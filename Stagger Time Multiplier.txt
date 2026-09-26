@@ -1,0 +1,43 @@
+{{Stub|reason=Version history says added by dlc but no banner.  is it defined in core,  was it added by the core update or the DLC,  did it switch at some point}}{{Verified|1.5.4104}}{{Stat
+| min value = 0
+| default base value = 1
+| to string style = PercentZero
+| description = A multiplier on the duration of the stagger-slowdown that occurs when damage is taken.
+| category = PawnCombat
+}}
+
+== Factors ==
+* [[Hediffs]]
+** [[Hediffs#Rage speed|Rage speed]] ([[Chimera]]){{AnomalyIcon}}: {{Good|×0%}}
+* [[Pawns]]
+** [[Revenant]]{{AnomalyIcon}}: {{Good|×0%}}
+* [[Genes]]{{BiotechIcon}}
+** [[Unstoppable]]: {{Good|×0%}}
+
+== Stat Def Data ==
+{| {{STDT}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Stagger Time Multiplier" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />StaggerDurationFactor
+* '''Label:'''<br />stagger time multiplier
+| A multiplier on the duration of the stagger-slowdown that occurs when damage is taken.
+|
+* Display Order:<br />'''110'''
+* Def Name:<br />'''PawnCombat'''
+* Label:<br />'''Combat'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''To String Style:''' PercentZero
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0}}
+* '''Hide At Value:''' {{%|1}}
+| -
+| 1200
+<!--</StatDef>-->
+|}
+
+== Version history ==
+* [[Biotech (DLC)]] Release - Added.
+
+{{nav|stats|wide}}

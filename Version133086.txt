@@ -1,0 +1,29 @@
+{{Version Nav|unstable=1}}
+
+Build 1.3.3086! This build will hopefully be released to the public.
+
+* Fix: Imprisoning and releasing slave immediately can cause some slaves to immediately join the player faction.
+* Add a "drag to reorder" label on colonist creation screen for clarity.
+* Remove second tick noise when reordering pawns on colonist creation screen.
+* Colorize the Tree Connection ritual icon to match the Gauranlen color.
+* Fix: Savage Tribe shows what it will buy.
+* Fix: Item style overrides information is not shown on ideo preset screen.
+* Fix: Slaves opportunistically haul during rebellion while grouping up.
+* Lower slave social fight chance by 50%.
+* Fix: Nutrient paste does not produce ate meat or ate non meat thoughts.
+* Fix: Pawn ritual arrival tag is not set if they started on the exact position they needed to be.
+* Fix: Animal products are considered when generating ate meat or ate non-meat history events and thoughts.
+* Add a null check to prevent old bestowing ceremony quests that existed pre-fix from causing issues.
+* Fix: Blood from animal sacrifice automatically cleans itself before ritual even completes.
+* PawnRenderer weapon drawing now supports Graphic_Random.
+* Fix: Players can load a caravan and bring disallowed items to new archonexus settlement.
+* Fix: Relic destroyed notification sent when player starts new archonexus settlement if they can't bring it.
+* Fix: Positive goodwill reward given when labourers miss shuttle and fixed scribe error trying to deep save a def.
+* Fix: Mentally broken pawn appears as participant for anima linking ritual.
+* Fix: Tribal members do not become hostile when arrested in terminal hack quest.
+* Fix: Insect jelly is treated as a drug, causing exception to be thrown.
+* Fix: Passive cave insects block bestowing ceremony.
+* Fix: Using numCase causes errors in date colorization. Also, add support for colorizing all cases of numCase dates.
+* Fix: Possible map junk wiping archonexus structure.
+* Fix: Badly formatted relic name in relic hunt quest description.
+* Fix: Some ancient junk is spawning overlapping chunks.

@@ -1,0 +1,69 @@
+{{BackToTutorials}}
+
+=Common (XML) errors=
+==Syntax==
+For beginning coders, the most common errors are '''formatting or syntax''' errors. A missing bracket, unclosed tag, empty file - these can all be avoided by using the proper tools. Get a text editor (or plug-in) that highlights or warns for these basic issues. RimWorld will not warn you: at best it will overload you with errors, at worst it will refuse to start. Syntax errors include capitalisation errors and errant whitespace. compClass and CompClass are two different things. Whitespace is just as evil,  ''<compClass>MyNamespace.MyClass </compClass>'' will leave you scratching your head forever as to why RimWorld can't find MyNamespace.MyClass .<!-- This extra space is intentional, as a hint to track down the subtle issues caused by it. Do not remove.-->
+
+==Cross-references==
+Other common errors are related to resolving cross-references. For instance: def A wants to use def B, but def B can't be found. These cross-references are by ''defName''. Both Type and defName have to match. In our earlier example, if there isn't a ''SoundDef'' with the ''Slurp'' defName, the game will log the following error:
+
+ Could not resolve cross-reference: No SoundDef named Slurp found to give to ThingDef SomeName.
+
+If the game can't find a cross-reference in a list, the error is slightly different:
+
+ Could not resolve cross-reference to Verse.ThingCategoryDef named BuldingsPower (wanter=thingCategories)
+
+where ''wanter=thingCategories'' is an optional addition, but it's the xml tag containing the misspelled "Bu'''i'''ldingsPower". One special note about the above error: If it says
+ Could not resolve cross-reference to RimWorld.ConceptDef named SomeName (wanter=knowledge)
+that means a mod that added an entry to the Learning Helper was added/removed. This is a one-time error that's otherwise harmless.<br/><br/>
+
+==Defining the same field/tag twice==
+ XML RimWorld.ThoughtDef defines the same field twice: stackLimit.
+ Field contents: 1.
+ Whole XML: <A lot of XML>
+
+In this example, there is a ThoughtDef with two ''stackLimit'' entries. Likely the result of two mods patching the same Def. The first mod wins. This is a classic example of a mod conflict, and lack of defensive patching. See also [[Modding_Tutorials/Compatibility#Defensive_patching|Defensive Patching]].
+
+==Missing a Type==
+ Could not find type named TurretExtensions.CompProperties_Upgradable from node <A lot of XML>
+This happens when an XML mod refers to a type which isn't loaded. In practice, a missing (DLL) dependency, a (DLL) dependency which couldn't be loaded due to earlier errors, or an outdated mod.<br/>
+
+==Referencing a non-existing field==
+<source lang ="xml"> XML error: <costStaffCount>50</costStaffCount> doesn't correspond to any field in type ThingDef. Context: <ThingDef ParentName="SculptureBase"><defName>SculptureSmall</defName><label>small sculpture</label><description>An artistic sculpture.</description><stuffCategories><li>Metallic</li><li>Woody</li><li>Stony</li></stuffCategories><costStaffCount>50</costStaffCount></ThingDef></source>
+
+This happens when the parentnode (in this case ''ThingDef'') does not contain an entry for the ''costSt'''a'''ffCount'' tag. This could be caused by a simple typo, by putting the tag in the wrong node, by a missing dependency, as a result of earlier errors, or an outdated mod. XML can only correspond to fields that are defined in C#.<br/>
+
+=Note about (solving) XML errors=
+XML errors '''cascade'''. Behind the scenes, RimWorld combines all Defs inside one massive XML document. If one <tag> is missing its closing </tag>, none of the XML will be readable by the parser and you will be greeted by a wall of red errors. Find the first XML error, and fix that one. Do not go chasing the other errors just yet. Reload the game, then fix the next error (if any).
+
+=Reading stracktraces=
+''Note: This real-life example was immediately fixed after reporting it. It helps to notify mod authors of errors!''<br/><br>
+What's often claimed as a mod conflict/incompatibility/load order issue is often just a bug. Just like how 80% of all statistics are made up on the spot, 98% of reported errors in RimWorld are NullReferenceExceptions. These forgotten null-checks can be tricky to find, but once found they're often easy to solve.
+
+Stacktraces are read from top to bottom, with the error first and all the methods that led up to it below. Let's look at a stacktrace:
+
+ Exception in BreadthFirstTraverse: System.NullReferenceException: Object reference not set to an instance of an object
+   at Gloomylynx.TantrumPatch.CheckForDisturbedSleepPrefix (Verse.Pawn) <0x00021>
+   at (wrapper dynamic-method) Verse.Pawn.CheckForDisturbedSleep_Patch1 (object,Verse.Pawn) <0x00020>
+   at Verse.Pawn.HearClamor (Verse.Thing,Verse.ClamorDef) <0x000b4>
+   at Verse.GenClamor/<DoClamor>c__AnonStorey0.<>m__0 (Verse.Region) <0x001b0>
+   at Verse.RegionTraverser/BFSWorker.BreadthFirstTraverseWork (Verse.Region,Verse.RegionEntryPredicate,Verse.RegionProcessor,int,Verse.RegionType) <0x000f7>
+   at Verse.RegionTraverser.BreadthFirstTraverse (Verse.Region,Verse.RegionEntryPredicate,Verse.RegionProcessor,int,Verse.RegionType) <0x00130>
+
+* The bottom part of the stacktrace is usually not too interesting, most of the lively stuff starts at ~3 calls earlier. In this case, ''Verse.GenClamor'' called ''Pawn.HearClamor'', which called ''Pawn.CheckForDisturbedSleep'', which called ''Gloomylynx.TantrumPatch.CheckForDisturbedSleepPrefix'', which caused the error.
+* '''Exception in BreadthFirstTraverse''' is where the error was caught: there's a try/catch block there, and the error was caught.
+* '''System.NullReferenceException: Object reference not set to an instance of an object is the type of error.''' NullReferenceExceptions are the most common type of error. It being "not set to an instance of an object" means something wasn't initialised (= instantiated). Like, say, checking how many items are in a list that wasn't created yet (= if it's not created, it's null).
+* '''at ''(wrapper dynamic-method)'' Verse.Pawn.CheckForDisturbedSleep''_Patch1''''' this is evidence of a [[Modding Tutorials/Harmony|Harmony Patch]]. HugsLib provides a list of all patched methods, which usually helps to see what mod did a thing: https://git.io/fh7BK#file-output_log-txt-L224 That list is helpful if you can see there's an error, but there's no hint of the mod.
+** If there are multiple patches on it, it's possible (but still unlikely) there's a mod-conflict. Most of the time though, it's because the mod that threw the error didn't consider something could be null. The beauty of Harmony, as the name suggests, is that multiple mods can patch the same method without issue.
+
+''Gloomylynx.TantrumPatch.CheckForDisturbedSleepPrefix'' is the ''Namespace.Class.Methodname'' containing the error. Most mods use their name (or derivative thereof) as their namespace. This is often a useful hint.
+
+=Submitting a bug report=
+Look, it's downright impossible to test a mod with all possible combinations of all mods. Some mods are multiple thousand lines of code so "x breaks" doesn't help anyone to fix the issue. A mod maker can try their best in play-testing to see if things work, but your mod configuration is most likely unique to you. If you encounter an issue in a mod, always contact the mod maker and inform them. It's bad form to demand a fix (we're all just volunteers after all), but most mod makers will want their release to be bug-free.
+
+Logs, especially those provided by HugsLib, are of tremendous value in determining where an issue is. Notifying a mod author of an issue and providing them a log and steps to repro are the first steps in solving an issue.
+
+See [https://steamcommunity.com/sharedfiles/filedetails/?id=725234314 this guide] on how to best submit a bug report.
+
+[[Category: Modding tutorials]]
+[[Category: Modding]]

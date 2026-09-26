@@ -1,0 +1,47 @@
+{{Version Nav}}
+
+Hi folks! We have a pretty small update with just a few changes and fixes to get 2023 started. This update should be compatible with all savegames and mods.
+
+Big thanks to our community for submitting bugs and testing our updates over at the official RimWorld development Discord. If you encounter any issues while playing, please share them with us on the Discord.
+
+Hope you're having fun out there!
+- Tia
+
+== Changelog ==
+* Improved performance of apocriton's resurrection ability on maps with many mech corpses.
+* Shuttles trying to land on a map that was despawned will fallback to using one of the player's home colonies instead.
+* Xenotype name is locked when loading custom xenotypes from gene assembler.
+* Updated name-in-game content.
+* Moved "Person" translation key to Core.
+* Removed duplicate stat entry RestFallRateFactor.
+
+=== Fixes ===
+* Fix: Styling station can instantly change hair and tattoo styles by pressing Escape or Enter while the dialog is open.
+* Fix: Power consumption on inspect string incorrect when using a consumer with idle power consumption.
+* Fix: Fence-blocked animals attempting to reach food that is diagonally accessible but cannot path to become stuck.
+* Fix: Child prisoners attempt to wear adult clothing, causing it to disappear.
+* Fix: Odd ordering of animals on animals main tab in certain circumstances.
+* Fix: The "No trait" option on growth letters does not save and load correctly.
+* Fix: Releasing pawns from prison sometimes automatically recruits them.
+* Fix: Pawn auto-uses age reversal after changing from Transhumanist to Non-Transhumanist ideoligion.
+* Fix: AI trying to use tox gas on immune targets.
+* Fix: Baby to child dialog becoming locked.
+* Fix: Newly purchased and downloaded game sometimes has extremely high UI scale, making the game unplayable.
+* Fix: Randomize symbols doesn't update member noun in ideology's description.
+* Fix: Some recipes missing ingredients in tooltip.
+* Fix: Reimplant ability not working with custom xenotypes.
+* Fix: BackstoryTitle translation key not used in Dialog_NamePawn.
+* Fix: {PAWN_gender ? ...} is not processed/ignored in precept tooltips.
+* Fix: Thought LabelCap loses lapel capitalization in PostProcessLabel.
+* Fix: Issues recruiting pawns in quests.
+* Fix: Colonists with pending bestowing ceremony quest in caravans don't have hediffs ticked.
+* Fix: Idle and active power draw displayint incorrectly in inspect string.
+* Fix: Babies and children added onto total population for shuttle mission quests. Ensure that at least one adult pawn can be left behind before generating quest.
+* Fix: Xenogerms with different genes and name stack in trade screen.
+* Fix: Pawn lend quests only take into consideration children and babies when determining colonist count when generating.
+* Fixed issues dealing with betrayal and refugee quests around recruiting of refugees: Refugees are properly removed from extra faction lists when they are recruited. Recruiting a refugee will immediately fail the betrayal quest.
+* Fix typo "targetter".
+* Fix typo "capactities".
+
+== Source ==
+* [https://store.steampowered.com/news/app/294100/view/3669904887430794969 Update 1.4.3613 released]

@@ -1,0 +1,57 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Drugs/Wake-up}}
+|}
+----
+{| {{STDT| c_24}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Wake-up tolerance" <!-- defName="WakeUpTolerance", ParentName="DrugToleranceBase" -->
+! Wake-up tolerance
+----
+* Def Name:<br />WakeUpTolerance
+* Label:<br />wake-up tolerance
+| A built-up tolerance to wake-up. The more severe this tolerance is, the more wake-up it takes to get the same effect.
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|100%|0%|50%}}
+* Max Severity: '''100%'''
+* Scenario Can Add: {{Good|true}}
+* Is Bad: {{Good|false}}
+* '''Comps'''
+** '''Severity Per Day:''' {{---|1.5%}}
+** '''Drug Effect Factor'''
+*** Chemical: '''WakeUp'''
+* '''Hediff Givers:''' ''Random Drug Effect''
+** Hediff: '''[[Hediffs#Severe chemical damage|Severe chemical damage]]'''
+** Parts To Affect: '''[[Kidney]]'''
+** Severity To {{MTB}} Days Curve:
+<div><li style="display: inline-table;">
+{| {{STDT| c_24}}
+! Severity !! {{MTB}}<br />Days
+|-
+! 45%
+| 99999
+|-
+! 50%
+| 180
+|-
+! 100%
+| 135
+|}{{Graph:Chart|width=300|height=200|xAxisTitle=Severity|yAxisTitle=MTB Days|type=line|x=0.45, 0.5, 1|y=99999, 180, 135|yAxisMax=200|interpolate=monotone|xGrid=|yGrid=}}</li></div>
+|<!-- Stages -->
+{| {{STDT| c_24}}
+! Label !! Parameters
+|-
+! Small
+|<!-- Parameters -->
+* Min Severity: '''0%'''
+|-
+! Large
+|<!-- Parameters -->
+* Min Severity: '''50%'''
+|-
+! Massive
+|<!-- Parameters -->
+* Min Severity: '''80%'''
+|}<noinclude>
+|}</noinclude>

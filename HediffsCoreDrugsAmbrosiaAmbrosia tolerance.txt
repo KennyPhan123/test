@@ -1,0 +1,40 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Drugs/Ambrosia}}
+|}
+----
+{| {{STDT| c_24}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Ambrosia tolerance" <!-- defName="AmbrosiaTolerance", ParentName="DrugToleranceBase" -->
+! Ambrosia tolerance
+----
+* Def Name: AmbrosiaTolerance
+* Label: ambrosia tolerance
+| A built-up tolerance to ambrosia. The more severe this tolerance is, the more ambrosia it takes to get the same effect.
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|100%|0%|50%}}
+* Max Severity: '''100%'''
+* Scenario Can Add: {{Good|true}}
+* Is Bad: {{Good|false}}
+* '''Comps'''
+** '''Severity Per Day:''' {{---|2%}}
+** '''Drug Effect Factor'''
+*** Chemical: '''Ambrosia'''
+|<!-- Stages -->
+{| {{STDT| c_24}}
+! Label !! Parameters
+|-
+! Small
+|<!-- Parameters -->
+* Min Severity: '''0%'''
+|-
+! Large
+|<!-- Parameters -->
+* Min Severity: '''50%'''
+|-
+! Massive
+|<!-- Parameters -->
+* Min Severity: '''80%'''
+|}<noinclude>
+|}</noinclude>

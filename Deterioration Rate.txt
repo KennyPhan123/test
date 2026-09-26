@@ -1,0 +1,203 @@
+{{Page Under Construction|help=1}}
+{{Verified|1.5.4104}}{{Stat
+| def name = DeteriorationRate
+| label = deterioration rate
+| description = The rate at which this item [[Deterioration|deteriorates]] when left outside, in average hit points per day.<br/>Deterioration rate is also affected by things like weather, roofs, toxic fallout, or being left in shallow water.
+| default base value = 0
+| min value = 0
+| format string = {0} / day
+| to string style = FloatTwo
+| scenario randomizable = true
+| show if undefined = false
+| category = BasicsNonPawn
+| display priority in category = 2500
+| parts = StatPart_Quality, StatPart_EnvironmentalEffects, StatPart_Pollution, StatPart_NoxiousHaze, StatPart_ToxicFallout, StatPart_NearHarbingerTree, StatPart_ShamblerCorpse
+}}
+
+== Base Values ==
+<div><li style="display: inline-table;">
+Click to <div class="mw-collapsible">
+<div class="mw-collapsible-content">
+{| {{STDT| c_01 sortable}}
+! Thing !! Deterioration Rate Base
+|-
+{{#ask: [[Deterioration Rate Base::+]]
+| ?Deterioration Rate Base
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Name
+| limit = 1000
+}}
+|}
+</div>
+</div>
+</li></div>
+
+== Factors ==
+The following factors are applied to base deterioration rate in order of appearance. [[Genepack]]s {{BiotechIcon}} exclusively do not deteriorate from environmental effects, which is likely to account for their constant deterioration rate when outside of [[gene bank]]s.{{BiotechIcon}}
+
+=== Quality ===
+For items that have quality:
+<div><li style="display: inline-table;">
+{| {{STDT| c_04}}
+! [[Quality]] !! Factor
+|-
+! Awful
+| {{Bad|×200%}}
+|-
+! Poor
+| {{Bad|×150%}}
+|-
+! Normal
+| '''×100%'''
+|-
+! Good
+| {{Good|×80%}}
+|-
+! Excellent
+| {{Good|×60%}}
+|-
+! Masterwork
+| {{Good|×30%}}
+|-
+! Legendary
+| {{Good|×10%}}
+|}
+</li></div>
+
+* Quality multiplier: x200%
+* Quality multiplier: x150%
+* Quality multiplier: x100%
+* Quality multiplier: x80%
+* Quality multiplier: x60%
+* Quality multiplier: x30%
+* Quality multiplier: x10%
+
+=== Environmental Effects ===
+* Deteriorate From Environmental Effects:
+** [[Genepack]] {{BiotechIcon}}: {{Good|false}}
+* Unroofed Factor Offset: {{++|50%}}
+* Outdoors Factor Offset: {{++|50%}}
+* Extra Deterioration Factor (Terrain):
+** Water: {{++|300%}}
+* Rain Rate: '''×100%''' ~ {{Bad|×500%}}
+* Prevent Deterioration On Top (Buildings):
+** [[Shelf]]: {{Good|true}}
+** [[Small shelf]]: {{Good|true}}
+** [[Bookcase]]: {{Good|true}}
+** [[Small bookcase]]: {{Good|true}}
+** Protected By Edifice Factor: {{Good|×0%}}
+<!--
+* preventDeteriorationInside
+** [[Grave]]
+** [[Sarcophagus]]
+* canDeteriorateUnspawned
+** [[Genepack]] {{BiotechIcon}}: true
+-->
+
+* Unroofed: +50%
+* Outdoors: +50%
+* Deep water: +300%
+* Deep ocean water: +300%
+* Chest-deep moving water: +300%
+* Shallow water: +300%
+* Shallow ocean water: +300%
+* Shallow moving water: +300%
+* Marsh: +300%
+* Raining: x100% ~ x500%
+* Protected: x0%
+
+=== Pollution ===
+{{Biotech|section=1}}
+Applies to items that deteriorate from environmental effects within [[Pollution|polluted]] cells.
+
+Multiplier for pollution: x150%
+
+=== Noxious Haze ===
+{{Biotech|section=1}}
+Applies to unroofed items that deteriorate from environmental effects when the [[Acidic smog]] game condition is active and when toxic fallout is not, which suppresses its effects. This means that deterioration rate can only be affected by one or the other at a time, not both.<!-- and pawn kinds not immune to game condition effects (Every pawn kind except for the following {{AnomalyIcon}} [[entities]]: [[Nociosphere]], [[Metalhorror]], [[Revenant]], [[Sightstealer]], [[Noctol]], [[Fleshmass nucleus]], [[Gorehulk]], [[Devourer]]): Unknown if this would apply to their corpses as well, which is what would make it relevant to deterioration rate -->
+
+Multiplier for acidic smog: x300%
+
+=== Toxic Fallout ===
+Applies to unroofed items that deteriorate from environmental effects when the [[Toxic fallout]] game condition is active.
+
+Multiplier for toxic fallout: x300%
+
+=== Near Harbinger Tree ===
+{{Anomaly|section=1}}
+Applies to items being consumed by a [[harbinger tree]].
+
+Multiplier for harbinger tree: x200%
+
+=== Shambler Corpse ===
+{{Anomaly|section=1}}
+Applies to corpses with the [[Hediffs#shambler corpse|shambler corpse]] hediff.
+
+Multiplier for shambler corpse: x500%
+
+== Calculating Deterioration Rate ==
+All of these factors combined result in:
+
+<code>Final Deterioration Rate = (Base Deterioration Rate + Unroofed + Outdoors + In Water) × Rain Rate × Protected × exposed to Pollution × exposed to Acidic smog or Toxic fallout × being consumed by a Harbinger tree × is a Shambler corpse</code>
+
+Which results in an effective maximum of:
+
+<code>Final Deterioration Rate = (Base Deterioration Rate + 0.5 + 0.5 + 3) × 5 × 1.5 × 3 × 2 × 5</code>
+
+<code>Final Deterioration Rate = (Base Deterioration Rate + 4) × 225</code>
+
+
+== Stat Def Data ==
+{| {{STDT}}
+! Name !! Description !! Category !! Parameters !! Complex Parameters !! Display Priority In Category
+|- id="Deterioration Rate" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />DeteriorationRate
+* '''Label:'''<br />deterioration rate
+| The rate at which this item deteriorates when left outside, in average hit points per day.<br/><br/>Deterioration rate is also affected by things like weather, roofs, toxic fallout, or being left in shallow water.
+|
+* Display Order: '''12'''
+* Def Name:<br />'''BasicsNonPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default: {{Bad|false}}
+|
+* Show If Undefined: {{Bad|false}}
+* Default Base Value: '''0'''
+* Min Value: '''0'''
+* To String Style: '''FloatTwo'''
+* Format String:<br />"{0} / day"
+* Scenario Randomizable: {{Good|true}}
+|
+* '''Parts:'''
+** '''StatPart_Quality:'''
+*** Factor Awful: {{Bad|×{{%|2}}}}
+*** Factor Poor: {{Bad|×{{%|1.5}}}}
+*** Factor Normal: '''×{{%|1}}'''
+*** Factor Good: {{Good|×{{%|0.8}}}}
+*** Factor Excellent: {{Good|×{{%|0.6}}}}
+*** Factor Masterwork: {{Good|×{{%|0.3}}}}
+*** Factor Legendary: {{Good|×{{%|0.1}}}}
+** '''StatPart_EnvironmentalEffects:'''
+*** Factor Offset Unroofed: {{+|{{%|0.5}}}}
+*** Factor Offset Outdoors: {{+|{{%|0.5}}}}
+*** Protected By Edifice Factor: {{Good|×{{%|0}}}}
+** {{BiotechIcon}} '''StatPart_Pollution:'''
+*** Multiplier: {{Bad|×{{%|1.5}}}}
+** {{BiotechIcon}} '''StatPart_NoxiousHaze:'''
+*** Multiplier: {{Bad|×{{%|3}}}}
+** '''StatPart_ToxicFallout:'''
+*** Multiplier: {{Bad|×{{%|3}}}}
+** {{AnomalyIcon}} '''StatPart_NearHarbingerTree:'''
+*** Multiplier: {{Bad|×{{%|2}}}}
+** {{AnomalyIcon}} '''StatPart_ShamblerCorpse:'''
+*** Multiplier: {{Bad|×{{%|5}}}}
+| 2500
+<!--</StatDef>-->
+|}
+
+== Version history ==
+{{Stub|nocat=1|section=1|reason=General Version history}}
+
+{{nav|stats|wide}}

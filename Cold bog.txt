@@ -1,0 +1,194 @@
+{{Infobox biome
+| name = Cold bog
+| image = Cold Bog.png
+| type = Biome
+| texture = ColdBogTexture.png
+| canbuildbase = Yes
+| allowFarmingCamps = false
+| animal density = 3.3
+| plant density = 0.6
+| movement difficulty = 4
+| min temperature = -10
+| min swampiness = 0.5
+| forageability = 0.5
+| wild plant regrow days = 20
+| disease mtb days = 45
+| description = A wetland packed with trees and vines. Much of the marshy land here can't support heavy structures, moving around is slow due to choking vegetation. Disease is endemic in this dense, wet ecosystem.
+<!-- weather -->
+| clear = 18
+| fog = 1
+| rain = 2
+| dry thunderstorm = 1
+| rainy thunderstorm = 1
+| foggy rain = 1
+| hard snow = 4
+| soft snow = 4
+| gray pall = 1
+| blind fog = 2
+| overcast = 2
+| torrential rain = 1
+<!-- fish -->
+| max fish population = 600
+| freshwater_common_salmon = Yes
+| freshwater_uncommon_frostfish = Yes
+| saltwater_common_salmon = Yes
+| saltwater_common_cod = Yes
+| saltwater_uncommon_dogfish = Yes
+}}
+'''Cold Bog''' is a cold [[biome]] in RimWorld.
+<!-- return 0f - tile.temperature + 13f + tile.swampiness * 8f -->
+== Summary ==
+A more wet version of the [[Boreal forest]]. Like in all swamps, diseases are more common. The marshy soil will probably require bridges before constructing buildings and the terrain is really slow to travel, but this biome also has more fertile soil. 
+
+In the lists below the number in brackets represents the relative commonality.
+
+=== Flora ===
+<div class="ul-column-width-200">
+{{#ask: [[Type::Plant]] [[Lives In Cold Bog::>>0]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Cold Bog
+}}
+</div>{{#set:Flora Commonality Sum | {{#expr: {{#ask: [[Type::Plant]] [[Lives In Cold Bog::>>0]] | ?Lives In Cold Bog = | mainlabel=- | sep=+ }} }} }}{{#set:Grazing Score|{{Grazing Score}} }}
+
+=== Fauna ===
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Cold Bog::>>0]] [[Coastal Animal::false]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Cold Bog
+}}
+</div>{{#set:Fauna Commonality Sum | {{#expr: {{#ask: [[Type::Animal]] [[Lives In Cold Bog::>>0]] [[Coastal Animal::false]] | ?Lives In Cold Bog = | mainlabel=- | sep=+ }} }} }}
+
+Additionally, these animals can spawn in coastal maps:
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Cold Bog::>0]] [[Coastal Animal::true]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Cold Bog
+}}
+</div>
+
+If the map is [[polluted]],{{BiotechIcon}} then the game may choose to spawn in wild animals from this list instead:
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Cold Bog (Polluted)::>0]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Cold Bog (Polluted)
+}}
+</div>
+
+=== Diseases ===
+Cold Bog has a disease {{MTB}} of 45 days. The following diseases can occur in a Cold Bog:
+{| {{STDT|c_07 sortable}}
+! Disease
+! Commonality{{#set:Disease commonality sum|{{#expr:100+80+30+40+40+30+100+80+10}} }}
+|-
+| [[Flu]] || 100{{#set:Flu commonality|100}}
+|-
+| [[Plague]] || 80{{#set:Plague commonality|80}}
+|-
+| [[Gut worms]] || 30{{#set:Gut worms commonality|30}}
+|-
+| [[Fibrous mechanites]] || 40{{#set:Fibrous mechanites commonality|40}}
+|-
+| [[Sensory mechanites]] || 40{{#set:Sensory mechanites commonality|40}}
+|-
+| [[Muscle parasites]] || 30{{#set:Muscle parasites commonality|30}}
+|-
+| [[Flu#Animals|Animal flu]] || 100{{#set:Animal flu commonality|100}}
+|-
+| [[Plague#Animals|Animal plague]] || 80{{#set:Animal plague commonality|80}}
+|-
+| [[Organ decay]] || 10{{#set:Organ decay commonality|10}}
+|}
+
+=== Fish ===
+{{Odyssey|section=1|No category}}
+The table below contains the list of all of the fish that can be caught - as well as where they can be caught.
+{| {{STDT|c_23 sortable}}
+! Fish
+! Water body
+! Rarity
+|-
+| [[Salmon]] || Freshwater || Common
+|-
+| [[Frostfish]] || Freshwater || Uncommon
+|-
+| [[Salmon]] || Saltwater || Common
+|-
+| [[Cod]] || Saltwater || Common
+|-
+| [[Dogfish]] || Saltwater || Uncommon
+|}
+
+== Analysis ==
+Cold bogs are one of the most visually pretty biomes in RimWorld. At first glance they appear survivable due to abundant vegetation and moderate temperatures compared to ice sheets, but underneath the surface they are one of the most punishing long-term biomes because of poor terrain, disease pressure, and limited building space.
+
+'''Food and Growing: Moderate
+Cold bogs contain large amounts of marshy terrain, with decent plant life and many trees. Unlike deserts or tundra, food is usually manageable during the growing season due to wild berries, animals, and sufficient soil for farming. However, much of the soil is muddy or waterlogged, making construction difficult and reducing efficient farmland placement. Growing seasons are shorter than temperate forests but generally longer than tundra.
+
+The biggest issue is not lack of fertility, but rather usable land. Colonies can struggle to create organized farms and defensive layouts because fertile areas are often broken apart by marshes and shallow water. Winter food shortages can still occur if enough crops are not stockpiled beforehand.
+
+'''Disease: Difficult
+Cold bogs are among the worst biomes in the game for disease frequency i.e. 1.3 times per year. Colonists with poor immunity or weak medical care could be at risk.
+
+Unlike jungles, temperatures are cold enough to somewhat reduce disease severity during parts of the year, but disease is still far more common than in boreal forests or tundra. Wild healroot may exist in limited quantities depending on temperature, but relying on natural medicine alone is unreliable. A competent doctor and medicine supply are extremely important.
+
+'''Temperature: Moderate to Difficult
+Cold bogs have cool temperatures with harsh winters but usually avoid the lethal extremes of ice sheets or sea ice. Summers are comfortable enough for outdoor work, while winters can require proper heating infrastructure and winter clothing.
+
+The biome becomes significantly harder during cold snaps, since colonists may already be operating near freezing temperatures for much of the year. Heating costs can rise quickly because wooden structures are common early on due to the large number of trees available.
+
+'''Terrain and Building: Extreme
+This is the defining challenge of cold bogs. Huge portions of the map are covered in marsh, mud, and shallow water. These terrains greatly slow movement and cannot support heavy structures without moisture pumps or bridges.
+
+Building secure bases becomes complicated because:
+
+* Defensive choke points are awkward to design
+* Heavy buildings and walls require careful terrain planning in the early game
+* Power conduits and infrastructure become messy
+* Travel speed across the map is reduced significantly
+
+Marsh terrain can also work against raiders, but experienced enemies may still exploit open paths while your own colonists struggle with movement penalties.
+
+However, with Odyssey{{OdysseyIcon}} expansion, heavy bridges can support the construction of every object in-game on marsh/shallow water terrains, although at a steel premium.
+
+'''Fires: Easy'''
+Despite abundant vegetation, cold bogs are naturally wet biomes, so massive wildfires are less threatening than in forests or shrublands. Rain is relatively common, helping extinguish fires naturally. Flashstorms are annoying rather than catastrophic in most cases.
+
+'''Predators: Moderate
+Wildlife is generally less dangerous than tropical jungles, but predators can still pose problems, especially during winter when food becomes scarce. Animals may target colonists or livestock more aggressively during colder months.
+
+'''Overall'''
+Cold bogs are a moderate-difficulty biome focused less on survival extremes and more on constant attrition. Food is manageable, wood is abundant, and temperatures are survivable, but the terrain and disease pressure create nonstop logistical problems.
+
+Cold bogs can be a great starting point for a gravship{{OdysseyIcon}} focused start, as it provides abundant food and wood and gravship substructure allows building all items on it.
+
+Early permanent base colonies may initially feel ''easier than tundra or desert starts'', but long-term development becomes frustrating due to construction limitations and recurring illnesses. Once moisture pumps, medicine production, proper heating, and advanced infrastructure are established, the biome becomes much more stable — though it never fully stops being inconvenient.
+
+== Gallery ==
+<gallery>
+Cold Bog.png|A Cold Bog
+<!-- ColdBogPolluted.png|A [[polluted]] Cold Bog{{BiotechIcon}} -->
+ColdBogTexture.png|Cold Bog's texture on the world map
+</gallery>
+
+== Version history ==
+* [[Version/0.18.1722|0.18.1722]] - Added
+
+{{nav|biomes|wide}}
+[[Category:Biomes]]
+[[Category:Cold Biomes]]

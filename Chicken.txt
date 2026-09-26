@@ -1,0 +1,133 @@
+{{Image wanted|reason=Flying animation}}{{infobox main|animal
+| page verified for version = 1.3.3101
+| name = Chicken
+| image = Chicken.png
+| description = The most traditional farm bird, the chicken is raised for its eggs and meat. It grows very quickly and lays eggs very often.
+| type = Animal
+| movespeed = 2.1
+| baseleatheramount = 0
+| min comfortable temperature = -10
+| max comfortable temperature = 40
+| toxic resistance = 0.5
+| toxic environment resistance = 0
+| flammability = 0.7
+| marketvalue = 50
+| filth rate = 4
+| eggsmin = 1
+| eggsmax = 1
+| eggs_avg = 1
+| eggtime = 1
+| fertilized egg name = Chicken egg (fert.)
+| unfertilized egg name = Chicken egg (unfert.)
+| baby name = chick
+| male name = rooster
+| female name = hen
+| combatPower = 30
+| bodysize = 0.3
+| healthscale = 0.35
+| hungerrate = 0.14
+| diet = herbivorous
+| wildness = 0
+| manhuntertame = 0
+| manhunter = 0
+| roamMtb = 7
+| trainable = none
+| mateMtb = 8
+| babyscale = 0.1
+| lifespan = 6
+| juvenileage = 0.12
+| maturityage = 0.2
+| tradeTags = AnimalFarm, AnimalCommon
+| attack1dmg = 2
+| attack1type = Scratch
+| attack1cool = 1.5
+| attack1part = feet
+| attack2dmg = 3
+| attack2type = Bite
+| attack2cool = 2
+| attack2part = beak
+| attack3dmg = 1
+| attack3type = Blunt
+| attack3cool = 1.5
+| attack3part = head
+| attack3chancefactor = 0.2
+| isCoastal = false
+}}
+'''Chickens''' are domesticated [[egg]]-laying [[animal]]s. Males of the species are referred to as '''Cockerels''' as adolescents and '''Roosters''' as adults and can be distinguished by their ruddy brown coloration, while females are referred to as '''Hens''' and are white. Babies of either gender are bright yellow and referred to as '''Chicks'''.
+
+== Acquisition ==
+Chickens do not spawn as wild animals. Instead they must be [[Trade|purchased]] from a [[Trade#Exotic goods trader 2|exotic goods traders]], [[Trade#Bulk goods trader 2|bulk goods traders]] or [[faction base]]. Chickens can also join the colony in an [[Events#Animals join|Animals join]] events.
+
+== Summary == 
+{{Pen Animal Note|Chickens}}
+
+A female chicken produces {{P|Eggs Per Clutch Average}} [[egg]] every {{P|Egg Laying Interval}} day. Chickens can lay both [[Chicken egg (unfert.)|unfertilized]] and [[Chicken egg (fert.)|fertilized]] eggs, depending on if it has mated with a rooster.
+
+Chickens can fly for up to 3 seconds.
+
+== Analysis ==
+Chickens are the best animal for egg production, and one of the best animals for meat production.
+
+Chickens grow very quickly, taking only {{#expr:{{P|Maturity Age}}*60 round 1}} days to mature, placing them among the fastest-growing animals. Combined with their incredibly fast reproduction rate of {{#expr:{{P|Eggs Per Clutch Average}}/{{P|Egg Laying Interval}}}} offspring per day, a population of chickens can rapidly explode from a single rooster and hen, theoretically increasing to a population of 1200 adults within the span of just a year. Once the population explosion gets going, the population will double every approximately 5.7 days.<!--simulated with clutch_size=1, egg_interval=1, maturity_age=12--> 
+
+Chickens are nearly identical to [[duck]]s. Ducks provide the same yield in both meat and eggs, but consume 20% more nutrition, so they are inferior as livestock.
+
+=== Eggs ===
+An adult hen consumes {{P|Real Hunger Rate}} nutrition per day, and produces {{#vardefineecho:egg_nutr_per_day|{{#expr:{{P|Eggs Per Clutch Average}}/{{P|Egg Laying Interval}}*{{Q|Chicken egg (unfert.)|Nutrition}}}}}} nutrition of eggs each day. This results in a nutrition efficiency of {{%|{{#var:egg_nutr_per_day}}/({{P|Base Hunger Rate}}*1.6) round 3}} when unfertilized eggs are eaten. [[Overeating]], and the existence of roosters, will lower nutrition efficiency in practice.
+
+Note that slaughtering chicks gives more nutrition than eating unhatched eggs (0.6 from meat rather than {{Q|Chicken egg (fert.)|Nutrition}} from 1 egg). Note that a rooster has to fertilize each hen, that hens have to be slaughtered, and that a butcher's yields are multiplied by [[Butchery Efficiency]]. So if you don't have a skilled cook, eggs may be better for nutrition. Also, eggs are vegetarian. 
+
+Eggs spoil in 15 days at normal temperatures. For comparison this is a day longer than milk, and berries, both of which spoil in 14 days. Note, if using egg boxes, the eggs batches will be hauled aged, but with even a few chickens the resultant spoil times can be long enough to provide a steady supply non-vegetable meal components without requiring a freezer. Note for food preservation, meat can be used to make pemmican, but eggs cannot. Eggs are a valid non-vegetable ingredient for fine meals, package survival meals, and kibble though.
+
+=== Meat ===
+When slaughtered, a chicken yields {{#vardefineecho:baby_meat|{{Meat Leather Curve|{{#expr:{{P|Body Size}}*0.1*140}}}}}} meat as a chick; {{Meat Leather Curve|{{#expr:{{P|Body Size}}*0.5*140}}}} as a juvenile; or {{Meat Leather Curve|{{#expr:{{P|Body Size}}*140}}}} as an adult. No leather is yielded.
+
+When chicks are slaughtered, an always-fertilized hen produces {{#expr:{{Meat Production|{{PAGENAME}}|Baby}} round 2}} nutrition per day, resulting in a nutrition efficiency of {{%|{{Meat Production|{{PAGENAME}}|Baby}}/({{P|Base Hunger Rate}}*1.6) round 3}} for the hen alone, or {{%|{{Meat Production|{{PAGENAME}}|Baby|{{#vardefineecho:femaleratio|{{#expr: 2/3*24*{{P|Egg Laying Interval}}/{{P|Mate Mtb Hours}} round 2}}}}}}/{{Nutrition Consumption|{{PAGENAME}}|Baby|{{#var:femaleratio}}|1}} round 3}} when accounting for the {{#var:femaleratio}}:1 hen:rooster ratio needed to achieve a good [[Animals#Mating|fertilization rate]].
+
+As a chick grows into adulthood, it will consume {{#expr:{{Consumption Upto Adulthood}} round 2}} nutrition in total, and will yield {{#expr:0.05*({{P|Meat Yield}} - {{#var:baby_meat}})}} more nutrition when slaughtered than it would as a baby. Due to the effects of [[overeating]], letting chickens grow up is a slight malus to meat yield. Despite being slightly worse, you may prefer to let chicks grow up, as slaughtering adult chickens takes less work.
+
+Chickens are the best pen animal for nutritional efficiency. The main competitors are the [[ibex]] and [[tortoise]]. [[Ibex]] are less efficient, but take far less slaughtering work. [[Tortoise]]s aren't pen animals, meaning they must be re-tamed over time, but are even better for nutrition.
+
+=== Kill-focused ===
+Chicken's rapid reproduction makes them good fodder for the  [[Kill-focused]] persona trait.{{RoyaltyIcon}} This persona trait grants {{+|20%}} [[psyfocus]]{{RoyaltyIcon}} whenever its wielder kills any pawn, even when slaughtering chickens or chicks. A coop can allow rapid use of [[psycasts]],{{RoyaltyIcon}} such as [[word of inspiration]],{{RoyaltyIcon}} which would otherwise be limited by psyfocus.
+
+== Training ==
+Chickens lack the intelligence for training.
+
+{{TrainingTable}}
+
+== Health ==
+{{Animal Health Table|Bird}}
+{{Pawn Attack Table}}
+
+== Gallery ==
+<gallery>
+Chicken east.png|Hen facing east
+Chicken north.png|Hen facing north
+Chicken south.png|Hen facing south
+</gallery>
+<gallery>
+Rooster.png|Rooster facing east
+Rooster North.png|Rooster facing north
+Rooster South.png|Rooster facing south
+</gallery>
+<gallery>
+Chick.png|Chick facing east
+Chick North.png|Chick facing north
+Chick South.png|Chick facing south
+</gallery>
+<gallery>
+Dessicated chicken east.png|Dessicated facing east
+Dessicated Chicken north.png|Dessicated facing north
+Dessicated Chicken south.png|Dessicated facing south
+</gallery>
+
+== Version history ==
+* [[Version/0.12.906|0.12.906]] - Added
+* Alpha 17 - Prior to Alpha 17, chickens were one of the fastest reproducing animals in the game. However, they were nerfed in Alpha 17 in both body size and breeding rate, making them significantly less efficient than they used to be. In fact, after Alpha 17, it was much more nutrition-efficient to farm [[snowhare]]s for meat and [[cow]]s for [[milk]].
+* [[Version/1.3.3066|1.3.3066]] - Egg interval decreased from 2 -> 1. Base hunger rate decreased from 0.35 -> 0.14. Maturity age decreased from 0.3 -> 0.2
+* [[Version/1.6.4518]] - Chickens can now fly.
+
+{{nav|animal|wide}}
+[[Category:Animals]]
+[[Category:Farm animal]]

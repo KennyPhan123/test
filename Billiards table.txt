@@ -1,0 +1,94 @@
+{{Infobox main|building
+| name = Billiards table
+| image = Billiards table.png
+| description = A soft-topped bounded table for playing a variety of billiards-type games. It trains shooting ability.
+| type = Building
+| type2 = Recreation
+| placeable = true
+| path cost = 42
+| passability = pass through only
+| cover = 0.4
+| minifiable = true
+| size = 2 ˣ 3
+| mass base = 60
+| flammability = 1
+| hp = 250
+| sell price multiplier = 0.7
+| beauty = 0
+| recreation power = 1.3
+| recreation type = dexterity play
+| terrain affordance = medium
+| research = complex furniture
+| skill 1 = Construction
+| skill 1 level = 6
+| work to make = 12000
+| stuff tags = Metallic, Woody, Stony
+| resource 1 = Stuff
+| resource 1 amount = 80
+| resource 2 = Cloth
+| resource 2 amount = 80
+| resource 3 = Wood
+| resource 3 amount = 30
+| has quality = True
+| page verified for version = 1.2.2900
+| room role = Rec room
+}}
+A '''billiards table''' is a [[Recreation]] building that provides dexterity play while slowly increasing their [[Shooting]] skill.
+
+== Acquisition ==
+{{Acquisition}}
+
+They can also be [[Trade|bought]] from [[Outlander]] or [[Empire]] {{RoyaltyIcon}} [[faction base]]s.
+
+== Summary ==
+The billiards table has a nominal area of 3x2 tiles, however it also requires a 1-space-wide area around it (total 5x4) which needs to be clear for it to be placed and remain usable.  Chairs/stools/thrones do ''not'' block this exclusion zone, however they will slow a billiards player down as they move around the table and so slow recreation gain.
+
+The billiards table can be used by 1 or 2 players at a time.  The [[quality]] of the billiards table affects the entertainment strength factor, but it has a base value of 130%. The displayed recreation power of the billiards table is deceptive however. Pawns will change position occasionally while playing by walking around the outside edge of the table, but they cease gaining recreation while moving. This results in a loss of approximately 25% of the recreation gain per unit time versus a recreation item of the same power as all other recreation items are used continuously.
+
+A pawn must have [[Sight]] and [[Manipulation]] capacities above 0% to play.
+
+Playing billiards increases a player's [[Shooting|shooting skill]] at a meager rate of 0.004 XP per [[tick]], or {{#expr: 60*0.004}} XP per real-time second. Similar to recreation, this only increases while actually playing so this rate is somewhat deceptive.
+
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_10 text-center}}
+! [[Quality]]
+!data-sort-type="number"| Awful
+!data-sort-type="number"| Poor
+!data-sort-type="number"| Normal
+!data-sort-type="number"| Good
+!data-sort-type="number"| Excellent
+!data-sort-type="number"| Masterwork
+!data-sort-type="number"| Legendary
+|-
+!Rec Power
+| {{#expr:{{P|Recreation Power}}*0.76*100 round 0}}%
+| {{#expr:{{P|Recreation Power}}*0.88*100 round 0}}%
+| {{#expr:{{P|Recreation Power}}*1.00*100 round 0}}%
+| {{#expr:{{P|Recreation Power}}*1.12*100 round 0}}%
+| {{#expr:{{P|Recreation Power}}*1.24*100 round 0}}%
+| {{#expr:{{P|Recreation Power}}*1.40*100 round 0}}%
+| {{#expr:{{P|Recreation Power}}*1.80*100 round 0}}%
+|-
+!Effective <br> Rec Power
+| {{#expr:{{P|Recreation Power}}*0.76*100*0.75 round 0}}%
+| {{#expr:{{P|Recreation Power}}*0.88*100*0.75 round 0}}%
+| {{#expr:{{P|Recreation Power}}*1.00*100*0.75 round 0}}%
+| {{#expr:{{P|Recreation Power}}*1.12*100*0.75 round 0}}%
+| {{#expr:{{P|Recreation Power}}*1.24*100*0.75 round 0}}%
+| {{#expr:{{P|Recreation Power}}*1.40*100*0.75 round 0}}%
+| {{#expr:{{P|Recreation Power}}*1.80*100*0.75 round 0}}%
+|}
+</li><div>
+
+== Analysis ==
+Compared to other recreation items, the billiards table is tied with the [[poker table]] with a recreation power of 130 percent, however due to the inefficiency mentioned [[#Summary|above]], it is actually significantly inferior to it. In fact, it is inferior to a [[chess table]] of the same quality and an Excellent [[quality]] billiards table is required to compete with the [[Tube television]]. However, due to the Recreation Boredom mechanic, rather than replacing these other items, it supplements them as they have different Recreation Types. 
+
+The only other contenders for the Dexterity Play that billiards offer are the [[horseshoes pin]] and [[hoopstone ring]] - notably due to the inefficiency this means that a Good quality billiards table or better is required to replace these most basic recreational items. Thus, billiards should only be made once a skilled [[Construction|constructor]] is available and given the relatively small improvement over the alternatives, focus should be placed on acquiring other Recreation Types before bothering to build a billiards table.  
+
+{{Building Stats Table}}
+
+== Version history ==
+* [[Version/0.10.785|0.10.785]] - Added with the addition of the [[Recreation|Joy]] system. 
+
+{{Nav|joy}}
+[[Category:Recreation]]

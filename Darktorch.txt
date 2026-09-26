@@ -1,0 +1,62 @@
+{{Ideology}}
+{{Project|Psyfocus}}
+{{See also|Torch lamp|Fungus darktorch}}
+{{Infobox main|furniture
+| name = Darktorch
+| image = Darktorch.png
+| description = A specially-treated wooden torch that produces a dim light over a large area. People who prefer darklight work best with this light source. Can be automatically refueled with wood. Produces a small amount of heat.
+| type = Building
+| type2 = Furniture
+| placeable = true
+| path cost = 14
+| passability = pass through only
+| cover = 0.15
+| minifiable = false
+| size = 1 ˣ 1
+| flammability = 0
+| hp = 75
+| glowradius = 7
+| glowcolor = (78, 226, 229)
+| heatpersecond = 3.5
+| maxheattemperature = 23
+| terrain affordance = light
+| styledominance = 5
+| work to make = 100
+| resource 1 = Wood
+| resource 1 amount = 20
+| deconstruct yield = nothing
+| destroyyield = nothing
+| fuel filter = Wood
+| fuel capacity = 20.0
+| fuel consumption rate = 1.5
+| initial fuel percent = 1 <!-- 100% -->
+| fuel consumption per tick in rain = 0.0006
+}}
+The '''darktorch''' is a piece of [[furniture]] that burns [[wood]] to [[light]] an area with [[darklight]], while also generating a small amount of [[Temperature|heat]].
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+[[File:Darktorch illumination area.png|300px|thumb|left|The white area (4 tiles out) is 50% illumination, required for best [[Surgery Success Chance Factor|surgery success chance]]; the yellow (5th tile) represents 30% or better, adequate for all general labor, avoiding [[mood]] penalties, and for growing [[Decorative Plants|decorative plants]] indoors in [[plant pot]]s.]]
+The darktorch outputs [[light]] in a 7 tile radius, with the nearest {{P|Light Radius}} tiles being above 50% light level and considered lit. It heats the room to a maximum [[temperature]] of {{Temperature|{{P|Max Heat Temperature}} }} at a rate of {{P|Heat Per Second}} heat per second.{{Check Tag|Exact mechanic unclear|Provides comparison with other heat sources but doesn't explain how much it actually heats}}
+
+It consumes {{Icon Small|wood}} 1.5 [[wood]] per day as long as it is lit. It can hold up to {{Icon Small|wood}} 20 wood at a time, for a maximum run time of {{#expr:20/1.5 round 2}} days. It is constructed with a full fuel capacity. Fuel is delivered to the torch lamp by a [[Work#Haul|haulers]] as long as refueling is enabled. It cannot be "turned off" or paused, only deconstructed, in which case ''no wood'' is recovered, regardless of any "fuel" remaining.
+
+If under the [[rain]] and unroofed, it consumes an additional {{Icon Small|wood}} 0.0006 wood per {{Ticks|1}}, or {{#expr: 1.5+ (0.0006*60000) round 2}} wood per day. It therefore lasts for {{#expr:20/37.5 round 2}} days if in constant rain.
+
+{{Pyromaniac Building Note}}
+
+The darktorch differs from the [[torch lamp]] in that it puts out [[darklight]] that does not count as "bright light" for the [[Lighting (precept)|Lighting: Darklight Preferred]] precept. Instead, it gives those with the precept a {{Thought| desc=This dim light is perfect. I feel focused and energized.| label=darklight| value=+4| stack=1}}, and prevents [[surgery]] penalties for being in darkness. It is identical to the [[fungus darktorch]] except in that it burns wood instead of [[raw fungus]].
+
+== Analysis ==
+{{Main|Torch lamp}}
+It is generally not resource and work-time efficient to use once [[Electricity]] has been researched, however its grid independence and immunity to power outages and [[solar flare]]s  make it very useful in niche applications even beyond this point.
+
+It consumes wood at a 3/4 the rate of a regular torch lamp - if the area requiring lighting is not large enough to require the additional radius of the torch lamp, this makes it more efficient to use the darktorch. 
+
+== Version history ==
+* [[Ideology DLC]] Release - Added.
+
+{{Nav|furniture|wide}}
+[[Category:Furniture]] [[Category:Lamp]]

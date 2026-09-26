@@ -1,0 +1,272 @@
+{{Anomaly}}
+{{Spoiler}}
+{{Infobox main|metallic
+| name = Bioferrite
+| image = Bioferrite c.png
+| description = An exotic metal-like fibrous substance with both organic and metallic properties. Bioferrite is produced by microscopic mechanites as they process organic material. In cases of disordered mechanite behavior, this happens in a chaotic, cancer-like way.<br>The material is known to interact with some types of psychic flows. If pressurized under specific conditions, bioferrite becomes extremely flammable, making it a useful fuel.
+<!-- Base Stats -->
+| type = Material
+| type2 = Metal
+| stuff category = Bioferrite, Metallic
+| marketvalue = 0.75
+| beauty = -4
+| mass base = 0.25
+| stack limit = 75
+| path cost = 14
+| rotatable = false
+| terrain affordance = Medium
+<!-- Stat Modifiers -->
+| beauty factor = 0.25
+| beauty offset = 0
+| work to build factor = 2.5
+| work to make factor = 2.5
+| max hit points factor = 2
+| flammability factor = 0.75
+| armor - sharp factor = 1.1
+| armor - blunt factor = 0.5
+| armor - heat factor = 0.5
+| insulation - cold factor = 2.5
+| insulation - heat factor = 0
+| melee blunt damage factor = 0.9
+| melee sharp damage factor = 1.3 
+| melee cooldown factor = 1
+| door opening speed factor = 1
+| rest effectiveness factor = 0.85
+<!-- Technical -->
+| defName = Bioferrite
+<!-- Unused -->
+| always haulable = true
+| color = (100, 80, 80)
+| construct effect = ConstructMetal
+| default color = 
+| draw gui overlay = true
+| graphic class = 
+| graphic path = Things/Item/Resource/Bioferrite
+| label = bioferrite
+| parent name = ResourceBase
+| resource readout priority = Middle
+| selectable = true
+| sound drop = Metal_Drop
+| sound impact stuff = BulletImpactMetal
+| sound interact = Metal_Drop
+| sound melee hit blunt = MeleeHit_Metal_Blunt
+| sound melee hit sharp = MeleeHit_Metal_Sharp
+| thing class = ThingWithComps
+| use hit points = false
+| volume = 1
+}}
+'''Bioferrite'''  is a [[metal]]lic [[material]] added by the [[Anomaly DLC]].
+
+== Acquisition ==
+{{Stub|section=1|reason=1) Detail needed 2) When sufficient detail, consider adding Acquisition optimisation to analysis}}
+{{Recode|section=1|reason=Automate table}}
+Bioferrite can be extracted from [[Entities]] securely held in [[Holding spot]]s or [[Holding platform]]s using a [[Bioferrite harvester]], amounts are as described in the following table.
+
+{| {{STDT| c_07 text-center sortable}}
+! Entity
+! Bioferrite Per Day
+|-
+! [[Harbinger tree]]
+| 0<br>(15 upon chopping){{Check Tag|Growth|Rewrite to be based a ranged on growth and growth when fed}}
+|-
+! [[Shambler]]
+| 0.2-4.0<br><small>(Body size dependent)</small>
+|-
+! [[Ghoul]]
+| 1
+|-
+! [[Fingerspike]]
+| 1.2
+|-
+! [[Sightstealer]]
+| 1.6
+|-
+! [[Trispike]]
+| 2
+|-
+! [[Toughspike]]
+| 2
+|-
+! [[Metalhorror]]
+| 2.0-4.4
+|-
+! [[Gorehulk]]
+| 3 
+|-
+! [[Fleshmass nucleus]]
+| 3
+|-
+! [[Noctol]]
+| 3
+|-
+! [[Chimera]]
+| 3.23
+|-
+! [[Devourer]]
+| 4
+|-
+! [[Revenant]]
+| 4
+|-
+! [[Bulbfreak]]
+| 7
+|-
+! [[Nociosphere]]
+| 7.2
+|-
+|}
+100 bioferrite is included in "The Anomaly" starting scenario. 
+
+{{Transmute Steel Acquisition Note}}
+
+Bioferrite can also be obtained from orbital [[trade ship]]s or by [[electric smelter|smelting]] bioferrite equipment.
+
+== Summary == 
+Equipment made of bioferrite as the [[stuff]] material has additional effects beyond the normal statistical effects of the material. These effects scale with the [[quality]] of the item made. Note that items that merely include bioferrite in the recipe, and do not use it as the stuff material, such as the [[ceremonial hood]] do not offer these effects.
+
+Equipped items stuffed from bioferrite apply a multiplier to the wearer's [[psychic sensitivity]]. These multipliers stack multiplicatively with one another and with other bonuses from [[eltex]]{{RoyaltyIcon}} apparel and [[prestige armor]]{{RoyaltyIcon}}. 
+
+{| {{STDT| c_07 text-center}}
+! Quality
+! Awful
+! Poor
+! Normal
+! Good
+! Excellent
+! Masterwork
+! Legendary
+|- 
+! Psychic Sensitivity
+| ×1.06
+| ×1.08
+| ×1.1
+| ×1.13
+| ×1.15
+| ×1.17
+| ×1.20
+|}
+
+For example, a pawn with a base psychic sensitivity of 100%, a [[psychic sensitizer]]{{RoyaltyIcon}}, [[prestige recon armor]]{{RoyaltyIcon}},  a normal [[eltex shirt]]{{RoyaltyIcon}}, and a bioferrite item of normal and good quality, would result in a psychic sensitivity of:
+{| class="wikitable"
+|-
+| '''Psychic sensitivity''' = ((100% + 25% + 5%) + 8.3%) * 1.1 * 1.13 = {{%|(1 + 0.25 + 0.05 + 0.083) * 1.1 * 1.13 round 2}}
+|}
+
+Equipped items stuffed from bioferrite apply an offset to both [[neural heat limit]] and [[neural heat recovery rate]]{{RoyaltyIcon}}, which stacks additively. Note that the heat limit bonus stacks with the bonus to the limit from the increased psychic sensitivity, however due to the sensitivity bonus' multiplicative nature the total bonus cannot be easily quantified without assuming what other bonuses to sensitivity a pawn may have. 
+
+{| {{STDT| c_07 text-center}}
+! Quality
+! Awful
+! Poor
+! Normal
+! Good
+! Excellent
+! Masterwork
+! Legendary
+|- 
+! Neural Heat Limit
+| 4
+| 6
+| 8
+| 11
+| 13
+| 15
+| 18
+|-
+! Neural Heat Recover Rate
+| 0.04
+| 0.04
+| 0.04
+| 0.04
+| 0.04
+| 0.04
+| 0.04
+|}
+
+== Usage ==
+Bioferrite can be used as a material for [[stuff]]able items with the [[Metallic]] stuff tag. Bioferrite is also the only "Bioferrite" material for [[stuffable]] items, allowing the requirement of bioferrite in the recipe but also allowing them to gain the psychic benefits detailed above. This affects the following items:
+<div class="ul-column-width-200">
+{{#ask: [[Stuff Tags::~*ioferrit*]]
+| format = template
+| template = Icon List
+| link = none
+| sort = From DLC
+}}
+</div>
+
+Bioferrite can be used in the following recipes:
+{{Ingredient List}}
+
+Bioferrite is used to refuel the following:
+* [[Atmospheric heater]]s, at a rate of {{Icon Small|Bioferrite||~6-8}}/day.
+* [[Bioferrite generator]]s, at a rate of {{Icon Small|Bioferrite||6}}/day.
+* [[Disruptor flare pack]]s, at a rate of {{Icon Small|Bioferrite||5}}/charge.
+* [[Hellcat rifle]] mini-burner charges, at a rate of {{Icon Small|Bioferrite||10}}/charge.
+* [[Incinerator]] burner charges, at a rate of {{Icon Small|Bioferrite||10}}/charge.
+
+Bioferrite is consumed by the following [[psychic rituals]]:
+* [[Blood rain]], at a cost of {{Icon Small|Bioferrite||60}}.
+* [[Chronophagy]], at a cost of {{Icon Small|Bioferrite||20}}.
+* [[Draw animals]], at a cost of {{Icon Small|Bioferrite||10}}.
+* [[Draw fleshbeasts]], at a cost of {{Icon Small|Bioferrite||50}}.
+* [[Draw shamblers]], at a cost of {{Icon Small|Bioferrite||20}}.
+* [[Neurosis pulse]], at a cost of {{Icon Small|Bioferrite||30}}.
+* [[Pleasure pulse]], at a cost of {{Icon Small|Bioferrite||30}}.
+* [[Provoke pit gate]], at a cost of {{Icon Small|Bioferrite||75}}.
+* [[Psychophagy]], at a cost of {{Icon Small|Bioferrite||20}}.
+* [[Skip abduction]], at a cost of {{Icon Small|Bioferrite||60}}.
+
+The following operations require bioferrite:
+* [[Bliss lobotomy]], at a cost of {{Icon Small|Bioferrite||30}}.
+* [[Ghoul|Ghoul infusion]], at a cost of {{Icon Small|Bioferrite||30}} and {{Icon Small|Shard||1}} [[shard]].
+
+== Analysis ==
+[[File:Bioferrite_psychic_sensitivity_stack.png|right| Max psy sensitivity]]
+Bioferrite is an excellent material for [[stuffable]] sharp melee weapons. It is most easily considered a sidegrade to [[plasteel]]; bioferrite weapons deal more damage per hit and boasts higher {{AP}}, but plasteel weapons attack 20% more quickly. The choice of which to use for any given fighter should be made on a case-by-case basis depending on their needs. Keep in mind that ultratech melee weapons such as [[monosword]]s {{RoyaltyIcon}} will still typically beat out both plasteel and bioferrite weapons of comparable item quality.
+
+From a statistical perspective, bioferrite is the strongest material for [[spike trap]]s. With a melee damage of 26 and AP of 39%, it deals more damage than plasteel traps against all enemies. It's also more durable and less flammable than [[wood]] traps. However, although bioferrite is ostensibly easy to obtain if you have captured some entities, production is typically quite slow without extensive containment facilities; single-use spike traps are thus a comparatively frivolous use for the material, especially for colonies that make extensive use of [[psychic ritual]]s.
+
+Bioferrite is typically more accessible than [[eltex]] {{RoyaltyIcon}} for increasing [[psychic sensitivity]]. It is much more reliably obtained both generally and at high qualities, its boost to sensitivity is multiplicative with all other buffs except [[blindsight]] {{IdeologyIcon}}, and unlike eltex, bioferrite equipment can provide a respectable amount of armor. Because sensitivity boosts from bioferrite gear multiply with one another, they become proportionally stronger when combined; a pawn can reach in excess of 2000% psychic sensitivity when given all possible boosts, making [[psycast]]ers {{RoyaltyIcon}} or colonists with installed [[psychic harmonizer]]s {{RoyaltyIcon}} exceptionally powerful. Bear in mind that pawns with this level of psychic sensitivity are acutely vulnerable to [[psychic drone]]s, so keeping a way to render them unconscious as needed is a prudent choice - [[cryptosleep casket]]s, [[biosculpter pod]]s {{IdeologyIcon}} (any cycle will do) or even [[Anesthetic|anesthetizing]] them as needed will all work for this purpose.
+
+As a building material, bioferrite has exactly twice the HP of [[steel]] and is the third most durable material in the game behind plasteel and [[uranium]]. Each unit of bioferrite is 62.5% the silver value of a unit of [[wood]], which can help with [[wealth management]]. Bioferrite is [[flammable]].
+
+Due to the 85% rest effectiveness of bioferrite, which is lower than any other material, it is a suitable material for prison beds. An awful bioferrite bed has a rest effectiveness of 73%, even lower than a sleeping spot. This causes prisoners to spend more time asleep, prolonging their prison break interval while avoiding the mood debuff when sleeping on the floor.
+
+[[Bioferrite plating]] is ugly, making it it ill-suited for use outside of containment cells. Bioferrite also has a mighty {{Bad|x25%}} penalty to beauty when used for art other than [[void sculpture]]s.
+
+=== Acquisition analysis ===
+In general, the daily amount of gained bioferrite should be weighed carefully against the ease of handling various entity escapes.
+
+[[Fleshmass nucleus|Fleshmass nuclei]] and [[nociosphere]]s never escape and provide large amounts of bioferrite generation, so long as they are consistently suppressed. Both provide other benefits while being contained by a colony.
+
+[[Noctol]]s, [[gorehulk]]s, and [[chimera]]s provide ~3-3.2 bioferrite per day, and are relatively easy to subdue during an escape attempt. [[Toughspike]]s provide slightly less bioferrite, but are more common and can be crippled through frostbite to ensure they are incapable of moving (described further below). They provide more per day than [[ghoul]]s, [[fingerspike]]s, and [[sightstealer]]s, all while not being a significant leap in combat risk.
+
+[[Shambler]]s grant bioferrite equal to their [[Body_Size|body size]], or what their bioferrite generation was before if a reanimated entity. The vast majority of shamblers will provide less bioferrite than a toughspike. Body size 3+ shamblers are also some of the most fearsome wildlife- megasloths, thrumbo, elephants, and rhinoceros. 
+
+Although a single [[revenant]] provides double the daily bioferrite of a toughspike, an escaped Revenant will likely require the attention of the entire colony, while a single escaped toughspike can typically be downed by a handful of colonists or a single ghoul. [[Devourer]]s' swallow attack makes them more dangerous during an escape than smaller entities, but not so dangerous as to make keeping them unwise.
+
+[[Bulbfreak]]s are excellent bioferrite producers but die shockingly easily when damaged and split into smaller fleshbeasts on death. In the early game, this can make them difficult to acquire and keep long term, but by mid-game [[psychic shock lance|psychic]] or [[shard shock lance]]s help with with both and a [[IED tox trap]]{{BiotechIcon}} in front of a [[security door]] will reliably and safely down them before they can escape.
+
+[[Harbinger tree]]s are an inefficient source of bioferrite, but they can serve as supplementary or reserve source in a pinch.
+
+==== Immobilizing entities ====
+Entities that are incapable of movement will never attempt to escape, making long-term containment a risk-free proposition. Nearly all entity types possess an anatomy similar to humans - such as a spine and legs - and can thus be rendered immobile through the destruction of the relevant body parts.
+
+This is difficult for most entities, but notably for the purposes of farming, [[fleshbeast]]s are vulnerable to hypothermia at temperatures below {{Temperature|-40}}. [[Toughspike]]s in particular are well-suited to this purpose; they are durable enough to survive hypothermia unlike [[fingerspike]]s, and do not split into smaller fleshbeasts when downed. Carefully subjecting a toughspike to hypothermia to the point where it develops frostbite, and then tending the resulting bleeding when body parts are lost, can allow a player to remove all of their limbs without killing the toughspike. This consistently renders them immobile and thus unable to escape.
+
+A containment room with 8 holding platforms filled with immobilized toughspikes connected to a [[bioferrite harvester]] will provide 16 bioferrite per day, with no risk of escapes. [[Holding spot]]s can be used in place of holding platforms in order to save on materials.
+
+Other, less reliable methods of immobilizing entities is through either releasing them and attacking them until their limbs are damaged enough to be removed by an attack, or using the electroharvester and waiting patiently until their brain becomes scarred enough that they can never escape. The former method is, needless to say, quite dangerous if the entity isn't already downed when released, and always runs the risk of killing the entity instead of downing it. Slashing weapons are the most useful weapons for this purpose, since blunt weapons have an overkill mechanic that deals excess damage to the parent part, which often leads to the torso getting destroyed in the process. As for the latter method, it would require extreme patience, as the odds of an entity getting brain damage from an electroharvester are quite low, and even then it requires this sort of damage to happen multiple times before the entity is immobilized.
+
+== Gallery ==
+<gallery>
+Bioferrite a.png|One bioferrite
+Bioferrite b.png|Partial stack
+Bioferrite c.png|Full stack
+</gallery>
+
+== Version history == 
+* [[Anomaly DLC]] Release - Added.
+
+{{nav|materials|wide}}
+[[Category:Material]] [[Category:Metal]]

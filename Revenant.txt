@@ -1,0 +1,176 @@
+{{Anomaly}}
+{{Spoiler}}
+{{Infobox main|entity
+| name = Revenant
+| image = Revenant.png
+| description = A spindly figure of desiccated skin stretched over an impossibly tall humanoid frame. The revenant's name comes from its pattern of returning to hypnotize new people each night.<br/>Outlander folklore describes an invisible spectre that captures the minds of sinners, placing them in a living hell. In the story, the victims can only be returned to life by hunting the creature as it sleeps and killing it.<br/>A hidden revenant can be revealed with disruptor flares, explosives, EMP, firefoam, or fire.
+<!-- Base Stats -->
+| type = Entity
+| type2 = Advanced
+| flammability = 0
+<!-- Containment -->
+| minimum containment strength = 80
+| anomaly knowledge = 3
+| knowledge category = Advanced
+| study interval = 120000
+| bioferrite density = 4
+| min monolith level for study = 1
+| requires holding platform = true
+| base escape interval MTB days = 45
+<!-- Pawn Stats -->
+| combatPower = 300
+| movespeed = 3.2
+| healthscale = 10
+| bodysize = 1
+| diet = none
+| lifespan = 1000
+| trainable = None
+| psychic sensitivity = 2
+| toxic resistance = 1
+| vacuum resistance = 1
+| stagger duration factor = 0
+| minimum comfortable temperature = -40
+| maximum comfortable temperature = 60
+| filth rate = 
+| juvenileage = 
+| maturityage = 
+<!-- Production -->
+| destroyyield = {{Icon Small|Revenant spine|1}}
+<!-- Melee Combat -->
+| attack1dmg = 3
+| attack1type = Blunt
+| attack1cool = 2
+| attack1part = Head
+| attack1chancefactor = 0.2
+<!-- Technical -->
+| defName = Revenant
+| label = revenant
+}}
+
+'''Revenants''' are an advanced [[entity]] added by the [[Anomaly DLC]].
+
+== Occurrence ==
+Revenants may spawn as an entity event when a colony has at least five [[colonist]]s. Be warned: temporary pawns ''do'' count towards this total. They will not spawn until this threshold is reached, even if all other advanced entities are already discovered and [[void provocation]] is performed. A known entity will be summoned instead.
+
+Alternatively, one can acquire a [[revenant spine]] from a Mysterious Cargo [[quest]] as a piece of cargo. The revenant will reform after some time, or when placed into [[containment]]. Note that immediately smashing the spine will not unlock the revenant's codex entry. This quest does not respect the population requirement.
+
+Outside of the ''ambient horror'' [[AI_Storytellers#Anomaly|storyteller option]], the [[monolith]] must be at least level 1 for a revenant to appear.
+
+== Summary ==
+The revenant is an advanced [[entity]] that hypnotizes humans. 
+
+Like the [[sightstealer]], revenants enter the map [[invisible]] to both pawns and the player, and remain so until they get close to a target. The player is not notified of a revenant's arrival.
+
+Every {{ticks/gametime/days|108000}} to {{ticks/gametime/days|192000}}, a revenant will enter an attacking state in which it stalks the closest available pawn. It will open doors between itself and its target as it approaches.
+
+Revenants will typically prioritize the nearest available target during an attack - potentially switching mid-chase if a closer pawn becomes available - but are otherwise completely indiscriminate. They will target colonists, prisoners, visiting guests, traders, and even raiders. [[Ghoul]]s, however, will always be ignored. If a revenant would attack but can't reach any targetable pawns, it will wander at random until a valid target becomes available, at which point the revenant begins stalking them.
+
+If allowed to reach melee range, it will freeze the targeted pawn in place and begin hypnotizing them. The length of time it takes for a revenant to hypnotize a pawn starts at {{ticks|900}} and reaches a minimum of {{ticks|360}}, scaling with the number of colonists on the map according to the following chart:
+
+{| class="wikitable"
+! Time required to hypnotize
+|-
+| {{Graph:Chart
+ | width = 300
+ | height = 300
+ | type = line
+ | xAxisTitle = Number of colonists
+ | yAxisTitle = Time in seconds
+ | x = 0, 2, 4, 10, 15
+ | y = 15, 15, 11, 6, 6
+ | xGrid = 1
+ | yGrid = 1
+ | xAxisMin = 0
+ | yAxisMin = 1
+ }}
+|}
+
+Once this process completes, the pawn will be subjected to ''revenant hypnosis'', which caps their [[consciousness]] at {{Bad|10%}} and leaves them [[downed]] indefinitely. The revenant will then attempt to flee and hide on a random tile far away from where it was revealed, where it will sleep until it is ready to attack again. The revenant will turn invisible {{ticks|140}} after it starts fleeing.
+
+The hypnosis condition is linked to the revenant itself - upon the revenant's death, any hypnotized pawns will immediately wake up and resume normal activity. Only the pawns hypnotized by that specific revenant will have the hypnosis removed. The condition can be ended prematurely with the [[unnatural healing]] ability or by administering a [[healer mech serum]]; otherwise, it lasts indefinitely as long as the revenant remains alive. Hypnosis will be broken when leaving the map via [[gravship]]{{OdysseyIcon}} leaving the revenant behind. 
+
+Revenants have a slow default movement speed of 3.2 {{CS}} while invisible, but they quickly speed up whenever they are revealed. This takes the form of a hidden multiplier to their speed that starts at {{Good|×1}} and linearly scales up to {{Good|×2.8}} over {{ticks|1800}} of being visible, resulting in an extremely fast final speed of 8.96 {{CS}}. Coupled with their [[Stagger Time Multiplier]] of {{Good|×0%}}, this makes revenants relentless hunters that are practically impossible to escape directly.
+
+=== Combat ===
+Despite nominally having a melee attack, revenants will never fight, even when confronted directly. They will only ever attempt to hypnotize their current target - heedless of incoming attacks - and then flee by the easiest available route. If completely enclosed and unable to escape, it will attempt to mine through walls rather than bashing them down.
+
+Upon death, the revenant will not create a traditional [[corpse]] but will instead dissolve into an oily looking black stain and a [[revenant spine]]. The stain can be cleaned like normal [[filth]] and the spine can be hauled like an item, carried to a [[holding platform]] or [[holding spot]] to reform and resurrect the revenant for study, smashed to kill the revenant permanently and yielding a [[shard]] in the process, or crafted into a [[revenant vertebrae]] at a [[bioferrite shaper]]. If not promptly dealt with, the spine may reform into a revenant on its own; a warning [[letter]] will be provided 3-5 hours in advance before this happens.
+
+Revenants are stunned by [[EMP]] blasts, which are very effective at immobilizing them. Note that revenants will adapt to EMP stuns like most targets do, which will prevent them from being permanently stunned without the use of masterwork or legendary [[EMP launcher]]s.
+
+Revenants are immune to traps, such as [[spike trap]]s and [[IED]]s, and will never set them off even when passing directly over them.
+
+Revenants have a [[psychic sensitivity]] of 200% and a [[toxic resistance]] of 100%. They do not bleed.
+
+Revenants are immune to [[psychic shock lance]]s and [[biomutation lance]]s. [[Psychic insanity lance]]s can target revenants, but the [[Mental_break#Berserk|berserk]] state does not change their behavior in any way.
+
+With a [[vacuum resistance]] of 100%, revenants are totally immune to [[vacuum exposure]] {{OdysseyIcon}}. 
+
+=== Tracking ===
+Revenants leave behind a distinct trail of smears as they move. These smears are left rarely while the revenant is wandering, and appear much more frequently during an attack or escape. They serve as the primary way of tracking down an invisible revenant.
+
+[[File:Revenant Smear.png|thumb|The smear left behind by a revenant that can be used to track it when it is invisible.]]
+
+If a revenant is damaged when it is actively hypnotizing a pawn, it'll drop a [[revenant flesh chunk]]. Only one chunk will drop during any given hypnosis. These chunks can be analyzed by a colonist to make it easier to track the revenant:
+# The first analyzed flesh chunk will make the revenant's trail of smears much longer.
+# The second analyzed flesh chunk will provide a warning when a pawn comes within 7.9 tiles of the revenant, indicated by an exclamation mark above the pawn's head and a visible message: (i.e. ''"Glasses can hear the revenant shivering nearby!"'')
+# The third and final analyzed flesh chunk will reveal the revenant whenever a pawn comes within 8.9 tiles of its location.
+
+Note that every revenant has a unique biosignature, and analysis progress is tied to this biosignature. Each encountered revenant must be analyzed individually. A slain revenant will retain its biosignature if it reforms by being contained, but a revenant that reforms on its own will adopt a new biosignature and must be analyzed again from scratch.
+
+Invisible revenants are revealed upon taking any form of damage (including area effects such as [[fire]], [[EMP]], and [[Bomb|explosions]]), being within 7.9 tiles of a [[Disruptor flare pack|disruptor flare]] when it lands, and being covered in [[firefoam]]. Revenants that are forcibly revealed will immediately attempt to escape.
+
+During an attack, revenants reveal themselves when they come within a certain range of their current target. This distance starts at 26 cells and, like the required time to hypnotize, scales with the number of colonists on the map according to the following chart:
+
+{| class="wikitable"
+! Minimum distance to reveal during attack
+|-
+| {{Graph:Chart
+ | width = 300
+ | height = 300
+ | type = line
+ | xAxisTitle = Number of colonists
+ | yAxisTitle = Distance in cells
+ | x = 0, 2, 3, 8, 15, 20
+ | y = 26, 26, 18, 16, 10, 10
+ | xGrid = 1
+ | yGrid = 1
+ | xAxisMin = 0
+ | yAxisMin = 1
+ | yAxisMax = 30
+ }}
+|}
+
+As long as they're not attacking, revenants that become visible by any means will turn invisible again after {{ticks|140}}. This is prevented as long as the revenant is stunned, covered in firefoam, or subjected to the ''disruptor flash'' effect from disruptor flares.
+
+== Analysis ==
+Revenants are extremely hard to kill. With their immunity to bleeding and very high maximum hit points, they are more durable than even a [[thrumbo]]; repeated volleys are required to bring one down. Catching them poses a significant challenge for unprepared settlements. Zoning, work assignments, and restricted doors can help to keep colonists together and prevent revenants from singling out and picking off isolated pawns one by one. When hunting a revenant, finding a way to stun it long enough for your colonists to inflict fatal damage is vital.
+
+There are many ways to make hunting down a revenant easier:
+* Doors opening on their own is a telltale sign that a revenant is moving through them.
+* [[Proximity detector]]s are capable of detecting a hidden revenant, but will not reveal it outright. They can still assist in pinning down where it is; reinstalling an activated detector in different spots or using an overlapping grid of detectors can be used to narrow down the potential range even further.
+* [[EMP grenades]], [[EMP launcher]]s, and [[disruptor flare pack|disruptor flares]] are excellent for flushing out invisible revenants due to their wide area of effect, and will leave them stunned and vulnerable to attack. EMP weapons don't require refilling ammunition, but disruptor flares can be equipped alongside another weapon.
+* Revenants that are driven [[Mental break#Berserk|berserk]] by any means do not behave any differently, but will emit faint red particles that can always be seen - even while the revenant is invisible. These particles can be used to track the revenant, although the effect tends to blend in with terrain and so is easy to lose sight of.
+** [[Psychic insanity lance]]s cause revenants to become berserk for {{ticks|80000}}, although using them in this manner may be expensive for the proportional benefit.
+* [[Psycasts]]{{RoyaltyIcon}} can be invaluable tools for dealing with a revenant, thanks to its high [[psychic sensitivity]]:
+** [[Vertigo pulse]] reveals the revenant, disrupts its hypnosis, and forces it to wander aimlessly for {{ticks|2400}}.
+** [[Stun (psycast)|Stun]] briefly stuns the revenant in place, but doesn't interrupt its hypnosis.
+** [[Beckon]] and [[Skip]] can both be used to stop a revenant from escaping or to interrupt it from hypnotizing a pawn.
+** [[Berserk (psycast)|Berserk]] and [[Berserk pulse]] will cause a revenant to become berserk for a total of {{ticks|1800}}, allowing it to be tracked for a short time.
+** [[Waterskip]] can be used to reveal the revenant, although it will quickly fade away again - meaning that this psycast is best used to confirm that the revenant is actually in an area before deploying a stronger revealing effect such as firefoam or disruptor flares.
+
+Remember that revenants are at their most vulnerable while attempting to hypnotize a colonist. They are permanently revealed during this time and will not flee even if mortally wounded. If all else fails, choosing one fast pawn as bait to [[Kiting|kite]] the revenant for as long as possible will allow your other colonists to attack with impunity; [[longjump legs]] {{BiotechIcon}} and [[jump pack]]s {{RoyaltyIcon}} can assist with this, although care must be taken to ensure that the revenant doesn't simply choose a closer target. Dealing enough damage this way can render the revenant too wounded to flee effectively, allowing your colonists to chase it down with your preferred method of invisibility disruption and finish it off for good.
+
+=== Containment ===
+The revenant has a high minimum containment strength requirement, meaning that a [[holding platform]] and [[security door]] are required to comfortably contain it. Additionally, its immunity to traps and its unique ability to open doors can make catching an escaping revenant very difficult, as it can simply walk out of its containment chamber. Securing one in the long term is thus contingent upon a colony's ability to quickly and safely recapture it when it inevitably breaks free and begins hunting anew. Due to this it is recommended you do not use bioferrite or electroharvesters on them.
+
+== Health == 
+{{Animal Health Table|Human}}
+{{Pawn Attack Table}}
+
+== Version history == 
+* [[Anomaly DLC]] Release - Added.
+* [[Version/1.5.4069]] - Revenant flammability reduced to 0%, effectively fireproof.
+
+{{Nav|entity|wide}}
+[[Category: Entities]]

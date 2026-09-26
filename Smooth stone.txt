@@ -1,0 +1,61 @@
+{{Stub|reason=General, it shouldn't all be under summary, and there should be a more explicit explanation of its odd place between terrain and floor where it has aspects of both.}}
+{{About|the floor type|the wall made from naturally occurring rock|Structure#Smoothed_walls{{!}}Smoothed walls}}
+{{Infobox main|structure
+| name = Smooth stone
+| image = Smooth stone.png
+| description = Smoothed natural stone floor.
+<!-- Base Stats -->
+| type = Terrain
+| type2 = Stone
+| marketvalue = 5
+| beauty = 2
+| flammability = 0
+| path cost = 0
+| paintable = true
+<!-- Building -->
+| size = 1 ˣ 1
+| placeable = True
+| cleaning time factor = 1
+| filth multiplier = .80
+<!-- Terrain -->
+| terrain affordance = <!--Light, Medium, -->Heavy
+| fertility = 0
+| filth acceptance mask = Any
+| natural terrain = true
+| leave terrain = hewn
+| smoothed terrain = smooth
+| terrain edge type = FadeRough
+| pollution color = (100%, 100%, 100%, 80%)
+| scatter type = Rocky
+| speed = 1
+<!-- Creation -->
+| work to make = 2800
+<!-- Technical -->
+| defName = _Smooth
+| label = smooth {0}
+| tags = floor
+}}
+'''Smooth stone''' is a type of [[terrain]] with some of the features of a [[floor]] that is created by smoothing either [[rough stone]] or [[rough-hewn stone]]. It has a faster walk speed, positive beauty, and a market value compared to the stone terrain from which it was made.
+
+== Summary ==
+This flooring does not require any materials to be constructed, but it needs to be placed on rough or rough-hewn stone and takes a greater amount of time to be completed than any artificial flooring placed on top. Note that smooth floor takes less time than its smoothed wall counterpart, {{Ticks|2800}} whereas the later takes {{Ticks|6500}}. 
+
+Rate is affected by the [[smoothing speed]] stat rather than [[construction speed]], however the two stats have identical values for all [[construction]] levels, [[global work speed]]s, and [[manipulation]] values ''unless'' the pawn has a [[sight]] value below 100%.
+
+It is recommended to be used as standard flooring whenever available, as it more easily provides the [[Thoughts list#Pleasant environment|pleasant environment bonus]] to your colonists, not to mention it's free. Perfect flooring for a "Dwarfy" colony, built into the side of a mountain.
+
+Since rough stone floors are widely available in most biomes, an easy way to train colonists in [[Construction]] is to select large sections of rough stone and set them for smoothing.
+
+== Gallery ==
+<gallery>
+Smooth stone.png|Smooth stone
+Smooth granite.png|Smooth granite
+Smooth limestone.png|Smooth limestone
+Smooth marble.png|Smooth marble
+Smooth sandstone.png|Smooth sandstone
+Smooth slate.png|Smooth slate
+Polluted smooth stone.png|[[Pollution|Polluted]] smooth stone {{BiotechIcon}}
+</gallery>
+
+{{Nav|floor|wide}}
+[[Category:Floor]]

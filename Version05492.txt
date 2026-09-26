@@ -1,0 +1,61 @@
+{{Version Nav}}
+
+We’re back with another alpha of RimWorld! Alpha 5 brings on lots of juicy new features and improvements. You can follow our day-to-day work on the changelog.
+
+If you own the game, you should get an update email from us. You can also get Alpha 5 by re-downloading from the link you used before (it is a permanent link and always has the newest version). Anyone still having trouble should start at this thread.
+
+Also note that this build will not load old savegames, so keep your old install separate if you want to finish an Alpha 4 colony.
+
+== Release Trailer ==
+<youtube>https://www.youtube.com/watch?v=fzfpEB5La6o</youtube>
+
+== Core Release ==
+* [[Raid#Siege|Sieges]] added. Raiders will now sometimes besiege the colony by setting up a fortified position nearby and bombarding you until you die or come out to break the siege. Of course this also means there are now researchable and buildable [[mortar]] weapons – both explosive and incendiary.
+* Escape ship added. You can now, at great cost, build a ship to escape the planet if you wish.
+* Crashed ancient ship part incident added. Sometimes this bad boy will crash-land nearby and start emitting an ever-increasing psychic drone that slowly drives colonists insane. Attack it to make it stop, but beware its defenses.
+* New [[mechanoid]] type added – the [[scyther]].
+* Many new sound effects from the illustrious Alistair Lindsay.
+* A new gear system allows changing out of clothing. [[Clothing]] now has basic effects, like reducing damage or movement speed.
+* There is now an info card you can view for most things in the game. For [[weapons]], it shows statistics about damage, accuracy, and so on. For [[animals]], it displays health, damage, meat amounts. Lots of other things can be inspected as well.
+* A game history tracker records the history of your colony in graphs of wealth, population, and happiness, as well as recording individual important events.
+* Game history is now uploaded automatically to our servers after an opt-in prompt is agreed to. This uploads your game history – the same one you see on your history graph – to us to help us balance future versions.
+* More translations added (Arabic, Chinese, Japanese, others) and existing translations updated.
+* Language can now be switched by clicking the flag on the main game screen.
+* Lots of other small improvements.
+
+== Alpha 5 Balance/Hotfix ==
+You all knew a hotfix was coming! It’s like a tradition now!
+
+The good thing is that this isn’t a bug hotfix, but a balance one. I’d been hearing a lot of reports that the global psychic drone event – causing -25 to mood – was harming play. So until I can rebalance it, it’s disabled in Alpha5b. The crashed ship part event seen in the release video is still present.
+
+To update, you just have to change one number in one file:
+
+Open Notepad or some other text editor.
+
+With Notepad, open [YourRimWorldFolder]/Mods/Core/Defs/IncidentDefs/BaseIncidents.xml, and find this text:
+
+ <IncidentDef>
+ <defName>PsychicDrone</defName>
+ <workerClass>IncidentWorker_PsychicDrone</workerClass>
+ <chance>1.2</chance>
+ <minRefireDays>8</minRefireDays>
+ <favorability>Bad</favorability>
+ </IncidentDef>
+
+Set <chance>1.2</chance> to <chance>0</chance>.
+
+Or, you can re-download the game from your old link.
+
+I’ll be reworking this event in future versions.
+
+==Alpha 5C (Silent Hotfix)==
+''Released on: July 7, 2014''
+
+===Changes===
+* Long eclipses no longer kill all the grass on the map
+
+== Alpha 5D ==
+''Released on: July 14, 2014''
+
+===Changes===
+* No significant changes other than folder name change

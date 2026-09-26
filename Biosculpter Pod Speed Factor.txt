@@ -1,0 +1,104 @@
+{{Ideology}}
+{{Stub|reason=1) Corresponding Property 2) Two-way links}}
+{{See also|Biosculpter Occupant Speed}}
+{{Verified|1.5.4104}}{{Stat
+| def name = BiosculpterPodSpeedFactor
+| label = biosculpter pod speed factor
+| description = A multiplier on the speed of a [[biosculpter pod]]. This is affected by the [[cleanliness]] of the [[room]] - a cleaner room will result in a quicker biosculpting cycle.
+| default base value = 1
+| min value = 0
+| effective minimum = 0.7
+| effective maximum = 1.25
+| to string style = PercentZero
+| show if undefined = false
+| category = Building
+| display priority in category = 4100
+| parts = StatPart_RoomStat
+}}
+
+== Bases ==
+<div><li style="display: inline-table;">
+{| {{STDT| c_06}}
+! Building !! Biosculpter Pod Speed Factor Base
+|-
+! {{Icon Small|Biosculpter pod|24}} [[Biosculpter pod]] {{IdeologyIcon}}
+| 100%
+|}
+</li></div>
+
+== Factors ==
+Room Stats:
+{| {{STDT}}
+! Room Stat !! Custom Label
+|-
+! [[Rooms#Biosculpter pod speed factor|Biosculpter pod speed factor]]
+| Room cleanliness
+|}
+
+''Room cleanliness'' is a multiplier ranging from {{Bad|70%}} - {{Good|125%}} ({{Bad|70%}} without a room), depending on the [[cleanliness]] of a room.
+
+{| {{STDT}}
+! Cleanliness !! Factor
+|-
+! -5
+| 0.7
+|-
+! -1
+| 0.9
+|-
+! 0
+| 1
+|-
+! 1
+| 1.25
+|}
+{{Graph:Chart|width=300|height=150|xAxisTitle=Cleanliness Score|yAxisTitle=Biosculpter Pod Speed Factor|type=line|interpolate=monotone|x=-5, -1, 0, 1|xType=number|y=0.7, 0.9, 1, 1.25|xGrid=|yGrid=}}
+
+== Calculating Biosculpter Pod Speed Factor ==
+The factors for [[Biosculpter Pod Speed Factor]] are: '''Biosculpter Pod Speed Factor Base''' and '''Room cleanliness'''. This would be written out as:
+
+<code>[[Biosculpter Pod Speed Factor]] = '''Biosculpter Pod Speed Factor Base''' × '''Room cleanliness'''</code>
+
+The maximum would be:
+
+<code>'''1''' × '''1.25''' = '''1.25'''</code>
+
+For an effective limit of '''125%'''.
+
+The minimum would be:
+
+<code>'''1''' × '''0.7''' = '''0.7'''</code>
+
+For an effective limit of '''70%'''.
+
+== Stat Def Data ==
+{| {{STDT| c_06}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Biosculpter Pod Speed Factor" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />BiosculpterPodSpeedFactor
+* '''Label:'''<br />biosculpter pod speed factor
+| A multiplier on the speed of a biosculpter pod. This is affected by the cleanliness of the room - a cleaner room will result in a quicker biosculpting cycle.
+|
+* Display Order:<br />'''50'''
+* Def Name:<br />'''Building'''
+* Label:<br />'''Building'''
+* Display All By Default:<br />{{Bad|false}}
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Show If Undefined:''' {{Bad|false}}
+* '''Min Value:''' {{%|0}}
+* '''To String Style:''' PercentZero
+|
+* '''Parts:'''
+** '''StatPart_RoomStat:'''
+*** '''Room Stat: '''[[Rooms#Biosculpter pod speed factor|Biosculpter pod speed factor]]'''
+*** '''Custom Label: '''Room cleanliness'''
+| 4100
+|}
+
+== Version history ==
+{{Stub|section=1|reason=General}}
+* [[Ideology (DLC)]] Release - Added.
+
+{{nav|stats|wide}}

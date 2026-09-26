@@ -1,0 +1,155 @@
+{{Infobox main|drug
+| name = Ambrosia
+| image = Ambrosia b.png
+| description = A soft, rare fruit. Ambrosia tastes wonderful and produces a subtle mood-increasing chemical high. However, if eaten too often, it can generate a mild addiction.
+<!-- Base Stats -->
+| type = Drug
+| type2 = Social drug
+| tech level = Neolithic
+| marketvalue = 15
+| stack limit = 150
+| mass base = 0.1
+| beauty = -4
+| hp = 50
+| deterioration = 4
+| flammability = 1
+| rotatable = false
+| path cost = 14
+<!-- Ingestion -->
+| food type = vegetable
+| nutrition = 0.2
+| days to rot = 30
+| joy offset = 0.5
+| joy kind = Chemical
+| addictiveness = 0.01
+| max num to ingest at once = 1
+| ingestion time = 80
+<!-- Technical -->
+| defName = Ambrosia
+| drug category = Social
+| preferability = Desperate
+| tradeability = Sellable
+| tradeTags = Drugs
+}}
+'''Ambrosia''' is a raw [[social drug]] that moderately boosts mood and recreation at relatively low risk of [[addiction]]. It can only be traded or harvested from [[ambrosia bush]]es that only spawn in [[Events#Ambrosia sprout|ambrosia sprout]] events, but cannot be grown by the player. Ambrosia does spoil if not refrigerated. Although it also provides {{P|Nutrition}} [[nutrition]] it is not a vegetarian food.
+
+== Acquisition ==
+It is harvested from [[ambrosia bush]]es. They can be harvested multiple times before dying, each time yielding 4 fruit when fully grown.
+
+A good way to harvest them is to draw a growing zone over them, but forbid sowing. Colonists will then automatically harvest the bushes when they are fully grown.
+
+The ambrosia event must initially spawn in the growing season of the map tile. The event can only occur, and thus the bush can only be found, in the following [[biomes]]:
+* [[Tropical rainforest]]
+* [[Tropical swamp]]
+* [[Temperate forest]]
+* [[Temperate swamp]]
+* [[Boreal forest]]
+* [[Arid shrubland]]
+
+== Summary ==
+Ambrosia is a moderately potent mood enhancing social drug. Its effects can be broken into effects that occur:
+* Instantaneously and one time upon using the drug.
+* While high on the drug.
+* While having a built-up tolerance to the drug.
+* While addicted to the drug.
+* While withdrawing from the drug.
+
+=== Upon ingestion ===
+A pawn eating an ambrosia will look for a place to sit in a four tile radius first, but will also eat it while standing if it doesn't find one. Eating an ambrosia takes {{Ticks|{{P|Ingestion Time}} }}. It has the following one time effects:
+
+* {{+|{{%|{{P|Joy Offset}} }} }} {{P|Joy Kind}} [[recreation]]
+* {{+|{{P|Nutrition}} }} [[Nutrition]]
+* If the pawn has the [[chemical interest]] or [[chemical fascination]] trait:
+** {{+|20%}} [[Chemical need]]
+* '''+{{%|{{#vardefineecho:highSeverity|0.5}} * 0.25}} to +{{%|{{#var:highSeverity}} }}''' Ambrosia high severity, depending on tolerance ''(see "Ambrosia high" below)''
+* {{++|{{%|{{#vardefineecho:toleranceSeverityOffset|0.032}} }} }} [[Drugs#Tolerance|Tolerance]] severity, divided by body size ''(see "Tolerance" below)''
+* If the pawn has {{%|{{#vardefineecho:minToleranceToAddict|0.15}} }} tolerance already:
+** {{Bad|{{%|{{P|Addictiveness}} * ( 1 + 4 * {{#var:minToleranceToAddict}} / 0.5) }} to {{%|{{P|Addictiveness}} * 15}} }} [[Addiction]] chance ''(see "Addiction" below)''
+* If the pawn has an addiction already:
+** {{+|{{%|{{#vardefineecho:needOffset|0.9}} }} }} Ambrosia need ''(see "Addiction" below)''
+** {{--|{{%|{{#vardefineecho:addictionSeverityOffset|0.1}} }} }} Addiction progress ''(see "Addiction" below)''
+
+=== Ambrosia high ===
+{{Quote|"Ambrosia chemicals in the bloodstream. It lifts the mood."|Ambrosia high description}}
+
+Each ambrosia increases the ambrosia high severity by the following formula:
+
+<code>Increase in severity = {{#var:highSeverity}} * (100 - (tolerance * 75 round 0))</code>
+
+Therefore with 0% tolerance the severity increases by {{%|{{#var:highSeverity}} }}, with 100% tolerance by {{%|{{#var:highSeverity}}*0.25}}. It decreases by {{%|{{#vardefineecho:highSeverityPerDay|0.75}} }} per day again, meaning that the high of a single dose lasts between {{#vardefineecho:highDurationMin|{{#expr: {{#var:highSeverity}}*0.25/({{#var:highSeverityPerDay}}/24)}} }} and {{Plural|{{#vardefineecho:highDurationMax|{{#expr: {{#var:highSeverity}}/({{#var:highSeverityPerDay}}/24)}} }}|hour}}. The maximum severity of an ambrosia high is 100% which is reached with {{#expr: 1/{{#var:highSeverity}} }} to {{#expr:1/{{#var:highSeverity}}/0.25}}&nbsp;ambrosia. Regardless of the ambrosia high severity, the effect is always the same. Only the duration changes accordingly:
+* {{+|5}} [[Mood]] (''Ambrosia warmth: "That ambrosia makes me feel more relaxed, and gives me energy at the same time."'')
+
+Without any tolerance, a dose of ambrosia will last for {{Plural|{{#vardefineecho:highDurationMax|{{#expr: {{#var:highSeverity}}/({{#var:highSeverityPerDay}}/24)}} }}|hour}}.
+
+=== Tolerance ===
+{{Main|Tolerance}}
+{{Quote|"A built-up tolerance to ambrosia. The more severe this tolerance is, the more ambrosia it takes to get the same effect."|Tolerance description}}
+Each ambrosia consumed increases the tolerance of the pawn by the following formula:
+
+<code>Increase in tolerance = {{%|{{#var:toleranceSeverityOffset}} }} / body size</code>
+
+Thus smaller or not fully grown pawns gain more tolerance per drug use then bigger or fully grown ones. An adult [[human]] has a body size of {{Q|Human|Body Size}}. Tolerance decreases at a rate of {{%|{{#vardefineecho:toleranceSeverityPerDay|0.02}} }} per day.
+
+See sections ''"Ambrosia high"'' and ''"Addiction"'' for how tolerance affects ambrosia high severity and addiction chance respectively. Otherwise tolerance against ambrosia has no ongoing effects.
+
+=== Addiction ===
+{{Quote|"A chemical addiction to ambrosia. Long-term presence of ambrosia has caused neurological adaptations at the cellular level, so the brain can no longer function properly without the drug. Without regular doses of ambrosia, withdrawal symptoms will begin. However, extended abstinence will force the brain to adapt back to its normal state, resolving the addiction."|Addiction description}}
+Once a pawn has a [[#Tolerance|tolerance]] of {{%|{{#var:minToleranceToAddict}} }} or above, each dose carries a chance of addiction that scales with tolerance. Due to the minimum tolerance to addict, ambrosia can be safely consumed once every {{Plural|{{#var:toleranceSeverityOffset}}/{{#var:toleranceSeverityPerDay}}|day}} without risking addiction, so long as tolerance is not already elevated before starting the schedule.
+
+The chance of addiction is as follows:
+{| class="wikitable" style="text-align:right"
+|-
+! Tolerance !! Addiction chance !! Graph
+|-
+| 0% || 0%
+| rowspan="4" | {{Graph:Chart
+ | width = 400 | height = 100 | type = line | xAxisTitle = Tolerance (%) | yAxisTitle = Addiction Chance (%)
+ | x = 0, {{#expr:{{#var:minToleranceToAddict}}*100}}, {{#expr:{{#var:minToleranceToAddict}}*100}}, 50, 80, 100
+ | y = 0, 0, {{#expr:{{P|Addictiveness}} * ( 1 + 4 * {{#var:minToleranceToAddict}} / 0.5) * 100}}, {{#expr:{{P|Addictiveness}} * 5 * 100}}, {{#expr:{{P|Addictiveness}} * 15 * 100}}, {{#expr:{{P|Addictiveness}} * 15 * 100}}
+}}
+|-
+| {{%|{{#var:minToleranceToAddict}} }} || {{%|{{P|Addictiveness}} * ( 1 + 4 * {{#var:minToleranceToAddict}} / 0.5) }}
+|-
+| 50% || {{%|{{P|Addictiveness}} * 5}}
+|-
+| 80% || {{%|{{P|Addictiveness}} * 15}}
+|}
+
+The addiction progresses by {{%|{{#vardefineecho:addictionSeverityPerDay|0.1}} }} per day from the initial 50%. Once it reaches 100% the addiction is healed, meaning it takes about {{Plural|0.5/{{#var:addictionSeverityPerDay}} round 1|day}} to overcome the addiction. Consuming ambrosia during an addiction will reduce the addiction progress by {{%|{{#var:addictionSeverityOffset}} }} again ''(see "Upon ingestion" above)''.
+
+Developing an addiction means a pawn has an ambrosia [[Needs#Drug addictions|need]]. The need for ambrosia falls by {{%|{{#vardefineecho:needFall|0.5}} }} per day, consuming ambrosia satisfies the need by {{%|{{#var:needOffset}} }} ''(see "Upon ingestion" above)'', meaning the pawn will need to consume ambrosia at least every {{Plural|{{#var:needOffset}}/{{#var:needFall}} round 1|day}} to prevent withdrawal symptoms.
+
+=== Withdrawal ===
+{{Quote|"Because of an ambrosia addiction, this person needs to regularly consume ambrosia to avoid withdrawal symptoms."|Need description}}
+As soon as the ambrosia need reaches 0% the pawn suffers from the following withdrawal symptom:
+* {{--|10}} [[Mood]] (''"I feel heavy and cold all the time. I never thought I'd want a piece of fruit so much."'')
+
+== Analysis ==
+With an easily avoidable addiction and relatively minor withdrawal symptoms, ambrosia is easily the safest drug to ingest in the game. Each ambrosia sprout might provide 200-300 fruits, enough to last 5 pawns an entire year. A {{+|5}} moodlet for 16 hours every 2 days can be meaningful in the early game. Unlike [[beer]] and [[smokeleaf joint]]s, ambrosia gives no work-related penalties. Eating the fruit also gives pawns an extra bit of nutrition. At the same time, ambrosia can be useless to a colony already in great spirits. At the very worst, ambrosia can be stored to help pawns in mood emergencies, or be sold immediately.
+
+Whether an ambrosia sprout is worth harvesting largely depends on how far away it is. It isn't worth it to constantly travel halfway across the map just a for a bit of ambrosia. Nearby ambrosia sprouts can be very valuable, however.
+
+=== Trade ===
+Ambrosia is a good supplemental source of money. When considering the raw numbers, ambrosia is superior to any other drug. However, it only appears from the ambrosia sprout event, meaning that quantity is ultimately limited.
+
+Compared to [[flake]], each ambrosia fruit is worth {{Icon Small|silver}} 1 [[silver]] more, and each bush has a base yield of 4 fruits when harvested (compared to 2 flake per [[psychoid plant]]). And there is no need (or ability) to process ambrosia any further. This makes ambrosia strictly superior to flake for cash. Of course, this is before travel time.
+
+== Trivia ==
+Ambrosia was added into the game at the request of Designer-tier [https://www.kickstarter.com/projects/tynansylvester/rimworld/rewards Kickstarter backer] AspenShadow. <ref>" Yes! Some did do this more recently, actually. As I recall: Ambrosia plant: AspenShadow Chain shotgun: William Salt" - Tynan Sylvester, [https://www.reddit.com/r/RimWorld/comments/6o2at0/comment/dkf8vu8 Reddit comment].</ref>
+
+== Gallery ==
+<gallery>
+Ambrosia a.png|One ambrosia
+Ambrosia b.png|Stack of ambrosia
+</gallery>
+
+== Version history ==
+* [[Version/1.3.3066|1.3.3066]] - Fix: Ambrosia can be selected as food for caravans.
+* [[Version/1.4.3580|1.4.3580]] - Fix: Ambrosia ingestion float menu option displays untranslated key "ConsumeThing".
+* [[Version/1.5.4062|1.5.4062]] - Drug tolerance gain is now divided by body size and not body size squared - this also had the effect of making the suggested safe dose intervals for children correct. 
+
+== References ==
+{{Reflist}}
+
+{{Nav|drugs|wide}}
+[[Category:Drug]] [[Category:Social Drug]]

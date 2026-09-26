@@ -1,0 +1,35 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Local/Injuries}}
+|}
+----
+{| {{STDT| c_10}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Frostbite" <!-- defName="Frostbite", ParentName="InjuryBase" -->
+! Frostbite
+----
+* Def Name:<br />Frostbite
+* Label:<br />frostbite
+* Label Noun Pretty:<br />{0} in the {1}
+| Frozen tissue caused by exposure to cold without adequate protection. Frostbite is very painful, and frostbitten body parts are often lost.
+|<!-- Details -->
+* Hediff Class: '''Injury'''
+* Tendable: {{Good|true}}
+* Display Wound: {{Bad|false}}
+* '''Comps'''
+** ''Tend Duration''
+*** Label Tended Well: bandaged
+*** Label Tended Well Inner: tended
+*** Label Solid Tended Well: tended
+** ''Infecter''
+*** Infection Chance: {{Bad|25%}}
+** ''Gets Permanent''
+*** Permanent Label: frostbite scar
+* '''Injury Props'''
+** Pain Per Severity: {{Bad|1.25%}}
+** Average Pain Per Severity Permanent: {{Bad|0.625%}}
+** Can Merge: {{Good|true}}
+** Destroyed Label: Lost to frostbite
+| -<!-- Stages -->
+<noinclude>
+|}</noinclude>

@@ -1,0 +1,134 @@
+{{Stub|reason=1) Corresponding Property 2) Two-way links}}
+{{See also|Shield belt|Shield Recharge Rate}}
+{{Verified|1.5.4104}}{{Stat
+| def name = EnergyShieldEnergyMax
+| label = Shield max energy
+| description = The maximum energy a [[shield]] can have at one time.<br/>More energy absorbs more damage.
+| min value = 0
+| to string style = PercentZero
+| show if undefined = false
+| category = Apparel
+| display priority in category = 70
+| parts = StatPart_Quality
+}}
+
+== Bases ==
+<div><li style="display: inline-table;">
+{| {{STDT| c_01 sortable}}
+! Thing !! Base
+|-
+! {{Icon Small|Shield belt|24}} [[Shield belt]]
+| {{%|1.1}}
+|-
+! {{Icon Small|Heavy shield unit|24}} [[Heavy shield unit]] {{BiotechIcon}}
+| {{%|4.0}}
+|-
+! {{Icon Small|Legionary|24}} [[Legionary]] {{BiotechIcon}}
+| {{%|1.5}}
+|-
+! {{Icon Small|Tunneler|24}} [[Tunneler]] {{BiotechIcon}}
+| {{%|2.5}}
+|-
+! {{Icon Small|Apocriton|24}} [[Apocriton]] {{BiotechIcon}}
+| {{%|1.5}}
+|-
+! {{Icon Small|Centurion|24}} [[Centurion]] {{BiotechIcon}}
+| {{%|3}}
+|-
+! {{Icon Small|War queen|24}} [[War queen]] {{BiotechIcon}}
+| {{%|3}}
+|}
+</li></div>
+
+== Stat Parts ==
+=== Quality ===
+<div><li style="display: inline-table;">
+{| {{STDT| c_01}}
+! [[Quality]] !! Factor
+|-
+! Awful
+| {{Bad|×60%}}
+|-
+! Poor
+| {{Bad|×80%}}
+|-
+! Normal
+| '''×100%'''
+|-
+! Good
+| {{Good|×120%}}
+|-
+! Excellent
+| {{Good|×140%}}
+|-
+! Masterwork
+| {{Good|×170%}}
+|-
+! Legendary
+| {{Good|×210%}}
+|}
+</li></div>
+
+<div><li style="display: inline-table;">
+Shield belt max energy depending on quality:
+{| {{STDT| c_01}}
+! [[Quality]] !! Shield<br />Max<br />Energy
+|-
+! Awful
+| {{%|{{#expr: 1.1 * 0.6}} }}
+|-
+! Poor
+| {{%|{{#expr: 1.1 * 0.8}} }}
+|-
+! Normal
+| {{%|{{#expr: 1.1 * 1}} }}
+|-
+! Good
+| {{%|{{#expr: 1.1 * 1.2}} }}
+|-
+! Excellent
+| {{%|{{#expr: 1.1 * 1.4}} }}
+|-
+! Masterwork
+| {{%|{{#expr: 1.1 * 1.7}} }}
+|-
+! Legendary
+| {{%|{{#expr: 1.1 * 2.1}} }}
+|}
+</li></div>
+
+== Stat Def Data ==
+{| {{STDT| c_01}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Shield Max Energy" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />EnergyShieldEnergyMax
+* '''Label:'''<br />Shield max energy
+| The maximum energy a shield can have at one time.<br/><br/>More energy absorbs more damage.
+|
+* Display Order:<br />'''30'''
+* Def Name:<br />'''Apparel'''
+* Label:<br />'''Apparel'''
+* Display All By Default:<br />{{Bad|false}}
+|
+* '''Min Value:''' {{%|0}}
+* '''To String Style:''' PercentZero
+* '''Show If Undefined:''' {{Bad|false}}
+|
+* '''Parts:'''
+** '''StatPart_Quality:'''
+*** Factor Awful: {{Bad|×{{%|0.6}}}}
+*** Factor Poor: {{Bad|×{{%|0.8}}}}
+*** Factor Normal: '''×{{%|1}}'''
+*** Factor Good: {{Good|×{{%|1.2}}}}
+*** Factor Excellent: {{Good|×{{%|1.4}}}}
+*** Factor Masterwork: {{Good|×{{%|1.7}}}}
+*** Factor Legendary: {{Good|×{{%|2.1}}}}
+| 70
+<!--</StatDef>-->
+|}
+
+== Version history ==
+{{Stub|section=1|reason=General Version history}}
+
+{{nav|stats|wide}}

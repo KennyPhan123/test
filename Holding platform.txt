@@ -1,0 +1,105 @@
+{{Anomaly}}
+{{Project|Psyfocus}}
+{{Infobox main|building
+| name = Holding platform
+| image = Holding platform.png
+| description = A platform for holding dangerous entities. The corners have eyelets where strong chains can be attached.<br/>Downed entities can be captured and secured on a holding platform, where they can be studied for Anomaly knowledge. Increase containment strength by building strong walls and doors, and other special containment devices.
+<!-- Base Stats -->
+| type = Building
+| type2 = Anomaly (Buildings)
+| rotatable = false
+| path cost = 30
+<!-- statBases -->
+| sell price factor = 0.70
+| meditation psyfocus bonus = 0
+| hp = 500
+| work to make = 2000
+| mass base = 30
+| flammability = 0.5
+<!-- Meditation -->
+| focus types = Void
+| occupied meditation psyfocus bonus offset = 0.16
+<!-- Building -->
+| buildingTags = Anomaly
+| passability = pass through only
+| cover = 0.4
+| terrain affordance needed = Medium
+| size = 3 * 3
+| minifiable = true
+| facility = Electroharvester, Electric inhibitor, Shard inhibitor, Bioferrite harvester
+<!-- Creation -->
+| research = Entity containment
+| resource 1 = Steel
+| resource 1 amount = 40
+<!-- Containment -->
+| containment factor = 1
+| min monolith level = 1
+<!-- Technical -->
+| defName = HoldingPlatform
+| label = holding platform
+| thingClass = Building_HoldingPlatform
+| category = Building
+| drawerType = RealtimeOnly <!-- Prevents items clipping into it -->
+| selectable = true
+| thingCategories = BuildingsMisc
+| inspectorTabs = ITab_Entity
+| descriptionHyperlinks = [[Electroharvester]], [[Electric inhibitor]], [[Shard inhibitor]], [[Bioferrite harvester]]
+| designationCategory = Anomaly
+<!-- graphicData -->
+| texPath = Things/Building/HoldingPlatform/HoldingPlatform
+| graphicClass = Graphic_Single
+| drawSize = (3, 3)
+<!-- Other -->
+<!--
+  <ThingDef ParentName="HoldingPlatformBase">
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <repairEffect>Repair</repairEffect>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <filthLeaving>Filth_RubbleBuilding</filthLeaving>
+    <containedPawnsSelectable>true</containedPawnsSelectable>
+    <tickerType>Normal</tickerType>
+    <uiOrder>100</uiOrder>
+    <canOverlapZones>false</canOverlapZones>
+    <defaultPlacingRot>North</defaultPlacingRot>
+  </ThingDef>
+-->
+| room role = Containment cell
+}}
+'''Holding platforms''' are [[buildings]] added by the [[Anomaly DLC]] that allow for the [[containment]] of some [[entities]].
+
+They can be considered the upgraded form of the [[holding spot]]. 
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+{{Stub|section=1|reason=General - describe containment mechanics here or better link to the [[containment]] page. Also, void focus mediation}}
+
+Holding platforms can be used to contain [[entities]]. To do this, an entity must be [[downed]] or otherwise capturable, then brought into the spot. Holding platforms will result in a higher [[containment]] score than [[holding spot]]s, as platforms have no containment penalty while spots do.
+
+=== Formula ===
+Below is the formula for [[containment]] strength without any modifiers. 
+
+{| class="wikitable
+|-
+| Containment strength = Current Average Door {{HP}} + Current Average Wall HP + (Average Light Level (%) * 100/10) (ɪꜰ[Active [[shard inhibitor]] ] {{--|20}} ᴇʟꜱᴇ +0) - electric(-10) inhibitor - active bioferrite harvester(-15) - electroharvesters(-25)
+|}
+Where current HP is the HP accounting for any damage to the building.
+
+== Analysis ==
+The holding platform is the more advanced version of the [[holding spot]], providing {{Good|x142%}} more [[containment]], which in turn reduces escape chance and improves study rate. The extra containment can help counteract the penalty from [[bioferrite harvester|harvesting]] [[electroharvester|resources]] from entities.
+
+When making a holding cell, it is also important to keep in mind the walls and doors of the room. It is recommended to keep platforms in rooms surrounded by [[stone]] walls or better. A room out of a mountain is a very cheap way to boost containment. Multiple entities can be contained within the same room at the cost of weakening the containment strength. Lowering the [[temperature]] will also inhibit certain types of enities ([[fleshbeast]]s, [[shambler]]s, [[ghoul]]s) while not boosting the escape rate of any other entity.
+
+=== Containing entities without proper containment level ===
+If an entity has enough brain damage, gets both/all of its legs/moving body parts destroyed, or otherwise loses enough of its [[moving]] or [[consciousness]] to permanently [[down]] it, the escape interval reduces to "never". This allows you to safely store the entity anywhere, as long as it can't regenerate permanent damage. As such, this strategy won't work with [[ghoul]]s, but will work with nearly any [[fleshbeast]], [[sightstealer]], and [[noctol]], with all of them allowing you to gain effectively infinite research, [[bioferrite]] and, in some cases, [[power]] at no cost. Some entities will eventually die if used with an [[electroharvester]]. An somewhat expensive late game strategy can be to repeatedly use a [[Psychic lance|psychic or shard lance]]s on entities to give them enough brain damage.
+
+=== Meditation ===
+Holding platforms or [[holding spot]]s are a decent early game option for void [[meditation focus]]{{RoyaltyIcon}} pawns, as they are fairly cheap and can be placed anywhere (unlike Natural). Once [[void sculpture]]s and [[shard beacon]]s are built, [[psychic ritual spot]]s are better for void focus.
+
+== Version history ==
+* [[Anomaly DLC]] Release - Added
+* [[Version/1.6.4850|1.6.4850]] - Fix: Holding platforms minified by infestations would delete their contents.
+
+{{Nav|anomaly|wide}}
+[[Category:Anomaly (Buildings)]]

@@ -1,0 +1,227 @@
+{{Ideology}}
+{{Infobox main|misc
+| name = Biosculpter pod
+| image = Biosculpter pod.png
+| description = An immersion pod full of bioactive gel. It can perform a variety of biological alterations including age reversal and pleasure-giving.<br>The pod biotunes to its user at the end of a cycle. While biotuned, it cannot be used by anyone else, but cycles will complete 25% more quickly. Biotuning resets if the pod is unused for 80 days.<br>The pod consumes 200W of power while working, but only 50W on standby.
+| type = Building
+| type2 = Ideology (Buildings)
+| placeable = true
+| path cost = 42
+| passability = pass through only
+| blockswind = true
+| cover = 0.5
+| minifiable = true
+| size = 3 ˣ 2
+| mass base = 50
+| flammability = 0.5
+| hp = 250
+| sell price multiplier = 0.7
+| beauty = -5
+| power = -200
+| terrain affordance = light
+| research = biosculpting
+| thingCategories = BuildingsMisc
+| skill 1 = Construction
+| skill 1 level = 8
+| work to make = 28000
+| resource 1 = Steel
+| resource 1 amount = 120
+| resource 2 = Component
+| resource 2 amount = 4
+| deconstructyieldfraction = 0.25
+| page verified for version = 1.3.3069
+}}
+The '''biosculpter pod''' is a building added by the [[Ideology DLC]] that can heal a variety of injuries and even reverse [[human]] aging. It's very important to colonies with Transhumanist [[ideoligion]]s, but other colonies can still build and use it.
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+{{Stub|section=1|reason=Ideology mechanics relating to it? Operating colors? Is cleanliness to speed multiplier linear between (0,100%) and (0.6, 115%) and if so is it linear when dirty? }}
+
+Biosculpter pods can perform four different operations on a human pawn, however some mechanics are consistent across all options. All cycles consume 5 non-[[hay]] [[nutrition]], which must be loaded by [[Work#Haul|haulers]] prior to selecting and starting a cycle. The pod will glow green when sufficient nutrition has been loaded. Canceling the cycle before it has started won't consume the stored nutrition, but the food cannot be retrieved once loaded. Nutrition is reset if the pod is reinstalled. Foods that inflict a negative moodlet when eaten, such as [[raw food]], [[human meat]], or [[kibble]], can be used without penalty by any occupant regardless of their dietary requirements. Additional cycle ingredients will be retrieved by the pawn initiating the cycle.
+
+Pawns can load themselves into a pod, either by selecting the pawn and using the right-click menu to select a cycle, or automatically for age reversal cycles with the toggle activated. Pawns can load [[prisoner]]s (who do not need to be downed), as well as  [[downed]] colonists and [[slave]]s into the pod. This is done by first selecting a colonist, then right clicking the desired pawn to load into the pod. Pawns from other factions, hostile or not, cannot enter the pod unless imprisoned first.
+
+Pawns inside a pod are suspended as if in [[cryptosleep]]; [[need]]s and [[disease]] progression are frozen for the duration of the cycle. Drug highs and tolerances do not decay while in a pod, but the time for scheduled use still progresses. Thus, a pawn may take a dose, get in a pod, have the timer to their next dose tick down, and then take a second scheduled dose while still under the effects of the first. This can turn otherwise safe or low risk drug schedules into dangerous ones and runs the risk of addictions. [[Food poisoning]] and [[toxic buildup]] similarly do not progress while in the pod. 
+
+Finishing a pod cycle will fully restore the pawn's [[saturation]] and [[sleep]] needs.
+
+Biosculpters consume 200W of [[power]] when running a cycle, and 50W otherwise. If power is lost, biosculpting will pause until it is restored. If 24 hours pass without power, the cycle is cancelled and pawn is ejected with [[biosculpting sickness]]. The remaining time before ejection will be displayed on the pod's info box if selected.
+
+Pawns can also be manually ejected from the pod by selecting the pod and cancelling the cycle via the gizmo, which will also cause biosculpting sickness.
+
+Conditions that will be or can be healed by a biosculpter cycle will be listed in the confirmation dialog displayed when ordering a pawn to enter or load another into the biosculpter.
+
+<gallery>
+Biosculpter_medic_bioregeneration_cycle.png|Biosculpter during a medic or bioregeneration cycle 
+Biosculpter_medic_bioregeneration_cycle_raw_color.png|Isolated graphic used for the biosculpter pod's medic and bioregeneration cycles
+Biosculpter_age_reversal_cycle.png|Biosculpter during an age reversal cycle
+Biosculpter age reversal cycle raw color.png|Isolated graphic used for the biosculpter pod's age reversal cycle
+Biosculpter pleasure cycle.png|Biosculpter during a pleasure cycle
+Biosculpter pleasure cycle raw color.png|Isolated graphic used for the biosculpter pod's pleasure cycle
+</gallery>
+
+=== Time ===
+Each operation takes between 4 to 25 [[Time|days]] to complete, before modifiers. The expected duration of a cycle, for both normal and transhumanist pawns, can be seen by mousing over its respective gizmo. It will also be displayed when selecting a cycle from the right click menu with a pawn selected. The final time is affected by the following modifiers:
+* Room [[Cleanliness]] - Biosculpter speed scales with cleanliness, with cleaner being faster. 0.6 cleanliness, equivalent to a clean, [[sterile tile]]d room, grants a 115% speed-factor.
+* Pawns with the [[Biosculpting (precept)|Biosculpting: Accelerated precept]] will have the time for each cycle halved. Note that this precept is mandatory for [[Transhumanist]]s and is unique to them. 
+* After an operation is completed, the pod becomes attuned to that colonist. This forbids usage by other colonists for 80 days, but speeds subsequent cycles by 25%. This 80-day time limit is renewed every time the pawn completes a cycle. The tuning time limit does not decay while the pod is powered off.
+
+{| class="wikitable"
+|- {{#vardefine: medicTime | 6}}{{#vardefine: regenTime | 25}}{{#vardefine:ageTime | 8}}{{#vardefine: pleasureTime | 4}} 
+! rowspan=2| Circumstances !!  colspan=4 | Cycle [[Time|Days]] (Tuned Time) 
+|-
+! Medic !! Bioregeneration !! Age reversal !! Pleasure
+|-
+! Default
+| {{#var: medicTime}} ({{#expr: 0.75 * {{#var: medicTime}} round 2}})|| {{#var: regenTime}} ({{#expr: 0.75 * {{#var: regenTime}} round 2}})|| {{#var:ageTime}} ({{#expr: 0.75 * {{#var:ageTime}} round 2}})|| {{#var: pleasureTime}} ({{#expr: 0.75 * {{#var: pleasureTime}} round 2}})
+|-
+! Sterile
+| {{#expr: (1/1.15)*{{#var: medicTime}} round 2}} ({{#expr: 0.75 * (1/1.15)*{{#var: medicTime}} round 2}})|| {{#expr: (1/1.15)*{{#var: regenTime}} round 2}} ({{#expr: 0.75 * (1/1.15)*{{#var: regenTime}} round 2}})|| {{#expr: (1/1.15)*{{#var:ageTime}} round 2}} ({{#expr: 0.75 * (1/1.15)*{{#var:ageTime}} round 2}})|| {{#expr: (1/1.15)*{{#var: pleasureTime}} round 2}} ({{#expr: 0.75 * (1/1.15)*{{#var: pleasureTime}} round 2}})
+|-
+! Transhumanist
+| {{#expr: 0.5*{{#var: medicTime}} round 2}} ({{#expr: 0.75 * 0.5*{{#var: medicTime}} round 2}})|| {{#expr: 0.5*{{#var: regenTime}} round 2}} ({{#expr: 0.75 * 0.5*{{#var: regenTime}} round 2}})|| {{#expr: 0.5*{{#var:ageTime}} round 2}} ({{#expr: 0.75 * 0.5*{{#var: ageTime}} round 2}})|| {{#expr: 0.5*{{#var: pleasureTime}} round 2}} ({{#expr: 0.75 * 0.5*{{#var: pleasureTime}} round 2}})
+|-
+! Transhumanist and Sterile
+| {{#expr: (0.5/1.15)*{{#var: medicTime}} round 2}} ({{#expr: 0.75 * (0.5/1.15)*{{#var: medicTime}} round 2}})|| {{#expr: (0.5/1.15)*{{#var: regenTime}} round 2}} ({{#expr: 0.75 * (0.5/1.15)*{{#var: regenTime}} round 2}})|| {{#expr: (0.5/1.15)*{{#var:ageTime}} round 2}} ({{#expr: 0.75 * (0.5/1.15)*{{#var:ageTime}} round 2}})|| {{#expr: (0.5/1.15)*{{#var: pleasureTime}} round 2}} ({{#expr: 0.75 * (0.5/1.15)*{{#var: pleasureTime}} round 2}})
+|}
+
+=== Cycles ===
+Conditions that will be or can be healed by a biosculpter cycle will be listed in the confirmation dialog displayed when ordering a pawn to enter or load another into the biosculpter.
+
+==== Medic ====
+[[File:BiosculpterCycleHealing.png|left|frameless]]
+{{quote|Heal all fresh wounds, blood loss, and one random infectious disease|Tooltip}}
+
+'''Medic''' cycles take 6 days to complete. It heals all fresh wounds, [[blood loss]] and one random [[disease]].
+
+It can cure: [[Malaria]], [[Sleeping sickness]], [[Flu]], [[Plague]], [[Gut worms]], [[Muscle parasites]], and [[Infection]]s (including [[Scaria]]).
+
+A warning will inform the player when attempting to place a pawn in this cycle that would not have any conditions healed.
+
+==== Bioregeneration ====
+[[File:BiosculpterCycleBioregeneration.png|left|frameless|64px]]
+{{quote|Heal all fresh wounds, heal one random permanent injury, and restore small missing body parts like fingers and toes.|Tooltip}}
+
+'''Bioregeneration''' cycles take 25 days to complete, and additionally costs {{Icon Small|Glitterworld medicine}} 2 [[glitterworld medicine]]. The [[Research#Bioregeneration|Bioregeneration]] research project must be completed before it can be used. It heals all fresh wounds, one random permanent injury, and restores destroyed or missing minor body parts. 
+
+It can heal one of the following permanent injuries: scars (including brain scars),  [[Frail]], [[Cataract]]s, [[Blindness]], [[Bad back]], [[Asthma]], [[Hearing loss]], and [[Artery blockage]]s.{{Check Tag|Sometimes multiple scars?|Very anecdotal evidence suggests that it can heal multiple scars in one cycle if those scars are on body parts that it can regenerate an unlimited amount of (like eyes). If true, will it also fix one scar on a major body part in addition?}}
+
+It will restore all of the following body parts: Eye, Ear, Nose, Finger, Toe, and Tongue. It will not heal missing eyes that have been replaced by an [[Artificial body parts#Eyes|artificial part]], or if the pawn's [[ideoligion]] approves of blindness.
+
+It does '''not''' heal: [[Alzheimer's]], [[Dementia]], [[Toxic buildup]], [[Carcinoma]], [[Chemical damage]], [[Trauma savant]], [[Resurrection psychosis]], {{Check Tag|Verify}} missing major body parts (like hands, arms, feet, legs, jaw and lungs), [[Luciferium]] need, [[addiction]]s, [[diseases]] or any types of [[Reproduction#Contraceptives|fertility procedures]].
+
+A warning will inform the player when attempting to place a pawn in this cycle that would not have any conditions healed.
+
+==== Age reversal ====
+[[File:BiosculpterCycleAgeReversal.png|left|frameless]]
+{{quote|Reverse one year of aging.|Tooltip}}
+[[File:BiosculpterAutoAgeReversal.png|thumb|64px|Automatic age reverse toggle]]
+'''Age reversal''' takes 8 days to complete. It reverses one year of aging, to a minimum colonist age of 13. 
+
+Colonists with [[Transhumanist]] ideoligions are granted {{Thought|desc=Aging and death have no hold on me. I am forever, as an enhanced human ought to be.|label=Received age reversal|value=+3|stack=1|duration=4}}, but they will expect yearly treatments after the age of 25 and experience a gradually increasing {{--|4/−7/−10}} mood penalty without them. Additionally, they can be instructed to automatically receive their yearly age reversal cycle by enabling the “Auto age reverse” toggle on a biotuned pod.
+
+==== Pleasure ====
+[[File:BiosculpterCyclePleasure.png|left|frameless]]
+{{quote|Temporarily reshape the nervous system to deliver elevated levels of happiness for a time.|Tooltip}}
+
+'''Pleasure''' cycles take 4 days to complete. It grants {{Thought|desc=Every part of me is somehow better at feeling good.|label=Biosculpter pleasure cycle|value=+15|stack=1|duration=12}}.
+
+== Analysis ==
+{{stub|section=1|reason=Has basics but analysis is limited and there's room for significantly more depth inc. strats for its use}}
+[[File:Biosculpter-tessellation.png|thumb|left|200px|Efficient biosculpter tessellation]]
+For ease of reading, the analysis is broken down into general - analysis of parts consistent across all cycles, and the analyses for each cycle.
+
+=== General ===
+'''Note:''' Drug highs and tolerances do not decay while in a pod, but the time for scheduled use still progresses. Thus a pawn may take a dose, get in a pod, have the timer to their next dose tick down, and then take a second scheduled dose while still under the effects of the first. This can turn otherwise safe or low risk drug schedules into dangerous ones and runs the risk of addictions.
+
+<General value proposition goes here>
+
+==== Tuning ====
+The 80 day tuning time is a significant problem if only a limited number of pods can be supported, so it can be tempting to simply deconstruct a tuned pod and use the resulting resources to build a fresh pod. However, due to the 75% loss of resources each time, it quickly becomes more efficient to simply have multiple pods. For every 4 pods deconstructed, 3 could have been built. If space or power is at issue, [[uninstall]] the pods or connect them to power via a [[power switch]], but the tuning time is extended while the pod is powered down.
+
+Because of the 80 day delay before the pod can be used by another colonist, some colonies may find it effective to repeatedly biosculpt one colonist, giving them age reversal, all the healing they can accept, and a pleasure cycle all in a row. 
+
+==== Mini-rooms ====
+[[File:Tiny biosculpter room.png|thumb|left|150px|A biosculpter "mini-room" with the door built over the interaction point]]
+
+If the door is built over the interaction spot, the smallest possible room size that can contain a single biosculpter is a mere 6 tiles. This is perfect for pods reserved for emergency situations, or for a smaller colony as it saves space, cleaning time, and construction resources- the pattern can be repeated by placing pods side-by-side with one door per pod.
+
+As a room's [[cleanliness]] stat affects the sculptor's speed, the room's smaller size also makes it cheaper to tile the entire room with [[sterile tile]]s. It is important to note that the game does not consider the flooring material underneath a door for a room's cleanliness, but it does consider any dirt or debris in the doorway: a Sterile Tile under the doorway is not needed, but the doorway should still be kept clean for maximum efficiency. You can even leave the door open for faster travel, at risk of allowing raiders easy access to your expensive machinery.
+
+As a bonus, the pawn will be unconscious during biosculpting, so the small room space will have no mood effect.
+
+=== Age reversal cycle ===
+For regular ideoligions, age reversal is only important when a colonist is getting close to turning 50 years old biologically (the non-bracketed number listed for their age), or is already 50 or older. While you can do age reversal pre-emptively, it may be worthwhile to hold off unless the colonist has nothing to do for a while. The chance to perform [[Lovin]]' is highest between the ages of 16 to 25, with a pawn only 63% as likely to engage in it at age 50, and 20% as likely at age 80. The [[Mood#Social|Lovin' mood boost]] can be significant, especially when combined with a [[love enhancer]].{{RoyaltyIcon}}
+
+Many [[Ailments]] have a chance to develop with age. Keeping your colonist young reduces the chance of getting these conditions.
+
+The [[Chronophagy]] psychic ritual{{AnomalyIcon}} may provide a more appealing alternative or supplement to Transhumanist colonies looking to address age reversal demands, as it requires significantly less down time and can remove many years at once. Unlike biosculpting however, it requires psychic sensitivity and it cannot scale with colonist count and may not be feasible as the only source of age reversal in very large colonies.
+=== Medic cycles ===
+Medic cycles can be utilized to help pawns that have [[slow wound healing]] or [[weak immunity]]{{BiotechIcon}} heal faster than their natural recovery allows. [[Yttakin]]{{BiotechIcon}} for example are prone to getting into [[social fight]]s and getting long-term injuries from them, impacting their overall work efficiency and performance in combat. It can also be utilized to treat long-term diseases that can be a hinderance to a pawn's productiveness to wait out such as [[sleeping sickness]], [[muscle parasites]] and [[gut worms]]. If used on [[children]],{{BiotechIcon}} a medic cycle has the advantage that the child does not age or lose [[Learning]] need while in stasis. It is better for a child's long-term development to spend time in a biosculpting pod than to spend time resting in bed, losing Learning need and getting closer to their next [[growth moment]].
+
+==== Emergency auto-doc ====
+It can be very helpful to keep a pod with a healing cycle prepared, that isn't bound to any particular colonist. 
+
+This can not only save on [[Medicine (disambiguation)|medicine]], but also save the life of a colonist that you might not otherwise have been able to treat in time. Having a waiting pod near your colony defenses allows pawns to rapidly be placed in the pod - as they are effectively suspended as soon as they enter the pod, and all injuries will be healed once the cycle is complete, this effectively guarantees that a pawn that makes it to the pod will survive, even if they had seconds to live. They will also be free of any risk of [[infection]]. 
+
+The downside to this is the increased healing time over traditional methods. Note that the pod being untuned will increase the length of the cycle, but having only tuned pods significantly increases the number of pods required for emergency treatment.
+
+=== Bio-Regeneration cycles ===
+Bio-regeneration can be extremely valuable, especially for [[scar]]s on the torso, neck, and head, which can't be replaced by bionics. Treating these scars would otherwise require a rare [[Healer mech serum]] or a permanent commitment to [[luciferium]]. It is also helpful to save on [[advanced component]]s or to treat [[Body purist]] scars and missing small limbs without replacing the entire arm or leg. It is worth noting Chronophagy {{AnomalyIcon}} can also heal scars and age-related ailments much faster then bio-regeneration albeit it can't restore limbs, requires the age to be lowered to a certain amount to treat age ailments and is limited to pawns with [[psychic sensitivity]]. Unlike biosculpter pods chronophagy can heal [[dementia]], [[alzheimer's]] and [[carcinoma]]s. As chronophagy is limited by colony rather than by resources or by pawn, it may also be preferable to use it for its intended use and supplement with a biosculpter pod for scars and minor issues.
+
+=== Pleasure cycle  ===
+{{stub|section=1|reason=More detailed analysis. Inc. but not limited to: Better breakdown of meal and drug costs etc - what does 12 days of psychite tea cost, lavish meals etc}}
+Pleasure cycles are generally not worth the four days of inactivity, stuck in a pod. It only provides 12 days of {{Good|+15}} mood. By the time you have gotten the technology to use biosculpter pods, you should already have developed better mood management options, such as [[psychite tea]], which provides a +12 mood buff for a small amount of easily acquirable [[psychoid leaves]]. This may be worth it if all the factors used to reduce cycle time are used however. More detailed analysis is needed.
+
+==== Pleasure cycle as a time saver ====
+The pleasure cycle is the shortest cycle, taking only 4 days when untuned, but still biotunes the pod. Meanwhile tuning reduces the length of the  bioregeneration cycle from 25 days to 18.75, or a 6.25 day reduction. Therefore, ''if the pod is untuned'', it is 2.25 days faster to use the pleasure cycle and then a bioregeneration cycle, than it is to perform bioregeneration cycle alone. 
+
+As all the biosculpting time reductions are multiplicative, this combination is always faster when using an untuned pod, however the quantitative difference may shrink. For example, the combination only saves transhumanists in a sterile room 0.98 days instead of 2.25.
+
+{{Heal Option Table}}
+
+== Version history ==
+* [[Ideology DLC]] Release - Added.
+* [[Version/1.3.3067|1.3.3067]] - Now plays a sound when nutrition is added.
+* [[Version/1.3.3069|1.3.3069]] - Reduce nutrition required for biosculpting from 20 to 10 for healing and age reversal cycles.
+* [[Version/1.3.3074|1.3.3074]] - Fix: Pawns under 18 can use age reversal.
+* [[Version/1.3.3076|1.3.3076]] - Cancelling a cycle before it has started now won't consume nutrition.
+* [[Version/1.3.3080|1.3.3080]] - Now ejects pawns when uninstalled, previously could be exploited to "pokeball" colonists, suspending them safely and indefinitely. 
+* [[Version/1.3.3087|1.3.3087]] - Biosculpter timers reset after archonexus resettlement.
+* [[Version/1.3.3101|1.3.3101]] - Added copy/paste gizmos for biosculpter nutrition settings. Now lists what can or will be cured in the tooltip. Split "Healing" cycle into "Medic" and "Bioregeneration" cycles. Added a new research project requiring multianalyzer and biosculpting that enables bioregeneration cycle. Medic cycle treats short-term wounds, while bioregeneration can heal permanent scars, age-related conditions, and some smaller missing limbs. Age reversal cycle duration 10 -> 8 days. Nutrition requirements of healing and age reversal 10 -> 5.
+* [[Version/1.3.3117|1.3.3117]] - Bioregeneration cycle now requires 2 glitterworld medicine. Integrated artwork for bioregeneration cycle gizmo, previously it used the healing cycle artwork. Pawns no longer get diseases while in the pod. Conditions that will be or can be healed by a cycle now listed in confirmation dialog. We now warn the player if they are trying to put a pawn in a regeneration or medic cycle that would not heal any conditions.
+* [[Version/1.3.3159|1.3.3159]] - 
+** Added “Auto age reverse” option. 
+** All cycles now take 5 nutrition, and nutrition must be loaded before a cycle is selected instead of after. Extra cycle ingredients are collected and carried to the pod by the pawn initiating the cycle.
+** It now only requires a single player action to start a pawn on a biosculpter cycle.
+** Now glow green when nutrition is loaded and they’re ready for cycle selection.
+** Biotuned cycles 25% faster.
+** Biotuning now occurs upon cycle completion instead of upon entry.
+** Power consumption 150W all the time -> 200W if a cycle is running, 50W otherwise.
+** Minify time increased.
+** Age reversal demanded alert will fire 1 day after age reversal deadline (instead of 5 days before) if a pawn has a pod with Auto age reverse enabled. This reduces spam.
+** Nutrition no longer ejected if a cycle is cancelled.
+** If biosculpter loses power while occupied, we don't animate and we now show how long until eject in inspect string.
+** Pleasure cycle mood bonus +10 -> +15.
+** Biotuning duration 60 days -> 80 days
+** Deconstruct yield 50% -> 25%. 
+** Construct cost {{Icon Small|component}} 3 components -> {{Icon Small|component}} 4 components.
+** No longer heal missing eyes if the pawn's ideoligion approves of blindness.
+** No longer removes Gastro-analyzer.
+** Fix: Biosculpter nutrition not incremented if same food def added to pod before and after biosculpter update.
+* [[Version/1.3.3200|1.3.3200]] - Show biosculpter cycle duration for both normal and transhumanist pawns in cycle button's tooltip. When you r-click on a biosculpter with a pawn selected, we now show biosculpter cycles' durations in the context menu.
+* [[Version/1.3.3287|1.3.3287]] - Fix: Blindness from resurrector mech serum is not cured by biosculpter regen cycle.
+* [[Version/1.4.3523|1.4.3523]] - Fix: Hay is listed as possible nutrition in biosculpter pods. Fix: SetBiotuned() method resets the biosculpter timer.
+* [[Version/1.4.3523|1.4.3523]] or later - Minimum age reduction age reduced from 18 to 13. Moved from [[Misc]] to new [[Ideology (Buildings)|Ideology]] architect tab.
+* [[Version/1.4.3535|1.4.3535]] or earlier - Description changed from ''"An immersive pod equipped with a biosculpting fluid injector and attached control system. It can perform a variety of biological alterations including age reversal and pleasure-giving. Each pod becomes biotuned to its user, and cannot be used by anyone else. Biotuning resets after 60 days. Believers in transhumanism believe biosculpter pods are of critical importance in their quest to transcend normal human physical limitations."'' changed to ''"An immersion pod full of bioactive gel. It can perform a variety of biological alterations including age reversal and pleasure-giving. The pod becomes biotuned to its user at the end of a cycle. While biotuned, it cannot be used by anyone else, but cycles will complete 25% more quickly. Biotuning resets if the pod is unused for 80 days."''
+* [[Version/1.4.3535|1.4.3535]] or later - ''"An immersion pod full of bioactive gel. It can perform a variety of biological alterations including age reversal and pleasure-giving. The pod becomes biotuned to its user at the end of a cycle. While biotuned, it cannot be used by anyone else, but cycles will complete 25% more quickly. Biotuning resets if the pod is unused for 80 days."'' to ''"An immersion pod full of bioactive gel. It can perform a variety of biological alterations including age reversal and pleasure-giving. The pod biotunes to its user at the end of a cycle. While biotuned, it cannot be used by anyone else, but cycles will complete 25% more quickly. Biotuning resets if the pod is unused for 80 days. The pod consumess{{Sic}} 200W of power while working, but only 50W on standby."''
+* [[Version/1.4.3555|1.4.3555]] - Fix: Right clicking injured pawns can cause usage of un-researched bioregeneration cycle.
+* [[Version/1.4.3580|1.4.3580]] - Fix: Second sentence of the biosculpter age reversal complete message begins in lower case.
+* [[Version/1.4.3613|1.4.3613]] - Fix: Pawn auto-uses age reversal after changing from Transhumanist to Non-Transhumanist ideoligion.
+* [[Version/1.6.4518|1.6.4518]] - Fix: Biosculpter select gizmo shows wrong rotation and scale.
+* [[Version/1.6.4850|1.6.4850]] - Fix: It was possible to have quest lodgers enter biosculpter pods via the gizmo when it was disabled via float menu.
+
+{{nav|ideology|wide}}
+[[Category:Ideology (Buildings)]]

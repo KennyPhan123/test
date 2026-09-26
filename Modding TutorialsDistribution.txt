@@ -1,0 +1,51 @@
+{{BackToTutorials}}<br/>
+
+This tutorial suggests steps to take when releasing your mod.<br/><br/>
+
+=Requirements=
+
+* (Optional): This tutorial requires you to have [[Modding Tutorials/Setting up a solution|set up a solution]].
+* (Optional): You will have to [[Modding Tutorials/Writing custom code|have written code]] (there's no use in an empty project).<br/><br/>
+
+=Preparation=
+# Compile all your DLLs and make sure they're in the Assemblies folder.
+# Activate your mod. Test it. Your mod should not cause any errors, warnings or other logspam on startup.
+# '''Recommended''': Consider a license, preferably one that will let other modders update and expand upon your mod.
+# '''Optional''': Make a copy of your mod folder for release. This folder shouldn't contain files that aren't of interest to most users.
+## Backups of older versions of textures and such can be removed from this folder.
+## Your .git folder and the .vs and bin/obj folders made by your IDE/Visual Studio can be removed.
+#* [https://steamcommunity.com/sharedfiles/filedetails/?id=1510554297 Publisher Plus] is a mod that gives you the option to exclude certain files and folders for uploading.
+# Update your About folder, that thing was made in a hurry anyways. Add a nice Preview.png to showcase your mod:
+## A good preview will help garner interest in your mod. For Steam, your Preview.png can't be bigger than 1 MB. A resolution of 640x360 works best.
+## Make sure you've updated the supportedVersions tag.
+## Write a good description. A good description will have a sentence at the top stating what the mod does.<br/>
+
+=Distribution=
+==Steam==
+# Put your prepared folder in the '''Mods''' subfolder of your RimWorld installation.
+# Enable dev mode (You're a mod developer now, you should already have it enabled).
+# Press the Mods button. If you have dev-mode enabled, there will be a button labeled "Upload on Steam".
+## Once you've successfully uploaded the mod on Steam, there will be a new file called PublishedFileId.txt. It contains a long number like 1454024362 which is the unique ID for your workshop submission. This file is required to update your mod later. Only your Steam account can update the workshop submission with this number.<br/>
+# Set the visibility of your item. If you keep it hidden nobody will see it!
+
+===Common issues===
+* Your Preview.png can't be larger than 1MB in size.
+* Your mod isn't a local folder.
+* Dev mode not active.
+* You are not logged in as the original author of the mod. This can happen when you're a contributor, or when the template mod you used had a pre-existing PublishedFileId.txt.
+** Make sure you are the original author and you're not re-uploading someone else's mod without permission.
+* Steam not running or initialised. Make sure you're logged in, there are no errors regarding Steam or Steamworks in the output_log (dev console doesn't always show these erros!) and that you can access the workshop.
+* Steam (workshop) is down. Verify [https://downdetector.com/status/steam/map/ here].
+* You have a [https://support.steampowered.com/kb_article.php?ref=3330-IAGK-7663 Limited User Account]. ''Limited user accounts are prevented from accessing several features on Steam, including but not limited to Submitting content on the Steam Workshop.'' Which is what uploading a mod is.
+
+==GitHub==
+# If your mod has a GitHub repository, you can visit its https://github.com/YOURUSERNAME/YOURREPOSITORY/releases section to make a new release.
+## https://github.com/YOURUSERNAME/YOURREPOSITORY/releases/latest will always link to your latest release.<br/>
+
+==General==
+# Some mods include a Dropbox download link to their source code in the mod's topic.
+# Take a look at the "Mod release rules" {{LudeonThread|10561}};
+# Along with that, this {{LudeonThread|7037}} has tips on host sites and further naming conventions.
+# While possible to add your mod as an attachment to your Ludeon thread, these attachments are severely limited in size (max. 600kB) and are regularly deleted. They are also only visible to logged in users.<br/><br/>
+
+[[Category:Modding tutorials]]

@@ -1,0 +1,83 @@
+{{Version Nav|date=2023-05-04}}
+
+== Features / additions ==
+* Added: New Auto-slaughter screen to make managing animal populations much easier
+* Added: New search and filtering added to custom scenario options. Quickly find the items etc you are looking for
+* Added: Extra colonist actions when drafted, to be able to select actions such as 'Animal Attack' or to consume drugs while being drafted
+* Added: Faction label on world map sites
+* Added: Nutrition details to “Form Caravan” details menu
+* Added: Prisoner and slave icon for “Form Caravan” menu
+* Added: Slave icon to Relations, Social and Gear tab in Caravan tabs
+* Added: 5% and 75% connection strength bars to Psypowers
+* Added: Information pop ups for special filters, where descriptions are useful
+* Added: Techprint information for research popups
+
+== Features/Improvements ==
+=== UI ===
+* Added: The game now asks for confirmation before removing an operation bill
+* Improved: Changed bill removing from button hold to a press with a confirmation dialog, to speed up removing multiple bills
+* Improved: Selection menu controls height which previously could cause misalignment and bad margins
+* Improved: Adjusted spacing and size of new save icons in save/load menus
+* Improved: Sliders now move faster when held to allow players to adjust values quickly
+* Improved: Multiple structure style changes to accommodate icons, making them fit in with other details panels
+* Improved: Custom icons in Scenario page now correct size and margin
+* Improved: Techprint requirement complete state is now updated in the research info popup
+* Improved: Error messages no longer stretch full screen width to improve readability
+* Improved: Refactor relations tab in character selection screen to avoid elements going out of bounds
+* Improved: Added backgrounds to popups in Ideology and Custom Scenario flows to make them easier to see
+* Improved: Popups in new flows now better fit the content by default
+* Removed: Right and left button prompts when no colonists are available on site
+* Removed: Info button no longer highlights when hovered over a filter in the stockpile screen
+* Removed: Favourite colour placeholder text if a colonist doesn't have favourite colour or Ideology DLC is not active
+
+=== Gameplay ===
+* Crash fix: Addressed an issue within Custom scenario creation which caused a number of players to experience crashes on PlayStation 5
+* Improved: Seed length on PlayStation 4 is now unlimited, allowing better compatibility with PC seeds
+* Improved: Social logs will now update while the log screen is open
+* Improved: Better playback for  Planet Killer animation
+
+=== Localization ===
+* Improved: Spanish only styles for the Neural Heat label added to stop overlapping
+* Fix: Automatic selection in Caravan menu Gear tab was being cut off in other languages, it is now moved to the top of the tabs
+
+== Fixes ==
+=== UI ===
+
+* Fix: Prevented the build menu from showing under Learning Helper
+* Fix: Health stats detail screen showed placeholder text for dead mechanoids
+* Fix: Truncation added to display of seed in Create World so it doesn’t overflow with large seeds lengths
+* Fix: Pinned inventory now hides correctly when empty
+* Fix: Cursor previously was not showing interact text for hostile factions
+* Fix: Correct scaling and aspect ratio added to multiple images and icons
+* Fix: Deconstructing neural supercharger now removes progress bar
+* Fix: Interaction menu staying visible when no options are available upon refreshing
+* Fix: All options now correctly show for all letters, including Ransom demand
+* Fix: Stats when viewing the detailed information of a minified item now show
+* Fix: Notification labels were not updating correctly for certain events
+* Fix: Pawn management Gear screen scrollbar was not updating correctly
+* Fix: Sort By Categories labels did not update when changes were made in the Caravan menu
+* Fix: An error with trying to view details card for apparel items has been fixed
+* Fix: Pinned inventory previously was overlapping the Architect screen
+* Fix: Incorrect text was showing for the Interact option when items with different toggle states were selected
+* Fix: The Contents button for the shuttle may have previously remained hidden until the 'Auto-Load' action was toggled
+* Fix: Caravan social log header shown as "Tomako's Log" when none of the colonists are named Tomako
+* Fix: Details of conditions box previously persisted despite condition already being cured
+
+=== Gameplay ===
+* Fix: Save issue when starting the game for the first time on PlayStation now fixed
+* Fix: A problem where a grey screen appears after loading on Xbox Series X is now fixed
+* Fix: The player can no longer interact with the game while it's fading-out to restart, this caused multiple issues that should be now resolved
+* Fix: Solved a memory leak in base game related to animal pen interactions keeping pawns in memory
+* Fix: Changing a ritual building during ideology reform now updates available rituals for that building
+* Fix: Ideology - Lock on narrative text now works as intended and narrative will randomise with other Ideology symbols when unlocked
+* Fix: A previously missing ritual seat precept caused errors when attempting rituals
+* Fix: Style source precepts were not updating in some cases after reforming an ideology
+* Fix: Mass chaos skip did not always teleport all affected pawns
+* Fix: Previously unable to select another request in the Comms Console after already selecting an option
+* Fix: Multiple fixes for the Learning Helper where some lessons were correctly recording progress against it
+
+=== Audio ===
+* Fix: Sound issues when using the deep drill
+
+=== Localisation ===
+* Fix: Fixed extra quotation marks (") found randomly at the end of sentences in Japanese

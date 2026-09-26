@@ -1,0 +1,94 @@
+{{Biotech}}
+{{Infobox main|building
+| name = Wastepack atomizer
+| image = WastepackAtomizer south.png
+| description = A glittertech device that deconstructs toxic wastepacks into inert gases using advanced molecular processes.<br/>The process requires considerable amounts of power.
+| type = Building
+| type2 = Biotech (Buildings)
+| placeable = 
+| path cost = 42
+| passability = pass through only
+| blockswind = true
+| cover = 0.5
+| minifiable = false
+| size = 3 * 2
+| flammability = 0.5
+| hp = 500
+| beauty = 
+| power = -400
+| mass base = 80
+| glowradius =
+| glowcolor = 
+| heatpersecond = 
+| terrain affordance = light
+| research = Wastepack atomizer
+| skill 1 = Construction
+| skill 1 level = 8
+| work to make = 30000
+| resource 1 = Steel
+| resource 1 amount = 200
+| resource 2 = Plasteel
+| resource 2 amount = 50
+| resource 3 = Nano structuring chip
+| resource 3 amount = 1
+| buildingTags = Biotech
+| deconstructyieldfraction = 1
+}}
+The '''wastepack atomizer''' cleanly destroys [[toxic wastepack]]s, preventing the spread of [[pollution]].
+== Acquisition ==
+Wastepack atomizers can be constructed after studying a [[nano structuring chip]], obtained from defeating an [[Apocriton]], and completing the [[Research#{{P|Required Research}}|{{P|Required Research}}]] research project. Each requires {{Required Resources}}, {{Ticks|{{P|Work To Make}}}} of work, and a [[{{P|Skill 1}}]] skill of {{P|Skill 1 Level}}. Alternatively, the research can be completed by reading a Wastepack atomizer [[Schematic]], entirely bypassing every boss mech and the need to have a mechanitor at all, although it would take a very long time do to so.
+
+== Summary ==
+Wastepack atomizers use 400 W of [[power]]. Atomizers hold up to 10 [[toxic wastepack]]s, equivalent to two stacks. A single wastepack is destroyed every {{Ticks/gametime|30000}} inside a powered atomizer. Pawns only reload the atomizer with full stacks of wastepacks (5 units/stack), or once every 2.5 days. Wastepacks do not deteriorate in the atomizer.
+
+{| class="wikitable"
+|+ Values Reference Table
+| Ticks to Atomize 1 Wastepack || {{Ticks/gametime|30000}}
+|-
+| Wastepacks Per Stack || 5 Wastepacks
+|-
+| Wastepacks Atomized Per Day || 2 Wastepacks
+|-
+| Wastepack Atomizer Capacity || 10 Wastepacks
+|-
+| Days to Atomize a Filled Atomizer || 5 Days
+|}
+
+== Analysis ==
+Atomizers are the primary consequence-free means of dealing with [[pollution]], along with [[polux tree]]s. Pollution can cause negative effects over time, and you will run out of space by simply freezing wastepacks. Dumping, whether by [[caravan]], [[transport pod]], or [[imperial shuttle]] or [[passenger shuttle]],{{OdysseyIcon}} has their own cost. Dumping anywhere near a faction causes [[goodwill]] hits, and potentially cause other diplomatic consequences.
+
+However, ''each'' atomizer a player wishes to build requires defeating an [[apocriton]] for its [[nano structuring chip]], which makes building multiple atomizers quite prohibitive. These chips can also be used for advanced [[mechanitor]] gear or gestating your own [[war queen]], creating an opportunity cost.
+
+=== Sustainability ===
+==== Toxifier generators ====
+A [[toxifier generator]] produces 6 tiles of ''[[pollution]]'' every 3 days, which is converted into 1 wastepack by a [[pollution pump]]. An atomizer can destroy 6 wastepacks in 3 days, and a pump can convert 2 generators of pollution. Therefore, 1 atomizer ({{P|Power Consumption #}} W) can support 6 generators (+{{Q|Toxifier generator|Power Consumption #}} W) and 3 pumps (-200 W), for a total net [[power]] gain of {{#expr:{{Q|Toxifier generator|Power Consumption #}}*(6)+{{Q|Pollution pump|Power Consumption #}}*(3) + {{P|Power Consumption #}}*(1)}} W. 
+
+This is entirely clean power, though a small area around each generator will be polluted before the pump extracts it. The only work required is hauling the wastepacks to the atomizer.
+
+==== Mechanoids ====
+Mechanoids will produce wastepacks proportional to their bandwidth every 12 days - working for 10 days and recharging for 2 days. An atomizer will destroy 24 wastepacks in 12 days. The table below shows how many mechanoids a single building will support per 12 day cycle, assuming 100% work uptime. Mechanoids that are idle or dormant will produce less waste.
+
+{| class="wikitable"
+! Mechanoids !! Bandwidth!! Wastepacks Produced<br/>(per 12 day Cycle) !! # Mechanoids<br/>(per atomizer)
+|-
+| [[Constructoid]], [[Agrihand]], [[Lifter]], [[Cleansweeper]], [[Militor]], [[Fabricor]], [[Paramedic]], [[Scorcher]] || 1 || 5 || 4.8
+|-
+| [[Legionary]], [[Pikeman]], [[Scyther]] || 2 || 10 || 2.4
+|-
+| [[Lancer]], [[Tesseron]], [[Tunneler (Mechanoid)|Tunneler]]  || 3 || 15 || 1.6
+|-
+| [[Centipede]] (all) || 4 || 20 || 1.2
+|-
+| [[Centurion]], [[Diabolus]], [[War queen]] || 5 || 25 || 0.96
+|}
+
+By the time most players have finished the 8000 research points [[Research#{{P|Required Research}}|{{P|Required Research}}]] project, they are highly likely to already have more mechs producing wastepacks than a single atomizer is capable of processing. However, if most of your mechs are dormant - combat mechs dormant outside of combat, for instance - then you will be producing much less pollution.
+
+== Version history ==
+* [[Biotech DLC]] Release - introduced.
+* [[Version/1.4.3531|1.4.3531]] - Fix: Pawns won't haul wastepacks to an atomizer unless there's 10 wastepacks on the map. Fix: Atomizer is backwards by default.
+* [[Version/1.4.3555|1.4.3555]] - Reduced the power needed for the wastepack atomizer to 400 W, from 800 W. Fix: Atomizer looks like it's rotated wrong by default.
+* [[Version/1.6.4850|1.6.4850]] - Fix: Wastepack atomizer west and east sprites were flipped.
+
+{{Nav|biotech|wide}}
+[[Category:Biotech (Buildings)]]

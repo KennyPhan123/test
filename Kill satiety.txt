@@ -1,0 +1,186 @@
+{{Biotech}}
+{{About|the need from the [[Kill thirst]] gene|the "kill thirst" persona weapon trait|Kill thirst (persona trait)}}
+{{Quote|Kill satiety fulfills a built-in desire to do violence at close range to human victims. If it isn't satiated, the person will become very unhappy.|Kill satiety description}}
+The '''kill satiety''' need is the game mechanic that controls the [[need]] of [[Characters]] with the [[Kill thirst]] gene to kill other [[human]]s in melee combat. Note that killing an enemy pawn by beating them to death with a ranged weapon will not fulfill the need. You can view the kill satiety need of any affected human by viewing the "Kill satiety" bar and the corresponding mouseover text in the [[Needs]] tab.
+
+Despite the similarity in name and mechanics, it has no connection with the [[Persona weapon#Kill thirst|Kill thirst]] persona weapon trait.{{RoyaltyIcon}}
+
+== Need changes ==
+{{Stub|section=1|reason=What counts for reset? Surgical euthanasia, ritual sacrifice, wildman hunting slaughter? Verfiy calculated time values in table}}
+The need only becomes active after age 13. It is only active on colonists, [[slaves]],{{IdeologyIcon}} and [[prisoners]]. Pawns from other factions such as [[raiders]] or in caravans{{Check Tag|Clarification needed|Is it 'NPCs such as raiders' and 'pawns in caravans' or is it 'pawns from other factions, such as raiders or those in trade caravans'}} do not have the need active, even if the gene is present. 
+
+The need decays by {{#expr: (150/60000)*(1/30)*100 round 5}}% every {{Ticks|150}}, equivalent to a rate of 3.33% per day. Killing a human in melee combat will fill the need to 100%. A ranged attack in melee range does not count, it must be a melee attack. Killing downed pawns counts. A melee attack with a ranged weapon does not work. Nor does executing a pawn, if the executioner is carrying a ranged weapon.
+
+{| class="wikitable"
+! Threshold
+! Thought
+! Real time in state<ref>Real time spent in the state before crossing the lower threshold, assuming no Kill satiety is gained</ref>
+! Game time in state<ref>Game time spent in the state before crossing the lower threshold, assuming no Kill satiety is gained</ref>
+! Real time since 100% Kill satiety <ref>Real time spent before entering the state, assuming no Kill satiety is gained and the starting Kill satiety is 100%</ref>
+! Game time since 100% Kill satiety <ref>Game time spent before entering the state, assuming no Kill satiety is gained and the starting Kill satiety is 100%</ref>
+|-
+! 100% - 31%
+|''<None>''
+| {{Ticks|150 * (1-0.30)/((150/60000)*(1/30))}}
+| {{Ticks/gametime|150 * (1-0.30)/((150/60000)*(1/30))}}
+| -
+| -
+|- 
+! 30% - 28%
+| {{Thought|desc=Must kill... it has been too long since I have killed somebody up close and personal.|label=Kill thirst|value=-4|stack=1}} 
+| {{Ticks|150 * (0.30-0.28)/((150/60000)*(1/30))}}
+| {{Ticks/gametime|150 * (0.30-0.28)/((150/60000)*(1/30))}}
+| {{Ticks|150 * (1-0.28)/((150/60000)*(1/30))}}
+| {{Ticks/gametime|150 * (1-0.28)/((150/60000)*(1/30))}}
+|- 
+! 27% - 26%
+| {{Thought|desc=Must kill... it has been too long since I have killed somebody up close and personal.|label=Kill thirst|value=-5|stack=1}} 
+| {{Ticks|150 * (0.27-0.26)/((150/60000)*(1/30))}}
+| {{Ticks/gametime|150 * (0.27-0.26)/((150/60000)*(1/30))}}
+| {{Ticks|150 * (1-0.26)/((150/60000)*(1/30))}}
+| {{Ticks/gametime|150 * (1-0.26)/((150/60000)*(1/30))}}
+|- 
+! 25% - 24%
+| {{Thought|desc=Must kill... it has been too long since I have killed somebody up close and personal.|label=Kill thirst|value=-6|stack=1}} 
+| {{Ticks|150 * (0.25-0.24)/((150/60000)*(1/30))}}
+| {{Ticks/gametime|150 * (0.25-0.24)/((150/60000)*(1/30))}}
+| {{Ticks|150 * (1-0.24)/((150/60000)*(1/30))}}
+| {{Ticks/gametime|150 * (1-0.24)/((150/60000)*(1/30))}}
+|- 
+! 23% - 22%
+| {{Thought|desc=Must kill... it has been too long since I have killed somebody up close and personal.|label=Kill thirst|value=-7|stack=1}} 
+| {{Ticks|150 * (0.23-0.22)/((150/60000)*(1/30))}}
+| {{Ticks/gametime|150 * (0.23-0.22)/((150/60000)*(1/30))}}
+| {{Ticks|150 * (1-0.22)/((150/60000)*(1/30))}}
+| {{Ticks/gametime|150 * (1-0.22)/((150/60000)*(1/30))}}
+|- 
+! 21% - 20%
+| {{Thought|desc=Must kill... it has been too long since I have killed somebody up close and personal.|label=Kill thirst|value=-8|stack=1}} 
+| {{Ticks|150 * (0.21-0.20)/((150/60000)*(1/30))}}
+| {{Ticks/gametime|150 * (0.21-0.20)/((150/60000)*(1/30))}}
+| {{Ticks|150 * (1-0.20)/((150/60000)*(1/30))}}
+| {{Ticks/gametime|150 * (1-0.20)/((150/60000)*(1/30))}}
+|- 
+! 19% - 18%
+| {{Thought|desc=Must kill... it has been too long since I have killed somebody up close and personal.|label=Kill thirst|value=-9|stack=1}} 
+| {{Ticks|150 * (0.19-0.18)/((150/60000)*(1/30))}}
+| {{Ticks/gametime|150 * (0.19-0.18)/((150/60000)*(1/30))}}
+| {{Ticks|150 * (1-0.18)/((150/60000)*(1/30))}}
+| {{Ticks/gametime|150 * (1-0.18)/((150/60000)*(1/30))}}
+|- 
+! 17% - 16%
+| {{Thought|desc=Must kill... it has been too long since I have killed somebody up close and personal.|label=Kill thirst|value=-10|stack=1}} 
+| {{Ticks|150 * (0.17-0.16)/((150/60000)*(1/30))}}
+| {{Ticks/gametime|150 * (0.17-0.16)/((150/60000)*(1/30))}}
+| {{Ticks|150 * (1-0.16)/((150/60000)*(1/30))}}
+| {{Ticks/gametime|150 * (1-0.16)/((150/60000)*(1/30))}}
+|- 
+! 15% - 13%
+| {{Thought|desc=Must kill... it has been too long since I have killed somebody up close and personal.|label=Kill thirst|value=-11|stack=1}} 
+| {{Ticks|150 * (0.15-0.13)/((150/60000)*(1/30))}}
+| {{Ticks/gametime|150 * (0.15-0.13)/((150/60000)*(1/30))}}
+| {{Ticks|150 * (1-0.13)/((150/60000)*(1/30))}}
+| {{Ticks/gametime|150 * (1-0.13)/((150/60000)*(1/30))}} 
+|- 
+! 12% - 11%
+| {{Thought|desc=Must kill... it has been too long since I have killed somebody up close and personal.|label=Kill thirst|value=-12|stack=1}} 
+| {{Ticks|150 * (0.12-0.11)/((150/60000)*(1/30))}}
+| {{Ticks/gametime|150 * (0.12-0.11)/((150/60000)*(1/30))}}
+| {{Ticks|150 * (1-0.11)/((150/60000)*(1/30))}}
+| {{Ticks/gametime|150 * (1-0.11)/((150/60000)*(1/30))}}
+|- 
+! 10% - 9%
+| {{Thought|desc=Must kill... it has been too long since I have killed somebody up close and personal.|label=Kill thirst|value=-13|stack=1}} 
+| {{Ticks|150 * (0.10-0.09)/((150/60000)*(1/30))}}
+| {{Ticks/gametime|150 * (0.10-0.09)/((150/60000)*(1/30))}}
+| {{Ticks|150 * (1-0.09)/((150/60000)*(1/30))}}
+| {{Ticks/gametime|150 * (1-0.09)/((150/60000)*(1/30))}}
+|-
+! 8% - 7%
+| {{Thought|desc=Must kill... it has been too long since I have killed somebody up close and personal.|label=Kill thirst|value=-14|stack=1}} 
+| {{Ticks|150 * (0.08-0.07)/((150/60000)*(1/30))}}
+| {{Ticks/gametime|150 * (0.08-0.07)/((150/60000)*(1/30))}}
+| {{Ticks|150 * (1-0.07)/((150/60000)*(1/30))}}
+| {{Ticks/gametime|150 * (1-0.07)/((150/60000)*(1/30))}}
+|- 
+! 6% - 5%
+| {{Thought|desc=Must kill... it has been too long since I have killed somebody up close and personal.|label=Kill thirst|value=-15|stack=1}} 
+| {{Ticks|150 * (0.06-0.05)/((150/60000)*(1/30))}}
+| {{Ticks/gametime|150 * (0.06-0.05)/((150/60000)*(1/30))}}
+| {{Ticks|150 * (1-0.05)/((150/60000)*(1/30))}}
+| {{Ticks/gametime|150 * (1-0.05)/((150/60000)*(1/30))}}
+|- 
+! 4% - 3%
+| {{Thought|desc=Must kill... it has been too long since I have killed somebody up close and personal.|label=Kill thirst|value=-16|stack=1}} 
+| {{Ticks|150 * (0.04-0.03)/((150/60000)*(1/30))}}
+| {{Ticks/gametime|150 * (0.04-0.03)/((150/60000)*(1/30))}}
+| {{Ticks|150 * (1-0.03)/((150/60000)*(1/30))}}
+| {{Ticks/gametime|150 * (1-0.03)/((150/60000)*(1/30))}}
+|- 
+! 2% - 1%
+| {{Thought|desc=Must kill... it has been too long since I have killed somebody up close and personal.|label=Kill thirst|value=-17|stack=1}} 
+| {{Ticks|150 * (0.02-0.01)/((150/60000)*(1/30))}}
+| {{Ticks/gametime|150 * (0.02-0.01)/((150/60000)*(1/30))}}
+| {{Ticks|150 * (1-0.01)/((150/60000)*(1/30))}}
+| {{Ticks/gametime|150 * (1-0.01)/((150/60000)*(1/30))}}
+|- 
+! 0%
+| {{Thought|desc=Must kill... it has been too long since I have killed somebody up close and personal.|label=Kill thirst|value=-18|stack=1}} 
+| -
+| - 
+| {{Ticks|150 * (1)/((150/60000)*(1/30))}}
+| {{Ticks/gametime|150 * (1)/((150/60000)*(1/30))}}
+|- 
+|}
+<references/>
+
+<!-- 
+<ThoughtDef>
+<defName>KillThirst</defName>
+<thoughtClass>Thought_Situational_KillThirst</thoughtClass>
+<workerClass>ThoughtWorker_KillThirst</workerClass>
+<developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+<stages>
+<li>
+<label>kill thirst</label>
+<description>
+
+n>
+<baseMoodEffect>-1</baseMoodEffect>
+</li>
+</stages>
+</ThoughtDef>
+-->
+
+== Need threshold == 
+{{Quote|Must kill... it has been too long since I have killed somebody up close and personal.|Kill thirst thought description}}
+A ''"Kill thirst"'' [[mood]] penalty is inflicted once the need drops to 30%. This starts at {{--|4}} and increasing linearly as need drops to a maximum of {{--|18}} at 0%.
+
+{| class="wikitable"
+|-
+| {{Graph:Chart
+| width = 200 
+| height = 200 
+| xAxisTitle = Kill satiety (%)
+| yAxisTitle = Mood penalty
+| type = line 
+| x = 100, 30.1, 30, 0
+| y1 = 0, 0, -4, -18
+}}
+|}
+
+== Analysis ==
+Kill thirst is a rather tedious gene to manage for colonies that don't raid frequently or much rather prefer using ranged weapons, fortunately it doesn't occur naturally outside the very rare custom xenotypes or trader genepacks, so kill satiety will be a rare issue and only ever self-inflicted.
+
+To get rid of kill thirst you can try replacing the xenogerm if possible or using the pawn as a [[Human Resources|Human Resource]] especially if the pawn is incapable of violence where they will suffer an {{--|18}} mood constantly.
+
+Otherwise, do caravan raids frequently, set your ranged pawns to hold fire to prevent kill stealing and let the desired pawn kill a enemy in melee combat and capture any prisoners regularly to be executed later by that pawn.
+
+== Version history ==
+* [[Biotech DLC]] Release - Introduced.
+* [[Version/1.4.3555|1.4.3555]] - Fix: Kills with body part weapons like knee spike and power claw don't satisfy kill satiety.
+
+{{Verified|1.4.3641}}
+{{nav|status levels|wide}}
+
+[[Category: Status Level]]

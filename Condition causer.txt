@@ -1,0 +1,44 @@
+<noinclude>{{Royalty}}
+'''Condition causers''' are structures that create a variety of effects on a given map tile or on the world map at large. They are generally associated with either [[Events]], [[Quest]] or a [[Mechanoid cluster]] {{RoyaltyIcon}} where they serve as both a threat and a call to action. The player must endure their effect until they are destroyed. In this way they are similar to [[psychic ship]]s. 
+
+If the player can endure their effects, they can be left alone however some quests may require them to be killed with a time limit and some progressively get worse. 
+
+They can spawn on the map with the players colony, or in a settlement on the world map that must be [[caravan]]ed to. In either case they will usually be guarded. </noinclude>
+{| {{STDT| c_01 text-center}}
+! Building Type !! Image !! Health !! Description !! Effect !! Size
+|- id="Psychic droner"
+! [[Psychic droner]] 
+| [[{{Q|Psychic droner|Image}}|64px]] || {{Q|Psychic droner|Max Hit Points Base}} || {{Q|Psychic droner|Description}} || Creates a gender specific Psychic Drone || {{Q|Psychic droner|Size}} 
+|- id="Toxic spewer"
+! [[Toxic spewer]] 
+| [[{{Q|Toxic spewer|Image}}|64px]] || {{Q|Toxic spewer|Max Hit Points Base}} || {{Q|Toxic spewer|Description}} ||  Causes [[toxic fallout]] across the map and a radius of 3 hexes on the world map. || {{Q|Toxic spewer|Size}} 
+|- id="Smoke spewer"
+! [[Smoke spewer]] 
+| [[{{Q|Smoke spewer|Image}}|64px]] || {{Q|Smoke spewer|Max Hit Points Base}} || {{Q|Smoke spewer|Description}} || Prevents sunlight shining through during day. Affects the worldmap with a radius of 10.  || {{Q|Smoke spewer|Size}} 
+|- id="Sun blocker"
+! [[Sun blocker]] 
+| [[{{Q|Sun blocker|Image}}|64px]] || {{Q|Sun blocker|Max Hit Points Base}} || {{Q|Sun blocker|Description}} || Blocks the sun akin to an eclipse. Affects the worldmap by 10 hexes.  || {{Q|Sun blocker|Size}} 
+|- id="Psychic suppressor"
+! [[Psychic suppressor]]
+| [[{{Q|Psychic suppressor|Image}}|64px]] || {{Q|Psychic suppressor|Max Hit Points Base}} || {{Q|Psychic suppressor|Description}} || Inflicts upon a specific gender a reduction in [[consciousness]] and scaled to the pawns [[psychic sensitivity]] up to a maximum of 50% consciousness cap at 100% sensitivity. Does not scale beyond 100% sensitivity. Affects the worldmap by 10 hexes.  || {{Q|Psychic suppressor|Size}}
+|- id="Weather controller"
+! [[Weather controller]]
+| [[{{Q|Weather controller|Image}}|64px]] || {{Q|Weather controller|Max Hit Points Base}} || {{Q|Weather controller|Description}} ||  Causes a local weather phenomenon on the local and world map within 10 hexes. || {{Q|Weather controller|Size}} 
+|- id="EMI dynamo"
+! [[EMI dynamo]]
+| [[{{Q|EMI dynamo|Image}}|64px]] || {{Q|EMI dynamo|Max Hit Points Base}} || {{Q|EMI dynamo|Description}} ||  Causes electrical equipment to malfunction akin to a [[solar flare]]. Affects a radius of 10 hexes on the worldmap. || {{Q|EMI dynamo|Size}} 
+|- id="Defoliator"
+! [[Defoliator]]
+| [[{{Q|Defoliator|Image}}|64px]] || {{Q|Defoliator|Max Hit Points Base}} || {{Q|Defoliator|Description}} || Kills all plant life in a slowly expanding radius, affecting up to a 100 tile radius of the map. <Br>Releases an [[EMP]] blast with a radius of 9 tiles when destroyed. || {{Q|Defoliator|Size}} 
+|- id="Climate adjuster"
+! [[Climate adjuster]]
+| [[{{Q|Climate adjuster|Image}}|64px]] || {{Q|Climate adjuster|Max Hit Points Base}} || {{Q|Climate adjuster|Description}} ||  Causes the Local and Map temperature to increase or decrease by 10 degrees, whichever would be more dangerous.  || {{Q|Climate adjuster|Size}} 
+|-
+|}
+<noinclude>
+== Version history ==
+* [[Version/1.2.2719|1.2.2719]] - Fix: Condition causer destroyed message sent whenever it was despawned instead of just when it was actually destroyed.
+* [[Version/1.2.2753|1.2.2753]] - Climate adjuster no longer will choose negative temperature offset for deserts nor positive offset for ice sheets (it will avoid being not dangerous).
+
+[[Category:Buildings]]
+</noinclude>

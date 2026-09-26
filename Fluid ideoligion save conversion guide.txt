@@ -1,0 +1,71 @@
+{{Ideology}}
+If you install [[Ideology DLC]] mid-game or simply want to change a non-fluid ideoligion, this guide will help you change your primary ideoligion to a fluid ideoligion.
+
+First you want to navigate to your save folder and copy your save to some place you won't forget about it in case of any damage to the save, rendering it unplayable.
+
+Windows save folder location: '''''YOURDRIVE'':\Users\''YOURUSER''\AppData\LocalLow\Ludeon Studios\RimWorld by Ludeon Studios\Saves'''
+
+Linux save folder location: '''/home/YOURUSER/.config/unity3d/Ludeon Studios/RimWorld by Ludeon Studios/Saves'''
+
+After you've backed up your save you can then double click on your save and edit it with any text editor of your choice, otherwise notepad will do. '''CTRL + F''' and search for the name of your primary ideoligion. You should find the code structured similarly to:
+
+<syntaxhighlight lang="xml">
+</foundation>
+<name>Cauteusism</name>
+<adjective>Cauteusic</adjective>
+<memberName>Cauteusite</memberName>
+<leaderTitleMale>High Cardinal</leaderTitleMale>
+</syntaxhighlight>
+<small style="font-size:80%;">''"Cauteusism" is the name of the ideoligion in this example''</small>
+
+From there you can begin to scroll down a long way until you start seeing many lines defining the [[Ideoligion#Hair and tattoos|hair/tattoo]] frequency structured as such:
+<syntaxhighlight lang="xml">
+</li>
+<li>
+	<gender>Any</gender>
+</li>
+<li>
+	<gender>Any</gender>
+</li>
+<li>
+	<gender>Any</gender>
+</li>
+<li>
+	<gender>Any</gender>
+</li>
+<li>
+	<gender>Any</gender>
+</syntaxhighlight>
+Alternatively you should be able to '''CTRL + F''' and search '''development'''
+
+Once you scroll past the frequency lines the indents should start receding until it reaches your final destination, which is structured similarly to such:
+<syntaxhighlight lang="xml">
+</style>
+<id>21</id>
+<initialPlayerIdeo>True</initialPlayerIdeo>
+<development isNull="True" />
+</syntaxhighlight>
+
+Once here you may begin the editing part.
+* First: replace '''<development isNull="True" />''' with '''<development>'''
+* Second: add a new line underneath '''<development>''' with text '''</development>'''
+* Third: add a new line underneath '''</development>''' with text '''<fluid>True</fluid>'''
+Make sure you indent them all uniformly, otherwise the save will be unplayable.
+{| class="wikitable"
+|-
+! Correct !! Incorrect
+|-
+| 
+:::::</style>
+:::::<id>21</id>
+:::::<development>
+:::::</development>
+:::::<fluid>True</fluid>
+|| 
+:::::</style>
+:::::<id>9</id>
+<development><br></development><br><fluid>True</fluid>
+|}
+
+Once you are done with the editing you may save the file and load the save in-game. If done correctly you should gain a '''0/10''' counter at the top left of your ideoligion screen, indicating the use of development points.
+[[Category:Guides]]

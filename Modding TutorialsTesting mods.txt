@@ -1,0 +1,105 @@
+{{DISPLAYTITLE:Testing Mods}}
+{{BackToTutorials}}
+
+{{:Modding_Tutorials/Under_Review}} 
+
+This page contains tips and tricks for debugging and testing mod content.
+
+=Development Mode=
+
+''Main Article: [[Development mode]]
+
+Usually referred to as just "dev mode", enabling this option gives you a large number of tools to help test both the vanilla game as well as mod content.
+
+To enable dev mode:
+
+# Start RimWorld
+# Go to Options in the Main Menu
+# Under Gameplay, check the "Development Mode" box
+
+Development mode will remain on until explicitly turned off, even if you close and reopen the game.
+
+=Debugging=
+
+RimWorld runs on Unity, which uses a modified fork of the Mono runtime. As of RimWorld 1.6 (Odyssey), the current versions are:
+
+* Unity 2022.3.35 (https://unity.com/releases/editor/whats-new/2022.3.35f1)
+* Mono (https://github.com/Unity-Technologies/mono/tree/unity-2022.3-mbe)
+
+If you are using [[Modding_Tutorials/Recommended_software|Rider]], the easiest way to set up debugging for custom assemblies is to use Gareth's RimWorld plugin: https://plugins.jetbrains.com/plugin/21583-rimworld-development-environment
+
+If you are not using Rider or do not want to use the plugin, there are instructions for setting up Doorstop manually here: https://github.com/pardeike/Rimworld-Doorstop
+
+=Tips=
+
+The following are specific tips for testing various types of mod content:
+
+==Weapons and Apparel==
+
+You can spawn weapons and apparel by using the "Spawn weapon" and "Spawn apparel" dev mode debug commands, respectively.
+
+There are also debug output commands for showing the chance of spawning any given weapon or apparel piece, to help diagnose whether your tags are correctly configured.
+
+==Pawns==
+
+You can test custom pawns by using the "Spawn pawn" dev mode command. This will list out all PawnKindDefs in the game.
+
+==Incidents==
+
+You can use the Incident dev mode commands to test various incidents, including raids.
+
+==Jobs==
+
+"Toggle job logging" and "Draw pawn debug" can be helpful for diagnosing pawn AI.
+
+==Lords==
+
+Lords are group AI controllers used by everything from trade caravans to raiding parties.
+
+* View settings -> Draw Duties (for seeing what each pawn does)
+* View settings -> Draw Lords (for seeing what the Lord does)
+* View settings -> Log Lord Toil Transitions (for reading what transitions happen)
+
+=Quicktest=
+
+When dev mode is enabled, there will be a Quicktest option on the Main Menu that instantly loads into a Crashlanded map with all default options.
+
+You can also have the game load instantly into a Quicktest map on load by using the <code>-quicktest</code> command line argument:
+
+<source>
+C:/Path/To/Game/RimWorld.exe -quicktest
+</source>
+
+On Mac:
+
+<source>
+/Users/Username/Library/Application\ Support/Steam/SteamApps/common/RimWorld/RimWorldMac.app/Contents/MacOS/RimWorldMac -quicktest
+</source>
+
+You can make a shortcut to the game with this command line argument.
+
+Alternatively, if you have a save file named <code>autostart.rws</code>, then game will load that on start.
+
+=Save Data=
+
+You can override the save data folder using the <code>-savedatafolder</code> command line argument. This is useful if you want to install the game on a USB drive so you can plug and play it from anywhere:
+
+<source>
+C:/Path/To/Game/RimWorld.exe -savedatafolder=C:/Path/To/The/Folder
+</source>
+
+You can also use relative file paths:
+
+<source>
+-savedatafolder=SaveData
+</source>
+
+Be sure the game is running with permission to modify the folder; it may not work properly if you run the game under default permissions on its own install folder.
+
+You can combine the -savedatafolder with the -quicktest argument for a clean modding environment.
+
+=Mod Tools=
+
+* [https://github.com/NightmareCorporation/PublisherPlusMultiVersionFork PublisherPlus] ([https://steamcommunity.com/sharedfiles/filedetails/?id=3183156228 Steam Workshop]) Originally created by Jaxe, forked by NightmareCorporation - gives you more options when uploading a mod to Steam Workshop, including excluding files or folders from the upload.
+
+[[Category:Modding tutorials]]

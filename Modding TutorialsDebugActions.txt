@@ -1,0 +1,50 @@
+===Preamble===
+Who this is for: Modders that have C# and want to directly call any method
+
+===Example===
+The whole idea with a DebugAction is to easily call a method without having to wait or build an elaborate scenario first. 
+
+Debug actions are only available while in Development Mode and the available options are shown by pressing the first cog button in the debug row
+
+// todo image
+
+Any static method can be used to make a debug action, you simply need to add the ''DebugAction'' attribute like this
+<source lang="csharp">
+[DebugAction("Showcase", "Spawn Potatoes", actionType = DebugActionType.ToolMapForPawns, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+public static void MyDebugAction(Pawn p)
+{
+    SomeStaticUtility.SpawnPotatoesOnPawn(p);
+}
+</source>
+
+The first argument is the "category" of the DebugAction, you can use this to nicely bundle all your logically connected actions and organize the large amount of buttons on the UI.
+
+The second argument is the label of the button
+
+The third argument is the actionType, which determines how the debug action is used, possible values are:
+====Action====
+Directly calls the method, can be used in any game state
+====ToolMap====
+Spawns a mouse targeter that calls the method with each click. can only used if the player is currently on a Map
+====ToolMapForPawns====
+Spawns a mouse targeter that calls the method with each click on a pawn. Passes the clicked-on pawn to the method as ''Pawn p''. Can only be used if the player is currently on a Map
+====ToolWorld====
+Spawns a mouse targeter that calls the method with each click on a world tile. Can only be used if the player is currently on the WorldMap (where the hexagonal tiles are)
+
+The fourth argument is the allowedGameStates, which is a (combinable) enum of which game states the debug tool should be visible in the debug action UI
+ public enum AllowedGameStates
+ {
+    Invalid = 0, // never
+    Entry = 1, // while the player is on the main menu
+    Playing = 2, // after game launch
+    WorldRenderedNow = 4, // after a save files world is loaded
+    IsCurrentlyOnMap = 8, // while a map is entered
+    HasGameCondition = 16, // while a map is entered and a game condition exists (e.g. solar flare)
+    PlayingOnMap = 10, // Playing && IsCurrentlyOnMap
+    PlayingOnWorld = 6 // Playing && WorldRenderedNow
+ }
+
+===Notes===
+If you have a decompiler, just searching for any Type with "DebugActions" will yield many results that you can investigate and copy for your own needs.
+
+[[Category:Modding tutorials]]

@@ -1,0 +1,69 @@
+{{DISPLAYTITLE:Decompiling Source Code}}
+
+{{BackToTutorials}}
+
+While most of RimWorld's content is configured in XML, XML is ultimately just a data storage solution and understanding how the game actually functions requires reading decompiled source code.
+
+'''NOTE:''' Decompiling RimWorld's source code is subject to the terms of RimWorld's [https://rimworldgame.com/eula/ End-User License Agreement]. It is strongly recommended that you read it before proceeding.
+
+=Recommended Software=
+
+The following are the C# decompilers recommended by the RimWorld modding community:
+
+==ILSpy==
+
+ILSpy is generally recommended as it is the best-maintained and most reliable decompiler with limited support by Microsoft themselves. The core project only has binaries for Windows, but there is an [https://marketplace.visualstudio.com/items?itemName=icsharpcode.ilspy-vscode ILSpy extension for Visual Studio Code] as well as a [https://github.com/icsharpcode/ILSpy#unix--mac CLI application for Mono framework] for OS X and Linux.
+
+# Download [http://ilspy.net/ ILSpy] ([https://github.com/icsharpcode/ILSpy/releases Download latest release]) and either install it via the MSI or unzip the archive into a folder. If you do not use the installer, creating a desktop shortcut may be useful.
+# Open ILSpy.
+# Load the main game assembly into ILSpy by either using File > Open or navigating to the assembly and simply dragging it into the ILSpy window:
+## On Windows, the default Steam assembly location is at <code>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</code>
+## On Mac, the default standalone assembly location is at <code>../RimWorldMac.app/Contents/Resources/Data/Managed/Assembly-CSharp.dll</code>
+## On Mac, the default Steam application folder should be under <code>~/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app</code>
+# Expand the assembly contents by clicking the <code>+</code> next to Assembly-CSharp in the Assemblies pane, or
+# Press Shift+Ctrl+F or click the magnifying glass icon on the hotbar to search for specific classes, methods, or fields.
+
+Using Command Line (CLI) ILSpy:
+# Despite the instructions saying .NET 5.0 SDK is needed, you may also need [https://dotnet.microsoft.com/download/dotnet/3.1 .NET Core 3.1]
+# It seems that it's possible to simply build from a [https://github.com/icsharpcode/ILSpy/releases release tarball], even if the instructions suggest to use a git checkout
+# After you've built ILSpy, find the ''ilspycmd'' tool (should be located at ''ICSharpCode.Decompiler.Console/bin/Release/netcoreapp3.1'')
+# Run a command like ''ilspycmd RimWorld/RimWorld*_Data/Managed/Assembly-CSharp.dll -p -o <output directory>'' (use proper paths to RimWorld and for the output directory)
+# The given output directory now contains decompiled sources.
+
+==dnSpy==
+
+dnSpy is an alternative with a UI more similar to Visual Studio. It is popular with some authors who dislike the UI of ILSpy, but it is generally not recommended as the original project has been abandoned for many years, its forks have not reached similar levels of adoption, and it consistently struggles to decompile certain types of complex code such as compiler-generated classes and methods.
+
+# Download [https://github.com/dnSpyEx/dnSpy/releases dnSpy] and extract it somewhere.
+# Open dnSpy.exe. Once it's open, click "open" on the top ribbon (or press Ctrl+O).
+# Open the RimWorld main assembly (see ILSpy instructions above for typical assembly locations).
+# Press Ctrl+Shift+K to open the search bar.
+
+==dotPeek==
+
+The developer of Rider also offers a free standalone decompiler in the form of [https://www.jetbrains.com/decompiler/ dotPeek]. dotPeek is preferred by some for reading IL Code for the purpose of Harmony transpilers, but suffers similar glitches and inconsistency as dnSpy when decompiling back to C# code, often refusing to show method contents at all for certain compiler-generated code.
+
+==MonoDevelop==
+
+MonoDevelop is capable of decompiling DLLs, albeit using clumsy initial settings. It is Linux only, otherwise you have to download Xamarin Studio which doesn't have a decompiler.
+
+# Download [http://www.monodevelop.com/download/ MonoDevelop] and install it;
+# '''Either''': associate the .dll extension with MonoDevelop:
+## Navigate to ''Assembly-CSharp.dll'' in ''../Rimworld***_Data/Managed/'', relative to your Rimworld installation and with *** being a version number (See Note on MacOS below);
+## Right-click "Open with" and select MonoDevelop as standard program;
+## Double-click ''Assembly-CSharp.dll'',
+# '''Or''': open MonoDevelop and open a .dll:
+## Open MonoDevelop;
+## Go to File -> Open, navigate to ''../Rimworld***_Data/Managed/'', relative to your Rimworld installation and with *** being a version number (See Note on MacOS below);
+## Select ''Assembly-CSharp.dll'' and confirm,
+# '''Very important''': search for a dropdown called "Visibility" and change it from "Only public members" to "All members";
+# '''Very important''': search for a dropdown called "Language" and change it from "Summary" to "C#";
+# Click the "+" next to ''Assembly-CSharp (***)'', you will now see a list including the items ''Rimworld'' and ''Verse'';
+# Take your time to look through the source code, to make yourself familiar. If you ever need the source code, open ''Assembly-CSharp.dll'' again.<br/><br/>
+
+=Tips=
+# Right-click any Type or Method and hit "Analyze" to obtain more context on that item. 'Used by' and 'Uses' provide a lot of contextual clues which is required to know how things work.
+# RimWorld often uses Reflection to instantiate worker classes, usually via factory methods. For example, Things are typically created via <code>ThingMaker.MakeThing</code> and Pawns are generated via <code>PawnGenerator.GeneratePawn</code>.
+# If you're going in circles trying to find things like "where is X assigned", odds are you'll need to look at the XML for it. The XML contains the data, C# does things with it.
+
+[[Category:Modding tutorials]]

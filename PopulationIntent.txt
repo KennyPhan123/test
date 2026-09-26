@@ -1,0 +1,168 @@
+{{Rewrite|reason=Orphan page - needs interlinking to and from this page to prevent page from being lost. '''Do not remove this tag until interlinking performed'''}}
+'''PopulationIntent''' is the mechanic that determines how often the [[Storyteller]] will give the player an opportunity for another Colonist. 
+
+PopulationIntent has two major factors which can be generally understood as:
+* '''current population''' and
+* '''time since last colonist joined''' (with all spans 8 days or longer treated the same)
+
+The ''smaller'' your population, and the ''longer'' it's been since someone last joined, the more likely you are to:
+# see slaves for sale at a [[faction base]],
+# be visited by a [[Trade|slaver caravan]],
+# have enemies be [[downed]] instead of dying (allowing you to imprison and recruit them),
+# have a [[guest]] choose to join your colony after you rescue them, and
+# experience a [[Events#Wanderer_joins|wanderer joins]] event.
+
+PopulationIntent does ''not'' have any effect on major threats, diseases, instant kills, or other negative events.
+
+== Adjusted Population ==
+
+Adjusted Population is a population total based on all colonists, children, slaves, prisoners, and guests on all player map tiles and caravans. Babies (colonists ''under'' 3 years old) are not counted.
+
+Adjusted Population Values based on Age    
+{| class="wikitable"
+    |-
+    ! Age !! AP
+    |-
+    | 3-4 || 0.5
+    |-
+    | 5-6 || 0.6
+    |-
+    | 7-8 || 0.7
+    |-
+    | 9-10 || 0.8
+    |-
+    | 11-12 || 0.9
+    |-
+    | 13+ || 1
+    |} 
+
+Multipliers
+
+Prisoner: 50%
+
+Unwavering Prisoner: 25%
+
+Slave: 75%
+
+{| class="wikitable"
+! Adjusted Population by Age
+|-
+| {{#vardefine: string | 3,13,16 && 0.5,1.0,1.0 }}<!--
+-->{{#vardefine: x | {{#explode: {{#var: string }} | && | 0 }} }}<!--
+-->{{#vardefine: y1 | {{#explode: {{#var: string }} | && | 1 }} }}<!--
+-->{{#vardefine: string | 3,13,16 && 0.375,0.75,0.75 }}<!--
+-->{{#vardefine: y2 | {{#explode: {{#var: string }} | && | 1 }} }}<!--
+-->{{#vardefine: string | 3,13,16 && 0.25,0.5,0.5 }}<!--
+-->{{#vardefine: y3 | {{#explode: {{#var: string }} | && | 1 }} }}<!--
+-->{{#vardefine: string | 3,13,16 && 0.125,0.25,0.25 }}<!--
+-->{{#vardefine: y4 | {{#explode: {{#var: string }} | && | 1 }} }}<!--
+-->{{Graph:Chart
+  | width = 400 | height = 200
+  | type = line
+  | xAxisTitle = Age
+  | xAxisMin = 0 | xAxisMax = 16 | yGrid =
+  | x = {{#var: x}}
+  | yAxisTitle = Adjusted Population
+  | yAxisMin = 0 | yAxisMax = 1 | xGrid =
+  | y1 = {{#var: y1}} | y1Title = Normal
+  | y2 = {{#var: y2}} | y2Title = Slave
+  | y3 = {{#var: y3}} | y3Title = Prisoner
+  | y4 = {{#var: y4}} | y4Title = Unwavering
+  | legend=Legend
+}}
+|}
+
+The Adjusted Population Value is taken to a separate chart. Here's the that chart. Population Intent Factor from Population Curve: 
+
+{| class="wikitable"
+    |-
+    ! AP !! Factor
+    |-
+    | 0 || 8
+    |-
+    | 1 || 2
+    |-
+    | 4 || 1
+    |-
+    | 7 || 0.35
+    |-
+    | 11 || 0.0
+    |-
+    | 20 || -1.0
+    |}
+
+== Population Adapt Days ==
+
+Population Adapt Days tracks how long it has been since a new colonist has been acquired. Any addition to the top colonist bar resets Population Adapt Days to 0. This includes acquiring any new colonist, slave, temporary guest from a quest, or birth and even includes a stillbirth from a growth vat. Population Adapt Days highest relevant value is 8 though the counter goes can rise indefinitely. 
+
+Population Adapt Days is taken to another chart to get the second multiplier for Population Intent.
+
+{| class="wikitable"
+    |-
+    ! Adapt Days !! Factor
+    |-
+    | 0 || 0
+    |-
+    | 8 || 1
+    |}
+
+== PopulationIntent ==
+
+PopulationIntent takes the Adjusted Population And PopAdaptDay Factors and multiplies them together. PopulationIntent is used for 6 things:
+
+How many slaves are for sale at a Faction base. The percent chance slaves are for sale at a colony is PopulationIntent assuming colonist and seller ideologies allow slavery.
+
+The chance a trade caravan is a Slaver caravan. Adjusts the commonality stat of Slave Traders by population intent using the following chart: 
+
+commonalityMultFromPopulationIntent
+{| class="wikitable"
+    |-
+    ! PopulationIntent !! Multiplier
+    |-
+    | 0.2 || 0
+    |-
+    | 1 || 1
+    |-
+    | 2 || 3
+    |}
+
+
+Enemy Death on Downed chance
+
+{| class="wikitable"
+    |-
+    ! PopulationIntent !! EnemyDeathonDownedChance
+    |-
+    | -1 || 0.8667
+    |-
+    | 0 || 0.8
+    |-
+    | 1 || 0.5657
+    |-
+    | 2 || 0.5
+    |-
+    | 8 || 0.2632
+    |}
+
+If a guest is willing to join. This chart shows the NON-Recruitable chance.
+
+{| class="wikitable"
+    |-
+    ! PopulationIntent !! NON-Recruitable chance.
+    |-
+    | -1 || 0.4
+    |-
+    | 0 || 0.25
+    |-
+    | 1 || 0.13
+    |-
+    | 2 || 0.1
+    |-
+    | 8 || 0.05
+    |}
+
+Chance of colonist joining minor events via Phoebe or Cassandra
+
+Chance of colonist joining minor events via Randy.
+
+[[Category: Game mechanics]]

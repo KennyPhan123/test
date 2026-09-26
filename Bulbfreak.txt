@@ -1,0 +1,156 @@
+{{Anomaly}}
+{{Stub|reason=General but also specifically the mechanical summary}}
+{{infobox main|entity
+| name = Bulbfreak
+| image = Bulbfreak.png
+| description = A horrid oozing amalgamation of many smaller fleshbeasts, all controlled by a linked nervous system. It has two large claws which it uses to tear through its victims. Bulbfreaks are often smelled before they are seen, giving off an overwhelming odor of rancid meat. They are relatively slow and easy to kill, but once they die, they explode into a horde of smaller fleshbeasts.
+<!-- Base Stats -->
+| type = Entity
+| type2 = Basic
+| flammability = 1.25
+<!-- Containment -->
+| minimum containment strength = 75
+| anomaly knowledge = 2.5
+| knowledge category = Advanced
+| study interval = 120000
+| bioferrite density = 2
+| gets cold containment bonus = true
+| min monolith level for study = 1
+| requires holding platform = true
+| base escape interval MTB days = 60
+<!-- Pawn Stats -->
+| combatPower = 360
+| movespeed = 3.8
+| healthscale = 0.3
+| bodysize = 3.5
+| diet = none
+| lifespan = 15
+| trainable = None
+| toxic resistance = 0.5
+| min comfortable temperature = -40
+| max comfortable temperature = 60
+| body = Bulbfreak
+<!-- Combat -->
+| attack1label = tentacle
+| attack1type = Blunt
+| attack1dmg = 7
+| attack1cool = 2
+| attack1alwaysTreatAsWeapon = true
+| attack1part = FirstTentacle
+| attack2label = tentacle
+| attack2type = Blunt
+| attack2dmg = 7
+| attack2cool = 2
+| attack2alwaysTreatAsWeapon = true
+| attack2part = SecondTentacle
+| attack3label = tentacle
+| attack3type = Blunt
+| attack3dmg = 7
+| attack3cool = 2
+| attack3alwaysTreatAsWeapon = true
+| attack3part = ThirdTentacle
+| attack4label = tentacle
+| attack4type = Blunt
+| attack4dmg = 7
+| attack4cool = 2
+| attack4alwaysTreatAsWeapon = true
+| attack4part = FourthTentacle
+| attack5label = tentacle
+| attack5type = Blunt
+| attack5dmg = 7
+| attack5cool = 2
+| attack5alwaysTreatAsWeapon = true
+| attack5part = FifthTentacle
+| attack6label = head
+| attack6type = Blunt
+| attack6dmg = 3
+| attack6cool = 2
+| attack6part = HeadAttackTool
+| attack6ensureLinkedBodyPartsGroupAlwaysUsable = true
+| attack6chanceFactor = 0.2
+<!-- Technical -->
+| defName = Bulbfreak
+| label = bulbfreak
+<!-- Other -->
+<!--
+| deathAction Class="DeathActionProperties_Divide" = 
+| divideBloodFilthCountRange = 3~4| /divideBloodFilthCountRange = 
+| dividePawnCount = 4
+| dividePawnKindOptions = Toughspike, Trispike
+| renderTree = Bulbfreak
+| lifeStageAges: def = EntityFullyFormed
+| ThingDef Name="BaseFleshbeast" ParentName="BasePawn" Abstract="True" = 
+| thingClass = Pawn
+| category = Pawn
+| selectable = true
+| containedPawnsSelectable = true
+| containedItemsSelectable = true
+| tickerType = Normal
+| altitudeLayer = Pawn
+| useHitPoints = false
+| hasTooltip = true
+| soundImpactDefault = BulletImpact_Flesh
+| drawHighlight = true
+| tradeability = None
+| hiddenWhileUndiscovered = true
+| renderTree = Misc
+| thinkTreeMain = Fleshbeast
+| thinkTreeConstant = FleshbeastConstant
+| intelligence = ToolUser
+| specificMeatDef = Meat_Twisted
+| overrideShouldHaveAbilityTracker = true
+| disableIgniteVerb = true
+| canOpenFactionlessDoors = false
+| needsRest = false
+| hasGenders = false
+| bloodDef = Filth_Blood
+| bloodSmearDef = Filth_BloodSmear
+| soundMeleeDodge = Pawn_MeleeDodge
+| fleshType = Fleshbeast
+| isImmuneToInfections = true
+| bleedRateFactor = 0.5
+| hediffGiverSets = Fleshbeast
+| corpseHiddenWhileUndiscovered = true
+| inspectorTabs = ITab_Pawn_Health, MayRequire="Ludeon.RimWorld.Anomaly" = ITab_Entity, ITab_Pawn_Log
+| compClass = CompAttachBase
+| Class="CompProperties_InspectString" = 
+| compClass = CompInspectStringEmergence
+| inspectString = Emerged from {SOURCEPAWN_labelShort}.
+| drawGUIOverlay = true
+-->
+}}
+'''Bulbfreaks''' are [[entities]], and type of [[fleshbeast]], added by the [[Anomaly DLC]]. 
+
+== Occurrence == 
+Bulbfreaks, the largest possible capturable type of fleshbeast, are the rarest common type of Fleshbeast. They cannot appear from [[Draw fleshbeasts]] but are much more likely to emerge from a [[pit gate]] during it's initial spawn, and from the periodic waves of fleshbeasts that emerge from an un-closed Pit Gate. They are also found roaming the [[Undercave]], and spawn when a [[Dreadmeld]] is killed.
+
+A [[twisted obelisk]] has a chance to spawn one from nearby wildlife, and a [[Biomutation pulser]] (though not a [[Biomutation lance]]) can turn animals with a body size of 3.49 and up into Bulbfreaks. This includes animals such as [[Elephant]]s, [[Thrumbo]], [[Mastodon]], [[Megasloth]], and [[Hive queen]]s.
+
+== Summary ==
+Bulbfreaks deal high melee damage,{{Check Tag|Verify|Am I missing something or is 7 damage every 2 seconds not great compared to say the thrumbo with its 23 dam attack every 2 seconds}} but are slow. Their main threat is not as melee units, however: It is both highly desirable and highly difficult to capture a Bulbfreak with traditional means, as they have exceptionally low health, and a near-guaranteed chance (90%) to die on downed. Even a pawn with no melee skill whatsoever and their bare fists can kill a Bulbfreak with ease.
+
+This is, however, not a good thing: The main purpose a Bulbfreak has is to die, for a killed bulbfreak explodes into numerous smaller fleshbeasts, which will instantly swarm a target from multiple sides after a brief stun period upon being spawned. Any stray gunfire into a mass of fleshbeasts can easily miss an intended target to hit a Bulbfreak, standing or downed, and immediately create more problems. Fleshbeasts spawned from a killed bulbfreak are launched a small radius away from it's body, enabling them to spawn over walls, sneaking hostile fleshbeasts past built defenses.
+
+Note that Bulbreaks unleash more fleshbeasts upon death than [[trispike]]s and unlike them can even release [[toughspike]]s, which is why Bulbfreaks are not to be underestimated.
+
+== Analysis ==
+Since splitting fleshbeasts can not land in an occupied cell, you can pack your fighters tightly and build walls around to prevent them from landing near.
+[[File:Bulbfreak counter.png|left|thumb|Fight bulbfreaks in a tight room to prevent fleshbeasts from landing inside it]]<br clear=left>
+
+
+Bulbfreaks are a highly valuable addition to any containment facility for multiple reasons: They provide the second highest Bioferrite per day in containment at 7 units, with the absolute highest being 7.2 from Nociospheres. Bulbfreaks are much better entities to capture for bioferrite, however, as they are much more available, and can be kept on a long term basis, unlike Nociospheres, which will eventually destabilize. In addition, they also provide 2.5 Advanced Research, which can advance any research project (Advanced or Basic, if an Advanced research is not selected).
+
+This high value comes with complications: [[Electroharvester]]s should not be used around Bulbfreaks, as they will harm and eventually kill them over time, causing the containment facility to flood with hostile, uncontained fleshbeasts. There are also few ways to down a bulbfreak without causing them to explode, with the only reliable options being a [[Psychic shock lance]] or [[Shard shock lance]], the latter being more likely to use on a regular basis, due to being renewable. Shard shock lances are expensive, however, and so minimizing the times a Bulbfreak breaks containment and needs to be psychically shocked into safe capture is desirable.
+
+The capture of Bulbfreaks is a useful addition to most colonies for the high research and bioferrite yields. 
+
+== Health ==
+{{Animal Health Table|Bulbfreak}}
+{{Pawn Attack Table}}
+
+== Version history == 
+* [[Anomaly DLC]] Release - Added.
+
+{{Nav|entity|wide}}
+[[Category: Entities]]
+[[Category: Fleshbeasts]]

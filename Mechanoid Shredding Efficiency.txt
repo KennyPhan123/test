@@ -1,0 +1,23 @@
+{{Verified|1.5.4104}}
+{{Stat
+| default base value = 1
+| to string style = PercentZero
+| max value = 1.5
+| description = The amount of materials yielded when this person shreds a dead mechanoid for resources.<br/>The actual amount is also related to the mechanoid's size.
+| category = PawnWork
+}}
+
+== Factors ==
+* [[Crafting]][[Skill::Crafting| ]]: [[Skill Base Factor::0.75|75%]] plus [[Skill Bonus Factor::0.025|2.5%]] per skill level.
+* [[Manipulation]]: [[Manipulation Importance::0.9|90%]] importance, [[Manipulation Limit::-|No]] limit
+* [[Sight]]: [[Sight Importance::0.4|40%]] importance, [[Sight Limit::1|100%]] limit
+
+The final value is capped at 150%.
+
+{{Stat Factors Table}}
+
+== Version history ==
+* Renamed from Mechanoid Disassembly Efficiency at some point, possibly in [[Version/1.1.2618|1.1.2618]]
+* [[Version/1.5.4062|1.5.4062]] - Cap raised to 150%
+
+{{Nav|stats|wide}}

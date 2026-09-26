@@ -1,0 +1,95 @@
+{{Ideology}}
+{{Stub|reason=1) Finish explaining factors / offsets 2) inadequate description of actual mechanical effect.}}
+{{Verified|1.5.4104}}{{Stat
+| def name = SlaveSuppressionFallRate
+| label = slave suppression fall rate
+| description = The rate at which [[slave]] [[suppression]] falls.
+| default base value = 0
+| min value = 0
+| hide at value = 0
+| format string = {0} per day
+| format string unfinalized = {0} per day
+| to string style = PercentZero
+| scenario randomizable = true
+| show on animals = false
+| show on mechanoids = false
+| show on slaves only = true
+| category = PawnSocial
+| display priority in category = 2200
+| worker class = StatWorker_SuppressionFallRate
+| parts = StatPart_Terror, StatPart_GearStatOffset, StatPart_AgeOffset
+}}
+
+== Factors ==
+* Stat Worker:
+{| {{STDT| c_06}}
+! Suppression !! Fall Rate<br />(% per day)
+|-
+| > 30% || 20%
+|-
+| > 15% || 10%
+|-
+| ≤ 15% || 5%
+|}
+
+== Offsets ==
+* Age Curve
+{| {{STDT| c_06}}
+! Age !! Slave Suppression Offset
+|-
+| 3 || {{--|50%}}
+|-
+| 13 || {{--|30%}}
+|-
+| 16 || 0%
+|}
+{{Graph:Chart|width=300|height=150|xAxisTitle=Age (Biological)|yAxisTitle=Slave Suppression Offset|type=line|x=3, 13, 16|y=-0.5, -0.3, 0|xGrid=|yGrid=}}
+
+== Stat Def Data ==
+{| {{STDT| c_06}}
+! Name !! Description !! Category !! Parameters !! Complex Parameters !! Display Priority In Category
+|- id="Slave Suppression Fall Rate" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />SlaveSuppressionFallRate
+* '''Label:'''<br />slave suppression fall rate
+| The rate at which slave suppression falls.
+|
+* Display Order: '''120'''
+* Def Name:<br />'''PawnSocial'''
+* Label:<br />'''Social'''
+* Display All By Default: {{Bad|false}}
+|
+* Worker Class: '''StatWorker_SuppressionFallRate'''
+* Default Base Value: '''{{%|0}}'''
+* Hide At Value: '''{{%|0}}'''
+* Min Value: '''{{%|0}}'''
+* To String Style: '''PercentZero'''
+* Format String:<br />"{0} per day"
+* Format String Unfinalized:<br />"{0} per day"
+* Show On Animals: {{Bad|false}}
+* Show On Mechanoids: {{Bad|false}}
+* Show On Slaves Only: {{Good|true}}
+* Scenario Randomizable: {{Good|true}}
+|
+* '''Parts:'''
+** '''StatPart_Terror'''
+** '''StatPart_GearStatOffset'''
+*** Apparel Stat: '''[[Slave Suppression Offset]]'''
+*** Subtract: {{Good|true}}
+** '''StatPart_AgeOffset''' {{BiotechIcon}}
+*** Use Biological Years: {{Good|true}}
+*** Humanlike Only: {{Good|true}}
+*** '''Curve:'''
+**** '''Points:'''
+***** (3, -0.5)
+***** (13, -0.3)
+***** (16, 0)
+{{Graph:Chart|width=300|height=150|xAxisTitle=Age (Biological)|yAxisTitle=Slave Suppression Offset|type=line|x=3, 13, 16|y=-0.5, -0.3, 0|xGrid=|yGrid=}}
+| 2200
+<!--</StatDef>-->
+|}
+
+== Version history ==
+* [[Ideology (DLC)]] Release - Added.
+
+{{nav|stats|wide}}

@@ -1,0 +1,126 @@
+{{Royalty}}
+'''Thrones''' are a set of two buildings used by [[noble]]s in the [[Royalty DLC]].
+
+* {{Icon Small|Meditation throne|48}} [[Meditation throne]]
+* {{Icon Small|Grand meditation throne|48}} [[Grand meditation throne]]
+
+Both thrones share similar mechanics.
+
+== Throne rooms ==
+Throne rooms are a key aspect of the [[title]] system. In order to receive a noble title from the empire at all, you must have a suitable throne room (even if a pawn is [[ascetic]]).
+{| class="wikitable"
+! rowspan="2" | Title
+! rowspan="2" | [[Honor]] (total)
+! colspan="8" | Throne Room Requirements
+|-
+! Throne !! Tiles !! [[Impressiveness]] !! [[Floor]] !! [[Brazier]] !! [[Column]] !! [[Musical instrument]] !! [[Drape]]
+|- id="Freeholder"
+! Freeholder !! 1
+| rowspan="2" | –
+| rowspan="2" | –
+| rowspan="3" | –
+| rowspan="2" | –
+| rowspan="2" | –
+| rowspan="3" | –
+| rowspan="3" | –
+| rowspan="5" | –
+|- id="Novice"
+! Novice !! 6 (7)
+|- id="Acolyte"
+! Acolyte !! 6 (13)
+| rowspan="3" | [[Meditation throne]]
+| 24
+| rowspan="3" | all floored
+| rowspan="6" | 2
+|- id="Knight" id="Dame"
+! Knight/Dame !! 8 (21)
+| 30
+| 60
+| 2
+| rowspan="2" | [[Harp]] / [[Harpsichord]] / [[Piano]]
+|- id="Praetor"
+! Praetor !! 10 (31)
+| 40
+| 90
+| rowspan="2" | 4
+|- id="Baron" id="Baroness"
+! Baron/Baroness !! 14 (45)
+| rowspan="3" | [[Grand meditation throne]]
+| 60
+| 120
+| rowspan="3" | all [[fine floor]]ed
+| Harpsichord / Piano
+| rowspan="3" | 2
+|- id="Archon"
+! Archon !! 20 (65)
+| rowspan="2" | 80
+| rowspan="2" | 160
+| rowspan="2" | 6
+| rowspan="2" | Piano
+|-
+! Dominus<br/>Consul<br/>Stellarch<br/>Emperor/Empress !! N/A
+|}
+
+'''Note''': All braziers must be lit and the room must be [[roof]]ed.
+
+'''Note''': The room area requirement is in tiles and not the [[Space]] room stat. I.e. an empty room with 28 (floor) tiles may have a space value of 42, but does not satisfy the 30 tile requirement of the Knight. Accordingly, a room with 34 (floor) tiles filled with plant pots may have a space value of 28, but '''does''' satisfy the 30 tile requirement of the Knight.
+
+Multiple pawns can share a throne room, but each pawn requires their own throne. You can place dining [[table]]s and [[recreation]] items inside a throne room. However, [[Production|workstations]] and [[Ideology]] ritual items cannot be placed in a throne room without undignifying it.
+
+Once assigned a title, non-[[Ascetic]] pawns will receive {{--|6}} ''No throne'' or {{--|6}} ''Undiginified throne room'' if their throne room is lowered below their requirements.
+
+== Meditation ==
+Both thrones are a ''Dignified'' [[meditation focus]]. Anyone with a royal [[title]] can be assigned to a throne, where they will meditate. 
+
+* Both thrones give a base of +15% [[psyfocus]] per day.
+* If it is in a throne room that meets the pawns title requirements, its focus strength is improved by +8%.
+* Focus strength is then further improved by the throne room's [[Room_stats#Levels_of_impressiveness|impressiveness]]:
+<div><li style="display: inline-table;">
+{{#vardefine:basesensitivitybonus|0.15}}
+{| {{STDT| c_07 text-center}}
+! Impressiveness Value
+! 0
+! 30
+! 60
+! 100
+! 170+
+|- 
+! Description at Value
+| Awful
+| Mediocre
+| Slightly Impressive
+| Very Impressive
+| Unbelievably Impressive 
+|- 
+! Strength Offset
+| -5%
+| +0%
+| +4%
+| +8%
+| +10%
+|}
+
+{| class="wikitable"
+! Graph
+|-
+| {{Graph:Chart| width = 400 | height = 100 | type = line| xAxisTitle = Room Impressiveness | yAxisTitle = Strength Offset (%) | x = 0, 30, 60, 100, 170, 200 | y = -5, 0, 4, 8, 10, 10 |xAxisMin = 0 | xAxisMax = 200 | yAxisMin = -5 | yAxisMax = 12 | xGrid = | yGrid = }}
+|}
+</li></div>
+'''N.B.''' The room impressiveness descriptors only relate to descriptors the room will have at that specific value. The descriptors themselves do not control the value. A room with 50 room impressiveness will be listed "Slightly Impressive" but will not make the cut off for the 4% increase.
+
+To reiterate: meditation thrones and grand meditation thrones give the exact same meditation focus. The only difference is that the grand throne meets more title requirements, and is more impressive as a building. Thrones have a maximum of +33% psyfocus / day, in an Unbelievably impressive room that meets throne requirements.
+
+== Seating ==
+Regular meditation thrones are considered as seats for all intents and purposes. Grand meditation thrones can only be sat on when watching [[television]] or while meditating.
+However, as of the 1.6 update, a room becomes a throneroom when a throne is installed. Production buildings lose work speed for not being in a workshop, similar to low light or bad temperature. Avoid thrones in your workshops.
+=== Comfort ===
+All seating have a [[Comfort]] value. This is a measure of how high a pawn can refill their comfort meter while using the piece of furniture. A pawn sitting in a meditation throne with a higher comfort value can achieve a higher level. It does not affect the rate at which comfort increases, only the maximum level. Comfort levels over 100% have no additional effect. Comfort varies by [[quality]] but not material. Meditation thrones of the same quality level will all have the same comfort, regardless of what they're constructed from.
+
+'''Meditation throne'''
+{{Comfort Quality Table|Meditation throne}}
+
+'''Grand meditation throne'''
+{{Comfort Quality Table|Grand meditation throne}}
+
+[[Category:Game mechanics]]
+{{Disambiguation}}

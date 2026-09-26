@@ -1,0 +1,272 @@
+{{DISPLAYTITLE:Example FloatMenuOptionProvider}}
+{{BackToTutorials}}
+
+This is a basic RimWorld mod tutorial for creating a FloatMenuOptionProvider to run arbitrary C# code. 
+
+== Goals ==
+In this tutorial you will:
+
+* Create a basic C# solution and compile it into an assembly
+* Create a basic FloatMenuOptionProvider: A simple option to instantly kill a non-player pawn
+* Learn how float menu options distinguish between disabled and enabled options
+* Create a message to display text on screen to display at a glance who was selected and who was killed
+* Learn how to use LanguageData to allow for translations of code used in the solution
+
+[[File:Example_FloatMenuOptionProvider.png|none|border]]
+
+== Context ==
+FloatMenuOptionProviders were added in 1.6 to permit for finer tuned control over assigning orders to player-controlled pawns. Prior to 1.6, many of these float menu options were handled by a monolithic method that made extending via mods difficult and liable to create conflicts. Some examples of vanilla cases in 1.6 include:
+* Ordering player-controlled pawns to equip or drop weapons and apparel
+* Ordering player-controlled pawns to arrest, rescue, pick up, romance, and otherwise interact with other pawns
+* Ordering player-controlled pawns to interact with relics, terminals, and other quest objects
+
+== Recommended Reading ==
+* [[Modding_Tutorials/Mod_Folder_Structure|Mod Folder Structure]]
+* [[Modding_Tutorials/Setting_up_a_solution|Setting Up a Solution]]
+* [[Modding_Tutorials/Decompiling_source_code|Decompiling Source Code]]
+
+== Sample Repository ==
+A working implementation of this mod can be found [https://github.com/RWDevathon/ExampleFloatMenuOptionProvider in this GitHub repository]. You can use it to compare against your work or as a basis for modification! The repository contains comments explaining each part, if you prefer learning by seeing the larger picture. The comments in the repository will be explained in greater detail here.
+
+== Folder Setup ==
+
+First, you will want to create the files and folders necessary for this mod:
+
+<source>
+Mods
+└ MyModFolder
+  ├ About
+  │ ├ About.xml
+  │ └ Preview.png
+  ├ Assemblies
+  ├ Languages
+  │ ├ English
+  │   └ Keyed
+  │     ├ FloatMenuOptions.xml
+  │     └ Messages.xml
+  └ Source
+</source>
+
+Please check out the [[Modding_Tutorials/Mod_Folder_Structure|mod folder structure guide]] for more information about individual folders.
+
+=== About.xml ===
+
+Your <code>About.xml</code> is used to identify your mod to RimWorld; please see [[Modding_Tutorials/About.xml|the About.xml reference page]] for more information. Be sure to replace "AuthorName" with your own name:
+
+<source lang="xml">
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+
+  <!-- This is the internal identifier for your mod. -->
+  <!-- It is recommended that you make it unique to as to avoid potential collisions with other authors; -->
+  <!--     if Rimworld detects multiple mods with the same packageId then it will refuse to load all of them. -->
+  <packageId>AuthorName.ExampleFloatMenuOptionProvider</packageId>
+
+  <!-- This is both the displayed name of your mod as well as the name used for patch targeting. -->
+  <name>Example Float Menu Option Provider</name>
+
+  <!-- Your name goes here. -->
+  <author>AuthorName</author>
+
+  <!-- A version number for your own tracking -->
+  <!-- See wiki About.xml guide for concerns regarding this field for RimWorld versions prior to 1.4 -->
+  <modVersion>1.0</modVersion>
+
+  <!-- These are the RimWorld game versions that your mod supports. -->
+  <!-- It is recommended that you only list versions that you have explicitly tested to ensure they work, -->
+  <!-- as even basic XML options can change between major versions of the game. -->
+  <supportedVersions>
+    <li>1.6</li>
+  </supportedVersions>
+
+  <!-- This is the description of your mod shown in both the vanilla mod manager as well as modded managers. -->
+  <description>This is an example float menu option provider made for the RimWorld Wiki.</description>
+
+</ModMetaData>
+</source>
+
+== Instructions ==
+
+=== Create your solution ===
+
+Our first step is to set up the C# workspace where we will create the FloatMenuOptionProvider. This tutorial assumes you have completed the [[Modding_Tutorials/Setting_up_a_solution|Setting Up a Solution]] tutorial and know how to initialize a solution. If you have not yet learned how to create a solution, please review that tutorial.
+
+Place a newly created solution in the Source folder with an appropriate name, and configure it to build to the Assemblies folder.
+
+=== Create the FloatMenuOptionProvider subclass ===
+
+FloatMenuOptionProvider is an abstract class. Subclasses of it inherit numerous properties and methods that can be overridden in order to have a wide variety of outcomes, and all subclasses will be automatically identified by the game. We will create our own FloatMenuOptionProvider subclass to allow for execution of code that has access to a source and target pawn (this tutorial will refer to them as "selected" and "clicked," respectively, as this aligns with how they are identified in C#).
+
+<source lang="cs">
+using RimWorld;
+using Verse;
+
+namespace ExampleFloatMenuOptionProvider
+{
+    public class FloatMenuOptionProvider_Example : FloatMenuOptionProvider
+    {
+      // Pasted content omitted
+    }
+}
+</source>
+
+RimWorld automatically identifies all subclasses of FloatMenuOptionProvider and applies them - meaning we only have to define this one class to be able to have it usable in game.
+
+=== Make a FloatMenuOption Appear In-Game ===
+
+Our subclass inherits many properties and methods from its parent class. It is highly recommended that you [[Modding_Tutorials/Decompiling_source_code|decompile]] the <code>FloatMenuOptionProvider</code> class so that you can learn all of the properties and methods that you can override. In this example, we are only overriding a small handful of them in order to compile and run the code.
+
+Before the solution can compile, we must override three properties from the parent class which are abstract (meaning that the parent class does not define a value for these properties and is expecting subclasses to define them):
+
+<source lang="cs">
+public class FloatMenuOptionProvider_Example : FloatMenuOptionProvider
+{
+    protected override bool Drafted => true;
+    protected override bool Undrafted => true;
+    protected override bool Multiselect => false;
+}
+</source>
+
+Our float menu option will be provided only if a single player-controlled pawn is selected and we do not care if they are drafted or undrafted. If any of these conditions are not met for the selected pawn, then the float menu option will not appear at all. '''These are not the only properties and methods that control whether the option will appear.''' Please decompile FloatMenuOptionProvider to see an up-to-date comprehensive list of them all, and their default values. These three are the only properties which are abstract and have no default values set.
+
+==== Making the FloatMenuOption ====
+Next, we will define what the FloatMenuOption we want to provide is. Because this example is focusing on killing a pawn, we will choose to override a method specific to targeting pawns:
+
+<source lang="cs">
+protected override FloatMenuOption GetSingleOptionFor(Pawn clickedPawn, FloatMenuContext context)
+{
+    return new FloatMenuOption("This is a Float Menu Option", null);
+}
+</source>
+
+This is all the code we need in order to compile and have a float menu option appear in game. Note that the string is the label for the option, and the "null" in the example above is the action that would happen if the option were to be selected. By leaving it null, the game will register this float menu option as disabled, and thus not selectable. We will provide an action in the following steps. Compile the code, make sure the assembly ends up in the correct place, and test whether the float menu appears in game.
+
+[[File:Example_FloatMenuOptionProvider_FirstOption.png|none|border]]
+
+Experiment with the provider to see situations and contexts in which the option will and will not appear.
+
+=== FloatMenuOption Actions ===
+
+In order for our provided FloatMenuOption to execute code, it needs to have an Action provided. The easiest way to define what the option will do is to provide the FloatMenuOption a lambda expression with the code that you want to have run inside of it:
+
+<source lang="cs">
+protected override FloatMenuOption GetSingleOptionFor(Pawn clickedPawn, FloatMenuContext context)
+{
+    return new FloatMenuOption("This is a Float Menu Option", () =>
+    {
+        clickedPawn.Kill(null);
+    });
+}
+</source>
+
+Here, we are telling the FloatMenuOption to run the code inside the lambda expression - to kill the pawn that was clicked on - when the option is selected. Recompile the code and test it out. Selecting the option should now be possible and should instantly kill the pawn.
+
+You can run any arbitrary C# from within the expression, such as spawning explosions, changing the skills, traits, hediffs, or relationships of the clicked pawn, and more.
+
+==== Sending a Message ====
+Next, we will add a message saying who was selected and who was killed, as a way to show some visual feedback for the action that the player just carried out:
+
+<source lang="cs">
+protected override FloatMenuOption GetSingleOptionFor(Pawn clickedPawn, FloatMenuContext context)
+{
+    return new FloatMenuOption("This is a Float Menu Option", () =>
+    {
+        clickedPawn.Kill(null);
+        Messages.Message($"{context.FirstSelectedPawn} has killed {clickedPawn} with their mind", MessageTypeDefOf.PositiveEvent, historical: false);
+    });
+}
+</source>
+
+The FloatMenuContext instance passed in to the method contains a lot of useful information, such as who is currently selected. Messages are the small lines of text that appear in the top left corner of the screen, and are usually reserved for transitory information that is relevant to a player but not worthy of a full Letter. By passing <code>historical: false</code> to the Message, we inform it that we do not want this Message to be logged in the History tab.
+
+Note: See the Referencing Defs from C# section of [[Modding_Tutorials/Defs|Defs]] for details on DefOf's like <code>MessageTypeDefOf.PositiveEvent</code> which are not covered in this tutorial.
+
+If you recompile your code and run the game again, every time the float menu option is selected, the clicked pawn should now be killed and a message should appear with the names of both the selected and clicked pawns.
+
+=== Allowing for Translations ===
+
+If all has gone well, we have a fully functional FloatMenuOptionProvider. At the moment, though, the label for the option and the text in the Message are entirely contained in our solution and cannot be accessed externally, making it impossible to translate the strings to other languages or re-use effectively. RimWorld allows for setting up translations much like it does for setting up Defs. It's time to change our raw strings to translated strings accessible in XML using <code>Translate</code>:
+
+<source lang="cs">
+protected override FloatMenuOption GetSingleOptionFor(Pawn clickedPawn, FloatMenuContext context)
+{
+    return new FloatMenuOption("Example_KillPawn".Translate(clickedPawn), () =>
+    {
+        clickedPawn.Kill(null);
+        Messages.Message("Example_KilledWithTheirMind".Translate(context.FirstSelectedPawn, clickedPawn), MessageTypeDefOf.PositiveEvent, historical: false);
+    });
+}
+</source>
+
+With these two key strings created, RimWorld will now look in the Languages folder for the player's language for a <code>Keyed</code> folder for these key strings. The file structure for key strings inside the Keyed folder does not matter, but it can be helpful for translators and yourself to keep the key strings organized by where they are used, as there is no way to know in XML what they are used for in the C#.
+
+Fill in text for the key strings like below:
+
+FloatMenuOptions.xml:
+<source lang="xml">
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+    <!-- Numbers represent the index of arguments passed to Translate. In this case, 0 is the Pawn that was clicked on. -->
+    <Example_KillPawn>Make {0} die</Example_KillPawn>
+
+</LanguageData>
+</source>
+
+Messages.xml:
+<source lang="xml">
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+    <!-- Numbers represent the index of arguments passed to Translate. In this case, 0 is the selected pawn and 1 is the Pawn that was clicked on. -->
+    <Example_KilledWithTheirMind>{0} has killed {1} with their mind</Example_KilledWithTheirMind>
+
+</LanguageData>
+</source>
+
+Note that the key string must '''exactly''' match the key in the solution, or else you will see the key string name from the solution itself in-game (if you have dev-mode on, you will see something called zalgo text to help visualize that this probably was not intentional).
+
+Recompile the code after checking that the key strings in the solution and translation files match, and test. You can change the text or what arguments are provided to the Translate method if you would like.
+
+=== Final Touches ===
+
+At this point, you should have a working FloatMenuOptionProvider that allows for execution of arbitrary C# with visual feedback and that allows for all text to be properly translated! From here, you can start expanding what the provider does and allow for creating entirely custom orders to be assigned to pawns. The concepts in this tutorial are widely used in RimWorld to handle all sorts of vanilla interactions that the player can force, and so should help serve as a foundation for new interactions.
+
+This tutorial concludes with one additional - optional - change to the FloatMenuOptionProvider we created by preventing the player from instantly killing their own pawns:
+
+<source lang="cs">
+protected override FloatMenuOption GetSingleOptionFor(Pawn clickedPawn, FloatMenuContext context)
+{
+    if (clickedPawn.Faction != Faction.OfPlayer)
+    {
+        return new FloatMenuOption("Example_KillPawn".Translate(clickedPawn), () =>
+        {
+            clickedPawn.Kill(null);
+            Messages.Message("Example_KilledWithTheirMind".Translate(context.FirstSelectedPawn, clickedPawn), MessageTypeDefOf.PositiveEvent, historical: false);
+        });
+    }
+
+    return new FloatMenuOption("Example_CannotKillPlayerPawns".Translate(clickedPawn), null);
+}
+</source>
+
+Languages/English/Keyed/FloatMenuOptions.xml:
+<source lang="xml">
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+    <!-- 0 is the first argument passed to translate, which is the Pawn clicked on in this case. -->
+    <Example_KillPawn>Make {0} die</Example_KillPawn>
+    <Example_CannotKillPlayerPawns>{0} is on your team, you can't kill them!</Example_CannotKillPlayerPawns>
+
+</LanguageData>
+</source>
+
+You can set as many different FloatMenuOption outcomes as you like, based on all sorts of conditions. Note that you may also return null from this method, if you ultimately decide you don't want to have a float menu option appear at all. This can be useful if the validation for the selected pawn or the clicked pawn mistakenly returned true for something that should not receive an option, or if after validation occurred, something changed and an option should no longer be valid.
+
+Don't forget to keep your translation key strings in the xml synced whenever you change them in the solution!
+
+If you get any errors, be sure to check out the [[Modding_Tutorials/Troubleshooting|troubleshooting guide]] or join us on the '''#mod-development''' channel on the [https://discord.gg/rimworld RimWorld Discord server].
+
+[[Category:Modding]]
+[[Category:Modding tutorials]]

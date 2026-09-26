@@ -1,0 +1,73 @@
+{{Biotech}}
+{{Infobox main|production
+| name = High subcore
+| image = SubcoreHigh.png
+| description = A high-tier mechanoid brain, this is a psychodynamic substrate unit which supports a sophisticated subpersona. This particular subcore is of the strongest tier, and can power complex ultra-heavy mechanoids.<br/>The subpersona inside this core approaches a live human in its complexity, though it is of a very different nature. Like any such mind, it has a noticeable psychic presence. This subcore could only have been produced by rich pattern transfer from another sophisticated mind. The only way to do this without huge facilities is to ripscan a living person's brain, killing them in the process.
+<!-- Base Stats -->
+| type = Crafted resources
+| hp = 100
+| marketvalue = 1000
+| mass base = 1
+| flammability = 0.6
+| deterioration = 2
+| stack limit = 10
+| path cost = 
+<!-- Technical -->
+| defName = 
+| techHediffsTags = SubcoreBasic
+| thingCategories = Manufactured
+<!-- Creation -->
+| skill 1 = 
+| skill 1 level = 
+| work to make = 
+| production facility 1 = Subcore ripscanner
+| resource 1 = steel
+| resource 1 amount = 50 
+| resource 2 = component
+| resource 2 amount = 4
+<!-- Unused -->
+| always haulable = 
+| draw gui overlay = 
+| parent name = 
+| graphic class = 
+| graphic path = 
+| label = 
+| selectable = 
+| sound drop =  
+| ticker type = 
+| use hit points = 
+}}
+A '''high subcore''' is a mechanoid component added by the [[Biotech DLC]].
+
+It is one of three [[subcore]] types, along with the less advanced [[basic subcore]] and [[standard subcore]].
+
+== Acquisition ==
+High subcores are acquired from the [[subcore ripscanner]], which requires [[High mechtech]] to be researched. The ripscanner can produce one subcore using {{Required Resources}} and one sacrificial pawn. Creating these items is not done with a standard work bill.
+
+Firstly, the ripscanner  must be loaded with {{Required Resources}}. Then, a non-[[baby]] [[human]] must sit in the scanner for {{Ticks|7500}}. Pawns under the player's control will enter willingly, while prisoners must be carried to the machine by a hauler. The ripscanner destroys the pawn's brain in the process, killing them and necessitating a new victim for every new subcore. The subcore ripscanner does not take pawns with [[scanning sickness]].
+
+== Usage ==
+High subcores are used in the following crafting recipes:
+
+{{Ingredient List|noCollapse=true}}
+
+== Analysis ==
+High subcores are used in the creation of a number of different mechanoids, and therefore how much they are needed, in what numbers, and at what priority depends on the need for those mechanoids. See the individual mechanoid pages listed in the table [[#Summary|above]] for analysis on their acquisition. Most mechanitor colonies will want them however, as the mechanoids that require them are some of the most useful on offer. Solo mechanitors in particular will value the [[paramedic]], which can rescue its master and perform [[surgery]] on them. 
+
+The primary way to get participants for the ripscanner are [[prisoner]]s, taken from the constant supply of raiders. It is also possible to use colonists who you would've banished in the first place.
+
+If used in tandem with a pawn capable of [[death refusal]]{{AnomalyIcon}}, it is possible to obtain a high subcore while keeping the pawn alive after the fact. This incurs the typical penalties associated with death refusal revival, but can be especially useful when looking to ripscan [[horax cult|cultist]]{{AnomalyIcon}} raiders as they can then be sold, organ harvested, or ripscanned a second time.
+
+=== Human resources ===
+{{Main|Human resources}}
+A high subcore requires {{Icon Small|silver||{{#expr:50*{{Q|Steel|Market Value Base}} + 4*{{Q|Component|Market Value Base}}}}}} [[silver]] of non-human material and is worth {{icon Small|silver||{{Q|High subcore|Market Value Base}}}} [[silver]], for a Market Value profit of {{Icon Small|silver}} {{#expr:1000 - 223}}. When used on guilty prisoners, there isn't a mood penalty.
+
+Selling prisoners directly to a slaver or [[faction base]] often is more profitable; this only gives a {{--|3}} [[mood]]let per prisoner. However, human market value is dependent on a pawn's quality; sufficiently bad traits like brain damage, a [[peg leg]], or previous organ harvests can make a high subcore more valuable. 
+Organ harvests in general are more profitable: a [[heart]] or [[liver]] is worth {{Icon Small|silver||{{Q|Heart|Market Value Base}}}} and requires 2 [[medicine]] of any type to extract. However, this usually gives {{--|5}} mood for organ harvesting and another {{--|6}} for organ-murder.
+
+== Version history ==
+* [[Biotech DLC]] Release - Added.
+* [[Version/1.4.3555|1.4.3555]] - Fix: Ripscanning doesn't kill pawns if colonist instant death in difficulty settings is 0%.
+
+{{Nav|mechanoid|wide}}
+[[Category:Crafted Resource]]

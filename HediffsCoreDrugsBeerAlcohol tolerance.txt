@@ -1,0 +1,75 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Drugs/Beer}}
+|}
+----
+{| {{STDT| c_24}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Alcohol tolerance" <!-- defName="AlcoholTolerance", ParentName="DrugToleranceBase" -->
+! Alcohol tolerance
+----
+* Def Name: AlcoholTolerance
+* Label: alcohol tolerance
+| <span style="max-width: 100px;">A built-up tolerance to alcohol. The more severe this tolerance is, the more alcohol it takes to get the same effect.</span>
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|100%|0%|50%}}
+* Max Severity: '''100%'''
+* Scenario Can Add: {{Good|true}}
+* Is Bad: {{Good|false}}
+* '''Comps'''
+** '''Severity Per Day:''' {{---|1.6%}}
+** '''Drug Effect Factor'''
+*** Chemical: '''Alcohol'''
+* '''Hediff Givers'''
+** '''Random Drug Effect'''
+*** Hediff: '''[[Hediffs#Cirrhosis|Cirrhosis]]'''
+*** Parts To Affect: '''[[Liver]]'''
+*** Severity To {{MTB}} Days Curve:
+<div><li style="display: inline-table;">
+{| {{STDT| c_24}}
+! Severity !! {{MTB}}<br />Days
+|-
+! 45%
+| 99999
+|-
+! 50%
+| 60
+|-
+! 100%
+| 45
+|}</li></div>{{Graph:Chart|width=300|height=200|xAxisTitle=Severity|yAxisTitle=MTB Days|type=line|x=0.45, 0.5, 1|y=99999, 60, 45|yAxisMax=100|interpolate=monotone|xGrid=|yGrid=}}
+** '''Random Drug Effect'''
+*** Hediff: '''[[Hediffs#Carcinoma|Carcinoma]]'''
+*** Parts To Affect: '''[[Liver]]'''
+*** Severity To {{MTB}} Days Curve:
+<div><li style="display: inline-table;">
+{| {{STDT| c_24}}
+! Severity !! {{MTB}}<br />Days
+|-
+! 45%
+| 99999
+|-
+! 50%
+| 180
+|-
+! 100%
+| 150
+|}</li></div>{{Graph:Chart|width=300|height=200|xAxisTitle=Severity|yAxisTitle=MTB Days|type=line|x=0.45, 0.5, 1|y=99999, 180, 150|yAxisMax=200|interpolate=monotone|xGrid=|yGrid=}}
+|<!-- Stages -->
+{| {{STDT| c_24}}
+! Label !! Parameters
+|-
+! Small
+|<!-- Parameters -->
+* Min Severity: '''0%'''
+|-
+! Large
+|<!-- Parameters -->
+* Min Severity: '''50%'''
+|-
+! Massive
+|<!-- Parameters -->
+* Min Severity: '''80%'''
+|}<noinclude>
+|}</noinclude>

@@ -1,0 +1,136 @@
+{{Stub|reason=1) Corresponding Property 2) Two-way links}}
+{{See also|Shield belt|Shield Max Energy}}
+{{Verified|1.5.4104}}{{Stat
+| def name = EnergyShieldRechargeRate
+| label = Shield recharge rate
+| description = The rate at which a shield gains energy as long as it is not broken.
+| default base value = 0.45
+| min value = 0
+| format string = {0}/s
+| to string style = PercentZero
+| show if undefined = false
+| category = Apparel
+| display priority in category = 69
+| parts = StatPart_Quality
+}}
+
+== Bases ==
+<div><li style="display: inline-table;">
+{| {{STDT| c_01 sortable}}
+! Thing !! Base
+|-
+! {{Icon Small|Shield belt|24}} [[Shield belt]]
+| {{%|0.13}}/s
+|-
+! {{Icon Small|Heavy shield unit|24}} [[Heavy shield unit]] {{BiotechIcon}}
+| {{%|0.013}}/s
+|-
+! {{Icon Small|Legionary|24}} [[Legionary]] {{BiotechIcon}}
+| {{%|0.25}}/s
+|-
+! {{Icon Small|Apocriton|24}} [[Apocriton]] {{BiotechIcon}}
+| {{%|0.25}}/s
+|-
+! {{Icon Small|Centurion|24}} [[Centurion]] {{BiotechIcon}}
+| {{%|0.5}}/s
+|-
+! {{Icon Small|War queen|24}} [[War queen]] {{BiotechIcon}}
+| {{%|0.5}}/s
+|}
+</li></div>
+
+== Stat Parts ==
+=== Quality ===
+<div><li style="display: inline-table;">
+{| {{STDT| c_01}}
+! [[Quality]] !! Factor
+|-
+! Awful
+| {{Bad|×90%}}
+|-
+! Poor
+| {{Bad|×95%}}
+|-
+! Normal
+| '''×100%'''
+|-
+! Good
+| {{Good|×105%}}
+|-
+! Excellent
+| {{Good|×110%}}
+|-
+! Masterwork
+| {{Good|×120%}}
+|-
+! Legendary
+| {{Good|×130%}}
+|}
+</li></div>
+
+<div><li style="display: inline-table;">
+Shield belt recharge rates based on quality:
+{{#vardefine:basecharge|1.1}}{{#vardefine:baseregen|0.13}}
+{| {{STDT| c_01 text-center}}
+! Quality !! Recharge<br />rate
+|-
+! Awful
+| {{%|{{#expr:{{#var:baseregen}} * 0.9}} }}/s
+|-
+! Poor
+| {{%|{{#expr:{{#var:baseregen}} * 0.95}} }}/s
+|-
+! Normal
+| {{%|{{#expr:{{#var:baseregen}} * 1.00}} }}/s
+|-
+! Good
+| {{%|{{#expr:{{#var:baseregen}} * 1.05}} }}/s
+|-
+! Excellent
+| {{%|{{#expr:{{#var:baseregen}} * 1.10}} }}/s
+|-
+! Masterwork
+| {{%|{{#expr:{{#var:baseregen}} * 1.2}} }}/s
+|-
+! Legendary
+| {{%|{{#expr:{{#var:baseregen}} * 1.3}} }}/s
+|}
+</li><div>
+
+== Stat Def Data ==
+{| {{STDT| c_01}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Shield Recharge Rate" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />EnergyShieldRechargeRate
+* '''Label:'''<br />Shield recharge rate
+| The rate at which a shield gains energy as long as it is not broken.
+|
+* Display Order:<br />'''30'''
+* Def Name:<br />'''Apparel'''
+* Label:<br />'''Apparel'''
+* Display All By Default:<br />{{Bad|false}}
+|
+* '''Min Value:''' {{%|0}}
+* '''Default Base Value:''' {{%|0.45}}
+* '''To String Style:''' PercentZero
+* '''Format String:''' {0}/s
+* '''Show If Undefined:''' {{Bad|false}}
+|
+* '''Parts:'''
+** '''StatPart_Quality:'''
+*** Factor Awful: {{Bad|×{{%|0.9}}}}
+*** Factor Poor: {{Bad|×{{%|0.95}}}}
+*** Factor Normal: '''×{{%|1}}'''
+*** Factor Good: {{Good|×{{%|1.05}}}}
+*** Factor Excellent: {{Good|×{{%|1.1}}}}
+*** Factor Masterwork: {{Good|×{{%|1.2}}}}
+*** Factor Legendary: {{Good|×{{%|1.3}}}}
+| 69
+<!--</StatDef>-->
+|}
+
+== Version history ==
+{{Stub|section=1|reason=General Version history}}
+
+{{nav|stats|wide}}

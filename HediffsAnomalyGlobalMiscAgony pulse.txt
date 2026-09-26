@@ -1,0 +1,41 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Anomaly/Global/Misc}}
+|}
+----
+{| {{STDT| c_21}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Agony pulse" <!-- defName="AgonyPulse" -->
+! Agony pulse
+----
+* Def Name:<br />AgonyPulse
+* Label:<br />agony pulse
+|<!-- Description -->
+<div style="max-width: 200px;">
+Pure projected mental pain caused by a shock-pulse of suffering. It is overwhelming, but dissipates relatively quickly.
+</div>
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Initial Severity: '''0.1%'''
+* Max Severity: '''100%'''
+* '''Comps'''
+** ''Disappears''
+*** Show Remaining Time: {{Good|true}}
+** ''Severity Per Second''
+*** Severity Per Second Range: '''{{++|10%}} ~ {{++|15%}}''' 
+<!-- xml comment says "10 to 15 seconds", but would it not actually be 6 2/3 to 10 seconds? ({{Ticks|400}} ~ {{Ticks|600}}) -->
+|<!-- Stages -->
+{| {{STDT| c_21}}
+! Label !! Parameters
+|-
+! acute
+|<!-- Parameters -->
+* Min Severity: '''0%'''
+* Pain Offset: {{++|100%}}
+|-
+! lingering
+|<!-- Parameters -->
+* Min Severity: '''95%'''
+* Pain Offset: {{++|25%}}
+|}<noinclude>
+|}</noinclude>

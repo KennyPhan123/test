@@ -1,0 +1,13 @@
+{{Stat
+| default base value = 1
+| min value = 0.2
+| to string style = PercentZero
+| description = The speed at which the door opens. It can vary based on the type of door constructed and the material used to construct it.
+| category = Building
+}}
+
+{{#ask: [[Door Opening Speed Factor::+]]
+|? = Material
+|?Door Opening Speed Factor
+|sort  = Door Opening Speed Factor
+}}

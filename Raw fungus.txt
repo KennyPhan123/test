@@ -1,0 +1,90 @@
+{{Infobox main|food
+| name = Raw fungus
+| image = Raw fungus.png
+| description = Raw fungus obtained by harvesting fungi growing in caves. It cannot be farmed.
+<!-- Base Stats -->
+| type = Food
+| type2 = Raw food
+| hp = 60
+| deterioration rate base = 6
+| marketvalue = 1.1
+| mass base = 0.03
+| flammability base = 1
+| stack limit = 75
+| path cost = 14
+| rotatable = false
+<!-- Ingestion -->
+| food type = fungus
+| taste = Raw
+| ingested direct thought = AteRawFood
+| days to rot = 40
+| nutrition = 0.05
+<!-- Technical -->
+| defName = RawRaw fungus
+| preferability = Raw
+<!-- Unused -->
+| always haulable = true
+| draw gui overlay = true
+| graphic class = Graphic_Single
+| graphic path = Things/Item/Resource/PlantFoodRaw/Rice
+| label = raw fungus
+| parent name = RawFoodBase
+| resource readout priority = Middle
+| selectable = true
+| social properness matters = true
+| sound drop = Food_Drop
+| sound interact = Food_Drop
+| thing class = ThingWithComps
+| ticker type = Rare
+| eat effect = EatVegetarian
+| sound eat = RawVegetable_Eat
+| use hit points = true
+}}
+'''Raw fungus''' is a vegetable [[raw food]] obtained by harvesting fungi. If the [[Ideology DLC]] {{IdeologyIcon}} is enabled, eating it is disliked by most pawns. 
+
+== Acquisition ==
+The following plants provide raw fungus:
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_08 text-center}}
+! Plant !! Harvest Yield <!--!! Yield/Day<br>(70% Fert) !! Yield/Day<br>(100% Fert) !! Yield/Day<br>(140% Fert) !! Yield/Day<br>(280% Fert)-->
+|-
+{{#ask: [[Harvest Product::Raw fungus]]
+| ?Harvest_Yield
+<!--
+| ?Harvest_Yield_Per_Day_(70)
+| ?Harvest_Yield_Per_Day_(100)
+| ?Harvest_Yield_Per_Day_(140)
+| ?Harvest_Yield_Per_Day_(280)
+-->
+| format = template
+| template = Ask Table Formatter
+| link = none
+}}
+|}
+</li></div>
+
+Note that of these, only [[nutrifungus]]{{IdeologyIcon}} can be planted. The rest only spawn naturally.
+
+== Summary ==
+As a [[raw food]], raw fungus can be be eaten raw, with a flat {{Bad|2%}} chance of giving [[food poisoning]], or cooked into a [[meal]] with a food poisoning chance dependent on the skill of the cook and the [[cleanliness]] of the kitchen. [[Animals]] are immune to food poisoning from raw food but not from meals. When used in food recipes that require specific types of [[nutrition]], such as [[fine meal]]s, raw fungus is classified as a vegetable.
+
+As with most raw food, eating raw fungus directly results in a {{Thought|desc=I had to eat raw food. We should be cooking that kind of food before eating it. We're not animals.|label=ate raw food|stack=1|value=-7|duration=1}}. This mood penalty is negated if the pawn has the [[ascetic]] trait or the [[Robust digestion]] {{BiotechIcon}} gene.
+
+With the [[Ideology DLC]] enabled, all [[ideoligion]]s inflict additional moodlets when eating raw fungus or meals made from it depending on which [[Fungus (precept)|Fungus precept]] they have. Ideoligions with the [[Tunneler (meme)|Tunneler]] meme have [[Fungus (precept)|Fungus: Preferred]] and receive a {{Thought|desc=I ate some fungus and it was just what I like!|label=ate fungus|value=+3|stack=1|duration=1}} after eating raw fungus and a {{Thought|desc=I ate a meal with fungus. Is there any dish it doesn't complement?|label=ate cooked fungus|value=+3|stack=1|duration=1}} after eating it cooked into a meal. All other ideoligions have the [[Fungus (precept)|Fungus: Despised]] and receive a {{Thought|desc=That fungus smelled like damp rags and tasted no better.|label=ate fungus raw|value=-6|stack=1|duration=1}} after eating raw fungus and a {{Thought|desc=That whole meal smelled like a dead rat left in a stagnant pool.|label=ate fungus cooked|value=-3|stack=1|duration=1}} after eating it cooked into a meal. Note that in all cases, these mood bonuses and malus stack with any applicable mood effects from the form the food is eaten in.
+
+=== Usage ===
+Raw fungus is used to create the following things:
+{{Ingredient List|noCollapse=1}}
+
+Raw fungus is also used to refuel the following things:
+{{Fuel Usage List}}
+
+== Analysis == 
+In RimWorld Core, it cannot be farmed, making it at best a random, situational and strictly supplemental source of vegetables. 
+
+With the [[Ideology DLC]], it can be be farmed, though all non-Tunnelers get a -3 mood debuff. Still, [[nutrifungus]] has the unique property of growing in darkness. This makes it possible to grow crops indoors (e.g. during the winter) without the need of a power-hungry [[sun lamp]]. Can also be grown if your colony prefers darkness ([[Combat in darkness|Combat in darkness: Preferred]] precept) or if a [[sun blocker]] is deployed. Note that, without a way of mitigating darkness penalties, colonists will work 80% as fast in the dark.
+
+With the [[Odyssey DLC]], large numbers of [[Agarilux]] occur naturally in the [[glowforest]] [[biome]], making foraged raw fungus a possible main source of nutrition.
+
+{{Nav|Food|wide}}
+[[Category:Food]] [[Category:Raw Food]] [[Category:Vegetarian]]

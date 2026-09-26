@@ -1,0 +1,116 @@
+{{Infobox main|exotic
+| name = Schematic
+| image = Schematic.png
+| description = A book which describes technology and methods for using it. Reading schematics can help unlock new technologies.
+<!-- Base Stats -->
+| type = Exotic item
+| type2 = Book
+| hp = 60
+| deterioration = 5
+| marketvalue = 150
+| mass base = 0.5
+| flammability = 1
+| stack limit = 1
+| rotatable = true
+| has quality = True
+<!-- Technical -->
+| defName = Schematic
+| thingSetMakerTags = RewardStandardMidFreq
+<!-- Unused -->
+| always haulable = true
+| draw gui overlay = true
+| graphic class = Graphic_Single
+| parent name = BookBase
+| selectable = true
+| use hit points = true
+}}
+'''Schematics''' are a type of [[book]] that provides [[recreation]] while generating [[research]] points.
+
+== Acquisition ==
+Schematics, like all books, can be purchased from [[Trade#Caravan|trade caravan]]s, [[orbital trader]]s and [[faction base]]s, or earned through [[quest]]s.
+
+When starting a new game, there is a chance for your starting colonists to carry books as [[possessions]] based on their [[trait]]s or [[backstory]].
+
+== Summary ==
+Schematics can be read by colonists as a [[recreation]] activity, with a [[recreation power]] of 1. All books will also train [[intellectual]] at a rate of 250 XP per in-game hour.
+
+Each schematic has one or two associated [[research]] projects. Whenever colonists read the schematic, they will also generate points towards those projects. 
+
+The rate at which points are generated depends on the [[quality]] of the schematic. The rate is not affected by the colonist's [[research speed]], meaning that schematics allow intellectually-impaired colonists to contribute to research. It's also not affected by the [[AI storytellers#Research_speed|research speed]] storyteller setting, or the research penalty suffered by tribal starting scenarios.
+
+[[Children]]{{BiotechIcon}} of any age are able to generate research points by reading schematics.
+
+The game will actively try to avoid generating schematics with research projects that the player has already completed. It is also impossible for schematics to contain projects that require [[techprint]]s,{{RoyaltyIcon}} or that are [[mechanitor]]-related,{{BiotechIcon}} with the exception of the [[Wastepack atomizer]] and Ultra mechtech projects, which can be generated without meeting either of the requirements to receive a [[Nano structuring chip]] or even having a [[Mechanitor]] pawn in your colony. Once the tech tree is completed, all future schematics will contain randomized research projects.
+
+In theory, if a single masterwork level schematic is read constantly without pause at normal game speed, it would take around ~80 minutes to complete the Wastepack Atomizer project (Divide the 8000 point requirement by the 70 points per in-game hour gained by the schematic for how many in-game hours it would take [114.29 RW hours], multiply by 42 [how many real seconds in a RW hour, according to wiki] for 4800 real world seconds, or 80 minutes. Additionally, upon finishing the project using this method, the "Ultra Mechtech" project becomes available for normal research, assuming you meet the usual requirements minus the chip. This is most likely a bug, <sub>but it would be funny if it was intentional</sub>. 
+
+Schematics have a 25% chance of generating with two research projects instead of one. Reading the book will progress both projects at once, but the number of points generated will be divided by 1.6. Completing one of the two projects will not negate this effect, making the schematic less effective overall.
+
+Colonists will try to avoid reading schematics that have been fully researched, unless no better book is available.
+<!--Please replicate any changes to this table on the Books page to ensure parity-->
+{| class="wikitable"
+|+ Effects of Quality on Research
+|-
+! rowspan=2 | Quality !! colspan=2 | Points
+|-
+! 1 project !! 2 projects
+|-
+! Awful 
+| 20 / Hour || 12 / Hour
+|-
+! Poor
+| 30 / Hour || 18 / Hour
+|-
+! Normal
+| 40 / Hour || 25 / Hour
+|-
+! Good
+| 50 / Hour || 31 / Hour
+|-
+!Excellent
+| 60 / Hour || 37 / Hour
+|-
+!Masterwork
+| 70 / Hour || 43 / Hour
+|-
+!Legendary
+| 80 / Hour || 50 / Hour
+|}
+
+As opposed to other book types when the [[Odyssey DLC]] is active, schematics cannot generate with a quest.
+
+All books can be efficiently stored in [[small bookcase|small]] and full-size [[bookcase]]s, allowing them to provide a [[reading bonus]] to any reading and [[research]] activities taking place within the same room. Each book stored in a nearby bookcase will increase the effectiveness of reading.
+
+When reading for recreational purposes, colonists will choose which books to read at random. You can use the [[assign]] tab to specify which types of book a colonist is allowed to read, but you cannot assign a colonist to read any one specific book automatically.
+
+You can manually force a colonist to read a specific book by selecting the colonist, right-clicking either the book itself or the bookcase containing it, then issuing the "read" command. The colonist will then read the target book for an hour before putting it away.
+
+== Analysis ==
+{{Stub|reason=Needs deeper comparison between fresh schematics and other recreation sources}}
+Schematic research is impressively fast compared to research performed at a [[research bench]] or [[hi-tech research bench]]. Even an awful-quality schematic is on par with a researcher with an [[intellectual]] skill of 8, and a good schematic can surpass even a level 20 researcher. It is vastly superior to research benches for tribal starts wishing to research medieval projects or higher. The clear drawback is that you actually need to ''find'' a schematic first, and there is no guarantee that the schematics you do come across will actually contain useful projects.
+
+Unlike [[textbook]]s and [[novel]]s, schematics lose all of their additional utility after their research project is complete. However, schematics are always useful for filling out [[bookcase]]s to increase the room's [[reading bonus]].
+
+It is worth noting that schematics with two research are generally better for buying compared to single project ones
+
+== Gallery ==
+=== Held ===
+<gallery>
+Schematic Open east.png|East
+Schematic Open north.png|North
+Schematic Open south.png|south
+</gallery>
+=== Stored ===
+<gallery>
+Schematic Vertical east.png|East
+Schematic Vertical north.png|North
+Schematic Vertical south.png|South
+</gallery>
+
+== Version history ==
+* [[Version/1.5.4062|1.5.4062]] - Added.
+* [[Version/1.6.4566|1.6.4566]] - Fix: [[Basic gravtech]]{{OdysseyIcon}} appearing in schematics. Fix: Several gravtech and mechtech researches could still appear in schematics.
+
+{{Nav|questitems|wide}}
+{{nav|joy|wide}}
+[[Category:Books]]

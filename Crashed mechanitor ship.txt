@@ -1,0 +1,85 @@
+{{Biotech}}
+{{Stub|reason=General}}
+
+{{Infobox main|Building
+| name = Crashed mechanitor ship
+| image = Crashed mechanitor ship.png
+| description = A short-range ship used by a mechanitor to transport mechs for low-orbit or planetary travel.
+<!-- Base Stats -->
+| type = Building
+| type2 = Misc
+| marketvalue = 0
+| hp = 200
+| flammability = 1
+| rotatable = false
+| path cost = 50
+<!-- Building -->
+| size = 5 * 3
+| passability = impassable
+| cover = 1
+| blockswind = true
+| terrain affordance = Light
+<!-- Creation -->
+| work to make = 800
+| resource 1 = Steel
+| resource 1 amount = 40
+| resource 2 = Plasteel
+| resource 2 amount = 70
+| resource 3 = Component
+| resource 3 amount = 10
+| destroyyield = {{Icon Small|Steel slag chunk||1}} + {{Icon Small|Steel||4}} + {{Icon Small|Plasteel||7}} + {{Icon Small|Component||1}}
+<!-- Technical -->
+| defName = ShuttleCrashed_Exitable_Mechanitor
+| label = crashed mechanitor ship
+<!-- ThingDef ParentName="ShuttleCrashedExitable" -->
+| texPath = Things/Building/Misc/MechanitorShipCrashed
+<!-- ThingDef Name="ShuttleCrashedExitable" ParentName="ShuttleCrashedBase" -->
+| massCapacity = 1000
+| max1PerGroup = true
+| showOverallStats = false
+| pawnExitSound = Shuttle_PawnExit
+<!-- ThingDef ParentName="ShuttleBase" Name="ShuttleCrashedBase" -->
+| comps Inherit = false
+| killedLeavings Inherit = false
+| leaveResourcesWhenKilled = true
+| preventSkyfallersLandingOn = true
+| building Inherit = false
+| destroySound = BuildingDestroyed_Metal_Big
+| claimable = false
+| alwaysDeconstructible = true
+<!-- ThingDef Name="ShuttleBase" ParentName="BuildingBase" -->
+| altitudeLayer = Building
+| drawHighlight = true
+| highlightColor = (0.56, 0.62, 0.9)
+| graphicClass = Graphic_Single
+| drawSize = (6,3)
+| color = (162,164,149)
+| volume = (4.1, 1.0, 1.8)
+| offset = (0, 0, -0.1)
+| tickerType = Normal
+| canOverlapZones = true
+| selectable = true
+| soundImpactDefault = BulletImpact_Metal
+| drawerType = RealtimeOnly
+| repairEffect = ConstructMetal
+| forceDebugSpawnable = true
+| uiIconScale = 1.4
+| soundAmbient = ShuttleIdle_Ambience
+| inspectorTabs = ITab_ContentsTransporter
+| comps = "CompProperties_Shuttle", "CompProperties_Transporter"
+| canChangeAssignedThingsAfterStarting = true
+| pawnLoadedSound = Shuttle_PawnLoaded
+}}
+
+'''Crashed mechanitor ship''' is a transport ship that is part of the [[Quests#Ancient Transport|mechanitor ship]] quest.
+
+== Gallery ==
+<gallery>
+Crashed mechanitor ship.png|Damaged
+Mechanitor ship.png|Undamaged
+</gallery>
+
+== Version history ==
+* [[Biotech]] Release - Added.
+
+[[Category:Miscellaneous]]

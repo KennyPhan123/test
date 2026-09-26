@@ -1,0 +1,80 @@
+{{Stub|reason=1) Corresponding Property 2) Two-way links}}
+{{Verified|1.5.4104}}{{Stat
+| def name = MedicalTendQualityOffset
+| label = medical tend quality offset
+| description = [[Medical tend quality]] is offset by this value.
+| default base value = 0
+| min value = 0
+| hide at value = 0
+| effective minimum = 0
+| effective maximum = 0.17
+| to string style = PercentZero
+| category = Building
+| display priority in category = 2000
+}}
+
+== Bases ==
+<div><li style="display: inline-table;">
+{| {{STDT| c_01}}
+! Furniture !! Medical Tend Quality Offset Base
+|-
+! {{Icon Small|Hospital bed|24}} [[Hospital bed]]
+| 10%
+|}
+</li></div>
+
+== Offsets ==
+<div><li style="display: inline-table;">
+{| {{STDT| c_01}}
+! Facility !! Medical Tend Quality Offset Offset
+|-
+! {{Icon Small|Vitals monitor|24}} [[Vitals monitor]]<ref>Linkable to [[Hospital bed]] (Maximum of 1)</ref>
+| {{+|7%}}
+|}
+<references />
+</li></div>
+
+== Calculating Medical Tend Quality Offset ==
+The factors for [[Medical Tend Quality Offset]] are: '''Medical Tend Quality Offset Base''' and '''Medical Tend Quality Offset Offset'''. This would be written out as:
+
+<code>[[Medical Tend Quality Offset]] = '''Medical Tend Quality Offset Base''' + '''Medical Tend Quality Offset Offset'''</code>
+
+The maximum would be:
+
+<code>'''0.10''' + '''0.07''' = '''0.17'''</code>
+
+For an effective limit of '''17%'''.
+
+The minimum would be:
+
+<code>'''0''' + '''0''' = '''0'''</code>
+
+For an effective limit of '''0%'''.
+
+== Stat Def Data ==
+{| {{STDT| c_01}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Medical Tend Quality Offset" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />MedicalTendQualityOffset
+* '''Label:'''<br />medical tend quality offset
+| Medical tend quality is offset by this value.
+|
+* Display Order:<br />'''50'''
+* Def Name:<br />'''Building'''
+* Label:<br />'''Building'''
+* Display All By Default:<br />{{Bad|false}}
+|
+* '''Default Base Value:''' {{%|0}}
+* '''Min Value:''' {{%|0}}
+* '''To String Style:''' PercentZero
+* '''Hide At Value:''' {{%|0}}
+| -
+| 2000
+<!--</StatDef>-->
+|}
+
+== Version history ==
+{{Stub|section=1|reason=General}}
+
+{{nav|stats|wide}}

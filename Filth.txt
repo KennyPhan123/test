@@ -1,0 +1,474 @@
+<!-- Game data for this page can be found in \ThingDefs_Misc\Filth_Various.xml -->
+'''Filth''' is a broad term for any of several types of tile effects, all of which possess unique in-game appearances. Most types of filth have negative '''[[beauty]]''' and '''[[cleanliness]]''' stats. Filth does not hinder movement, manipulation, or field of view, and cannot be picked up. Filth is often spontaneous and unpreventable, with potentially disastrous consequences. 
+
+Many colonist tasks are directly impacted by the nearby presence of filth. The cleanliness room stat affects [[food poisoning]], [[room]] quality, [[research speed]], infection chance, and [[surgery]] success chance. 
+
+Filth is also a major factor on your colonists' [[mood]]. Pawns who have been in a filthy, ugly environment too long will gain a negative thought. Filth can quickly destroy the quality rating of an otherwise fine room, too, depriving your colonists of potential positive thoughts.
+
+== Generation ==
+Several types of filth may stack on the same tile at the same time, with cumulative beauty effects. 
+
+A pawn's [[Filth Rate]] determines how often it spontaneously produces '''dirt''' on floors. In general, large animals produce a lot of animal filth and should thus be kept off of floors using [[zones]]. Smaller animals like the [[husky]] or [[cat]] have filth rates equal or comparable to humans.
+
+Anytime a pawn moves on a terrain like soil, there is a chance for dirt to stick to their feet. When a pawn with dirt on their feet then walks on a non-dirt surface, like concrete or stone tile, there is a chance that the dirt can fall off their feet and create dirt on that floor. Limiting the frequency of transitions from dirt to not-dirt flooring is very important for maintaining a clean base. 
+
+[[Straw matting]] has a filth rate multiplier that affects both types of dirt generation. Straw matting will reduce the natural filth generation of pawns, like farm animals and even humans, that occur from the Filth Rate statistic. Straw matting also affects the dirt that is created when a pawn walks on a dirt surface and then walks on a non-dirt surface. When a colonist with dirt on their feet walks on Straw matting there is a greatly reduced chance that the dirt will fall off. This reduced chance does not clean the dirt off the pawn's feet.
+
+== Interactions ==
+{{Stub|section=1|reason=Account for floor clean time multi}}
+Filth is removed from a tile by colonists assigned to [[Work#Clean|Cleaning]] or by rain if [[Roof|unroofed]]. Only filth in the [[Home area]] will be cleaned; tiles outside the home area will be ignored.
+
+Limiting the home area of your colony will substantially reduce cleaning demands on your colonists. By default, a home area is automatically designated around new player structures and zones (this setting may be toggled in the lower right corner icon bar). However, home area designation is '''''not''''' automatically removed from an area, even if player structures are removed.
+
+All colonists clean tiles at the same rate regardless of [[trait]]s or [[capacities]], but some types of floors, like [[Steel tile]]s and [[sterile tile]]s, are faster to clean than others. Some types of filth, like pawn trash, are faster to clean than others, like '''bugblood'''.
+
+Outdoors: Soil does not collect dirt from foot traffic  (it only adds dirt to the shoe soles of pawns), and therefore may be more beautiful to use outdoors than constructed streets.
+However, in comparison to streets/paths in the base state soil tiles are only of neutral beauty and have a walk speed penalty.
+
+Indoors: Soil does collect animal filth from Filth Rate. Indoor Soil also spreads dirt to pawns’ shoes. Indoor Soil has -1 cleanliness and -3 beauty per tile indoors.
+
+== Summary table ==
+Certain unsightly objects, i.e. vomit, have one value when under a roof and a lower value when unroofed. This simulates the general disgust of seeing eyesores indoors versus encountering them outside. Some messes can be spread by pawns tracking through them and others can be washed away by rain.
+
+The effect of filth on outdoors beauty is 30% of the effect indoors.
+<!--Default values-->{{#vardefine:beautyI|-15}}{{#vardefine:beautyO|{{#expr:{{#var:beautyI}}*0.3 round 0}}}}{{#vardefine:cleanliness|-5}}
+{| {{STDT| sortable c_25 text-center}}
+! Name !! Source !! Beauty indoors (outdoors) !! Cleanliness !! Ignores filth multiplier !! Trackable !! Washes away !! <abbr title="Ticks required to clean 1 layer of the filth">Work to clean</abbr> !! <abbr title="Will automatically disappear after this many days">Days to disappear</abbr> !! Notes
+|- id = "Amniotic fluid"
+! style="text-align:left;" | Amniotic fluid 
+| Fluid produced when an animal or a [[Reproduction|pregnant colonist]]{{BiotechIcon}} gives birth
+| {{--|30}} ({{--|9}})     
+| {{--|5}}                  
+| {{Check}} || {{Check}} || {{Check}} 
+| 70 
+| 35 - 40 
+|
+|- id = "Ash"
+! style="text-align:left;" | Ash
+| Produced after flammables catch fire
+| {{--|12}} ({{Bad|{{#expr:-12*0.3 round 0}}}})     
+| {{--|15}}                  
+| {{Check}} || {{Check}} || {{Cross}} 
+| 70 
+| 10 - 15 
+|
+|- id = "Animal filth"
+! style="text-align:left;" | Animal filth
+| Produced by animals when walking on constructed floors
+| {{Bad|{{#var:beautyI}}}} ({{Bad|{{#var:beautyO}}}}) 
+| {{Bad|{{#var:cleanliness}}}} 
+| {{Cross}} || {{Check}} || {{Check}} 
+| 35 
+| 45 - 50 
+|
+|- id = "Blood"
+! style="text-align:left;" | Blood
+| From a bleeding human or animal
+| {{--|30}} ({{Bad|{{#expr:-30*0.3 round 0}}}})     
+| {{--|10}}                  
+| {{Check}} || {{Check}} || {{Check}} 
+| 70 
+| 35 - 40 
+| 
+|- id = "Bugblood"
+! style="text-align:left;" | Bugblood
+| From a bleeding insectoid
+| {{--|40}} ({{Bad|{{#expr:-40*0.3 round 0}}}})     
+| {{--|15}}                  
+| {{Check}} || {{Check}} || {{Check}} 
+| 80 
+| 35 - 40 
+| 
+|- id = "Building rubble"
+! style="text-align:left;" | Building rubble
+| Debris created by collapsed structures or during [[mental break]]
+| {{Bad|{{#var:beautyI}}}} ({{Bad|{{#var:beautyO}}}}) 
+| {{Bad|{{#var:cleanliness}}}} 
+| {{Cross}} || {{Cross}} || {{Cross}} 
+| 35 
+| 45 - 50 
+| 
+|- id = "Chemfuel puddle"
+! style="text-align:left;" | Chemfuel puddle
+| Flammable puddles created by incendiary weapons.
+| {{--|10}} ({{Bad|{{#expr:-10*0.3 round 0}}}})     
+| {{--|15}}                  
+| {{Check}} || {{Check}} || {{Check}} 
+| 70 
+| 35 - 40 
+| style="text-align:left;" | Can be lit on fire. 150 {{HP}} and 200% flammability.<br/>Max thickness 1.
+|- id = "Corpse bile"
+! style="text-align:left;" | Corpse bile
+| From a rotting corpse
+| {{--|50}} ({{Bad|{{#expr:-50*0.3 round 0}}}})     
+| {{--|20}}                  
+| {{Check}} || {{Check}} || {{Check}} 
+| 80 
+| 35 - 40 
+| 
+|- id = "Dirt"
+! style="text-align:left;" | Dirt
+| Produced by humans when walking on constructed floors or rough stone after dirt
+| {{Bad|{{#var:beautyI}}}} ({{Bad|{{#var:beautyO}}}}) 
+| {{Bad|{{#var:cleanliness}}}} 
+| {{Cross}} || {{Check}} || {{Check}} 
+| 35 
+| 45 - 50 
+| 
+|- id = "Firefoam"
+! style="text-align:left;" | [[Firefoam]]
+| Fireproof foam from a firefoam popper
+| {{--|25}} ({{Bad|{{#expr:-25*0.3 round 0}}}})     
+| {{--|5}}                  
+| {{Check}} || {{Check}} || {{Check}} 
+| 100 
+| 5 - 10 
+| style="text-align:left;" | Prevents fire from igniting.
+|- id = "Machine bits"
+! style="text-align:left;" | Machine bits
+| Produced from completing the "Shred Mechanoid" bill
+| {{--|10}} ({{Bad|{{#expr:-10*0.3 round 0}}}})     
+| {{--|5}}                  
+| {{Check}} || {{Cross}} || {{Cross}} 
+| 35 
+| 45 - 50 
+| 
+|- id = "Rock rubble"
+! style="text-align:left;" | Rock rubble
+| Debris created by digging into mineral rocks
+| {{Bad|{{#var:beautyI}}}} ({{Bad|{{#var:beautyO}}}}) 
+| {{Bad|{{#var:cleanliness}}}} 
+| {{Cross}} || {{Cross}} || {{Cross}} 
+| 35 
+| 45 - 50 
+| 
+|- id = "Sand"
+! style="text-align:left;" | Sand
+| Produced by pawns when walking on constructed floors or rough stone after sand
+| {{Bad|{{#var:beautyI}}}} ({{Bad|{{#var:beautyO}}}}) 
+| {{Bad|{{#var:cleanliness}}}} 
+| {{Cross}} || {{Check}} || {{Cross}} 
+| 35 
+| 45 - 50 
+| 
+|- id = "Scattered sandbags"
+! style="text-align:left;" | Scattered sandbags
+| Remnants from damaged or destroyed sandbags
+| {{Bad|{{#var:beautyI}}}} ({{Bad|{{#var:beautyO}}}}) 
+| {{Bad|{{#var:cleanliness}}}} 
+| {{Cross}} || {{Cross}} || {{Cross}} 
+| 35 
+| 45 - 50 
+| 
+|- id = "Scattered slag"
+! style="text-align:left;" | Scattered slag
+| Spawned by crashed ships
+| {{Bad|{{#var:beautyI}}}} ({{Bad|{{#var:beautyO}}}}) 
+| {{Bad|{{#var:cleanliness}}}} 
+| {{Cross}} || {{Cross}} || {{Cross}} 
+| 35 
+| 45 - 50 
+| 
+|- id = "Slime"
+! style="text-align:left;" | Slime
+| Found after opening a cryptosleep casket or during infestations
+| {{--|25}} ({{Bad|{{#expr:-25*0.3 round 0}}}})     
+| {{--|5}}                   
+| {{Cross}} || {{Check}} || {{Check}} 
+| 70 
+| 35 - 40 
+| 
+|- id = "Trash"
+! style="text-align:left;" | Trash
+| Produced by humans when walking on constructed floors
+| {{Bad|{{#var:beautyI}}}} ({{Bad|{{#var:beautyO}}}}) 
+| {{Bad|{{#var:cleanliness}}}} 
+| {{Cross}} || {{Check}} || {{Cross}} 
+| 35 
+| 45 - 50 
+| 
+|- id = "Vomit"
+! style="text-align:left;" | Vomit
+| Created from a [[vomiting]] human or animal
+| {{--|40}} ({{--|12}})     
+| {{--|15}}                  
+| {{Check}} || {{Check}} || {{Check}} 
+| 70 
+| 35 - 40 
+| 
+|- id = "Water puddle"
+! style="text-align:left;" | Water puddle
+| Produced by [[Waterskip]] psycast {{RoyaltyIcon}}
+| {{--|10}}
+| {{--|5}}                  
+| {{Cross}} || {{Check}} || {{Cross}} 
+| 30 
+| 0.2 - 0.4 
+| style="text-align:left;" | Prevents fire from igniting.
+|- id = "Hair"
+! style="text-align:left;" | Hair {{IdeologyIcon}}
+| Produced by changing hair at a [[Styling station]] {{IdeologyIcon}}
+| {{--|10}} ({{--|3}})     
+| {{--|5}}                  
+| {{Check}} || {{Cross}} || {{Cross}} 
+| 35 
+| 30 - 40 
+| 
+|- id = "Dried blood"
+! style="text-align:left;" | Dried blood {{IdeologyIcon}}
+| Placed during map generation (rarely)
+| {{--|10}} ({{--|3}})     
+| {{--|5}}                  
+| {{Cross}} || {{Cross}} || {{Check}} 
+| 90 
+| 35 - 40 
+| 
+|- id = "Oil smear"
+! style="text-align:left;" | Oil smear {{IdeologyIcon}}
+| Produced during map generation of Junk clusters (rarely)
+| {{--|10}} ({{--|3}})     
+| {{--|15}}                  
+| {{Cross}} || {{Check}} || {{Check}} 
+| 70 
+| 35 - 40 
+| style="text-align:left;" | Can be lit on fire. 250 {{HP}} and 150% flammability. <br/>Max thickness 1.
+|- id = "Pod slime"
+! style="text-align:left;" | Pod slime {{IdeologyIcon}}
+| Produced from a completed or rejected cycle in a [[Biosculpter pod]] {{IdeologyIcon}}
+| {{--|30}} ({{--|9}})     
+| {{--|5}}                  
+| {{Cross}} || {{Check}} || {{Check}} 
+| 70 
+| 35 - 40 
+| 
+|- id = "Ragged uniform"
+! style="text-align:left;" | Ragged uniform {{IdeologyIcon}}
+| Rarely spawned in ancient complexes
+| {{Bad|{{#var:beautyI}}}} ({{Bad|{{#var:beautyO}}}}) 
+| {{Bad|{{#var:cleanliness}}}} 
+| {{Check}} || {{Check}} || {{Cross}} 
+| 25 
+| 35 - 40 
+| 
+|- id = "Scattered documents"
+! style="text-align:left;" | Scattered documents {{IdeologyIcon}}
+| Rarely spawned in ancient complexes
+| {{Bad|{{#var:beautyI}}}} ({{Bad|{{#var:beautyO}}}}) 
+| {{Bad|{{#var:cleanliness}}}} 
+| {{Cross}} || {{Cross}} || {{Check}} 
+| 25 
+| 35 - 40 
+| 
+|- id = "Flammable bile"
+! style="text-align:left;" | Flammable bile {{BiotechIcon}}
+| Flammable puddles created by the [[Fire spew]] {{BiotechIcon}} ability
+| {{--|10}} ({{--|3}}) 
+| {{--|15}} 
+| {{Check}} || {{Check}} || {{Check}} 
+| 70 
+| 35 - 40 
+| style="text-align:left;" | Can be lit on fire. 150 {{HP}} and 200% flammability.<br/>Max thickness 1. 
+|- id = "Floor drawing"
+! style="text-align:left;" | Floor drawing {{BiotechIcon}}
+| Drawn by a [[Children_and_reproduction|child]]{{BiotechIcon}} colonist
+| '''0 (0) '''
+| '''0'''
+| {{Check}} || {{Cross}} || {{Check}} 
+| 25 
+| 35 - 40 
+| 
+|- id = "Spent acid"
+! style="text-align:left;" | Spent acid {{BiotechIcon}}
+| From the [[Acid spray]] projectile. 
+| {{--|30}} ({{--|9}}) 
+| {{--|5}} 
+| {{Check}} || {{Check}} || {{Check}} 
+| 70 
+| 35 - 40 
+| style="text-align:left;" | Max thickness 1
+|- id = "Metalhorror debris"
+! style="text-align:left;" | Metalhorror debris {{AnomalyIcon}}
+| From a destroyed [[Metalhorror]]{{AnomalyIcon}} 
+| {{--|9}} 
+| {{--|10}} 
+| {{Check}} || {{Check}} || {{Cross}} 
+| 140 
+| 35 - 40 
+| 
+|- id = "Dark blood"
+! style="text-align:left;" | Dark blood {{AnomalyIcon}}
+| From any non-[[fleshbeast]] [[entity]]{{AnomalyIcon}} that can bleed 
+| {{--|9}} 
+| {{--|10}} 
+| {{Check}} || {{Check}} || {{Check}} 
+| 70 
+| 35 - 40 
+| 
+|- id = "Twisted flesh"
+! style="text-align:left;" | Twisted flesh {{AnomalyIcon}}
+| From a fleshbeast splitting or being destroyed, also spawns naturally in a [[pit gate]]{{AnomalyIcon}} 
+| {{--|15}} 
+| {{--|20}} 
+| {{Check}} || {{Check}} || {{Check}} 
+| 80 
+| 10 - 15 
+| 
+|- id = "Fleshmass debris"
+! style="text-align:left;" | Fleshmass debris {{AnomalyIcon}}
+| From a destroyed chunk of fleshmass{{AnomalyIcon}} 
+| {{--|15}} 
+| {{--|20}} 
+| {{Check}} || {{Check}} || {{Check}} 
+| 100 
+| 10 - 15 
+| 
+|- id = "Gray flesh"
+! style="text-align:left;" | Gray flesh {{AnomalyIcon}}
+| Appears on the tile that a gray flesh sample{{AnomalyIcon}} drops on 
+| {{--|8}} 
+| {{--|5}} 
+| {{Cross}} || {{Cross}} || {{Cross}} 
+| 160 
+| 4 - 6 
+| 
+|}
+
+== Gallery ==
+<gallery>
+Grainy A.png|Grainy
+Liquid fuel A.png|Chemfuel puddle
+Machine bits A.png|Machine bits
+RubbleA.png|Rubble
+SandbagsA.png|Scattered sandbags
+SlagBitsA.png|Scattered slag
+Vomit bit.png|Vomit
+</gallery>
+<gallery>
+Ash A.png|Ash variant A
+Ash B.png|Ash variant B
+Ash C.png|Ash variant C
+</gallery>
+<gallery>
+Bile A.png|Bile variant A
+Bile B.png|Bile variant B
+Bile C.png|Bile variant C
+</gallery>
+<gallery>
+BloodA.png|Blood variant A
+BloodB.png|Blood variant B
+BloodC.png|Blood variant C
+</gallery>
+<gallery>
+Fire foam A.png|Firefoam variant A
+Fire foam B.png|Firefoam variant B
+Fire foam C.png|Firefoam variant C
+</gallery>
+<gallery>
+Hair A.png|Hair variant A
+Hair B.png|Hair variant B
+Hair C.png|Hair variant C
+</gallery>
+<gallery>
+Pool soft A.png|Soft pool variant A
+Pool soft B.png|Soft pool variant B
+Pool soft C.png|Soft pool variant C
+</gallery>
+<gallery>
+Spatter A.png|Spatter variant A
+Spatter B.png|Spatter variant B
+Spatter C.png|Spatter variant C
+</gallery>
+<gallery>
+Trash A.png|Trash variant A
+Trash B.png|Trash variant B
+Trash C.png|Trash variant C
+</gallery>
+<gallery>
+Dried blood A.png|Dried blood variant A {{IdeologyIcon}}
+Dried blood B.png|Dried blood variant B {{IdeologyIcon}}
+Dried blood C.png|Dried blood variant C {{IdeologyIcon}}
+Dried blood D.png|Dried blood variant D {{IdeologyIcon}}
+Dried blood E.png|Dried blood variant E {{IdeologyIcon}}
+</gallery>
+<gallery>
+Oil smear A.png|Oil smear variant A {{IdeologyIcon}}
+Oil smear B.png|Oil smear variant B {{IdeologyIcon}}
+Oil smear C.png|Oil smear variant C {{IdeologyIcon}}
+</gallery>
+<gallery>
+Moldy uniform A.png|Ragged uniform variant A {{IdeologyIcon}}
+Moldy uniform B.png|Ragged uniform variant B {{IdeologyIcon}}
+Moldy uniform C.png|Ragged uniform variant C {{IdeologyIcon}}
+</gallery>
+<gallery>
+Scattered documents A.png|Scattered documents variant A {{IdeologyIcon}}
+Scattered documents B.png|Scattered documents variant B {{IdeologyIcon}}
+Scattered documents C.png|Scattered documents variant C {{IdeologyIcon}}
+Scattered documents D.png|Scattered documents variant D {{IdeologyIcon}}
+Scattered documents E.png|Scattered documents variant E {{IdeologyIcon}}
+Scattered documents F.png|Scattered documents variant F {{IdeologyIcon}}
+</gallery>
+<gallery>
+Flammable bile A.png|Flammable bile variant A {{BiotechIcon}}
+Flammable bile B.png|Flammable bile variant B {{BiotechIcon}}
+Flammable bile C.png|Flammable bile variant C {{BiotechIcon}}
+Flammable bile D.png|Flammable bile variant D {{BiotechIcon}}
+Flammable bile E.png|Flammable bile variant E {{BiotechIcon}}
+</gallery>
+<gallery>
+Floordrawing filth A.png|Floordrawing variant A {{BiotechIcon}}
+Floordrawing filth B.png|Floordrawing variant B {{BiotechIcon}}
+Floordrawing filth C.png|Floordrawing variant C {{BiotechIcon}}
+Floordrawing filth D.png|Floordrawing variant D {{BiotechIcon}}
+Floordrawing filth E.png|Floordrawing variant E {{BiotechIcon}}
+Floordrawing filth F.png|Floordrawing variant F {{BiotechIcon}}
+</gallery>
+<gallery>
+Fleshmass filth a.png|Fleshmass filth variant A {{AnomalyIcon}}
+Fleshmass filth b.png|Fleshmass filth variant B {{AnomalyIcon}}
+Fleshmass filth c.png|Fleshmass filth variant C {{AnomalyIcon}}
+Fleshmass filth d.png|Fleshmass filth variant D {{AnomalyIcon}}
+</gallery>
+<gallery>
+Loose ground a.png|Loose ground variant A {{AnomalyIcon}}
+Loose ground b.png|Loose ground variant B {{AnomalyIcon}}
+Loose ground c.png|Loose ground variant C {{AnomalyIcon}}
+Loose ground d.png|Loose ground variant D {{AnomalyIcon}}
+Loose ground e.png|Loose ground variant E {{AnomalyIcon}}
+</gallery>
+<gallery>
+Metalhorror debris a.png|Metalhorror debris variant A {{AnomalyIcon}}
+Metalhorror debris b.png|Metalhorror debris variant B {{AnomalyIcon}}
+Metalhorror debris c.png|Metalhorror debris variant C {{AnomalyIcon}}
+Metalhorror debris d.png|Metalhorror debris variant D {{AnomalyIcon}}
+Metalhorror debris e.png|Metalhorror debris variant E {{AnomalyIcon}}
+</gallery>
+<gallery>
+Revenant blood pool a.png|Revenant blood pool variant A {{AnomalyIcon}}
+Revenant blood pool b.png|Revenant blood pool variant B {{AnomalyIcon}}
+Revenant blood pool c.png|Revenant blood pool variant C {{AnomalyIcon}}
+</gallery>
+<gallery>
+Revenant smear a.png|Revenant smear variant A {{AnomalyIcon}}
+Revenant smear b.png|Revenant smear variant B {{AnomalyIcon}}
+Revenant smear c.png|Revenant smear variant C {{AnomalyIcon}}
+</gallery>
+<gallery>
+Twisted flesh a.png|Twisted flesh variant A {{AnomalyIcon}}
+Twisted flesh b.png|Twisted flesh variant B {{AnomalyIcon}}
+Twisted flesh c.png|Twisted flesh variant C {{AnomalyIcon}}
+Twisted flesh d.png|Twisted flesh variant D {{AnomalyIcon}}
+Twisted flesh e.png|Twisted flesh variant E {{AnomalyIcon}}
+Twisted Flesh f.png|Twisted flesh variant F {{AnomalyIcon}}
+</gallery>
+
+== Version history ==
+* [[Version/1.1.0|1.1.0]] - Ashes from burned plants and buildings now survive rain and disappear after 10-15 days. They’re also visually larger. Fix: Corpses wouldn’t create corpse bile.
+* [[Version/1.2.2753|1.2.2753]] - Dirt now washes away in rain.
+* [[Ideology DLC]] Release - Added pod slime.
+* [[Version/1.3.3066|1.3.3066]] - Rain washes away more filth types. Added an alert which tells the player high filth-producing animals are indoors without straw matting floor type. Indoor rooms with non-water flooring can have animal filth or trash spread on them. New filth types: Dried blood, scattered documents, ragged uniform, and oil smear
+* [[Version/1.3.3200|1.3.3200]] - Fix: Blood from scarification is from cutter, not cuttee.
+* [[Biotech DLC]] Release - Added floor drawing, spent acid, and flammable bile.
+* [[Anomaly DLC]] Release - Added metalhorror debris, dark blood, twisted flesh, gray flesh and fleshmass debris.
+
+[[Category:Environment]]

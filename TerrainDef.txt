@@ -1,0 +1,88 @@
+<small><&nbsp;[[Modding Tutorials/Flooring]]</small><br/>
+
+'''TerrainDefs''' are used for defining basically anything that covers the floor, whether it be grass, sand, soil, or carpets.
+
+==Global attributes==
+
+{| class="wikitable sortable"
+!Attribute
+!Description
+!Options
+|-
+!defName
+|Unique ID for which the TerrainDef will take (also the reference ID)
+|String
+|-
+!label
+|Language-specific name displayed in game
+|String
+|-
+!renderPrecedence
+|Render importance of terrain
+|Integer; higher values take higher priority (Sand = 350, Soil = 340, Gravel = 330, Carpet = 300-298)
+|-
+!description
+|Information about the terrain
+|String
+|-
+!texturePath
+|Path in which the terrain texture is located
+|String as path (from Textures/)
+|-
+!beauty
+|How nice the terrain looks to pawns (influences thoughts)
+|Enchanting, Gorgeous, Nice, NiceTiny, Neutral, UglyTiny, Ugly, Hideous, Horrifying
+|-
+!fertility
+|Fertility rating of the terrain (ability for crops to grow on terrain)
+|Float (Soil = 1.0, SoilRich = 1.4, Gravel = 0.7, Sand = 0.06)
+|-
+!acceptTerrainSourceFilth
+|Determines whether or not the flooring can collect filth on it
+|Boolean (true or false)
+|-
+!takeFootprints
+|Determines whether or not the flooring draws colonists' footprints
+|Boolean (true or false)
+|-
+!edgeType
+|Gives the terrain a fade effect towards the edges
+|Hard, Fade, FadeRough, Water (default: Hard)
+|}
+
+==Flooring==
+
+You should add these attributes if you are making buildable terrain, such as a carpet.
+{| class="wikitable sortable"
+|-
+!Attribute
+!Description
+!Options
+|-
+!surfacesSupported
+|Defines what surfaces the flooring can be placed on
+|Any, Light, Heavy, GrowSoil, Diggable, SmoothHard, SmoothableStone
+|-
+!costList
+|Cost to make each tile of flooring
+|Integer
+|-
+!researchPrerequisites
+|Defines any research requirements before the flooring can be built
+|String
+|-
+!constructionEffect
+|Effect shown when colonists are building the flooring
+|ConstructDig
+|-
+!designationCategory
+|Defines which architect tab the flooring should appear in (optional)
+|Zone, Building, Orders, Structure, Furniture, Security
+|-
+!workToBuild
+|Ticks needed to build 1 tile of flooring
+|Integer (usually 1 tick per frame)
+|-
+|}
+
+[[Category:Defs]]

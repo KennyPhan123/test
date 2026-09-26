@@ -1,0 +1,100 @@
+{{infobox main|misc
+| name = Long-range mineral scanner
+| image = LongRangeMineralScanner.png
+| description = A lateral sensor unit used by researchers to detect a specific type of mineral across the planet. The chance to find a resource depends on the operator's research ability. This sensor can be tuned to target a specific resource type. It consumes a lot of electricity. If you find a resource, you'll need to travel to collect it.
+| type = Building
+| type2 = Misc
+| placeable = true
+| path cost = 50
+| passability = pass through only
+| cover = 0.4
+| minifiable = false
+| size = 3 ˣ 3
+| flammability = 0.5
+| hp = 250
+| beauty = -8
+| power = -700
+| terrain affordance = heavy
+| research = long-range mineral scanner
+| skill 1 = Construction
+| skill 1 level = 8
+| work to make = 10000
+| resource 1 = Steel
+| resource 1 amount = 200
+| resource 2 = Component
+| resource 2 amount = 6
+| resource 3 = Advanced component
+| resource 3 amount = 2
+| destroyyield = nothing
+}}
+The '''long-range mineral scanner''' can detect mineral deposits in the nearby areas outside your colony when manned by a researcher. It can be tuned to find different minerals, such that it will only find deposits of a certain kind.
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+Long-range mineral scanners consume 700 W of [[power]] and do not function under a roof, not even partial coverage. Scanning falls under Intellectual work. When operated, there is a mean of {{ticks/gametime|240000}} of work to find a deposit of ores. Finding a deposit is guaranteed after {{ticks/gametime|480000}} of work. Guaranteed finds are separate from random finds; the ​progress towards the guaranteed scan is not reset after finding ore randomly. These values are then modified by the [[Research Speed]] of the user in question. Unlike the [[ground-penetrating scanner]], the long-range scanner is tuned to a chosen mineral.
+
+When the long-range scanner completes a scan, it will trigger its [[Quests#Ore_Lump|respective quest]] on a random tile between 6 and 25 cells away. If the tile is not entered within 30 days, the quest will expire. The target area can either be unguarded, surrounded by a small [[manhunter]] pack, or have an enemy waiting to ambush you. [[Manhunter]]s or an enemy may approach your colonists from the edge of the map when one of your colonists gets near the mineral lump, given that there wasn't anything else waiting at the lump. 
+
+Once the area has been cleared of hostiles, you have 10 days to mine everything before another group of hostiles arrives.
+
+=== Resources ===
+Every [[ore]] in the game can be discovered with the scanner. This includes [[component]]s, which cannot be found with a [[ground-penetrating scanner]]. The expected yield and mass from a lump can be found in the table below; this is useful for knowing how many [[pack animal]]s to send to various discovered lumps.
+
+{| class="wikitable"
+|- <!--- IF you edit this table, please edit the one on the Quests -->
+! Resource       !! No. of Tiles !! Total Yield !! Total Mass (kg) !! Market Value 
+|-
+| [[Steel]]      || 55 - 60      || 2200 - 2400 || 1100 - 1200 || 4180 - 4560
+|-
+| [[Plasteel]]   || 10 - 15      || 400 - 600   || 100 - 150 || 3600 - 5400
+|-
+| [[Component]]s || 50 - 70      || 100 - 140   || 60 - 84 || 3200 - 4480
+|-
+| [[Silver]]     || 60 - 80      || 2400 - 3200 || 16.8 - 22.4 || 2400 - 3200
+|-
+| [[Gold]]       || 8 - 12       || 320 - 480   || 2.5 - 3.8 || 3200 - 4800
+|-
+| [[Uranium]]    || 15 - 20      || 600 - 800   || 600 - 800 || 3600 - 4800 
+|-
+| [[Jade]]       || 20 - 25      || 700 - 875   || 350 - 438 || 3500 - 4375
+|}
+
+==Analysis==
+Researching the long-range mineral scanner is eventually required for the [[ship]], as it is a prerequisite to [[Research#Starflight Sensors|Starflight Sensors]]. The long-range scanner can help find the minerals required to build the ship, or materials for the rest of your endeavors. They can find an indefinite amount of ore - your world will never run out of deposits to find.
+
+In order to use a long-range scanner, you will need to account for the following:
+* Travel time for the round trip. You can take a [[caravan]], use [[transport pod]]s, or use [[passenger shuttle]]s{{OdysseyIcon}}. Caravans can take multiple days to get to location. Transport pods are nearly instant, but cost {{Required Resources|Transport pod}} per pod, and {{Icon Small|chemfuel}} variable [[chemfuel]] to get to location. On the return trip, you'll need to make a [[pod launcher]], which costs {{Required Resources|Pod launcher}}. If using a passenger shuttle,{{OdysseyIcon}} make sure it has enough fuel for the round trip (anywhere from 100-150 chemfuel, depending on the distance).
+* Weight. Unless mining for gold, silver, or components, minerals are heavy. [[Pack animal]]s are often required to bring the stuff back on foot, while you'll need multiple [[transport pod]]s or shuttle trips to bring all the stuff back. 
+*The enemies around the scanner. You will need enough firepower to eliminate potential enemies on the map, which is firepower that is not in your colony when a [[raid]] happens to come.
+* [[Mood]]. Lowered [[expectations]] helps with mood, but your colonists will still be grumpy when sitting on the floor and eating without a table.
+
+As building the scanner requires two [[advanced component]]s, make sure to plan ahead. Keep some in a stockpile if you don't have the research for [[Research#Advanced fabrication|Advanced Fabrication]] yet.
+
+You have 30 days from the ore being scanned to arrive at the destination. With a constantly running scanner, you can find multiple deposits, and tackle them all at once. This saves on travel time. With light materials like [[gold]], weight isn't a problem. Otherwise, you'll need a way to hold / transport all the minerals.
+
+=== Comparison to deep drills ===
+The [[ground-penetrating scanner]] can find ores deposits in the ground, within your colony. A [[deep drill]] is needed to extract ores, but you don't need to travel anywhere, meaning you don't need any of those considerations. The Deep Drill + Ground Scanner combination costs the same amount of research as the long-range scanner, though the latter is required to research Starflight Sensors.
+
+Ground-penetrating scanners create much more ore per deposit (9000 vs 2300 average [[steel]], for instance), find ores roughly {{ticks/gametime|60000}} faster than the long-range scanner, and don't require spending time traveling to a different map. Because your colonists can stay in-map, it is easier to operate multiple deep drills, and they can defend your colony against raids. However, it finds random ores in random locations. You may find a deposit that's too far away to reasonably drill, and it may take a while to find minerals that you need at the moment. And while long-range deposits often have ambushes, drilling can trigger the [[Infestation|Too Deep: Infestation]] event.
+
+In general, long-range scanners are better if 1. you are looking for a specific mineral like plasteel or gold, 2. you have great scanners, but you are lacking ''great'' miners, or 3. travel time is non-existent.
+* Long-range scanners can find specific ores if needed quickly, e.g., if lacking a metal for [[ship]] parts. Ground penetrating scanners are more likely to find steel than any other ore, so long-range scanners are comparatively great at finding non-steel ores. 
+* Ground-penetrating scanners are relatively better with multiple good miners, as more mining work is required.
+* When travel time is near instant, such as with [[passenger shuttle]](s),{{OdysseyIcon}} a [[gravship]],{{OdysseyIcon}} or a combination of [[drop pod]]s and [[farskip]],{{RoyaltyIcon}} there is no longer a need to consider safety at the mining site or colony (colonists can return any time, easier to bring more colonists). Also, it becomes faster and mood is a much smaller issue.
+
+Nomadic colonies, such as those operating out of [[gravship]]s,{{OdysseyIcon}} will find the long-range mineral scanner more appropriate for their needs. Also, [[sea ice]] colonies cannot use deep drills but can use long-range scanners.
+
+=== Ideology ===
+{{Ideology|section=1}} <!--- ensure rough parity with GPS page -->
+As scanning rates is dependent on [[research speed]], the bonuses offered by both [[research specialist]]s and the [[Ideoligion#Research|Research]] precept can make for significantly faster returns. This gives research specialists a niche even once all normal [[research]] is complete and may warrant maintaining an NPC ideoligion if it grants access to the specialist.
+
+== Version history ==
+* Beta 19 - can now find more than gold and jade, and can be tuned to the desired mineral. Now requries a colonist to operate. Lumps now expire. More than one scanner on the same map is now effective.
+* 1.1 - power cost was increased. The time between finding ore veins is now displayed.
+* [[Version/1.3.3200|1.3.3200]] - Work to make increased from 1000 to 10,000
+* [[Version/1.4.3682|1.4.3682]] - Fix: Long range mineral scanner tune command has no description. 
+
+{{nav|misc}}
+[[Category:Miscellaneous]]

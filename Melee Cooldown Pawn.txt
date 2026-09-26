@@ -1,0 +1,61 @@
+{{Stub|reason=1) Corresponding Property 2) Two-way links}}
+{{See also|Melee Cooldown}}
+{{Verified|1.5.4104}}{{Stat
+| def name = MeleeCooldownFactor
+| label = melee cooldown
+| description = A multiplier on the time this creature takes to recover after making a melee attack.
+| default base value = 1
+| min value = 0.05
+| to string style = PercentZero
+| show if undefined = false
+| category = PawnCombat
+| display priority in category = 5201
+}}
+
+== Values ==
+=== Offsets ===
+* Hediffs:
+** {{AnomalyIcon}} [[Hediffs#Light exposure|Light exposure]]:
+*** (moderate): {{++|125%}}
+*** (serious): {{++|150%}}
+*** (extreme): {{++|200%}}
+
+=== Factors ===
+* Hediffs:
+** {{AnomalyIcon}} [[Hediffs#Shambler|Shambler]]: {{Bad|×150%}}
+** {{AnomalyIcon}} [[Hediffs#Ghoul frenzy|Ghoul frenzy]]: {{Good|×70%}}
+
+== Calculating Melee Cooldown ==
+The base cooldown time of a melee attack is multiplied by [[Melee Cooldown|Melee Cooldown (Stuff Multiplier)]] if applicable, and then multiplied by [[Melee Cooldown (Pawn)]]:
+
+<code>Final Cooldown Time = Base Cooldown Time × Melee Cooldown (Stuff Multiplier) × [[Melee Cooldown (Pawn)]]</code>
+
+For hediffs, stat offsets are applied first and factors second. Although with the current usage of this stat, no instances of offsets and factors both applying at once would arise.
+
+== Stat Def Data ==
+{| {{STDT| c_10}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Melee Cooldown Pawn" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />MeleeCooldownFactor
+* '''Label:'''<br />melee cooldown
+| A multiplier on the time this creature takes to recover after making a melee attack.
+|
+* Display Order:<br />'''110'''
+* Def Name:<br />'''PawnCombat'''
+* Label:<br />'''Combat'''
+* Display All By Default:<br />{{Bad|false}}
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0.05}}
+* '''To String Style:''' PercentZero
+* '''Show If Undefined:''' {{Bad|false}}
+| -
+| 5201
+<!--</StatDef>-->
+|}
+
+== Version history ==
+{{Stub|section=1|reason=General Version history}}
+
+{{nav|stats|wide}}

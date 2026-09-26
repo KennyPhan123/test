@@ -1,0 +1,196 @@
+{{Infobox main|production
+| name = Electric smelter
+| image = Electric smelter.png
+| imagesize = 192px
+| description = Extracts usable metal from slag chunks and other mixed metal items. Consumes a lot of power.
+| type = Building
+| type2 = Production
+| placeable = true
+| path cost = 50
+| blockswind = false
+| passability = pass through only
+| cover = 0.5
+| minifiable = true
+| size = 3 ˣ 1
+| mass base = 20
+| flammability = 1
+| hp = 180
+| sell price multiplier = 0.7
+| power = -700
+| glowradius = 6
+| glowcolor = (217, 112, 33)
+| heatpersecond = 9
+| terrain affordance = heavy
+| research = Electricity
+| thingCategories = BuildingsProduction
+| skill 1 = Construction
+| skill 1 level = 4
+| work to make = 3500
+| resource 1 = Steel
+| resource 1 amount = 170
+| resource 2 = Component
+| resource 2 amount = 2
+| room role = Workshop
+| work table not in room role factor = 0.8
+}}
+The '''electric smelter''' is a [[production]] building used to extract [[steel]] from [[steel slag chunk]]s and metal [[weapons]] and [[armor]]. Colonists assigned to [[work#Crafting|crafting]] will make use of it.
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+=== Power consumption ===
+Electric smelters are placed on the ground and require 700 W of [[power]]. The smelter has gizmos for designating toggle power and reconnecting the power supply between circuits just like many other electric appliances, to aid in managing its high power needs.
+
+=== Light and heat ===
+While powered, smelters output light in a 6 tile radius; the nearest {{P|Light Radius}} tiles are above 30% light level and considered "lit", negating the work speed penalty from darkness. Smelters also produce {{P|Heat Per Second}} heat per second while in ''process of smelting'' things (which is about half of the output of one [[heater]]). No heat is produced when idle, even if powered on.
+
+=== Bills ===
+Powered electric smelters can convert [[steel slag chunk]]s, metal weapons, and metallic armor pieces into usable metal. All bills are affected by [[Smelting Speed|smelting speed]] which is not affected by any skill but can be increased by [[manipulation]] and [[Global Work Speed|global work speed]].
+
+==== Smelt metal from slag ====
+{{Quote|"Use heat and strong electromagnets to extract useful metal from slag chunks."|Smelt metal from slag description}}
+[[Steel slag chunk]]s can be melted into {{Icon Small|steel}} 15 [[steel]] after {{Ticks|400}} of work (modified by the [[Smelting Speed|smelting speed]] of the crafter).
+
+==== Smelt weapon ====
+{{Quote|"Use heat and strong electromagnets to break down weapons into useful resources."|Smelt weapon description}}
+Metallic weapons can be smelted to return 25% of the materials used to craft them, excluding any [[component]]s or [[advanced component]]s, after {{Ticks|1600}} of work (modified by the [[Smelting Speed|smelting speed]] of the crafter). Smelting will produce the same amount of materials, regardless of [[quality]], hit points or [[biocoding]]. 
+
+==== Smelt apparel ====
+{{Quote|"Use heat and strong electromagnets to break down metallic apparel like armor into useful resources."|Smelt apparel description}}
+Metallic apparel can be smelted to return 25% of the materials used to craft them, excluding any [[component]]s, [[advanced component]]s, or [[chemfuel]], after {{Ticks|1600}} of work (modified by the [[Smelting Speed|smelting speed]] of the crafter). Smelting will produce the same amount of materials, regardless of [[quality]], hit points or [[Apparel#Tainted apparel|tainting]]. 
+
+==== Destroy weapon ====
+{{Quote|"Use heat to destroy unwanted weapons. This process is faster than smelting, and works on non-smeltable items, but yields no resources."|Destroy weapon description}}
+Weapons can be destroyed after {{Ticks|400}} of work (modified by the [[Smelting Speed|smelting speed]] of the crafter). This works for smeltable and non-smeltable weapons alike, however no materials are returned. A similar bill is also available for the [[electric crematorium]] and [[campfire]].
+
+==== Destroy apparel ====
+{{Quote|"Use heat to destroy unwanted apparels. This process is faster than smelting, and works on non-smeltable items, but yields no resources."|Destroy apparel description}}
+Apparel can be destroyed after {{Ticks|400}} of work (modified by the [[Smelting Speed|smelting speed]] of the crafter). This works for smeltable and non-smeltable apparel alike, however no materials are returned. A similar bill is also available for the [[electric crematorium]] and [[campfire]].
+
+== Analysis ==
+=== Non-smeltable and unsellable items ===
+Destroying apparel and weapons with the electric smelter is rarely worth it. For starters, smeltable items can be smelted into useful materials, and unless serious [[wealth management]] is enforced, sellable items can be sold for profit.
+
+The only items that are non-smeltable and unsellable are certain types of [[Apparel#Tainted apparel|tainted apparel]]. Burning them at an [[electric crematorium]] or even a [[campfire]] is much faster. Additionally, a few other methods might require even less work:
+# Creating a [[caravan]] and dropping items on the world map.
+# Letting them [[deteriorate]] outside, unroofed or – even faster – in water.
+# Using [[molotov cocktails]] to get rid of junk through [[fire]].
+
+=== Smeltable but unsellable items ===
+The ''smelt metal from slag'', ''smelt apparel'' and ''smelt weapon'' are undoubtedly useful for turning [[steel slag chunk]]s, smeltable [[Apparel#Tainted apparel|tainted apparel]] and smeltable [[biocoded]] weapons respectively, into useful materials, since they are all outright unsellable.
+
+=== Smeltable and sellable items ===
+[[File:Graph1.png|thumb|This graph shows dependence item sell price multiplier($) from item hit points.]]
+For items that can both be sold and smelted, the table below describes the sales value (excluding the pawns [[Trade Price Improvement]] but including the [[Sell Price Multiplier]] of the item) of the items at each quality, alongside the sales value of the raw resources that can be attained by smelting. Items that can be made of different kinds of [[stuff]] do not have data. In parenthesis are the hit point percentages at which the item's sales value is equal to that of the raw resources. ''Never'' means the sales value of the item is never as high as the sales value of the raw resources. '''Above this percentage it is better to sell the item, where as below the percentage it is better to sell the raw resources.''' Note that this only considers selling each, so if you would otherwise have to buy the resources you would get from smelting, it would be better to smelt the items more often than not.
+
+In general, very damaged items are better to smelt (under 60% health remaining, the value of an item drops rapidly after 60 percent), as the sale price is reduced while the amount of resources recovered are unaffected. Note that items with 90% or more health remaining retain full value.
+
+==== Weapons ====
+<div><li style="display: inline-table;">
+{| {{STDT|sortable c_06 text-center}}
+! Name !! Material !! Material Return<br/>(on average) !! Material Value !! Awful Sale Value !! Poor Sale Value !! Normal Sale Value !! Good Sale Value !! Excellent Sale Value !! Masterwork Sale Value !! Legendary Sale Value
+{{#ask: [[Type2::Weapons]] [[Resource 1::Stuff]] [[Stuff Tags::Metallic]]
+ | format = template
+ | template = Hit Point Market Value Inverse/relative/quality table/material
+ | link = none
+ | named args = true
+ | ?Name = 1
+ | ?Resource 1 = R1
+ | ?Resource 2 = R2
+ | ?Resource 3 = R3
+ | ?Resource 4 = R4
+ | ?Resource 5 = R5
+ | ?Resource 6 = R6
+ | ?Resource 1 Amount = R1a
+ | ?Resource 2 Amount = R2a
+ | ?Resource 3 Amount = R3a
+ | ?Resource 4 Amount = R4a
+ | ?Resource 5 Amount = R5a
+ | ?Resource 6 Amount = R6a
+ | ?Type2 = Type2
+ | ?Has Quality = HasQuality
+ | sort = From DLC, Name
+}}{{#ask: [[Type2::Weapons]] [[Resource 1::!Stuff]] [[Resource 1::!Wood]] [[Resource 1::!Cloth]]
+ | format = template
+ | template = Hit Point Market Value Inverse/relative/quality table
+ | link = none
+ | named args = true
+ | ?Name = 1
+ | ?Resource 1 = R1
+ | ?Resource 2 = R2
+ | ?Resource 3 = R3
+ | ?Resource 4 = R4
+ | ?Resource 5 = R5
+ | ?Resource 6 = R6
+ | ?Resource 1 Amount = R1a
+ | ?Resource 2 Amount = R2a
+ | ?Resource 3 Amount = R3a
+ | ?Resource 4 Amount = R4a
+ | ?Resource 5 Amount = R5a
+ | ?Resource 6 Amount = R6a
+ | ?Type2 = Type2
+ | ?Has Quality = HasQuality
+ | sort = From DLC, Name
+}}
+|}
+</li></div>
+
+==== Apparel ====
+<div><li style="display: inline-table;">
+{| {{STDT|sortable c_06 text-center}}
+! Name !! Material !! Material Return<br/>(on average) !! Material Value !! Awful Sale Value !! Poor Sale Value !! Normal Sale Value !! Good Sale Value !! Excellent Sale Value !! Masterwork Sale Value !! Legendary Sale Value
+{{#ask: [[Type::Gear]] [[Resource 1::Stuff]] [[Stuff Tags::Metallic]]
+ | format = template
+ | template = Hit Point Market Value Inverse/relative/quality table/material
+ | link = none
+ | named args = true
+ | ?Name = 1
+ | ?Resource 1 = R1
+ | ?Resource 2 = R2
+ | ?Resource 3 = R3
+ | ?Resource 4 = R4
+ | ?Resource 5 = R5
+ | ?Resource 6 = R6
+ | ?Resource 1 Amount = R1a
+ | ?Resource 2 Amount = R2a
+ | ?Resource 3 Amount = R3a
+ | ?Resource 4 Amount = R4a
+ | ?Resource 5 Amount = R5a
+ | ?Resource 6 Amount = R6a
+ | ?Type2 = Type2
+ | ?Has Quality = HasQuality
+ | sort = From DLC, Name
+}}{{#ask: [[Type::Gear]] [[Resource 1::!Stuff]] [[Name::!Low-shield pack]]
+ | format = template
+ | template = Hit Point Market Value Inverse/relative/quality table
+ | link = none
+ | named args = true
+ | ?Name = 1
+ | ?Resource 1 = R1
+ | ?Resource 2 = R2
+ | ?Resource 3 = R3
+ | ?Resource 4 = R4
+ | ?Resource 5 = R5
+ | ?Resource 6 = R6
+ | ?Resource 1 Amount = R1a
+ | ?Resource 2 Amount = R2a
+ | ?Resource 3 Amount = R3a
+ | ?Resource 4 Amount = R4a
+ | ?Resource 5 Amount = R5a
+ | ?Resource 6 Amount = R6a
+ | ?Type2 = Type2
+ | ?Has Quality = HasQuality
+ | sort = From DLC, Name
+}}
+|}
+</li></div>
+
+== Version history ==
+* [[Version/0.4.460|0.4.460]] -  Added as '''Slag Refinery'''
+* [[Version/1.3.3087|1.3.3087]] - Pawns no longer smelt [[relic]]s ,{{IdeologyIcon}} to avoid accidental mishaps.
+* [[Version/1.4.3523|1.4.3523]] - Smelted armor no longer returns chemfuel. Fix: Some apparel is smeltable when it would not give anything for smelting.
+* [[Version/1.4.3641|1.4.3641]] - Fix: Apparel that can be made of any non-smeltable stuff does not show up on the smelting bill UI. (Eg plate armor) 
+
+{{Nav|production|wide}}
+[[Category:Production]] [[Category:Resource Production]]

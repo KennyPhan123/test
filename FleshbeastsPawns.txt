@@ -1,0 +1,67 @@
+<onlyinclude><div><li style="display: inline-table;">
+{| {{STDT| c_01 sortable text-center}}
+! Pawn Kind !! Combat Power !! Armor (<abbr title="sharp/blunt/heat">S/B/H</abbr>) !! Health Scale !! Body Size !! {{DPS}}<ref name="Actual">Note: This is the actual base average derived from the [[Weapons#Listed DPS on pawns|melee verb system]] updated in [[Version/1.1.2610|1.1.2610]], it may sometimes disagree with the listed value in the in-game infobox.<br/>It may also change depending on the stats and the melee verbs available to the pawn.</ref><br>([[Melee Hit Chance|Post Hit Chance]]) !! Move Speed !! Abilities !!  Additional Info [[{{fullurl:Fleshbeasts/Pawns|action=edit}} edit]]
+<!-- 6 columns; 1 bold, 5 normal: -->
+<!-- defName="", label="", ParentName="", Name="BaseFleshbeastKind", Abstract="BaseFleshbeastKind"
+|- id="Name"
+! Name
+| -
+| [[File:Name.png]] || CP
+| '''Age Range:''' <br />'''Race:''' <br />'''Default Faction Type:''' Entities<br />'''Melee Attack Infection Pathways:''' Entity Attacked
+-->
+<!-- defName="Bulbfreak", label="bulbfreak", ParentName="BaseFleshbeastKind", Name="", Abstract="" -->
+|- id="Bulbfreak"
+! [[Bulbfreak]]<br>{{Icon Small|Bulbfreak|64}} 
+| {{Q|Bulbfreak|Combat Power}}
+| {{Q|Bulbfreak|Armor - Sharp|0}}% / {{Q|Bulbfreak|Armor - Blunt|0}}% / {{Q|Bulbfreak|Armor - Heat|0}}%
+| {{Q|Bulbfreak|Health Scale}}
+| {{Q|Bulbfreak|Body Size}}
+| {{#vardefineecho: tempTrueDPSVariable|{{True Melee DPS Calculator|Bulbfreak}}}}<br>({{#expr:{{#var:tempTrueDPSVariable}}*0.62 round 2}}) || {{Q|Bulbfreak|Move Speed Base}} {{CS}}
+| -
+<!-- Additional Info -->
+| '''Age Range:''' Any<br />'''Race:''' Bulbfreak<br />'''Default Faction Type:''' Entities<br />'''Melee Attack Infection Pathways:''' Entity Attacked<br />'''Override Death On Downed Chance:''' 90%
+<!-- defName="Fingerspike", label="fingerspike", ParentName="BaseFleshbeastKind", Name="", Abstract="" -->
+|- id="Fingerspike"
+! [[Fingerspike]]<br>{{Icon Small|Fingerspike|64}}
+| {{Q|Fingerspike|Combat Power}}
+| {{Q|Fingerspike|Armor - Sharp|0}}% / {{Q|Fingerspike|Armor - Blunt|0}}% / {{Q|Fingerspike|Armor - Heat|0}}%
+| {{Q|Fingerspike|Health Scale}}
+| {{Q|Fingerspike|Body Size}}
+| {{#vardefineecho: tempTrueDPSVariable|{{True Melee DPS Calculator|Fingerspike}}}}<br>({{#expr:{{#var:tempTrueDPSVariable}}*0.62 round 2}}) || {{Q|Fingerspike|Move Speed Base}} {{CS}}
+| SpikeLaunch Fingerspike: <br/>Base damage 7, range 3.9
+<!-- Additional Info -->
+| '''Age Range:''' Any<br />'''Race:''' Fingerspike<br />'''Default Faction Type:''' Entities<br />'''Melee Attack Infection Pathways:''' Entity Attacked
+<!-- defName="Toughspike", label="toughspike", ParentName="BaseFleshbeastKind", Name="", Abstract="" -->
+|- id="Toughspike"
+! [[Toughspike]]<br>{{Icon Small|Toughspike|64}} 
+| {{Q|Toughspike|Combat Power}}
+| {{Q|Toughspike|Armor - Sharp|0}}% / {{Q|Toughspike|Armor - Blunt|0}}% / {{Q|Toughspike|Armor - Heat|0}}%
+| {{Q|Toughspike|Health Scale}}
+| {{Q|Toughspike|Body Size}}
+| {{#vardefineecho: tempTrueDPSVariable|{{True Melee DPS Calculator|Toughspike}}}}<br>({{#expr:{{#var:tempTrueDPSVariable}}*0.62 round 2}}) || {{Q|Toughspike|Move Speed Base}} {{CS}}
+| SpikeLaunch Toughspike. <br/>Base damage 9, range 5.9
+<!-- Additional Info -->
+| '''Age Range:''' Any<br />'''Race:''' Toughspike<br />'''Default Faction Type:''' Entities<br />'''Melee Attack Infection Pathways:''' Entity Attacked
+<!-- defName="Trispike", label="trispike", ParentName="BaseFleshbeastKind", Name="", Abstract="" -->
+|- id="Trispike"
+! [[Trispike]]<br>{{Icon Small|Trispike|64}} 
+| {{Q|Trispike|Combat Power}}
+| {{Q|Trispike|Armor - Sharp|0}}% / {{Q|Trispike|Armor - Blunt|0}}% / {{Q|Trispike|Armor - Heat|0}}%
+| {{Q|Trispike|Health Scale}}
+| {{Q|Trispike|Body Size}}
+| {{#vardefineecho: tempTrueDPSVariable|{{True Melee DPS Calculator|Trispike}}}}<br>({{#expr:{{#var:tempTrueDPSVariable}}*0.62 round 2}}) || {{Q|Trispike|Move Speed Base}} {{CS}}
+| SpikeLaunch Toughspike: <br/>Base damage 9, range 5.9
+<!-- Additional Info -->
+| '''Age Range:''' Any<br />'''Race:''' Trispike<br />'''Default Faction Type:''' Entities<br />'''Melee Attack Infection Pathways:''' Entity Attacked<br />'''Override Death On Downed Chance:''' 90%
+<!-- defName="Dreadmeld", label="dreadmeld", ParentName="BaseFleshbeastKind", Name="", Abstract="" -->
+|- id="Dreadmeld"
+! [[Dreadmeld]]<br>{{Icon Small|Dreadmeld|64}} 
+| {{Q|Dreadmeld|Combat Power}}
+| {{Q|Dreadmeld|Armor - Sharp|0}}% / {{Q|Dreadmeld|Armor - Blunt|0}}% / {{Q|Dreadmeld|Armor - Heat|0}}%
+| {{Q|Dreadmeld|Health Scale}}
+| {{Q|Dreadmeld|Body Size}}
+| {{#vardefineecho: tempTrueDPSVariable|{{True Melee DPS Calculator|Dreadmeld}}}}<br>({{#expr:{{#var:tempTrueDPSVariable}}*0.62 round 2}}) || {{Q|Dreadmeld|Move Speed Base}} {{CS}}
+| -
+<!-- Additional Info -->
+| '''Age Range:''' Any<br />'''Race:''' Dreadmeld<br />'''Default Faction Type:''' Entities<br />'''Melee Attack Infection Pathways:''' Entity Attacked<br />'''Force Death On Downed:''' true<br />'''Is Boss:''' true <br />'''Starting Hediffs:''' [[Regeneration]]; '''Severity:''' 1
+|}</li></div></onlyinclude><noinclude>[[Category:Pawnkind tables]]</noinclude>

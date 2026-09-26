@@ -1,0 +1,59 @@
+{{Stub|reason=1) Better table formatting 2) Version history 3) Two-way links 4) StatWorker}}
+{{Verified|1.5.4104}}{{Stat
+| def name = Ability_PsyfocusCost
+| label = psyfocus cost
+| description = How much [[psyfocus]] must be spent to perform this [[Psycasts|ability]].
+| default base value = 0
+| min value = 0
+| to string style = PercentOne
+| show if undefined = false
+| category = Ability
+| display priority in category = 1002
+| worker class = StatWorker_PsyfocusCost
+| show if mods loaded = Royalty
+}}
+
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_07 text-center}}
+! Ability !! Psyfocus Cost
+|-
+{{#ask: [[Psyfocus Cost::+]]
+| ?Psyfocus Cost
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Name
+}}
+|}
+</li><div>
+
+== Stat Def Data ==
+{| {{STDT}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Psyfocus Cost" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />Ability_PsyfocusCost
+* '''Label:'''<br />psyfocus cost
+| How much psyfocus must be spent to perform this ability.
+|
+* Display Order:<br />'''60'''
+* Def Name:<br />'''Ability'''
+* Label:<br />'''Ability'''
+* Display All By Default:<br />{{Bad|false}}
+|
+* '''Worker Class:''' StatWorker_PsyfocusCost
+* '''To String Style:''' PercentOne
+* '''Default Base Value:''' {{%|0}}
+* '''Min Value:''' {{%|0}}
+* '''Show If Undefined:''' {{Bad|false}}
+|
+* Show If Mods Loaded:
+** '''[[Royalty]] {{RoyaltyIcon}}'''
+| 1002
+<!--</StatDef>-->
+|}
+
+== Version history ==
+* [[Royalty (DLC)]] Release - Added.
+
+{{nav|stats|wide}}

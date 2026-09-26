@@ -1,0 +1,66 @@
+{{Version Nav}}
+This is a relatively minor update focused on fixes and balance. The major content we’re working on is still being held back for release as the content add-on later.
+
+This update should be compatible with all savegames and mods. DRM-free users can update by re-downloading and re-installing from their personal download link – it always has the latest version and never changes.
+
+Thanks to everyone who has given feedback at the unstable testing Discord server. Come join to test future releases!
+
+== Improvements ==
+* Monuments can now be sastisfied with any floor type instead of requiring specific floor types.
+* Monument generation has been adjusted to make monuments more dense and consistent.
+* Reworked how quests decide whether to appear based on player progress to solve an issue that would cause quests not to appear for a long time at lower populations on certain difficulty settings.
+* “Choose rewards” window renamed to “Reward preferences”. Added explanation at the top of the window. Increased height of reward prefs window.
+* Man in black is now always capable of violent and caring work.
+* Quests will no longer offer rewards with unreasonably small numbers of items (e.g. 5x hyperweave).
+* Improved clarity of monument marker placement feedback. Added messages for incompatible terrain or blocking buildings.
+* Prices now only display decimals when under $10.
+* Now, only esquire and higher titles will be inherited.
+* Hospitality threats with mech clusters now display more accurate sizing in generated text.
+
+== Tuning ==
+* Praetors can now give speeches.
+* Lodger minimum mood now only applies to the asker, not any others who accompany him.
+* Mech clusters now have more chance of using walls at low points levels, but less chance at high points levels.
+* Mech clusters are more likely to have mechanoid guards instead of just turrets.
+* Mech clusters at low points are more likely to have unstable power cells.
+* Reduce duration of berserk pulse from 15 seconds to 11 seconds.
+* Increase cost of mortars.
+* Siegers now recieve 6 replenish shells at a time instead of 10.
+* Decrease joywire brain efficiency impact from 30% to 20% (reverts previous change).
+* Increased human turrets damage and fuel consumption.
+* Increased uranium slug turret range.
+* Reduce steel from smelting steel chunks from 20 to 15. Reduce resource yield from destroying/disassembing mechs and their buildings. This should reduce late-game clutter, reduce weird economic imbalances between difficulty levels, make it more relevant to actually have an economy besides killing things, and improve challenge spread between difficulties.
+* Quest ThreatReward_Manhunters_Joiner: Manhunter arrival is much sooner, and comes not too long after the joiner arrives.
+
+== Technical ==
+* Removed null asker possibility from hospitality quests.
+* Added try/catch to StaticConstructorOnStartupUtility.CallAll() so 1 broken mod doesn’t break all other mods.
+* DesignatorFor -> FindAllowedDesignatorRoot
+* Monument placement now checks overlap before adjacency.
+* Minimum mech cluster points can be set for mech cluster buildings.
+* Rename “ludeon” constant in ModContentPack to LudeonPackageIdAuthor Fix typos in a related check.
+* Reward from lodgersMoodThreshold in hospitality quests is now factored based on lodgersMoodThreshold value.
+* QuestNode_IsInList now uses previously unused function.
+* Removed redundant checks from IsSpawningBlocked. IsSpawningBlockedPermanently checks proper location.
+* Moved TerrainDef.genericLabel to DesignatorDropdownGroupDef label.
+* Move the delegate inside ModContentPack.ReloadContent into a class function to prevent future issues with mods.
+* Added null check for QuestGenUtility method IsInList.
+* lodgersMoodThreshold is now selected from 4 discrete random values.
+* Renamed allowedThreats to threatType in hospitality quests; a back-compatibility rule for the old name remains.
+
+== Fixes ==
+* Fix: Can’t target caster or pawns of the same faction with psycasts if they’re invisible.
+* Fix: Text overlap for some items on architect tab description.
+* Fix: Kind label is not gender-aware in RulesForPawn
+* Fix: Pawns can stand on drapes are standable.
+* Fix: Some hospitality quest fields report missing translations even though they shouldn’t
+* Fix: Alerts throwing errors after choosing “Load mod list from save” while in-game.
+* Fix: Smoke spewer does nothing.
+* Fix: Psycasts don’t check cooldown in CanCast method.
+* Fix: Tribute collector doesn’t arrive unless you have a knight.
+* Fix: Black screen on startup if a workshop mod folder was deleted without unsubbing from the mod.
+* Fix: Force loading animals into a shuttle while forming a caravan and then sending the shuttle causes errors.
+* Fix: Asker potentially not being set when setting lodgersHaveMoodThreshold.
+* Fix: Monuments can be placed over non-edifice buildings without warning.
+* Fix: Languages listed as seperate even if they share the same legacy folder name.
+* Fix: Manhunter pack quests and incidents fail to generate for higher points.

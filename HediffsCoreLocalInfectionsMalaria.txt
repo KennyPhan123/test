@@ -1,0 +1,77 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Local/Infections}}
+|}
+----
+{| {{STDT| c_15}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Malaria" <!-- defName="Malaria", ParentName="InfectionBase" -->
+! Malaria
+----
+* Def Name:<br />Malaria
+* Label:<br />malaria
+| An infectious disease caused by a mosquito-borne parasite.
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|80%|80%|35%}}
+* Is Infection: {{Bad|true}}
+* Makes [[Thoughts#Sick|Sick]] Thought: {{Bad|true}}
+* Initial Severity: '''0.1%'''
+* Lethal Severity: {{Bad|100%}}
+* Scenario Can Add: {{Good|true}}
+* Tendable: {{Good|true}}
+* '''Comps'''
+** ''Tend Duration''
+*** Base Tend Duration Hours: '''12'''
+*** Severity Per Day Tended: {{---|23.2%}}
+** ''Immunizable''
+*** Severity Per Day Not Immune: {{++|37.02%}}
+*** Immunity Per Day Sick: {{+|31.45%}}
+*** Severity Per Day Immune: {{---|72.97%}}
+*** Immunity Per Day Not Sick: {{---|3%}}
+* '''Remove On Redress Chance By Days Curve:'''
+<div><li style="display: inline-table;">
+{| {{STDT| c_15}}
+! <abbr title="Days as a World Pawn">Days</abbr> !! <abbr title="Chance to remove on Pawn Generator Redress">Chance</abbr>
+|-
+! 0
+| 0%
+|-
+! 2
+| 0%
+|-
+! 7
+| 50%
+|-
+! 20
+| 100%
+|}</li></div>
+|<!-- Stages -->
+{| {{STDT| c_15}}
+! Label !! Parameters
+|-
+! minor
+|<!-- Parameters -->
+* [[Blood Filtration]] Offset: {{--|10%}}
+* [[Consciousness]] Offset: {{--|5%}}
+|-
+! major
+|<!-- Parameters -->
+* Min Severity: '''78%'''
+* Vomit {{MTB}} Days: '''1.5'''
+* Pain Offset: {{++|30%}}
+* [[Blood Filtration]] Offset: {{--|20%}}
+* [[Consciousness]] Offset: {{--|12%}}
+* [[Manipulation]] Offset: {{--|8%}}
+|-
+! extreme
+|<!-- Parameters -->
+* Min Severity: '''91%'''
+* Life Threatening: {{Bad|true}}
+* Vomit {{MTB}} Days: '''0.75'''
+* Pain Offset: {{++|30%}}
+* [[Blood Filtration]] Offset: {{--|22%}}
+* [[Consciousness]] Max: {{Bad|10%}}
+* [[Manipulation]] Offset: {{--|10%}}
+|}<noinclude>
+|}</noinclude>

@@ -1,0 +1,146 @@
+{{Main|Neolithic base trader}}{{#set:
+ | Name = Neolithic base trader
+ | Tech Level = Neolithic
+
+ | Trades Single = Silver
+ | Trades Single = Component<!--ComponentIndustrial-->
+ | Trades Single = Steel
+ | Trades Single = Wood<!--WoodLog-->
+ | Trades Single = Cloth
+ | Trades Single = Gold
+ | Trades Single = Pemmican
+ | Trades Single = Herbal medicine<!--MedicineHerbal-->
+ | Trades Single = Animus stone<!--AnimusStone-->
+ | Trades Single = Chocolate<!--StockGenerator_MultiDef-->
+ | Trades Single = Kibble<!--StockGenerator_MultiDef-->
+ | Trades Single = Slave
+
+ | Trades Tag = WeaponRanged
+ | Trades Tag = BasicClothing
+ | Trades Tag = Clothing
+ | Trades Tag = Artifact
+ | Trades Tag = Serum
+
+ | Trades Category = Textiles
+ | Trades Category = ResourcesRaw
+ | Trades Category = FoodRaw
+ | Trades Category = Drugs
+ | Trades Category = Books
+ | Trades Category = WeaponsMelee
+
+ | Sells Tag = AnimalUncommon
+ | Sells Tag = AnimalExotic
+
+ | Buys Tag = ExpensiveSimple
+ | Buys Tag = Art
+ | Buys Tag = MusicalInstrument
+ | Buys Tag = AnimalFarm
+ | Buys Tag = AnimalPet
+}}
+<onlyinclude>
+This trader '''buys and sells''' the following things:
+{| {{STDT|sortable c_03}}
+! style="width:8em" | Name !! Price !! style="width:4em" | Min stock !! style="width:4em" | Max stock
+|-
+! [[Silver]]
+| ×1 || 800 || 3000
+|-
+! [[Component]]
+| ×2 || 3 || 10
+|-
+! [[Steel]]
+| ×1 || 200 || 300
+|-
+! [[Wood]]
+| ×1 || 500 || 600
+|-
+! [[Cloth]]
+| ×1 || 200 || 300
+|-
+! [[Gold]]
+| ×1 || -40 || 120
+|-
+! [[Pemmican]]
+| ×1 || 500 || 1000
+|-
+! [[Herbal medicine]]
+| ×1 || 15 || 30
+|-
+! [[Slave]]
+| ×1 || -1 || 2
+|-
+! [[Animus stone]] {{RoyaltyIcon}}
+| ×1 || -3 || 1
+|-
+! [[Tome]] {{AnomalyIcon}}
+| ×1 || -2 || 1
+|}
+
+Additionally this trader '''buys and sells''' the following groups of things:
+{| {{STDT|sortable c_03}}
+! style="width:8em" | Group /<br/>Trade tag !! Price !! style="width:4em" | Min stock !! style="width:4em" | Max stock !! style="width:4em" | Variety !! style="text-align:left" | Things
+|-
+! Textiles
+| ×1 || 300 {{Icon Small|silver}} || 700 {{Icon Small|silver}} || 1 - 2 kinds || {{#ask: [[Category:Textile]] [[Name::!Dread leather]] | template = DLC Icons | link = none | sep = ,<nowiki> </nowiki> | sort = From DLC, Name}}
+|-
+! Raw resources
+| ×1 || 200 {{Icon Small|silver}} || 600 {{Icon Small|silver}} || 3 kinds || {{#ask: [[Stuff Category::Metallic||Woody]] [[Name::!Bioferrite]] OR [[Stuff Category::Stony]] [[Name::Jade]] | template = DLC Icons | link = none | sep = ,<nowiki> </nowiki> | sort = From DLC, Name}}
+|-
+! Raw food
+| ×1 || 300 {{Icon Small|silver}} || 800 {{Icon Small|silver}} || 3 - 5 kinds || {{#ask: [[Category:Raw Food]] [[Name::!~*(fert.)]] | template = DLC Icons | link = none | sep = ,<nowiki> </nowiki> | sort = From DLC, Name}}
+|-
+! Drugs (neolithic)
+| ×1 || 400 {{Icon Small|silver}} || 1000 {{Icon Small|silver}} || 1 - 2 kinds || {{#ask: [[Category:Drug]] [[Tech Level::Neolithic]] | template = DLC Icons | link = none | sep = ,<nowiki> </nowiki> | sort = From DLC, Name}}
+|-
+! Books
+| ×1 || -2 || 1 || 2 kinds || {{#ask: [[Category:Books]] [[Name::!Tome]] | template = DLC Icons | link = none | sep = ,<nowiki> </nowiki> | sort = From DLC, Name}}
+|-
+! Melee weapons (neolithic)
+| ×1 || 1 || 3 || 2 - 4 kinds || {{#ask: [[Category:Melee Weapons]] [[Tech Level::Neolithic]] | template = DLC Icons | link = none | sep = ,<nowiki> </nowiki> | sort = From DLC, Name}}
+|-
+! Ranged weapons (neolithic)
+| ×1 || 1 || 1 || 2 - 4 kinds || {{#ask: [[TradeTags::WeaponRanged]] [[Tech Level::Neolithic]] | template = DLC Icons | link = none | sep = ,<nowiki> </nowiki> | sort = From DLC, Name}}
+|-
+! Basic clothing (neolithic)
+| ×1 || 1 || 1 || 3 - 9 kinds || {{#ask: [[TradeTags::BasicClothing]] [[Tech Level::Neolithic]] | template = DLC Icons | link = none | sep = ,<nowiki> </nowiki> | sort = From DLC, Name}}
+|-
+! Clothing (neolithic)
+| ×1 || 1 || 1 || 1 - 3 kinds || {{#ask: [[TradeTags::Clothing]] [[Tech Level::Neolithic]] | template = DLC Icons | link = none | sep = ,<nowiki> </nowiki> | sort = From DLC, Name}}
+|-
+! Artifact
+| ×1 || 1 || 1 || 0 - 3 kinds || {{#ask: [[TradeTags::Artifact]] | template = DLC Icons | link = none | sep = ,<nowiki> </nowiki> | sort = From DLC, Name}}
+|-
+! Other
+| ×1 || {{Check Tag|???|How does StockGenerator_MultiDef work?}} || ??? || ??? || [[Chocolate]], [[Kibble]]
+|-
+! Serums {{AnomalyIcon}}
+| ×1 || -3 || 1 || 4 || {{#ask: [[Category:Serum]] [[Name::!Voidsight serum]] | template = DLC Icons | link = none | sep = ,<nowiki> </nowiki> | sort = From DLC, Name}}
+|}
+
+Additionally this trader '''sells''' the following groups of things:
+{| {{STDT|sortable c_03}}
+! style="width:8em" | Group /<br/>Trade tag !! Price !! style="width:4em" | Min stock !! style="width:4em" | Max stock !! style="width:4em" | Variety !! style="text-align:left" | Things
+|-
+! Farm and pet animals
+| ×1 || 2 || 4 || 3 - 4 kinds || Farm animals: {{#ask: [[TradeTags::AnimalFarm]] [[Wildness::<0.7]] | template = DLC Icons | link = none | sep = ,<nowiki> </nowiki> | sort = From DLC, Name}} (mating pairs will be generated for these)<br/>Pet animals: {{#ask: [[TradeTags::AnimalPet]] [[Wildness::<0.7]] | template = DLC Icons | link = none | sep = ,<nowiki> </nowiki> | sort = From DLC, Name}}
+|}
+
+Additionally this trader '''buys''' the following groups of things:
+{| {{STDT|sortable c_03}}
+! style="width:8em" | Group /<br/>Trade tag !! Price !! style="text-align:left" | Things
+|-
+! Art
+| ×1 || {{#ask: [[TradeTags::Art]] | template = DLC Icons | link = none | sep = ,<nowiki> </nowiki> | sort = From DLC, Name}}
+|-
+! Musical instruments
+| ×1 || {{#ask: [[TradeTags::MusicalInstrument]] | template = DLC Icons | link = none | sep = ,<nowiki> </nowiki> | sort = From DLC, Name}}
+|-
+! Uncommon and exotic animals
+| ×1 || Uncommon animals: {{#ask: [[TradeTags::AnimalUncommon]] | template = DLC Icons | link = none | sep = ,<nowiki> </nowiki> | sort = From DLC, Name | limit = 100}}<br/>Exotic animals: {{#ask: [[TradeTags::AnimalExotic]] | template = DLC Icons | link = none | sep = ,<nowiki> </nowiki> | sort = From DLC, Name}}<!-- Don't think the maxWildness applies here, since then they couldn't by any exotic animals. -->
+|-
+! Expensive simple
+| ×1 || [[Insect jelly]] and generally all items that have a [[market value]] of at least 15 {{Icon Small|silver}}, excluding [[apparel]], [[weapons]], [[medicine (disambiguation)|medicines]], and [[drugs]].<!-- Some individual items are also excluded, see <tradeability> in the xml -->
+|}
+
+</onlyinclude>
+[[Category:Trade]]

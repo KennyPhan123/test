@@ -1,0 +1,149 @@
+{{Biotech}}
+{{Stub|reason=1) Two-way links 2) Account for cerebrex node}}
+{{See also|Global Work Speed}}
+{{Verified|1.5.4104}}{{Stat
+| def name = WorkSpeedGlobalOffsetMech
+| label = mech work speed offset
+| description = A work speed offset applied to a [[mechanitor]]'s [[Mechanitor#Allied_mechanoids|mechs]].
+| default base value = 0
+| min value = 0
+| effective maximum = 0.56
+| hide at value = 0
+| to string style = PercentZero
+| scenario randomizable = true
+| show on animals = false
+| show on humanlikes = 
+| show on mechanoids = false
+| category = Mechanitor
+| display priority in category = 5000
+}}
+
+== Offsets ==
+* [[Hediffs]]
+** {{BiotechIcon}} [[Hediffs#Control sublink|Control sublink]]<ref>See {{Icon Small|Control sublink (standard)|24}} [[Control sublink (standard)]] and {{Icon Small|Control sublink (high)|24}} [[Control sublink (high)]]</ref>:
+<div><li style="display: inline-table;">
+{| {{STDT| c_18}}
+! Level !! Offset
+|-
+! 1
+| {{+|6%}}
+|-
+! 2
+| {{+|12%}}
+|-
+! 3
+| {{+|18%}}
+|-
+! 4
+| {{+|24%}}
+|-
+! 5
+| {{+|30%}}
+|-
+! 6
+| {{+|36%}}
+|}</li></div>
+<references />
+
+* [[Precepts]] {{IdeologyIcon}}
+** {{BiotechIcon}} [[Mechanoid labor]]:
+*** Enhanced: {{+|20%}}
+
+== Explanation ==
+[[Mech Work Speed Offset]] is applied as an offset to [[Global Work Speed]] for mechanitor controlled mechanoids. Every mechanoid except for the [[Tunneler]] (150%) has a default ''Global Work Speed'' of 50%, and some have special modifiers to certain work types. Combat mechanoids cannot perform any type of work, meaning that work speed is only relevant to the following (work) mechanoids:
+* Lifter
+* Constructoid
+* Fabricor
+* Agrihand
+* Cleansweeper
+* Paramedic
+* Tunneler
+
+Here is a table of work mechanoids with the possible ''global work speed''s from different control sublink levels:
+<div><li style="display: inline-table;">
+{| {{STDT| c_18 sortable}}
+! Mechanoid !! Base Global<br />Work Speed !! Level 1<br />(standard) !! Level 2<br />(standard) !! Level 3<br />(standard) !! Level 5<br />(high) !! Level 5<br />(high) !! Level 6<br />(high)
+<!-- Biotech Races_Mechanoids_Light -->
+|-
+! {{Icon Small|Lifter|24}} [[Lifter]] {{BiotechIcon}}
+| 50% || 56% || 62% || 68% || 74% || 80% || 86%
+|-
+! {{Icon Small|Constructoid|24}} [[Constructoid]] {{BiotechIcon}}
+| 50% || 56% || 62% || 68% || 74% || 80% || 86%
+|-
+! {{Icon Small|Fabricor|24}} [[Fabricor]] {{BiotechIcon}}
+| 50% || 56% || 62% || 68% || 74% || 80% || 86%
+|-
+! {{Icon Small|Agrihand|24}} [[Agrihand]] {{BiotechIcon}}
+| 50% || 56% || 62% || 68% || 74% || 80% || 86%
+|-
+! {{Icon Small|Cleansweeper|24}} [[Cleansweeper]] {{BiotechIcon}}
+| 50% || 56% || 62% || 68% || 74% || 80% || 86%
+|-
+! {{Icon Small|Paramedic|24}} [[Paramedic]] {{BiotechIcon}}
+| 50% || 56% || 62% || 68% || 74% || 80% || 86%
+<!-- Biotech Races_Mechanoids_Heavy -->
+|-
+! {{Icon Small|Tunneler|24}} [[Tunneler]] {{BiotechIcon}}
+| 150% || 156% || 162% || 168% || 174% || 180% || 186%
+|}</li></div>
+
+Here is a table with the added bonus from the Enhanced Mechanoid labor Precept:
+<div><li style="display: inline-table;">
+{| {{STDT| c_18 sortable}}
+! Mechanoid !! Global Work<br />Speed +<br />[[Mechanoid labor|Mechanoid labor:<br />Enhanced]] !! Level 1<br />(standard) !! Level 2<br />(standard) !! Level 3<br />(standard) !! Level 5<br />(high) !! Level 5<br />(high) !! Level 6<br />(high)
+<!-- Biotech Races_Mechanoids_Light -->
+|-
+! {{Icon Small|Lifter|24}} [[Lifter]] {{BiotechIcon}}
+| 70% || 76% || 82% || 88% || 94% || 100% || 106%
+|-
+! {{Icon Small|Constructoid|24}} [[Constructoid]] {{BiotechIcon}}
+| 70% || 76% || 82% || 88% || 94% || 100% || 106%
+|-
+! {{Icon Small|Fabricor|24}} [[Fabricor]] {{BiotechIcon}}
+| 70% || 76% || 82% || 88% || 94% || 100% || 106%
+|-
+! {{Icon Small|Agrihand|24}} [[Agrihand]] {{BiotechIcon}}
+| 70% || 76% || 82% || 88% || 94% || 100% || 106%
+|-
+! {{Icon Small|Cleansweeper|24}} [[Cleansweeper]] {{BiotechIcon}}
+| 70% || 76% || 82% || 88% || 94% || 100% || 106%
+|-
+! {{Icon Small|Paramedic|24}} [[Paramedic]] {{BiotechIcon}}
+| 70% || 76% || 82% || 88% || 94% || 100% || 106%
+<!-- Biotech Races_Mechanoids_Heavy -->
+|-
+! {{Icon Small|Tunneler|24}} [[Tunneler]] {{BiotechIcon}}
+| 170% || 176% || 182% || 188% || 194% || 200% || 206%
+|}</li></div>
+
+== Stat Def Data ==
+{| {{STDT| c_18}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Mech Work Speed Offset" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />WorkSpeedGlobalOffsetMech
+* '''Label:'''<br />mech work speed offset
+| A work speed offset applied to a mechanitor's mechs.
+|
+* Display Order:<br />'''105'''
+* Def Name:<br />'''Mechanitor'''
+* Label:<br />'''Mechanitor'''
+* Display All By Default:<br />{{Good|true}}
+|
+* '''Default Base Value:''' {{%|0}}
+* '''Min Value:''' {{%|0}}
+* '''Hide At Value:''' {{%|0}}
+* '''To String Style:''' PercentZero
+* '''Scenario Randomizable:''' {{Good|true}}
+* '''Show On Mechanoids:''' {{Bad|false}}
+* '''Show On Animals:''' {{Bad|false}}
+| -
+| 5000
+<!--</StatDef>-->
+|}
+
+== Version history ==
+* [[Biotech (DLC)]] Release - Added.
+
+{{nav|stats|wide}}

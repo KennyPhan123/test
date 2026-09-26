@@ -1,0 +1,52 @@
+{{Infobox main|temperature
+| name = Passive cooler
+| image = Passive cooler.png
+| description = A traditional unpowered cooler that works by water evaporation. Must be regularly replenished with wood. Not efficient enough to refrigerate food.
+<!-- Base Stats -->
+| type = Building
+| type2 = Temperature
+| hp = 80
+| flammability = 1
+| rotatable = false
+| placeable = true
+| path cost = 30
+<!-- Building -->
+| size = 1 ˣ 1
+| cover = 0.4
+| minifiable = false
+| heatpersecond = -11
+<!-- Creation -->
+| research = Passive cooler
+| work to make = 200
+| resource 1 = Wood
+| resource 1 amount = 50
+| deconstruct yield = Nothing
+| fuel filter = Wood
+| fuel capacity = 50.0
+| fuel consumption rate = 10.0
+| initial fuel percent = 1 <!-- 100% -->
+}}
+The '''passive cooler''' is a low-tech alternative to the [[cooler]]. It does not require power or any advanced materials, but requires wood to refuel.
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+Passive coolers absorb heat from interior spaces at a rate of {{Temperature|11||delta}} per second, spread among each tile. They cannot lower the temperature below {{Temperature|17}}. In order to do so, passive coolers consume {{Icon Small|wood}} 10 [[wood]] per day; they must be restocked at a cooler's full cost every 5 days.
+
+== Analysis ==
+Passive coolers are unable to preserve food, but they can protect your colonists from [[heatstroke]] and prevent debuffs such as "Slept in the heat". Unlike [[campfire]]s, passive coolers can't be "too efficient" and make your pawns uncomfortably cold.
+
+Despite not being able to directly cool a room below {{Temperature|17}}, a Passive Cooler can actually assist a Cooler unit if the Cooler is fighting ambient temperatures higher than 17C. This is great for if a freezer is needed, resources are limited and wood is reasonably abundant. This also helps keep wealth low and does not consume power or components for maintenance like another cooler would. It can also allow coolers to operate without venting outdoors, such as in mountain bases, by cooling the room heat is pushed to. 
+
+They are very fuel inefficient, even compared to running coolers on [[Wood-fired_generator|wood-fired generators]]. However, they have the great advantage of not needing electrical power to function. As such, they will save your [[fermenting barrel|fermenting barrels]] from going bad during a [[Events#Solar_flare|solar flare]].
+
+== Version history ==
+* [[Version/0.15.1279|0.15.1279]] - Added.
+* [[Version/0.19.2009|0.19.2009]] - no longer self-destructs when it runs out of fuel but instead waits to be restocked.
+* [[Version/1.0.0|1.0.0]] - No longer requires Construction skill to craft.
+* [[Version/1.1.0|1.1.0]] - Refueling is now toggleable.
+* ? New Arrivals start with Passive Cooler researched.
+
+{{Nav|temperature}}
+[[Category:Temperature]]

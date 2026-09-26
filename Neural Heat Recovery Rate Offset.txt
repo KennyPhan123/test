@@ -1,0 +1,76 @@
+{{Stub|reason=Order of operations}}
+{{See also|Neural Heat Recovery Rate}}
+{{Verified|1.5.4104}}{{Stat
+| def name = PsychicEntropyRecoveryRateOffset
+| label = neural heat recovery rate offset
+| description = An offset applied to the user's neural heat recovery rate.
+| default base value = 0
+| hide at value = 0
+| format string = {0}/s
+| to string style = FloatTwo
+| show if undefined = false
+| show on pawns = false
+| show on animals = false
+| category = Basics
+| display priority in category = 3550
+| show if mods loaded any = Royalty, Biotech
+}}
+
+== Offsets ==
+* [[Stuff]] Stats (Factors when made of this)
+** [[Bioferrite]]{{AnomalyIcon}} Stat [[Quality]] Offsets:
+{| {{STDT}}
+! Quality !! Offsets
+|-
+| Awful || {{+|0.04}}
+|-
+| Poor || {{+|0.04}}
+|-
+| Normal || {{+|0.04}}
+|-
+| Good || {{+|0.04}}
+|-
+| Excellent || {{+|0.04}}
+|-
+| Masterwork || {{+|0.04}}
+|-
+| Legendary || {{+|0.04}}
+|}
+
+== Stat Def Data ==
+{| {{STDT}}
+! Name !! Description !! Category !! Parameters !! Complex Parameters !! Display Priority In Category
+|- id="Neural Heat Recovery Rate Offset" <!-- MayRequireAnyOf="Royalty, Biotech" --> <!--<StatDef>-->
+|
+* '''Def Name:'''<br />PsychicEntropyRecoveryRateOffset
+* '''Label:'''<br />neural heat recovery rate offset
+----
+* May Require Any Of:
+** '''[[Royalty]] {{RoyaltyIcon}}'''
+** '''[[Biotech]] {{BiotechIcon}}'''
+| An offset applied to the user's neural heat recovery rate.
+|
+* Display Order: '''10'''
+* Def Name:<br />'''Basics'''
+* Label:<br />'''Basics'''
+* Display All By Default: {{Good|true}}
+|
+* Default Base Value: '''0'''
+* Hide At Value: '''0'''
+* Format String:<br />"{0}/s"
+* To String Style: '''FloatTwo'''
+* Show On Animals: {{Bad|false}}
+* Show If Undefined: {{Bad|false}}
+* Show On Pawns: {{Bad|false}}
+|
+* Show If Mods Loaded Any:
+** '''[[Royalty]] {{RoyaltyIcon}}'''
+** '''[[Biotech]] {{BiotechIcon}}'''
+| 3550
+<!--</StatDef>-->
+|}
+
+== Version history ==
+{{Stub|nocat=1|section=1|reason=General Version history}}
+
+{{nav|stats|wide}}

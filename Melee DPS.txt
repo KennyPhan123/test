@@ -1,0 +1,50 @@
+{{Stub|reason= 1) this page is dangerous as is because it is very likely to confuse people about actual melee DPS vs the stat of the same name. this needs to be explictly and loudly spelled out here (i.e. more than just [[Template: About]] and the practical differences explained, to the point where we might consider.moving this page to Melee DPS (stat) and leaving a description here 2) Thorough explanation of StatWorker_MeleeDPS and all of its contributing factors towards the calculated melee DPS}}
+{{Page Under Construction}}
+{{Verified|1.5.4104}}{{Stat
+| min value = 0
+| default base value = 0
+| to string style = FloatTwo
+| description = Average damage per second in melee combat.<br id="n" />This stat ignores target defenses like dodging and armor.
+| category = PawnCombat
+}}
+
+== Factors ==
+* Melee Damage
+** Average of all attacks
+*** Melee Damage goes through a list of all available melee verbs, factors in their selection weights, base power, and pawn, stuff, and weapon multipliers (MeleeDamageFactor, SharpDamageMultiplier / BluntDamageMultiplier, and MeleeWeapon_DamageMultiplier)
+* [[Melee Hit Chance]]
+* Melee Cooldown
+** Average of all attacks
+*** Melee Cooldown goes through a list of all available melee verbs, factors in their selection weights, and stuff and pawn multipliers (MeleeWeapon_CooldownMultiplier and MeleeCooldownFactor)
+
+The basic string format is:
+ <nowiki>{0} ( {1} x {2} / {3} )</nowiki>
+or
+ <nowiki>Melee DPS ( Average Melee Damage x Melee Hit Chance / Average Melee Cooldown )</nowiki>
+
+== Stat Def Data ==
+{| {{STDT}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Melee DPS" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />MeleeDPS
+* '''Label:'''<br />melee DPS
+| Average damage per second in melee combat.<br id="n" /><br id="n" />This stat ignores target defenses like dodging and armor.
+|
+* Display Order:<br />'''110'''
+* Def Name:<br />'''PawnCombat'''
+* Label:<br />'''Combat'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Worker Class:''' StatWorker_MeleeDPS
+* '''Default Base Value:''' 0
+* '''Min Value:''' 0
+* '''To String Style:''' FloatTwo
+* '''For Information Only:''' {{Good|true}}
+* '''Show Developmental Stage Filter:''' Child, Adult
+| -
+| 5100
+<!--</StatDef>-->
+|}
+
+{{nav|stats|wide}}

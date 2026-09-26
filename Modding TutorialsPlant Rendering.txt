@@ -1,0 +1,259 @@
+{{DISPLAYTITLE:Modding Tutorials/Plant Rendering}}
+{{BackToTutorials}}
+
+{{:Modding_Tutorials/Under_Review}}
+
+This page covers the technical aspects of how plants (whether they be trees, bushes, grass, or some new vegetative monstrosity cooked up in a mod) are rendered to the screen in-game.
+
+== How Plants Are Rendered ==
+
+When RimWorld draws a plant, it does the following:
+
+* Calculates plant size and center position based on current growth percent out of 100%.
+* Determines how many textures (copies of the plant graphic) to draw on a single mesh, per cell on the map.
+* Randomly places those textures on the mesh with slight randomized offsets along both the x and z axes.
+* Applies mesh offsets to simulate wind movement.
+* Adds a shadow if defined, based on the base position calculated above for the default texture.
+
+All of these behaviors can be controlled using the plant's XML <code>ThingDef</code>.
+
+== Mesh Count & Placement ==
+
+The number of texture copies drawn per plant instance is controlled by the <code>maxMeshCount</code> field on each plant <code>ThingDef</code>.
+
+<source lang="XML">
+<Defs>
+  <ThingDef>
+    <plant>
+      <maxMeshCount>9</maxMeshCount>
+    </plant>
+  </ThingDef>
+<Defs>
+</source>
+
+* By the time the plant reaches full maturity (100% growth) all copies will be drawn, though until that time, fewer copies will be drawn.
+** Meaning if the <code>maxMeshCount</code> is 9, then when fully grown, 9 textures will be rendered for the plant.
+* Each copy of the texture on the mesh has a chance to be flipped on the x-axis as well, to add some visual variance.
+* If the plant uses random graphics, <code>Graphic_Random</code>, then each copy of the texture will be picked at random too.
+
+[[File:WikiPlantRendering maxMeshCount RandomGraphics Example .png|border]]
+
+▲ Example of randomized plant graphics with a <code>maxMeshCount</code> value of 4.
+
+
+The example code block above tells the game to draw up to 9 overlapping textures per plant instance. These textures appear spread across a grid (roughly 3x3 in the case of 9) within the occupying cell. Only perfect square numbers less than or equal to 25 are allowed as well. Any value not equaling a perfect square or being > 25 will result in an error on game launch. All the various possible <code>maxMeshCount</code> values below, aside from 1, are also drawn with each texture getting small random offsets applied to the x and z-axes to add randomness to their visual spread.
+
+* 1 — single-centered plant (no grid)
+* 4 — 2x2 layout
+* 9 — 3x3 layout
+* 16 — 4x4 layout
+* 25 — 5x5 layout
+
+[[File:WikiPlantRendering maxMeshCount Example.png|border]]
+
+▲ Here's an example of how different <code>maxMeshCount</code> values create semi-random grid-like layouts per each plant instance mesh. 
+Remember, in each of these examples, there is only one actual plant; we are just rendering multiple copies of its default texture to adjust the visual density of the plant on the map and in the cell.
+
+== Visual Size Scaling ==
+
+Plants change size as they grow. This is controlled by the combination of the def's <code>drawSize</code> and <code>visualSizeRange</code> fields as follows.
+Where <code>drawSize</code>, <code>min</code>, and <code>max</code> are defined as:
+* <code>drawSize</code> — 1.0 as the default for all plants (at 1.0, the actual texture will be scaled to fill a single cell on the map)
+* <code>min</code> — scale at 0% growth
+* <code>max</code> — scale at 100% growth (fully grown)
+
+It's important to remember that the <code>visualSizeRange</code> values correspond to the actual size (area) of a single cell on the map. So a value of 1.0 would be the same as the total area of a single cell on the map so long as the <code>drawSize</code> is also 1.0. A value of 3.0, as seen in the below example for the <code>max</code> field, means the texture will be scaled up to cover a 3x3 area of cells with a <code>drawSize</code> of 1.0. If the <code>maxMeshCount</code> is 1.0, as is the case with trees and many other larger plants, then the texture will always be positioned relative to the bottom of the cell it occupies. If the <code>maxMeshCount</code> is greater than 1, like with grass or other small plants, then the entire mesh and each copy of the texture on the mesh will be scaled and positioned relative to the center of the cell it occupies.
+This is applied to shadows as well, if defined.
+
+<source lang="XML">
+<Defs>
+  <ThingDef>
+    <graphicData>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <plant>
+      <visualSizeRange>
+        <min>1.0</min>
+        <max>3.0</max>
+      </visualSizeRange>
+    </plant>
+  </ThingDef>
+<Defs>
+</source>
+
+[[File:WikiPlantRendering visualSizeRange Example.png|border]]
+
+▲ In this example, we see the visual scaling progression of an oak tree at various stages of growth (from 15% to 100%). For this example, we've also adjusted the <code>visualSizeRange</code> field for the oak tree to use the above range of 1.0 to 3.0 for clarity.  The tree texture is also using the default <code>drawSize</code> value of 1.0. At 100% growth, we can see the tree texture takes up the space of a 3x3 area of cells on the map. In this example, if the <code>drawSize</code> was 2.0, instead of 1.0, then at 100% growth the tree texture would take up a 6x6 area of cells.
+
+Remember, the <code>visualSizeRange * drawSize</code> and current growth % act as a ratio. So in the example above we see the following:
+
+{| class="wikitable"
+|-
+! Max Growth % ''':''' Max <code>visualSizeRange</code> !! Current Growth % ''':''' Cells Covered (X x Z)
+|-
+| 100% ''':''' 3.0 || 15%  ''':''' 0.45 x 0.45
+|-
+| 100% ''':''' 3.0 || 38%  ''':''' 1.14 x 1.14
+|-
+| 100% ''':''' 3.0 || 41%  ''':''' 1.23 x 1.23
+|-
+| 100% ''':''' 3.0 || 100% ''':''' 3.00 x 3.00
+|}
+
+== Random Position Offsets ==
+
+To avoid plants looking too uniform, RimWorld offsets mesh positions slightly using internal randomness.
+
+* For <code>maxMeshCount</code> = 1, a small random horizontal offset is applied.
+* For higher counts, mesh copies are placed in a grid and randomly nudged to avoid sharp alignment.
+
+We cannot directly control this randomness in XML, but it still enhances visual variety.
+
+== Texture Selection ==
+
+A plant’s default texture is defined in its def via the <code>graphicData</code> field like so.
+
+<source lang="XML">
+<Defs>
+  <ThingDef>
+    <graphicData>
+      <texPath>Things/Plant/BerryPlant</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+    </graphicData>
+  </ThingDef>
+<Defs>
+</source>
+
+Most base game and modded plants use random graphics for the plant, as seen in the example of the base game berry bush above. To ensure the plant uses random graphics, use the <code>Graphic_Random</code> class and ensure the <code>texPath</code> ends with the name of the folder containing the textures, not the name of the actual texture file(s).
+* To provide multiple texture variants, append a suffix for each (e.g., Dandelion.png, DandelionA.png, DandelionB.png, etc.).
+
+
+Plants can also have immature, leafless, and polluted (if Biotech is loaded) textures for those states. All of these paths will use the same <code>graphicClass</code> the default texture uses, along with the same <code>shaderType</code>, <code>drawSize</code>, <code>color</code>, and <code>colorTwo</code> fields. These textures are all defined in the <code>plant</code> field, as shown below.
+In the case of immature, leafless, and polluted texture variants (if using random graphics), name them the same as you would the default texture, like so.
+
+As of 1.6, plants also support optional snow overlay textures for each respective state. These overlays are also defined in the <code>plant</code> field.
+
+{| class="wikitable"
+|-
+! default !! immature !! leafless !! polluted
+|-
+| BerryBushA.png || BerryBushImmatureA.png || BerryBushLeaflessA.png || BerryBushPollutedA.png
+|}
+* The same number of immature, leafless, or polluted textures as the default texture is not required. One of each is fine, or 5 default variations and 1 immature, leafless, and polluted would work too.
+
+<source lang="XML">
+<Defs>
+  <ThingDef>
+    <plant>
+      <immatureGraphicPath>Things/Plant/BerryPlant_Immature</immatureGraphicPath>
+      <leaflessGraphicPath>Things/Plant/BerryPlant_Leafless</leaflessGraphicPath>
+      <pollutedGraphicPath>Things/Plant/BerryPlant_Polluted</pollutedGraphicPath>
+      <snowOverlayGraphic>Things/Plant/BerryPlant_Snowy</snowOverlayGraphic>
+      <immatureSnowOverlayGraphic>Things/Plant/BerryPlant_ImmatureSnowy</immatureSnowOverlayGraphic>
+      <leaflessSnowOverlayGraphic>Things/Plant/BerryPlant_LeaflessSnowy</leaflessSnowOverlayGraphic>
+    </plant>
+  </ThingDef>
+<Defs>
+</source>
+
+
+Plants will automatically change textures depending on their current state, as mentioned above, such as immature, leafless, polluted, or mature. A plant is considered "mature" by the game if its current growth % is greater than the <code>harvestAfterGrowth</code> value defined in the plants' def. 
+
+A plant's various textures are used accordingly:
+* Default - When the current growth % is > the <code>harvestAfterGrowth</code> value defined in the plants' def.
+* Immature - When the current growth % is <= the <code>harvestAfterGrowth</code> value defined in the plants' def.
+* Leafless - When the plant cannot be sown or harvested, and when it should be made leafless.
+* Polluted - When the cell the plant is in becomes polluted (Biotech must be loaded).
+* Snow Overlays - When the total amount of snow in the occupied map cell is > 80%.
+
+<source lang="XML">
+<Defs>
+  <ThingDef>
+    <plant>
+      <harvestAfterGrowth>0.30</harvestAfterGrowth>
+    </plant>
+  </ThingDef>
+<Defs>
+</source>
+
+* <code>harvestAfterGrowth</code> is out of 1.0, being 100% or fully grown. So in this example, '''if''' the plant has an <code>immatureGraphicPath</code> defined, then the immature texture will be used until the plant reaches 31% growth, at which point the plant's default texture will be used. This is generally the case for plants that give resources, such as bushes and trees.
+
+== Wind Movement ==
+
+To simulate wind effects, RimWorld applies a subtle animation to each plant mesh in code.
+* The plant's <code>topWindExposure</code> field determines how much the plant sways in the wind. This is done by offsetting the [https://en.wikipedia.org/wiki/Vertex_(computer_graphics)/ vertices] of the plant mesh.
+* This is not a simple back-and-forth animation. The sway produces an exaggerated stretching of the mesh along the x and z axes. Look at the example GIFs below carefully for examples.
+* The default value is 0.25.
+* A value of 1.0 (the maximum) means the plant will sway back and forth in the wind as much as possible.
+* A value of 0.0 (the minimum) means the plant will have no visible sway in the wind.
+
+<source lang="XML">
+<Defs>
+  <ThingDef>
+    <plant>
+      <topWindExposure>0.25</topWindExposure>
+    </plant>
+  </ThingDef>
+<Defs>
+</source>
+
+<table style="width:50%; text-align:center;">
+  <tr>
+    <td>[[File:Wiki PlantRendering WindMovement 0.gif|center]]</td>
+    <td>[[File:Wiki PlantRendering WindMovement point25.gif|center]]</td>
+    <td>[[File:Wiki PlantRendering WindMovement point5.gif|center]]</td>
+    <td>[[File:Wiki PlantRendering WindMovement 1.gif|center]]</td>
+  </tr>
+</table>
+
+▲ Here is a comparison of different <code>topWindExposure</code> values for the base game oak tree.
+* From left to right the examples use values of 0, 0.25, 0.5, and 1 at a game speed of 1 (normal play speed).
+
+== Shadow Rendering ==
+
+For a plant to cast a shadow (like a tree or tall bush might), define it like so:
+Where the <code>volume</code> dictates the scale of the shadow graphic for the plant, and the <code>offset</code> determines the shadow's offset relative to the center of the plant graphic.
+If <code>shadowData</code> is omitted, no shadow is drawn.
+
+<source lang="XML">
+<Defs>
+  <ThingDef>
+    <graphicData>
+      <shadowData>
+        <volume>(0.5, 0.2, 0.5)</volume>
+        <offset>(0.1, 0, 0.1)</offset>
+      </shadowData>
+    </graphicData>
+  </ThingDef>
+<Defs>
+</source>
+
+== Fall Colors for Trees ==
+
+Plants (only deciduous trees in vanilla) can have color ranges specified in XML to simulate the changing of the seasons. Fall colors can be defined for a plant in the <code>shaderParameters</code> field.
+* Only plants using the "CutoutPlant" <code>shaderType</code> can use this feature. Plants using the "TransparentPlant" <code>shaderType</code> cannot.
+* <code>_FallColorSource</code> - Base HSV color for transitioning from when seasonal color transition starts. (Hue, Saturation, Value) format.
+* <code>_FallColorDestination</code> - Optional texture used to override destination color based on randomness. Takes a texture path similar to <code>texPath</code>.
+* <code>_FallTransitionRange</code> - Controls transition hue width and blend curve shape.
+* <code>_FallBehaviorEnabled</code> - Enables/disables seasonal color transition effect. 1 to enable, 0 to disable.
+
+[[File:TreeFallGradient.png|border]]
+
+▲ The default texture used for the <code>_FallColorDestination</code> field.
+
+<source lang="XML">
+<Defs>
+  <ThingDef>
+    <graphicData>
+      <shaderParameters>
+        <_FallColorSource>(0.3803, 0.4352, 0.1451)</_FallColorSource>
+        <_FallColorDestination>/Other/TreeFallGradient</_FallColorDestination>
+        <_FallTransitionRange>(0.02, 0.10)</_FallTransitionRange>
+        <_FallBehaviorEnabled>1</_FallBehaviorEnabled>
+      </shaderParameters>
+    </graphicData>
+  </ThingDef>
+<Defs>
+</source>
+
+[[Category:Modding tutorials]]

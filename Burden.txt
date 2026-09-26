@@ -1,0 +1,46 @@
+{{Royalty}}
+{{Infobox main|psycast
+| name = Burden
+| image = Burden.png
+| type = Psycast
+| description = Slow the target for a short time by suppressing motor activity in the brain.
+| psylink level = 1
+| casting time = 15
+| ability range = 29.9
+| psyfocus cost = 0.01
+| neural heat gain = 8
+| effect radius =
+| duration = 1200
+| duration multiplier =  
+| goodwill impact = -15
+| caster must be capable of violence = false
+}}
+'''Burden''' is a level {{P|Psylink Level}} [[psycast]] that slows a single target for its duration.
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+{{Quote|Psychically-induced difficulty in locomotion.|Psychic burden description}}
+The burden psycast inflicts the "Psychic burden" hediff on its singular target. This target must be in [[line of sight]] but can be any [[human]], [[animal]], or [[mechanoid]] with a [[psychic sensitivity]] above 0%. The hediff has only one effect, capping the [[Moving]] capacity of the target at {{Bad|40%}} for {{Ticks|{{P|Duration}}}}. Note that this is not a multiplier or offset. It does not stack with other effects on the Moving capacity - if a pawn's Moving would be below 40% anyway, then it has no effect, and an enemy won't reach ''below'' the cap from injuries or other effects any faster. Conversely this means that Moving buffs cannot mitigate the effect either. 
+
+Moving, in turn, affects the following [[stats]]: {{#ask: [[Moving Importance::+]]}}. Assuming a baseline of '''100%''' Moving, this results in a directly proportional change to the target pawn's [[move speed]], and a change in [[melee dodge chance]] equivalent to losing {{#expr: {{Q|Melee Dodge Chance|Moving Importance}}*0.6}} levels of [[Melee]] skill. Due to how the stat is fit to a post-process curve, this will result in the melee dodge chance dropping to 0% for pawns with skill under 16. Note that additive buffs to [[move speed]] like the [[jogger]] trait or speed penalties obtained from various sources like wearing [[plate armor]] ''do'' still affect move speed as they are added before the Moving multiplier.
+
+Additionally, note that Burden is considered a harmful ability, and will incur a [[goodwill]] penalty of {{Bad|-15}} when cast on pawns from a neutral or allied [[faction]].
+
+== Analysis ==
+Burden does one thing and it does it well. The ability to slow enemy pawns is reasonably useful in combat, and powerful enough for its role as a level 1 psycast. Due to its low neural heat gain and psyfocus cost, as well as a moderate duration, it can perform well against groups of enemies in spite of its single target nature, given a sufficiently capable psycaster.
+
+Primarily, Burden is most effective against melee attackers, as they are most heavily impacted by the loss of move speed, given their need to close the distance between them and their intended target. Casting Burden drastically increases the time your pawns have to deal with said attackers before they enter melee range, giving the player time to kite their firing line backwards to a new position, intercept them with melee pawns, or simply dispatch them before they ever get close. As a minor benefit, the reduction to Melee Dodge Chance incurred by the loss of Moving renders affected enemies more vulnerable to your own melee pawns. As such, casting Burden can be worthwhile against strong melee pawns, regardless of their distance from your own pawns. Burden is also of particular use against pawns with increased movement speed, such as [[impids]]{{BiotechIcon}} or [[chimera]]s{{AnomalyIcon}}. Notably, Burden can almost entirely eliminate the increase to Moving (and thus move speed) gained from [[Go-juice]], or at the very least preventing it from surpassing 40%.
+
+Outside of direct combat, Burden is highly useful for hunting dangerous animals, such as [[thrumbo]]s, or packs of [[rhinoceros]]. The reduction to movement inflicted makes kiting and killing said animals effortless, allowing clean and bloodless hunting trips, securing their valuable meats and hides at little risk to your own pawns. It can also be used reactively to an unexpected manhunter from a lower risk animal (such as [[caribou]] or [[boomalope]]), allowing your pawn to flee to safety, or make space to dispatch the threat.
+
+Lastly, note that unlike many other psycasts, neither the effect nor the duration of Burden is affected by [[Psychic Sensitivity]]. This makes Burden particularly effective as a countermeasure to [[Scyther]]s and [[Scorcher]]s{{BiotechIcon}} - while their 50% Psychic Sensitivity reduces the effectiveness of other psycasts such as [[Berserk]] or [[Vertigo pulse]], Burden will retain its full duration and Movement reduction. While this holds true for all [[mechanoid]]s, these two tend to be the only ones that are significantly impacted by Burden, due to their low effective range compared to other members of the mechanoid caste.
+
+== Version history ==
+* [[Royalty DLC]] Release - Added.
+* [[Version/1.1.2559|1.1.2559]] - Range increased from 25 to 30.
+* [[Version/1.1.2571|1.1.2571]] - Duration decreased from 30 to 20.
+
+{{Nav|psycasts|wide}}
+[[Category: Psycasts]]

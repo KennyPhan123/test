@@ -1,0 +1,75 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Global/Misc}}
+|}
+----
+{| {{STDT| c_11}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Food poisoning" <!-- defName="FoodPoisoning", ParentName="DiseaseBase" -->
+! Food poisoning
+----
+* Def Name:<br />FoodPoisoning
+* Label:<br />food poisoning
+| Gastrointestinal illness caused by consuming decayed or unclean food. It can be caused by eating rotten food, by incompetent cooks accidentally poisoning meals, or by eating from unsafe wild sources. The patient will vomit and feel sick for some time.
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|90%|100%|35%}}
+* Initial Severity: '''0.1%'''
+* Scenario Can Add: {{Good|true}}
+* Initial Severity: '''100%'''
+* '''Remove On Redress Chance By Days Curve:'''
+<div><li style="display: inline-table;">
+{| {{STDT| c_01}}
+! Days !! Chance
+|-
+! 0
+| 0%
+|-
+! 2
+| 0%
+|-
+! 7
+| 50%
+|-
+! 20
+| 100%
+|}{{Graph:Chart|width=200|height=200|xAxisTitle=Days|yAxisTitle=Remove On Redress Chance|yAxisFormat=%|type=line|x=0, 2, 7, 20|y=0, 0, 0.5, 1|interpolate=monotone|xGrid=|yGrid=}}</li></div>
+* '''Comps:''' ''Severity Per Day:'' {{---|100%}}
+|<!-- Stages -->
+{| {{STDT| c_11}}
+! Label !! Parameters
+|-
+! recovering
+|<!-- Parameters -->
+* Vomit {{MTB}} Days '''0.4''' (''{{Ticks/gametime/hours|24000}}'')
+* Pain Offset: {{++|20%}}
+* [[Consciousness]] Post Factor: {{Bad|×60%}}
+* [[Moving]] Post Factor: {{Bad|×80%}}
+* [[Manipulation]] Post Factor: {{Bad|×90%}}
+* [[Blood Filtration]] Post Factor: {{Bad|×95%}}
+* [[Eating]] Post Factor: {{Bad|×50%}}
+|-
+! major
+|<!-- Parameters -->
+* Min Severity: '''20%'''
+* Vomit {{MTB}} Days: '''0.2''' (''{{Ticks/gametime/hours|12000}}'')
+* Pain Offset: {{++|40%}}
+* [[Consciousness]] Post Factor: {{Bad|×50%}}
+* [[Moving]] Post Factor: {{Bad|×50%}}
+* [[Manipulation]] Post Factor: {{Bad|×80%}}
+* [[Blood Filtration]] Post Factor: {{Bad|×85%}}
+* [[Talking]] Post Factor: {{Bad|×80%}}
+* [[Eating]] Post Factor: {{Bad|×30%}}
+|-
+! initial
+|<!-- Parameters -->
+* Min Severity: '''80%'''
+* Vomit {{MTB}} Days: '''0.3''' (''{{Ticks/gametime/hours|18000}}'')
+* Pain Offset: {{++|20%}}
+* [[Consciousness]] Post Factor: {{Bad|×60%}}
+* [[Moving]] Post Factor: {{Bad|×80%}}
+* [[Manipulation]] Post Factor: {{Bad|×90%}}
+* [[Blood Filtration]] Post Factor: {{Bad|×95%}}
+* [[Eating]] Post Factor: {{Bad|×50%}}
+|}<noinclude>
+|}</noinclude>

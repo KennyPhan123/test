@@ -1,0 +1,78 @@
+{{Infobox main|Structure
+| name = Collapsed rocks
+| image = Collapsed rocks.png
+| description = Collapsed rocks, packed tightly enough to hold up a roof.
+<!-- Base Stats -->
+| type = Structure
+| hp = 500
+| flammability = 0
+| rotatable = true
+<!-- Building -->
+| size = 1 * 1
+| passability = impassable
+| cover = 1
+| blockswind = true
+<!-- Mineable -->
+| mineable = true
+<!-- Technical -->
+| defName = CollapsedRocks
+| label = collapsed rocks
+<!-- Other -->
+| isNaturalRock = false
+| claimable = false
+| holdsRoof = true
+| category = Building
+| selectable = true
+| drawerType = MapMeshOnly
+| filthLeaving = Filth_RubbleRock
+| scatterableOnMapGen = false
+| artificialForMeditationPurposes = false
+| thingClass = Mineable
+| linkFlags = Rock, MapEdge
+| altitudeLayer = Building
+| castEdgeShadows = true
+| coversFloor = true
+| neverMultiSelect = true
+| saveCompressible = true
+| staticSunShadowHeight = 1.0
+| blockLight = true
+| fertility = 0
+| canOverlapZones = false
+| isInert = true
+| canBuildNonEdificesUnder = false
+| deconstructable = false
+| destroyShakeAmount = 0
+| supportsWallAttachments = true
+| damageMultipliers = Thump
+| multiplier = 4
+| texPath = Things/Building/Natural/CollapsedRocks
+| graphicClass = Graphic_Single
+| linkType = None
+}}
+
+
+'''Collapsed rocks''' fall from above when support for a [[roof]] with overhead mountain is removed, such as when a rock wall is [[Orders#Mine|mined]] or otherwise destroyed. 
+
+== Summary ==
+Collapsed rocks fall from overhead mountain tiles when the last supporting structure for that tile (i.e. columns, rock walls, close supported roof tiles, [[nutrient paste dispenser|nutrient paste dispensers]]) is removed. The maximum range from any roof to supporting structure is 6 tiles.
+
+Collapsing rocks do not remove the overhead mountain, and overhead mountains roofs cannot be removed by [[Dev mode|any means available]] to your colonists. 
+Unsupported overhead mountain tiles fill with collapsed rocks immediately, but collapsed rocks will provide support to potentially prevent further collapses once fallen. Mining collapsed rocks without adding sufficient support will keep causing rocks to fall in the same or nearby tiles indefinitely. Multiple supports collapsing in the exact same [[time|tick]] can make very large areas fall, but this is unlikely to occur even intentionally, due to the dangers involved and the precise timing of removal required. 
+
+Collapsed rocks can also happen when pods impact a rock roof. This collapse is independent from support, and so long as there is still sufficient support, they can be mined without issue. {{Check Tag|Detail|Only some pods hitting a roof over a tunnel cause a collapse. Which? Detail needed}}
+
+[[Insectoids|Insects]] that are part of an active [[hive]] will not normally mine collapsed rocks unless trapped and [[Infestation|angered]], but do drop them accidentally as they expand their hives. They consider any harm caused by this to be a hostile act and will respond aggressively for some time. 
+
+== Analysis ==
+When rocks fall, anything beneath them is immediately and completely destroyed and can never be recovered.
+This will [[Death|kill]] your [[colonist]]s, but if used carefully, you can make a [[Defense tactics#Mountain trap|trap]] to instantly kill incoming threats.
+
+== Gallery ==
+<gallery>
+Collapsed rocks mining.png
+</gallery>
+
+== Version history ==
+* Release - Added.
+
+[[Category:Environment]]

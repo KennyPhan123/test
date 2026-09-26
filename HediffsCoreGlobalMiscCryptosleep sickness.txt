@@ -1,0 +1,53 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Global/Misc}}
+|}
+----
+{| {{STDT| c_11}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Cryptosleep sickness" <!-- defName="CryptosleepSickness", ParentName="DiseaseBase" -->
+! Cryptosleep sickness
+----
+* Def Name:<br />CryptosleepSickness
+* Label:<br />cryptosleep sickness
+| After-effects of using a cryptosleep pod. Cryptosleep suspends and replaces many bodily functions in order to prevent aging and death. Upon exiting cryptosleep, the body takes time to restart and rebalance its natural metabolic processes. While this is ongoing, the patient suffers from nausea, dizziness, and a sense of fuzziness in the mind.
+----
+After-effects of using a cryptosleep pod including dizziness, nausea, and vomiting.
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|90%|100%|35%}}
+* Initial Severity: '''0.1%'''
+* Makes [[Thoughts#Sick|Sick]] Thought: {{Bad|true}}
+* Scenario Can Add: {{Good|true}}
+* '''Remove On Redress Chance By Days Curve:'''
+<div><li style="display: inline-table;">
+{| {{STDT| c_01}}
+! Days !! Chance
+|-
+! 0
+| 0%
+|-
+! 2
+| 0%
+|-
+! 7
+| 50%
+|-
+! 20
+| 100%
+|}{{Graph:Chart|width=200|height=200|xAxisTitle=Days|yAxisTitle=Remove On Redress Chance|yAxisFormat=%|type=line|x=0, 2, 7, 20|y=0, 0, 0.5, 1|interpolate=monotone|xGrid=|yGrid=}}</li></div>
+* '''Comps:''' ''Disappears''
+** Disappears After Ticks: {{Ticks/gametime/hours|8000}} ~ {{Ticks/gametime/hours|12000}}
+** Show Remaining Time: {{Good|true}}
+|<!-- Stages -->
+{| {{STDT| c_11}}
+! Label !! Parameters
+|-
+! Cryptosleep sickness
+|<!-- Parameters -->
+* Vomit {{MTB}} Days: '''0.125''' (''{{Ticks/gametime/hours|7500}}'')
+* [[Consciousness]] Post Factor: {{Bad|×80%}}
+* [[Moving]] Post Factor: {{Bad|×90%}}
+* [[Manipulation]] Post Factor: {{Bad|×90%}}
+|}<noinclude>
+|}</noinclude>

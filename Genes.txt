@@ -1,0 +1,3122 @@
+{{Biotech}}
+{{Recode|reason=Thought templates}}
+{{See also|altphrase=This page is a list of genes. For a full explanation of the gene system see|Genetics}}
+'''Genes''' are a system for modifying [[human]] pawns, added by the [[Biotech DLC]]. They can be obtained from character creation or implanted via [[xenogerm]]s.
+
+== Mechanics ==
+Genetics are limited by metabolic efficiency, denoted by the [[File:Metabolism.png|20px|Metabolism]] symbol. This affects pawns' [[hunger rate]]. Harmful genes improve metabolic efficiency, lowering hunger rate, and thus consuming less food overall. Helpful genes lower metabolic efficiency, getting hungry faster. A baseline human has a metabolic efficiency of 0 (100% hunger rate), and genes can bring it as low as -5 (225% hunger rate) or up to 5 (50% hunger rate). The game will not allow the creation of xenogerms with a metabolic efficiency lower than -5.
+
+Note that genes with over [[File:Metabolism.png|20px|Metabolism]] 5 cannot be extracted by themselves, and must be extracted in a pack with another gene that lowers metabolism cost.
+
+Complexity, denoted by the [[File:Complexity.png|20px|Complexity]] symbol, affects how many [[gene processor]]s you need to create a [[xenogerm]] from a set of genes.  A [[gene assembler]] can create xenogerms with a maximum complexity of 6, plus 2 for every attached gene processor.  Complexity also determines the base time it takes to create the xenogerm, ranging from 4 hours at ≤3 complexity, to 23 hours at ≥20 complexity (which is then scaled by the [[research speed]] of whoever operates the gene assembler).
+
+== Gene expression ==
+When looking at a pawn's gene tab, each gene can be considered to be in one of three categories:
+* [[File:GeneBackground Endogene.png|32px]] Germline Genes
+* [[File:GeneBackground_Xenogene.png|32px]] Xenogenes
+* [[File:GeneBackground ArchiteGene.png|32px]] Archite genes
+
+Germline genes are freely distributed through and only through [[reproduction]]. Xenogenes are genes that have been [[Operation|surgically implanted]] through a xenogerm, and can override germline genes that are identical to or conflict with the xenogene; a [[Dirtmole]] that was converted into a [[Sanguophage]] will have half of their genes overwritten by the Sanguophage xenotype. Xenogerms cannot be passed through reproduction. 
+
+Note that germline and xenogenes are determined by the way they are obtained, not by the effects of the gene itself. For example, there is only one [[fire resistant]] gene coded into the game - "germline fire resistant" and "xenogene fire resistant" are the same gene obtained in different ways. Trying to have both would simply disable the redundant germline version.
+
+Archite genes are non-inheritable (even if they are forced into the germline of a [[Xenotypes#Customization|custom xenotype]]) and xenogerms containing them must be supplied with the requested number of [[archite capsules]] before being assembled. Archite genes cannot extracted through the [[gene extractor]], but can be implanted using the [[gene implanter]] ability.
+
+== Work Required ==
+The work required to create a xenogerm is determined by its [[File:Complexity.png|20px|Complexity]]. First, a base value is obtained from the post-process curve with the points:
+:{| class="wikitable"
+|-
+! colspan=2 |Xenogerm work
+|-
+|
+* (0, 3)
+* (4, 5)
+* (8, 8)
+* (12, 12)
+* (16, 17)
+* (20, 23)
+| {{Graph:Chart|width=400|height=100|type=line|x=0,4,8,12,16,20|y=3,5,8,12,17,23|xAxisTitle=Gene Complexity}}
+|}
+This value is then multiplied by 2500 to obtain the final number.
+:{| class="wikitable"
+|-
+! colspan=2 |Xenogerm work
+|-
+|
+* (0, 7500)
+* (4, 12500)
+* (8, 20000)
+* (12, 30000)
+* (16, 42500)
+* (20, 57500)
+| {{Graph:Chart|width=400|height=100|type=line|x=0,4,8,12,16,20|y=7500,12500,20000,30000,42500,57500|xAxisTitle=Gene Complexity}}
+|}
+The actual time required is inversely proportional with the [[research speed]] of whoever operates the gene assembler. At 100% research speed, it takes between {{ticks|7500}} (for 0 complexity) to {{ticks|57500}} (for complexity 20 and above).
+
+== Archite ==
+
+<div><li style="display: inline-table;">
+Click to <div class="mw-collapsible">
+<div class="mw-collapsible-content">
+{| {{STDT| sortable c_17 text-valign:top}}
+! Name
+! Description
+! [[File:Metabolism.png|20px|Metabolism]]
+! [[File:Complexity.png|20px|Complexity]]
+! [[File:Archite capsule required.png|20px|Archite capsules]]
+! [[File:Baseliner.png|20px|link=Xenotypes]]
+! Exclude
+
+|- id="Scarless"
+! Scarless<br>[[File:Gene_TotalHealing.png|64px]]
+| ''Carriers of this gene have a special type of regenerator cell which can heal old wounds and chronic illnesses like bad back.''
+----
+* Prevents new [[scar]]s from forming, even from brain damage. 
+* Heals 1 scar, permanent injury, or [[Ailments#Chronic|chronic condition]] ([[Alzheimer's]], [[asthma]], [[bad back]], [[cataract]]s, [[carcinoma]], [[dementia]], [[frail]], [[hearing loss]], [[blindness]], and [[organ decay]]) every 15-30 days, akin to (and alongside) [[luciferium]]. Includes scars from a scarification [[ritual]].{{IdeologyIcon}}
+** Will ''not'' automatically heal [[trauma savant]] conditions.
+| '''0'''
+| {{Bad|4}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Xenogene.png|Sanguophage.png|32|Sanguophages|Sanguophages}}
+| -
+
+|- id="Gene implanter"
+! Gene implanter<br>[[File:Gene_XenogermReimplanter.png|64px]]
+| ''Carriers of this gene can implant a copy of their xenogerm into another person through a somewhat gross-looking injector organ. Their own genetic material will then regrow very slowly. If they implant while their genes are regrowing, they will die. ''
+----
+*Adds ability: [[File:Gene_XenogermReimplanter.png|16px]] Implant Genes
+:''Implant this person's xenogenes into a willing subject using a special injector organ. If this person's genes are currently regrowing, they will implant their xenogerm and die in the process. When implanted, a xenogerm will overwrite the target's xenogenes. Germline genes will be unaffected.''
+:* Passes on a copy of all xenogenes to a target. Both pawns will start regrowing genes for a [[Time|period of around 2 years]]. The pawn that implants the genes will suffer [[Hediffs/Biotech/Various/Gene_loss_shock|gene loss shock]] for 2 days as well. The pawn receiving the xenogerm will be put into [[Hediffs/Biotech/Various/Xenogermination_coma|xenogermination coma]] for a flat 2 days.
+:* Using this ability while genes are regrowing will kill the caster and remove all of their xenogenes.
+:* Cannot target a hostile pawn unless they are [[downed]].
+:* Cannot target members of a temporary faction, even if they are downed. This can be worked-around by [[Prisoner|imprisoning]] the pawn then [[Slavery|enslaving]] or recruiting them, which changes their faction.
+:* The caster must have xenogenes, and the target must be of a different [[xenotype]].
+:* If the target's [[ideoligion]]{{IdeologyIcon}} includes one or more [[Ideoligion#Xenotype_preferences|xenotype preferences]],{{IdeologyIcon}} the caster's xenotype must match one of target's preferred types. This restriction applies even if the target is downed, enslaved or imprisoned.
+:* If the caster has the [[#Bloodfeeder|bloodfeeder]] gene, they cannot target a pawn whose [[ideoligion]]{{IdeologyIcon}} includes the [[Bloodfeeders (precept)|Bloodfeeders: Reviled]]{{IdeologyIcon}} precept. This restriction applies even if the target is downed.
+| '''0'''
+| {{Bad|3}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Xenogene.png|Sanguophage.png|32|Sanguophages|Sanguophages}}
+| -
+
+|- id="Perfect immunity"
+! Perfect immunity<br>[[File:Gene_PerfectImmunity.png|64px]]
+| ''Carriers of this gene have archite-enhanced immune systems which intelligently destroy invaders. They are totally immune to most normal illnesses.''
+----
+* Immunity to [[flu]], [[malaria]], [[sleeping sickness]], [[plague]], [[infection]], [[lung rot]], [[gut worms]], [[muscle parasites]], and [[organ decay]]. This includes all the [[disease]]s that are fatal and that adult colonists can acquire.
+** Despite the description, it only prevents new illnesses. It does ''not'' affect pre-existing conditions nor boost [[Immunity Gain Speed]]. 
+** Note: Does ''not'' prevent [[food poisoning]].
+| '''0'''
+| {{Bad|3}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Xenogene.png|Sanguophage.png|32|Sanguophages|Sanguophages}}
+| Immunity
+
+|- id="Non-senescent"
+! Non-senescent<br>[[File:Gene_NonSenescent.png|64px]]
+| ''Carriers of this gene do not go through senescence in the normal way. They never get chronic age-related diseases like cancer, bad back, cataracts, or dementia.''
+----
+*Total immunity to [[carcinoma]], [[heart attack]], and [[Ailments#Chronic|chronic conditions]] ([[Alzheimer's]], [[Asthma]], [[Artery blockage]], [[Bad back]], [[Cataract]]s, [[Dementia]], [[Frail]], but not [[Hearing loss]]).
+**Prevents these conditions from any source, not just aging. (e.g. [[nuclear stomach]],{{RoyaltyIcon}} [[toxic buildup]])
+**Does ''not'' affect pre-existing conditions. 
+
+| ''' 0'''
+| {{Bad|3}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Xenogene.png|Sanguophage.png|32|Sanguophages|Sanguophages}}
+| -
+
+|- id="Ageless"
+! Ageless<br>[[File:Gene_Ageless.png|64px]]
+| ''Carriers of this gene have archites in the bloodstream which continuously reverse the process of aging. Starting at the age of 13, carriers begin to biologically age slower. By 18, the aging process stops completely.''
+----
+* Aging ×1 at age 13 or lower. Rate linearly slows as the pawn gets older.
+* Aging ×0 at age 18.5 or higher.
+| '''0'''
+| {{Bad|3}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Xenogene.png|Sanguophage.png|32|Sanguophages|Sanguophages}}
+| -
+
+|- id="Deathless"
+! Deathless<br>[[File:Gene_Deathless.png|64px]]
+| ''Carriers of this gene have archites in the blood which will sustain their life processes no matter what. As long as the brain remains intact, a carrier of this gene will never die.''
+----
+* If a pawn would've died, but the brain, head, or neck is not directly destroyed, they enter into either a regenerative coma or involuntary deathrest.
+** Pawns without the Deathrest gene enter a regenerative coma. After all fatal conditions are removed, the regenerative coma lasts for 7 more days. [[Hemogen]] is unaffected.
+** Pawns with the Deathrest gene enter involuntary [[deathrest]] and lose all [[Hemogen]]. After fatal conditions are removed, the usual deathrest mechanics take place.
+** Does not regenerate limbs or organs, except for the torso.
+** Entering the regeneration coma or involuntary deathrest will cause the pawn to lose 3% to 6% of total [[skill]] XP in a random skill.
+* Market value of [[genepack]]s containing this gene: ×200% (also multiplied by the usual ×400% for 1 Archite capsule)
+| '''0'''
+| {{Bad|7}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Xenogene.png|Sanguophage.png|32|Sanguophages|Sanguophages}}
+| -
+
+|- id="Archite metabolism"
+! Archite metabolism<br>[[File:Gene_ArchiteMetabolism.png|64px]]
+| ''Carriers of this gene have special archites in their cells that facilitate and optimize metabolism. This improves overall genetic and metabolic quality.''
+----
+* Increases metabolic efficiency by 6. No other effect.
+* Market value of [[genepack]]s containing this gene: ×150% (also multiplied by ×700% for 2 Archite capsules)
+| {{+|6}}
+| {{Bad|6}}
+| {{Bad|2}}
+| {{Stacked image|GeneBackground Xenogene.png|Sanguophage.png|32|Sanguophages|Sanguophages}}
+| -
+
+|- id="Breathless"
+! Breathless{{OdysseyIcon}}<br>[[File:Gene_Breathless.png|64px]]
+| ''Carriers of this gene can store concentrated oxygen in their bodies. Their cells consume much less oxygen, meaning they rarely need to breathe. These adaptations make them immune to the harmful effects of space, as well as environmental toxins, tox gas, acidic smog, and rot stink.''
+----
+* [[Vacuum resistance]]: {{Good|+100%}}
+* [[Toxic Environment Resistance]]: {{+|100%}}
+* Immunity to [[vacuum burn]]s, [[tox gas]], [[acidic smog]], and [[rot stink]].
+* [[Minimum Comfortable Temperature]]: {{---|{{temperature|5||delta}}}}
+| '''0'''
+| {{Bad|3}}
+| {{Bad|1}}
+| 
+| ToxicEnvironmentResistance
+VacuumResistance
+|}
+</div>
+</div>
+</li></div>
+
+== Special abilities ==
+{{Stub|section=1|reason=Acid spray has AP and its own Damage type etc. Further mechanical detail including how it works, what armor it opposes etc is needed}}
+<div><li style="display: inline-table;">
+Click to <div class="mw-collapsible">
+<div class="mw-collapsible-content">
+{| {{STDT| sortable c_17 text-valign:top}}
+! Name
+! Description
+! [[File:Metabolism.png|20px|Metabolism]]
+! [[File:Complexity.png|20px|Complexity]]
+! [[File:Baseliner.png|20px|link=Xenotypes]]
+
+|- id="Fire spew"
+! Fire spew<br>[[File:Gene_Firespew.png|64px]]
+| ''Carriers are able to spew flammable bile generated by a special organ in their neck. The bile sticks to anything in a small area and can ignite people, objects, and the ground.'' 
+----
+* Adds ability: [[File:FireSpew.png|16px]] Fire spew
+:''Spit a stream of sticky, flammable bile from the mouth. The bile can ignite anything or anyone it hits, and also form flaming pools on the ground. The bile is generated and stored by an organ in the neck, along with a separate pouch of hypergolic reactant for ignition.'' 
+:* Spits flammable liquid in a 7.9 tile triangle with a 3 tile wide end.{{Check Tag|Detail Needed|Damage? Filth? Etc. See CompProperties_AbilityFireSpew }}
+:* Target: Pawn or Location
+:* Warmup Time: {{Ticks|60}}
+:* Cooldown: {{Ticks/gametime|300000}}
+:* Charges: 1
+:* AI Can Use: True. Note: AI will still target fire-immune targets.
+* Market value of [[genepack]]s containing this gene: ×150%
+| {{--|2}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Endogene.png|Impid.png|32|Impids|Impids}}
+
+|- id="Foam spray"
+! Foam spray<br>[[File:Gene_FoamSpray.png|64px]]
+| ''Carriers grow glands in the neck that generate and store a fire-retardant foam. They can spew this foam over an area to extinguish fires.'' 
+----
+* Adds ability: [[File:Gene_FoamSpray.png|16px]] Foam spray
+:''Spray thick fire-retardant foam from glands in the neck up through the mouth. The foam will cover a small area and extinguish any fire it touches.'' 
+:* Spits firefoam in a 3x3 area around the target, up to 4 tiles away. This leaves [[firefoam]] filth on the ground, extinguishing fires and preventing new ones from igniting.
+:* Target: Pawn or Location
+:* Warmup Time: {{Ticks|60}}
+:* Cooldown: {{Ticks/gametime|30000}} for all 3 charges. Cooldown will not begin until all charges have been expended.
+:* Charges: 3
+:* AI Can Use: False.
+| {{--|2}}
+| {{Bad|1}}
+| -
+
+|- id="Animal warcall"
+! Animal warcall<br>[[File:Gene_AnimalWarcall.png|64px]]
+| ''Carriers of this gene can perform an animal warcall, using a powerful bellow and psychic connection to call an animal to fight for them.'' 
+----
+* Adds ability: [[File:AnimalWarcall.png|16px]] Animal warcall
+:''With a powerful bellow and psychic connection, call an animal to fight your enemies for a few hours.'' 
+:* Turns the target berserk against all factions hostile to the caster for 12 in-game hours/{{ticks|500*60}}. -75 base goodwill when used on a friendly [[faction]]'s animal.
+:* Target: Any single [[animal]] or [[wildman]]. Does not require [[LoS]] {{Check Tag|Detail|Does work on NPC animals, even hostile factions?}}
+:* Range: 49.9 tiles
+:* Warmup Time: {{Ticks|120}}
+:* Cooldown: {{Ticks/gametime|900000}} per charge.
+:* Charges: 2
+:* AI Can Use: True
+| {{--|3}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Endogene.png|Yttakin.png|32|Yttakin|Yttakin}}
+
+|- id="Acid spray"
+! Acid spray<br>[[File:Gene_AcidSpray.png|64px]]
+| ''Carriers grow glands in the neck that generate and store a sticky acid substance, along with acid-tolerant tissues in the mouth. They can spew this acid over an area, where it will stick to enemies and burn them.'' 
+----
+* Adds ability: [[File:AcidSpray.png|16px]] Acid spray
+:''Spray a sticky acid substance from glands in the neck up through the mouth and all over the target area. The acid will stick to targets and burn them.''
+:* Spits a fast-moving acid projectile in a 3x3 area around the target. This does 30 damage to buildings and items, and creates a harmless "spent acid" filth on each affected tile. Creatures in the affected area suffer a 30 damage burn (possibly spread over multiple body parts), but suffer no persistent damage over time. The attack has an {{AP}} of 80%{{Check Tag|Armor type?|Does this oppose heat armor? Sharp? blunt?}} and a [[stopping power]] of 1.
+:* Target: Pawn or Location
+:* Range: 8.9 tiles
+:* Warmup Time: {{Ticks|30}}
+:* Cooldown: {{Ticks/gametime|30000}}
+:* Charges: 1
+:* AI Can Use: True.
+* Market value of [[genepack]]s containing this gene: ×150%
+| {{--|2}}
+| {{Bad|1}}
+| -
+|}
+</div>
+</div>
+</li></div>
+
+== Hemogen ==
+<div><li style="display: inline-table;">
+Click to <div class="mw-collapsible">
+<div class="mw-collapsible-content">
+{| {{STDT| sortable c_17 text-valign:top}}
+! Name
+! Description
+! [[File:Metabolism.png|20px|Metabolism]]
+! [[File:Complexity.png|20px|Complexity]]
+! Prereq.
+! [[File:Baseliner.png|20px|link=Xenotypes]]
+
+|- id="Hemogenic"
+! Hemogenic<br>[[File:Gene_Hemogenic.png|64px]]
+| ''Carriers of this gene have a reserve of biological strength powered by a resource called hemogen. The resource can be gained and spent in various ways, all of which are unlocked by other genes.  Carriers lose 2 hemogen per day from biological entropy.'' 
+----
+* Creates a [[Hemogen]] need, which decreases by {{--|2}} per day.
+** Increases by {{+|20}} per [[hemogen pack]] or Bloodfeed.
+* Receive ''Hemogen Craving'' [[ailment]] when Hemogen hits 0. <br>Craving severity increases by 5% / hour with 0 hemogen. Severity decreases by 10% / hour with it.
+** Hemogen Craving (minor, 0%): {{--|10}} [[mood]], [[Consciousness]] max {{Bad|90%}}, {{++|5%}} [[Pain]]
+** Hemogen Craving (moderate, 35%): {{--|15}} [[mood]], [[Consciousness]] max {{Bad|80%}}, {{++|10%}} [[Pain]]
+** Hemogen Craving (major, 70%): {{--|20}} [[mood]], [[Consciousness]] max {{Bad|50%}}, {{++|15%}} [[Pain]]
+| {{+|1}}
+| {{Bad|1}}
+| -
+| {{Stacked image|GeneBackground Xenogene.png|Sanguophage.png|32|Sanguophages|Sanguophages}}
+
+|- id="Hemogen drain"
+! Hemogen drain<br>[[File:Gene_HemogenDrain.png|64px]]
+| ''Carriers lose an additional 8 hemogen per day from biological entropy.''
+----
+*{{--|8}} [[Hemogen]] per day.
+
+| {{+|6}}
+| {{Bad|1}}
+| Hemogenic
+| {{Stacked image|GeneBackground Xenogene.png|Sanguophage.png|32|Sanguophages|Sanguophages}}
+
+|- id="Coagulate"
+! Coagulate<br>[[File:Gene_Coagulate.png|64px]]
+| ''Carriers of this gene have special glands on their hands and wrists, as well as a unique salivary compound that they can use to rapidly tend wounds.'' 
+----
+* Adds ability: [[File:Gene_Coagulate.png|16px]] Coagulate
+:''Use special glands in the wrists to quickly tend someone's wounds.'' 
+:* Tends wounds at 40-80% [[tend quality]].
+:* Target: Single target in [[LoS]]
+:* Range: 3.9 tiles
+:* Warmup Time: {{Ticks|60}}
+:* [[Hemogen]] Cost: 20
+:* AI Can Use: ?
+| {{--|1}}
+| {{Bad|1}}
+| Hemogenic
+| {{Stacked image|GeneBackground Xenogene.png|Sanguophage.png|32|Sanguophages|Sanguophages}}
+
+|- id="Bloodfeeder"
+! Bloodfeeder<br>[[File:Gene_Bloodfeeder.png|64px]]
+| ''Carriers of this gene have small retractable fangs and an organ on the roof of the mouth which can extract hemogen from fresh warm blood. They can bite an unresisting person, suck the blood, and gain hemogen directly.'' 
+----
+* Adds ability: [[File:Gene_Bloodfeeder.png|16px]] Bloodfeed
+:''Bite the target and extract hemogen directly from their blood. The target will lose blood and will be horrified by the interaction, but will be otherwise unharmed. A fast-acting coagulant will seal the wound to prevent bleeding. Can only target non-hemogenic humans. Hemogen gain is affected by the target’s body size.''
+:* Feed on a pawn to gain up to {{+|20}} [[Hemogen]], which scales with target body size, but not the user's. 
+:** Target will gain {{++|45%}} [[blood loss]] and the {{--|5}} ''Fed on'' [[mood]]let (5 days, doesn't stack, negated by [[masochist]] trait and [[Bloodfeeders (precept)|Bloodfeeders]] precept.{{IdeologyIcon}}). Also gains a bloodfeeder mark on the neck (+1% [[pain]]).
+:** If the target does not have enough blood, hemogen gain will be reduced accordingly.{{Check Tag|Detail}}
+:** Bloodfeeder must have a non-0% [[Eating]] capacity.
+:* Target: Single human target. Target must not have the Bloodfeeder gene. Must be [[downed]] or a [[colonist]], [[slave]],{{IdeologyIcon}} or [[prisoner]] not on a [[mental break]].
+:** A warning will be given if it would kill the target or render them unconscious, but it will not account for continuing blood loss.
+*{{+|2}} [[mood]] when near a [[blood torch]].
+----
+*Interaction with [[Bloodfeeders (precept)|Bloodfeeders]] precept.{{IdeologyIcon}} 
+** Bloodfeeders: Revered - Believers have a higher [[opinion]] towards bloodfeeders,  negates moodlet for being fed on, mood bonus when bloodfeeders are in the colony or are the [[Ideoligion#Leader|Leader]],{{IdeologyIcon}} and mood penalty when they die.
+** Bloodfeeders: Reviled. - Believers have a lower [[opinion]] towards bloodfeeders, mood penalty when bloodfeeders are in the colony or when they are bloodfeeder, and mood bonus when they die.
+
+| {{--|1}}
+| {{Bad|1}}
+| Hemogenic
+| {{Stacked image|GeneBackground Xenogene.png|Sanguophage.png|32|Sanguophages|Sanguophages}}
+
+|- id="Longjump legs"
+! Longjump legs<br>[[File:Gene_LongJumpLegs.png|64px]]
+| ''Carriers have special hemogen-powered muscle fibers in their legs which allow them to jump great distances.'' 
+----
+* Adds ability: [[File:Longjump.png|16px]] Longjump
+:''Jump to a distant location using super-strong hemogen-powered legs.'' 
+:* Jump to the selected location, over non-LoS blocking objects, quickly but not instantly. Immune to all damage during the jump.
+:* Target: Location in [[LoS]]
+:* Range: 19.9 tiles
+:* Warmup Time: {{Ticks|30}}
+:* [[Hemogen]] Cost: 5
+:* AI Can Use: True
+| {{--|2}}
+| {{Bad|1}}
+| Hemogenic
+| {{Stacked image|GeneBackground Xenogene.png|Sanguophage.png|32|Sanguophages|Sanguophages}}
+
+|- id="Piercing spine"
+! Piercing spine<br>[[File:Gene_PiercingSpine.png|64px]]
+| ''Carriers grow an opening in their upper chest along with a quiver of keratin spines. Using a hemogen-powered chemical reaction, they can fire these spines at high speed at nearby targets with surprising accuracy.'' 
+----
+* Adds ability: [[File:PiercingSpine.png|16px]] Piercing spine
+:''Use a hemogenic chemical reaction to launch a bony spine at the target. The spine exits through the skin from an opening between the collarbones. Given the method of launch, it is surprisingly easy to aim.'' 
+:* Launches an unerring spine at the target, dealing 30 [[Damage Types#RangedStab|RangedStab]] damage, with an {{AP}} of 100% and a [[stopping power]] of 1.
+:* Target: Single target in [[LoS]]
+:* Range: 3.9 tiles
+:* Warmup Time: {{Ticks|30}}
+:* Cooldown Time: {{Ticks|60}}
+:* [[Hemogen]] Cost: 20
+:* AI Can Use: True
+* Market value of [[genepack]]s containing this gene: ×150%
+| {{--|1}}
+| {{Bad|1}}
+| Hemogenic
+| {{Stacked image|GeneBackground Xenogene.png|Sanguophage.png|32|Sanguophages|Sanguophages}}
+
+|- id="Deathrest"
+! Deathrest<br>[[File:Gene_Deathrest.png|64px]]
+| ''Carriers of this gene must periodically regenerate themselves in a special coma called deathrest. Deathrest takes days, but can confer substantial bonuses. Deathrest can be accelerated and its effects enhanced by the use of a variety of special buildings and technologies. Those who put off deathresting will suffer from deathrest exhaustion.''
+----
+*Creates a need for [[deathrest]] roughly every 30 days. 
+**Deathrest is initiated at a [[bed]] or [[deathrest casket]] and prevents action. It lasts for 4 days by default (3.6 days in casket), which can be interrupted for a stat penalty.
+**If need hits 0, maximum [[Consciousness]] set to {{Bad|50%}} and [[Psychic Sensitivity]] -100%.
+**See the [[deathrest|deathrest article]] for more details.
+**Implanting new xenogerm, even with deathrest gene will reset pawn's deathrest capacity. 
+
+| {{+|6}}
+| {{Bad|1}}
+| Hemogenic
+| {{Stacked image|GeneBackground Xenogene.png|Sanguophage.png|32|Sanguophages|Sanguophages}}
+|}
+</div>
+</div>
+</li></div>
+
+== Health ==
+
+<div><li style="display: inline-table;">
+Click to <div class="mw-collapsible">
+<div class="mw-collapsible-content">
+{| {{STDT| sortable c_17 text-valign:top}}
+! Name
+! Description
+! [[File:Metabolism.png|20px|Metabolism]]
+! [[File:Complexity.png|20px|Complexity]]
+! [[File:Baseliner.png|20px|link=Xenotypes]]
+! Exclude
+
+|- id="Weak immunity"
+! Weak immunity<br>[[File:Gene_WeakImmunity.png|64px]]
+| ''Carriers of this gene gain immunity to diseases more slowly than normal. They may die from infections that others would survive.'' 
+----
+* [[Immunity Gain Speed]] {{Bad|x90%}}
+| {{+|2}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Endogene.png|Impid.png|32|Impids|Impids}}
+| Immunity
+
+|- id="Strong immunity"
+! Strong immunity<br>[[File:Gene_StrongImmunity.png|64px]]
+| ''Carriers of this gene gain immunity to diseases faster than normal.'' 
+----
+* [[Immunity Gain Speed]] {{Good|x110%}}
+| {{--|1}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Endogene.png|Neanderthal.png|32|Neanderthals|Neanderthals}}{{Clear}}{{Stacked image|GeneBackground Endogene.png|PigskinXenotype.png|32|Pigskins|Pigskins}}
+| Immunity
+
+|- id="Super immunity"
+! Super immunity<br>[[File:Gene_SuperStrongImmunity.png|64px]]
+| ''Carriers of this gene gain immunity to diseases considerably faster than normal.'' 
+----
+* [[Immunity Gain Speed]] {{Good|x150%}}
+* Market value of [[genepack]]s containing this gene: ×125%
+| {{--|2}}
+| {{Bad|2}}
+| {{Stacked image|GeneBackground Endogene.png|Waster.png|32|Wasters|Wasters}}
+| Immunity
+
+|- id="Slow wound healing"
+! Slow wound healing<br>[[File:Gene_WoundHealingRateSlow.png|64px]]
+| ''Carriers of this gene heal from wounds half as fast as normal.'' 
+----
+*[[Injury Healing Factor]] {{Bad|×50%}}
+| {{+|2}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Endogene.png|Impid.png|32|Impids|Impids}}{{Clear}}{{Stacked image|GeneBackground Endogene.png|Yttakin.png|32|Yttakin|Yttakin}}
+| WoundHealingRate
+
+|- id="Fast wound healing"
+! Fast wound healing<br>[[File:Gene_WoundHealingRateFast.png|64px]]
+| ''Carriers of this gene heal from wounds twice as fast as normal.'' 
+----
+*Injury Healing Factor {{Good|×200%}}
+| {{--|2}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Endogene.png|Dirtmole.png|32|Dirtmoles|Dirtmoles}}
+| WoundHealingRate
+
+|- id="Superfast wound healing"
+! Superfast wound healing<br>[[File:Gene_WoundHealingRateSuperfast.png|64px]]
+|''Carriers of this gene heal from wounds four times as fast as normal.'' 
+----
+*Injury Healing Factor {{Good|×400%}}
+* Market value of [[genepack]]s containing this gene: ×125%
+| {{--|3}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Xenogene.png|Hussar.png|32|Hussars|Hussars}}{{Clear}}{{Stacked image|GeneBackground Xenogene.png|Sanguophage.png|32|Sanguophages|Sanguophages}}
+| WoundHealingRate
+
+|- id="Superclotting"
+! Superclotting<br>[[File:Gene_Superclotting.png|64px]]
+| ''Carriers of this gene have extra-power coagulating factors in their blood, and will stop bleeding very quickly when wounded.'' 
+----
+*Every 6 seconds, all bleeding wounds are automatically tended at 20-70% [[tend quality]]. The exact tend quality is fully random within this range.
+*This renders it functionally impossible for the pawn to bleed out, at the minor downside of the wound being somewhat more susceptible to infection than being treated by a doctor under better conditions (e.g. by a skilled doctor, with industrial+ medicine, in a clean hospital).
+*Does not affect non-bleeding wounds.
+| {{--|1}}
+| {{Bad|1}}
+| -
+| -
+|}
+</div>
+</div>
+</li></div>
+
+== Psychics ==
+
+<div><li style="display: inline-table;">
+Click to <div class="mw-collapsible">
+<div class="mw-collapsible-content">
+{| {{STDT| sortable c_17 text-valign:top}}
+! Name
+! Description
+! [[File:Metabolism.png|20px|Metabolism]]
+! [[File:Complexity.png|20px|Complexity]]
+! [[File:Baseliner.png|20px|link=Xenotypes]]
+! Exclude
+
+|- id="Psychically deaf"
+! Psychically deaf<br>[[File:Gene_PsychicallyDeaf.png|64px]]
+| ''Carriers of this gene are deaf to all psychic energy and influence outside their own minds. They cannot be affected by psychic influence, nor can they ever wield psychic power.'' 
+----
+* Forced [[trait]]: [[Psychically deaf]]
+| {{+|2}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Xenogene.png|Hussar.png|32|Hussars|Hussars}}
+| PsychicAbility
+
+|- id="Psychically dull"
+! Psychically dull<br>[[File:Gene_PsychicallyDull.png|64px]]
+| ''Carriers of this gene are less psychically-sensitive than others.'' 
+----
+* Forced [[trait]]: [[Psychically dull]]
+| {{+|1}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Endogene.png|Yttakin.png|32|Yttakin|Yttakin}}
+| PsychicAbility
+
+|- id="Psy-sensitive"
+! Psy-sensitive<br>[[File:Gene_EnhancedPsychicAbility.png|64px]]
+| ''Carriers of this gene are more psychically-sensitive than average.'' 
+----
+* [[Psychic Sensitivity]] +20%
+* Meditation psyfocus gain {{+|10% / day}} {{Check Tag|Verify|Verify and explain exact mechanic, order of operations, math etc}}
+* {{+|0.1}} Neural Heat Recovery per second base. Effectively {{#expr:0.1*1.625 round 3}} Heat/s recovery at Level 6 psylink. 
+* Does not suppress the [[psychically dull]] or [[psychically deaf]] traits, but is applied afterwards. This increases the pawn's base psychic sensitivity to 70 / 20 respectively.
+| {{--|2}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Xenogene.png|Highmate.png|32|Highmates|Highmates}}{{Clear}}{{Stacked image|GeneBackground Xenogene.png|Sanguophage.png|32|Sanguophages|Sanguophages}}
+| PsychicAbility
+
+|- id="Super psy-sensitive"
+! Super psy-sensitive<br>[[File:Gene_ExtremePsychicAbility.png|64px]]
+| ''Carriers of this gene are much more psychically-sensitive than most.'' 
+----
+* [[Psychic Sensitivity]] +40%
+* Meditation psyfocus gain {{+|20% / day}} {{Check Tag|Verify|Verify and explain exact mechanic, order of operations, math etc}}
+* {{+|0.2}} Neural Heat Recovery per second base. Effectively {{#expr:0.2*1.625 round 3}} Heat/s recovery at Level 6 psylink.
+* Does not suppress the [[psychically dull]] or [[psychically deaf]] traits, but is applied afterwards. This increases the pawn's base psychic sensitivity to 90 / 40 respectively.
+| {{--|5}}
+| {{Bad|2}}
+| -
+| PsychicAbility
+
+|- id="Psychic bonding"
+! Psychic bonding<br>[[File:Gene_PsychicBonding.png|64px]]
+| ''Carriers of this gene have a special neural organ that makes them psychically bond with a lover for life. As long as the lovers are together, they will be happy. If they are physically separated, they will be disturbed by the distance. If one dies, the other's mind will be badly disrupted.'' 
+----
+*Romance attempts always succeed
+*Gains psychic bond with first attempted [[romance]] or [[lovin']]
+:*''This person has a psychic bond with another person based on the psychic bonding gene. The bond itself grants some limited psychic awareness, allowing it to connect even with the psychically deaf.''
+:* Bonded pawns receive gain {{Good|×50%}} [[pain]] multiplier, {{+|15%}} [[consciousness]], {{+|12}} [[mood]] and {{+|10%}} [[psychic sensitivity]] when on same map or in the same [[caravan]].
+:* Bonded pawns receive {{--|10}} [[mood]], {{+|5%}} [[psychic sensitivity]], and {{--|25%}} [[consciousness]] when not on same map or when one pawn is in stasis via [[cryptosleep casket]]s or a [[biosculpter pod]]{{IdeologyIcon}}.
+:* Bonded pawns have {{Good|+50}} [[opinion]] of each other.
+:* When one bonded pawn dies, the other will receive a {{--|25}} mood penalty that linearly decays over the course of 30 days. Note: if counseled, the counsel bonus will not decay, but will stay at the value it was applied with.
+:* When a bonded pawn dies, the pawn with the psychic bonding gene will immediately suffer an extreme [[mental break]]. Violence disabled pawns can still go [[Mental break#Berserk|berserk]].
+| {{--|1}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Xenogene.png|Highmate.png|32|Highmates|Highmates}}
+| -
+|}
+</div>
+</div>
+</li></div>
+
+==Movement==
+
+<div><li style="display: inline-table;">
+Click to <div class="mw-collapsible">
+<div class="mw-collapsible-content">
+{| {{STDT| sortable c_17 text-valign:top}}
+! Name
+! Description
+! [[File:Metabolism.png|20px|Metabolism]]
+! [[File:Complexity.png|20px|Complexity]]
+! [[File:Baseliner.png|20px|link=Xenotypes]]
+! Exclude
+
+|- id="Slow runner"
+! Slow runner<br>[[File:Gene_SlowMovespeed.png|64px]]
+| ''Carriers of this gene move more slowly than normal.'' 
+----
+* [[Move Speed]]: {{--|0.2}} {{CS}}
+| {{+|3}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Endogene.png|Dirtmole.png|32|Dirtmoles|Dirtmoles}}{{Clear}}{{Stacked image|GeneBackground Endogene.png|Neanderthal.png|32|Neanderthals|Neanderthals}}
+| MoveSpeed
+
+|- id="Fast runner"
+! Fast runner<br>[[File:Gene_QuickMovespeed.png|64px]]
+| ''Carriers of this gene move more quickly than normal.'' 
+----
+* [[Move Speed]]: {{+|0.2}} {{CS}}
+| {{--|3}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Xenogene.png|Sanguophage.png|32|Sanguophages|Sanguophages}}
+| MoveSpeed
+
+|- id="Very fast runner"
+! Very fast runner<br>[[File:Gene_VeryQuickMovespeed.png|64px]]
+| ''Carriers of this gene move much more quickly than normal.'' 
+----
+* [[Move Speed]]: {{+|0.4}} {{CS}}
+| {{--|5}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Endogene.png|Impid.png|32|Impids|Impids}}
+| MoveSpeed
+
+|- id="Naked speed"
+! Naked speed<br>[[File:Gene_NakedSpeed.png|64px]]
+| ''Carriers of this gene move slower while clothed, and faster while naked.'' 
+----
+* [[Move speed]]: {{--|0.20}} {{CS}} (clothed)
+* [[Move speed]]: {{+|0.10}} {{CS}} (unclothed)
+| {{+|2}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Endogene.png|Yttakin.png|32|Yttakin|Yttakin}}
+| -
+
+|- id="Webbed phalanges"
+! Webbed phalanges<br>[[File:Gene_WebbedPhalanges.png|64px]]
+| ''Carriers of this gene have webbed fingers and toes, allowing them to move faster in water. Webbed fingers slightly reduce fine motor control.'' 
+----
+* [[Manipulation]] {{Bad|-5%}}
+* [[Environment#Naturally generated surfaces|Water tiles]] no longer hinder movement for this pawn. 
+** Mechanically, any terrain with the '''water''' tag will be treated as having a movement speed of 100% for pawns with this gene.
+| {{--|1}}
+| {{Bad|1}}
+| -
+| -
+|}
+</div>
+</div>
+</li></div>
+
+== Mood ==
+
+<div><li style="display: inline-table;">
+Click to <div class="mw-collapsible">
+<div class="mw-collapsible-content">
+{| {{STDT| sortable c_17 text-valign:top}}
+! Name
+! Description
+! [[File:Metabolism.png|20px|Metabolism]]
+! [[File:Complexity.png|20px|Complexity]]
+! [[File:Baseliner.png|20px|link=Xenotypes]]
+! Exclude
+
+|- id="Very unhappy"
+! Very unhappy<br>[[File:Gene_Depressive.png|64px]]
+| ''Carriers of this gene are highly predisposed to negative emotion. They'll see the bad in every situation and have a much lower mood than others.'' 
+----
+* Permanent {{Thought|desc=Natural penalty from 'very unhappy' gene.|label=Genetic depression|value=-10|stack=1}} 
+| {{+|5}}
+|{{Bad|1}}
+| -
+| Mood
+
+|- id="Unhappy"
+! Unhappy<br>[[File:Gene_Pessimist.png|64px]]
+| ''Carriers of this gene are predisposed to pessimistic perceptions. They'll tend to interpret things negatively and have lower mood than others.'' 
+----
+* Permanent {{Thought|desc=Natural penalty from 'unhappy' gene.|label=Genetic pessimism|value=-5|stack=1}}
+| {{+|3}}
+|{{Bad|1}}
+| {{Stacked image|GeneBackground Endogene.png|Impid.png|32|Impids|Impids}}
+| Mood
+
+|- id="Happy"
+! Happy<br>[[File:Gene_Optimist.png|64px]]
+| ''Carriers of this gene are predisposed to optimistic feelings. They'll have higher mood than others.'' 
+----
+* Permanent {{Thought|desc=Natural bonus from 'happy' gene.|label=Genetic optimism|value=+5|stack=1}}
+| {{--|1}}
+| {{Bad|2}}
+| -
+| Mood
+
+|- id="Very happy"
+! Very happy<br>[[File:Gene_Sanguine.png|64px]]
+| ''Carriers of this gene are highly predisposed to optimism and not at all inclined to think negatively. They'll have much higher mood than others.'' 
+----
+* Permanent {{Thought|desc=Natural bonus from 'very happy' gene.|label=Genetic joy|value=+10|stack=1}}
+| {{--|2}}
+| {{Bad|3}}
+| {{Stacked image|GeneBackground Xenogene.png|Highmate.png|32|Highmates|Highmates}}
+| Mood
+|}
+</div>
+</div>
+</li></div>
+
+== Temperature ==
+
+<div><li style="display: inline-table;">
+Click to <div class="mw-collapsible">
+<div class="mw-collapsible-content">
+{| {{STDT| sortable c_17 text-valign:top}}
+! Name
+! Description
+! [[File:Metabolism.png|20px|Metabolism]]
+! [[File:Complexity.png|20px|Complexity]]
+! [[File:Baseliner.png|20px|link=Xenotypes]]
+! Exclude
+
+|- id="Cold weakness"
+! Cold weakness<br>[[File:Gene_MinTemperatureSmallIncrease.png|64px]]
+| ''Carriers of this gene are slightly less comfortable in cold temperatures.'' 
+----
+* [[Minimum Comfortable Temperature]]: {{++|{{temperature|5||delta}}}}
+| {{+|1}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Endogene.png|Impid.png|32|Impids|Impids}}
+| MinTemperature
+
+|- id="Cold tolerant"
+! Cold tolerant<br>[[File:Gene_MinTemperatureSmallDecrease.png|64px]]
+| ''Carriers of this gene are slightly more comfortable in cold temperatures.'' 
+----
+* [[Minimum Comfortable Temperature]]: {{---|{{temperature|10||delta}}}}
+| {{--|1}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Xenogene.png|Hussar.png|32|Hussars|Hussars}}{{Clear}}{{Stacked image|GeneBackground Endogene.png|Neanderthal.png|32|Neanderthals|Neanderthals}}
+| MinTemperature
+
+|- id="Cold super-tolerant"
+! Cold super-tolerant<br>[[File:Gene_MinTemperatureLargeDecrease.png|64px]]
+| ''Carriers of this gene are much more comfortable in cold temperatures.'' 
+----
+* [[Minimum Comfortable Temperature]]: {{---|{{temperature|20||delta}}}}
+| {{--|2}}
+| {{Bad|1}}
+| {{Clear}}{{Stacked image|GeneBackground Xenogene.png|Starjack.png|32|Starjack|Starjack}}
+| MinTemperature
+
+|- id="Heat weakness"
+! Heat weakness<br>[[File:Gene_MaxTemperatureSmallDecrease.png|64px]]
+| ''Carriers of this gene are slightly less comfortable in warm temperatures.'' 
+----
+* [[Maximum Comfortable Temperature]]: {{--|{{temperature|5||delta}}}}
+| {{+|1}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Xenogene.png|Highmate.png|32|Highmates|Highmates}}
+| MaxTemperature
+
+|- id="Heat tolerant"
+! Heat tolerant<br>[[File:Gene_MaxTemperatureSmallIncrease.png|64px]]
+| ''Carriers of this gene are slightly more comfortable in warm temperatures.'' 
+----
+* [[Maximum Comfortable Temperature]]: {{+|{{temperature|10||delta}}}}
+| {{--|1}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Xenogene.png|Hussar.png|32|Hussars|Hussars}}{{Clear}}{{Stacked image|GeneBackground Endogene.png|Neanderthal.png|32|Neanderthals|Neanderthals}}{{Clear}}{{Stacked image|GeneBackground Xenogene.png|Starjack.png|32|Starjack|Starjack}}
+| MaxTemperature
+
+|- id="Heat super-tolerant"
+! Heat super-tolerant<br>[[File:Gene_MaxTemperatureLargeIncrease.png|64px]]
+| ''Carriers of this gene are much more comfortable in warm temperatures.'' 
+----
+* [[Maximum Comfortable Temperature]]: {{+|{{temperature|20||delta}}}}
+| {{--|2}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Endogene.png|Impid.png|32|Impids|Impids}}
+| MaxTemperature
+|}
+</div>
+</div>
+</li></div>
+
+== Resistance and sensitivity ==
+
+<div><li style="display: inline-table;">
+Click to <div class="mw-collapsible">
+<div class="mw-collapsible-content">
+{| {{STDT| sortable c_17 text-valign:top}}
+! Name
+! Description
+! [[File:Metabolism.png|20px|Metabolism]]
+! [[File:Complexity.png|20px|Complexity]]
+! [[File:Baseliner.png|20px|link=Xenotypes]]
+! Exclude
+
+|- id="Tox resistance"
+! Tox resistance<br>[[File:Gene_PartialToxicityResistance.png|64px]]
+| ''Carriers of this gene are resistant to toxic buildup from any source. This includes pollution, toxic fallout, tox gas, and direct attacks with venom or injected poison. They'll gain half the amount of toxic buildup compared to others.  Cellular filters in the lung and skin reduce the dose of toxins entering the bloodstream. 
+----
+* [[Toxic Resistance]]: {{+|50%}}
+| {{--|2}}
+| {{Bad|1}}
+| -
+| ToxResistance
+
+|- id="Tox immunity"
+! Tox immunity<br>[[File:Gene_TotalToxicityResistance.png|64px]]
+| ''Carriers of this gene are totally immune to toxic buildup from all sources including polluted terrain, toxic fallout, tox gas, and direct attacks with venom or injected poison. They are also not bothered by acidic smog.  The carrier's biochemical pathways are modified to route around interference from nearly all known toxins. Along with enhancements to the kidneys and liver, this keeps carriers comfortable in even the most toxic of environments. 
+----
+* [[Toxic Resistance]]: {{+|100%}}
+* [[Tox gas]] immunity
+* Removes mood: Toxic fallout: -5
+* Removes mood: Acidic smog: -5
+| {{--|4}}
+| {{Bad|2}}
+| {{Stacked image|GeneBackground Xenogene.png|Sanguophage.png|32|Sanguophages|Sanguophages}}
+| ToxResistance
+
+|- id="Partial antitoxic lungs"
+! Partial antitoxic lungs<br>[[File:Gene_PartialPollutionResistance.png|64px]]
+| ''Carriers of this gene are resistant to environmental toxins. They get less toxic buildup from tox gas, polluted terrain, and toxic fallout, but are still vulnerable to direct attacks with venom or injected poison. Additionally, they build up rot stink exposure slower. 
+----
+* [[Toxic Environment Resistance]]: {{+|50%}}
+| {{--|1}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Xenogene.png|Hussar.png|32|Hussars|Hussars}}
+| ToxicEnvironmentResistance
+
+|- id="Total antitoxic lungs"
+! Total antitoxic lungs<br>[[File:Gene_TotalPollutionResistance.png|64px]]
+| ''Carriers of this gene are immune to environmental toxins, but not from direct toxic attacks. They get no toxic buildup from tox gas, polluted terrain, or toxic fallout, and they are not bothered by acidic smog. They are still vulnerable to direct attacks like venom and injected poison. Additionally, they are immune to rot stink exposure. 
+----
+* [[Toxic Environment Resistance]]: {{+|100%}}
+* [[Tox gas]] immunity
+* Removes mood: Toxic fallout: -5
+* Removes mood: Acidic smog: -5
+| {{--|3}}
+| {{Bad|2}}
+| {{Stacked image|GeneBackground Endogene.png|Waster.png|32|Wasters|Wasters}}
+| ToxicEnvironmentResistance
+
+|- id="Mild UV sensitivity"
+! Mild UV sensitivity<br>[[File:Gene_MildUVSensitivity.png|64px]]
+| ''Carriers of this gene have biological compounds in their skin that react painfully to UV radiation. They are unusually sensitive to sunlight. 
+----
+* When in sunlight (when on an unroofed tile while [[light]] levels from {{Hover title|Sunlamps and other artificial light sources don't count|natural sunlight}} are 11% or more):
+** [[Move Speed]] {{Bad|×90%}}
+** Mood: ''Sunlight Sensitivity'': {{--|6}}
+* Does not cause [[pain]], despite the description.
+| {{+|3}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Xenogene.png|Sanguophage.png|32|Sanguophages|Sanguophages}}
+| UVSensitivity
+
+|- id="Intense UV sensitivity"
+! Intense UV sensitivity<br>[[File:Gene_IntenseUVSensitivity.png|64px]]
+| ''Carriers of this gene have biological compounds in their skin that react dangerously to UV radiation. They are intensely sensitive to sunlight.'' 
+----
+* When in sunlight (when on an unroofed tile while [[light]] levels from {{Hover title|Sunlamps and other artificial light sources don't count|natural sunlight}} are 11% or more):
+** [[Move Speed]] {{Bad|×80%}}
+** Mood: ''Sunlight Sensitivity'': {{--|12}}
+* Does not cause [[pain]].
+| {{+|4}}
+| {{Bad|2}}
+| {{Stacked image|GeneBackground Endogene.png|Dirtmole.png|32|Dirtmoles|Dirtmoles}}
+| UVSensitivity
+
+|- id="Fire resistant"
+! Fire resistant<br>[[File:Gene_FireResistant.png|64px]]
+| ''Carriers of this gene have special fast-acting sweat glands and heat-resistant skin. They only take 25% of the normal damage from fire. The chance of them catching on fire is also drastically reduced. 
+----
+* [[Flammability]] {{Good|x10%}}
+* [[Damage Type#Flame|Flame]] damage {{Good|x25%}}
+:<small>Note that this does not affect [[Damage Type#Heat|Heat]] or [[Damage Type#Vaporize|Vaporize]] damage</small>
+| {{--|2}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Endogene.png|Impid.png|32|Impids|Impids}}
+| FireDamage
+
+|- id="Tinderskin"
+! Tinderskin<br>[[File:Gene_FireWeakness.png|64px]]
+| ''Carriers have dry, thin skin which burns easily from fire, and their immune systems react very poorly to this kind of threat. Damage from fire is multiplied by 4. 
+----
+* [[Damage Type#Flame|Flame]] damage {{Bad|x400%}}
+:<small>Note that this does not affect [[Damage Type#Heat|Heat]] or [[Damage Type#Vaporize|Vaporize]] damage</small>
+| {{+|2}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Xenogene.png|Sanguophage.png|32|Sanguophages|Sanguophages}}
+| FireDamage
+
+|- id="Pyrophobia"
+! Pyrophobia<br>[[File:Gene_FireTerror.png|64px]]
+| ''Carriers of this gene have an intense fear of fire. When fires are close, there is a chance they will have a mental breakdown at any moment. 
+----
+* If the pawn has line of sight of a fire within 19.9 tiles, it is considered "near fire" and the following happens:
+** {{--|10}} ''Afraid of fire'' [[mood]]let
+** 0.1 day mtb chance of "Fire terror" mental break that cause "panic-fleeing fire" mental state, ends when not "near fire" for {{Ticks|500}}
+* Suppresses [[Pyromaniac]] trait
+:<small>Note that blind pawns are still affected by pyrophobia, and will still flee</small>
+| {{+|4}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Xenogene.png|Sanguophage.png|32|Sanguophages|Sanguophages}}
+| -
+
+|- id="Vacuum resistant"
+! Vacuum resistant<br>{{OdysseyIcon}}<br>[[File:Gene_VacuumResistance.png|64px]]
+| ''Carriers of this gene have skin that releases a waxy substance when air pressure is low, preventing vacuum burns and allowing them to survive longer when exposed to vacuum.'' 
+----
+* Immune to vacuum burns
+* [[Vacuum resistance]]: {{Good|+45%}}
+* [[Minimum Comfortable Temperature]]: {{---|{{temperature|5||delta}}}}
+| {{--|1}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Xenogene.png|Starjack.png|32|Starjack|Starjack}}
+| VacuumResistance
+|}
+</div>
+</div>
+</li></div>
+
+== Violence ==
+
+<div><li style="display: inline-table;">
+Click to <div class="mw-collapsible">
+<div class="mw-collapsible-content">
+{| {{STDT| sortable c_17 text-valign:top}}
+! Name
+! Description
+! [[File:Metabolism.png|20px|Metabolism]]
+! [[File:Complexity.png|20px|Complexity]]
+! [[File:Baseliner.png|20px|link=Xenotypes]]
+! Exclude
+
+|- id="Dead calm"
+! Dead calm<br>[[File:Gene_DeadCalm.png|64px]]
+| Carriers of this gene feel calm in every situation and have a very placid demeanor. They will never start social fights or have aggressive mental breaks.
+----
+* Effects:
+** Will never do social fights
+** Mental breaks are never violent (Tantrum, Berserk, Slaughterer, Murderous Rage)
+** Will never prison break
+** [[Arrest]]ing never fails, and will never berserk on arrest.
+| {{--|1}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Xenogene.png|Genie.png|32|Genies|Genies}}
+| Aggression
+
+|- id="Aggressive"
+! Aggressive<br>[[File:Gene_Aggressive.png|64px]]
+| Carriers of this gene are quick to anger. They are twice as likely to start social fights. When they have mental breaks, they are twice as likely to choose an aggressive kind of break.
+----
+* Effects:
+** Social fight chance factor ×200%
+** Chance mental break is violent ×200% (Tantrum, Berserk, Slaughterer, Murderous Rage) {{Check Tag|Wb minor breaks?|Minor has no violent options. Does this affect the chance at that tier in any way?}}
+** Prison break interval factor ×60%
+| {{+|2}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Endogene.png|Neanderthal.png|32|Neanderthals|Neanderthals}}{{Clear}}{{Stacked image|GeneBackground Endogene.png|Waster.png|32|Wasters|Wasters}}{{Clear}}{{Stacked image|GeneBackground Endogene.png|Yttakin.png|32|Yttakin|Yttakin}}{{Clear}}{{Stacked image|GeneBackground Xenogene.png|Sanguophage.png|32|Sanguophages|Sanguophages}}
+| Aggression<br>Aggressive
+
+|- id="Hyper-aggressive"
+! Hyper-aggressive<br>[[File:Gene_HyperAggressive.png|64px]]
+| Carriers of this gene are hormonally high-strung and very aggressive. They are three times as likely to start social fights. Any mental break they have will be of an aggressive type.
+----
+* Effects:
+** Social fight chance factor ×300%
+** Mental breaks are always{{Check Tag|Verify|Nominally, it multiplies the chance of a violent break by 999x, so it is still possible but unlikely to have a non-violent. Confirm which. Look at TryRandomElementByWeight}} violent where possible.(Tantrum, Berserk, Slaughterer, Murderous Rage) Tiers without violent options, i.e. Minor breaks, non-violent breaks are chosen instead.{{Check Tag|All types?|For tiers without violent options, so they use the standard chances or does it.have default?}}
+** Prison break interval factor ×40%
+| {{+|3}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Xenogene.png|Hussar.png|32|Hussars|Hussars}}
+| Aggression<br>Aggressive
+
+|- id="Weak melee damage"
+! Weak melee damage<br>[[File:Gene_WeakMeleeDamage.png|64px]]
+| Carriers of this gene do less damage in close-quarters combat. Weak fast-twitch muscle fibers make their strikes shaky and weak.
+----
+* [[Melee damage factor]] ×50%
+** This also affects melee {{AP}} when calculated from damage. It does not affect the AP of weapons that are set independently of damage, such as: [[Spear]]s, [[Monosword]]s,{{RoyaltyIcon}} [[Persona monosword]]s,{{RoyaltyIcon}} [[Hand talon]],{{RoyaltyIcon}} [[Knee spike]]s,{{RoyaltyIcon}} and [[flesh whip]]s{{AnomalyIcon}}.
+| {{+|1}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Endogene.png|Impid.png|32|Impids|Impids}}{{Clear}}{{Stacked image|GeneBackground Xenogene.png|Starjack.png|32|Starjack|Starjack}}
+| MeleeDamage
+
+|- id="Strong melee damage"
+! Strong melee damage<br>[[File:Gene_StrongMeleeDamage.png|64px]]
+| Carriers of this gene do more damage in close-quarters combat. Extra-strong fast-twitch muscle fibers make their strikes accurate and powerful.
+----
+* [[Melee damage factor]] ×150%
+** This also affects melee {{AP}} when calculated from damage. It does not affect the AP of weapons that are set independently of damage, such as: [[Spear]]s, [[Monosword]]s,{{RoyaltyIcon}} [[Persona monosword]]s,{{RoyaltyIcon}} [[Hand talon]],{{RoyaltyIcon}} [[Knee spike]]s,{{RoyaltyIcon}} and [[flesh whip]]s{{AnomalyIcon}}.
+| {{--|2}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Endogene.png|Dirtmole.png|32|Dirtmoles|Dirtmoles}}{{Clear}}{{Stacked image|GeneBackground Endogene.png|Neanderthal.png|32|Neanderthals|Neanderthals}}{{Clear}}{{Stacked image|GeneBackground Endogene.png|Yttakin.png|32|Yttakin|Yttakin}}{{Clear}}{{Stacked image|GeneBackground Xenogene.png|Sanguophage.png|32|Sanguophages|Sanguophages}}
+| MeleeDamage
+
+|- id="Violence disabled"
+! Violence disabled<br>[[File:Gene_ViolenceDisabled.png|64px]]
+| Carriers of this gene are emotionally and mentally incapable of engaging in violence. They are overwhelmingly resistant to and horrified by the idea of hurting another.
+----
+*Disables work:
+** Hunt
+** Violent
+| {{+|3}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Xenogene.png|Highmate.png|32|Highmates|Highmates}}
+| MeleeDamage<br>ShootingAccuracy<br>Aggressive<br>KillThirst
+
+|- id="Kind instinct"
+! Kind instinct<br>[[File:Gene_KindInstinct.png|64px]]
+| Carriers of this gene are high in trait agreeableness and are very conscientious. They rarely insult others and will sometimes offer kind words to brighten the moods of those around them. They also never judge people by their appearance.
+----
+* Forced [[trait]]: [[Kind]]
+* Suppresses [[Abrasive]] and [[Psychopath]] traits
+| {{--|1}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Xenogene.png|Highmate.png|32|Highmates|Highmates}}
+| -
+
+|- id="Kill thirst"
+! Kill thirst<br>[[File:Gene_Killthirst.png|64px]]
+| Carriers of this gene lust for the feeling of ending another's life. They will become irritated if they go for too long without killing someone in close combat.
+---- 
+*Causes [[need]]: [[Kill satiety]]. Inflicts an increasing mood penalty during long periods between melee kills. See the [[Kill satiety]] page for details.
+| {{+|4}}
+| {{Bad|1}}
+| -
+| KillThirst
+
+|}
+</div>
+</div>
+</li></div>
+
+== Sleep ==
+
+<div><li style="display: inline-table;">
+Click to <div class="mw-collapsible">
+<div class="mw-collapsible-content">
+{| {{STDT| sortable c_17 text-valign:top}}
+! Name
+! Description
+! [[File:Metabolism.png|20px|Metabolism]]
+! [[File:Complexity.png|20px|Complexity]]
+! [[File:Baseliner.png|20px|link=Xenotypes]]
+! Exclude
+
+|- id="Very sleepy"
+! Very sleepy<br>[[File:Gene_VerySleepy.png|64px]]
+| Carriers of this gene get tired much faster than others.
+----
+* [[Sleep Fall Rate]]: {{Bad|×180%}}
+| {{+|4}}
+| {{Bad|1}}
+| -
+| Sleep
+
+|- id="Sleepy"
+! Sleepy<br>[[File:Gene_Sleepy.png|64px]]
+| Carriers of this gene get tired somewhat faster than others.
+----
+* [[Sleep Fall Rate]]: {{Bad|×140%}}
+| {{+|2}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Endogene.png|Yttakin.png|32|Yttakin|Yttakin}}
+| Sleep
+
+|- id="Low sleep"
+! Low sleep<br>[[File:Gene_QuickSleeper.png|64px]]
+| Carriers of this gene get tired less quickly than others.
+----
+* [[Sleep Fall Rate]]: {{Good|×40%}}
+| {{--|4}}
+| {{Bad|2}}
+| {{Stacked image|GeneBackground Xenogene.png|Sanguophage.png|32|Sanguophages|Sanguophages}}
+| Sleep
+
+|- id="Never sleep"
+! Never sleep<br>[[File:Gene_Neversleep.png|64px]]
+| Carriers of this gene have a unique metabolic process which allows clusters of neurons to sleep while the rest of the brain stays awake. They never need to sleep.
+----
+* Effects:
+** Disables [[need]]: [[Sleep]]
+** If all pawns in a [[caravan]] have either this gene, a [[circadian half-cycler]],{{RoyaltyIcon}} or the [[body mastery]]{{AnomalyIcon}} trait, and they travel without animals, they don't need to [[Caravan#Caravan schedule|stop at night]].
+* Market value of [[genepack]]s containing this gene: ×125%
+| {{--|6}}
+| {{Bad|3}}
+| -
+| Sleep
+|}
+</div>
+</div>
+</li></div>
+
+== Pain ==
+
+<div><li style="display: inline-table;">
+Click to <div class="mw-collapsible">
+<div class="mw-collapsible-content">
+{| {{STDT| sortable c_17 text-valign:top}}
+! Name
+! Description
+! [[File:Metabolism.png|20px|Metabolism]]
+! [[File:Complexity.png|20px|Complexity]]
+! [[File:Baseliner.png|20px|link=Xenotypes]]
+! Exclude
+
+|- id="Delicate"
+! Delicate<br>[[File:Gene_Delicate.png|64px]]
+| Carriers of this gene take greater injuries than others from the same damage. They have thin, brittle bones and less binding molecules in joints and flesh.
+----
+* Forced [[trait]]: [[Delicate]]
+* Suppresses [[Tough]] trait
+
+| {{+|3}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Xenogene.png|Genie.png|32|Genies|Genies}}{{Clear}}{{Stacked image|GeneBackground Xenogene.png|Highmate.png|32|Highmates|Highmates}}
+| Toughness
+
+|- id="Robust"
+! Robust<br>[[File:Gene_Tough.png|64px]]
+| Carriers of this gene take less injuries than others from the same damage. They have thickened, densified bones, nearly-solid ribcages, and strengthened binding factors in joints and flesh.
+----
+* {{Good|x75%}} [[Incoming Damage Multiplier]]
+** Note that despite being incompatible with the [[#Delicate|Delicate]] gene, it stacks multiplicatively with other Incoming Damage Multiplier factors, including the [[Delicate]] ''trait''. See for [[Incoming Damage Multiplier]] further details on stacking.
+| {{--|2}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Endogene.png|Neanderthal.png|32|Neanderthals|Neanderthals}}{{Clear}}{{Stacked image|GeneBackground Endogene.png|Yttakin.png|32|Yttakin|Yttakin}}{{Clear}}{{Stacked image|GeneBackground Xenogene.png|Sanguophage.png|32|Sanguophages|Sanguophages}}
+| Toughness
+
+|- id="Extra pain"
+! Extra pain<br>[[File:Gene_ExtraPain.png|64px]]
+| Carriers of this gene feel more pain than others given the same injuries. Neuron activity in the brain's nociception center is amplified, so pain feels extra-intense and fiery. This can be protective, but overall it's considered a negative and makes it hard to push through difficult situations.
+----
+* Forced [[trait]]: [[Wimp]]
+* Suppresses [[Masochist]] and [[Brawler]] traits
+| {{+|2}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Xenogene.png|Genie.png|32|Genies|Genies}}
+| Pain
+
+|- id="Reduced pain"
+! Reduced pain<br>[[File:Gene_PainReduced.png|64px]]
+| Carriers of this gene feel half as much pain compared to a baseliner. Reduced neuron activity in the brain's nociception centers makes pain dull and faint. This can be advantageous sometimes, and dangerous other times.
+----
+* Pain ×50%
+| {{--|1}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Xenogene.png|Hussar.png|32|Hussars|Hussars}}{{Clear}}{{Stacked image|GeneBackground Endogene.png|Neanderthal.png|32|Neanderthals|Neanderthals}}{{Clear}}{{Stacked image|GeneBackground Endogene.png|PigskinXenotype.png|32|Pigskins|Pigskins}}
+| Pain
+|}
+</div>
+</div>
+</li></div>
+
+== Reproduction ==
+
+<div><li style="display: inline-table;">
+Click to <div class="mw-collapsible">
+<div class="mw-collapsible-content">
+{| {{STDT| sortable c_17 text-valign:top}}
+! Name
+! Description
+! [[File:Metabolism.png|20px|Metabolism]]
+! [[File:Complexity.png|20px|Complexity]]
+! [[File:Baseliner.png|20px|link=Xenotypes]]
+! Exclude
+
+|- id="Low libido"
+! Low libido<br>[[File:Gene_LowLibido.png|64px]]
+| Carriers of this gene are less likely to engage in lovin' with their partner.
+----
+* {{MTB}} [[Lovin']] Factor: {{Bad|x2}} 
+| '''0'''
+| {{Bad|1}}
+| -
+| Libido
+
+|- id="High libido"
+! High libido<br>[[File:Gene_HighLibido.png|64px]]
+| Carriers of this gene are more likely to engage in lovin' with their partner.
+----
+* {{MTB}} [[Lovin']] Factor: {{Good|x0.5}} 
+| '''0'''
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Xenogene.png|Highmate.png|32|Highmates|Highmates}}
+| Libido
+
+|- id="Sterile"
+! Sterile<br>[[File:Gene_Sterile.png|64px]]
+| Carriers of this gene cannot reproduce by natural means.
+----
+* Fertility ×0%
+| {{+|1}}
+| {{Bad|1}}
+| -
+| Fertility
+
+|- id="Fertile"
+! Fertile<br>[[File:Gene_Fertile.png|64px]]
+| Carriers of this gene have a higher chance of becoming pregnant or impregnating others.
+----
+* Fertility ×200%
+| '''0'''
+| {{Bad|1}}
+| -
+| Fertility
+|}
+</div>
+</div>
+</li></div>
+
+== Beauty ==
+
+<div><li style="display: inline-table;">
+Click to <div class="mw-collapsible">
+<div class="mw-collapsible-content">
+{| {{STDT| sortable c_17 text-valign:top}}
+! Name
+! Description
+! [[File:Metabolism.png|20px|Metabolism]]
+! [[File:Complexity.png|20px|Complexity]]
+! [[File:Baseliner.png|20px|link=Xenotypes]]
+! Exclude
+|- id="Very unattractive"
+! Very unattractive<br>[[File:Gene_StaggeringlyUgly.png|64px]]
+| ''Carriers of this gene have misshapen, asymmetrical facial structures and blotchy skin. They're hard to look at.'' 
+----
+* [[Beauty (Pawn)]]: {{--|2}}
+* [[Market Value]]: {{bad|-700}}
+| {{+|2}}
+|{{Bad|1}}
+| -
+| Beauty
+
+|- id="Unattractive"
+! Unattractive<br>[[File:Gene_Ugly.png|64px]]
+| ''Carriers of this gene have exaggerated facial features and poor skin that are generally considered ugly.'' 
+----
+* [[Beauty (Pawn)]]: {{--|1}}
+* [[Market Value]]: {{bad|-350}}
+| {{+|1}}
+|{{Bad|1}}
+| {{Stacked image|GeneBackground Endogene.png|Waster.png|32|Wasters|Wasters}}
+| Beauty
+
+|- id="Attractive"
+! Attractive<br>[[File:Gene_Pretty.png|64px]]
+| ''Carriers of this gene have unusually symmetrical, balanced facial features and extra-clear skin which gives them a pleasing appearance.'' 
+----
+* [[Beauty (Pawn)]]: {{+|1}}
+* [[Market Value]]: {{+|350}}
+| {{--|1}}
+|{{Bad|1}}
+| {{Stacked image|GeneBackground Xenogene.png|Sanguophage.png|32|Sanguophages|Sanguophages}}
+| Beauty
+
+|- id="Very attractive"
+! Very attractive<br>[[File:Gene_Beautiful.png|64px]]
+| ''Carriers of this gene have remarkably precise and symmetrical faces. Their features are distinctive and strong without being exaggerated, and their skin is nearly perfect. They are generally seen as beautiful.'' 
+----
+* [[Beauty (Pawn)]]: {{+|2}}
+* [[Market Value]]: {{+|700}}
+| {{--|2}}
+|{{Bad|1}}
+| {{Stacked image|GeneBackground Xenogene.png|Highmate.png|32|Highmates|Highmates}}
+| Beauty
+|}
+</div>
+</div>
+</li></div>
+
+== Cosmetic ==
+<div><li style="display: inline-table;">
+Click to <div class="mw-collapsible">
+<div class="mw-collapsible-content">
+{| {{STDT| sortable c_17 text-valign:top}}
+! Name
+! Description
+! [[File:Metabolism.png|20px|Metabolism]]
+! [[File:Complexity.png|20px|Complexity]]
+! [[File:Baseliner.png|20px|link=Xenotypes]]
+! Exclude
+
+|- id="Red eyes"
+! Red eyes<br>[[File:Gene_RedEyes.png|64px]]
+| ''Carriers of this gene have deeply red-pigmented eyes.''
+| '''0'''
+| '''0'''
+| {{Stacked image|GeneBackground Xenogene.png|Hussar.png|32|Hussars|Hussars}}
+| EyeColor
+
+|- id="Gray eyes"
+! Gray eyes<br>[[File:Gene_GrayEyes.png|64px]]
+| ''Carriers of this gene have pale white-gray eyes.''
+| '''0'''
+| '''0'''
+| {{Stacked image|GeneBackground Endogene.png|Dirtmole.png|32|Dirtmoles|Dirtmoles}}
+| EyeColor
+
+|- id="No hair"
+! No hair<br>[[File:Gene_HairStyleBaldOnly.png|64px]]
+| ''Carriers of this gene grow no hair on the head.''
+| '''0'''
+| '''0'''
+| {{Stacked image|GeneBackground Xenogene.png|Genie.png|32|Genies|Genies}}{{Clear}}{{Stacked image|GeneBackground Endogene.png|Yttakin.png|32|Yttakin|Yttakin}}{{Clear}}{{Stacked image|GeneBackground Xenogene.png|Starjack.png|32|Starjack|Starjack}}
+| HairStyle
+
+|- id="Short-haired"
+! Short-haired<br>[[File:Gene_HairStyleShortOnly.png|64px]]
+| ''Carriers of this gene can only grow short hair.''
+| '''0'''
+| '''0'''
+| {{Stacked image|GeneBackground Xenogene.png|Hussar.png|32|Hussars|Hussars}}
+| HairStyle
+
+|- id="Long-haired"
+! Long-haired<br>[[File:Gene_HairStyleLongOnly.png|64px]]
+| ''Carriers of this gene grow hair on the head very quickly.''
+| '''0'''
+| '''0'''
+| {{Stacked image|GeneBackground Xenogene.png|Highmate.png|32|Highmates|Highmates}}
+| HairStyle
+
+|- id="Only bushy beards"
+! Only bushy beards<br>[[File:Gene_BeardStyleBushyOnly.png|64px]]
+| ''Male carriers of this gene experience rapid beard growth and are uncomfortable cutting their beards.''
+| '''0'''
+| '''0'''
+| -
+| BeardStyle
+
+|- id="Beardless"
+! Beardless<br>[[File:Gene_BeardStyleNone.png|64px]]
+| ''Carriers of this gene grow no facial hair.''
+| '''0'''
+| '''0'''
+| {{Stacked image|GeneBackground Xenogene.png|Genie.png|32|Genies|Genies}}{{Clear}}{{Stacked image|GeneBackground Endogene.png|Impid.png|32|Impids|Impids}}
+| BeardStyle
+
+|- id="Unisex beards"
+! Unisex beards<br>[[File:Gene_UnisexBeards.png|64px]]
+| ''Carriers of this gene always have thick facial hair, even women.''
+| '''0'''
+| '''0'''
+| {{Stacked image|GeneBackground Endogene.png|Yttakin.png|32|Yttakin|Yttakin}}
+| BeardStyle
+
+|- id="Human ears"
+! Human ears<br>[[File:Gene_EarHuman.png|64px]]
+| ''Carriers of this gene have regular human ears.''
+| '''0'''
+| '''0'''
+| -
+| Ears
+
+|- id="Pointed ears"
+! Pointed ears<br>[[File:Gene_EarPointed.png|64px]]
+| ''Carriers of this gene have pointed ears.''
+| '''0'''
+| '''0'''
+| -
+| Ears
+
+|- id="Cat ears"
+! Cat ears<br>[[File:Gene_EarCat.png|64px]]
+| ''Carriers of this gene have cat-like ears.''
+| '''0'''
+| '''0'''
+| -
+| Ears
+
+|- id="Floppy ears"
+! Floppy ears<br>[[File:Gene_EarFloppy.png|64px]]
+| ''Carriers of this gene grow long, floppy hound-like ears.''
+| '''0'''
+| '''0'''
+| -
+| Ears
+
+|- id="Pig ears"
+! Pig ears<br>[[File:Gene_EarPig.png|64px]]
+| ''Carriers of this gene will grow pointed pig-like ears.''
+| '''0'''
+| '''0'''
+| {{Stacked image|GeneBackground Endogene.png|PigskinXenotype.png|32|Pigskins|Pigskins}}
+| Ears
+
+|- id="Human nose"
+! Human nose<br>[[File:Gene_NoseHuman.png|64px]]
+| ''Carriers of this gene have regular human noses.''
+| '''0'''
+| '''0'''
+| -
+| Nose
+
+|- id="Human jaw"
+! Human jaw<br>[[File:Gene_JawBaseline.png|64px]]
+| ''Carriers of this gene have regularly-shaped jaws.''
+| '''0'''
+| '''0'''
+| -
+| Jaw
+
+|- id="Heavy jaw"
+! Heavy jaw<br>[[File:Gene_JawHeavy.png|64px]]
+| ''Carriers of this gene have large jaws.''
+| '''0'''
+| '''0'''
+| {{Stacked image|GeneBackground Endogene.png|Neanderthal.png|32|Neanderthals|Neanderthals}}
+| Jaw
+
+|- id="Gaunt head"
+! Gaunt head<br>[[File:Gene_GauntHead.png|64px]]
+| ''Carriers of this gene have a pinched, gaunt appearance in their face and head.''
+| '''0'''
+| '''0'''
+| {{Stacked image|GeneBackground Endogene.png|Waster.png|32|Wasters|Wasters}}
+| Jaw
+
+|- id="Heavy brow"
+! Heavy brow<br>[[File:Gene_HeavyBrow.png|64px]]
+| ''Carriers of this gene have a prominent brow.''
+| '''0'''
+| '''0'''
+| {{Stacked image|GeneBackground Endogene.png|Neanderthal.png|32|Neanderthals|Neanderthals}}
+| -
+
+|- id="Center-horn"
+! Center-horn<br>[[File:Gene_HeadboneCenterhorn.png|64px]]
+| ''Carriers of this gene grow a single horn protruding from the center of the forehead.''
+| '''0'''
+| '''0'''
+| -
+| Headbone
+
+|- id="Mini-horns"
+! Mini-horns<br>[[File:Gene_HeadboneMinihorns.png|64px]]
+| ''Carriers of this gene grow two small horns protruding from the forehead.''
+| '''0'''
+| '''0'''
+| {{Stacked image|GeneBackground Endogene.png|Impid.png|32|Impids|Impids}}
+| Headbone
+
+|- id="Human headbone"
+! Human headbone<br>[[File:Gene_HeadboneHuman.png|64px]]
+| ''Carriers of this gene have regular human skulls.''
+| '''0'''
+| '''0'''
+| -
+| Headbone
+
+|- id="Human voice"
+! Human voice<br>[[File:Gene_VoiceHuman.png|64px]]
+| ''Carriers of this gene have regular human vocal cords.''
+| '''0'''
+| '''0'''
+| -
+| Voice
+
+|- id="Pig voice"
+! Pig voice<br>[[File:Gene_VoicePig.png|64px]]
+| ''Carriers have a squealing voice like that of a pig.''<br>[[File:Pawn_Pigskin_Call_02e.wav ]]
+| '''0'''
+| '''0'''
+| {{Stacked image|GeneBackground Endogene.png|PigskinXenotype.png|32|Pigskins|Pigskins}}
+| Voice
+
+|- id="Roar voice"
+! Roar voice<br>[[File:Gene_VoiceRoar.png|64px]]
+| ''Carriers have an animal-like roaring voice.''<br>[[File:Roar_Voice_Call_B02.wav]]
+| '''0'''
+| '''0'''
+| {{Stacked image|GeneBackground Endogene.png|Yttakin.png|32|Yttakin|Yttakin}}
+| Voice
+
+|- id="Facial ridges"
+! Facial ridges<br>[[File:Gene_FacialRidges.png|64px]]
+| ''Carriers of this gene grow raised ridges of skin on their face.''
+| '''0'''
+| '''0'''
+| {{Stacked image|GeneBackground Xenogene.png|Starjack.png|32|Starjack|Starjack}}
+| -
+|}
+</div>
+</div>
+</li></div>
+
+=== Body type ===
+Since people without these genes can have any of the four body types, these genes effectively limit what body types a xenotype can have. For example, [[File:Neanderthal.png|20px|link=Neanderthals]][[Neanderthals]] cannot be thin, because they have all three of the other genes.
+
+<div><li style="display: inline-table;">
+Click to <div class="mw-collapsible">
+<div class="mw-collapsible-content">
+{| {{STDT| sortable c_17 text-valign:top}}
+! Name
+! Description
+! [[File:Metabolism.png|20px|Metabolism]]
+! [[File:Complexity.png|20px|Complexity]]
+! [[File:Baseliner.png|20px|link=Xenotypes]]
+! Exclude
+
+|- id="Standard body"
+! Standard body<br>[[File:Gene_BodyStandard.png|64px]]
+| ''Carriers can have average-shaped bodies. A person can have more than one body type gene; one body type will be chosen among those that are allowed.''
+| '''0'''
+| '''0'''
+| {{Stacked image|GeneBackground Xenogene.png|Hussar.png|32|Hussars|Hussars}}{{Clear}}{{Stacked image|GeneBackground Endogene.png|Neanderthal.png|32|Neanderthals|Neanderthals}}{{Clear}}{{Stacked image|GeneBackground Xenogene.png|Highmate.png|32|Highmates|Highmates}}
+| BodyType
+
+|- id="Thin body"
+! Thin body<br>[[File:Gene_BodyThin.png|64px]]
+| ''Carriers can have thin bodies. A person can have more than one body type gene; one body type will be chosen among those that are allowed.''
+| '''0'''
+| '''0'''
+| {{Stacked image|GeneBackground Xenogene.png|Genie.png|32|Genies|Genies}}{{Clear}}{{Stacked image|GeneBackground Xenogene.png|Highmate.png|32|Highmates|Highmates}}
+| BodyType
+
+|- id="Fat body"
+! Fat body<br>[[File:Gene_BodyFat.png|64px]]
+| ''Carriers can have fat bodies. A person can have more than one body type gene; one body type will be chosen among those that are allowed.''
+| '''0'''
+| '''0'''
+| {{Stacked image|GeneBackground Endogene.png|Neanderthal.png|32|Neanderthals|Neanderthals}}{{Clear}}{{Stacked image|GeneBackground Endogene.png|PigskinXenotype.png|32|Pigskins|Pigskins}}
+| BodyType
+
+|- id="Hulk body"
+! Hulk body<br>[[File:Gene_BodyHulk.png|64px]]
+| ''Carriers can have large bodies. A person can have more than one body type gene; one body type will be chosen among those that are allowed.''
+| '''0'''
+| '''0'''
+| {{Stacked image|GeneBackground Xenogene.png|Hussar.png|32|Hussars|Hussars}}{{Clear}}{{Stacked image|GeneBackground Endogene.png|Neanderthal.png|32|Neanderthals|Neanderthals}}{{Clear}}{{Stacked image|GeneBackground Endogene.png|PigskinXenotype.png|32|Pigskins|Pigskins}}{{Clear}}{{Stacked image|GeneBackground Endogene.png|Yttakin.png|32|Yttakin|Yttakin}}
+| BodyType
+|}
+</div>
+</div>
+</li></div>
+
+=== Hair ===
+These genes are defined in Core, not Biotech.
+
+All of them have a "random brightness factor" of 0.12 unless otherwise specified. 
+
+<div><li style="display: inline-table;">
+Click to <div class="mw-collapsible">
+<div class="mw-collapsible-content">
+{| {{STDT| sortable c_17 text-valign:top}}
+! Name
+! Description
+! [[File:Metabolism.png|20px|Metabolism]]
+! [[File:Complexity.png|20px|Complexity]]
+! Weight
+! [[File:Baseliner.png|20px|link=Xenotypes]]
+! Exclude
+
+|- id="Snow-white hair"
+! Snow-white hair<br>[[File:Hair_SnowWhite.png|64px]]
+| ''Carriers of this gene have a particular hair color. With multiple hair color genes, one is randomly selected.''
+----
+* Hair color override: (250, 250, 250)
+* Random brightness factor: 0
+| '''0'''
+| '''0'''
+| 0.05
+| {{Stacked image|GeneBackground Xenogene.png|Highmate.png|32|Highmates|Highmates}}
+| HairColor
+
+|- id="Gray hair"
+! Gray hair<br>[[File:Hair_Grey.png|64px]]
+| ''Carriers of this gene have a particular hair color. With multiple hair color genes, one is randomly selected.''
+----
+* Hair color override: (0.65, 0.65, 0.65)
+| '''0'''
+| '''0'''
+| 0.02
+| {{Stacked image|GeneBackground Endogene.png|Waster.png|32|Wasters|Wasters}}
+| HairColor
+
+|- id="Blonde hair"
+! Blonde hair<br>[[File:Hair_Blonde.png|64px]]
+| ''Carriers of this gene have a particular hair color. With multiple hair color genes, one is randomly selected.''
+----
+* Hair color override: (237, 202, 156)
+* Selection weight factor with dark skin: 0
+| '''0'''
+| '''0'''
+| 1?
+| -
+| HairColor
+
+|- id="Sandy-blonde hair"
+! Sandy-blonde hair<br>[[File:Hair_SandyBlonde.png|64px]]
+| ''Carriers of this gene have a particular hair color. With multiple hair color genes, one is randomly selected.''
+----
+* Hair color override: (193, 146, 85)
+* Selection weight factor with dark skin: 0
+| '''0'''
+| '''0'''
+| 1?
+| {{Stacked image|GeneBackground Endogene.png|Impid.png|32|Impids|Impids}}
+| HairColor
+
+|- id="Orange hair"
+! Orange hair<br>[[File:Hair_Orange.png|64px]]
+| ''Carriers of this gene have a particular hair color. With multiple hair color genes, one is randomly selected.''
+----
+* Hair color override: (189, 133, 49)
+| '''0'''
+| '''0'''
+| 0.05
+| {{Stacked image|GeneBackground Endogene.png|Impid.png|32|Impids|Impids}}
+| HairColor
+
+|- id="Reddish-brown hair"
+! Reddish-brown hair<br>[[File:Hair_ReddishBrown.png|64px]]
+| ''Carriers of this gene have a particular hair color. With multiple hair color genes, one is randomly selected.''
+----
+* Hair color override: (132, 83, 47)
+| '''0'''
+| '''0'''
+| 1?
+| -
+| HairColor
+
+|- id="Brown hair"
+! Brown hair<br>[[File:Hair_Brown.png|64px]]
+| ''Carriers of this gene have a particular hair color. With multiple hair color genes, one is randomly selected.''
+----
+* Hair color override: (90, 58, 32)
+| '''0'''
+| '''0'''
+| 1?
+| -
+| HairColor
+
+|- id="Dark-brown hair"
+! Dark-brown hair<br>[[File:Hair_DarkBrown.png|64px]]
+| ''Carriers of this gene have a particular hair color. With multiple hair color genes, one is randomly selected.''
+----
+* Hair color override: (56, 36, 18)
+| '''0'''
+| '''0'''
+| 1.5
+| -
+| HairColor
+
+|- id="Dark-reddish hair"
+! Dark-reddish hair<br>[[File:Hair_DarkReddish.png|64px]]
+| ''Carriers of this gene have a particular hair color. With multiple hair color genes, one is randomly selected.''
+----
+* Hair color override: (0.25, 0.2, 0.15)
+| '''0'''
+| '''0'''
+| 1.5
+| -
+| HairColor
+
+|- id="Mid-black hair"
+! Mid-black hair<br>[[File:Hair_MidBlack.png|64px]]
+| ''Carriers of this gene have a particular hair color. With multiple hair color genes, one is randomly selected.''
+----
+* Hair color override: (0.31, 0.28, 0.26)
+| '''0'''
+| '''0'''
+| 1.5
+| -
+| HairColor
+
+|- id="Dark-black hair"
+! Dark-black hair<br>[[File:Hair_DarkBlack.png|64px]]
+| ''Carriers of this gene have a particular hair color. With multiple hair color genes, one is randomly selected.''
+----
+* Hair color override: (0.2, 0.2, 0.2)
+| '''0'''
+| '''0'''
+| 1.5
+| -
+| HairColor
+
+|- id="Ink-black hair"
+! Ink-black hair<br>[[File:Hair_InkBlack.png|64px]]
+| ''Carriers of this gene have a particular hair color. With multiple hair color genes, one is randomly selected.''
+----
+* Hair color override: (25, 25, 25)
+* Random brightness factor: 0
+| '''0'''
+| '''0'''
+| 0.05
+| -
+| HairColor
+
+|- id="Blue hair"
+! Blue hair<br>[[File:Hair_Blue.png|64px]]
+| ''Carriers of this gene have a particular hair color. With multiple hair color genes, one is randomly selected.''
+----
+* Hair color override: (34, 63, 227)
+| '''0'''
+| '''0'''
+| 0.05
+| -
+| HairColor
+
+|- id="Teal hair"
+! Teal hair<br>[[File:Hair_Teal.png|64px]]
+| ''Carriers of this gene have a particular hair color. With multiple hair color genes, one is randomly selected.''
+----
+* Hair color override: (52, 191, 182)
+| '''0'''
+| '''0'''
+| 0.05
+| -
+| HairColor
+
+|- id="Green hair"
+! Green hair<br>[[File:Hair_Green.png|64px]]
+| ''Carriers of this gene have a particular hair color. With multiple hair color genes, one is randomly selected.''
+----
+* Hair color override: (72, 201, 40)
+| '''0'''
+| '''0'''
+| 0.05
+| -
+| HairColor
+
+|- id="Pink hair"
+! Pink hair<br>[[File:Hair_Pink.png|64px]]
+| ''Carriers of this gene have a particular hair color. With multiple hair color genes, one is randomly selected.''
+----
+* Hair color override: (191, 86, 149)
+| '''0'''
+| '''0'''
+| 0.05
+| -
+| HairColor
+
+|- id="Purple hair"
+! Purple hair<br>[[File:Hair_Purple.png|64px]]
+| ''Carriers of this gene have a particular hair color. With multiple hair color genes, one is randomly selected.''
+----
+* Hair color override: (227, 115, 255)
+| '''0'''
+| '''0'''
+| 0.05
+| -
+| HairColor
+
+|- id="Red hair"
+! Red hair<br>[[File:Hair_Red.png|64px]]
+| ''Carriers of this gene have a particular hair color. With multiple hair color genes, one is randomly selected.''
+----
+* Hair color override: (191, 86, 86)
+| '''0'''
+| '''0'''
+| 0.05
+| -
+| HairColor
+|}
+</div>
+</div>
+</li></div>
+
+=== Melanin ===
+
+These natural skin colors are '''not available in the xenotype editor and cannot be extracted'''. Every person gets one of these as a germline gene unless they already have a skin-color germline gene (e.g. [[File:Dirtmole.png|20px|link=Dirtmoles]][[Dirtmoles]] have light gray skin instead of these).
+
+These genes are defined in Core, not Biotech. They are all named "Skin color" in-game.
+
+<div><li style="display: inline-table;">
+Click to <div class="mw-collapsible">
+<div class="mw-collapsible-content">
+{| {{STDT| sortable c_17 text-valign:top}}
+! Name
+! Description
+! [[File:Metabolism.png|20px|Metabolism]]
+! [[File:Complexity.png|20px|Complexity]]
+! Weight
+! Exclude
+
+|- id="Skin_Melanin1"
+! Skin_Melanin1<br>[[File:Skin_Melanin1.png|64px]]
+| ''Carriers of this gene have a particular skin color. With multiple skin color genes, one is randomly selected.''
+----
+* Skin color base: (242, 237, 224)
+* Min melanin: 0
+| '''0'''
+| '''0'''
+| 0.2
+| SkinColor
+
+|- id="Skin_Melanin2"
+! Skin_Melanin2<br>[[File:Skin_Melanin2.png|64px]]
+| ''Carriers of this gene have a particular skin color. With multiple skin color genes, one is randomly selected.''
+----
+* Skin color base: (255, 239, 213)
+* Min melanin: 0.1
+| '''0'''
+| '''0'''
+| 0.5
+| SkinColor
+
+|- id="Skin_Melanin3"
+! Skin_Melanin3<br>[[File:Skin_Melanin3.png|64px]]
+| ''Carriers of this gene have a particular skin color. With multiple skin color genes, one is randomly selected.''
+----
+* Skin color base: (255, 239, 201)
+* Min melanin: 0.25
+| '''0'''
+| '''0'''
+| 0.5
+| SkinColor
+
+|- id="Skin_Melanin4"
+! Skin_Melanin4<br>[[File:Skin_Melanin4.png|64px]]
+| ''Carriers of this gene have a particular skin color. With multiple skin color genes, one is randomly selected.''
+----
+* Skin color base: (255, 239, 189)
+* Min melanin: 0.45
+| '''0'''
+| '''0'''
+| 0.5
+| SkinColor
+
+|- id="Skin_Melanin5"
+! Skin_Melanin5<br>[[File:Skin_Melanin5.png|64px]]
+| ''Carriers of this gene have a particular skin color. With multiple skin color genes, one is randomly selected.''
+----
+* Skin color base: (249, 219, 165)
+* Min melanin: 0.58
+| '''0'''
+| '''0'''
+| 0? 1?
+| SkinColor
+
+|- id="Skin_Melanin6"
+! Skin_Melanin6<br>[[File:Skin_Melanin6.png|64px]]
+| ''Carriers of this gene have a particular skin color. With multiple skin color genes, one is randomly selected.''
+----
+* Skin color base: (242, 199, 140)
+* Min melanin: 0.63
+| '''0'''
+| '''0'''
+| 0? 1?
+| SkinColor
+
+|- id="Skin_Melanin7"
+! Skin_Melanin7<br>[[File:Skin_Melanin7.png|64px]]
+| ''Carriers of this gene have a particular skin color. With multiple skin color genes, one is randomly selected.''
+----
+* Skin color base: (228, 158, 90)
+* Min melanin: 0.75
+| '''0'''
+| '''0'''
+| 0? 1?
+| SkinColor
+
+|- id="Skin_Melanin8"
+! Skin_Melanin8<br>[[File:Skin_Melanin8.png|64px]]
+| ''Carriers of this gene have a particular skin color. With multiple skin color genes, one is randomly selected.''
+----
+* Skin color base: (130, 91, 48)
+* Min melanin: 0.83
+| '''0'''
+| '''0'''
+| 0.5
+| SkinColor
+
+|- id="Skin_Melanin9"
+! Skin_Melanin9<br>[[File:Skin_Melanin9.png|64px]]
+| ''Carriers of this gene have a particular skin color. With multiple skin color genes, one is randomly selected.''
+----
+* Skin color base: (99, 70, 36)
+* Min melanin: 0.9
+| '''0'''
+| '''0'''
+| 0.2
+| SkinColor
+|}
+</div>
+</div>
+</li></div>
+
+=== Skin ===
+These exotic (non-natural) skin colors do not appear on anyone without the gene. Like body type genes and hair genes, a person can have more than one skin color gene (e.g. [[File:Impid.png|20px|link=Impids]][[Impids]] have three), and one will be chosen.
+
+All of these genes have a "random brightness factor" of 0.18 unless otherwise specified.
+
+<div><li style="display: inline-table;">
+Click to <div class="mw-collapsible">
+<div class="mw-collapsible-content">
+
+{| {{STDT| sortable c_17 text-valign:top}}
+! Name
+! Description
+! [[File:Metabolism.png|20px|Metabolism]]
+! [[File:Complexity.png|20px|Complexity]]
+! [[File:Baseliner.png|20px|link=Xenotypes]]
+! Exclude
+
+|- id="Green skin"
+! Green skin<br>[[File:FanGene_SkinColor_Green.png|64px]]
+| ''Carriers of this gene produce a pigment that gives their skin a green color.''
+----
+* Skin color override: (169,182,108)
+| '''0'''
+| '''0'''
+| -
+| SkinColorOverride
+
+|- id="Deep yellow skin"
+! Deep yellow skin<br>[[File:FanGene_SkinColor_Yellow_Deep.png|64px]]
+| ''Carriers of this gene produce a pigment that gives their skin a deep yellow color.''
+----
+* Skin color override: (204, 199, 65)
+| '''0'''
+| '''0'''
+| -
+| SkinColorOverride
+
+|- id="Pale yellow skin"
+! Pale yellow skin<br>[[File:FanGene_SkinColor_Yellow_Pale.png|64px]]
+| ''Carriers of this gene produce a pigment that turns their skin a grayish yellow color.''
+----
+* Skin color override: (193, 165, 99)
+| '''0'''
+| '''0'''
+| {{Stacked image|GeneBackground Endogene.png|Impid.png|32|Impids|Impids}}
+| SkinColorOverride
+
+|- id="Orange skin"
+! Orange skin<br>[[File:FanGene_SkinColor_Orange.png|64px]]
+| ''Carriers of this gene produce a pigment that gives their skin an orange color.''
+----
+* Skin color override: (210, 114, 63)
+* Random brightness factor: 0
+| '''0'''
+| '''0'''
+| {{Stacked image|GeneBackground Endogene.png|Impid.png|32|Impids|Impids}}
+| SkinColorOverride
+
+|- id="Deep red skin"
+! Deep red skin<br>[[File:FanGene_SkinColor_Red_Deep.png|64px]]
+| ''Carriers of this gene produce a deep-red pigment that gives their skin an almost bloody appearance.''
+----
+* Skin color override: (150, 62, 62)
+| '''0'''
+| '''0'''
+| {{Stacked image|GeneBackground Endogene.png|Impid.png|32|Impids|Impids}}
+| SkinColorOverride
+
+|- id="Pale red skin"
+! Pale red skin<br>[[File:FanGene_SkinColor_Red_Pale.png|64px]]
+| ''Carriers of this gene produce a pigment that turns their skin a moderate red color.''
+----
+* Skin color override: (222, 106, 106)
+| '''0'''
+| '''0'''
+| -
+| SkinColorOverride
+
+|- id="Purple skin"
+! Purple skin<br>[[File:FanGene_SkinColor_Purple.png|64px]]
+| ''Carriers of this gene produce a pigment that gives their skin a purple color.''
+----
+* Skin color override: (97, 87, 195)
+| '''0'''
+| '''0'''
+| {{Stacked image|GeneBackground Xenogene.png|Highmate.png|32|Highmates|Highmates}}
+| SkinColorOverride
+
+|- id="Blue skin"
+! Blue skin<br>[[File:FanGene_SkinColor_Blue.png|64px]]
+| ''Carriers of this gene produce a pigment that turns their skin a blue color.''
+----
+* Skin color override: (100, 165, 193)
+| '''0'''
+| '''0'''
+| {{Stacked image|GeneBackground Xenogene.png|Highmate.png|32|Highmates|Highmates}}
+| SkinColorOverride
+
+|- id="Sheer white skin"
+! Sheer white skin<br>[[File:FanGene_SkinColor_White.png|64px]]
+| ''Carriers of this gene have sheer white skin, unlike natural skin tones, due to a special engineered reflective cell covering.''
+----
+* Skin color override: (250, 240, 240)
+* Random brightness factor: 0
+| '''0'''
+| '''0'''
+| {{Stacked image|GeneBackground Xenogene.png|Highmate.png|32|Highmates|Highmates}}{{Clear}}{{Stacked image|GeneBackground Xenogene.png|Starjack.png|32|Starjack|Starjack}}
+| SkinColorOverride
+
+|- id="Light gray skin"
+! Light gray skin<br>[[File:FanGene_SkinColor_Light_Gray.png|64px]]
+| ''Carriers of this produce a light-gray pigment in their skin.''
+----
+* Skin color override: (200, 200, 200)
+| '''0'''
+| '''0'''
+| {{Stacked image|GeneBackground Endogene.png|Dirtmole.png|32|Dirtmoles|Dirtmoles}}
+| SkinColorOverride
+
+|- id="Slate gray skin"
+! Slate gray skin<br>[[File:FanGene_SkinColor_Gray.png|64px]]
+| ''Carriers of this gene produce a pigment that turns their skin slate gray.''
+----
+* Skin color override: (90, 90, 90)
+| '''0'''
+| '''0'''
+| {{Stacked image|GeneBackground Endogene.png|Waster.png|32|Wasters|Wasters}}
+| SkinColorOverride
+
+|- id="Ink black skin"
+! Ink black skin<br>[[File:FanGene_SkinColor_Black.png|64px]]
+| ''Carriers of this gene produce a pigment that turns their skin a pale black color almost as dark as ink.''
+----
+* Skin color override: (55, 55, 55)
+* Random brightness factor: 0
+| '''0'''
+| '''0'''
+| -
+| SkinColorOverride
+|}
+</div>
+</div>
+</li></div>
+
+== Miscellaneous ==
+<div><li style="display: inline-table;">
+Click to <div class="mw-collapsible">
+<div class="mw-collapsible-content">
+{| {{STDT| sortable c_17 text-valign:top}}
+! Name
+! Description
+! [[File:Metabolism.png|20px|Metabolism]]
+! [[File:Complexity.png|20px|Complexity]]
+! [[File:Baseliner.png|20px|link=Xenotypes]]
+! Exclude
+
+|- id="Strong stomach"
+! Strong stomach<br>[[File:Gene_StrongStomach.png|64px]]
+| ''Carriers of this gene have an extra toxin-filtering organ in their stomach and will never suffer from food poisoning even after eating rotten food.'' 
+----
+* Immune to [[food poisoning]].
+** Does ''not'' affect pre-existing conditions. Only prevents new illnesses.
+| {{--|1}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Endogene.png|PigskinXenotype.png|32|Pigskins|Pigskins}}
+| -
+
+|- id="Robust digestion"
+! Robust digestion<br>[[File:Gene_RobustDigestion.png|64px]]
+| ''Carriers of this gene grow a multi-fold stomach, allowing them to digest raw foods more efficiently than baseline humans. In general, they get the same nutrition from raw food as from if it is cooked. They also don't mind the taste of raw food at all.'' 
+----
+* [[Raw Nutrition Multiplier]] {{Good|×180%}}
+** Note: Does not apply to [[insect jelly]] or fertilized [[eggs]]. ''Does'' apply to unfertilized eggs.
+* Removes mood: Ate raw food: -7
+* Note: Does ''not'' prevent [[food poisoning]].
+| {{--|2}}
+| {{Bad|2}}
+| {{Stacked image|GeneBackground Endogene.png|PigskinXenotype.png|32|Pigskins|Pigskins}}
+| -
+
+|- id="Slow study"
+! Slow study<br>[[File:Gene_SlowLearning.png|64px]]
+| ''Carriers of this gene have deficient long-term memories and don't understand new ideas quickly. They are slow at learning new skills and knowledge.'' 
+----
+* [[Global Learning Factor]] {{Bad|×50%}}
+| {{+|2}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Endogene.png|Neanderthal.png|32|Neanderthals|Neanderthals}}
+| Learning
+
+|- id="Quick study"
+! Quick study<br>[[File:Gene_FastLearning.png|64px]]
+| ''Carriers of this gene have excellent memories and grasp new ideas quickly. They learn faster than others.'' 
+----
+* [[Global Learning Factor]] {{+|50%}}
+| {{--|3}}
+| {{Bad|2}}
+| -
+| Learning
+
+|- id="Nearsighted"
+! Nearsighted<br>[[File:Gene_Nearsighted.png|64px]]
+| ''Carriers of this gene have difficulty seeing at a distance. Their shooting accuracy at long ranges is reduced.'' 
+----
+* Accuracy factor (long) {{Bad|×25%}}
+* Accuracy factor (medium) {{Bad|×50%}}
+| {{+|2}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Endogene.png|Dirtmole.png|32|Dirtmoles|Dirtmoles}}{{Clear}}{{Stacked image|GeneBackground Endogene.png|PigskinXenotype.png|32|Pigskins|Pigskins}}
+| ShootingAccuracy
+
+|- id="Dark vision"
+! Dark vision<br>[[File:Gene_Darkvision.png|64px]]
+| ''Carriers of this gene see well in low light and are unaffected by mood penalties related to darkness. They have a reflective layer behind the retina that amplifies their ability to see in the dark.'' 
+----
+* Negates the [[Global Work Speed]] penalty from [[Light|darkness]].
+* Negates the [[Move Speed]] penalty from darkness. '''Note:''' This effect is not mentioned by the in-game description
+* Removes [[mood]]: Darkness: {{--|5}}
+| {{--|1}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Endogene.png|Dirtmole.png|32|Dirtmoles|Dirtmoles}}{{Clear}}{{Stacked image|GeneBackground Xenogene.png|Sanguophage.png|32|Sanguophages|Sanguophages}}
+| -
+
+|- id="Inbred"
+! Inbred<br>[[File:Gene_Inbred.png|64px]]
+| ''This genetic condition affects a person's fertility, immunity, and mental capacity.'' 
+----
+* Forced trait: [[Slow learner]]
+* [[Fertility]] {{Bad|×50%}}
+* [[Immunity gain speed]] {{Bad|×85%}}
+* Note: Despite being harmful, this gene also lowers metabolic efficiency.
+* See [[Reproduction#Inbreeding|inbreeding]] for full details.
+| {{--|2}}
+| {{Bad|1}}
+| -
+| -
+
+|- id="Mild cell instability"
+! Mild cell instability<br>[[File:Gene_MildCellInstability.png|64px]]
+| ''Carriers of this gene need less metabolic energy to stay alive, at the cost of reduced stability in their cell-replication machinery.'' 
+----
+* [[Lifespan Factor]] {{Bad|×80%}}
+** Note this means age-related diseases come earlier, e.g. [[Ailments#Frail|Frail]] can happen at 40 instead of 50
+* [[Cancer Rate Factor]] {{Bad|×300%}}
+* [[Immunity gain speed]] {{Bad|×96%}}
+| {{+|2}}
+| {{Bad|1}}
+| -
+| CellInstability
+
+|- id="Major cell instability"
+! Major cell instability<br>[[File:Gene_MajorCellInstability.png|64px]]
+| ''Carriers of this gene need much less metabolic energy to stay alive, at the cost of greatly-reduced stability in their cell-replication machinery.'' 
+----
+* [[Lifespan Factor]] {{Bad|×60%}}
+** Note this means age-related diseases come earlier, e.g. [[Ailments#Frail|Frail]] can happen at 30 instead of 50
+* [[Cancer Rate Factor]] {{Bad|×500%}}
+* [[Immunity gain speed]] {{Bad|×92%}}
+| {{+|4}}
+| {{Bad|1}}
+| -
+| CellInstability
+
+|- id="Grayless hair"
+! Grayless hair<br>[[File:Gene_GreylessHair.png|64px]]
+| ''Carriers of this gene keep their natural hair color as they age.''
+----
+* No age-related gray hair.
+| '''0'''
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Xenogene.png|Highmate.png|32|Highmates|Highmates}}
+| -
+
+|- id="Human hands"
+! Human hands<br>[[File:Gene_HandsHuman.png|64px]]
+| ''Carriers of this gene have regular human hands.'' 
+----
+| '''0'''
+| '''0'''
+| - 
+| Hands
+
+|- id="Trotter hands"
+! Trotter hands<br>[[File:Gene_HandsTrotter.png|64px]]
+| ''Carriers of this gene have hands that partially resemble pig trotters. This reduces their ability to manipulate objects.'' 
+----
+* [[Manipulation]] {{Bad|×85%}}
+| {{+|1}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Endogene.png|PigskinXenotype.png|32|Pigskins|Pigskins}}
+| Hands
+
+|- id="Elongated fingers"
+! Elongated fingers<br>[[File:Gene_ElongatedFingers.png|64px]]
+| ''Long, delicate fingers improve the carrier's manipulation capacity. This aids with many tasks, especially crafting and construction.'' 
+----
+* [[Manipulation]] {{Good|×110%}}
+| {{--|1}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Xenogene.png|Genie.png|32|Genies|Genies}}
+| Hands
+
+|- id="Furskin"
+! Furskin<br>[[File:Gene_Furskin.png|64px]]
+| ''Carriers of this gene grow thick fur all over their body, which protects them from cold temperatures.'' 
+----
+* [[Minimum Comfortable Temperature]]: {{---|{{temperature|10||delta}}}}
+* [[Romance|Non-furskin romance chance]] ×20%
+* {{RimworldIcon}}Removes mood: Naked: -6
+* {{IdeologyIcon}}Removes mood: Uncovered (body part): -4
+* {{IdeologyIcon}}Removes opinion: Uncovered (body part): -10 of any other pawns
+| {{--|1}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Endogene.png|Yttakin.png|32|Yttakin|Yttakin}}
+| HairStyle<br>Fur<br>BeardStyle<br>
+
+|- id="Pig nose"
+! Pig nose<br>[[File:Gene_NosePig.png|64px]]
+| ''Carriers of this gene have pig-like snouts.''
+----
+* [[Romance|Non-pig nose romance chance]] ×20%
+| '''0'''
+| '''0'''
+| {{Stacked image|GeneBackground Endogene.png|PigskinXenotype.png|32|Pigskins|Pigskins}}
+| Nose
+
+|- id="Pollution stimulus"
+! Pollution stimulus<br>[[File:Gene_PollutionRush.png|64px]]
+| ''Carriers of this gene get a chemical rush from being exposed to pollution. This makes them move faster and helps them think clearer. A similar gene is found in combat-engineered mega-insects.'' 
+----
+* Gain stat bonuses when exposed to pollution.
+** Increases move speed and consciousness. See [[Pollution stimulus]] for full details.
+| {{--|1}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Endogene.png|Waster.png|32|Wasters|Wasters}}
+| -
+
+|- id="Unstoppable"
+! Unstoppable<br>[[File:Gene_Unstoppable.png|64px]]
+| ''Carriers of this gene are not slowed down when taking damage.'' 
+----
+* [[Stagger Time Multiplier]] {{Good|×0%}}
+| {{--|2}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Xenogene.png|Hussar.png|32|Hussars|Hussars}}
+| -
+
+|- id="Furry tail"
+! Furry tail<br>[[File:Gene_TailFurry.png|64px]]
+| ''Carriers of this gene grow a fluffy tail which partially protects them from cold temperatures.'' 
+----
+* [[Minimum Comfortable Temperature]]: {{Good|{{temperature|-10||delta}}}}
+* Adds an aesthetic only tail to the pawn's sprite
+* Note: Does '''not''' add a targetable or damageable [[body part]]
+| {{--|1}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Endogene.png|Yttakin.png|32|Yttakin|Yttakin}}
+| Tail
+
+|- id="Smooth tail"
+! Smooth tail<br>[[File:Gene_TailSmooth.png|64px]]
+| ''Carriers of this gene grow a slender tail that can act as a dexterous fifth limb.'' 
+----
+* [[Manipulation]]: {{+|5%}}
+* Adds an aesthetic only tail to the pawn's sprite
+* Note: Does '''not''' add a targetable or damageable [[body part]]
+| {{--|1}}
+| {{Bad|1}}
+| -
+| Tail
+
+|- id="Indoor dweller"
+! Indoor dweller<br>[[File:Gene_CaveDweller.png|64px]]
+| ''Carriers of this gene have no need for the outdoors and will never feel cooped up no matter how long they stay inside.'' 
+----
+* Disables need: [[Outdoors]]
+| {{--|1}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Endogene.png|Dirtmole.png|32|Dirtmoles|Dirtmoles}} {{Clear}} {{Stacked image|GeneBackground Xenogene.png|Starjack.png|32|Starjack|Starjack}}
+| -
+
+|- id="Low gravity adapted"
+! Low gravity adapted {{OdysseyIcon}}<br>[[File:Gene_LowGravityAdapted.png|64px]]
+| ''Carriers of this gene move and work more easily in low-gravity environments. However They're slower and less efficient when planetside.'' 
+----
+* [[Move Speed]]: {{--|0.2}} {{CS}} (planetside)
+* [[Global work speed]] {{--|10%}} (planetside)
+* [[Move Speed]]: {{+|0.4}} {{CS}} (in space)
+* [[Global work speed]] {{+|10%}} (in space)
+| {{+|1}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Xenogene.png|Starjack.png|32|Starjack|Starjack}}
+| -
+
+|}
+</div>
+</div>
+</li></div>
+
+== Aptitudes ==
+<div><li style="display: inline-table;">
+Click to <div class="mw-collapsible">
+<div class="mw-collapsible-content">
+{| {{STDT| sortable c_17 text-valign:top}}
+! Name
+! Description
+! [[File:Metabolism.png|20px|Metabolism]]
+! [[File:Complexity.png|20px|Complexity]]
+! [[File:Baseliner.png|20px|link=Xenotypes]]
+! Skill<!--for the sake of sorting, and they do exclude each other too-->
+
+|- id="Awful animals"
+! Awful Animals<br>[[File:Gene_AwfulAnimals.png|64px]]
+| ''The carrier's aptitude in Animals is reduced by 8. Aptitude acts like an offset on skill level. Additionally, all passion is removed from Animals.'' 
+----
+* [[Skills#Animals|Animals]]: {{--|8}}. Note: Experience gain and decay applies as if this offset did not exist.
+* Removes all [[passion]]s for [[Skills#Animals|Animals]]
+| {{+|2}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Xenogene.png|Hussar.png|32|Hussars|Hussars}}{{Clear}}{{Stacked image|GeneBackground Endogene.png|Waster.png|32|Wasters|Wasters}}{{Clear}}{{Stacked image|GeneBackground Xenogene.png|Starjack.png|32|Starjack|Starjack}}
+| Animals
+
+|- id="Awful artistic"
+! Awful Artistic<br>[[File:Gene_AwfulArtistic.png|64px]]
+| ''The carrier's aptitude in Artistic is reduced by 8. Aptitude acts like an offset on skill level. Additionally, all passion is removed from Artistic.'' 
+----
+* [[Artistic]]: {{--|8}}. Note: Experience gain and decay applies as if this offset did not exist.
+* Removes all [[passion]]s for [[Artistic]]
+| {{+|2}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Xenogene.png|Hussar.png|32|Hussars|Hussars}}
+| Artistic
+
+|- id="Awful construction"
+! Awful Construction<br>[[File:Gene_AwfulConstruction.png|64px]]
+| ''The carrier's aptitude in Construction is reduced by 8. Aptitude acts like an offset on skill level. Additionally, all passion is removed from Construction.'' 
+----
+* [[Construction]]: {{--|8}}. Note: Experience gain and decay applies as if this offset did not exist.
+* Removes all [[passion]]s for [[Construction]]
+| {{+|2}}
+|{{Bad|1}}
+| -
+| Construction
+
+|- id="Awful cooking"
+! Awful Cooking<br>[[File:Gene_AwfulCooking.png|64px]]
+| ''The carrier's aptitude in Cooking is reduced by 8. Aptitude acts like an offset on skill level. Additionally, all passion is removed from Cooking.'' 
+----
+* [[Cooking]]: {{--|8}}. Note: Experience gain and decay applies as if this offset did not exist.
+* Removes all [[passion]]s for [[Cooking]]
+| {{+|2}}
+|{{Bad|1}}
+| -
+| Cooking
+
+|- id="Awful crafting"
+! Awful Crafting<br>[[File:Gene_AwfulCrafting.png|64px]]
+| ''The carrier's aptitude in Crafting is reduced by 8. Aptitude acts like an offset on skill level. Additionally, all passion is removed from Crafting.'' 
+----
+* [[Crafting]]: {{--|8}}. Note: Experience gain and decay applies as if this offset did not exist.
+* Removes all [[passion]]s for [[Crafting]]
+| {{+|2}}
+|{{Bad|1}}
+| -
+| Crafting
+
+|- id="Awful medical"
+! Awful Medical<br>[[File:Gene_AwfulMedical.png|64px]]
+| ''The carrier's aptitude in Medical is reduced by 8. Aptitude acts like an offset on skill level. Additionally, all passion is removed from Medical.'' 
+----
+* [[Medical]]: {{--|8}}. Note: Experience gain and decay applies as if this offset did not exist.
+* Removes all [[passion]]s for [[Medical]]
+| {{+|2}}
+|{{Bad|1}}
+| -
+| Medical
+
+|- id="Awful melee"
+! Awful Melee<br>[[File:Gene_AwfulMelee.png|64px]]
+| ''The carrier's aptitude in Melee is reduced by 8. Aptitude acts like an offset on skill level. Additionally, all passion is removed from Melee.'' 
+----
+* [[Melee]]: {{--|8}}. Note: Experience gain and decay applies as if this offset did not exist.
+* Removes all [[passion]]s for [[Melee]]
+| {{+|2}}
+|{{Bad|1}}
+| {{Stacked image|GeneBackground Xenogene.png|Starjack.png|32|Starjack|Starjack}}
+| Melee
+
+|- id="Awful mining"
+! Awful Mining<br>[[File:Gene_AwfulMining.png|64px]]
+| ''The carrier's aptitude in Mining is reduced by 8. Aptitude acts like an offset on skill level. Additionally, all passion is removed from Mining.'' 
+----
+* [[Mining]]: {{--|8}}. Note: Experience gain and decay applies as if this offset did not exist.
+* Removes all [[passion]]s for [[Mining]]
+| {{+|2}}
+|{{Bad|1}}
+| {{Stacked image|GeneBackground Endogene.png|Yttakin.png|32|Yttakin|Yttakin}}{{Clear}}{{Stacked image|GeneBackground Xenogene.png|Highmate.png|32|Highmates|Highmates}}{{Clear}}{{Stacked image|GeneBackground Xenogene.png|Starjack.png|32|Starjack|Starjack}}
+| Mining
+
+|- id="Awful intellectual"
+! Awful Intellectual<br>[[File:Gene_AwfulIntellectual.png|64px]]
+| ''The carrier's aptitude in Intellectual is reduced by 8. Aptitude acts like an offset on skill level. Additionally, all passion is removed from Intellectual.'' 
+----
+* [[Intellectual]]: {{--|8}}. Note: Experience gain and decay applies as if this offset did not exist.
+* Removes all [[passion]]s for [[Intellectual]]
+| {{+|2}}
+|{{Bad|1}}
+| -
+| Intellectual
+
+|- id="Awful plants"
+! Awful Plants<br>[[File:Gene_AwfulPlants.png|64px]]
+| ''The carrier's aptitude in Plants is reduced by 8. Aptitude acts like an offset on skill level. Additionally, all passion is removed from Plants.'' 
+----
+* [[Skills#Plants|Plants]]: {{--|8}}. Note: Experience gain and decay applies as if this offset did not exist.
+* Removes all [[passion]]s for [[Skills#Plants|Plants]]
+| {{+|2}}
+|{{Bad|1}}
+| {{Stacked image|GeneBackground Xenogene.png|Hussar.png|32|Hussars|Hussars}}{{Clear}}{{Stacked image|GeneBackground Xenogene.png|Highmate.png|32|Highmates|Highmates}}
+| Plants
+
+|- id="Awful shooting"
+! Awful Shooting<br>[[File:Gene_AwfulShooting.png|64px]]
+| ''The carrier's aptitude in Shooting is reduced by 8. Aptitude acts like an offset on skill level. Additionally, all passion is removed from Shooting.'' 
+----
+* [[Shooting]]: {{--|8}}. Note: Experience gain and decay applies as if this offset did not exist.
+* Removes all [[passion]]s for [[Shooting]]
+| {{+|2}}
+| {{Bad|1}}
+| -
+| Shooting
+
+|- id="Awful social"
+! Awful Social<br>[[File:Gene_AwfulSocial.png|64px]]
+| ''The carrier's aptitude in Social is reduced by 8. Aptitude acts like an offset on skill level. Additionally, all passion is removed from Social.'' 
+----
+* [[Skills#Social|Social]]: {{--|8}}. Note: Experience gain and decay applies as if this offset did not exist.
+* Removes all [[passion]]s for [[Skills#Social|Social]]
+| {{+|2}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Xenogene.png|Genie.png|32|Genies|Genies}}{{Clear}}{{Stacked image|GeneBackground Xenogene.png|Hussar.png|32|Hussars|Hussars}}
+| Social
+
+
+
+|- id="Poor animals"
+! Poor Animals<br>[[File:Gene_PoorAnimals.png|64px]]
+| ''The carrier's aptitude in Animals is reduced by 4. Aptitude acts like an offset on skill level.'' 
+----
+* [[Skills#Animals|Animals]]: {{--|4}}. Note: Experience gain and decay applies as if this offset did not exist.
+| {{+|1}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Xenogene.png|Genie.png|32|Genies|Genies}}{{Clear}}{{Stacked image|GeneBackground Endogene.png|Impid.png|32|Impids|Impids}}
+| Animals
+
+|- id="Poor artistic"
+! Poor Artistic<br>[[File:Gene_PoorArtistic.png|64px]]
+| ''The carrier's aptitude in Artistic is reduced by 4. Aptitude acts like an offset on skill level.'' 
+----
+* [[Artistic]]: {{--|4}}. Note: Experience gain and decay applies as if this offset did not exist.
+| {{+|1}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Endogene.png|Waster.png|32|Wasters|Wasters}}
+| Artistic
+
+|- id="Poor construction"
+! Poor Construction<br>[[File:Gene_PoorConstruction.png|64px]]
+| ''The carrier's aptitude in Construction is reduced by 4. Aptitude acts like an offset on skill level.'' 
+----
+* [[Construction]]: {{--|4}}. Note: Experience gain and decay applies as if this offset did not exist.
+| {{+|1}}
+|{{Bad|1}}
+| -
+| Construction
+
+|- id="Poor cooking"
+! Poor Cooking<br>[[File:Gene_PoorCooking.png|64px]]
+| ''The carrier's aptitude in Cooking is reduced by 4. Aptitude acts like an offset on skill level.'' 
+----
+* [[Cooking]]: {{--|4}}. Note: Experience gain and decay applies as if this offset did not exist.
+| {{+|1}}
+|{{Bad|1}}
+| {{Stacked image|GeneBackground Endogene.png|PigskinXenotype.png|32|Pigskins|Pigskins}}{{Clear}}{{Stacked image|GeneBackground Endogene.png|Waster.png|32|Wasters|Wasters}}
+| Cooking
+
+|- id="Poor crafting"
+! Poor Crafting<br>[[File:Gene_PoorCrafting.png|64px]]
+| ''The carrier's aptitude in Crafting is reduced by 4. Aptitude acts like an offset on skill level.'' 
+----
+* [[Crafting]]: {{--|4}}. Note: Experience gain and decay applies as if this offset did not exist.
+| {{+|1}}
+|{{Bad|1}}
+| -
+| Crafting
+
+|- id="Poor medical"
+! Poor Medical<br>[[File:Gene_PoorMedical.png|64px]]
+| ''The carrier's aptitude in Medical is reduced by 4. Aptitude acts like an offset on skill level.'' 
+----
+* [[Medical]]: {{--|4}}. Note: Experience gain and decay applies as if this offset did not exist.
+| {{+|1}}
+|{{Bad|1}}
+| -
+| Medical
+
+|- id="Poor melee"
+! Poor Melee<br>[[File:Gene_PoorMelee.png|64px]]
+| ''The carrier's aptitude in Melee is reduced by 4. Aptitude acts like an offset on skill level.'' 
+----
+* [[Melee]]: {{--|4}}. Note: Experience gain and decay applies as if this offset did not exist.
+| {{+|1}}
+|{{Bad|1}}
+| -
+| Melee
+
+|- id="Poor mining"
+! Poor Mining<br>[[File:Gene_PoorMining.png|64px]]
+| ''The carrier's aptitude in Mining is reduced by 4. Aptitude acts like an offset on skill level.'' 
+----
+* [[Mining]]: {{--|4}}. Note: Experience gain and decay applies as if this offset did not exist.
+| {{+|1}}
+|{{Bad|1}}
+| -
+| Mining
+
+|- id="Poor intellectual"
+! Poor Intellectual<br>[[File:Gene_PoorIntellectual.png|64px]]
+| ''The carrier's aptitude in Intellectual is reduced by 4. Aptitude acts like an offset on skill level.'' 
+----
+* [[Intellectual]]: {{--|4}}. Note: Experience gain and decay applies as if this offset did not exist.
+| {{+|1}}
+|{{Bad|1}}
+| {{Stacked image|GeneBackground Endogene.png|Neanderthal.png|32|Neanderthals|Neanderthals}}
+| Intellectual
+
+|- id="Poor plants"
+! Poor Plants<br>[[File:Gene_PoorPlants.png|64px]]
+| ''The carrier's aptitude in Plants is reduced by 4. Aptitude acts like an offset on skill level.'' 
+----
+* [[Skills#Plants|Plants]]: {{--|4}}. Note: Experience gain and decay applies as if this offset did not exist.
+| {{+|1}}
+|{{Bad|1}}
+| {{Stacked image|GeneBackground Xenogene.png|Genie.png|32|Genies|Genies}}{{Clear}}{{Stacked image|GeneBackground Endogene.png|Impid.png|32|Impids|Impids}}
+| Plants
+
+|- id="Poor shooting"
+! Poor Shooting<br>[[File:Gene_PoorShooting.png|64px]]
+| ''The carrier's aptitude in Shooting is reduced by 4. Aptitude acts like an offset on skill level.'' 
+----
+* [[Shooting]]: {{--|4}}. Note: Experience gain and decay applies as if this offset did not exist.
+| {{+|1}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Endogene.png|Neanderthal.png|32|Neanderthals|Neanderthals}}
+| Shooting
+
+|- id="Poor social"
+! Poor Social<br>[[File:Gene_PoorSocial.png|64px]]
+| ''The carrier's aptitude in Social is reduced by 4. Aptitude acts like an offset on skill level.'' 
+----
+* [[Skills#Social|Social]]: {{--|4}}. Note: Experience gain and decay applies as if this offset did not exist.
+| {{+|1}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Endogene.png|Neanderthal.png|32|Neanderthals|Neanderthals}}
+| Social
+
+|- id="Strong animals"
+! Strong Animals<br>[[File:Gene_StrongAnimals.png|64px]]
+| ''The carrier's aptitude in Animals is increased by 4. Aptitude acts like an offset on skill level.'' 
+----
+* [[Skills#Animals|Animals]]: {{+|4}}. Note: Experience gain and decay applies as if this offset did not exist.
+| {{--|1}}
+| {{Bad|2}}
+| -
+| Animals
+
+|- id="Strong artistic"
+! Strong Artistic<br>[[File:Gene_StrongArtistic.png|64px]]
+| ''The carrier's aptitude in Artistic is increased by 4. Aptitude acts like an offset on skill level.'' 
+----
+* [[Artistic]]: {{+|4}}. Note: Experience gain and decay applies as if this offset did not exist.
+| {{--|1}}
+| {{Bad|2}}
+| -
+| Artistic
+
+|- id="Strong construction"
+! Strong Construction<br>[[File:Gene_StrongConstruction.png|64px]]
+| ''The carrier's aptitude in Construction is increased by 4. Aptitude acts like an offset on skill level.'' 
+----
+* [[Construction]]: {{+|4}}. Note: Experience gain and decay applies as if this offset did not exist.
+| {{--|1}}
+|{{Bad|2}}
+| -
+| Construction
+
+|- id="Strong cooking"
+! Strong Cooking<br>[[File:Gene_StrongCooking.png|64px]]
+| ''The carrier's aptitude in Cooking is increased by 4. Aptitude acts like an offset on skill level.'' 
+----
+* [[Cooking]]: {{+|4}}. Note: Experience gain and decay applies as if this offset did not exist.
+| {{--|1}}
+|{{Bad|2}}
+| -
+| Cooking
+
+|- id="Strong crafting"
+! Strong Crafting<br>[[File:Gene_StrongCrafting.png|64px]]
+| ''The carrier's aptitude in Crafting is increased by 4. Aptitude acts like an offset on skill level.'' 
+----
+* [[Crafting]]: {{+|4}}. Note: Experience gain and decay applies as if this offset did not exist.
+| {{--|1}}
+|{{Bad|2}}
+| -
+| Crafting
+
+|- id="Strong medical"
+! Strong Medical<br>[[File:Gene_StrongMedical.png|64px]]
+| ''The carrier's aptitude in Medical is increased by 4. Aptitude acts like an offset on skill level.'' 
+----
+* [[Medical]]: {{+|4}}. Note: Experience gain and decay applies as if this offset did not exist.
+| {{--|1}}
+|{{Bad|2}}
+| -
+| Medical
+
+|- id="Strong melee"
+! Strong Melee<br>[[File:Gene_StrongMelee.png|64px]]
+| ''The carrier's aptitude in Melee is increased by 4. Aptitude acts like an offset on skill level.'' 
+----
+* [[Melee]]: {{+|4}}. Note: Experience gain and decay applies as if this offset did not exist.
+| {{--|1}}
+|{{Bad|2}}
+| {{Stacked image|GeneBackground Xenogene.png|Sanguophage.png|32|Sanguophages|Sanguophages}}
+| Melee
+
+|- id="Strong mining"
+! Strong Mining<br>[[File:Gene_StrongMining.png|64px]]
+| ''The carrier's aptitude in Mining is increased by 4. Aptitude acts like an offset on skill level.'' 
+----
+* [[Mining]]: {{+|4}}. Note: Experience gain and decay applies as if this offset did not exist.
+| {{--|1}}
+|{{Bad|2}}
+| -
+| Mining
+
+|- id="Strong intellectual"
+! Strong Intellectual<br>[[File:Gene_StrongIntellectual.png|64px]]
+| ''The carrier's aptitude in Intellectual is increased by 4. Aptitude acts like an offset on skill level.'' 
+----
+* [[Intellectual]]: {{+|4}}. Note: Experience gain and decay applies as if this offset did not exist.
+| {{--|1}}
+|{{Bad|2}}
+| {{Stacked image|GeneBackground Xenogene.png|Sanguophage.png|32|Sanguophages|Sanguophages}}
+| Intellectual
+
+|- id="Strong plants"
+! Strong Plants<br>[[File:Gene_StrongPlants.png|64px]]
+| ''The carrier's aptitude in Plants is increased by 4. Aptitude acts like an offset on skill level.'' 
+----
+* [[Skills#Plants|Plants]]: {{+|4}}. Note: Experience gain and decay applies as if this offset did not exist.
+| {{--|1}}
+|{{Bad|2}}
+| -
+| Plants
+
+|- id="Strong shooting"
+! Strong Shooting<br>[[File:Gene_StrongShooting.png|64px]]
+| ''The carrier's aptitude in Shooting is increased by 4. Aptitude acts like an offset on skill level.'' 
+----
+* [[Shooting]]: {{+|4}}. Note: Experience gain and decay applies as if this offset did not exist.
+| {{--|1}}
+| {{Bad|2}}
+| -
+| Shooting
+
+|- id="Strong social"
+! Strong Social<br>[[File:Gene_StrongSocial.png|64px]]
+| ''The carrier's aptitude in Social is increased by 4. Aptitude acts like an offset on skill level.'' 
+----
+* [[Skills#Social|Social]]: {{+|4}}. Note: Experience gain and decay applies as if this offset did not exist.
+| {{--|1}}
+| {{Bad|2}}
+| {{Stacked image|GeneBackground Xenogene.png|Sanguophage.png|32|Sanguophages|Sanguophages}}
+| Social
+
+
+|- id="Great animals"
+! Great Animals<br>[[File:Gene_GreatAnimals.png|64px]]
+| ''The carrier's aptitude in Animals is increased by 8. Aptitude acts like an offset on skill level. Additionally, one level of passion is added to Animals.'' 
+----
+* [[Skills#Animals|Animals]]: {{+|8}}. Note: Experience gain and decay applies as if this offset did not exist.
+* Adds one additional [[passion]] for [[Skills#Animals|Animals]]
+| {{--|3}}
+| {{Bad|2}}
+| {{Stacked image|GeneBackground Endogene.png|Yttakin.png|32|Yttakin|Yttakin}}
+| Animals{{ref label|Passion|A}}
+
+|- id="Great artistic"
+! Great Artistic<br>[[File:Gene_GreatArtistic.png|64px]]
+| ''The carrier's aptitude in Artistic is increased by 8. Aptitude acts like an offset on skill level. Additionally, one level of passion is added to Artistic.'' 
+----
+* [[Artistic]]: {{+|8}}. Note: Experience gain and decay applies as if this offset did not exist.
+* Adds one additional [[passion]] for [[Artistic]]
+| {{--|3}}
+| {{Bad|2}}
+| -
+| Artistic{{ref label|Passion|A}}
+
+|- id="Great construction"
+! Great Construction<br>[[File:Gene_GreatConstruction.png|64px]]
+| ''The carrier's aptitude in Construction is increased by 8. Aptitude acts like an offset on skill level. Additionally, one level of passion is added to Construction.'' 
+----
+* [[Construction]]: {{+|8}}. Note: Experience gain and decay applies as if this offset did not exist.
+* Adds one additional [[passion]] for [[Construction]]
+| {{--|3}}
+| {{Bad|2}}
+| {{Stacked image|GeneBackground Xenogene.png|Starjack.png|32|Starjack|Starjack}}
+| Construction{{ref label|Passion|A}}
+
+|- id="Great cooking"
+! Great Cooking<br>[[File:Gene_GreatCooking.png|64px]]
+| ''The carrier's aptitude in Cooking is increased by 8. Aptitude acts like an offset on skill level. Additionally, one level of passion is added to Cooking.'' 
+----
+* [[Cooking]]: {{+|8}}. Note: Experience gain and decay applies as if this offset did not exist.
+* Adds one additional [[passion]] for [[Cooking]]
+| {{--|3}}
+| {{Bad|2}}
+| -
+| Cooking{{ref label|Passion|A}}
+
+|- id="Great crafting"
+! Great Crafting<br>[[File:Gene_GreatCrafting.png|64px]]
+| ''The carrier's aptitude in Crafting is increased by 8. Aptitude acts like an offset on skill level. Additionally, one level of passion is added to Crafting.'' 
+----
+* [[Crafting]]: {{+|8}}. Note: Experience gain and decay applies as if this offset did not exist.
+* Adds one additional [[passion]] for [[Crafting]]
+| {{--|3}}
+| {{Bad|2}}
+| {{Stacked image|GeneBackground Xenogene.png|Genie.png|32|Genies|Genies}}
+| Crafting{{ref label|Passion|A}}
+
+|- id="Great medical"
+! Great Medical<br>[[File:Gene_GreatMedical.png|64px]]
+| ''The carrier's aptitude in Medical is increased by 8. Aptitude acts like an offset on skill level. Additionally, one level of passion is added to Medical.'' 
+----
+* [[Medical]]: {{+|8}}. Note: Experience gain and decay applies as if this offset did not exist.
+* Adds one additional [[passion]] for [[Medical]]
+| {{--|3}}
+| {{Bad|2}}
+| -
+| Medical{{ref label|Passion|A}}
+
+|- id="Great melee"
+! Great Melee<br>[[File:Gene_GreatMelee.png|64px]]
+| ''The carrier's aptitude in Melee is increased by 8. Aptitude acts like an offset on skill level. Additionally, one level of passion is added to Melee.'' 
+----
+* [[Melee]]: {{+|8}}. Note: Experience gain and decay applies as if this offset did not exist.
+* Adds one additional [[passion]] for [[Melee]]
+| {{--|3}}
+| {{Bad|2}}
+| {{Stacked image|GeneBackground Xenogene.png|Hussar.png|32|Hussars|Hussars}}
+| Melee{{ref label|Passion|A}}
+
+|- id="Great mining"
+! Great Mining<br>[[File:Gene_GreatMining.png|64px]]
+| ''The carrier's aptitude in Mining is increased by 8. Aptitude acts like an offset on skill level. Additionally, one level of passion is added to Mining.'' 
+----
+* [[Mining]]: {{+|8}}. Note: Experience gain and decay applies as if this offset did not exist.
+* Adds one additional [[passion]] for [[Mining]]
+| {{--|3}}
+| {{Bad|2}}
+| {{Stacked image|GeneBackground Endogene.png|Dirtmole.png|32|Dirtmoles|Dirtmoles}}
+| Mining{{ref label|Passion|A}}
+
+|- id="Great intellectual"
+! Great Intellectual<br>[[File:Gene_GreatIntellectual.png|64px]]
+| ''The carrier's aptitude in Intellectual is increased by 8. Aptitude acts like an offset on skill level. Additionally, one level of passion is added to Intellectual.'' 
+----
+* [[Intellectual]]: {{+|8}}. Note: Experience gain and decay applies as if this offset did not exist.
+* Adds one additional [[passion]] for [[Intellectual]]
+| {{--|3}}
+| {{Bad|2}}
+| {{Stacked image|GeneBackground Xenogene.png|Genie.png|32|Genies|Genies}}
+| Intellectual{{ref label|Passion|A}}
+
+|- id="Great plants"
+! Great Plants<br>[[File:Gene_GreatPlants.png|64px]]
+| ''The carrier's aptitude in Plants is increased by 8. Aptitude acts like an offset on skill level. Additionally, one level of passion is added to Plants.'' 
+----
+* [[Skills#Plants|Plants]]: {{+|8}}. Note: Experience gain and decay applies as if this offset did not exist.
+* Adds one additional [[passion]] for [[Skills#Plants|Plants]]
+| {{--|3}}
+| {{Bad|2}}
+| -
+| Plants{{ref label|Passion|A}}
+
+|- id="Great shooting"
+! Great Shooting<br>[[File:Gene_GreatShooting.png|64px]]
+| ''The carrier's aptitude in Shooting is increased by 8. Aptitude acts like an offset on skill level. Additionally, one level of passion is added to Shooting.'' 
+----
+* [[Shooting]]: {{+|8}}. Note: Experience gain and decay applies as if this offset did not exist.
+* Adds one additional [[passion]] for [[Shooting]]
+| {{--|3}}
+| {{Bad|2}}
+| {{Stacked image|GeneBackground Xenogene.png|Hussar.png|32|Hussars|Hussars}}
+| Shooting{{ref label|Passion|A}}
+
+|- id="Great social"
+! Great Social<br>[[File:Gene_GreatSocial.png|64px]]
+| ''The carrier's aptitude in Social is increased by 8. Aptitude acts like an offset on skill level. Additionally, one level of passion is added to Social.'' 
+----
+* [[Skills#Social|Social]]: {{+|8}}. Note: Experience gain and decay applies as if this offset did not exist.
+* Adds one additional [[passion]] for [[Skills#Social|Social]]
+| {{--|3}}
+| {{Bad|2}}
+| {{Stacked image|GeneBackground Xenogene.png|Highmate.png|32|Highmates|Highmates}}
+| Social{{ref label|Passion|A}}
+|}
+</div>
+</div>
+</li></div>
+:{{note|Passion|A}} If overridden by strong or poor aptitude gene, passion from great aptitude gene is added anyway.
+
+== Drugs ==
+{{Stub|section=1|reason=How does impervious eliminate tolerance build up - is it -100% or x0%. Both are listed}}
+{{Recode|section=1|reason=The patch notes for 1.5 say that drug-related genes no longer prevent overdose across all drugs. Verify if true, then edit this section to reflect the change}} <!-- true for psychite at least -->
+There are one of each of these for each drug, except for [[ambrosia]], [[luciferium]] and [[penoxycyline]].
+
+<div><li style="display: inline-table;">
+Click to <div class="mw-collapsible">
+<div class="mw-collapsible-content">
+{| {{STDT| sortable c_17 text-valign:top}}
+! Name
+! Description
+! [[File:Metabolism.png|20px|Metabolism]]
+! [[File:Complexity.png|20px|Complexity]]
+! [[File:Baseliner.png|20px|link=Xenotypes]]
+|- id="Alcohol resistant"
+! Alcohol resistant<br>[[File:AddictionResistant Alcohol.png|64px]]
+| ''Carriers are only half as likely to become addicted to Alcohol.''
+----
+* [[Beer|Alcohol]] addiction factor: ×50%
+* Alcohol tolerance gain: ×50%
+| {{--|1}}
+| {{Bad|1}}
+| -
+|- id="Smokeleaf resistant"
+! Smokeleaf resistant<br>[[File:AddictionResistant Smokeleaf.png|64px]]
+| ''Carriers are only half as likely to become addicted to Smokeleaf.''
+----
+* [[Smokeleaf joint|Smokeleaf]] addiction factor: ×50%
+* Smokeleaf tolerance gain: ×50%
+| {{--|1}}
+| {{Bad|1}}
+| -
+|- id="Psychite resistant"
+! Psychite resistant<br>[[File:AddictionResistant Psychite.png|64px]]
+| ''Carriers are only half as likely to become addicted to Psychite.''
+----
+* [[Psychite]] addiction factor: ×50%
+* Psychite tolerance gain: ×50%
+* Overdose chance: ×50% {{Check Tag|Random or All|Random overdoses only or cumulative ODs?}} 
+| {{--|2}}
+| {{Bad|1}}
+| -
+|- id="Go-juice resistant"
+! Go-juice resistant<br>[[File:AddictionResistant Go Juice.png|64px]]
+| ''Carriers are only half as likely to become addicted to Go-juice.''
+----
+* [[Go-juice]] addiction factor: ×50%
+* Overdose chance: ×50% {{Check Tag|Random or All|Random overdoses only or cumulative ODs?}} 
+| {{--|2}}
+| {{Bad|1}}
+| -
+|- id="Wake-up resistant"
+! Wake-up resistant<br>[[File:AddictionResistant Wake Up.png|64px]]
+| ''Carriers are only half as likely to become addicted to Wake-up.''
+----
+* [[Wake-up]] addiction factor: ×50%
+* Overdose chance: ×50% {{Check Tag|Only this drug?}} {{Check Tag|Random or All?|Random overdoses only or cumulative ODs?}} 
+| {{--|2}}
+| {{Bad|1}}
+| -
+|- id="Alcohol impervious"
+! Alcohol impervious<br>[[File:AddictionImmune Alcohol.png|64px]]
+| ''Carriers of this gene never get addicted to Alcohol.''
+----
+* Alcohol addiction factor: x0%
+* Tolerance build-up for Alcohol: -100% 
+| {{--|3}}
+| {{Bad|2}}
+| -
+|- id="Smokeleaf impervious"
+! Smokeleaf impervious<br>[[File:AddictionImmune Smokeleaf.png|64px]]
+| ''Carriers of this gene never get addicted to Smokeleaf.''
+----
+* Smokeleaf addiction factor: x0%
+* Tolerance build-up for Smokeleaf: -100% 
+| {{--|3}}
+| {{Bad|2}}
+| -
+|- id="Psychite impervious"
+! Psychite impervious<br>[[File:AddictionImmune Psychite.png|64px]]
+| ''Carriers of this gene never get addicted to Psychite.''
+----
+* Psychite addiction factor: x0% 
+* Tolerance build-up for Psychite: ×0%
+* Cumulative [[overdose|overdose severity]] and random, per-dose overdose chance from Psychite based drugs eliminated.
+| {{--|5}}
+| {{Bad|2}}
+| -
+|- id="Go-juice impervious"
+! Go-juice impervious<br>[[File:AddictionImmune Go Juice.png|64px]]
+| ''Carriers of this gene never get addicted to Go-juice.''
+----
+* Go-juice addiction factor: x0%
+* Cumulative [[overdose|overdose severity]] and random, per-dose overdose chance from Go-juice eliminated.
+| {{--|5}}
+| {{Bad|2}}
+| -
+|- id="Wake-up impervious"
+! Wake-up impervious<br>[[File:AddictionImmune Wake Up.png|64px]]
+| ''Carriers of this gene never get addicted to Wake-up.''
+----
+* Wake-up addiction factor: x0%
+* Cumulative [[overdose|overdose severity]] and random, per-dose overdose chance from Wake-up eliminated.
+
+| {{--|5}}
+| {{Bad|2}}
+| {{Stacked image|GeneBackground Endogene.png|Waster.png|32|Wasters|Wasters}}
+|- id="Alcohol dependency"
+! Alcohol dependency<br>[[File:ChemicalDependency Alcohol.png|64px]]
+| ''Carriers of this gene need to ingest alcohol on a regular basis to survive. After 5 days without alcohol, carriers will suffer from drug deficiency. After 30 days, they will fall into a coma. After 60 days, they will die.''
+----
+<!--Still needs more obviously, but adding now so its not forgotten. -->
+* Teetotalers will take the required drug without penalties, but ideoligion can still block taking them.
+* Chemical dependency severity increases by 0.2 per day. Reduced to 0% upon taking [[beer]]. 
+**  Mood debuff starting with -4 at Severity 1.0 gradually scaling up to -20 at severity 5.85
+** '''Severity 1 (5 days):''' [[Consciousness]] {{Bad|70% max}}, [[Moving]] {{Bad|80% max}}, [[Manipulation]] {{Bad|50% max}},
+** '''Severity 6 (30 days):''' Consciousness {{Bad|10% max}} (Unconsciousness)
+** '''Severity 12 (60 days):''' Consciousness {{Bad|0% max}} ([[Death]]) <!--Implemented in a weirdly specific way so worth specifically noting-->
+* Alcohol addiction factor: x0%
+
+* Teetotalers can take the required drug without penalties. However, [[ideoligion]]s against drug use will apply the {{--|15}} ''Used drug'' moodlet.
+* Children under 13 do not get any of the ill effects from not using these drugs. The timer for penalties only starts on their 13th birthday.
+| {{+|3}}
+| {{Bad|1}}
+| -
+|- id="Smokeleaf dependency"
+! Smokeleaf dependency<br>[[File:ChemicalDependency Smokeleaf.png|64px]]
+| ''Carriers of this gene need to ingest Smokeleaf on a regular basis to survive. After 5 days without smokeleaf, carriers will suffer from smokeleaf deficiency. After 30 days, they will fall into a coma. After 60 days, they will die.''
+----
+<!--Still needs more obviously, but adding now so its not forgotten. -->
+* Teetotalers will take the required drug without penalties, but ideoligion can still block taking them.
+* Chemical dependency severity increases by 0.2 per day. Reduced to 0% upon taking a [[smokeleaf joint]]. 
+**  Mood debuff starting with -4 at Severity 1.0 gradually scaling up to -20 at severity 5.85
+** '''Severity 1 (5 days):''' [[Consciousness]] {{Bad|70% max}}, [[Moving]] {{Bad|80% max}}, [[Manipulation]] {{Bad|50% max}},
+** '''Severity 6 (30 days):''' Consciousness {{Bad|10% max}} (Unconsciousness)
+** '''Severity 12 (60 days):''' Consciousness {{Bad|0% max}} ([[Death]]) <!--Implemented in a weirdly specific way so worth specifically noting-->
+* Smokeleaf addiction factor: x0%
+
+* Teetotalers can take the required drug without penalties. However, [[ideoligion]]s against drug use will apply the {{--|15}} ''Used drug'' moodlet.
+* Children under 13 do not get any of the ill effects from not using these drugs. The timer for penalties only starts on their 13th birthday.
+| {{+|3}}
+| {{Bad|1}}
+| -
+|- id="Psychite dependency"
+! Psychite dependency<br>[[File:ChemicalDependency Psychite.png|64px]]
+| ''Carriers of this gene need to ingest psychite on a regular basis to survive. After 5 days without Psychite, carriers will suffer from psychite deficiency. After 30 days, they will fall into a coma. After 60 days, they will die.''
+----
+<!--Still needs more obviously, but adding now so its not forgotten. -->
+* Chemical dependency severity increases by 0.2 per day. Reduced to 0 upon taking [[psychite tea]], [[flake]], or [[yayo]].
+**  Mood debuff starting with -4 at Severity 1.0 gradually scaling up to -20 at severity 5.85
+** '''Severity 1 (5 days):''' [[Consciousness]] {{Bad|70% max}}, [[Moving]] {{Bad|80% max}}, [[Manipulation]] {{Bad|50% max}},
+** '''Severity 6 (30 days):''' Consciousness {{Bad|10% max}} (Unconsciousness)
+** '''Severity 12 (60 days):''' Consciousness {{Bad|0% max}} ([[Death]]) <!--Implemented in a weirdly specific way so worth specifically noting-->
+* Psychite addiction factor: x0%
+<!-- Overdosing is now possible, unsure whether chance is reduced-->
+<!--Patch notes seem to be accurate, tested using baselines implanted with psychite dependency gene, they're now able to OD on yayo despite suffering from a deficiency-->
+
+* Teetotalers can take the required drug without penalties. However, [[ideoligion]]s against drug use will apply the {{--|15}} ''Used drug'' moodlet.
+* Children under 13 do not get any of the ill effects from not using these drugs. The timer for penalties only starts on their 13th birthday.
+| {{+|4}}
+| {{Bad|1}}
+| {{Stacked image|GeneBackground Endogene.png|Waster.png|32|Wasters|Wasters}}
+|- id="Go-juice dependency"
+! Go-juice dependency<br>[[File:ChemicalDependency Go Juice.png|64px]]
+| ''Carriers of this gene need to ingest Go-juice on a regular basis to survive. After 5 days without Go-juice, carriers will suffer from Go-juice deficiency. After 30 days, they will fall into a coma. After 60 days, they will die.''
+----
+<!--Still needs more obviously, but adding now so its not forgotten. -->
+* Chemical dependency severity increases by 0.2 per day. Reduced to 0 upon taking [[go-juice]]. 
+**  Mood debuff starting with -4 at Severity 1.0 gradually scaling up to -20 at severity 5.85
+** '''Severity 1 (5 days):''' [[Consciousness]] {{Bad|70% max}}, [[Moving]] {{Bad|80% max}}, [[Manipulation]] {{Bad|50% max}},
+** '''Severity 6 (30 days):''' Consciousness {{Bad|10% max}} (Unconsciousness)
+** '''Severity 12 (60 days):''' Consciousness {{Bad|0% max}} ([[Death]]) <!--Implemented in a weirdly specific way so worth specifically noting-->
+* Go-juice addiction factor: x0%
+<!-- Overdosing is now possible, unsure whether chance is reduced-->
+
+* Teetotalers can take the required drug without penalties. However, [[ideoligion]]s against drug use will apply the {{--|15}} ''Used drug'' moodlet.
+* Children under 13 do not get any of the ill effects from not using these drugs. The timer for penalties only starts on their 13th birthday.
+| {{+|4}}
+| {{Bad|1}}
+| | {{Stacked image|GeneBackground Xenogene.png|Hussar.png|32|Hussars|Hussars}}
+|- id="Wake-up dependency"
+! Wake-up dependency<br>[[File:ChemicalDependency Wake Up.png|64px]]
+| ''Carriers of this gene need to ingest wake-up on a regular basis to survive. After 5 days without wake-up, carriers will suffer from wake-up deficiency. After 30 days, they will fall into a coma. After 60 days, they will die.''
+---- <!--Still needs more obviously, but adding now so its not forgotten. -->
+* Chemical dependency severity increases by 0.2 per day. Reduced to 0 upon taking [[wake-up]]. 
+**  Mood debuff starting with -4 at Severity 1.0 gradually scaling up to -20 at severity 5.85
+** '''Severity 1 (5 days):''' [[Consciousness]] {{Bad|70% max}}, [[Moving]] {{Bad|80% max}}, [[Manipulation]] {{Bad|50% max}}.
+** '''Severity 6 (30 days):''' Consciousness {{Bad|10% max}} (Unconsciousness)
+** '''Severity 12 (60 days):''' Consciousness {{Bad|0% max}} ([[Death]]) <!--Implemented in a weirdly specific way so worth specifically noting-->
+* Wake-up addiction factor: x0%
+<!-- Overdosing is now possible, unsure whether chance is reduced-->
+
+* Teetotalers can take the required drug without penalties. However, [[ideoligion]]s against drug use will apply the {{--|15}} ''Used drug'' moodlet.
+* Children under 13 do not get any of the ill effects from not using these drugs. The timer for penalties only starts on their 13th birthday.
+| {{+|4}}
+| {{Bad|1}}
+| -
+|}
+</div>
+</div>
+</li></div>
+
+== Removed genes ==
+This table contains genes that are no longer found as-is in the current game version. They may have been removed or migrated in an update, or cut during development before a release.
+
+<div><li style="display: inline-table;">
+Click to <div class="mw-collapsible">
+<div class="mw-collapsible-content">
+{| {{STDT| sortable c_03 text-valign:top}}
+! Name
+! Description
+! [[File:Metabolism.png|20px|Metabolism]]
+! [[File:Complexity.png|20px|Complexity]]
+! [[File:Archite capsule required.png|20px|Archite capsules]]
+! Removed
+! Reason
+
+|- id="Resurrect"
+! Resurrect<br>[[File:Gene Resurrect.png|64px]]
+| Carriers have a reserve of unique resurrector archites which can infuse a corpse, rebuild degenerated tissue and kickstart the vital processes. This brings the dead back to life - though possibly with health issues. This can only be done very rarely, and comes at a steep hemogen cost.
+----
+* Requires Hemogenic
+* Adds ability: [[File:Resurrect gene ability.png|16px]] Resurrect
+:''Use archites in the bloodstream to infuse a corpse's body with new life, repairing degenerated cell structures and kickstarting vital functions. The older and worse-preserved the corpse is, the more likely it is that they will come back with memory loss or health conditions. This ability seems to exhaust the archites somehow, so it can only be used very rarely.''
+:* Resurrects the targeted corpse, similarly to [[Resurrector mech serum]]
+:* Target: Any non-mechanoid corpse
+:* Warmup Time: {{Ticks|2}}
+:* Cooldown: {{Ticks/gametime/years|6840000}} to {{Ticks/gametime/years|7560000}}
+:* Charges: 1
+:* AI Can Use: False
+* Market value of [[genepack]]s containing this gene: ×150%
+| '''0'''
+| {{Bad|4}}
+| {{Bad|1}}
+| Before [[Biotech DLC]] release
+| Unknown.
+|- id="Apathy"
+! Skill apathy<br>[[File:Skills PassionDrop Loop.gif|64px]]
+| The carrier will have no passion in (skill).
+| {{Good|2}}
+| {{Bad|1}}
+| '''-'''
+| Before [[Biotech DLC]] release
+| From an XML comment:
+''"Removed since the downsides are too easy and boring to avoid, and synergize with skill loss genes too much. If you already aren't using the skill it's too easy to just kill passion on it too. -Ty"''
+|- id="Drug addict-sensitive"
+! Drug addict-sensitive
+| Carriers of this gene get addicted to (drug) very easily.
+* Specific drug addiction factor: x9999%
+| {{Good|2}}
+| {{Bad|1}}
+| '''-'''
+| Before [[Biotech DLC]] Release
+| From an XML comment:
+''"Removed since these just aren't very interesting, very narrow in application, and the downsides are too easy and boring to avoid. Just not much interaction or story here. -Ty"''
+|}
+</div>
+</div>
+</li></div>
+
+== Notes ==
+* Certain genes will not be properly negated by other genes. For example, a drug dependency germline gene, while appearing to be negated by the same drug dependency as a xenogene, will instead cause the negative mood from the lack of the drug to start at 2.5 days instead of at 5 days.
+
+== Version history == 
+* [[Biotech DLC]] Release - Added.
+* [[Version/1.4.3524|1.4.3524]] - Children no longer get adult body types from genes.
+* [[Version/1.4.3525|1.4.3525]] - Fix: Suppressed genes contributing to romance chance still apply. Fix: Attempting to absorb a xenogerm of your own colonist displays a warning message saying you'll anger your faction.
+* [[Version/1.4.3527|1.4.3527]] - Fix: Never sleep xenohumans still rest when caravanning alone.
+* [[Version/1.4.3530|1.4.3530]] - Fix: Removing passion-adding genes doesn't revert effect. Fix: Psychically bonded pawns in the same caravan still get "psychic bond distance" mood malus in some circumstances.
+* [[Version/1.4.3531|1.4.3531]] - Fix: AI sanguophages can use longjump without any remaining hemogen. Increase the effect of the temperature genes. From {{Bad|3}}/?{{Check Tag|Value?}}/{{Good|10}} to {{Bad|5}}/{{Good|10}}/{{Good|20}}. Fix: Some hemogenic abilities can be queued without enough hemogen.
+* [[Version/1.4.3534|1.4.3534]] - Fix: Melanin genes can be extracted by gene extractor. Reduced volume and frequency of yttakin sounds.
+* [[Version/1.4.3541|1.4.3541]] - Fix: Victims of bloodfeeder bites can gain hemogen from the interaction.
+* [[Version/1.4.3542|1.4.3542]] - Fix: Coagulate can still be queued if hemogen is below casting cost.
+* [[Version/1.4.3555|1.4.3555]] -
+** [[#Psychic bonding|Psychic bond]] now gives +10% [[psychic sensitivity]], or +5% if on different maps. Hediff description changed from ''This person has a psychic bond with another person based on the psychic bonding gene.'' to ''This person has a psychic bond with another person based on the psychic bonding gene. The bond itself grants some limited psychic awareness, allowing it to connect even with the psychically deaf''. Bonds can now be created during lovin' allowing pawns already in a relationship when the gene was implanted to bond.
+**Many genes now give direct boosts instead of forcing traits, which allows genes and traits to stack:
+*** '''Depressive''' gene renamed to [[#Very unhappy|Very unhappy]], no longer forces [[Depressive]] trait instead decreases mood by {{--|10}}. '''Pessimist''' gene renamed to [[#Unhappy|Unhappy]], no longer forces [[Pessimist]] trait instead decreases mood by {{--|5}}. '''Optimist''' gene renamed to [[#Happy|Happy]], no longer forces [[Optimist]] trait instead increases mood by {{+|5}}. '''Sanguine''' gene renamed to [[#Very happy|Very happy]], no longer forces [[Sanguine]] trait instead increases mood by {{+|10}}. 
+*** [[#Slow runner|Slow runner]] no longer forces [[Slowpoke]] trait instead decreases move speed by {{--|0.2}} {{CS}}. [[#Fast runner|Fast runner]] no longer forces [[Fast walker]] trait instead increases move speed by {{+|0.2}} {{CS}}. [[#Very fast runner|Very fast runner]] no longer forces [[Jogger]] trait instead increases move speed by {{+|0.4}} {{CS}}.
+***'''Slow learner''' renamed to [[#Slow study|Slow study]], no longer forces [[Slow learner]] trait instead multiplies [[Global Learning Factor]] {{Bad|×50%}}. '''Fast learner''' renamed to [[#Quick study|Quick study]], no longer forces [[Fast learner]] trait instead increases [[Global Learning Factor]] {{+|50%}}.
+*** '''Staggeringly ugly''' gene renamed to [[#Very unattractive|Very unattractive]], no longer forces [[Staggeringly ugly]] trait instead decreases beauty by {{--|2}}. '''Ugly''' gene renamed to [[#Unattractive|Unattractive]], no longer forces [[Ugly]] trait instead decreases beauty by {{--|1}}. '''Pretty''' gene renamed to [[#Attractive|Attractive]], no longer forces [[Pretty]] trait instead increase beauty by {{+|1}}. '''Beautiful''' gene renamed to [[#Very attractive|Very attractive]], no longer forces [[Beautiful]] trait instead increase beauty by {{+|2}}. 
+** '''<Drug> addict-resist''' genes renamed to [[#Alcohol resistant|<Drug> resistant]], Addiction-resistant genes for alcohol, smokeleaf and psychite provide a 50% reduction in tolerance buildup. Addiction-resistant genes for psychite, wake-up and go juice have a 50% multiplier on overdose chance. Smokeleaf and Alcohol resistant metabolism cost reduced from {{--|2}} to {{--|1}}. 
+** '''<Drug> addict-immune''' genes renamed to [[#Alcohol impervious|<Drug> impervious]]. Addiction-immune genes for psychite, wake-up and go juice grants immunity to overdoses from the drug. Addiction-immune genes for alcohol, smokeleaf and psychite provides a 100% reduction in tolerance buildup. Smokeleaf and Alcohol impervious metabolism cost reduced from {{--|5}} to {{--|3}}. 
+**[[#Smokeleaf dependency|Smokeleaf]] and [[#Alcohol dependency|Alcohol dependency]] metabolism gain reduced from {{+|4}} to {{+|3}}. 
+** Fix: Remove reference to damage over time in acid spray ability description. {{Hover title|Spray a sticky acid substance from glands in the neck up through the mouth and all over the target area. The acid will stick to targets and burn them over time.|''[...] stick to targets and burn them over time.''}} to {{Hover title|Spray a sticky acid substance from glands in the neck up through the mouth and all over the target area. The acid will stick to targets and burn them.|''[...] stick to targets and burn them.''}}
+** [[#Furskin|Furskin]] and [[#Beardless|beardless]] genes are now mutually exclusive.
+** Buffed [[#Furry tail|furry tail]] minimum comfy temperature offset from {{Good|{{temperature|-5||delta}}}} to {{Good|{{temperature|-10||delta}}}}.
+** When a [[#Deathless|deathless]] pawn takes damage that would have been lethal and falls into a deathrest coma instead, as an additional consequence they lose 3-6% of XP in a random skill. This should make non-death less trivial for these characters and preserve the sense of risk and danger. We’ll tuned this ongoing as needed.
+** Fix: Bloodfeed can be used on pawns in mental states.
+* [[Version/1.4.3557|1.4.3557]] - [[#Slow study|Slow study]] gene applies a {{Bad|x50%}} factor to [[Global Learning Factor]] instead of a {{--|50%}} offset.
+* [[Version/1.4.3563|1.4.3563]] - Fix: Pawns with "dead calm" gene can get into fights over botched conversion attempts. Fix: Genes that remove all passions don't save previous values, causing passions to reset on removal. Fix: Pawns being carried by other pawns strains psychic bond.
+* [[Version/1.4.3580|1.4.3580]] - Fix: Furskin_Average3 head uses the wrong graphic. Fix: Tattoos render below heavy brow. Fix: Furskin gene hair/fur color not staying when implanted with a skin color xenogene. Fix: Exception trying to visit sick pawn with neversleep gene.
+* [[Version/1.4.3613|1.4.3613]] - Fix: Reimplant ability not working with custom xenotypes.
+* [[Version/1.4.3641|1.4.3641]] - Fix: Inactive sterile gene affects fertility. 
+* [[Version/1.4.3682|1.4.3682]] - [[Arrest]]ing dead calm pawns now never fails, to prevent them going berserk.
+* [[Version/1.5.4062|1.5.4062]] -
+** Made psychic bond distance thought more permissive. As long as both pawns are on the same map and not suspended (cryptosleep casket) they get the positive thought.
+** Remove reference to damage over time in acid spray gene description. ("...it will stick to enemies and burn them over time." to "...it will stick to enemies and burn them.")
+** Added more acid filth texture options for acid spray so it never looks tiled.
+** Attached helpful text to mouse when selected pawn is aiming animal warcall ability.
+** Updated fire spew LOS highlighting.
+** Updated psychic bonding hediff tooltip to factor in pawns contained in buildings.
+** Clarify that pawns with no xenogenes cannot implant their xenogerm into another person. Show correct warning message on attempt.
+** Fix: Pawns with genetic drug needs aren't getting mothballed. Can improve performance in late-game saves.
+** Fix: Chemical genes affect tolerance buildup and addiction chance of all chemicals, not just the specified one.
+** Fix: On colonist selection, wasters and hussars are currently generating without their drug dependencies.
+** Fix: Small increments of pawn speed differences are lost due to integer calculations. Very quick and quick genes were effectively the same on an otherwise unmodified pawn.
+** Fix: Drug dependency endogenes aren't properly being overridden by other drug-related xenogenes of the same chemical.
+** Fix: Psychic bonds can form between two pawns that have the psychic bonding genes even if they are bonded to other people.
+** Fix: Pawns still carry a weapon after getting incapable of violence gene.
+** Fix: Pawns incapable of violence still can use combat gene abilities
+** Fix: Fire spew can shoot through walls.
+** Fix: Fire spew ability not leaning like other ranged attacks.
+** Fix: Fire spew ability can't target walls.
+** Fix: Perfect immunity doesn't block gut worms or muscle parasites.
+* [[Version/1.6.4518|1.6.4518]] - Added 2 new genes: [[#Indoor dweller|Indoor dweller]] (Disables the outdoors need) and [[#Webbed phalanges|webbed phalanges]] (Ignores movement speed penalties from water terrain Decreases manipulation by 5%). The former is added to dirtmoles, resulting in complexity increasing from 9 -> 10, Net metabolism decreasing from +1 -> 0, hunger rate increasing from 90% -> 100%.
+* [[Version/1.6.4535|1.6.4535]] - Made the [[#Breathless|breathless]] gene suppress the normal [[#Vacuum resistant|vacuum resistant]] gene, removing its metabolic impact.
+* [[Version/1.6.4566|1.6.4566]] - Rebalanced the starjack xenotype, added the [[Low gravity adapted]] gene. Removed [[Awful plants]], replaced [[Poor melee]] with [[Awful melee]] and replaced [[Cold tolerant]] with [[Cold super-tolerant]]. Net metabolism decreasing from +1 -> 0, hunger rate increasing from 90% -> 100%. [[Breathless]] and [[Vacuum resistant]] now grants  [[Minimum Comfortable Temperature]]: {{---|{{temperature|5||delta}}}}
+* [[Version/1.6.4850|1.6.4850]] - 
+** Fix: Pawns can infinitely desire a looks-change if their ideoligion and genes clash.
+** Fix: Having an endogene and an overriding xenogene with the same trait can cause the trait to never be applied at all.
+{{Biotech navbox}}
+[[Category:Game mechanics]]

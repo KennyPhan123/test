@@ -1,0 +1,24 @@
+{{Version Nav}}
+''Released October 28, 2022''
+
+Version 1.4.3530 is up now on the unstable (and now stable) branch!
+* Added a toggle to the hemogen gizmo which allows configuration of whether or not a pawn can ingest hemogen packs to satisfy the desired hemogen level.
+* Reduce growth points of generated children by ~25%.
+* Fertility stat is no longer capped at 100%.
+* Deathrest buildings drain hemogen enough to empty over the course of 10 days of deathrest.
+* "Genes regrowing" hediff from gene extraction lasts 12-20 days. (Down from 25)
+* Gene extractor takes 12 hours to extract genes. (Down from 24)
+* Don't display pick up options for drugs that the pawn will drop immediately anyways.
+* Re-cache CachedTextures on ResetStaticData() calls.
+* Remove addictions when adding chemical dependency genes.
+* Minor adjustments to pigskin and impid pawn kinds. Force them to use faction xenotype set.
+* Babies that have fallen asleep in someone's arms no longer immediately wake up.
+* Fix: With toxic fallout active, inspecting items from trade ships causes errors.
+* Fix: Children gain growth points in cryptosleep.
+* Fix: Errors if bossgroups are called with the mechanoid faction disabled.
+* Fix: Comms console diabolus threat cannot  be called by mechanitors if mech faction is disabled.
+* Fix: Paramedic not counted as doctor in solo mechanitor run.
+* Fix: Archonexus quest allows taking mechanoid weapons with you to a new colony.
+* Fix: Psychically bonded pawns in the same caravan still get "psychic bond distance" mood malus in some circumstances.
+* Fix: Removing passion-adding genes doesn't revert effect.
+* Fix: Update steel tile description to match them having 0 beauty.

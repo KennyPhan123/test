@@ -1,0 +1,12 @@
+{{About|the multiplier on products|the mulitplier on work speed|Work Speed Factor}}
+{{Stat
+| default base value = 1
+| min value = 0.1
+| to string style = PercentZero
+| description = Work efficiency is multiplied by this value.
+| category = Building
+}} This acts as a multiplier on the products of recipe bills performed at the work table. For example, a value of 50% would result in bills returning only half of the products they would produce with a value of 100%.
+
+The default value is {{#expr:{{P|Default Base Value}}*100}}%. The minimum value is {{#expr:{{P|Stat Minimum}}*100}}%
+
+The only workstation with a non-default ''Work Table Efficiency Factor'' is the [[Butcher spot]] with a value of {{%|{{Q|Butcher spot|Work Efficiency Factor}}}}.

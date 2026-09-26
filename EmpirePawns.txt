@@ -1,0 +1,327 @@
+<onlyinclude>Color Guide:
+* {{Color|0.7|0.7|0.7}}
+* {{Color|0.5|0.5|0.5}}
+* {{Color|0.6|0.6|0.6}}
+* {{Color|104|120|119}}: drab dark blue
+* {{Color|119|145|121}}: drab light green
+* {{Color|106|120|104}}: drab dark green
+* {{Color|106|120|104}}: drab dark green
+* {{Color|140|140|119}}: tan
+* {{Color|99|87|67}}: muted brown
+* {{Color|128|116|84}}: light brown
+* {{Color|107|94|64}}: mid brown
+* {{Color|77|66|45}}: dark brown
+
+Shared traits between all pawn kinds (except for Slave):
+* '''Race:''' Human
+* '''Default Faction:''' Empire
+
+<div><li style="display: inline-table;">
+{| {{STDT| c_01 sortable text-center}}
+! Pawn Kind !! Combat Power !! Gear !! Apparel !! Weapons !! Tech !! Inventory !! Additional Info [[{{fullurl:Empire/Pawns|action=edit}} edit]]
+<!-- 9 columns; 1 bold, 8 normal:
+|-
+! Name
+| [[File:.png]] || CP || '''HP:''' <br />'''Avg. Quality:'''
+| Apparel: '''Budget''': <br />{{#ask:[[Tags::]][[Lifestage::~*Adult*]][[Name::!~*hat*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,<br />}}
+| Weapons: '''Budget''': <br />% Biocoded: {{Gear List|WeaponTags}}
+| Tech: '''Budget''': <br />% chance to have one of the following: {{Gear List|budget=|TechHediffsTags|}}
+| I
+| AI<br />'''Chemical Addiction Chance''': <br />'''Initial Will Range''': <br />'''Initial Resistance Range''': 
+-->
+<!-- defName="Slave_Empire", label="slave", ParentName="SlaveBase", Name="" -->
+|- id="Imperial slave"
+! Slave (Empire)<br>[[File:Imperial slave.png]] 
+| 30 || '''HP:''' 20~80%<br />'''Avg. Quality:''' Poor
+<!-- Apparel -->
+| '''Budget''': 0~350<br /><!--
+-->'''Allow Headgear Chance:''' 0%<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic]][[Lifestage::~*Adult*]][[Layer::!~*Headgear*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}<br /><!--
+-->'''Ignore Seasons'''<br /><!--
+-->'''Ignore Pollution'''
+<!-- Weapons -->
+| -
+<!-- Tech -->
+| '''Budget''': 50~800<br /><!--
+-->3% chance to have one of the following: {{Gear List|budget=800|TechHediffsTags|Poor}}
+| 20x {{Gear List/Items|Pemmican}}
+<!-- Additional Info -->
+| '''Age Range:''' Any<br />'''Race:''' Human<br />'''Default Faction Type:''' Civil Outlander<br />'''Backstories:''' Cryptosleep (10% Commonality); Offworld, Outlander, Outsider<br />'''isFighter:''' false<br />'''Xenotypes:''' 5% {{Icon Small|Highmate|24}} [[Highmate]]<br />'''Chemical Addiction Chance''': 5%<br />'''Initial Will Range''': 0~0<br />'''Initial Resistance Range''': 10~17
+<!--===================== Imperial civilians =========================-->
+<!--
+|-
+! Empire commoner base
+| IMG || CP || '''HP:''' <br />'''Avg. Quality:'''
+| '''Required:''' {{Icon Small|Cloth|24}} UpperHead, {{Icon Small|Cloth|24}} Torso, {{Icon Small|Cloth|24}} Legs; <br />'''Colors:''' {{Color|0.7|0.7|0.7}}, {{Color|0.5|0.5|0.5}}, {{Color|0.6|0.6|0.6}}, {{Color|104|120|119}}, {{Color|119|145|121}}, {{Color|106|120|104}}, {{Color|106|120|104}}, {{Color|140|140|119}}, {{Color|99|87|67}}, {{Color|128|116|84}}, {{Color|107|94|64}}, {{Color|77|66|45}}
+| Weapons: '''Budget''': <br />% Biocoded: {{Gear List|WeaponTags}}
+| Tech: '''Budget''': <br />% chance to have one of the following: {{Gear List|budget=|TechHediffsTags|}}
+| I
+| '''Age Range:''' Any<br />'''Chemical Addiction Chance''': <br />'''Initial Will Range''': <br />'''Initial Resistance Range''': 
+-->
+|- id="Imperial citizen"
+! Imperial citizen<br>[[File:Imperial common lodger.png]] 
+| 30 || '''HP:''' 100%<br />'''Avg. Quality:''' Always Normal
+| '''Budget''': 200~1000<br />0% Headgear; '''Required:''' {{Icon Small|Cloth|24}} UpperHead, {{Icon Small|Cloth|24}} Torso, {{Icon Small|Cloth|24}} Legs<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic]][[Lifestage::~*Adult*]][[Name::!~*hat*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,<br />}}; '''Disallowed:''' {{Gear List|Tags|Western}}<br />'''Colors:''' {{Color|0.7|0.7|0.7}}, {{Color|0.5|0.5|0.5}}, {{Color|0.6|0.6|0.6}}, {{Color|104|120|119}}, {{Color|119|145|121}}, {{Color|106|120|104}}, {{Color|106|120|104}}, {{Color|140|140|119}}, {{Color|99|87|67}}, {{Color|128|116|84}}, {{Color|107|94|64}}, {{Color|77|66|45}}
+| -
+| '''Budget''': 50~800<br />8% chance to have one of the following: {{Gear List|budget=800|TechHediffsTags|Poor|Simple}}
+| -
+| '''Age Range:''' Up to 65<br />'''Min Title:''' [[Titles#Freeholder|Freeholder]]<br />'''Backstories:''' Imperial Common [[Backstories/ImperialCommon Child|Child]] and [[Backstories/ImperialCommon Adult|Adult]], Imperial Fighter [[Backstories/ImperialFighter Child|Child]] and [[Backstories/ImperialFighter Adult|Adult]], Cryptosleep (8% Commonality); Not Fighter<br />'''Disallowed Traits:''' [[Nudist]]<br />'''Xenotypes:''' 20% {{Icon Small|Neanderthal|24}}, 10% {{Icon Small|Hussar|24}}, 10% {{Icon Small|Genie|24}}<br />'''Initial Will Range''': 1~3<br />'''Initial Resistance Range''': 10~17
+|- id="Imperial trader"
+! Imperial trader<br>[[File:Imperial common trader.png]] 
+| 40 || '''Avg. Quality:''' Normal
+| '''Budget''': 1250~2500<br />'''Required:''' {{Icon Small|Cloth|24}}{{#ask:[[Tags::RoyalTier2]][[Coverage::~*Head*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,<br />}}, {{Icon Small|Cloth|24}} Torso, {{Icon Small|Cloth|24}} Legs<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic||IndustrialAdvanced||IndustrialMilitaryBasic||IndustrialMilitaryAdvanced]][[Lifestage::~*Adult*]][[Name::!~*hat*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,<br />}}; '''Disallowed:''' {{Gear List|Tags|Western}}<br />'''Colors:''' {{Color|0.7|0.7|0.7}}, {{Color|0.5|0.5|0.5}}, {{Color|0.6|0.6|0.6}}, {{Color|104|120|119}}, {{Color|119|145|121}}, {{Color|106|120|104}}, {{Color|106|120|104}}, {{Color|140|140|119}}, {{Color|99|87|67}}, {{Color|128|116|84}}, {{Color|107|94|64}}, {{Color|77|66|45}}
+| '''Budget''': 1100~3500<br />{{Gear List|budget=3500|WeaponTags|SimpleGun}}
+| '''Budget''': 1000~1800<br />15% chance to have one of the following: {{Gear List|budget=1800|TechHediffsTags|Advanced|ImplantEmpireCommon}}
+| 2.55 '''Nutrition'''<br />15% {{Icon Small|Go juice|24}} [[Go juice]] or {{Icon Small|Yayo|24}} [[Yayo]], 30% 30~100x {{Icon Small|Silver|24}}
+| '''Age Range:''' Up to 65<br />'''Backstories:''' Cryptosleep (8% Commonality)<br />'''Min Title:''' [[Titles#Freeholder|Freeholder]]; Trader; Not Fighter<br />'''Xenotypes:''' 5% {{Icon Small|Highmate}}<br />'''Chemical Addiction Chance''': 10%<br />'''Initial Will Range''': 3~5<br />'''Initial Resistance Range''': 16~25
+|- id="Imperial laborer"
+! Imperial laborer<br>[[File:Imperial common laborer.png]] 
+| 30 || '''HP:''' 100%<br />'''Avg. Quality:''' Always Normal
+| '''Budget''': 200~1000<br />0% Headgear; '''Required:''' {{Icon Small|Cloth|24}} UpperHead, {{Icon Small|Cloth|24}} Torso, {{Icon Small|Cloth|24}} Legs<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic]][[Lifestage::~*Adult*]][[Name::!~*hat*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,<br />}}; '''Disallowed:''' {{Gear List|Tags|Western}}<br />'''Style Item Tags:''' Soldier, Weight 1, Factor 1<br />'''Colors:''' {{Color|0.7|0.7|0.7}}, {{Color|0.5|0.5|0.5}}, {{Color|0.6|0.6|0.6}}, {{Color|104|120|119}}, {{Color|119|145|121}}, {{Color|106|120|104}}, {{Color|106|120|104}}, {{Color|140|140|119}}, {{Color|99|87|67}}, {{Color|128|116|84}}, {{Color|107|94|64}}, {{Color|77|66|45}}
+| -
+| '''Budget''': 50~800<br />8% chance to have one of the following: {{Gear List|budget=800|TechHediffsTags|Poor|Simple}}
+| -
+| '''Age Range:''' Up to 50<br />'''Backstories:''' Cryptosleep (8% Commonality), Imperial Common [[Backstories/ImperialCommon Child|Child]] and [[Backstories/ImperialCommon Adult|Adult]]<br />'''Not Fighter'''<br />'''Required Work Tags:''' Manual Dumb, Manual Skilled, Cleaning, Hauling, Firefighting<br />'''Disallowed Traits:''' [[Nudist]]<br />'''Override Faction Xenotypes:''' 75% {{Icon Small|Neanderthal|24}}, 3% {{Icon Small|Hussar|24}}, 3% {{Icon Small|Genie|24}}<br />'''Initial Will Range''': 1~3<br />'''Initial Resistance Range''': 6~10
+<!--===================== Imperial fighters =========================-->
+<!--
+|-
+! Imperial fighter base
+| [[File:.png]] || CP || '''HP:''' <br />'''Avg. Quality:''' Normal
+|'''Budget''': 1250~2500<br />50% Headgear; '''Required:''' {{Icon Small|Cloth|24}} Torso|OnSkin, {{Icon Small|Cloth|24}}{{Icon Small|Pants|24}}<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic||IndustrialAdvanced||IndustrialMilitaryBasic||IndustrialMilitaryAdvanced]][[Lifestage::~*Adult*]][[Name::!~*hat*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,<br />}}; '''Disallowed:''' {{Gear List|Tags|Western}}<br />'''Style Item Tags:''' Soldier, Weight 1, Factor 1
+| '''Budget''': 1100~2500<br />'''Biocoded:''' 15%<br />{{Gear List|WeaponTags}}
+| '''Budget''': 1000~1500<br />'''Required:''' {{Icon Small|Death acidifier}} [[Death acidifier]]; 30% chance to have one of the following: {{#ask:[[TechHediffsTags::]] [[Market Value Base::<1500]]|format=template|template=Gear List/Items|link=none|default=-|limit=10|sort=TechHediffsTags,From DLC|sep=,<br />}}
+| 2.55 '''Nutrition'''<br />15% 0~2x {{Icon Small|Go juice|24}} [[Go juice]] or {{Icon Small|Yayo|24}} [[Yayo]]
+| '''Age Range:''' Up to 55<br />'''Backstories:''' Cryptosleep (8% Commonality), Imperial Fighter [[Backstories/ImperialFighter Child|Child]] and [[Backstories/ImperialFighter Adult|Adult]]<br />'''Min Title:''' [[Titles#Freeholder|Freeholder]]<br />'''Disallowed Traits:''' [[Body purist]]<br />'''Chemical Addiction Chance''': 10%<br />'''Initial Will Range''': <br />'''Initial Resistance Range''': 
+-->
+<!-- Trooper -->
+<!--
+|-
+! Imperial trooper base
+| [[File:.png]] || 65 || '''HP:''' <br />'''Avg. Quality:''' Normal
+|'''Budget''': 5000~8000<br />50% Headgear; '''Required:''' {{Icon Small|Flak jacket|24}}, {{Icon Small|Flak vest|24}}, {{Icon Small|Flak pants|24}}, {{Icon Small|Cloth|24}} Torso|OnSkin, {{Icon Small|Cloth|24}}{{Icon Small|Pants|24}}<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic||IndustrialAdvanced||IndustrialMilitaryBasic||IndustrialMilitaryAdvanced]][[Lifestage::~*Adult*]][[Name::!~*hat*]][[Layer::!~*Outer*]][[Layer::!~*Middle*]][[Coverage::!~*Left Leg*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,<br />}}; '''Disallowed:''' {{Gear List|Tags|Western}}<br />'''Style Item Tags:''' Soldier, Weight 1, Factor 1
+| '''Budget''': 1100~2500<br />'''Biocoded:''' 15%<br />{{#ask:[[WeaponTags::IndustrialGunAdvanced]]|format=template|template=Gear List/Items|link=none|default=-|limit=10|sort=WeaponTags,From DLC|sep=,<br />}}
+| '''Budget''': 1000~1500<br />'''Required:''' {{Icon Small|Death acidifier}} [[Death acidifier]]; 30% chance to have one of the following: {{#ask:[[TechHediffsTags::]] [[Market Value Base::<1500]]|format=template|template=Gear List/Items|link=none|default=-|limit=10|sort=TechHediffsTags,From DLC|sep=,<br />}}
+| 2.55 '''Nutrition'''<br />15% 0~2x {{Icon Small|Go juice|24}} [[Go juice]] or {{Icon Small|Yayo|24}} [[Yayo]]
+| '''Age Range:''' Up to 55<br />'''Backstories:''' Cryptosleep (8% Commonality), Imperial Fighter [[Backstories/ImperialFighter Child|Child]] and [[Backstories/ImperialFighter Adult|Adult]]<br />'''Min Title:''' [[Titles#Freeholder|Freeholder]]<br />'''Disallowed Traits:''' [[Body purist]]<br />'''Chemical Addiction Chance''': 10%<br />'''Initial Will Range:''' 2~4<br />'''Initial Resistance Range''': 
+-->
+|- id="Trooper"
+! Trooper<br>[[File:Imperial fighter trooper.png]] 
+| 65 || '''Avg. Quality:''' Normal
+|'''Budget''': 5000~8000<br />50% Headgear, 25% {{Icon Small|Gunlink|24}}; '''Required:''' {{Icon Small|Flak jacket|24}}, {{Icon Small|Flak vest|24}}, {{Icon Small|Flak pants|24}}, {{Icon Small|Cloth|24}} Torso|OnSkin<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic||IndustrialAdvanced||IndustrialMilitaryBasic||IndustrialMilitaryAdvanced]][[Lifestage::~*Adult*]][[Name::!~*hat*]][[Layer::!~*Outer*]][[Layer::!~*Middle*]][[Coverage::!~*Left Leg*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,<br />}}; '''Disallowed:''' {{Gear List|Tags|Western}}<br />'''Style Item Tags:''' Soldier, Weight 1, Factor 1<br />'''Colors:''' {{Color|130|130|130}}
+| '''Budget''': 1100~2500<br />'''Biocoded:''' 15%<br />{{#ask:[[WeaponTags::IndustrialGunAdvanced]]|format=template|template=Gear List/Items|link=none|default=-|limit=10|sort=WeaponTags,From DLC|sep=,<br />}}
+| '''Budget''': 1000~1500<br />'''Required:''' {{Icon Small|Death acidifier}} [[Death acidifier]]; 30% chance to have one of the following: {{Gear List|budget=1500|TechHediffsTags|ImplantEmpireCommon}}
+| 2.55 '''Nutrition'''<br />15% 0~2x {{Icon Small|Go juice|24}} [[Go juice]] or {{Icon Small|Yayo|24}} [[Yayo]]
+| '''Age Range:''' Up to 55<br />'''Backstories:''' Cryptosleep (8% Commonality), Imperial Fighter [[Backstories/ImperialFighter Child|Child]] and [[Backstories/ImperialFighter Adult|Adult]]<br />'''Min Title:''' [[Titles#Freeholder|Freeholder]]<br />'''Disallowed Traits:''' [[Body purist]], [[Brawler]]; '''Forced Skills:''' 4~10 [[Shooting]]<br />'''Override Faction Xenotypes:''' 25% {{Icon Small|Hussar|24}}, 3% {{Icon Small|Neanderthal|24}}, 3% {{Icon Small|Genie|24}}<br />'''Chemical Addiction Chance''': 10%<br />'''Initial Will Range:''' 2~4<br />'''Initial Resistance Range''': 15~24
+<!-- Imperial Grenadier -->
+|- id="Imperial grenadier"
+! Imperial grenadier<br>[[File:Imperial fighter grenadier.png]] 
+| 100 || '''Avg. Quality:''' Normal
+| '''Budget''': 6000~9000<br />50% Headgear; '''Required:''' {{Icon Small|Marine helmet|24}}, {{Icon Small|Marine armor|24}}, {{Icon Small|Cloth|24}} Torso|OnSkin, {{Icon Small|Cloth|24}}{{Icon Small|Pants|24}}<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic||IndustrialAdvanced||IndustrialMilitaryBasic||IndustrialMilitaryAdvanced]][[Lifestage::~*Adult*]][[Layer::!~*Outer*]][[Layer::!~*Middle*]][[Name::!~*hat*]][[Coverage::!~*Left Leg*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,<br />}}; '''Disallowed:''' {{Gear List|Tags|Western}}<br />'''Style Item Tags:''' Soldier, Weight 1, Factor 1<br />'''Colors:''' {{Color|142|159|123}}
+| '''Budget''': 1100~2500<br />'''Biocoded:''' 15%<br />{{#ask:[[WeaponTags::EmpireGrenadeDestructive]]|format=template|template=Gear List/Items|link=none|default=-|limit=10|sort=WeaponTags,From DLC|sep=,<br />}}
+| '''Budget''': 1000~1500<br />'''Required:''' {{Icon Small|Death acidifier}} [[Death acidifier]]; 30% chance to have one of the following: {{Gear List|budget=1500|TechHediffsTags|ImplantEmpireCommon}}
+| 2.55 '''Nutrition'''<br />15% 0~2x {{Icon Small|Go juice|24}} [[Go juice]] or {{Icon Small|Yayo|24}} [[Yayo]]
+| '''Age Range:''' Up to 55<br />'''Backstories:''' Cryptosleep (8% Commonality), Imperial Fighter [[Backstories/ImperialFighter Child|Child]] and [[Backstories/ImperialFighter Adult|Adult]]<br />'''Min Title:''' [[Titles#Freeholder|Freeholder]]<br />'''Disallowed Traits:''' [[Body purist]], [[Brawler]]; '''canBeSapper'''; '''isGoodBreacher'''; '''Forced Skills:''' 4~10 [[Shooting]]<br />'''Xenotypes:''' 40% {{Icon Small|Hussar|24}}, 3% {{Icon Small|Neanderthal|24}}, 3% {{Icon Small|Genie|24}}<br />'''Chemical Addiction Chance''': 10%<br />'''Initial Will Range''': 2~4<br />'''Initial Resistance Range''': 13~21
+<!-- Janissary -->
+<!--
+|-
+! Janissary base
+| [[File:.png]] || 100 || '''HP (%): HP%''' <br />'''Avg. Quality:''' Normal
+| Apparel: '''Budget''': 6000~9000<br />{{#ask:[[Tags::IndustrialBasic||IndustrialAdvanced||IndustrialMilitaryBasic||IndustrialMilitaryAdvanced]][[Lifestage::~*Adult*]][[Name::!~*hat*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,<br />}}
+| 
+| 50% Headgear; '''Required:''' {{Icon Small|Recon helmet|24}}, {{Icon Small|Recon armor|24}}, {{Icon Small|Cloth|24}} Torso|OnSkin, {{Icon Small|Cloth|24}}{{Icon Small|Pants|24}}; '''Disallowed:''' {{Gear List|Tags|Western}}<br />'''Style Item Tags:''' Soldier, Weight 1, Factor 1
+| Weapons: '''Budget''': 1550~2700<br />'''Biocoded:''' 15%<br />{{#ask:[[WeaponTags::IndustrialGunAdvanced||SpacerGun||SniperRifle]]|format=template|template=Gear List/Items|link=none|default=-|limit=10|sort=WeaponTags,From DLC|sep=,<br />}}
+| '''Budget''': 1000~1500<br />'''Required:''' {{Icon Small|Death acidifier}} [[Death acidifier]]<br />30% chance to have one of the following: {{#ask:[[TechHediffsTags::]] [[Market Value Base::<1500]]|format=template|template=Gear List/Items|link=none|default=-|limit=10|sort=TechHediffsTags,From DLC|sep=,<br />}}
+| 2.55 Nutrition; 15% 0~2x {{Icon Small|Go juice|24}} [[Go juice]] or {{Icon Small|Yayo|24}} [[Yayo]]
+| '''Age Range:''' Up to 55<br />'''Backstories:''' Cryptosleep (8% Commonality), Imperial Fighter [[Backstories/ImperialFighter Child|Child]] and [[Backstories/ImperialFighter Adult|Adult]]<br />'''Min Title:''' [[Titles#Freeholder|Freeholder]]<br />'''Disallowed Traits:''' [[Body purist]], [[Brawler]]<br />'''Chemical Addiction Chance''': 10%<br />'''Initial Will Range''': IWR<br />'''Initial Resistance Range''': IRR
+-->
+|- id="Janissary"
+! Janissary<br>[[File:Imperial fighter janissary.png]] 
+| 100 || '''Avg. Quality:''' Normal
+| '''Budget''': 6000~9000<br />50% Headgear, 25% {{Icon Small|Gunlink|24}}; '''Required:''' {{Icon Small|Recon helmet|24}}, {{Icon Small|Recon armor|24}}, {{Icon Small|Cloth|24}} Torso|OnSkin, {{Icon Small|Cloth|24}}{{Icon Small|Pants|24}}<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic||IndustrialAdvanced||IndustrialMilitaryBasic||IndustrialMilitaryAdvanced]][[Lifestage::~*Adult*]][[Name::!~*hat*]][[Layer::!~*Outer*]][[Layer::!~*Middle*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,<br />}}; '''Disallowed:''' {{Gear List|Tags|Western}}<br />'''Style Item Tags:''' Soldier, Weight 1, Factor 1<br />'''Colors:''' {{Color|75|75|75}}
+| '''Budget''': 1550~2700<br />'''Biocoded:''' 15%<br />{{#ask:[[WeaponTags::IndustrialGunAdvanced||SpacerGun||SniperRifle]]|format=template|template=Gear List/Items|link=none|default=-|limit=10|sort=WeaponTags,From DLC|sep=,<br />}}
+| '''Budget''': 1000~1500<br />'''Required:''' {{Icon Small|Death acidifier}} [[Death acidifier]]; 30% chance to have one of the following: {{Gear List|budget=1500|TechHediffsTags|ImplantEmpireCommon}}
+| 2.55 Nutrition; 15% 0~2x {{Icon Small|Go juice|24}} [[Go juice]] or {{Icon Small|Yayo|24}} [[Yayo]]
+| '''Age Range:''' Up to 55<br />'''Backstories:''' Cryptosleep (8% Commonality), Imperial Fighter [[Backstories/ImperialFighter Child|Child]] and [[Backstories/ImperialFighter Adult|Adult]]<br />'''Min Title:''' [[Titles#Freeholder|Freeholder]]<br />'''Disallowed Traits:''' [[Body purist]], [[Brawler]]; '''Forced Skills:''' 6~10 [[Shooting]]<br />'''Override Faction Xenotypes:''' 40% {{Icon Small|Hussar|24}}, 3% {{Icon Small|Neanderthal|24}}, 3% {{Icon Small|Genie|24}}<br />'''Chemical Addiction Chance''': 10%<br />'''Initial Will Range''': 3~5<br />'''Initial Resistance Range''': 13~21
+<!-- Champion -->
+|- id="Champion"
+! Champion<br>[[File:Imperial fighter champion.png]] 
+| 100 || '''Avg. Quality:''' Normal
+| '''Budget''': 1250~2500<br />50% Headgear; '''Required:''' {{Icon Small|Plate armor|24}}, {{Icon Small|Shield belt|24}}, {{Icon Small|Cloth|24}} Torso|OnSkin, {{Icon Small|Cloth|24}}{{Icon Small|Pants|24}}<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic||IndustrialAdvanced||IndustrialMilitaryBasic||IndustrialMilitaryAdvanced]][[Lifestage::~*Adult*]][[Name::!~*hat*]][[Layer::!~*Outer*]][[Layer::!~*Middle*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,<br />}}; '''Disallowed:''' {{Gear List|Tags|Western}}<br />'''Style Item Tags:''' Soldier, Weight 1, Factor 1<br />'''Colors:''' {{Color|250|250|250}}
+| '''Budget''': 1100~2500<br />'''Biocoded:''' 15%<br />{{#ask:[[WeaponTags::MedievalMeleeDecent||MedievalMeleeAdvanced||UltratechMelee]]|format=template|template=Gear List/Items|link=none|default=-|limit=10|sort=WeaponTags,From DLC|sep=,<br />}}
+| '''Budget''': 1000~1500<br />'''Required:''' {{Icon Small|Death acidifier}} [[Death acidifier]]; 30% chance to have one of the following: {{Gear List|budget=1500|TechHediffsTags|Advanced|ImplantEmpireCommon}}
+| 2.55 '''Nutrition'''<br />15% 0~2x {{Icon Small|Go juice|24}} [[Go juice]] or {{Icon Small|Yayo|24}} [[Yayo]]
+| '''Age Range:''' Up to 40<br />'''Backstories:''' Cryptosleep (8% Commonality), Imperial Fighter [[Backstories/ImperialFighter Child|Child]] and [[Backstories/ImperialFighter Adult|Adult]]<br />'''Min Title:''' [[Titles#Freeholder|Freeholder]]<br />'''Disallowed Traits:''' [[Body purist]]; '''Forced Skills:''' 8~13 [[Melee]]<br />'''Override Faction Xenotypes:''' 40% {{Icon Small|Hussar|24}}, 3% {{Icon Small|Neanderthal|24}}, 3% {{Icon Small|Genie|24}}<br />'''Chemical Addiction Chance''': 10%<br />'''Initial Will Range''': 3~5<br />'''Initial Resistance Range''': 12~20
+<!-- Cataphract -->
+<!--
+|-
+! Cataphract base
+| [[File:.png]] || CP || '''HP:''' <br />'''Avg. Quality:''' Excellent
+| '''Budget''': 7000~10000<br />50% Headgear; '''Required:''' {{Icon Small|Cloth|24}} Torso|OnSkin, {{Icon Small|Cloth|24}}{{Icon Small|Pants|24}}<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic||IndustrialAdvanced||IndustrialMilitaryBasic||IndustrialMilitaryAdvanced]][[Lifestage::~*Adult*]][[Name::!~*hat*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,<br />}}; '''Disallowed:''' {{Gear List|Tags|Western}}<br />'''Style Item Tags:''' Soldier, Weight 1, Factor 1
+| '''Budget''': 1100~2500<br />'''Biocoded:''' 15%<br />
+| '''Budget''': 1000~4000<br />'''Required:''' {{Icon Small|Death acidifier}} [[Death acidifier]]<br />30% chance to have at most 4 of the following: 
+| 2.55 '''Nutrition'''<br />15% 0~2x {{Icon Small|Go juice|24}} [[Go juice]] or {{Icon Small|Yayo|24}} [[Yayo]]
+| '''Age Range:''' Up to 40<br />'''Backstories:''' Cryptosleep (8% Commonality), Imperial Fighter [[Backstories/ImperialFighter Child|Child]] and [[Backstories/ImperialFighter Adult|Adult]]<br />'''Min Title:''' [[Titles#Freeholder|Freeholder]]<br />'''Disallowed Traits:''' [[Body purist]]; '''No Royal Room Requirements'''<br />'''Chemical Addiction Chance''': 10%<br />'''Initial Will Range''': IWR<br />'''Initial Resistance Range''': IRR
+-->
+|- id="Cataphract"
+! Cataphract<br>[[File:Imperial fighter cataphract.png]] 
+| 150 || '''Avg. Quality:''' Normal
+| '''Budget''': 7000~10000<br />50% Headgear, 20% {{Icon Small|Gunlink|24}}; '''Required:''' {{Icon Small|Cataphract helmet|24}}, {{Icon Small|Cataphract armor|24}}, {{Icon Small|Synthread|24}} Torso|OnSkin, {{Icon Small|Synthread|24}} Legs|OnSkin<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic||IndustrialAdvanced||IndustrialMilitaryBasic||IndustrialMilitaryAdvanced]][[Lifestage::~*Adult*]][[Name::!~*hat*]][[Layer::!~*Outer*]][[Layer::!~*Middle*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,<br />}}; '''Disallowed:''' {{Gear List|Tags|Western}}<br />'''Style Item Tags:''' Soldier, Weight 1, Factor 1<br />'''Colors:''' {{Color|250|250|250}}
+| '''Budget''': 1100~2500<br />'''Biocoded:''' 15%<br />{{#ask:[[WeaponTags::GunHeavy||SpacerGun]]|format=template|template=Gear List/Items|link=none|default=-|limit=10|sort=WeaponTags,From DLC|sep=,<br />}}
+| '''Budget''': 1000~4000<br />'''Required:''' {{Icon Small|Death acidifier}} [[Death acidifier]], {{Icon Small|Armorskin gland}} [[Armorskin gland]]<br />30% chance to have at most 4 of the following: {{Gear List|budget=4000|TechHediffsTags|Advanced|ImplantEmpireCommon}}
+| 2.55 '''Nutrition'''<br />15% 0~2x {{Icon Small|Go juice|24}} [[Go juice]] or {{Icon Small|Yayo|24}} [[Yayo]]
+| '''Age Range:''' Up to 40<br />'''Backstories:''' Cryptosleep (8% Commonality), Imperial Fighter [[Backstories/ImperialFighter Child|Child]] and [[Backstories/ImperialFighter Adult|Adult]]<br />'''Min Title:''' [[Titles#Freeholder|Freeholder]]<br />'''Disallowed Traits:''' [[Body purist]], [[Brawler]]; '''No Royal Room Requirements'''<br />'''10% chance of Title:''' [[Titles#Freeholder|Freeholder]] or [[Titles#Yeoman|Yeoman]]; '''Forced Skills:''' 8~12 [[Shooting]]<br />'''Override Faction Xenotypes:''' 40% {{Icon Small|Hussar|24}}, 3% {{Icon Small|Neanderthal|24}}, 3% {{Icon Small|Genie|24}}<br />'''Chemical Addiction Chance''': 10%<br />'''Initial Will Range''': 4~6<br />'''Initial Resistance Range''': 17~26
+<!-- Stellic Guard -->
+<!--
+|-
+! Stellic guard base
+| [[File:.png]] || 150 || '''HP:''' <br />'''Avg. Quality:''' Excellent
+| '''Budget''': 7000~10000<br />50% Headgear; '''Required:''' {{Color|68|68|68}}{{Icon Small|Prestige cataphract helmet|24}}, {{Icon Small|Prestige cataphract armor|24}}, {{Icon Small|Hyperweave|24}} Torso|OnSkin, {{Icon Small|Hyperweave|24}}{{Icon Small|Pants|24}}<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic||IndustrialAdvanced||IndustrialMilitaryBasic||IndustrialMilitaryAdvanced]][[Lifestage::~*Adult*]][[Name::!~*hat*]][[Layer::!~*Outer*]][[Layer::!~*Middle*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,<br />}}; '''Disallowed:''' {{Gear List|Tags|Western}}<br />'''Style Item Tags:''' Soldier, Weight 1, Factor 1<br />'''Colors:''' {{Color|150|50|50}}
+| '''Budget''': 3000~3500<br />'''Biocoded:''' 15%<br />
+| '''Budget''': 1000~4000<br />'''Required:''' {{Icon Small|Death acidifier|24}} [[Death acidifier]], 2x {{Icon Small|Bionic eye|24}} [[Bionic eye]]s, {{Icon Small|Stoneskin gland|24}} [[Stoneskin gland]]; '''Disallowed:''' {{Icon Small|Mindscrew}} [[Mindscrew]]; 30% chance to have at most 4 of the following: '''Budget''': <br />% chance to have one of the following: {{Gear List|budget=4000|TechHediffsTags|Advanced|ImplantEmpireCommon|ImplantEmpireRoyal}}
+| 2.55 '''Nutrition'''<br />15% 0~2x {{Icon Small|Go juice|24}} [[Go juice]] or {{Icon Small|Yayo|24}} [[Yayo]]
+| '''Age Range:''' Up to 40<br />'''Backstories:''' Cryptosleep (8% Commonality), Imperial Fighter [[Backstories/ImperialFighter Child|Child]] and [[Backstories/ImperialFighter Adult|Adult]]<br />'''Min Title:''' [[Titles#Freeholder|Freeholder]]<br />'''Disallowed Traits:''' [[Body purist]], [[Nudist]], [[Wimp]]; '''No Royal Room Requirements'''<br />'''Title:''' <br />'''Override Faction Xenotypes:''' 75% {{Icon Small|Hussar|24}}, 3% {{Icon Small|Neanderthal|24}}, 3% {{Icon Small|Genie|24}}<br />'''Chemical Addiction Chance''': 3%<br />'''Initial Will Range''': 5~7<br />'''Initial Resistance Range''': IRR
+-->
+|- id="Stellic defender"
+! Stellic defender<br>[[File:Imperial fighter stellic guard ranged.png]] 
+| 150 || '''Avg. Quality:''' Excellent
+| '''Budget''': 7000~10000<br />50% Headgear; '''Required:''' {{Color|68|68|68}}{{Icon Small|Prestige cataphract helmet|24}}, {{Icon Small|Prestige cataphract armor|24}}, {{Icon Small|Hyperweave|24}} Torso|OnSkin, {{Icon Small|Hyperweave|24}}{{Icon Small|Pants|24}}<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic||IndustrialAdvanced||IndustrialMilitaryBasic||IndustrialMilitaryAdvanced]][[Lifestage::~*Adult*]][[Name::!~*hat*]][[Layer::!~*Outer*]][[Layer::!~*Middle*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,<br />}}; '''Disallowed:''' {{Gear List|Tags|Western}}<br />'''Style Item Tags:''' Soldier, Weight 1, Factor 1<br />'''Colors:''' {{Color|150|50|50}}
+| '''Budget''': 3000~3500<br />'''Biocoded:''' 15%<br />{{Gear List|budget=3500|WeaponTags|SpacerGun}}
+| '''Budget''': 1000~4000<br />'''Required:''' {{Icon Small|Death acidifier|24}} [[Death acidifier]], 2x {{Icon Small|Bionic eye|24}} [[Bionic eye]]s, {{Icon Small|Stoneskin gland|24}} [[Stoneskin gland]]; '''Disallowed:''' {{Icon Small|Mindscrew}} [[Mindscrew]]<br />30% chance to have at most 4 of the following: {{Gear List|budget=4000|TechHediffsTags|Advanced|ImplantEmpireCommon|ImplantEmpireRoyal}}
+| 2.55 '''Nutrition'''<br />15% 0~2x {{Icon Small|Go juice|24}} [[Go juice]] or {{Icon Small|Yayo|24}} [[Yayo]]
+| '''Age Range:''' Up to 40<br />'''Backstories:''' Cryptosleep (8% Commonality), Imperial Fighter [[Backstories/ImperialFighter Child|Child]] and [[Backstories/ImperialFighter Adult|Adult]]<br />'''Min Title:''' [[Titles#Freeholder|Freeholder]]<br />'''Disallowed Traits:''' [[Body purist]], [[Brawler]], [[Nudist]], [[Wimp]]; '''No Royal Room Requirements'''<br />'''Title:''' [[Titles#Freeholder|Freeholder]], [[Titles#Yeoman|Yeoman]], [[Titles#Acolyte|Acolyte]], or [[Titles#Knight|Knight / Dame]]<br />'''Override Faction Xenotypes:''' 75% {{Icon Small|Hussar|24}}, 3% {{Icon Small|Neanderthal|24}}, 3% {{Icon Small|Genie|24}}; '''Forced Skills:''' 11~16 [[Shooting]]<br />'''Chemical Addiction Chance''': 3%<br />'''Initial Will Range''': 5~7<br />'''Initial Resistance Range''': 14~22
+|- id="Stellic warden"
+! Stellic warden<br>[[File:Imperial fighter stellic guard melee.png]] 
+| 150 || '''Avg. Quality:''' Excellent
+| '''Budget''': 7000~10000<br />50% Headgear; '''Required:''' {{Color|68|68|68}}{{Icon Small|Prestige cataphract helmet|24}}, {{Icon Small|Prestige cataphract armor|24}}, {{Icon Small|Shield belt|24}}, {{Icon Small|Hyperweave|24}} Torso|OnSkin, {{Icon Small|Hyperweave|24}}{{Icon Small|Pants|24}}<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic||IndustrialAdvanced||IndustrialMilitaryBasic||IndustrialMilitaryAdvanced]][[Lifestage::~*Adult*]][[Name::!~*hat*]][[Layer::!~*Outer*]][[Layer::!~*Middle*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,<br />}}; '''Disallowed:''' {{Gear List|Tags|Western}}<br />'''Style Item Tags:''' Soldier, Weight 1, Factor 1<br />'''Colors:''' {{Color|150|50|50}}
+| '''Budget''': 3000~3500<br />'''Biocoded:''' 15%<br />{{#ask:[[WeaponTags::Bladelink]]|format=template|template=Gear List/Items|link=none|default=-|limit=10|sort=WeaponTags,From DLC|sep=,<br />}}
+| '''Budget''': 1000~4000<br />'''Required:''' {{Icon Small|Death acidifier|24}} [[Death acidifier]], 2x {{Icon Small|Bionic eye|24}} [[Bionic eye]]s, {{Icon Small|Stoneskin gland|24}} [[Stoneskin gland]]; '''Disallowed:''' {{Icon Small|Mindscrew}} [[Mindscrew]]; 30% chance to have at most 4 of the following: {{Gear List|budget=4000|TechHediffsTags|Advanced|ImplantEmpireCommon|ImplantEmpireRoyal}}
+| 2.55 '''Nutrition'''<br />15% 0~2x {{Icon Small|Go juice|24}} [[Go juice]] or {{Icon Small|Yayo|24}} [[Yayo]]
+| '''Age Range:''' Up to 40<br />'''Backstories:''' Cryptosleep (8% Commonality), Imperial Fighter [[Backstories/ImperialFighter Child|Child]] and [[Backstories/ImperialFighter Adult|Adult]]<br />'''Min Title:''' [[Titles#Freeholder|Freeholder]]<br />'''Disallowed Traits:''' [[Body purist]], [[Nudist]], [[Wimp]]; '''No Royal Room Requirements'''<br />'''Title:''' Knight<br />'''Override Faction Xenotypes:''' 75% {{Icon Small|Hussar|24}}, 3% {{Icon Small|Neanderthal|24}}, 3% {{Icon Small|Genie|24}}; '''Forced Skills:''' 11~16 [[Melee]]<br />'''Chemical Addiction Chance''': 3%<br />'''Initial Will Range''': 5~7<br />'''Initial Resistance Range''': 19~30
+<!-- Royals -->
+<!-- Royal Base -->
+<!--
+|-
+! Royal Base
+| [[File:.png]] || 130 || '''HP:''' <br />'''Avg. Quality:''' Excellent
+| '''Budget''': 1000~1500<br />50% Headgear; 8% {{#ask:[[Tags::Psychic]][[Coverage::~*Torso*]]|format=template|template=Gear List/Items|link=none|default=-|limit=10|sort=Tags,From DLC|sep=,<br />}}<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic]][[Lifestage::~*Adult*]][[Name::!~*hat*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,<br />}}; '''Disallowed:''' {{Gear List|Tags|Western}}<br />'''Style Item Tags:''' Royalty, Weight 1, Factor 1; '''Ignore Seasons'''
+| '''Budget''': 2600~3100<br />% Biocoded: {{Gear List|budget=3100|TechHediffsTags|UltratechMelee|Bladelink}}
+| 15%
+| '''Budget''': 500~1500<br />{{Tag List|value=1500|techHediffsTags|Advanced|ImplantEmpireRoyal|ImplantEmpireCommon}}; '''Disallowed:''' {{Icon Small|Mindscrew}} [[Mindscrew]]
+| 5%
+| I
+| IWR
+| IRR
+| '''Age Range:''' Up to 80<br />'''Backstories:''' Cryptosleep (8% Commonality), Imperial Royal [[Backstories/ImperialRoyal Child|Child]] and [[Backstories/ImperialRoyal Adult|Adult]]<br />'''Title:''' <br />'''Disallowed Traits:''' [[Body purist]], [[Nudist]]<br />'''Chemical Addiction Chance''': <br />'''Initial Will Range''': <br />'''Initial Resistance Range''': 
+-->
+|- id="Noble wimp"
+! Noble (wimp)<br>[[File:Imperial royal noble wimp.png]] 
+| 40 || '''Avg. Quality:''' Excellent
+| '''Budget''': 1000~1500<br />50% Headgear; '''Required:''' {{Icon Small|Steel|24}}{{Icon Small|Crown|24}}, {{Icon Small|Formal vest|24}} (M) or {{Icon Small|Corset|24}} (F), {{Icon Small|Formal shirt|24}}, {{Icon Small|Prestige robe|24}}, {{Icon Small|Synthread|24}} Torso, {{Icon Small|Synthread|24}}{{Icon Small|Pants|24}}; 8% {{#ask:[[Tags::Psychic]][[Coverage::~*Torso*]]|format=template|template=Gear List/Items|link=none|default=-|limit=10|sort=Tags,From DLC|sep=,<br />}}, 50% {{Icon Small|Cape|24}}<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic]][[Lifestage::~*Adult*]][[Layer::!~*Headgear*]][[Layer::!~*Outer*]][[Coverage::!~*Left Leg*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,<br />}}; '''Disallowed:''' {{Gear List|Tags|Western}}<br />'''Style Item Tags:''' Royalty, Weight 1, Factor 1; '''Ignore Seasons'''
+| '''Budget''': 2600~3100
+| '''Budget''': 0<br />15% chance to have one of the following: {{Tag List|value=0|techHediffsTags|Advanced|ImplantEmpireRoyal|ImplantEmpireCommon}}; '''Disallowed:''' {{Icon Small|Mindscrew}} [[Mindscrew]]
+| -
+| '''Age Range:''' Up to 80<br />'''Backstories:''' Cryptosleep (8% Commonality), Imperial Royal [[Backstories/ImperialRoyal Child|Child]] and [[Backstories/ImperialRoyal Adult|Adult]]<br />'''Title:''' [[Titles#Knight|Knight / Dame]] or [[Titles#Praetor|Praetor]]<br />'''Disallowed Traits:''' [[Body purist]], [[Nudist]], [[Tough]]; No Royal Room or Apparel Requirements<br />'''Pregnancy Chance:''' 0%<br />'''Override Faction Xenotypes:''' 5% {{Icon Small|Neanderthal|24}}, 5% {{Icon Small|Hussar|24}}, 5% {{Icon Small|Genie|24}}<br />'''Chemical Addiction Chance''': 5%<br />'''Initial Will Range''': 5~7<br />'''Initial Resistance Range''': 26~40
+|- id="Yeoman"
+! Yeoman<br>[[File:Imperial royal yeoman.png]]
+| 120 || '''Avg. Quality:''' Excellent
+| '''Budget''': 1000~1500<br />50% Headgear; 8% {{#ask:[[Tags::Psychic]][[Coverage::~*Torso*]]|format=template|template=Gear List/Items|link=none|default=-|limit=10|sort=Tags,From DLC|sep=,<br />}}, 30% {{Icon Small|Cape|24}}<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic]][[Lifestage::~*Adult*]][[Name::!~*hat*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,<br />}}; '''Disallowed:''' {{Gear List|Tags|Western}}<br />'''Style Item Tags:''' Royalty, Weight 1, Factor 1; '''Ignore Seasons'''<br />'''Colors:''' {{Color|0.7|0.7|0.7}}, {{Color|0.5|0.5|0.5}}, {{Color|0.6|0.6|0.6}}, {{Color|104|120|119}}, {{Color|119|145|121}}, {{Color|106|120|104}}, {{Color|106|120|104}}, {{Color|140|140|119}}, {{Color|99|87|67}}, {{Color|128|116|84}}, {{Color|107|94|64}}, {{Color|77|66|45}}
+| '''Budget''': 2600~3100<br />{{Gear List|budget=3100|TechHediffsTags|UltratechMelee|Bladelink}}
+| '''Budget''': 0~500<br />15% chance to have one of the following: {{Gear List|budget=500|TechHediffsTags|Advanced|ImplantEmpireRoyal|ImplantEmpireCommon}}; '''Disallowed:''' {{Icon Small|Mindscrew}} [[Mindscrew]]
+| -
+| '''Age Range:''' Up to 80<br />'''Backstories:''' Cryptosleep (8% Commonality), Imperial Royal [[Backstories/ImperialRoyal Child|Child]] and [[Backstories/ImperialRoyal Adult|Adult]]<br />'''Title:''' [[Titles#Yeoman|Yeoman]]<br />'''Disallowed Traits:''' [[Body purist]], [[Nudist]]<br />'''Override Faction Xenotypes:''' 5% {{Icon Small|Neanderthal|24}}, 5% {{Icon Small|Hussar|24}}, 5% {{Icon Small|Genie|24}}<br />'''Chemical Addiction Chance''': 5%<br />'''Initial Will Range''': 8~11<br />'''Initial Resistance Range''': 38~58
+<!-- Royal Lower Base -->
+<!--
+|-
+! Royal Lower Base
+| [[File:.png]] || 130 || '''Avg. Quality:''' Excellent
+| '''Budget''': 1000~1500<br />50% Headgear; '''Required:''' {{Icon Small|Synthread|24}} UpperHead, {{Icon Small|Synthread|24}} Torso, {{Icon Small|Synthread|24}}{{Icon Small|Pants|24}}; 8% {{#ask:[[Tags::Psychic]][[Coverage::~*Torso*]]|format=template|template=Gear List/Items|link=none|default=-|limit=10|sort=Tags,From DLC|sep=,<br />}}<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic]][[Lifestage::~*Adult*]][[Name::!~*hat*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,<br />}}; '''Disallowed:''' {{Gear List|Tags|Western}}<br />'''Style Item Tags:''' Royalty, Weight 1, Factor 1; '''Ignore Seasons'''
+| '''Budget''': 2600~3100<br />{{Gear List|budget=3100|TechHediffsTags|UltratechMelee|Bladelink}} 
+| '''Budget''': 500~1500<br />15% chance to have one of the following: {{Gear List|budget=1500|TechHediffsTags|Advanced|ImplantEmpireRoyal|ImplantEmpireCommon}}; '''Disallowed:''' {{Icon Small|Mindscrew}} [[Mindscrew]]
+| -
+| '''Age Range:''' Up to 80<br />'''Backstories:''' Cryptosleep (8% Commonality), Imperial Royal [[Backstories/ImperialRoyal Child|Child]] and [[Backstories/ImperialRoyal Adult|Adult]]<br />'''Title:''' <br />'''Disallowed Traits:''' [[Body purist]], [[Nudist]]<br />'''Chemical Addiction Chance''': 5%<br />'''Initial Will Range''': IWR<br />'''Initial Resistance Range''': IRR
+-->
+|- id="Acolyte"
+! Acolyte<br>[[File:Imperial royal acolyte.png]] 
+| 125 || '''Avg. Quality:''' Excellent
+| '''Budget''': 1000~1500<br />50% Headgear; '''Required:''' {{Color|58|58|58}}{{Icon Small|Synthread|24}}{{Icon Small|Beret|24}} or 10% {{#ask:[[Tags::Psychic]][[Layer::Headgear]]|format=template|template=Gear List/Items|link=none|default=-|sort=Tags,From DLC|sep=,<br />}}, {{Icon Small|Formal shirt|24}}, 30% {{Icon Small|Cape|24}}, {{Color|204|180|150}}{{Icon Small|Synthread|24}} Torso, {{Icon Small|Synthread|24}}{{Icon Small|Pants|24}}; 8% {{#ask:[[Tags::Psychic]][[Coverage::~*Torso*]]|format=template|template=Gear List/Items|link=none|default=-|limit=10|sort=Tags,From DLC|sep=,<br />}}<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic]][[Lifestage::~*Adult*]][[Layer::!~*Headgear*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,<br />}}; '''Disallowed:''' {{Gear List|Tags|Western}}<br />'''Style Item Tags:''' Royalty, Weight 1, Factor 1; '''Ignore Seasons'''
+| '''Budget''': 2600~3100<br />{{Gear List|budget=3100|TechHediffsTags|UltratechMelee|Bladelink}}
+| '''Budget''': 300~800<br />15% chance to have one of the following: {{Gear List|budget=800|TechHediffsTags|Advanced|ImplantEmpireRoyal|ImplantEmpireCommon}}; '''Disallowed:''' {{Icon Small|Mindscrew}} [[Mindscrew]]
+| -
+| '''Age Range:''' Up to 80<br />'''Backstories:''' Cryptosleep (8% Commonality), Imperial Royal [[Backstories/ImperialRoyal Child|Child]] and [[Backstories/ImperialRoyal Adult|Adult]]<br />'''Title:''' [[Titles#Acolyte|Acolyte]]<br />'''Disallowed Traits:''' [[Body purist]], [[Nudist]]<br />'''Override Faction Xenotypes:''' 5% {{Icon Small|Neanderthal|24}}, 5% {{Icon Small|Hussar|24}}, 5% {{Icon Small|Genie|24}}<br />'''Chemical Addiction Chance''': 5%<br />'''Initial Will Range''': 8~11<br />'''Initial Resistance Range''': 37~56
+|- id="Knight"
+! id="Dame" | Knight / Dame<br>[[File:Imperial royal knight.png]] 
+| 130 || '''Avg. Quality:''' Excellent
+| '''Budget''': 1000~1500<br />50% Headgear; {{Icon Small|Synthread|24}}{{Icon Small|Beret|24}} or 30% {{#ask:[[Tags::Psychic]][[Layer::Headgear]]|format=template|template=Gear List/Items|link=none|default=-|sort=Tags,From DLC|sep=,<br />}}; '''Required:''' {{Icon Small|Synthread|24}} Torso, {{Icon Small|Synthread|24}}{{Icon Small|Pants|24}}; 8% {{#ask:[[Tags::Psychic]][[Coverage::~*Torso*]]|format=template|template=Gear List/Items|link=none|default=-|limit=10|sort=Tags,From DLC|sep=,<br />}}<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic]][[Lifestage::~*Adult*]][[Layer::!~*Headgear*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,<br />}}; '''Disallowed:''' {{Gear List|Tags|Western}}<br />'''Style Item Tags:''' Royalty, Weight 1, Factor 1; '''Ignore Seasons'''<br />'''Colors:''' {{Color|58|58|58}}
+| '''Budget''': 2600~3100<br />{{Gear List|budget=3100|TechHediffsTags|UltratechMelee|Bladelink}}
+| '''Budget''': 500~1000<br />15% chance to have one of the following: {{Gear List|budget=1000|TechHediffsTags|Advanced|ImplantEmpireRoyal|ImplantEmpireCommon}}; '''Disallowed:''' {{Icon Small|Mindscrew}} [[Mindscrew]]
+| -
+| '''Age Range:''' Up to 80<br />'''Backstories:''' Cryptosleep (8% Commonality), Imperial Royal [[Backstories/ImperialRoyal Child|Child]] and [[Backstories/ImperialRoyal Adult|Adult]]<br />'''Title:''' [[Titles#Knight|Knight / Dame]]<br />'''Disallowed Traits:''' [[Body purist]], [[Nudist]]<br />'''Override Faction Xenotypes:''' 5% {{Icon Small|Neanderthal|24}}, 5% {{Icon Small|Hussar|24}}, 5% {{Icon Small|Genie|24}}, 5% {{Icon Small|Sanguophage|24}}<br />'''Chemical Addiction Chance''': 5%<br />'''Initial Will Range''': 10~13<br />'''Initial Resistance Range''': 38~58
+|- id="Praetor"
+! Praetor<br>[[File:Imperial royal praetor.png]] 
+| 135 || '''Avg. Quality:''' Excellent
+| '''Budget''': 1000~1500<br />50% Headgear; {{Color|58|58|58}}{{Icon Small|Beret|24}} or 50% {{#ask:[[Tags::Psychic]][[Layer::Headgear]]|format=template|template=Gear List/Items|link=none|default=-|sort=Tags,From DLC|sep=,<br />}}; '''Required:''' {{Icon Small|Formal shirt|24}}, {{Color|0.7|0.7|0.7}} Torso 30% {{Icon Small|Cape|24}}, {{Icon Small|Synthread|24}} UpperHead, {{Icon Small|Synthread|24}} Torso, {{Icon Small|Synthread|24}}{{Icon Small|Pants|24}}; 8% {{#ask:[[Tags::Psychic]][[Coverage::~*Torso*]]|format=template|template=Gear List/Items|link=none|default=-|limit=10|sort=Tags,From DLC|sep=,<br />}}<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic]][[Lifestage::~*Adult*]][[Layer::!~*Headgear*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,<br />}}; '''Disallowed:''' {{Gear List|Tags|Western}}<br />'''Style Item Tags:''' Royalty, Weight 1, Factor 1; '''Ignore Seasons'''
+| '''Budget''': 2600~3100<br />{{Gear List|budget=3100|TechHediffsTags|UltratechMelee|Bladelink}}
+| '''Budget''': 1000~1500<br />15% chance to have one of the following: {{Gear List|budget=1500|TechHediffsTags|Advanced|ImplantEmpireRoyal|ImplantEmpireCommon}}; '''Disallowed:''' {{Icon Small|Mindscrew}} [[Mindscrew]]
+| -
+| '''Age Range:''' Up to 80<br />'''Backstories:''' Cryptosleep (8% Commonality), Imperial Royal [[Backstories/ImperialRoyal Child|Child]] and [[Backstories/ImperialRoyal Adult|Adult]]<br />'''Title:''' [[Titles#Praetor|Praetor]]<br />'''Disallowed Traits:''' [[Body purist]], [[Nudist]]<br />'''Override Faction Xenotypes:''' 5% {{Icon Small|Neanderthal|24}}, 5% {{Icon Small|Hussar|24}}, 5% {{Icon Small|Genie|24}}, 5% {{Icon Small|Sanguophage|24}}<br />'''Chemical Addiction Chance''': 5%<br />'''Initial Will Range''': 11~14<br />'''Initial Resistance Range''': 38~58
+<!-- Royal Upper Base -->
+<!--
+|-
+! Royal Upper Base
+| [[File:.png]] || 130 || '''HP:''' <br />'''Avg. Quality:''' Excellent
+| '''Budget''': 1000~1500<br />50% Headgear; 8% {{#ask:[[Tags::Psychic]][[Coverage::~*Torso*]]|format=template|template=Gear List/Items|link=none|default=-|limit=10|sort=Tags,From DLC|sep=,<br />}}; {{Icon Small|Synthread|24}} Torso, {{Icon Small|Synthread|24}}{{Icon Small|Pants|24}}<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic]][[Lifestage::~*Adult*]][[Name::!~*hat*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,<br />}}; '''Disallowed:''' {{Gear List|Tags|Western}}<br />'''Style Item Tags:''' Royalty, Weight 1, Factor 1; '''Ignore Seasons'''
+| '''Budget''': 2600~3100<br />% Biocoded: {{Gear List|budget=3100|TechHediffsTags|UltratechMelee|Bladelink}}
+| '''Budget''': 500~1500<br />15% chance to have one of the following: {{Gear List|budget=1500|TechHediffsTags|Advanced|ImplantEmpireRoyal|ImplantEmpireCommon}}; '''Disallowed:''' {{Icon Small|Mindscrew}} [[Mindscrew]]
+| I
+| '''Age Range:''' Up to 80<br />'''Backstories:''' Cryptosleep (8% Commonality), Imperial Royal [[Backstories/ImperialRoyal Child|Child]] and [[Backstories/ImperialRoyal Adult|Adult]]<br />'''Title:''' <br />'''Disallowed Traits:''' [[Body purist]], [[Nudist]]<br />'''Chemical Addiction Chance''': 5%<br />'''Initial Will Range''': IWR<br />'''Initial Resistance Range''': IRR
+-->
+|- id="Baron"
+! id="Baroness" | Baron / Baroness<br>[[File:Imperial royal baron.png]]
+| 135 || '''Avg. Quality:''' Excellent
+| '''Budget''': 1000~1500<br />50% Headgear; {{Icon Small|Steel|24}}{{Icon Small|Coronet}}, {{Icon Small|Formal vest|24}} (M) or {{Icon Small|Corset|24}} (F), {{Icon Small|Formal shirt|24}}, {{Color|0.7|0.7|0.7}} Torso, {{Color|104|85|227}} or 50% {{Icon Small|Cape|24}}; 8% {{#ask:[[Tags::Psychic]][[Coverage::~*Torso*]]|format=template|template=Gear List/Items|link=none|default=-|limit=10|sort=Tags,From DLC|sep=,<br />}}; {{Icon Small|Synthread|24}} Torso, {{Icon Small|Synthread|24}}{{Icon Small|Pants|24}}<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic]][[Lifestage::~*Adult*]][[Layer::!~*Headgear*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,<br />}}; '''Disallowed:''' {{Gear List|Tags|Western}}<br />'''Style Item Tags:''' Royalty, Weight 1, Factor 1; '''Ignore Seasons'''
+| '''Budget''': 2600~3100<br />{{Gear List|budget=3100|TechHediffsTags|UltratechMelee|Bladelink}}
+| '''Budget''': 1000~1500<br />15% chance to have one of the following: {{Gear List|budget=1500|TechHediffsTags|Advanced|ImplantEmpireRoyal|ImplantEmpireCommon}}; '''Disallowed:''' {{Icon Small|Mindscrew}} [[Mindscrew]]
+| -
+| '''Age Range:''' Up to 80<br />'''Backstories:''' Cryptosleep (8% Commonality), Imperial Royal [[Backstories/ImperialRoyal Child|Child]] and [[Backstories/ImperialRoyal Adult|Adult]]<br />'''Title:''' [[Titles#Baron|Baron / Baroness]]<br />'''Disallowed Traits:''' [[Body purist]], [[Nudist]]<br />'''Override Faction Xenotypes:''' 5% {{Icon Small|Neanderthal|24}}, 5% {{Icon Small|Hussar|24}}, 5% {{Icon Small|Genie|24}}, 5% {{Icon Small|Sanguophage|24}}<br />'''Chemical Addiction Chance''': 5%<br />'''Initial Will Range''': 12~15<br />'''Initial Resistance Range''': 25~39
+|- id="Count"
+! id="Countess" | Count / Countess<br>[[File:Imperial royal count.png]] 
+| 135 || '''Avg. Quality:''' Excellent
+| '''Budget''': 9999999<br />50% Headgear; {{Icon Small|Steel|24}}{{Icon Small|Coronet}}, {{Color|55|55|55}} {{Icon Small|Formal vest|24}} (M) or {{Icon Small|Corset|24}} (F), {{Color|104|85|227}}{{Icon Small|Formal shirt|24}}, {{Color|104|85|227}}{{Icon Small|Prestige robe|24}} or 50% {{Icon Small|Cape|24}}; 8% {{#ask:[[Tags::Psychic]][[Coverage::~*Torso*]]|format=template|template=Gear List/Items|link=none|default=-|limit=10|sort=Tags,From DLC|sep=,<br />}}; {{Icon Small|Synthread|24}} Torso, {{Icon Small|Synthread|24}}{{Icon Small|Pants|24}}<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic]][[Lifestage::~*Adult*]][[Layer::!~*Headgear*]]|format=template|template=Gear List/Items|link=none|default=-|limit=10|sort=Tags,From DLC|sep=,<br />}}; '''Disallowed:''' {{Gear List|Tags|Western}}<br />'''Style Item Tags:''' Royalty, Weight 1, Factor 1; '''Ignore Seasons'''
+| '''Budget''': 2600~3100<br />{{Gear List|budget=3100|TechHediffsTags|UltratechMelee|Bladelink}}
+| '''Budget''': 1000~2000<br />15% chance to have one of the following: {{Gear List|budget=2000|TechHediffsTags|Advanced|ImplantEmpireRoyal|ImplantEmpireCommon}}; '''Disallowed:''' {{Icon Small|Mindscrew}} [[Mindscrew]]
+| -
+| '''Age Range:''' Up to 80<br />'''Backstories:''' Cryptosleep (8% Commonality), Imperial Royal [[Backstories/ImperialRoyal Child|Child]] and [[Backstories/ImperialRoyal Adult|Adult]]<br />'''Title:''' [[Titles#Count|Count / Countess]]<br />'''Disallowed Traits:''' [[Body purist]], [[Nudist]]<br />'''Override Faction Xenotypes:''' 5% {{Icon Small|Neanderthal|24}}, 5% {{Icon Small|Hussar|24}}, 5% {{Icon Small|Genie|24}}, 5% {{Icon Small|Sanguophage|24}}<br />'''Chemical Addiction Chance''': 5%<br />'''Initial Will Range''': 13~16<br />'''Initial Resistance Range''': 38~58
+|- id="Duke"
+! id="Duchess" | Duke / Duchess<br>[[File:Imperial royal duke.png]]
+| 135 || '''Avg. Quality:''' Excellent
+| '''Budget''': 9999999<br />50% Headgear; {{Icon Small|Plasteel|24}}{{Icon Small|Crown|24}}, {{Color|55|55|55}} {{Icon Small|Formal vest|24}} (M) or {{Icon Small|Corset|24}} (F), {{Color|104|85|227}}{{Icon Small|Formal shirt|24}}, {{Color|104|85|227}}{{Icon Small|Prestige robe|24}} or 50% {{Icon Small|Cape|24}}; 8% {{#ask:[[Tags::Psychic]][[Coverage::~*Torso*]]|format=template|template=Gear List/Items|link=none|default=-|limit=10|sort=Tags,From DLC|sep=,<br />}}; {{Icon Small|Synthread|24}} Torso, {{Icon Small|Synthread|24}}{{Icon Small|Pants|24}}<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic]][[Lifestage::~*Adult*]][[Layer::!~*Headgear*]]|format=template|template=Gear List/Items|link=none|default=-|limit=10|sort=Tags,From DLC|sep=,<br />}}; '''Disallowed:''' {{Gear List|Tags|Western}}<br />'''Style Item Tags:''' Royalty, Weight 1, Factor 1; '''Ignore Seasons'''
+| '''Budget''': 2600~3100<br />{{Gear List|budget=3100|TechHediffsTags|UltratechMelee|Bladelink}}
+| '''Budget''': 1000~2500<br />25% chance to have at most 2 of the following: {{Gear List|budget=2500|TechHediffsTags|Advanced|ImplantEmpireRoyal|ImplantEmpireCommon}}; '''Disallowed:''' {{Icon Small|Mindscrew}} [[Mindscrew]]
+| -
+| '''Age Range:''' Up to 80<br />'''Backstories:''' Cryptosleep (8% Commonality), Imperial Royal [[Backstories/ImperialRoyal Child|Child]] and [[Backstories/ImperialRoyal Adult|Adult]]<br />'''Title:''' [[Titles#Duke|Duke / Duchess]]<br />'''Disallowed Traits:''' [[Body purist]], [[Nudist]]<br />'''Override Faction Xenotypes:''' 5% {{Icon Small|Neanderthal|24}}, 5% {{Icon Small|Hussar|24}}, 5% {{Icon Small|Genie|24}}, 15% {{Icon Small|Sanguophage|24}}<br />'''Chemical Addiction Chance''': 5%<br />'''Initial Will Range''': 14~17<br />'''Initial Resistance Range''': 38~58
+<!-- Back to Royal Base -->
+|- id="Consul"
+! Consul<br>[[File:Imperial royal consul.png]]
+| 135 || '''Avg. Quality:''' Excellent
+| '''Budget''': 9999999<br />50% Headgear; {{Icon Small|Plasteel|24}}{{Icon Small|Crown|24}}, {{Color|27|78|171}} {{Icon Small|Formal vest|24}} (M) or {{Icon Small|Corset|24}} (F), {{Color|27|78|171}}{{Icon Small|Formal shirt|24}}, {{Color|250|250|250}} {{Icon Small|Prestige robe|24}} or 50% {{Icon Small|Cape|24}}, {{Icon Small|Hyperweave|24}} Torso, {{Icon Small|Hyperweave|24}}{{Icon Small|Pants|24}}; 8% {{#ask:[[Tags::Psychic]][[Coverage::~*Torso*]]|format=template|template=Gear List/Items|link=none|default=-|limit=10|sort=Tags,From DLC|sep=,<br />}}<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic]][[Lifestage::~*Adult*]][[Layer::!~*Headgear*]]|format=template|template=Gear List/Items|link=none|default=-|limit=10|sort=Tags,From DLC|sep=,<br />}}; '''Disallowed:''' {{Gear List|Tags|Western}}<br />'''Style Item Tags:''' Royalty, Weight 1, Factor 1; '''Ignore Seasons'''
+| '''Budget''': 2600~3100<br />{{Gear List|budget=3100|TechHediffsTags|UltratechMelee|Bladelink}}
+| '''Budget''': 2000~2500<br />25% chance to have at most 2 of the following: {{Gear List|budget=2500|TechHediffsTags|Advanced|ImplantEmpireRoyal|ImplantEmpireCommon}}; '''Disallowed:''' {{Icon Small|Mindscrew}} [[Mindscrew]]
+| -
+| '''Age Range:''' Up to 80<br />'''Backstories:''' Cryptosleep (8% Commonality), Imperial Royal [[Backstories/ImperialRoyal Child|Child]] and [[Backstories/ImperialRoyal Adult|Adult]]<br />'''Title:''' [[Titles#Consul|Consul]]<br />'''Disallowed Traits:''' [[Body purist]], [[Nudist]]<br />'''Override Faction Xenotypes:''' 5% {{Icon Small|Neanderthal|24}}, 5% {{Icon Small|Hussar|24}}, 5% {{Icon Small|Genie|24}}, 15% {{Icon Small|Sanguophage|24}}<br />'''Chemical Addiction Chance''': 5%<br />'''Initial Will Range''': 15~18<br />'''Initial Resistance Range''': 19~30
+|- id="Stellarch"
+! Stellarch<br>[[File:Imperial royal stellarch.png]] 
+| 135 || '''Avg. Quality:''' Excellent
+| '''Budget''': 9999999<br />50% Headgear; {{Icon Small|Gold}}{{Icon Small|Stellic crown}}, {{Color|95|20|133}}{{Icon Small|Hyperweave|24}} {{Icon Small|Corset|24}} (F) or {{Icon Small|Formal vest|24}} (M), {{Color|95|20|133}}{{Icon Small|Formal shirt|24}}, {{Color|128|0|32}}{{Icon Small|Prestige robe}}, {{Icon Small|Hyperweave|24}}{{Icon Small|Pants|24}}; 8% {{#ask:[[Tags::Psychic]][[Coverage::~*Torso*]]|format=template|template=Gear List/Items|link=none|default=-|limit=10|sort=Tags,From DLC|sep=,<br />}}<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic]][[Lifestage::~*Adult*]][[Layer::!~*Headgear*]]|format=template|template=Gear List/Items|link=none|default=-|limit=10|sort=Tags,From DLC|sep=,<br />}}; '''Disallowed:''' {{Gear List|Tags|Western}}<br />'''Style Item Tags:''' Royalty, Weight 1, Factor 1; '''Ignore Seasons'''
+| '''Budget''': 2600~3100<br />{{Gear List|budget=3100|TechHediffsTags|UltratechMelee|Bladelink}}
+| '''Budget''': 3000~4000<br />100% chance to have at most 3 of the following: {{Gear List|budget=4000|TechHediffsTags|Advanced|ImplantEmpireRoyal|ImplantEmpireCommon}}; '''Disallowed:''' {{Icon Small|Mindscrew}} [[Mindscrew]]
+| -
+| '''Age Range:''' Up to 80<br />'''Backstories:''' Cryptosleep (8% Commonality), Imperial Royal [[Backstories/ImperialRoyal Child|Child]] and [[Backstories/ImperialRoyal Adult|Adult]]<br />'''Title:''' [[Titles#Stellarch|Stellarch]]<br />'''Disallowed Traits:''' [[Body purist]], [[Nudist]]; '''Faction Leader'''<br />'''Override Faction Xenotypes:''' 5% {{Icon Small|Neanderthal|24}}, 5% {{Icon Small|Hussar|24}}, 5% {{Icon Small|Genie|24}}, 25% {{Icon Small|Sanguophage|24}}<br />'''Chemical Addiction Chance''': 5%<br />'''Initial Will Range''': 16~19<br />'''Initial Resistance Range''': 38~58
+|- id="Bestower"
+! Bestower<br>[[File:Imperial royal bestower.png]]
+| 50 || '''Avg. Quality:''' Excellent
+| '''Budget''': 1000~1500<br />50% Headgear; {{Icon Small|Hood|24}}, {{Icon Small|Prestige robe|24}}, {{Icon Small|Formal shirt|24}}, {{Icon Small|Hyperweave|24}}{{Icon Small|Pants|24}}; 8% {{#ask:[[Tags::Psychic]][[Coverage::~*Torso*]]|format=template|template=Gear List/Items|link=none|default=-|limit=10|sort=Tags,From DLC|sep=,<br />}}<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic]][[Lifestage::~*Adult*]][[Layer::!~*Headgear*]][[Layer::!~*Skin*]][[Layer::!~*Outer*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,<br />}}; '''Disallowed:''' {{Gear List|Tags|Western}}<br />'''Style Item Tags:''' Royalty, Weight 1, Factor 1; '''Ignore Seasons'''<br />'''Colors:''' {{Color|114|12|12}}
+| '''Budget''': 99999<br />{{#ask:[[WeaponTags::EltexStaff]]|format=template|template=Gear List/Items|link=none|default=-|limit=10|sort=WeaponTags,From DLC|sep=,<br />}}
+| '''Budget''': 1000~4000<br />'''Disallowed:''' {{Icon Small|Mindscrew}} [[Mindscrew]]<br />15% chance to have at most 3 of the following: {{Gear List|budget=4000|TechHediffsTags|Advanced|ImplantEmpireRoyal|ImplantEmpireCommon}}
+| -
+| '''Age Range:''' At least 50<br />'''Backstories:''' Cryptosleep (8% Commonality), Imperial Royal [[Backstories/ImperialRoyal Child|Child]] and [[Backstories/ImperialRoyal Adult|Adult]]<br />'''Title:''' <br />'''Disallowed Traits:''' [[Body purist]], [[Nudist]]<br />'''Faction Hostile on Death'''<br />'''Override Faction Xenotypes:''' 100% {{Icon Small|Baseliner}}<br />'''Required Work Types:''' Violent<br />'''Pregnancy Chance:''' 0%<br />'''Chemical Addiction Chance''': 5%<br />'''Initial Will Range''': 6~8<br />'''Initial Resistance Range''': 30~46
+|}</li></div></onlyinclude>
+<noinclude>[[Category:Pawnkind tables]]</noinclude>

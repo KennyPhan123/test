@@ -1,0 +1,42 @@
+{{BackToTutorials}}
+
+'''ResearchProjectDef'''s are used for defining researchable technologies.
+
+==Global attributes==
+
+{| class="wikitable sortable"
+!Tag
+!Description
+!Values
+|-
+!defName
+|Internal ID of the research. Does not appear in-game.
+|String (Can't end with number.)
+|-
+!label
+|In-game title of the research.
+|String
+|-
+!renderPrecedence
+|Render importance of terrain
+|Integer; higher values take higher priority (Sand = 350, Soil = 340, Gravel = 330, Carpet = 300-298)
+|-
+!description
+|In-game description of the research you can see in research tab.
+|String
+|-
+!descriptionDiscovered
+|In-game description of the research which can be seen when you finish the research.
+|String
+|-
+!totalCost
+|Research point cost of this research.
+|Integer over 0
+|-
+!prerequisites
+|What research(es) should be done in order to start this research.
+|ResearchDefs (is a list)
+|-
+|}
+
+[[Category:Defs]]

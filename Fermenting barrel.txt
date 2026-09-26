@@ -1,0 +1,75 @@
+{{Infobox main|production
+| name = Fermenting barrel
+| image = FermentingBarrel.png
+| description = A barrel for fermenting raw wort into beer.
+| type = Building
+| type2 = Production
+| placeable = true
+| path cost = 42
+| passability = pass through only
+| cover = 0.45
+| minifiable = true
+| mass base = 10
+| flammability = 1
+| hp = 100
+| min safe temperature = -1
+| max safe temperature = 32
+| spoiling rate per degree per tick = 0.00001
+| terrain affordance = light
+| research = Beer brewing
+| work to make = 600
+| resource 1 = Steel
+| resource 1 amount = 10
+| resource 2 = Wood
+| resource 2 amount = 30
+}}
+The '''fermenting barrel''' converts [[wort]] into [[beer]] over a lengthy process.
+
+== Acquisition ==
+[[File:Faction base brewery isolated.png|160px|thumb|left|An example of a brewery that could generate in a faction base.]]
+{{Acquisition}}
+
+Fermenting barrels can also generate inside of enemy [[Faction base]]s. These barrels will typically be partially filled with wort, and in the middle of the fermentation process. These barrels can be carried off by a caravan for the player to use. If the barrels are properly preserved during transit{{Check Tag|Verify|Can barrels in caravans be ruined? Under what conditions?}}, then they can be reinstalled to continue the fermenting process.
+
+== Summary ==
+[[File:Fermenting_progress.png|thumb|left|250px|Top: Fermenting, 0% progress<br/>Bottom: Fermenting, 100% progress<br/>Bar ''length'' shows # of wort inside.]]
+
+Fermenting barrels convert [[wort]] into [[beer]], at a ratio of 1 wort per 1 beer. Each barrel can hold up to 25 wort at a time. [[Work#Haul|Haulers]] fill barrels with wort and remove beer when complete. [[Lifter]] mechanoids{{BiotechIcon}} will not interact with fermenting barrels. Note that wort will only be added when the barrels are in the correct [[temperature]] range.
+
+After wort has been loaded, it must ferment. The fermenting process takes 6 days. This begins as soon as the first wort is planted. Adding more wort later does not reset the timer entirely, but rather delays it proportional to the wort added. For example, adding 5 wort to a 5-wort barrel would halve existing progress. During the fermenting period, the room [[temperature]] must be maintained between {{Temperature|7|{{P|Max Safe Temperature}} }} for progress to continue.
+
+If the barrel is kept below {{Temperature|{{P|Min Safe Temperature}} }} or above {{Temperature|{{P|Max Safe Temperature}} }}, for too long, the fermentation will be ruined, and no wort or beer can be recovered.
+
+{| class="wikitable"
+! Temperature
+! Effect
+|-
+| {{Temperature|7|{{Q|Fermenting barrel|Max Safe Temperature}} }}
+| Ideal fermenting temperature range
+|-
+| {{Temperature|{{Q|Fermenting barrel|Min Safe Temperature}}|7}}
+| Temporarily halts fermentation process<br/>Process continues when ideal temperature restored
+|-
+| > {{Temperature|{{Q|Fermenting barrel|Max Safe Temperature}} }}<br/> < {{Temperature|{{Q|Fermenting barrel|Min Safe Temperature}} }}
+| Freezing or "too hot" for too long ruins fermentation.<br/>If left too long in this state, no product can be recovered
+|}
+
+On the barrel, there is a bar that serves as both the progress bar and the contents bar. The length of the bar is dependent on the amount of wort that is inside, while the color indicates how close it is to completion- brown means it has just started, and yellow means it has finished.
+
+A fermenting barrel can be moved and reinstalled without resetting the fermenting process, however an uninstalled barrel halts the timer (apparently) indefinitely.{{Check Tag|Temperature?|Does this also remove the temperature sensitivity while minified? Is this a method of avoiding spoiling?}}
+
+{{Recipe List}}
+
+== Analysis ==
+[[File:BreweryStrategy.png|thumb|left|300px|An example brewery set up]]
+In order to make beer, you must grow [[hop plant]]s, use a [[brewery]] to turn hops into wort, then use a fermenting barrel to convert wort into beer. The barrel is the 3rd step in the beer production process.
+
+It is wise to put your fermentation barrels near your breweries, to minimize the hauling work required. Since [[hops]] lasts a long time before spoiling (30 days), it can be safely stored in a warm room.
+
+If the temperature is too hot/cold when a [[solar flare]] disables your electric devices, you can use [[campfire]]s or [[passive cooler]]s to save your beer.
+
+== Version history ==
+* Beta 19/1.0 - Beer fermenting time 10 days -> 6 days.
+
+{{Nav|production|wide}}
+[[Category:Production]] [[Category:Drug Production]]

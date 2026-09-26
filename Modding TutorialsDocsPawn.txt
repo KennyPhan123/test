@@ -1,0 +1,494 @@
+<!-- 1.5
+<!-- 
+    TODO: 
+    Add 1.6 functions (make sure to mark as 1.6); I dont have the game updated since too many of my mods aren't 1.6 compat yet 
+    Mark any functions removed in 1.6 as @deprecated(ver<1.6) or sm 
+
+    I forgot my semicolons TT some lines might be missing them
+
+    feel free to modify this to improve it, im not that good at making docs
+-->
+
+also check out [[Modding_Tutorials/Setting_up_a_solution|solutions]]
+
+= API =
+<code><span style="color:#3131ff">public class</span> Pawn : <span style="color:#0645ad">[[Modding_Tutorials/Docs/ThingWithComps|<u>ThingWithComps</u>]]</span></code><br>
+Notable inherits: 
+* <code>GetComp<T>()</code>
+== Info ==
+<code><span style="color:#3131ff">public</span> [[Modding_Tutorials/Docs/PawnKindDef|<u>PawnKindDef</u>]] kindDef;</code><br>
+Defines the pawn species
+
+<code><span style="color:#3131ff">public</span> <span style="color:#0645ad">[[Modding_Tutorials/Docs/Enums#Gender|<u>Gender</u>]]</span> gender;</code><br>
+Where <code><span style="color:#0645ad">[[Modding_Tutorials/Docs/Enums#Gender|<u>Gender</u>]]</span></code> is an enum
+
+<code><span style="color:#3131ff">public</span> [[Modding_Tutorials/Docs/Pawn_AgeTracker|<u>Pawn_AgeTracker</u>]] ageTracker;</code><br>
+<code><span style="color:#3131ff">public</span> [[Modding_Tutorials/Docs/Pawn_AgeTracker|<u>DevelopmentalStage</u>]] DevelopmentalStage</code><br>
+
+<code><span style="color:#3131ff">public</span> [[Modding_Tutorials/Docs/Pawn_StoryTracker|<u>Pawn_StoryTracker</u>]] story;</code><br>
+Contains a pawns backstory, traits, appearence (hair and skin), favourite color, birth names and title
+
+<code><span style="color:#3131ff">public</span> [[Modding_Tutorials/Docs/Pawn_RecordsTracker|<u>Pawn_RecordsTracker</u>]] records;</code><br>
+Contains a pawns records
+
+<!--
+public TaggedString LegalStatus => "Slave" "{colony} member" "Colonist"
+public override string DescriptionDetailed
+public override string DescriptionFlavor
+public override IEnumerable<DefHyperlink> DescriptionHyperlinks
+public float BodySize
+public float HealthScale (here or health(?))
+-->
+
+==== Name ====
+<code><span style="color:#3131ff">public</span> <span style="color:#3131ff">immutable</span> [[Modding_Tutorials/Docs/Name|<u>Name</u>]] Name;</code><br>
+<!--
+is NameTriple for humanoid pawns
+is NameSingle for pet pawns
+is Null for any unnamed pawns
+-->
+<code><span style="color:#3131ff">public</span> <span style="color:#0645ad">TaggedString</span> NameShortColored;</code><br>
+A TaggedString of the pawns nickname if the pawn has a triple, or its name if the pawn has a single.
+
+<code><span style="color:#3131ff">public</span> <span style="color:#0645ad">TaggedString</span> NameFullColored;</code><br>
+A TaggedString of the pawns full name.
+
+== Faction ==
+<code><span style="color:#3131ff">public</span> <span style="color:#aa0000">readonly</span> <span style="color:#0645ad">bool</span> IsColonist;</code><br>
+<code><span style="color:#3131ff">public</span> <span style="color:#aa0000">readonly</span> <span style="color:#0645ad">bool</span> IsFreeColonist;</code><br>
+<code><span style="color:#3131ff">public</span> <span style="color:#aa0000">readonly</span> <span style="color:#0645ad">bool</span> IsFreeNonSlaveColonist;</code><br>
+
+<code><span style="color:#3131ff">public</span> <span style="color:#aa0000">readonly</span> <span style="color:#0645ad">bool</span> IsPrisoner;</code><br>
+<code><span style="color:#3131ff">public</span> <span style="color:#aa0000">readonly</span> <span style="color:#0645ad">bool</span> IsPrisonerOfColony;</code><br>
+
+<code><span style="color:#3131ff">public</span> <span style="color:#aa0000">readonly</span> <span style="color:#0645ad">bool</span> IsSlave;</code><br>
+<code><span style="color:#3131ff">public</span> <span style="color:#aa0000">readonly</span> <span style="color:#0645ad">bool</span> IsSlaveOfColony;</code><br>
+
+<code><span style="color:#3131ff">public</span> <span style="color:#aa0000">readonly</span> <span style="color:#0645ad">bool</span> IsFreeman;</code><br>
+Is not part of any Faction (wild pawns)
+
+<code><span style="color:#3131ff">public</span> [[Modding_Tutorials/Docs/Faction|<u>Faction</u>]] HomeFaction;</code><br>
+
+==== Guests ====
+<code><span style="color:#3131ff">public</span> [[Modding_Tutorials/Docs/GuestStatus|<u>GuestStatus</u>]]? GuestStatus;</code><br>
+
+<code><span style="color:#3131ff">public</span> [[Modding_Tutorials/Docs/Faction|<u>Faction</u>]] HostFaction;</code><br>
+<code><span style="color:#3131ff">public</span> [[Modding_Tutorials/Docs/Faction|<u>Faction</u>]] SlaveFaction;</code><br>
+TODO: unsure if these are specifically for guests
+
+<!--
+public bool IsColonistPlayerControlled use IsPlayerControlled
+public bool IsPlayerControlled (here or jobs(?) or pathfinding maybe)
+-->
+
+<!--public bool HasShowGizmosOnCorpseHediff-->
+<!--==== Traders ====-->
+<!--
+public TraderKindDef TraderKind
+public TradeCurrency TradeCurrency => TraderKind.tradeCurrency
+public IEnumerable<Thing> Goods => trader.Goods;
+public int RandomPriceFactorSeed => trader.RandomPriceFactorSeed
+public string TraderName => trader.TraderName
+public bool CanTradeNow
+public float TradePriceImprovementOffsetForPlayer
+-->
+
+== Mental ==
+<code><span style="color:#3131ff">public</span> [[Modding_Tutorials/Docs/Pawn_MindState|<u>Pawn_MindState</u>]] mindState;</code><br> 
+The following are null safe references to its inner values: <br>
+<code><span style="color:#3131ff">public</span> bool InMentalState;</code> => mindState.mentalStateHandler.inMentalState<br>
+<code><span style="color:#3131ff">public</span> bool InAggroMentalState;</code> => mindState.mentalStateHandler.CurStateDef<br>
+<code><span style="color:#3131ff">public</span> MentalState MentalState;</code> => mindState.mentalStateHandler.CurState | null<br>
+<code><span style="color:#3131ff">public</span> MentalStateDef MentalStateDef;</code> => mindState.mentalStateHandler.CurStateDef | null<br>
+<code><span style="color:#3131ff">public</span> bool Inspired;</code> => mindState.inspirationHandler.Inspired<br>
+<code><span style="color:#3131ff">public</span> Inspiration Inspiration;</code> => mindState.inspirationHandler.CurState<br>
+<code><span style="color:#3131ff">public</span> InspirationDef InspirationDef;</code> => mindState.inspirationHandler.CurStateDef<br>
+
+<code><span style="color:#3131ff">public</span> [[Modding_Tutorials/Docs/Pawn_NeedsTracker|<u>Pawn_NeedsTracker</u>]] needs;</code><br>
+<code><span style="color:#3131ff">public</span> [[Modding_Tutorials/Docs/Pawn_Thinker|<u>Pawn_Thinker</u>]] thinker;</code><br>
+<code><span style="color:#3131ff">public</span> [[Modding_Tutorials/Docs/Pawn_GuiltTracker|<u>Pawn_GuiltTracker</u>]] guilt;</code><br>
+
+== Skills ==
+
+<!--public [[Modding_Tutorials/Docs/Pawn_SkillTracker|<u>Pawn_SkillTracker</u>]] skills;
+public [[Modding_Tutorials/Docs/Pawn_LearningTracker|<u>Pawn_LearningTracker</u>]] learning;-->
+
+== Health ==
+<code><span style="color:#3131ff">public</span> [[Modding_Tutorials/Docs/Pawn_HealthTracker|<u>Pawn_HealthTracker</u>]] health</code><br>
+Contains pawn health hediffs, operation bills, downed state and more.
+
+<code><span style="color:#3131ff">public</span> [[Modding_Tutorials/Docs/Pawn_InfectionVectorTracker|<u>Pawn_InfectionVectorTracker</u>]] infectionVectors;</code><br>
+
+==== Surgery ====
+<code><span style="color:#3131ff">public</span> [[Modding_Tutorials/Docs/BillStack|<u>BillStack</u>]] BillStack</code><br>
+The BillStack for Operation Bills. Returns <code>health.surgeryBills</code>
+
+<code><span style="color:#3131ff">public overrides</span> <span style="color:#0645ad">bool</span> <span style="color:#8b6a00">CurrentlyUsableForBills()</span></code><br>
+If this pawn is currently able to be operated on.
+
+<code><span style="color:#3131ff">public overrides</span> <span style="color:#0645ad">bool</span> UsableForBillsAfterFueling()</code><br>
+Returns <code>CurrentlyUsableForBills()</code>
+
+<code><span style="color:#3131ff">public</span> <span style="color:#0645ad">void</span> <span style="color:#8b6a00">Notify_BillDeleted(</span>[[Modding_Tutorials/Docs/Bill|<u>Bill</u>]] bill<span style="color:#8b6a00">)</span></code><br>
+Call this if you ever remove an operation scriptually from billstack
+
+== Combat ==
+<code><span style="color:#3131ff">public</span> [[Modding_Tutorials/Docs/Pawn_DraftController|<u>Pawn_DraftController</u>]] drafter;</code><br>
+<code><span style="color:#3131ff">public</span> <span style="color:#aa0000">readonly</span> <span style="color:#0645ad">bool</span> Drafted</code><br>
+<code><span style="color:#3131ff">public</span> [[Modding_Tutorials/Docs/Pawn_MeleeVerbs|<u>Pawn_MeleeVerbs</u>]] meleeVerbs;</code><br>
+<code><span style="color:#3131ff">public</span> [[Modding_Tutorials/Docs/Pawn_StanceTracker|<u>Pawn_StanceTracker</u>]] stances;</code><br>
+<code><span style="color:#3131ff">public</span> [[Modding_Tutorials/Docs/Pawn_AbilityTracker|<u>Pawn_AbilityTracker</u>]] abilities;</code><br>
+<!--
+public IEnumerable<Thing> EquippedWornOrInventoryThings
+public float TargetPriorityFactor => 1f;
+public readonly LocalTargetInfo TargetCurrentlyAimingAt
+public LocalTargetInfo LastAttackedTarget
+public int LastAttackTargetTick
+-->
+==== Psycast ====
+
+<code><span style="color:#3131ff">public</span> <span style="color:#0645ad">bool</span> HasPsylink;</code><br>
+
+<code><span style="color:#3131ff">public</span> [[Modding_Tutorials/Docs/Pawn_PsychicEntropyTracker|<u>Pawn_PsychicEntropyTracker</u>]] psychicEntropy;</code><br>
+Contains everything psylink related
+
+== Inventory ==
+
+public [[Modding_Tutorials/Docs/Pawn_InventoryTracker|<u>Pawn_InventoryTracker</u>]] inventory;
+
+public [[Modding_Tutorials/Docs/Pawn_EquipmentTracker|<u>Pawn_EquipmentTracker</u>]] equipment;
+
+public [[Modding_Tutorials/Docs/Pawn_ApparelTracker|<u>Pawn_ApparelTracker</u>]] apparel;
+
+== Jobs ==
+
+<!--public [[Modding_Tutorials/Docs/VerbTracker|<u>VerbTracker</u>]] verbTracker;
+
+public [[Modding_Tutorials/Docs/Pawn_CarryTracker|<u>Pawn_CarryTracker</u>]] carryTracker;
+
+public [[Modding_Tutorials/Docs/Pawn_JobTracker|<u>Pawn_JobTracker</u>]] jobs;
+
+public [[Modding_Tutorials/Docs/Pawn_PathFollower|<u>Pawn_PathFollower</u>]] pather;
+
+public [[Modding_Tutorials/Docs/Pawn_RopeTracker|<u>Pawn_RopeTracker</u>]] roping;
+public VerbTracker VerbTracker => verbTracker;
+
+public List<VerbProperties> VerbProperties => def.Verbs;
+
+public List<Tool> Tools => def.tools;
+
+public WorkTags CombinedDisabledWorkTags
+-->
+====pathfinding====
+<!--
+public float TicksPerMoveCardinal
+public float TicksPerMoveDiagonal
+public bool ShouldAvoidFences-->
+== Policies ==
+
+<!--public [[Modding_Tutorials/Docs/Pawn_DrugPolicyTracker|<u>Pawn_DrugPolicyTracker</u>]] drugs;
+
+public [[Modding_Tutorials/Docs/Pawn_FoodRestrictionTracker|<u>Pawn_FoodRestrictionTracker</u>]] foodRestriction;
+
+public [[Modding_Tutorials/Docs/Pawn_TimetableTracker|<u>Pawn_TimetableTracker</u>]] timetable;
+
+public [[Modding_Tutorials/Docs/Pawn_WorkSettings|<u>Pawn_WorkSettings</u>]] workSettings;
+
+public [[Modding_Tutorials/Docs/Pawn_ReadingTracker|<u>Pawn_ReadingTracker</u>]] reading;-->
+
+== Rendering ==
+<!--
+public [[Modding_Tutorials/Docs/Pawn_RotationTracker|<u>Pawn_RotationTracker</u>]] rotationTracker;
+
+public override Vector3 DrawPos
+public Pawn_DrawTracker Drawer => drawer ?? (drawer = new Pawn_DrawTracker(this));
+-->
+
+== Anomaly ==
+
+<code><span style="color:#3131ff">public</span> <span style="color:#aa0000">readonly</span> <span style="color:#0645ad">bool</span> IsCreepJoiner</code><br>
+
+<!--(anomaly)
+public bool IsMutant 
+public bool IsDuplicate 
+public bool IsEntity 
+public bool IsShambler 
+public bool IsAwokenCorpse
+
+public bool IsColonyMutant
+public bool IsColonyMutantPlayerControlled
+public bool HasDeathRefusalOrResurrecting
+
+public Faction DeadlifeDustFaction
+-->
+
+== Biotech ==
+==== Mechs ====
+<code><span style="color:#3131ff">public</span> [[Modding_Tutorials/Docs/Pawn_MechanitorTracker|<u>Pawn_MechanitorTracker</u>]] mechanitor;</code>
+<!--
+public bool IsColonyMech
+public bool IsColonyMechPlayerControlled
+public CompOverseerSubject OverseerSubject
+-->
+==== Sanguines =====
+<!--
+public bool Deathresting
+-->
+== Other/To be categorized ==
+
+
+
+<!--public [[Modding_Tutorials/Docs/Pawn_Ownership|<u>Pawn_Ownership</u>]] ownership;
+
+public [[Modding_Tutorials/Docs/Pawn_FilthTracker|<u>Pawn_FilthTracker</u>]] filth;
+
+
+
+public [[Modding_Tutorials/Docs/Pawn_SurroundingsTracker|<u>Pawn_SurroundingsTracker</u>]] surroundings;
+
+public [[Modding_Tutorials/Docs/Pawn_DuplicateTracker|<u>Pawn_DuplicateTracker</u>]] duplicate;
+
+
+
+public [[Modding_Tutorials/Docs/Pawn_NativeVerbs|<u>Pawn_NativeVerbs</u>]] natives;
+
+
+
+
+
+public [[Modding_Tutorials/Docs/Pawn_GuestTracker|<u>Pawn_GuestTracker</u>]] guest;
+
+
+public [[Modding_Tutorials/Docs/Pawn_RoyaltyTracker|<u>Pawn_RoyaltyTracker</u>]] royalty;
+
+
+public [[Modding_Tutorials/Docs/Pawn_IdeoTracker|<u>Pawn_IdeoTracker</u>]] ideo;
+
+public [[Modding_Tutorials/Docs/Pawn_GeneTracker|<u>Pawn_GeneTracker</u>]] genes;
+
+public [[Modding_Tutorials/Docs/Pawn_CreepJoinerTracker|<u>Pawn_CreepJoinerTracker</u>]] creepjoiner;
+
+
+public [[Modding_Tutorials/Docs/Pawn_TraderTracker|<u>Pawn_TraderTracker</u>]] trader;
+
+public [[Modding_Tutorials/Docs/Pawn_StyleTracker|<u>Pawn_StyleTracker</u>]] style;
+
+public [[Modding_Tutorials/Docs/Pawn_StyleObserverTracker|<u>Pawn_StyleObserverTracker</u>]] styleObserver;
+
+public [[Modding_Tutorials/Docs/Pawn_ConnectionsTracker|<u>Pawn_ConnectionsTracker</u>]] connections;
+
+public [[Modding_Tutorials/Docs/Pawn_TrainingTracker|<u>Pawn_TrainingTracker</u>]] training;
+
+public [[Modding_Tutorials/Docs/Pawn_CallTracker|<u>Pawn_CallTracker</u>]] caller;
+
+public [[Modding_Tutorials/Docs/Pawn_MutantTracker|<u>Pawn_MutantTracker</u>]] mutant;
+
+public [[Modding_Tutorials/Docs/Pawn_RelationsTracker|<u>Pawn_RelationsTracker</u>]] relations;
+
+public [[Modding_Tutorials/Docs/Pawn_InteractionsTracker|<u>Pawn_InteractionsTracker</u>]] interactions;
+
+public [[Modding_Tutorials/Docs/Pawn_PlayerSettings|<u>Pawn_PlayerSettings</u>]] playerSettings;
+
+public [[Modding_Tutorials/Docs/Pawn_OutfitTracker|<u>Pawn_OutfitTracker</u>]] outfits;
+
+public [[Modding_Tutorials/Docs/Pawn_InventoryStockTracker|<u>Pawn_InventoryStockTracker</u>]] inventoryStock;
+
+---------
+public bool markedForDiscard;
+public int becameWorldPawnTickAbs = -1;
+public bool teleporting;
+public bool forceNoDeathNotification;
+public int showNamePromptOnTick = -1;
+public int babyNamingDeadline = -1;
+public bool addCorpseToLord;
+public int timesRaisedAsShambler;
+public Map prevMap;
+public bool wasLeftBehindStartingPawn;
+public bool debugMaxMoveSpeed;
+public bool wasDraftedBeforeSkip;
+public bool dontGivePreArrivalPathway;
+public bool everLostEgo;
+
+public const int DefaultBabyNamingPeriod = 60000;
+public const int DefaultGrowthMomentChoicePeriod = 120000;
+public const int MaxMoveTicks = 450;
+
+public RaceProperties RaceProps => def.race;
+public Job CurJob => jobs?.curJob;
+public JobDef CurJobDef => CurJob?.def;
+public bool Downed => health.Downed;
+public bool Crawling
+public bool CanAttackWhileCrawling
+public bool Dead => health.Dead;
+public bool DeadOrDowned => (health.Dead || health.Downed)
+public string KindLabel => GenLabel.BestKindLabel(this);
+
+public IEnumerable<IntVec3> IngredientStackCells
+public bool InContainerEnclosed => base.ParentHolder.IsEnclosingContainer();
+public Corpse Corpse => base.ParentHolder as Corpse;
+public readonly Pawn CarriedBy
+
+public readonly Verb CurrentEffectiveVerb
+private readonly bool ForceNoDeathNotification
+ (health operations bill stack)
+public override IntVec3 InteractionCell
+public ThingOwner SearchableContents
+public virtual bool ShouldShowQuestionMark() (for traders and interactable pawns)
+
+public static void ResetStaticData()
+public override void Notify_DefsHotReloaded()
+public void MarkDeadlifeDustForFaction(Faction faction)
+public override void SpawnSetup(Map map, bool respawningAfterLoad)
+public override void PostMapInit()
+
+public void DrawShadowAt(Vector3 drawLoc)
+public override void DynamicDrawPhaseAt(DrawPhase phase, Vector3 drawLoc, bool flip = false)
+protected override void DrawAt(Vector3 drawLoc, bool flip = false)
+public override void DrawGUIOverlay() (for pawn gui)
+public override void DrawExtraSelectionOverlays()
+
+public override void Tick()
+public override void TickRare()
+
+public void ProcessPostTickVisuals(int ticksPassed, CellRect viewRect)
+public void TickMothballed(int interval)
+
+public void Notify_Teleported(bool endCurrentJob = true, bool resetTweenedPos = true)
+
+public virtual SurgicalInspectionOutcome DoSurgicalInspection(Pawn surgeon, out string desc)
+
+public void Notify_BecameVisible()
+public void Notify_BecameInvisible()
+public void Notify_ForcedVisible()
+public void Notify_PassedToWorld()
+public void Notify_AddBedThoughts()
+
+public override void PreApplyDamage(ref DamageInfo dinfo, out bool absorbed)
+public override void PostApplyDamage(DamageInfo dinfo, float totalDamageDealt)
+
+public override Thing SplitOff(int count)
+
+private float TicksPerMove(bool diagonal)
+private void DoKillSideEffects(DamageInfo? dinfo, Hediff exactCulprit, bool spawned)
+private void PreDeathPawnModifications(DamageInfo? dinfo, Map map)
+private void DropBeforeDying(DamageInfo? dinfo, ref Map map, ref bool spawned)
+private void RemoveFromHoldingContainer(ref Map map, ref bool spawned, DamageInfo? dinfo)
+
+public override void Kill(DamageInfo? dinfo, Hediff exactCulprit = null)
+public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
+public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
+public override void Discard(bool silentlyRemoveReferences = false)
+
+public Corpse MakeCorpse(Building_Grave assignedGrave, Building_Bed currentBed)
+public Corpse MakeCorpse(Building_Grave assignedGrave, bool inBed, float bedRotation)
+
+public void ExitMap(bool allowedToJoinOrCreateCaravan, Rot4 exitDir)
+
+public override void PreTraded(TradeAction action, Pawn playerNegotiator, ITrader trader)
+public void PreKidnapped(Pawn kidnapper)
+public override bool ClaimableBy(Faction by, StringBuilder reason = null)
+public override bool AdoptableBy(Faction by, StringBuilder reason = null)
+public override void SetFaction(Faction newFaction, Pawn recruiter = null)
+public void ClearMind(bool ifLayingKeepLaying = false, bool clearInspiration = false, bool clearMentalState = true)
+public void ClearAllReservations(bool releaseDestinationsOnlyIfObsolete = true)
+public void VerifyReservations(Job prevJob = null)
+public void ClearReservationsForJob(Job job)
+
+public void DropAndForbidEverything(bool keepInventoryAndEquipmentIfInBed = false, bool rememberPrimary = false)
+
+public void GenerateNecessaryName()
+
+public Verb TryGetAttackVerb(Thing target, bool allowManualCastWeapons = false, bool allowTurrets = false)
+
+public bool TryStartAttack(LocalTargetInfo targ)
+
+public override IEnumerable<Thing> ButcherProducts(Pawn butcher, float efficiency)
+
+public TaggedString FactionDesc(TaggedString name, bool extraFactionsInfo, string nameLabel, string genderLabel)
+
+public string MainDesc(bool writeFaction, bool writeGender = true)
+public override string GetInspectString()
+
+public string GetJobReport() (debugging)
+
+public override IEnumerable<Gizmo> GetGizmos()
+
+public virtual IEnumerable<FloatMenuOption> GetExtraFloatMenuOptionsFor(IntVec3 sq)
+public override IEnumerable<FloatMenuOption> GetFloatMenuOptions(Pawn selPawn)
+
+public override TipSignal GetTooltip()
+public override IEnumerable<StatDrawEntry> SpecialDisplayStats()
+
+public bool Sterile()
+public bool AnythingToStrip() => has anything strippable
+public void Strip(bool notifyFaction = true)
+
+public Thought_Memory GiveObservedThought(Pawn observer)
+public HistoryEventDef GiveObservedHistoryEvent(Pawn observer)
+
+public void HearClamor(Thing source, ClamorDef type)
+private void NotifyLordOfClamor(Thing source, ClamorDef type)
+public override void Notify_UsedVerb(Pawn pawn, Verb verb)
+public override void Notify_Explosion(Explosion explosion)
+public override void Notify_BulletImpactNearby(BulletImpactData impactData)
+public virtual void Notify_Downed()
+public virtual void Notify_Released()
+public virtual void Notify_PrisonBreakout()
+public virtual void Notify_DuplicatedFrom(Pawn source)
+
+private void CheckForDisturbedSleep(Pawn source)
+
+public float GetAcceptArrestChance(Pawn arrester)
+public bool CheckAcceptArrest(Pawn arrester)
+
+public bool ThreatDisabled(IAttackTargetSearcher disabledFor)
+public bool ThreatDisabledBecauseNonAggressiveRoamer(Pawn otherPawn)
+
+private void UpdatePyroVerbThought(Verb verb)
+private bool IsValidPyroThoughtTarget(Thing thing)
+
+public List<WorkTypeDef> GetDisabledWorkTypes(bool permanentOnly = false)
+public List<string> GetReasonsForDisabledWorkType(WorkTypeDef workType)
+public bool WorkTypeIsDisabled(WorkTypeDef w)
+public bool OneOfWorkTypesIsDisabled(List<WorkTypeDef> wts)
+public void Notify_DisabledWorkTypesChanged()
+public bool WorkTagIsDisabled(WorkTags w)
+
+public override bool PreventPlayerSellingThingsNearby(out string reason)
+
+public void ChangeKind(PawnKindDef newKindDef)
+
+public override void ExposeData()
+
+public override string ToString()
+public IEnumerable<Thing> ColonyThingsWillingToBuy(Pawn playerNegotiator)
+public void GiveSoldThingToTrader(Thing toGive, int countToGive, Pawn playerNegotiator)
+public void GiveSoldThingToPlayer(Thing toGive, int countToGive, Pawn playerNegotiator)
+
+public int GetRootTile()
+public ThingOwner GetDirectlyHeldThings()
+public void GetChildHolders(List<IThingHolder> outChildren)
+
+
+-->
+
+<!--
+* confirm what these do
+
+public virtual bool CanAttackWhenPathingBlocked
+
+
+private string LabelPrefix
+public override string LabelNoCount
+public override string LabelShort
+public TaggedString LabelNoCountColored
+public string GetKindLabelSingular()
+public string GetKindLabelPlural(int count = -1)
+
+
+public override bool Suspended
+-->
+
+[[Category:Modding tutorials]]
+
+-->

@@ -1,0 +1,143 @@
+<noinclude>{{About|the capacity that controls a number of stats|the rate at which a pawn moves|Move Speed}}
+{{Capacity
+| default base value = 1
+| to string style = PercentZero
+| description = How well a character can move around. Directly affected by consciousness.
+}}</noinclude>Any time a pawn's moving is reduced to 15% or below, they become [[downed]] and can no longer walk, only [[crawl]]. They can be rescued or captured at this point. An injured pawn may eventually recover on their own as the pain levels drop, although blood loss may prevent this or cause them to collapse again.
+
+Moving is related to [[move speed]], but not equivalent. Some factors, like [[armor]] and the [[jogger]] trait, impact move speed, but not the "Moving" capacity itself.
+
+== Affected stats ==
+{{#ask: [[Moving Importance::+]]
+| ?Health Type = Type
+| ?Moving Importance# = Weight
+| ?Moving Limit# = Max
+| ?description
+| format = broadtable
+| limit  = 100
+| mainlabel = Name
+| headers = plain
+| sort = Health Type, 
+| order = desc
+}}
+
+== Factors ==
+=== Base factors ===
+The following factors affect ''moving'':
+* [[Consciousness]]: [[Consciousness Importance::1|100%]] importance, no allowed defect. [[Consciousness Limit::1|100%]] Max.
+* [[Blood Pumping]]: [[Blood Pumping Importance::0.2|20%]] importance, no allowed defect. [[Blood Pumping Limit::-|No]] Max (effectively {{%|{{Q|Blood Pumping|Effective Maximum}} }}).
+* [[Breathing]]: [[Breathing Importance::0.2|20%]] importance, no allowed defect. [[Breathing Limit::-|No]] Max (effectively {{%|{{Q|Breathing|Effective Maximum}} }}).
+* Leg  part efficiency: 100% importance, no allowed defect. No Max (effectively 150%).
+** Whole leg: 50% importance for each leg, no allowed defect. No Max (effectively 150%).
+*** [[Peg leg]]: 60% part efficiency resulting in {{--|20%}} Moving.
+*** [[Prosthetic leg]]: 85% part efficiency resulting in {{--|7.5%}} Moving.
+*** [[Bionic leg]]: 125% part efficiency resulting in {{+|12.5%}} Moving.
+*** [[Archotech leg]]: 150% part efficiency resulting in {{+|25%}} Moving.
+** Tibia part efficiency: 50% importance for each tibia, no allowed defect. No Max (effectively 100%).
+** Femur part efficiency: 50% importance for each femur, no allowed defect. No Max (effectively 100%).
+** Foot part efficiency: 50% importance for each foot, no allowed defect. No Max (effectively 100%).
+*** [[Wooden foot]]: 80% part efficiency resulting in {{--|10%}} Moving.
+** Toes part efficiency: Every toe missing results in {{--|4%}} Moving. No Max (effectively 100%).
+** Pelvis part efficiency: 100% importance, no allowed defect. No Max (effectively 100%).
+** Spine part efficiency: 100% importance, no allowed defect. No Max (effectively 100%).
+{{Moving Part Efficiency Table}}
+
+=== Offsets ===
+The following offsets affect ''moving''. They are applied after the base factors.
+* Alcohol ([[Beer]]) high
+** Tipsy: {{--|5%}}
+** Drunk and Hammered: {{--|10%}}
+** Withdrawal: {{--|30%}}
+* [[Go-juice]]
+** High: {{+|50%}}
+** Withdrawal: {{--|50%}}
+* [[Luciferium]] high: {{+|5%}}
+* [[Yayo]] high: {{+|15%}}
+* Psychite ([[Flake]]/[[Yayo]]/[[Psychite tea]]) withdrawal: {{--|20%}}
+*  [[Smokeleaf]]
+** High: {{--|10%}}
+** Withdrawal: {{--|15%}}
+* [[Wake-up]]
+** High: {{+|10%}}
+** Withdrawal: {{--|20%}}
+* [[Anesthetic]]
+** Wearing off: {{--|5%}}
+** Woozy: {{--|20%}}
+* [[Pregnancy]]
+** Middle-stage: {{--|15%}}
+** Late-stage: {{--|30%}}
+* [[Heatstroke]]
+** Minor: {{--|10%}}
+** Serious: {{--|30%}}
+* [[Hypothermia]]
+** Minor: {{--|10%}}
+** Serious: {{--|30%}}
+* [[Hypothermic slowdown]]
+** Minor: {{--|8%}}
+** Moderate: {{--|20%}}
+** Serious: {{--|40%}}
+* [[Bad back]]: {{--|30%}}
+* [[Frail]]: {{--|30%}}
+* [[Muscle parasites]]: {{--|30%}}
+* [[Fibrous mechanites]]: {{+|50%}}
+* [[Cirrhosis]]: {{--|10%}}
+* [[Power claw]]: {{--|8%}}
+* [[Drill arm]]:{{RoyaltyIcon}} {{--|8%}}
+* [[Field hand]]:{{RoyaltyIcon}} {{--|8%}}
+* [[Fast mover]] persona trait:{{RoyaltyIcon}} {{+|15%}}
+
+=== Post factors ===
+The following factors affect ''moving''. They are applied after the offsets.
+* [[Toughskin gland]]:{{RoyaltyIcon}} '''{{bad|x95%}}'''
+* [[Armorskin gland]]:{{RoyaltyIcon}} '''{{bad|x90%}}'''
+* [[Stoneskin gland]]:{{RoyaltyIcon}} '''{{bad|x85%}}'''
+* [[Vacskin_gland|Vacskin Gland]]:{{RoyaltyIcon}}{{OdysseyIcon}} '''{{bad|x90%}}'''
+* [[Cryptosleep sickness]]: '''{{bad|x90%}}'''
+* [[Food poisoning]]
+** Recovering and Initial: '''{{bad|x80%}}'''
+** Major: '''{{bad|x50%}}'''
+* [[Resurrection sickness]]: '''{{bad|x10%}}'''
+* [[Focus]] psycast:{{RoyaltyIcon}} '''{{good|x130%}}'''
+* [[Burden]] psycast:{{RoyaltyIcon}} '''{{bad|Max: 40%}}'''
+* [[Elephant#In Odyssey DLC|War trumpet]]{{OdysseyIcon}}: {{Bad|x75%}}
+* [[Thrumbo#Summary|Thrumbo roar]]{{OdysseyIcon}}: {{Bad|x70%}}
+
+== Example ==
+Let us calculate the highest value possible. The moving capacity can be calculated with the following formula:
+
+ '''Moving''' = ({IF Consciousness < 100 THEN Consciousness ELSE 1} × [1 + (Blood Pumping - 1) × 0.2] × [1 + (Breathing - 1) × 0.2] × Leg efficiency + Offsets) × Post factors 
+
+Leg efficiency must again be calculated by inserting the efficiency of all the related body parts. Note that the efficiency of all toes must be added up first (normally 10). If any type of body part is not affected, that part of the formula can be omitted.
+
+ '''Leg efficiency''' = (Left leg × 0.5 + Right leg × 0.5) × (Left tibia × 0.5 + Right tibia × 0.5) × (Left femur × 0.5 + Right femur × 0.5) × (Left foot × 0.5 + Right foot × 0.5) × (Toes × 0.04 + 0.6) × Pelvis × Spine
+
+In this particular case the values would be the following:
+
+* [[Consciousness]]: '''140%''' (has no effect due to the max of 100%)
+* [[Blood Pumping]]: '''{{%|{{Q|Blood Pumping|Effective Maximum}} }}''' (''see [[Blood Pumping]]'')
+* [[Breathing]]: '''{{%|{{Q|Breathing|Effective Maximum}} }}''' (''see [[breathing]]'')
+* Leg efficiency
+** Left leg: '''150%''' ([[Archotech leg]])
+** Right leg: '''150%''' ([[Archotech leg]])
+* Offsets (total {{+|145%}}):
+** [[Go-juice]] high: {{+|50%}}
+** [[Luciferium]] high: {{+|5%}}
+** [[Yayo]] high: {{+|15%}}
+** [[Wake-up]] high: {{+|10%}}
+** [[Fibrous mechanites]]: {{+|50%}}
+** [[Persona weapon#Fast_mover|Fast mover]] persona trait {{RoyaltyIcon}}: {{+|15%}}
+* Post factors: '''130%'''
+** [[Focus]] psycast:{{RoyaltyIcon}} '''x130%'''
+
+First of all we can calculate the leg efficiency:
+
+ '''Leg efficiency''' = Left leg × 0.5 + Right leg × 0.5 = 1.5 × 0.5 + 1.5 × 0.5 = '''150%'''
+
+We can therefore calculate the Moving capacity:
+
+ '''Moving''' = ({1} × [1 + (1.9 - 1) × 0.2] × [1 + (1.2 - 1) × 0.2] × 1.5 + 1.45) * 1.3
+ 
+ '''Moving''' = (1 × [1.18] × [1.02] × 1.5 + 1.45) × 1.3 = 427.804% ≈ '''[[Effective Maximum::4.28|428%]]'''
+
+{{Nav|stats|wide}}
+[[Category:Capacity]]

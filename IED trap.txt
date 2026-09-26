@@ -1,0 +1,63 @@
+{{infobox main|security|
+| name = IED trap
+| image = IED high explosive.png
+| description = A pair of high-explosive shells connected to a trigger which detonates on touch or bullet impact. Since it is hidden in the surrounding terrain, it cannot be placed adjacent to other traps. Animals can sense these when calm.
+| type = Building
+| type2 = Security
+| placeable = true
+| minifiable = true
+| size = 1 ˣ 1
+| mass base = 2
+| flammability = 1
+| hp = 40
+| sell price multiplier = 0.7
+| beauty = -4
+| terrain affordance = light
+| research = IEDs
+| thingCategories = BuildingsSecurity
+| skill 1 = Construction
+| skill 1 level = 3
+| work to make = 1400
+| resource 1 = High-explosive shell
+| resource 1 amount = 2
+| deconstructable = false
+| destroyyield = nothing
+}}
+'''IED traps''' ("improvised explosive device" traps) are artisanal landmines made out of [[high-explosive shell]]s.
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+[[File:IED trap radius.png|thumb|left|The radius of the IED trap]]
+{{IED Note}}
+
+When triggered, the trap will begin to spark and emit a hissing sound for {{ticks|15}} before exploding, dealing 50 [[Bomb]] damage in a 3.9-tile radius. Bomb damage has additional damage multipliers depending on the target, see [[Bomb]] for details. 
+
+Non-drafted pawns will attempt to run from an activated IED trap.{{Check Tag|Verify|verify this fact}}
+
+== Analysis ==
+It is inadvisable to place them in the open, as manhunting animals could trigger them. Colonists, friendlies and sane animals are aware of placed traps and will walk around them, but only if another short route is available. Pawns will not be able to avoid traps placed in a long continuous line, or in choke points like a narrow hallway. A trap is less likely to be triggered by a colonist or friendly (0.4% chance).
+
+Placement requires some forethought by guessing positions where the enemies will be stuck for a couple of seconds such as cover spots (rocks or walls) and choke points on the side where enemies would take cover when engaging your colonists. Example: an IED trap surrounded by a tile or two of [[sandbags]] will explode while victims are still close due to the reduced movement speed to walk out over them.
+
+=== As a detonator === 
+[[File:Bombing a defoliator.png|right|300px|thumb|Example of multiple shells to be detonated by a single IED. Here, a dozen high-explosive shells are placed near a [[Crashed ship parts#Defoliator ship|defoliator ship]] (1200 HP), along with an IED trap which will be shot by a pawn.]]
+
+IED traps can be triggered by shooting at them, so they can be placed near other [[high-explosive shell]]s to make a bigger explosion, to destroy larger targets (e.g. [[crashed ship parts]] - see example, right).
+
+Unfortunately, one large stack of 12 shells doesn't make the same damage as a dozen stacks of 1 shell each, so individual stacks have to be made. (In fact, using the example to the right, a stack of 25 shells exploding brings the defoliator to 725/1200, not even half the damage for more than twice the amount of shells). 
+
+It requires a bit of micro-management to place individual stacks of shells (make the shell at a [[machining table]], carry it to a 1×1 [[stockpile zone]], delete this zone to avoid having more shells on it, repeat), and a careful placement of the trap (placing it too close to a mecha will wake it up), but the explosion will destroy the defoliator outright. The pawn shooting at the IED trap should be ready to run very fast, or better: wear a [[jump pack]]{{RoyaltyIcon}} to avoid being sliced up by the waking mechanoids.
+
+This technique works well to destroy ship parts, or possibly sleeping [[scyther]]s that accompany it, but killing [[centipede]]s would require much more shells and is clearly not the best method: kiting them is much easier.
+
+=== Roof Fall Trap ===
+Since the IED deals bomb damage, building a large roof supported by a single wooden wall within range of an IED can cause a [[Roof#Roof collapse|roof collapse]] when the IED is triggered, which can deal additional damage in a much larger area for a low additional cost.
+
+== Version history ==
+* [[Version/0.11.877|0.11.877]] - Added.
+* [[Version/1.1.0|1.1.0]] - IEDs explode when bullets hit them. This allows the player to purposefully shoot them to set them off.
+
+{{nav|security|wide}}
+[[Category:Security]] [[Category:Trap]]

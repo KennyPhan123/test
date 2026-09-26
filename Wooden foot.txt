@@ -1,0 +1,56 @@
+{{Infobox main|
+| name = Wooden foot
+| image = Woodlog a.png
+| type = Medical Items
+| type2 = Body Parts
+| description = An installed wooden foot.
+| class = Medieval
+| marketvalue = 1.2
+| max hit points base = 30
+<!-- Creation -->
+| skill 1 = medical
+| skill 1 level = 3
+| work to make = 1500
+| work speed stat = Medical Operation Speed
+| resource 1 = Wood
+| resource 1 amount = 1
+| resource 2 = Herbal medicine
+| resource 2 amount = 2
+<!-- Technical -->
+| tradeTags = TechHediff
+| techHediffsTags = Poor
+| body part = Foot
+}}
+{{Info|'''Wooden feet''' are medieval [[artificial body parts]] that replace a pawn's foot. They are better than having a missing foot or replacing the foot with a [[peg leg]], but are inferior to all other options.}}
+
+== Acquisition ==
+Unlike most other prostheses, wooden feet don't have a separate item form and the materials require no previous work to turn into a prosthesis before installation. Instead, when ordering a [[Health#Operations|surgical operation]] on a pawn, {{Required Resources}} is consumed and the wooden foot is added to the pawn. Notably, when removed the wooden foot turns back into a wooden log.
+
+== Summary ==
+Wooden feet replace the user's [[Table of Human Body Parts|entire organic foot]]. The wooden foot has a part efficiency of 80%. This partially replaces the functionality of a normal foot - when coupled with the foot body part having a [[Moving]] importance of 50%, it results in restoring 40% [[moving]] per missing foot replaced, or a loss of 10% when replacing a healthy foot. 
+
+Moving, in turn, affects the following [[stats]]: {{#ask: [[Moving Importance::+]]}}. This results in a directly proportional change to a pawn's [[move speed]], and a change in [[melee dodge chance]] equivalent to losing {{#expr: {{Q|Melee Dodge Chance|Moving Importance}}*0.1}} levels of [[Melee]] skill per foot replaced. Due to how the stat is fit to a post-process curve, this can result in the melee dodge chance dropping to 0% for pawns with skill under 7, when replacing one foot, or under 10 for both feet.
+
+Each wooden foot results in -4% character quality and thus a 4% reduction in the affected individual's pawn value.
+
+As an artificial part, wooden feet will give a mood buff to anyone with the [[Body modder]] trait, and a mood penalty to anyone with the [[Body purist]] trait.
+
+=== Installation === 
+Installing the part requires {{ticks|1000}} of work, ?x medicine of ?? quality or better, and a [[Skills#Medical|Medical skill]] of 3.
+
+Removing the part requires {{ticks|2000}} of work, 1x medicine of [[Herbal medicine|herbal]] quality or better, and has no [[Skills#Medical|Medical skill]] requirements.
+
+If the operation fails, the wood will be destroyed.
+
+== Analysis == 
+A wooden foot is significantly better than having a missing foot or using a whole [[peg leg]], and slightly better than 3 lost toes. Meanwhile, a [[prosthetic leg]] only improves Moving from a wooden foot by 2.5%, though it replaces the full leg (including leg scars). For pawns in general, a wooden foot isn't a dealbreaker, but less moving means they are less effective at work and combat.
+
+Regardless, replacing a wooden foot with a [[bionic leg]] should be a priority. There are no "prosthetic feet" or "bionic feet"; you must replace the entire leg to improve a foot.
+
+{{Moving Part Efficiency Table}}
+
+== Version history ==
+* [[Version/1.1.0|1.1.0]] - Added
+
+{{nav|body parts|wide}}
+[[Category:Medical Item]] [[Category:Body Part]] [[Category:Artificial Body Part]]

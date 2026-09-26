@@ -1,0 +1,80 @@
+{{Infobox main|production
+| name = Butcher table
+| image = TableButcher.png
+| imagesize = 192px
+| description = A heavy table for butchering dead creatures into pieces of raw meat.
+| type = Building
+| type2 = Production
+| placeable = true
+| path cost = 50
+| passability = pass through only
+| cover = 0.5
+| minifiable = true
+| size = 3 ˣ 1
+| mass base = 20
+| flammability = 1
+| hp = 180
+| sell price multiplier = 0.7
+| cleanliness = -15
+| terrain affordance = medium
+| facility = tool cabinet
+| work to make = 2000
+| stuff tags = Metallic, Woody
+| resource 1 = Stuff
+| resource 1 amount = 75
+| resource 2 = Wood
+| resource 2 amount = 20
+}}
+A '''butcher table''' is a [[production]] bench for butchering non-rotten creatures into raw meat and [[leather]].
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary == 
+{{Stub|section=1|reason=This section is included in the [[RimWorld_Wiki:To-do#Butchery project|Butchery project]] - there are a number of factors that are in need of verification and potentially addition to this section. See that page for details}}
+The butcher table is ''not'' associated with the kitchen room role. For the exact calculations, see the [[kitchen]] room role.
+
+=== Butchering ===
+{{Stub|section=1|reason=Specifics of filth creation mentioned in analysis}}
+Butcher tables are used to butcher fresh (not rotten) [[corpse]]s into [[meat]] and [[leather]]. Colonists assigned to [[Work#Cook|cooking]] will butcher creatures, after they have actioned all available meal cooking bills. Butchering requires {{Ticks|450}} of work, modified by the [[butchery speed]] of the cook and up to two nearby [[tool cabinet]]s.
+
+The yield of butchering depends on the following factors:
+* The base yields of the animal 
+* The [[butchery efficiency]] of the cook
+* The maturity stage of the animal.{{Check Tag|Detail needed}}
+* A 66% multiplier for damaged corpses i.e. any animal not [[tame]]d and then cleanly slaughtered. {{Check Tag|Fact Check|Version change-log only mentions meat - needs confirmation that it doesn't affect leather}}
+* A percentage multiplier for lost body parts.
+
+Using a butcher table gives no penalty towards butcher yield, while the [[butcher spot]] only gives 70% yield. When a creature is butchered, it will create [[filth|blood]], which is considered [[filth]].{{Check Tag|Fact Check Needed|check with all [[floor]]s, [[terrain]]s, [[snow]]}} 
+
+The Butcher Creature [[bill]] defaults to include all animals and exclude [[human]]oids, but can be configured to include or exclude any species of organic pawn. The bill configuration can also restrict ingredients by hit points by adjusting the minimum and maximum sliders. 
+
+Butchering a human will inflict a {{--|6}} [[mood]] penalty to colonists on the map, and a stacking {{--|6}} penalty to the butcher. Colonists with the [[cannibal]], [[bloodlust]], or [[psychopath]] traits, or colonists following a suitable [[ideoligion]],{{IdeologyIcon}} are immune to both moodlets.
+
+=== Kibble ===
+Butcher tables and butcher spots can be used to create [[kibble]]. Compared to the butcher spot, the butcher table offers more kibble from the same ingredients.
+
+{{Recipe List}}
+
+=== Cleanliness ===
+{{Stub|section=1|reason=Mention specifically whether butchering creates filth}}
+{{Cleanliness Note}}
+<!--In addition, butchering leaves bloodstains around the table, reducing cleanliness even more.-->
+
+== Analysis ==
+Butcher tables are cheap, require no research, and offer a substantial boost to your butchering yield. If you are in any way reliant on [[meat]] for food or [[leather]] for [[trade]] or [[crafting]], then you should make a butchering table as soon as possible.
+
+Optimally, butcher's tables should be placed near your kitchen area and/or cold storage, to reduce travel time. However, as they actively create [[filth]] when used, they should not be placed in the same room where you prepare meals, unless that area is large enough to not risk the average cleanliness dropping below the -2 required to chance [[food poisoning]]. You can place them in a [[cooler|freezer]], though note that [[temperature]]s below {{Temperature|10}}, i.e. all temperatures cold enough to refrigerate or freeze foods, will inflict a work speed penalty, and prolonged exposure to low temperatures can risk [[hypothermia]].
+
+{{Building Stats Table}}
+
+== Version history ==
+* [[Version/0.10.785|0.10.785]] - Can now be made of various [[stuff]]s.
+<gallery>
+ButcheringTable Old.png|Old Butchering Table Texture
+ButcheringTable Oldest.png|Oldest Butchering Table Texture
+</gallery>
+
+{{Nav|production|wide}}
+[[Category:Production]]
+[[Category:Food Production]] [[Category:Resource Production]]

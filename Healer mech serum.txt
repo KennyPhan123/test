@@ -1,0 +1,114 @@
+{{Infobox main|exotic
+| name = Healer mech serum
+| image = Healer mech serum.png
+| description = A one-use super-dose of mechanites tuned to heal health conditions. The mechanites will target and heal the single worst health condition affecting someone at any given time. Works even on health conditions that would otherwise be incurable. The mechanites can even transmute themselves into organic matter, forming new limbs or organs as needed.
+<!-- Base Stats -->
+| type = Exotic item
+| tech level = Ultra
+| hp = 80
+| deterioration = 2
+| marketvalue = 1300
+| mass base = 0.2
+| flammability = 0
+| stack limit = 10
+| path cost = 14
+<!-- Technical -->
+| defName = MechSerumHealer
+| tradeability = Sellable
+| tradeTags = ExoticMisc
+<!-- Unused -->
+| always haulable = true
+| label = healer mech serum
+| use hit points = true
+| quest item = true
+}}
+The '''healer mech serum''' is an item that can heal almost every health condition.
+
+== Acquisition == 
+Healer mech serums cannot be crafted, nor can it be bought from [[trader]]s. Instead they can only be found in [[ancient shrine]]s, [[hermetic crate]]s, and [[sealed crate]]s or acquired as a reward for performing [[quests]]. Note that quest rewards are selected with a weighted random generator, so there is no way to guarantee access to a serum in a given play-through.
+
+== Summary ==
+{{Stub|section=1|reason=Not a full list of conditions - see FixWorstHealthCondition}}
+Healer mech serums will heal a single health condition. It removes the most "severe" health problem, in a specific order. If there are no healable conditions, the serum will still be consumed. Pawns can be directed to use a serum on themselves or others.
+
+The serum will heal these conditions in the following order:
+# Missing limbs, hands, and feet (Not fingers/ toes)
+#* Legs
+#* Shoulders/arms
+#* Spine
+# Whole body ailments
+#* [[Toxic buildup]]
+#* [[Disease]]s, in order of severity
+#* [[Blood loss]]
+#* [[Heatstroke]]
+#* [[Hypothermia]]
+#* [[Frail]]
+#* [[Cryptosleep sickness]]
+#* [[Neural heat]]{{RoyaltyIcon}} (Will ''not'' actually reduce stored neural heat)
+#* [[Xenogerm|Xenogermination coma]]{{BiotechIcon}}
+#* [[Genes#Deathless|Regeneration coma]]{{BiotechIcon}} (Does ''not'' prevent an immediate coma from leftover lethal conditions)
+#* [[Revenant hypnosis]]{{AnomalyIcon}}
+#* Sterilized
+# Brain ailments
+#* [[Resurrection psychosis]]
+#* [[Trauma savant]]
+#* [[Alzheimer's]]
+#* [[Dementia]]
+#* [[Crumbling mind]],{{AnomalyIcon}} so long as it has not progressed to crumbled mind.
+# Scars on the brain
+# Missing organs
+#* [[Lung]]s
+#* [[Kidney]]s
+#* Facial parts
+#* Fingers/ toes
+# Ailments in other parts
+#* For example: [[Carcinoma]], [[Cataract]], [[Bad back]]
+# Drug [[addiction]]
+# Scars on other parts
+# Injuries
+
+Organs that occur in pairs (kidneys, eyes, ears) will always be healed in pairs (e.g. the serum would cure a cataract in both eyes, not just one). Replacements, however, occur individually.
+
+=== Restrictions ===
+Below are the conditions which the serum '''cannot''' treat:
+* [[Luciferium]] need
+* Drug tolerances
+* Anesthetic
+* Fertility Procedures: Tubal Ligation, Implanted IUD, Vasectomy
+* Crumbled mind {{AnomalyIcon}}
+
+To regrow a [[Artificial body parts|replaced body part]], the artificial part has to be removed first by surgery before the serum is applied.
+
+== Analysis ==
+Firstly, don't expect to find more than a handful of these serums during a playthrough, if even that many. Use it wisely: most missing limbs and failed organs can be replaced, either with artificial or natural parts. Serums should be saved for situations where all other treatments fail, such as brain damage, or when a pawn would certainly die otherwise.
+
+Conditions are treated in a strict order. An [[infection]] (Major, developed immunity) will be cured over Alzheimer's, even though the former is virtually harmless. Blood loss, toxic buildup and even cryptosleep sickness will be cured before scars are. Do not apply the serum unless absolutely certain it will heal the correct condition.
+
+=== Uses ===
+* Great for colonists with brain damage, dementia and frailty. These can be quite crippling, and most other ways to treat them come with significant downsides (see below).
+* Repair shattered spines or pelvises to allow colonists to function again (the former can however also be fixed with a [[bionic spine]]).
+* Immediately end a colonist's [[catatonic breakdown|catatonic break]], at quite a cost. Do so when the colonist is absolutely vital to your colony's operations -- this should be a very rare occasion.
+* This is the only option to fix certain Social penalties in the base game, such as the Disfigured debuff from a missing nose.
+**A missing nose can be fixed with the [[aesthetic nose]]{{RoyaltyIcon}} or [[biosculpter pod]],{{IdeologyIcon}} but both require their respective DLC installed.
+
+=== Alternatives ===
+Many permanent conditions like Dementia or Alzheimer's can be cured with other methods, which all have some other form of cost. For a full comparison of what can and can't be healed by these methods, see the Healing method table below.
+* Killing the pawn and applying a [[resurrector mech serum]], an item of the same rarity as the healer mech serum. It can also cause adverse side-effects, including the fatal [[Resurrection psychosis|psychosis]] (which ironically, requires a healer mech serum to treat). 
+* Killing the pawn after making sure they have a [[death refusal]] {{AnomalyIcon}} charge stored. This may result in scars, and the imbuing ritual will lower a pawn's skill XP.
+* [[Luciferium]], which will cause immediate hard dependence on the drug. It requires constant intake; while it does provide significant stat buffs, luciferium is expensive, and withdrawal is fatal.
+* [[Biosculpter pod]]s.{{IdeologyIcon}} The Bioregeneration cycle can heal many conditions (less than lucifierium), which costs 2 [[glitterworld medicine]], up to 25 days in a clean room to complete, and dedicated research. However do note that pawns of an [[Ideoligion]]{{IdeologyIcon}} with the [[Transhumanist]] meme will halve all Biosculpting periods, bringing it down to about 11 to 12 days.
+* [[Scarless]] gene.{{BiotechIcon}} This either requires the scarless [[genepack]] and an [[archite capsule]], or has the price of becoming a [[sanguophage]]. It can also be obtained from game start.
+* [[Unnatural healing]].{{AnomalyIcon}} Requires recruiting a [[Creepjoiner]] with this specific ability, most of the time appearing on blind healers or lone geniuses. Has the same power as a healer mech serum with only a 6 day ({{Ticks|360000}}) cooldown between uses.
+
+{{Heal Option Table}}
+
+== Version history ==
+* [[Version/0.18.1722|0.18.1722]] - Added as '''Healer mechanite superdose'''. At that time it could treat injuries and ailments, but could not treat some conditions, notably diseases.
+* Beta 19/1.0 - Function was expanded such that it can now treat nearly all health conditions.
+* [[Version/1.2.2753|1.2.2753]] - Fix: Healer mech serum heals love
+* [[Version/1.3.3200|1.3.3200]] - Restored the healing message displayed after using a healer mech serum.
+* [[Version/1.4.3641|1.4.3641]] - Fix: Psychic suppression targeted by healer mech serum.
+* [[Version/1.5.4062|1.5.4062]] - Fix: Gene loss shock is healed before scars and injuries when using healing serum.
+
+{{Nav|questitems|wide}}
+[[Category:Medical Item]] [[Category:Exotic Item]]

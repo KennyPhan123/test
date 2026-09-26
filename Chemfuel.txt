@@ -1,0 +1,101 @@
+{{Infobox main|resource
+| name = Chemfuel
+| image = Chemfuel.png
+| description = A volatile liquid chemical. Used to fuel engines and rockets, or to transmute into propellant for projectiles, or as an incendiary weapon.
+| type = Crafted resources
+| type2 = 
+| path cost = 
+| stack limit = 150
+| beauty = 
+| flammability = 2.0
+| marketvalue = 2.3
+| mass base = 0.05
+| hp = 50
+| deterioration = 2
+| defName = Chemfuel
+| thingCategories = Manufactured
+| tradeTags = 
+| page verified for version = 1.3.3066
+}}
+{{Info|'''Chemfuel''' is a [[flammable]] and explosive [[crafted resource]] used to fuel various devices and vehicles, and craft a variety of, often-explosive, items and buildings.}}
+
+== Acquisition ==
+There are several different ways to obtain chemfuel:
+
+=== Biofuel refinery ===
+[[Biofuel refinery|Biofuel refineries]] can be worked by [[Work#Craft|crafters]] to turn organic matter into chemfuel via two bills:
+* Make chemfuel from [[wood]]: Turns {{Icon Small|wood}} 70 wood logs, worth {{Icon Small|Silver||{{#expr: {{Q|Wood|Market Value Base}} * 70}} }} into {{Icon Small|chemfuel}} 35 chemfuel, worth {{Icon Small|Silver||{{#expr: {{Q|Chemfuel|Market Value Base}} * 35}} }}. Takes {{Ticks|2000}} of work, scaling with the [[General Labor Speed]] of the crafter.
+* Make chemfuel from [[raw food]]: Turns 3.5 nutrition worth of food ingredients into {{Icon Small|chemfuel}} 35 chemfuel, worth {{Icon Small|Silver||{{#expr: {{Q|Chemfuel|Market Value Base}} * 35}} }}. Takes {{Ticks|2500}} of work, scaling with the [[General Labor Speed]] of the crafter.
+** [[Hay]] or [[meal]]s are not accepted, though [[kibble]] made with hay will work. Most raw ingredients have a nutrition value of 0.05. For such ingredients, 3.5 nutrition requires 70 units, which is the same quantity required of wood.
+
+=== Boomalopes ===
+Chemfuel is produced when a [[Work#Handle|animal handler]] milks a tamed, adult [[boomalope]] of either gender. The base amount produced is {{Icon Small|chemfuel||{{Q|Boomalope|Milk Amount}} }} but the amount scales with [[Animal Gather Yield]] of the handler. Handlers will milk boomalopes when they are ready, producing chemfuel which will then be left on the ground. Boomalopes can be milked at a base frequence of once every {{#ifeq: 1|{{Q|Boomalope|Milking Interval Days}}|day|{{Q|Boomalope|Milking Interval Days}} days}}, however frequence is also affected by the [[saturation]] of the animal. Chemfuel production is halved when the animal is hungry, reduced to one third when it is urgently hungry, and completely stopped when the animal is starving.
+
+Milking an animal takes {{Ticks|400}} of work, regardless of the amount of chemfuel produced, and only modified by the [[Animal Gather Speed]] of the handler.
+
+=== Infinite chemreactors ===
+An [[infinite chemreactor]] generates {{Icon Small|Chemfuel||75}} chemfuel every {{Ticks/gametime|600000}} as long as it is [[power]]ed by {{#expr:-{{Q|Infinite chemreactor|Power Consumption}} }}W. When it is done producing chemfuel, it will drop a stack of 75 onto an empty adjacent tile.
+
+This process requires no work or input from any pawns.
+
+=== Trade ===
+Varying merchants and [[faction base]]s have stocks of chemfuel available for [[trade]].
+
+=== Boomshrooms ===
+[[Boomshroom]]s{{OdysseyIcon}} are [[glowforest]]{{OdysseyIcon}} [[plants|flora]] that generate a harvestable base yield of {{Icon Small|Chemfuel||{{Q|Boomshroom|Harvest Yield}}}} chemfuel.
+
+== Summary ==
+[[#Usage|Mostly used in crafting.]] 
+
+Chemfuel is especially [[flammable]]. After being in contact with [[fire]] or being damaged beyond 1/3rd of its health, it will spark and emit a hissing sound before exploding after between {{Ticks|70}} and {{Ticks|150}}, dealing 10 [[Flame]] damage in a radius around itself. The radius depends on the quantity in the stack, with a single unit of chemfuel covering a 1.1 tile radius, and expanding this radius proportional to the square root of the stack size times 0.037 up to a maximum radius of {{#expr: 1.1+((149*0.037)^0.5) round 2}} tiles at a full stack of 150. This explosion leaves [[chemfuel puddle]]s which will then ignite and burn over time. [[Chemfuel tank]]s{{OdysseyIcon}} protect chemfuel stocks from direct flame exposure. However, chemfuel tanks{{OdysseyIcon}} holding chemfuel will hiss after allowed to be damaged to under 40% hit points, before all the chemfuel inside them is dropped and immediately explodes. 
+
+The market value of chemfuel is not affected by its hit points, so [[deterioration|deteriorated]] or damaged chemfuel still [[trade|sells]] for its normal price.
+
+== Usage ==
+Chemfuel is used to refuel the following:
+* [[Chemfuel generator]]s, at a rate of {{Icon Small|Chemfuel||4.5}}/day.
+* [[Pod launcher]]s, at a rate of {{Icon Small|Chemfuel||2.25}}/tile of distance.
+* [[Rocketswarm launcher]]s, at a rate of {{Icon Small|Chemfuel||180}}/reload.
+* [[Smokepop pack]]s, at a rate of {{Icon Small|Chemfuel||10}}, regardless of the number of charges used.
+* [[Firefoam pop pack]]s, at a rate of {{Icon Small|Chemfuel||30}}/charge.
+* [[Jump pack]]s,{{RoyaltyIcon}} at a rate of {{Icon Small|Chemfuel||20}}/charge.
+* [[Locust armor]],{{RoyaltyIcon}} at a rate of {{Icon Small|Chemfuel||20}}/charge.
+* [[Phoenix armor]],{{RoyaltyIcon}} at a rate of {{Icon Small|Chemfuel||40}}/charge.
+* [[Gravship]]s,{{OdysseyIcon}} at a rate of {{Icon Small|Chemfuel||10}}/tile traveled, or {{Icon Small|Chemfuel||50}}/ trip, whichever is greater. Must be stored in a connected [[chemfuel tank]]{{OdysseyIcon}} to function.
+* [[Passenger shuttle]]s,{{OdysseyIcon}} at a rate of {{Icon Small|Chemfuel||3}}/tile traveled, or {{Icon Small|Chemfuel||50}}/ trip, whichever is greater.
+
+It is also an ingredient in the following crafting recipes:
+{{Ingredient List|noCollapse=1}}
+
+== Analysis ==
+Due to its volatile nature, it should be stored safely away from [[flammable]]s and [[power conduit]]s capable of [[Zzztt...|electric misphaps]]. Ideally, chemfuel should be placed in small, non-flammable rooms in modest amounts so a single explosion won't destroy your entire supply and should not share space with [[mortar shell]]s. Be careful, as an unhappy colonist may [[Mental break|decide]] to let out their stress out by [[Tantrum|beating up a chemfuel container]] until it explodes. But with a little creativity, careful placement of chemfuel stockpiles can be used as components in base [[defense]].
+
+Alternatively, chemfuel may be compactly and relatively safely stored onto [[transport pod]]s and [[passenger shuttle]]s as a tedious but space-efficient way to store chemfuel.
+
+[[Chemfuel tank]]s{{OdysseyIcon}} can be used as another storage option. It is safer as chemfuel won't explode while in a tank, but both types of chemfuel tank provide far less storage density than [[shelves]].  
+
+=== Methods of acquiring ===
+[[Infinite chemreactor]]s are better than [[boomalope]]s, which are better than [[biofuel refinery|refining]], regardless of what feedstock is used.
+
+An infinite chemreactor is entirely free fuel, taking 0 work or items, only [[power]]. One chemreactor can fully load a [[chemfuel generator]], providing both 700 W of extra [[power]] and some fuel to spare. However, they are exclusively a [[quest]] reward. In addition, the production per day is somewhat slow. These factors inherently limit its viability as a colony's sole source of chemfuel.
+
+[[Boomalope]]s can graze on [[grass]] for free, and feeding them [[haygrass]] or [[corn]] still gives more chemfuel per nutrition than a refinery. So long as a pawn with [[Animals skill]] greater than 4 is available, milking a boomalope itself takes less work than a refinery. Of course, this comes at the usual explosive risk, and boomalopes may not always be available.
+
+Refineries are the most consistently available way of obtaining chemfuel, but require the most work. A wood-fueled biofuel refinery and [[chemfuel generator]] is still more wood- and work-efficient than a [[wood-fired generator]], so don't shy away from using one.
+* If you have to grow things yourself, growing [[corn]] is much less work per chemfuel than growing trees. You can also use [[insect meat]] / [[human meat]] / [[hay]]-created [[kibble]] / [[twisted meat]]{{AnomalyIcon}} in a refinery with no penalty.
+* If your [[biome]] has many trees, then harvesting wood can be a viable alternative to converting food.
+
+== Version history ==
+* [[Version/0.16.1393|0.16.1393]] - Added. At this point, its only use is refueling [[pod launcher]]s.
+* [[Version/0.17.1546|0.17.1546]] - Because it was way OP, chemfuel can no longer be made from [[haygrass]].
+* [[Version/0.18.1722|0.18.1722]] - [[Boomalope]]s can be milked for chemfuel.
+* Beta 19 - Chemfuel can no longer be acquired by [[deep drill]]ing.
+* [[Version/1.0.2096|1.0.2096]] or prior  - Texture updated.
+* [[Version/1.4.3523|1.4.3523]] - [[Electric smelter|Smelted]] armor no longer returns chemfuel.
+* [[Version/1.4.3541|1.4.3541]] - Disallow [[baby food]]{{BiotechIcon}} and [[hemogen pack]]s{{BiotechIcon}} for chemfuel creation recipes.
+* [[Version/1.6.4518|1.6.4518]] - Fix: Refueling could use fogged chemfuel.
+
+<gallery>
+Chemfuel old.png|Old texture
+</gallery>
+[[Category:Crafted Resource]]

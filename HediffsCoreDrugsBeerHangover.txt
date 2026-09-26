@@ -1,0 +1,42 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Drugs/Beer}}
+|}
+----
+{| {{STDT| c_24}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Hangover" <!-- defName="Hangover" -->
+! Hangover
+----
+* Def Name: Hangover
+* Label: hangover
+* Label Noun: a hangover
+| An unpleasant delayed after-effect of alcohol intoxication.
+|<!-- Details -->
+* Hediff Class: '''Hediff_Hangover'''
+* Initial Severity: '''100%'''
+* Scenario Can Add: {{Good|true}}
+* '''Comps'''
+** '''Severity Per Day:''' {{---|100%}}
+|<!-- Stages -->
+{| {{STDT| c_24}}
+! Label !! Parameters
+|-
+! Slight
+|<!-- Parameters -->
+* Min Severity: '''0%'''
+* [[Consciousness]] Offset: {{--|3%}}
+|-
+! Strong
+|<!-- Parameters -->
+* Min Severity: '''15%'''
+* [[Consciousness]] Offset: {{--|8%}}
+|-
+! Pounding
+|<!-- Parameters -->
+<!-- starts low because it isn't visible until alcohol hediff is gone-->
+* Min Severity: '''40%'''
+* Vomit {{MTB}} Days: '''0.4'''
+* [[Consciousness]] Offset: {{--|18%}}
+|}<noinclude>
+|}</noinclude>

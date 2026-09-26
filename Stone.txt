@@ -1,0 +1,60 @@
+__NOTOC__
+{{See also|Materials|Stone blocks}}
+
+'''Stone''' is a material used for construction and crafting. It is typically acquired by cutting it from [[stone chunk|chunks]], either from the ones naturally spawned on maps or from mining stone.
+
+== Comparison table ==
+Below is a list of material effects for stone types. When a [[stuff]]able item is created from a stone type, each of its base stats is multiplied by a factor for that stat belonging to the material used. Take "Hit Points" for example. For this stat, [[granite blocks]] have a ''factor'' of {{Q|granite blocks|Max Hit Points Factor}} and [[wall]]s have a base stat of {{Q|Wall|Max Hit Points Base}}. Thus, the final "Hit Points" of a granite wall is: <code>{{Q|granite blocks|Max Hit Points Factor}} × {{Q|Wall|Max Hit Points Base}} = {{#expr: {{Q|granite blocks|Max Hit Points Factor}}*{{Q|Wall|Max Hit Points Base}}}}</code>
+
+This process is then repeated for each stat. The material's sharp damage factor is applied to the items base sharp damage, flammability factor to flammability etc.
+
+Market value is the notable exception to this direct multiplicative relationship, but the value of a material does have a direct effect on that of the final product. See [[Market Value]] for details.
+<includeonly><onlyinclude>
+|-
+! {{DLC Icons|{{{Name}}} }}
+| data-sort-value="{{{Beauty Factor}}}" | ×{{{Beauty Factor}}}
+| data-sort-value="{{{Beauty Offset}}}" | +{{{Beauty Offset}}}
+| data-sort-value="{{{Work To Make Factor}}}" | ×{{{Work To Make Factor}}}
+| data-sort-value="{{{Work To Build Factor}}}" | ×{{{Work To Build Factor}}}
+| data-sort-value="{{{Work To Build Offset}}}" | {{#if:{{{Work To Build Offset}}}|+{{Ticks|{{{Work To Build Offset}}}}}|-}}
+| data-sort-value="{{{Max Hit Points Factor}}}" | ×{{{Max Hit Points Factor}}}
+| data-sort-value="{{{Melee Blunt Damage Factor}}}"| {{#if: {{{Melee Blunt Damage Factor}}} | ×{{{Melee Blunt Damage Factor}}} }}
+| data-sort-value="{{{Melee Sharp Damage Factor}}}" | {{#if: {{{Melee Sharp Damage Factor}}} | ×{{{Melee Sharp Damage Factor}}} }}
+| data-sort-value="{{{Melee Cooldown Factor}}}"| {{#if: {{{Melee Cooldown Factor}}} | ×{{{Melee Cooldown Factor}}} }}
+| data-sort-value="{{{Door Opening Speed Factor}}}"| {{#if: {{{Door Opening Speed Factor}}} | ×{{{Door Opening Speed Factor}}} }}
+| data-sort-value="{{{Rest Effectiveness Factor}}}"| {{#if: {{{Rest Effectiveness Factor}}} | ×{{{Rest Effectiveness Factor}}} }}
+| data-sort-value="{{{Market Value Base}}}" | {{{Market Value Base}}} {{Icon Small|silver}}
+</onlyinclude></includeonly><div><li style="display: inline-table;">
+{| {{STDT| sortable c_12 text-center}}
+! Name !! Beauty (Factor) !! Beauty (Offset) !! Work To Make !! Work To Build (Factor) !! Work To Build (Offset) !! Max Hit Points !! Melee Blunt Damage !! Melee Sharp Damage !! Melee Cooldown !! Door Opening Speed !! Rest Effectiveness !! Market Value
+{{#ask: [[Stuff Category::Stony]]
+ | named args = true
+ | ?Name
+ | ?Beauty Factor
+ | ?Beauty Offset
+ | ?Work To Make Factor
+ | ?Work To Build Factor
+ | ?Work To Build Offset # ticks
+ | ?Max Hit Points Factor
+ | ?Melee Blunt Damage Factor
+ | ?Melee Sharp Damage Factor
+ | ?Melee Cooldown Factor
+ | ?Door Opening Speed Factor
+ | ?Rest Effectiveness Factor
+ | ?Market Value Base
+ | format = template
+ | template = :Stone
+ | link = none
+ | sort = From DLC, Name
+}}
+|}
+</li></div>
+
+All stones have the following modifiers in common:
+* [[Property:Flammability Factor|Flammability Factor]] of 0.
+
+== Descriptions ==
+{{List|Stone}}
+
+{{nav|materials|wide}}
+[[Category: Material|#Stone]]

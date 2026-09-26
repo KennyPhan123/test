@@ -1,0 +1,60 @@
+{{Infobox main|structure
+| name = Straw matting
+| image = StrawMatting.png
+| description = Rough straw matting for use in animal barns. It is cheap and accepts very little filth.
+<!-- Base Stats -->
+| type = Floor
+| marketvalue = 1.6
+| beauty = -1
+| hp = 100
+| flammability = 1.5
+| path cost = 1
+<!-- Building -->
+| size = 1 ˣ 1
+| placeable = True
+| cleanliness = -0.1
+| cleaning time factor = 1
+| filth multiplier = 0.05
+| speed = 0.93
+<!-- Creation -->
+| work to make = 120
+| resource 1 = Hay
+| resource 1 amount = 2
+| deconstructable = true
+<!-- Wiki -->
+| page verified for version = 1.3.3101
+}}
+'''Straw matting''' is a type of [[floor]] that prevents 95% of most types of [[filth]] from being deposited on it.
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+Straw matting is one of a few floors that slows down pawns to {{Bad|{{%|{{P|Move Speed Factor}} }} }} of their [[move speed]]. It is also ''very'' flammable. It is not just by far the most flammable flooring, but one of the most flammable structures in general. Precautions should be taken in case of [[fire]] in areas where this is a risk, but it can also be exploited by making intentional fire traps. When it burns it leaves [[burned straw matting]] behind.
+
+Straw matting has a [[cleanliness]] of {{Bad|{{P|Cleanliness}} }}, which means a room entirely filled with straw matting will have a cleanliness of the same value. Cleaning [[filth]] from straw matting takes the normal amount of work.
+
+=== Filth multiplier ===
+
+Straw matting is the only floor with a [[filth multiplier]] of less than 100%. The chance that [[filth]] will be deposited on it is reduced to only {{Good|{{%|{{P|Filth Multiplier}} }} }}, meaning {{%|1-{{P|Filth Multiplier}} }} of filth that would be dropped there won't be dropped. Despite the in-game description, straw matting '''does not actually delete any filth'''. Pawns with dirty feet will instead deposit the filth on other floor tiles elsewhere. This means that using straw matting as a "doormat" is counter-productive. <abbr title="Version/1.6.4871">At the time of writing</abbr> it is unknown if this is a bug.
+
+The filth multiplier is especially important for filth like [[Filth#Animal filth|animal filth]], [[Filth#Dirt|dirt]], [[Filth#Sand|sand]] and [[Filth#Trash|trash]]. Some types of filth are excluded from the multiplier, however, and will be deposited at the usual rate. These include notably: [[Filth#Blood|blood]], [[Filth#Corpse bile|corpse bile]], [[Filth#Firefoam|firefoam]] and [[Filth#Vomit|vomit]].
+
+== Analysis ==
+
+Straw matting should be placed in any enclosed area that animals, especially farm animals, are allowed to enter (like [[barn]]s). However, due to its incredibly high [[flammability]], its is not recommended to pave pathways or other unrelated areas with straw matting.
+
+=== Cleanliness ===
+{{Stub|section=1|reason=Time to overwhelm steel/sterile tile or other cleanliness positive flooring vs straw matting needs to be tested, including for non-kitchens}}<!--Note for editors looking to destub this section: Regular floor vs straw matting was tested, but cleanliness positive floors were not. Also keep in mind the last paragraph - in testing the fact that they can be combined should be accounted for--> 
+For the purposes of [[cooking]], as long as a room's cleanliness is above -2.0, then the chance of [[food poisoning]] will not increase. Straw matting's {{P|Cleanliness}} is significantly above this threshold. As straw matting only creates 5% of walking filth, it is a very work efficient way to creating "clean enough" kitchens. It takes much longer to reach -2.0 cleanliness with straw than with regular floor. 
+
+However, for other rooms where cleanliness and impressiveness matters, such as hospitals and throne rooms,{{RoyaltyIcon}} the beauty and base cleanliness penalties of straw matting are sufficient by themselves to justify the cleaning time to avoid.
+
+You can pair this floor with [[steel tile|steel]] or [[sterile tile]]s in areas where filth does not or cannot accumulate, such as under furniture or chairs. This increases the overall base cleanliness of the room, while retaining the filth repellent nature of the straw matting in traffic areas. [[Fence]]s can be used to control the path cost on sterile tile making pawns prefer the straw matting instead
+
+== Version history ==
+* [[Version/1.3.3066|1.3.3066]] - Added
+* [[Version/1.4.3523|1.4.3523]] - Cleaning time factor added.
+
+{{Nav|floor|wide}}
+[[Category:Floor]]

@@ -1,0 +1,333 @@
+<noinclude>{{Verified|1.5.4104}}
+&larr; <small>[[Stat]]</small>
+{| {{STDT|sortable}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category</noinclude>
+<!-- Core Stats_Pawns_WorkRecipes -->
+<div id="Core Stats_Pawns_WorkRecipes"><!--<Defs>-->
+<!-- Dumb recipes - not affected by skill because there's no skill component -->
+|- id="Smelting Speed" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />SmeltingSpeed
+* '''Label:'''<br />smelting speed
+| The speed at which this person smelts things.<br id="n" /><br id="n" />Since smelting is dumb labor, smelting speed is not affected by any skill.
+|
+* Display Order:<br />'''140'''
+* Def Name:<br />'''PawnWork'''
+* Label:<br />'''Work'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0.1}}
+* '''To String Style:''' PercentZero
+|
+* '''Stat Factors:'''
+** '''[[Global Work Speed]]'''
+* '''Capacity Factors:'''
+** Capacity: '''[[Sight]]'''
+*** Weight: '''{{%|0.3}}'''
+*** Max: '''{{%|1}}'''
+** Capacity: '''[[Manipulation]]'''
+*** Weight: '''{{%|1}}'''
+| 4500
+<!--</StatDef>-->
+<!-- Standard-speed recipes - speed not affected by skill because there's no skill involved OR because the skill affects product quality instead of production speed -->
+|- id="General Labor Speed" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />GeneralLaborSpeed
+* '''Label:'''<br />general labor speed
+| The speed at which this person carries out general labor like making stone blocks, making chemfuel at a refinery, burning items, tailoring clothes, creating art, smithing armor and weapons or smelting slag. This stat applies both to activities that involve no skill, as well as those where the skill affects the quality of the product instead of the speed of production.
+|
+* Display Order:<br />'''140'''
+* Def Name:<br />'''PawnWork'''
+* Label:<br />'''Work'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0.1}}
+* '''To String Style:''' PercentZero
+|
+* '''Stat Factors:'''
+** '''[[Global Work Speed]]'''
+* '''Capacity Factors:'''
+** Capacity: '''[[Manipulation]]'''
+*** Weight: '''{{%|1}}'''
+** Capacity: '''[[Sight]]'''
+*** Weight: '''{{%|0.5}}'''
+*** Max: '''{{%|1}}'''
+| 4999
+<!--</StatDef>-->
+<!-- Production recipes - speed affected by skill because there is no output quality -->
+|- id="Drug Synthesis Speed" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />DrugSynthesisSpeed
+* '''Label:'''<br />drug synthesis speed
+| How fast this character synthesizes complex chemical drugs.
+|
+* Display Order:<br />'''140'''
+* Def Name:<br />'''PawnWork'''
+* Label:<br />'''Work'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0.1}}
+* '''To String Style:''' PercentZero
+* '''Supress Disabled Error:''' {{Good|true}}
+* '''Disable If Skill Disabled:''' [[Crafting]]
+|
+* '''Stat Factors:'''
+** '''[[Global Work Speed]]'''
+* '''Skill Need Factors:'''
+** '''SkillNeed_BaseBonus:'''
+*** Skill: '''[[Intellectual]]'''
+*** Base Value: '''{{%|0.3}}'''
+*** Bonus Per Level: '''{{+|{{%|0.0875}}}}'''
+*** Required: '''{{Bad|false}}'''
+{{Graph:Chart|width=300|height=150|xAxisTitle=Intellectual Level|yAxisTitle=Drug Synthesis Speed|type=rect|x=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20|y=0.3, 0.3875, 0.475, 0.5625, 0.65, 0.7375, 0.825, 0.9125, 1, 1.0875, 1.175, 1.2625, 1.35, 1.4375, 1.525, 1.6125, 1.7, 1.7875, 1.875, 1.9625, 2.05|xGrid=|yGrid=}}
+* '''Capacity Factors:'''
+** Capacity: '''[[Sight]]'''
+*** Weight: '''{{%|0.6}}'''
+*** Max: '''{{%|1}}'''
+** Capacity: '''[[Manipulation]]'''
+*** Weight: '''{{%|1}}'''
+| 4511
+<!--</StatDef>-->
+|- id="Cooking Speed" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />CookSpeed
+* '''Label:'''<br />cooking speed
+| The speed at which this person cooks meals.
+|
+* Display Order:<br />'''140'''
+* Def Name:<br />'''PawnWork'''
+* Label:<br />'''Work'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|0}}
+* '''No Skill Offset:''' 20
+* '''Min Value:''' {{%|0.1}}
+* '''To String Style:''' PercentZero
+* '''To String Style Unfinalized:''' FloatOne
+|
+* '''Post Process Stat Factors:'''
+** '''[[Global Work Speed]]'''
+* '''Skill Need Offsets:'''
+** '''SkillNeed_BaseBonus:'''
+*** Skill: '''[[Cooking]]'''
+*** Base Value: '''0'''
+*** Bonus Per Level: '''{{+|1}}'''
+{{Graph:Chart|width=300|height=150|xAxisTitle=Cooking Level|yAxisTitle=Cooking Skill Points|type=rect|x=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20|y=0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20|xGrid=|yGrid=}}
+* '''Capacity Offsets:'''
+** Capacity: '''[[Sight]]'''
+*** Scale: '''4'''
+*** Max: '''{{%|1.5}}'''
+** Capacity: '''[[Manipulation]]'''
+*** Scale: '''16'''
+*** Max: '''{{%|1.5}}'''
+* '''Post Process Curve:'''
+** '''Points:'''
+*** (-20, 0.01)
+*** (0, 0.4)
+*** (20, 1.6)
+{{Graph:Chart|width=300|height=150|xAxisTitle=Cooking Skill Points|yAxisTitle=Cooking Speed Multiplier|type=line|x=-20, 0, 20|y=0.01, 0.4, 1.6|interpolate=monotone|xGrid=|yGrid=}}
+| 4541
+<!--</StatDef>-->
+|- id="Food Poison Chance" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />FoodPoisonChance
+* '''Label:'''<br />food poison chance
+* '''Label For Full Stat List:'''<br />food poison chance (chance to poison a meal)
+| The probability that this character will inadvertently poison a meal they cook.<br id="n" /><br id="n" />Anyone who eats a food-poisoned meal will be temporarily debilitated with pain, weakness, and vomiting.
+|
+* Display Order:<br />'''140'''
+* Def Name:<br />'''PawnWork'''
+* Label:<br />'''Work'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0}}
+* '''To String Style:''' PercentTwo
+|
+* '''Skill Need Factors:'''
+** '''SkillNeed_Direct:'''
+*** Skill: '''[[Cooking]]'''
+*** '''Values Per Level:'''
+**** 0.050
+**** 0.040
+**** 0.030
+**** 0.020
+**** 0.015
+**** 0.010
+**** 0.005
+**** 0.0025
+**** 0.0015
+**** 0.001
+**** 0.001
+**** 0.001
+**** 0.001
+**** 0.001
+**** 0.001
+**** 0.001
+**** 0.001
+**** 0.001
+**** 0.001
+**** 0.001
+{{Graph:Chart|width=300|height=150|xAxisTitle=Cooking Level|yAxisTitle=Food Poison Chance|type=rect|x=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20|y=0.050, 0.040, 0.030, 0.020, 0.015, 0.010, 0.005, 0.0025, 0.0015, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001|xGrid=|yGrid=}}
+| 4542
+<!--</StatDef>-->
+|- id="Drug Cooking Speed" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />DrugCookingSpeed
+* '''Label:'''<br />drug cooking speed
+| The speed at which this person brews beer and tea, or makes simple drug products like smokeleaf joints.
+|
+* Display Order:<br />'''140'''
+* Def Name:<br />'''PawnWork'''
+* Label:<br />'''Work'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0.1}}
+* '''To String Style:''' PercentZero
+* '''Supress Disabled Error:''' {{Good|true}}
+|
+* '''Stat Factors:'''
+** '''[[Global Work Speed]]'''
+* '''Skill Need Factors:'''
+** '''SkillNeed_BaseBonus:'''
+*** Skill: '''[[Cooking]]'''
+*** Base Value: '''{{%|0.4}}'''
+*** Bonus Per Level: '''{{+|{{%|0.06}}}}'''
+{{Graph:Chart|width=300|height=150|xAxisTitle=Cooking Skill Points|yAxisTitle=Drug Cooking Speed|type=rect|x=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20|y=0.40, 0.46, 0.52, 0.58, 0.64, 0.70, 0.76, 0.82, 0.88, 0.94, 1.00, 1.06, 1.12, 1.18, 1.24, 1.30, 1.36, 1.42, 1.48, 1.54, 1.60|xGrid=|yGrid=}}
+* '''Capacity Factors:'''
+** Capacity: '''[[Sight]]'''
+*** Weight: '''{{%|0.3}}'''
+*** Max: '''{{%|1}}'''
+** Capacity: '''[[Manipulation]]'''
+*** Weight: '''{{%|1}}'''
+| 4510
+<!--</StatDef>-->
+|- id="Butchery Speed" <!-- ParentName="ButcherySpeedBase" --><!--<StatDef>-->
+|
+* '''Def Name:'''<br />ButcheryFleshSpeed
+* '''Label:'''<br />butchery speed
+| The speed at which this person butchers flesh creatures.
+|
+* Display Order:<br />'''140'''
+* Def Name:<br />'''PawnWork'''
+* Label:<br />'''Work'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* Default Base Value: '''{{%|1}}'''
+* Min Value: '''{{%|0.1}}'''
+* To String Style: '''PercentZero'''
+|
+* ''Stat Factors:''
+** '''[[Global Work Speed]]'''
+* '''Capacity Factors:'''
+** Capacity: '''[[Sight]]'''
+*** Weight: '''{{%|0.4}}'''
+*** Max: '''{{%|1}}'''
+** Capacity: '''[[Manipulation]]'''
+*** Weight: '''{{%|1}}'''
+* '''Skill Need Factors:'''
+** '''SkillNeed_BaseBonus:'''
+*** Skill: '''[[Cooking]]'''
+*** Base Value: '''{{%|0.4}}'''
+*** Bonus Per Level: '''{{+|{{%|0.06}}}}'''
+{{Graph:Chart|width=300|height=150|xAxisTitle=Cooking Skill Points|yAxisTitle=Butchery Speed|type=rect|x=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20|y=0.40, 0.46, 0.52, 0.58, 0.64, 0.70, 0.76, 0.82, 0.88, 0.94, 1.00, 1.06, 1.12, 1.18, 1.24, 1.30, 1.36, 1.42, 1.48, 1.54, 1.60|xGrid=|yGrid=}}
+| 4500
+<!--</StatDef>-->
+|- id="Mechanoid Shredding Speed" <!-- ParentName="ButcherySpeedBase" --><!--<StatDef>-->
+|
+* '''Def Name:'''<br />ButcheryMechanoidSpeed
+* '''Label:'''<br />mechanoid shredding speed
+| The speed at which this person can shred a mechanoid for resources.
+|
+* Display Order:<br />'''140'''
+* Def Name:<br />'''PawnWork'''
+* Label:<br />'''Work'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* Default Base Value: '''{{%|1}}'''
+* Min Value: '''{{%|0.1}}'''
+* To String Style: '''PercentZero'''
+|
+* ''Stat Factors:''
+** '''[[Global Work Speed]]'''
+* '''Capacity Factors:'''
+** Capacity: '''[[Sight]]'''
+*** Weight: '''{{%|0.4}}'''
+*** Max: '''{{%|1}}'''
+** Capacity: '''[[Manipulation]]'''
+*** Weight: '''{{%|1}}'''
+* '''Skill Need Factors:'''
+** '''SkillNeed_BaseBonus:'''
+*** Skill: '''[[Crafting]]'''
+*** Base Value: '''{{%|0.4}}'''
+*** Bonus Per Level: '''{{+|{{%|0.06}}}}'''
+{{Graph:Chart|width=300|height=150|xAxisTitle=Crafting Level|yAxisTitle=Mechanoid Shredding Speed|type=rect|x=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20|y=0.40, 0.46, 0.52, 0.58, 0.64, 0.70, 0.76, 0.82, 0.88, 0.94, 1.00, 1.06, 1.12, 1.18, 1.24, 1.30, 1.36, 1.42, 1.48, 1.54, 1.60|xGrid=|yGrid=}}
+| 4500
+<!--</StatDef>-->
+|- id="Butchery Efficiency" <!-- ParentName="ButcheryEfficiencyBase" --><!--<StatDef>-->
+|
+* '''Def Name:'''<br />ButcheryFleshEfficiency
+* '''Label:'''<br />butchery efficiency
+| The amount of meat produced when butchering flesh creatures.<br id="n" /><br id="n" />The actual amount is also related to the creature's size.
+|
+* Display Order:<br />'''140'''
+* Def Name:<br />'''PawnWork'''
+* Label:<br />'''Work'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* Default Base Value: '''{{%|1}}'''
+* Min Value: '''{{%|0}}'''
+* Max Value: '''{{%|1.5}}'''
+* To String Style: '''PercentZero'''
+|
+* '''Capacity Factors:'''
+** Capacity: '''[[Sight]]'''
+*** Weight: '''{{%|0.4}}'''
+*** Max: '''{{%|1}}'''
+** Capacity: '''[[Manipulation]]'''
+*** Weight: '''{{%|0.9}}'''
+* '''Skill Need Factors:'''
+** '''SkillNeed_BaseBonus:'''
+*** Skill: '''[[Cooking]]'''
+*** Base Value: '''{{%|0.75}}'''
+*** Bonus Per Level: '''{{+|{{%|0.025}}}}'''
+{{Graph:Chart|width=300|height=150|xAxisTitle=Cooking Skill Points|yAxisTitle=Butchery Efficiency|type=rect|x=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20|y=0.75, 0.775, 0.80, 0.825, 0.85, 0.875, 0.90, 0.925, 0.95, 0.975, 1.00, 1.025, 1.05, 1.075, 1.10, 1.125, 1.15, 1.175, 1.20, 1.225, 1.25|xGrid=|yGrid=}}
+| 4520
+<!--</StatDef>-->
+|- id="Mechanoid Shredding Efficiency" <!-- ParentName="ButcheryEfficiencyBase" --><!--<StatDef>-->
+|
+* '''Def Name:'''<br />ButcheryMechanoidEfficiency
+* '''Label:'''<br />mechanoid shredding efficiency
+| The amount of materials yielded when this person shreds a dead mechanoid for resources.<br id="n" /><br id="n" />The actual amount is also related to the mechanoid's size.
+|
+* Display Order:<br />'''140'''
+* Def Name:<br />'''PawnWork'''
+* Label:<br />'''Work'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* Default Base Value: '''{{%|1}}'''
+* Min Value: '''{{%|0}}'''
+* Max Value: '''{{%|1.5}}'''
+* To String Style: '''PercentZero'''
+|
+* '''Capacity Factors:'''
+** Capacity: '''[[Sight]]'''
+*** Weight: '''{{%|0.4}}'''
+*** Max: '''{{%|1}}'''
+** Capacity: '''[[Manipulation]]'''
+*** Weight: '''{{%|0.9}}'''
+* '''Skill Need Factors:'''
+** '''SkillNeed_BaseBonus:'''
+*** Skill: '''[[Crafting]]'''
+*** Base Value: '''{{%|0.75}}'''
+*** Bonus Per Level: '''{{+|{{%|0.025}}}}'''
+{{Graph:Chart|width=300|height=150|xAxisTitle=Crafting Level|yAxisTitle=Mechanoid Shredding Speed|type=rect|x=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20|y=0.75, 0.775, 0.80, 0.825, 0.85, 0.875, 0.90, 0.925, 0.95, 0.975, 1.00, 1.025, 1.05, 1.075, 1.10, 1.125, 1.15, 1.175, 1.20, 1.225, 1.25|xGrid=|yGrid=}}
+| 4520
+<!--</StatDef>-->
+<!--</Defs>--></div>
+<noinclude>
+|}</noinclude>

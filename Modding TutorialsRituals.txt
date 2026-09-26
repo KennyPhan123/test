@@ -1,0 +1,36 @@
+This is a basic overview of how Rituals work and is still in progress
+
+Rituals start with a <code>RitualPatternDef</code> which have a <code>[https://github.com/Garethp/rimworld-ash-and-dust/blob/master/Defs/PirateBurial/Ritual.xml#L37 ritualBehavior]</code> that links to a <code>[https://github.com/Garethp/rimworld-ash-and-dust/blob/master/Defs/PirateBurial/Ritual.xml#L54C18-L54C39 RitualBehaviorDef]</code>. <code>RitualBehaviorDef</code> has stages that rituals go through. Each stage has a <code>[https://github.com/Garethp/rimworld-ash-and-dust/blob/master/Defs/PirateBurial/Ritual.xml#L70 defaultDuty]</code> with the ability to designate a [https://github.com/Garethp/rimworld-ash-and-dust/blob/master/Defs/PirateBurial/Ritual.xml#L84 duty for each role].
+
+<code>RitualPatternDef</code>s have a <code>[https://github.com/Garethp/rimworld-ash-and-dust/blob/master/Defs/PirateBurial/Ritual.xml#L36 ritualOutcomeEffect]</code> which controls what the different possible outcome levels are and how the different participants and [https://github.com/Garethp/rimworld-ash-and-dust/blob/master/Defs/PirateBurial/Ritual.xml#L116 roles affect the score]. If you're just using XML, it doesn't directly specify the reward of the outcome, just how the quality is determined. For that, most rituals should allow players to choose their own rewards. The rewards a player can choose from are defined with <code>RitualAttachableOutcomeEffectDef</code>s. For examples of <code>RitualAttachableOutcomeEffectDef</code>s, take a look into the file at <code>Data/Ideology/Defs/PreceptDefs/Ritual_AttachableOutcomes_Special.xml</code>. Here's an example from that file:
+
+<syntaxhighlight lang="xml">
+  <RitualAttachableOutcomeEffectDef>
+    <defName>GauranlenTreePod</defName>
+    <workerClass>RitualAttachableOutcomeEffectWorker_GauranlenPosSprout</workerClass>
+    <label>gauranlen pod sprout</label>
+    <effectDesc>a Gauranlen pod will sprout at a random location on the map, if it can.</effectDesc>
+    <letterInfoText>A Gauranlen pod sprouted nearby.</letterInfoText>
+    <requiredMemeAny>
+      <li>TreeConnection</li>
+      <li>NaturePrimacy</li>
+    </requiredMemeAny>
+  </RitualAttachableOutcomeEffectDef>
+</syntaxhighlight>
+
+The <code>workerClass</code> of the attachable outcome is what actually applies the reward to a ritual, based on the quality as defined by the <code>RitualOutcomeEffectDef</code>. If you want to have completely new rewards you'll need C#, likewise if you want to have completely new behaviors during the rituals. But if you're just interested in defining a ritual and not the outcome, and you don't want completely custom behavior, then you should be able to do it in XML
+
+For reference, the built-in attachable outcomes are:
+
+Royalty: 
+* <code>RitualAttachableOutcomeEffectWorker_PsyfocusRecharge</code>
+
+Ideology:
+* <code>RitualAttachableOutcomeEffectWorker_FarmAnimalsWanderIn</code>
+* <code>RitualAttachableOutcomeEffectWorker_GauranlenPosSprout</code>
+* <code>RitualAttachableOutcomeEffectWorker_InsectJellyTunnels</code>
+* <code>RitualAttachableOutcomeEffectWorker_NearbyFactionGoodwill</code>
+* <code>RitualAttachableOutcomeEffectWorker_RandomRecruit</code>
+* <code>RitualAttachableOutcomeEffectWorker_DiscoverAncientComplex</code>
+
+[[Category:Modding tutorials]]

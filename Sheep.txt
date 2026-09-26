@@ -1,0 +1,126 @@
+{{Infobox main|animal
+| name = Sheep
+| image = SheepFemale east.png
+| description = Sheep husbandry is practised throughout the majority of the inhabited worlds, however only recently it has been introduced to the rimworlds. Domestic sheep are relatively small herbivores, usually with yellowish wool and medium sized horns.
+| type = Animal
+| movespeed = 4.8
+| min comfortable temperature = -20
+| max comfortable temperature = 45
+| toxic resistance = 0.5
+| toxic environment resistance = 0
+| flammability = 0.7
+| marketvalue = 210
+| filth rate = 8
+| woolname = sheep wool
+| sheartime = 10
+| wool = 45
+| herdanimal = true
+| combatPower = 55
+| bodysize = 0.75
+| healthscale = 0.7
+| hungerrate = 0.225
+| diet = herbivorous
+| leathername = plainleather
+| wildness = 0
+| manhuntertame = 0
+| manhunter = 0
+| roamMtb = 5
+| trainable = none
+| gestation = 5.661
+| offspring = 1-2
+| avg offspring = 1.318
+| mateMtb = 12
+| lifespan = 12
+| juvenileage = 0.25
+| maturityage = 0.3333
+| tradeTags = AnimalFarm, AnimalCommon
+| baby name = lamb
+| male name = ram
+| female name = ewe
+| attack1dmg = 14
+| attack1type = Blunt
+| attack1cool = 2.9
+| attack1part = head
+| attack2dmg = 6
+| attack2type = Blunt
+| attack2cool = 2
+| attack2part = front left leg
+| attack3dmg = 6
+| attack3type = Poke
+| attack3cool = 2
+| attack3part = front left leg
+| attack4dmg = 6
+| attack4type = Blunt
+| attack4cool = 2
+| attack4part = front right leg
+| attack5dmg = 6
+| attack5type = Poke
+| attack5cool = 2
+| attack5part = front right leg
+| attack6dmg = 8
+| attack6type = Bite
+| attack6cool = 2
+| attack6part = teeth
+| attack6chancefactor = 0.5
+| isCoastal = false
+}}
+'''Sheep''' are easily tameable [[herbivore]]s with a medium movement speed. Males of the species are referred to as '''Rams''' and can be distinguished by their rounded horns, while females are referred to as '''Ewes''' and lack horns. Babies of either gender appear identical to ewes and are referred to as '''Lambs'''. Despite the visual differences, adults of both genders have the same stats and attacks. 
+
+== Acquisition ==
+Sheep do not spawn as wild animals. Instead they must be [[Trade|purchased]] from a [[Trade#Bulk goods trader 2|bulk goods traders]] or [[faction base]], or join the colony in an [[Events#Animals join|Animals join]] events.
+
+== Summary ==
+{{Pen Animal Note|Sheep}}
+
+Sheep can be sheared for {{Icon Small|Sheep wool}} {{P|Wool Amount}} [[sheep wool]] ({{Icon Small|silver|16|{{#expr: {{Q|Sheep wool|Market Value Base}}*45}}}}) every {{P|Shearing Interval Days}} days for {{Ticks|1700}} of work. Note that yield and shearing time are modified by the shearer's [[Animal Gather Yield]] and [[Animal Gather Speed]] respectively.
+
+== Analysis ==
+=== Wool ===
+Sheep have the highest wool / nutrition ratio of all animals. Sheep produce as much wool as [[alpaca]]s, but have a lower hunger rate.
+
+An adult sheep eats {{#expr:{{#show:{{PAGENAME}}|?Real Hunger Rate}}/0.05}} [[hay]] per day, which would require {{#expr:{{#show:{{PAGENAME}}|?Real Hunger Rate}}/0.05/{{#show:Haygrass|?Harvest Yield Per Day (100)}} round 1}} tiles of [[haygrass]] to sustain. Sheep produce {{Icon Small|Sheep wool}} {{#expr: {{P|Wool Amount}} / {{P|Shearing Interval Days}}}} wool per day. The same {{#expr:{{#show:{{PAGENAME}}|?Real Hunger Rate}}/0.05/{{#show:Haygrass|?Harvest Yield Per Day (100)}} round 1}} tiles of [[cotton plant]] would produce {{Icon Small|Cloth}} {{#expr: 5.2 * {{#show:Cotton plant|?Harvest Yield Per Day (100)}} round 2}} units of cloth per day. Sheep wool is {{%|({{Q|Sheep wool|Market Value Base}} / {{Q|Cloth|Market Value Base}})-1 round 2}} more valuable per unit, making wool more profitable. This becomes further profitable if sheep are allowed to graze.
+
+However, [[textile]] supply usually isn't a problem. Cotton can be grown as long as its warm outside and there's soil around. Sheep are more efficient, but you'll have to buy (or otherwise get) sheep, which is an opportunity cost on its own.  In the early game, cloth is usually "good enough" for all your textile needs. Sheep must also be sheared by an Animals handler, while cloth can be sown normally. If you don't have anyone good at Animals, sheep produce much less wool.
+
+=== Nutrition ===
+When slaughtered, a sheep yields {{#vardefineecho:baby_meat|{{Meat Leather Curve|{{#expr:{{P|Body Size}}*0.2*140}}}}}} meat and {{Meat Leather Curve|{{#expr:{{P|Body Size}}*0.2*40}}}} leather as a baby; {{Meat Leather Curve|{{#expr:{{P|Body Size}}*0.5*140}}}} meat and {{Meat Leather Curve|{{#expr:{{P|Body Size}}*0.5*40}}}} as a juvenile; or {{Meat Leather Curve|{{#expr:{{P|Body Size}}*140}}}} meat and {{Meat Leather Curve|{{#expr:{{P|Body Size}}*40}}}} leather as an adult. 1 meat is equal to 0.05 nutrition.
+
+An adult sheep consumes {{P|Real Hunger Rate}} nutrition per day, and creates up to {{#expr: {{P|Average Offspring Per Birth}}/{{P|Gestation Period Days}} round 2}} offspring per day.
+* When offspring are slaughtered as babies, a female sheep will produce {{#expr:{{Meat Production|{{PAGENAME}}|baby}} round 2}} nutrition of meat per day, giving a nutrition efficiency of {{%|{{Meat Production|{{PAGENAME}}|baby}}/{{P|Real Hunger Rate}} round 3}}.
+* If the offspring are allowed to grow to adulthood, offspring will consume an additional {{#expr:{{Nutrition Consumption|{{PAGENAME}}|adult}} - {{P|Real Hunger Rate}} round 2}} nutrition per day, but will instead yield {{#expr:{{Meat Production|{{PAGENAME}}|adult}} round 2}} nutrition per day as they are slaughtered, resulting in a nutrition efficiency of {{%|{{Meat Production|{{PAGENAME}}|adult}}/{{Nutrition Consumption|{{PAGENAME}}|adult}} round 3}}.
+When considering a population of equal numbers of males and females, these nutrition efficiencies fall to {{%|{{Meat Production|{{PAGENAME}}|baby|1|1}}/{{Nutrition Consumption|{{PAGENAME}}|baby|1|1}} round 3}} for baby slaughter and {{%|{{Meat Production|{{PAGENAME}}|adult|1|1}}/{{Nutrition Consumption|{{PAGENAME}}|adult|1|1}} round 3}} for adult slaughter.
+
+== Training ==
+{{TrainingTable}}
+
+== Health ==
+{{Animal Health Table|QuadrupedAnimalWithHooves}}
+{{Pawn Attack Table}}
+
+== Gallery ==
+<gallery>
+SheepMale east.png|Ram facing east
+SheepMale north.png|Ram facing north
+SheepMale south.png|Ram facing south
+</gallery>
+<gallery>
+SheepFemale east.png|Ewe facing east
+SheepFemale north.png|Ewe facing north
+SheepFemale south.png|Ewe facing south
+</gallery>
+<gallery>
+Dessicated SheepMale east.png|Dessicated ram facing east
+Dessicated SheepMale north.png|Dessicated ram facing north
+Dessicated SheepMale south.png|Dessicated ram facing south
+</gallery>
+<gallery>
+Dessicated SheepFemale east.png|Dessicated ewe facing east
+Dessicated SheepFemale north.png|Dessicated ewe facing north
+Dessicated SheepFemale south.png|Dessicated ewe facing south
+</gallery>
+== Version history ==
+* [[Version/1.1.0|1.1.0]] - Added as part of the integration of the Vanilla Animals Expanded - Livestock mod into the basegame.
+
+{{nav|animal|wide}}
+[[Category:Animals]]
+[[Category:Farm animal]]

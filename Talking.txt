@@ -1,0 +1,63 @@
+{{Capacity
+| mechanoid name = Communication
+| default base value = 1
+| to string style = PercentZero
+| description = A [[characters|character]]'s capacity of speech. Directly affected by consciousness.
+}}{{#set:Effective Maximum = {{#expr: {{Q|Consciousness|Effective Maximum}} * 1.25 + 0.5 }} }}
+Talking is a factor of all social stats. Talking capacity is reduced by a damaged or missing [[Table of Human Body Parts#Jaw|jaw]]. [[Dementia]] also impairs talking.
+
+{{Hover title|Version/1.4.3901|At the time of writing}}, the maximum possible talking capacity is {{%|{{P|Effective Maximum}} }} for a pawn with [[sensory mechanites]], a [[bionic jaw]], and the maximum possible consciousness of {{%|{{Q|Consciousness|Effective Maximum}} }}. There is however no advantage of a talking capacity above 100%.
+
+== Effects ==
+{{Stub|section=1|reason=Section describing effects when mute - e.g. some leader abilities can't be used. See [[sight]] for an example}}
+Talking has a number of unique interactions with other mechanics, beyond the traditional effects on [[stats]]. 
+
+Pawns with 0% Talking:
+* Do not ramble and inflict a mood penalty when they have the [[disturbing]] trait.{{AnomalyIcon}}
+** Pawns with 0% talking can suffer the Insane Rambling mental break, and will talk during it.
+
+== Affected stats ==
+{{#ask: [[Talking Importance::+]]
+| ?Health Type = Type
+| ?Talking Importance# = Weight
+| ?Talking Limit# = Max
+| ?description
+| format = broadtable
+| limit  = 100
+| mainlabel = Name
+| headers = plain
+| sort = Health Type, Name
+}}
+
+== Factors ==
+Pawns need a talking capacity above '''0%''' in order to socially interact with other pawns, trade, tame/train animals, and hold speeches.
+=== Base factors ===
+The following factors affect Talking:
+* [[Consciousness]]: [[Consciousness Importance::1|100%]] importance, no allowed defect. [[Consciousness Limit::-|No]] Max
+* Jaw part efficiency. 100% importance, no allowed defect. No Max (effectively 125%).
+** [[Denture]]: '''80%''' part efficiency, resulting in {{--|20%}} Talking
+** [[Bionic jaw]]: '''125%''' part efficiency, resulting in {{+|25%}} Talking
+** Tongue part efficiency. 100% importance, no allowed defect. No Max (effectively 100%).
+*** [[Bionic tongue]]: '''100%''' part efficiency, resulting in no changes in capacity.
+
+=== Offsets ===
+The following offsets affect Talking:
+* [[Anesthetic]]:
+** Woozy: {{--|20%}}
+* [[Dementia]]: {{--|25%}}
+** Note, that as dementia also inflicts a {{--|15%}} Consciousness penalty, this is effectively a {{--|40%}} to Talking (assuming no other factors are involved)
+* [[Sensory mechanites]] (Any severity): {{+|50%}}
+
+===Post factors===
+The following factors affect Talking. They are applied after the offsets. 
+* [[Food poisoning]]:
+** Major: {{Bad|x0.8}}
+*** Note that food poisoning also penalizes Consciousness, so the effective penalty is greater than this would suggest.
+* [[Ghoul]]:{{AnomalyIcon}}: {{Bad|x0}}
+
+=== Cap Modifiers ===
+The following factor restricts the maximum Talking value:
+* [[Trauma savant]]: '''0%'''
+
+
+{{nav|stats|wide}}

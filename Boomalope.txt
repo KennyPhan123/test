@@ -1,0 +1,160 @@
+{{infobox main|animal|
+| page verified for version = 1.3.3101
+| name = Boomalope
+| image = Boomalope east.png
+| description = Engineered for chemicals production, the boomalope grows a large sac of volatile chemicals on its back. Though it is weak and fragile for its size, other animals have learned to avoid it because of the huge explosion it produces when it dies. It can be milked to produce chemfuel - very carefully.
+| type = Animal
+| movespeed = 3.4
+| min comfortable temperature = -15
+| max comfortable temperature = 40
+| toxic resistance = 0.5
+| toxic environment resistance = 0.9
+| flammability = 0.7
+| marketvalue = 350
+| filth rate = 16
+| milkname = chemfuel
+| milktime = 1
+| milk = 11
+| herdanimal = true
+| bodysize = 2
+| combatPower = 80
+| healthscale = 0.65
+| hungerrate = 0.535
+| diet = herbivorous
+| leathername = plainleather
+| wildness = 0.6
+| manhuntertame = 0.1
+| manhunter = 0.1
+| roamMtb = 2
+| trainable = none
+| mateMtb = 12
+| gestation = 6.66
+| offspring = 1
+| lifespan = 15
+| juvenileage = 0.2
+| maturityage = 0.3333
+| tradeTags = AnimalUncommon, AnimalFighter
+| baby name = boomalope calf
+| attack1dmg = 7
+| attack1type = Blunt
+| attack1cool = 2
+| attack1part = head
+| attack1chancefactor = 0.2
+| attack2dmg = 9
+| attack2type = Blunt
+| attack2cool = 2
+| attack2part = front left leg
+| attack3dmg = 9
+| attack3type = Poke
+| attack3cool = 2
+| attack3part = front left leg
+| attack4dmg = 9
+| attack4type = Blunt
+| attack4cool = 2
+| attack4part = front right leg
+| attack5dmg = 9
+| attack5type = Poke
+| attack5cool = 2
+| attack5part = front right leg
+| attack6dmg = 10
+| attack6type = Bite
+| attack6cool = 2
+| attack6part = teeth
+| attack6chancefactor = 0.5
+| isCoastal = false
+| livesin_temperateforest = 0.4
+| livesin_temperateforest_polluted = 0.1
+| livesin_temperateswamp = 0.4
+| livesin_temperateswamp_polluted = 0.1
+| livesin_aridshrubland = 0.5
+| livesin_aridshrubland_polluted = 0.4
+| livesin_desert = 0.6
+| livesin_tropicalrainforest = 0.5
+| livesin_tropicalrainforest_polluted = 0.1
+| livesin_tropicalswamp = 0.5
+| livesin_tropicalswamp_polluted = 0.1
+| livesin_glowforest = 0.5
+| livesin_glowforest_polluted = 0.1
+| livesin_grassland = 0.4
+| livesin_grassland_polluted = 0.1
+| livesin_lavafield = 0.5
+| livesin_lavafield_polluted = 0.4
+| livesin_scarlands = 0.4
+| livesin_scarlands_polluted = 0.1
+}}
+'''Boomalopes''', called '''boomalope calves''' when babies, are [[herbivore]]s with a high hunger rate. They produce {{#show:{{PAGENAME}}|?Daily Milk Average#}} [[chemfuel]] per day, and explode on death.
+
+== Acquisition ==
+Boomalopes can be found in {{Habitats}}. They can either be tamed by a [[Work#Handle|Handler]] or self-tame in a random [[events|event]].
+
+Boomalopes can be bought and sold in other [[Trade#Faction base|faction bases]] and from [[Trade#Slaver caravan 2|slaver traders]] and [[Trade#Exotic goods trader 2|exotic goods traders]]. Boomalopes purchased from traders will be already tamed.
+
+== Summary ==
+{{Pen Animal Note|Boomalopes}} As pen animals, [[raider]]s will not attack boomalopes.
+
+Boomalopes (both male & female) can be milked for {{Icon Small|chemfuel}} {{#show:{{PAGENAME}}|?Daily Milk Average#}} [[chemfuel]] per day when fully fed. Production decreases as [[saturation]] drops. Production drops to half when the animal is hungry, one third when urgently hungry and completely stops when starving.
+
+Milking an animal takes {{Ticks|400}} of work, regardless of the amount of chemfuel produced, and only modified by the [[Animal Gather Speed]] of the handler.
+
+Boomalopes have 90% [[Toxic Environment Resistance]] rendering them highly resistant to environmental effects such as [[rot stink]] and [[toxic buildup]] from non-attack sources.
+
+==== Explosion ====
+On death, boomalopes explode, doing 10 [[Damage Types#Flame|flame]] damage in a radius that depends on the age stage of the animal. Baby boomalopes explode in a 1.9 tile radius, juveniles in a 2.9 tile radius, and adults in a 4.9 tile radius. This explosion does not itself set fires nor provide [[Filth#Chemfuel puddle|chemfuel puddles]] to burn but the flame damage might ignite surrounding objects and pawns. '''Note:''' This explosion will still occur if the boomalope is slaughtered or dies of natural causes.
+
+[[Shambler]]{{AnomalyIcon}} boomalopes do not explode on death.
+
+== Analysis ==
+Boomalopes are an efficient source of chemfuel, more efficient than a [[biofuel refinery]] in terms of both pawn work and nutrition cost. It is naturally risky to handle boomalopes due to [[Mental break#Slaughterer|potential collateral damage]], but they can be a vital part of a colony's infrastructure. 
+
+=== Chemfuel ===
+Each boomalope produces enough chemfuel to fuel ~{{#expr:{{#show:Boomalope|?Daily Milk Average#}}/4.5 round 2}} [[chemfuel powered generator]]s.
+
+An adult boomalope consumes {{#expr:{{#show:{{PAGENAME}}|?Real Hunger Rate}}/0.05}} [[hay]] per day. In 100% fertility soil, this would require {{#expr:{{#show:{{PAGENAME}}|?Real Hunger Rate}}/0.05/{{#show:Haygrass|?Harvest Yield Per Day (100)}} round 1}} tiles of [[haygrass]] to grow. In order to produce the same {{Icon Small|Chemfuel}} {{#show:{{PAGENAME}}|?Daily Milk Average#}} chemfuel per day in a [[biofuel refinery]], {{#expr:{{#show:{{PAGENAME}}|?Daily Milk Average#}}/{{#show:Corn plant|?Harvest Yield Per Day (100)}}*70/35 round 1}} tiles of [[corn plant]] would be needed. The yield of a boomalope is then modified by the handler's [[Animal Gather Yield]], which has a chance to botch the milking and produce no chemfuel if it is below 100%. A boomalope fed with hay is still more efficient than refining corn except in the case of a handler with very low skill, [[Manipulation]] and [[Sight]].
+
+This advantage is further increased if the boomalope is allowed to graze instead of requiring pawn-grown crops. This can partially or totally negate the ongoing resource costs of boomalopes, which the refinery cannot replicate. 
+
+In addition, the process of milking tends to be faster than refining. It takes {{ticks|400}} of work for {{Icon Small|Chemfuel}} {{P|Daily Milk Average#}} units of chemfuel, or {{ticks|{{#expr:400/{{P|Daily Milk Average#}} round 1}}}} of work per chemfuel. A refinery would take {{ticks|2500}} for {{Icon Small|Chemfuel}} 35 units, or {{ticks|{{#expr:2500/35 round 1}}}} of work per chemfuel. Milking could be slower at low [[Skills#Animals|Animals skill]], as it relies on [[Animal Gather Speed]] and [[Animal Gather Yield]] rather than [[General Labor Speed]]. So long as a pawn has a skill of 5 or more, they'll be faster at milking. And unlike refining, boomalope milking speed can be reduced even further at high Animals skill.
+
+=== Safety ===
+Wild boomalopes spawn in areas with long and year-round growing periods. If you really need to kill a boomalope, use ranged weapons to kill them, preferably during [[rain]]fall to prevent fires from spreading. [[Manhunter]] boomalopes can be devastating to a colony, but, as explosive animals, they are prone to chain reactions.
+
+For tamed boomalopes, it is relatively safe to let them sleep outside. However, one should have [[animal sleeping spot]]s in a separate, fireproof safe area, to avoid bringing injured boomalopes inside your base. It may be a good idea to keep boomalope in a separate pen as other animals to minimize collateral damage in case of accidental death. It's generally better to limit the number kept in the same spot as multiple boomalopes can lead to a chain explosion. One option would be to disable boomalopes in the setting of your pen marker and to keep the animals exclusively tied to caravan markers outside your walls. If a large herd of boomalope get sick, it can be a good idea to move them to a caravan on the world map as boomalopes that die in caravans won't hurt each other. If boomalopes must be kept indoors, such as during [[toxic fallout]], non-flammable flooring and walls, such as [[concrete]] and [[stone]], should be used instead of [[straw matting]] and [[wood]]. Durable alternatives for pens, such as non-flammable [[barricade]]s, may also be preferred.
+
+Since there is no automated way to get rid of them without starting fires and auto-slaughter results in handlers getting harmed, boomalopes herds often end up overpopulating. To safely slaughter boomalopes, you can make a fireproof room, place a [[pen marker]] in there that allows for boomalopes, and shoot the boomalopes there once they have been transferred. Alternatively, if the meat and/or leather is not required, excess population can be sent in caravans and either banished once off the map, sold for a decent amount of [[silver]] or given for goodwill to other factions.
+
+==Training==
+{{TrainingTable}}
+
+== Health ==
+{{Animal Health Table|QuadrupedAnimalWithHoovesAndHump}}
+{{Pawn Attack Table}}
+
+== Lore ==
+<onlyinclude>Boomalopes are likely one of the chemfuel-producing animals mentioned in the [[boomshroom]]'s description as being engineered from the boomshroom's genetic material.</onlyinclude>
+
+== Gallery ==
+<gallery>
+Boomalope east.png|Facing east
+Boomalope north.png|Facing north
+Boomalope south.png|Facing south
+</gallery>
+<gallery>
+Corpse Boomalope east.png|Fresh corpse. Boomalopes only use this sprite as a [[shambler]]{{AnomalyIcon}} at this stage.
+</gallery>
+<gallery>
+Dessicated boomalope east.png|Dessicated facing east
+Dessicated boomalope north.png|Dessicated facing north
+Dessicated boomalope south.png|Dessicated facing south
+</gallery>
+
+== Version history ==
+* [[Version/0.12.906|0.12.906]] - Added
+* [[Version/0.18.1722|0.18.1722]] - Can now be milked for chemfuel, at a rate of 20 fuel per 2 days. 
+* Beta 19/1.0 - chemfuel production reduced by 40%, hunger rate 1.0 -> 1.3
+* [[Version/1.3.3066|1.3.3066]] - Trainable Intelligence reduced from Intermediate to None. Became [[pen animals]].
+* [[Version/1.4.3555|1.4.3555]] - Boomalopes given 90% [[Toxic Environment Resistance]], rendering them resistant to [[toxic fallout]] and other sources of toxins.
+* [[Version/1.5.4062|1.5.4062]] - Fix: Boomalope struck by lightning causes several errors as a corpse.
+
+{{nav|animal|wide}}
+[[Category:Animals]]
+[[Category:Wild animal]]

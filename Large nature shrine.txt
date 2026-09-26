@@ -1,0 +1,80 @@
+{{Royalty}}
+{{Project|Psyfocus}}
+{{Infobox main|misc
+| name = Large nature shrine
+| image = Large nature shrine.png
+| description = A large shrine for honoring spiritual beings. Tribal psycasters can focus on this shrine while meditating to increase psyfocus gain. Nature shrines lose their power if they are close to artificial structures, so they are always built in nature. Since they look like natural objects to unobservant outsiders, raiders will generally ignore them.
+| type = Building
+| type2 = Misc
+| placeable = true
+| passability = pass through only
+| minifiable = true
+| size = 3 ˣ 3
+| mass base = 50
+| flammability = 1
+| hp = 300
+| sell price multiplier = 0.7
+| beauty = 20
+| terrain affordance = heavy
+| thingCategories = BuildingsMisc
+| work to make = 30000
+| stuff tags = Metallic, Woody, Stony
+| resource 1 = Stuff
+| resource 1 amount = 300
+}}
+A '''large nature shrine''' is a type of [[furniture]] added by the [[Royalty DLC]] at which a pawn can meditate for recreation and to regain [[psyfocus]].
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+{{Stub|section|reason=Raider avoidance mechanic - ensure parity with all other similar items}}
+Large nature shrines are a natural [[meditation focus]]. They have a base meditation focus strength of '''30%'''. Each [[animus stone]] within 9.9 tiles increases the meditation effectiveness by {{+|2%}}, up to a total of four stones for a maximum of {{+|8%}}.
+
+Like other natural focus objects, its effectiveness is reduced by artificial buildings within a 34.9 tile radius. Note that this does not include [[floor]]ing and [[torch lamp]]s. The reduction is set by the following curve:
+
+<div><li style="display: inline-table;">
+{| {{STDT| c_07 text-center}}
+! Artificial items<br>in range !! Strength<br>offset !! Graph
+|-
+|  0 || '''0%'''
+| rowspan="4" | {{Graph:Chart
+ | width = 200 | height = 200 | type = line | xAxisTitle = Artificial items in range | yAxisTitle = Strength offset
+ | x = 0,  5,  10,  50
+ | y = 0, -6, -13, -30
+}}
+|-
+|  5 || {{--| 6%}}
+|-
+| 10 || {{--|13%}}
+|-
+| 50 || {{--|30%}}
+|} 
+</li></div>
+
+The maximum meditation focus strength is thus '''38%''' for a large nature shrine with no artificial buildings within 34.9 tiles and surrounded by four [[animus stone]]s.
+
+Large nature shrines also give {{+|1%}} psyfocus per day to other nearby natural foci, for a total of {{+|4%}} with four nature shrines.
+
+== Analysis == 
+{{Stub|section=1|reason=Better comparison of nature options, and when to use this if ever. Some mention of other focus also valuable }}
+As a natural meditation focus, the large nature shrine has +2% psyfocus / day compared to the [[anima tree]], but does not have the [[Anima tree#Linking ritual|anima tree linking ritual]]. Therefore, the anima tree is usually better for daily meditation.
+
+The large nature shrine can be built when the anima tree is too far for natural pawns to be conveniently able to meditate at, and when the superior [[animus stone]] is unavailable. For boosting the strength of an anima tree, the [[small nature shrine]] is cheaper and gives the same amount of extra psyfocus.
+
+== Gallery ==
+<gallery>
+NatureShrine_Large_Planks.png|Sprite when made with Wood
+Large nature shrine.png|Sprite when made with Metals or Stone
+</gallery>
+
+== Version history ==
+* [[Version/1.1.2647|1.1.2647]] - Added.
+* [[Version/1.1.2654|1.1.2654]] - Reduce nature shrine build times by 40%. Increase psyfocus gain of large nature shrine from 22 to 30.
+* [[Version/1.2.2719|1.2.2719]] - Now has terrain affordances appropriate for its size. Fix: Just claimed artificial structures don't affect nature focus objects.
+* [[Version/1.2.2753|1.2.2753]] - Made nature shrines minifiable and reinstallable.
+
+{{nav|misc|wide}}
+
+[[Category:Furniture]]
+[[Category:Royalty]]

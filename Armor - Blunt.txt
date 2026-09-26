@@ -1,0 +1,134 @@
+{{Stub|reason=1) Two-way links}}
+{{About|the stat that items of [[apparel]] have|more information about blunt armor generally|Apparel#Protection{{!}}Armor}}
+{{See also|Armor - Sharp|Armor - Heat}}
+{{Verified|1.5.4104}}{{Stat
+| def name = ArmorRating_Blunt
+| label = Armor - Blunt
+| label for full stat list = Armor - Blunt (armor stat)
+| description =<!-- extra lines, line breaks, and whitespace are there because otherwise everything is on one line, which doesn't reflect in-game appearance -->
+The protection given against blunt damage like fists, club impacts and rock falls.
+
+Upon taking damage, first this armor rating is reduced by the attack's armor penetration value.
+
+The remaining armor rating is then compared against a random number from 0 to 100.
+
+{{0|00}}- If the random number is under half the armor rating, the damage deflects harmlessly.
+<br />{{0|00}}- If the random number is over half the armor rating, but not higher than the armor rating, the damage is reduced by half and changed to blunt.
+<br />{{0|00}}- If the random number is greater than the armor rating, the armor has no effect.
+
+For example, at 90% armor rating against an attack with 10% armor penetration, there is a 40% chance of deflecting the attack harmlessly, and a 40% chance of mitigating the damage.
+
+Each layer of armor is applied separately, from the outside in.
+| default base value = 0
+| min value = 0
+| max value = 2
+| hide at value = 0
+| to string style = PercentOne
+| category = Apparel
+| display priority in category = 99
+| parts = StatPart_Quality, StatPart_Stuff
+}}
+
+== Stat Parts ==
+=== Quality ===
+<div><li style="display: inline-table;">
+{| {{STDT| c_01}}
+! [[Quality]] !! Factor
+|-
+! Awful
+| {{Bad|×60%}}
+|-
+! Poor
+| {{Bad|×80%}}
+|-
+! Normal
+| '''×100%'''
+|-
+! Good
+| {{Good|×115%}}
+|-
+! Excellent
+| {{Good|×130%}}
+|-
+! Masterwork
+| {{Good|×145%}}
+|-
+! Legendary
+| {{Good|×180%}}
+|}
+</li></div>
+
+=== Stuff ===
+* Priority: '''100'''{{Check Tag|What is the impact of this?}}
+* Stuff Power Stat: '''[[Armor - Blunt (Material Factor)]]'''
+* Multiplier Stat: '''[[Armor - Material Effect Multiplier]]'''
+
+== Base values ==
+<div><li style="display: inline-table;">
+Click to <div class="mw-collapsible">
+<div class="mw-collapsible-content">
+{| {{STDT| c_01 sortable}}
+! Thing !! [[Property:Armor - Blunt|Armor - Blunt]]
+|-
+{{#ask: [[Armor - Blunt::+]]
+| ?Armor - Blunt
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Name
+| limit = 1000
+}}
+|}
+</div>
+</div>
+</li></div>
+
+== Stat Def Data ==
+{| {{STDT| c_01}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Armor - Blunt (Armor Stat)" <!-- ParentName="ArmorRatingBase" --><!--<StatDef>-->
+|
+* '''Def Name:'''<br />ArmorRating_Blunt
+* '''Label:'''<br />Armor - Blunt
+* '''Label For Full Stat List:'''<br />Armor - Blunt (armor stat)
+| The protection given against blunt damage like fists, club impacts and rock falls.
+Upon taking damage, first this armor rating is reduced by the attack's armor penetration value.
+The remaining armor rating is then compared against a random number from 0 to 100.
+- If the random number is under half the armor rating, the damage deflects harmlessly.
+- If the random number is over half the armor rating, but not higher than the armor rating, the damage is reduced by half and changed to blunt.
+- If the random number is greater than the armor rating, the armor has no effect.
+For example, at 90% armor rating against an attack with 10% armor penetration, there is a 40% chance of deflecting the attack harmlessly, and a 40% chance of mitigating the damage.
+Each layer of armor is applied separately, from the outside in.
+|
+* Display Order:<br />'''30'''
+* Def Name:<br />'''Apparel'''
+* Label:<br />'''Apparel'''
+* Display All By Default:<br />{{Bad|false}}
+|
+* Default Base Value: '''{{%|0}}'''
+* Min Value: '''{{%|0}}'''
+* Hide At Value: '''{{%|0}}'''
+* Max Value: '''{{%|2}}'''
+* To String Style: '''PercentOne'''
+|
+* '''Parts:'''
+** '''''StatPart_Quality:'''''
+*** Factor Awful: {{Bad|×{{%|0.60}}}}
+*** Factor Poor: {{Bad|×{{%|0.80}}}}
+*** Factor Normal: '''×{{%|1.00}}'''
+*** Factor Good: {{Good|×{{%|1.15}}}}
+*** Factor Excellent: {{Good|×{{%|1.30}}}}
+*** Factor Masterwork: {{Good|×{{%|1.45}}}}
+*** Factor Legendary: {{Good|×{{%|1.80}}}}
+** '''StatPart_Stuff:'''
+*** Priority: '''100'''
+*** Stuff Power Stat: '''[[Armor - Blunt (Material Factor)]]'''
+*** Multiplier Stat: '''[[Armor - Material Effect Multiplier]]'''
+| 99
+<!--</StatDef>-->
+|}
+
+== Version history ==
+{{Stub|section=1|reason=General Version history}}
+
+{{nav|stats|wide}}

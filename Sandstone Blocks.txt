@@ -1,0 +1,93 @@
+{{Infobox main|stony
+| name = Sandstone blocks
+| image = Sandstone blocks C.png
+| description = Blocks of solid sandstone. Sandstone is a relatively soft rock and chips easily.
+<!-- Base Stats -->
+| type = Material
+| type2 = Stone
+| stuff category = Stony
+| marketvalue = 0.9
+| beauty = -12
+| mass base = 1
+| stack limit = 75
+| path cost = 14
+| rotatable = false
+| terrain affordance = Heavy
+<!-- Stat Modifiers -->
+| beauty factor = 1.1
+| beauty offset = 0
+| work to make factor = 1.1
+| work to build factor = 5
+| work to build offset = 140
+| max hit points factor = 1.4
+| flammability factor = 0
+| melee blunt damage factor= 1.0
+| melee sharp damage factor= 0.5
+| melee cooldown factor = 1.3
+| door opening speed factor = 0.45
+| rest effectiveness factor = 0.9
+<!-- Creation -->
+| production facility 1 = Stonecutter's table
+| work to make = 1600
+| resource 1 = Stone chunk
+| resource 1 amount = 1
+| product amount = 20
+<!-- Technical -->
+| defName = BlocksSandstone
+| stuff adjective = sandstone
+<!-- Unused -->
+| always haulable = true
+| appearance = Bricks
+| color = (126,104,94)
+| default color = (126,104,94)
+| draw gui overlay = true
+| graphic class = Graphic_Single
+| graphic path = Things/Item/Resource/StoneBlocks
+| label = sandstone blocks
+| parent name = StoneBlocksBase
+| resource readout priority = Middle
+| selectable = true
+| sound drop = Stone_Drop
+| sound impact stuff = BulletImpactGround
+| sound interact = Stone_Drop
+| sound melee hit blunt = MeleeHit_Stone
+| sound melee hit sharp = MeleeHit_Stone
+| thing class = ThingWithComps
+| use hit points = false
+}}
+'''Sandstone''' are a [[stony]] [[material]] and are the quickest to build and craft with out of the five types of [[stone blocks]].
+
+== Acquisition ==
+Sandstone blocks are cut from [[sandstone chunk]]s at a [[{{P|Production Facility 1}}]]. It takes {{Ticks|{{P|Work To Make}}}} of work to cut a single chunk into {{P|Product Amount}} blocks.
+
+== Usage ==
+Sandstone blocks can be used as a material for [[stuff]]able items with the [[Stony]] stuff tag.
+
+Sandstone blocks can be used in the following recipes:
+{{Ingredient List}}
+
+== Analysis ==
+=== Comparison to other materials ===
+Sandstone blocks don't have any unique recipes and are only used in stuffable items and buildings. As such, they must be considered in comparison to the other stone types, which share all the same recipes.
+
+Sandstone has mostly middling stats in comparison to the other stone blocks, but they are the fastest to work with. The difference is slight at about 15%, but that can add up when building or crafting in large quantities, such as for large defensive projects, or bulk-crafting sculptures for sale in [[trade]].
+
+While sandstone blocks do not have as high of a "Max Hit Points" factor as that of [[granite blocks|granite]] or [[limestone blocks]], walls built from all three have enough {{HP}} to survive one explosion from [[frag grenade]]s and [[high-explosive shell]]s, and can survive the same amount of hits from a [[thump cannon]], giving them identical performance against [[breacher]]s and certain other scenarios. The HP still matters against [[sapper]]s and tribal [[breacher]]s, but as a defensive wall material, sandstone is an attractive choice. It can be the best choice for perimeter walls, areas with walls expected to be destroyed like with [[IED trap]]s, and other places where the difference between sandstone and granite HP is not likely to be relevant.
+
+=== Stone generally ===
+{{Stone blocks analysis}}
+{{Stonecutting maximization}}
+
+== Gallery ==
+<gallery>
+Sandstone blocks A.png|Stack of 1 sandstone blocks
+Sandstone blocks B.png|Stack of multiple sandstone blocks
+Sandstone blocks C.png|Full stack of sandstone blocks
+</gallery>
+
+== Version history ==
+* [[Version/0.7.581|0.7.581]] - Added, previously there was only generic "stone".
+* Beta 19/1.0 - Slowed constructing buildings with all stone types by 20%
+
+{{Nav|materials|wide}}
+[[Category:Material]] [[Category:Stone]] [[Category:Stone Blocks]]

@@ -1,0 +1,172 @@
+{{Stub|reason=1) Corresponding Property 2) Two-way links}}
+{{Verified|1.5.4104}}{{Stat
+| def name = ResearchSpeedFactor
+| label = research speed factor
+| description = The speed at which people do [[research]] is multiplied by this value.
+| default base value = 1
+| min value = 0.25
+| effective minimum = 0.2953125
+| effective maximum = 1.518
+| to string style = PercentZero
+| show if undefined = false
+| category = Building
+| display priority in category = 1000
+| parts = StatPart_Outdoors, StatPart_WorkTableTemperature, StatPart_RoomStat, StatPart_RoomStat
+}}
+
+== Bases ==
+<div><li style="display: inline-table;">
+{| {{STDT| c_01 sortable}}
+! Building !! Research Speed Factor Base
+|-
+! {{Icon Small|Simple research bench|24}} [[Simple research bench]]
+| {{Bad|75%}}
+|-
+! {{Icon Small|Hi-tech research bench|24}} [[Hi-tech research bench]]
+| '''100%'''
+|}
+<references />
+</li><div>
+
+== Offsets ==
+<div><li style="display: inline-table;">
+{| {{STDT| c_01}}
+! Facility !! Research Speed Factor Offset
+|-
+! {{Icon Small|Multi-analyzer|24}} [[Multi-analyzer]]<ref>Linkable to [[Hi-tech research bench]] (Maximum of 1)</ref> {{BiotechIcon}}
+| {{+|10%}}
+|}
+<references />
+</li><div>
+
+== Factors ==
+Outdoors:
+{| {{STDT}}
+! Location !! Factor
+|-
+! Indoors
+| '''×100%'''
+|-
+! Outdoors
+| {{Bad|×75%}}
+|}
+
+Work Table Temperature:
+{| {{STDT}}
+! Temperature !! Factor
+|-
+! < {{Temperature|9}}
+| {{Bad|×70%}}
+|-
+! > {{Temperature|39}}
+| {{Bad|×70%}}
+|}
+
+Room Stats:
+{| {{STDT}}
+! Room Stat !! Custom Label
+|-
+! [[Rooms#Research speed factor|Research speed factor]]
+| Room cleanliness
+|-
+! [[Reading bonus]]
+| Reading bonus
+|}
+
+''Room cleanliness'' is a multiplier ranging from {{Bad|75%}} - {{Good|115%}} ({{Bad|75%}} without a room), depending on the [[Rooms#Cleanliness|cleanliness]] of a room.
+
+{| {{STDT}}
+! Cleanliness !! Factor
+|-
+! -5.0
+| 0.75
+|-
+! -2.5
+| 0.85
+|-
+!  0.0
+| 1.00
+|-
+!  1.0
+| 1.15
+|}
+{{Graph:Chart|width=300|height=150|xAxisTitle=Cleanliness Score|yAxisTitle=Research Speed Factor|type=line|interpolate=monotone|x=-5, -2.5, 0.0, 1.0|y=0.75, 0.85, 1.00, 1.15|xGrid=|yGrid=}}
+
+''Reading bonus'' is a multiplier ranging from '''100%''' - {{Good|120%}} ('''100%''' without a room), depending on the number of [[books]] in [[bookcase]]s in a room. It is not affected by books on the floor.
+
+There are diminishing returns on ''reading bonus'' for the number of books:
+{| {{STDT}}
+! Books !! Reading Bonus Offset Per Book
+|-
+! 1-5
+| {{+|0.8%}}
+|-
+! 6-10
+| {{+|0.4%}}
+|-
+! 11-15
+| {{+|0.2%}}
+|-
+! 16+
+| {{+|0.1%}}
+|}
+{{Graph:Chart|width=300|height=150|xAxisTitle=Number of Books|yAxisTitle=Reading Bonus|type=line|x=0, 1, 5, 6, 10, 11, 15, 16, 155, 160|y=1, 1.008, 1.04, 1.044, 1.06, 1.062, 1.07, 1.071, 1.2, 1.2|xGrid=|yGrid=}}
+Books 1-5 give a total of {{+|4%}}, books 6-10 a total {{+|2}}, 11-15 a total {{+|1%}}, and 16+ a mere {{+|0.1%}} per book. To reach the maximum bonus of '''120%''', it would require a total of 155 books.
+
+See [[Reading Bonus]] for further details.
+
+== Calculating Research Speed Factor ==
+The factors for [[Research Speed Factor]] are: '''Research Speed Factor Base''', '''Research Speed Factor Offset''', '''Outdoors''', '''Work Table Temperature''', '''Room cleanliness''', and '''Reading bonus'''. This would be written out as:
+
+<code>[[Research Speed Factor]] = ('''Research Speed Factor Base''' + '''Research Speed Factor Offset''') × '''Outdoors''' × '''Work Table Temperature''' × '''Room cleanliness''' × '''Reading bonus'''</code>
+
+The maximum would be:
+
+<code>('''1''' + '''0.1''') × '''1''' × '''1''' × '''1.15''' × '''1.2''' = '''1.518'''</code>
+
+For an effective limit of '''151.8%'''.
+
+The minimum would be:
+
+<code>('''0.75''' + '''0''') × '''0.75''' × '''0.7''' × '''0.75''' × '''1''' = '''0.2953125'''</code>
+
+For an effective limit of '''29.53125%'''.
+
+== Stat Def Data ==
+{| {{STDT}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Research Speed Factor" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />ResearchSpeedFactor
+* '''Label:'''<br />research speed factor
+| The speed at which people do research is multiplied by this value.
+|
+* Display Order:<br />'''50'''
+* Def Name:<br />'''Building'''
+* Label:<br />'''Building'''
+* Display All By Default:<br />{{Bad|false}}
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0.25}}
+* '''To String Style:''' PercentZero
+* '''Show If Undefined:''' {{Bad|false}}
+|
+* '''Parts:'''
+** '''StatPart_Outdoors:'''
+*** Factor Indoors: '''×{{%|1.00}}'''
+*** Factor Outdoors: {{Bad|×{{%|0.75}}}}
+** '''StatPart_WorkTableTemperature'''
+** '''StatPart_RoomStat:'''
+*** '''Room Stat: '''[[Rooms#Research speed factor|Research speed factor]]'''
+*** '''Custom Label: '''Room cleanliness'''
+** '''StatPart_RoomStat:'''
+*** '''Room Stat: '''[[Rooms#Reading bonus|Reading bonus]]'''
+*** '''Custom Label: '''Reading bonus'''
+| 1000
+<!--</StatDef>-->
+|}
+
+== Version history ==
+{{Stub|section=1|reason=General}}
+
+{{nav|stats|wide}}

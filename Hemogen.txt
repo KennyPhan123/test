@@ -1,0 +1,91 @@
+{{Biotech}}
+{{Stub|reason=General}}
+{{For|stored hemogen|hemogen pack}}
+{{Quote|A reserve of biological strength which can be gained and spent in a variety of ways. Hemogen can be increased by bloodfeeding from a human or consuming hemogen packs. You can obtain hemogen packs using the 'extract hemogen pack' medical operation on a non-hemogenic human. If hemogen reaches zero, [they] will become very unhappy.|Hemogen description}}
+
+'''Hemogen''' is a measure of the need and reserves of [[hemogenic]] pawns to fuel their bodies and abilities. 
+
+== Hemogen total ==
+[[File:Hemogen Gizmo.png|thumb|right|Hemogen gizmo showing a hemogen value of 88, maximum of 100, a target hemogen of 90, and [[hemogen pack]] consumption allowed]]
+A pawn's current hemogen total and their maximum hemogen is displayed in a gizmo to the right of their info pane when the pawn is selected. Note that it will not appear when multiple pawns are selected, even if they all have a hemogen need. The current hemogen total can be increased by [[#Feeding|consuming hemogen]] as detailed below, and is reduced through daily [[#Decay|decay]] and use of [[#Abilities|abilities]]. The maximum hemogen is the cap on how much hemogen a pawn can hold. Any hemogen consumed that would put the total over this value is wasted. By default the maximum is 100 but pawns that can [[deathrest]] can increase it through the use [[hemopump]]s at at a rate of {{+|25}} per pump. 
+
+The gizmo also allows the selection of target value by left clicking on the bar, displayed as a white line over the bar {{Check Tag|Change with max change?|If a pawn has a target value set at say 50, and then they deathrest with 4 hemopumps (adding 100 hemogen storage), does the target value stay at 50 or increase to 100}}- the pawn will then automatically attempt to consume [[hemogen pack]]s or bloodfeed from prisoners designated for bloodfeeding to reach that value {{Check Tag|Reach or exceed?|Say its set to 90 and they are at 88 - will they comesume a +20 hemo pack or wait till they are at 70 to consume it?}}{{Check Tag|Frequency?|How often does this check for this}}{{Check Tag|Priorities?|How does this interact with things such as Schedule assingments? Will they drop everything to get the target value?}} The use of hemogen packs can be toggled on or off by clicking the {{Icon Small|Hemogen pack}} icon, with a {{Check}} indicating that the pawn will consume packs to reach their target, while a {{Cross}} indicates that they will not. 
+
+=== Feeding ===
+* The bloodfeeding ability gives {{+|20}} hemogen when using on a full grown adult with sufficient blood.
+** Bloodfeeding can be done on [[downed]] humans, or on a colonist, [[slave]],{{IdeologyIcon}} or [[prisoner]] that is not on a [[mental break]]. This can be manually selected, and prisoners can automatically be designated to be bloodfed.{{Check Tag|When?|When do they automatically feed on prisoners}}
+** Hemongen gain is reduced if feeding on smaller [[body size]] pawns and also reduced if the target has insufficient blood.{{Check Tag|Detail|Detail on scaling}}
+* [[Hemogen pack]]s give {{+|20}} hemogen per pack.
+* [[Human meat]] gives {{+|3.75}} hemogen per 20 meat.{{Check Tag|Rounding?}} Human meat must be eaten raw; cooked meals and corpses do not count.
+
+[[Hemogen amplifier]]s will increase the [[Hemogen Gain Multiplier]] by {{+|25%}} per amplifier active.
+
+=== Hemogen loss ===
+Hemogen is lost through 3 methods.
+* [[#Decay|Decay]] - where a certain amount of hemogen is lost per day
+* [[#Abilities|Abilities]] - where a certain amount of hemogen is consumed to perform an specific task, and which cannot be performed without the requisite hemogen
+* Entering into a regenerative coma from the [[Deathless]] gene while having the [[Gene#Deathrest|Deathrest]] gene  - where any remaining hemogen is lost, but none is required to place the pawn in the coma in the first place. If the Deathrest gene is not present, then no hemogen is lost by Deathless.
+
+==== Decay ====
+Pawns with the [[hemogenic]] gene decay at -2 per day.
+
+Pawns with the [[hemogen drain]] gene decay at an addition -8 per day, for a total of -10 per day. 
+
+While the rates are known, it is currently unknown when or in what quantity this decrement occurs.{{Check Tag|Detail|For example; does it instantaneously increase by -10 at midnight? Noon? Unique to the pawn? Or does it increase by -10*(150/(24*2500)) every 150 ticks like other needs, or some other fractional increase?}}
+
+==== Abilities ====
+{| class="wikitable"
+|-
+! colspan=2 |Ability !! Hemogen
+|-
+! [[File:Gene Bloodfeeder.png|32px|link=Bloodfeeder]] !! [[Bloodfeeder|Bloodfeed]]
+| {{+|20}}
+|-
+!  [[File:Gene Coagulate.png|32px|link=Coagulate]]    !! [[Coagulate]]
+| {{--|20}}
+|-
+!  [[File:Longjump.png|32px|link=Longjump legs]]      !! [[Longjump legs|Longjump]]
+| {{--|5}}
+|-
+! [[File:PiercingSpine.png|32px|link=Piercing spine]] !! [[Piercing spine]]
+| {{--|20}}
+|}
+
+== Hemogen craving ==
+{{Quote|''Due to a lack of hemogen, this person's body is breaking down hemogen reserves in their bone marrow. This causes disorientation and a painful craving for human blood.''|Description}}
+When a hemogenic pawns hemogen reserves hit 0, they begin having a craving for hemogen. This craving inflicts increasingly severe [[mood]], [[pain]], and [[consciousness]] penalties. Once hemogen is over 0, the severity of the craving gradually decays until it disappears.
+
+While a pawn hemogen value is 0, their hemogen craving severity increases at a rate of {{++|5%}} per hour. While the rate is known, it is currently unknown when or in what increment this severity increase occurs.{{Check Tag|Detail|For example; does it instantaneously increase by +5% every hour, or does it increase by 5%*(150/2500) every 150 ticks like other needs, or some other fractional increase?}}  
+
+So long as hemogen is above 0, hemogen craving severity reduces at a rate of {{---|10%}} per hour. Hemogen craving does '''not''' accelerate hemogen decay like [[malnutrition]] does for [[saturation]].
+
+{| class="wikitable"
+|-
+! Label    !! Severity      !! Time from 0 Hemogen !! Time to 0%<br>Severity (Upper) !! Mood !! Pain !! Consciousness
+|-
+! Minor    
+| >0% and ≤34%   || {{ticks/gametime|( 0/5) * 2500}} || {{ticks/gametime|(35/10) * 2500}} || {{--|10}} || {{--| 5%}} || {{Bad|90% Max}}
+|-
+! Moderate 
+| ≥35% and ≤69%  || {{ticks/gametime|(35/5) * 2500}} || {{ticks/gametime|(70/10) * 2500}} || {{--|15}} || {{--|10%}} || {{Bad|80% Max}}
+|-
+! Major    
+| ≥70% and ≤100% || {{ticks/gametime|(70/5) * 2500}} || {{ticks/gametime|(100/5) * 2500}} || {{--|20}} || {{--|15%}} || {{Bad|50% Max}}
+|}
+'''Note:''' Mood penalty does '''not''' include the penalty from pain. 
+
+== Analysis ==
+?
+
+== Version history ==
+* [[Biotech DLC]] Release - Introduced.
+* [[Version/1.4.3529|1.4.3529]] - Fix: Giving a pawn xeno and germline hemogenic genes results in two hemogen gizmos. Fix: Deathrest buildings use hemogen when not in use.
+* [[Version/1.4.3530|1.4.3530]] - Added a toggle to the hemogen gizmo which allows configuration of whether or not a pawn can ingest hemogen packs to satisfy the desired hemogen level.
+* [[Version/1.4.3531|1.4.3531]] - Fix: AI sanguophages can use longjump without any remaining hemogen. Fix: Some hemogenic abilities can be queued without enough hemogen.
+* [[Version/1.4.3541|1.4.3541]] - Fix: Victims of bloodfeeder bites can gain hemogen from the interaction. Fix: Consume hemogen packs toggle tooltip displays hemogen in % form.
+* [[Version/1.4.3542|1.4.3542]] - Fix: Coagulate can still be queued if hemogen is below casting cost.
+* [[Version/1.4.3555|1.4.3555]] - Hemogen UI gizmo no longer displays when multi-selecting pawns, to reduce clutter. Fix: Bloodfeeders sometimes do not ingest all taken hemogen packs, depending on food need level. Added a toggle to the hemogen gizmo which allows configuration of whether or not a pawn can ingest hemogen packs to desired hemogen level - Note this is essentially a duplicate of the change from 1.4.3530, it is currently unclear whether this is an error, whether there is a difference, or whether the change was reverted and re-added latter. Fix: Bloodfeed can be used on pawns in mental states.
+
+{{nav|status levels|wide}}
+[[Category:Status Level]]
+[[Category: Game mechanics]]

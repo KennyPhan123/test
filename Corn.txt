@@ -1,0 +1,68 @@
+{{Infobox main|food
+| name = Corn
+| image = Corn.png|Corn
+| description = Raw corn.
+<!-- Base Stats -->
+| type = Food
+| type2 = Raw food
+| hp = 100
+| deterioration = 6
+| marketvalue = 1.1
+| mass base = 0.03
+| flammability = 1
+| stack limit = 75
+| path cost = 14
+| rotatable = false
+<!-- Ingestion -->
+| taste = Raw
+| food type = vegetable
+| food poison chance = 0.02
+| ingested direct thought = AteRawFood
+| nutrition = 0.05
+| days to rot = 60
+<!-- Technical -->
+| defName = RawCorn
+| preferability = Raw
+<!-- Unused -->
+| always haulable = true
+| draw gui overlay = true
+| eat effect = EatVegetarian
+| graphic class = Graphic_Single
+| graphic path = Things/Item/Resource/PlantFoodRaw/Corn
+| label = corn
+| parent name = RawFoodBase
+| resource readout priority = Middle
+| selectable = true
+| social properness matters = true
+| sound drop = Food_Drop
+| sound eat = RawVegetable_Eat
+| sound interact = Food_Drop
+| thing class = ThingWithComps
+| ticker type = Rare
+| use hit points = true
+}}
+'''Corn''' is a vegetable [[raw food]] obtained by harvesting [[corn plant]]s.
+
+== Acquisition == 
+The corn plant can be sown by all pawns immediately. Each plant requires {{Q|Corn plant|Real Grow Days}} full days at optimal light and temperature range to reach maturity in normal, 100% fertile soil and yields {{Q|Corn plant|Harvest Yield}} units per plant, before modifiers for [[Difficulty]] and [[Plant Harvest Yield]].
+
+== Summary ==
+As a [[raw food]], corn can be be eaten raw, with a flat {{Bad|2%}} chance of giving [[food poisoning]], or cooked into a [[meal]] with a food poisoning chance dependent on the skill of the cook and the [[cleanliness]] of the kitchen. [[Animals]] are immune to food poisoning from raw food but not from meals. When used in food recipes that require specific types of [[nutrition]], such as [[fine meal]]s, corn is classified as a vegetable.
+
+As with most raw food, eating corn directly results in a {{Thought|desc=I had to eat raw food. We should be cooking that kind of food before eating it. We're not animals.|label=ate raw food|stack=1|value=-7|duration=1}}. This mood penalty is negated if the pawn has the [[ascetic]] trait or the [[robust digestion]] {{BiotechIcon}} gene.
+
+Corn takes {{P|Days To Start Rot Base}} days to rot without refrigeration, double that of most other vegetarian foods.
+
+== Analysis ==
+Corn is the least labor-intensive food crop per item of food produced. This is balanced by a long grow time, with the risks from raiders, events, and weather. This typically makes it useful late game where a stock of food is built up in case of famine, and where switching to corn frees up pawn time or means more pawns can be supported for the same labor. 
+
+In terms of absolute food per tile per day, [[rice]] is slightly better in regular soil, and becomes much better in [[Hydroponics basin|hydroponics]], where corn can't be planted. However, this comes at the expense of massively more work - in most instances simply making a corn field bigger is a more efficient choice, with small fields of rice being used to make up any immediate needs for food.
+
+With a shelf life of {{#show:corn|?Days To Start Rot Base}} days, corn is tied with [[toxipotatoes]] as the most resilient crop to store outside a freezer. While only relevant while a freezer is not available, this should give ample time to set up an appropriate storage facility, or even obviate the need for a freezer in the medium term.
+
+With a nutrition of {{#show:Rice|?nutrition}} per unit and a deterioration rate of {{#show:Rice|?Deterioration Rate Base}}, there is no difference with other raw vegetables for the purpose of cooking meals. While direct consumption is possible, this is inefficient from a nutrition point of view compared to cooking a [[simple meal]] even without considering the mood penalty and food poisoning chance.
+
+Feeding rice to [[herbivore]]s and [[omnivore]]s has no ill effects, but is inefficient in terms of work per nutrition compared to farming [[haygrass]] or making [[kibble]].
+
+{{nav|Food|wide}}
+[[Category:Food]] [[Category:Raw Food]] [[Category:Vegetarian]]

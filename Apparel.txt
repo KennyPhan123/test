@@ -1,0 +1,403 @@
+<!--Top Nav Box-->
+{| align=center
+| {{Gear_Nav}}
+|}
+<hr>
+<!-- End of Nav -->
+{{imagemargin|[[File:apparel_preview.png|140px|right]]|40px}}'''Apparel''' is worn by your colonists to protect them from extreme temperatures or from [[Damage|damage]] in combat.
+See a pawn's Gear tab to see what apparel they are wearing.
+{{TOCright}}
+
+== Clothing vs Armor ==
+There are two main types of apparel, [[clothing]] and [[armor]]. Both clothing and armor use the same basic mechanics and the distinction is largely arbitrary beyond its use in sorting items. They can be mixed and matched, as far as [[Apparel layers]] allow.
+
+Clothing usually:
+* is made from light materials (fabrics and leathers);
+* offers good insulation from extreme temperatures;
+* offers lower protection from damage (with the right materials, clothing can be a worthwhile "light" armor).
+
+Armor usually:
+* is made from solid materials (metal);
+* offers less insulation from extreme temperatures;
+* offers good protection from damage;
+* gives penalties to movement speed (from wearing the armor) and to carrying capacity (from the weight of the armor).
+[[File:Apparel examples.png|350px|thumb|center|Examples of different apparel, including both [[clothing]] and [[armor]]]]<!-- This image relates to this intro section; any larger and this image will block text until below TOC -->
+
+== Layers and coverage ==
+{{:Apparel layers}}
+
+== Protection ==
+Colonists wearing protective apparel have a chance of outright avoiding all damage from an attack, as the item can sometimes utterly deflect a bullet or a [[Melee]] strike. This will be represented by a "tink" sound and a spark particle effect. They may also receive a mitigated blow, for only half of the damage.
+
+There are several types of armor ratings. They are expressed as percentages. The maximum armor rating per type is 200%.
+<div><li style="display: inline-table;">
+{| {{STDT| c_08 text-center}}
+! Name !! Label !! Description
+|- style="text-align:left;"
+! [[Injury#Sharp|Sharp]]
+| Armor - Sharp || Protection against piercing damage like bullets, knife stabs, and animal bites. These attacks will cause cuts, stabs or gunshot wounds, which in turn are prone to cause [[Bleeding]]. Even the lightest clothing material seems to offer some protection against sharp damage.
+|- style="text-align:left;"
+! [[Injury#Blunt|Blunt]]
+| Armor - Blunt || Protection against blunt damage like fist and [[club]] attacks, rock falls, explosions, and strikes with ranged weapons at melee range. This protection is generally limited, and blunt weapons will generally have to deal with less armor than an equivalent tier sharp weapon.
+|- style="text-align:left;"
+! [[Injury#Heat|Heat]]
+| Armor - Heat || Protection against fire damage from natural fires, fire weapons such as [[molotov cocktail]]s, as well as [[lightning|lightning strikes]] and [[Damage Types#Beam|Beam]] damage. Not to be mistaken with Heat Insulation.
+|}
+</li><div>
+=== Calculation ===
+Each pawn [[body part]] has its own '''armor rating''', which is affected by every '''layer''' of worn apparel covering that body part. 
+Incoming attack damage is first applied to the outermost layer of apparel at a body part and proceeds sequentially through all layers of apparel before finally damaging the pawn. Damage passes through a layer completely if no armor is found there. Note that some attacks can damage multiple body parts at once.
+
+So if a pawn wearing only a [[duster]], [[flak vest]], and [[tribalwear]] were struck in the torso, the final damage to the torso would be calculated thus:
+# First, the armor effects of the outermost apparel layer (in this example, the duster) are applied to the total damage of the attack.
+# If there is residual attack damage, then the effects of the next layer (the flak vest on the middle layer) are applied to the attack damage.
+# If there is still residual damage, the armor of the next layer, the tribalwear, is applied.
+# If no layers of apparel remain, any residual damage is applied to the skin of the body part.
+
+If this same pawn were hit in the arm, the only armor effects would come from their duster, as neither the vest nor tribalwear cover the arm. If they were struck in the head, then the damage would be directly applied to the head, as they aren't wearing anything that covers their head.
+
+Some items occupy multiple apparel layers, such as [[Marine armor]] which occupies both the middle and outer layer. In such cases, damage is only calculated against the item one time, leaving the other occupied layer(s) technically unarmored. A strike to the torso would be calculated against the marine armor only once, with residual damage passing to the next apparel item. Armor that occupies multiple layers typically has much higher armor values and armor penetration resistance, though, to more than make up for the loss of an apparel layer.
+
+''See the [[#Analysis|Analysis]] section below for details.''
+
+In-game, Armor rating is calculated as follows:
+#The armor rating is reduced by the armor penetration value, dependent on the weapon. This gives the "effective armor rating". 
+
+'''Note''': While armor penetration is given as a percentage, it is ''subtracted'' from the target's armor, not used as a multiplier. E.g. if a target with 150% armor is attacked using a weapon with 50% armor penetration, the result is 150% - 50% = 100% effective armor rating, ''not'' 150% * (1 - 50%) = 75% effective armor rating.
+#The effective armor rating is then compared against a random number from 0 to 100:
+#*If the random number is under half the armor rating, the damage deflects harmlessly.
+#*If the random number is over half the armor rating, but not higher than the armor rating, the damage is halved.
+#*If the random number is greater than the armor rating, the armor has no effect.
+#If any damage remains, then the same process is applied to the next item on a lower layer using the new damage (if halved) or full damage (if the armor had no effect) and retaining the full AP of the attack. Damage halving is applied multiplicatively - so if the two layers both half the damage, the pawn receives one quarter of the damage.
+
+==== Sharp damage ====
+If the damage is Sharp and any layer halves the damage, then any remaining damage to the pawn will be changed to Blunt damage.
+
+'''Note:''' Despite the common misconception, the armor effect of layers below will still be calculated against the ''sharp armor rating'' of those layers, '''not''' against the blunt armor rating. For example,  if a pawn wears a duster over a flak vest, and the duster halves the damage of an incoming sharp attack, converting it to blunt damage in the process, the flak vest will still use its sharp armor rating for its attempt at mitigating the damage.
+
+==== Flame damage ====
+Heat armor works to prevent [[Damage Types#Flame|Flame]] damage from injuring the pawn using the same process as any other armor and damage type, but any Flame damage that actually deals damage to the pawn has a chance to set the pawn on [[fire]]. This ignition chance is the same regardless of the damage dealt to the pawn, so long as some damage is actually dealt. Thus if the Heat Armor does not outright negate the damage, it otherwise does nothing to prevent the pawn from being ignited. 
+
+While [[Damage Types#Burn|Burn]] damage is otherwise identical to Flame damage, including its interaction with heat armor, it cannot ignite pawns.
+
+=== Analysis ===
+The formula for the average residual damage for an ''effective'' armor value ''A'' is: max(100%-A, 0%) + (min(A, 100%) - A/2)/2
+
+Thus each ''effective'' point of armor gives 0.5% to harmlessly deflect damage, and another 0.5% chance to mitigate it, instead receiving half the damage as blunt damage. Each effective armor point below 100% results in a net 0.75% reduction in damage, while each point above results in a 0.25% reduction. This means that at 200% effective armor rating, colonists will be completely immune to damage that has 0% AP; this currently works only on heat damage, as all other kinds of damage have armor penetration.
+
+Armor is calculated per item of apparel, from the item occupying the outermost layer in. Armor mitigation does stack multiplicatively, e.g. two pieces of armor layered on top of each other can each mitigate the damage by 50%, reducing it to 25% of the base damage. Each layer also has an independent chance to entirely negate the damage, using the above calculation steps.
+
+Armor Penetration is applied identically to each layer.  This means that, while multiple layers of armor each have more chances to mitigate the damage, layering apparel with low armor values may do little or nothing against projectiles with high armor penetration, while a single layer of high armor value may be able to mitigate it. For example a pawn with both a [[devilstrand]] [[Button-down shirt|shirt]] with sharp armor of 28% and a [[toughskin gland]] with sharp armor 35% would always receive full damage from a [[charge rifle]], as its armor penetration of 35% completely nullifies the protection of both items. This is why higher armor values may be preferable over multiple layers of much lower armor values. However there is little reason not to stack the best protection on your pawns when the items not mutually exclusive. A hyperweave shirt might still stop an assault rifle bullet that penetrates a flak vest, and it could be the only thing protecting the pawns arm.
+
+Note that armor does not stop weapons with sufficient stopping power from staggering colonists, even if the damage is deflected.
+
+Because most damage in combat is sharp, unless you are planning to fight a specific threat with blunt or heat damage, it's better to focus on sharp armor alone. Counterintuitively, the most protection from sharp damage in the game is not provided by legendary [[cataphract armor]], but by legendary thrumbofur [[duster]] and [[flak vest]] under it. But the cataphract armor gives better protection for the limbs
+
+== Durability ==
+Apparel, including armor, takes damage from several factors. It takes 1 HP of damage for every 4 points of damage dealt to the wearer, provided the damage is applied to that layer and location. Thus, if an attack hits a pawn's torso and is stopped by apparel on the Outer layer, such as a [[Duster]], the duster will receive damage, but a torso-covering item on Middle layer, such as a [[Flak vest]] will receive no damage. If the duster were to halve the damage instead, then the flak vest would receive half of the durability damage, while the duster would receive full damage.
+
+The damage to the item is the same regardless of whether it deflects all the damage, half the damage, or no damage, just so long as the attack is calculated against that item.  The durability damage is calculated off of the raw damage as it reaches that layer, before that layer's mitigation is applied. Therefore, as [[quality]] does not affect an item's HP, high-quality armor lasts about as long as low-quality armor in combat, but will better protect lower layers from damage.
+
+Apparel also takes damage when the pawn wearing it is on fire.  Each time the fire deals damage to the pawn, it deals the same amount of damage to a random piece of worn apparel.
+
+All apparel worn by a pawn has a 40% chance to take 1 HP of damage each day (so on average, each piece of apparel takes about 0.4 HP of damage per day).  This effect is only applied to pawns in a map - pawns in caravans, transport pods etc do not suffer apparel damage in this way. This damage is not modified by the [[Quality#General|deterioration rate factor]] applied by [[quality]] - worn clothing is damaged at the same average rate regardless of quality.
+
+Finally, when a pawn is killed by an attack, all worn apparel takes anywhere between 15% and 40% of its current hit points in damage.
+
+=== Damaged apparel ===
+A colonist wearing badly damaged apparel will have one of the following thoughts. These debuffs do not stack, only one is given based on the apparel with the worst condition.
+{| class="wikitable" style="width: 24em"
+! HP !! Thought !! Debuff
+|-
+| 20% - 50% || "Ratty apparel" || style="text-align: center;" | -3
+|-
+| below 20% || "Tattered apparel" || style="text-align: center;" | -5
+|}
+
+Durability does not affect stats such as protection and insulation.
+
+== Insulation ==
+[[File:Legendary muffalo wool parka.png|500px|thumb|right|In-game insulation stats from a legendary muffalo wool parka]]
+Insulation offers protection against extreme temperatures like freezing cold and scorching heat. Every pawn and every animal has a natural range of acceptable temperatures.  By default a naked human has a very narrow acceptable temperature range of {{Temperature|{{Q|Human|Min Comfortable Temperature}}|{{Q|Human|Max Comfortable Temperature}}}}, so you'll need to wear apparel to survive in the harsh environment of a rimworld.
+
+=== Insulation from a single piece of apparel ===
+Apparel can offer "'''Insulation - Cold'''", which protects from extremely cold temperatures, and "'''Insulation - Heat'''" which protects from extremely hot temperatures.
+The amount of insulation a piece of apparel offers is equal to:
+
+  Insulation = Material insulation * Apparel insulation_factor * Quality multiplier
+
+* '''Material insulation''': the material used to create an article of apparel has a large impact on how much insulation a piece of apparel offers.  For example, [[muffalo wool]] offers {{Temperature|{{Q|Muffalo wool|Insulation - Cold Factor}}||delta}} of insulation from cold, while [[birdskin]] only offers {{Temperature|{{Q|Birdskin|Insulation - Cold Factor}}||delta}}. See [[textile]]s for a full comparison of clothing options.
+* '''Apparel insulation factor''': each type of apparel has an insulation factor associated with it. For example, [[parka]]s have an insulation factor - cold of {{Q|Parka|Insulation Factor - Cold}}, so a normal muffalo wool parka offers {{Temperature|{{#expr:{{Q|Muffalo wool|Insulation - Cold Factor}}*{{Q|Parka|Insulation Factor - Cold}}}}||delta}} of insulation from cold. See [[clothing]] for a full comparison.
+* '''Quality multiplier''': the [[quality]] of an item influences its insulation as well. For example, legendary quality offers a 1.8x increase in insulation, so a legendary muffalo wool parka offers {{Temperature|{{#expr:{{Q|Muffalo wool|Insulation - Cold Factor}}*{{Q|Parka|Insulation Factor - Cold}}*1.8}}||delta}} of insulation from cold. See [[quality]] for a full comparison.
+
+=== Total insulation for a pawn ===
+[[File:Total insulation cold.png|500px|thumb|right|Total cold insulation for a pawn wearing a legendary muffalo wool parka and a poor quality cloth button-down shirt]]
+The total insulation for a pawn is the sum of the insulation from each piece of apparel.  A pawn's minimum comfortable temperature is reduced by their total '''Insulation - Cold''', while their maximum comfortable temperature is increased by their '''Insulation - Heat'''.
+
+For example, consider a pawn wearing a legendary [[muffalo wool]] [[parka]] and a poor quality [[cloth]] [[button-down shirt]].  By default, humans have an acceptable temperature range of {{Temperature|{{Q|Human|Min Comfortable Temperature}}|{{Q|Human|Max Comfortable Temperature}}}}. We can find the new temperature range by computing the insulation from the clothing, then adding to the base insulation:
+
+'''Computing insulation from clothing'''
+  '''Parka cold insulation''' = muffalo wool cold insulation * parka cold insulation factor * legendary modifier
+  = {{Q|Muffalo wool|Insulation - Cold Factor}}°C * {{#expr:100*{{Q|Parka|Insulation Factor - Cold}}}}% * 1.8
+  = '''{{#expr: {{Q|Muffalo wool|Insulation - Cold Factor}} * {{Q|Parka|Insulation Factor - Cold}} * 1.8}}°C'''
+
+  '''Parka heat insulation''' = muffalo wool heat insulation * parka heat insulation factor * legendary modifier
+  = {{Q|Muffalo wool|Insulation - Heat Factor}}°C * {{#expr:100*{{Q|Parka|Insulation Factor - Heat}}}}% * 1.8
+  = '''{{#expr: {{Q|Muffalo wool|Insulation - Heat Factor}} * {{Q|Parka|Insulation Factor - Heat}} * 1.8}}°C'''
+
+  '''Shirt cold insulation''' = cloth cold insulation * shirt modifier * poor modifier
+  = {{Q|Cloth|Insulation - Cold Factor}}°C * {{#expr:100*{{Q|Button-down shirt|Insulation Factor - Cold}}}}% * 0.9
+  = '''{{#expr: {{Q|Cloth|Insulation - Cold Factor}} * {{Q|Button-down shirt|Insulation Factor - Cold}} * 0.9 round 1}}°C'''
+
+  '''Shirt heat insulation''' = cloth heat insulation * shirt modifier * poor modifier
+  = {{Q|Cloth|Insulation - Heat Factor}}°C * {{#expr:100*{{Q|Button-down shirt|Insulation Factor - Heat}}}}% * 0.9
+  = '''{{#expr: {{Q|Cloth|Insulation - Heat Factor}} * {{Q|Button-down shirt|Insulation Factor - Heat}} * 0.9 round 1}}°C'''
+
+'''Adding to base insulation'''
+  '''Minimum acceptable temperature''' = default minimum acceptable temperature - parka cold insulation - shirt cold insulation
+  = 16 - {{#expr: {{Q|Muffalo wool|Insulation - Cold Factor}} * {{Q|Parka|Insulation Factor - Cold}} * 1.8}} - {{#expr: {{Q|Cloth|Insulation - Cold Factor}} * {{Q|Button-down shirt|Insulation Factor - Cold}} * 0.9 round 1}}
+  = '''{{#expr: 16 - ({{Q|Muffalo wool|Insulation - Cold Factor}} * {{Q|Parka|Insulation Factor - Cold}} * 1.8) - ({{Q|Cloth|Insulation - Cold Factor}} * {{Q|Button-down shirt|Insulation Factor - Cold}} * 0.9) round 1}}°C'''
+
+  '''Maximum acceptable temperature''' = default maximum acceptable temperature + parka heat insulation + shirt heat insulation
+  = 26 + {{#expr: {{Q|Muffalo wool|Insulation - Heat Factor}} * {{Q|Parka|Insulation Factor - Heat}} * 1.8}} + {{#expr: {{Q|Cloth|Insulation - Heat Factor}} * {{Q|Button-down shirt|Insulation Factor - Heat}} * 0.9 round 1}}
+  = '''{{#expr: 26 + ({{Q|Muffalo wool|Insulation - Heat Factor}} * {{Q|Parka|Insulation Factor - Heat}} * 1.8) + ({{Q|Cloth|Insulation - Heat Factor}} * {{Q|Button-down shirt|Insulation Factor - Heat}} * 0.9) round 1}}°C'''
+
+So the new comfortable range is: '''-89°C to 27.6°C'''
+
+== Flammability ==
+How likely the item is to burst into flames while in storage. Often Heat Protection and this value are related. It is entirely dependent on the material.
+
+It has no effect on the chance of a pawn to catch fire while wearing the item.
+
+== Quality effects ==
+{{See also|Quality}}
+{| {{STDT| left c_08}}
+! Quality !! Armor<br>Factor  !! Insulation<br>Factor !! Market Value !! Max Market Value Gain !! Deterioration Rate !! Beauty 
+|-
+|Awful      || style="text-align:center;" | 0.6 || style="text-align:center;" |  0.8 || 0.5 || - || 2 || -0.1
+|-
+|Poor       || style="text-align:center;" |  0.8 || style="text-align:center;" |  0.9 || 0.75 || - || 1.5 || 0.5
+|-
+|Normal     || style="text-align:center;" |  1.0 || style="text-align:center;" |  1.0 || 1.0 || - || 1 || 1
+|-
+|Good       || style="text-align:center;" |  1.15 || style="text-align:center;" |  1.1 || 1.25 || 500 || 0.8 || 2
+|-
+|Excellent  || style="text-align:center;" |  1.3 || style="text-align:center;" |  1.2 || 1.5 || 1000 || 0.6 || 3
+|-
+|Masterwork || style="text-align:center;" |  1.45 || style="text-align:center;" |  1.5 || 2.5 || 2000 || 0.3 || 5
+|-
+|Legendary  || style="text-align:center;" | 1.8 || style="text-align:center;" |  1.8 || 5 || 3000 || 0.1 || 8
+|-
+|}
+
+== Nudity ==
+In RimWorld Core, male colonists are considered naked when their legs are not covered, while female colonists are considered naked when either their legs or chest are not covered.  
+Most colonists will receive a {{--|6}} mood penalty from being naked, triggering an alert prompting the player to seek suitable clothing.
+
+For Nudists the opposite is true - they receive a {{+|20}} mood bonus while naked and a {{--|3}} mood penalty while wearing any clothes other than [[sash]]es, [[heavy bandolier]]s, and headgear. They have no negative or positive social opinions about nudity.
+
+With the [[Ideology (DLC)]] installed and active, mood for being naked and opinion of others who are naked depend on the [[Ideoligion]]{{IdeologyIcon}} of the pawn and its precepts. Nudists are completely unaffected by ideoligion clothing standards, both for mood and for social opinions of others being nude. They do however get the {{+|1}} mood bonus for ideoligion preferred apparel, but unless that apparel is nudist acceptable they will still lose the {{+|20}} mood bonus and gain the {{--|3}} mood penalty.
+
+== Special values ==
+Clothing can have very specific secondary values. The more common ones are:
+* Negative movement Speed. This is mostly seen with armor
+* Bonus to social skills. This is a extremely common stat for any form of headwear that is not armor
+* Pain Threshold. Specific to Tribal clothing, this increases when a character will collapse from damage
+
+== Tainted apparel ==
+Apparel that is worn by a human as they die becomes tainted. The clothing must be worn, not merely carried, to become tainted. All tainted items have names suffixed with single letter ''T''. [[Utility]] items never become tainted. 
+
+Most pawns wearing tainted apparel gain a persistent [[mood]] debuff as long as they're wearing it that scales with the number of items worn - colonists with [[Bloodlust]] trait or [[Inhuman]] meme{{IdeologyIcon}}{{AnomalyIcon}} are unaffected by tainted clothing. Tainted clothes also have their [[market value]] decreased by 90%. [[Trade]]rs and [[faction base]]s do not buy tainted apparel nor accept them as gifts, but tainted clothing may be sent to them via [[transport pod]] for [[goodwill]] at their reduced market value. 
+
+The apparel that is worn by a pawn as they are resurrected by a [[resurrector mech serum]] become untainted. There is no other way to untaint apparel.
+
+While tainted apparel does give a mood debuff, [[#Insulation|insulation]], [[#Protection|protection]], and [[#Nudity|nudity]] concerns may take precedence over the comparatively minor penalty. 
+
+If truly unwanted, tainted apparel can be [[#Disposal|disposed of]] via a variety of means - one easy way is to create an outdoor stockpile for tainted apparel where they will deteriorate over time.
+
+{| class="wikitable" style="width: 14em"
+! Num. Items !! Debuff
+|- style="text-align:center;"
+! 1 
+| {{--|5}}
+|- style="text-align:center;"
+! 2 
+| {{--|8}}
+|- style="text-align:center;"
+! 3 
+| {{--|11}}
+|- style="text-align:center;"
+! 4+ 
+| {{--|14}}
+|}
+
+== Disposal ==
+Apparel can also be destroyed via a "Burn apparel" bill at a [[crematorium]] or a [[campfire]] or destroyed at an electric smelter. Apparel containing [[metallic]] resources can instead be smelted at an [[electric smelter]], for a return of 25% of the metallic resources used to create them. Note that things such as [[component]]s will similarly be reduced to their base metals. In either case care must be taken in selecting the allowed items to destroyed. 
+
+A ''burn pit'' provides a quick way to dispose of large quantities of burnable apparel. Place a [[stockpile zone]] on non-flammable [[terrain]] or [[floor]]ing, designate the zone for all apparel you wish to dispose of - suggested settings are tainted and non-smeltable apparel only, remove the automatically created [[home zone]] around the stockpile to prevent colonists extinguishing the fire, and manually attack the pile with an incendiary weapon such as a [[Molotov cocktail]]. [[Fire]] will spread from item to item and the unwanted apparel will be destroyed with minimal colonist work.
+
+Another alternative is to simply dump all unwanted apparel onto water or marsh tiles, which will rapidly speed up its [[deterioration]] rate.
+
+Finally, unwanted apparel can be sold or gifted for [[goodwill]] if [[#Tainted apparel|untainted]]. If disposing of apparel because it becomes worn, disposal at 60% HP will retain significantly more market value than waiting for 50% and the first worn moodlet to apply. Any item, including tainted items, can be sent as gifts via [[transport pod]]s to [[faction base]]s. For the majority of items, the reduction in market value from tainting makes this not worth the resources to make and launch the transport pod. For items with high base values, like hyperweave clothes occasionally found on raiders, it can still be worthwhile.
+
+== Outfit selection ==
+{{Stub|section=1|reason=General and also how the automatic apparel selection works. most info commented out below}}
+Colonists can be instructed to automatically equip items from a whitelist selected in the [[apparel policies]]. Pawns will attempt to select items based on a number of factors and the stats of the items available for selection - they will occasionally update their selection as "better" options become available or they are required to remove items per the apparel policy. Pawns can also be instructed to "force" wear an item, in which case they will continue to wear the item regardless of apparel policy or the statistics. 
+
+The logic for automatic apparel selection assigns a numerical value to the apparel available to the pawn. This value is based on the apparel's properties, such as its sharp and blunt armor and its insulation, as well as the pawn's requirements and preferences. The pawn compares the potential improvement from wearing an item with its current outfit, and will switch if the improvement is significant enough. Apparel that can be worn without replacing an existing item is favored over apparel that would require another item to be removed. The selection check occurs approximately every 0.1–0.15 days.{{Check Tag|Verify}}
+
+When determining whether to favor cold-insulating apparel, the selection system does not use the current temperature. Instead, it compares the average expected temperature of this time of the [[quadrum]] to the pawn's base comfortable minimum temperature. If the average temperature is sufficiently below the pawn's comfortable minimum, cold insulation is given greater weight when selecting apparel. This means that the apparel selection system can favor warmer clothing during a cold period, but it does not check whether the resulting outfit is actually sufficient for the temperature the pawn is currently experiencing.
+<!--
+The selection value is calculated as follows:
+* If the pawn is physically capable of wearing the item, the value has a base value of 0.1
+* If the apparel has the <code><MechanitorApparel>True<MechanitorApparel></code> tag, and the pawn is not a [[mechanitor]],{{BiotechIcon}} the value is set to -10.
+* If the apparel has the <code><slaveApparel>True<slaveApparel></code> tag, and the pawn is not a [[slave]],{{IdeologyIcon}} the value is set to -10
+* Some apparel then defines a <code><scoreOffset></code> that is added to the score. For example, all [[utility]] items excluding [[shield belt]], [[disruptor flare pack]], [[smokepop pack]] and [[firefoam pop pack]], [[airwire headset]],{{BiotechIcon}} [[array headset]],{{BiotechIcon}} [[mechcommander helmet]],{{BiotechIcon}} [[mechlord helmet]],{{BiotechIcon}} [[locust armor]],{{RoyaltyIcon}} [[grenadier armor]],{{RoyaltyIcon}} and [[phoenix armor]],{{RoyaltyIcon}} all have a bonus of +4, while the [[torture crown]] has a malus of -10. 
+
+
+the sharp + blunt armor rating is added to the score. Note this is done as a value from 0-1, not 0-100, which means the bonus of 4 makes it 4x more "valuable" than an apparel piece that gives 50% sharp and 50% blunt armor.
+If the apparel is damaged to the point of being considered frayed, the score is multiplied by some value between 0.2-0.3. If it's tattered, this drops to between 0 and 0.2. The exact value depends on how damaged it is.
+Shield belts get a bonus between 0.25 and approximately 2.0, depending on how much max charge they can hold.
+If it's going to be cold, apparel that gives insulation against the cold gets a bonus score between 1 point and 8 points (for 30 degrees celsius of insulation)If it's tainted, the score is decreased by 0.5 and then multiplied by 0.1 if it's still positive.
+If it's human leather and the pawn doesn't like human leather, again -0.5 then x0.1
+If it's considered "wrong gender" apparel the score is multiplied by 0.01.
+If there is apparel that is required for e.g. royal title, its score is multiplied by 25. If it's "allowed" by some special circumstance (allowedTags in various places like royal titles) it's multiplied by 10.
+If the pawn's royal title defines a min quality, and the apparel is below that quality, the score is multiplied by 0.25.
+if the score the pawn would gain by switching apparel (i.e. the score of the new apparel - the sum of scores of any apparel that needs to be taken off to wear it) is < 0.05, the pawn "doesn't care" and doesn't switch
+if apparel can be equipped without replacing anything, its relative score is multiplied by x10 
+
+"if it's going to be cold" is specifically defined as "if the average temperature in the current twelfth is more than 4 degrees (celsius) below my comfortable min temperature"  twelfth = month = 5 days -->
+
+== Materials ==
+A number of Materials are available for Clothing and Armor. Not every piece supports every material and a lot of the protective power of armor and insulation of clothing actually comes from the used material, rather than something unique to the item.
+
+=== Armor materials ===
+These materials are primarily used for armor. It includes any metal and in rare cases, even wood. (Note that even though jade has armor and insulation modifiers, it can't be used for any type of apparel.)
+
+{{#ask: [[Stuff Category::Metallic]] OR [[Stuff Category::Woody]]
+| ?Stuff Category
+| ?Market Value Base = Market Value
+| ?Beauty Factor
+| ?Beauty Offset
+| ?Work To Make Factor
+| ?Max Hit Points Factor
+| ?Flammability Factor
+| ?Armor - Sharp Factor
+| ?Armor - Blunt Factor
+| ?Armor - Heat Factor
+| ?Insulation - Cold Factor = Insulation - Cold (&deg;C)
+| ?Insulation - Heat Factor = Insulation - Heat (&deg;C)
+| limit = 100
+| link = subject
+| mainlabel = Material
+}}
+
+=== Clothing materials ===
+See [[Textiles#Material Effects]].
+
+== Common combinations ==
+{{Rewrite|section=1|reason=Currently a C&P from clothing. Needs adaption to all apparel, general analysis, suggested combos need some TLC. Whole section needs TLC}}
+Apparel combinations are limited by layer and coverage, and this selective incompatibility leads to trends in combinations that are discussed and compared here.
+
+=== Skin Layer ===
+In the early game, this layer is dominated by two options: [[tribalwear]] or [[button-down shirt]] + [[pants]].  The [[t-shirt]] is an inferior (and negligibly cheaper) version of the button-down shirt and should be avoided.
+
+[[Tribalwear]] offers the best thermal insulation and is cheaper.  [[Button-down shirt]] + [[pants]] has the same armor values but also covers the shoulders, arms, and neck.  When made of the weakest textiles like [[cloth]], the armor is so low that enemy weapons' AP completely nullifies it, making the coverage irrelevant, so you might as well use the cheaper tribalwear.  But as you acquire stronger textiles, the armor coverage becomes more valuable, and insulation becomes more plentiful as you give everyone a full set of clothing, so the button-down combo becomes the better choice usually early to mid game.  Note that, if you're using [[duster]]s/[[cape]]s/[[jacket]]s—which have higher armor values—then your strongest textiles are best spent on upgrading the outerwear first.  (For example, a [[thrumbofur]] duster and [[plainleather]] shirt+pants protects better than a plainleather duster and thrumbofur shirt+pants.)
+
+[[Flak pants]] are available mid-game; they give 40% sharp protection, about the same as [[hyperweave]] and [[thrumbofur]] pants, but are cheaper and easier to source (note again that you should spend those textiles on dusters first—hyperweave dusters give 60% sharp protection to legs)—at the cost of -0.12 move speed.  Whether this is worthwhile depends on your combat style.  Flak pants also occupy the Middle layer for legs, making them incompatible with power armor, and therefore not used in the late game.
+
+The [[formal shirt]]{{RoyaltyIcon}} will replace the button-down for [[noble]]s{{RoyaltyIcon}} of a certain rank, but provides no benefit to other pawns. The rare [[eltex shirt]]{{RoyaltyIcon}} is useful for [[psycast]]ers{{RoyaltyIcon}} but provides little protection.
+
+[[Children]]{{BiotechIcon}} have three options: [[kid tribalwear]], [[kid shirt]] + [[kid pants]], and [[kid romper]].  All have the same armor values; kid tribalwear provides the best insulation and the least armor coverage, kid romper is the opposite, and shirt+pants is in between; material costs are 30, 40, 30 respectively.  So it's a similar tradeoff as for adults, but children's needs are somewhat different.  First, heat insulation is more difficult for children because there is (currently) no kid duster or jacket, although there is a [[kid parka]].  Second, players will usually keep children out of combat situations to the extent possible (though unusual events and social fights do happen), so the armor values on their clothing will matter much more rarely than for adults.  Thus, the case for tribalwear is stronger in children's clothing, especially in hot climates.
+
+=== Middle ===
+The middle layer is primarily the realm of Armor, with the [[Eltex vest]] {{RoyaltyIcon}} and [[Corset]]/[[Formal vest]] {{RoyaltyIcon}} being the only Clothing items that use it. What option is selected here will depend on the stage of the game and military strategies employed.
+
+=== Head Layer ===
+This layer can mostly be divided into three categories: hats (textile), masks (wood/metal), and helmets.
+
+Among textile-based hats, the [[hood]] gives the best social impact of +20%, as well as 0.2x armor.  The [[broadwrap]]{{IdeologyIcon}} offers the highest armor value among textile hats (0.25x, tied with [[headwrap]]{{IdeologyIcon}}), and also gives the widest coverage of all headwear, protecting even the neck and shoulders.
+
+The [[visage mask]]{{IdeologyIcon}} has generally higher armor values than textile hats (although [[devilstrand]] or [[hyperweave]] broadwrap beats it in sharp protection).  The [[war mask]] is a more expensive version of a wooden visage mask, but also gives +10% pain shock threshold.
+
+Helmets have the highest armor values; even the most basic [[steel]] [[simple helmet]] is stronger than [[plasteel]] visage masks, and is comparable to hyperweave broadwrap; though they don't cover the eyes, nose, or jaw.  Power armor helmets do cover the full head, and, once you have the tech and the resources, the [[marine helmet]]—or [[cataphract helmet]],{{RoyaltyIcon}} if you can get it—is the best.  (Broadwrap still provides wider coverage than power helmets—to the neck and shoulders—but that can be addressed with a [[flak vest]] or other armor.)  The prestige versions of the power helmets are useful for psycasters.
+
+Temperature-wise, the [[tuque]], its equivalent [[flophat]],{{IdeologyIcon}} and its [[leather]]-based equivalent [[tailcap]]{{IdeologyIcon}} protect best against cold, while the [[cowboy hat]] and [[shadecone]]{{IdeologyIcon}} protect best against heat.  The cowboy hat is better than the shadecone for colonists, though since it decreases slave suppression you might give slaves the shadecone.
+
+For pawns that require noble apparel, the prestige power helmets give the best armor, while if you want a social impact bonus you may need to use the [[top hat]]/[[ladies hat]], or the [[coronet]] for royal pawns.
+
+There's a variety of special-purpose hats, most of which provide little to no armor (and all of which are weaker than [[recon helmet]]s).  [[Eltex]]{{RoyaltyIcon}} hats boost psychic abilities, [[psychic foil helmet]]s reduce them, the [[gunlink]]{{RoyaltyIcon}} increases shooting, there are several mech-bandwidth-enhancing hats, etc.  Whether the special abilities are worth the armor reduction depends on the situation.
+
+=== Outer ===
+The Outer layer is primarily for armor and additional clothing layers. They can be combined with shirts, [[flak pants]], and [[flak vest]]s.
+
+The [[Parka]] is the perfect option for Cold Resistance, as it outright doubles the material values. Accordingly, it should be always made from whatever material has the highest base values. 
+
+The [[Duster]] is a cowboy attire. Aside from good heat insulation, it also offers decent protection. The [[Cape]] is the Noble apparel statistical equal of the duster.
+
+The [[Jacket]] is a common item. Crashlanded survivors start with one. It is a good balance between protection and insulation.
+
+For slaves, the slave body strap occupies this slot, unless the biome is extremely cold or hot, due to it increasing the slaves suppression, while providing nearly no protection.
+
+=== Suggested apparel progression ===
+What constitutes the "correct" apparel for pawns depends on a variety of factors including game-stage, [[biome]] both for available [[materials]] and [[temperature]] concerns, [[difficulty]], strategies employed, the presence or absence of [[DLC]] and even what a player considers acceptable risk. 
+The suggested loadouts presented below represent a rough timeline suitable for [[Biomes#Warm Biomes|comfortable biomes]] and moderate difficulty, and with some common sense modifications will fit most playstyles.
+
+'''Industrial - Early''':
+The [[synthread]] apparel you start with should suffice for the early game. Start hunting and begin crafting [[button-down shirt]]s and [[duster]]s.
+
+'''Industrial - Mid''':
+The best apparel combo for this stage of the game is [[button-down shirt]] and a pair of [[pants]] on the skin layer, a [[flak vest]] in the middle, and a [[duster]] on the top. This combination offers good amounts of protection without significantly compromising the movement speed of a pawn.
+
+'''Industrial - Late''':
+The best combo for the late game is a pair of pants and a button down shirt on the bottom layer,  a [[marine armor]] set for ranged pawns, or a set of [[recon armor]] with a [[shield belt]] for melee pawns. For [[Royalty]] {{RoyaltyIcon}} owners, [[cataphract armor]] is recommended for ranged fighters, and a set of [[locust armor]] and a shield belt is suggested for melee brawlers because of the installed [[jump pack]] that frees up an utility slot for the shield belt.
+
+For pawns with 2 arm replacements, flak vest with devilstrand duster is generally better than marine armor. With hyperweave or thrumbofur dusters, it's better than cataphract armor. This assumes that they all have the same quality level.
+
+'''Royal Fighter {{RoyaltyIcon}}''':
+Royal pawns that are also fighters should wear the [[prestige armor|prestige]] versions of the Industrial - Late combo.
+
+'''Royal Psycaster {{RoyaltyIcon}}''':
+Pawns that are [[title|nobles]] and have fighting as a secondary priority, equip the pawn with full eltex gear. The recommended combo is: an [[eltex skullcap]], an [[eltex robe]], an [[eltex vest]], and an [[eltex shirt]]. This is full eltex set is hard to acquire, so they can use the Royal Fighter combo or just the normal clothing requirements for the title, such as the prestige robe and formal vest.
+
+== Comparison tables ==
+Apparel combinations are limited by layer and coverage - an item cannot be worn with another item covering the same body parts and on the same layer. Thus, items covering the same parts but on different layers are compatible, as are items on the same layer but with no overlap in coverage. Items that cover multiple layers conflict with items on all layers. 
+
+As such the following tables are divided by layer, but note that individual items on that layer may not be incompatible if their coverage does not overlap. For example, [[flak pants]] and the [[flak vest]] which both occupy the middle layer do not cover the same body parts, and thus can be worn together.
+
+The hands and feet, across all layers, are NOT covered by any apparel present in base game.
+
+Since some armor covers multiple layers, they are present in multiple tables as well.
+
+=== Headgear ===
+{{Apparel Table | type=Apparel | layer=Headgear}}
+
+=== Eyes ===
+{{Apparel Table | type=Apparel | layer=Eyes}}
+
+=== Skin ===
+{{Apparel Table | type=Apparel | layer=Skin}}
+
+=== Middle ===
+{{Apparel Table | type=Apparel | layer=Middle}}
+
+=== Outer ===
+{{Apparel Table | type=Apparel | layer=Outer}}
+
+=== Internal ===
+{{Apparel Table | type=Body Parts | layer=Internal}}
+
+== Version history ==
+* [[Version/0.8.657|0.8.657]] - Apparel insulation introduced with temperature system.
+* [[Version/0.9.722|0.9.722]] - Apparel becomes damaged when owner dies from violence, takes the damage it absorbs as armor and wears out over very long periods of use. Tattered apparel [[mood|thought]] added.
+* Beta 19 or earlier - Traders will no longer accept tainted apparel.
+* Beta 19 - System changed d100 system. Previously each point of armor from 1 - 50% reduced damage by 1%, each point of armor between 51 - 100% provided a 1% chance to not take damage, each point of armor beyond 100% reduced damage by 0.25% and gives a 0.25% chance to not take damage. Total protection capped at 90% damage reduction and 90% deflect chance (i.e. 260% armor rating).
+*  Beta 19/1.0 - Refactored how apparel insulation is calculated to be simpler, and rebalanced all apparel and stuff insulation stats.
+* [[Version/1.2.2719|1.2.2719]] - Fix: Non-royal colonists will not wear royal apparel even if outfit requires it.
+* [[Version/1.2.2753|1.2.2753]] - Apparel scoring algorithm no longer ignores heat armor, significantly shifting upgrading priorities e.g. pawns "upgrading" to [[Devilstrand]] [[duster]]s over [[Thrumbofur]], despite the significant detriment to Sharp protection.
+* [[Version/1.3.3066|1.3.3066]] - Pawns now try a lot harder to avoid wearing tattered apparel.
+* [[Version/1.6.4566|1.6.4566]] - Pawns won't automatically remove their vacuum-resistant apparel if they’re in a dangerous vacuum.
+* [[Version/1.6.4850|1.6.4850]] - Fix: Pawns would attempt to remove their vacsuit in space if their policy didn't allow for it.
+
+[[Category:Gear]]
+{{nav|clothing|wide}}

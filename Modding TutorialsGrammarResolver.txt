@@ -1,0 +1,182 @@
+{{BackToTutorials}}
+
+The grammar resolver is a RimWorld utility that customizes text strings based on in-game objects, such as pawns. This is used for backstory descriptions, trait tooltips, and many types of incidents and player messages.
+
+For instance, the letter when a wanderer joins starts:
+  A {PAWN_kind} named {PAWN_nameDef} has arrived and is joining the colony. {PAWN_pronoun} is a {PAWN_title}.
+
+When resolved, details of a specific pawn are filled in:
+  A wanderer named Bob has arrived and is joining the colony. He is a chef.
+
+== Symbols ==
+To allow text you write to be personalized, you need to add ''symbols'' to it. Symbols are set off by curly braces {} and consist of two parts with an underscore between. The first part of the symbol is the ''key''. This identifies which object the symbol belongs to. PAWN is the most common key for traits, backstories, and many incidents. If there are multiple objects being referenced, each one receives a separate key.
+
+The second, optional, part of a symbol is the ''subsymbol'', which determines what information the resolver fetches and how it's formatted. The available subsymbols depend on the type of object. Subsymbols that add an article (a, an, the) to the output will try to obey normal rules of grammar, such as not printing articles in front of proper names in English. Because the resolver is designed to support multiple languages, not all of its features (such as PluralIndef symbols or genders of inanimate objects) will apply to English-language mods.
+
+=== Thing Subsymbols ===
+These subsymbols are defined for Things (including Pawns), World Objects, and Defs.
+
+{| class="wikitable"
+|-
+! Subsymbol !! Meaning !! Examples !!   !! 
+|-
+| (none) || identical to ''indefinite'' || Alice  || an alpaca  || a chair
+|-
+| label || the ''label'' field of the thing's def || human  || alpaca  || chair
+|-
+| labelShort ||   || Alice  || alpaca  || chair
+|-
+| definite || ''label'' plus "the" || Alice  || the alpaca  || the chair
+|-
+| indefinite || ''label'' plus "a" || Alice  || an alpaca  || a chair
+|-
+| labelPlural ||   || humans  || alpacas  || chairs
+|-
+| labelPluralDef ||   || the humans  || the alpacas  || the chairs
+|-
+| labelPluralIndef  ||   || humans  || alpacas  || chairs
+|-
+| pronoun ||   || he  || she  || it
+|-
+| possessive ||   || his  || her  || its
+|-
+| objective ||   || him  || her  || it
+|-
+| factionName || the faction the thing belongs to; invalid for Defs || Alicetopia  ||   || 
+|-
+| gender || prints the symbol for the object's gender ||    ||   || 
+|}
+
+===Pawn Subsymbols===
+These subsymbols are defined specifically for Pawns. Note that these definitions for ''labelShort'', ''definite'', and ''indefinite'' override the general Thing definitions.
+
+{| class="wikitable"
+|-
+! Subsymbol !! Meaning !! Examples !!   !! 
+|-
+| labelShort || a pawn's short name or label || Alice || alpaca  || 
+|-
+| nameFull || defaults to ''kindIndef'' || Alison 'Alice' Abbey || an alpaca  || 
+|-
+| nameFullDef || defaults to ''kindDef'' || Alison 'Alice' Abbey || the alpaca  || 
+|-
+| nameDef || identical to ''definite'' || Alice || the alpaca  || 
+|-
+| nameIndef || identical to ''indefinite'' || Alice || an alpaca  || 
+|-
+| kind || based on the pawn's pawnkind, gender, and lifestage || colonist || calf || bull
+|-
+| kindDef ||   || the colonist || the calf || the bull
+|-
+| kindIndef ||   || a colonist || a calf || a bull
+|-
+| kindPlural ||   || colonists || calves || bulls
+|-
+| kindPluralDef ||   || the colonists || the calves || the bulls
+|-
+| kindPluralIndef ||   || colonists || calves || bulls
+|-
+| kindBase || the pawn's PawnKindDef's label || colonist || cow || cow
+|-
+| kindBaseDef ||   || the colonist || the cow || the cow
+|-
+| kindBaseIndef ||   || a colonist || a cow || a cow
+|-
+| kindBasePlural ||   || colonists || cows || cows
+|-
+| kindBasePluralDef ||   || the colonists || the cows || the cows
+|-
+| kindBasePluralIndef ||   || colonists || cows || cows
+|-
+| factionPawnSingular || The title of a member of the pawn's faction || colonist  ||   || 
+|-
+| factionPawnSingularDef ||   || the colonist  ||   || 
+|-
+| factionPawnSingularIndef ||   || a colonist  ||   || 
+|-
+| factionPawnsPlural ||   || colonists  ||   || 
+|-
+| factionPawnsPluralDef ||   || the colonists  ||   || 
+|-
+| factionPawnsPluralIndef ||   || colonists  ||   || 
+|-
+| lifestage || The noun form of the pawn's lifestage || adult || teenager  || 
+|-
+| lifestageDef ||   || the adult || the teenager  || 
+|-
+| lifestageIndef ||   || an adult || a teenager  || 
+|-
+| lifestageAdjective || The adjective form of the pawn's lifestage || adult || teenage  || 
+|-
+| title || The pawn's backstory title || chef || medic  || 
+|-
+| titleDef ||   || the chef || the medic  || 
+|-
+| titleIndef ||   || a chef || a medic  || 
+|-
+| humanlike || prints a symbol denoting whether the pawn is human or animal ||   ||   || 
+|}
+
+=== Faction Subsymbols ===
+These subsymbols are defined for Factions.
+
+{| class="wikitable"
+|-
+! Subsymbol !! Meaning !! Examples
+|-
+| (none) || identical to ''name'' || Alicetopia
+|-
+| name || The faction's name || Alicetopia
+|-
+| pawnSingular || label for one pawn of this faction || colonist
+|-
+| pawnSingularDef ||   || the colonist
+|-
+| pawnSingularIndef ||   || a colonist
+|-
+| pawnsPlural || label for several pawns of this faction || colonists
+|-
+| pawnsPluralDef ||   || the colonists
+|-
+| pawnsPluralIndef ||   || colonists
+|}
+
+=== Misc ===
+A string with no subsymbol will be printed as-is. The resolver will give its best guess for any of the following subsymbols, treating the string as a singular noun.
+
+{| class="wikitable"
+|-
+| plural || pluralDef || pluralIndef
+|-
+| definite || indefinite || pronoun
+|-
+| possessive || objective || gender
+|}
+
+An integer with the subsymbol "ordinal" will be turned into an ordinal ("1st", "2nd", "3rd", etc.). One with no subsymbol is printed as-is.
+
+Any other object without a subsymbol will attempt to invoke that object's ToString() method and print the result.
+
+== Invoking the Resolver ==
+If you're writing your own events or other code, you may want to print a string customized with objects you provide it. To do so, use the .Formatted() method: 
+  string.Formatted(object.Named("KEY"))
+
+where ''string'' is the string to be formatted, ''object'' is the object to customize for, and ''KEY'' is the key associated with that object. If you have multiple objects, you will need multiple keys and a separate call to Formatted for each one. Keys may be any arbitrary string, so long as the method and text use the same key.
+
+== AdjustedFor ==
+Certain methods (especially the battle log) use a separate resolver instead of or in addition to the above. This is invoked like so:
+  string.AdjustedFor(pawn, "KEY")
+
+This method supports a small number of keywords, all of which work the same way as described above. 
+
+{| class="wikitable"
+|-
+| nameFull || nameShort || nameShortDef || definite
+|-
+| nameShortIndef || indefinite || pronoun || possessive
+|-
+| objective || factionName || kind || title
+|}
+
+[[Category:Modding]]
+[[Category:Modding tutorials]]

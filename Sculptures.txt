@@ -1,0 +1,277 @@
+{{Stub|reason=Include [[Statue]] in considerations}}
+'''Sculptures''' are artistic [[buildings]] that typically have a high [[beauty]] stat. There are four types of traditional sculpture:
+
+* [[Small sculpture]]
+* [[Large sculpture]]
+* [[Grand sculpture]]
+* [[Terror sculpture]] {{IdeologyIcon}}
+
+[[Cube sculpture]]s{{AnomalyIcon}} are identified as sculptures and do provide beauty, but have a number of unique mechanics. Their similarities to more traditional sculptures are also shared by any building in the game. As such they are not considered on this page.
+
+== Summary ==
+[[File:UnfinishedSculpture.png|left|thumb|Unfinished sculpture]]
+All four sculptures are created from an [[art bench]] using {{Icon Small|stuff}} [[Wood]], [[Stone|Stony]], or [[Metal]]lic ingredients. Counterintuitively, stone sculptures are not made from stone [[chunk]]s, but from [[stone block]]s.
+
+The sculptor's [[Artistic]] skill is the primary factor in determining the sculptures' [[quality]]. A sculptor cannot work on another sculptor's piece.
+
+The three sculptures in Core have a high [[beauty]] rating, which depends on the sculpture size, material, and [[quality]]. [[Terror sculpture]]s do not increase beauty, but instead increase [[suppression]] of [[slave]]s.{{IdeologyIcon}}
+
+All sculptures have a 1.1x [[Sell Price Multiplier]], making them sell for more when compared to other items of the same [[market value]]. 
+
+All sculptures will have a name and story, like items of excellent or higher qualities. See [[#Story Generation]] below for more details.
+
+The following table compares the four sculptures:
+
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_24 text-center}}
+! Sculpture !! Size !! Materials !! Base Beauty<ref group="*" name="quality">Base values. Ignoring multipliers and offsets from materials or [[quality]].</ref> !! {{HP}}<ref group="*" name="quality" /> !! Work to make<ref group="*" name="quality" />
+|-
+! {{DLC Icons| {{#vardefineecho:art|Small sculpture}} }}
+| {{Q|{{#var:art}}|Size}}
+| {{Required Resources| {{#var:art}} }}
+| {{#vardefineecho:beauty| {{Q|{{#var:art}}|Beauty Base}} }}
+| {{Q|{{#var:art}}|Max Hit Points Base}}
+| {{Ticks| {{#vardefineecho:work| {{formatnum:{{Q|{{#var:art}}|Work To Make}}|R}} }} }}
+|-
+! {{DLC Icons| {{#vardefineecho:art|Large sculpture}} }}
+| {{Q|{{#var:art}}|Size}}
+| {{Required Resources| {{#var:art}} }}
+| {{#vardefineecho:beauty| {{Q|{{#var:art}}|Beauty Base}} }}
+| {{Q|{{#var:art}}|Max Hit Points Base}}
+| {{Ticks| {{#vardefineecho:work| {{formatnum:{{Q|{{#var:art}}|Work To Make}}|R}} }} }}
+|-
+! {{DLC Icons| {{#vardefineecho:art|Grand sculpture}} }}
+| {{Q|{{#var:art}}|Size}}
+| {{Required Resources| {{#var:art}} }}
+| {{#vardefineecho:beauty| {{Q|{{#var:art}}|Beauty Base}} }}
+| {{Q|{{#var:art}}|Max Hit Points Base}}
+| {{Ticks| {{#vardefineecho:work| {{formatnum:{{Q|{{#var:art}}|Work To Make}}|R}} }} }}
+|-
+! {{DLC Icons| {{#vardefineecho:art|Terror sculpture}} }}
+| {{Q|{{#var:art}}|Size}}
+| {{Required Resources| {{#var:art}} }}
+| {{#vardefineecho:beauty| {{Q|{{#var:art}}|Beauty Base}} }}
+| {{Q|{{#var:art}}|Max Hit Points Base}}
+| {{Ticks| {{#vardefineecho:work| {{formatnum:{{Q|{{#var:art}}|Work To Make}}|R}} }} }}
+|}
+</li></div>
+<references group="*"/>
+
+=== Meditation ===
+{{Royalty|section=1}}
+Pawns with the ''Artistic'' [[Psyfocus|meditation]] focus can use sculptures in a 10-tile radius to increase psyfocus. This includes all pawns who are not Tribal or [[Ascetic]].
+
+The highest quality sculpture is the primary source of psyfocus:
+{| {{STDT| c_07 text-center}}
+! Quality
+! Awful
+! Poor
+! Normal
+! Good
+! Excellent
+! Masterwork
+! Legendary
+|- 
+! Base Strength
+| +12%
+| +16%
+| +20%
+| +22%
+| +24%
+| +26%
+| +28%
+|}
+
+The other, surrounding sculptures give a much smaller boost:
+{| {{STDT| c_07 text-center}}
+! Quality
+! Awful
+! Poor
+! Normal
+! Good
+! Excellent
+! Masterwork
+! Legendary
+|- 
+! Strength Offset
+| +0%
+| +0%
+| +1%
+| +1%
+| +1%
+| +2%
+| +2%
+|}
+
+The maximum meditation focus strength is thus 44% for a legendary sculpture surrounded by 8 additional sculptures of masterwork or legendary quality.
+
+== Analysis ==
+<onlyinclude>Sculptures can quickly increase the [[Impressiveness]] of a [[room]] through Wealth and Beauty, in addition to fulfilling the actual [[beauty|beauty need]]. Certain rooms give increasing [[mood]] buffs for being more impressive:
+* Dining room
+* Rec room
+* Bedroom (inc. Barrack, Prison Room)
+* Hospital
+* Throne room {{RoyaltyIcon}} & Ritual room {{IdeologyIcon}}
+
+Other than these rooms, place art where pawns will stay for a long time, such as work stations. For extra efficiency, you can combine these rooms to make the most out of the sculptures. If Dining, Recreation, and Work all happen in the same room, then the same sculpture can apply to all 3 rooms, in addition to the general increase to Wealth.
+
+Note that sculptures increase a ''room'''s beauty rating from anywhere inside, but will only fulfill the beauty ''need'' when in an 8-tile radius from a pawn.
+
+=== Which sculpture to create ===
+An initial consideration is the material the sculpture is to be constructed from - some materials, namely {{#ask: [[Beauty Offset::>0.000001]]}}, have a beauty offset. This offset is added after the beauty multiplier and only applied once per item. As such, there is an advantage in beauty per tile for large sculptures over grand sculptures when made of one of those materials. For example, Jade has beauty factor of {{Q|Jade|Beauty Factor}} and an offset of {{Q|Jade|Beauty Offset}}. As such a Jade grand sculpture would have a total beauty of ({{Q|Grand sculpture|Beauty Base}} × {{Q|Jade|Beauty Factor}}) + {{Q|Jade|Beauty Offset}} or {{#expr:{{Q|Grand sculpture|Beauty Base}}*{{Q|Jade|Beauty Factor}}+{{Q|Jade|Beauty Offset}}}}. Conversely, the {{#expr: {{Q|Grand sculpture|Resource 1 Amount}}/{{Q|Large sculpture|Resource 1 Amount}}}} large sculptures you could construct with the same materials would have a total beauty of {{#expr:({{Q|Grand sculpture|Resource 1 Amount}}/{{Q|Large sculpture|Resource 1 Amount}}) * ({{Q|Large sculpture|Beauty Base}}*{{Q|Jade|Beauty Factor}}+{{Q|Jade|Beauty Offset}})}}. In a similar vein, there is an advantage in beauty per material for small sculptures and, to a lesser extent, large sculptures. The effects of this offset are most visible at lower qualities, and the other factors in choosing a sculpture size are usually more relevant, however, it should be considered if one of the aforementioned materials will be used.
+
+Small sculptures are the worst for beauty. For each point of beauty, they require the most work and take up the most space. Yet, because small sculptures take the most work, they have the highest [[Market Value]] per material. Therefore, small sculptures are the most profitable to sell per material. Small sculptures also have another advantage when selling: [[quality]] is a multiplier to market value, but can only increase value up to a flat cap. Small sculptures, especially of [[gold]] or [[silver]], are less impacted by the cap than the larger sculptures. Plus, traders likely won't have enough money to afford a masterwork grand sculpture.
+
+Conversely, large and grand sculptures are better to actually place around your base. Both are equally as space efficient (before rounding). You can place 4 large sculptures in 4 separate locations, as opposed in a grand sculpture needing a 2x2 space. This makes large sculptures a better solution for bedrooms and other smaller rooms, and a more flexible option generally. 
+
+Making grand sculptures exhibits a greater risk - if it turns out awful, you've had wasted 4 sculpture's worth of time. Conversely, grand sculptures are the best when you have [[inspiration#inspired creativity|inspired creativity]], assuming you can actually complete it. It may be wise to work on a grand sculpture, suspend it before it's completed, and finish it once the inspiration hits. Grand sculptures are also the most wealth efficient way to provide beauty of all sculptures, due to the aforementioned market value cap. A [[gold]] grand sculpture costs {{Market Value Calculator|Grand sculpture|Gold|Normal}} {{Icon Small|Silver}} at Normal quality and {{Market Value Calculator|Grand sculpture|Gold|Legendary}} {{Icon Small|Silver}} at Legendary quality, an increase of {{#expr:{{Market Value Calculator|Grand sculpture|Gold|Legendary}}-{{Market Value Calculator|Grand sculpture|Gold|Normal}}}} {{Icon Small|Silver}}. Four large sculptures would cost {{#expr: 4*{{Market Value Calculator|Large sculpture|Gold|Normal}}}} {{Icon Small|Silver}} at Normal quality and {{#expr: 4*{{Market Value Calculator|Large sculpture|Gold|Legendary}}}} {{Icon Small|Silver}} at Legendary quality, an increase of {{#expr: 4*{{Market Value Calculator|Large sculpture|Gold|Legendary}}- 4*{{Market Value Calculator|Large sculpture|Gold|Normal}}}} {{Icon Small|Silver}}.</onlyinclude>
+
+If managing wealth, carefully consider how much beauty a sculpture gives for its wealth footprint. A legendary gold grand sculpture provides 12960 beauty, but only {{#expr: 12960/{{Market Value Calculator|Grand sculpture|Gold|Legendary}} round 2}} beauty per wealth. Weigh this against a legendary quality jade grand sculpture which provides {{#expr: 8080/{{Market Value Calculator|Grand sculpture|Jade|Legendary}} round 2}} beauty per wealth. Excellent quality marble grand sculpture are much easier to obtain and provide {{#expr: 1625/{{Market Value Calculator|Grand sculpture|Marble blocks|Excellent}} round 2}} beauty per wealth. For single tile sculptures, excellent quality marble large sculptures provide {{#expr: 410/{{Market Value Calculator|Large sculpture|Marble blocks|Excellent}} round 2}} beauty per wealth. Masterwork large and grand marble sculptures are negligibly close in beauty per wealth to their excellent counterpart.
+
+== Material table ==
+'''Note:''' The table below assumes Normal quality. For the effect of other qualities, see the [[#Quality table|Quality table]] or the [[Quality]] page. Keep in mind that while Beauty is multiplied by the factor from quality directly, the market value increase from quality is capped. As such, the qualitative differences between 2 sculptures may be different at different qualities. The ratios of Beauty/Value, Value/Work, and Value/Material are provided as a rough guide only.
+<div><li style="display: inline-table;">
+{| {{STDT|sortable c_01 text-right}}
+! Sculptures
+! Material
+! data-sort-type="number" | Beauty
+! data-sort-type="number" | Work to Build
+! data-sort-type="number" | HP
+! data-sort-type="number" | Flamma&shy;bility
+! data-sort-type="number" | Market Value
+! Beauty<br>/Work 	
+! Beauty<br>/Value 	
+! Value<br>/Work
+! Value<br>/Material <!--
+-->{{#vardefine:multipleBuildings|true}}<!--
+-->{{#vardefine:workValueRatios|true}}<!--
+-->{{#vardefine:useWorkToMake|true}}<!--
+-->{{#vardefine:beautyFactor|1}}<!--
+SMALL SCULPTURE
+-->{{#vardefine:name         | Small sculpture}}<!--
+-->{{#vardefine:beauty       | {{formatnum:{{Q|{{#var:name}}|Beauty Base|0}}|R}} }}<!--
+-->{{#vardefine:flammability | {{formatnum:{{Q|{{#var:name}}|Flammability Base}}|R}} }}<!--
+-->{{#vardefine:HP           | {{formatnum:{{Q|{{#var:name}}|Max Hit Points Base}}|R}} }}<!--
+-->{{#vardefine:stufftags    | {{lc:{{Q|{{#var:name}}|Stuff Tags}} }} }}<!--
+-->{{#vardefine:stuffAmount  | {{Q|{{#var:name}}|Resource 1 Amount}} }}<!--
+-->{{#vardefine:value        | {{formatnum:{{Q|{{#var:name}}|Market Value Base}}|R}} }}<!--
+-->{{#vardefine:work         | {{formatnum:{{Q|{{#var:name}}|Work To Make}}|R}} }}<!--
+-->{{#ask: {{#ifeq: | {{#pos:{{#var:stufftags}}|leathery}} || [[Stuff Category::Leathery]] OR}}
+           {{#ifeq: | {{#pos:{{#var:stufftags}}|fabric}}   || [[Stuff Category::Fabric]]   OR}}
+           {{#ifeq: | {{#pos:{{#var:stufftags}}|woody}}    || [[Stuff Category::Woody]]    OR}}
+           {{#ifeq: | {{#pos:{{#var:stufftags}}|stony}}    || [[Stuff Category::Stony]]    OR}}
+           {{#ifeq: | {{#pos:{{#var:stufftags}}|metallic}} || [[Stuff Category::Metallic]] OR}} [[Stuff Category::PLACEHOLDER]]
+    | format = template
+    | template = Building Stats Table Row
+    | link = none
+}}<!--
+LARGE SCULPTURE
+-->{{#vardefine:name         | Large sculpture}}<!--
+-->{{#vardefine:beauty       | {{formatnum:{{Q|{{#var:name}}|Beauty Base|0}}|R}} }}<!--
+-->{{#vardefine:flammability | {{formatnum:{{Q|{{#var:name}}|Flammability Base}}|R}} }}<!--
+-->{{#vardefine:HP           | {{formatnum:{{Q|{{#var:name}}|Max Hit Points Base}}|R}} }}<!--
+-->{{#vardefine:stufftags    | {{lc:{{Q|{{#var:name}}|Stuff Tags}} }} }}<!--
+-->{{#vardefine:stuffAmount  | {{Q|{{#var:name}}|Resource 1 Amount}} }}<!--
+-->{{#vardefine:value        | {{formatnum:{{Q|{{#var:name}}|Market Value Base}}|R}} }}<!--
+-->{{#vardefine:work         | {{formatnum:{{Q|{{#var:name}}|Work To Make}}|R}} }}<!--
+-->{{#ask: {{#ifeq: | {{#pos:{{#var:stufftags}}|leathery}} || [[Stuff Category::Leathery]] OR}}
+           {{#ifeq: | {{#pos:{{#var:stufftags}}|fabric}}   || [[Stuff Category::Fabric]]   OR}}
+           {{#ifeq: | {{#pos:{{#var:stufftags}}|woody}}    || [[Stuff Category::Woody]]    OR}}
+           {{#ifeq: | {{#pos:{{#var:stufftags}}|stony}}    || [[Stuff Category::Stony]]    OR}}
+           {{#ifeq: | {{#pos:{{#var:stufftags}}|metallic}} || [[Stuff Category::Metallic]] OR}} [[Stuff Category::PLACEHOLDER]]
+    | format = template
+    | template = Building Stats Table Row
+    | link = none
+}}<!--
+GRAND SCULPTURE
+-->{{#vardefine:name         | Grand sculpture}}<!--
+-->{{#vardefine:beauty       | {{formatnum:{{Q|{{#var:name}}|Beauty Base|0}}|R}} }}<!--
+-->{{#vardefine:flammability | {{formatnum:{{Q|{{#var:name}}|Flammability Base}}|R}} }}<!--
+-->{{#vardefine:HP           | {{formatnum:{{Q|{{#var:name}}|Max Hit Points Base}}|R}} }}<!--
+-->{{#vardefine:stufftags    | {{lc:{{Q|{{#var:name}}|Stuff Tags}} }} }}<!--
+-->{{#vardefine:stuffAmount  | {{Q|{{#var:name}}|Resource 1 Amount}} }}<!--
+-->{{#vardefine:value        | {{formatnum:{{Q|{{#var:name}}|Market Value Base}}|R}} }}<!--
+-->{{#vardefine:work         | {{formatnum:{{Q|{{#var:name}}|Work To Make}}|R}} }}<!--
+-->{{#ask: {{#ifeq: | {{#pos:{{#var:stufftags}}|leathery}} || [[Stuff Category::Leathery]] OR}}
+           {{#ifeq: | {{#pos:{{#var:stufftags}}|fabric}}   || [[Stuff Category::Fabric]]   OR}}
+           {{#ifeq: | {{#pos:{{#var:stufftags}}|woody}}    || [[Stuff Category::Woody]]    OR}}
+           {{#ifeq: | {{#pos:{{#var:stufftags}}|stony}}    || [[Stuff Category::Stony]]    OR}}
+           {{#ifeq: | {{#pos:{{#var:stufftags}}|metallic}} || [[Stuff Category::Metallic]] OR}} [[Stuff Category::PLACEHOLDER]]
+    | format = template
+    | template = Building Stats Table Row
+    | link = none
+}}
+|}
+</li></div>
+
+== Quality table ==
+{| {{STDT|sortable c_24 text-center}}
+! Quality !! Base [[Beauty]]<br/>Modifier !! Base Value<br/>Modifier
+|-
+! Awful
+| -10%
+| 50%
+|-
+! Poor
+| 50%
+| 75%
+|-
+! Normal
+| 100%
+| 100%
+|-
+! Good
+| 200%
+| 125% (max +500)
+|-
+! Excellent
+| 300%
+| 150% (max +1000)
+|-
+! Masterwork
+| 500%
+| 250% (max +2000)
+|-
+! Legendary
+| 800%
+| 500% (max +3000)
+|}
+
+== Story generation ==
+{{Rewrite|reason=More precise description of how the story is put together. See RulePacks_Art_DescriptionsPhysical.xml and RulePacks_Art_Descriptions.xml|section=1}}
+Each sculpture has its own semi-randomly generated story based on past events in the colony and pre-written story segments. These stories tend to contain any of the following:
+* A past event occurring in or to the colony (see below)
+* A seemingly random event with no relation to the colony (e.g. "hundreds of doctors and engineers eating mushrooms")
+* A border to the art (e.g. "a triangular border")
+* A texture (e.g. "''insert texture example''")
+* A design style (e.g. "conveys a feeling of rage and happiness")
+* A location (e.g. "in a town")
+
+The events sometimes depicted in the story can be about any of the following that occurred in the colony's history:
+* killings
+* [[social fight]]s
+* drunkenness
+* vomiting
+* landing in drop pods
+* someone crafted an object
+* artwork created
+* someone reached a high [[skill]] level
+* struck ore
+* someone escaped a [[roof collapse]]
+* person captured
+* person recruited
+* animal trained
+* animal hunted
+* surgery done
+* someone was on fire
+* someone went psychotic
+* someone [[Mental break|gave up]]
+
+Alternatively, they can contain something random, without relating to any events in the colony at all (e.g. "this sculpture bears a portrayal of a cube"). Because of this grammar generator, artwork can have some humorous descriptions
+
+== Version history ==
+* [[Version/0.9.722|0.9.722]] - Sculptures now have sizes - small, large, and grand. Now have generated descriptions of what they depict. Will depict events that happened earlier in a colony’s life, include: killings, drunkenness, vomiting, landing in drop pods, artwork created, struck ore, person captured, person recruited, animal hunted, surgery done, someone was on fire, someone went psychotic, someone gave up
+* [[Version/1.1.2654|1.1.2654]] - Increase psyfocus gain of sculptures by 2, up to a max of 28 at legendary quality.
+
+{{Nav|furniture|wide}}
+[[Category:Furniture|#Sculptures]]

@@ -1,0 +1,196 @@
+{{DISPLAYTITLE:Setting Up a Solution}}
+
+{{BackToTutorials}}
+
+In this tutorial you will learn how to set up a solution, along with instructions on setting the output directory and files for more convenient building right into the Assemblies folder.
+
+=Requirements=
+
+* The manual option in this tutorial requires you to have [[Modding_Tutorials/Mod_folder_structure#The Source and Assemblies folders|set up a Source and Assemblies folder]] (the Visual Studio automatic option sets this up for you).
+* You will want to have an IDE installed: [[Modding Tutorials/Recommended software#IDE's|Recommended IDE's]].<br/><br/>
+
+=Setting up a solution=
+Setting up can be different for different IDE's. Feel free to add '''''complete''''' instructions for your IDE of choice.
+
+===Visual Studio Community 2022===
+''NOTE: Visual Studio 2022 is a rather heavy application (2-3 GB for basic functionality) but works out of the box. It is strongly recommended if you are on Windows and have a PC that can handle it. This tutorial is similar for other versions of Visual Studio.''
+
+First, ensure that you have the .NET desktop development workload feature installed. If you didn't select it during installation or if you aren't sure, you can click on Get Tools and Features under the Tools menu to check:
+
+[[File:Get Tools and Feature (VS2022).png|border|To verify that you have the proper module installed, click here.]]
+
+[[File:Workload Selection (VS2022).png|border|Make sure you have the ".NET desktop development" workload installed.]]
+
+==== Option 1 (Manual Method):====
+# Create a new class library project
+## Once loaded, go to File -> New -> Project...
+## Type "Class Library (.NET Framework)" in the search bar, and select the C# option. [[File:ClassLibrary.png|200px|thumb|right|Installing the .NET framework]]
+## Enter your project name.
+## Choose a location, preferably:<br/><pre>(RimWorldInstallFolder)/Mods/(YourModName)/Source</pre>
+## Enter a solution name (optionally, tick "Place solution and project in the same directory")
+## Make sure Framework is ".NET Framework 4.7.2"
+# In your project, set target framework and various other properties
+## In your Solution Explorer (the panel usually located on the right), right click your project -> Properties (or expand your project and double click "Properties" with the wrench icon)
+## ''Optional'': Under Application, change your Assembly and Namespace names to anything of your choice
+## ''Optional'': You can go to Build -> Advanced... and set "Debugging information" to "Embedded" or "Portable" to remove the extraneous PDB file while also retaining full debug information. You can also set it to "None" to make your DLL smaller, but error stacktraces will have less useful information.
+## Leave Advanced..., and set the Output Path to "..\..\Assemblies\" (Or wherever the Assemblies folder is)
+# Add references to RimWorld code
+## Expand your project in Solution Explorer. Then right click "References" -> Add Reference...
+## Click Browse...
+## Navigate towards <pre>RimWorldInstallPath/RimWorld******_Data/Managed</pre> and select files: <br/><pre>Assembly-CSharp.dll&#10;UnityEngine.CoreModule.dll</pre>
+## Click "Add"
+## Click "OK" to close the Reference Manager.
+## Right-click on both Assembly-CSharp.dll and UnityEngine.dll and set Copy Local to False (Properties pane).
+
+====Option 2 (Using Nuget):====
+This option uses [https://www.nuget.org/packages/Krafs.Rimworld.Ref Krafs Rimworld Reference Package] it is less involved than using reference assemblies and is the recommended method.</br>
+#Follow the above up till ''Add references to RimWorld code''
+#From the Tools menu, select NuGet Package Manager -> Package Manager Settings.
+##In the Settings dialog, under Package Management, change the ''Default package management format'' to '''PackageReference'''.
+##Click OK to close the dialog.
+#Open Nuget Manager and type ''Rimworld''
+#Add Krafs Rimworld Reference
+You can now continue as if you added the assemblies. Doing this makes your project portable, because RimRef can be downloaded by anyone and used from anywhere, unlike Rimworld's assemblies which can't be distributed.
+
+===Linux===
+
+====Using .NET SDK====
+
+On Linux it is possible to develop using .NET packages provided by Microsoft:
+# [https://learn.microsoft.com/en-us/dotnet/core/install/linux Install .NET by following the provided instructions.]
+# If you use IDE, use it to build (no further details, not tested).
+# It is possible to build from CLI using a .csproj file. Find a mod that has description pointing to its GitHub sources and copy from there ([https://github.com/llunak/rimworld-dietfiltersinstorage/blob/master/Source/DietFiltersInStorage.csproj example here]), or use another way to create a .csproj file.
+# For building use a command like the following (substitute the proper .csproj file, change Release to Debug for a debug build):<br/><pre>dotnet build <project file>.csproj /property:Configuration=Release</pre>
+# If you get errors, possibly the .csproj is Windows-specific and needs to be edited:
+## You may need to fix paths (point them to .dll files in RimWorld/RimWorld*_Data/Managed, but it is generally better to use NuGet as described above in Option 2, as that is platform-independent).
+## See other setups above for other settings (those IDEs write those settings to the .csproj files).
+
+Note that .NET Framework from Microsoft is Windows-only, and some .csproj files do not build without it. Generally it seems those using Windows-specific paths are affected, while those platform-independent work fine. Either use Mono (see below), or use one that works. The example .csproj file linked above can usually be used as a drop-in replacement, with only properties in the first PropertyGroup needing adjustment. If you really want or need it, you can get .NET Framework from Mono, by additionally doing these steps:
+# Install Mono (refer to your distribution's instructions);
+# Change the build command to the following (4.7.2 is the .NET version from the .csproj file):<br/><pre>FrameworkPathOverride=$(dirname $(which mono))/../lib/mono/4.7.2-api/ dotnet build <project file>.csproj /property:Configuration=Release</pre>
+
+====Using Mono====
+
+A lighter alternative to the .NET SDK is the Mono C# compiler. Many Linux distributions offer Mono in their official package repositories.
+
+The installation command depends on your flavour of Linux. Below are some common examples.
+
+Debian:
+<source lang=sh>
+apt install mono-msc
+</source>
+Arch Linux:
+<source lang=sh>
+pacman -S mono
+</source>
+
+With Mono installed, the <code>mcs</code> tool should now be available for compiling C# assemblies.
+
+An example command to build a simple mod using Mono:
+<source lang=sh>
+mcs -target:library -nostdlib -noconfig -reference:"${REFS}/mscorlib.dll" -reference:"${REFS}/Assembly-CSharp.dll" -out:"Assemblies/mymod.dll" "Source/mymod.cs"
+</source>
+This will read the C# file at <code>Source/mymod.cs</code> and write the compiled assembly to <code>Assemblies/mymod.dll</code>. The <code>Assemblies</code> directory must already exist. Replace <code>${REFS}</code> with the path to your reference assemblies, such as <code>~/.steam/steam/steamapps/common/RimWorld/RimWorldWin64_Data/Managed</code> or <code>~/.nuget/packages/krafs.rimworld.ref/1.6.4850/ref/net472</code>.
+
+Explanation:
+* The <code>mcs</code> command invokes the Mono C# compiler.
+* <code>-target:library</code> specifies that the output should be a library (DLL) instead of an executable.
+* <code>-nostdlib</code> and <code>-noconfig</code> prevent automatically referencing the system's version of '''mscorlib.dll''' and other standard .NET assemblies. Since the game provides its own .NET assemblies, we want to reference those instead.
+* <code>-reference:...</code> supplies the path to a reference assembly. Exactly which set of assemblies are needed depends on the content of the mod being compiled.
+
+Refer to the [https://manpages.debian.org/latest/mono-mcs/mcs.1.en.html mcs manual] for a full list of available options.
+
+Some Linux distributions do not provide a working NuGet client. While inconvenient, it's still possible to obtain NuGet packages by manually downloading them from the NuGet website.
+
+Arch Linux is one distribution which ''does'' have a NuGet client available. On Arch Linux, the client can be installed with:
+<source lang=sh>
+pacman -S nuget
+</source>
+
+Example usage - fetch a specific version of the '''krafs.rimworld.ref''' package:
+<source lang=sh>
+nuget install -version "1.6.4850" "krafs.rimworld.ref"
+</source>
+This will download and extract the package contents into <code>./Krafs.Rimworld.Ref.1.6.4850/</code>, and place an additional copy in <code>~/.nuget/packages/krafs.rimworld.ref/1.6.4850/</code> (unless the path is overridden by the <code>$NUGET_PACKAGES</code> variable).
+
+===Rider (good for Mac)===
+JetBrains Rider is a great cross-platform C# IDE. Previously a paid product (with exceptions), it now offers a community license, making it free for non-commercial use.
+
+# Open Rider and click New Solution in the welcome dialog.
+## Click Class Library under .NET on the left. The option may take a second to show up.
+## Under Solution Name (and Project Name), enter the name of your mod.
+## Set the Solution Directory to [your mod folder]/Source.
+## Optionally check "put solution and project in the same directory." This is probably a good idea.
+## Change Framework to .Net Framework 4.7.2. 
+### If you're on Windows and 4.7.2 does not show up as an option, you will have to install the "4.7.2 Dev Pack" from [https://dotnet.microsoft.com/en-us/download/visual-studio-sdks Microsoft].
+### If you're on MacOS, you may see an error "mono is not found"; install mono from [https://www.mono-project.com/docs/getting-started/install/mac/ here]. Additionally, if you do not have the option to choose .NET 4.7.2, you can create a project with the available NET option(s) and then manually edit the .csproj file to contain "<TargetFramework>net472</TargetFramework>" later.
+## Click Create.
+# In the left side bar, expand your solution, right click your project (mod name with "C#" icon) and click Properties.
+## In the Properties window, select Configurations > Debug on the left and uncheck Debug Symbols.
+## For both configurations, change the Output Path to ../../Assemblies.
+## Click OK.
+# Expand your project, right click Dependencies and click Reference.
+## Click Add From.
+## Browse to the folder with the RimWorld DLLs
+### DLL Location for Mac: "/Users/[username]/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Contents/Resources/Data/Managed
+### For Win10: "\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed"
+## Select both Assembly-CSharp.dll and UnityEngine.dll and click OK.
+## Expand Assemblies under Dependencies. For both of the assemblies that you just added:
+### Right click the assembly and click Properties.
+### Uncheck "Copy Local" (you may need to scroll down) and click OK.
+
+You're done! Note that Rider has a built-in decompiler—to view the source of a RimWorld class or method, just right-click its name and click Go To > Definition.
+
+===.NET Framework via Command Line===
+If you are on Windows and for some reason you don't want to use Visual Studio, you can also use the C# compiler that comes with the .NET Framework from within the terminal.
+
+# Install the [https://dotnet.microsoft.com .NET Framework].
+# (Optional) Adding the compiler to PATH.
+## Search for "env" -> Edit system environment variables -> click on "Environment Variables" -> Edit the Path of the user variables -> Add the folder of csc.exe (Usually C:\Windows\Microsoft.NET\Framework\vX.X.XXXXX).
+# Find <br/><pre>Assembly-CSharp.dll&#10;UnityEngine.CoreModule.dll</pre> in your game files(Usualy at: C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\).
+# Open a terminal and cd to the location of your .cs file.
+# Compile your .cs file (If you skipped adding csc.exe to path, replace it with its full filepath in the following command).
+## It should look something like this:<pre>csc.exe /t:library /r:"C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp.dll","C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll" MyMod.cs</pre>
+## The command is structured where:<pre>csc.exe</pre> is the compiler(or the whole filepath), and:<pre>/r:"...","..."</pre> is the filepath of both gamefiles from step 3, and:<pre>MyMod.cs</pre> is your C# source code.
+# Explanation:
+## the /t flag sets it to be a .dll file.
+## the /r flag references the game files(Not the decompiled source code, the game files).
+
+===Visual Studio Code via Dev Container===
+{{Recode|section=1|reason=Section commented out due to unknown, unvalidated source. Ideally a full guide for VCS needs to be written}}
+<!-- VS Code provides with Dev Containers a very simple way to set up an working development environment. To make use of Dev Containers you need VS Code with the Dev Containers Extension and docker installed on your machine.
+
+====Quick Start====
+For a quick start either clone the repository inside your mods folder:
+<pre>git clone https://github.com/N3fastus/RainingGoo</pre>
+or download a zip archive by visiting the [https://github.com/N3fastus/RainingGoo Repository]. Click "Code", then "Download ZIP" and unzip the code in your mods folder.
+The Mod has a dependency to [https://github.com/pardeike/HarmonyRimWorld/releases Harmony], this one needs also to be in the "Mods" directory. Download the zip and extract it to the "Mods" folder.
+
+Now open the folder with VS Code. If you are not on Linux you need to adjust the path in '''.devcontainer/docker-compose.yml''' to your platform. 
+To start up the container you need to press '''CTRL + Shift + P''' and type '''"Dev Container: Reopen in Container"'''. This might take a few minutes.
+When the container is up and running, switch to the terminal inside VS Code and type:
+<pre>dotnet build</pre>
+In the Assemblies folder should now be a "RainingGoo.dll".
+
+====Starting a new Project====
+To start over with a complete new solution, copy the ".devcontainer" folder to your own project and open it in VS Code. 
+
+To create a new solution file in the actual location:
+<pre>dotnet new sln</pre>
+
+To create a new project (here a library) in the actual location:
+<pre>dotnet new classlib -n MyNewProject -o .</pre>
+
+To add the created project to the solution file:
+<pre>dotnet sln add Path/to/MyNewProject.csproj</pre>
+
+For the configuration of the csproj files compare against the example project above.
+-->
+
+=Common issues=
+* Can't find the option to target .NET Framework 4.7.2? It may require additional installation steps. In Visual Studio, Tools => Get Tools and features => Individual Components => Select ''.NET Framework 4.7.2 development tools'' (or google installation instructions). Also make sure your project is a ''Class Library (.NET '''Framework''')''. Not .NET Core or .NET Standard.
+
+=See also=
+* [[Modding Tutorials/Writing custom code|Writing custom code]] continues on setting up your solution.<br/>
+
+[[Category:Modding tutorials]]

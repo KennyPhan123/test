@@ -1,0 +1,120 @@
+{{Stub|reason=1) Two-way links}}
+{{Main|Insulation}}
+{{See also|Insulation - Cold}}
+{{Verified|1.5.4104}}{{Stat
+| def name = Insulation_Heat
+| label = Insulation - Heat
+| label for full stat list = Insulation - Heat (armor stat)
+| description = How much this [[apparel]] improves a wearer's [[maximum comfortable temperature]].<br/>Greater values allow surviving in warmer [[temperature]]s.
+| default base value = 0
+| min value = -9999
+| max value = 9999
+| hide at value = 0
+| to string style = TemperatureOffset
+| show on pawns = false
+| category = Apparel
+| display priority in category = 89
+| parts = StatPart_Quality, StatPart_Stuff
+}}
+
+The range of possible temperature is limited to {{Temperature|-273.15}} ~ {{Temperature|1000}}, so final heat insulation values that extend beyond this are largely useless.
+
+== Stat Parts ==
+=== Quality ===
+<div><li style="display: inline-table;">
+The following factors also apply to negative values:
+{| {{STDT| c_01}}
+! [[Quality]] !! Factor
+|-
+! Awful
+| {{Bad|×80%}}
+|-
+! Poor
+| {{Bad|×90%}}
+|-
+! Normal
+| '''×100%'''
+|-
+! Good
+| {{Good|×110%}}
+|-
+! Excellent
+| {{Good|×120%}}
+|-
+! Masterwork
+| {{Good|×150%}}
+|-
+! Legendary
+| {{Good|×180%}}
+|}
+</li></div>
+
+=== Stuff ===
+* Priority: '''100'''{{Check Tag|What is the significance of this?}}
+* Stuff Power Stat: '''[[Insulation - Heat (Material Factor)]]'''
+* Multiplier Stat: '''[[Insulation - Heat - Material Effect Multiplier]]'''
+
+== Bases ==
+<div><li style="display: inline-table;">
+Click to <div class="mw-collapsible">
+<div class="mw-collapsible-content">
+{| {{STDT| c_01 sortable}}
+! Apparel !! [[Property:Insulation - Heat Base|Insulation - Heat Base]]
+|-
+{{#ask: [[Insulation - Heat Base::+]]
+| ?Insulation - Heat Base
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Name
+| limit = 1000
+}}
+|}
+</div>
+</div>
+</li></div>
+
+== Stat Def Data ==
+{| {{STDT| c_01}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Insulation - Heat (Armor Stat)" <!-- ParentName="InsulationBase" --><!--<StatDef>-->
+|
+* '''Def Name:'''<br />Insulation_Heat
+* '''Label:'''<br />Insulation - Heat
+* '''Label For Full Stat List:'''<br />Insulation - Heat (armor stat)
+| How much this apparel improves a wearer's maximum comfortable temperature.<br/><br/>Greater values allow surviving in warmer temperatures.
+|
+* Display Order:<br />'''30'''
+* Def Name:<br />'''Apparel'''
+* Label:<br />'''Apparel'''
+* Display All By Default:<br />{{Bad|false}}
+|
+* Default Base Value: '''0'''
+* Hide At Value: '''0'''
+* Min Value: '''-9999'''
+* Max Value: '''9999'''
+* To String Style: '''TemperatureOffset'''
+* Show On Pawns: {{Bad|false}}
+|
+* '''Parts:'''
+** '''''StatPart_Quality:'''''
+*** Factor Awful: {{Bad|×{{%|0.8}}}}
+*** Factor Poor: {{Bad|×{{%|0.9}}}}
+*** Factor Normal: '''×{{%|1}}'''
+*** Factor Good: {{Good|×{{%|1.1}}}}
+*** Factor Excellent: {{Good|×{{%|1.2}}}}
+*** Factor Masterwork: {{Good|×{{%|1.5}}}}
+*** Factor Legendary: {{Good|×{{%|1.8}}}}
+*** Apply To Negative Values: {{Good|true}}
+** '''StatPart_Stuff:'''
+*** Priority: '''100'''
+*** Stuff Power Stat: '''[[Insulation - Heat (Material Factor)]]'''
+*** Multiplier Stat: '''[[Insulation - Heat - Material Effect Multiplier]]'''
+| 89
+<!--</StatDef>-->
+|}
+
+== Version history ==
+{{Stub|section=1|reason=General Version history}}
+
+{{nav|stats|wide}}

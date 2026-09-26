@@ -1,0 +1,78 @@
+{{Verified|1.3.3387}}{{Stub|reason=Incomplete(?) list of ideoligious effects}}
+{{For|places considered indoors|Rooms}}
+'''Indoors''' is the [[need]] for pawns with the [[Undergrounder]] trait to be inside. Keeping them outside for too long will eventually affect their [[mood]] negatively. Having an [[ideoligion]] with the [[Indoors (precept)|Indoors: Preferred]] precept{{IdeologyIcon}} will also give the Indoors need.
+
+For the equivalent but inverse need for non-Undergrounder pawns, see [[Outdoors]].
+
+== Need thresholds ==
+Characters' indoors level is grouped into six thresholds: ''None'', Just Outdoors, Outdoors, Long Outdoors, Very Long Outdoors, and Brutal Outdoors. Each threshold provides a different [[thought]] and thus [[mood]] penalty to a character.
+
+The indoors levels are as follows:
+{| class="wikitable"
+|-
+! Label
+! Indoors
+! Mood Debuff
+|-
+! ''None''
+| >80%
+| ''None''
+|-
+! Just Outdoors
+| >60% and ≤80%
+| {{--|1}}
+|-
+! Outdoors
+| >40% and ≤60%
+| {{--|3}}
+|-
+! Long Outdoors
+| >20% and ≤40%
+| {{--|5}}
+|-
+! Very Long Outdoors
+| >0.05% and ≤20%
+| {{--|7}}
+|-
+! Brutal Outdoors
+| ≤0.05%
+| {{--|8}}
+|}
+
+Indoors caps at 0% and 100%.
+
+== Need changes ==
+The indoors status level ticks up or down depending on two factors - the [[roof]] above the pawn, and whether they are considered indoors by room mechanics. All changes are frozen while a pawn is sleeping.
+
+<!--Note - this is not the same as "will not increase over 50%", and is specifically worded. Use caution when rewording-->
+When the current level is ≥50%, the indoors need can only increase when the pawn is also under overhead mountain. If they are, it will do so at the normal rate. If they are not under an overhead mountain and the status level is ≥50%, it will instead decrease by {{--|{{#expr: 0.5 * 0.0025 * 100}}%}} per {{ticks|150}} or {{--|{{#expr: 0.5 * 0.0025 * 100 * 2500/150 round 2}}%}} per in-game hour, regardless of any other factors.
+
+The changes in each circumstance are displayed below. The value changes every {{ticks|150}}.
+{| class="wikitable"
+|-
+! rowspan='2' | !! colspan='2' | No Roof !! colspan='2' | Constructed Roof; or <br>Rock roof (Thin) !! colspan='2' | Overhead mountain
+|-
+! Per 150 ticks !! Per In-Game Hour !! Per 150 ticks !! Per In-Game Hour !! Per 150 ticks !! Per In-Game Hour
+|-
+! Indoors
+| '''+0%'''    || '''+0%''' 
+| {{+|{{#expr: 1 * 0.0025 * 100}}%}} || {{+|{{#expr: 1 * 0.0025 * 100 * 2500/150 round 2}}%}}
+| {{+|{{#expr: 2 * 0.0025 * 100}}%}} || {{+|{{#expr: 2 * 0.0025 * 100 * 2500/150 round 2}}%}}
+|-
+! Outdoors
+| {{--|{{#expr: 0.25 * 0.0025 * 100}}%}}    || {{--|{{#expr: 0.25 * 0.0025 * 100 * 2500/150 round 2}}%}}  
+| {{--|{{#expr: 0.25 * 0.0025 * 100}}%}}    || {{--|{{#expr: 0.25 * 0.0025 * 100 * 2500/150 round 2}}%}} 
+| '''+0%'''    || '''+0%''' 
+|}
+
+== Analysis ==
+{{Stub|section=1|reason=Strategies, importance  etx}}
+This is more of a concern for certain professions. Farmers, animal handlers and hunters go outside quite regularly.  It's less of a concern for pawns whose jobs keep them inside: cooks, builders, tailors, crafters, artists, researchers, etc.
+
+[[Caravan]]s will always have to go through the outdoors. While minor and major [[mental break]]s inside a caravan only slow it down, watch out for the mood once entering the colony again.
+
+== Version history == 
+* [[Version/1.3.3066|1.3.3066]] - Added. Previously, undergrounder pawns simply had {{+|3}} mood when indoors, {{+|4}} when underground, and {{--|3}} when outdoors.
+
+{{nav|status levels|wide}}
+[[Category:Status Level]]

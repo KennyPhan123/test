@@ -1,0 +1,118 @@
+{{Version Nav}}
+''Note, this version was initially reported as 1.1.2587, including by [https://twitter.com/tynansylvester/status/1244388673468149766?lang=en Tynan on Twitter]. However the steam post was later updated to say 1.1.2589 so this is assumed to be correct.''
+
+Steam and GoG Galaxy will update automatically. For those who bought DRM-free on rimworldgame.com, you should re-download from your original download link; it always has the latest version. If you need it resent to you, please go to rimworldgame.com/getmygame
+
+The main feature of this update is the ship landing beacon. Placing four of these on the corners of an open rectangle forms a shuttle landing pad. When shuttles land at the colony, they will land here if they can. In addition, Imperial guests (including the High Stellarch) now land using the shuttle.
+
+This update should be compatible with savegames and mods. We did extensive testing for mod compatibility, but if any further issues come up please let us know on the unstable testing Discord channel here.
+
+Big thanks to everyone who helped test this update!
+
+Discuss this post on the Ludeon Forums.
+
+==Improvements==
+* Add ship landing beacon, which can be used to create landing pad for shuttles. Shuttles will land there if possible for dropoff and pickup of characters during quests.
+* Historical quests can now be deleted.
+* We now calculate the best UI scale when the game is first started.
+* Reworked royal title inheritance rules so they will avoid designating unknown pawns as heirs.
+* Add creepy sound to psychic droner and make it a bit quieter.
+* Optimized research tab.
+* We no longer show mood thought bubbles for unimportant pawn (e.g. spamming them on raiders during battles).
+* FireFoam graphic improved.
+* Hostility mode dropdown now displays icon.
+* Add custom art and name for the [[light charge blaster]] used by mech turrets.
+* “Select monument marker” now only selects the monument instead of moving the camera.
+* Implemented QuestNode_AddRangeToList.
+* Improve debug output for future incidents.
+* Updated player-created names and backstories from those who bought Name in Game access.
+
+==Text==
+* Change label for downgrade psychic amplifier to extract psychic amplifier and clarify the description.
+* Added decree expiry info to quest tab.
+* Prisoner ITab displays prison break interval as “Never” if incapable of breaking out.
+* Add a paragraph to pain focus tooltip, showing relation between pain level and current entropy recovery bonus.
+* Mining yield difficulty factor factored into the readable stat. Added difficulty calculation explanation for stat description in info cars on mining and crop yield.
+* Royal Title info tab now shows the list of title privileges.
+* Fix: Miscapitalized symbol BodyPart in grammar system.
+* Fix: Bad ‘worldtribal’ symbol in tribal faction name generator.
+* Fix: Bio mentions “Squirrel Boy” even if the pawn is female.
+* Improve debug and player-visible output when grammar system can’t resolve something.
+* Added some missing translation symbols to BattleLogEntry_MeleeCombat.
+* Misc other text fixes.
+
+==Tuning==
+* Monument quests now let the player choose which material to use for building the structures (Note: floor materials are still fixed).
+* Adjusted the frequency of various misc incidents. Easy on the cargo pods.
+* Make extracting psychic amplifiers more difficult.
+* Increase chance random mech clusters a bit and reduce the min points.
+* Inferno turret fires slower and costs more for the storyteller to use.
+* Significantly reduce health of large mech turrets.
+* Remove minRefireDays from ManhunterPack incident.
+* Reduce explosive mortar radius from 3.5 to 2.9.
+* Royal ascent quest now is sent after 35 days instead of 18, at the earliest.
+* Royal aid soldiers now arrive with biocoded armor.
+* Quest giving factions get annoyed if you destroy their monument within 15 days after building it.
+* Build monument decree quest now causes a minor negative mood if the player if the monument is destroyed within 15 days.
+* Increase health of mech problem causers.
+* Firefoam filth cleaningWorkToReduceThickness increased to 100.
+
+==Fixes==
+* Fix: Steles generate over ancient danger walls, opening up the ancient danger.
+* Fix: Allies punch through roof unnecessarily when arriving in drop pods.
+* Fix: Decree unmet thought not disappearing after a monument was built.
+* Fix: Dragging while scrolling doesn’t work in the mod menu. Remove remaining performance bottlenecks, should be substantially faster on large mod counts.
+* Fix: Rat attacking door by biting fails resolving grammar.
+* Fix: Scars getting a random painCategory on loading save if their existing value matched the random defaultValue.
+* Fix: Pain focus/psychic entropy limit tooltips appearing above main entropy tracker tooltip.
+* Fix: Mech clusters not waking up from grenades/melee in some cases.
+* Fix: Erroneous warning on downgrading royal implants.
+* Fix: Food poisoning ignoring pawn hediffs that modify food poisoning chance.
+* Fix: Language worker not being passed correct gender information for _titleDef and _titleIndef pawn rules.
+* Fix: Assemblies loading in reverse order, which makes dependency management awkward.
+* Fix: Missing cataphract armor graphic.
+* Fix: Mech clusters don’t attack wild men.
+* Fix: Blocky shadow on countdown activator.
+* Fix: WorkGiver_Merge not using CanStackWith, which makes pawns not merge some stacks of modded items.
+* Fix: Bugs caused if a pawn’s apparel wore out to nothing.
+* Fix: Alert_CannotBeUsedRoofed checking non-player buildings.
+* Fix: Death letters are sent by change heir quest when title holder or heir died even after monument constructed.
+* Fix: Pawn flee and attack motes showing in the corner of the map instead of on the pawn.
+* Fix: Can place monument blueprints outside buildable area.
+* Fix: Royal ascent quest did not fail when Empire became hostile and could actually be accepted in this state.
+* Fix: Missing ambient sound from fallen psychic drone ship part.
+* Fix: Fog is generated incorrectly on maps with condition causers
+* Fix: Can’t use the Esc key to leave the mod screen.
+* Fix: Pawns inheriting title having their heir sometimes set to a pawn that will die in the same tick.
+* Fix: Incorrect description on foor poisoning chance factor for artificial stomachs.
+* Fix: Recruitment chance shows values beyond 100%.
+* Fix: Combat suppliers don’t buy or sell certain kinds of armor.
+* Fix: Temporary faction members can’t equip their biocoded weapons if they have a weapon equipped.
+* Fix: DrawMouseAttachments corrupts things of def list.
+* Fix: Some quests can’t generate because of an error in QuestNode_GetFaction.
+* Fix: Trade request quest is not ended when the faction becomes hostile.
+* Fix: Title inheritance letter paragraphs not correctly capitalized.
+* Fix: Psychic harmonizer doesn’t work in caravans.
+* Fix: Able to load quest helpers onto drop pods.
+* Fix: Downed refugee and prisoner willing to join quests don’t add description constants
+* Fix: Sites with no map generated not included into ThoughtWorker_PsychicDrone check.
+* Fix: Game is stuttering heavily with psychic ship event.
+* Fix: Psychic droner ship part not affecting caravans nearby the player map.
+* Fix: Factionless quest shuttles don’t show gizmos.
+* Fix: Redressed pawns arrive starving or exhausted.
+* Fix: Incorrect rounding when purchasing royal favor from tribute collector.
+* Fix: ‘Could not find player faction’ random error.
+* Fix: UI root exception on using rotate gesture on Mac touchpad.
+* Fix: Downed pawns can start mental breaks initiated by traits.
+* Fix: Factionless pawns with a harmonizer causes an error.
+* Fix: One internal variable name in QuestNode_GetRandomPawnKindForFaction marked for translation.
+* Fix: CameraJumper.TrySelect always moves the camera because TryHideWorld returns incorrect values.
+* Fix: Colonist left unburied thought appears for quest lodgers and helpers.
+* Fix: Mech cluster can wake up undiscovered hive.
+* Fix: Monument quest description sometimes needlessly splits stuff into two entries, even though they’re the same but in a different order.
+* Fix: Comms console keeps saying ‘already in progress’ forever when trying to change heir for pawn that already had its heir changed once.
+* Fix: Change heir quest part not saving some data.
+* Fix: Factionless leaving lodgers can be assigned hostile factions and they’ll fight each other
+* Fix: Misalignment in recon armor north/south views.
+* Fix: Quest helpers can make decrees.
+* Fix: Female Imperial traders show up with wrongly gendered headgear.

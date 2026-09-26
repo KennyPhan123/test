@@ -1,0 +1,68 @@
+{{Odyssey}}
+'''Vacuum''' is an environmental factor unique to locations in [[orbit]], and represents the amount of breathable air within a room. Vacuum management is a vital consideration during trips into orbit and especially for spacebound colonies; [[plant]]s will die if even briefly exposed to vacuum, and most living pawns will be severely endangered if caught in airless environments without sufficient protection.
+
+Vacuum is never a consideration on planet-bound maps. In such locations, all tiles are always considered to be fully pressurized.
+
+== Summary ==
+
+=== Measurement ===
+Vacuum is measured as a percentage per cell. A cell with 100% vacuum is considered to be completely depressurized, while a cell with 0% vacuum is considered to be fully pressurized. All tiles within a room share the same vacuum level.
+
+The vacuum level of a tile is listed in the tile's information area located above the Architect menu, just above its [[light]] level. A vacuum overlay can also be toggled on and off from the bottom right corner of the screen, and will visualize the vacuum level from red (100%) to green (0%).
+
+Airtight rooms with at least 50% vacuum will have a visible overlay resembling gray clouds and white motes of dust, with its visibility inversely scaling with vacuum level; at 50% vacuum, the overlay will be nearly transparent, while at 100% vacuum it will be totally visible.
+
+[[File:Vacuum overlay demonstration.png|300px|thumb|right|An airtight room with 100% vacuum.]]
+
+=== Pressurization ===
+In orbit, all outdoors areas are always considered to be a complete vacuum, no matter what. 
+
+Each [[building]] is designated as airtight or not airtight, visible in its information window. In order for a room to be pressurized, it must  be airtight: it needs to be completely enclosed by airtight structures, as well as entirely [[roof]]ed and not having any gaps of Space on the ground. [[Wall]]s and [[door]]s are considered airtight if made out of [[metallic]] stuff types (excluding [[obsidian]], but ''including'' [[bioferrite]]{{AnomalyIcon}}). Doors and [[vent]]s will exchange vacuum when opened;{{Check Tag|What rate?}} powered [[vac barrier]]s can be used to allow passage while keeping pressure in.
+
+Once a room is airtight, they can be pressurized with [[oxygen pump]]s or [[archean tree]]s, reducing the vacuum level of the room. [[Life support unit]]s can be found in some naturally-generating locations and faction bases that pressurize the room they are in at no cost, but they cannot be moved or deconstructed.
+
+=== Effects ===
+Vacuum is very dangerous for unprotected pawns, causing [[vacuum exposure]] and [[#vacuum burns|vacuum burns]], the former being lethal in as little as {{ticks|3000}}.
+
+==== Vacuum exposure ====
+{{See also|Vacuum exposure}}
+Without 100% [[Vacuum Resistance]], a human or animal that enters a tile with at least 50% vacuum will immediately begin suffering from [[vacuum exposure]]. This reduces [[Consciousness]] and increases [[pain]], eventually causing unconsciousness at 85% exposure and death at 100%. The rate of exposure increase every {{ticks|60}} is:
+:<code>Increase in vacuum exposure severity = 0.02 * tile vacuum percentage * (1 - vacuum resistance)</code>
+
+With 0% Vacuum Resistance and a 100% vacuum tile, a pawn will reach 100% vacuum exposure and die at {{ticks|3000}}, and will become unconcious at {{ticks|2550}}.
+
+A downed pawn can be saved from further vacuum exposure by being carried by another pawn.
+
+==== Vacuum burns ====
+{{stub|section=1|reason=needs injury type definitions in the relevant locations}}
+Pawns in at least 50% vacuum will suffer periodic ''vacuum burn'' injuries to random external body parts that are not covered by vacuum-resistant gear. This happens at an interval scaling linearly from one burn every {{ticks|1200}} at 50% vacuum to one burn every {{ticks|300}} at 100% vacuum. Vacuum burns deal a flat 1-2 damage each - regardless of multipliers to incoming damage such as the [[Tough]] trait - and will combine together when inflicted to the same body part.
+
+Vacuum burns never [[scar]], and cannot become [[infection|infected]]. This makes them mostly a tertiary danger compared to vacuum exposure, but the penalties caused by compounding burns can still add up to become a significant danger.
+
+Pawns with the [[vacuum resistant]] or [[breathless]] [[genes]],{{BiotechIcon}} as well as pawns with the [[vacskin gland]],{{RoyaltyIcon}} will never suffer vacuum burns.
+
+=== Other effects ===
+Roughly every hour, [[plant]]s other than [[archean tree]]s will ''instantly die'' if they are exposed to at least 50% vacuum.{{Check Tag|Checks on long ticks -- describe more accurately?}}
+
+[[Fire]] and [[gas]]es will dissapate rapidly in a vacuum.
+
+Note that pawns in vacuum protective gear can still eat and sleep while in a vacuum without gaining extra exposure.
+
+== Analysis ==
+Before launching into space, make sure that all venturing colonists have appropriate Vacuum Resistance, and if using a [[gravship]] or making a [[orbit#Permanent Colony|permanent colony]], it is good for each important room to be airtight and have proper heating and pressurization. Having multiple differnt airtight sections, with each one having heaters/oxygen pumps, will help in case one gets breached.
+
+The [[vacsuit]] and [[vacsuit helmet]] is the cheapest and easiest to research armor that lets pawns travel safely in [[orbit]], but comes at a major [[move speed]] penalty. [[Power armor]] can allow for pawns to stay in days in orbit, ranging from {{ticks/gametime/days|51000}} until unconciousness with [[recon helmet]] + any power armor, to {{ticks/gametime/days|127500}} with a [[cataphract helmet]]{{RoyaltyIcon}} + any power armor.
+
+The [[vacuum resistant]] [[gene]]{{BiotechIcon}} alone is not enough for safe vacuum travel, but it will provide some insurance against short, accidental, exposures, and allows pawns to wear [[power armor]] with 100% resistance. The [[breathless]] [[gene]]{{BiotechIcon}} provides 100% immunity to vacuum, but pawns will still need to be prepared for the {{Temperature|-75}} temperature in orbit.
+
+== Gallery ==
+
+<gallery>
+Unpowered Airlock Demonstration.png|A practical example of a simple unpowered airlock. Note the [[door]]s constructed in sequence.
+</gallery>
+
+== Version history ==
+* [[Odyssey DLC]] Release - Added.
+* [[Version/1.6.4543|1.6.4543]] - Fix: Vacuum overlay not updating after gravship takeoff.
+
+[[Category: Game mechanics]]

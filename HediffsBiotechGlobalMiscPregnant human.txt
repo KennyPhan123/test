@@ -1,0 +1,52 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Biotech/Global/Misc}}
+|}
+----
+{| {{STDT| c_04}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Pregnant (human)" id="Pregnant human" <!-- defName="PregnantHuman" -->
+! Pregnant (human)
+----
+* Def Name:<br />PregnantHuman
+* Label:<br />pregnant
+* Label Noun:<br />pregnancy
+* Debug Label Extra:<br />human
+| <div style="max-width: 300px;">A baby growing inside a woman, preparing to be born. In humans, pregnancy lasts for 18 days and is divided into 3 trimesters. As the pregnancy grows it will reduce the mother's mobility. For some mothers, pregnancy may induce nausea or mood swings that can be hard to deal with.</div>
+|<!-- Details -->
+* Hediff Class: '''Hediff_Pregnant'''
+* Default Label Color: {{Color|70%|100%|70%}}
+* Is Bad: {{Good|false}}
+* Initial Severity: '''0.1%'''
+* Prevents Pregnancy: {{Good|true}}
+* Pregnant: {{Good|true}}
+* '''Comps'''
+** ''Message After Ticks''
+*** Ticks: '''{{Ticks|600}}'''
+*** Letter Label:<br />{0_labelShort} pregnant
+*** Letter Text:<br />{0_labelShort} is pregnant!
+*** Letter Type: '''HumanPregnancy'''
+** Comp Class: '''HediffComp_PregnantHuman'''
+|<!-- Stages -->
+{| {{STDT| c_04}}
+! Label !! Parameters
+|-
+! first trimester
+|<!-- Parameters -->
+* Hunger Rate Factor Offset: {{+|10%}}
+|-
+! second trimester
+|<!-- Parameters -->
+* Min Severity: '''33.3%'''
+* Hunger Rate Factor Offset: {{+|30%}}
+* [[Moving]] Offset: {{--|10%}}
+* [[Manipulation]] Offset: {{--|5%}}
+|-
+! third trimester
+|<!-- Parameters -->
+* Min Severity: '''66.6%'''
+* Hunger Rate Factor Offset: {{+|50%}}
+* [[Moving]] Offset: {{--|50%}}
+* [[Manipulation]] Offset: {{--|10%}}
+|}<noinclude>
+|}</noinclude>

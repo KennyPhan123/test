@@ -1,0 +1,88 @@
+{{Version Nav}}
+
+I’m happy to announce that we’ve just released RimWorld Alpha 15! This version adds a rich tutorial, an intelligent learning helper to help you pick up the game, a new drug system, deep drilling to provide resources in the end game, and a giant pile of other smaller improvements and fixes. A full change log and detailed info is below.
+
+For Steam players, if you want to continue with Alpha 14 for any reason, you can get on the ‘alpha14’ beta branch in Steam. In the Steam Library, right click RimWorld, click Properties, go to the Betas tab, select alpha14 in the drop-down list, and restart Steam.
+
+Non-Steam players who wish to update can simply download from the same download link as before; it has been updated to the new version. They should install the new version in a clean empty folder.
+
+==Compatibility==
+
+===Save Compatibility===
+As usual, Alpha 15 will not load Alpha 14 save games by default. However, a user did put together a guide that allows you to manually update save files with some text editing. Check it out here if you really want to try to continue that Alpha 14 colony.
+
+===Mod Compatibility===
+Some purely XML mods will be compatible between versions. However, most significant mods will need to be adjusted and recompiled. Beware: If a mod author updates their existing mod to the new version, it’ll stop updating on the old version. You may wish to turn off Steam auto-updates if you really want to avoid this.
+
+==Release Trailer==
+
+<youtube>https://www.youtube.com/watch?v=sp3Mh3a7Ifk</youtube>
+
+==Changes==
+
+===Tutorial===
+* Added new rich tutorial with step-by-step instructions.
+* Tutorial teaches the basics of setting up a game, building a small self-sustaining colony, and defeating the first raider.
+* Tutorial locks out irrelevant controls and highlights relevant controls.
+* At the end of the tutorial, the player can continue the game with a normal storyteller.
+
+===Learning helper===
+* Added new learning helper system to replace yellow pop-up messages and yellow learning alerts.
+* Learning helper sits in the top right of the screen. If something happens relating to a concept the player hasn’t learned, that lesson will be activated and shown on the learning helper. It can then be opened and read. Lessons are automatically marked as learned when the player does the necessary interaction, and can be marked as learned manually. Lessons are shown as needed by circumstance, or on a slow timer. The overall idea is that you’ll never be shown a lesson you already know, but always be shown the lessons you need to know now.
+* Learning helper can be expanded and searched for any lesson, so you can look up how to do a specific thing at any time.
+
+===Drugs system===
+* Added new drugs system. It’s not just beer any more!
+* Drugs typically create up to four effects. Not all drugs have all effects.
+* Primary – The valuable short-term effect, whether it improves mood or work focus or combat effectiveness or makes one immune to a disease.
+* Overdose – Excessive drug usage in a short time can build up blood toxicity, leading to unconsciousness and possible death.
+* Tolerance – Long-term usage of a drug can build up a tolerance which makes subsequent usage less and less effective in producing the high.
+* Addiction – Drug use can form an addiction. This generates a new need for the drug which the pawn will try to feed regularly. If the need isn’t fed, the pawn will develop withdrawal symptoms (low mood, reduced consciousness). Eventually withdrawal will pass and the addiction will go away.
+* Drugs can be assigned for regular taking through the drug policy system. Similar to Outfits, drug policies are an assigned schedule for taking drugs. You can set any number of drugs, each with a frequency. For example, you can assign a colonist to drink 2 beers every day, and take one Malari-Block every 5 days.
+* The drugs are:
+** [[Beer]] – Improved mood but worsened capacities. Addictive.
+** [[Malari-block]] – Prevents malaria infection for 5 days.
+** [[Yayo]] – Stimulant pleasure drug, addictive.
+** [[Flake]] – Cheap, short high, very addictive.
+** [[Wake-up]] – Improves work performance, addictive.
+** [[Smokeleaf]] – Improved mood but worsened capacities. More hunger, slower movement. Can form dependence.
+** [[Go-juice]] – Synthetic futuristic combat drug. Boost speed and fighting capacity tremendously. Addictive.
+** [[Luciferium]] – Glitterworld mechanites that give huge bonuses to most capacities. However, without repeated doses the user goes insane and dies. It is impossible to clear the addiction, and the drug is 100% addictive on one dose.
+* Drugs are produced in various ways, typically at the new Drug Lab building, from various precursor chemicals and growable crops. They require research to create.
+
+===Deep drilling===
+* The map now spawns with clusters of underground resources. These can be accessed by building a deep scanner to find them, and then building deep drills on top of them, and then working the drills. This slowly produces the resource.
+* Deep drilling tech is at the end of the tech tree. This should mitigate late-game resource exhaustion problems.
+
+===Misc===
+* Mood is now drawn subtly behind the pawn on the colonist readout at the top of the screen.
+* You can now produce medicine from herbal medicine, neutroamine (a precursor chemical you buy), and cloth. Requires research.
+* Added passive cooler building. Made of wood and low tech, it cools a room for a short time. Good for passing heat waves as a tribe.
+* Added a ‘copy building’ tool which lets you quickly select the designator for a building through an existing copy of that building.
+* Beer production now takes several stages: Colonists make wort (unfermented beer) at the brewer table, then leave it in fermenting barrels for a while, after which they can harvest it as beer.
+* Infestation can now only spawn under a thick roof.
+* Gear tab now shows aggregate stats about armor and comfy temperatures.
+* Raider steal a bit more often now.
+* Factored MapGeneratorDef apart into separate GenStepDefs which can be modded or inserted individually. This will allow modders to change the MapGenerator without blowing away each others’ changes.
+* Added alert: Need warm clothes.
+* Mods can now be dragged to reorder them in the mods page.
+* Re-tuned food finding algorithm.
+* Hunters will no longer hunt without a ranged weapon.
+* Debuffed corn a bit.
+* Reworked trade interface to clearly state what kind of trader they are, and to list items they’re not willing to trade.
+* Reworked trader stock generators so traders carry and accept more sensible items for their type.
+* You can now request traders by calling allied factions. It costs silver.
+* Chance to spring known traps is reduced from 2.5% to 0.4%.
+* Friendly fire chances reduced by 60% for fly-by shots (shots that miss and land in the cell with a pawn have the same chance to hit as before).
+* Added a message when food spoils in storage.
+* Fix: Pawns don’t get ‘catharsis’ mood gainer thought after a mental break.
+* Rename PDW to [[Machine pistol]].
+* Torches and campfires are no longer destroyed near-instantly by rain/snow. They instead consume fuel faster.
+* Torches consume fuel a bit faster overall.
+* Fueled generator consumes fuel faster and holds less fuel.
+* Plant sow and harvest are now slower.
+* Debuffed fists.
+* Reduced volume of idle animal calls at high time speeds.
+* Smithing is now a prerequisite for Machining research.
+* Added a toggleable view that shows roofs in glowing green.
+* Hundreds of other balance changes, text fixes, redesigns, and bug fixes.

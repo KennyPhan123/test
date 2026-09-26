@@ -1,0 +1,200 @@
+{{Version Nav}}
+
+Update 1.2.2753 add new gear, new permits, and many refinements
+
+I'm happy to bring you another RimWorld update! This is a refinement update for 1.2 which also includes some new apparel and permits. Below is the full list of changes.
+
+Compatibility: Hundreds of testers have been trying this build for weeks, so it doesn't have major known mod incompatibilities. Of course, with thousands of mods out there I expect a few hiccups but in general it should be compatible. Non-modded savegames will of course be totally compatible.
+
+If for any reason you want to continue with an old version, please use the Steam betas feature to go back to the version you want.
+
+Thanks to all the testers, translators, and our amazing developers!
+
+-Ty
+
+== New features ==
+* New apparel - [[Beret]]: Worn by various lower-ranking Imperial nobles.
+* New apparel - [[Cape]]: This stylish cape functions similarly to a duster. Worn by various middle-ranking Imperial nobles.
+* New apparel - [[Gunlink]]: This tactical headgear offers no protection, but increases shooting accuracy. It is used by Imperial troops.
+* New apparel - [[Eltex skullcap]]: This offers little protection, but improves psycasting. Worn by some middle-ranking Imperial nobles.
+* New apparel - [[Stellic crown]]: A unique, gigantic crown worn by the high stellarch.
+* New [[Titles#Permit|permit]] - [[Steel]] drop: Call down some steel resources.
+* New [[Titles#Permit|permit]] - [[Glitterworld medicine]] drop: Call down some glitterworld medicine.
+* New [[Titles#Permit|permit]] - [[Silver]] drop: Call down some silver.
+* New [[Titles#Permit|permit]] - Food drop: Call down some food.
+* When forming a caravan, animals now instantly go to the caravan packing spot instead of waiting for a colonist to take them. This speeds up the caravan formation process significantly.
+* You can now place blueprints separately for different types of buildings in a monument, so you can make them of different materials.
+* We now display a text mote when a player pawn gains a new level in a skill.
+* If you have a menu with a very large number of commands, as in a powerful psycaster, some of them will be displayed smaller.
+* Use drug commands are now condensed onto a single command if a pawn carries more than one drug type.
+* Allow projectiles to be rendered with a visual arc and ground shadow. Activated this behavior for: Phoenix and Grenadier armor, frag grenades, molotovs, emp/smoke/incendiary launchers.
+* Allow right clicking on the shuttle with multiple pawns selected to load all allowed ones.
+* Mods can now be tagged as translations in the workshop.
+* We now automatically add appropriate bedrolls to caravan.
+* Pawns will now not lose their skill levels until they fall 1000 XP under zero. This stops pawns from quickly leveling up and down around a threshold.
+* Added a warning confirmation for calling for resources that would cause the caravan to be immobile.
+* Add some text content to refugee hospitality quest.
+* Recipes for crafted things now show work to make in their info card.
+* New artwork for orbital targeters.
+* Allow quick loading via permit [[imperial shuttle|shuttle]] from non-home maps with no hostiles.
+* Upon death, all titles will not be instantly transferred to their heirs. Instead, we give favor up to the inherited title and generate a bestowing quest for the heir.
+
+== Adjustments ==
+* Adjust text and icon for the 'Take drug' command.
+* In custom difficulty settings, rename "fixed wealth" mode to "wealth-independent" mode, and give the player a slider to control how many years until this mode delivers its maximum threat level.
+* Move 'take to inventory' column over just to the right of the drug name.
+* Dirt now washes away in rain.
+* Changed precious lump hostile threats description to something more concise.
+* Psycasts are now sorted on the interface by category and then level.
+* Changed psychic droner to start off with medium bad strength as baseline and when spawned on sites its determined by points now, same as the 'raw' gamecondition.
+* Ensure all the mech cluster buildings wake up once it was attacked.
+* Adjustments to Precious Lump quest text and world object info.
+* Make pawns count as guilty while in aggro mental state.
+* Disable corpse obsession break for prisoners, as it's very unlikely to happen and is not implemented around this possibility.
+* Reorganized permit UI. Exchanged horizontal scrollbar for vertical.
+* Give the broadshield pack a smaller drawsize, so that its icon/map-icon is more congruent with its appearance on a pawn.
+* Added faction icon to main work tab with click through to faction and scroll to faction.
+* Added max lodger count to hospitality refugee quest.
+* AI will now only deploy an NPC's Smokepop or Broadshield pack if the offending attacker is hostile. This prevents friendly-fire from activating an NPC's Smokepop/Broadshield.
+* Rewrite noble requests for help in the pawn lending quest.
+* Increase frequency of bandit camp mission and shuttle crash quests.
+* Food and medicine renamed to travel supplies.
+* Add hediff links to recipes for implants and parts.
+* Apparel with utility now has a score offset to make AI more likely to automatically wear it.
+* Made nature shrines minifiable and reinstallable.
+* Made shrines improve anima tree meditation.
+* Farskip now affects colony animals if not on the home map.
+* Colonists and pack animals unload inventory automatically once farskipped to a player home map.
+* Climate adjuster no longer will choose negative temperature offset for deserts nor positive offset for ice sheets (it will avoid being not dangerous).
+* NPC pawns with titles now purchase random permits on generation.
+* We now show the player a feedback message when calling resources to a caravan.
+* Trade requests will no longer request patchleather.
+* Added quest look target when bestowing ceremony cannot be accepted due to threat.
+* Bestowing ceremony text now says that player is expected to keep bestower safe.
+* Jump packs and locust armor now require enough chemfuel to provide their initial fuel, and one more component.
+* Ensure auto-selected travel supplies doesn't exceed caravan mass capacity.
+* Use phrase "Force equip" instead of "Force wear" when referring to utility-slot apparel items.
+* Change the "[[Tornado generator]]" targeter to a [[utility]]-slot apparel item.
+* Change the "[[Orbital mech cluster targeter]]" to a [[utility]]-slot apparel item.
+* Increased warmup time for aerodrone permits by 1 second.
+* Removed full-map light up effect of all strikes except orbital beam.
+* Icons of spacer armor now display as off-white instead of dark gray.
+* Adjust eltex gear colors to be darker.
+* Shield renaming for clarity and consistency. "Mortar shield" is now "[[mech high-shield]]". "Bullet shield" is now "[[mech low-shield]]". "Broadshield pack" is now "[[low-shield pack]]". "Broadshield projector" is now "burnout low-shield". "bullet shield" psycast is now "[[skipshield]]". No code or defNames were changed.
+* Rename orbital strike [[permits]] to aerodrone strike (for fiction coherence reasons).
+* Don't autoselect beer, ambrosia, flowers or insect jelly in the form caravan dialog.
+* Bestower is no longer required to have archotech eyes.
+* Neural heat overload can no longer cause psylink degradation or any other permanent damage.
+* Member stripped goodwill penalty increased from 10 to 40.
+* Royal apparel production costs rebalanced.
+* Prevent farskip when caravan is overweight.
+* Improve meditation and medical rest priorities to allow meditation for pawns with healing injuries if they're on meditation schedule.
+* Optimize monument marker drawing.
+
+== Technical ==
+* Use the old root keys in PawnLend script to avoid breaking translations.
+* Reset pawns enemyTarget after recovering from aggro mental state.
+* Selectively finalize equipped stat offsets
+* Use ThingDefCountClass to list dropped resources in permits. Added missing honor values. Zero honor cost produces a config error.
+* Spread out re-validating FloatMenuOption across multiple frames.
+* Improve FloatMenuMap caching and AddUndraftedOrders check order for better performance.
+* Make the 'try add to inventory' debug option.
+* Tweak the drawSize of various headgear to ensure their on-map size is congruent with their on-pawn size.
+* Royal title requirement thought workers now pass RoyalTitle object into Formatted and GrammarResolverSimple provides all required symbols.
+* Added some missing apparel score offsets for utility armor.
+* GenStep_ConditionCauser now checks for existing buildings at scatter spot.
+* Medieval surgeries now have links to the proper hediffs.
+* Fixed an issue where if the "Insect spawning rate" custom difficulty setting was set to zero, it caused unnecessary every-tick re-checking of whether a hive should spawn more pawns.
+* Remove remaining mentions of "default" load folder from ModUpdating.txt.
+
+== Fixes ==
+* Fix: Colonist with a sick thought won't meditate at all.
+* Fix: Pawn lend initial description and final letter mismatch.
+* Fix: Ability duration on the tooltip is shown in hours even for low values.
+* Fix: Gunlink displays shooting accuracy stat offset as %.
+* Fix: Becoming neutral/allied with imperials after taking the deserter quest then entering their site allows you to take the neuroformers without a fight.
+* Fix: Auto-rebuild doesn't work on bridges.
+* Fix: Quest prisoners can spawn on door tiles and walk away.
+* Fix: Overlapping keybinds for assigning pawn and toggle prisoner-owned for beds.
+* Fix: Psycast disabled status is not being updated in shrunk mode.
+* Fix: Auto mortars are always active.
+* Fix: Compressed commands are drawn from top to bottom.
+* Fix: Quest reward pawn died before quest was accepted.
+* Fix: Not all curve marks being drawn on graphs.
+* Fix: Errors on generating long range mineral scanner quest via debug tools.
+* Fix: Psyfocus target value on the gizmo tooltip is not updated until you finished adjusting it.
+* Fix: Colonist pods returning from a 'pawn lend' quest can roof punch.
+* Fix: No mech cluster building is multi-selectable
+* Fix: Keyed translations from a mod can't replace existing values with the same key and log an error instead.
+* Fix: XML Attribute IsNull only works on simple fields.
+* Fix: Psylink neuroformers that are in a storage area do not appear on a resource readout.
+* Fix: Ensure Graphic_RandomRotated preserves the <drawSize> of wrapped graphics.
+* Fix: Projectiles were invisible for the first few cells of flight, due to them inheriting and interpolating their launcher's y layer, and being clipped/obscured out of the camera
+* Fix: Auto Charge Turret fires when stunned
+* Fix: Can't prioritize chatting with a prisoner if some other warden is already doing it.
+* Fix: Unfogging adjacent cells of buildings which are more than 1x1 of size doesn't work properly.
+* Fix: Grammar errors in a few 'title requirements not met' thought descriptions.
+* Fix: Apparel scoring algorithm ignores heat armor.
+* Fix: Rescuing downed noble ends shuttle rescue quest.
+* Fix: Bandit camp returnees don't unload.
+* Fix: Its possible to arrest non-violent/downed pawns and not have their faction notified of member captured.
+* Fix: Some wrong import settings on a few UI icon graphics.
+* Fix: "Unchangeable" text from visually overlaps with "Clear forced" button in assign-outfits panel.
+* Fix: Incorrect memory thought when refugee arrested or violated and incorrect letter text when violated in refugee hospitality quest.
+* Fix: Join letter in hospitality refugee quest remains (with disabled accept) if pawn leaves map before quest has ended.
+* Fix: Rare exception when changing the "Allowed area" restriction of a colonist in the Schedule tab, while the colonist is performing certain multi-step actions (such as being in the middle of reloading a mortar).
+* Fix: Gloomlight would prevent a Sun lamp from producing "brightly lit" cells within the radius of the Gloomlight. Due to: the glowColor of the Gloomlight not having an explicit alpha of zero. We now correctly ignore the alpha from the xml.
+* Fix: Bestower quest has a rootSelectionWeight of 1.
+* Fix: Quest helper went wild man, now wandering around on map, can't arrest or empire becomes hostile.
+* Fix: Drug scheduling for inventory does not function when set to 1.
+* Fix: Stellarch and other non-rewardable title holding pawns don't get any permits.
+* Fix: Logging null leader error for factions which don't need a leader.
+* Fix: Meditation preventing pawn from attending a gathering or giving speech.
+* Fix: Using explanation text meant for anima tree (after letting letting it being enhanced with shrines) on other focus objects.
+* Fix: Condition causer can be spawned ontop of power conduits (wiping them).
+* Fix: lastPsylinkAvailable is reset whenever a game is loaded, causing fewer neuroformer quest rewards.
+* Fix: Finding throne room spot for bestowing ceremony does not work if throne is blocked in front and back.
+* Fix: In custom-difficulty settings, the minimum value of "Turret rearm cost" was set to 1%.
+* Fix: Bestowing ceremony doesn't update permit points.
+* Fix: Extra newlines in quest descriptions.
+* Fix: If the "Insect spawning rate" custom difficulty setting was set to zero, it caused insect/mech hives to spawn every tick once they reached their next spawn time.
+* Fix: Calling a shuttle to a caravan always costs favor instead of initiating cooldown.
+* Fix: Resources with null stuffProps can be accepted as "Stony" resources in monuments.
+* Fix: NRE when trying to get all pawns with specific mental state in quest part.
+* Fix: Shuttle auto-load does not properly work on shuttle assault quest return.
+* Fix: Bestowing ceremony escorte can be used as a fighting force. There will now be negative effects if they are killed.
+* Fix: Bestower goes to wrong room for ceremony (added fallbacks when no spot in thronerome can be found).
+* Fix: Animals refusing to eat reachable food when restricted to an area.
+* Fix: Exception during reward-giving Quests when custom-difficulty setting "Quest Rewards" is set to 0%.
+* Fix: Pawns don't face table when eating.
+* Fix: Healer mech serum heals love
+* Fix: Player blueprints prevent mech clusters from dropping.
+* Fix: Attacking a settlement with a shuttle causes the map to be smaller compared to caravans and transport pods.
+* Fix: Some single-use utility items could be used multiple times via shift-clicking.
+* Fix: GenStep_MechCluster spawns mech that are awake, but marked as dormant.
+* Fix: Pawn keeps meditating with a focus object that has 0 focus offset.
+* Fix: "Clear prioritised work" command can interrupt neuroquake cast.
+* Fix: Can't rescue invisible colonists.
+* Fix: Lack of back-compatibility for mods that use old style of defining offsets in FocusStrengthOffset_BuildingDefs.
+* Fix: Caravan food auto selection gives rotting food higher weight.
+* Fix: Sick pawns falling out of bed because of trying to do meditation for joy.
+* Fix: Errors on viewing bestowing quest while target pawn is not spawned.
+* Fix: Uncapitalized first letters in some paragraphs.
+* Fix: Arrested Refugee Leader can not be sold, leaves to unusual behavior.
+* Fix: The mouse-attachment that indicates what resource is contained in areas found by ground-penetrating radars should show even when the area is fogged (such as under a mountain).
+* Fix: Setting the butchering or mining yield to a high value in the custom difficulty settings may not result in actual increased yields.
+* Fix: Mission shuttles cannot auto loot.
+* Fix: Taking wake-up to inventory same wording as taking wake-up.
+* Fix: Non-heat psycasts can be spammed when it shouldn't be possible.
+* Fix: GetBuildingDefsForCluster_NewTemp() creates an infinite loop.
+* Fix: Teetotalers can use drugs normally by using the new gizmos.
+* Fix: JobGiver_OptimizeApparel.ApparelScoreRaw() reads an uninitialized variable which can lead to some weird behavior especially if there are modded races.
+* Fix: You can use farskip on the caravan you're in.
+* Fix: Received spelt recieved in mood and notification letter for titles.
+* Fix: SoundDefOf.MeditationGainPsyfocus plays on loop after done meditating.
+* Fix: Prisoner refugee leaves when refugee quest ends normally.
+* Fix: Arrested refugees will join the player colony if arrest job is interupted before placing refugee in cell.
+* Fix: Permit prerequisites are removed even when you don't have the permit.
+* Fix: Can banish quest lodgers through character card UI.
+* Fix: Game breaks if quest lodgers have RunWild mental break.
+* Fix: Various typos.

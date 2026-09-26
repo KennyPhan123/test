@@ -1,0 +1,133 @@
+{{Odyssey}}
+{{Stub|reason=Missing analysis and formatting/cleanup}}
+{{infobox main|none|
+| name = Fuel optimizer
+| image = FuelOptimizer_north.png
+| description = A gravtech unit that allows grav engine lift to coordinate more efficiently with traditional thrusters. It reduces the fuel needed for gravship flight. A gravship can support two fuel optimizers.
+<!-- Base Stats -->
+| type = 
+| type2 = 
+| hp = 150
+| beauty = -10
+| flammability = 0.3
+<!-- Building -->
+| size = 2 * 2
+| placeable = 
+| terrain affordance = 
+| cleaning time factor = 
+| filth multiplier = 
+| speed = 
+<!-- Creation 
+Not created, but used for the deconstruct/destruction yield.
+
+| resource 1 = Steel
+| resource 1 amount = 100
+| resource 2 = Gravlite panel
+| resource 2 amount = 40
+| resource 3 = Advanced component
+| resource 3 amount = 6
+<!-- Technical -->
+| tags = 
+<!-- Wiki -->
+| page verified for version = 
+}} 
+The '''fuel optimizer''' is a [[building]] added by the [[Odyssey DLC]] that reduces the amount of [[chemfuel]] consumed per world tile travelled by a [[gravship]].
+
+== Acquisition ==
+Fuel optimizers cannot be built. They can only be acquired through Odyssey-related [[quests]] and locations discovered with the [[orbital scanner]].
+
+== Summary == 
+Fuel optimizers can be placed anywhere within on the [[gravship]]. Each fuel optimiser reduces the [[chemfuel]] required per tile traveled by the gravship by {{Icon Small|Chemfuel}} {{---|3}}. Up to two optimizers can affect a gravship at one time, reducing the chemfuel cost per tile from {{Icon Small|Chemfuel||10}} to {{Icon Small|Chemfuel||4}}. Note that this does not affect the minimum take off cost of {{Icon Small|Chemfuel||50}}. In other words, the fuel consumption of a gravship can be stated as follows:
+
+{| class="wikitable"
+|-
+! Gravship base
+| {{Icon Small|Chemfuel||50}} or {{Icon Small|Chemfuel}} (World Tiles Traveled × 10), whichever is greater.
+|-
+! Gravship + 1× Fuel optimizer
+| {{Icon Small|Chemfuel||50}} or {{Icon Small|Chemfuel}} (World Tiles Traveled × 7), whichever is greater. 
+|-
+! Gravship + 2× Fuel optimizer
+| {{Icon Small|Chemfuel||50}} or {{Icon Small|Chemfuel}} (World Tiles Traveled × 4), whichever is greater. 
+|-
+! [[Passenger shuttle]]
+| {{Icon Small|Chemfuel||50}} or {{Icon Small|Chemfuel}} (World Tiles Traveled × 3), whichever is greater. 
+|}
+
+{| class="wikitable"
+|-
+! Fuel by Distance Traveled
+|-
+| {{Graph:Chart
+|width=400
+|height=400
+|xAxisTitle=World Tiles Traveled 
+|yAxisTitle= Chemfuel consumed
+|legend=Legend
+|type=line
+|x= 0, 0.9999,  1,  5,  7,  8, 12, 13, 16, 17, 62,136
+|y1=0, 0     , 50, 50, 70, 80,120,130,160,170,620,1360<!--Max(50,10xDistance)-->
+|y2=0, 0     , 50, 50, 50, 56, 84, 91,112,119,434,952<!--Max(50, 7xDistance)-->
+|y3=0, 0     , 50, 50, 50, 50, 50, 52, 64, 68,248,544<!--Max(50, 4xDistance)-->
+|y4=0, 0     , 50, 50, 50, 50, 50, 50, 50, 51,186<!--Max(50, 3xDistance)-->
+|y1Title = Gravship Base
+|y2Title = Gravship + 1x Fuel optimizer
+|y3Title = Gravship + 2x Fuel optimizer
+|y4Title = Passenger shuttle
+|colors=skyblue, blue, black, red, green}}
+|}
+
+{| class="wikitable"
+|-
+! Thrusters !! Max World Tiles Traveled ||  Gravship base || 1× Fuel optimizer || 2× Fuel optimizer
+|-
+| {{Icon Small|Small thruster||1}} 
+| 10 || 100 || 70 || 50
+|-
+| {{Icon Small|Small thruster||2}} 
+| 20 || 200 || 140 || 80
+|-
+| {{Icon Small|Small thruster||3}} 
+| 30 || 300 || 210 || 120
+|-
+| {{Icon Small|Small thruster||4}} 
+| 40 || 400 || 280 || 160
+|-
+| {{Icon Small|Small thruster||4}} + {{Icon Small|Large thruster||1}} 
+| 56 || 560 || 392 || 224
+|-
+| {{Icon Small|Small thruster||4}} + {{Icon Small|Large thruster||2}} 
+| 72 || 720 || 504 || 288
+|-
+| {{Icon Small|Small thruster||4}} + {{Icon Small|Large thruster||3}} 
+| 88 || 880 || 616 || 352
+|-
+| {{Icon Small|Small thruster||4}} + {{Icon Small|Large thruster||4}} 
+| 104 || 1040 || 728 || 416
+|-
+| {{Icon Small|Small thruster||4}} + {{Icon Small|Large thruster||5}} 
+| 120 || 1200 || 840 || 480
+|-
+| {{Icon Small|Small thruster||4}} + {{Icon Small|Large thruster||6}} 
+| 136 || 1360 || 952 || 544
+|}
+
+== Analysis == 
+While fuel optimizers are not strictly necessary, as [[chemfuel]] is renewable and not difficult to farm, they can save significant amounts of chemfuel and thus colonist time. They primarily appear in "gravship upgrade" loot piles, so it is likely that fuel optimizers will be obtained if looking for gravship upgrades in general.
+
+Two fuel optimizers is enough to reduce the fuel cost to the point that a single [[large chemfuel tank]] can support the maximum possible travel distance.
+
+== Gallery ==
+<gallery>
+File:FuelOptimizer east.png|Facing east 
+File:FuelOptimizer_north.png|Facing north 
+File:FuelOptimizer south.png|Facing south
+</gallery>
+
+== Version history ==
+* [[Odyssey DLC]] Release - Added.
+
+{{Nav|questitems|wide}}
+{{Nav|odyssey|wide}}
+
+CATEGORIES GO HERE.

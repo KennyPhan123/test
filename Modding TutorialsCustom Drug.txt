@@ -1,0 +1,299 @@
+{{DISPLAYTITLE:Custom Drug}}
+{{BackToTutorials}}
+
+{{:Modding_Tutorials/Under_Review}}
+
+In this simple RimWorld tutorial, we will create a custom drug, complete with its own hediff and sprite.
+
+== Goals ==
+In this tutorial you will:
+
+* Create [[Modding_Tutorials/ThingDef|ThingDef]]s for a '''new drug''': xylin, a potent painkiller.
+* Assign '''custom stackable textures''' to your new drug
+* Create a new [[Modding_Tutorials/RecipeDef|RecipeDef]] to '''craft xylin''', yielding this new drug
+
+== Folder Setup ==
+First, you will want to set up your mod folder in this order:
+
+<source>
+Mods
+└ MyModFolder
+  ├ About
+  │ └ About.xml
+  ├ Defs
+  │ └ ThingDefs_Items
+  │   └ ExampleItem_Xylin.xml
+  └ Textures
+    └ ExampleMod
+      └ Xylin
+        ├ Xylin_a.png
+        └ Xylin_b.png
+</source>
+
+=== About.xml ===
+The <code>about.xml</code> is used to register the mod with RimWorld; the template below should act as a baseline.
+<source>
+<?xml version="1.0" encoding="UTF-8"?>
+<ModMetaData>
+    <name>CustomDrug</name>
+    <author>YourName</author>
+    <!-- Package IDs must be unique; RimWorld will not load two mods with the same ID. -->
+    <packageId>YourName.CustomDrug</packageId>
+    <!-- Your description goes here. -->
+    <description>ExampleDescription</description>
+    <supportedVersions>
+        <!-- This field tells RimWorld which versions of the game this mod works on. For this tutorial, we will be working with the latest update, 1.6. -->
+        <li>1.6</li>
+    </supportedVersions>
+</ModMetaData>
+</source>
+
+
+=== Sample Assets ===
+You can use these as the example textures:
+<div class="TwoColumnCollapsibleLayout">
+<div class="TwoColumnCollapsibleLayout-section">
+<div class="TwoColumnCollapsibleLayout-subtitle">Single graphic</div>
+<div class="TwoColumnCollapsibleLayout-text">
+[[File:CustomDrug_Xylin_a.png|none]]
+</div>
+</div>
+<div class="TwoColumnCollapsibleLayout-section">
+<div class="TwoColumnCollapsibleLayout-subtitle">Full stack graphic</div>
+<div class="TwoColumnCollapsibleLayout-text">
+[[File:CustomDrug_Xylin_b.png|none]]
+</div>
+</div>
+</div>
+
+== Instructions ==
+=== 1. Create drug ThingDefs ===
+Internally, the addiction system is relatively consistent across all drugs, so we will be using the def block of [[Smokeleaf]] as a template. The XML for [[Smokeleaf]] can be found in <code>Data/Core/Defs/Drugs/Smokeleaf.xml</code>
+
+There are two main defs we'll be working with, the ThingDef for the drug item, and the HediffDef for the effect.
+<source>
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!--ParentName makes the thing inherit properties from its parent-->
+	<ThingDef ParentName="MakeableDrugBase">
+		<!--a defName is an ID unique to every def, allowing the game to distinguish things from one another-->
+		<defName>XylinDrug</defName>
+		<!--a label is the text shown to the player-->
+		<label>xylin</label>
+		<description>Description goes here.</description>
+		<!--properties go here-->
+	</ThingDef>
+	<HediffDef>
+		<defName>XylinHigh</defName>
+		<label>high on xylin</label>
+		<labelNoun>a xylin high</labelNoun>
+		<description>Xylin's active chemical in the bloodstream. Dulls pain.</description>
+		<!--properties go here-->
+	</HediffDef>
+</Defs>
+</source>
+
+=== 2. Add properties ===
+==== <code>XylinDrug</code> ====
+<div class="TutorialTableWrapper">
+{| class="TutorialCodeTable"
+! XML !! Description
+|-
+| <source lang="xml">
+<possessionCount>5</possessionCount>
+</source>
+| class="TutorialCodeTable-description" |
+This defines how many instances of said item pawns will carry in their inventory, if instructed to do so via policy or manually.
+|-
+| <source lang="xml">
+<descriptionHyperlinks>
+	<HediffDef>XylinHigh</HediffDef>
+</descriptionHyperlinks>
+</source>
+| class="TutorialCodeTable-description" |
+This defines what other things will be hyperlinked on the item's info page.
+|-
+| <source lang="xml">
+<graphicData>
+	<texPath>ExampleMod/Xylin</texPath>
+	<graphicClass>Graphic_StackCount</graphicClass>
+</graphicData>
+</source>
+| class="TutorialCodeTable-description" |
+The <code>texPath</code> tag tells RimWorld which folder contains the textures.<br>
+The <code>graphicClass</code> tag defines what type of texture is used to represent the item. Specifically, <code>Graphic_StackCount</code> instructs the game to display a different texture depending on how many items are stacked.
+|-
+| <source lang="xml">
+<rotatable>false</rotatable>
+</source>
+| class="TutorialCodeTable-description" |
+TBA
+|-
+| <source lang="xml">
+<techLevel>Industrial</techLevel>
+</source>
+| class="TutorialCodeTable-description" |
+TBA
+|-
+| <source lang="xml">
+<statBases>
+	<WorkToMake>450</WorkToMake>
+	<MarketValue>16</MarketValue>
+	<Mass>0.05</Mass>
+	<DeteriorationRate>6</DeteriorationRate>
+	<Flammability>1.3</Flammability>
+</statBases>
+</source>
+| class="TutorialCodeTable-description" |
+<code>WorkToMake</code> refers to how many ticks producing this item takes.<br>
+The <code>MarketValue</code> tag provides the item's price in silver, before modifiers such as colony disadvantage are applied.<br>
+<code>Mass</code> refers to the weight of the item for caravan purposes.<br>
+<code>DeteriorationRate</code> is a tag instructing the game how many points of damage per day the item should take if left outdoors.<br>
+The <code>Flammability</code> tag provides how quickly the item will deteriorate from direct fire.
+|-
+| <source lang="xml">
+<ingestible>
+	<foodType>Plant, Fluid</foodType>
+	<baseIngestTicks>80</baseIngestTicks>
+	<nurseable>true</nurseable>
+	<drugCategory>Medical</drugCategory>
+	<ingestSound>Ingest_Inject</ingestSound>
+	<ingestEffectEat>EatVegetarian</ingestEffectEat>
+	<ingestHoldOffsetStanding>
+		<northDefault>
+			<offset>(0.18,0,0)</offset>
+		</northDefault>
+	</ingestHoldOffsetStanding>
+	<ingestHoldUsesTable>false</ingestHoldUsesTable>
+	<ingestCommandString>Inject {0}</ingestCommandString>
+	<ingestReportString>Injecting {0}.</ingestReportString>
+	<ingestReportStringEat>Consuming {0}.</ingestReportStringEat>
+	<useEatingSpeedStat>false</useEatingSpeedStat>
+	<outcomeDoers>
+		<li Class="IngestionOutcomeDoer_GiveHediff">
+			<hediffDef>XylinHigh</hediffDef>
+			<severity>1.0</severity>
+		</li>
+	</outcomeDoers>
+</ingestible>
+</source>
+| class="TutorialCodeTable-description" |
+<code>FoodType</code> -> TBA<br>
+The <code>baseIngestTicks</code> tag refers to how many ticks a pawn will take to consume this item.<br>
+<code>nurseable</code> -> TBA<br>
+The <code>drugCategory</code> tag separates drugs into types. Social drugs will be used for recreation, hard drugs will be consumed during certain mental breaks, and medical drugs won't be consumed unless instructed to manually or via policy.<br>
+<code>ingestHoldUsesTable</code> refers to whether pawns will seek out a table to consume this item.<br>
+<code>useEatingSpeedStat</code> instructs the game whether to take the eating stat into account when calculating consumption time.
+|-
+| <source lang="xml">
+<recipeMaker>
+	<recipeUsers>
+		<li>DrugLab</li>
+	</recipeUsers>
+	<workSpeedStat>DrugCookingSpeed</workSpeedStat>
+	<workSkill>Cooking</workSkill>
+	<displayPriority>2000</displayPriority>
+</recipeMaker>
+</source>
+| class="TutorialCodeTable-description" |
+<code>recipeUsers</code> refers to what workbenches can create this item. Multiple things may be added.<br>
+<code>workSkill</code> is a tag instructing the game what skill producing this item trains and uses.<br>
+The <code>DrugCookingSpeed</code> tag provides what modifier affects crafting time.
+|-
+| <source lang="xml">
+<costList>
+	<Chemfuel>4</Chemfuel>
+</costList>
+</source>
+| class="TutorialCodeTable-description" |
+The ingredients required to produce one instance of this item.
+|-
+| <source lang="xml">
+<comps>
+	<li Class="CompProperties_Drug">
+		<listOrder>20</listOrder>
+	</li>
+</comps>
+</source>
+| class="TutorialCodeTable-description" |
+TBA
+|-
+| <source lang="xml">
+<allowedArchonexusCount>50</allowedArchonexusCount>
+</source>
+| class="TutorialCodeTable-description" |
+TBA
+|-
+|}
+</div>
+
+
+
+
+<div class="TutorialTableWrapper">
+{| class="TutorialCodeTable"
+! XML !! Description
+|-
+| <source lang="xml">
+<hediffClass>Hediff_High</hediffClass>
+</source>
+| class="TutorialCodeTable-description" |
+This defines what type of effect this is.
+|-
+| <source lang="xml">
+<defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+</source>
+| class="TutorialCodeTable-description" |
+The color that the hediff appears as in the health tab.
+|-
+| <source lang="xml">
+<scenarioCanAdd>true</scenarioCanAdd>
+</source>
+| class="TutorialCodeTable-description" |
+Whether custom scenarios can add this hediff as a starting effect.
+|-
+| <source lang="xml">
+<maxSeverity>1.0</maxSeverity>
+</source>
+| class="TutorialCodeTable-description" |
+TBA
+|-
+| <source lang="xml">
+<isBad>false</isBad>
+</source>
+| class="TutorialCodeTable-description" |
+Whether this qualifies as a bad effect. Used by healer mech serum and resurrection mech serum in order to determine whether to remove this effect.
+|-
+| <source lang="xml">
+<comps>
+	<li Class="HediffCompProperties_SeverityPerDay">
+		<severityPerDay>-0.5</severityPerDay>
+		<showHoursToRecover>true</showHoursToRecover>
+	</li>
+</comps>
+</source>
+| class="TutorialCodeTable-description" |
+<code>severityPerDay</code> -> TBA<br>
+<code>showHoursToRecover</code> refers to whether the health tab will show how many hours the effect has left.
+|-
+| <source lang="xml">
+<stages>
+	<li>
+		<painOffset>-0.9</painOffset>
+		<capMods>
+			<li>
+				<capacity>Consciousness</capacity>
+				<offset>-0.1</offset>
+			</li>
+		</capMods>
+	</li>
+</stages>
+</source>
+| class="TutorialCodeTable-description" |
+TBA.
+|-
+|}
+</div>
+
+[[Category:Modding]]
+[[Category:Modding tutorials]]

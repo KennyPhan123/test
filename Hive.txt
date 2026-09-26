@@ -1,0 +1,78 @@
+{{rewrite|reason=Cleanup and Format Standardisation. Also generates heat. How much etc.}}
+{{Stub|reason=Previous Version of page said hive will initially generate with up to 200 combat power of insectoids and can have up to 500 points of insectoids at one time alive at one time. Updated number for initial spawn and sustained number needed}}{{infobox main|building|
+| name = Hive
+| image = Hive.png
+| description =  A hive of giant insects. If activated, it will spawn additional insects and hives over time, as well as valuable insect jelly.
+| type = Building
+| type2 = Misc
+| size = 1 ˣ 1
+| cover = 0.5
+| hp = 130
+| flammability = 1.0
+| heatpersecond = 6
+| maxheattemperature = 38
+| destroyyield = {{Icon Small|Insect jelly}} 30
+| thingCategories = BuildingsSpecial
+}}
+A '''hive''' can spawn in regions with caves or when opening an [[ancient shrine]] or at [[Events#Infestation|Infestation events]]. Each hive spawns with insects like [[megascarab]]s, [[megaspider]]s  and [[spelopede]]s. Megaspiders, spelopedes, and megascarabs will tend the hives, and without them, the hives will begin to show lack of maintenance, and eventually deteriorate into a bunch of insect jelly. 
+
+== Summary ==
+Insects will attack creatures trespassing the hive's boundaries, except for wild animals. They will also mine random tiles which sometimes lead to [[Collapsed rocks]] falling from above and killing anything below.
+
+If there are less than 30 hives in a colony, non-dormant hives will reproduce another hive in a random roofed tile within 10 tiles of themselves, as long as there is no [[fence]] present on that given tile. If a tile is selected is occupied with a passable building, a hive will still spawn there either uninstalling (if possible) or removing the building and recovering the entire construction cost. The time between hive reproduction depends on difficulty. The number of hives generated this way will never exceed 30, but it is possible to have more than 30 hives if they spawn directly from an infestation event. Hives never reproduce to a cell outside of the original enclosed space (room with no open door), unless the hive adjacent to the door of another room. A hive will never reproduce in the 8 cells adjacent to any other hive.
+
+Hives can increase the temperature of their surroundings up to 38°C. It spawns 20 [[insect jelly]] every {{Ticks|26000}} to {{Ticks|30000}}, for an average of 42.86 per day, so long as there are is less than 40 jelly in adjacent tiles. It also spawns 1 [[Glow pod]] every 12 to 24 game hours if there are none around. 
+
+Hives will self-heal over time 1 HP per {{ticks|6000}}, or a total of 10 HP per day.
+
+Dormant hives may be present in maps which have [[World_generation#Caves|caves]]. Those hives will not spread, although they will produce jelly and glow pods as usual. They will also spawn with insects around them, but they will not spawn more over time.
+
+If they are not maintained for 1 day, they will be healthy for a further 1 day before taking 10 points of damage every {{ticks|250}}, enough to be completely destroyed in 1.3 hours. When destroyed they drop 30 insect jelly.
+
+== Farming ==
+{{#vardefine:daily_yield|{{#expr:20*60/((26+30)/2)}}}}
+Each hive spawn an average of {{Icon Small|Insect jelly||{{#expr:{{#var:daily_yield}} round 2}}}} [[insect jelly]]/day, for a whopping {{Icon Small|Silver||{{#expr:{{#var:daily_yield}}*{{Q|Insect jelly|Market Value Base}}*60 round 0}}}}/year. In fact, 6 well-maintained hives will give enough insect jelly to completely buy out all items on all trade caravans and trade ships that come to your colony, even on the highest difficulty level. The limiting factor is usually not how many hives you can maintain, but how much wealth you can hoard without attracting dangerous raids from other sources.
+
+Spawned insects will give [[insect meat]] when butchered. If the [[Insect meat (precept)|Insect Meat: Loved]]{{IdeologyIcon}} precept is used, colonies can be fed exclusively on insect meat and be ecstatic about it. Insect meat can also be converted into [[chemfuel]] from a [[biofuel refinery]], or sold as [[meal]]s with no penalty.
+
+=== "Farming" skills ===
+Melee skill is required for insect farming, as the farmer will need to regularly fight insects to extract the jelly and meat, or take their damage when trying to tame them. A pawn with high melee skill, the best armor available, and favorable traits such as [[tough]], [[nimble]], or [[robust]] gene{{BiotechIcon}} (or all of them) is needed. Consider getting such a pawn as your starting colonist if you decide to build a mountain base. Animal skill is also needed if you want to tame insects.
+
+Aside from taking damage, the farmer also need to have good wound healing, as they will have to fight insects and take damage everyday. Assign them the best bed, or even a [[hospital bed]], give them [[fast wound healing]] gene,{{BiotechIcon}} the [[healing enhancer]],{{RoyaltyIcon}} or use a [[ghoul]]{{AnomalyIcon}} farmer. But you may not want to tend their wounds with medicine, as the constant injuries may quickly drain your medicine supply.
+
+If you plan to grow [[nutrifungus]],{{IdeologyIcon}} note that infestations tend to occur in your dark fungus fields. In that case, you will need to build the insect farm nearby, so try to find a starting colonist that fits both the role of insect farmer and regular farmer to reduce travel time and the risk of insects attacking your other colonists.
+
+=== Hive room ===
+<gallery widths=364 heights=405>
+Hive molding.png|A hive-room with fences built to restrict possible hive spawning locations to the desired (white) cells
+Hive saturation.png|A hive-saturated room. As long as the door and fence is maintained, and only 1 layer of walls has been mined, no additional hive will spawn
+</gallery>
+When reproducing, insect hives never make a new one outside of the current room. After an infestation, you can limit the surviving hives to a small region by building a room around them. The entrance of the room should have a chokepoint in case the hives spawn multiple insects.
+
+If the hive room is in or near your base, it should have at least 2 layers of wall to prevent insects from randomly mining through. The innermost layer of walls should be built right next to the hives, so that new hives won't spawn even when insects have mined through 1 layer of walls. Wood is actually a good material for the innermost wall, it reduces the time spent building inside the dangerous hive room; it's also cheap enough to replace the continuously mined walls.
+
+Ideally hives should be exactly 2 cells away from each other to avoid insect jelly from one hive affecting the output of other hives. You can block possible spawning cells of the hives by building fences on them.
+
+=== Hive maintenance ===
+The number of hives you should maintain depend on your insect jelly and meat need, and your ability to withstand insect attacks. Too many hives will rapidly raise your colony wealth, leading to dangerous raids. Too few hives will risk them being wiped out by accident. You can limit the number of hives that can spawn by enclosing them in a small room. Since hives can't spawn adjacent to each other, they will eventually run out of space in the room and stop reproducing.
+
+If left without insects for too long, the hives will display "Due for maintenance"; not long after that, they will take damage and quickly be destroyed. For that, it's crucial to let the insects maintain their hive before killing them. If an insect spawn and one of the hives is due for maintenance, you have to wait for that insect to maintain the hive, or risk losing that hive.
+
+When the insects has finished maintaining their hives, you can kill or tame them, and take the insect jelly. If the insects has mined any part of the wall, send a builder in to fill it back. Try to kill the insect as soon as they finish hive maintenance and don't give them time to mine through the wall.
+
+===Taming===
+If you destroy all hives of an infestation, then any insects that are [[downed]] will become "neutral". They are still hostile, but will not attack unless a colonist gets very close. [[Megaspider]]s are an advanced trainability [[animal]] that can be tamed without a proper manhunter chance. Tamed insects do not breed, therefore you will only have the amount you tamed. This makes them bad for long term use for defense or farming.
+
+=== Spending all the wealth ===
+The accumulated wealth from all the insect jelly can be dangerous for high difficulties. But with 6 hives or more, the wealth generated will overwhelm any trader that naturally come to the colony, so you can't sell all the insect jelly either.
+
+It's recommended that you start making allies as soon as you start growing the hives so that you eventually can request trade caravans to sell the jelly. This ability costs 15 goodwill and has a cooldown of 4 days. The goodwill gained from trading is 1 per 500 silver, meaning 6 hives will produce enough jelly to make up for the lost goodwill through trading.
+
+==Version history==
+* ? - Hives no longer take damage at -20°C.{{Check Tag|Fact Check|It is unclear if this was ever the case}}
+* [[Version/0.13.1135|0.13.1135]] - Added. 
+* [[Version/1.1.0|1.1.0]] - Now slowly heals over the course of days
+* [[Version/1.3.3066|1.3.3066]] - Insect Jelly from destruction reduced from 100 -> 30. 
+[[Category:Special]]
+[[Category:Environment]]
+[[Category:Miscellaneous]]

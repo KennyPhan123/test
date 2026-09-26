@@ -1,0 +1,48 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Global/Misc}}
+|}
+----
+{| {{STDT}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Blood loss" <!-- defName="BloodLoss" -->
+! Blood loss
+----
+* Def Name:<br />BloodLoss
+* Label:<br />blood loss
+| A reduction in the normal blood volume. Minor blood loss has relatively mild effects, but when blood loss becomes severe, oxygen transport becomes badly impaired and the victim loses the ability to move. Extreme blood loss leads to death.
+<br />Blood loss naturally recovers over time as the body slowly regenerates its blood supply.
+|<!-- Details -->
+* Lethal Severity: '''100%'''
+|<!-- Stages -->
+{| {{STDT}}
+! Label !! Parameters
+|-
+! minor
+|<!-- Parameters -->
+* Become Visible: {{Bad|false}}
+|-
+! minor
+|<!-- Parameters -->
+* Minor
+* Min Severity: '''15%'''
+* [[Consciousness]] Offset: {{--|10%}}
+|-
+! moderate
+|<!-- Parameters -->
+* Min Severity: '''30%'''
+* [[Consciousness]] Offset: {{--|20%}}
+|-
+! severe
+|<!-- Parameters -->
+* Min Severity: '''45%'''
+* [[Consciousness]] Offset: {{--|40%}}
+|-
+! extreme
+|<!-- Parameters -->
+* Min Severity: '''60%'''
+* Life Threatening: {{Bad|true}}
+* [[Consciousness]] Offset: {{--|40%}}
+* [[Consciousness]] Max: {{Bad|10%}}
+|}<noinclude>
+|}</noinclude>

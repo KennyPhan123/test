@@ -1,0 +1,76 @@
+{{infobox main
+| name = Prosthetic heart
+|image = Health item prosthetic.png
+| type = Medical Items
+| type2 = Body Parts
+| tech level = Industrial
+| description = A heart prosthesis. It contains an electric motor that pumps blood smoothly around the body. Users often report feeling tired, but it's better than the alternative.
+| production facility 1 = Machining table
+| research = Prosthetics
+| skill 1 = Crafting
+| skill 1 level = 5
+| work to make = 15000
+| resource 1 = Steel
+| resource 1 amount = 25
+| resource 2 = Component
+| resource 2 amount = 4
+| mass = 2
+| marketvalue = 230
+| max hit points base = 50
+| flammability = 0.7
+| tradeTags = TechHediff
+| techHediffsTags = Simple
+| body part = Heart
+}}
+The '''Prosthetic heart''' is a [[heart]] replacement with 80% efficiency. It affects [[Blood pumping]] and several dependent stats - due to its below-normal part efficiency it negatively affects healthy pawns but may benefit [[Injury|injured]] or [[Ailments|unhealthy]] ones. 
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+{{Stub|section=1|reason=Should affect moving directly but not mentioned. See [[Bionic heart]] as example}}
+Prosthetic hearts have an 80% part efficiency, or a {{--|20%}} reduction compared to a healthy organic heart. This results in {{--|20%}} loss to [[Blood Pumping]]. As a positive, installing a prosthetic heart will instantly cure any [[artery blockage]]s, and prevent [[heart attack]]s from any source, including [[drugs]].
+
+The reduction to Blood Pumping lowers [[move speed]] by a total {{--|8%}} and Consciousness by {{--|4%}} (which also reduces [[Manipulation]], [[Talking]], and [[Eating]]). Additionally, it subtracts {{--|6%}} to [[Rest Rate Multiplier]], so pawns require 6% more rest.
+
+A prosthetic heart results in a 20.3% reduction in an otherwise healthy pawn's market value. Installing a prosthetic heart in a patient with a healthy natural [[heart]] will result in the organic heart being kept for later use - normal organ harvesting penalties apply if the patient belongs to a different faction than the surgeon, and causes a {{--|70}} [[goodwill]] penalty with the patient's faction for an "unnecessary surgery".
+
+=== Installation ===
+Installing the part requires {{ticks|2500}} of work, 2x medicine of [[Herbal medicine|herbal]] quality or better, and a [[Skills#Medical|Medical skill]] of 4.
+
+Removing the part requires {{ticks|2000}} of work, 1x medicine of [[Herbal medicine|herbal]] quality or better, and has no [[Skills#Medical|Medical skill]] requirements.
+
+If the operation fails, the part will be destroyed. If the installation surgery fails, there is also a 25% chance that the patient dies. Thus, as the maximum [[Doctoring#Success chance|success chance]] of any surgery is capped at 98%, there is always at least a 0.5% chance of death per attempt.
+
+== Analysis ==
+Prosthetic hearts can be important tools to prevent heart attack deaths in the early game, should an otherwise valuable colonist be prone to them. Its small but significant stat penalties mean that, ideally, natural [[heart]]s or [[bionic heart]]s should be used instead. Bionic hearts in particular have the same disease immunities, but improve rather than lower stats.
+
+There are also concerns installing a prosthetic heart. Unlike the bionic heart, and like the biological heart, there is a 25% chance of instant death in the event of failed installation. This makes it significantly riskier to install. However, it only requires a medical skill of 4 to attempt compared to the organic heart's 8 and the bionic's 5.
+
+An artificial heart could be used to make the use of [[wake-up]] safer in the long term, which could otherwise cause heart attacks. However, wake-up isn't free to make, and you'll lose productivity outside of drug use. This option should be weighed against a [[circadian half-cycler]],{{RoyaltyIcon}} which is a one time cost with a flat {{--|15%}} [[Consciousness]] penalty.
+
+On the plus side, prosthetic hearts provide a fairly cheap method of harvesting an ordinary heart. This way, you can get an organic heart without killing a prisoner, or obtain both a heart and a [[liver]]; just remember to harvest the liver last, as organs can't be retrieved from a corpse.
+
+While it does provide a buff to pawns with the [[Body modder]] [[trait]], its negative effects on healthy pawns (and unavoidable chance of death) means it should be passed over for other, less detrimental prostheses.
+
+===Profit===
+A prosthetic heart is worth {{Icon Small|silver||{{P|Market Value Base}}}}, while an organic heart is worth {{Icon Small|silver||{{Q|Heart|Market Value Base}}}}. You can then extract a liver for {{Icon Small|silver||{{Q|Liver|Market Value Base}}}} (the same as a heart), which is as fatal as taking the heart without a prosthetic replacement, or let the prisoner live for other purposes.
+
+Keep in mind that there's a natural x0.6 penalty for selling and x1.4 penalty for buying. Profit of a prosthetic heart also depends on your trader's [[Trade Price Improvement]] (TPI) and the [[AI Storytellers#Trade price disadvantage|Trade price disadvantage]] setting (impacted by [[difficulty]]). 
+
+At 0% TPI (no social skill):
+* If you buy a prosthetic heart and sell an organic heart, you would get a profit of {{Icon Small|silver||{{#expr: 0.6*{{Q|Heart|Market Value Base #}} - (1.4*{{P|Market Value Base}})}}}} (in Strive to Survive).
+* If you buy 4 [[component]]s, mine steel, and sell an organic heart, you would get a profit of {{Icon Small|silver||{{#expr: 0.6*{{Q|Heart|Market Value Base #}} - (4 * 1.4 * {{Q|Component|Market Value Base}}) - (25 * 0.6 * {{Q|Steel|Market Value Base}})}}}} (in Strive to Survive, assuming you would've sold steel otherwise).
+* In Losing is Fun, this drops to {{Icon Small|silver||{{#expr: 0.6 * 0.8 * {{Q|Heart|Market Value Base #}} - (1.4*1.2*{{P|Market Value Base}})}}}} profit when buying a full prosthetic heart, and {{Icon Small|silver||{{#expr: (0.6 * 0.8 * {{Q|Heart|Market Value Base #}}) - (4 * 1.4 * 1.2 * {{Q|Component|Market Value Base}}) - (25 * 0.6 * 0.8 * {{Q|Steel|Market Value Base}})}}}} if you buy components.
+
+At 15% TPI (10 social skill, healthy):
+* If you buy a prosthetic heart and sell an organic heart, you would get a profit of {{Icon Small|silver||{{#expr: 0.69*{{Q|Heart|Market Value Base #}} - (1.19*{{P|Market Value Base}})}}}} (in Strive to Survive).
+* If you buy 4 [[component]]s, mine steel, and sell an organic heart, you would get a profit of {{Icon Small|silver||{{#expr: 0.69*{{Q|Heart|Market Value Base #}} - (4 * 1.19 * {{Q|Component|Market Value Base}}) - (25 * 0.69 * {{Q|Steel|Market Value Base}})}}}} (in Strive to Survive).
+* In Losing is Fun, this drops to {{Icon Small|silver||{{#expr: 0.69 * 0.8 * {{Q|Heart|Market Value Base #}} - (1.19*1.2*{{P|Market Value Base}})}}}} profit when buying a full prosthetic heart, and {{Icon Small|silver||{{#expr: (0.69 *0.8* {{Q|Heart|Market Value Base #}}) - (4 * 1.19 * 1.2 * {{Q|Component|Market Value Base}}) - (25 * 0.69 * 0.8 * {{Q|Steel|Market Value Base}})}}}} if you buy components.
+
+This does not include the cost of medicine.
+
+== Version history ==
+* [[Version/0.19.2009|0.19.2009]] - Added.
+{{nav|body parts|wide}}
+[[Category:Medical Item]] [[Category:Body Part]] [[Category:Artificial Body Part]]

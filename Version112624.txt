@@ -1,0 +1,86 @@
+{{Version Nav}}
+This is a refinements and fixes update with improvements for the base game and Royalty expansion. It should be compatible with all savegames and mods. This biggest changes will be tunings designed to move deep drilling from the lategame towards the midgame and make them more viable for marginal drilling projects. As always, everything is on the table for further adjustment as we go forward.
+
+On Steam, if you want to play the previous version for any reason, just use the Steam beta branch called ‘previous’.
+
+We’re also working on some deeper gameplay improvements and content additions – look forward to those! However, for stability reasons those are being held back for now.
+
+Thanks to all those who helped test on the official testing Discord server. Come join to test future releases!
+
+==Tuning==
+* Defeating a mech cluster now gives a mood boost to all player pawns on the same map.
+* Reduce work cost of smelting metal from slag from 1600 to 800 (to help reduce clutter).
+* Reduce uranium slug turret cost per shot from 4 to 3 and increase its damage from 45 to 50.
+* Butchered cenitpedes now yield 10 plasteel when shredded, modified by difficulty and pawn skill.
+* Crashed ship parts now drop an advanced component.
+* [[Plasteel]] no longer burns.
+* Reduced commonality of mechanoid raids at high points levels.
+* Reduced deep drilling research cost from 4000 to 1000 and moved from multi-analyzer tier to microelectronics tier.
+* Reduced cost of deep drill from 200 steel and 4 components to 100 steel and 2 components.
+* Reduced cost of ground-penetrating scanner from 2 advanced components, 6 components, and 200 steel to 1 advanced component, 4 components, and 150 steel.
+* Increased deep drill yield for steel, plasteel, uranium, silver, and jade. Reduced yield for gold.
+* Reduced max deep lump size for gold, and jade, and steel.
+* Reduced deep drill power consumption from 300W to 200W.
+* Deep drill can now extract from the 21 closest cells instead of only the 9 closest.
+* Imperial settlements offer more psytrainers.
+* Mechs created by the mech assembler mechs now defend the cluster instead of attacking.
+* Mech assembler now shuts down after spawning 4 mechs.
+* Double the effect of pain focus.
+* Seperated deep drilling speed from mining speed. Drill arm now affects deep drilling speed less than normal mining speed.
+* Tune monument size and construction time.
+* Monument damage consequence size is no longer affected by challenge rating.
+* Removed extra selection weight for mech cluster as monument damage consequence.
+* Adjusted monument protection duration based on challenge rating.
+* Colonists with bloodlust no longer suffer a mood debuff when harvesting organs.
+* Adjust Alzheimer’s to nullify fewer conditional thoughts, otherwise it can be impossible to keep guests happy with Alzheimer’s and it’s a bit weird that their mood ends up locked at default.
+
+==Misc==
+* Reworked how monuments are generated to produce more compact structures without weird large gaps.
+* Optimized deep drilling for modded games with more rock types.
+* Explicitly mark some more things as part of Royalty in code for clarity: Shuttle, bladelink weapons, muscial instruments, thrones, projectile interceptors (shields).
+* Refactor royal title warning texts in order to do the formatting programatically.
+* Removed unnecessary ‘You must keep [guestName] at colony’ from hospitality quests as lodgers should not be able to be transferred.
+* Removed ‘showCreatedAt’ on recipe def and used existing IsSurgery property instead.
+* Removed unnecessary check on text height for architect category tab.
+* Changed psychic amplifier graphic to match archotech artstyle, since it’s an archotech item.
+* Moved IncomingDamageFactor damage mitigation to ApplyDamageToPart.
+* Optimization: Make GridsUtility.GetDoor use GetEdifice instead of checking every thing in the cell.
+* Adjusted apparel debug outputs.
+
+==Text==
+* Monument quest descriptions now better handle multiple allowed floor types.
+* Added more quest name content for PawnLend quests.
+* Adjusted monument resource readout to include all possible floor type required resources.
+* Added a warning popup about conceited colonists when a royal favor quest is about to be accepted (similar to anti-social colonists).
+* Combine warnings when attempting to accept a royal favor quest for someone who is both conceited and anti-social.
+* Made it clearer why a Praetor cannot call an orbital imperial trader.
+* Reduced the tooltip delay on storyteller difficulty selections to zero
+* Rewrote natural goodwill rise/fall tooltip to display yearly change. Removed redundant text.
+* Pain focus readout now rounds to the nearest whole number.
+* Adjust text and fully define mining stat order.
+* Added an explanation to the psycast ‘Target’ stat entry.
+
+==Fixes==
+* Fix: You cannot shoot over unstable power cells.
+* Fix: Sometimes the wrong people can be ordered to enter shuttles.
+* Fix: Quests sometimes generate manhunting packs with > 100 animals.
+* Fix: Spawning sketch that wipes doors with no adjacent regions causes an error.
+* Fix: The translation files cleaner tool uses LF in the end of the first line (xml root).
+* Fix: Cocoa trees are marked as unlocked for both ‘Tree sowing’ and ‘Cocoa’ research projects.
+* Fix: Quest lodgers being attacked by colonists (temporary or permanent) during murderous rage and other aggro mental states cause relations loss.
+* Fix: Typo in peaceful difficulty description.
+* Fix: Some custom backstories with gender set to “either” have a default gendered body type.
+* Fix: Manhunter incident can fail for very high points.
+* Fix: Padding for mod requirement box is uneven.
+* Fix: QuestPart_RequirementsToAcceptBedroom causes errors for pawns with royal titles which don’t have bedroom requirements.
+* Fix: Tough trait incoming damage multiplier doesn’t work properly.
+* Fix: Item hitpoint slider precision - unequal values shown as same.
+* Fix: NPCs incabable of doctoring can self tend.
+* Fix: In the info card for a psycast, all entries in the lists of Target are capitalized.
+* Fix: Formatter tool adds and deletes same values because cyclic reference prevention would skip value types falsely.
+* Fix: Luciferium not healing chronic conditions but the message says it did.
+* Fix: Ship parts sometimes land on walls and skip upon spawning inner thing.
+* Fix: TryFindSafeLandingSpotCloseToColony only checks single cell instead of occupied rect for blocking things.
+* Fix: Accepting two shuttle-based quests one after another causes one to land on top of the other.
+* Fix: Siegers receive extra supplies they don’t need.
+* Fix: Various StockGenerator_Tag missing countRanges which made some settlements not carry items they should have.

@@ -1,0 +1,111 @@
+{{Anomaly}}
+{{Spoiler}}
+{{Stub|reason=Confirm spawning conventions, odds of direction chance, link to the random flavor text, etc.}}
+{{About|the structure added by the [[Anomaly DLC]] within the [[Labyrinth]]|the recreational activity [[Children]] partake in|Learning}}
+{{Infobox main|Buildings
+| name = Floor etching
+| image = Floor etching a.png
+| description = A crude sketch drawn onto the ground.<br/>With sufficient time, you may be able to decipher it. Select a colonist and right-click the etching to inspect it.
+<!-- Base Stats -->
+| type = Building
+| flammability = 0
+<!-- Building -->
+| size = 1 * 1
+| passability = standable
+| terrain affordance = Light
+<!-- Technical -->
+| defName = FloorEtching
+| label = floor etching
+<!-- ThingDef Name="FloorEtching" ParentName="BuildingBase" -->
+| altitudeLayer = FloorEmplacement
+| scatterableOnMapGen = false
+| destroyable = false
+| useHitPoints = false
+| selectable = true
+| hasTooltip = true
+| drawerType = MapMeshOnly
+| neverMultiSelect = True
+| claimable = false
+| deconstructable = false
+| paintable = false
+| neverBuildable = true
+| isTargetable = false
+| isInert = true
+| graphicClass = Graphic_Random
+| texPath = Things/Filth/FloorEtchings
+| shaderType = TransparentBelowSnow
+| compClass = CompFloorEtching
+| ticksToActivate = 2500 <!-- ~40 seconds -->
+| activateTexPath = UI/Commands/DecipherEtchings
+| activateLabelString = Decipher...
+| activateDescString = Choose someone to decipher this floor etching.
+| guiLabelString = Choose who should do this
+| jobString = Decipher floor etching
+| activatingStringPending = Deciphering floor etching
+| activatingString = Deciphering floor etching: {1}s
+| inspectString = Send a colonist to decipher this.
+| messageCompletedString = {PAWN_nameDef} has successfully deciphered the floor etching.
+| canTargetBuildings = false
+| canTargetAnimals = false
+| canTargetMechs = false
+| onlyTargetControlledPawns = true
+<!-- ThingDef Name="BuildingBase" Abstract="True" -->
+| category = Building
+| thingClass = Building
+| soundImpactDefault = BulletImpact_Metal
+| terrainAffordanceNeeded = Light
+| repairEffect = Repair
+| leaveResourcesWhenKilled = true
+| filthLeaving = Filth_RubbleBuilding
+| SellPriceFactor = 0.70
+}}
+
+'''Floor etchings''' are encountered within the labyrinth across most of the map, acting as directional cues which help to navigate the maze.
+
+== Summary ==
+Each room within the labyrinth has a chance to spawn a Floor etching{{Check Tag|Add Details|Exact chance?}}. Multiple may spawn in any given room. Etchings tend to be less likely to spawn the closer the room is to the [[Warped obelisk]]{{Check Tag|Verify}}.
+
+In order to investigate the drawing, a colonist must be ordered to decipher the etching, which takes {{Ticks|2500}}. Once finished, a [[Letter]] will appear with a short description followed by the chance of getting a cardinal direction to the exit room. It is not guaranteed that any given floor etching will give a direction. The chance of success seems to be more likely if the etching is further from the exit{{Check Tag|Verify}}.
+
+[[File:Decipher etchings.png|Decipher etching command]]
+Floor etchings use the following strings:
+* Activate label: "Decipher..."
+* Activate description: "Choose someone to decipher this floor etching."
+* Gui label: "Choose who should do this"
+* Job: "Decipher floor etching"
+* Activating pending: "Deciphering floor etching"
+* Activating: "Deciphering floor etching: {1}s"
+* Inspect: "Send a colonist to decipher this."
+* Message completed: "{PAWN_nameDef} has successfully deciphered the floor etching."
+
+== Analysis ==
+As a reliable way to help triangulate the exit room, these drawings should be investigated quickly to help narrow down paths towards a safe exit. Ensure that the area is clear before deciphering, as the task is not instantaneous. It is unknown whether deciphering a drawing in the same room as a sleeping enemy will wake them up{{Check Tag|Verify}}. Once a general path can be gleaned from these map markers, it can be much easier to plot out a more time efficient path to freedom.
+
+If the current goal is complete exploration of the entire map tile, these can likely be safely ignored. That being said, the floor etching can still be of help during a full sweep of the maze, as it can help you save the area around the obelisk for last.
+
+== Gallery ==
+<gallery>
+Floor etching a.png|Floor etching variant A
+Floor etching b.png|Floor etching variant B
+Floor etching C.png|Floor etching variant C
+Floor etching D.png|Floor etching variant D
+Floor etching E.png|Floor etching variant E
+Floor etching F.png|Floor etching variant F
+Floor etching G.png|Floor etching variant G
+Floor etching H.png|Floor etching variant H
+Floor etching I.png|Floor etching variant I
+Floor etching J.png|Floor etching variant J
+Floor etching K.png|Floor etching variant K
+Floor etching L.png|Floor etching variant L
+Floor etching M.png|Floor etching variant M
+Floor etching N.png|Floor etching variant N
+Floor etching O.png|Floor etching variant O
+</gallery>
+
+== Trivia ==
+In the game files, there is a FloorEtching and FloorEtchingRambling, with the latter noted to take 10 seconds to decipher, which one would assume to be a floor etching that doesn't give a direction. Both etchings however are defined with {{Ticks|2500}}, meaning there is no difference in time.
+
+== History ==
+* [[Anomaly]] Release - Added.
+
+[[Category:Buildings]]

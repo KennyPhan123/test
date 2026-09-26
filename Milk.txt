@@ -1,0 +1,71 @@
+{{Infobox main|food
+| name = Milk
+| image = Milk.png
+| description = Milk from an animal.
+<!-- Base Stats -->
+| type = Food
+| type2 = Raw food
+| hp = 60
+| deterioration = 10
+| marketvalue = 1.9
+| mass base = 0.045
+| flammability = 0.2
+| stack limit = 75
+| path cost = 14
+<!-- Ingestion -->
+| food type = animal product, fluid
+| taste = raw
+| food poison chance = 0.02
+| nutrition = 0.05
+| days to rot = 14
+<!-- Creation -->
+| work to make = 400
+| work speed stat = Animal Gather Speed
+<!-- Technical -->
+| preferability = RawTasty
+}}
+'''Milk''' is an [[Animal husbandry#Products|animal product]] and [[raw food]] obtained from tamed adult female [[animals]] of certain species only. Raw consumption of milk does not cause negative thoughts and it counts as a meat ingredient for [[meals]] that require meat specifically.
+
+== Acquisition ==
+Milk is produced when a [[Work#Handle|animal handler]] milks a tamed adult female [[animals]] of a milkable species. The amount obtained depends on the Milk Amount of the milked animal, as well as the [[Animal Gather Yield]] of the handler. Handlers will milk animals when they are ready, producing milk which will then be left on the ground. Each animal can be milked at a frequency dependent on the species in question and the [[saturation]] of the animal. Milk production is halved when the animal is hungry, reduced to one third when it is urgently hungry, and completely stopped when the animal is starving.
+
+Milking an animal takes {{Ticks|400}}, regardless of the amount of milk produced, and only modified by the [[Animal Gather Speed]] of the handler.
+
+The following animals produce milk:
+<div><li style="display: inline-table;">{{#vardefine:formatterNumeratorVariable1|Daily Milk Average}}{{#vardefine:formatterDenominatorVariable1|Real Hunger Rate}}{{#vardefine:formatterNumeratorVariable2|Daily Milk Average}}{{#vardefine:formatterDenominatorVariable2|Real Hunger Rate}}{{#vardefine:formatterFactorVariable2|0.05}}
+{| {{STDT| sortable c_08 text-center}}
+! Animal !! Milk Amount !! Milking<br/>Interval !! Milk/Day<br/>(Average) !! Milk / food consumed<br/>per day !! Nutrition / food consumed<br/>per day
+|-
+{{#ask: [[Concept:Production Animals]] [[Milk Amount::+]] [[Milk Name::Milk]]
+| ?Milk Amount
+| ?Milking Interval Days
+| ?Daily Milk Average
+| format = template
+| template = Ask Table Formatter
+| link = none}}
+|}
+</li></div>
+
+== Summary ==
+As a [[raw food]], milk can be be eaten raw, with a flat {{Bad|2%}} chance of giving [[food poisoning]]. This chance is applied per batch of milk consumed - that is, if 10 milk is consumed in one sitting, only a single 2% chance to get food poisoning is rolled, not the 18.3% chance of 10 individual 2% rolls. It can also be cooked into a [[meal]] with a food poisoning chance dependent on the skill of the cook and the [[cleanliness]] of the kitchen. [[Animals]] are immune to food poisoning from raw food but not from meals. When used in food recipes that require specific types of [[nutrition]], such as [[fine meal]]s, milk is classified as an animal product.  
+
+Unlike most raw food,  eating milk does not cause the {{Thought|desc=I had to eat raw food. We should be cooking that kind of food before eating it. We're not animals.|label=ate raw food|stack=1|value=-7|duration=1}}. 
+
+Each unit of milk has a [[nutrition]] of {{P|Nutrition}}, providing {{%|{{P|Nutrition}}}} to a pawn when eaten raw.
+
+Milk is one of the few food items that can be consumed by [[babies]].{{BiotechIcon}}
+
+== Analysis ==
+{{Stub|section=1|reason=Needs analysis of Nutrition production efficiency as a staple food (i.e. when compared to any other raw food inc. vegetables), and for a meat-equvialent (compare to meat, [[human meat|variant]] [[insect meat|meats]], and eggs) both in terms of Nutrition Out/Nutrition In and in terms of Nutrition Out/Pawn Work in}}
+Milk is interchangeable with [[meat]] for meal production and yet can also be used as an ingredient in vegetarian meals. Milk has a slightly lower market value of {{Icon Small|silver||{{P|Market Value Base}}}} vs meat's {{Icon Small|silver||{{Q|Meat|Market Value Base}}}}, weighs more at {{P|Mass Base}} kg vs {{Q|Meat|Mass Base}} kg, can be eaten raw without penalty, and lasts {{P|Days To Start Rot Base}} days before spoiling instead of {{Q|Meat|Days To Start Rot Base}}. Thus it is advantageous to sell your meat before your milk if you have an excess, and to buy milk from traders that come to you. For taking with your own caravans, meat is preferable due to its lower weight, so long as refrigeration isn't a problem, such as during winter or on very short trips, 
+
+To avoid excessive hauling jobs, pen your milk-producing animals in a convenient animal area near your freezer.
+
+For feeding [[babies]], turning milk into [[baby food]] is generally a better option. Baby food is twice as nutrious as raw milk, and when made by a competent cook, reduces the chance of [[food poisoning]].
+
+== Version history == 
+* [[Version/0.12.906|0.12.906]] - Added
+
+{{nav|Food|wide}}
+
+[[Category:Animal Products]]

@@ -1,0 +1,108 @@
+{{Infobox main|building
+| name = Wood-fired generator
+| image = fueledgenerator.png
+| description = Produces power by consuming wood. Must be periodically loaded with wood fuel by hand.
+| type = Building
+| type2 = Power
+| placeable = true
+| path cost = 50
+| passability = pass through only
+| blockswind = true
+| cover = 1
+| minifiable = false
+| size = 2 ˣ 2
+| flammability = 1
+| hp = 300
+| beauty = -20
+| power = 1000
+| glowradius = 6
+| glowcolor = (217, 112, 33)
+| heatpersecond = 6
+| terrain affordance = medium
+| research = Electricity
+| skill 1 = Construction
+| skill 1 level = 4
+| work to make = 2500
+| resource 1 = Steel
+| resource 1 amount = 100
+| resource 2 = Component
+| resource 2 amount = 2
+| fuel filter = Wood
+| fuel capacity = 75.0
+| fuel consumption rate = 22.0
+}}
+A '''wood-fired generator''' is a power source that runs by burning [[wood]] as fuel, producing some [[temperature|heat]] as a byproduct.
+
+== Acquisition ==
+{{Acquisition}} 
+
+== Summary ==
+The wood-fired generator consumes {{Icon Small|wood}} 22 [[wood]] per day and generates a constant 1000W as long as it is switched on and fueled. It can hold up to 75 fuel at a time, for a maximum run time of 3.27 days. Fuel consumption is not dependent on how much power is actually drawn.  Fuel has to be delivered to the generator by a [[Work#Haul|hauler colonist]]. It can be switched off; in the off state it will neither consume fuel nor produce power. 
+
+It outputs [[light]] in a 6 tile radius, with the nearest {{P|Light Radius}} tiles being above 50% light level and considered lit.  Note that the light source is centered at the bottom-left tile of the generator, rather than the "true" center of the generator. It heats at a rate of 6 heat per second<sup>{{Check Tag|Exact mechanic unclear|Provides comparison with other heat sources but doesn't explain how much it actually heats}}</sup>.
+
+Generators are temporarily disabled by sources of [[EMP]], with downtime scaling to the EMP damage dealt.{{Check Tag|Verify}} During this time, it will not generate any power. Unlike mechanoids, generators do not adapt to EMP and thus can be continuously restunned.
+
+== Analysis ==
+Wood-fired generators incur considerable labor costs for [[Chop_Wood|chopping]] and [[hauling|hauling]] wood, but provide an improvement from neolithic technology. They can make a decent source of consistent, early game power, but are outclassed by [[chemfuel generator]]s once chemfuel production is readily available.
+
+=== Wood powered appliances ===
+A variety of buildings are powered directly by wood, such as [[campfire]]s and [[torch lamp]]s. It is significantly more efficient to fuel a generator and run the electric equivalents, if all 1000 W of power is used. The generator does not scale with power use, so if power is wasted, then fueled versions may be superior. In addition, electric buildings require more infrastructure, and are vulnerable to [[solar flare]]s and other interruptions.
+
+{| class="wikitable"
+! Wood-powered appliance
+! Wood per day
+! Electric equivalent
+! Equivalent wood per day<ref>Equivalent wood per day is assuming is the percentage of a wood fired generator power generation multiplied by the generators wood consumption. Note that this assumes that the generators entire production capacity is used.</ref>
+|-
+| [[Campfire]]<ref name="temperature">Campfires and passive coolers regulate temperature at the same rate as heaters and coolers, but have a maximum/minimum temperature. In addition, both campfires and passive coolers are unable to be turned off, consuming wood until none is left.</ref> (roofed)
+| {{Icon Small|Wood|| 10}}
+| [[Heater]]<ref name="temperature" />
+| {{Icon Small|Wood|| {{#expr: -22*{{Q|Heater|Power Consumption #}}/{{P|Power Consumption #}}}}}}
+|-
+| [[Passive cooler]]<ref name="temperature" />
+| {{Icon Small|Wood|| 10}}
+| [[Cooler]]<ref name="temperature" />
+| {{Icon Small|Wood|| {{#expr: -22*{{Q|Cooler|Power Consumption #}}/{{P|Power Consumption #}}}}}}
+|-
+| [[Fueled stove]]
+| {{Icon Small|Wood||160}}{{Check Tag|Verify|Needs to be checked and then confirmed on the main building page}}
+| [[Electric stove]]<ref name="production">Fueled stoves and smithies only consume power when being actively worked, while electric stoves and smithies have to manually toggled off to save power. This comparison assumes they are on for the same length of time.</ref>
+| {{Icon Small|Wood|| {{#expr: -22*{{Q|Electric stove|Power Consumption #}}/{{P|Power Consumption #}}}}}}
+|-
+| [[Fueled smithy]]
+| {{Icon Small|Wood||  ?}}{{Check Tag|Detail|Needs to be checked and then added to the main building page}}
+| [[Electric smithy]]<ref name="production" />
+| {{Icon Small|Wood|| {{#expr: -22*{{Q|Electric smithy|Power Consumption #}}/{{P|Power Consumption #}}}}}}
+|-
+| [[Torch lamp]] (roofed)
+| {{Icon Small|Wood||  2}}
+| [[Standing lamp]]<ref>Standing lamps don't produce heat, unlike torch lamps, but light a larger area. This also does not include the effect of the [[Research#Advanced lights|Advanced lights]] halving the power consumption.</ref>
+| {{Icon Small|Wood|| {{#expr: -22*{{Q|Standing lamp|Power Consumption #}}/{{P|Power Consumption #}}}}}}
+|}
+<references />
+
+=== Wind turbines ===
+[[Wind turbine]]s are also unlocked via researching [[Research#Electricity|Electricity]]. They require no labor to maintain, but do require a large amount of space free of structures and trees. This can make them difficult to defend, and completely unsuitable in certain base layouts. Wind turbine power output is variable, realistically forcing the construction of [[battery|batteries]] to smooth out periods of low power production. 
+
+If you have both wind and wood-fired generators, there's no reason why you can't use both at the same time. You can use wood when wind power is low, turning off the generator when extra power isn't required.
+
+=== Chemfuel powered generators ===
+A [[chemfuel powered generator]] is generally more efficient in terms of both wood and work. However, it may be difficult to obtain chemfuel in the early game.
+
+Each chemfuel generator generates {{Q|Chemfuel powered generator|Power Consumption}} W of power. Assuming the colony is running a [[biofuel refinery]] to make chemfuel from wood, each consumes {{Icon Small|wood||{{#expr:(4.5/35) * 70}}}} [[wood]] per day and an extra {{Ticks|(4.5/35) * 2000 round 0}} of work. Powering the biofuel refinery takes {{Q|Biofuel refinery|Power Consumption}} W of power, but takes only {{Ticks/gametime|2000}} to produce enough fuel for {{#expr:35/9 round 2}} in-game days of fuel, or on average equivalent of a constant load of only {{#expr:(-{{Q|Biofuel refinery|Power Consumption #}}*(2000/60000))/(35/9) round 2}} W. 
+
+The extra {{ticks|(4.5/35) * 2000 round 0}} of work is not nothing, but the reduced wood saves at least {{ticks|((22-(4.5*70/35))/{{Q|Cypress tree|Harvest Yield}}) * {{Q|Cypress tree|Harvest Work #}} round 0}} of work in tree cutting work, assuming the most efficient harvest tree and that the tree doesn't have to be planted first. This means that a pawn requires a [[Plant Work Speed]] of {{%|(((22-(4.5*70/35))/{{Q|Cypress tree|Harvest Yield}}) * {{Q|Cypress tree|Harvest Work #}})/((4.5/35) * 2000) round 2}} (Plants skill 13) to make it more work efficient to use the wood fired generator, and this increases to a massive {{%|(((22-(4.5*70/35))/{{Q|Cypress tree|Harvest Yield}}) * ({{Q|Cypress tree|Harvest Work #}} + {{Q|Cypress tree|Sow Work #}}))/((4.5/35) * 2000) round 2}} speed if the tree has to be planted as well. This also ignores walking distance; the wood-fired generator often forces colonists to walk further as more trees are harvested.
+
+Also, you can make chemfuel out of [[raw food]]; {{Icon Small|corn}} [[corn plant|corn]] or even {{Icon Small|rice}} [[rice plant|rice]] take much less work to cultivate than trees, while taking up less space. Meanwhile, [[insect meat]] can be extremely plentiful and used all the same. [[Boomalope]]s can create chemfuel from grass, which takes no work to grow. [[Boomshroom]]s{{OdysseyIcon}} are another alternative to produce chemfuel directly while in a [[glowforest]]{{OdysseyIcon}}.
+
+The only disadvantage of chemfuel generators is that they require access to chemfuel. [[Research#Biofuel refining|Biofuel Refining]] costs 700 points of research, and the [[biofuel refinery]] itself costs {{Required Resources|Biofuel refinery}}. Boomalopes require you to tame / buy the boomalopes in the first place. Provided you can make chemfuel, the chemfuel generator is strictly better.
+
+== Version history ==
+* [[Version/0.13.1135|0.13.1135]] - Added.
+* [[Version/0.15.1279|0.15.1279]] -  Fueled generator will consume fuel faster. Fuel duration 5 days -> 3 days 9 hours. 
+* Beta 18 - Name changed from '''fueled generator''' to '''wood-fired generator''' to prevent ambiguity with the Chemfuel powered generator, which was added in the same update. No other changes made.
+* [[Version/1.1.0|1.1.0]] - Refueling is now toggleable.
+
+{{nav|power|wide}}
+[[Category:Power]]

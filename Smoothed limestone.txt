@@ -1,0 +1,88 @@
+{{Stub|reason=general}}
+{{See also|Limestone}}
+
+{{Infobox main|Structure
+| name = Smoothed limestone
+| image = Smoothed limestone.png
+| description = A sedimentary rock formed from the compacted remains of ancient seashells. It glows a smooth white, with light patterns of impurities suspended within.
+<!-- Base Stats -->
+| type = Structure
+| MarketValue = 7
+| hp = 700
+| flammability = 0
+| beauty = 1
+| rotatable = false
+<!-- Refuelable -->
+<!-- Item -->
+| stack limit = 
+| mass base = 
+| deterioration = 
+<!-- Building -->
+| size = 1 * 1
+| passability = impassable
+| cover = 1
+| blockswind = true
+<!-- Technical -->
+| defName = SmoothedLimestone
+| label = smoothed limestone
+<!-- ThingDef Name="BuildingNaturalBase" Abstract="True"-->
+| category = Building
+| selectable = true
+| drawerType = MapMeshOnly
+| filthLeaving = Filth_RubbleRock
+| scatterableOnMapGen = false
+<!-- ThingDef Name="RockBase" ParentName="BuildingNaturalBase" Abstract="True" -->
+| castEdgeShadows = true
+| thingClass = Mineable
+| graphicClass = Graphic_Single
+| linkType = CornerFiller
+| linkFlags = Rock, MapEdge
+| altitudeLayer = Building
+| coversFloor = true
+| neverMultiSelect = true
+| holdsRoof = true
+| staticSunShadowHeight = 1.0
+| blockLight = true
+| mineable = true
+| fertility = 0
+| canOverlapZones = false
+| isInert = true
+| deconstructable = false
+| supportsWallAttachments = true
+| damageMultipliers = Thump
+| multiplier = 4
+<!-- ThingDef Name="UglyRockBase" ParentName="RockBase" Abstract="True" -->
+| mineableYieldWasteable = false
+<!-- ThingDef ParentName="UglyRockBase" Name="LimestoneBase" -->
+| color = (158,153,135)
+| mineableThing = ChunkLimestone
+| mineableDropChance = 0.25
+<!-- ThingDef ParentName="LimestoneBase" -->
+| uiIconPath = Things/Building/Linked/WallSmooth_MenuIcon
+| texPath = Things/Building/Linked/RockSmooth_Atlas
+| isNaturalRock = false
+| canBuildNonEdificesUnder = true
+| artificialForMeditationPurposes = false
+| smoothedThing = true
+| paintable = true
+| saveCompressible = false
+| repairEffect = Repair
+}}
+
+'''Smoothed limestone'''
+
+== Summary ==
+
+== Analysis ==
+
+== Gallery ==
+<gallery>
+Limestone.png|Natural limestone wall
+Smoothed limestone.png|Smoothed limestone wall
+</gallery>
+
+== Version history ==
+* Beta 19/1.0 Update - Added.
+* [[Version/1.5.4062|1.5.4062]] - Market value reduced from {{Icon Small|Silver||20}} to {{Icon Small|Silver||7}} when value of all smoothed stone walls was unified.
+
+[[Category:Artificial wall]]

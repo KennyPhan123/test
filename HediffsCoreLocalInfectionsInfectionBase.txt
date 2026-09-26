@@ -1,0 +1,38 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Local/Infections}}
+|}
+----
+{| {{STDT| c_15}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="InfectionBase" <!-- defName="", Name="InfectionBase", Abstract="True" -->
+! InfectionBase
+----
+* Name:<br />InfectionBase
+* Abstract:<br />True
+| -<!-- Description -->
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|80%|80%|35%}}
+* Initial Severity: '''0.1%'''
+* Is Infection: {{Bad|true}}
+* '''Remove On Redress Chance By Days Curve:'''
+<div><li style="display: inline-table;">
+{| {{STDT| c_15}}
+! <abbr title="Days as a World Pawn">Days</abbr> !! <abbr title="Chance to remove on Pawn Generator Redress">Chance</abbr>
+|-
+! 0
+| 0%
+|-
+! 2
+| 0%
+|-
+! 7
+| 50%
+|-
+! 20
+| 100%
+|}{{Graph:Chart|width=200|height=200|xAxisTitle=Days|yAxisTitle=Remove On Redress Chance|yAxisFormat=%|type=line|x=0, 2, 7, 20|y=0, 0, 0.5, 1|xGrid=|yGrid=}}</li></div>
+| -<!-- Stages -->
+<noinclude>
+|}</noinclude>

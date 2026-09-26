@@ -1,0 +1,106 @@
+{{Infobox main|exotic
+| name = Resurrector mech serum
+| image = Resurrector mech serum.png
+| description = A one-use super-dose of mechanites tuned to resurrect the dead. Administered to a corpse soon after [[Death|death]], mechanites repair broken-down tissues and kickstart the body back to life. Unfortunately, the resurrected sometimes come back with brain damage, blindness, or progressive psychosis. Outcomes are better when the mechanites are administered to a fresher body. Well-preserved bodies can be resurrected, even long after death.
+<!-- Base Stats -->
+| type = Exotic item
+| tech level = Ultra
+| hp = 80
+| deterioration = 2
+| marketvalue = 1700
+| mass base = 0.2
+| flammability = 0
+| stack limit = 10
+| path cost = 14
+<!-- Technical -->
+| defName = MechSerumResurrector
+| thingSetMakerTags = RewardStandardMidFreq
+| tradeability = Sellable
+| tradeTags = ExoticMisc
+<!-- Unused -->
+| always haulable = true
+| label = resurrector mech serum
+| use hit points = true
+| quest item = true
+}}
+The '''resurrector mech serum''' is an item found in quests that can resurrect a deceased human or animal.
+
+== Acquisition == 
+Resurrector mech serums cannot be crafted nor bought from [[trader]]s. Instead, they can only be acquired as a reward for performing [[quests]] or found in [[ancient shrine]]s, [[hermetic crate]]s, and [[sealed crate]]s. Note that quest rewards are selected with a weighted random generator, so there is no way to guarantee access to a serum in a given play-through.
+
+== Summary ==
+A resurrector mech serum can be used on any non-desiccated organic [[corpse]], [[human]] or [[animal]], even rotting ones. Select a colonist and right-click the serum, then click a valid target. They will use the serum on the corpse, returning it to life. This will restore missing organs and eliminate all health problems, except for brain injury, [[organ decay]]{{Check Tag|Detail needed|Even when fatal? What happens if so?}} and [[Luciferium]] addiction. [[Artificial body parts]] are not affected, and any [[Babies|pregnant]]{{BiotechIcon}} deceased human or animal will retain their pregnancy when revived by the resurrector mech serum and their pregnancy will continue. 
+
+Dead [[shambler]]s{{AnomalyIcon}} will return to life as a living creature, not as a shambler. Using the serum on an [[unnatural corpse]]{{AnomalyIcon}} will consume the serum but fail, displaying a message stating ''"Failed to resurrect <PAWNNAME>. It simply does not respond."''
+
+Using the serum removes the "Tainted" tag from any clothing worn on the dead. Any eligible [[title]]{{RoyaltyIcon}} is immediately passed on to the heir, and won't be received even when revived.
+
+Executed [[prisoners]] who are then resurrected will have the execute toggle deselected to prevent their immediate re-execution.
+
+=== Resurrection ailments ===
+{{Stub|section=1|reason=What about refrigeration without freezing? Does it slow the counter comparable to rot time?}}
+Once revived, pawns will initially be [[downed|incapacitated]] due to [[resurrection sickness]]. Besides this, they may suffer from permanent side effects. Possible side effects are:
+* [[Dementia]]
+* [[Blindness]]
+* [[Resurrection psychosis]], visible 10 days after usage
+The chances of these side effects increase with the time spent unfrozen since death. Freezing the dead pawn completely halts the progression of this time, but does not revert previously accrued time. For each of the above, the initial chance is 2%, increasing after 0.1 day of decay and linearly increasing to 80% after 5 days of decay. This chance is applied separately for each of the effects i.e. there is a 5.88% of at least one side effect even if immediately resurrected and a 99.2% chance after 5 days of decay. 
+
+Note the game tracks all time spent unfrozen; it may report that the body is still "Fresh" but that does not mean that it has not accrued decay. At 1 day, the chance of each effect would have risen to {{%|0.02 + (1 - 0.1) * ((0.8-0.02)/(5-0.1)) round 4}} while still reporting that the body is Fresh.
+
+{| class="wikitable"
+|-
+! rowspan=2"| Time unfrozen<br>since death !! colspan=2"| Chance of 
+|- 
+! Each side effect !! Any side effect
+|-
+! 0 Days  
+| 2% || {{%|1-(1-0.02)^3 round 4}}
+|- <!-- Linear interpolation formula, and then chance of at least one instance in n trials -->
+! 1 Days  
+| {{%|{{#vardefineecho: tempChancePercent| {{#expr: 0.02 + (1 - 0.1) * ((0.8-0.02)/(5-0.1))}}}} round 4}} || {{%|1-(1-{{#var: tempChancePercent}})^3 round 4}}
+|-
+! 2 Days  
+| {{%|{{#vardefineecho: tempChancePercent| {{#expr: 0.02 + (2 - 0.1) * ((0.8-0.02)/(5-0.1))}}}} round 4}} || {{%|1-(1-{{#var: tempChancePercent}})^3 round 4}}
+|-
+! 3 Days  
+| {{%|{{#vardefineecho: tempChancePercent| {{#expr: 0.02 + (3 - 0.1) * ((0.8-0.02)/(5-0.1))}}}} round 4}} || {{%|1-(1-{{#var: tempChancePercent}})^3 round 4}}
+|-
+! 4 Days  
+| {{%|{{#vardefineecho: tempChancePercent| {{#expr: 0.02 + (4 - 0.1) * ((0.8-0.02)/(5-0.1))}}}} round 4}} || {{%|1-(1-{{#var: tempChancePercent}})^3 round 4}}
+|-
+! 5+ Days  
+| 80% || {{%|1-(1-0.80)^3 round 4}}
+|}
+
+== Analysis ==
+Resurrector mech serums are the only way to revive a dead pawn, save for [[death refusal]]{{AnomalyIcon}} (which must be imbued before the pawn dies), making it very valuable for both sentimental and practical reasons. 
+
+It can also be used, albeit expensively and riskly, to restore damaged or lost body parts. By destroying the brain or head, resurrector mech serum can heal brain injuries and [[crumbling mind]]. Removing the brain can be done reliably through extracting the [[skull]],{{IdeologyIcon}} killing the pawn through a [[subcore ripscanner]],{{BiotechIcon}} or killing the pawn through [[luciferium]] withdrawal.
+
+Using it on an enemy corpse will not convert them towards your side. They will remain hostile. However, since they return to life [[Downed|incapacitated]], you can easily arrest and capture them. Using it on wild animal will not tame it.
+
+=== Corpse preservation ===
+Storing dead colonists in a freezer or other cold room will allow for resurrecting them long after [[death]] without higher risks of side effects, even if you do not have a serum at the time of death. 
+
+Colony pets may feed from the corpse of the intended body if within reach. Consider forbidding the corpse until you can control/micromanage what happens to it. Constructing a [[sarcophagus]] may be useful to protect it from animals, over-zealous butchers, or from being hauled from the freezer.
+
+If preservation is vital, a dedicated freezer may be constructed. Ideally this freezer would have the minimum possible internal area, have a [[Orders#Forbid|forbidden]] door and a two-thick wall, and be kept at the lowest practical temperature to ensure that it stays frozen during power outages and attacks. The forbidden door will also prevent accidents from being left open too long. If all the floor is occupied by buildings, then drop pod raids also cannot drop in there and upset the temperature control.
+
+=== Comparison to death refusal ===
+[[Death refusal]]{{AnomalyIcon}} is a stronger alternative to resurrector mech serum. Death refusal is ''much'' easier to obtain and apply, as access to the death refusal research is guaranteed with enough [[void provocation]]s, and it only costs 1 [[shard]] per use, which are easy to acquire in the late game. Death refusal never comes with a chance of negative health effects and allows the pawn to revive near-instantly. Furthermore, death refusal does not require another colonist, meaning it can be used even if no one else is alive on the map. Finally, death refusal prevents a pawn from turning into a [[shambler]].{{AnomalyIcon}}
+
+However, death refusal must be installed before a pawn dies, requires significant progress into [[Anomaly]] content, and the ritual has a 15 day cooldown, preventing it from being applied on every pawn immediately. Resurector mech serum is the only way to revive a pawn that has died before death refusal can be used.
+
+In addition, ressurector mech serum is the only way to remove [[luciferium]] need. This can be done by ressurecting the corpse as a [[shambler]],{{AnomalyIcon}} then reviving the shambler's corpse via resurrector mech serum. Since a shambler corpse is always rotten, they are very likely to have ressurection psychosis - death refusal can then be used to cure that.
+
+Note that [[deathless]]{{BiotechIcon}} is not a complete replacement for resurrector mech serum as deathless does not prevent death by destruction of the neck, head, or brain.
+
+== Version history ==
+* [[Version/0.18.1722|0.18.1722]] - Added as '''Resurrector mechanite superdose'''.
+* [[Version/1.1.2563|1.1.2563]] - Now removes royal [[title]]s,{{RoyaltyIcon}} to prevent duplicating them.
+* [[Version/1.2.2719|1.2.2719]] - Fix: Colonists can lose their [[psylink]] {{RoyaltyIcon}} entirely when being resurrected.
+* [[Version/1.3.3287|1.3.3287]] - Fix: Resurrector mech serum plays resurrection sound on item pickup, not on application.
+* [[Version/1.4.3523|1.4.3523]] - Fix: Resurrected executed prisoners retain the execute option and usually immediately get executed after being resurrected.
+
+{{Nav|questitems|wide}}
+[[Category:Medical Item]] [[Category:Exotic Item]]

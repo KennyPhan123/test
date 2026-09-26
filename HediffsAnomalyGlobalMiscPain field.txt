@@ -1,0 +1,41 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Anomaly/Global/Misc}}
+|}
+----
+{| {{STDT| c_21}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Pain field" <!-- defName="PainField" -->
+! Pain field
+----
+* Def Name:<br />PainField
+* Label:<br />pain field
+|<!-- Description -->
+<div style="max-width: 300px;">
+A searing pain caused by the presence of a psychically active entity nearby. The effect intensifies when the entity is more active.
+</div>
+|<!-- Details -->
+* Hediff Class: '''Hediff_PainField'''
+* Ever Curable By Item: {{Bad|false}}
+* '''Comps'''
+** ''Pain Field''
+*** '''Activity Multiplier:'''
+<div><li style="display: inline-table;">
+{| {{STDT| c_21}}
+! Nociosphere<br />Activity !! Severity<br />Multiplier
+|-
+! 10%
+| 20%
+|-
+! 90%
+| 100%
+|}{{Graph:Chart|width=200|height=200|xAxisTitle=Nociosphere Activity|xAxisFormat=%|xAxisAngle=+45|yAxisTitle=Severity Multiplier|yAxisFormat=%|type=line|x=0.1, 0.9|y=0.2, 1|xGrid=|yGrid=}}</li></div>
+*** Pain Distance: '''5.9 (cells)'''
+*** Activated Minimum: '''15%'''
+** ''Disappears''
+*** Disappears After Ticks: '''{{Ticks|50}}'''
+** ''Link''
+*** Require Link On Other Pawn: {{Good|false}}
+| -<!-- Stages -->
+<noinclude>
+|}</noinclude>

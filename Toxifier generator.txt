@@ -1,0 +1,66 @@
+{{Biotech}}
+{{Infobox main|building
+| name = Toxifier generator
+| image = ToxifierGenerator.png
+| description = This electrical generator very slowly pollutes the terrain in a radius around it while producing energy. If all terrain in the radius is polluted, the generator will shut down.
+| type = Building
+| type2 = Power
+| placeable = true
+| path cost = 
+| passability = impassable
+| blockswind = false
+| cover = 1
+| minifiable = false
+| size = 2 ˣ 2
+| flammability = 0.5
+| hp = 300
+| beauty = 
+| power = 1400
+| terrain affordance = light
+| research = Toxifier generator
+| skill 1 = Construction
+| skill 1 level = 4
+| work to make = 8000
+| resource 1 = Steel
+| resource 1 amount = 125
+| resource 2 = Component
+| resource 2 amount = 3
+}}
+{{Info|The '''toxifier generator''' is a [[power]] generator added by the [[Biotech DLC]].}}
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+[[File:Toxifier generator radius.png|260px|thumb|left|Working radius of the toxifier. White tiles mark the pollution area. Once all of these tiles are polluted, power generation will be halted.]]
+Each generator produces {{P|Power Consumption #}}W and [[Pollution|pollutes]] 6 tiles every 3 days, for an average of 2 tiles a day. The [[pollution]] can spread up to a 27-tile radius from the bottom-left tile. This is an area of 2253 tiles. Once all cells in range are polluted, the generator ceases to work until there are unpolluted tiles again. Pollution can spread through constructed walls but not natural ones. This means that generator beginning on clear ground will cease working in {{#expr: 2253/((6/3)*60)}} years. 
+
+Unlike [[wood-fired generator|wood-fired]] and [[chemfuel powered generator]]s, toxifier generators do not produce heat or light, and cannot be toggled off. 
+
+Toxifier generators cannot be placed on [[Gravship substructure]].{{OdysseyIcon}}
+
+Like [[ship reactor]]s and [[gravcore power cell]]s{{OdysseyIcon}} but unlike every other constructable power source, toxifier generators will never [[breakdown]].
+
+== Analysis ==
+Toxifier generators don't actually create ''too'' much pollution. A [[pollution pump]] can convert the output of 2 generators into [[wastepack]]s, which are easy to freeze and store.
+
+A toxifier generator creates the equivalent of 1 [[wastepack]] every 3 days. With a pump, this is equal to 20 wastepacks, or 4 full stacks, per year. A year's worth of waste from ''2'' generators, 8 full stacks, can easily be frozen or otherwise [[toxic wastepack#Disposal|managed]]. An 8x8 room has space for 64 tiles, or 8 years of running 2 generators, and can be frozen with a single [[cooler]] year-round in a temperate [[biome]]. The net power of this setup, {{#expr:{{P|Power Consumption #}}*(2)+{{Q|Pollution pump|Power Consumption #}}*(1) + {{Q|Cooler|Power Consumption #}}*(1)}} W, can be enough to power an entire early- to mid- game colony.
+
+The pollution can be annoying in the long term, especially with [[allied mechanoid|mechanoids]]. However, "free" and invariable power saves quite a bit of labor compared to [[wood-fired generator]]s. Colonists can manually pick up pollution, though it is quite slow, and non-resistant colonists will accumulate [[toxic buildup]].
+
+=== Clean energy ===
+The toxifier generator's key drawback is its pollution, however, with sufficient infrastructure it can provide net positive power without polluting the map.
+
+Each generator produces an average of 2 tiles of pollution per day. A [[pollution pump]] cleans 4 tiles of pollution per day, where 6 tiles = 1 [[toxic wastepack]]. The [[wastepack atomizer]] destroys 2 wastepacks a day, or 12 pollution tiles per day. Pumps consume {{Q|Pollution pump|Power Consumption #}} W of [[power]] each, and atomizers consume {{Q|Wastepack atomizer|Power Consumption}} W. Therefore, a ratio of 6 toxifier generators : 3 pollution pumps : 1 atomizer is fully clean and has a net power of {{#expr:{{P|Power Consumption #}}*(6)+{{Q|Pollution pump|Power Consumption #}}*(3) + {{Q|wastepack atomizer|Power Consumption #}}*(1)}} W.
+
+== Gallery ==
+<gallery>
+Toxifier polluting.PNG|Toxifier polluting nearby tiles. Note the purple clouds over newly-polluted tiles.
+Toxifier generator radius forested.png|Alternative visualization of radius with forest for scale. Green carpets are inside of the pollution zone, red carpets are outside.
+</gallery>
+
+== Version history ==
+* [[Biotech DLC]] Release - Added.
+
+{{Nav|power|wide}}
+[[Category:Power]]

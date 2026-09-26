@@ -1,0 +1,22 @@
+<noinclude>{{Recode|reason=Automate lists}}{{Main|Orders}}{{#set:Image|File:Deconstruct.png}}</noinclude>
+[[{{Q|Deconstruct|Image}}|left]] '''Deconstruct''' orders your colonists to take apart the highlighted object. Only objects with the [[building]] tag can be deconstructed; this includes [[structure]]s, [[floor]]s, [[furniture]], [[temperature]] items, decorative items, and minified buildings. You cannot deconstruct most other items such as [[apparel]] or [[weapons]], but you can destroy them at a [[Electric smelter|smelter]].
+
+The [[construction]] skill has a significant effect on the speed of deconstructing an object. How long it takes to deconstruct an object is determined by its [[Work To Build|work to build]], while the speed at which it is deconstructed is determined by [[construction speed]] of the colonist. Deconstruction will provide a small amount of [[experience]] to the Construction skill.
+
+In most cases, deconstructing a building will give a refund of 50% of the build cost of the item; for odd-numbered values, there is a 50/50 chance to round up or down. (e.g., a [[wall]] section, which costs 5 [[wood]] or stone [[block]]s to build, will return either 2 or 3 of that building material.) All resulting material is left on the square where the object had been.
+
+Some buildings refund 100% of their build cost. The buildings are: {{#ask: [[Deconstruct Yield Fraction::1]] | format = template | template = DLC Icons | link = none | sep=<nowiki>, </nowiki> | sort = From DLC, Name}}. There are also buildings that cannot be built that refund 100%, which are: [[mech high-shield]],{{RoyaltyIcon}} [[mech low-shield]],{{RoyaltyIcon}} [[mech node]],{{RoyaltyIcon}} and [[mechanoid ship chunk]].{{OdysseyIcon}}
+
+Buildings that refund nothing are: {{#ask: [[Deconstruct Yield Fraction::0]] | format = template | template = DLC Icons | link = none | sep=<nowiki>, </nowiki> | sort = From DLC, Name}}. This is also true for terrain like [[broken asphalt]], [[packed dirt]] and [[environment|insect sludge]] {{OdysseyIcon}}.
+
+Additionally, a [[biosculpter pod]]{{IdeologyIcon}} yields 0.25 of the build cost when deconstructed.
+
+Deconstruction can be useful when resources are desperately needed or when structures are no longer required, or when it's simply time to remodel. Existing ruins found on maps can be deconstructed for free building materials.
+
+Constructing an item that can be minified (i.e., uninstalled, moved and then placed again), loading it onto a [[caravan]], and then later deconstructing it again can sometimes be a good way to reduce the "shipping weight" of the final total resources.  Compare the weight of the item to the final weight of the items returned. ([[Urn]]s are a good example of this.)
+
+While it is under the [[Work#Construct|construction work type]], deconstruction is given a lower priority within the [[work]] task, and therefore usually takes place after all Construction has been completed. Give a pawn specific [[orders]] (by right-clicking the target item) for urgent deconstructions.<noinclude>
+
+{{Nav|order|wide}}
+[[Category:Orders]]
+</noinclude>

@@ -1,0 +1,71 @@
+{{Stub|reason=2) Two-way links}}
+{{See also|Ranged Cooldown Multiplier}}
+{{Verified|1.5.4104}}{{Stat
+| def name = RangedWeapon_Cooldown
+| label = ranged cooldown
+| description = How long it takes to recover after firing this [[Ranged weapons|weapon]].
+| default base value = 1
+| min value = 0.01
+| format string = {0} s
+| to string style = FloatTwo
+| scenario randomizable = true
+| show if undefined = false
+| category = Weapon_Ranged
+| display priority in category = 5106
+}}
+This value is modified by the user's [[Ranged Cooldown Multiplier]].
+
+== Bases ==
+<div><li style="display: inline-table;">
+Click to <div class="mw-collapsible">
+<div class="mw-collapsible-content">
+{| {{STDT| c_06 sortable}}
+! Thing !! [[Property:Ranged Cooldown Base|Ranged<br />Cooldown<br />Base]]
+|-
+{{#ask: [[Ranged Cooldown Base::+]]
+| ?Ranged Cooldown Base
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Name
+| limit = 1000
+}}
+|}
+</div>
+</div>
+</li></div>
+
+== Associated properties ==
+* [[Property:Ranged Cooldown Base]]
+* [[Property:Ranged Cooldown Offset]]
+* [[Property:Ranged Cooldown Factor]]
+
+== Stat Def Data ==
+{| {{STDT| c_06}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Ranged Cooldown" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />RangedWeapon_Cooldown
+* '''Label:'''<br />ranged cooldown
+| How long it takes to recover after firing this weapon.
+|
+* Display Order:<br />'''44'''
+* Def Name:<br />'''Weapon_Ranged'''
+* Label:<br />'''Weapon (ranged)'''
+* Display All By Default:<br />{{Bad|false}}
+|
+* '''Default Base Value:''' 1
+* '''Min Value:''' 0.01
+* '''To String Style:''' FloatTwo
+* '''Format String:''' {0} s
+* '''Show If Undefined:''' {{Bad|false}}
+* '''Scenario Randomizable:''' {{Good|true}}
+| -
+| 5106
+<!--</StatDef>-->
+|}
+
+== Version history ==
+{{Stub|section=1|reason=General Version history}}
+
+{{nav|stats|wide}}

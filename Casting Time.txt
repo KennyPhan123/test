@@ -1,0 +1,59 @@
+{{Stub|reason=1) Better table formatting 2) Version history 3) Two-way links}}
+{{Verified|1.5.4104}}{{Stat
+| def name = Ability_CastingTime
+| label = casting time
+| description = How long it takes to perform this ability.
+| default base value = 1
+| min value = 0
+| format string = {0} s
+| to string style = FloatOne
+| show if undefined = false
+| category = Ability
+| display priority in category = 1004
+| show if mods loaded = Royalty
+}}
+
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_07 text-center}}
+! Ability !! Casting Time
+|-
+{{#ask: [[Casting Time::+]]
+| ?Casting Time
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Name
+}}
+|}
+</li><div>
+
+== Stat Def Data ==
+{| {{STDT}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Casting Time" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />Ability_CastingTime
+* '''Label:'''<br />casting time
+| How long it takes to perform this ability.
+|
+* Display Order:<br />'''60'''
+* Def Name:<br />'''Ability'''
+* Label:<br />'''Ability'''
+* Display All By Default:<br />{{Bad|false}}
+|
+* '''Default Base Value:''' 1
+* '''Min Value:''' 0
+* '''Format String:''' {0} s
+* '''To String Style:''' FloatOne
+* '''Show If Undefined:''' {{Bad|false}}
+|
+* Show If Mods Loaded:
+** '''[[Royalty]] {{RoyaltyIcon}}'''
+| 1004
+<!--</StatDef>-->
+|}
+
+== Version history ==
+* [[Royalty (DLC)]] Release - Added.
+
+{{nav|stats|wide}}

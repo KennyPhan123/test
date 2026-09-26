@@ -1,0 +1,76 @@
+{{Anomaly}}
+
+{{Infobox main|Buildings
+| name = Gray door
+| image = Gray door jammed.png
+| description = A strange gray door.
+<!-- Base Stats -->
+| type = Building
+| type2 = Door
+| flammability = 0
+<!-- Building -->
+| size = 1 * 1
+<!-- Technical -->
+| defName = GrayDoor
+| label = 
+<!-- ThingDef ParentName="Door" -->
+| thingClass = Building_JammedDoor
+| destroyable = false
+| useHitPoints = false
+| designationCategory IsNull="True"
+| texPath = Things/Building/GrayDoor/GrayDoor_Mover
+| ignoreThingDrawColor = true
+| paintable = false
+| deconstructable = false
+| claimable = false
+| neverBuildable = true
+| comps Inherit="False"
+| texPath2 = Things/Building/GrayDoor/GrayDoor_Jammed
+| graphicClass = Graphic_Single
+| unlockedChance = 0.3
+<!-- Interactable -->
+| activeTicks = 1
+| ticksToActivate = 3600
+| activateTexPath = UI/Commands/ForceOpenDoor
+| activateLabelString = Force open...
+| activateDescString = Choose someone to force this door open.
+| guiLabelString = Choose who should do this
+| jobString = Force this door open
+| activatingStringPending = forcing door open
+| activatingString = forcing door open: {1}s
+| messageCompletedString = {PAWN_nameDef} has successfully forced the door open.
+| canTargetBuildings = false
+| canTargetAnimals = false
+| canTargetMechs = false
+| onlyTargetControlledPawns = true
+}}
+
+'''Gray door''' is a door found exclusively in the [[Labyrinth]].
+
+== Summary ==
+Gray doors act as the main obstacle in the labyrinth, with a 70% chance for a door to be jammed, requiring a colonist to be ordered to open it, taking {{Ticks|3600}} to force open. They stay open once forced open/walked through.
+
+[[File:Force open door.png|thumb|left|Force open door command]]
+
+Gray door uses the following strings:
+* Activate label: "Force open..."
+* Activate description: "Choose someone to force this door open."
+* Gui label: "Choose who should do this"
+* Job: "Force this door open"
+* Activating pending: "forcing door open"
+* Activating: "forcing door open: {1}s"
+* Message completed: "{PAWN_nameDef} has successfully forced the door open."
+
+== Analysis ==
+Open doors can be quickly identified by selecting doors and looking for ones without the force open gizmo, allowing for faster initial exploration of the labyrinth, and possibly avoiding opening doors to rooms that you already have easy access to.
+
+== Gallery ==
+<gallery>
+Gray door jammed.png|Jammed
+Gray door mover.png|Door panel
+</gallery>
+
+== Version history ==
+* [[Anomaly]] Release - Added.
+
+[[Category:Buildings]]

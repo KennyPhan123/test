@@ -1,0 +1,186 @@
+{{Anomaly}}
+{{Infobox main|entity
+| name = Chimera
+| image = Chimera.png
+| description = A huge creature that resembles a disfigured combination of a bear and other animals. It is vicious without limit.<br />It's not known if this is a combination of natural animals or a poor imitation of animal life created by an insane machine mind.
+<!-- Base Stats -->
+| type = Entity
+| type2 = Advanced
+| flammability = 0.7
+| hidden while undiscovered = true
+| tradeability = None
+<!-- Containment -->
+| minimum containment strength = 70
+| anomaly knowledge = 1
+| knowledge category = Advanced
+| study interval = 120000
+| bioferrite density = 1.5
+| gets cold containment bonus = 
+| min monolith level for study = 1
+| requires holding platform = true
+| base escape interval MTB days = 60
+<!-- Pawn Stats -->
+| combatPower = 135
+| movespeed = 3.6
+| healthscale = 3
+| bodysize = 2.15
+| body = QuadrupedAnimalWithPaws
+| diet = none
+| trainable = None
+| toxic resistance = 0.5
+| min comfortable temperature = -40
+| max comfortable temperature = 60
+| can become shambler = true
+| needs rest = false
+| blood def = Filth_DarkBlood
+| bleed rate factor = 0.5
+| flesh type = EntityFlesh
+| is immune to infections = true
+| has genders = false
+| corpse hidden while undiscovered = true
+| hediff giver sets = AnomalyEntity
+| life stage ages = EntityFullyFormed
+<!-- Production -->
+| leatheryield = 20
+| leathername = Dread leather
+| meatyield = 70
+| meatname = Twisted meat
+<!-- Melee Combat -->
+<!-- 1. Attack -->
+| attack1label = left claw
+| attack1labelNoLocation = claw
+| attack1dmg = 17
+| attack1type = Scratch
+| attack1part = FrontLeftPaw
+| attack1cool = 2
+| attack1stun = 14
+<!-- 2. Attack -->
+| attack2label = right claw
+| attack2labelNoLocation = claw
+| attack2dmg = 17
+| attack2type = Scratch
+| attack2part = FrontRightPaw
+| attack2cool = 2
+| attack2stun = 14
+<!-- 3. Attack -->
+| attack3dmg = 23.6
+| attack3type = Bite
+| attack3part = Teeth
+| attack3cool = 2.6
+| attack3stun = 14
+| attack3chancefactor = 0.5
+<!-- 4. Attack -->
+| attack4label = head
+| attack4dmg = 11
+| attack4type = Blunt
+| attack4part = HeadAttackTool
+| attack4cool = 2
+| attack4chancefactor = 0.2
+| attack4ensureLinkedBodyPartsGroupAlwaysUsable = true
+<!-- Technical -->
+| defName = Chimera
+| label = chimera
+}}
+The '''chimera''' is a bestial and ferocious [[entity]] added by the [[Anomaly DLC]].
+
+== Occurrence ==
+Chimeras only require a level 1 Monolith to spawn.
+
+Chimera packs appear as a Major threat. [[Shambler]] chimeras can be mixed into Shambler animal swarms.
+
+== Summary ==
+They bleed at half the rate of normal animals and have 50% [[Toxic Resistance]].
+
+The chimera has the unique ability to become enraged upon taking damage,{{Check Tag|Guaranteed to?}} gaining a hediff called 'Rage Speed.' This ability makes them much harder to put down, and much more adept at closing the distance between it and your pawns.
+
+'''[[Hediffs#Rage speed|Rage speed]]:'''
+* [[Pain]]: {{Good|×0%}}
+* [[Move Speed]]: {{Good|×175%}}
+** This results in a move speed of {{#expr:{{P|Move Speed Base}}*1.75}} {{CS}}
+* [[Stagger Time Multiplier]]: {{Good|×0%}}
+
+Rage speed lasts for {{Ticks/gametime|3400}}.{{Check Tag|Cooldown?|Is there a cool down, of so what? Alternatively will they only activate it once or every time theyre damaged once its complete}}
+
+If raised as a [[shambler]] (e.g. by [[Research#Deadlife_dust|deadlife dust]]), chimeras retain their Rage Speed ability. Shambler chimeras can also fulfill the entity codex entry for Chimeras.
+
+Colonists who see a chimera will receive a {{Thought|desc=That misshapen creature, the cracked whorled flesh... horrifying.|label=Observed chimera|value=-8|stack=1|duration=1}}. Killing or disposing of the chimera has no affect on this moodlet.
+
+Chimeras have 3 different behaviors: attack, stalk and withdrawal. Initially chimeras will be in stalk mode and wander around their initial position. In attack mode, chimeras will behave very similar to manhunter packs. Receiving damage will generally cause chimeras to change from stalk mode to attack mode. 
+
+Stalk mode will change to attack mode every 16.8 hours on average. Attack mode will change to stalk mode every 8 hours on average. Stalk Mode and Attack Mode will last at least 3 hours. An exception is when chimeras in stalk mode are damaged and then they can switch to attack mode.
+
+Everytime a chimera is killed or downed in attack mode there is a 7.5% chance the chimeras will switch to withdrawal mode. In withdrawal mode, Chimeras will flee and not respond to damage. Withdrawal mode will last at least one hour.
+
+Chimeras are not susceptible to Heatstroke, Hypothermia, or Superheated Air burns.
+
+=== Containment ===
+It provides Advanced anomaly research, and can be studied every 2 days.
+It has a minimum containment strength of 70.
+When hooked up to a [[bioferrite harvester]], it yields {{Icon Small|bioferrite||3.225}} [[bioferrite]] per day.
+When hooked up to an [[electroharvester]], it provides 430 watts.
+
+== Analysis ==
+When enraged, chimeras gain pain immunity and a large speed boost, allowing them to catch up to ranged pawns frighteningly fast. Running away is difficult, so heavily armored melee pawns or [[ghoul]]s are recommended to intercept them first.  Standard ranged [[killbox]]es are less effective than usual due to their high HP and enrage mechanics. They also have the some of the strongest melee attacks of any single entity, equivalent to a [[grizzly bear]], and can quickly cause a colonist to bleed out by tearing off limbs.
+
+Still, chimeras essentially behave like [[manhunter|manhunting animals]] when attacking. They will eagerly ​pile up behind a [[door]] blocked by melee colonists. [[Frag grenades|Frag grenadiers]] behind the melee blockers will make short work of the pack, assuming the blockers can last long enough. They will not attack structures and will wait patiently outside a colony that has walled itself in and closed its doors, although they will not sleep or leave, waiting indefinitely until killed. As chimeras are hostile to non-entity raiders, it is possible to summon a [[mechanoid commander|mech boss]],{{BiotechIcon}} fail a [[draw animals]] ritual to summon manhunters, accept a [[quest]], etc. in order to eliminate or weaken a pack of chimeras. A [[nociosphere]] can be used to quickly dispatch stalking chimeras without triggering them into their attack mode, which could also lead to one being pain shocked and thus capturable.
+
+Unlike manhunters, chimeras are not considered mentally broken and can be turned against each other with [[psychic insanity lance]]s or [[berserk (psycast)|berserk]] [[psycast]]s.{{RoyaltyIcon}} They are no longer affected by the [[manhunter pulse]] psycast,{{RoyaltyIcon}}{{Check Tag|As of at least 1.6.4633}} nor affected by the [[psychic animal pulser]].
+
+Some other strategies include:
+* [[Mortar]]s can be used to trigger their rage ability early, so that it will be close to ending or on cooldown by the time they reach the base and susceptible to pain shock. 
+* Like many entities, [[fire]] can be effective against chimeras when fighting out in the open. Fire is not recommended in a melee blocking scenario as pawns lit on fire can run past the melee blockers.
+
+=== Containment ===
+Capturing chimeras is quite difficult due to their immunity to pain combined with their high speed and durability.  The most reliable method is generally to wound one severely, then retreat behind a door until it passes out from blood loss.  When using this strategy, keep in mind that they are extremely fast and may block a doorway before your colonist can close the door. [[Psychic shock lance]]s are another option, if available. 
+
+Once captured, they have a fairly high [[bioferrite]] yield - although less than [[devourer]]s - and are a source of Advanced study available before [[monolith]] level 2. [[IED tox trap]]s{{BiotechIcon}} are a good way to stop an escaping chimera, as the [[toxic buildup]] will down the chimera before it can break down an actively repaired [[security door]]. Otherwise, they are relatively dangerous to contain, and their pain immunity means they will often be killed while escaping unless using (expensive) options like [[psychic shock lance]]s.
+
+== Health ==
+{{Animal Health Table|QuadrupedAnimalWithPaws}}
+{{Pawn Attack Table}}
+
+== Gallery ==
+<gallery>
+File:Chimera_A_east.png | Variant A facing east
+File:Chimera_A_north.png| Variant A facing north
+File:Chimera_A_south.png| Variant A facing south
+File:DessicatedChimera_A_east.png | Dessicated variant A facing east
+File:DessicatedChimera_A_north.png| Dessicated variant A facing north
+File:DessicatedChimera_A_south.png| Dessicated variant A facing south
+</gallery>
+<gallery>
+File:Chimera_B_east.png | Variant B facing east
+File:Chimera_B_north.png| Variant B facing north
+File:Chimera_B_south.png| Variant B facing south
+File:DessicatedChimera_B_east.png | Dessicated variant B facing east
+File:DessicatedChimera_B_north.png| Dessicated variant B facing north
+File:DessicatedChimera_B_south.png| Dessicated variant B facing south
+</gallery>
+<gallery>
+File:Chimera_C_east.png | Variant C facing east
+File:Chimera_C_north.png| Variant C facing north
+File:Chimera_C_south.png| Variant C facing south
+File:DessicatedChimera_C_east.png | Dessicated variant C facing east
+File:DessicatedChimera_C_north.png| Dessicated variant C facing north
+File:DessicatedChimera_C_south.png| Dessicated variant C facing south
+</gallery>
+<gallery>
+File:Chimera_D_east.png | Variant D facing east
+File:Chimera_D_north.png| Variant D facing north
+File:Chimera_D_south.png| Variant D facing south
+File:DessicatedChimera_D_east.png | Dessicated variant D facing east
+File:DessicatedChimera_D_north.png| Dessicated variant D facing north
+File:DessicatedChimera_D_south.png| Dessicated variant D facing south
+</gallery>
+
+== Trivia ==
+The chimeras are inspired by the bear creature in the 2018 film "[https://en.wikipedia.org/wiki/Annihilation_(film) Annihilation]". <ref>"This creature was inspired by the bear from the film Annihilation. " - Tynan Sylvester, [https://www.reddit.com/r/RimWorld/comments/1jffcqs/comment/miwhpyi Reddit comment].</ref>
+
+== Version history == 
+* [[Anomaly DLC]] Release - Added.
+
+== References ==
+{{Reflist}}
+
+{{Nav|entity|wide}}
+[[Category: Entities]]

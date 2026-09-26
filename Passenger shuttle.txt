@@ -1,0 +1,158 @@
+{{Odyssey}}
+{{About|the player-built vehicle|the NPC-faction vehicle|imperial shuttle}}
+{{Infobox main|building
+| name = Passenger shuttle
+| image = PassengerShuttle_east.png
+| description = A chemfuel-powered shuttle designed for long-distance travel. It is capable of reaching orbital locations.
+<!-- Base Stats -->
+| type = Building
+| type2 = Odyssey (Buildings)
+| beauty = 
+| hp = 600
+| flammability = 0.5
+| rotatable = yes
+| path cost = 50
+| mass base = 125
+<!-- Building -->
+| size = 3 ˣ 5
+| passability = pass through only
+| comfort = 0.65
+| cover = 0.5
+| blockswind = true
+| terrain affordance = Light
+| paintable = true
+| deconstruct yield = {{Icon Small|Steel||125}} + {{Icon Small|Plasteel||75}} + {{Icon Small|Component||3}} + {{Icon Small|Shuttle engine||1}}
+| destroyyield = {{Icon Small|Steel slag chunk||4}} + {{Icon Small|Steel||50}} + {{Icon Small|Plasteel||50}} + {{Icon Small|Component||3}} + {{Icon Small|Shuttle engine||1}}
+<!-- Fuel -->
+| fuel filter = Chemfuel
+| fuel capacity = 400.0
+<!-- Creation -->
+| research = Shuttle
+| skill 1 = Construction
+| skill 1 level = 6
+| work to make = 36000
+| resource 1 = Steel
+| resource 1 amount = 250
+| resource 2 = Plasteel
+| resource 2 amount = 150
+| resource 3 = Component
+| resource 3 amount = 6
+| resource 4 = Shuttle engine
+| resource 4 amount = 1
+<!-- Technical -->
+| defName PassengerShuttle
+| tickerType = 
+| drawerType = 
+| designationCategory = 
+| castEdgeShadows = 
+| uiOrder = 
+| expandHomeArea = 
+| buildingTags = 
+| externalTicking = 
+| showAllowAutoRefuelToggle = 
+<!-- Unsorted -->
+| flickable = 
+| claimable = 
+| lowPowerConsumptionFactor = 
+
+}}
+'''Passenger shuttles''' are reusable transportation vehicles used to carry [[pawn]]s and/or items across the world map, and to locations in [[orbit]].
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+{{Image Wanted|section=1|reason=Gizmos}}
+
+Passenger shuttles can be launched to transport all of its contents to a different location on its current map, or on a different world tile up to 62 tiles away. This can be done by selecting the Launch gizmo on the shuttle building itself or on a [[caravan]] containing a shuttle, provided nothing is restricting it.
+
+=== Launch requirements ===
+Each passenger shuttle can hold 500 kg of items or pawns. Items equipped and carried by pawns count towards this weight. For comparison, an adult [[human]] weighs {{Q|Human|Mass - Adult}} kg before equipment.
+
+Passenger shuttles can travel up to 62 tiles away. A launch consumes {{Icon Small|Chemfuel||3}} [[chemfuel]] per tile with a minimum of {{Icon Small|Chemfuel||50}} [[chemfuel]] for flights of 16 tiles or less.{{Check Tag|Orbit?|Are there extra fuel costs for traveling from surfance to orbit}} A shuttle can be refueled with {{Icon Small|Chemfuel}} [[chemfuel]] stored in its cargo hold, increasing its effective range with sequential launches.
+
+A passenger shuttle requires a conscious pilot with a minimum [[piloting ability]] of 10%, which is easily achieved by any pawn that isn't missing their eyes and is capable of intellectual.{{Check Tag|Detail needed|Does piloting ability affect anything else besides needing to pass the 10% number? If yes, specify. If not, explicitly state that it affects nothing else}}
+
+Shuttles cannot be launched during a blizzard, blind fog, or sandstorm.{{Check Tag|Other weather?|Does any other weather affect take off?}} Shuttles also cannot launch during a [[solar flare]], however they are not affected by [[EMI dynamo|EMI fields]]{{RoyaltyIcon}}. Shuttles cannot be launched with a roof built above them.
+
+After landing, the shuttle requires a {{Ticks|3750}} cooldown before it can be launched again.
+
+=== Launch targets ===
+If the selected tile's map is currently loaded, the player will be prompted to choose the exact location of where the passenger shuttle lands. It is possible to land on [[roof]]ed tiles, but this will cause a roof collapse, damaging things underneath. It cannot land on [[rock roof (thin)]] or [[overhead mountain]], on unwalkable terrain, or on furniture that would block its landing.
+
+If landing on a non-hostile [[faction base]], it is possible to choose to trade or attack it. Hostile faction bases can only be attacked; gifts cannot be offered directly via shuttle. If landing on an unloaded quest tile, there is the option to land on edge or center, similar to [[transport pod]]s.
+
+Landing on an empty tile will create a [[caravan]], but caravans containing a shuttle will be unable to move by foot even if there is enough carrying capacity. Landing on a tile containing a caravan will not automatically merge the two, but merging can be done after the shuttle lands.
+
+=== Loading ===
+The Set to Load gizmo will allow the player to designate which items and pawns will be loaded onto the shuttle. When items are selected, haulers will immediately proceed to load the pods. If a colonist is part of the load, that colonist will prioritize loading the pod, even if they are otherwise incapable of hauling, identically to a [[transport pod]]. Pawns can be manually selected to enter the shuttle by selecting the colonist, right clicking the shuttle, and selecting "Get in shuttle".
+
+If automatic refuel is turned on, chemfuel will automatically be loaded onto the passenger shuttle as [[Hauling]] work.
+
+=== Item ===
+A shuttle can't be carried around as an item, with one exception: the [[Farskip]] [[psycast]]{{RoyaltyIcon}} can teleport a shuttle-equipped caravan if the pawns present can support the 125-kg weight of the shuttle plus any other items. The shuttle will be unloaded at the destination like any other item brought in by a caravan, it can also be manually dropped at a desired location from a drafted pawn's inventory.
+
+A caravan cannot contain two shuttles. If two caravans both have shuttles and want to merge, one shuttle will need to be dropped.
+
+== Analysis ==
+Passenger shuttles are a fast, flexible, and powerful late-game transportation option that can completely negate the need to form traditional caravans. With a 500kg weight limit a shuttle is generally limited to carrying six human pawns at a time after considering equipment.
+
+=== Compared to transport pods ===
+Unlike [[transport pod]]s, shuttles are reusable, avoiding the {{Required Resources|Transport pod}} per trip cost, carry 500kg of weight instead of 150kg per pod, and are capable of making round trips. Shuttles do cost more chemfuel and have a minimum chemfuel cost of 50, but the chemfuel will most likely be easier to acquire/make than steel and components. Also, for heavy loads, one shuttle will carry more weight and use less fuel than three transport pods. Shuttles require more research and resources (including a [[shuttle engine]], uncommon without [[Royalty]] or [[Biotech]]), but are more efficient for most purposes once built.
+
+Transport pods do have a niche for "doom dropping" - i.e., dropping pods on your own tile - as the shuttle is likely to be destroyed when landing near enemies. Pods also has a niche for gifting items to other factions, as the shuttle's chemfuel cost is effectively doubled for that purpose. In addition, shuttles cannot be used to gift items to hostile factions while pods can.
+
+=== Compared to imperial shuttles ===
+{{Royalty|section=1}}
+Imperial shuttles are only available to [[noble]]s of Knight rank or higher with the appropriate [[permit]]. Passenger shuttles only carry a quarter (500 kg) of the weight of an imperial shuttle
+(2,000 kg), but an imperial shuttle can only be used for one trip per permit holder before requiring either a 40-day cooldown or spending 8 [[honor]], making rapid round trips require either two nobles or spending honor worth {{Icon Small|Gold||{{#expr:8/0.015 round 0}}}} [[gold]]. Imperial shuttles can be launched up to 70 tiles away compared to the 62 tiles of the passenger shuttle. The permit also cannot be used while hostile to the [[Empire]].
+
+Typically this places the imperial shuttle as an incredibly useful option in the early game if nobles can be ranked up quickly while the passenger shuttle cannot be produced, but one that significantly decreases in utility once the competition is available. This also means the opportunity cost of spending a permit point of the shuttle versus the other permit options must also be considered. However, unlike transport pods which are often entirely replaced, the shuttle permit offers flexibility that is often useful unless a tremendous fleet of shuttles is available. 
+
+=== Maximum carry amounts ===
+In practice these amounts don't account for the weight of a pilot.
+{| class="wikitable"
+|+
+|-
+! Cargo !! Maximum Amount Carried
+|-
+| [[Chemfuel]] || 10,000
+|-
+| [[Silver]] || 62,500
+|-
+| [[Yayo]], [[Smokeleaf joint]]s, and [[Flake]] || 10,000
+|-
+| [[Go-juice]] || 5,000
+|-
+| [[Wake-up]] || 100,000
+|-
+| [[Wood]] || 1,250
+|-
+| [[Steel]] || 1,000
+|-
+| [[Plasteel]] || 2,000
+|}
+
+== Gallery ==
+<gallery>
+File:PassengerShuttle_east.png|Facing east
+File:PassengerShuttle_north.png|Facing north
+File:PassengerShuttle_south.png|Facing south
+</gallery>
+
+== Version history ==
+* [[Odyssey DLC]] Release - Added.
+* [[Version/1.6.4528|1.6.4528]] - Fix: Passenger shuttle skyfallers wrong size.
+* [[Version/1.6.4535|1.6.4535]] - Fix: Player shuttles could be lost in water when landing.
+* [[Version/1.6.4566|1.6.4566]] - Shuttles are no longer blocked from landing on items and no longer destroy more roof than they need to when landing. 
+** Fix: Player shuttle could be lost if settling/camping on map with not much land.
+** Fix: Out of bounds error trying to determine shuttle landing position when few options are possible.
+** Fix: Shuttle load list getting reset after launching.
+** Fix: Several issues with shuttle and transport pod range calculations.
+** Fix: Was possible for shuttles to get lost in specific set ups when merging two caravans.
+* [[Version/1.6.4850|1.6.4850]] - 
+** Fix: Babies born during shuttle flight were deleted.
+** Fix: Ghouls now exit shuttles drafted like other colonists.
+
+{{Nav|odyssey|wide}}
+[[Category:Odyssey (Buildings)]]

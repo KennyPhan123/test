@@ -1,0 +1,76 @@
+{{BackToTutorials}}<br/>
+
+{{:Modding_Tutorials/Outdated}}
+
+In this tutorial you will learn how to extract the base assets of RimWorld.
+
+=Requirements=
+# [https://github.com/SeriousCache/UABE Unity Assets Bundle Extractor] to extract the contents of the unity .asset archives.
+# or [https://github.com/aelurum/AssetStudio AssetStudioMod]
+
+=UnityEx=
+To extract the original files from the Unity asset archives we will be using UnityEx which is compatible with Rimworld 1.0's Archives.<br/>
+
+#Download UnityEx either by searching using your search engine of choice or [https://yadi.sk/d/m3vFWoQ3j62Cr via this link].
+#Place the UnityEX.exe somewhere easily locatable (I prefer to place it into the Rimworld Directory).
+#Run UnityEX.exe and open the .asset file you would like to extract, for example; <pre>RimWorld\RimWorldWin64_Data\resources.assets</pre>
+#Extract the files you need. If you are extracting .tex files you can use "Extract with convert", this will convert the .tex files to .dds.
+#The extracted files will be placed into a new folder in the same directory (Unity_Assets_Files) as the .asset file you have extracted.
+
+=Unity Assets Bundle Extractor=
+To extract the original files from the Unity asset archives we will be using Unity Assets Bundle Extractor which is compatible with Rimworld 1.0's Archives.<br/>
+
+#Download Unity Assets Bundle Extractor by searching using your search engine of choice or [https://github.com/SeriousCache/UABE via this link].
+#Unzip it.
+#Run AssetBundleExtractor.exe and open the .asset file you would like to extract, for example, <pre>RimWord\RimWorldWin64_Data\resources.assets</pre>
+#Select the files you need/want. Then, click "Plugins" and select "Export to .png" or "Export sound". Note that this only works when you select files by type: so select only audio files or only textures.
+#Click OK and select a folder for storage.
+
+=AssetStudioMod=
+To extract the original files from the Unity asset archives we will be using '''AssetStudioMod''' which is compatible with Rimworld 1.6 (also 1.5 and 1.4, not tested prior versions).<br/>
+
+#Download AssetStudioMod by searching using your search engine of choice or [https://github.com/aelurum/AssetStudio via this link], if you are unsure which .NET runtime version you have installed net472 should be fine.
+##Do note that the original [https://github.com/Perfare/AssetStudio AssetStudio] is archived and will not work on Rimworld 1.5 or above.
+##Also, there is more than one AssetStudioMod github repository. At the time of writing (27/10/025), the most up to date is the aelurum branch.
+#Unzip it.
+#Run AssetStudioModGUI.exe and open the asset file you would like to extract.
+##Rimworld vanilla assets are in <code>RimWord\RimWorldWin64_Data\resources.assets</code>
+##DLC assets on the AssetBundles fodler inside the data folder named after the DLC. For instance, the anomaly files are in <code>RimWorld\Data\Anomaly\AssetBundles\resources_anomaly</code>
+##If preferred, you can also load the entire folder instead.
+#All the relevant files will be listed on the '''Asset List''' tab.
+##You can limit the types of files shown with the '''Filter Type''' menu. Excluding the '''All''' option, the desired types can be mixed and matched at will.
+#Select the files you need/want. Then, right click and select "'''Export selected assets'''".
+#Select a folder for storage and click "select folder" (or press enter).
+#The program will extract the selected elements on the selected folder, organized in folder named after the type of file extracted (ex: Texture2D).
+
+=AssetStudio on Linux=
+
+#Download AssetStudio by searching using your search engine of choice or [https://github.com/Perfare/AssetStudio via this link]. Use the .net 6 version (AssetStudio.net6.v0.16.47.zip)
+#Install [https://github.com/bottlesdevs/Bottles Bottles] however is appropriate for your distro. [https://aur.archlinux.org/packages/bottles Here] is the AUR link for arch users
+#Unzip AssetStudio.net6.v0.16.47.zip (e.g /home/username/applications/AssetStudio.net6.v0.16.47/)
+#Open Bottles and click the + symbol in the top left corner of the UI to 'Create New Bottle'
+#In the 'Create New Bottle' options window that pops up enter a name (e.g 'AssetStudio') and select 'Application'. You can leave the other options as default.
+#Once the AssetStudio bottle has been created and has automatically opened the details page click on 'Add Shortcuts...'
+#Navigate to where you extracted AssetStudio and select 'AssetStudioGUI.exe'
+#After you have selected the exe you'll be on the bottle Detail page again, this time select 'Dependencies' and from the list choose 'dotnetcoredesktop6'
+#After the .net dependency is installed you can now click the play button next to 'AssetStudioGUI' and the application will launch
+#Open the asset file you would like to extract, for example with '''File -> Load file''', <pre>RimWord\RimWorldWin64_Data\resources.assets</pre> or for the DLC Asset Bundles with '''File -> Load folder''' <pre>RimWorld\Data\Anomaly\AssetBundles</pre>
+#Switch to the Asset List tab.
+#Select the files you need/want. Then, right click and select "Export selected assets", works for audio and textures.
+#Select a folder for storage and click open.
+
+Notes: You could wait unzip AssetStudio in the Bottles prefix folder if you want to want to keep it all together (e.g /home/username/.local/share/bottles/bottles/AssetStudio/drive_c/Program Files/AssetStudio.net6.v0.16.47/). This would require waiting for step 5 to be complete (creating the bottle) prior to unzipping so that the folder structure exists.
+
+AssetStudio.net6.v0.16.47 is used in this tutorial as it uses the most recent version of .net however the dependency for .net472 can be installed in Bottles (dotnet472) so AssetStudio.net472.v0.16.47.zip could presumably be used if there was a need.
+
+<gallery>
+Bottles create 1.png|'Create New Bottle' dialog box in Bottles
+Bottles create 2.png|'Details' page for a newly created bottle in Bottles
+Bottles create 3.png|Bottles 'Dependencies' screen with correct dependency highlighted
+Bottles create 4.png|Completed bottle with AssetStudioGUI ready to run and use
+</gallery>
+
+=See also=
+* [[Modding Tutorials/Recommended software#Graphics Software|Recommended graphics software]] for suggestions on software for further editing or viewing of source files.<br/>
+
+[[Category:Modding tutorials]]

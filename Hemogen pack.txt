@@ -1,0 +1,121 @@
+{{Biotech}}
+{{Infobox main|food
+| name = Hemogen pack
+| image = HemogenPack c.png
+| description = A package of refined hemogen in a specialized container that prevents spoilage. Hemogenic humans can consume it to restore their internal hemogen stores. It can be administered via an operation to reverse blood loss.
+<!-- Base Stats -->
+| type = Food
+| type2 = 
+| hp = 60
+| deterioration = 5
+| marketvalue = 5
+| mass base = 0.5
+| flammability = 0.7
+| stack limit = 10
+| path cost = 14
+<!-- Ingestion -->
+| food type = fluid
+| taste = 
+| max num to ingest at once = 
+| nutrition = 0.1
+<!-- Technical -->
+| defName = HemogenPack
+| preferability = Desperate
+| thingCategories = Foods
+| tradeTags = 
+| page verified for version =
+<!-- Creation -->
+| production facility 1 =  
+| product amount = 
+| work to make = 
+| skill 1 = 
+| resource 1 = 
+| resource 1 type = 
+| resource 1 amount = 
+}}
+'''Hemogen packs''' are a type of [[food]] added by the [[Biotech DLC]]. It acts as a form of blood that can be used for blood transfusions, or consumed by those with the [[Hemogenic]] gene to restore their [[Hemogen]] need.
+
+== Acquisition == 
+Hemogen packs can be extracted from non-[[hemogenic]] [[human]]s with the ''Extract Hemogen Pack'' operation. This takes {{ticks|500}} of work and increases their [[blood loss]] by 45%; if blood loss exceeds 100%, then the pawn will die. Unlike most other operations, it does not consume medicine or [[Anesthetic|anesthetise]] the subject. It does still provide [[Medical]] experience however.
+
+This operation is considered a violation for [[faction]] relations, when done on a guest or ally.  
+* Extracting [[Hemogen|hemogen]] from a [[prisoner]] of a hostile faction lowers reputation by 1.
+* Extracting [[Hemogen|hemogen]] from a [[guest]] of a friendly faction faction lowers reputation by 5 and immediately fails the associated quest.
+
+Prisoners can be designated to have extraction operations automatically queued up when their blood loss reaches 0% via the [[Prisoner#Hemogen farm|Hemogen farm]] interaction option.
+
+== Summary ==
+[[File:Hemogen Gizmo.png|thumb|left|Hemogen gizmo with [[File:check.png|12px|link=]] showing hemogen pack consumption allowed]]
+Hemogen is a packaged form of blood that can be extracted and implanted to alter a human pawn's [[blood loss]]. 
+
+Any pawn can consume one for a measly {{P|Nutrition}} [[nutrition]]. Those without either a Hemogen need, the [[Cannibal (trait)|Cannibal]] trait, or a pro-[[Cannibalism (precept)|Cannibalism]] ideoligion{{IdeologyIcon}} get a {{Thought|desc=I ingested a hemogen pack. It might keep me alive, but it was absolutely disgusting.|label=ingested hemogen pack|value=-5|duration=5|stack=5}}. [[Conceited noble]]s{{RoyaltyIcon}} also dislike consuming hemogen packs, and will receive a {{Thought|desc=That meal was below my station. My title's formal requirements should always be respected.|label=Ate low-class food|value=-8|duration=1}} upon consumption, even if that noble has a Hemogen need. Consuming a pack in this way will not restore any blood loss.
+
+When consumed by [[Hemogenic]] pawns, each pack satisfies the [[Hemogen]] need by {{+|20}}. This is sufficient to satisfy 2 days of hemogen need for pawns with the [[Hemogen drain]] gene, including [[Sanguophages]], and 10 days for those who just have [[Hemogenic]], assuming no hemogenic abilities are used during these periods. 
+
+Pawns will automatically consume hemogen packs to reach their target hemogen level if the toggle on their hemogen gizmo is enabled. See [[Hemogen#Hemogen total|Hemogen]] for details. Additionally doctors{{Check Tag|Wardens?}} can be ordered to feed patients hemogen to restore hemogen so long as the hemogenic pawn is under the target level. Note that this can be done even when hemogen packs are disallowed by the patient's [[food policy]]. 
+
+Hemogen packs do not rot, but do [[deteriorate]] by being left outdoors or in otherwise rough conditions.
+
+Hemogen packs are also used in the construction and fueling of the following [[deathrest]] buildings:
+{{Ingredient List|noCollapse=1}}
+
+=== Blood transfusion ===
+{{Quote|Use hemogen packs to reduce the effects of blood loss. Each hemogen pack used recovers 35% blood loss. The operation will also restore hemogen to hemogenic individuals.|Operation description}}
+Hemogen packs can be used to perform the ''"Blood transfusion"'' operation on pawns, which restores a pawn's [[blood loss]]. The operation consumes {{Icon Small|hemogen pack||1-3}} hemogen packs, takes {{ticks|800}} of work, and reduces blood loss by {{---|35%}} per pack. It always fully recovers blood loss, taking as many hemogen packs as needed, and if fewer packs are available, the operation cannot be performed at all; it's all or nothing. It is currently unknown whether this is a bug.{{Check Tag|Bug?|Is this considered a bug by ludeon? Has it been reported etc.}} This surgery does not require medicine or a minimum [[Medical]] skill, does not [[Anesthetic|anesthetise]] the subject, and always succeeds. Operation duration and, consequently, Medical experience gain don't depend on the quantity of packs used.
+
+When a [[hemogenic]] pawn is transfused, they receive the same {{+|20}} per pack as if they had consumed them. For example, a pawn with {{Bad|75%}} blood loss would be transfused with 2 hemogen packs, dropping to only {{Bad|5%}} blood loss and gaining {{+|40}} hemogen. As such, if a pawn is subject to both blood loss and hemogen need, transfusing is strictly superior to allowing them to consume the pack, time and workload permitting. 
+
+==== Efficiency ====
+The {{---|35%}} blood loss recovered is less than the {{++|45%}} lost from creating the pack.
+
+Since as many hemogen packs are used as needed to fully recover from blood loss, some healing potential is always wasted. Pawns die at {{Bad|100%}} blood loss, so if 3 packs ({{---|105%}}) are used, at least {{---|5%}} is wasted. The number of required packs is calculated when the doctor decides or is ordered to start the operation, and if blood loss subsequently recovers naturally, passing {{Bad|35%}} or {{Bad|70%}} threshold before the end of operation, the calculated amount is consumed, nonetheless. Like most numbers in the game, the blood loss percentage displayed in the ailment's tooltip is a rounded value of an actual floating-point number used internally. So, the actual {{Bad|35}}/{{Bad|70%}} threshold is in the midpoint of the timespan during which the corresponding {{Bad|35}}/{{Bad|70%}} tooltip is displayed, {{ticks|900}} from the beginning.
+
+== Analysis ==
+{{Recode|section=1|reason=Once tend mechanics are properly described, add direct comparison between tend and transfusion <!-- If sight is 100%, [[Medical Operation Speed]] and [[Medical Tend Speed]) are the same. blood transfusion rake 800 ticks. -->}}
+Hemogen packs are not made for emergency transfusion. By the time a hemogen pack is brought to a patient and installed, a doctor could've used [[medicine]] to reduce/stop the bleeding. In addition, tending can be done on the field, while operations must be done on a bed or [[sleeping spot]]. For non-hemogenic pawns, hemogen packs can be used to cure extreme blood loss once all wounds have been tended - this causes the pawn to be conscious faster. For hemogenic pawns, it has an obvious use in keeping their need satiated.
+
+=== Medical training ===
+Hemogen farms have a niche in increasing Medical experience. Make the operation as slow as possible, such as turning off the [[light]]s, to gain more XP. You may want to manually order operations instead of using the "Hemogen Farm" setting, so you can control which pawn is trained.
+
+=== Hemogen ===
+Compared to [[Bloodfeeder|bloodfeeding]]:
+* Hemogen packs give the same base Hemogen and blood loss.
+* Hemogen pack extraction does not upset pawns, without requiring the [[Bloodfeeders (precept)|Bloodfeeders]] precept,{{IdeologyIcon}} or cause [[pain]].
+* Hemogen packs can be stored and transported and even kept on the hemogenic pawn, independent of having a pawn to feed from at the time of consumption. This allows topping up in-combat, while caravanning, or just building up a stockpile in case of a prisoner escape or death, without having to feed on your own colonists.
+* Extracting hemogen packs trains medical experience.
+* The [[Gene#Bloodfeeder|bloodfeeder]] gene has a cost of {{--|1}} metabolic efficiency. Note that this isn't a choice with [[Sanguophage]]s, who already come with this gene.
+* Hemogen packs are more efficient when harvesting from [[children]]. Bloodfeeders will receive less hemogen (for the same blood loss) when feeding on a child, due to their smaller body size. However, when extracting a hemogen pack, a child will give an adult-sized pack.
+* Bloodfeeding is somewhat faster. A doctor needs to operate on a patient in order to extract a hemogen pack, and this process takes a bit of work.
+* [[Conceited noble]]s{{RoyaltyIcon}} dislike consuming hemogen packs, but don't mind bloodfeeding.
+
+=== Extraction strategies ===
+As:
+* A hemogen pack gives {{+|20}} hemogen
+* Extracting a hemogen pack causes {{++|45%}} blood loss
+* Blood loss recovers at {{---|33%}} per day
+You can safely extract 1 pack every {{#expr: (45/33) round 2}} days, or making {{#expr: 20/(45/33) round 2}} hemogen a day, capable of supporting {{#expr: 20/(45/33)/10 round 2}} [[sanguophage]]s pawns or {{#expr: 20/(45/33)/2 round 2}} [[hemogenic]] pawns. Note that this is with optimum timing and therefore represents a theoretical maximum gain - actual extractions may not occur so promptly.
+
+Prisoners make ideal sources of hemogen - the risk of death and statistical impact from blood loss is not important and the extraction can be completely automated. Long term prisoners can cause problems however. Pawns with the [[dead calm]] gene, such as [[genie]]s, are ideal as they can feed and clothe themselves but will never harm other prisoners or attempt a prison break. Their mood becomes largely unimportant at that point, and they can be fed using a [[nutrient paste dispenser]] in their prison for maximum nutritional and colonist work efficiency. You may also choose to give them [[genes]] that improve their metabolic efficiency, to further cut costs. 
+
+If a dead calm pawn is not available, you can also remove a prisoners legs by installing and removing [[peg leg]]s. They will need to be manually fed by a colonist but they can never escape.
+
+The hemogen farm prisoner option will not keep prisoners unconscious, and will instead wait until they have recovered all bloodloss before performing another extraction. The player can manually schedule extractions to whenever the pawn is below 55% blood loss. This will cause the prisoner to fall unconscious until they again decrease to below 60% bloodloss. In this way, a prisoner can be kept unconscious for up to a theoretical maximum of {{%|(99-60)/(99-54) round 2}} of the time, significantly reducing prison and mental breaks.
+
+== Gallery ==
+<gallery>
+HemogenPack a.png|One pack
+HemogenPack b.png|Partial stack
+HemogenPack c.png|Full stack
+</gallery>
+
+== Version history ==
+* [[Biotech DLC]] Release - Added
+* [[Version/1.4.3530|1.4.3530]] - Added a toggle to the hemogen gizmo which allows configuration of whether or not a pawn can ingest hemogen packs to satisfy the desired hemogen level.
+* [[Version/1.4.3541|1.4.3541]] - Extracting hemogen no longer requires medicine (previously: 2x [[herbal medicine|herbal]] or better) and does not anesthetize the target. Medical experience also reduced.
+* [[Version/1.4.3555|1.4.3555]] - Reduced the work needed for the extract hemogen operation to 500 from 1500. Fix: Bloodfeeders sometimes do not ingest all taken hemogen packs, depending on food need level. Added a toggle to the hemogen gizmo which allows configuration of whether or not a pawn can ingest hemogen packs to desired hemogen level - Note this is essentially a duplicate of the change from 1.4.3530, it is currently unclear whether this is an error, whether there is a difference, or whether the change was reverted and re-added latter.
+* [[Version/1.4.3563|1.4.3563]] - Fix: Sanguophages can take too many hemogen packs for maintaining hemogen levels in some circumstances.
+* [[Version/1.4.3580|1.4.3580]] - Fix: Hemogen packs give "ate vegetarian" mood.
+* [[Version/1.5.4062|1.5.4062]] - Fix: Hemogen packs trigger 'ate non-cannibal food' for sanguophage with cannibal precept. Fix: Medicineless hemogen extraction recipe brings blood loss up to 65%. Fix: Hemogen extraction done without medicine has less blood loss than extraction done with industrial medicine.
+
+{{Nav|Food|wide}}
+[[Category: Food]]

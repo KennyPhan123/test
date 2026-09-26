@@ -1,0 +1,235 @@
+'''Outlanders''' are [[Tech level|industrial tech level]] [[faction]]s that populate the rimworld. There are two types of outlanders: civil outlanders, which start out neutral, and rough outlanders, which start out hostile but can be befriended.
+
+Outlanders use the same equipment and technology as pirates, but they do not behave the same. Unlike [[Pirate]]s, Outlanders can be made into allies by sending gifts, trading, or releasing prisoners. They often use similar equipment and tactics as normal pirates, but rarely use high level gear such as [[sniper rifle]]s. Be nice to them and you will be rewarded, but anger them and you basically have another pirate group, except they can be negotiated with. 
+
+== Lore ==
+<blockquote><small>"These people have lived here for decades or centuries, and have lost most of the technology that brought them to this world. They usually work with simple machinery and defend themselves with advanced gunpowder weapons. They are concerned with the practical matters of trade, trust and survival." - '''In-game description'''</small></blockquote>
+
+In the core game, Outlander faction leaders are called "Prime Councilors", but with the [[Ideology DLC]] enabled the leader titles are that of their [[ideoligion]].
+
+=== Names ===
+The name of the Outlander factions vary from game to game, but follows one of several patterns:
+* ''[nearnameinitial]''
+* ''[nearnameinitial]'' ''[political_union_outlander]''
+* ''[nearnameinitial]'' ''[political_adjective]'' ''[political_union_outlander]''
+* ''[political_union_outlander]'' of ''[nearnameinitial]''
+* ''[political_adjective]'' ''[political_union_outlander]'' of ''[nearnameinitial]''
+
+Where ''[nearnameinitial]'' can be either:
+* ''[PlaceOutlander]''
+* ''[Direction]'' ''[PlaceOutlander]''
+
+== Variants ==
+There are three primary variants of outlanders. They differ in their description and their relations with the player and other factions, but are otherwise identical. 
+
+=== Civil outlander union ===
+[[File:Civil_outlander.png|left|50px]]
+{{Quote|''This particular group holds civil behavior in high regard.''}}
+
+Civil outlander unions always start off neutral. This type of faction has a natural goodwill range from -50 to 50. If goodwill is over 50, it will fall by 0.4 per day. If goodwill is under -50, it will rise by 0.2 per day.
+
+=== Rough outlander union ===
+[[File:Rough_outlander.png|left|50px]]
+{{Quote|''This particular group has a streak of barbarity in them.''}}
+
+Rough outlander unions always start off hostile towards your faction, as well as all other factions. This type of faction has a natural goodwill range from -100 to -80. If goodwill is over -80, it will fall by 0.4 per day. If goodwill is under -100, it will rise by 0.2.
+
+=== Rough pig union ===
+{{Biotech|section=1}}
+[[File:RoughPigUnion.png|left|50px]]
+{{Quote|''A loose union of hardy pigskin townships. They're willing to make friends, even with thinsnouts, but they're also ready to toss a bomb and gnaw human gristle when it suits them. Treat them with respect and they'll offer a trotter to an ally in need. Turn against them and the last thing you hear might be a triumphant battle squeal.''}}
+
+Rough pig unions are, in essence, rough outlander unions that are exclusively populated with outlanders with the [[pigskins|pigskin]] [[xenotype]]. They also have some custom pawnkinds available to them to reflect that change, the primary difference being the use short ranged weapons because of their [[genetic]] [[Nearsighted|nearsightedness]].
+
+Rough pig unions always start off hostile towards your faction, as well as all other factions. This type of faction has a natural goodwill range from -100 to -80. If goodwill is over -80, it will fall by 0.4 per day. If goodwill is under -100, it will rise by 0.2.
+
+==== Pawn Kinds ====
+<!-- Rough Pig Union -->
+<!-- Inherit="False" -->
+{| {{STDT}}
+! Pawn Groups !! Commonality !! Options
+|- <!-- 5+10+10+10+7+10+10 = 62 -->
+| '''Combat'''
+| -
+| {{#expr:5/62 * 100 round 1}}% [[File:Pigskin villager.png|Pigskin villager|x32px]] [[Outlanders#Pigskin villager|Pigskin villager]]<!--
+--><br />{{#expr:10/62 * 100 round 1}}% [[File:Pigskin town guard.png|Pigskin town guard|x32px]] [[Outlanders#Pigskin town guard|Pigskin town guard]]<!--
+--><br />{{#expr:10/62 * 100 round 1}}% [[File:Grenadier.png|x32px|Grenadier]] [[Pirates#Grenadier|Grenadier]]<!--
+--><br />{{#expr:10/62 * 100 round 1}}% [[File:Mercenary slasher.png|x32px|Mercenary slasher]] [[Pirates#Mercenary slasher|Mercenary slasher]]<!--
+--><br />{{#expr:7/62 * 100 round 1}}% [[File:Pig gunner.png|Pig gunner|x32px]] [[Outlanders#Pig gunner|Pig gunner]]<!--
+--><br />{{#expr:10/62 * 100 round 1}}% [[File:Pig elite.png|Pig elite|x32px]] [[Outlanders#Pig elite|Pig elite]]<!--
+--><br />{{#expr:10/62 * 100 round 1}}% [[File:Pigskin town councilman.png|Pigskin town councilman|x32px]] [[Outlanders#Pigskin town councilman|Pigskin town councilman]]
+|- <!-- 20+10+10+10 = 50 -->
+| '''Peaceful'''
+| -
+| {{#expr:20/50 * 100 round 1}}% [[File:Pigskin villager.png|Pigskin villager|x32px]] [[Outlanders#Pigskin villager|Pigskin villager]]<!--
+--><br />{{#expr:10/50 * 100 round 1}}% [[File:Pigskin villager child.png|Pigskin villager (Child)|x32px]] [[Outlanders#Pigskin villager child|Pigskin villager (Child)]]<!--
+--><br />{{#expr:10/50 * 100 round 1}}% [[File:Pigskin town guard.png|Pigskin town guard|x32px]] [[Outlanders#Pigskin town guard|Pigskin town guard]]<!--
+--><br />{{#expr:10/50 * 100 round 1}}% [[File:Pigskin town councilman.png|Pigskin town councilman|x32px]] [[Outlanders#Pigskin town councilman|Pigskin town councilman]]
+|- <!-- 1+6+5+2+1+3+10+10+10+7+10 = 65 -->
+| '''Trader'''
+| -
+| {{#expr:1/65 * 100 round 1}}% [[File:Pigskin town trader.png|Pigskin town trader|x32px]] [[Outlanders#Pigskin town trader|Pigskin town trader]]<!--
+--><br />{{#expr:6/65 * 100 round 1}}% [[File:Muffalo east.png|x32px|Muffalo]] [[Muffalo]]<!--
+--><br />{{#expr:5/65 * 100 round 1}}% [[File:Dromedary.png|x32px|Dromedary]] [[Dromedary]]<!--
+--><br />{{#expr:2/65 * 100 round 1}}% [[File:Alpaca.png|x32px|Alpaca]] [[Alpaca]]<!--
+--><br />{{#expr:1/65 * 100 round 1}}% [[File:Elephant.png|x32px|Elephant]] [[Elephant]]<!--
+--><br />{{#expr:3/65 * 100 round 1}}% [[File:Pigskin villager.png|Pigskin villager|x32px]] [[Outlanders#Pigskin villager|Pigskin villager]]<!--
+--><br />{{#expr:10/65 * 100 round 1}}% [[File:Pigskin town guard.png|Pigskin town guard|x32px]] [[Outlanders#Pigskin town guard|Pigskin town guard]]<!--
+--><br />{{#expr:10/65 * 100 round 1}}% [[File:Grenadier.png|x32px|Grenadier]] [[Pirates#Grenadier|Grenadier]]<!--
+--><br />{{#expr:10/65 * 100 round 1}}% [[File:Mercenary slasher.png|x32px|Mercenary slasher]] [[Pirates#Mercenary slasher|Mercenary slasher]]<!--
+--><br />{{#expr:7/65 * 100 round 1}}% [[File:Pig gunner.png|Pig gunner|x32px]] [[Outlanders#Pig gunner|Pig gunner]]<!--
+--><br />{{#expr:10/65 * 100 round 1}}% [[File:Pig elite.png|Pig elite|x32px]] [[Outlanders#Pig elite|Pig elite]]
+|- <!-- 10+10+10+10+7+10+10 = 67 -->
+| '''Settlement'''
+| -
+| {{#expr:10/67 * 100 round 1}}% [[File:Pigskin villager.png|Pigskin villager|x32px]] [[Outlanders#Pigskin villager|Pigskin villager]]<!--
+--><br />{{#expr:10/67 * 100 round 1}}% [[File:Pigskin town guard.png|Pigskin town guard|x32px]] [[Outlanders#Pigskin town guard|Pigskin town guard]]<!--
+--><br />{{#expr:10/67 * 100 round 1}}% [[File:Grenadier.png|x32px|Grenadier]] [[Pirates#Grenadier|Grenadier]]<!--
+--><br />{{#expr:10/67 * 100 round 1}}% [[File:Mercenary slasher.png|x32px|Mercenary slasher]] [[Pirates#Mercenary slasher|Mercenary slasher]]<!--
+--><br />{{#expr:7/67 * 100 round 1}}% [[File:Pig gunner.png|Pig gunner|x32px]] [[Outlanders#Pig gunner|Pig gunner]]<!--
+--><br />{{#expr:10/67 * 100 round 1}}% [[File:Pig elite.png|Pig elite|x32px]] [[Outlanders#Pig elite|Pig elite]]<!--
+--><br />{{#expr:10/67 * 100 round 1}}% [[File:Pigskin town councilman.png|Pigskin town councilman|x32px]] [[Outlanders#Pigskin town councilman|Pigskin town councilman]]
+|- <!-- 1 -->
+| '''Miners''' {{IdeologyIcon}}
+| 1
+| 100% [[File:Miner (Outlander).png|Miner (Outlander)|x32px]] [[Work site#Outlander miner|Miner (Outlander)]]
+|- <!-- 1 -->
+| '''Hunters''' {{IdeologyIcon}}
+| 1
+| 100% [[File:Hunter (Outlander).png|Hunter (Outlander)|x32px]] [[Work site#Outlander hunter|Hunter (Outlander)]]
+|- <!-- 1 -->
+| '''Loggers''' {{IdeologyIcon}}
+| 1
+| 100% [[File:Logger (Outlander).png|Logger (Outlander)|x32px]] [[Work site#Outlander logger|Logger (Outlander)]]
+|- <!-- 1 -->
+| '''Farmers''' {{IdeologyIcon}}
+| 1
+| 100% [[File:Farmer (Outlander).png|Farmer (Outlander)|x32px]] [[Work site#Outlander farmer|Farmer (Outlander)]]
+|}
+
+==== Pawn Kinds ====
+{{:Outlanders/Pawns/Pigskin}}
+
+==Pawns==
+Outlander pawns will have [[backstories]] from the "Outlander" category 95% of the time, and from the "Offworld" category 5% of the time.
+
+=== Pawn Groups ===
+<!-- Base Outlanders -->
+{| {{STDT}}
+! Pawn Groups !! Commonality !! Options
+|- <!-- 5+10+1.5+7+10+10+10 = 53.5 -->
+| '''Combat:''' Normal fights, standard mix
+| -
+| {{#expr:5/53.5 * 100 round 1}}% [[File:Villager.png|x32px|Villager]] [[Outlanders#Villager|Villager]]<!--
+--><br />{{#expr:10/53.5 * 100 round 1}}% [[File:Town guard.png|x32px|Town guard]] [[Outlanders#Town guard|Town guard]]<!--
+--><br />{{#expr:1.5/53.5 * 100 round 1}}% [[File:Grenadier.png|x32px|Grenadier]] [[Pirates#Grenadier|Grenadier]]<!--
+--><br />{{#expr:7/53.5 * 100 round 1}}% [[File:Mercenary slasher.png|x32px|Mercenary slasher]] [[Pirates#Mercenary slasher|Mercenary slasher]]<!--
+--><br />{{#expr:10/53.5 * 100 round 1}}% [[File:Mercenary gunner.png|x32px|Mercenary gunner]] [[Pirates#Mercenary gunner|Mercenary gunner]]<!--
+--><br />{{#expr:10/53.5 * 100 round 1}}% [[File:Elite mercenary.png|x32px|Elite mercenary]] [[Pirates#Elite mercenary|Elite mercenary]]<!--
+--><br />{{#expr:10/53.5 * 100 round 1}}% [[File:Town councilman.png|x32px|Town councilman]] [[Outlanders#Town councilman|Town councilman]]
+|- <!-- 20+10+10+10 = 50 -->
+| '''Peaceful'''
+| -
+| {{#expr:20/50 * 100 round 1}}% [[File:Villager.png|x32px|Villager]] [[Outlanders#Villager|Villager]]<!--
+--><br />{{#expr:10/50 * 100 round 1}}% [[File:Villager child.png|x32px|Villager (Child)]] [[Outlanders#Villager child|Villager (Child)]]<!--
+--><br />{{#expr:10/50 * 100 round 1}}% [[File:Town guard.png|x32px|Town guard]] [[Outlanders#Town guard|Town guard]]<!--
+--><br />{{#expr:10/50 * 100 round 1}}% [[File:Town councilman.png|x32px|Town councilman]] [[Outlanders#Town councilman|Town councilman]]
+|- <!-- 1+6+5+2+1+3+10+1.5+7+10+10 = 56.5 -->
+| '''Trader'''
+| -
+| {{#expr:1/56.5 * 100 round 1}}% [[File:Town trader.png|x32px|Town trader]] [[Outlanders#Town trader|Town trader]]<!--
+--><br />{{#expr:6/56.5 * 100 round 1}}% [[File:Muffalo east.png|x32px|Muffalo]] [[Muffalo]]<!--
+--><br />{{#expr:5/56.5 * 100 round 1}}% [[File:Dromedary.png|x32px|Dromedary]] [[Dromedary]]<!--
+--><br />{{#expr:2/56.5 * 100 round 1}}% [[File:Alpaca.png|x32px|Alpaca]] [[Alpaca]]<!--
+--><br />{{#expr:1/56.5 * 100 round 1}}% [[File:Elephant.png|x32px|Elephant]] [[Elephant]]<!--
+--><br />{{#expr:3/56.5 * 100 round 1}}% [[File:Villager.png|x32px|Villager]] [[Outlanders#Villager|Villager]]<!--
+--><br />{{#expr:10/56.5 * 100 round 1}}% [[File:Town guard.png|x32px|Town guard]] [[Outlanders#Town guard|Town guard]]<!--
+--><br />{{#expr:1.5/56.5 * 100 round 1}}% [[File:Grenadier.png|x32px|Grenadier]] [[Pirates#Grenadier|Grenadier]]<!--
+--><br />{{#expr:7/56.5 * 100 round 1}}% [[File:Mercenary slasher.png|x32px|Mercenary slasher]] [[Pirates#Mercenary slasher|Mercenary slasher]]<!--
+--><br />{{#expr:10/56.5 * 100 round 1}}% [[File:Mercenary gunner.png|x32px|Mercenary gunner]] [[Pirates#Mercenary gunner|Mercenary gunner]]<!--
+--><br />{{#expr:10/56.5 * 100 round 1}}% [[File:Elite mercenary.png|x32px|Elite mercenary]] [[Pirates#Elite mercenary|Elite mercenary]]
+|- <!-- 10+10+1.5+7+10+10+10 = 58.5 -->
+| '''Settlement'''
+| -
+| {{#expr:10/58.5 * 100 round 1}}% [[File:Villager.png|x32px|Villager]] [[Outlanders#Villager|Villager]]<!--
+--><br />{{#expr:10/58.5 * 100 round 1}}% [[File:Town guard.png|x32px|Town guard]] [[Outlanders#Town guard|Town guard]]<!--
+--><br />{{#expr:1.5/58.5 * 100 round 1}}% [[File:Grenadier.png|x32px|Grenadier]] [[Pirates#Grenadier|Grenadier]]<!--
+--><br />{{#expr:7/58.5 * 100 round 1}}% [[File:Mercenary slasher.png|x32px|Mercenary slasher]] [[Pirates#Mercenary slasher|Mercenary slasher]]<!--
+--><br />{{#expr:10/58.5 * 100 round 1}}% [[File:Mercenary gunner.png|x32px|Mercenary gunner]] [[Pirates#Mercenary gunner|Mercenary gunner]]<!--
+--><br />{{#expr:10/58.5 * 100 round 1}}% [[File:Elite mercenary.png|x32px|Elite mercenary]] [[Pirates#Elite mercenary|Elite mercenary]]<!--
+--><br />{{#expr:10/58.5 * 100 round 1}}% [[File:Town councilman.png|x32px|Town councilman]] [[Outlanders#Town councilman|Town councilman]]
+|- <!-- 1 -->
+| '''Miners''' {{IdeologyIcon}}
+| 1
+| 100% [[File:Miner (Outlander).png|Miner (Outlander)|x32px]] [[Work site#Outlander miner|Miner (Outlander)]]
+|- <!-- 1 -->
+| '''Hunters''' {{IdeologyIcon}}
+| 1
+| 100% [[File:Hunter (Outlander).png|Hunter (Outlander)|x32px]] [[Work site#Outlander hunter|Hunter (Outlander)]]
+|- <!-- 1 -->
+| '''Loggers''' {{IdeologyIcon}}
+| 1
+| 100% [[File:Logger (Outlander).png|Logger (Outlander)|x32px]] [[Work site#Outlander logger|Logger (Outlander)]]
+|- <!-- 1 -->
+| '''Farmers''' {{IdeologyIcon}}
+| 1
+| 100% [[File:Farmer (Outlander).png|Farmer (Outlander)|x32px]] [[Work site#Outlander farmer|Farmer (Outlander)]]
+|}
+
+=== Outlanders ===
+{{:Outlanders/Pawns}}
+
+=== Mercenaries ===
+These elite units types join both outlanders and [[pirates]] in their ranks in the mid-to-late game. 
+{{:Mercenaries/Pawns}}
+=== Xenotypes ===
+{{Biotech|section=1}}
+The table below describes the chance for a given pawn from each faction being one of the [[xenotypes]] added by the [[Biotech DLC]]. Note that this value does not account for chances in xenotype chance from [[ideoligion]]{{IdeologyIcon}} or from pawn kind, it only shows the base value before those factors.
+
+<div style="display:inline-table; vertical-align:top;">
+{{Faction Xenotype Table|Civil outlander union|Civil outlander union}}
+{{Faction Xenotype Table|Rough outlander union|Rough outlander union}}
+{{Faction Xenotype Table|Rough pig union|Rough pig union}}
+</div>
+
+==Raids==
+
+Outlander raids generally consist of enemies with firearms and/or melee weapons. Notably, Outlander enemies never carry Doomsday nor Triple Rockets. 
+
+Outlanders raids consist of a few types:
+* Immediate Attack
+* Immediate Attack Smart
+* Stage then Go
+* Breacher
+* Smart Breacher
+* Sapper
+* Siege
+
+The chance of a certain type of attack occurring changes based on Raid Points. Generally, as Raid Points rise the chance of Breachers and Sappers increases.  At 5,000 Raid Points or higher, 28% of Outlander attacks will be Sieges, 28% will be Breachers and Sappers, and the remaining roughly 44% of raids will be all other types.
+
+Outlanders can "Drop Right on Top of you" via Transport Pods. This attack is a type of immediate attack raid.
+
+=== Raid loot ===
+{{Main|Raider#Loot|l1=Raid loot}}
+{{Icon List|Silver}}
+{{Icon List|Medicine}}
+{{Icon List|Component}}
+{{Icon List|Packaged survival meal}}
+{{Icon List|Neutroamine }}
+
+== Faction bases ==
+{{Stub|section=1|reason=Missing faction base section}}
+<gallery>
+Site civil outlander union base A.png|Civil outlander base example A
+Site civil outlander base B.png|Civil outlander base example B
+Site rough pig union base A.png|Rough pig outlander base example A
+Site rough pig union base B.png|Rough pig outlander base example B
+</gallery>
+
+== Version history ==
+* 1.1 - Faction icons are now differentiated by shape as well as color, to help out colorblind players. Smoke grenadier pawnkind added.
+* [[Version/1.4.3555|1.4.3555]] - Fix: Pigskin factions can have quest helper snipers show up without weapons.
+
+{{nav|factions|wide}}
+
+[[Category: Factions]]

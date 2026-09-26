@@ -1,0 +1,38 @@
+{{BackToTutorials}}
+
+TweakValue is a simple attribute that allows for direct run-time changing of values. They can be applied to any field with a value of float, bool, int or ushort that is static and isn't marked constant or readonly.
+
+==Requirements==
+We are firmly in C# territory so you know
+* [[Modding Tutorials/Setting up a solution|Setting up a Solution]]
+* [[Modding Tutorials/Writing custom code|Custom code]]
+
+==What TweakValues are used for==
+They really shine in creating UI. If you need to nudge an element just a smidgen to the left, you'd normally have to edit, recompile and restart the game. With a TweakValue, you can call forth a menu with sliders and immediately see the effects of our changes.
+
+==Using your TweakValues==
+It's one of the dev-mode buttons. Looks kinda like a list of dashes and dots. Slide it around for funsies. TweakValues are not stored anywhere. If you find a good value, write it down as they are lost for all eternity when the game closes.
+
+==An Example==
+<source lang = "C#">
+        [TweakValue("exampleCategory", -100f, 4000f)]
+        private static float exampleFloat = 2000f;
+</source>
+Simple as that. ''exampleCategory'' is a string that's shown in the TweakValues window. The numbers inside the annotation are optional min and max values (default 0 and 100 respectively).
+
+==Tips==
+Put your [TweakValue] in an #if DEBUG or comment them out for release. This prevents spamming the TweakValues window. The TweakValue window is organised alphabetically, so if you categorise your values sensible and with AAA you'll save yourself some scrolling.
+
+<source lang = C#>
+#if DEBUG
+        [TweakValue("AAAMehniMiscMods")]
+#endif
+        private static float widthFiddler = 9f;
+</source>
+
+==See also==
+[https://github.com/pardeike/Reloader Method Reloader]</br>
+[https://github.com/RimWorld-CCL-Reborn/RWTextureReload Texture reloader]
+
+
+[[Category:Modding tutorials]]

@@ -1,0 +1,54 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Biotech/Various}}
+|}
+----
+{| {{STDT| c_18}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Chemical dependency" <!-- defName="GeneticDrugNeed" -->
+! Chemical dependency
+----
+* Def Name:<br />GeneticDrugNeed
+* Label:<br />chemical dependency
+|<!-- Description -->
+<div style="max-width: 500px;">
+This person has a genetically-induced biochemical dependency on a specific drug. Without regular doses of the drug, their body cannot maintain itself in a healthy state and they will suffer degrading health and mood until they die.
+
+Takes effect after age: 13.
+</div>
+|<!-- Details -->
+* Hediff Class: '''Hediff_ChemicalDependency'''
+* Ever Curable By Item: {{Bad|false}}
+* Initial Severity: '''0'''
+* Max Severity: '''12'''
+* Lethal Severity: {{Bad|12}}
+* Allow Mothball If Low Priority World Pawn: {{Good|true}}
+* '''Comps:''' ''Severity Per Day:'' {{++|0.2}}
+** Min Age: '''13'''
+|<!-- Stages -->
+{| {{STDT| c_18}}
+! Label !! Parameters
+|-
+! -
+|<!-- Parameters -->
+* Become Visible: {{Bad|false}}
+|-
+! -
+|<!-- Parameters -->
+* Min Severity: '''0.001'''
+* Become Visible: {{Good|true}}
+|-
+! deficiency
+|<!-- Parameters -->
+* Min Severity: '''1'''
+* [[Consciousness]] Max: {{Bad|70%}}
+* [[Moving]] Max: {{Bad|80%}}
+* [[Manipulation]] Max: {{Bad|50%}}
+|-
+! Override Label: deficiency coma
+|<!-- Parameters -->
+* Min Severity: '''6'''
+* Life Threatening: {{Bad|true}}
+* [[Consciousness]] Max: {{Bad|10%}}
+|}<noinclude>
+|}</noinclude>

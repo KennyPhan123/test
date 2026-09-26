@@ -1,0 +1,271 @@
+{{TOCright}}
+'''Human resources''' are everything that an otherwise-useless human body, living or dead, can offer. If you aren't squeamish, organs and other resources can be extracted from prisoners, prisoners can be sold as slaves or executed or used for even darker purposes, and corpses can be broken down for [[Human meat|food]] and [[Human leather|leather]]. You may be doing what you need to survive in terribly harsh circumstances, or simply profiting off of your enemies' misfortune.
+
+However, exploiting human resources can impart significant [[mood]] penalties on many colonists. A number of traits can make this feasible as a core strategy for a colony. Some colonies might even make it the preferred standard for living, especially the [[Ideology DLC]]{{IdeologyIcon}} or mods.
+
+Note that selling items gets less than [[market value]], sometimes much less. In practice the actual buying/selling price is the market price modified by [[Trade Price Improvement|trading skills, etc.]] and [[difficulty]].
+
+== Prisoners ==
+Living prisoners can be stripped of their possessions and [[clothing]] without penalty, and [[Prisoner#Recruitment|recruited]] (assuming they aren't [[unwaveringly loyal]]), [[Slavery|taken as slaves]],{{IdeologyIcon}} or converted to loyal [[ghoul]]s.{{AnomalyIcon}} But what about prisoners not worth taking on as permanent members of your colony?
+
+=== Selling as slaves ===
+Not to be confused with [[Slavery|keeping pawns as slaves]],{{IdeologyIcon}} prisoners can be [[trade|sold]] as slaves to other factions. Humans have a base value of {{Icon Small|silver}} {{Q|Human|Market Value Base #}}. This is [[Market Value#Pawn value|modified by]] traits, skills, injuries, ailments, and organ loss, and increased directly by their bionics' value. Most often, prisoners are worth less than the base human market value. Selling a prisoner is a quick way to get a decent amount of money quickly, inflicts a smaller [[#Mood table|mood penalty]] than some of the other options, and gives us a baseline to compare other options to. However, you may need to wait: only slave caravans, slave ships, and [[faction base]]s accept slaves. Of those, only faction bases are reliably available for trade, and visiting them requires a [[caravan]].
+
+====Royal tribute collector====
+{{Royalty|section=1}}
+Prisoners can also be sold for [[Titles#Honor|honor]] to a Royal tribute collector, inflicting [[#Mood table|the usual mood penalties]]. Each prisoner is worth 3 honor each, equal to {{Icon Small|gold||200}} [[gold]], nominally worth {{Icon Small|silver||{{#expr:200*{{Q|Gold|Market Value Base #}}}}}} silver. The market value of the prisoner, so long as they can walk, doesn't matter. Therefore, you can organ-harvest a lung and kidney ({{Icon Small|silver||{{#expr:{{Q|Lung|Market Value Base #}}+{{Q|Kidney|Market Value Base #}}}}}}), then convert the prisoner into honor. Like slavers, the Royal tribute collector only visits every so often.
+
+Honor itself can be converted into silver at a 4 honor : {{Icon Small|silver||500}} silver rate, or {{Icon Small|silver||375}} silver per prisoner. It is important to note that unlike honor conversion, all other ways of selling human resources get less than market value. However, even a [[Skills#Social|Social]] skill 0 pawn would still only need to sell items with a total ''base'' market value of {{Icon Small|silver||{{#expr:375/0.6}}}} to be more profitable. Generally, it's best to only take the honor if you actually want it as the final product, not to convert it into silver.
+
+=== Extracting organs ===
+{{See also|Surgery|Medical Surgery Success Chance}}
+A healthy pawn can give a [[lung]], a [[kidney]], and a [[heart]] or [[liver]], worth {{Icon Small|silver||{{#expr:{{Q|Lung|Market Value Base #}}+{{Q|Kidney|Market Value Base #}}+{{Q|Heart|Market Value Base #}}}}}}, and you can still butcher their corpse. Most prisoners are worth more as organs than as slaves, and organs can be used for your own diseased or injured pawns, or more easily sold than slaves. However, each harvested organ and deceased patient inflicts [[#Mood table|stacking mood penalties]] under normal circumstances.
+
+Organ harvesting requires a live pawn, a doctor, and 2 units of [[herbal medicine]] (worth {{Icon Small|silver||{{#expr:2*{{Q|Herbal medicine|Market Value Base}}}}}}) or better for each organ. Organs must be undamaged; diseased organs are not available to harvest. The [[kidney]]s, [[lung]]s, [[liver]], and [[heart]] are all options for harvesting. You can typically harvest the following from a healthy pawn:
+
+* 1 kidney worth {{Icon Small|silver||{{Q|Kidney|Market Value Base}}}}
+* 1 lung worth {{Icon Small|silver||{{Q|Lung|Market Value Base}}}}
+* ''Either'' 1 heart or 1 liver, worth {{Icon Small|silver||{{Q|Liver|Market Value Base}}}}. Harvesting either will typically kill the donor pawn.
+
+Harvesting these three organs is worth a total of {{Icon Small|silver||{{Q|Kidney|Market Value Base #}}}} + {{Icon Small|silver||{{Q|Lung|Market Value Base #}}}} + ({{Icon Small|silver||{{Q|Heart|Market Value Base}}}} or {{Icon Small|silver||{{Q|Liver|Market Value Base}}}}) = {{Icon Small|silver||{{#expr: {{Q|Lung|Market Value Base #}} + {{Q|Kidney|Market Value Base #}} + {{Q|Heart|Market Value Base #}}}}}} market value.
+
+If you're unwilling to organ-murder the donor, then you shouldn't remove the heart or the liver. One lung and kidney are worth a total of {{Icon Small|silver||{{#expr: {{Q|Lung|Market Value Base #}} + {{Q|Kidney|Market Value Base #}}}}}}. If the organ "donor" is still alive, they'll receive a -30 mood penalty ''per organ'' removed, at 75% stacking, up to 5 times. Expect survivors to [[break]], so check their melee skill accordingly.
+
+Not all pawns and circumstances are typical. Some pawns are worth more or less as organ donors.
+
+If the heart and liver are both unavailable (typically due to injury or sickness), you may harvest a second kidney for a total of {{Icon Small|silver||{{#expr: {{Q|Lung|Market Value Base #}} + 2* {{Q|Kidney|Market Value Base #}}}}}} or lung for a total of {{Icon Small|silver||{{#expr: 2*{{Q|Lung|Market Value Base #}} + {{Q|Kidney|Market Value Base #}}}}}}.
+
+If you have a [[prosthetic heart]], which is worth {{Icon Small|silver||{{Q|Prosthetic heart|Market Value Base}}}}, you can install it to obtain the more valuable organic heart. Then, you can harvest the liver worth {{Icon Small|silver||{{Q|Liver|Market Value Base}}}}, for a total of {{Icon Small|silver||{{#expr: {{Q|Lung|Market Value Base #}} + {{Q|Kidney|Market Value Base #}} + {{Q|Liver|Market Value Base #}} + {{Q|Heart|Market Value Base #}} - {{Q|Prosthetic heart|Market Value Base #}}}}}}. (If you don't want to organ-murder the patient, skip the liver, for a total value of {{Icon Small|silver||{{#expr: {{Q|Lung|Market Value Base #}} + {{Q|Kidney|Market Value Base #}} + {{Q|Heart|Market Value Base #}} - {{Q|Prosthetic heart|Market Value Base #}}}}}}.) This is more efficient if you can craft your own prosthetic hearts, as items are always bought and sold at a loss.
+
+If the pawn has the [[Deathless]] gene,{{BiotechIcon}} then you can harvest all 6 organs for a total of {{Icon Small|silver||{{#expr: 2*{{Q|Lung|Market Value Base #}} + 2*{{Q|Kidney|Market Value Base #}} + {{Q|Heart|Market Value Base #}} + {{Q|Liver|Market Value Base #}}}}}}. A [[sanguophage]] quest can net a huge sum of money. If installing the [[xenogerm]] yourself, 1 [[archite capsule]] costs {{Icon Small|silver||{{Q|Archite capsule|Market Value Base}}}} to buy, for a net profit of {{Icon Small|silver||{{#expr: 2*{{Q|Lung|Market Value Base #}} + 2*{{Q|Kidney|Market Value Base #}} + {{Q|Heart|Market Value Base #}} + {{Q|Liver|Market Value Base #}} - {{Q|Archite capsule|Market Value Base #}}}}}}. 
+
+A [[Void touched]]{{AnomalyIcon}} pawn with the Deathless gene will grow back organs, and can be duplicated using a [[Corrupted obelisk]]{{AnomalyIcon}} to create a renewable source of organs for infinite profit, but this requires completion of the [[Anomaly (DLC)]].{{AnomalyIcon}} Deathless void touched prisoners will be comatose until vital organs are regrown, preventing them from attempting any breakouts.
+
+Additionally, [[unnatural healing]]{{AnomalyIcon}} can work as an slow organ printer. By capturing a prisoner, and removing all but the most vital organs, then using unnatural healing to restore said organs, you can get a steady supply of new organs. The process is much slower than just extracting organs from more people, and will make the prisoner very upset. But it guarantees that you will have at least 1 organ to sell/use. The infamous peg leg removal method won't work to limit prison breakouts, as unnatural healing has a chance of giving the prisoner a new leg as a replacement, however [[dead calm]]{{BiotechIcon}} will. To aid the organ extraction process, a diet of hard drugs such as [[Yayo]] and implants like [[Joywire]] can also be used to counter the mood penalties inflicted due to organ harvesting.
+
+=== Artificial body parts ===
+Most [[artificial body parts]] can be surgically removed without any mood debuffs, to be reused for your own colony's pawns or resold. Removing artificial parts reduces the market value of the prisoner, both by deducting the value of the implant, and (in most cases) also because of the now-missing body part and decreased [[Capacity|capacities]].
+
+Removing a [[bionic heart]] or [[prosthetic heart]] will immediately organ-murder the patient, with the usual [[#Mood table|mood penalties]]. This can also happen with a [[detoxifier lung]]{{BiotechIcon}} or [[detoxifier kidney]]{{BiotechIcon}} if the patient doesn't have a second lung or kidney remaining.
+
+[[Peg leg]]s and [[wooden hand]]s and [[Wooden foot|feet]] will only yield {{Icon Small|wood||1 wood}} when removed, which is worth less than the medicine necessary to extract them. [[Denture]]s can be removed but do not yield a part to resell. [[Flesh tentacle]]s,{{AnomalyIcon}} [[flesh whip]]s,{{AnomalyIcon}} [[fleshmass lung]]s,{{AnomalyIcon}} and [[fleshmass stomach]]s{{AnomalyIcon}} cannot be extracted, only removed, and spawn a hostile [[Fingerspike]] when removed.
+
+[[Joywire]]s, [[death acidifier]]s,{{RoyaltyIcon}} and [[mindscrew]]s{{RoyaltyIcon}} cannot be removed.
+
+Removing a [[bionic spine]] or both legs leaves the patient helpless, unable to walk or feed themselves. This can be exploited to leave prisoners helpless to escape for long-term exploitation, by installing two [[peg leg]]s and removing them, at the cost of some medicine. However, this also significantly reduces to the market value of the prisoner, and prisoners who cannot walk cannot be sold to the [[Royal tribute collector]].{{RoyaltyIcon}}
+
+=== Execution and fluid ideoligion ===
+{{Ideology|section=1}}
+Executing a prisoner normally incurs a small mood debuff, varying depending on whether the prisoner was considered guilty or not. However, in addition to the positive [[Mood|thought]] that followers of a [[fluid ideoligion]] with the [[Execution (precept)|Execution: Respected if guilty]] or [[Execution (precept)|Required]] precept get from executing prisoners, the ideoligion will also get a [[development point]] for each eligible prisoner executed. Note that [[subcore ripscanner|ripscanning]]{{BiotechIcon}} is considered an execution.
+
+=== Hemogen ===
+{{Biotech|section=1}}
+Pawns can be kept for [[hemogen pack]] production, or directly bloodfed on by those with Hemogen needs. Hemogen packs take a long time to create and are only worth {{Icon Small|Silver||{{Q|Hemogen pack|Market Value Base}}}} [[silver]] per pack, so this is not particularly profitable, but it is valuable for building a stable supply of packs for your hemogen-reliant pawns and as a way of completely automating the training of [[medical]] skill.
+
+=== Genetic extraction and manipulation ===
+{{Biotech|section=1}}
+Pawns can be kept as prisoners for their genetic potential, to perform periodic [[gene]] extractions and extract [[Ovum|ova]] from female prisoners. (Like hemogen packs, ovum are only worth {{Icon Small|Silver||{{Q|Ovum|Market Value Base}}}} [[silver]] and thus not significantly profitable on their own.) They can be kept long term to safely extract genes after the genetic shock wears off, or they can be extracted in rapid succession to get two extractions done quickly at the cost of killing them. 
+
+Prisoners can also be used to split up genepacks that have multiple genes, by installing those genepacks in them, then running extractions on them to get separate genepacks for the genes. This works best on [[baseliner]]s, who are less likely to give a genepack with a non-cosmetic gene attached to the individual gene you want to extract.
+
+[[Sanguophage]] prisoners can also be forced to spread their xenotype.
+
+The [[dead calm]] gene (naturally present in [[genie]]s) will prevent prison breaks while still allowing the prisoner to walk and feed themselves. This will remove any existing xenotype however. [[Deathrest]] can also be used.
+
+=== Subcore production === 
+{{Biotech|section=1}}
+Prisoners can be kept to continually scan in a [[subcore softscanner]] to produce [[standard subcore]]s, or "ripscanned" (executed) in [[subcore ripscanner]] to create a [[high subcore]]. The former is generally not worth keeping a prisoner by itself, but can be worth it when you're already keeping them for other reasons. The latter can be combined with organ harvesting and butchering: take a kidney and a lung, ripscan them, and then butcher the corpse.
+
+For selling, standard subcores are just barely profitable (just {{Icon Small|silver||77}} [[silver]]) compared to their base components and are not worth the time. A high subcore requires {{Icon Small|silver||{{#expr:50*{{Q|Steel|Market Value Base}} + 4*{{Q|Component|Market Value Base}}}}}} [[silver]] of non-human material and is worth {{Icon Small|silver||{{Q|High subcore|Market Value Base}}}} [[silver]], for a Market Value profit of {{Icon Small|silver||{{#expr:1000 - 223}}}}. This is still less than a [[heart]] or [[liver]], but the death is considered an execution rather than organ-murder.
+
+Under some unusual circumstances, [[high subcore]]s can be more profitable than organ-murder:
+* A pawn with [[Deathless]] can be harvested for all 6 major organs (2 lungs, 2 kidneys, heart, liver) and then ripscanned for a total profit of {{Icon Small|silver||6977}} [[silver]].
+* A pawn with [[death refusal]]{{AnomalyIcon}} can survive being ripscanned once for each charge of death refusal.
+
+=== Psychic rituals ===
+{{Anomaly|section=1}}
+Some [[psychic rituals]] require a target, which can be a prisoner as long as they have [[psychic sensitivity]] above 0% (i.e. the target is not [[psychically deaf]] or [[psychically dead]]).
+
+* [[Chronophagy]] de-ages the invoker at the cost of {{Icon Small|bioferrite||20}} [[Bioferrite]] and aging the target.
+* [[Psychophagy]] costs {{Icon Small|bioferrite||20}} [[Bioferrite]] to temporarily increase the invoker's [[psychic sensitivity]] and permanently render the target [[psychically dead]].
+* [[Philophagy]] costs {{Icon Small|shard||1}} [[shard]] and permanently transfers [[skill]] experience from the target's highest skill to the invoker.
+
+[[Imbue death refusal]] can be used on a prisoner (at the cost of {{Icon Small|shard||1}} [[shard]]) to grant that target charge(s) of [[death refusal]], which can allow them to survive normally-fatal exploitation for gene extraction{{BiotechIcon}} or ripscanning.{{BiotechIcon}} This doesn't protect against organ-murder, however.
+
+== Corpses ==
+Human resources don't end when the heart stops - or gets removed.
+
+=== Unprocessed corpses ===
+Pawns generally do not like seeing human corpses, which makes hauling them from place to place difficult. Hauling them to storage can be handled by non-human labor, however: [[Animal training|Animals trained to haul]], [[carrier]] [[dryad]]s{{IdeologyIcon}} and [[lifter]] mechs{{BiotechIcon}} can carry human corpses without penalty. Simply set a [[zone]] so that human haulers won't go to the corpse area.
+
+Similarly, [[animal]]s don't mind eating humans - it isn't cannibalism, after all. You may want to leave a pile of [[raider]] corpses for your [[warg]]s, [[ghoul]]s,{{AnomalyIcon}} and other carnivores/non-grazing omnivores to eat. This doubles as free corpse disposal. Feeding raw human corpses to animals or ghouls has no penalty for the colony.
+
+=== Tainted clothing ===
+You can also strip corpses of their [[apparel|clothes]]. Except for [[utility]] items, apparel stripped from a corpse is considered [[tainted]], reducing its market value by 90% and preventing traders from buying it or, under normal circumstances, accepting it as a gift. Wearing tainted clothing will give stacking mood penalties to colonist pawns who do not have the [[Bloodlust]] [[trait]] or [[inhumanized]] hediff. However, it's often worth the small penalty to use a single critical piece, such as a suit of [[marine armor]], or a [[megasloth wool]] [[parka]] in an [[ice sheet]].
+
+With an [[electric smelter]], you can scrap armor for small amounts of the [[metallic]] resources used to make it even if that armor is tainted, which is moderately useful as a labor-intensive source of small amounts of metal.
+
+=== Human butchering ===
+By default, "humanlike corpses" is turned ''off'' under the [Details...] tab under [Bills] on a [[butcher table]], to avoid accidental over-enthusiasm. Simply go in and turn click it back ''on'', and get to your dark deeds. Butchering a human produces a base yield of {{Icon Small|human meat||{{Q|Human|Meat Yield}}}} [[human meat]] and {{Icon Small|human leather||{{Q|Human|Leather Yield}}}} [[human leather]]. 
+
+Before [[AI Storytellers#Butchering yield|Difficulty and Storyteller]] modifiers, each undamaged adult corpse, butchered by a pawn with 100% [[Butchery Efficiency]] (or 10+ Cooking skill), is worth {{Icon Small|silver||{{#expr:{{Q|Human|Meat Yield}}*{{Q|Human meat|Market Value Base}} + {{Q|Human|Leather Yield}}*{{Q|Human leather|Market Value Base}}}}}} in market value from raw resources - human meat and human leather. Corpses may be further processed - converting them to [[packaged survival meal]]s and [[duster]]s provides an average of {{Icon Small|silver||338}} per corpse.{{Check Tag|Detail|Expected value at say, skill 10?}} This is before considering corpse damage, duster quality, [[Trade Price Improvement|trading skills]], etc. In most practical scenarios, pawns will die from damage, and you'll receive less material.
+
+==== Human meat ====
+[[Human meat]] is nutrition like any other. The meat itself can be used as a last resort for most pawns, at the cost of a massive mood penalty: {{--|20}} for eating raw meat and {{--|15}} for meals made of human meat. For cannibals, these penalties are reversed to mood bonuses, however. Like butchering, you must edit a meal's bill in order for your pawns to start cooking with humans.
+
+A human corpse provides an average of {{Q|Human|Meat Yield}} human meat, before violent death, missing body parts, and [[difficulty]] modifiers are taken into account, for a market value of {{Icon Small|silver||{{#expr:{{Q|Human|Meat Yield}}*{{Q|Human meat|Market Value Base}}}}}}. Human meat itself is worth less than ordinary meat, but not when processed. Selling, cooking, or otherwise processing human meat doesn't carry any additional mood penalties. It can be used in any meal that requires meat, but cannot be processed into saleable meals without vegetables. Human meat can also be processed in a biofuel refinery for {{Icon Small|chemfuel||{{#expr: 35*{{Q|Human|Meat Yield}}/70}}}} [[chemfuel]], worth {{Icon Small|silver||{{#expr: 35*{{Q|Chemfuel|Market Value Base}} * {{Q|Human|Meat Yield}}/70}}}}. It can also be used to make [[kibble]] or fuel a [[biosculpter pod]].{{IdeologyIcon}}
+
+If you must have a non-cannibal subsist on human meat, making the meat into [[carnivore lavish meal|(carnivore)]] [[lavish meal]]s reduces the net mood loss to only {{--|3}} for non-cannibals, in addition to those penalties accrued from butchering the corpse. This can be useful when food is scarce but raider corpses are not.
+
+==== Human leather ====
+[[Human leather]], the other byproduct of butchering a human, is terrible as a protective [[textile]], but has a high [[market value]]. If made into clothing, wearing such items give a mood boost to pawns with the [[bloodlust]] or [[Cannibal (trait)|cannibal]] traits and a mood penalty to those without.
+
+Without [[DLC]], creating human [[armchair]]s or [[duster]]s is the most valuable way to use textiles. If the [[Royalty DLC]]{{RoyaltyIcon}} is enabled, [[formal vest]]s and [[corset]]s are more efficient. Like human meat, working or selling human leather does not have any penalties, once it has been butchered.
+
+Undamaged adult corpses provide an average of {{#vardefineecho:leatherYield|{{#expr:{{Q|Human|Leather Yield}} * 2/3<!-- Factor for not cleanly slaughtered corpses -->}} }} human leather{{Check Tag|Fact Check|Does 2/3 multiplier for not cleanly slaughtered corpses really affect leather?}}, worth {{Icon Small|silver}} {{#expr: {{#var:leatherYield}} * {{Q|Human leather|Market Value Base}} }} on its own. It is enough for {{%|{{#var:leatherYield}}/{{#vardefineecho:dusterAmount|{{Q|Duster|Resource 1 Amount}} }} }} of a [[duster]]; when converted into normal quality dusters, each corpse is worth around {{Icon Small|silver}} {{#expr: ({{#var:leatherYield}}/{{#var:dusterAmount}}) * {{Market Value Calculator|Duster|Human leather}} round 0}} for {{Ticks|({{#var:leatherYield}}/{{#var:dusterAmount}}) * {{Q|Duster|Work To Make}} <!-- Work to craft (partial) duster --> + 450 <!-- Work to butcher --> round 0}} of work. This doesn't account for [[butchery efficiency]] and [[butchery speed]] of the cook and the used butchery workstation.
+
+=== Shambler traps ===
+{{Anomaly|section=1}}
+Corpses can be left in a strategically-placed pile to be revived as friendly [[shambler]]s as needed, by using [[deadlife dust]] from a [[deadlife shell]], [[deadlife pack]], or [[IED deadlife trap]]. This is one of the few productive uses of desiccated or rotting corpses. However, even if the corpses were fresh, they will be rotting (or desiccated) when the shamblers expire. Corpse piles can also pose a threat to your own base if they aren't under a roof, as they can be revived as ''hostile'' shamblers by a [[death pall]] event.
+
+=== Harbinger trees ===
+{{Anomaly|section=1}}
+Harbinger trees convert corpses (including human) and fresh meat (again, including human) into more of themselves, and can be harvested for {{Icon Small|twisted meat||30 [[twisted meat]]}} and a [[Plant Harvest Yield|skill-]] and [[difficulty]]-dependent amount of [[bioferrite]] (base amount {{Icon Small|bioferrite||15}}). This is wasteful compared to [[#Human butchering|butchering the corpses yourself]] and selling the products, but doesn't incur any [[#Mood chart|mood penalties]] other than possibly from seeing the corpses, and requires much less labor.
+
+Harbinger trees will eat rotting or desiccated corpses but do not gain any nutrition from them.
+
+== Mood penalties ==
+"Normal" colonists in base game (Core RimWorld) receive penalties whenever ''anyone'' in the colony: butchers corpses, harvest organs, kills a pawn through organ harvest, or sells slaves. Colonists will also receive penalties for seeing corpses, eating human flesh, wearing human leather, or wearing tainted clothing. They also don't like butchering corpses themselves. Colonists will know about organ harvesting and slavery (but ''not'' butchering) even while on a [[caravan]], or in another settlement. Debuffs from slavery, organ harvesting, and for a human butcher all stack, so it becomes very dangerous unless your colony is filled with psychopaths/cannibals.
+
+Some additional care can be taken to maintain mood levels through other means, such as providing additional [[recreation]], [[psychic soothe pulser]]s, better [[meal]]s, [[drugs]] or improved quality bed. However, reserving these mood regulators for your organ farm could mean that a poorly timed [[psychic drone]] on top could seriously mess with your colony.
+
+Mood penalties are occasionally useful in their own right. Low mood can cause [[mental break]]s, activating inspirations for a [[tortured artist]]. Low mood also makes [[Ideoligion#Conversion|conversion]]{{IdeologyIcon}} easier, and can even cause a [[Crisis of belief]]. 
+
+A pawn's [[Ideoligion]]{{IdeologyIcon}} may change what they feel about these practices - they might enjoy or even ''require'' them. See [[Human resources#Ideoligion]] for more details.
+
+=== Mood table ===
+Without the [[Ideology (DLC)|Ideology DLC]]{{IdeologyIcon}}:
+{| class="wikitable"
+! !! Scope !! None (average colonist) !! [[Psychopath]] !! [[Bloodlust]] !! [[Cannibal]] !! [[Inhumanized]]{{AnomalyIcon}}
+|-
+! [[Mood#Observed corpse|Observes corpse]]
+| One pawn || {{--|4 Mood}}<br>(0.5 days, 3 stacks,<br> 0.5 stack multiplier) || – || – || – || <span style="color:firebrick">'''Normal penalty'''</span>{{Check Tag|Unverified|Crosschecked with the [[Mood]] article, which may be incomplete}}
+|-
+! [[Mood#Observed rotting corpse|Observes rotting corpse]]
+| One pawn || {{--|6 Mood}}<br>(0.5 days, 5 stacks,<br> 0.5 stack multiplier) || <span style="color:firebrick">'''Normal penalty'''</span> || – || <span style="color:firebrick">'''Normal penalty'''</span> || <span style="color:firebrick">'''Normal penalty'''</span>{{Check Tag|Unverified|Crosschecked with the [[Mood]] article, which may be incomplete}}
+|-
+! [[Mood#I butchered humanlike|Butchers human]]
+| Butcher pawn || {{--|6 Mood}}<br>(6 days, 4 stacks,<br> 0.75 stack multiplier) || – || – || – || <span style="color:firebrick">'''Normal penalty'''</span>{{Check Tag|Unverified|Crosschecked with the [[Mood]] article, which may be incomplete}}
+|-
+! [[Mood#We butchered humanlike|Somebody butchers human]]
+| All same-colony pawns || {{--|6 Mood}}<br>(6 days, 1 stack) || – || – || – || <span style="color:firebrick">'''Normal penalty'''</span>{{Check Tag|Unverified|Crosschecked with the [[Mood]] article, which may be incomplete}}
+|-
+! [[Mood#Raw cannibalism|Eats raw human flesh]]
+| Eater || {{--|20 Mood}}<br>(1 day, 1 stack) || <span style="color:firebrick">'''Normal penalty'''</span> || <span style="color:firebrick">'''Normal penalty'''</span> || {{+|20 Mood}}<br>(1 day, 1 stack) || <span style="color:firebrick">'''Normal penalty'''</span>{{Check Tag|Unverified|Crosschecked with the [[Mood]] article, which may be incomplete}}
+|-
+! [[Mood#Cooked cannibalism|Eats meal with human flesh]]
+| Eater || {{--|15 Mood}}<br>(1 day, 1 stack) || <span style="color:firebrick">'''Normal penalty'''</span> || <span style="color:firebrick">'''Normal penalty'''</span> || {{+|15 Mood}}<br>(1 day, 1 stack) || <span style="color:firebrick">'''Normal penalty'''</span>{{Check Tag|Unverified|Crosschecked with the [[Mood]] article, which may be incomplete}}
+|-
+! Wears human skin clothing
+| Pawn wearing clothing || {{--|3/−5/−7/−8 Mood}} || <span style="color:firebrick">'''Normal penalty'''</span> || {{+|3/+5/+7/+8 Mood}} || {{+|3/+5/+7/+8 Mood}} || -
+|-
+! [[Mood#Tainted <name>|Wears tainted clothing]]
+| Pawn wearing clothing || {{--|5/−8/−11/−14 Mood}} || <span style="color:firebrick">'''Normal penalty'''</span> || - || <span style="color:firebrick">'''Normal penalty'''</span> || -
+|-
+! [[Mood#A prisoner was sold|A slave is sold]]
+| All same-faction pawns worldwide || {{--|3 Mood}}<br>(4 days, 5 stacks) || – || <span style="color:firebrick">'''Normal penalty'''</span> || <span style="color:firebrick">'''Normal penalty'''</span> || <span style="color:firebrick">'''Normal penalty'''</span>{{Check Tag|Unverified|Crosschecked with the [[Mood]] article, which may be incomplete}}
+|-
+! [[Mood#Someone's organ harvested|An organ is harvested]]
+| All same-faction pawns || {{--|5 Mood}}<br>(7.5 days, 5 stacks,<br> 0.75 stack multiplier) || – || – || <span style="color:firebrick">'''Normal penalty'''</span> || <span style="color:firebrick">'''Normal penalty'''</span>{{Check Tag|Unverified|Crosschecked with the [[Mood]] article, which may be incomplete}}
+|-
+! Harvests organ
+| Doctor || – || – || {{+|4 Mood}}<br>(1 stack) || - || -
+|-
+|}
+
+Note that the "[[Mood#Someone's organ harvested|Someone's organ harvested]]" debuff does not affect the patient. The patient will have the "[[Mood#My organ harvested|My organ harvested]]" {{--|30 Mood}} debuff instead.
+
+The [[Ideology DLC]] changes the impact of these actions. All [[Ideoligion]]s have precepts for corpses, cannibalism, etc., which will change the moodlet accordingly. While some precept values are designed to be similar to the base game, they are not necessarily identical. See [[Human resources#Ideoligion table]] for more details.
+
+=== Traits ===
+The three [[traits]] below make a colonist react indifferently or even enthusiastically towards human suffering or abuse. If there are more than one of the traits on the same person, the most beneficial one applies (e.g. a Cannibal will always receive +20 mood per day by eating raw human flesh, no matter what other traits that colonist has).
+
+* '''[[Psychopath]]''': No issue with slavery or organ harvesting.
+:* No issue with seeing fresh corpses, butchering corpses, or wearing human skin clothing.
+:* Does '''NOT''' like seeing rotten corpses or eating human flesh.
+
+* '''[[Bloodlust]]''': No issue with organ harvesting. Likes to wear human leather, doesn't mind wearing [[tainted]] apparel (i.e. taken from a dead body)
+:* No issue with seeing corpses (even rotten), butchering corpses.
+:* Does '''NOT''' like cannibalism or slavery.
+
+* '''[[Cannibal (trait)|Cannibal]]''': Loves human flesh and likes to wear human leather.
+:* No issue with seeing fresh corpses or butchering corpses.
+:* Does '''NOT''' like slavery or organ harvesting.
+
+=== Selling slaves ===
+
+=== Mood ===
+* {{--|3}} - Slave sold (4 days). Stacks up to -15 for 5 slaves.
+* Significant negative [[opinion]] of whoever sells the slaves.
+
+Selling slaves incurs a smaller mood decrease than organ harvest. Selling slaves in small amounts - 1 or 2 slaves every 4 days - provides a small and easily manageable mood debuff. You can improve their rooms, temporarily use [[drug]]s or [[lavish meal]]s, or simply tank the mood if the colony is happy otherwise. However, slavers only appear occasionally and stay around for 1-2 days, which makes selling slowly difficult without a nearby [[faction base]].
+
+Alternatively, as the penalty caps out at a stack of 5, selling more than 5 prisoners does not increase the debuff further. Thus, selling in a single burst can be more efficient so long as the larger debuff can be withstood. Timing the sale with the occurrence of a wedding or party for example can help. Slaves can be stored in [[cryptosleep casket]]s to eliminate their upkeep cost while waiting to sell them. Note that prisoners must generally be anaesthetized to do so, and after removing them from the casket they will take some time to both wake up and fully recover which can affect both whether they can be sold and their price. Plan ahead to give them time to recover before their time of sale.
+
+== Ideoligion ==
+{{Ideology|section=1}}
+{{Stub|section=1|reason=1) Mood debuffs involving the Ideology DLC needed. 2) Benefits of executions for development points as a human resource}}
+With the [[Ideology]] DLC, pawns can tolerate - or even enjoy - certain illicit practices. The following precepts are relevant:
+*'''Cannibalism: '''
+:*Cannibalism: Acceptable - Negates penalties for butchering humans, observing non-rotting human corpses, and eating human flesh.
+:*Cannibalism: Preferred (or greater) - Negates penalties for butchering humans, enjoys eating human flesh and wearing human leather.
+*'''Corpses:''' Don't Care - Negates penalties from seeing corpses, fresh or rotten.
+*'''Organ Use:''' Acceptable - Negates all penalties from organ harvesting.
+*'''Slavery:'''
+:*Slavery: Acceptable - Negates penalties for selling prisoners or using slave labor
+:*Slavery: Honorable - Mood buffs for selling slaves and enslaving others
+
+=== Ideoligion table ===
+{| class=wikitable
+! Cannibalism Precepts!! Butchers human !! Somebody butchers human (colonywide) !! Eats human flesh !! Wears human skin clothing !! Eats non-human flesh meal
+|-
+! Cannibalism: Abhorrent
+| {{--|12 Mood}}<br/>(6&nbsp;days) || {{--|5 Mood}}<br/>(5&nbsp;days. 5&nbsp;stacks. 0.75&nbsp;stack multiplier) || {{--|20 Mood}}<br/>(1&nbsp;day. 1&nbsp;stack) || {{--|2/−4/−6/−8 Mood}} || –
+|-
+! Cannibalism: Horrible
+| {{--|6 Mood}}<br/>(6&nbsp;days) || {{--|3 Mood}}<br/>(5&nbsp;days. 5&nbsp;stacks. 0.75&nbsp;stack multiplier) || {{--|12 Mood}}<br/>(1&nbsp;day. 1&nbsp;stack) || {{--|2/−3/−5/−6 Mood}} || –
+|-
+! Cannibalism: Disapproved
+| {{--|3 Mood}}<br/>(6&nbsp;days) || {{--|1 Mood}}<br/>(5&nbsp;days. 5&nbsp;stacks. 0.75&nbsp;stack multiplier) || {{--|5 Mood}}<br/>(1&nbsp;day. 1&nbsp;stack) || {{--|1/−2/−3/−4 Mood}} || –
+|-
+! Cannibalism: Acceptable
+| – || – || – || – || –
+|-
+! Cannibalism: Preferred
+| – || – || {{+|2 Mood}}<br/>(1&nbsp;day. 1&nbsp;stack) || {{+|1/+2/+3/+4 Mood}} || –
+|-
+! Cannibalism: Required (Strong)
+| – || – || {{+|4 Mood}}<br/>(1&nbsp;day. 1&nbsp;stack) || {{+|2/+3/+5/+6 Mood}} || {{--|2 Mood}}<br/>(1&nbsp;day. 1&nbsp;stack)
+|-
+! Cannibalism: Required (Ravenous)
+| – || – || {{+|6 Mood}}<br/>(1&nbsp;day. 1&nbsp;stack) || {{+|2/+4/+6/+8 Mood}} || {{--|4 Mood}}<br/>(1&nbsp;day. 1&nbsp;stack)
+|}
+{| class=wikitable
+! Corpse Precepts!! Observes Corpse !! Observes rotting corpse
+|-
+! Corpses: Ugly
+| {{--|4 Mood}}<br/>(0.5&nbsp;days. 3&nbsp;stacks. 0.5&nbsp;stack multiplier) || {{--|6 Mood}}<br/>(0.5&nbsp;days. 5&nbsp;stacks. 0.3&nbsp;stack multiplier)
+|-
+! Corpses: Don't care
+| – || –
+|}
+
+*Organ Use: Acceptable*
+*Slavery*
+
+== Version history ==
+* [[Version/1.3.3117|1.3.3117]] - Fix: Selling prisoners doesn't trigger negative thoughts on selling to slavers.
+
+{{Nav|guides|wide}}
+[[Category:Guides]]
+[[Category:Game mechanics]]

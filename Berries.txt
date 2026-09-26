@@ -1,0 +1,107 @@
+{{Infobox main|food
+| name = Berries
+| image = Berries.png|Berries
+| description = Assorted berries. Nice to eat, even when raw.
+<!-- Base Stats -->
+| type = Food
+| type2 = Raw food
+| hp = 100
+| deterioration = 6
+| marketvalue = 1.2
+| mass base = 0.027
+| flammability = 1
+| stack limit = 75
+| path cost = 14
+| rotatable = false
+<!-- Ingestion -->
+| taste = Simple
+| food type = vegetable
+| food poison chance = 0.02
+| nutrition = 0.05
+| days to rot = 14
+<!-- Technical -->
+| defName = RawBerries
+| preferability = RawTasty
+<!-- Unused -->
+| always haulable = true
+| draw gui overlay = true
+| graphic class = Graphic_Single
+| eat effect = EatVegetarian
+| graphic path = Things/Item/Resource/PlantFoodRaw/Berries
+| label = berries
+| parent name = PlantFoodRawBase
+| resource readout priority = Middle
+| selectable = true
+| social properness matters = true
+| sound drop = Food_Drop
+| sound eat = RawVegetable_Eat
+| sound interact = Food_Drop
+| thing class = ThingWithComps
+| ticker type = Rare
+| use hit points = true
+}}
+'''Berries''' are a vegetable [[raw food]] obtained by harvesting wild [[berry bush]]es or domesticated [[strawberry plant]]s.  Unlike most raw foods, they can be eaten raw with no [[mood]] penalty.
+
+== Acquisition ==
+The following plants provide berries:
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_14 text-center}}
+! Plant !! Harvest Yield <!--!! Yield/Day<br>(70% Fert) !! Yield/Day<br>(100% Fert) !! Yield/Day<br>(140% Fert) !! Yield/Day<br>(280% Fert)-->
+|-
+{{#ask: [[Harvest Product::Berries]]
+| ?Harvest_Yield
+<!--
+| ?Harvest_Yield_Per_Day_(70)
+| ?Harvest_Yield_Per_Day_(100)
+| ?Harvest_Yield_Per_Day_(140)
+| ?Harvest_Yield_Per_Day_(280)
+-->
+| format = template
+| template = Ask Table Formatter
+| link = none
+}}
+|}
+</li><div>
+
+Note that only [[strawberry plant]]s can be planted. [[Berry bush]]es only spawn naturally.
+
+Berries can also be created by a [[berrymaker]] [[dryad]].{{IdeologyIcon}}
+
+Berries can be foraged by a [[caravan]] when traveling through any [[biome]], other than arid shrubland, [[glowforest]]s{{OdysseyIcon}} and both deserts, in its growing season.
+
+== Summary ==
+As a [[raw food]], berries can be be eaten raw, with a flat {{Bad|2%}} chance of giving [[food poisoning]], or cooked into a [[meal]] with a food poisoning chance dependent on the skill of the cook and the [[cleanliness]] of the kitchen. When used in food recipes that require specific types of [[nutrition]], such as [[fine meal]]s, berries are classified as a vegetable.
+
+Unlike most raw food, eating berries directly does not result in the {{Thought|desc=I had to eat raw food. We should be cooking that kind of food before eating it. We're not animals.|label=ate raw food|stack=1|value=-7|duration=1}}
+
+Berries are also unique in that they are the only raw plant food that [[conceited noble]]s {{RoyaltyIcon}} will eat.
+
+Berries take {{P|Days To Start Rot Base}} days to rot without refrigeration, half that of most other vegetarian foods.
+
+== Analysis == 
+[[Strawberry plant]]s are not particularly work or space efficient to grow, nor are they fertility-insensitive. Berries have 3 major niches:
+* You can forage from wild [[berry bush]]es, giving you food in the very early game.
+* Pawns automatically forage for berries inside a [[caravan]]. Foraging can supplement a caravan's existing food, and a good enough pawn can survive indefinitely off of berries.
+* [[Berrymaker]]s{{IdeologyIcon}} are dryads and not plants. They and their requisite [[gauranlen tree]] can survive up to {{Temperature|-50}}, meaning they can "grow" food in a [[tundra]]. However, they are quite work-intensive; plants should be grown if at all possible.
+Berries have a number of other possible niches, but these lack much application.
+
+They can be eaten raw without mood penalty. However, cooking food into [[meal]]s is almost always better: cooking offers increased nutrition and a decreased food poisoning chance. You could use a [[sterilizing stomach]],{{RoyaltyIcon}} [[nuclear stomach]],{{RoyaltyIcon}} or the [[strong stomach]] gene{{BiotechIcon}} to remove the risk of food poisoning, but it is still more efficient to cook. In addition, the only [[xenotype]] that spawns with strong stomach, the [[pigskins]], also have the [[robust digestion]] gene. While it makes raw food as nutritionally efficient as simple and fine meals, it also eliminates the mood penalty from ''all'' raw food, removing the only advantage berries have over other raw vegetarian foods.
+
+They can be grown in [[hydroponics basin]]s, unlike corn, and unlike potatoes, strawberries receive the full benefit from hydroponics. Compared to [[rice]], strawberries require {{Good|75%}} as much work for {{Bad|86%}} the yield per tile. While this sounds good on paper, each hydroponics basin costs a lot. Therefore, tile efficiency is usually valued more than work efficiency. In addition, this requires that you are using hydroponics at all, that outdoor farmland for growing corn/potatoes is unavailable, and that planter work is an issue at all. A moderately skilled planter (8 Plants) can handle 1 full [[sun lamp]] setup, 24 basins, with plenty of time to spare.
+
+=== Nobles ===
+Berries can be eaten by [[conceited noble]]s, but that requires that you have nobles and that they are conceited. Even then, [[fine meal]]s are far more nutritionally efficient, and can be eaten by praetors and below. [[Lavish meal]]s are net equal on nutrition, give {{+|12}} mood, and suit any noble rank. Even a conceited, pigskin noble would be more efficiently fed by growing corn, and turning that into [[vegetarian lavish meal]]s.
+
+Therefore, berries only have a niche if you have a conceited noble and cannot make fine meals at all. Or, you have a conceited baron (or higher), can't make lavish meals, and aren't willing to tank the {{--|3}} from the combined ''Ate fine meal'' mood buff and ''Ate low-class food'' mood penalty but ''are'' willing to risk, or are immune to, food poisoning.
+
+== Gallery ==
+<gallery>
+Berries old 2.png|Old sprite
+Berries old.png|Even older sprite
+</gallery>
+
+== Version history ==
+* [[Version/0.2.363|0.2.363]] - added
+
+{{nav|Food|wide}}
+[[Category:Food]] [[Category:Raw Food]] [[Category:Vegetarian]]

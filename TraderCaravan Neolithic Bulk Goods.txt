@@ -1,0 +1,105 @@
+{{Main|Neolithic bulk goods trader}}{{#set:
+ | Name = Neolithic bulk goods trader
+ | Tech Level = Neolithic
+
+ | Trades Single = Silver
+ | Trades Single = Wood<!--WoodLog-->
+ | Trades Single = Cloth
+ | Trades Single = Pemmican
+ | Trades Single = Herbal medicine<!--MedicineHerbal-->
+ | Trades Single = Dye
+ | Trades Single = Ritual mask
+ | Trades Single = Ceremonial hood
+ | Trades Single = Chocolate<!--StockGenerator_MultiDef-->
+ | Trades Single = Kibble<!--StockGenerator_MultiDef-->
+
+ | Trades Category = Textiles
+ | Trades Category = FoodRaw
+ | Trades Category = Drugs
+
+ | Trades Tag = BasicClothing
+ | Trades Tag = Clothing
+
+ | Sells Tag = AnimalFarm
+
+ | Buys Tag = ExpensiveSimple
+ | Buys Tag = Art
+ | Buys Tag = MusicalInstrument
+}}
+<onlyinclude>
+This trader '''buys and sells''' the following things:
+{| {{STDT|sortable c_03}}
+! style="width:8em" | Name !! Price !! style="width:4em" | Min stock !! style="width:4em" | Max stock
+|-
+! [[Silver]]
+| ×1 || 750 || 1200
+|-
+! [[Wood]]
+| ×1 || 100 || 350
+|-
+! [[Cloth]]
+| ×1 || 100 || 300
+|-
+! [[Pemmican]]
+| ×1 || 500 || 1000
+|-
+! [[Herbal medicine]]
+| ×1 || 0 || 10
+|-
+! [[Dye]]
+| ×1 || 20 || 30
+|-
+! [[Ritual mask]] {{AnomalyIcon}}
+| ×1 || -1 || 2
+|-
+! [[Ceremonial hood]] {{AnomalyIcon}}
+| ×1 || -1 || 2
+|}
+
+Additionally this trader '''buys and sells''' the following groups of things:
+{| {{STDT|sortable c_03}}
+! style="width:8em" | Group /<br/>Trade tag !! Price !! style="width:4em" | Min stock !! style="width:4em" | Max stock !! style="width:4em" | Variety !! style="text-align:left" | Things
+|-
+! Textiles
+| ×1 || 200 {{Icon Small|silver}} || 600 {{Icon Small|silver}} || 2 kinds || {{#ask: [[Category:Textile]] [[Name::!Dread leather]] | template = DLC Icons | link = none | sep = ,<nowiki> </nowiki> | sort = From DLC, Name}}
+|-
+! Raw food
+| ×1 || 400 {{Icon Small|silver}} || 600 {{Icon Small|silver}} || 4 kinds || {{#ask: [[Category:Raw Food]] [[Name::!~*(fert.)]] | template = DLC Icons | link = none | sep = ,<nowiki> </nowiki> | sort = From DLC, Name}}
+|-
+! Drugs (neolithic)
+| ×1 || {{Check Tag|???|Not defined in the xml. There must be some default value.}} || ??? || ??? kinds || {{#ask: [[Category:Drug]] [[Tech Level::Neolithic]] | template = DLC Icons | link = none | sep = ,<nowiki> </nowiki> | sort = From DLC, Name}}
+|-
+! Basic clothing (neolithic)
+| ×1 || {{Check Tag|???|Not defined in the xml. There must be some default value.}} {{Icon Small|silver}} || ??? {{Icon Small|silver}} || ??? kinds || {{#ask: [[TradeTags::BasicClothing]] [[Tech Level::Neolithic]] | template = DLC Icons | link = none | sep = ,<nowiki> </nowiki> | sort = From DLC, Name}}
+|-
+! Clothing (neolithic)
+| ×1 || {{Check Tag|???|Not defined in the xml. There must be some default value.}} {{Icon Small|silver}} || ??? {{Icon Small|silver}} || 3 kinds || {{#ask: [[TradeTags::Clothing]] [[Tech Level::Neolithic]] | template = DLC Icons | link = none | sep = ,<nowiki> </nowiki> | sort = From DLC, Name}}
+|-
+! Other
+| ×1 || {{Check Tag|???|How does StockGenerator_MultiDef work?}} || ??? || ??? || [[Chocolate]], [[Kibble]]
+|}
+
+Additionally this trader '''sells''' the following groups of things:
+{| {{STDT|sortable c_03}}
+! style="width:8em" | Group /<br/>Trade tag !! Price !! style="width:4em" | Min stock !! style="width:4em" | Max stock !! style="width:4em" | Variety !! style="text-align:left" | Things
+|-
+! Farm animals
+| ×1 || 2 || 4 || 2 kinds || Farm animals: {{#ask: [[TradeTags::AnimalFarm]] [[Wildness::<0.7]] | template = DLC Icons | link = none | sep = ,<nowiki> </nowiki> | sort = From DLC, Name}} (mating pairs will be generated for these)
+|}
+
+Additionally this trader '''buys''' the following groups of things:
+{| {{STDT|sortable c_03}}
+! style="width:8em" | Group /<br/>Trade tag !! Price !! style="text-align:left" | Things
+|-
+! Art
+| ×1 || {{#ask: [[TradeTags::Art]] | template = DLC Icons | link = none | sep = ,<nowiki> </nowiki> | sort = From DLC, Name}}
+|-
+! Musical instruments
+| ×1 || {{#ask: [[TradeTags::MusicalInstrument]] | template = DLC Icons | link = none | sep = ,<nowiki> </nowiki> | sort = From DLC, Name}}
+|-
+! Expensive simple
+| ×1 || [[Insect jelly]] and generally all items that have a [[market value]] of at least 15 {{Icon Small|silver}}, excluding [[apparel]], [[weapons]], [[medicine (disambiguation)|medicines]], and [[drugs]].<!-- Some individual items are also excluded, see <tradeability> in the xml -->
+|}
+
+</onlyinclude>
+[[Category:Trade]]

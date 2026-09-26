@@ -1,0 +1,83 @@
+<!--Top Nav Box-->
+{| align=center
+| {{Resources_Nav}}
+|}
+----
+<!-- End of Nav -->
+__NOTOC__
+'''Materials''' are the most basic resources. They are used for [[structure]]s, [[buildings]], [[apparel]], [[weapons]] and more.
+
+== Stuff ==
+Materials are grouped in five [[Property:Stuff Category|stuff categories]]:
+*'''[[Stony]]''' for all types of stone.
+*'''[[Metallic]]''' for all metals.
+*'''[[Woody]]''' for wood.
+*'''[[Leathery]]''' for all leathers.
+*'''[[Fabric]]''' for all fabrics.
+
+So called "stuffable" buildings and items ([[walls]], [[armchair]]s, [[longsword]]s, [[plate armor]] etc.) have [[Property:Stuff Tags|stuff tags]]. They determine from which stuff categories the building or item can be made of. The player can choose any material from these stuff categories to build or craft that building or item. The stats of the end product are then affected by the modifiers of the used material.
+
+== Comparison table ==
+The following table shows all materials, their stuff category and all their modifiers. The empty cells give a good overview which materials can't be used for what kind of building or item.
+
+* Fabrics and leathers can't be used for [[weapons]], [[door]]s and [[bed]]s
+* Stone can't be used for [[apparel]]. (Note that even though jade has armor and insulation modifiers, it can't be used for any type of apparel.)
+
+<includeonly><onlyinclude>
+|-
+! {{DLC Icons|{{{Name}}} }}
+| {{{Stuff Category}}}
+| data-sort-value="{{{Market Value Base}}}" | {{{Market Value Base}}} {{Icon Small|silver}}
+| data-sort-value="{{{Beauty Factor}}}" | ×{{{Beauty Factor}}}
+| data-sort-value="{{{Beauty Offset}}}" | +{{{Beauty Offset}}}
+| data-sort-value="{{{Work To Make Factor}}}" | ×{{{Work To Make Factor}}}
+| data-sort-value="{{{Work To Build Factor}}}" | ×{{{Work To Build Factor}}}
+| data-sort-value="{{{Work To Build Offset}}}" | {{#if:{{{Work To Build Offset}}}|+{{Ticks|{{{Work To Build Offset}}}}}|-}}
+| data-sort-value="{{{Max Hit Points Factor}}}" | ×{{{Max Hit Points Factor}}}
+| data-sort-value="{{{Flammability Factor}}}" | ×{{{Flammability Factor}}}
+| data-sort-value="{{{Armor - Sharp Factor}}}" | {{#if: {{{Armor - Sharp Factor}}}|×{{{Armor - Sharp Factor}}}|-}}
+| data-sort-value="{{{Armor - Blunt Factor}}}" | {{#if: {{{Armor - Blunt Factor}}} |×{{{Armor - Blunt Factor}}}|-}}
+| data-sort-value="{{{Armor - Heat Factor}}}" | {{#if: {{{Armor - Heat Factor}}} |×{{{Armor - Heat Factor}}}|-}}
+| data-sort-value="{{{Insulation - Cold Factor}}}" | {{#if: {{{Insulation - Cold Factor}}} |+{{Temperature|{{{Insulation - Cold Factor}}}||delta}}|-}}
+| data-sort-value="{{{Insulation - Heat Factor}}}" | {{#if: {{{Insulation - Heat Factor}}} |+{{Temperature|{{{Insulation - Heat Factor}}}||delta}}|-}}
+| data-sort-value="{{{Melee Blunt Damage Factor}}}"| {{#if: {{{Melee Blunt Damage Factor}}} | ×{{{Melee Blunt Damage Factor}}} |-}}
+| data-sort-value="{{{Melee Sharp Damage Factor}}}" | {{#if: {{{Melee Sharp Damage Factor}}} | ×{{{Melee Sharp Damage Factor}}} |-}}
+| data-sort-value="{{{Melee Cooldown Factor}}}"| {{#if: {{{Melee Cooldown Factor}}} | ×{{{Melee Cooldown Factor}}} |-}}
+| data-sort-value="{{{Door Opening Speed Factor}}}"| {{#if: {{{Door Opening Speed Factor}}} | ×{{{Door Opening Speed Factor}}} |-}}
+| data-sort-value="{{{Rest Effectiveness Factor}}}"| {{#if: {{{Rest Effectiveness Factor}}} | ×{{{Rest Effectiveness Factor}}} |-}}
+</onlyinclude></includeonly><div><li style="display: inline-table;">
+{| {{STDT| sortable c_03 text-center}}
+! Name !! Stuff Category !! Market Value !! Beauty (Factor) !! Beauty (Offset) !! Work To Make !! Work To Build (Factor) !! Work To Build (Offset) !! Max Hit Points !! Flammability !! Armor - Sharp !! Armor - Blunt !! Armor - Heat !! Insulation - Cold !! Insulation - Heat !! Melee Blunt Damage !! Melee Sharp Damage !! Melee Cooldown !! Door Opening Speed !! Rest Effectiveness
+{{#ask: [[Stuff Category::+]]
+ | named args = true
+ | ?Name
+ | ?Stuff Category
+ | ?Market Value Base
+ | ?Beauty Factor
+ | ?Beauty Offset
+ | ?Work To Make Factor
+ | ?Work To Build Factor
+ | ?Work To Build Offset # ticks
+ | ?Max Hit Points Factor
+ | ?Flammability Factor
+ | ?Armor - Sharp Factor
+ | ?Armor - Blunt Factor
+ | ?Armor - Heat Factor
+ | ?Insulation - Cold Factor
+ | ?Insulation - Heat Factor
+ | ?Melee Blunt Damage Factor
+ | ?Melee Sharp Damage Factor
+ | ?Melee Cooldown Factor
+ | ?Door Opening Speed Factor
+ | ?Rest Effectiveness Factor
+ | format = template
+ | template = :Materials
+ | limit = 100
+ | link = none
+ | sort = Stuff Category, From DLC, Name
+}}
+|}
+</li></div>
+
+{{nav|materials|wide}}
+[[Category:Resources]]

@@ -1,0 +1,392 @@
+{{Infobox main|food
+| name = Beer
+| image = Beer b.png
+| description = The first beverage besides water ever consumed by mankind. Beer can taste good, but its main effect is intoxication. Excessive consumption can lead to alcohol blackouts and, over time, addiction.
+<!-- Base Stats -->
+| type = Drug
+| type2 = Social drug
+| tech level = Neolithic
+| marketvalue = 12
+| stack limit = 25
+| mass base =  0.3
+| hp = 50
+| deterioration = 0.5
+| flammability = 0.5
+| rotatable = false
+| path cost = 14
+<!-- Melee Combat -->
+| mode = Melee
+| meleeattack1dmg = 9
+| meleeattack1type = Blunt
+| meleeattack1part = Bottle
+| meleeattack1cool = 2
+| meleeattack1ap = 13
+| meleeattack2dmg = 9
+| meleeattack2type = Poke
+| meleeattack2part = Neck
+| meleeattack2cool = 2
+| meleeattack2ap = 13
+<!-- Ingestion -->
+| food type = processed, fluid, liquor
+| nutrition = 0.08
+| taste = Simple
+| joy offset = 0.17
+| joy kind = Chemical
+| addictiveness = 0.01
+| max num to ingest at once = 1
+| ingestion time = 0
+<!-- Creation -->
+| production facility 1 = Fermenting barrel
+| work to make = 0
+| resource 1 = Wort
+| resource 1 amount = 1
+<!-- Technical -->
+| defName = Beer
+| has quality = False
+| tradeTags = Drugs
+| preferability = NeverForNutrition
+| drug category = Social
+| is pleasure drug = true
+}}
+
+'''Beer''' is a beverage that functions as a [[drug]]. It provides some [[recreation]], and inebriates the user. The more intoxicated a pawn is, the greater their [[mood]], but the worse it is for health and performance. In addition to its intoxicating effects, beer is considered [[food]], as it gives a small amount of [[nutrition]].
+
+It can also be used as a somewhat ineffectual [[Weapons#Base melee stats|melee weapon]], doing less {{DPS}} than a [[club]] or even a lump of [[wood]], but still more than a normal [[human]] fist. Conveniently, the beer is not lost after using it as a weapon.
+
+== Acquisition ==
+
+Beer is produced in three steps. It requires the [[Research#Beer brewing|Beer brewing]] research to create.
+
+# Plant and harvest [[hops]], which is an easy task and can be done without Research (min [[Skills#Plants|Plants Skill]] 3).
+# Turn 25 hops into 5 [[wort]] at a [[brewery]]. This is a [[Work#Cook|Cooking task]], and its [[Drug Cooking Speed|speed]] dependent on cooking skill. There is no chance of [[food poisoning]], so unskilled cooks can create wort, just slower.
+# Place up to 25 units of wort (125 hops) into a [[fermenting barrel]] for 6 days. Filling the barrel is considered a [[Work#Haul|Hauling task]]. Partial loads of wort are possible, but less efficient. The size of the load relatively to total capacity is represented by the length of the bar displayed on the barrel once any wort has been added.<br>If more wort is added to a barrel already fermenting, progress will be delayed proportional to both the wort added and already in the barrel. For example, adding 5 wort to a barrel with 5 wort would halve existing progress. Each wort is converted to 1 beer. If temperatures get too hot or cold, the brewing will fail and no beer will be produced.  
+# When the fermentation is complete, represented by the fill bar changing color from brown to yellow, the completed beer can be removed. This is considered a [[Work#Haul|Hauling task]].
+
+[[File:Fermenting_progress.png|thumb|left|250px|[[Fermenting barrel]]s.<br>Top: Fermenting, 0% progress<br>Bottom: Fermenting, 100% progress<br>Bar ''length'' shows # of wort inside.]]
+
+=== Critical temperature ===
+The process of brewing involves a living organism, so difficulty can increase greatly depending on your biome's weather conditions. Avoiding delays or failure requires following temperature requirements:
+
+: {| class="wikitable"
+|-
+! Temperature
+! Effect
+|-
+| {{Temperature|7|{{Q|Fermenting barrel|Max Safe Temperature}}}}
+| Ideal fermenting temperature range
+|-
+| {{Temperature|{{Q|Fermenting barrel|Min Safe Temperature}}|7}}
+| Temporarily halts fermentation process, process continues when ideal temperature restored
+|-
+| > {{Temperature|{{Q|Fermenting barrel|Max Safe Temperature}}}}<br> < {{Temperature|{{Q|Fermenting barrel|Min Safe Temperature}}}}
+| Freezing or "too hot" is fatal to the brewing process, all product is lost, all the previous work wasted
+|}
+
+The inspect pane will indicate 'Overheating' or 'Freezing', increasing by {{#expr:{{Q|Fermenting barrel|Spoiling Rate}}*100}}% per {{Temperature|1||delta}} outside the safe temperature range each [[tick]]. This is halted when safe temperature is restored, but not reset. If it reaches 100%, the contents are 'ruined by temperature' and no beer can be obtained.
+
+== Summary ==
+Beer is a mood enhancing drug that has a variety of effects. These can be broken into effects that occur:
+
+* Instantaneously and one time upon using the drug.
+* While high on the drug.
+* After being high on the drug.
+* While having a built-up tolerance to the drug.
+* While addicted to the drug.
+* While withdrawing from the drug.
+
+=== Upon drinking ===
+A pawn consuming beer will look for a place to sit in a twenty tile radius first, but will also drink it while standing if it doesn't find one. Drinking a beer takes {{ticks|{{P|Ingestion Time}}}}. It has the following one time effects:
+
+* {{+|{{%|{{P|Joy Offset}}}}}} {{P|Joy Kind}} [[recreation]]
+* {{+|{{P|Nutrition}} }} [[Nutrition]]
+* If the pawn has the [[chemical interest]] or [[chemical fascination]] trait:
+** {{+|20%}} [[Chemical need]]
+* '''+{{%|{{#vardefineecho:highSeverity|0.15}} * 0.25}} to +{{%|{{#var:highSeverity}}}}''' Alcohol high severity, depending on tolerance ''(see "Alcohol high" below)''
+* {{++|{{%|{{#vardefineecho:toleranceSeverityOffset|0.016}}}}}} [[Drugs#Tolerance|Tolerance]] severity, divided by body size ''(see "Tolerance" below)''
+* If the pawn has {{%|{{#vardefineecho:minToleranceToAddict|0.25}}}} tolerance already:
+** {{Bad| {{%|{{P|Addictiveness}} * ( 1 + 4 * {{#var:minToleranceToAddict}} / 0.5) }} to {{%|{{P|Addictiveness}} * 15}} }} [[Addiction]] chance ''(see "Addiction" below)''
+* If the pawn has an addiction already:
+** {{+|{{%|{{#vardefineecho:needOffset|0.9}}}}}} Alcohol need ''(see "Addiction" below)''
+** {{--|{{%|{{#vardefineecho:addictionSeverityOffset|0.2}}}}}} Addiction progress ''(see "Addiction" below)''
+
+=== Alcohol high ===
+{{Quote|"Alcohol in the bloodstream. It makes people happy, but reduces capacities."|Alcohol high description}}
+
+Each beer increases the alcohol high severity by the following formula:
+
+<code>Increase in severity = {{#var:highSeverity}} * (100 - (tolerance * 75 round 0))</code>
+
+Therefore with 0% tolerance the severity increases by {{%|{{#var:highSeverity}}}}, with 100% tolerance by {{%|{{#var:highSeverity}}*0.25}}. It decreases by {{%|{{#vardefineecho:highSeverityPerDay|0.75}}}} per day again, meaning that the high of a single dose lasts between {{#vardefineecho:highDurationMin|{{#expr: {{#var:highSeverity}}*0.25/({{#var:highSeverityPerDay}}/24) round 1}}}} and '''{{Plural|{{#vardefineecho:highDurationMax|{{#expr: {{#var:highSeverity}}/({{#var:highSeverityPerDay}}/24) round 1}}}}|hour}}'''. The maximum severity of an alcohol high is 100% which is reached with {{#expr: 1/{{#var:highSeverity}} round 1}} to {{#expr:1/{{#var:highSeverity}}/0.25 round 1}}&nbsp;beer.
+
+The alcohol high severity not only sets the length of the high but also affects the symptoms.
+
+{| class="wikitable" style="text-align:right;"
+! Level
+! Alcohol high severity
+! [[Mood]]
+! [[Pain]]
+! [[Consciousness]]
+! [[Moving]]
+! Social fight chance
+! Other effects
+|-
+! Warm
+| >0%
+| style="text-align:left;" | {{Thought|value=+10|stack=1|label=alcohol warmth|desc=I just feel a bit more relaxed after that drink. That's good.}}
+| {{Good|×90%}}
+| – || – || {{Bad|×1.5}}
+| style="text-align:left;" | {{--|2%}} [[Manipulation]]
+|-
+! Tipsy
+| >25%
+| style="text-align:left;" | {{Thought|value=+14|stack=1|label=quite inebriated|desc=I'm a bit wobbly! And this is quite enjoyable.}}
+| {{Good|×80%}}
+| {{Bad|×90%}}
+| {{--|5%}}
+| {{Bad|×2.5}}
+| style="text-align:left;" | –
+|-
+! Drunk
+| >40%
+| style="text-align:left;" | {{Thought|value=+20|stack=1|label=drunk|desc=I feel so uninhibited and unafraid! This is a great time!}}
+| {{Good|×50%}}
+| {{Bad|×65%}}
+| {{--|10%}}
+| {{Bad|×4}}
+| style="text-align:left;" | {{Bad|Vomiting:}} on average every 0.75 days.<br/>{{Bad|Hangover}} once the alcohol high severity drops below 40% (see ''"Hangover"'' below).
+|-
+! Hammered
+| >70%
+| style="text-align:left;" | {{Thought|value=+26|stack=1|label=hammered|desc=Wooo! What's going on?}}
+| {{Good|×30%}}
+| {{Bad|×50%}}
+| {{--|10%}}
+| {{Bad|×5}}
+| style="text-align:left;" | {{Bad|Vomiting:}} on average every 0.2 days.
+|-
+! Blackout
+| >90%
+| style="text-align:left;" | –
+| {{Good|×10%}}
+| {{Bad|max. 10%}}
+| – || –
+| style="text-align:left;" | {{Bad|Chemical damage (moderate):}}<br/>The [[chemical damage]] occurs on average every 10 days and affects the brain.
+|}
+
+Assuming the beers are consumed right after each other with initially 0% tolerance, the different stages last the following times:
+
+{| {{STDT| sortable c_25 text-center}}
+! Beers Consumed !! Hours Warm !! Hours Tipsy !! Hours Drunk !! Hours Hammered !! Hours Blackout
+|-
+| {{#vardefineecho:doses|1}}{{#vardefine:highSeverityOdd | {{#expr: {{#var:highSeverity}} * (1 - ({{#var:toleranceSeverityOffset}} * ({{#var:doses}}-1) * 0.75 round 2))}} }}
+| {{#expr: {{#ifexpr: {{#var:highSeverityOdd}} < 0.25 | {{#var:highSeverityOdd}} | 0.25}} / {{#vardefineecho:highSeverityPerHour|{{#expr: {{#var:highSeverityPerDay}}/24}} }} round 1}}
+| {{#ifexpr: {{#var:highSeverityOdd}} > 0.25 | {{#expr: ({{#ifexpr: {{#var:highSeverityOdd}} < 0.4 | {{#var:highSeverityOdd}} | 0.4}} - 0.25)/{{#var:highSeverityPerHour}} round 1}} | 0 }}
+| {{#ifexpr: {{#var:highSeverityOdd}} > 0.4 | {{#expr: ({{#ifexpr: {{#var:highSeverityOdd}} < 0.7 | {{#var:highSeverityOdd}} | 0.7}} - 0.4)/{{#var:highSeverityPerHour}} round 1}} | 0 }}
+| {{#ifexpr: {{#var:highSeverityOdd}} > 0.7 | {{#expr: ({{#ifexpr: {{#var:highSeverityOdd}} < 0.9 | {{#var:highSeverityOdd}} | 0.9}} - 0.7)/{{#var:highSeverityPerHour}} round 1}} | 0 }}
+| {{#ifexpr: {{#var:highSeverityOdd}} > 0.9 | {{#expr: ({{#ifexpr: {{#var:highSeverityOdd}} < 1 | {{#var:highSeverityOdd}} | 1}} - 0.9)/{{#var:highSeverityPerHour}} round 1}} | 0 }}
+|-
+| {{#vardefineecho:doses|2}}{{#vardefine:highSeverityEven|{{#expr: {{#var:highSeverityOdd}} + {{#var:highSeverity}} * (1 - ({{#var:toleranceSeverityOffset}} * ({{#var:doses}}-1) * 0.75 round 2))}} }}
+| {{#expr: {{#ifexpr: {{#var:highSeverityEven}} < 0.25 | {{#var:highSeverityEven}} | 0.25}} / {{#var:highSeverityPerHour}} round 1}}
+| {{#ifexpr: {{#var:highSeverityEven}} > 0.25 | {{#expr: ({{#ifexpr: {{#var:highSeverityEven}} < 0.4 | {{#var:highSeverityEven}} | 0.4}} - 0.25)/{{#var:highSeverityPerHour}} round 1}} | 0 }}
+| {{#ifexpr: {{#var:highSeverityEven}} > 0.4 | {{#expr: ({{#ifexpr: {{#var:highSeverityEven}} < 0.7 | {{#var:highSeverityEven}} | 0.7}} - 0.4)/{{#var:highSeverityPerHour}} round 1}} | 0 }}
+| {{#ifexpr: {{#var:highSeverityEven}} > 0.7 | {{#expr: ({{#ifexpr: {{#var:highSeverityEven}} < 0.9 | {{#var:highSeverityEven}} | 0.9}} - 0.7)/{{#var:highSeverityPerHour}} round 1}} | 0 }}
+| {{#ifexpr: {{#var:highSeverityEven}} > 0.9 | {{#expr: ({{#ifexpr: {{#var:highSeverityEven}} < 1 | {{#var:highSeverityEven}} | 1}} - 0.9)/{{#var:highSeverityPerHour}} round 1}} | 0 }}
+|-
+| {{#vardefineecho:doses|3}}{{#vardefine:highSeverityOdd|{{#expr: {{#var:highSeverityEven}} + {{#var:highSeverity}} * (1 - ({{#var:toleranceSeverityOffset}} * ({{#var:doses}}-1) * 0.75 round 2))}} }}
+| {{#expr: {{#ifexpr: {{#var:highSeverityOdd}} < 0.25 | {{#var:highSeverityOdd}} | 0.25}} / {{#var:highSeverityPerHour}} round 1}}
+| {{#ifexpr: {{#var:highSeverityOdd}} > 0.25 | {{#expr: ({{#ifexpr: {{#var:highSeverityOdd}} < 0.4 | {{#var:highSeverityOdd}} | 0.4}} - 0.25)/{{#var:highSeverityPerHour}} round 1}} | 0 }}
+| {{#ifexpr: {{#var:highSeverityOdd}} > 0.4 | {{#expr: ({{#ifexpr: {{#var:highSeverityOdd}} < 0.7 | {{#var:highSeverityOdd}} | 0.7}} - 0.4)/{{#var:highSeverityPerHour}} round 1}} | 0 }}
+| {{#ifexpr: {{#var:highSeverityOdd}} > 0.7 | {{#expr: ({{#ifexpr: {{#var:highSeverityOdd}} < 0.9 | {{#var:highSeverityOdd}} | 0.9}} - 0.7)/{{#var:highSeverityPerHour}} round 1}} | 0 }}
+| {{#ifexpr: {{#var:highSeverityOdd}} > 0.9 | {{#expr: ({{#ifexpr: {{#var:highSeverityOdd}} < 1 | {{#var:highSeverityOdd}} | 1}} - 0.9)/{{#var:highSeverityPerHour}} round 1}} | 0 }}
+|-
+| {{#vardefineecho:doses|4}}{{#vardefine:highSeverityEven|{{#expr: {{#var:highSeverityOdd}} + {{#var:highSeverity}} * (1 - ({{#var:toleranceSeverityOffset}} * ({{#var:doses}}-1) * 0.75 round 2))}} }}
+| {{#expr: {{#ifexpr: {{#var:highSeverityEven}} < 0.25 | {{#var:highSeverityEven}} | 0.25}} / {{#var:highSeverityPerHour}} round 1}}
+| {{#ifexpr: {{#var:highSeverityEven}} > 0.25 | {{#expr: ({{#ifexpr: {{#var:highSeverityEven}} < 0.4 | {{#var:highSeverityEven}} | 0.4}} - 0.25)/{{#var:highSeverityPerHour}} round 1}} | 0 }}
+| {{#ifexpr: {{#var:highSeverityEven}} > 0.4 | {{#expr: ({{#ifexpr: {{#var:highSeverityEven}} < 0.7 | {{#var:highSeverityEven}} | 0.7}} - 0.4)/{{#var:highSeverityPerHour}} round 1}} | 0 }}
+| {{#ifexpr: {{#var:highSeverityEven}} > 0.7 | {{#expr: ({{#ifexpr: {{#var:highSeverityEven}} < 0.9 | {{#var:highSeverityEven}} | 0.9}} - 0.7)/{{#var:highSeverityPerHour}} round 1}} | 0 }}
+| {{#ifexpr: {{#var:highSeverityEven}} > 0.9 | {{#expr: ({{#ifexpr: {{#var:highSeverityEven}} < 1 | {{#var:highSeverityEven}} | 1}} - 0.9)/{{#var:highSeverityPerHour}} round 1}} | 0 }}
+|-
+| {{#vardefineecho:doses|5}}{{#vardefine:highSeverityOdd|{{#expr: {{#var:highSeverityEven}} + {{#var:highSeverity}} * (1 - ({{#var:toleranceSeverityOffset}} * ({{#var:doses}}-1) * 0.75 round 2))}} }}
+| {{#expr: {{#ifexpr: {{#var:highSeverityOdd}} < 0.25 | {{#var:highSeverityOdd}} | 0.25}} / {{#var:highSeverityPerHour}} round 1}}
+| {{#ifexpr: {{#var:highSeverityOdd}} > 0.25 | {{#expr: ({{#ifexpr: {{#var:highSeverityOdd}} < 0.4 | {{#var:highSeverityOdd}} | 0.4}} - 0.25)/{{#var:highSeverityPerHour}} round 1}} | 0 }}
+| {{#ifexpr: {{#var:highSeverityOdd}} > 0.4 | {{#expr: ({{#ifexpr: {{#var:highSeverityOdd}} < 0.7 | {{#var:highSeverityOdd}} | 0.7}} - 0.4)/{{#var:highSeverityPerHour}} round 1}} | 0 }}
+| {{#ifexpr: {{#var:highSeverityOdd}} > 0.7 | {{#expr: ({{#ifexpr: {{#var:highSeverityOdd}} < 0.9 | {{#var:highSeverityOdd}} | 0.9}} - 0.7)/{{#var:highSeverityPerHour}} round 1}} | 0 }}
+| {{#ifexpr: {{#var:highSeverityOdd}} > 0.9 | {{#expr: ({{#ifexpr: {{#var:highSeverityOdd}} < 1 | {{#var:highSeverityOdd}} | 1}} - 0.9)/{{#var:highSeverityPerHour}} round 1}} | 0 }}
+|-
+| {{#vardefineecho:doses|6}}{{#vardefine:highSeverityEven|{{#expr: {{#var:highSeverityOdd}} + {{#var:highSeverity}} * (1 - ({{#var:toleranceSeverityOffset}} * ({{#var:doses}}-1) * 0.75 round 2))}} }}
+| {{#expr: {{#ifexpr: {{#var:highSeverityEven}} < 0.25 | {{#var:highSeverityEven}} | 0.25}} / {{#var:highSeverityPerHour}} round 1}}
+| {{#ifexpr: {{#var:highSeverityEven}} > 0.25 | {{#expr: ({{#ifexpr: {{#var:highSeverityEven}} < 0.4 | {{#var:highSeverityEven}} | 0.4}} - 0.25)/{{#var:highSeverityPerHour}} round 1}} | 0 }}
+| {{#ifexpr: {{#var:highSeverityEven}} > 0.4 | {{#expr: ({{#ifexpr: {{#var:highSeverityEven}} < 0.7 | {{#var:highSeverityEven}} | 0.7}} - 0.4)/{{#var:highSeverityPerHour}} round 1}} | 0 }}
+| {{#ifexpr: {{#var:highSeverityEven}} > 0.7 | {{#expr: ({{#ifexpr: {{#var:highSeverityEven}} < 0.9 | {{#var:highSeverityEven}} | 0.9}} - 0.7)/{{#var:highSeverityPerHour}} round 1}} | 0 }}
+| {{#ifexpr: {{#var:highSeverityEven}} > 0.9 | {{#expr: ({{#ifexpr: {{#var:highSeverityEven}} < 1 | {{#var:highSeverityEven}} | 1}} - 0.9)/{{#var:highSeverityPerHour}} round 1}} | 0 }}
+|-
+| {{#vardefineecho:doses|7}}{{#vardefine:highSeverityOdd|{{#expr: {{#var:highSeverityEven}} + {{#var:highSeverity}} * (1 - ({{#var:toleranceSeverityOffset}} * ({{#var:doses}}-1) * 0.75 round 2))}} }}
+| {{#expr: {{#ifexpr: {{#var:highSeverityOdd}} < 0.25 | {{#var:highSeverityOdd}} | 0.25}} / {{#var:highSeverityPerHour}} round 1}}
+| {{#ifexpr: {{#var:highSeverityOdd}} > 0.25 | {{#expr: ({{#ifexpr: {{#var:highSeverityOdd}} < 0.4 | {{#var:highSeverityOdd}} | 0.4}} - 0.25)/{{#var:highSeverityPerHour}} round 1}} | 0 }}
+| {{#ifexpr: {{#var:highSeverityOdd}} > 0.4 | {{#expr: ({{#ifexpr: {{#var:highSeverityOdd}} < 0.7 | {{#var:highSeverityOdd}} | 0.7}} - 0.4)/{{#var:highSeverityPerHour}} round 1}} | 0 }}
+| {{#ifexpr: {{#var:highSeverityOdd}} > 0.7 | {{#expr: ({{#ifexpr: {{#var:highSeverityOdd}} < 0.9 | {{#var:highSeverityOdd}} | 0.9}} - 0.7)/{{#var:highSeverityPerHour}} round 1}} | 0 }}
+| {{#ifexpr: {{#var:highSeverityOdd}} > 0.9 | {{#expr: ({{#ifexpr: {{#var:highSeverityOdd}} < 1 | {{#var:highSeverityOdd}} | 1}} - 0.9)/{{#var:highSeverityPerHour}} round 1}} | 0 }}
+|}
+
+==== Hangover ====
+{{Quote|"An unpleasant delayed after-effect of alcohol intoxication."|Hangover description}}
+Once a colonist reaches at least the drunk state, they will go through the hangover stages after their alcohol high severity drops below 40% again. It isn't visible until after the alcohol effect is fully gone however. If a colonist drinks beer while hungover they will be both hungover and inebriated. Severity starts at 100% and decreases consistently to 0% over the course of a full day, 
+
+{| class="wikitable" style="text-align:right;"
+! Level !! Severity % !! Mood !! Consciousness !! Other effects
+|-
+! Pounding
+| >40%
+| {{Thought|value=-12|stack=1|label=pounding hangover|desc=It feels like a gaggle of geese are pecking at my skull.}}
+| {{--|18%}} || {{Bad|Vomiting:}} on average every 0.4 days.
+|-
+! Strong/serious
+| >15%
+| {{Thought|value=-6|stack=1|label=serious hangover|desc=My head hurts from all that liquor.}}
+| {{--|8%}} || 
+|-
+! Slight/mild
+| >0%
+| {{Thought|value=-3|stack=1|label=mild hangover|desc=The headache is almost gone.}}
+| {{--|3%}} || 
+|}
+
+=== Tolerance ===
+{{Main|Tolerance}}
+{{Quote|"A built-up tolerance to alcohol. The more severe this tolerance is, the more alcohol it takes to get the same effect."|Tolerance description}}
+Each beer consumed increases the tolerance of the pawn by the following formula:
+
+<code>Increase in tolerance = {{%|{{#var:toleranceSeverityOffset}} }} / body size</code>
+
+Thus smaller or not fully grown pawns gain more tolerance per drug use then bigger or fully grown ones. An adult [[human]] has a body size of {{Q|Human|Body Size}}. Tolerance decreases at a rate of {{%|{{#vardefineecho:toleranceSeverityPerDay|0.016}} }} per day.
+
+See sections ''"Alcohol high"'' and ''"Addiction"'' for how tolerance affects alcohol high severity and addiction chance respectively.
+
+If the tolerance is above a certain thresholds it imposes a chance over time to gain the following [[ailments]]:
+
+<ul><li>{{Bad|Cirrhosis}}<br/>
+'''Tolerance above 45%'''  imposes a chance to get [[cirrhosis]] in the liver proportional to the tolerance held.
+{| class="wikitable" style="text-align:right"
+! Tolerance !! Average cirrhosis interval !! Graph
+|-
+| 45% || 99999 Days
+| rowspan="3" | {{Graph:Chart| width = 400 | height = 100 | type = line | xAxisTitle = Tolerance (%) | yAxisTitle = MTB Cirrhosis (Days) | x = 49, 50, 100 | y =  250, 60, 45 | xAxisMin = 45 | yAxisMax = 250}}
+|-
+| 50% || 60 Days
+|-
+| 100% || 45 Days
+|}</li>
+<li>{{Bad|Carcinoma}}<br/>
+'''Tolerance above 45%''' imposes a chance to get [[carcinoma]] in the liver proportional to the tolerance held.
+{| class="wikitable" style="text-align:right"
+! Tolerance !! Average carcinoma interval !! Graph
+|-
+| 45% || 99999 Days
+| rowspan="3" | {{Graph:Chart| width = 400 | height = 100 | type = line | xAxisTitle = Tolerance (%) | yAxisTitle = MTB Carcinoma (Days) | x = 49, 50, 100 | y = 250, 180, 150 | xAxisMin = 45 | yAxisMax = 250}}
+|-
+| 50% || 180 Days
+|-
+| 100% || 150 Days
+|}</li></ul>
+
+=== Addiction ===
+{{Quote|"A chemical addiction to alcohol. Long-term presence of alcohol has caused neurological adaptations at the cellular level, so the brain can no longer function properly without the drug. Without regular doses of alcohol, withdrawal symptoms will begin. However, extended abstinence will force the brain to adapt back to its normal state, resolving the addiction."|Addiction description}}
+Once a pawn has a alcohol tolerance of {{%|{{#var:minToleranceToAddict}} }} or above, each dose carries a chance of alcohol addiction that scales with tolerance. Due to the minimum tolerance to addict, beer can be safely consumed once every {{Plural|{{#var:toleranceSeverityOffset}}/{{#var:toleranceSeverityPerDay}} round 1|day}} without risking addiction, so long as the pawn has a body size of 1 or higher and their tolerance is not already elevated before starting the schedule.
+
+The chance of addiction is as follows:
+{| class="wikitable" style="text-align:right"
+|-
+! Tolerance !! Addiction chance !! Graph
+|-
+| 0% || 0%
+| rowspan="4" | {{Graph:Chart
+  | width = 400 | height = 100 | type = line | xAxisTitle = Tolerance (%) | yAxisTitle = Addiction Chance (%)
+  | x = 0, {{#expr:{{#var:minToleranceToAddict}}*100}}, {{#expr:{{#var:minToleranceToAddict}}*100}}, 50, 80, 100
+  | y = 0, 0, {{#expr:{{P|Addictiveness}} * ( 1 + 4 * {{#var:minToleranceToAddict}} / 0.5) * 100}}, {{#expr:{{P|Addictiveness}} * 5 * 100}}, {{#expr:{{P|Addictiveness}} * 15 * 100}}, {{#expr:{{P|Addictiveness}} * 15 * 100}}
+}}
+|-
+| {{%|{{#var:minToleranceToAddict}}}} || {{%|{{P|Addictiveness}} * ( 1 + 4 * {{#var:minToleranceToAddict}} / 0.5) }}
+|-
+| 50% || {{%|{{P|Addictiveness}} * 5}}
+|-
+| 80% || {{%|{{P|Addictiveness}} * 15}}
+|}
+
+The addiction progresses by {{%|{{#vardefineecho:addictionSeverityPerDay|0.0333}}}} per day from the initial 50%. Once it reaches 100% the addiction is healed, meaning it takes about {{Plural|0.5/{{#var:addictionSeverityPerDay}} round 1|day}} to overcome the addiction. Drinking beer during an alcohol addiction will reduce the addiction progress by {{%|{{#var:addictionSeverityOffset}}}} again ''(see "Upon drinking" above)''.
+
+Developing an addiction also means a pawn has an alcohol [[Needs#Drug addictions|need]]. The need for alcohol falls by {{%|{{#vardefineecho:needFall|0.5}}}} per day, drinking beer satisfies the need by {{%|{{#var:needOffset}}}} ''(see "Upon drinking" above)'', meaning the pawn will need to drink beer at least every {{Plural|{{#var:needOffset}}/{{#var:needFall}} round 1|day}} to prevent withdrawal symptoms.
+
+=== Withdrawal ===
+{{Quote|"Because of an alcohol addiction, this person needs to regularly consume alcohol to avoid withdrawal symptoms."|Need description}}
+As soon as the alcohol need reaches 0%, the pawn suffers from the following withdrawal symptoms:
+* {{--|35}} [[Mood]] (''"Feeling shaky. Everything pisses me off. I keep thinking of drinking."'')
+* {{--|20%}} [[Consciousness]]
+* {{--|30%}} [[Moving]]
+* {{--|50%}} [[Manipulation]]
+* {{Bad|Mental break}} chance:
+** [[Social drug binge]]: on average every {{#vardefineecho:bingeMtb|40}} days. This averages to {{Plural|1/{{#var:addictionSeverityPerDay}}/{{#var:bingeMtb}} round 1|social drug binge}} during each withdrawal.
+
+{{Weapon Stats Table}}
+
+== Analysis ==
+Beer is one of the most difficult drugs to get addicted to - a pawn at 0% tolerance would need to drink ''15'' beers to get addicted. Therefore, beer is great for [[chemical interest]] pawns and [[Ideoligions#High life|High Life]] [[ideoligion]]s{{IdeologyIcon}}. Note that alcohol binges can still lead to blackouts, which can lead to permanent brain damage.
+
+Even for ordinary pawns, beer can be a good source of mood increase. One beer per day gives {{+|10}} mood for 4.8 hours with no chance for addiction and a tiny {{--|2%}} Manipulation. It is recommended to set the [[drug policy]] to remove "Take for Recreation". Instead, set a schedule for pawns to take beer once per day. You can also set pawns to drink beer only when mood is low (while still only once per day) to conserve on beer.
+
+In some cases, you can use beer to down animals - they will drink it if they have no other food source. This technique can even down [[thrumbo]]s, allowing for an easy kill. Note that this will take multiple bottles depending on the creature and they will ''only'' attempt to drink the beer when there is no other food source that they can reach. This also applies to colony animals, so watch out.
+
+=== Brewing temperature ===
+Because the "fatal" range is unforgiving even for a moment, it's recommended to keep your temperatures well within the "ideal" range and have a separate, emergency power/temperature system so that an open door or short-term power loss will not cause the loss of the batch. Double-walling your brewery to insulate from extreme temperatures, and/or installing a long* entry hall/room as an "air lock" with doors at each end is not a bad idea. Also, when planning the location of your brewing, be aware that a kitchen will often be quite warm, as active stoves produce excess heat.
+
+: (* 6 tiles long gives time for the first door to shut before your colonist opens the next, so that your brewery is not exposed to "outside" temperatures. [[Autodoor]]s would shorten this required length.)
+
+=== Trade ===
+Beer is more or less equal to [[smokeleaf joint]]s. Beer takes {{++|{{%|-1 + (5/4)*({{Q|Smokeleaf plant|Harvest Yield Per Work}}/{{Q|Hop plant|Harvest Yield Per Work}}) round 3}}}} more planter work per item for {{Good|-{{%|(1000/450)/5 round 3}}}} less cook work per item. Beer is worth {{+|{{%|-1+{{Q|Beer|Market Value Base}}/{{Q|Smokeleaf joint|Market Value Base}} round 3}}}} more silver, but it takes longer to load. Therefore, smokeleaf can be better with a better cook, and beer better with a better planter. Beer brewing requires research, though [[drug lab]]s are needed to make smokeleaf at 100% speed, and they are unlocked with [[Research#Drug production|Drug production]] research.
+
+Beer is almost completely inferior to [[flake]] as a trade drug, as beer takes {{++|{{%|-1 + (5/4)*({{Q|Psychoid plant|Harvest Yield Per Work}}/{{Q|Hop plant|Harvest Yield Per Work}}) round 3}}}} more planter work per item, is worth {{--|{{%|-1+{{Q|Flake|Market Value Base}}/{{Q|Beer|Market Value Base}} round 3}}}} less per item, for {{Good|{{%|-1+(200/250) round 3}}}} less work per item created (not including extra loading). Flake creation is based off Intellectual skill, so beer may have a niche if you have a pawn great at Cooking, but no intellectual pawn.
+
+Regardless - if your colony already uses beer, then you can sell any excess beer to traders.
+
+== Production math ==
+Don't worry, we'll walk you through it...
+* 25 [[hops]] makes 5 [[wort]]
+* A single [[fermenting barrel]] can hold up to 25 wort
+* 1 wort = 1 beer
+That means that 125 hops items = 25 wort = 1 full barrel = 25 beer. 
+
+* Fermentation takes 6 days for 25 beer.
+* 1 pawn can drink 1 beer/day without risk of [[addiction]].
+Due to inefficiency, let's assume that the entire loading process takes 7 days. 1 barrel can therefore support 3.5 pawns (25 beer/7 days).  It would not be too hard to have everything in place and approach something just over 6 days/run, which, ''if maintained'', would give you a production rate closer to 1 barrel = beer for 4 pawns.
+
+Before [[difficulty]] multipliers and the [[Plant Harvest Yield]] stat, and assuming hops are grown in regular soil: 
+* 1 barrel can hold up to 16 [[hop plant]]s' worth of yield at a time.
+* 24 [[hop plant]]s are enough to sustain 1 barrel indefinitely. (This is more than enough to fill a barrel, but hops grow slower than the fermentation process)
+** In Losing is Fun, a grower with 8 Plants skill would require 30 hop plants to fill 1 barrel indefinitely.
+
+== Trivia ==
+In real life, beer is brewed from malted barley/wheat, not hops. Hops are used in the brewing of beer to provide flavor and as a preservative. 
+
+Also unlike its RimWorld counterpart, real beer is typically not flammable as it does not have sufficient alcohol content. In fact, a bottle of beer being placed in a fire would be more likely to extinguish it when the bottle broke.
+
+This, along with [[wood]], is one of only two items that serves dual purposes as both a usable item and an improvised weapons.
+
+== Gallery ==
+<gallery>
+Beer a.png|One beer
+Beer b.png|Stack of beer
+</gallery>
+
+== Version history ==
+* [[Version/0.9.722|0.9.722]] - Possibly Added. Beer brewing, beer drinking, inebriated thoughts, ability impacts and hangovers added.
+* ? - No longer produced directly from hops at the brewery, now must be placed in barrels to ferment.
+* Beta 19/1.0 - Beer fermenting time 10 days -> 6 days. Buffed beer bottles slightly (~10%) above fists in terms of DPS. Alcohol loses hidden ‘buzzed’ stage;‘warm’ begins from 0 severity. Alcohol severity per day -1.0 -> 0.75, so it lasts longer. Alcohol mood gains all increase +2.
+* [[Version/1.1.0|1.1.0]] - Fix: Pawn with alcohol-induced brain damage are doomed to die.{{Check Tag|Actual change?}}
+* [[Version/1.5.4062|1.5.4062]] - Drug tolerance gain is now divided by body size and not body size squared - this also had the effect of making the suggested safe dose intervals for children correct.
+
+{{Nav|drugs|wide}}
+{{Nav|weapon|wide}}
+
+[[Category:Drug]] [[Category:Social Drug]]
+
+[[Category:Equipment]] [[Category:Weapons]] [[Category:Neolithic Weapons]]
+[[Category:Melee Weapons]] [[Category:Blunt Weapons]] [[Category:Improvised Weapons]]

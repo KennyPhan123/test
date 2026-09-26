@@ -1,0 +1,53 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Biotech/Mechanitor}}
+|}
+----
+{| {{STDT| c_12}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Mechlink" <!-- defName="MechlinkImplant", ParentName="ImplantHediffBase" -->
+! Mechlink
+----
+* Def Name:<br />MechlinkImplant
+* Label:<br />mechlink
+|<!-- Description -->
+<div style="min-width: 300px; max-width: 500px;">
+A bionic implant that allows direct control of mechanoids. Mechlinks are used by soldiers to control war mechs, and by workers to control labor mechs. A person with a mechlink is known as a mechanitor.
+
+Mechlinks are self-installable. Pressed into the back of the throat, the unit injects itself through the flesh to clamp inside the base of the skull where it meets the spinal cord. There, it threads a web of ultrafine wires throughout nearby neuronal tissue to make the direct mental link between the user and the mechanoid control band.
+
+Mechlinks are not simply devices for sending radio signals to mechanoids, because mechanoids are not merely robots. In addition to traditional computers, mechanoids have a dim psychic presence, so fluently controlling them requires a psychic connection. By linking mechanitor and mechanoid both psychically and electromagnetically, the mechlink permits deeper control than screen-and-button interfaces.
+
+Since the mechlink interlaces deep within the brain tissue, it can only be removed after death.
+
+Note: A mechanitor must be capable of smithing work to gestate mechanoids.
+----<!-- Description Short -->
+A bionic implant that allows direct control of mechanoids. Can only be removed after death.
+</div>
+|<!-- Details -->
+* Hediff Class: '''Hediff_Mechlink'''
+* Default Label Color: {{Color|60%|60%|100%}}
+* Is Bad: {{Good|false}}
+* Price Impact: {{Bad|true}}
+* Counts As Added Part Or Implant: {{Good|true}}
+* Duplication Allowed: {{Bad|false}}
+* Keep On Body Part Restoration: {{Good|true}}
+* Remove On Redress If Not Of Kind:
+** '''Mechanitor''' ([[Player factions#Player_mechanitor|Player Pawn Kind]] used for "[[The Mechanitor Guide|The Mechanitor]]" [[Scenario system|Scenario]])
+** '''Mechanitor_Basic''' (Lootable corpse used in the [[Quests#Ancient Transport|Ancient Transport]] and [[Quests#Ancient Mechanitor Complex|Ancient Mechanitor Complex]] quests)
+* Allow Mothball If Low Priority World Pawn: {{Good|true}}
+* '''Comps:''' ''Letter On Death''
+** Letter Def: '''NeutralEvent'''
+** Letter Label:<br />Reusable {HEDIFF_label} available
+** Letter Text:<br />{PAWN} has died with a {HEDIFF_label} installed. This can be removed and installed by someone else.
+** Only If No Mechanitor Died: {{Good|true}}
+|<!-- Stages -->
+{| {{STDT| c_12}}
+! Label !! Parameters
+|-
+! Mechlink
+|<!-- Parameters -->
+* [[Mech Bandwidth]] Offset: {{+|6}}
+* [[Mech Control Groups]] Offset: {{+|2}}
+|}<noinclude>
+|}</noinclude>

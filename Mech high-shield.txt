@@ -1,0 +1,58 @@
+{{Royalty}}
+{{Infobox main|building
+| name = Mech high-shield
+| image = ShieldGeneratorMortar-0.png
+| description = A shielding device which projects a momentum repulsor field. Shots can go out, but not in. This one is tuned to high angles, so it will block mortar rounds. The unit can be temporarily disabled by EMP attacks, either by shocking the projector unit itself, or using EMP munitions on the shield.
+| type = Building
+| type2 = Mechanoid cluster
+| placeable = false
+| path cost = 50
+| passability = pass through only
+| blockswind = true
+| cover = 1
+| size = 1 ˣ 1
+| flammability = 0
+| hp = 200
+| beauty = -20
+| deconstruct yield = {{Icon Small|Plasteel}} 7 + {{Icon Small|Shield core}} 1
+| destroyyield = {{Icon Small|Plasteel}} 7
+| page verified for version = 1.3.3117
+}}
+'''Mech high-shields''' are [[Mechanoid cluster]] buildings added by the [[Royalty DLC]] that blocks incoming [[mortar]] shells, [[orbital bombardment targeter|orbital bombardments]], and [[Permits|aerodrone strikes]] in a radius around it. 
+
+== Acquisition ==
+Mech high-shields can arrive as a component of mechanoid clusters. Mech high-shields cannot be acquired for player use, and shutdown when the cluster is defeated. 
+
+== Summary == 
+{{Stub|section=1|reason=1) If its between the mortar and the mortar's target, but the target is not under the shield, will it intercept the shells? i.e. does it have a fire "shadow" like low shields have for weapons fire? 2) Drop pods? mention specifically even if no.}}
+Mech high-shields can arrive as parts of a mechanoid cluster. Upon landing, they will begin projecting a shield that blocks incoming [[mortar]] shells, [[orbital bombardment targeter|orbital bombardment]], or [[Permits|aerodrone strikes or salvos]] in a 25 tile radius. Mortar shells will detonate as soon as they cross the shields radius, exploding as if they had landed at that point normally, while other intercepted projectiles will simply disappear. The resulting explosion from an intercepted mortar shell can still hit targets within the radius of the shield. The mech high-shield will not intercept shells fired from mechanoid [[auto mortar]]s, even if they are on the outside of the shield radius. 
+
+High-shields will be disabled when the shield intercepts an [[EMP shell]], or when [[EMP]] damage from any source is dealt to the emitter itself. Projectiles that the shield type does not stop, such as [[EMP grenades]], will not have any effect when crossing the shield, nor does an EMP's area of effect overlapping with the projected shield - a projectile must be intercepted or the EMP damage must be dealt to the structure itself. The shield will be disabled for {{ticks|1080}} when hit by an EMP from any source.{{Check Tag|Scale with EMP damage?|E.g. EMP launcher of dif qualities hitting the emitter}} EMPing a mech high-shield, even with a [[mortar]], will not wake up a dormant mech cluster.{{Check Tag|Verify|Verify core idea, and then also check that getting a mech hit with the EMP radius doens't trigger wake now that it detonates on the edge - if the first is true but the second triggers wake, note specifically}}
+
+High-shields will continuously project their shield without material or power requirements from the cluster. Every 10 days, the shield projector will be disabled for a 24 hour charge cycle. The projector will automatically re-enable itself after the charge cycle is complete. Once the cluster is defeated, they will be permanently disabled.
+
+When deconstructed, they are a valuable source of [[shield core]]s needed to create [[low-shield pack]]s.
+
+They not only have a [[Flammability]] of 0%, but also take no damage from attacks with the [[Damage Types|Flame]] damage type.
+
+== Analysis ==
+{{Stub|section=1|reason=General stub - current is just a couple of very  rough suggestions}}
+=== Countering ===
+Have two or more mortars, one loaded with an [[EMP shell]], the other(s) loaded with [[high-explosive shell]]s. Fire the EMP shell first, and then a moment later fire the HE at the high shield. The "Hold Fire" option can be used to control when they fire. One mortar cannot be loaded and fired fast enough to both stun the shield and fire the explosive.
+
+=== Exploiting ===
+If you don't defeat the cluster, you can repurpose the shield to cover your own equipment against enemy mortars. This is most easily done by walling in a single [[Mini-slugger turret]] through the liberal use of EMP, smoke, and the [[wallraise]] psycast. It will not protect from the automortars of other mech clusters, but will protect against sieges. Note that it will still have the recharge mechanics.
+
+== Version history ==
+* [[Version/1.1.2575|1.1.2575]] - Implement mech shield generator charge cycle. Shields now go down for a random day every 10 days. Now shuts down when the cluster is defeated.
+* [[Version/1.2.2753|1.2.2753]] - Renamed from '''mortar shield''' to '''mech high-shield'''.
+* [[Version/1.3.3066|1.3.3066]] - Now stops orbital strikes and aerodrone strikes, the same way they stop mortars.
+* [[Version/1.4.3523|1.4.3523]] - Fix: Explosive projectiles disappear when impacting a shield. They now detonate when impacting.
+
+== See also == 
+* [[Skipshield]] - A 6th level psycast with that stops all incoming and outgoing ground-level ranged attacks in a smaller radius and short duration
+* [[Low-shield pack]] - a [[utility]] item that stops all incoming ground-level ranged attacks in a smaller radius and short duration 
+* [[Mech low-shield]] - a [[mechanoid cluster]] building that produces a similar effect in size and duration, but tuned to ground-level ranged attacks only.
+
+{{nav|mechanoid|wide}}
+[[Category:Mechanoid Cluster]]

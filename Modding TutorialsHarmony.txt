@@ -1,0 +1,83 @@
+{{BackToTutorials}}
+
+'''Harmony - A library for patching, replacing and decorating .NET and Mono methods during runtime'''
+
+Harmony is the current best practice for changing the runtime execution of code in RimWorld.
+
+To integrate Harmony into your mod for use, download the latest stable release and add it as a reference to your C# project. You can also get [https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077 Harmony on Steam]. Please '''''do not''''' include the dll (0Harmony.dll) in your mod's assemblies folder! Outdated versions of Harmony can cause issues. Simply add Harmony as a dependency on Steam instead.
+
+Additionally, please DO NOT use HugsLib for an "easy" Harmony implementation due to the fact that HugsLib becomes an unnecessary and unutilized dependency for mods and beginners grow accustomed to using HugsLib in all their mods even if they never touch HugsLib's API in their code. This is a bad practice, especially for beginners new to RimWorld Modding. Please only use HugsLib when you want to utilize some of its features!
+
+Harmony is great for running code patches before (Prefix) or after (Postfix) an existing method. Usually this is all you need for your Mod. Because this does not change existing functionality of RimWorld, it MOST LIKELY does not impact other mods and runs in parallel with other Harmony patches.
+
+''The snippets on this page are not meant as an exhaustive document on all things Harmony. Refer to the original documentation ([https://harmony.pardeike.net/ here]).'' This article is mostly a "this is what you can do" summary in 5 minutes.
+
+==Requirements==
+* If you still haven't [[Modding_Tutorials/Setting up a solution|set up a solution]], you're not ready for Harmony.
+* You need to be able to write a [[Modding_Tutorials/Hello World|Hello World]] program.
+* You don't need to know the inner workings of JIT-compilation, reflection and inlining, but a basic understanding of C# and/or programming in general is assumed in this article.
+
+==Summary==
+Harmony can alter the workings of any method. It offers three ways of doing this: prefixes, postfixes, and transpilers.
+
+===Prefix===
+A prefix is a method that runs before the original method. It can have a return type of void or bool. If a bool returns false, the original method is skipped. This will cause compatibility issues if you're not very careful. This type of prefix may also prevent other prefixes from running.
+
+===Postfix===
+A postfix is a method that runs after the original method. They are guaranteed to run. Postfixes can also alter the result. Use these for greatest compatibility.
+
+===Transpilers===
+A transpiler is a set of CodeInstructions. These alter the inner working of the method. They use low-level IL-code, from System.Reflection and System.Reflection.Emit. Refer to MSDN and Harmony documentation for more info. Transpilers are difficult to debug and therefore hard to create/maintain/update.
+
+If you must use a transpiler, you might find useful notes [[Modding_Tutorials/Transpiler Hints|here]].
+
+==Altering the result==
+If the original method has a return type, you can alter its ''__result'' by passing it by ''ref''.
+
+==Pitfalls==
+
+===Overuse===
+Harmony is a fantastic tool, that you'll soon want to use for everything. Before you do that, consider the alternatives. Can you subclass? Can you use a ThingComp? A MapComponent? There may be viable alternatives without the added dependency.
+===Not changing the result?===
+Forgot to pass by ref.
+===How do I return a value from a void or prefix?===
+That's the magic. Harmony disconnects its own return type from the return type of the original method. Consider the following destructive prefix, which gives everyone perfect knowledge of trap locations:
+<source lang="csharp">
+	[HarmonyPatch(typeof(Building_Trap))]
+	[HarmonyPatch(nameof(Building_Trap.KnowsOfTrap))] //annotation boiler plate to tell Harmony what to patch. Refer to docs.
+	static class Building_Trap_KnowsOfTrap_Patch
+	{
+		static bool Prefix(ref bool __result) //pass the __result by ref to alter it.
+		{
+			__result = true; //alter the result.
+			return false; //return false to skip execution of the original.
+		}
+	}
+</source>
+
+===Getting the right method to patch===
+'''AccessTools''' is a nice wrapper for reflection. The most reliable way of specifying the method to patch is by providing the Patch() method with MethodInfo. Standard System.Reflection also works. You will need to specify arguments for overloaded methods.
+===Doesn't seem to get patched?===
+Does your Log.Message() not show up? Set HarmonyInstance.DEBUG = true and check the new .txt file Harmony placed on your desktop. If you are trying to patch something that runs during game loading, you [[Modding_Tutorials/Hello_World#StaticConstructorOnStartup_vs_inheriting_from_Mod| may need to bootstrap differently]]. Are you doing everything right? If the method you're patching is small, it may have been [https://en.wikipedia.org/wiki/Inline_expansion inlined.]
+
+==Bootstrapping==
+Remember the [[Modding Tutorials/Hello World|Hello World]] tutorial? The [StaticConstructorOnStartup] is a perfect starting point. Create your harmony instance in there, and use it to call PatchAll() or do your manual patching.
+
+==Links== 
+[https://steamcommunity.com/workshop/filedetails/?id=2009463077 Harmony Mod] (Steam Workshop)
+
+[https://github.com/pardeike/Harmony/releases Harmony 2 Releases] (GitHub)
+
+[https://www.nuget.org/packages/Lib.Harmony/ Harmony 2 NuGet package]
+
+[https://harmony.pardeike.net/ Harmony 2 Documentation] - Official documentation for Harmony 2.
+
+[https://github.com/RimWorld-CCL-Reborn/AlienRaces/blob/master/Source/AlienRace/AlienRace/HarmonyPatches.cs Alien races] - The Alien Races framework HarmonyPatches class. With approximately 180 patches, it's considered a good reference as it contains examples of all Harmony patch types.
+
+<s>[https://github.com/roxxploxx/RimWorldModGuide/wiki/SHORTTUTORIAL%3A-Harmony RimWorldModGuide on Harmony]</s> - '''OUTDATED''' (Harmony 1) <s>gives some concrete examples and helpful explanations</s>
+
+<s>[https://gist.github.com/pardeike/c02e29f9e030e6a016422ca8a89eefc9 Harmony's Author's Transpiler tutorial]</s> - '''OUTDATED''' (Harmony 1) <s>Tutorial and example of using Harmony Transpiler, with helpful links (inject your code inside a RimWorld class's code - #DeepMagic)</s>
+
+<s>[https://ludeon.com/forums/index.php?topic=29517 Harmony Thread]</s> - '''OUTDATED''' (Harmony 1) <s>Harmony thread on Ludeon Studio's Forum.  Announcements of new versions, and the forum in general is a reasonable place to ask questions.</s>
+
+[[Category:Modding tutorials]]

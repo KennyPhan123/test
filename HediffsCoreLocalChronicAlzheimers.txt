@@ -1,0 +1,81 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Local/Chronic}}
+|}
+----
+{| {{STDT| c_11}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Alzheimers" <!-- defName="Alzheimers", ParentName="ChronicDiseaseBase" -->
+! Alzheimer's
+----
+* Def Name:<br />Alzheimers
+* Label:<br />alzheimer's
+| A brain disease usually associated with aging. Alzheimer's disease causes progressive degradation in the ability to think and remember. Patients are known to forget close relatives and sometimes wander around in confusion.
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|90%|100%|35%}}
+* Initial Severity: '''0.1%'''
+* Chronic: {{Good|true}}
+* Allow Mothball If Low Priority World Pawn: {{Good|true}}
+* '''Remove On Redress Chance By Days Curve:'''
+<div><li style="display: inline-table;">
+{| {{STDT| c_11}}
+! Days !! Chance
+|-
+! 0
+| 0%
+|-
+! 2
+| 0%
+|-
+! 7
+| 50%
+|-
+! 20
+| 100%
+|}{{Graph:Chart|width=200|height=200|xAxisTitle=Days|yAxisTitle=Remove On Redress Chance|yAxisFormat=%|type=line|x=0, 2, 7, 20|y=0, 0, 0.5, 1|xGrid=|yGrid=}}</li></div>
+* '''Comps:''' ''Immunizable''
+** Severity Per Day Not Immune: {{++|0.3%}} (333 Days to 100%)
+|<!-- Stages -->
+{| {{STDT| c_11}}
+! Label !! Parameters
+|-
+! minor
+|<!-- Parameters -->
+* Part Efficiency Offset: {{--|5%}}
+* '''Mental State Givers:'''
+** Mental State: '''[[Confusion|Confused wandering]]'''
+** {{MTB}} Days: '''12'''
+* Forget Memory Thought {{MTB}} Days: '''7'''
+|-
+! minor
+|<!-- Parameters -->
+* Min Severity: '''20%'''
+* Part Efficiency Offset: {{--|10%}}
+* '''Mental State Givers:'''
+** Mental State: '''[[Confusion|Confused wandering]]'''
+** {{MTB}} Days: '''9'''
+* Forget Memory Thought {{MTB}} Days: '''4'''
+* Pct Conditional Thoughts Nullified: '''15%'''
+|-
+! major
+|<!-- Parameters -->
+* Min Severity: '''50%'''
+* Part Efficiency Offset: {{--|15%}}
+* '''Mental State Givers:'''
+** Mental State: '''[[Confusion|Confused wandering]]'''
+** {{MTB}} Days: '''7'''
+* Forget Memory Thought {{MTB}} Days: '''2'''
+* Pct Conditional Thoughts Nullified: '''33%'''
+|-
+! major
+|<!-- Parameters -->
+* Min Severity: '''80%'''
+* Part Efficiency Offset: {{--|20%}}
+* '''Mental State Givers:'''
+** Mental State: '''[[Confusion|Confused wandering]]'''
+** {{MTB}} Days: '''4'''
+* Forget Memory Thought {{MTB}} Days: '''1'''
+* Pct Conditional Thoughts Nullified: '''50%'''
+|}<noinclude>
+|}</noinclude>

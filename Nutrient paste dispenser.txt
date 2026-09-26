@@ -1,0 +1,132 @@
+{{For|the meal the dispenser dispenses|Nutrient paste meal}}
+{{Infobox main|production
+| name = Nutrient paste dispenser
+| image = Nutrient paste dispenser.png
+| description = A machine that synthesizes edible nutrient paste from organic feedstocks placed in adjacent hoppers. It consumes less ingredients and time than any other meal production method - but nobody likes eating nutrient paste. Accepts raw food, but not rough plant matter like hay.
+| type = Building
+| type2 = Production
+| placeable = true
+| passability = impassable
+| blockswind = true
+| cover = 1
+| minifiable = false
+| size = 3 ˣ 4
+| flammability = 0.5
+| hp = 350
+| power = -200
+| terrain affordance = heavy
+| research = Nutrient paste
+| skill 1 = Construction
+| skill 1 level = 5
+| work to make = 2200
+| resource 1 = Steel
+| resource 1 amount = 125
+| resource 2 = Component
+| resource 2 amount = 3
+}}
+{{Info|The '''nutrient paste dispenser''' is an electrical device that converts [[raw food]] placed in an adjacent [[hopper]] into [[nutrient paste meal]]s.}}
+
+== Acquisition ==
+{{Acquisition}}
+
+By default, [[New Arrivals]] start with nutrient paste researched.
+
+== Summary ==
+{{Stub|section=1|reason= Describe what happens when nutrition of individual feedstock item exceeds required nutrition (Note: see below for order of hopper draw when testing):
+# Only 1 item in hopper, but with too much nutrition. Result: Item consumed, extra nutrition wasted
+# First hopper drawn has item with too much nutrition, second hopper drawn has unitized item that can be consumed without wasting nutrition. Does it consume the larger item and waste nutrition or empty 2nd hopper first?
+# First hopper contains item/s with insufficient nutrition (e.g. 0.25 nutrition, second has large item (e.g. 1 nutrition). Does it use the 0.25 and waste even more of the second hopper item than option 1, or does it just take the large item and save the 0.25
+# First hopper contains multiple larger items with insufficient nutrition (e.g. 0.25), second hopper contains item(s) with enough nutrition (e.g. 0.05) to safely consume alongside first hopper without wasting nutrition. Result: First hopper prioritized, larger item consumed, extra nutrition wasted
+}}
+[[File:Nutrient paste hoppers.png|thumb|200px|left|All valid [[hopper]] positions.<br/>Gold tile is the interaction spot. Numbers indicate order the hoppers will be drawn from - Note that this order is '''not''' rotated if the dispenser is.]] 
+[[File:Npd colonist prisoner.png|thumb|The orange dispenser on the right is marked for prisoner use.]]
+The nutrient paste dispenser is an impassible object, acting like a wall for [[room]] and [[temperature]] mechanics. Pawns will dispense meals from the interaction spot, the front-center tile indicated by the circle during placement. If this spot is inside a [[prison]] cell, then the machine will change color to orange and only [[prisoners]] will be allowed to use it. You cannot build objects on the interaction spot, nor can you build the dispenser with it blocked. [[Chunk]]s placed there after construction will prevent use until they are [[haul]]ed away. 
+
+The dispenser creates {{Icon Small|nutrient paste meal||1}} [[nutrient paste meal]] for 0.3 [[nutrition]] worth of food placed in an adjacent [[hopper]]. Hoppers can be placed in any cardinally adjacent tile, except for the interaction spot. The dispenser will attempt to draw food from the southwesternmost hopper first, regardless of dispenser orientation. If insufficient food is present in this hopper, then it will be emptied of any food inside, and then the process is repeated on each hopper proceeding counterclockwise around the dispenser until sufficient food has been collected to make a meal or all hoppers have been checked. If there is insufficient food to make a meal in all of the attached hoppers, no food will be consumed and no meal will be produced.
+
+Nutrient paste dispensers can share hoppers, the direction of the hoppers is only visual.
+
+Colonists will deliver food as both [[Work#Haul|Hauling]] and [[Work#Cook|Cooking]] tasks. Make sure to set the Priority of the hoppers to be higher than other stockpiles. Hoppers can only be loaded with [[raw food]], and only one type of food can be placed into each hopper.
+
+Colonists or prisoners will automatically use the dispenser any time they would otherwise look for a meal to pick up and eat, assuming it is powered, accessible, has enough food, the pawn is allowed to eat nutrient paste meals per their [[Food restriction]]s and there are no preferable unrestricted meals available. No work bills or tasks can be performed at the machine, and no skills are necessary to use it. [[Work#Warden|Wardens]] can also deliver nutrient paste from an external machine to prisoners, and [[Work#Doctor|Doctors]] will do the same for patients. Doctors can use prison-designated dispensers to feed prisoner patients. Animals cannot operate the dispenser but will eat meals if provided. In order to produce meals for storage or animals, you must manually manipulate a pawn - see below for details. 
+
+=== Nutrient paste ===
+Nutrient paste converts 0.3 nutrition of raw food to a 0.9 nutrition meal, tripling your food. But when consumed, nutrient paste gives a {{--|4}} mood penalty ("[[Thoughts#Eating|Ate nutrient paste meal]]"). This is at least better than eating raw food. Pawns will always prefer a more tasty food, so unless their Food Restriction is specifically assigned to "Paste" (located at the top of a colonist's Health tab), they will only use the dispenser if no better option is available. The mood penalty is negated if the colonist eating it has the [[Ascetic]] trait, or an ideoligion with the [[Eating nutrient paste|Eating Nutrient Paste: Don't mind]] precept.{{IdeologyIcon}}
+
+Use of [[human meat]], [[insect meat]], [[twisted meat]]{{AnomalyIcon}} or, if the [[Ideology DLC]] is enabled, [[raw fungus]], in a nutrient paste meal will still apply their regular [[mood]]lets, on top of the one for nutrient paste.
+<gallery widths="300px" heights="300px" class="center" mode="nolines">
+Nutrient paste dispenser no hopper.png|'''When you build a NPD, the game will notify a hopper is needed'''
+Hopper storage cropped.png|'''Hopper storage menu to select ingredients'''
+Nutrient paste dispenser with hopper.png|'''Hopper mouse indicator will turn from red to green for correct placement and colonists will pick NP meals from the dispenser'''
+</gallery>
+
+== Analysis ==
+At 300% nutritional efficiency, Nutrient paste is the most efficient way to prepare a meal. Compared to the next best method, [[simple meal|simple]] and [[fine meal]]s with 180% efficiency, paste gives 66.67% more food. This makes nutrient paste useful in a famine, even if you don't plan to use it indefinitely. In addition, no cooking is necessary. There's no risk of [[food poisoning]], and it can save a lot of time off a cook's hands - cooking is often a full time job in large colonies. Overall, a nutrient paste dispenser can accelerate the development of a colony, and may be necessary in an extreme [[biome]] like ice sheet.
+
+However, nutrient paste meals give a {{--|4}} [[mood]] debuff, which ends up being -9 net mood compared to [[fine meal]]s. It is advised to not give nutrient paste to pawns with a [[trait]] that gives a negative modifier to mental break threshold, because they can push a pawn over the edge. Because pawns prefer normal meals over nutrient paste, you can set restrictions to prevent normal pawns from consuming all of the good meals and leaving none to the volatile ones. In contrast, Ascetics can eat paste without worry. 
+
+[[Transhumanist]], [[Inhuman]],{{AnomalyIcon}} and [[Shipborn]]{{OdysseyIcon}} [[ideoligion]]s{{IdeologyIcon}} can eat these meals without penalty, but still miss out on {{+|5}} mood from fine meals. Due to the increased hunger from using [[neural supercharger]]s and [[sleep accelerator]]s, a paste dispenser may be preferred.
+
+*'''Notes'''
+The dispenser has a minor quirk - because colonists have to dispense meals as needed, they will never carry meals in their inventory. By preventing outdoor snacking, it ''forces'' colonists to eat at a nearby dining area, always giving the ''<Impressive> dining room'' [[mood]]lets while preventing {{--|3}} ''Ate without Table''. However, this makes colonists slightly less efficient, as they'll have to travel to the dispenser every time they want to eat. It's also worth noting that having hoppers filled with food in the dining room will cause the room to count is a "Storeroom" which will stop pawns from receiving the positive dining room moodlet. If the hoppers are empty the room will count as a "Dining room".
+
+The paste dispenser also makes it a lot easier to keep animals that need to be fed by the colonists (such as dogs and grazing animals off the growing season). Feeding animals with paste requires occasional micro-management to create meal reserves, since animals cannot trigger the dispenser themselves.
+
+=== Throne rooms ===
+{{Royalty|section=1}}
+With [[Royalty]] active, it is possible to combine a [[throne room]] with a [[Room roles|dining room]]. However, nutrient paste dispensers count as a "Production" building, and are not allowed in the room. Having the NPD very close is still possible, even as close as one [[door]] away.
+
+[[File:NPD-Royalty.png|thumb|NPD with interaction cell inside a door to the throne room]]
+
+=== Manually producing meals ===
+Using the paste dispenser is an automatic task that cannot be explicitly triggered. It is still possible to make a pawn produce as many meals as you want, until the machine runs out of raw food to process.
+
+You need at least one pawn to be hungry enough to demand a meal. This will happen at least once per day, per pawn (assuming no alteration to their hunger rate such as [[nuclear stomach]]).
+
+Forcing the pawn to create meals exploits the fact that a pawn stops their current action when they are [[Drafting|drafted]]. We also need to keep the colonist away from any food, so they will be forced to keep producing new meals at the dispenser.
+
+==== Method 1: using a special zone restriction (recommended) ====
+The following method uses a small zone restriction that is placed on the dispenser. This is the easiest method for producing more than one stack of meals at a time. In detail:
+# Create a new [[Allowed area|area]] that covers exactly one tile in the center of the main body of the nutrient paste dispenser (as shown in the screenshot) ''and'' the interaction tile of the dispenser. ''The exact placement of this area matters'', in order for the pawn to be able to path to the dispenser.
+# Place an item on the interaction tile of the dispenser. It can be any item other than a nutrient paste meal. The item here prevents meals from being dropped onto this tile.
+# Fill the hoppers with enough raw food to produce the desired number of meals.
+# When one of your colonists (it does not matter which one) becomes hungry, and is about to eat a meal, '''pause''' the game and '''restrict''' the pawn to the area created in step one. Ensure the pawn's [[Assign#Food policies|food policy]] allows for nutrient paste. You might also have to draft and undraft the colonist so he will stop the current action. '''The pawn will now be unable to do anything except produce meals at the dispenser''', due to the zone restriction he is now under.
+# Wait for the colonist to walk up to the paste dispenser and draw a meal from the machine. '''Pause''' the game again at this point.
+# To start mass producing meals, simply '''draft''' and '''undraft''' the pawn as many times as desired. Each cycle will instantly procure another meal from the dispenser, using up some of the resources from the hoppers. The meal is not consumed by the colonist, because drafting him will make him drop the meal on the floor, where it will be out of reach (due to the zone restriction). You can hold down the ''draft'' hotkey to rapidly mass produce meals.
+# When you are finished, simply undraft the pawn a final time and remove the zone restriction from him. Done.
+
+The entire process will require no in-game time, since the game is paused all the way.
+
+''Notes'':
+* Pawns may prefer to eat meals that are already made, and not use the paste dispenser in those situations, depending on several factors that are difficult to control. If you want to protect your bulk-produced meals from colonists, you have to forbid the stacks, use food policies to manage their consumption, or exclude the colonists from the area they are stored in. Domesticated animals will not eat from forbidden stacks, so an exclusion zone or policy has to be used to reserve the food for animals.
+* Many pawns want to eat after getting up in the morning. This makes it easier to watch for hungry pawns if you plan to mass produce some meals.
+
+<gallery widths="400px" heights="400px" mode="nolines">
+File:Mass dispense (before).png|The pawn is restricted to a 1-tile area covering the interaction spot of the nutrient paste dispenser, where an item is placed. The area must also cover a single title in the middle of the dispenser. The precise location of the area is important. The pawn will now produce meals indefinitely when drafted and undrafted in front of the dispenser (while there is material in the hoppers).
+File:Mass dispense (after).png|This is the state after all hoppers are depleted. The pawn is now surrounded by stacks of nutrient paste meals, yet unable to eat any of them due to the zone restriction (which can now be removed and the pawn undrafted). Note that none of the meal stacks are forbidden, because that is not necessary with this method.
+</gallery>
+
+Now you can have as many nutrient paste meals as your heart desires!
+Enough to take with you on cold journeys!
+Enough to make an emergency food stockpile!
+Enough to use as animal fodder!
+
+==== Method 2: manually forbidding stacks (casual use) ====
+If you do not want to deal with zone restrictions, you proceed as in method 1, but then you have to '''forbid''' any new meal stacks that are created, before continuing to cycle the drafting. This method is a little inconvenient if you want to produce more than a single stack of meals, or if you repeat the process regularly (eg. to produce animal food).
+<gallery widths="300px" heights="300px" mode="nolines">
+File:Npd start.png|The pawn has just grabbed a meal from the dispenser, and wants to eat it. The game is paused at this point. If you draft the pawn now, he will drop the meal on the floor.
+File:Npd middle.png|This is how it looks like after a couple of stacks have been produced, simply by drafting and undrafting the pawn. The game remains paused all the way. When a new stack appears, it has to be forbidden for the process to continue.
+File:Npd end.png|Beyond 3 tiles, you do not even need to forbid stacks any more.
+</gallery>
+
+== Version history ==
+* Beta 19/ 1.0 - Now tinted orange when they can be used by prisoners.
+* [[Version/1.4.3523|1.4.3523]] - Added build hopper command to nutrient paste dispenser.
+
+<gallery>
+OldNutrient.png|Old Nutrient Paste Dispenser Texture
+</gallery>
+
+{{Nav|production|wide}}
+[[Category:Production]]
+[[Category:Food Production]]

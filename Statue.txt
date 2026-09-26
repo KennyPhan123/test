@@ -1,0 +1,131 @@
+{{Odyssey}}
+{{Project|Psyfocus}}
+{{Stub|reason=Inadequate copy if existing sculpture pages. mentions to grand sculptureremoved in olsces, analysis trasncluded but does not cover statues etc.}}
+{{About|the art building depicting a specific pawn|sculpture more generally|Sculpture}}
+{{Infobox main
+| type = Art
+| image = GenericStatue.png
+| description = A sculpture depicting a specific person. Artists will often make statues depicting friends or loved ones.
+| hp = 100
+| mass base = 4
+| beauty = 60
+| size = 1 ˣ 1
+| cover = 0.5
+| flammability = 1.0
+| path cost = 
+| styledominance = 
+| production facility 1 = Art bench
+| stuff tags = Metallic, Woody, Stony
+| work to make = 21000
+| work speed stat = General Labor Speed
+| resource 1 = Stuff
+| resource 1 amount = 65
+| skill 1 = Artistic
+| skill 1 level = 4
+| has quality = True
+| tradeTags = Art
+}}
+'''Statues''' are artistic [[buildings]] similar to [[Small sculpture|small]] [[sculpture]]s that depict a [[human]] or individual [[colonist]].
+
+== Acquisition ==
+{{Acquisition}}{{Check Tag|Trade? Quests?|True for small sculptures}} 
+
+== Summary ==
+Functionally similar to small sculptures, statues have 60 base beauty, 10 more than small sculptures, cost 15 more materials to make, and always recreate the likeness of the subject human or colonist at the time the statue was finished. Statues will match the appearance of a living human, including their clothing, equipment, hairstyle,{{IdeologyIcon}} genes,{{BiotechIcon}} and body parts like [[bionic eye]]s and [[flesh tentacle]]s.{{AnomalyIcon}}{{Check Tag|Verify|Health capacity? Standing? Only living humans?}}{{Check Tag|Beauty|State whether pawn or equipment beauty affects final object - likely not, but should be outright stated regardless}} Their subject is always included in a tale associated with the sculpture's description - for further details, see the [[Sculptures#Story generation|Sculptures]] page.
+Unlike other beauty-focused artistic buildings, statues do not have a 110% trade price improvement stat.
+
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_24 text-center}}
+! Sculpture !! Size !! Materials !! Base Beauty<ref group="*" name="quality">Base values. Ignoring multipliers and offsets from materials or [[quality]].</ref> !! {{HP}}<ref group="*" name="quality" /> !! Work to make<ref group="*" name="quality" />
+|-
+! {{DLC Icons| {{#vardefineecho:art|Small sculpture}} }}
+| {{Q|{{#var:art}}|Size}}
+| {{Required Resources| {{#var:art}} }}
+| {{#vardefineecho:beauty| {{Q|{{#var:art}}|Beauty Base}} }}
+| {{Q|{{#var:art}}|Max Hit Points Base}}
+| {{Ticks| {{#vardefineecho:work| {{formatnum:{{Q|{{#var:art}}|Work To Make}}|R}} }} }}
+|-
+! {{DLC Icons| {{#vardefineecho:art|Large sculpture}} }}
+| {{Q|{{#var:art}}|Size}}
+| {{Required Resources| {{#var:art}} }}
+| {{#vardefineecho:beauty| {{Q|{{#var:art}}|Beauty Base}} }}
+| {{Q|{{#var:art}}|Max Hit Points Base}}
+| {{Ticks| {{#vardefineecho:work| {{formatnum:{{Q|{{#var:art}}|Work To Make}}|R}} }} }}
+|-
+! {{DLC Icons| {{#vardefineecho:art|Statue}} }}
+| {{Q|{{#var:art}}|Size}}
+| {{Required Resources| {{#var:art}} }}
+| {{#vardefineecho:beauty| {{Q|{{#var:art}}|Beauty Base}} }}
+| {{Q|{{#var:art}}|Max Hit Points Base}}
+| {{Ticks| {{#vardefineecho:work| {{formatnum:{{Q|{{#var:art}}|Work To Make}}|R}} }} }}
+|-
+|}
+</li></div>
+<references group="*" />
+
+=== Meditation ===
+{{Royalty|section=1}}
+Pawns with the [[Psyfocus#Artistic|Artistic]] meditation focus type can use statues in a 10-tile radius to increase psyfocus. This includes all pawns who are not Tribal or [[Ascetic]]. 
+Statues are functionally equivalent to other 1x1 sculptures for the purposes of meditiation. 
+
+The highest quality statue or sculpture is the primary source of psyfocus:
+{| {{STDT| c_07 text-center}}
+! Quality
+! Awful
+! Poor
+! Normal
+! Good
+! Excellent
+! Masterwork
+! Legendary
+|- 
+! Base Strength
+| +12%
+| +16%
+| +20%
+| +22%
+| +24%
+| +26%
+| +28%
+|}
+
+The other, surrounding sculptures or statues give a much smaller boost:
+{| {{STDT| c_07 text-center}}
+! Quality
+! Awful
+! Poor
+! Normal
+! Good
+! Excellent
+! Masterwork
+! Legendary
+|- 
+! Strength Offset
+| +0%
+| +0%
+| +1%
+| +1%
+| +1%
+| +2%
+| +2%
+|}
+
+The maximum meditation focus strength is thus 44% for a legendary statue surrounded by 8 additional statues or sculptures of masterwork or legendary quality.
+
+== Analysis == 
+{{:Sculptures}}
+
+{{Building Stats Table}}
+
+== Styles ==
+Statues do not have distinct styles but reflect the features and appearance of their subject, which will include [[style]]d clothes, [[gene]]s, body parts and injuries as they were when the statue was finished. 
+
+== Version history ==
+* [[Odyssey DLC]] Release - Added.
+* [[Version/1.6.4528|1.6.4528]] - Fix: Issue with modded statues due to xenotype being set before kindDef. Fix: [[Flesh tentacle]]{{AnomalyIcon}} on statue no longer moves.
+* [[Version/1.6.4535|1.6.4535]] - Fix: Statue doesn't visually update until save/reload if you use transmute steel on it.
+* [[Version/1.6.4566|1.6.4566]] - Fix: Statues weren’t saving style of apparel (fix not retroactive).
+
+{{Nav|furniture|wide}}
+[[Category:Art]]
+[[Category:Furniture]]

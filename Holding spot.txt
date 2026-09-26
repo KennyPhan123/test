@@ -1,0 +1,93 @@
+{{Anomaly}}
+{{Stub|reason=General }}
+{{See also|Holding platform}}
+{{Infobox main|building
+| name = Holding spot
+| image = Holding spot.png
+| description = A spot for holding dangerous entities. Not as good as a steel holding platform, but a lot better than nothing.<br />Downed entities can be secured at a holding spot where they can be studied. Increase containment strength by building strong walls and doors, and other special containment devices.
+<!-- Base Stats -->
+| type = Building
+| type2 = Anomaly (Buildings)
+| rotatable = false
+| path cost = 0
+<!-- Building -->
+| buildingTags = Anomaly
+| sowTag = SupportPlantsOnly
+| can place over impassable plant = false
+| ai_chill destination = false
+| wake dormant pawns on construction = false
+| artificial for meditation purposes = false
+| passability = standable
+| cover = 0
+| terrain affordance needed = Light
+| size = 3 * 3
+<!-- statBases -->
+| sell price factor = 0.70
+| meditation psyfocus bonus = 0
+| hp = 0
+| work to make = 0
+<!-- Meditation -->
+| focus types = Void
+| occupied meditation psyfocus bonus offset = 0.16
+<!-- Building -->
+| facility = Electroharvester, Electric inhibitor, Shard inhibitor, Bioferrite harvester
+<!-- Containment -->
+| containment factor = 0.7
+| min monolith level = 1
+<!-- Technical -->
+| defName = HoldingSpot
+| label = holding spot
+| thingClass = Building_HoldingPlatform
+| category = Building
+| drawerType = RealtimeOnly <!-- Prevents items clipping into it -->
+| resourceReadoutPriority = 
+| useHitPoints = false
+| selectable = true
+| scatterableOnMapGen = false
+| inspectorTabs = ITab_Entity
+| descriptionHyperlinks = [[Electroharvester]], [[Electric inhibitor]], [[Shard inhibitor]], [[Bioferrite harvester]]
+| designationCategory = Anomaly
+<!-- graphicData -->
+| texPath = Things/Building/HoldingSpot
+| graphicClass = Graphic_Single
+| drawSize = (3, 3)
+<!-- Other -->
+<!--
+  <ThingDef ParentName="HoldingPlatformBase">
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <repairEffect>Repair</repairEffect>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <filthLeaving>Filth_RubbleBuilding</filthLeaving>
+    <containedPawnsSelectable>true</containedPawnsSelectable>
+    <tickerType>Normal</tickerType>
+    <uiOrder>100</uiOrder>
+    <canOverlapZones>true</canOverlapZones>
+    <defaultPlacingRot>North</defaultPlacingRot>
+  </ThingDef>
+-->
+| room role = Containment cell
+}}
+'''Holding spots''' are [[spot]]s added by the [[Anomaly DLC]] that allow for the [[containment]] of some [[entities]].
+
+They can be considered the basic counterpart to the more advanced [[holding platform]]. 
+
+== Acquisition ==
+Holding spots become available in the [[Anomaly]] tab of the [[Architect]] menu after activating the [[Monolith]]. Holding spots do not require a colonist to construct or [[deconstruct]], nor is there a cost, build time, or [[skill]] requirements for placing them. Instead, they are simply selected from the menu and placed directly by the player.
+
+== Summary == 
+{{Stub|section=1|reason=Void focus mediation and penalty stacking (see commented out section)}}
+{{See also|Containment}}
+Holding spots can be used to contain [[entities]]. To do this, an entity must be [[downed]] or otherwise capturable, then brought into the spot. A holding spot provides {{Bad|x70%}} [[containment]] when compared to a [[holding platform]].
+
+Each additional holding spot or platform in a room inflicts a roughly {{--|10%}} exponential cumulative penalty to all holding platforms in the same room. <!-- The cumulative remaining containment percentage of x platforms is roughly given by the exponential curve of y=111*e^(-.11*x), but I am unsure of how to present this information in a pretty and accurate manner and I've been at this edit for over two hours primarily trying to find out this info and I need to stop looking at spreadsheets... -Vilobion -->
+
+== Analysis ==
+Holding spots can be useful as temporary entity containment before a [[holding platform]] can be built. They can also be suitable for entities that are permanently [[downed]] or unable to break out, such as a [[toughspike]] with both legs destroyed, as extra containment score for them is not required, although containment will still improve study rate.
+
+Since holding spots can be deconstructed instantly, it is possible build holding spots in combat locations, then deconstruct them to unleash [[entities]] on raiders. However, this is not a very practical strategy due to the difficulty of capturing and containing entities in large numbers.  Using [[deadlife dust]] to ressurect dead entities is a safer, less tedious, and more effective way of using entities to the colony's advantage.
+
+== Version history ==
+* [[Anomaly DLC]] Release - Added
+
+{{Nav|anomaly|wide}}
+[[Category:Anomaly (Buildings)]]

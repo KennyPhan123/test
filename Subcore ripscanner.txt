@@ -1,0 +1,74 @@
+{{Biotech}}
+{{Infobox main|building
+| name = Subcore ripscanner
+| image = SubcoreRipscanner north.png
+| description = A pod with thousands of tissue probe injectors and an ultra-high-power vaporizing brain scanner. Once a person is inserted, the device will insert the probes into their body through the skin while the ripscanner chews through the brain, reading the reflected radiation and destroying the brain in the process. Ripscanning the mind generates a neuro-psychic pattern that the scanner can analog-transfer to a new high-tier mechanoid subcore.<br/>Subcores are mechanoid brains and producing any mechanoid requires one. High-tier subcores produced by this ripscanner can only power high-tier mechanoids.
+| type = Building
+| type2 = Biotech (Buildings)
+| placeable = 
+| path cost = 
+| passability = pass through only
+| blockswind = false
+| cover = 0.3
+| minifiable = false
+| size = 3 ˣ 2
+| flammability = 0.5
+| hp = 250
+| mass base = 25
+| beauty = 
+| power = -150
+| terrain affordance = Light
+| research = High mechtech
+| skill 1 = Construction
+| skill 1 level = 6
+| work to make = 1200
+| resource 1 = Steel
+| resource 1 amount =  200
+| resource 2 = Plasteel
+| resource 2 amount = 150
+| resource 3 = Component
+| resource 3 amount = 6
+| thingCategories = 
+| room role = Laboratory
+}}
+The '''subcore ripscanner''' is a building added by the [[Biotech DLC]] that allows for the creation of [[high subcore]]s by ripscanning [[human]] pawns.
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+{{Stub|section=1|reason=Thoughts from use, traits and ideoligions that negate/modify them, whether it counts as execution for ideos requiring executions, etc. Use {{T|Thought}} where appropriate. What work type to enter or take pawn to enter?}}
+The subcore ripscanner takes 150 W of [[power]]. Its only purpose is to form a [[high subcore]], an ingredient used for the gestation of the following mechanoids:
+{{Ingredient List|High subcore|noCollapse=1}}
+
+A high subcore requires 50 [[steel]] and 4 [[components]] to create. Then, a non-[[baby]] [[human]] must be selected from the scanner's gizmo menu, where they will then enter (if they are a colonist or [[slave]]{{IdeologyIcon}}) or be placed into (if they are a prisoner) the scanner for {{ticks|7500}}. The pawn then [[death|dies]] from destruction of the brain. This is considered an execution for all intents and purposes. The subcore ripscanner does not take pawns with [[scanning sickness]].
+
+Unlike other forms of execution, the mood penalties from ripscanning are not limited to colonists within the same world tile. This is because the game uses the location of the executioner to determine which world tile is relevant, but when a ripscan occurs there is no associated executioner so it uses the fallback behaviour of applying the mood penalties to all colonists worldwide.
+
+== Analysis ==
+High subcores are used in the creation of a number of different mechanoids, and therefore how much they are needed, in what numbers, and at what priority depends on the need for those mechanoids. See the individual mechanoid pages listed in the table [[#Summary|above]] for analysis on their acquisition. Most mechanitor colonies will want them however, as the mechs on offer are some of the most useful. Solo mechanitors in particular will value the [[paramedic]], which can rescue its master and perform [[surgery]] on them. 
+
+The primary way to get participants for the ripscanner are [[prisoner]]s, taken from the constant supply of raiders. It is also possible to use colonists who you would've banished in the first place.
+
+If used in tandem with a pawn capable of [[death refusal]]{{AnomalyIcon}}, it is possible to obtain a high subcore while keeping the pawn alive after the fact. This incurs the typical penalties associated with death refusal revival, but can be especially useful when looking to ripscan [[horax cult|cultist]]{{AnomalyIcon}} raiders as they can then be sold, organ harvested, or ripscanned a second time.
+
+=== Human resources ===
+{{Main|Human resources}}
+A high subcore requires {{Icon Small|silver||{{#expr:50*{{Q|Steel|Market Value Base}} + 4*{{Q|Component|Market Value Base}}}}}} [[silver]] of non-human material and is worth {{icon Small|silver||{{Q|High subcore|Market Value Base}}}} [[silver]], for a Market Value profit of {{Icon Small|silver}} {{#expr:1000 - 223}}. When used on guilty prisoners, the ''Justified execution ({{--|2}})'' mood penalty is applied instead of the usual ''Someone was ripscanned ({{--|6}})''.
+
+Selling prisoners directly to a slaver or [[faction base]] can be more profitable, and only gives a {{--|3}} [[mood]]let per prisoner. However, human market value is dependent on a pawn's quality; sufficiently bad traits like brain damage, a [[peg leg]], or previous organ harvests can make a high subcore more valuable. 
+
+Organ harvests in general are more profitable: a [[heart]] or [[liver]] is worth {{Icon Small|silver||{{Q|Heart|Market Value Base}}}} and requires 2 [[medicine]] of any type to extract. However, this usually gives {{--|5}} mood for organ harvesting and another {{--|6}} for organ-murder.
+
+== See also ==
+* [[Subcore encoder]] - Creates [[basic subcore]]s.
+* [[Subcore softscanner]] - Creates [[standard subcore]]s.
+
+== Version history ==
+* [[Biotech DLC]] Release - Added.
+* [[Version/1.4.3534|1.4.3534]] - Added more feedback to subcore scanners.
+* [[Version/1.4.3555|1.4.3555]] - In the 'Completed scan' message sent when subcore scan is cancelled, changed 'cancel load' to 'cancel scan'. Fix: Ripscanning doesn't kill pawns if colonist instant death in difficulty settings is 0%. Subcore scanners: Added confirmation dialog when cancelling a scan that can kill the occupant.
+* [[Version/1.4.3580|1.4.3580]] - Fix: Typo in colonist ripscanned thought description.
+
+{{Nav|biotech|wide}}
+[[Category:Biotech (Buildings)]]

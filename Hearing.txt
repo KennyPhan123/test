@@ -1,0 +1,55 @@
+{{Capacity
+| default base value = 1
+| to string style = PercentZero
+| description = How well a creature can detect sound waves. It improves social and trade prices.
+}} 
+
+== Effects ==
+{{Stub|section=1|reason= [[Reproduction#Giggling and crying]] - detail is there but should be summarised here with link to there for further detail.  Other mechanical interactions need testing - insults, television,  ritual participation (inc [but not only] drum ritual and its recreation effects) etc}}
+Hearing has a number of unique interactions with other mechanics, beyond the traditional effects on [[stats]].
+
+Pawns with {{Bad|0%}} Hearing do not get the [[mood]] bonus from musical instruments,{{RoyaltyIcon}} or the mood penalties from disturbed sleep or crying [[babies]].{{BiotechIcon}} They also have no {{Bad|-25}} opinion towards pawns with [[Annoying voice]] or [[Creepy breathing]].
+
+Animals also have a Hearing capacity, but it's not clear if it affects any of their stats.
+
+== Affected stats ==
+{{#ask: [[Hearing Importance::+]]
+| ?Health Type = Type
+| ?Hearing Importance# = Weight
+| ?Hearing Limit# = Max
+| ?description
+| format = broadtable
+| limit  = 100
+| mainlabel = Name
+| headers = plain
+| sort = Hearing Importance
+| order = desc
+}}
+
+== Factors ==
+The following factors affect Hearing:
+=== Base factors ===
+* Ear efficiency.  100% importance, no allowed defect, no max.
+** The game assigns 75% weight to the stronger ear and 25% weight to the weaker, so entirely losing a single ear reduces hearing by 25% rather than 50%. As such the effects on Hearing of each change to Ear efficiency are displayed in the table below rather than listed with each entry.
+** [[Hearing loss]]: Part efficiency offset {{--|20%}}. 
+** [[Cochlear implant]]: 65% part efficiency.
+** [[Bionic ear]]: 125% part efficiency.
+
+{{Hearing Part Efficiency Table}}
+
+=== Offsets ===
+The following offsets affect Hearing:
+* [[Dementia]]: {{--|25%}}
+** Note, that as dementia also inflicts a -15% Consciousness penalty, this is effectively a {{--|40%}} to Hearing.
+* [[Sensory mechanites]]: {{+|50%}}
+=== Multipliers ===
+The following factors affect Hearing and are applied after any offsets. 
+* [[Focus]] psycast:{{RoyaltyIcon}} {{Good|x130%}}
+* [[Elephant#In Odyssey DLC|War trumpet]]{{OdysseyIcon}}: {{Bad|x50%}}
+* [[Thrumbo#Summary|Thrumbo roar]]{{OdysseyIcon}}: {{Bad|x25%}}
+
+== Version history ==
+* [[Version/1.2.2719|1.2.2719]] - Humans with 0% hearing no longer get thoughts from listening to instruments.
+
+{{nav|stats|wide}}
+<noinclude>[[Category:Capacity]]</noinclude>

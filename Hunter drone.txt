@@ -1,0 +1,104 @@
+{{Odyssey}}
+{{infobox main|none
+| name = Hunter drone
+| image = HunterDrone_east.png
+| description = An automated kill drone. The hunter drone pursues its target and detonates when it gets close.
+| type = Drone
+| marketvalue = 1200
+| combatPower = 75
+| movespeed = 3.4
+| basemeatamount = 0
+| baseleatheramount = 0
+| armorblunt = 0.05
+| armorsharp = 25
+| armorheat = 150
+| min comfortable temperature = -100
+| max comfortable temperature = 250
+| toxic environment resistance = 1
+| toxic resistance = 1
+| bodysize = 0.7
+| healthscale = 0.35
+| lifespan = 2500
+| attack1dmg = 6
+| attack1type = Stab
+| attack1cool = 2.6
+| meleeattack1ap = 0.1
+| attack1part = shell spike
+}}
+A '''hunter drone''' is a self-propelled explosive machine added by the [[Odyssey  DLC]] that homes in on its target after activation.
+
+== Occurrence ==
+Hunter drones do not spawn as pawns natively in the world, but instead only come into existence during interactions with two related objects.
+
+These are: 
+* The [[hunter pack]], a craftable, single use [[utility]] item that allows the user to deploy a hunter drone within a set range; and 
+* The [[hunter trap]], a building that turns into a hunter drone when activated by an enemy of the faction that owns the building. They can be constructed, in which case they will belong to the player colony and be activated by, and target, only enemies of the colony. Hostile hunter traps belonging to the Hostile [[Ancients]] faction can also be encountered in [[landmarks]], such as an [[Landmarks#Ancient_garrison|Ancient Garrison]]. These can be triggered by most{{Check Tag|All?}} other factions, including the player's colony.
+
+== Summary ==
+{{Stub|section =1|reason =1)   <labelOverride>Battery power</labelOverride>
+        <tooltipOverride>Drones have limited battery life. When the battery runs dry, the drone dies.</tooltipOverride>
+ 2) Check Tags
+ 3) EMP detail in summary. See a mechanoid page for an example of an appropriate description if mechabics the same, alternatively a turret page if no adaptation, or write new as necessar
+}}
+{{Image wanted|section=1|reason=Gizmos for player use, and Exposion AoE (consider including detection radius of the trap in same image) in standard style}}
+Drones are similar to [[mechanoids]] in several ways - they eschew [[cover]], do not drop equipment when destroyed, die when [[downed]], are [[Flammability |non-flammable]], and have 100% [[toxic environment resistance]] and 100% [[vacuum resistance]]. Unlike mechs, they are not entirely immune to [[flame]] and [[Damage Types#Heat|heat]] damage and have a [[psychic sensitivity]] of 0%.
+
+When generated as part of a map, drones will be at least 200 years old{{Check Tag|Verify}}
+
+Hunter drones will chase, and attempt to close with, targets{{Check Tag|LoS? Range? Ever change target? Ever disengage? Living?}} through doors, including player-owned [[door]]s, without breaking them.{{Check Tag|Verify|For sentry drones this has been confirmed by the developers as intentional}}
+
+Upon reaching a target in its melee range, they will attack it, forcing a longer than usual melee cooldown on the pawn and detonate themselves on a five second cooldown, dealing 40 [[Damage Type#Bomb|Bomb]] damage in a 2.9 tile radius. Shows sparks for {{Ticks|120}} and then explodes. When it explodes, it does not leave a corpse. Same behavior applies if its killed
+
+Hunter drones also have a melee stabbing attack independent of their bomb explosion, which can slow its target into remaining within blast radius if used.
+
+While the drone is active, its battery slowly depletes. The battery lasts {{Ticks|12500}}, which is displayed on a gizmo visible when the drone is selected, regardless of whether the drone is friendly or hostile to the player. After this time, the drone dies without exploding, leaving a corpse with their core part destroyed. The corpse can be shredded for {{Icon Small|Steel||15}} [[steel]].
+
+== Analysis ==
+
+Hunter drones are very dangerous for colonists in the early game as, without high-tech armor or shields, the explosion can instantly kill them. They are best avoided, especially mid-combat, since speed is crucial for escape.
+
+A [[shield belt]] will completely protect the wearer from the explosion damage, however normal and below [[quality]] shield belts will be broken and require recharging afterwards. This can be dangerous when multiple drones or other threats are present.
+
+Multiple hunter drones can spawn in a single room. Rooms may contain a combination of items that could magnify the explosive reaction of an exploding hunter drone, such as [[chemfuel]] or [[ancient mining charge]]s. 
+
+A healthy target can outrun it, allowing others to take it down, especially with fast ranged weapons, however they typically spawn inside ruins with close confines, obstructions, and doors which may slow down a pawn enough to be caught by the drone. Hunter drones attack in melee, [[stagger]]ing their targets and usually preventing them from escaping their final explosive attack. 
+
+It is possible to avoid damage from a sparking drone by quickly moving away from it (similar to a turret sparking before the explosion) or hiding behind a wall. Friendly Hunter drones can be used to destroy hostile and triggered hunter drones as they will aggro onto one another if one becomes the closest target.
+
+Hunter drones are vulnerable to [[EMP]] damage, but stunning them is risky, as they still explode on death, and move quickly enough that [[EMP grenades]] may miss them and leave your colonists without a safe way to escape. EMP damage completely nullifies hunter ''traps'', as long as they are stunned before activating. EMP-stunned hunter traps never deploy a hunter drone, and drop steel and chemfuel instead of exploding when destroyed. Since they trigger in line-of-sight, not all hunter drones or traps can be safely stunned, even if already scouted. Hunter drones adapt to EMP damage the same way [[mechanoids]] do, but this is not a notable concern due to their low health and single attack nature. 
+
+The [[Skip]] and [[Wallraise]] psycasts{{RoyaltyIcon}} are ideal for dealing with them.
+
+[[Ghoul]]s can usually tank a hunter drone without dying and regenerate the damage without requiring doctor attention or medicine.
+
+===Colony use===
+{{Stub|section=1|reason=Very simple}}
+Hunter drone traps cannot be dodged and are entirely automatic seeking weapons. But they can cause collateral damage and are subject to dumb AI targeting methods. As built Hunter drones are considered part of the colony, their splash damage can cause problems with [[goodwill]] if they happen to maim your allies.
+
+== Health == 
+=== Body parts ===
+{{Recode|section=1|reason=DroneWithThreeLegs body type not supported}}
+{{Animal Health Table|DroneWithThreeLegs}}
+=== Armor ===
+{| class="wikitable"
+! Armor
+|-
+| {{Apparel Protection Chart
+| set1name= {{P|Name}} (Sharp) | set1armor1={{P|Armor - Sharp}} 
+| set2name= {{P|Name}} (Blunt) | set2armor1={{P|Armor - Blunt}} 
+| set3name= {{P|Name}} (Heat) | set3armor1={{P|Armor - Heat}} 
+| color= grey, blue, red
+}} 
+|}
+
+== Gallery ==
+<gallery>
+File:HunterDrone_east.png|Facing east
+File:HunterDrone_north.png|Facing north
+File:HunterDrone_south.png|Facing south
+</gallery>
+
+== Version history ==
+* [[Odyssey DLC]] Release - Added. 
+
+[[Category: Drones]]

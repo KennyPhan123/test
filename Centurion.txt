@@ -1,0 +1,138 @@
+{{Biotech}}
+{{See also|Legionary}}
+{{infobox main|none|
+| name = Centurion
+| image = CenturionAncient east.png
+| description = An ultraheavy mech with a built-in shield bubble generator. The centurion carries a point-defense bulb turret capable of firing while the mechanoid is moving.
+| combatPower = 250
+| type = Mechanoid
+| movespeed = 1.6
+| flammability = 0
+| marketvalue = 1600
+| armorblunt = 25
+| armorsharp = 75
+| armorheat = 200
+| min comfortable temperature = -100
+| max comfortable temperature = 250
+| psychic sensitivity = 0.75
+| toxic resistance = 1
+| toxic environment resistance = 1
+| bandwidth cost = 5
+| bodysize = 3.6
+| healthscale = 3
+| hungerrate = <!-- May not be applicable, or may need custom implementation, if unsure, tag page with {{Stub}} and any known details -->
+| lifespan = 
+| attack1dmg = 12
+| attack1type = Demolish
+| attack1cool = 2
+| attack1part = Head
+| attack5chancefactor = 0.2 
+| page verified for version = 1.4.3525
+<!-- Creation -->
+| research = Ultra mechtech
+| production facility 1 = Large mech gestator
+| gestation cycles = 12
+| resource 1 = Steel
+| resource 1 amount = 300
+| resource 2 = Plasteel
+| resource 2 amount = 200
+| resource 3 = Advanced component
+| resource 3 amount = 2
+| resource 4 = Powerfocus chip
+| resource 4 amount = 1
+| resource 5 = High subcore
+| resource 5 amount = 1
+}}
+A '''centurion''' is a [[mechanoid]] added by the [[Biotech DLC]] that projects a shield around itself and nearby pawns.
+
+== Occurrence ==
+{{Stub|section=1|reason = General. Ensure parity with other non-commander mechs, whatever standard you or others might decide to set.}}
+
+Centurions may spawn as part of mech raids or mech clusters if there are sufficent raid points for them.
+Additionally, they will spawned on the 6th and 8th time you summon Diabolus, on the 6th and 8th time you summon the War queen, and on the 5th and 8th time you summon the Apocriton.
+
+== Acquisition ==
+{{Acquisition}}
+
+Dead, friendly {{lc:{{PAGENAME}}}}s can also be resurrected at the {{lc:{{P|Production Facility 1}}}} using the "''Resurrect ultraheavy mechanoid''" bill. This requires the corpse of the friendly {{PAGENAME}}, {{Icon Small|Steel||150}} [[steel]], and 1 [[gestation cycle]] taking {{ticks|1800}} to initiate.
+
+== Summary ==
+{{Mechanoid Summary}}
+
+Dead centurions may be shredded at the [[machining table]] or [[crafting spot]] for {{Icon Small|Steel||50}} [[steel]] and {{Icon Small|Plasteel||20}} [[plasteel]]. However, these values are affected by [[Mechanoid Shredding Efficiency|mechanoid shredding efficiency]], as well as missing parts on the centurion.
+
+Centurions are nearly unstoppable ultra-heavy mech with a built-in shield bubble generator and point-defense bulb turret capable of firing even while the mechanoid is moving. The centurion acts as a mobile defense platform. Its massive shield is one of the strongest among mechanoids, providing large numbers of allies with strong defense while allowing them to shoot outwards.
+
+=== Shield ===
+[[File:Centurion shield radius.png|thumb|left|175px|Radius of the Centurion's shield with unshielded area denoted in red, partially shielded areas in gold (see Note right).<br> Note that despite the shield visually extends into the red tiles, it does not protect them.]]
+
+The centurion projects a shield that is 6 tiles in radius, centered on the mech and moving with it. The shield stops all incoming enemy ground-level fire from passing into the bubble. It does not prevent pawns of any faction that are inside from firing out.  Also note that this only applies to ground-level fire, i.e. fire from ranged [[weapons]] carried by all types of [[pawn]] and [[turrets]], including grenades that cross the boundary of the shield. Explosives projectiles will detonate on the shield edge. Fire from [[mortar]]s, [[orbital bombardment targeter|orbital bombardment]], or [[Titles#Permits|aerodrone strikes or salvos]] {{RoyaltyIcon}} will not be blocked by the shield, nor will explosions crossing the boundary.
+
+'''Note:''' Pawns on the tiles shown in [[gold tile|gold]] in the image to the left are shielded from attacks directly targeted at them, however, due to a bug, they can still be hit by attacks aimed at other nearby pawns that miss. 
+
+The shield can absorb up to 300 damage before breaking. If an attack would be sufficient to completely deplete the shield's charge, then the rest of its damage is negated, and the shield is temporarily broken. The shield regenerates charge at rate of 0.5 HP per second, so long as it has not been broken. However, once the shield's charge is completely expended, the shield will break and be totally disabled for {{ticks|1800}} after which point the shield will be restored at full health. Projectiles from [[EMP grenades]] and [[EMP launcher|launchers]] from outside hitting the shield will disable the shield for {{ticks|1500}}, after which time the shield will be restored at full health. Note that {{Hover title|Version/1.6.4630|as of the time of writing}}, projectiles [[unique weapons]] with the [[EMP rounds]]{{OdysseyIcon}} trait do not disable the shield when striking it. It is currently unknown whether this is intended or considered a bug. Striking the mechanoid itself does not disable the shield. Furthermore, unlike the mechanoid itself, the shield projector will not adapt to the EMP effect. Its therefore possible to continuously disable the shield until the mechanoid can be killed. Note that an EMP area of effect overlapping with the projected shield will not disable it - a projectile must hit the shield or the EMP damage must be dealt to the structure itself
+
+If the [[EMP]] damage is dealt to the centurion itself, the shield is similarly disabled for {{ticks|1500}}, but will continue to regenerate as if it was not.
+
+A pawn does not need to be inside the shield to benefit from the effect, assuming the enemy is not inside the shield and that the shield is between them and their attacker the incoming rounds will be stopped. However, it does not prevent pawns from moving inside the shield and attacking.
+
+=== Combat ===
+{{Stub|section=1|reason= Effect of MeleeDoorDamageFactor? Also add findings to [[War queen]]}}
+Centurions are always equipped with a [[charge blaster turret]], which they do not drop upon death. Note that this weapon is unique in that it can fire while moving. See the [[charge blaster turret]] page for further information.
+
+Centurions have a [[shooting accuracy]] of 96%, equivalent to a pawn with a [[Shooting]] skill of 8. They have a [[melee hit chance]] of 62%, equivalent to a pawn with a [[Melee]] skill of 4.
+
+The centurion's head attack deals [[Damage types#Demolish|Demolish damage]] which does significantly more damage to buildings than to pawns on average. The head attacks have a 10x damage multiplier against passable buildings and a 7.5x multiplier against impassable buildings such as [[wall]]s. Thus, the head attack deals the following:
+* Passable buildings: {{#expr: {{P|Attack 1 Damage}}*10}} damage
+* Impassable buildings: {{#expr: {{P|Attack 1 Damage}}*7.5}} damage
+* All other targets: {{#expr: {{P|Attack 1 Damage}}}} damage
+
+Note that only the head's attack has the multiplier. As this multiplier is not taken into account when choosing which attack to perform,<!---Tested on breach axes as of 1.3.3159-->other attacks, such as those added by the [[charge blaster turret]], without the multiplier can still be chosen when attacking buildings and the resulting DPS versus buildings is not simply 7.5x or 10x that when used against pawns.
+
+== Analysis ==
+{{stub|section=1|reason=Strategies as enemies, weaknesses}}
+The centurion is a superheavy unit, sharing similarities such as armor and base health with the deadly [[war queen]] and [[diabolus]].
+
+Enemy or wild centurions can be downed using a [[psychic shock lance]] to then be carried and trapped in a 1x1 space to provide a permanent shield for your colonists that does not add wealth. Once the shock passes, they will stand idly and they will not try to break out. Please note that this shield specifically does NOT block projectiles from the Mechanoid faction the centurion belongs to. Also, once downed, it is possible to carefully cripple the centurion by destroying the four legs, making it completely safe to handle and relocate. It provided a free carry capacity bonus like a pack animal if added to a caravan and indeed must be carried/taken off the map tile (temporarily) in order to proceed with bestowing ceremonies and other quests that require the map to be clear of pawns considered hostile to the Empire. 
+
+=== As an ally ===
+Centurions are less cost-effective than [[legionaries]] for the sole purpose of shield HP, with centurions providing {{#expr:300/5}} shield HP/bandwidth and legionaries providing {{#expr:200/2}} shield HP/bandwidth. In addition, centurions are extremely slow, slower than even [[centipede]]s, and legionaries don't require [[advanced component]]s to make. The benefits of centurions are their higher shield radius, a better range weapon, and the higher HP of the mech itself. Since the main reason to build a centurion is its shield, though, the latter two are not especially relevant.
+
+The best use of a centurion is inside a [[killbox]] or other stationary fortifications. Ideally, raiders won't get many hits in, but the centurion's shield can help prevent the worst case situation where raiders get a shot in and one hit kill an important colonist. In this role, centurions' higher shield radius is advantageous. It covers a wider area with 300 HP, as opposed to two legionaries where either the legionaries can split (resulting in each area only having 200 HP of shield) or stack together (limiting the area). Also, if a [[doomsday rocket launcher]] impacts the shield, the explosion will be further away from colonists.
+
+Still, this should be compared to just having a [[centipede]] or [[war queen]] in front of the defensive position to attract enemy fire. Such a setup is generally better at tanking shots due to the massive HP of heavy mechs, and centipedes have better firepower. However, raiders can miss or not target the mech, thus not 100% protecting the colonists in the back, and this setup requires more repairing and thus more energy.
+
+In other cases, the centurion is not very practical due to its slow movement speed and high cost. If forced to take the brunt of an attack, the shield will break very quickly.
+
+== Health == 
+=== Body parts ===
+{{Animal Health Table|Mech_Centurion}}
+=== Armor ===
+{| class="wikitable"
+! Armor
+|-
+| {{Apparel Protection Chart
+| set1name= {{P|Name}} (Sharp) | set1armor1={{P|Armor - Sharp}} 
+| set2name= {{P|Name}} (Blunt) | set2armor1={{P|Armor - Blunt}} 
+| set3name= {{P|Name}} (Heat) | set3armor1={{P|Armor - Heat}} 
+| color= grey, blue, red
+}} 
+|}
+{{Pawn Attack Table|weapon=Charge blaster turret}}
+
+== Gallery ==
+<gallery>
+Centurion east.png| Age 0-99 Centurion facing east
+Centurion north.png| Age 0-99 Centurion facing north
+Centurion south.png| Age 0-99 Centurion facing south
+</gallery><gallery>
+CenturionAncient east.png| Age 100+ Centurion facing east
+CenturionAncient north.png| Age 100+ Centurion facing north
+CenturionAncient south.png| Age 100+ Centurion facing south
+</gallery>
+
+== Version history ==
+* [[Biotech DLC]] Release - Added.
+
+{{nav|mechanoid|wide}}
+[[Category:Mechanoids]]

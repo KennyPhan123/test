@@ -1,0 +1,119 @@
+{{infobox main|security|
+| name = Uranium slug turret
+| image = UraniumSlugTurret.png|Uranium slug turret
+| description = An armor-piercing turret. Its ultra-dense uranium shells can punch through heavy armor, but it requires new uranium slugs to be loaded after use. It's more accurate at longer ranges, and can't fire at all close up. May explode when damaged.
+| type = Building
+| type2 = Security
+| placeable = true
+| path cost = 50
+| passability = pass through only
+| cover = 0.5
+| minifiable = false
+| size = 2 ˣ 2
+| flammability = 0.7
+| hp = 380
+| beauty = -20
+| power = -150
+| terrain affordance = heavy
+| research = uranium slug turret
+| skill 1 = Construction
+| skill 1 level = 6
+| work to make = 15000
+| resource 1 = Steel
+| resource 1 amount = 300
+| resource 2 = Plasteel
+| resource 2 amount = 30
+| resource 3 = Uranium
+| resource 3 amount = 60
+| resource 4 = Component
+| resource 4 amount = 6
+| damage = 55
+| armorPenetration = 82
+| range = 45.9
+| minrange = 11.9
+| accuracyTouch = 22
+| accuracyShort = 33
+| accuracyMedium = 44
+| accuracyLong = 95
+| mode = Single-Shot
+| burst = 1
+| cooldown = 240
+| warmup = 0
+| velocity = 120
+| stoppingPower = 0.5
+| DPS = DPS
+| fuel filter = Uranium
+| fuel capacity = 60
+| fuel consumption rate = {{#expr:60/30 round 2}}
+}}
+The '''uranium slug turret''' is a long-range, high per-shot damage [[security]] [[turret]] with a wide blind zone.
+
+== Acquisition ==
+{{Acquisition}} 
+
+== Summary ==
+{{Image wanted|section=1|reason=Concise, small infographic of the cover bug}}
+Uranium slug turrets automatically shoot at enemies within range so long as they are [[power]]ed and have sufficient ammunition. They only shoot at enemies of their faction, including manhunting animals but not animals hunting pawns or faction animals for food. They are capable of [[friendly fire]]. The uranium slug turret uses the [[uranium slug cannon]] weapon. In addition to the weapon's accuracy, the turret itself has a per-tile [[shooting accuracy]] of 98% or equivalent to a [[Shooting]] skill of 14. It has a maximum range of {{P|Range}} tiles, but is unable to hit enemies within an {{P|Minimum Range}} tile radius. These ranges are centered on the lower left tile of the turret, regardless of orientation.  Despite its damage, the uranium slug turret's stopping power is almost non-existent, not even being able to stagger [[human]]s - the same is also true for the [[autocannon turret]]. 
+
+After firing 30 slugs, it needs to be reloaded with {{Icon Small|Uranium||60}} [[uranium]] by a hauler. This can be adjusted in the [[storyteller settings]], but all default [[difficulty]] settings do not alter this.
+
+Since uranium slug turrets are large 2x2 structures, ranged attacks are twice as accurate against them.
+
+As of [[Version/1.4.3580|version 1.4.3580]], uranium slug turrets do benefit from [[cover]] but only if the lower left corner of the turret is covered from the shooter as confirmed by [[:File:Big_turrets_partially_benefit_from_cover.jpg|empirical testing]]. In practice this means that the turret can '''only''' be in cover if engaged from the south-east, as pawns will target the nearest tile of the turret and cover only applies if it is directly adjacent to the targeted tile. 
+
+Like all turrets, they cannot target any pawn that has one or more tiles of [[blind smoke]] between the turret and them and are temporarily disabled by sources of [[EMP]], with downtime scaling to the EMP damage dealt. Unlike mechanoids, turrets do not adapt to EMP and thus can be continuously restunned.
+
+=== Explosion ===
+Uranium slug turrets have a 50% chance to explode when damaged below 20% health. The exploding turret will spark and emit a hissing sound for {{ticks|240}} before exploding, dealing 50 [[Damage Types#Bomb|Bomb damage]] in a 5.9 tile radius centered around the lower left tile of the turret. Bomb damage is multiplied {{Up|x8}} against [[wall]]s, {{Up|x4}} against other impassable structures and plants, and {{Up|x2}} against passable buildings. All nearby raiders will attempt to move out of the blast radius before detonation.
+
+[[File:Large turret explosion radius.png|thumb|center|Radius of uranium slug turret explosion. Note the slight offset from the 'true' center of the turret.]]
+
+== Analysis ==
+{{Stub|section=1|reason=Exploiting/avoiding the cover bug in killbox/defense design}}
+Uranium slug turrets are expensive, with high research requirement and high ammo costs. Getting enough [[uranium]] to use the turrets is difficult, at least until you have either [[ground-penetrating scanner]]s or [[long-range mineral scanner]]s. In return, they don't offer much firepower. Turrets in general aren't strong - you should not expect them to defeat raids on their own. In any case, [[autocannon turret]]s are often the more practical choice.
+
+Autocannons are cheaper, yet have better raw {{DPS}} - to the vast majority of targets - until past 25 tiles of range. To make the comparison worse, the uranium slug turret has a tendency to overkill. It deals 55 damage per shot, but a human's largest body part, the torso, only has 40 HP. This leads to wasted overkill damage. Thus, even against armored humans, the autocannon may outperform. Against [[centipedes]] and other heavy mechanoids, the uranium turret ends up being stronger, due to higher {{AP}} and lack of overkill damage.
+
+The real niches of the uranium slug turret are its massive range and {{AP}}. With 45.9 tiles of range, it outranges every enemy in the game. Unlike most weapons, this turret gets more accurate the further away a target is, performing the best around 35-45 tiles. The high AP is useful against heavy mechs and armored humans, which other turrets can struggle with.
+
+Due to their impracticality, uranium slug turrets are relegated to the late-game / end-game, where the uranium cost is no longer an issue. It performs great against high-armor targets from far away. Since uranium turrets are most accurate from far away, you'll want to design any [[killbox]]es around that fact. Give space to place your turrets, but place them out of line of your colonists to avoid [[friendly fire]]. Also, due to their range, uranium turrets remain effective outside of a killbox.
+
+== Graphs ==
+{{#ifeq: {{#expr:{{Q|Autocannon|Minimum Range}}*{{Q|Uranium slug cannon|Minimum Range}}}}|105.91||{{Recode|section=1|reason=Min range changed - code needs update}}}}
+{| class="wikitable"
+|-
+! {{Hover title|link=no|dotted=yes|DPS taking into account both weapon accuracy and pawn/turret accuracy|True DPS}} over Range
+|-
+| {{Graph:Chart|width=400
+|height=200
+|type=line
+|xGrid=
+|yGrid=
+|xAxisTitle=Range (Cells)
+|xAxisMin = 0
+|xAxisMax = 46
+|yAxisMin = 1
+|yAxisMax = 30
+|yAxisTitle=DPS
+|x= 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46 
+|y1= {{#explode:  {{Weapon DPS Iterator|Mini-turret gun|normal|0.96}} | && |1 }}
+|y2= , , , , , , , {{#explode: {{Weapon DPS Iterator|Autocannon|normal|0.96}} | && |1 }}
+|y3= , , , , , , , , , , {{#explode: {{Weapon DPS Iterator|Uranium slug cannon|normal|0.98}} | && |1 }}
+|y1Title= Mini-turret
+|y2Title= Autocannon turret
+|y3Title= Uranium slug turret
+|legend= Legend
+}}
+|}
+
+== Version history ==
+* [[Version/0.19.2009|0.19.2009]] - Added.
+* [[Version/1.1.0|1.1.0]] - Received a massive nerf to damage (75 -> 30), nerf to armor penetration (112.5% -> 70%), reduced range (49.9 -> 39.9), increased reload cost (60 -> 80 baseline) and nerf to shooting accuracy (98.8% -> 98%). Placing turrets now shows min and max range, not just max range.
+* [[Version/1.1.2618|1.1.2618]] - Received a buff to damage (30 -> 45), increased range (39.9 -> 45.9), increased reload cost (80 -> 120) and reduced magazine capacity (40 -> 30).
+* [[Version/1.1.2624|1.1.2624]] - Received a buff to damage (45 -> 50), buff to armor penetration (70% -> 75%), and reduced reload cost (120 -> 90).
+* [[Version/1.3.3200|1.3.3200]] - Damage increased from 50 to 55. Accuracy increased: touch 0.2 -> 0.22, short 0.3 -> 0.33, medium 0.4 -> 0.44. Turret ammo cost is no longer factored by difficulty. Reduced uranium slug turret cost per shot from 3 uranium to 2.666.
+* Between [[Version/1.3.3117|1.3.3117]] and 1.4.3580 - Turrets now benefit from [[cover]]. Despite displaying in the mouse-over box as such, empirical testing demonstrated that turrets did not benefit at all. However, a new issue was introduced. See above.
+* Between [[Version/1.3.3200|1.3.3200]] and [[Version/1.5.4241|1.5.4241]] - Reduced uranium slug turret cost per shot from 2.666 uranium to 2.
+
+{{nav|security|wide}}
+[[Category:Security]] [[Category:Turret]]

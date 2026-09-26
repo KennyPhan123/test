@@ -1,0 +1,39 @@
+{{Biotech}}
+{{Verified|1.5.4104}}{{Stat
+| min value = 0.0001
+| default base value = 1
+| to string style = PercentZero
+| description = A multiplier on how nutritious [[raw food]] is for this person. Note that since [[meals]] usually have more nutrition than their raw ingredients, a boost to this stat may only mean the person gets the same nutrition from raw food as if it were cooked.
+| category = BasicsPawn
+}}
+
+== Factors ==
+* [[Robust digestion]] gene: {{Good|×180%}}
+
+== Stat Def Data ==
+{| {{STDT}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Raw Nutrition Multiplier" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />RawNutritionFactor
+* '''Label:'''<br />raw nutrition multiplier
+| A multiplier on how nutritious raw food is for this person. Note that since meals usually have more nutrition than their raw ingredients, a boost to this stat may only mean the person gets the same nutrition from raw food as if it were cooked.
+|
+* Display Order:<br />'''11'''
+* Def Name:<br />'''BasicsPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''To String Style:''' PercentZero
+* '''Default Base Value:''' {{%|1}}
+* '''Hide At Value:''' {{%|1}}
+* '''Min Value:''' {{%|0.0001}}
+| -
+| 1001
+<!--</StatDef>-->
+|}
+
+== Version history ==
+* [[Biotech (DLC)]] Release - Added.
+
+{{nav|stats|wide}}

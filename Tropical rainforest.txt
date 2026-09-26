@@ -1,0 +1,170 @@
+{{Infobox biome
+| name = Tropical rainforest
+| image = TropicalRainforest.png
+| type = Biome
+| texture = TemperateSwampTexture.png
+| canbuildbase = Yes
+| allowFarmingCamps = Yes
+| animal density = 6.5
+| plant density = 0.99
+| movement difficulty = 2
+| min average temperature = 15
+| max average temperature = 30
+| min temperature = 15
+| min rainfall = 2000
+| forageability = 0.75
+| wild plant regrow days = 13
+| disease mtb days = 35
+| description = A thick, moist jungle, buzzing with animal life and infested with disease. Despite its visual beauty, this is a very dangerous biome. Choking overgrowth, aggressive animals, and constant sickness are why some explorers call this the "green hell".
+<!-- weather -->
+| clear = 18
+| fog = 1
+| rain = 2
+| dry thunderstorm = 0.3
+| rainy thunderstorm = 1.7
+| foggy rain = 1
+| hard snow = 4
+| soft snow = 4
+| gray pall = 1
+| blind fog = 1
+| overcast = 2
+| torrential rain = 0.5
+<!-- fish -->
+| max fish population = 720
+| freshwater_common_tilapia = Yes
+| freshwater_uncommon_piranha = Yes
+| saltwater_common_bluefish = Yes
+| saltwater_uncommon_tuna = Yes
+| saltwater_uncommon_flounder = Yes
+}}
+'''Tropical rainforest''' is a hot [[biome]] in RimWorld.
+<!-- return 28f + (tile.temperature - 20f) * 1.5f + (tile.rainfall - 600f) / 165f; -->
+== Summary ==
+Tropical rainforests have both strong advantages and disadvantages. The lack of winters and plentiful rich soil allow for year-round growing and both wood and animals are plentiful, however the dense foliage can make expansion difficult, hinders ranged combat, and the frequency of large predators can make fieldwork dangerous. High heat is also somewhat more difficult to deal with than low temperatures in terms of maintaining base temperature and the high disease frequency means that colonists will regularly come down with debilitating illnesses including [[sleeping sickness]], a slow-progressing and long-lasting disease exclusive to the tropics. Wild [[healroot]] also does not grow in rainforests, making medicine more difficult to come by unless you have a grower with sufficient plant skill.
+
+In the lists below the number in brackets represents the relative commonality.
+
+=== Flora ===
+<div class="ul-column-width-200">
+{{#ask: [[Type::Plant]] [[Lives In Tropical Rainforest::>>0]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Tropical Rainforest #
+}}
+</div>{{#set:Flora Commonality Sum | {{#expr: {{#ask: [[Type::Plant]] [[Lives In Tropical Rainforest::>>0]] | ?Lives In Tropical Rainforest = | mainlabel=- | sep=+ }} }} }}{{#set:Grazing Score|{{Grazing Score}} }}
+
+=== Fauna ===
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Tropical Rainforest::>>0]] [[Coastal Animal::false]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Tropical Rainforest
+}}
+</div>{{#set:Fauna Commonality Sum | {{#expr: {{#ask: [[Type::Animal]] [[Lives In Tropical Rainforest::>>0]] [[Coastal Animal::false]] | ?Lives In Tropical Rainforest = | mainlabel=- | sep=+ }} }} }}
+
+Additionally, these animals can spawn in coastal maps:
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Tropical Rainforest::>0]] [[Coastal Animal::true]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Tropical Rainforest
+}}
+</div>
+
+If the map is [[polluted]],{{BiotechIcon}} then the game may choose to spawn in wild animals from this list instead:
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Tropical Rainforest (Polluted)::>0]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Tropical Rainforest (Polluted)
+}}
+</div>
+
+=== Diseases ===
+Tropical Rainforest has a disease {{MTB}} of 35 days. The following diseases can occur in a Tropical Rainforest:
+{| {{STDT|c_07 sortable}}
+! Disease
+! Commonality{{#set:Disease commonality sum|{{#expr:100+100+160+140+80+30+30+80+100+100+10}} }}
+|-
+| [[Flu]] || 100{{#set:Flu commonality|100}}
+|-
+| [[Plague]] || 100{{#set:Plague commonality|100}}
+|-
+| [[Malaria]] || 160{{#set:Malaria commonality|160}}
+|-
+| [[Sleeping sickness]] || 140{{#set:Sleeping sickness commonality|140}}
+|-
+| [[Gut worms]] || 80{{#set:Gut worms commonality|80}}
+|-
+| [[Fibrous mechanites]] || 30{{#set:Fibrous mechanites commonality|30}}
+|-
+| [[Sensory mechanites]] || 30{{#set:Sensory mechanites commonality|30}}
+|-
+| [[Muscle parasites]] || 80{{#set:Muscle parasites commonality|80}}
+|-
+| [[Flu#Animals|Animal flu]] || 100{{#set:Animal flu commonality|100}}
+|-
+| [[Plague#Animals|Animal plague]] || 100{{#set:Animal plague commonality|100}}
+|-
+| [[Organ decay]] || 10{{#set:Organ decay commonality|10}}
+|}
+
+=== Fish ===
+{{Odyssey|section=1|No category}}
+The table below contains the list of all of the fish that can be caught - as well as where they can be caught.
+{| {{STDT|c_23 sortable}}
+! Fish
+! Water body
+! Rarity
+|-
+| [[Tilapia]] || Freshwater || Common
+|-
+| [[Piranha]] || Freshwater || Uncommon
+|-
+| [[Bluefish]] || Saltwater || Common
+|-
+| [[Tuna]] || Saltwater || Uncommon
+|-
+| [[Flounder]] || Saltwater || Uncommon
+|}
+
+== Analysis ==
+While food is rarely an issue, fertile land is common, and many tiles have comfortable temperatures year-round, the tropical forest is rife with disease and predation.
+
+* '''Food and Growing: Easy''' - Growing seasons are often year-round, while it is densely populated with both animals and plant life.
+
+* '''Disease: Difficult''' - Diseases are very common in the rainforest, with the only biome having more diseases being the [[tropical swamp]]. In addition, wild [[healroot]] does not grow in the tropical rainforest, making medicine supply an issue unless there is a grower with Plants 8+.
+
+* '''Temperature: Moderate (regular settings) or Extreme (hot world)''' - Cooler rainforest tiles should be fairly comfortable to live in except during [[heat wave]]s. Warmer tiles can cause heatstroke during the warmer months, but [[passive cooler]]s are easy to make due to the abundance of wood. If the world's temperature setting is increased past normal, tropical rainforests can have dangerously hot temperatures year-round. They have no significant cold periods, although [[cold snap]]s can happen in cooler tiles.
+
+* '''Fires: Difficult''' - Tropical rainforests are filled with trees and other flora, making fires near your base difficult to contain. The game's [[Weather|firewatch]] will typically contain large fires, but various conditions can disable the firewatch and significant damage can occur before it contains the fire regardless. For more information, see [[Weather]]. Surrounding your base and growing fields with firebreaks such as stone walls, two-tile-wide non-flammable flooring, or sections of roof over soil to prevent plant growth will make fires less of an issue.
+
+* '''Predators: Moderate, but common''' - While there are no large predators like [[grizzly bear]]s, predators like [[cobra]]s and [[panther]]s are common, and will sometimes decide to hunt colonists. Colonists who venture far away are at greater risk than usual, while small animals and [[children]]{{BiotechIcon}} are especially vulnerable.
+
+Overall difficulty is moderate. It is relatively easy in the early game due to having year-round growing periods and plenty of wood. Past the early game, when food and temperature are no longer issues, the rainforest is somewhat more difficult than most other biomes due to its disease frequency. The added diseases are annoying and will slow down production, and while rarely life-threatening, an outbreak can be a death sentence for a struggling or just-recovering colony.
+
+== Gallery ==
+<gallery>
+TropicalRainforest.png|A Tropical Rainforest
+<!--TropicalRainforestPolluted.png|A [[polluted]] Tropical Rainforest {{BiotechIcon}}-->
+TropicalRainforestTexture.png|Tropical Rainforest's texture on the world map
+</gallery>
+
+== Version history ==
+* [[Version/0.7.581|0.7.581]] - Added
+
+{{nav|biomes|wide}}
+[[Category:Biomes]]
+[[Category:Hot Biomes]]

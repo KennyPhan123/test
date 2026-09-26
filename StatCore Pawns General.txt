@@ -1,0 +1,777 @@
+<noinclude>{{Verified|1.5.4104}}
+&larr; <small>[[Stat]]</small>
+{| {{STDT|sortable}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category</noinclude>
+<!-- Core Stats_Pawns_General -->
+<div id="Core Stats_Pawns_General"><!--<Defs>-->
+|- id="Move Speed" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />MoveSpeed
+* '''Label:'''<br />move speed
+| Speed of movement in cells per second.
+|
+* Display Order:<br />'''11'''
+* Def Name:<br />'''BasicsPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' 3.0
+* '''Min Value:''' 0.15
+* '''To String Style:''' FloatTwo
+* '''Format String:''' {0} c/s
+* '''Scenario Randomizable:''' {{Good|true}}
+|
+* '''Capacity Factors:'''
+** Capacity: '''[[Moving]]'''
+*** Weight: '''{{%|1}}'''
+* '''Parts:'''
+** '''StatPart_Glow:'''
+*** Humanlike Only: '''{{Good|true}}'''
+*** '''Factor From Glow Curve:'''
+**** '''Points:'''
+***** (0,0.80)
+***** (0.30,1.00)
+{{Graph:Chart|width=300|height=150|xAxisTitle=Light Percentage|yAxisTitle=Move Speed Multiplier|type=line|x=0, 0.30|y=0.80, 1.00|interpolate=monotone|xGrid=|yGrid=}}
+*** Ignore If Incapable Of Sight: '''{{Good|true}}'''
+*** Ignore If Prefers Darkness: '''{{Good|true}}'''
+** '''StatPart_RevenantSpeed''' {{AnomalyIcon}}
+| 2500
+<!--</StatDef>-->
+|- id="Crawl Speed" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />CrawlSpeed
+* '''Label:'''<br />crawl speed
+| Speed of crawling in cells per second.
+|
+* Display Order:<br />'''11'''
+* Def Name:<br />'''BasicsPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' 0.6
+* '''Min Value:''' 0
+* '''To String Style:''' FloatTwo
+* '''Show On Animals:''' {{Bad|false}}
+* '''Show On Mechanoids:''' {{Bad|false}}
+* '''Show On Entities:''' {{Bad|false}}
+* '''Format String:''' {0} c/s
+|
+* '''Capacity Factors:'''
+** Capacity: '''[[Manipulation]]'''
+*** Weight: '''{{%|1}}'''
+| 2499
+<!--</StatDef>-->
+|- id="Mental Break Threshold" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />MentalBreakThreshold
+* '''Label:'''<br />mental break threshold
+| As long as someone's mood is below this level, they are in danger of having a mental break.<br id="n" /><br id="n" />The severity of the mental break will depend on how far below the threshold they are.
+|
+* Display Order:<br />'''11'''
+* Def Name:<br />'''BasicsPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|0.35}}
+* '''Min Value:''' {{%|0.01}}
+* '''Max Value:''' 0.50
+* '''To String Style:''' PercentZero
+* '''Show On Animals:''' {{Bad|false}}
+* '''Show On Mechanoids:''' {{Bad|false}}
+* '''Show On Entities:''' {{Bad|false}}
+* '''Scenario Randomizable:''' {{Good|true}}
+| -
+| 2000
+<!--</StatDef>-->
+|- id="Psychic Sensitivity" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />PsychicSensitivity
+* '''Label:'''<br />psychic sensitivity
+| More sensitive people suffer more from negative psychic effects, and benefit more from positive ones. Higher psychic sensitivity also increases neural heat limit.
+|
+* Display Order:<br />'''11'''
+* Def Name:<br />'''BasicsPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|1}}
+* '''To String Style:''' PercentZero
+* '''Show On Animals:''' {{Bad|false}}
+* '''Min Value:''' {{%|0}}
+* '''Scenario Randomizable:''' {{Good|true}}
+* '''Cacheable:''' {{Good|true}}
+|
+* '''Parts:'''
+** '''StatPart_GearStatOffset:'''
+*** Apparel Stat: '''PsychicSensitivityOffset'''
+*** Include Weapon: '''{{Good|true}}'''
+** '''StatPart_GearStatFactor:'''
+*** Apparel Stat: '''PsychicSensitivityFactor'''
+*** Include Weapon: '''{{Good|true}}'''
+** '''StatPart_SightPsychicSensitivityOffset'''
+** '''StatPart_BlindPsychicSensitivityOffset''' {{IdeologyIcon}}
+| 3500
+<!--</StatDef>-->
+|- id="Toxic Resistance" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />ToxicResistance
+* '''Label:'''<br />toxic resistance
+| How well this creature resists toxic buildup.
+|
+* Display Order:<br />'''11'''
+* Def Name:<br />'''BasicsPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|0}}
+* '''Hide At Value:''' {{%|0}}
+* '''Max Value:''' 1
+* '''To String Style:''' PercentZero
+| -
+| 3451
+<!--</StatDef>-->
+|- id="Global Learning Factor" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />GlobalLearningFactor
+* '''Label:'''<br />global learning factor
+| A multiplier on the learning rate for all skills.
+|
+* Display Order:<br />'''11'''
+* Def Name:<br />'''BasicsPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|1.0}}
+* '''To String Style:''' PercentZero
+* '''Show On Animals:''' {{Bad|false}}
+* '''Hide At Value:''' {{%|1}}
+* '''Min Value:''' {{%|0}}
+* '''Scenario Randomizable:''' {{Good|true}}
+| -
+| 3500
+<!--</StatDef>-->
+|- id="Bed Hunger Rate Multiplier" <!--<StatDef>--> <!-- Hidden stat only used by facilities to control hunger rate of sleeping pawns -->
+|
+* '''Def Name:'''<br />BedHungerRateFactor
+* '''Label:'''<br />bed hunger rate multiplier
+| -
+| -
+|
+* '''Always Hide:''' {{Good|true}}
+* '''Min Value:''' {{%|0}}
+* '''To String Style:''' PercentZero
+* '''Default Base Value:''' {{%|1.0}}
+| -
+| -
+<!--</StatDef>-->
+|- id="Rest Rate Multiplier" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />RestRateMultiplier
+* '''Label:'''<br />rest rate multiplier
+| A multiplier on how quickly a creature rests while sleeping.
+|
+* Display Order:<br />'''11'''
+* Def Name:<br />'''BasicsPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|1.0}}
+* '''To String Style:''' PercentZero
+* '''Show On Animals:''' {{Bad|false}}
+* '''Hide At Value:''' {{%|1}}
+* '''Min Value:''' {{%|0.05}}
+* '''Scenario Randomizable:''' {{Good|true}}
+* '''Show On Mechanoids:''' {{Bad|false}}
+|
+* '''Capacity Factors:'''
+** Capacity: '''[[Blood Pumping]]'''
+*** Weight: '''{{%|0.3}}'''
+** Capacity: '''[[Metabolism]]'''
+*** Weight: '''{{%|0.3}}'''
+** Capacity: '''[[Breathing]]'''
+*** Weight: '''{{%|0.3}}'''
+| 2501
+<!--</StatDef>-->
+|- id="Eating Speed" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />EatingSpeed
+* '''Label:'''<br />eating speed
+| A multiplier on eating speed.
+|
+* Display Order:<br />'''11'''
+* Def Name:<br />'''BasicsPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|1}}
+* '''To String Style:''' PercentZero
+* '''Hide At Value:''' {{%|1}}
+* '''Min Value:''' {{%|0.15}}
+* '''Show On Mechanoids:''' {{Bad|false}}
+* '''Show On Entities:''' {{Bad|false}}
+|
+* '''Capacity Factors:'''
+** Capacity: '''[[Eating]]'''
+*** Weight: '''{{%|0.95}}'''
+** Capacity: '''[[Manipulation]]'''
+*** Weight: '''{{%|0.3}}'''
+| 1000
+<!--</StatDef>-->
+|- id="Min Comfortable Temperature" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />ComfyTemperatureMin
+* '''Label:'''<br />min comfortable temperature
+| Below this temperature, characters will be unhappy.<br id="n" /><br id="n" />Significantly below this temperature, they will develop hypothermia and frostbite and eventually die.
+|
+* Display Order:<br />'''11'''
+* Def Name:<br />'''BasicsPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|0}}
+* '''To String Style:''' Temperature
+* '''Min Value:''' {{%|-2000}}
+* '''Max Value:''' 2000
+* '''Scenario Randomizable:''' {{Good|true}}
+* '''Cacheable:''' {{Good|true}}
+|
+* '''Parts:'''
+** '''StatPart_GearStatOffset:'''
+*** Apparel Stat: '''Insulation_Cold'''
+*** Subtract: '''{{Good|true}}'''
+| 2010
+<!--</StatDef>-->
+|- id="Max Comfortable Temperature" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />ComfyTemperatureMax
+* '''Label:'''<br />max comfortable temperature
+| Above this temperature, characters will be unhappy.<br id="n" /><br id="n" />Significantly above this temperature, they will develop heatstroke and eventually die.
+|
+* Display Order:<br />'''11'''
+* Def Name:<br />'''BasicsPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|40}}
+* '''To String Style:''' Temperature
+* '''Min Value:''' {{%|-2000}}
+* '''Max Value:''' 2000
+* '''Scenario Randomizable:''' {{Good|true}}
+* '''Cacheable:''' {{Good|true}}
+|
+* '''Parts:'''
+** '''StatPart_GearStatOffset:'''
+*** Apparel Stat: '''Insulation_Heat'''
+| 2010
+<!--</StatDef>-->
+|- id="Immunity Gain Speed" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />ImmunityGainSpeed
+* '''Label:'''<br />immunity gain speed
+| The speed at which this character gains immunity to diseases.<br id="n" /><br id="n" />If this is too slow, the character will die from a disease before developing immunity.
+|
+* Display Order:<br />'''11'''
+* Def Name:<br />'''BasicsPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Show On Entities:''' {{Bad|false}}
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0}}
+* '''To String Style:''' PercentZero
+* '''Scenario Randomizable:''' {{Good|true}}
+* '''Show On Mechanoids:''' {{Bad|false}}
+|
+* '''Capacity Factors:'''
+** Capacity: '''[[Blood Filtration]]'''
+*** Weight: '''{{%|0.5}}'''
+* '''Parts:'''
+** '''StatPart_Food:'''
+*** Factor Urgently Hungry: '''{{%|0.9}}'''
+*** Factor Starving: '''{{%|0.7}}'''
+** '''StatPart_Rest:'''
+*** Factor Tired: '''{{%|0.96}}'''
+*** Factor Very Tired: '''{{%|0.92}}'''
+*** Factor Exhausted: '''{{%|0.8}}'''
+** '''StatPart_BedStat:'''
+*** Stat: '''[[ImmunityGainSpeedFactor]]'''
+** '''StatPart_Resting:'''
+*** Factor: '''{{%|1.1}}'''
+** '''StatPart_Age:'''
+*** '''Curve:'''
+**** '''Points:'''
+***** (0.65,1)
+***** (0.8,0.95)
+***** (1.0,0.9)
+***** (1.2,0.8)
+***** (1.5,0.5)
+{{Graph:Chart|width=300|height=150|xAxisTitle=Age / Life Expectancy (80 for Humans)|yAxisTitle= Immunity Gain Speed Multiplier|type=line|x=0.65, 0.8, 1.0, 1.2, 1.5|y=1, 0.95, 0.9, 0.8, 0.5|xAxisMin=0.65|interpolate=monotone|xGrid=|yGrid=}}
+| 2000
+<!--</StatDef>-->
+|- id="Injury Healing Factor" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />InjuryHealingFactor
+* '''Label:'''<br />injury healing factor
+| The multiplier applied to a person's injury healing rate.
+|
+* Display Order:<br />'''11'''
+* Def Name:<br />'''BasicsPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|1.0}}
+* '''To String Style:''' PercentZero
+* '''Min Value:''' {{%|0}}
+* '''Hide At Value:''' {{%|1}}
+|
+* '''Parts:'''
+** '''StatPart_Deathresting{{BiotechIcon}}'''
+*** Factor: '''{{%|5}}'''
+| 2201
+<!--</StatDef>-->
+|- id="Carrying Capacity" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />CarryingCapacity
+* '''Label:'''<br />carrying capacity
+| The amount of stuff this creature can carry in its hands, mouth, or other manipulators.<br id="n" /><br id="n" />This is separate from the ability to carry cargo on long cross-world trips.
+|
+* Display Order:<br />'''11'''
+* Def Name:<br />'''BasicsPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Show On Entities:''' {{Bad|false}}
+* '''Default Base Value:''' {{%|75}}
+* '''Min Value:''' {{%|1}}
+* '''To String Style:''' Integer
+|
+* '''Parts:'''
+** '''StatPart_BodySize'''
+* '''Capacity Factors:'''
+** Capacity: '''[[Manipulation]]'''
+*** Weight: '''{{%|1.0}}'''
+| 2203
+<!--</StatDef>-->
+|- id="Meat Amount" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />MeatAmount
+* '''Label:'''<br />meat amount
+| The amount of meat yielded when butchering this creature. This value is reduced if the creature is not slaughtered cleanly, or if it is wounded when killed.
+|
+* Display Order:<br />'''11'''
+* Def Name:<br />'''BasicsPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Worker Class:''' StatWorker_MeatAmount
+* '''Default Base Value:''' {{%|140}}
+* '''Min Value:''' {{%|0}}
+* '''Show On Mechanoids:''' {{Bad|false}}
+* '''To String Style:''' Integer
+|
+* '''Parts:'''
+** '''StatPart_BodySize'''
+** '''StatPart_NaturalNotMissingBodyPartsCoverage'''
+** '''StatPart_NotCarefullySlaughtered:'''
+*** Factor: '''{{%|0.66}}'''
+** '''StatPart_Difficulty_ButcherYield'''
+** '''StatPart_Malnutrition:'''
+*** '''Curve:'''
+**** '''Points:'''
+***** (0, 1)
+***** (1, 0.4)
+{{Graph:Chart|width=300|height=150|xAxisTitle=Malnutrition Percentage|yAxisTitle=Meat Amount Multiplier|type=line|xType=number|x=0, 1|y=1, 0.4|interpolate=monotone|xGrid=|yGrid=}}
+* '''Post Process Curve:'''
+** '''Points:'''
+*** (0,0)
+*** (5,14)
+*** (40,40)
+*** (100000,100000)
+{{Graph:Chart|width=300|height=150|xAxisTitle=Meat Amount Before Curve|yAxisTitle=Meat Amount After Curve|type=line|x=0, 5, 40, 100000|y=0, 14, 40, 100000|xAxisMax=100|yAxisMax=100|interpolate=monotone|xGrid=|yGrid=}}
+| 3552
+<!--</StatDef>-->
+|- id="Leather Amount" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />LeatherAmount
+* '''Label:'''<br />leather amount
+| The amount of leather yielded when butchering this creature. This value is reduced if the creature is not slaughtered cleanly, or if it is wounded when killed.
+|
+* Display Order:<br />'''11'''
+* Def Name:<br />'''BasicsPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Worker Class:''' StatWorker_LeatherAmount
+* '''Default Base Value:''' {{%|0}}
+* '''Min Value:''' {{%|0}}
+* '''To String Style:''' Integer
+* '''Hide At Value:''' {{%|0}}
+|
+* '''Parts:'''
+** '''StatPart_BodySize'''
+** '''StatPart_NaturalNotMissingBodyPartsCoverage'''
+** '''StatPart_NotCarefullySlaughtered:'''
+*** Factor: '''{{%|0.66}}'''
+* '''Post Process Curve:'''
+** '''Points:'''
+*** (0,0)
+*** (5,14)
+*** (40,40)
+*** (100000,100000)
+{{Graph:Chart|width=300|height=150|xAxisTitle=Leather Amount Before Curve|yAxisTitle=Leather Amount After Curve|type=line|x=0, 5, 40, 100000|y=0, 14, 40, 100000|xAxisMax=100|yAxisMax=100|interpolate=monotone|xGrid=|yGrid=}}
+| 3551
+<!--</StatDef>-->
+|- id="Minimum Handling Skill" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />MinimumHandlingSkill
+* '''Label:'''<br />minimum handling skill
+| This creature cannot be tamed, trained, or commanded by anyone with less than this skill in animals.
+|
+* Display Order:<br />'''11'''
+* Def Name:<br />'''BasicsPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Worker Class:''' StatWorker_MinimumHandlingSkill
+* '''Default Base Value:''' {{%|0}}
+* '''Min Value:''' {{%|0}}
+* '''Round Value:''' {{Good|true}}
+* '''To String Style:''' Integer
+* '''Show On Mechanoids:''' {{Bad|false}}
+* '''Show On Entities:''' {{Bad|false}}
+* '''Show On Non Wild Man Humanlikes:''' {{Bad|false}}
+|
+* '''Parts:'''
+** '''StatPart_WildManOffset:'''
+*** Offset: '''{{+|7}}'''
+| 1500
+<!--</StatDef>-->
+|- id="Pain Shock Threshold" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />PainShockThreshold
+* '''Label:'''<br />pain shock threshold
+| The pain level at which this creature is downed from pain.
+|
+* Display Order:<br />'''11'''
+* Def Name:<br />'''BasicsPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Min Value:''' {{%|0.01}}
+* '''Max Value:''' 0.99
+* '''Default Base Value:''' {{%|0.8}}
+* '''To String Style:''' PercentZero
+* '''Show On Mechanoids:''' {{Bad|false}}
+| -
+| 2000
+<!--</StatDef>-->
+|- id="Foraged Food Amount" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />ForagedNutritionPerDay
+* '''Label:'''<br />foraged food amount
+| The amount of nutrition this person will automatically forage per day while traveling by caravan.
+|
+* Display Order:<br />'''11'''
+* Def Name:<br />'''BasicsPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Min Value:''' {{%|0}}
+* '''Default Base Value:''' {{%|0}}
+* '''To String Style:''' FloatMaxTwo
+* '''Show On Animals:''' {{Bad|false}}
+* '''Show On Mechanoids:''' {{Bad|false}}
+* '''Show On Entities:''' {{Bad|false}}
+|
+* '''Skill Need Offsets:'''
+** '''SkillNeed_BaseBonus:'''
+*** Skill: '''[[Skills#Plants|Plants]]'''
+*** Base Value: '''{{%|0}}'''
+*** Bonus Per Level: '''{{+|{{%|0.09}}}}'''
+{{Graph:Chart|width=300|height=150|xAxisTitle=Plants Level|yAxisTitle=Foraged Food Amount Multiplier|type=rect|x=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20|y=0, 0.09, 0.18, 0.27, 0.36, 0.45, 0.54, 0.63, 0.72, 0.81, 0.9, 0.99, 1.08, 1.17, 1.26, 1.35, 1.44, 1.53, 1.62, 1.71, 1.8|xGrid=|yGrid=}}
+* '''Capacity Factors:'''
+** Capacity: '''[[Manipulation]]'''
+*** Weight: '''{{%|0.5}}'''
+*** Max: '''{{%|1}}'''
+** Capacity: '''[[Sight]]'''
+*** Weight: '''{{%|0.9}}'''
+| 1000
+<!--</StatDef>-->
+|- id="Filth Rate" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />FilthRate
+* '''Label:'''<br />filth rate
+| How much filth this creature produces.<br id="n" /><br id="n" />It's best to keep filth-producing animals outdoors or on straw matting where their filth won't be a problem.
+|
+* Display Order:<br />'''11'''
+* Def Name:<br />'''BasicsPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Show On Mechanoids:''' {{Bad|false}}
+* '''Show On Entities:''' {{Bad|false}}
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0}}
+* '''To String Style:''' FloatOne
+| -
+| 2205
+<!--</StatDef>-->
+|- id="Animals Learning Factor" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />AnimalsLearningFactor
+* '''Label:'''<br />animals learning factor
+| A multiplier on the learning rate for animals skill.
+|
+* Display Order:<br />'''11'''
+* Def Name:<br />'''BasicsPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|1.0}}
+* '''To String Style:''' PercentZero
+* '''Show On Animals:''' {{Bad|false}}
+* '''Hide At Value:''' {{%|1}}
+* '''Min Value:''' {{%|0}}
+* '''Scenario Randomizable:''' {{Good|true}}
+| -
+| 3500
+<!--</StatDef>-->
+|- id="Caravan Riding Speed" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />CaravanRidingSpeedFactor
+* '''Label:'''<br />caravan riding speed
+| The multiplier applied to a person's movement speed when they ride this animal as part of a caravan. Animals can only be ridden in caravans.
+|
+* Display Order:<br />'''11'''
+* Def Name:<br />'''BasicsPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Worker Class:''' StatWorker_CaravanRidingSpeedFactor
+* '''Show If Undefined:''' {{Bad|false}}
+* '''Default Base Value:''' {{%|1.0}}
+* '''To String Style:''' PercentZero
+* '''Min Value:''' {{%|1}}
+| -
+| 2203
+<!--</StatDef>-->
+|- id="Max Nutrition" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />MaxNutrition
+* '''Label:'''<br />max nutrition
+| The amount of nutrition needed to completely fill this creature's stomach.
+* '''Default Base Value:''' {{%|1}}
+* '''Hide At Value:''' {{%|1}}
+* '''Min Value:''' {{%|0.01}}
+|
+* Display Order:<br />'''11'''
+* Def Name:<br />'''BasicsPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''To String Style:''' FloatMaxTwo
+* '''Show On Mechanoids:''' {{Bad|false}}
+* '''Show On Entities:''' {{Bad|false}}
+* '''Cacheable:''' {{Good|true}}
+|
+* '''Parts:'''
+** '''StatPart_BodySize'''
+** '''StatPart_LifeStageMaxFood'''
+| 2501
+<!--</StatDef>-->
+|- id="Lifespan Factor" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />LifespanFactor
+* '''Label:'''<br />lifespan factor
+| Lifespan factor alters the effective lifespan of a creature by shortening or lengthening the time until they develop age-related diseases. A lifespan factor over 100% delays disease onset and increases overall lifespan, while a lifespan factor under 100% speeds up disease onset and reduces lifespan.
+|
+* Display Order:<br />'''11'''
+* Def Name:<br />'''BasicsPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''To String Style:''' PercentZero
+* '''Default Base Value:''' {{%|1}}
+* '''Hide At Value:''' {{%|1}}
+* '''Min Value:''' {{%|0.01}}
+* '''Show On Animals:''' {{Bad|false}}
+* '''Show On Mechanoids:''' {{Bad|false}}
+| -
+| 2000
+<!--</StatDef>-->
+|- id="Meditation Psyfocus Gain" <!-- ParentName="MeditationFocusBase" MayRequireAnyOf="Royalty{{RoyaltyIcon}} Biotech{{BiotechIcon}}" --><!--<StatDef>-->
+|
+* '''Def Name:'''<br />MeditationFocusGain{{RoyaltyIcon}}{{BiotechIcon}}
+* '''Label:'''<br />meditation psyfocus gain
+| The amount of psyfocus a person gains per day of meditation, ignoring bonuses from focus objects.
+|
+* Display Order:<br />'''11'''
+* Def Name:<br />'''BasicsPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* Format String: '''{0} / day'''
+* Format String Unfinalized: '''{0} / day'''
+* To String Style: '''PercentZero'''
+* Show If Mods Loaded Any: '''Royalty{{RoyaltyIcon}}'''
+* '''Default Base Value:''' {{%|0.5}}
+* '''Min Value:''' {{%|0}}
+* '''Show On Animals:''' {{Bad|false}}
+* '''Show On Mechanoids:''' {{Bad|false}}
+* '''Show On Entities:''' {{Bad|false}}
+|
+* '''Show If Mods Loaded Any:'''
+** '''Biotech {{BiotechIcon}}'''
+| 4010
+<!--</StatDef>-->
+|- id="Neural Heat Limit" <!-- MayRequireAnyOf="Royalty {{RoyaltyIcon}},Biotech {{BiotechIcon}}" --> <!--<StatDef>-->
+|
+* '''Def Name:'''<br />PsychicEntropyMax
+* '''Label:'''<br />neural heat limit
+| The maximum amount of neural heat individual can tolerate safely.
+|
+* Display Order:<br />'''11'''
+* Def Name:<br />'''BasicsPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|30}}
+* '''Min Value:''' {{%|0}}
+* '''Hide At Value:''' {{%|0}}
+* '''To String Style:''' FloatOne
+* '''Show On Animals:''' {{Bad|false}}
+* '''Show On Mechanoids:''' {{Bad|false}}
+* '''Scenario Randomizable:''' {{Good|true}}
+|
+* '''Show If Mods Loaded:'''
+** '''Royalty {{RoyaltyIcon}}'''
+* '''Show If Hediffs Present:'''
+** '''[[Hediffs#Psychic amplifier|Psychic amplifier]]'''
+* '''Show If Mods Loaded Any:'''
+** '''Royalty {{RoyaltyIcon}}'''
+** '''Biotech {{BiotechIcon}}'''
+* '''Stat Factors:'''
+** '''[[Psychic Sensitivity]]'''
+* '''Parts:'''
+** '''StatPart_GearStatOffset{{RoyaltyIcon}}{{BiotechIcon}}:'''
+*** Apparel Stat: '''PsychicEntropyMaxOffset'''
+*** Include Weapon: '''{{Good|true}}'''
+| 3500
+<!--</StatDef>-->
+|- id="Neural Heat Recovery Rate" <!-- MayRequireAnyOf="Royalty{{RoyaltyIcon}} Biotech{{BiotechIcon}}" --> <!--<StatDef>-->
+|
+* '''Def Name:'''<br />PsychicEntropyRecoveryRate
+* '''Label:'''<br />neural heat recovery rate
+| The rate at which this person reduces neural heat.
+|
+* Display Order:<br />'''11'''
+* Def Name:<br />'''BasicsPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Min Value:''' 0
+* '''Hide At Value:''' 0
+* '''Default Base Value:''' 0.54
+* '''To String Style:''' FloatTwo
+* '''Format String:''' {0}/s
+* '''Show On Animals:''' {{Bad|false}}
+* '''Show On Mechanoids:''' {{Bad|false}}
+|
+* '''Show If Mods Loaded:'''
+** '''Royalty {{RoyaltyIcon}}'''
+* '''Show If Hediffs Present:'''
+** '''[[Hediffs#Psychic amplifier|Psychic amplifier]]'''
+* '''Show If Mods Loaded Any:'''
+** '''Royalty {{RoyaltyIcon}}'''
+** '''Biotech {{BiotechIcon}}'''
+* '''Parts:'''
+** '''StatPart_Pain:'''
+*** Factor: '''{{%|3}}'''
+** '''StatPart_GearStatOffset{{RoyaltyIcon}}{{BiotechIcon}}:'''
+*** Apparel Stat: '''PsychicEntropyRecoveryRateOffset'''
+*** Include Weapon: '''{{Good|true}}'''
+| 4000
+<!--</StatDef>-->
+|- id="Toxic Environment Resistance" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />ToxicEnvironmentResistance
+* '''Label:'''<br />toxic environment resistance
+| How resistant this creature is to the effects of environmental toxins. This protects against toxic fallout and rot stink exposure, but not against direct attacks with venom or injected poison.
+|
+* Display Order:<br />'''11'''
+* Def Name:<br />'''BasicsPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''To String Style:''' PercentZero
+* '''Default Base Value:''' {{%|0}}
+* '''Min Value:''' {{%|0}}
+* '''Max Value:''' 1
+| -
+| 3450
+<!--</StatDef>-->
+|- id="Sleep Fall Rate" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />RestFallRateFactor
+* '''Label:'''<br />sleep fall rate
+| A multiplier on the speed that a person's sleep need falls.
+|
+* Display Order:<br />'''11'''
+* Def Name:<br />'''BasicsPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''To String Style:''' PercentZero
+* '''Default Base Value:''' {{%|1}}
+* '''Hide At Value:''' {{%|1}}
+* '''Min Value:''' {{%|0.0001}}
+* '''Show On Animals:''' {{Bad|false}}
+| -
+| -
+<!--</StatDef>-->
+|-id="EMP Resistance" <!-- ParentName="MechStatBase" MayRequireAnyOf="Biotech {{BiotechIcon}},Ludeon.RimWorld.Anomaly" --><!--<StatDef>-->
+|
+* '''Def Name:'''<br />EMPResistance
+* '''Label:'''<br />EMP resistance
+| This mechanoid has special shielding and shock-dissipation filaments that reduce the effect of EMP damage by this percentage. This reduces the duration of stuns caused by EMP.
+|
+* Display Order:<br />'''13'''
+* Def Name:<br />'''Mechanoid'''
+* Label:<br />'''Mechanoid'''
+* Display All By Default:<br />'''{{Good|true}}'''
+|
+* '''May Require Any Of:'''
+** Biotech{{BiotechIcon}}
+** Anomaly{{AnomalyIcon}}
+* Show On Animals: '''{{Bad|false}}'''
+* Show On Humanlikes: '''{{Bad|false}}'''
+* Show On Mechanoids: '''{{Good|true}}'''
+* '''Default Base Value:''' {{%|0}}
+* '''Min Value:''' {{%|0}}
+* '''To String Style:''' PercentZero
+* '''Show If Undefined:''' {{Bad|false}}
+| -
+| 2030
+<!--</StatDef>-->
+|- id="Recreation Fall Rate" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />JoyFallRateFactor
+* '''Label:'''<br />recreation fall rate
+| A multiplier on the speed that a person's recreation need falls.
+|
+* Display Order:<br />'''11'''
+* Def Name:<br />'''BasicsPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''To String Style:''' PercentZero
+* '''Default Base Value:''' {{%|1}}
+* '''Hide At Value:''' {{%|1}}
+* '''Min Value:''' {{%|0.0001}}
+* '''Show On Animals:''' {{Bad|false}}
+| -
+| -
+<!--</StatDef>-->
+<!--</Defs>--></div>
+<noinclude>
+|}</noinclude>

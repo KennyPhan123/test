@@ -1,0 +1,96 @@
+{{Infobox main|production
+| name = Electric crematorium
+| image = Crematorium north.png
+| imagesize = 192px
+| description = A huge stone crematorium which vaporizes corpses with extremely high temperatures.
+| type = Building
+| type2 = Production
+| placeable = true
+| passability = impassable
+| cover = 1
+| minifiable = false
+| size = 3 ˣ 2
+| flammability = 0
+| hp = 300
+| beauty = -10
+| cleanliness = -20
+| power = -250
+| glowradius = 6
+| glowcolor = (217, 112, 33)
+| heatpersecond = 12
+| terrain affordance = heavy
+| research = Electricity
+| skill 1 = Construction
+| skill 1 level = 4
+| work to make = 4500
+| stuff tags = Stony
+| resource 1 = Stuff
+| resource 1 amount = 150
+| resource 2 = Steel
+| resource 2 amount = 20
+| resource 3 = Component
+| resource 3 amount = 2
+}}
+{{Info|An '''electric crematorium''' is a [[Production]] [[Power#Appliances|appliance]] used to destroy [[corpse]]s as well as unwanted [[apparel]], [[weapons]], or [[drugs]].}} Despite the specificity in the name, there is no other form of crematorium.
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+Crematoria can be used to destroy corpses, apparel, weapons, or drugs by creating bills. The building itself uses 250 W of [[power]], has {{P|Beauty}} [[beauty]], and a [[cleanliness]] value of {{P|cleanliness}}.
+
+Crematoria produce heat while executing bills at a rate of 12 [[Temperature|heat per second]], over half the rate of a [[campfire]] and with no maximum temperature. No heat is produced when idle, even if powered on.
+
+It outputs [[light]] in a 6 tile radius while it is powered on, with the nearest {{P|Light Radius}} tiles being above 50% light level and considered lit. As the crematorium can only be used while it is powered, and it emits light when powered, this means there is no need for additional light sources to prevent work speed penalties to the operator. The light emitted by the crematorium itself is sufficient.
+
+If the electric crematorium left is out in the [[rain]], a [[short circuit]] can start a fire. 
+
+{{Cleanliness Note}}
+
+=== Bills ===
+Bills are worked by [[Work#Haul|haulers]]. All cremation times are scaled only by the [[General Labor Speed]] of the hauler performing the bill. In all cases, the item is completely destroyed leaving nothing behind.
+
+==== Cremate corpse ====
+{{Quote|Cremate a corpse to completely destroy it.|Cremate corpse description}}
+[[Corpse]]s require {{Ticks|180}} work to cremate (modified by the [[general labor speed]] of the hauler) and are cremated together with all of their equipped gear. By default, animal corpses will be filtered out. [[Mechanoid]] corpses cannot be burned.
+
+==== Burn apparel ====
+{{Quote|Burn unwanted apparel to completely destroy it.|Burn apparel description}}
+Apparel requires {{Ticks|60}} work to burn (modified by the [[general labor speed]] of the hauler), regardless of the item or material. [[Shield belt]]s and [[smokepop pack]]s cannot be burned (though [[firefoam pop pack]]s can).
+
+==== Burn weapon ====
+{{Quote|Burn unwanted weapon to completely destroy it.|Burn weapon description}}
+Weapons require {{Ticks|60}} work to burn (modified by the [[general labor speed]] of the hauler), regardless of the item or material. Only flammable melee weapons, and ranged weapons made from wood ([[pila]], [[short bow]] / [[recurve bow]] / [[greatbow]] / [[flamebow]]{{BiotechIcon}}), can be burned.
+
+==== Burn drugs ====
+{{Quote|Burn unwanted drugs to completely destroy them.|Burn drugs description}}
+Drugs require {{Ticks|60}} work to burn (modified by the [[general labor speed]] of the hauler), but burns in entire stacks.
+
+== Analysis ==
+{{For|an analysis of butchering vs disposal of human corpse|Human resources#Human_butchering{{!}}Human resources}}
+Crematoria are work intensive compared to other methods of disposing of unwanted objects, and this typically leads them to be neglected. However they do possess some advantages that can be relevant. 
+
+[[Molotov cocktail]]s can dispose items with an open [[fire]]; one throw is enough to burn many objects. A safe burn area is required, such as a stone floored and walled room, though this can be cheaper than 1 crematorium. A [[stockpile zone]] can be configured to load the corpses, but the player needs to ignite it every time. Also note that the entrance must be forbidden or the [[Home Zone]] area removed to ensure no firefighters attempts to put out the cremating fire within. 
+
+However, unlike molotovs, electric crematoria don't require [[Research#Machining|Machining]] to be researched to be be constructed, can be fully automated with bills, and do not involve open [[fire]]. In addition, many rotten corpses in a confined space can cause [[rot stink]]. This allows the player to be completely hands-off once the process is set up, which can be a significant advantage in some playstyles or colonies. 
+
+Finally, unwanted objects can instead be loaded onto [[transport pod]]s, and launched to other [[faction]]'s settlements, for a modest relationship gain. Using transport pods solely to dispose of weapons is costly for little gain. You can mitigate this by shipping unwanted gear with other items you would've sent as gifts, anyway (like [[flake]] or [[sculpture]]s). As corpses are heavy, this method is impractical for them.
+
+{{Building Stats Table}}
+
+== Gallery ==
+<gallery>
+Crematorium north.png|Facing north
+Crematorium east.png|Facing east
+Crematorium south.png|Facing south
+</gallery>
+
+== Version history ==
+* [[Version/0.4.460|0.4.460]] -  Added as "Crematorium"
+
+<gallery>
+OldCrematorium.png|The Old Crematorium Texture
+</gallery>
+
+{{Nav|production|wide}}
+[[Category:Production]]

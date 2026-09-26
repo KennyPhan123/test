@@ -1,0 +1,134 @@
+{{Version Nav}}
+
+Alpha 10 has arrived! This time we’ve added a new “joy” need with a bunch of ways to fulfil it, new timetable, outfits, and thing filter management tools, and dozens of smaller improvements. A full change list is at the end of this post.
+
+If you own the game, you can get Alpha 10 by re-downloading from the link you used before (it is a permanent link and always has the newest version). You should also get an update email from us. Anyone still having trouble should start at this thread. There may be a delay of some hours before your download count resets or your email arrives.
+
+Also note that this build will not load old savegames or old worlds, so please don’t try to load these in the new version. They’ll probably just crash the game.
+
+==Release Trailer==
+
+<youtube>https://www.youtube.com/watch?v=zdNuJ8ESJPI</youtube>
+
+==Core Release==
+
+===Changes===
+====Joy====
+* New [[joy]] need added. Colonists want to have “joy”, which means anything that lets the stop working and enjoy themselves for a while.
+* Added joy sources
+* Skygazing
+* Meditating/praying
+* Social relaxation around [[campfire]] or [[table]], with or without [[beer]]
+* [[Horseshoes pin|Horseshoes game]]
+* [[Chess table|Chess]]
+* [[Billiards table|Billiards]]
+* [[Television]] (purchasable)
+* [[Telescope]] for astronomy (purchasable)
+* Added [[armchair]] and [[dining chair]]
+* There are various kinds of joy. Repeated use of the same kind of joy builds up a tolerance, reducing its impact. Colonists will prefer joy sources they are not already tolerant to. Result: it’s beneficial to provide a variety of joy sources.
+
+====Outfits System====
+* New [[Apparel policies|outfits manager system]] added. You can design ‘outfits’ (restrictions on what a colonist is allowed to a wear) and assign them to colonists in a central interface. Colonists will then independently work to find the best apparel possible given their outfit and the current season. They will automatically switch out damaged apparel for better apparel, or poor-quality apparel for high-quality apparel.
+* If the player manually assigns [[apparel]], the colonist will never remove it until the manual assignment is cleared.
+
+====Timetable System====
+* New [[Menus#Schedule|timetable system]] added. You can assign each colonist a daily timetable which describes when they should sleep, work, have joy, or decide on their own.
+
+====Misc====
+* Colonists can fall unconscious on their own if over-exhausted.
+* Reworked how melee verbs are selected so they’ll be selected with a bit more randomness. e.g. Someone with one [[scyther blade]] hand won’t use it exclusively; you’ll need to get them two if you want a true killing machine.
+* [[Beer]] can now be wielded as a weapon (like wood).
+* [[Skills#Passion|Passion]] flames are now displayed subtly on the work overview screen.
+* New end credits song from Al!
+* Reduced [[skill]] degradation rate.
+* [[Time|Day length]] extended from 24,000 to 30,000 ticks. Days per month reduced from 12 to 10.
+* Hunters will now approach and execute downed animals at close range.
+* Reworked food search so it smoothly integrates information about food distance, taste, and psychological preference to get the most optimal food source.
+* [[Health#Health_Tab|Health tab]] now displays overall bleeding rate.
+* [[Malnutrition|Starvation]] and [[blood loss]] are now staged and affect consciousness as they worsen.
+* Reworked how skills generate so there will be more initial skill variation and age affect starting skills more.
+* Rebalanced and reformatted plant ecology tunings to lengthen crop cycles and slow wild plant spread. Reworked plant growth in relation to light levels so plants can still grow slowly in dim light (e.g. tundra summers).
+* [[Pain]] now creates [[mood|unhappiness]].
+* String lists are now part of language data and can be translated.
+* [[Butcher table]], [[Sculptor's table|sculptor’s table]], and [[Stonecutter's table|stonecutter’s table]] can now be made of various stuffs.
+* [[Trees]] are no longer sowable. [[Traders]] carry [[wood]].
+* Characters will now sometimes resist [[Arrest Success Chance|arrest]].
+* You can now set a minimum skill level on bills.
+* Visitors will now carry away wounded [[guest|guests]] from their faction.
+* Hunted animals will occasionally fight back. Some [[animals]] always fight back.
+* Doctors now automatically rescue downed colonists.
+* Generalized toggle power interaction to ‘switch flicking’ and applied it to power switch toggling and door locking as well as building power on/off.
+* Many many other fixes, adjustments, and optimizations.
+
+==Alpha 10B==
+I’ve released a quick hotfix for Alpha 10 that should address some bugs, design mistakes and imbalances in the first released version.
+
+You should get an update email some time today. Or, you can just download from your existing link (as it always gives the latest version).
+
+Save games from Alpha 10 will still work. To install, delete your Alpha 10 install directory and unzip the Alpha 10b files to a clean empty folder (your save data is not stored in the install directory).
+
+===Changes===
+* Substantially increased the speed of joy gain.
+* Door locking is really door forbidding, so it happens instantly again and does not require colonist interaction.
+* Trees are sowable again.
+* The first enemy [[raider]] will never flee (makes him easier to capture).
+* Colonist names can now include numerals.
+* Fixed colonist outfit apparel search so colonists with guns will not take personal shields.
+* Improved colonist outfit apparel selection in general.
+* Some other smaller fixes.
+
+==Alpha 10C==
+
+I’ve released another hotfix addressing some bugs and balance issues. Thank you for being patient with these!
+
+This is a silent hotfix; there will be no update email. Just re-download from your existing link.
+
+Save games from Alpha 10 will still work. To install, delete your old install directory and unzip the new Alpha 10c files to a clean empty folder (your save data is not stored in the install directory).
+
+===Changes===
+
+* Changes to speed up pacing: reduced building costs, start with more steel, a colonist will join reasonably early (on Cassandra or Phoebe). Recruiting is slightly easier. Joy tolerance is gained slower.
+* You’ll get a letter when an animal goes insane due to taking damage. Also, the chance of this happening is reduced.
+* Colonists will stand away from boomrats while executing them.
+* Joy-related thoughts are broken up more finely and balanced.
+* Planning designation has dark outline for easy visibility.
+* Trees are still sowable, but it takes a lot of time to sow them.
+* Bugfix: Colonists will no longer get stuck if you put a blueprint under a hopper and they try to fill it.
+* Bugfix: Colonists no longer relax socially in prisons.
+* Bugfix: Cooks will no longer make more [[meals]] than requested in the “do until you have X” bill repeat mode.
+* Bugfix: Unpowered lamps will no longer start glowing after being destroyed.
+
+==Alpha 10D==
+So I got to have that special moment where you’re looking at some game code and you realize that the game you shipped last week to 75,000 people is totally horribly broken in subtle but game-destroying ways. This is the hotfix to the problem I found and others. Up to now, Alpha 10 has been basically broken.
+
+There were a number of issues but the biggest one was probably the broken enemy fleeing and recruitment code that made it way too hard to get new people.
+
+Sorry about releasing a kind-of broken version. I’m thinking that for Alpha 11 I’ll start doing public unstable builds a week before the stable release. It’s getting really hard to catch all the bugs in the game as it becomes more complex and it takes longer to play.
+
+To update, just use your existing download link; it always gives the latest version. Save games from Alpha 10 will still work. To install, delete your old install directory and unzip the new Alpha 10d files to a clean empty folder (your save data is not stored in the install directory).
+
+===Changes===
+
+* Fixed and rebalanced prisoner recruiting: Prisoners no longer get cabin fever and no longer have a joy need (until we get support for proper prison complexes). They can be recruited at any mood over 35% (though the chance may be very low).
+* Fixed a units change bug that caused 40% of enemies to flee after taking one hit, and other enemies to never flee. Now the flee properly with individual health thresholds again.
+* Fixed PawnName parsing so pawns with apostrophes in their names will work.
+* Cleaned up and robustified the AI with regards to finding a space to stand next to medical beds. Abolished the “medical bed needs headspace” alert as it’s no longer needed.
+* Fixed a bug that caused colonists to get stuck switching apparel over and over given certain weather conditions and combinations of apparel (they were considering the needed warmth in relation to their own current apparel instead of in relation to their absolute naked needs).
+* Fixed a bug that would crash the UI if colonists hauled a sculpture or TV while the player was selecting an install location.
+* Fixed bug that caused pawns to sometimes teleport to the bottom left corner of the map.
+* Fixed the needs tab not displaying on animals if a human was never previously selected with the needs tab.
+* Fixed a bug that caused colonists to spaz out around the billiards table when they reached full joy instead of just ending the job.
+* Some minor storyteller tuning.
+* Some minor typo fixes in game text.
+
+==Alpha 10E==
+This hotfix was broke for the first few hours of its release, when it was called Alpha10e. If you got it during that time, please re-download the fixed Alpha10f. The fix solves an issue in Alpha10e where rain would never put out fires, leading to the whole map burning down.
+
+This small hotfix cleans up some minor issues that remained in Alpha10d.
+
+To update, just use your existing download link from your last update email – it always gives the latest version. Save games from Alpha 10 will still work. To install, delete your old install directory and unzip the new Alpha 10f files to a clean empty folder (your save data is not stored in the install directory).
+
+===Changes===
+* Reworked apparel optimization AI. Now they very much prefer wearing anything over wearing nothing (so they don’t walk around naked with clothes on the floor), and have a lower threshold of quality difference to replace apparel.
+* Optimized fire significantly so large fires won’t slow down your computer as much.
+* Some very minor fixes.

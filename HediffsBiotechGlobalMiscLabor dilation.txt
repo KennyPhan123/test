@@ -1,0 +1,50 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Biotech/Global/Misc}}
+|}
+----
+{| {{STDT| c_18}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Labor (dilation)" <!-- defName="PregnancyLabor" -->
+! Labor (dilation)
+----
+* Def Name:<br />PregnancyLabor
+* Label:<br />labor (dilation)
+| <div style="max-width: 300px;">The condition of being about to give birth. Labor moves through multiple stages with different levels of pain and contractions. Each labor is different, and pain can rise and fall unpredictably over time. Labor ends when the baby is born.</div>
+|<!-- Details -->
+* Hediff Class: '''Hediff_Labor'''
+* Blocks Sleeping: {{Good|true}}
+* Prevents Pregnancy: {{Good|true}}
+* Pregnant: {{Good|true}}
+* '''Comps'''
+** ''Disappears''
+*** Disappears After Ticks: '''{{Ticks/gametime/hours|1700}} ~ {{Ticks/gametime/hours|25000}}'''
+*** Show Remaining Time: {{Good|true}}
+** ''Randomize Stage With Interval''
+*** Ticks To Randomize: '''{{Ticks/gametime/hours|5000}} ~ {{Ticks/gametime/hours|15000}}'''
+*** Notify Message:<br />{PAWN_labelShort}'s labor went from {1} to {2}.
+** ''Effecter''
+*** State Effecter: '''LaborEarly'''
+|<!-- Stages -->
+{| {{STDT| c_18}}
+! Label !! Parameters
+|-
+! mild
+|<!-- Parameters -->
+* Min Severity: '''1%'''
+* Pain Offset: {{++|25%}}
+* [[Moving]] Post Factor: {{Bad|×40%}}
+|-
+! intense
+|<!-- Parameters -->
+* Min Severity: '''30%'''
+* Pain Offset: {{++|50%}}
+* [[Moving]] Post Factor: {{Bad|×20%}}
+|-
+! debilitating
+|<!-- Parameters -->
+* Min Severity: '''60%'''
+* Pain Offset: {{++|85%}}
+* [[Moving]] Post Factor: {{Bad|×0%}}
+|}<noinclude>
+|}</noinclude>

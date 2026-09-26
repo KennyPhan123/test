@@ -1,0 +1,117 @@
+{{Ideology}}
+{{Stub|reason=1) Two-way links}}
+{{See also|Shooting Accuracy Outdoors Lit|Shooting Accuracy Indoors Dark|Shooting Accuracy Indoors Lit}}
+{{Verified|1.5.4104}}{{Stat
+| def name = ShootingAccuracyOutdoorsDarkOffset
+| label = shooting accuracy outdoors dark
+| description = An offset on [[shooting accuracy]] if the target is outdoors at night.
+| default base value = 0
+| to string style = PercentZero
+| show on animals = false
+| always hide = true
+| category = PawnCombat
+}}
+
+== Offsets ==
+* [[Precepts]]{{IdeologyIcon}}
+** [[Combat in darkness]]:
+*** Preferred: {{+|25%}}
+
+== Explanation ==
+<onlyinclude>Darkness Combat Utility is used to calculate when to apply the darkness combat stats.
+
+=== Indoors and Outdoors ===
+A pawn is considered ''Outdoors'' when the roof at their location is not natural or not a thick roof (i.e. Constructed roof).
+
+For reference:
+{| {{STDT}}
+! [[Roof]] !! Thick !! Natural
+|-
+! Constructed roof
+| - || false
+|-
+! Rock roof (thin)
+| false || true
+|-
+! Overhead mountain
+| true || true
+|-
+! Void metal ceiling {{AnomalyIcon}}
+| true || true
+|}
+If this checks out, the pawn is then tested to see if they are in a room and considered ''Psychologically outdoors'': When the unroofed cell count of the room is ≥ 300, or when the room touches the map edge and the unroofed cell count is ≥ 50% of the room cell count.
+
+As such, a pawn is considered ''Indoors'' when they are under a Rock roof (thin), Overhead mountain, or a Void metal ceiling {{AnomalyIcon}}. They are also considered ''Indoors'' when they are within a room with an unroofed cell count of < 300, or when the room touches the map edge and the unroofed cell count is < 50% of the room cell count
+
+=== Darklight Utility ===
+''Darklight'' refers to a default color of {{Color|78|226|229}}, with a hue range of 49~51%.
+
+For the Red (r), Green (g), and Blue (b) color channels:
+Light is not considered ''Darklight'' when:
+* red > green
+* red > blue
+
+For the following expression:
+
+If green > blue:
+* num = green
+* num2 = blue
+Otherwise:
+* num = blue
+* num2 = green
+
+Simply put, the larger value is num, and the smaller is num2.
+
+<code>(num is not zero) and red ≤ (num / 2) and (num2 / num) > 0.85</code>
+
+Light is considered ''Darklight'' when the above expression is true.
+
+=== Lit and Dark ===
+There are 3 different stages of light, defined by PsychGlow (Psychological Glow):
+* '''Dark''' (''Glow'' ≤ 30%)
+* '''Lit''' (''Glow'' > 30%)
+* '''Overlit''' (''Glow'' > 90%)
+''Glow'' in this case refers to the cell light level.
+
+When ''Outdoors'', the pawn is considered ''Lit'' when the sky light is > 35%, otherwise they will be considered ''Dark''.
+
+When ''Indoors'', the pawn is considered ''Lit'' when the light level is ''Lit'' and there is no ''Darklight''. The Pawn is considered ''Dark'' when the light level is ''Dark'' or if there is ''Darklight''.
+
+In short:
+{| {{STDT}}
+! Location !! Lit !! Dark
+|-
+! Outdoors
+| Sky light > 35% || Sky light ≤ 35%
+|-
+! Indoors
+| Lit and no Darklight || Dark or Darklight
+|}</onlyinclude>
+
+== Stat Def Data ==
+{| {{STDT}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Shooting Accuracy Outdoors Dark" <!-- ParentName="DarknessCombat" --><!--<StatDef>-->
+|
+* '''Def Name:'''<br />ShootingAccuracyOutdoorsDarkOffset
+* '''Label:'''<br />shooting accuracy outdoors dark
+| An offset on shooting accuracy if the target is outdoors at night.
+|
+* Display Order:<br />'''110'''
+* Def Name:<br />'''PawnCombat'''
+* Label:<br />'''Combat'''
+* Display All By Default:<br />{{Bad|false}}
+|
+* Default Base Value: '''{{%|0}}'''
+* To String Style: '''PercentZero'''
+* Show On Animals: {{Bad|false}}
+* Always Hide: {{Good|true}}
+| -
+| -
+<!--</StatDef>-->
+|}
+
+== Version history ==
+* [[Ideology (DLC)]] Release - Added.
+
+{{nav|stats|wide}}

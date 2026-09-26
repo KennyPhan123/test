@@ -1,0 +1,164 @@
+{{Version Nav}}
+
+The day is finally here. RimWorld is now available on Steam! You can buy it at the RimWorld Steam Store page. It’s got full support for Steam Workshop and Cloud saves.
+
+Also, Alpha 14 – Scenario System is out! For full information Alpha 14, including the change list, look at the Alpha 14 preview thread.
+
+More good news – everyone who owns the game can move it to Steam. Hooray! You get a Steam key! And you get a Steam key! To get your Steam key, go to the automated link and key sender.
+
+('''EDIT:''' The following no longer applies. Due to fraudster attacks, we’ve been forced to cut off Steam keys for new purchases from our site. You can still buy directly on Steam, of course, at the same prices.) A business note – If you want, buying it from our site is better for us. This way, we get significantly more of the money, since Steam isn’t taking their cut. You can still immediately grab your Steam key and put the game on your Steam account. Obviously we’ll still be very happy if you buy it either way!
+
+Just for fun, for those who are interested, I’m posting the full change list for Alpha 14. Previously, you saw the change summary. This file, however, shows every ‘commit’ (package of code changes) we contributed to our code repository to transform the game from Alpha 13 to Alpha 14.
+
+Each line is one commit. Some are just a few minutes of work, others can be a whole day. Some are by me, others are by ison.
+
+==Release Trailer==
+
+<youtube>https://www.youtube.com/watch?v=QiFRqCvG6Q4</youtube>
+
+==Note From Devs==
+
+On a final, more serious note – please don’t buy Steam keys from third-party sellers. The only ways RimWorld has ever been sold are on our website or on Steam itself, which means that any key being resold is a stolen or improperly sold one. The common scam is this: Hackers steal thousands of credit cards, use them to buy copies of the game from our website, redeem the Steam keys, and then sell these keys at half price. The credit card holder eventually notices the fraudulent purchase and gets it reversed. The end result is that the scammers keep the sale money, and we lose a sale, and we lose the chargeback fees incurred by payment providers (which can be $15 per copy!). It can add up to hundreds of thousands of dollars. So buying these keys is much worse than piracy, because it takes money directly from us, and gives money to thieves. We will be working to make it more difficult for scammers to pull this off, and disabling stolen keys where we find them, so any key bought at a third party likely won’t work. Buy original and all should be good.
+
+==Changes==
+
+===Combat=== 
+*Pawns can no longer overlap during melee combat (unless they’re really small). No more animal deathstacks! This also creates new tactics around blocking, surrounding, or back-line shooters. We had to write a bunch of AI and blocking code to make this function.
+*Projectiles fired by hunting colonists no longer intercept random targets.
+*AI now runs away from grenades thrown by their own faction.
+
+===Pawn AI===
+*Predators no longer hunt boomrats and boomalopes.
+*Pawns will be smarter about avoiding traps in various situations.
+
+===Social=== 
+*Humans now do incest.
+*Beauty trait now has four stages: Staggeringly ugly, ugly, pretty, beautiful.
+*Some backstories now force pawns to have a given trait (e.g. Model->Beautiful)
+
+===Buildings===
+*Roofs must now be manually built and torn down by colonists; they do not appear and disappear instantly any more.
+
+===Animals===
+*Tortoises aren’t so deadly any more.
+*Animals no longer do incest.
+*Nuzzling is now a visualized, recorded social interaction.
+
+===Interface===
+*Ground fertility is now reported on mouseover.
+*Trading interface now lets you type in the number you want to trade instead of dragging to the number.
+*Reworked the right-click menu to be prettier, more readable, more solid, and better handle large lists of options.
+
+===Incidents===
+*Raiders can now enter “steal” mode if they see enough value. They’ll grab your stuff and carry it off.
+*Kidnapping raiders now work together much better to kidnap. Instead of everyone fleeing at once, some will kidnap while others cover them.
+
+===Miscellaneous===
+*Full Steam Workshop support for mods.
+*Updated to Unity 5.
+*World generation is now part of the new game process, instead of being separate.
+*Flow for opening worlds and savegames from old version is now improved; the “warning, old version” dialog comes before you open them instead of after.
+*Seeds for world gen are now generated from actual words instead of random letter strings.
+*Deworked mods config menu to have a much nicer selection and ordering interface.
+*Humans can now eat unbutchered corpses (though they really don’t like it).
+*Trade caravans can bring pack dromedaries.
+*Gut worms and muscle parasites vanish sooner.
+*Reworked ancient tomb loot generation. Plasteel is sometimes found on pod people. So are components.
+*Research difficulty is now related to your faction’s tech level. Researching techs above your level is harder. So if you’re a tribe, researching spaceflight will be difficult.
+*Various refactorings to make modding easier and code easier to maintain and more flexible. Much more functionality is now implemented as composable ThingComps.
+*Many, many, many other balance changes, gameplay and interface refinements, and bugfixes.
+
+===NewContents===
+====Scenario System==== 
+*New scenario system allows you to choose, randomize, and customize special situations to play in. Determine starting situation, your type of community (tribe, colony), permanent map conditions, starting items, animals, health conditions, and traits, and change special rules.
+* Several built-in scenarios, including one matching the classic RimWorld experience, are included.
+*You can randomize new scenarios.
+*You can customize scenarios with a special interface that allows creation of any scenario you like.
+*Scenarios can be uploaded to or grabbed from Steam Workshop with a single click.
+**ScenPart: Permanent version of all map conditions (eclipse, solar flare, etc).
+**ScenPart: Planetkiller scenario part: World is destroyed on X date.
+**ScenPart: Climate cycle which makes the world get warmer and cooler over a period of years. Winter is coming.
+**ScenPart: Disable building a given type of building.
+**ScenPart: Pawns start with health condition.
+**ScenPart: Start with items.
+**ScenPart: Map is scattered with items.
+**ScenPart: Configure arrival method (pods or standing)
+**ScenPart: Starting pawns are all between ages X and Y
+**ScenPart: Pawns explode on death (configurable type and radius)
+**ScenPart: All pawns from source (game start/all) have trait X
+**ScenPart: Starting animal(s)
+**ScenPart: Disallow mining
+**ScenPart: Disallow hunting
+**ScenPart: Disallow taming
+**ScenPart: Disallow growing
+**ScenPart: Disable incident
+**ScenPart: Multiplier for any stat on the game (move speed, mining speed, etc)
+**ScenPart: Disallow building
+
+====Incidents====
+*Added ‘ransom demand’ incident. Can fire after one of your people is kidnapped.
+*Infestations are easier and grow less exponentially.
+*Infestations only appear deeper underground now.
+*Hives now pop out glow pods – bug light sources that glow for 20 days (as long as they’re installed) and can be reinstalled or sold.
+*AI dressing algorithm is now better at making outfits to withstand cold temperatures. If there is no way to make a survivable outfit, pawns won’t arrive at all. No more raids arriving and keeling over in -60C weather.
+
+====Social====
+*Added “killed my X” social thoughts so people dislike their loved ones’ killers
+*Added new class of “minor” mental breaks, which can happen at mood under 40%.
+*Added minor mental break: food binge.
+*Added traits: creepy breathing, annoying voice. These are socially repellent.
+*Added trait: pyromaniac. Will go on firestarting sprees when stressed, and never puts out fire.
+
+====Items====
+*Added pemmican for low-tech food preservation.
+
+====Buildings====
+*Added moisture pump, which slowly converts wet terrain to dry terrain. Requires power.
+*Added torch lamp
+
+====Research====
+*Added research (needed for tribes only): complex clothing, electricity
+*Added research (needed for non-tribes only): pemmican
+*Added research: air conditioning, autodoors, gun turrets
+
+====Animals====
+*Added [[panther]] for jungle biome. Because I discovered panthers aren’t real and I need to cope with this somehow.
+*Added/replaced animals created by the excellent Kay Fedewa:
+**[[Caribou]]
+**[[Cassowary]]
+**[[Deer]]
+**[[Emu]]
+**[[Arctic fox]]
+**[[Fennec fox]]
+**[[Red fox]]
+**[[Gazelle]]
+**[[Husky]]
+**[[Ibex]]
+**[[Lynx]]
+**[[Megasloth|Megatherium]] (prehistoric giant ground sloth)
+**[[Ostrich]]
+**[[Raccoon]]
+**[[Rat]]
+**[[Turkey]]
+**[[Arctic wolf]]
+**[[Timber wolf]]
+
+====Interface====
+*Added a row of colonist icons along the top of the screen, with various status info. They can be clicked to select, double-clicked to jump to, or box-selected to multi-select. These icons can be turned off.
+*There is now an orange glow to help you identify very hot areas.
+*Animals tab now has gender and life stage informational columns
+*Animals tab now has a “slaughter” checkbox column to allow easy slaughtering of many animals
+*Animals tab now has checkbox columns for each trainable, to allow easy training of many animals
+
+===Miscellaneous===
+*You can now play as a tribe in some scenarios.
+*Some traders buy and sell furniture now.
+
+===Bugfixes===
+*Traders, visitors, raiders, kidnappers, animals, etc will now escape if surrounded by walls with no way out.
+*Manhunters and insects will attack doors if colonists try to hop in and out of them while getting shots off.
+*Hives must now be tended by insects, so if insects are all instantly killed by a turret wall, the hives will die out.
+*You can no longer avoid the ‘executed prisoner’ mood impact by just shooting or starving the prisoner; pawns will get a “prisoner died innocent” thought. A similar solution applies to the deaths of colonists.
+*Solved various powerleveling exploits. Once colonists have learned a certain (high) amount in a day, they’ll learn at a much-reduced rate until the next day.
+*Flowers are no longer good animal feed (reduced nutrition).
+*Fixed exploit where players would give prisoner to raiders for kidnapping, to make raiders go away without a fight. Solution: Raiders only kidnap colonists.

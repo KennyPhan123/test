@@ -1,0 +1,164 @@
+{{Royalty}}
+{{Infobox main
+| name = Field hand
+| image = Health item prosthetic.png
+| type = Medical Items
+| type2 = Body Parts
+| tech level = Industrial
+| description = This mechanical hand replacement is made to speed up the sowing and harvesting tasks of a farmer. Multiple telescoping finger-like protrusions can simultaneously harvest from several points on the same plant, or precisely sow several holes at once. It also has a general-purpose manipulator. It is somewhat ungainly, which slows down movement slightly.
+| class = 
+| meleeattack1dmg = 9
+| meleeattack1type = Blunt
+| meleeattack1part = Knuckle
+| meleeattack1cool = 2
+| meleeattack1ap = 13
+| body part = Hand
+| mode = Melee
+| production facility 1 = Machining table
+| research = Specialized limbs
+| skill 1 = Crafting
+| skill 1 level = 5
+| resource 1 = Steel
+| resource 1 amount = 60
+| resource 2 = Component
+| resource 2 amount = 8
+| work to make = 15000
+| damage type = Sharp
+| mass = 4
+| marketvalue = 425
+| max hit points base = 50
+| tradeTags = ImplantEmpireCommon
+| techHediffsTags = ImplantEmpireCommon, FieldHand
+| thingSetMakerTags = RewardStandardLowFreq
+}}
+The '''field hand''' is an [[artificial body part]] that provides both the functionality of a normal hand, while also increasing [[plant work speed]] but penalising [[Moving]].
+
+== Acquisition ==
+{{Recode|section=1|reason=Now pawnkinds are complete, link to specific Pawnkinds on the faction pages}}
+{{Acquisition}}
+
+They can also be [[trade|bought]] from [[Outlanders]] and [[Empire]] settlements.
+
+The pawns that populate Farming [[work site]]s owned by an Outlander or [[Pirate]] factions, including minor factions, very commonly spawn with field hands.
+
+== Summary ==
+=== Body part ===
+Field hands replace the user's organic hand. They are universal and can be installed on either the left or right. This is a hand replacement, and cannot be installed on an artificial or missing arm.
+
+The field hand acts as a fully functional hand, providing '''100%''' [[Manipulation]]. This fully replaces the functionality of a regular arm, but with no enhancement. Manipulation, in turn, affects a great many stats. For a full list of stats, see [[Manipulation]].
+
+=== Other effects ===
+Each field hand installed gives {{+|160%}} [[Plant Work Speed]]. Note that this is an offset to the base value of the stat, which is then multiplied by factors like [[Global Work Speed]] and [[Manipulation]]. This means that the final value can be significantly higher. The effect of multiple field hands will stack.
+
+Each field hand also inflicts a {{--|8%}} [[Moving]] penalty. Moving, in turn, affects the following [[stats]]: {{#ask: [[Moving Importance::+]]}}. This results in a directly proportional change to a pawn's [[move speed]], and a penalty to [[melee dodge chance]] equivalent to an losing {{--|{{#expr: {{Q|Melee Dodge Chance|Moving Importance}}*0.08}}}} levels of [[Melee]] skill per arm replaced.
+
+=== Combat ===
+A field arm replaces the natural "Fist" attack of the replaced hand.
+
+<div><li style="display: inline-table;"> 
+{| {{STDT|sortable c_06 text-center}}
+! colspan="2" | Name !! Damage !! DPS !! AP !! Damage Type
+|-
+! {{Icon Small|Heart|32}}
+! style='text-align: left !important;'| Human Fist
+| {{Q|Human|Attack 1 Damage}}
+| {{Q|Human|Attack 1 DPS}}
+| {{Q|Human|Attack 1 AP}}%
+| [[Damage Types#{{Q|Human|Attack 1 Type}}|{{Q|Human|Attack 1 Type}}]]
+|-
+! {{Icon Small|{{PAGENAME}}|32}}
+! {{PAGENAME}}
+| {{P|Attack 1 Damage}}
+| {{P|MeleeDPS}}
+| {{P|Attack 1 AP}}%
+| [[Damage Types#{{P|Attack 1 Type}}|{{P|Attack 1 Type}}]]
+|}
+</li></div>
+
+=== Installation ===
+Installing the part requires {{Ticks|2500}} of work, 2x medicine of [[Herbal medicine|herbal]] quality or better, and a [[Skills#Medical|Medical skill]] of 4.
+
+Removing the part requires {{Ticks|2000}} of work, 1x medicine of [[Herbal medicine|herbal]] quality or better, and has no [[Skills#Medical|Medical skill]] requirements.
+
+If the operation fails, the part will be destroyed.
+
+== Analysis ==
+Field hands offer an extreme boost to planting speed. With 1 field hand, a Plants 0 pawn sows and harvests as fast as a baseline Plants 13 pawn. With 2 field hands, this same pawn works ''faster'' than a Plants 20 pawn. While the field hand disables the use of a work-enhancing [[bionic arm]] or [[archotech arm]], if a pawn's primary job is to grow, then a field hand offers a clear benefit. (Note that this implant does not increase [[Plant Harvest Yield]], so your Plants 0 pawn will not get much per harvest).
+
+<div id="mw-EventList_collapsible" class="mw-collapsible mw-collapsed" data-expandtext="Additional Analysis" data-collapsetext="Hide">
+
+Plant work speed is calculated as
+{| class="wikitable"
+| (100% + Offsets) * [[Plant Work Speed|Plant work speed]] skill modifier * Manipulation * max(100%, 100% + (Sight - 100%) * 30%) * Global Work Speed
+|}
+Harvest yield is calculated as
+{| class="wikitable"
+| (100% + Offsets) * [[Plant Harvest Yield]] skill modifier * (100% + (Manipulation - 100%) * 30%) * max(100%, 100% + (Sight - 100%) * 20%)
+|}
+The effective plant work speed (yield per unit time spent working) is equal to the product of the work speed and the yield. The table below details the results of using bionic arms compared with field hands (rounded up), assuming a constant 100% global work speed and 100% [[Sight]] efficiency.
+
+{| {{STDT| sortable c_14 text-center mw-collapsible}}
+
+|-
+! rowspan = 2| Plants<br>Skill!! colspan = 4 | Plant Work Speed !! colspan = 4 | Plant Harvest Yield !! colspan = 4 | Effective Work Speed !! rowspan = 2| Plants<br>Skill
+|-
+! style="vertical-align:top;"| Baseline !! style="vertical-align:top;"| 2 Bionic !! style="vertical-align:top;"| 2 Field !! Bionic +<br> Field !! style="vertical-align:top; background:#8edf44;" | Baseline !! style="vertical-align:top; background:#8edf44;"| 2 Bionic !! style="vertical-align:top; background:#8edf44;"| 2 Field !! style="vertical-align:top; background:#8edf44;"| Bionic +<br> Field !! style="vertical-align:top;"| Baseline !! style="vertical-align:top;"| 2 Bionic !! style="vertical-align:top;"| 2 Field !! Bionic +<br> Field 
+|-
+| 0 || 8 % || 12 % || 34 % || 26 % || 60 % || 69 % || 60 % || 65 % || 5 % || 8 % || 20 % || 17 % || 0
+|-
+| 1 || 20 % || 29 % || 82 % || 63 % || 70 % || 81 % || 70 % || 75 % || 14 % || 24 % || 57 % || 48 % || 1
+|-
+| 2 || 31 % || 47 % || 130 % || 101 % || 75 % || 86 % || 75 % || 81 % || 23 % || 40 % || 98 % || 81 % || 2
+|-
+| 3 || 43 % || 64 % || 179 % || 138 % || 80 % || 92 % || 80 % || 86 % || 34 % || 59 % || 143 % || 119 % || 3
+|-
+| 4 || 54 % || 81 % || 227 % || 176 % || 85 % || 98 % || 85 % || 91 % || 46 % || 79% || 193 % || 160 % || 4
+|-
+| 5 || 66 % || 98 % || 275 % || 213 % || 90 % || 104 % || 90 % || 97 % || 59 % || 102 % || 248 % || 206 % || 5
+|-
+| 6 || 77 % || 116 % || 323 % || 250 % || 95 % || 109 % || 95 % || 102 % || 73 % || 126 % || 307 % || 256 % || 6
+|-
+| 7 || 89 % || 133 % || 372 % || 288 % || 98 % || 113 % || 98 % || 105 % || 87 % || 150 % || 364 % || 303 % || 7
+|-style="background:#A3BFAC;" 
+| 8 || 100 % || 150 % || 420 % || 325 % || 100 % || 115 % || 100 % || 108 % || 100 % || 173 % || 420 % || 349 % || 8
+|-
+| 9 || 112 % || 167 % || 468 % || 362 % || 101 % || 116 % || 101 % || 109 % || 113 % || 194 % || 473 % || 393 % || 9
+|-
+| 10 || 123 % || 185 % || 517 % || 400 % || 102 % || 117 % || 102 % || 110 % || 125 % || 216 % || 528 % || 438 % || 10
+|-
+| 11 || 135 % || 202 % || 565 % || 437 % || 103 % || 118 % || 103 % || 111 % || 139 % || 239 % || 582 % || 484 % || 11
+|-
+| 12 || 146 % || 219 % || 613 % || 475 % || 104 % || 120 % || 104 % || 112 % || 152 % || 262 % || 638 % || 530 % || 12
+|-
+| 13 || 158 % || 236 % || 662 % || 512 % || 105 % || 121 % || 105 % || 113 % || 165 % || 285 % || 695 % || 578 % || 13
+|-
+| 14 || 169 % || 254 % || 710 % || 549 % || 106 % || 122 % || 106 % || 114 % || 179 % || 309 % || 752 % || 626 % || 14
+|-
+| 15 || 181 % || 271 % || 758 % || 587 % || 107 % || 123 % || 107 % || 115 % || 193 % || 333 % || 811 % || 675 % || 15
+|-
+| 16 || 192 % || 288 % || 806 % || 624 % || 108 % || 124 % || 108 % || 116 % || 207 % || 358 % || 671 % || 724 % || 16
+|-
+| 17 || 204 % || 305 % || 855 % || 661 % || 109 % || 125 % || 109 % || 117 % || 222 % || 383 % || 932 % || 775 % || 17
+|-
+| 18 || 215 % || 323 % || 855 % || 699 % || 110 % || 127 % || 110 % || 118 % || 237 % || 408 % || 993 % || 826 % || 18
+|-
+| 19 || 227 % || 340 % || 951 % || 736 % || 112 % || 129 % || 112 % || 120 % || 254 % || 438 % || 1065 % || 886 % || 19
+|-
+| 20 || 238 % || 357 % || 1000 % || 774 % || 113 % || 130 % || 113 % || 121 % || 269 % || 464 % || 1130 % || 940 % || 20
+|}
+The data above shows that using a pair of field hands is 20% faster than using a bionic arm alongside a field hand. Whenever or not this increase is worth the additional -8% [[Moving]] penalty of the second field hand and the opportunity cost of not using a bionic arm (or archotech arm) is something to be considered.
+</div>
+
+Planting is essential to virtually every colony. Crops are a mostly stable form of food, and this skill can also be used to grow useful products like [[drug]]s, [[cloth]], and [[devilstrand]]. Even on the [[sea ice]], (successful) colonies will eventually reach [[hydroponics]] and be able to farm. You may want to consider planting [[rice plant|rice]]; since the field hand is ''so'' efficient, the workload of rice is easily managed.
+
+This comes at a cost of movement speed. In addition to the reduced efficiency in regards to day-to-day work, installing a field hand will hinder a pawn's performance in combat. For ranged fighters, slower movement means that [[kiting]] tactics are no longer as viable. For melee fighters, the Moving penalty directly encumbers a pawn's [[melee dodge chance]]. This can be eventually compensated, partially, by using [[bionic leg]]s.
+
+Field hands can also be used to replace a missing hand. Compared to the [[wooden hand]], the field hand offers {{+|10%}} [[Manipulation]] for {{--|8%}} [[Moving]].
+
+== Version history ==
+* [[Royalty DLC]] Release - Added 
+* [[Version/1.1.2565|1.1.2565]] - 50% part efficiency increased to 100%, plant work speed buff reduced from 180% to 160%. -8% Moving penalty added.
+
+{{Nav|body parts|wide}}
+{{Nav|weapon|wide}}
+[[Category:Medical Item]] [[Category:Body Part]] [[Category:Artificial Body Part]]

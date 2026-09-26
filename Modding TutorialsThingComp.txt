@@ -1,0 +1,297 @@
+{{BackToTutorials}}
+<small><&nbsp;[[Modding Tutorials/Custom Comp Classes]]</small><br/>
+
+A ThingComp is a specific type of [[Modding Tutorials/Custom Comp Classes|Component]] that's attached to a ThingWithComps. Things like Pawns, Plants, Equipment, Buildings are all ThingsWithComps, so ThingComps are broadly applicable. You can add any custom code to your ThingComps for you to call manually, and it has methods called at specific occurrences that you can override.
+
+'''Benefits''':<br/>
+<nowiki>+</nowiki> Are very well supported by RimWorld.<br/>
+<nowiki>+</nowiki> Exposes (part of its) functionality to XML.<br/>
+<nowiki>+</nowiki> Compatible with savefiles, other mods, you name it.</br>
+<nowiki>+</nowiki> Does not come with the compatibility issues and pitfalls of creating a custom Def class.<br/>
+<nowiki>+</nowiki> Can save data.<br/>
+<nowiki>+</nowiki> Can access its parent.<br/>
+<nowiki>+</nowiki> Certain functionality gets automatically called RimWorld.<br/>
+
+'''Downsides''':<br>
+<nowiki>-</nowiki> Only works on ThingWithComps.<br/>
+<nowiki>-</nowiki> Requires a few extra steps to expose their functionality to XML.<br/>
+<nowiki>-</nowiki> Not suited for every type of functionality.<br/>
+
+== Requirements ==
+* You need to have [[Modding Tutorials/Setting up a solution|set up your editor and environment]]
+* You need to know [[Modding Tutorials/Writing custom code|how to write custom code]]
+* You should probably understand Defs at least somewhat.
+
+== What you'll learn ==
+What ThingComps are, when and how to use them. Since ThingComps are so ubiquitous and practical, every method you can override is also included, along with a short blurb of what it does.
+
+== Setting up ==
+To implement a ThingComp, we need to inherit from the ''ThingComp'' class. This tutorial assumes you'll want to expose your Comp's functionality to XML, for that we need to inherit from ''CompProperties'' as well. 
+
+== The Code ==
+RimWorld will initialise your Comp like thus: 
+# First the ThingMaker will create a new instance of a Def, and call this a Thing.
+# ThingMaker will then call PostMake() on the instance of Thing (in our case, a ThingWithComps).
+# PostMake() will call ThingWithComps.InitializeComps().
+# For every entry in the Def's Comp list, ThingWithComps.InitializeComps will create a new instance of each compClass
+#* If the compClass isn't set in the XML, InitializeComps will use the default Type of ThingComp to instantiate. The constructor for CompProperties can specify a different (subclass of) ThingComp to instantiate.
+# ThingWithComps.InitializeComps will set the parent of the ThingComp.
+#* Parent in this context is the ThingWithComps that has the Comp. For example: [[Electric stove]]s have a CompFlickable. The stove is the parent of this instance of comp.
+# ThingWithComps.InitializeComps calls the Initialize() method of the ThingComp instance.
+# ThingComp.Initialize() will set the CompProperties, with the properties as defined in the Def.
+
+Note that this is [https://en.wikipedia.org/wiki/Object-oriented_programming Object Oriented Programming]: the (JIT) compiler first looks for overridden methods to call before calling the parent.
+
+==An Example==
+The below is a simple example. We'll use this later on.
+<source lang = "csharp">
+using Verse;
+using System;
+
+namespace MyExampleNamespace
+{
+    public class MyExampleComp : ThingComp
+    {
+        public override void CompTick()
+        {
+            Log.Error("Let's error on every tick!");
+        }
+
+        /// <summary>
+        /// By default props returns the base CompProperties class.
+        /// You can get props and cast it everywhere you use it, 
+        /// or you create a Getter like this, which casts once and returns it.
+        /// Careful of case sensitivity!
+        /// </summary>
+        public MyExampleCompProperties Props => (MyExampleCompProperties)this.props;
+
+        public bool ExampleBool => Props.myExampleBool;
+    }
+
+    public class MyExampleCompProperties : CompProperties
+    {
+        public bool myExampleBool;
+        public float myExampleFloat;
+
+        /// <summary>
+        /// These constructors aren't strictly required if the compClass is set in the XML.
+        /// </summary>
+        public MyExampleCompProperties()
+        {
+            this.compClass = typeof(MyExampleComp);
+        }
+
+        public MyExampleCompProperties(Type compClass) : base(compClass)
+        {
+            this.compClass = compClass;
+        }
+    }
+}
+</source>
+
+==XML==
+If you want to add your Comp to a Def, you use the following XML:
+<source lang ="xml">
+<Defs>
+    <ThingDef>
+        <comps>
+            <li Class="MyExampleNamespace.MyExampleCompProperties">
+                <myExampleBool>false</myExampleBool>
+                <myExampleFloat>0.005</myExampleFloat>
+            </li>
+        </comps>
+    </ThingDef>
+</Defs>
+</source>
+This adds the ThingComp to your ThingWithComps and populates it fields with the values set in the XML.
+
+If your ThingComp does not have properties, you use the following XML:
+<source lang ="xml">
+<Defs>
+    <ThingDef>
+        <comps>
+            <li>
+                <compClass>MyExampleNamespace.MyExampleComp</compClass>
+            </li>
+        </comps>
+    </ThingDef>
+</Defs>
+</source>
+This adds the ThingComp to the ThingWithComps and uses the specified compClass.
+
+Somewhat niche but useful: One type of CompProperties can instantiate different type of CompClasses. CompProperties_Power is a good example.
+
+===Adding them with xpath===
+If the ThingWithComps already has comps, you can use a simple PatchOperationAdd to add your comp to the list. If it does not yet have a ''comps'' node, you will need to make one. Other mods may also have the same need, which would result in incompatibility issues: Adding a ''comps'' entry twice results in only the first entry getting read. To go around this, a PatchOperationConditional is used:
+
+<source lang = "xml">
+<!-- Add /comps/li/compClass if there are no comps yet. -->
+<!-- Add /li/compClass to /comps if exists (i.e. other mod already added the comps field first) -->
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/WorldObjectDef[defName="Caravan"]/comps</xpath>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/WorldObjectDef[defName="Caravan"]</xpath>
+            <value>
+                <comps>
+                    <li>
+                        <compClass>MyExampleNamespace.MyExampleComp</compClass>
+                    </li>
+                </comps>
+            </value>
+        </nomatch>
+        <match Class="PatchOperationAdd">
+            <xpath>/Defs/WorldObjectDef[defName="Caravan"]/comps</xpath>
+            <value>
+                <li>
+                    <compClass>MyExampleNamespace.MyExampleComp</compClass>
+                </li>
+            </value>
+        </match>
+    </Operation>
+</source>
+
+== Accessing your Comps ==
+Just setting up your custom comps doesn't do you a lot of good if you can't access them!
+
+=== Accessing your Comp directly ===
+Accessing them depends on whether or not you have a Thing or a ThingWithComps. 
+* ThingWithComps has a GetComp<>() method which will return the type of ThingComp specified in the <nowiki><></nowiki> if present, and null otherwise.
+* Thing has a TryGetComp<MyExampleComp>() method. It will safely cast to ThingWithComps and return null upon failure. Upon success, it will return the value of ThingWithComps.GetComp<>()
+
+It is wise to nullcheck.
+
+=== Accessing your CompProperties ===
+If you have the Comp (see above) you can access its properties like so:
+<source lang ="csharp">
+MyExampleCompProperties myProps = (MyExampleCompProperties)MythingWithComps.GetComp<MyExampleComp>().props
+</source>
+
+or, if you have a Props getter which does the casting for you:
+<source lang ="csharp">
+MyExampleCompProperties myProps = MythingWithComps.GetComp<MyExampleComp>().Props
+</source>
+
+==Overridable methods of ThingComp==
+'''NOTE:''' This is up to date for version 1.0.2150. For the most up-to-date info, grab a decompiler.
+
+It does not make sense to override every method listed here. It therefore goes without saying you should only override those methods need.
+
+===Initialize(CompProperties props)===
+Called once when the ThingComp is instantiated, and called once during loading. Most commonly used to initialise the comp props, but functionally similar to PostMake() so equally suitable for setting up default values.
+
+===ReceiveCompSignal(string signal)===
+A string based signalling system that allows for communication between comps. The counterpart of this is ThingWithComps.BroadcastCompSignal. Note that this is functionally different from [[Modding Tutorials/ThingComp#Notify_SignalReceived(Signal signal)|Notify_SignalReceived]].
+
+===PostExposeData===
+{{Main|Modding Tutorials/ExposeData}}
+Used for saving and loading data. Runs after the ThingWithComps ExposeData.
+
+===PostSpawnSetup(bool respawningAfterLoad)===
+Similar to Initialize(), but be aware that there's a difference between "getting initialised" and "spawning". A ThingWithComps can be initialised without getting spawned. Useful for setting up Map- and Thing-related stuff.
+
+===PostDeSpawn(Map map)===
+Gets called after despawning. Useful for cleaning up. Note: getting despawned doesn't mean destroyed. Think: caravans, minifying, etc.
+
+===PostDestroy(DestroyMode mode, Map previousMap)===
+Gets called after being destroyed. Useful for cleaning up.
+	
+===CompTick===
+Runs once every [[Time|Tick]], but only if the TickerType of the parent is TickerType Normal.
+
+===CompTickRare===
+Runs once every [[Time|TickRare]], but only if the TickerType of the parent is TickerType Rare.
+
+===PostPreApplyDamage(DamageInfo dinfo, out bool absorbed)===
+Runs before damage gets applied to the parent. The bool sets if damage was absorbed or not. Full damage absorption or nothing.
+
+===PostPostApplyDamage(DamageInfo dinfo, float totalDamageDealt)===
+Runs after damage gets applied to the parent.
+
+===PostDraw===
+Called every frame, but only if the DrawerType of the parent is DrawerType MapMeshAndRealTime. Only use this for drawing. Do not put game logic in this.
+
+===PostDrawExtraSelectionOverlays===
+Called every frame, if the parent is selected. Used by things like the DeepScanner. Only use this for drawing. Do not put game logic in this.
+
+===PostPrintOnto(SectionLayer layer)===
+It's so the ThingComp can print polygons onto the SectionLayer. SectionLayer is part of the "chunked" graphics printing system that allows us to efficiently render non-moving objects by printing them on a shared mesh and drawing them in one call. All Things have a Print method for this; PostPrintOnto is just the ThingComp hook to participate in Print.<ref>[https://gist.github.com/Mehni/b3f46b3b08f70cd74746a46f89d2d7a8]</ref>
+
+===CompPrintForPowerGrid(SectionLayer layer)===
+Same as above, but allows printing images on the power grid. This method is only called for Comps on buildings.<ref>[https://gist.github.com/Mehni/b3f46b3b08f70cd74746a46f89d2d7a8]</ref>
+
+===PreAbsorbStack(Thing otherStack, int count)===
+Used before the parent absorbs ''count'' amount of ''otherStack''. Useful for averaging out values of your Comp. e.g. FoodPoisoning.	
+
+===PostSplitOff(Thing piece)===
+The opposite of PreAbsorbStack.
+
+===TransformLabel(string label)===
+Returns a string. Neurotrainers use this to identify what type of Neurotrainer they are.
+
+===CompGetGizmosExtra===
+Returns an IEnumerable<Gizmo>. Lets you add [[Modding Tutorials/Gizmos|Gizmos]] to the thing. Gizmos are the actions buttons you see when you select something, like the temperature setting buttons.
+
+===AllowStackWith(Thing other)===
+Returns a boolean that determines whether or not two Things can stack.
+
+===CompInspectStringExtra===
+Returns a string. Adds extra things to the selection box.
+
+===GetDescriptionPart===
+Returns a string. Adds extra things to the selection box.
+
+===CompFloatMenuOptions(Pawn selPawn)===
+Returns an IEnumerable<FloatMenuOption>. Lets you add a FloatMenuOption to the thing.
+
+===PrePreTraded(TradeAction action, Pawn playerNegotiator, ITrader trader)===
+Runs before the trade is completed. Useful for making Pawns very attached to a Thing, then make them hate the Pawn that sells it.
+
+===PostIngested(Pawn ingester)===
+Runs after the Thing is eaten.
+
+===PostPostGeneratedForTrader(TraderKindDef trader, int forTile, Faction forFaction)===
+Runs after it's generated for a trader. Used by CompQuality.
+
+===Notify_SignalReceived(Signal signal)===
+The ThingComp way of participating in the ISignalReceiver interface. The ISignalReceiver interface isn't used a lot in RimWorld, but the design pattern it follows is reminiscent of the Observer Design pattern, or maybe Eventhandler. Except different.
+
+===ToString===
+For debugging.
+
+==Overridable methods of CompProperties==
+'''NOTE:''' This is up to date for version 1.0.2150. For the most up-to-date info, grab a decompiler.
+
+It does not make sense to override every method listed here. It therefore goes without saying you should only override those methods need.
+
+===CompProperties()===
+Technically not an override. A constructor.
+
+===CompProperties(Type compClass)===
+Technically not an override. A constructor which takes a parameter.
+
+===DrawGhost(IntVec3 center, Rot4 rot, ThingDef thingDef, Color ghostCol, AltitudeLayer drawAltitude)===
+Used by Fire, and other cases where you'd not recognise the Blueprint without the Comp.
+
+===ConfigErrors(ThingDef parentDef)===
+Returns an IEnumerable<string> with config errors. Don't forget to ''yield return'' every error in the ''base''.
+
+===ResolveReferences(ThingDef parentDef)===
+Part of the def loading process. Loading involves multiple stages, one of which is "ResolveReferences". Lots of defs have a ResolveReferences method. This is the CompProperties way of participating in that.<ref>[https://gist.github.com/Mehni/b3f46b3b08f70cd74746a46f89d2d7a8]</ref>
+
+===SpecialDisplayStats(StatRequest req)===
+Returns an IEnumerable<StatDrawEntry>. Useful for when your Comp adds extra stats.
+
+== Cautions, traps, etc ==
+* If you have the same comp in an abstract (XML) def and attempt to redefine it in a (XML) child def, it will get counted twice. To get around this in XML, inherit from a newly defined Parent without the Comp. It's '''not''' recommended to add the Inherit="False" tag to the comps tag, as that gets rid of all Comps. While you can get around it in code, a newly defined parent is cleaner (and less effort).
+* Not every Thing is a ThingWithComps! Only Things that are a ThingWithComps (or subclass thereof) have Comps. Chunks are a notable Thing that aren't ThingWithComps.
+* Casting to ThingWithComps is needlessly expensive and explicit casting can lead to InvalidCastExceptions. If it's a Thing you suspect is a ThingWithComps, you can:
+<source lang ="csharp">
+Thing thing;
+MyExampleComp comp = thing.TryGetComp<MyExampleComp>();
+if (comp != null)
+{
+    //do stuff
+}</source>
+* Ticking! Make sure the TickerType and your Tick method matches. If the ThingWithComp has the Normal TickerType, CompTickRare() will never get called.
+
+[[Category:Modding tutorials]][[Category:Modding]][[Category:Defs]]

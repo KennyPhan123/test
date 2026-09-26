@@ -1,0 +1,76 @@
+{{Version Nav}}
+
+This is a follow-on update to last week’s major content additions with some refinements and fixes.
+
+This update should be fully compatible with all savegames and mods.
+
+Since Royalty content is less mature (3 months vs 6 years), most of these refinements are focused on it, but there are things for the base game as well.
+
+Thanks to everyone who helped test!
+
+''This version was released on: June 3rd, 2020''
+
+== Improvements ==
+* You can now configure a desired psyfocus level on your [[psycast]]ers and they will meditate enough to maintain it, without needing to use the schedule.
+* Reworked how destroyed buildings generate slag so small buildings don’t generate giant slag blooms; they’ll leave steel behind instead.
+* Implemented toggle for [[anima tree]]s that toggles whether building ghosts are showing connections to meditation foci or not.
+* All Empire pawns have at least the title of Freeholder.
+* Player-created names update.
+
+== Training and feedback ==
+* Implemented warning message for pawns with psychically dull or deaf traits when becoming a royal or trying to gain a psylink by anima tree.
+* Rename [[difficulty]]: “The price of survival is blood” to “Blood and dust”.
+* Rename esquire to acolyte. Adjust some [[title]] descriptions.
+* Added warning message when designating an anima tree for cutting.
+* Clarify undignified thronerooms reason text.
+* Anima tree now sends a letter when enough anima grass is available for linking.
+* We now prompt the user to confirm using a [[psytrainer]] if the pawn’s psylink level is too low to use the psycast.
+* Add “Meditation desired psyfocus” learning helper lesson.
+* Add “Meditation schedule” learning helper lesson.
+* Show base and max value for MeditationFocusStrength stats with offsets.
+* Improved organization of drug stats listing.
+* Various text adjustments.
+
+== Tuning ==
+* Increase rewards per points for quests game-wide.
+* Reduce the threat points for fights generated off the home map, and increase bandit camp quest rewards.
+* Double the rate of nuzzling by animals to buff mood-oriented pets.
+* Extend the thought for when you buried someone in a sarcophagus.
+* Reduce monument sizes about 15%.
+* Reduce psyfocus decay rates 0.5% at each level.
+* Increase psyfocus gain of wall from 11 to 22.
+* Increase psyfocus gain range of grave from 4~20 to 6~26.
+* Increase psyfocus gain range of sarcophagus from 8~24 to 10~30.
+* Increase psyfocus gain of animus stone from 25 to 34.
+* Increase psyfocus gain of sculptures by 2, up to a max of 28 at legendary quality.
+* Increase psyfocus gain of small nature shrine from 15 to 22.
+* Increase psyfocus gain of large nature shrine from 22 to 30.
+* Remove psylink neuroformer from traders (but most still buy it).
+* Reduce nature shrine build times by 40%.
+* Reduced [[yayo]] new addiction chance from 10% to 1%, and removed the min tolerance to addict.
+* Reduce [[flake]] new addition chance from 20% to 5%. Reduce flake tolerance gain from 4.5% to 4% (matches yayo).
+* Increase toxic fallout earliestDay from 20 to 60. Reduce base chance from 0.14 to 0.12. Increase volcanic winter earliest day from 30 to 60.
+* Reduce anima tree regrowth check cycle from 40 days to 30 days.
+* Ship chunks now leave a component if killed, even if not deconstructed.
+* Reduce blood rot severity per day gain from 60% to 40%.
+* Reduce chance for [[disease]]s in caravans by 4x.
+* Min market value for neuroformer quest rewards reduced from 720 to 600. Neuroformer market value increased from 1200 to 2600.
+* Reduced the selection weight of hostile factions as quest askers to 15%.
+* Disabled paralysis in hospitality quests.
+* Anima grass glows less brightly.
+* Various internal tunings in quests.
+
+== Technical ==
+* Moved Abasia and BloodRot to Royalty XML files.
+* Rename CompWarnInBuildingRadius -> ToggleDrawAffectedMeditationFoci.
+
+== Fixes ==
+* Fix: Psyfocus meditation effect shown for psychically deaf pawns.
+* Fix: [[Wake-up]] meditation focus gain is overtuned, should be 20% not 40%. Also it needs to be expressed in the right format of % per day.
+* Fix: Lodgers with blood rot and abasia spawn with equipment that immediately gets dropped.
+* Fix: [[Research#Tree sowing|Tree sowing research]] project lists [[anima tree]] as hyperlink.
+* Fix: Incorrect pluralisation in goodwill letter text and removed reference to asker in success/failure letter to match quest text.
+* Fix: Item stash quest uses asker’s short name instead of full name.
+* Fix: Typo in deserter quest description.
+* Fix: [[Unstable power cell]] can be rotated.
+* Fix: Accidentally referencing MeditationFocusStrength directly in StatWorker_PossibleCompOffsets.

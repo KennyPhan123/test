@@ -1,0 +1,67 @@
+{{Stub|reason=1) Two-way links}}
+{{Verified|1.5.4104}}{{Stat
+| def name = StuffEffectMultiplierArmor
+| label = Armor - Material effect multiplier
+| description = -
+| default base value = 0
+| min value = 0
+| always hide = true
+| category = Apparel
+| display priority in category = 1
+}}
+It is the base value for an item of [[apparel]]. This is multiplied by the [[Stuff]]'s Armor Factor to get the final armor rating.
+
+The game uses one stat for all armor types, but the wiki uses separate properties for Sharp, Blunt and Heat:
+* [[Armor - Material Effect Multiplier]] × [[Property:Armor - Sharp Factor|Armor - Sharp Factor]] to get the final [[Armor - Sharp]] rating
+* [[Armor - Material Effect Multiplier]] × [[Property:Armor - Blunt Factor|Armor - Blunt Factor]] to get the final [[Armor - Blunt]] rating
+* [[Armor - Material Effect Multiplier]] × [[Property:Armor - Heat Factor|Armor - Heat Factor]] to get the final [[Armor - Heat]] rating
+
+== Bases ==
+Since the 3 properties are derived from the same stat, you can see that because of this they are identical to each other:
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_01}}
+! [[Apparel]] !! Category !! [[Property:Armor Factor - Sharp|Armor<br />Factor -<br />Sharp]] !! [[Property:Armor Factor - Blunt|Armor<br />Factor -<br />Blunt]] !! [[Property:Armor Factor - Heat|Armor<br />Factor -<br />Heat]]
+|-
+{{#ask:
+[[Armor Factor - Sharp::+]]
+[[Armor Factor - Blunt::+]]
+[[Armor Factor - Heat::+]]
+| ?Type2
+| ?Armor Factor - Sharp
+| ?Armor Factor - Blunt
+| ?Armor Factor - Heat
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Name
+| limit = 100
+}}
+|}
+</li><div>
+
+== Stat Def Data ==
+{| {{STDT| c_01}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Armor - Material Effect Multiplier" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />StuffEffectMultiplierArmor
+* '''Label:'''<br />Armor - Material effect multiplier
+| -
+|
+* Display Order:<br />'''30'''
+* Def Name:<br />'''Apparel'''
+* Label:<br />'''Apparel'''
+* Display All By Default:<br />{{Bad|false}}
+|
+* '''Default Base Value:''' 0
+* '''Min Value:''' 0
+* '''Always Hide:''' {{Good|true}}
+| -
+| 1
+<!--</StatDef>-->
+|}
+
+== Version history ==
+{{Stub|section=1|reason=General}}
+
+{{nav|stats|wide}}

@@ -1,0 +1,81 @@
+{{Rewrite|reason=Needs integration with rest of wiki, and potentially to be entire subsumed by [[Terrain]] or [[Environment]] and replaced with a redirect to there}}
+{{Merge|destination=Terrain|destination2=Environment|reason=Integrate as above}}
+{{For|weather events|Environment#Weather{{!}}Weather}}
+'''Snow''' refers to two intrinsically linked mechanics - weather of that name and the terrain covering that it creates. Snow on the ground is created on [[roof|unroofed]] areas during snowy weather, i.e. "rain" when the [[temperature]] is freezing. It will cover solid [[terrain]] but will not cover water of any type, including marsh.
+
+It can be removed by [[fire]], [[steam geyser]]s, [[lightning]], [[colonist]]s when designated with the [[Zone#Snow clear area|Snow Clear Zone]], and by temperatures above {{Temperature|0}}.
+
+Colonists may build [[snowman|snowmen]] as a [[recreation]]al activity when there is snow on the ground.
+
+== Weather ==
+There are two types of snowy [[weather]]: gentle snow and hard snow. These can occur at temperatures of {{Temperature|-0.5}} and below.
+
+{| class="wikitable"
+! Weather
+! Accuracy modifier
+! Move speed modifier
+! Snow rate
+|-
+| Gentle snow
+| 80%
+| 100%
+| 120%
+|-
+| Hard snow 
+| 80%
+| 80%
+| 80%
+|}
+
+== Depth ==
+{{stub|section=1|reason= Rate of deposition?}}
+Various depths of snow exist, with deeper levels hindering movement more. Depth is an internal value, measured from 0% to 100%, hidden from the player.
+
+{| class="wikitable"
+! Level
+! Depth range
+! Move speed
+|-
+| Dusting
+| 3% ≤ 𝑥 < 25%
+| 100%
+|-
+| Thin
+| 25% ≤ 𝑥 < 50%
+| 76%
+|-
+| Medium
+| 50% ≤ 𝑥 < 75%
+| 62%
+|-
+| Thick
+| 75%+
+| 52%
+|}
+
+== Melting ==
+The melting rate of snow from ambient temperature is found using the following table:
+
+{| class="wikitable"
+! Temperature range
+! Melting rate (depth %/tick)
+|-
+| {{Temperature|0}} and below
+| 0
+|-
+| Between {{Temperature|0}} to {{Temperature|10}}
+| 0.058% of temperature²
+|-
+| {{Temperature|10}} and above
+| 0.58% of temperature
+|}
+
+As a result, snow will not be melted by ambient temperatures of {{Temperature|0}} or less, and the higher the temperature the faster the snow will melt.
+
+== Gallery ==
+<gallery mode=nolines widths=400px >
+File:Desertcolsummer.jpg|A desert colony in summer, and...
+File:Desertcolwinter.jpg|... the same colony in winter. Not all [[biome]]s will have snow.
+</gallery>
+
+[[Category:Game mechanics]]

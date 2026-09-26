@@ -1,0 +1,114 @@
+{{Odyssey}}
+{{Stub|reason=General, unique weapons can be fished}}
+{{infobox main|area|
+| name = Fishing zone
+| image = ZoneCreate Fishing.png
+| description = Create an area where your hunters will fish. Must be placed over water containing fish. Larger bodies of water are generally better for fishing.
+| type = Zones
+| placeable = True
+| size = 1 ˣ 1
+| blockswind = false
+| research = fishing
+}}
+
+A '''fishing zone''' designates where fisher pawns can catch [[fish]]. They are the main source for fish such as [[salmon]] and [[marlin]]. Fishing also occasionally allows fisher pawns to reel in treasures such as [[drugs]].
+
+== Acquisition ==
+Fishing zones can be designated once the [[Research#Fishing|Fishing]] research project is finished. [[New Tribe]] starts will start with it researched.
+
+== Summary ==
+Colonists will fish on a free tile of the fishing zone as part of the Fish job in the [[Work|Work tab]]. Their productivity is governed by the [[Animals]] skill, through the [[Fishing Speed]] and [[Fishing Yield]] stats. You can only create fishing zones in shallow non-toxic water with a population of fish. All fish in the body of water share a single population count, which replenishes at a rate of 2.5% of the maximum population per day provided there's no Gill Rot event.
+
+After completing around {{Ticks|7500}}{{Check Tag|Verify|Quick in-game testing, precise value needed}} of work, the following possible outcomes are rolled in order:
+# 2% chance of a negative fishing outcome. Skipped if the last negative outcome on this map was less than {{ticks/gametime|300000}} ago, or if none of the fish present are capable of producing negative outcomes. Fish that can cause negative outcomes include [[piranha]], [[guppy|guppies]], and [[marlin|marlins]].
+# 0-60% chance of catching a batch of [[toxfish]] depending on the pollution level.{{BiotechIcon}}
+# 1% chance of a rare catch. Similar to the negative fishing outcomes, the rare catch roll is skipped if the time since the last rare catch was less than {{ticks/gametime|300000}}.
+# 5% chance of catching a batch of uncommon fish. Skipped if there is no uncommon fish in the body of water.
+# If none of the above are rolled, a batch of common fish is caught. If toxfish are present as a common fish, they have a further chance to be chosen here.
+
+The size of the batch is determined by the fishers [[Fishing Yield]], and a 1x-6x multiplier based on the fish population (max at 300 fish pop). If fish are caught, the fish population is reduced by the size of the batch.
+
+Animals cannot receive negative or positive fishing outcomes. On top of that, animals are only able to catch toxfish and any other common fish, but not uncommon fish. They'll also fish up as many fish as they need to fill their hunger, but no more.
+
+<!-- Technically, a body of water can have an unlimited amount of common/uncommon fish types, and the game fully supports it. However, without mods modifying the code, a body of water can't generate more than a single common and uncommon fish. -->
+
+===Graphs===
+<!-- If you have a way to word this better than me, please do. Or perhaps it should go somewhere else? -->
+====Fish population multiplier====
+The base amount of fish for a given biome (including [[Landmarks#Additional_features|certain tile features]]), is further modified by amount of water tiles:
+{| class="wikitable"
+|-
+| {{Graph:Chart | width = 400 | height = 200 | xAxisTitle = Amount of water cells | yAxisTitle = Amount of fish (%) | type = line | x = 74.9, 75, 400, 1600, 3200, 6000, 20000 | y1 = 0, 3, 4, 10, 24, 80, 100}}
+|}
+
+====Common fish presence chance====
+{| class="wikitable"
+|-
+| {{Graph:Chart | width = 400 | height = 200 | xAxisTitle = Amount of water cells | yAxisTitle = Chance for common fish | type = line | x = 74.9, 75, 100, 200 | y1 = 0, 5, 50, 100}}
+|}
+
+====Uncommon fish presence chance====
+{| class="wikitable"
+|-
+| {{Graph:Chart | width = 400 | height = 200 | xAxisTitle = Amount of water cells | yAxisTitle = Chance for uncommon fish | type = line | x = 399.9, 400, 1600, 6000 | y1 = 0, 10, 25, 70}}
+|}
+
+==== Chance for toxfish replacement: ====
+{| class="wikitable"
+|-
+| {{Graph:Chart | width = 400 | height = 200 | xAxisTitle = Polluted tiles (%) | yAxisTitle = Toxfish catch chance (%) | type = line | x = 5, 80 | y1 = 0, 60}}
+|}
+
+====Fishing yield population multiplier====
+{| class="wikitable"
+|-
+|{{Graph:Chart | width = 400 | height = 200 | xAxisTitle = Fish population | yAxisTitle = Base amount of caught fish (%) | type = line | x = 25, 100, 300 | y1 = 100, 300, 600}}
+|}
+
+=== Rare catches ===
+Fishing rare catches offer a large variety of items, the majority of which are available in all biomes, with a small number only available in some biomes.
+
+==== Biome-independent items ====
+The most common items are [[map]]s, followed by [[book]]s and [[drug]]s.
+
+==== Biome-related items ====
+These items are only present in specific [[biome]] subsets:
+* Hot: [[arid shrubland]], [[desert]], [[extreme desert]], [[grassland]], [[lava field]]
+* Cold: [[boreal forest]], [[cold bog]], [[tundra]], [[ice sheet]], [[sea ice]], [[glacial plain]]
+* Temperate: [[temperate forest]], [[temperate swamp]]
+* Tropical: [[tropical rainforest]], [[tropical swamp]]
+* [[Glowforest]] has its own subset
+* Fishing is not possible in the [[scarlands]].
+
+For most biomes, these items are biome-appropriate [[apparel]], [[animal]] corpses, and fertilized [[egg]]s. In the [[glowforest]] it's [[psilocap]] and [[raw fungus]].
+
+==== Fishing rare catch table ====
+A rare catch gives one of the following items:
+{{Fishing Rare Catches}}
+
+== Analysis ==
+[[File:Fishing room.png|250px|thumb|right|Enclosed room made using [[bridge]]s, allowing fishing in a lake despite the ice.]]
+
+Fishing is an effective way to get food and occasional resources, especially on harder biomes where farming and hunting is more difficult. It can be done year-round if there is a non-frozen body of water, and its yield is not influenced by temperature. It can also be used as a way to train Animals skill, which is otherwise difficult to train from low levels without tamed animals that can be milked or shorn. It can be performed by [[children]]{{BiotechIcon}} at 3 years old.
+
+However, fishing has two major downsides:
+* Fishing takes a lot more work when compared to growing crops. A base colonist with Animals 10 takes around {{Ticks|7500}} of work to catch 1 batch of fish,{{Check Tag|Verify|Quick in-game testing, precise value needed}} resulting in 6 fish or 1.5 raw nutrition. A base colonist with Plants 8 only takes {{Ticks|1850}} of work to sow and harvest 5 [[rice plant]]s for 30 rice, equating to the same raw nutrition, or {{Good|{{%|1850/7500 round 2}}}} the work. This ignores the chance of fish escaping or fishing up non-food items.
+* Fishing is limited by the bodies of water available. A standard coastal tile, with ~300 max fish, can permanently sustain around 1-2 colonists with standard meals. More pawns can be sustained for a while, but the fish will eventually run out. Larger bodies of water can provide more fish (1000+ max fish) but the map itself will be restricted by the water.
+
+Fishing does have its advantages: there is no need to wait for crops to grow, it can be done year-round, and it can find rare items. In addition, fishing provides [[meat]]. Fishing may be more efficient than using regular animals, especially in biomes where grazing cannot be done year-round. Still, fishing is much less work efficient than growing crops before considering skill.
+
+Note some food can be wasted if used in a [[nutrient paste dispenser]]. Nutrient paste requires 0.3 nutrition to make. Fish are worth 0.25 or 0.5 nutrition per item, so if only fish are in the dispenser, the dispenser will round up and consume 0.5 nutrition instead (resulting in the same efficiency as standard meals).
+
+===Enclosed fishing===
+While fresh water will naturally freeze when temperatures are below {{Temperature|0}}, it is still possible to fish. This can be done by creating an enclosed room on top of the lake, building [[bridge]]s or [[heavy bridge]]s to support walls, then heating up the room using a [[campfire]] or [[heater]]. This will melt the ice, enabling access to a full body of water's worth of fish whilst keeping colonists warm.
+
+Ocean water will not freeze, but building such rooms may still be useful to keep colonists warm.
+
+== Special events ==
+[[Gill rot]] is a fungus that will slowly make the fish decline in population. Low fish populations will make fishing less effective.
+
+== Version history ==
+* [[Odyssey DLC]] Release - Added.
+* [[Version/1.6.4528|1.6.4528]] - Animals specialist increases fishing speed and fishing yield
+* [[Version/1.6.4566|1.6.4566]] - Added a separate fishing work type to work tab.
+[[Category:Zones]]

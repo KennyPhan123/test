@@ -1,0 +1,78 @@
+{{Version Nav|date=2022-09-21}}
+
+== Features/Improvements ==
+=== Gameplay ===
+* Added: Poison synthesis to research tree
+* Added: When creating a colony, if there is a task which no selected character can perform, a dialog warning is now shown
+* Added: Postpone option for a number of wanderer will join quests
+* Added: Bills which include the ability to smelt, destroy or burn weapons and apparel now have options to choose between biocoded, non-biocoded, clean or tainted. Other special allowances for ingredient menus also added with this feature
+* Improved: Memory usage during randomisation of characters
+* Improved: Scrolling through history records for colonist with a lot of past/recent log previously caused performance to drop
+* Improved: When multiple of the same object were selected, choosing to build a copy previously caused performance stuttering
+
+=== UI ===
+* Added: Ability to delete a restriction group which is applied to a colonist in the “Assign menu” with a warning
+* Added: On-screen UI showing distance between landing beacons
+* Added: The expiring quest message now has jump to option
+* Added: The alerts and messages for the mech buildings now has jump to the source option
+* Added: Cancel option to “Abandon All” items confirmation prompt in the Caravan UI
+* Added: Change tab prompt on each tab on form caravan to improve player experience
+* Added: Select prompt to extras menu
+* Added: custom language-based styling to support upcoming language additions
+* Improved: “Allow all” toggling no longer affects special filters
+* Improved: UI only enters area build mode, if player confirms selection from area menu instead of every time the player exits area management screens
+* Improved: Scroll position correctly resets when tab change occurs
+* Improved: Moved control prompts on build mode to differentiate between actions and make the actions clearer
+* Improved: The button prompt to close the completed research message was not consistent to other dialogs - changed to X/A
+* Improved: Warning, alert and good colours adjust to new levels when forming a caravan to better reflect status
+* Improved: Info button when multiple objects are selected only shows when option is possible
+
+=== Localisation === 
+* Added: Translations for labels in Animal pen management screens and Permit tabs
+
+=== Audio ===
+* Added: Sound effects in Bills and trade menus
+
+== Fixes ==
+=== Gameplay ===
+* Balanced: Corrected filth generation rate 
+* Balanced: Wild plant regrowth
+* Balanced: XP gained for crafting and creating art
+* Balanced: Weather updating and rate of change
+* Balanced: Ground penetrating mineral scanner speed
+* Fixed: Opening content of Shuttle after instructing a colonist to enter would sometimes cause a soft-lock for shuttle-related Royalty quests
+* Fixed: Inventory bindings now consistently apply when entering the game for a second time
+* Fixed: Threat pause setting is now working consistently
+* Fixed: Error on suspending and returning to the game while loading
+* Fixed: Debug warning when multiple use of psylink abilities occur
+* Fixed: Errors on entirely dead or empty colony
+* Fixed: Pressing the Cross/A button in social tab of caravan details did not switch selection to the log panel
+* Fixed: Attempting to replant a tree caused the controller to not respond, on occasions when the interact option was displayed
+* Fixed: Gracefully handling a colonist dying while player is in the mood menu
+* Removed: unintentional ability to rename dead colonists
+
+=== UI ===
+* Fix: Pregnancy icon now updates correctly for animal menu
+* Fixed: The Scrollbar to navigate the quest description within the “Quests” UI wasn’t functioning on occasion
+* Fixed: Operation names could be too long causing the pause UI to overflow or disappear from the health bill list
+* Fixed: Selecting details via the “i” prompt in gear page of an active caravan will now correctly show detailed information
+* Fixed: Occasions when a details card blocked the view of stats for items in various screens 
+* Fixed: Issue caused when no colonists left in your colony, and you opened the Work or Schedule menu
+* Fixed: Having a Colonist who is "Incapable of Violence" as your warden caused the "None of your wardens is capable of violence" pop-up to incorrectly appear when you open the "Prisoner" tab 
+* Fixed: The highlight of items within the “Allowed” list of bills ingredients was partially cut off when the last item in the list was selected
+* Fixed: Holding down the button to confirm trade would previously open the interact menu of a faction on the world map
+* Fixed: ‘Caravan arrived at weather controller’ message could not be deleted after reforming caravan from a site
+* Fixed: Overflowing text in the Difficulty level section of the pause menu
+* Fixed: Forming a caravan while leaving details page open caused the details page to remain on the screen
+* Fixed: Navigating to Needs tab of a refugee pawn causes an error to occur. Players may have seen incorrect details
+* Fixed: Highlight selection bar disappeared when scrolling through long social logs while at 3x speed
+* Removed: Spacing and line breaks being added when the work description is updated
+* Removed: Incorrect L1/LB prompts from non-colonist objects in target mode, such as queue actions and cancel when transport pods were selected
+* Removed: Incorrect option to train “guard” appeared on animals with “Trainability - None” 
+* Removed: UI being rendered twice which caused map appears too dark under translucent windows
+
+=== Audio ===
+* Fixed: Changes to Ambient sounds options didn’t take immediate effect when adjusted in Settings menu
+
+=== Localisation ===
+* Fixed: Missing characters in Korean localisations when italics were used in English

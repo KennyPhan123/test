@@ -1,0 +1,27 @@
+{{Version Nav}}
+
+This update brings bugfixes and other adjustments.
+
+If you're willing to help test the unstable branch in future, please join this Discord server: https://discord.gg/FYBsdNX
+
+== Change log ==
+* Fix: Endless cycle of the prisoner getting out of bed, and the doctor putting the prisoner in the bed
+* Fix: Tortured artist gets inspiration after being hit by berserk psycast.
+* Most traders now buy musical instruments.
+* A mitigation for: Pawn allocated several times to Bed or Throne. Until the root cause is known.
+* Fix: Cloth sandbags not displaying as 1.0 color.
+* Fix: A count was used as a caravan guard for the empire
+* Show detection chance for illegal psycasts attached to the mouse.
+* All weapons are now biocodable. All lodgers now arrive with their weapons biocoded. Lodgers can now drop non biocoded weapons via UI (e.g. if the player made him equip it).
+* Fix: some mech cluster building can be deconstructed but won't drop anything. Fix mech capsule not being deconstructible.
+* Use SketchThing.OccupiedRect in AnyThingOutOfBounds function.
+* Fixed: IEDs spawn shells when destroyed.
+* Traders can no longer sell slaves with royal titles.
+* PawnGenerationRequest properties are now public.
+* Change CellHasCrops check to early out if no plants found.
+* Add an out of bounds check to CanSpawnClusterAt.
+* Pawn lend quest no longer sends shuttles onto maps that don't have enough pawns available.
+* Removed pawn beauty stat min/max clamping.
+* Changes to shuttle landing spot finder based on feedback.
+* Reworked field hand and drill arm so their stats don't fight each other. Instead of reducing manipulation, they now affect movement speed.
+* Waterproof conduit cost reduced 40 steel -> 10 steel.

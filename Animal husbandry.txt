@@ -1,0 +1,436 @@
+{{for|a more general overview|Animals}}
+All [[animals]] in Rimworld can be tamed, providing certain benefits to the colony. Some animals can be trained, others require enclosed spaces ([[pen]]) to remain in the colony, and yet others can lose their tame state if left alone for too long.
+
+Any animal that requires a [[pen]] to remain on the colony is considered a farm animal and can't be trained<ref>This is not an intrinsic property, just so happens that every currently implemented pen animal lacks the ability to be trained.</ref>. Farm animals don't lose tameness due to wildness.
+
+== Acquisition ==
+There are five options to obtain tamed animals. Having them as starting pets, taming wild animals, buying them from traders, having them birth offspring, and getting them from events.
+
+=== Taming ===
+Wild animals can be tamed by an [[Work#Handle|animal handler]] with sufficient Animal skill and available food. Tamed animals may be bred, trained, traded, slaughtered, or farmed.
+
+[[File:TameButton.png|64px|left|link=]]
+Wild animals may be marked for taming using the Tame order.
+
+An [[Work#Handle|animal handler]] will attempt to tame marked animals using non-meal, non-drug food fitting that animal's diet. The chance to tame an animal depends on the animal's wildness (displayed on the info window) and the handler's 'Tame animal chance' stat. This stat is determined by the colonist's [[Skills#Animals|animals skill]], [[Health#Manipulation|manipulation]], [[Health#Talking|talking]], and [[Health#Hearing|hearing]]. When a handler fails to tame an animal there is a cooldown period of {{ticks|30000}}, or {{#expr:30000/2500}} in-game [[Time|hours]], before another attempt can be made. There is also a chance it will turn [[manhunter]] and start attacking the handler and others. The revenge chance is shown on the [[Menu#Wildlife|Wildlife]] menu. After a while the handler may drop unused food.
+
+Tamed animals will wander around the map until they are lead to a pen with a [[pen marker]], for pen animals, or restricted to a designated [[area]], for all other animals. Restricting non-pen animal movement using areas is usually necessary to prevent unwanted food consumption and animal [[filth]].
+
+==== Tame chances ====
+{{for|the calculation details|Tame Animal Chance}}
+Besides the animal handler's own skill, the wildness of the animals also counts.
+
+Tame chances undergo a post-processing curve.
+*An animal with 0% wildness has a x2 taming chance.
+*An animal with 50% wildness has normal taming chance.
+*An animal with 100% wildness cannot be tamed at all.
+
+The net effect of the curve above is the expression <code>2*(1-wildness)</code>. The minimum value it can take is '''0''' at 100% wildness while the max is '''2'''(duplicates chance) at 0% wildness.
+
+Currently, the hardest to tame animal is the [[alpha thrumbo]].{{OdysseyIcon}} Assuming 20 [[Skill#Animal skill|Animal skill]], the base taming chance is 1.28%.
+
+[[List of animals|Animals]] with 0% wildness remain tame forever. If wildness is above 0% (shown on the wildlife tab), the animals requires maintenance to not revert into its wild state. Farm animals will remain tamed regardless of wildness.
+
+==== Minimum skill ====
+{{for|the calculation details|Minimum Handling Skill}}
+Most animal species have a '''Minimum handling skill''' stat which determines the Animal [[skill]] necessary of a handler pawn. The game will briefly produce a warning message if no colonist has enough skill to handle the animal.
+
+Any animal with 0% wildness can be handled even with 0 skill. This list includes but is not limited to: {{#ask: [[Minimum Handling Skill::0]]| template = DLC Icons | link = none | sep = ,<nowiki> </nowiki> | sort = From DLC, Name}}.
+
+The highest minimum skill required by any animal in Core is 10, which is required by both the [[Megasloth]] (97% wildness) and [[Thrumbo]] (98.5% wildness). This increases to 14 with the [[DLC]] enabled, such as the [[alpha thrumbo]].{{OdysseyIcon}}
+
+=== Starting pets ===
+For most [[Scenario system|scenarios]], new colonies will include a random pet that is already tamed. These pets will have a random name and are always bonded with a pawn. The animals available are determined by the handling skills of the starting pawn(s), as the game will not provide a pet that cannot be handled by the colony. This rule is broken when all colonists have animal handling disabled, as the game will still provide animals that require periodic taming.
+
+The chance of getting an animal is influenced by the "petness" stat, with a higher value resulting in a higher chance. The selection of animals also influences the chances, for example a Husky has a {{#expr: {{#show:Husky|?Petness}}/({{#ask: [[Minimum Handling Skill::0]] [[Petness::>>0]] | ?Petness = | mainlabel=- | sep=+ }}) * 100 round 2}}% chance of being selected with the highest handling skill at 0, while at level 10+ the chance is only {{#expr: {{#show:Husky|?Petness}}/({{#ask: [[Petness::>>0]] | ?Petness = | mainlabel=- | sep=+ }}) * 100 round 2}}% (assuming all DLCs are active). Hares, snowhares, capybaras and cobras are all under 1% chance due to the petness being so low and the animal handling being so high.
+<!--
+-->{{#vardefine:petnessSum0|{{#expr:{{#ask: [[Minimum Handling Skill::0]] [[Petness::>>0]] | ?Petness = | mainlabel=- | sep=+ }} }} }}<!--
+-->{{#vardefine:petnessSum2|{{#expr:{{#ask: [[Minimum Handling Skill::<2]] [[Petness::>>0]] | ?Petness = | mainlabel=- | sep=+ }} }} }}<!--
+-->{{#vardefine:petnessSum3|{{#expr:{{#ask: [[Minimum Handling Skill::<3]] [[Petness::>>0]] | ?Petness = | mainlabel=- | sep=+ }} }} }}<!--
+-->{{#vardefine:petnessSum4|{{#expr:{{#ask: [[Minimum Handling Skill::<4]] [[Petness::>>0]] | ?Petness = | mainlabel=- | sep=+ }} }} }}<!--
+-->{{#vardefine:petnessSum5|{{#expr:{{#ask: [[Minimum Handling Skill::<5]] [[Petness::>>0]] | ?Petness = | mainlabel=- | sep=+ }} }} }}<!--
+-->{{#vardefine:petnessSum6|{{#expr:{{#ask: [[Minimum Handling Skill::<6]] [[Petness::>>0]] | ?Petness = | mainlabel=- | sep=+ }} }} }}<!--
+-->{{#vardefine:petnessSum8|{{#expr:{{#ask: [[Minimum Handling Skill::<8]] [[Petness::>>0]] | ?Petness = | mainlabel=- | sep=+ }} }} }}<!--
+-->{{#vardefine:petnessSum9|{{#expr:{{#ask: [[Minimum Handling Skill::<9]] [[Petness::>>0]] | ?Petness = | mainlabel=- | sep=+ }} }} }}<!--
+-->{{#vardefine:petnessSumMax|{{#expr:{{#ask: [[Petness::>>0]] | ?Petness = | mainlabel=- | sep=+ }} }} }}<includeonly><onlyinclude>
+|-
+! {{DLC Icons|{{{?Name}}} }}
+{{!}} {{{?Minimum Handling Skill}}}
+{{!}} {{{?Petness}}}
+{{!}} {{#ifexpr: {{{?Minimum Handling Skill}}} = 0 | {{#expr: {{{?Petness}}} / {{#var:petnessSum0}} * 100 round 2 }} % |-}}
+{{!}} {{#ifexpr: {{{?Minimum Handling Skill}}} < 3 | {{#expr: {{{?Petness}}} / {{#var:petnessSum2}} * 100 round 2 }} % |-}}
+{{!}} {{#ifexpr: {{{?Minimum Handling Skill}}} < 4 | {{#expr: {{{?Petness}}} / {{#var:petnessSum3}} * 100 round 2 }} % |-}}
+{{!}} {{#ifexpr: {{{?Minimum Handling Skill}}} < 5 | {{#expr: {{{?Petness}}} / {{#var:petnessSum4}} * 100 round 2 }} % |-}}
+{{!}} {{#ifexpr: {{{?Minimum Handling Skill}}} < 6 | {{#expr: {{{?Petness}}} / {{#var:petnessSum5}} * 100 round 2 }} % |-}}
+{{!}} {{#ifexpr: {{{?Minimum Handling Skill}}} < 7 | {{#expr: {{{?Petness}}} / {{#var:petnessSum6}} * 100 round 2 }} % |-}}
+{{!}} {{#ifexpr: {{{?Minimum Handling Skill}}} < 9 | {{#expr: {{{?Petness}}} / {{#var:petnessSum8}} * 100 round 2 }} % |-}}
+{{!}} {{#ifexpr: {{{?Minimum Handling Skill}}} < 10 | {{#expr: {{{?Petness}}} / {{#var:petnessSum9}} * 100 round 2 }} % |-}}
+{{!}} {{#expr: {{{?Petness}}} / {{#var:petnessSumMax}} * 100 round 2 }} %
+</onlyinclude></includeonly><div><li style="display: inline-table;">
+{| {{STDT| sortable c_08 text-center}}
+! rowspan="2" | Animal
+! rowspan="2" | Handling skill<br/>required
+! rowspan="2" | Petness
+! colspan="9" | Chance with max handling skill:
+|- {{#vardefine:style|style="background-color:#52a76f; border-color:#428659"}}
+! {{#var:style}} | 0 !! {{#var:style}} | 2 !! {{#var:style}} | 3 !! {{#var:style}} | 4 !! {{#var:style}} | 5 !! {{#var:style}} | 6 !! {{#var:style}} | 8 !! {{#var:style}} | 9 !! {{#var:style}} | Max
+|-
+{{#ask: [[Petness::>>0]]
+ | ?Name = ?Name
+ | ?Minimum Handling Skill = ?Minimum Handling Skill
+ | ?Petness = ?Petness
+ | named args = yes
+ | format = template
+ | template = :Animal husbandry
+ | link = none
+ | sort = From DLC, Name
+}}
+|}
+</li></div>
+
+=== Buying ===
+{{Main|Trade}}
+Animals bought from [[trader]]s are always tamed. Different types of traders have different kinds of animals in stock.
+
+=== Events ===
+{{Main|Events}}
+The events [[Events#Animal self-tamed|animals join]] and [[animal self-tamed]] give your colony tamed animals.
+
+== Interactions ==
+Some animal species can be trained by colonists. With Guard trained, they will follow their master around if designated to do so. 
+
+Some species may be harvested to produce [[milk]], [[chemfuel]], or [[wool]]. Still others passively lay frequent eggs.
+
+When injured, they will go to animal sleeping spots/ beds for rest and treatment.
+
+=== Naming ===
+Newly tamed or purchased animals are distinguished by numerical designations(“Muffalo 1”, “Muffalo 2”, etc.). When an animal forms a bond with a colonist, it is given a unique name. Names can be changed by the player from the "Training" tab in the inspect pawn pane. Names of tamed animals are not shown on the map unless the option is turned on, via Menu, Options, 'Show animal names'.
+
+Animals may have a gender-specific name (i.e. hen, rooster, buck, doe), or a lifestage-specific name (piglet, puppy), or even a gender/lifestage-specific name (cockerel).
+
+It is possible for animals which have been lost or sold to reappear later as part of a wild herd. This will only happen with animals which occur naturally on your colony's biome. They will still have the name you gave them (including automatic names like "Muffalo 2"), but will need to be tamed and trained again.
+
+=== Nuzzling ===
+Occasionally, some animals can nuzzle colonists, giving the colonist {{Thought|desc=A cute animal nuzzled me|label=Nuzzled|value=+4|multi=0.5|stack=3|duration=1}} or {{Thought|desc=It is so cute, and supportive, and loving... I feel fulfilled and refreshed.|label=Nuzzled|value=+6|multi=0.5|stack=3|duration=1}} {{Check Tag|test|How do these two stages interact?}}. Animals can nuzzle anyone regardless of handling skill unless they are a [[psychopath]] or [[inhumanized]] {{AnomalyIcon}}.
+
+The following animals can nuzzle:
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_08 text-center}}
+! Animal !! Nuzzle {{MTB}} in hours
+|-
+{{#ask: [[Nuzzle Mtb Hours::>>0]]
+ | ?Nuzzle Mtb Hours
+ | format = template
+ | template = Ask Table Formatter
+ | link = none
+ | sort = From DLC, Name
+}}
+|}
+</li></div>
+
+=== Bonding ===
+Animals may '''bond''' with their handlers or doctors, and [[#Starting pets|starting pets]] have a chance to start the game bonded with a random starting colonist. A bond gives the following [[mood]] effects to non-[[psychopath]]ic or [[inhumanized]]{{AnomalyIcon}} pawns. All moodlets stack with each other.
+* {{Thought|desc=Being together with my bonded animal makes me feel better.|label=Bonded animal's [[#Training|master]]|value=+5|stack=1}}
+* {{Thought|desc=I should be together with my bonded animals.|label=Not bonded animal's master|value=-3|stack=1}}
+* {{Thought|desc=My special bonded animal was given away!|label=Bonded animal given away|value=-10|stack=10|duration=60}}. This will also inflict <abbr title="Stacking 10 times for a maximum of -100 or 2 times for a maximum of -20 for the same other pawn">{{--|10}}</abbr> [[opinion]] of the pawns that performed the action for 60 days.
+* {{Thought|desc=Such a tender, unique animal. This universe is evil!|label=Bonded animal died|value=-8|stack=5|duration=20}}. This will also inflict <abbr title="Stacking 300 times for a maximum of -3000 or 10 times for a maximum of -100 for the same other pawn">{{--|10}}</abbr> [[opinion]] of the pawns that performed the action for 60 days.
+* {{Thought|desc=Such a tender, unique animal. This universe is evil!|label=Bonded animal lost|value=-8|stack=5|duration=20}}
+* {{Thought|desc=My bonded animal was banished!|label=Bonded animal banished|value=-6|stack=5|duration=6}}
+* {{Thought|desc=Such a tender, unique animal. Why did it have to go?|label=Bonded animal released|value=-5|stack=5|duration=15}}
+
+Bonds can occur when:
+* When an animal has its wounds tended by a colonist, there is a constant 0.4% chance that the animal will bond with the colonist, regardless of Animals skill. If the animal is wild, the animal will instantly self-tame, disregarding wildness.
+* When tamed, an animal also has a 1% chance to bond with the tamer.
+* When successfully trained, an animal has a 0.7% chance to bond with the trainer.
+* Every {{Ticks|2500}}, if an animal is within 12 tiles and has line of sight to their master, there is a 0.1% chance to bond.
+* For starting animals, the % to start bonded with an owner appears to be related to the innate [[Property:Wildness|wildness]] (i.e. horses and camels will start bonded more often than cobras or wargs).  Domestic animals (wildness 0 - dogs, cats, some farm animals) will always start bonded.
+Pawns with the [[Ideoligion#Animal connection|Animal connection: Strong]] precept in their [[ideoligion]]{{IdeologyIcon}} have a ×2 [[Bond Chance Factor|multiplier on bonding chance]]. 
+Pawns with the [[Ideoligion#Bonding|Bonding: Disapproved]] precept in their [[ideoligion]]{{IdeologyIcon}} cannot be bonded with, but they will not lose existing bonds, nor their mood effects, if the precept is added via a fluid ideoligion's reformation. Pawns converted into a non-bonding ideoligion will renounce all their bonds at the moment of conversion.
+
+Bonded animals are also easier for their master to train (5x multiplier on chance). Animals are given a unique name upon bonding.
+
+On the death of the pawn an animal is bonded with, it can go into one of two animal mental breaks; [[manhunter]], in which it will attack all nearby entities, or [[confusion]], in which it will wander around, uncontrollably, similar to dazed humans.
+
+=== Training ===
+{{Stub|section=1|reason=Odyssey training effects}}
+Tamed animals may be trained depending on their trainable intelligence. Click the animal's training tab to specify training targets and view progress.
+
+The stats of the training pawn, including Animals skill or [[Global Work Speed]], have no effect on how fast each training session is completed. Instead, increased skill improves a pawn's [[Train Animal Chance]], resulting in the animal requiring fewer training attempts in the first place. After a training attempt on a tamed animal, there is a 6 in-game hour waiting period before that same animal can be trained again.
+
+Once Guard is trained, they can be assigned a master which they will follow. You can configure when the animal will follow their master, by toggling whether or not the animal will follow while doing field work (hunting/taming), or while drafted, from the Animals menu.
+
+Many skills require multiple steps to fully train. Guard has three steps, rescue and attack have two, and haul has seven. An animal also has five stages of tameness to maintain.
+
+Animal skills decay over time. The speed of decay ranges from {{ticks/gametime|720000}} at 0% [[wildness]] to {{ticks/gametime|360000}} at 100% wildness. Any animal with over 10.1% [[wildness]] can additionally lose the tamed status unless it is a [[pen animal]]. For this reason, if you do not have handlers meeting the animal's minimum handling skill, it is best to sell or slaughter before your animal returns to the wild.
+
+When an animal skill decays, one point of training is subtracted from one of the 'outermost' skills at random, ie: skills with no trained dependents. 'Guard' will always remain trained until all its dependent skills have fully decayed, and only after Guard is decayed can an animal lose tameness.
+
+{|class="wikitable sortable mw-collapsible" style="text-align: center;"
+|+ '''Orders Table'''
+!colspan=2 | Orders !! Training <br/>intelligence<br/> required || Steps || Description
+|- id="Guard"
+! Guard !! [[File:Obedience.png|link=]]
+| Simple || 3 || style="text-align: left;"| An animal trained in guard will follow its master and attack nearby aggressors. An animal's master is listed on the Training tab and on the Animals menu. Multiple animals may be assigned to a single master. <br/>Note that assigning an animal to the pawn it is bonded with will give that pawn a permanent {{+|5}} moodlet, and if a bonded animal is ''not'' assigned to its bonded pawn, that pawn gets a permanent {{--|3}} moodlet. Mood effects stack with multiple bonded animals, and one pawn can have both the positive and negative moodlets from two bonded animals
+|- id="Attack"
+! Attack !! [[File:Release.png|link=]] 
+| Intermediate || 5 || style="text-align: left;"| Using the 'attack' command, animals may leave their master's immediate area to attack enemies. When the 'Animals Attack' command is turned off, animals will guard their master and only attack enemies nearby.
+|- id="Rescue"
+! Rescue !! [[File:Rescue.png|link=]]
+| Advanced || 2 || style="text-align: left;"| Animals trained in rescue will rescue its master as well as nearby colonists in a radius of 75. Only species of sufficient size can rescue.<!-- On vanilla, a Labrador's 0.75 body size is the lowest it goes.-->
+|- id="Haul"
+! Haul !! [[File:Haul_animal.png|link=]]
+| Advanced || 7 || style="text-align: left;"| Animals trained in hauling will [[haul]] just as colonists do, although each species has a specific carrying capacity according to its size. Only species of sufficient size can haul, but this requirement is lesser than for rescuing. <br/>Animals will perform hauling intermittently with an <abbr title="mean time between">MTB</abbr> of 1.5 hours. Apart from being able to move, animals also need an intact jaw in order to haul.  Animals will only haul within their allowed area if they are assigned to one.<!-- On vanilla, a carrier's 0.667 body size is the lowest it goes.-->
+{| {{STDT| sortable c_08 text-center mw-collapsible mw-collapsed}}
+! Animal !! <abbr title=c/s>Move Speed</abbr> !! Carrying Capacity !! <abbr title=c*i/s>Haul Throughput</abbr> !! Wildness !! <abbr title=Nutrition lost per day>Hunger Rate</abbr> !! Filth Rate !! data-sort-type=number|<abbr title=days>Juvenile Age</abbr> !! data-sort-type=number|<abbr title=days>Maturity Age</abbr> !! <abbr title=°C>Min Temperature</abbr> !! <abbr title=°C>Max Temperature</abbr>
+|-
+{{#ask:[[Category:Animals]] [[Can Train Haul::True]] [[Carrying Capacity::+]]
+| named args=yes
+| ?Name=?Name
+| format = template
+| template = Animals/Haul Row
+}}
+|}
+|- id="Attack target"
+! Attack target {{OdysseyIcon}} !! [[File:Special.png|link=]]
+| - || 2
+| style="text-align: left;" | The following animals can be trained to Attack Target: {{#ask: [[Category:Animals]] [[Can Train Attack Target::true]] | format = template | template = DLC Icons | link = none | sep=<nowiki>, </nowiki> | sort = from DLC, Name}}
+{{Quote|Command the animal to attack a specific target|Attack Target description}}
+|- id="Comfort"
+! Comfort{{OdysseyIcon}} !! [[File:Special.png|link=]]
+| - || 2
+| style="text-align: left;" | The following animals can be trained to comfort: {{#ask: [[Category:Animals]] [[Can Train Comfort::true]] | format = template | template = DLC Icons | link = none | sep=<nowiki>, </nowiki> | sort = from DLC, Name}}
+{{Quote|The animal will be more emotionally supportive. It will nuzzle more often, and make your colonists happier when it does so.|Comfort description}}
+|- id="Forage"
+! Forage{{OdysseyIcon}} !! [[File:Forage.png|link=]]
+| - || 3
+| style="text-align: left;" | {{See also|Foraging}}
+The following animals can be trained to forage: {{#ask: [[Category:Animals]] [[Can Train Forage::true]] | format = template | template = DLC Icons | link = none | sep=<nowiki>, </nowiki> | sort = from DLC, Name}}
+{{Quote|"The animal will occasionally find berries, mushrooms, or food. Animals will find more food in biomes with higher forageability. Foraging can only be done on fertile terrain."|Foraging description}}
+|- id="Dig"
+! Dig{{OdysseyIcon}} !! [[File:Special.png|link=]]
+| - || 3
+| style="text-align: left;" | The following animals can be trained to dig: {{#ask: [[Category:Animals]] [[Can Train Dig::true]] | format = template | template = DLC Icons | link = none | sep=<nowiki>, </nowiki> | sort = from DLC, Name}}
+{{Quote|The animal will mine rock designated for mining. Animals are generally slow and inefficient at mining.|Dig description}}
+|- id="War trumpet"
+! War trumpet{{OdysseyIcon}} !! [[File:Special.png|link=]]
+| - || 2
+| style="text-align: left;" | The following animals can be trained to War Trumpet: {{#ask: [[Category:Animals]] [[Can Train War Trumpet::true]] | format = template | template = DLC Icons | link = none | sep=<nowiki>, </nowiki> | sort = from DLC, Name}}
+{{Quote|Command the animal to release a powerful roar. This has a chance to cause hostile humans and animals to tremble in fear, reducing their movement speed and manipulation.|War Trumpet description}}
+|- id="Thrumbo roar"
+! Thrumbo roar{{OdysseyIcon}} !! [[File:Special.png|link=]]
+| - || 2
+| style="text-align: left;" | The following animals can be trained to Thrumbo Roar: {{#ask: [[Category:Animals]] [[Can Train Thrumbo Roar::true]] | format = template | template = DLC Icons | link = none | sep=<nowiki>, </nowiki> | sort = from DLC, Name}}
+{{Quote|Command the thrumbo to release a deafening roar. This has a chance to cause hostile humans and animals to tremble in fear, reducing their movement speed and manipulation.|Thrumbo Roar description}}
+|- id="Terror roar"
+! Terror roar{{OdysseyIcon}} !! [[File:Special.png|link=]]
+| - || 2
+| style="text-align: left;" | The following animals can be trained to Terror Roar: {{#ask: [[Category:Animals]] [[Can Train Terror Roar::true]] | format = template | template = DLC Icons | link = none | sep=<nowiki>, </nowiki> | sort = from DLC, Name}}
+{{Quote|Command the alpha thrumbo to release a deafening roar. This has a chance to send nearby hostile humans and animals fleeing in terror.|Terror Roar description}}
+|- id="Sludge spew"
+! Sludge spew{{OdysseyIcon}} !! [[File:Special.png|link=]]
+| - || 2
+| style="text-align: left;" | The following animals can be trained to Sludge Spew: {{#ask: [[Category:Animals]] [[Can Train Sludge Spew::true]] | format = template | template = DLC Icons | link = none | sep=<nowiki>, </nowiki> | sort = from DLC, Name}}
+{{Quote|Command the larva to spray an acidic sludge all over the target area. Once trained, larva will only spew sludge when commanded.|Sludge Spew description}}
+|- id="Egg spew"
+! Egg spew{{OdysseyIcon}} !! [[File:Special.png|link=]]
+| - || 2
+| style="text-align: left;" | The following animals can be trained to Egg Spew: {{#ask: [[Category:Animals]] [[Can Train Egg Spew::true]] | format = template | template = DLC Icons | link = none | sep=<nowiki>, </nowiki> | sort = from DLC, Name}}
+{{Quote|Command the queen to launch an egg sac and a spray of acidic sludge at the target area. Once trained, the queen will only produce eggs when commanded|Egg Spew description}}
+|}
+
+=== Combat ===
+Once Guard is trained, animals will gather around their master upon drafting, and will attack nearby threats, or (unintentionally) block ranged attacks for their master. This is configurable and can be disabled by disabling follow during drafted.
+
+With Attack trained, animals can be released to attack threats from a distance.  Even colonists incapable of Violence can send their assigned animals into battle.
+
+Animals can be downed during combat, and can be rescued by colonists or other animals capable of Rescue.
+
+=== Slaughtering ===
+{{Stub|section=1|reason=This section is included in the [[RimWorld_Wiki:To-do#Butchery project|Butchery project]] - there are a number of factors that are in need of verification and potentially addition to this section. See that page for details}}
+
+[[File:SlaughterButton.png|64px|left|link=]] Tamed animals may be slaughtered selecting the animal and clicking the Slaughter button, or by using the Slaughter tool from the Orders menu. An animal marked in this way will be slaughtered by an animal handler. The handler need not be equipped with a weapon but must be [[incapable|capable of violence]]. This job takes ???{{Check Tag|How long?}} to perform and instantly kills the animal - the animal will not resist, flee, or fight. You can also set up an auto-slaughter order in the animals tab, configurable to limit the amount of male, female, and pregnant animals in a pen.
+
+Animals killed through damage suffer a 66% multiplier to [[Meat Amount]] and [[Leather Amount]]. Slaughtering, throat slitting a downed-but-not-injured animal as a hunting task, the "euthanize by cut" [[operation]], and the [[Rituals#Animal sacrifice|Animal Sacrifice]] ritual{{IdeologyIcon}} all result in a careful slaughter and avoid the 66% modifier.
+
+If you try to slaughter a bonded animal, the game will warn you about it due to the mood impact this has on the animal's master.
+{{clear|left}}
+
+==== Auto-Slaughter ====
+[[File:Autoslaughter.png|thumb|left|200px|Auto-slaughter menu]]
+Via the Animals button on the bottom bar is a "Manage auto-slaughter.." option. Auto-slaughter allows the player to automatically cull animals above a defined threshold. 
+
+Total Animals, Male/Female Adults, Male/Female Young are all definable amounts that the player can set. If the current animal count exceeds any of the defined amounts in any of these columns the eldest allowed animal of that exceeded type is slaughtered. These 5 left-most columns function as OR operators. The two rightmost columns allow the player to allow the slaughtering of pregnant or bonded animals if desired.
+
+=== Other Interactions ===
+==== Caravans ====
+{{Main|Pack animal}}
+These animals can graze, meaning they don't usually require food during a [[caravan]]. (This may not be true when traveling across cold or inhospitable [[biome]]s, like tundra or deserts, or in winter in general.) When carrying items in their inventory, they will appear to have packs on, which disappear when unloaded.
+
+==== Release to Wild ====
+Unwanted animals can be released to the wild using a command next to the slaughter button. Releasing bonded animals also causes a mood debuff to master of the animal.
+
+==== Social ====
+Each animal has a Social tab that lists that animal's human [[bond]]s and familial relations. Clicking an entry jumps to that bond's counterpart on the map. Animals, even wild ones, have a small chance of bonding with a colonist everytime they interact. Bonded animals are given a unique name by their Master. Animals assigned to Guard a bonded human will give their master a permanent +5 mood thought. Humans who are not the master of their bonded animal receive a -5 "Not bonded animal's master" thought. Animals do not have a mood meter. Humans may have more than one bonded animal, but animals may only have one human bond.
+
+==== Trade goods ====
+Tamed animals may be sold to [[trade]]rs. Animals purchased from traders will be already tamed. Bulk goods traders offer pets and farm animals while exotic goods traders carry most of the wild species. Traders offering animals will attempt to at least carry a breeding pair of a core farm animal.
+
+== Products ==
+Certain tame animals produce {{Icon Small|eggs}} [[eggs]], {{Icon Small|milk}} [[milk]], {{Icon Small|wool}} [[wool]], or {{Icon Small|chemfuel}} [[chemfuel]]. Milking (including chemfuel) and shearing sometimes fails, which is indicated with a brief "product wasted" message. This and the amount of wool, milk or chemfuel respectively is dependent on the [[Animal Gather Yield]] stat of the pawn.
+
+=== Eggs ===
+{{Main|Eggs}}
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_08 text-center}}
+! Animal !! Fert. Egg !! Unfert. Egg !! Can lay<br>unfertilized !! Nutrition<br/>per Egg !! Avg Eggs<br/>per Clutch !! Laying<br/>Interval !! Avg Eggs<br/>per Day !! Egg Nutrition<br/>per Day !! <abbr title="Assuming they sleep on the ground and mate as soon as possible.">Needed<br/>Males / Female</abbr> !! Daily Hunger<br/>Rate !! Daily Egg Nutrition<br/>per Hunger
+|-
+{{#ask: [[Egg Laying Interval::+]]
+| named args=yes
+| ?Name = ?Name
+| ?Eggs Per Clutch Average = ?Eggs Per Clutch Average
+| ?Egg Laying Interval = ?Egg Laying Interval
+| ?Eggs Per Season Average = ?Eggs Per Season Average
+| ?Can Lay Unfertilized Eggs = ?Can Lay Unfertilized Eggs
+| ?Real Hunger Rate = ?Real Hunger Rate
+| format = Template
+| template = Egg Table Row
+| link = none
+| sort = From DLC, Name
+}}
+|}
+</li></div>
+
+=== Milk ===
+{{Main|Milk}}
+<div><li style="display: inline-table;">{{#vardefine:formatterNumeratorVariable1|Daily Milk Average}}{{#vardefine:formatterDenominatorVariable1|Real Hunger Rate}}{{#vardefine:formatterNumeratorVariable2|Daily Milk Average}}{{#vardefine:formatterDenominatorVariable2|Real Hunger Rate}}{{#vardefine:formatterFactorVariable2|0.05}}
+{| {{STDT| sortable c_08 text-center}}
+! Animal !! Milk Amount !! Milking<br/>Interval !! Milk/Day<br/>(Average) !! Milk / food consumed<br/>per day !! Nutrition / food consumed<br/>per day
+|-
+{{#ask: [[Concept:Production Animals]] [[Milk Amount::+]] [[Milk Name::Milk]]
+| ?Milk Amount
+| ?Milking Interval Days
+| ?Daily Milk Average
+| format = template
+| template = Ask Table Formatter
+| link = none}}
+|}
+</li></div>{{#vardefine:formatterNumeratorVariable1}}{{#vardefine:formatterDenominatorVariable1}}{{#vardefine:formatterNumeratorVariable2}}{{#vardefine:formatterDenominatorVariable2}}{{#vardefine:formatterFactorVariable2}}
+
+=== Wool ===
+{{Main|Wool}}
+<div style="display:inline-table">
+{| {{STDT| sortable c_08 text-center}}
+! Animal !! Wool Name !! Wool Amount !! Shearing Interval !! Daily Wool Average
+|-
+{{#ask: [[Concept:Production Animals]] [[Wool Amount::+]]
+| ?Wool Name
+| ?Wool Amount
+| ?Shearing Interval Days
+| ?Daily Wool Average
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Name}}
+|}</div>
+
+=== Chemfuel ===
+{{Main|Chemfuel}}
+<div style="display:inline-table">
+{| {{STDT| sortable c_08 text-center}}
+! Animal !! Chemfuel Amount !! Milking Interval !! Daily Chemfuel Average
+|-
+{{#ask: [[Concept:Production Animals]] [[Milk Name::Chemfuel]]
+| ?Milk Amount
+| ?Milking Interval Days
+| ?Daily Milk Average
+| format = template
+| template = Ask Table Formatter
+| link = none}}
+|}</div>
+
+== Feeding ==
+=== Grazing wild plants ===
+Letting your animals graze is one of the easiest way to feed your [[herbivorous]], omnivorous grazer and dendrovorous animals. While the later can only "graze" live [[tree]]s, the former two can eat all other living [[plant]]s. Depending on the animals in the colony it might therefore be beneficial to cut all trees or other plants respectively in the grazing area.
+
+The simplest way to feed non-strictly-carnivorous animals is to create a large [[Pens|pen]] where animals can graze on the wild grass and brambles. The [[pen marker]] will show the number of animals the wild plants can sustain (measured in [[cow]]s, [[goat]]s, and [[chicken]]s. When the weather is too cold or too hot though, plants grow slower or even stop growing. Furthermore, plants become totally inedible when the temperature drops below {{Temperature|-10}}, because they all are considered leafless, grass as well as trees. This mechanic is not explained in-game, and is quite puzzling to unaware players. It looks like animals starve on top of good-looking grass. See [[Plants#Temperature|Plants]] for more info.
+
+While grazing might need the least amount of work, it can also be highly inefficient for smaller animals. Most wild plants have 0.5 nutrition (except the rather uncommon {{#ask: [[Category:Plants]] [[Type2::Wild]] [[Nutrition::<<0.5]] | format = template | template = DLC Icons | sort = From DLC, Name | sep = ,&nbsp; | link = none}}). The amount of nutrition an animal can hold is dependent on its [[body size]] and its life stage. They will start eating as soon as they hold less than 25 % of the maximum nutrition they can hold (see [[saturation]] for more info). This means all adult animals with a body size below {{#expr: 2/3 round 2}} will start eating before they can fit the full 0.5 nutrition of most plants, with the excess getting wasted. This is even more pronounced for baby and juvenile animals since they are smaller. Only species that have an adult body size of at least {{#expr: 2/3/0.75 round 2}} will not be overeating when juvenile and with an adult body size of at least {{#expr: 2/3/0.6 round 2}} as babies as well.
+
+=== Growing haygrass ===
+While the land can sustain a sizable population of animals grazing on it, it doesn't have an infinite supply and can still be depleted. Winter can also stop grass growth, leaving nothing for your grazing animals to eat. 
+
+If you need to raise a lot of animals, e.g. an exponentially growing flock of [[chicken]]s, you will need to grow haygrass to sustain them all. You also need to have a stock of haygrass to keep animals fed through the winter.
+
+Haygrass gives a total of 0.9 nutrition (18 units of [[hay]]) when fully grown and harvested, compared to 0.5 of grass. However, you have to keep your hungry animals from getting to it otherwise they'll only get a max of 0.2 nutrition from eating the plant.
+
+=== Making kibble ===
+[[Kibble]] is a kind of animal feed made with both plant and animal sources. It can be made using haygrass and any kind of meat, including human or insect meat. Producing kibble at a [[butcher table]] costs 1 nutrition of vegetables or hay and 1 nutrition of meat or animal products, and produces 2.5 nutrition of kibble. 
+
+All animals except [[warg]]s can eat it, so it makes a good way to feed your animals using mixed sources of nutrition, including those that animals won't normally eat. Kibble also lasts forever under a roof so you can store it and use it to feed animals when in need, such as in winter when there is nothing to eat.
+
+When you feed a population of herbivorous or omnivorous animals kibble made from their own meat or milk, the formula for their nutrition efficiency can be calculated as:
+
+{{math|''nutritionEfficiency(kibble)'' {{=}} 2.5&times;''nutritionEfficiency(raw vegetables)'' - 1}}
+In effect, this means that for any animal population that has a nutrition efficiency of at least 0.667, it is more efficient to feed them kibble rather than hay. It is worth noting, however, that this will increase the amount of butchering and cooking labour needed to support the higher animal population required.
+
+=== Corpse freezer ===
+In typical RimWorlder fashion, you can use a freezer to preserve the corpses of raiders (or dead colonists if you're desperate) so you can feed omnivorous and carnivorous animals. This allows you to make use of corpses while avoiding heavy mood penalties from butchering humans or eating their flesh.
+
+== Raising ==
+=== Pens ===
+{{main|Pens}}
+Pens are areas which farm animals are assigned to. These [[pen animals]] will be passive, meaning that hostiles will not attack these animals, and vice versa. Tamed pen animals must be put in a pen, or they will occasionally attempt to leave the map, meaning they disappear forever. Colonists will automatically rope roaming farm animals and place them in the pen. The borders of pens can be marked with: solid [[wall]]s, [[door]]s, [[fence]]s, [[fence gate]]s, and [[animal flap]]s. To mark an enclosed area as a pen, place a pen marker inside. The pen marker also tells you the amount of animals that can be sustained in a pen with wild plants, measured in [[cow]]s, [[goat]]s, and [[chicken]]s. An attached, roofed, and heated/cooled coop can be built with an [[animal flap]] as a door instead of a regular [[door]] for animals to stay warm or cool down during extreme temperatures.
+
+=== Pet care ===
+Tamed animals that have a social bond to a person will affect the master's mood positively while living and negatively if killed (-8 for 20 days). This bond will either improve resistance against mental breaks or cause them. Because of the effect they cause on feelings, these creatures should be given special treatment, or any animal worth keeping alive.
+
+These are a few tips to keep them safe:
+
+* Keep them indoors by creating a new animal zone within a room. 
+* Keep them at the Home area after building a base wall.
+* Prey pets should not be left wandering around in unrestricted area.
+* Hunt their predators to prevent surprise attacks (or just wall the base in to prevent predators from coming in).
+* Patrol your perimeter by zooming your view out to a larger scale but not to full, just enough to spot their sleeping animation of flying ZZZs while they rest at night. Sweeping your surroundings once every night shall keep you aware of threat presence.
+* Animals can get into drugs, store them in specialized storage areas and use a zone to prevent them from accessing it, depending on size they may be prone to overdose or getting blackout from alcohol, being more dangerous with [[Boomrat|Boomrats]] which can set fire to the storage area. Pen Animals should also be kept away from storage areas for this reason.
+
+Note: The first three of these tips only apply to pet animals. Farm animals are passive while in pens, though if the pen is built with [[fence]]s, predators can still pass through.
+
+== Butchering ==
+{{Rewrite|section=1|reason=This section needs to better explain the assumptions and math built into gthe different results, ideally with a worked example using property calls to stay matched to the table result. see Talk page for some discussion}}
+{| class="wikitable sortable mw-collapsible"
+! rowspan="2" | Animal
+! rowspan="2" | Diet
+! rowspan="2" data-sort-type="number" | <abbr title="The tameness of animals that are blocked by fences or that have low enough wildness does not decay">Tameness Decay Interval (Days)</abbr>
+! rowspan="2" | Produces
+! rowspan="2" data-sort-type="number" | Produce / Day
+! rowspan="2" data-sort-type="number" | Produced Nutrition / Day
+! rowspan="2" | <abbr title="Assuming they sleep on the ground and mate as soon as possible.">Males / Female</abbr>
+! colspan="3" | Baby Slaughter
+! colspan="3" | Adult Slaughter
+|-
+! <abbr title="Units of nutrition of meat produced per female per day when babies are slaughtered, assuming constant pregnancy.">Meat Nutrition / Day</abbr>
+! <abbr title="Units of nutrition consumed per day by one adult plus the nutrition consumed by the required males per female.">Consumption / Day</abbr>
+! <abbr title="Meat Nutrition/Consumption">Meat Nutrition Efficiency</abbr><ref name="Milking">For a list that does include milking see [[List of animals]].</ref>
+! <abbr title="Units of nutrition of meat produced per female per day when adults are slaughtered, assuming constant pregnancy.">Meat Nutrition / Day</abbr>
+! <abbr title="Units of nutrition consumed per day by one adult plus the nutrition consumed by the required males per female, including the offspring's consumption up to adulthood.>Consumption / Day</abbr>
+! <abbr title="Meat Nutrition/Consumption">Meat Nutrition Efficiency</abbr><ref name="Milking"/>
+{{#ask: [[Type::Animal]] [[Mate Mtb Hours::+]] | format = template | template = Animal Rearing Row | named args = true | ?Name = animal | sort = From DLC, Name | limit = 500}} 
+|}
+<sup>a)</sup> Babies will overeat when grazing most wild plants. See [[Animal_husbandry#Grazing wild plants|above]] or [[saturation]] for more info.<br/>
+<sup>b)</sup> Babies and juveniles will overeat when grazing most wild plants. See [[Animal_husbandry#Grazing wild plants|above]] or [[saturation]] for more info.<br/>
+<sup>c)</sup> Babies, juveniles and adults will overeat when grazing most wild plants. See [[Animal_husbandry#Grazing wild plants|above]] or [[saturation]] for more info.
+
+== Notes ==
+<references/>
+
+== Version history ==
+* [[Version/0.12.906|0.12.906]] - Animals can now be tamed and trained. Animals now sleep. Animals can be pregnant and give birth. Animals can be named when tamed or when nuzzling. Animals produce animal filth. Animals have “life stages” related to their ages. Eggs, Milk and Wool production added. Nuzzling added. Animals have life expectancies.
+* [[Version/0.12.910|0.12.910]] - Rebalanced animal hunger rate and animal hauling.
+* [[Version/0.13.1135|0.13.1135]] - Added new animals, some of which will hunt people. Some animals are now predators, including colony pets (e.g. cats catch squirrels). Animals can gnaw corpses apart directly now. Animal bonding added.
+* Beta 19/1.0 Update - Obedience training steps 1 -> 3. Nuzzle target search distance 15 -> 40. Nuzzled memory duration 0.5 days->1 day, stacked effect multiplier 0.95->0.5, stack limit 10
+* [[Version/1.1.0|1.1.0]] - Changed animal rescue radius from 30 to 75. Fix: Jawless animals can still haul.
+* [[Version/1.2.2719|1.2.2719]] - Removed naming animals through nuzzling. Animals only get names by bonding, or if given names by the player (so you can implicitly tell which animals are bonded by seeing which have names).
+* [[Version/1.3.3066|1.3.3066]] - Major overhaul to animals: added multiple animal-related buildings, added pens, decreased trainability of [[boomalope]] to none, added sterilization, added release to wild.
+
+{{nav|animal}}
+[[Category:Creatures]]

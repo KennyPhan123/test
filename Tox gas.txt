@@ -1,0 +1,113 @@
+{{Biotech}}
+{{Stub|reason=0) Cleanup - Analyis is Summary and vice versa 1) Needs a general gas format standard that can also be used for blind smoke and tox gas - below is a rough suggestion but only a suggestion 2) [[Toxic Environment Resistance]] prevents toxic build up from this gas. Does it also affect the stat from exposure? 3) Toxic lung genes interaction with this 4) How does the tox gas exposure and tox build up tick up over time? How does it relate to gas density? etc? Actual math required }}
+'''Tox gas''' is a [[gas]] created by several tox weapons or by burning or damaged [[toxic wastepack]]s. It causes irritation and [[toxic buildup]]. 
+
+== Causes ==
+{{Stub|section=1|reason=How much is created by each option and for multishot, at what rate, does 1 wastepack being destroyed generate as much gas as a full stack of 5? wb 1 stack of 5 vs 5 stacks of 1?}}
+Tox gas can be created in multiple ways. The most easy way is to use one of the tox weapons. 
+
+* [[Toxbomb launcher]]
+* [[Tox grenades]]
+* [[Tox pack]]
+* [[IED tox trap]]
+* [[Tox shell]]
+
+Another way to create tox gas is by damaging [[toxic wastepack]]s, such as by burning them.
+
+== Mechanics ==
+Tox gas burns the lungs and eyes and induce tox buildup if surrounded by it long enough.
+
+Tox gas exposure:
+
+* '''Tox gas (mild)'''
+: (Density: 0% - 19%): 
+** {{++|10%}} [[Pain]] 
+** {{--|10%}} [[Sight]]
+** {{--|15%}} [[Breathing]]
+* '''Tox gas (moderate)'''
+: (Density: 20% - 49%): 
+** {{++|15%}} [[Pain]] 
+** {{--|25%}} [[Sight]]
+** {{--|30%}} [[Breathing]]
+* '''Tox gas (severe)'''
+: (Density: 50% - 100%): 
+** {{++|25%}} [[Pain]] 
+** {{--|40%}} [[Sight]]
+** {{--|60%}} [[Breathing]]
+
+An exploding [[IED tox trap]] in an open field fills a radius of 7 tiles with a severe dose of tox gas. The following table shows experimentally determined amounts of time for the density to fall below 50% at a given distance from the tox trap. General [[gas]] mechanics apply, meaning separate sources are additive as they "fill" the available volume to 100% and spread out to a larger distance. This makes it relatively easy/cheap to cover a wide area with enough gas to last throughout a raid at severe density.
+
+{| class="wikitable"
+|+ halftime by distance
+|-
+! distance [tiles] !! time [s]
+|-
+| 7|| 7
+|-
+| 6|| 17
+|-
+| 5|| 22
+|-
+| 4|| 30
+|-
+| 3|| 37
+|-
+| 2|| 43
+|}
+
+A severe dose of tox gas results in a ~40% reduction in [[Shooting Accuracy]], ~40% reduction in [[Melee Hit Chance]], and a ~25% reduction in [[Moving]]. Meaning an enemy raid subjected to a severe dose of tox gas will effectively only be half as dangerous to your colony (explosives nonwithstanding). This does not yet include the shortened combat capacity of pawns as they start any encounter with a ~20% reduced [[Consciousness]] and at medium [[Pain]].
+
+The following table shows the time to reach and the effects of toxic buildup under severe tox gas exposure, facilitated by detonating a tox trap (not keeping density at 100% throughout).
+
+{| class="wikitable"
+|+ toxic buildup effects under tox gas exposure
+|-
+! state!! time [s] !! Shooting Accuracy [%]
+|-
+| healthy || 0 || 60
+|-
+| tox gas (severe) + toxic buildup (initial)|| 3|| 34
+|-
+| tox gas (severe) + toxic buildup (minor)|| 10 || 32
+|-
+| tox gas (severe) + toxic buildup (moderate)|| 20 || 31
+|-
+| tox gas (severe) + toxic buildup (serious)|| 30 || 31
+|-
+| tox gas (severe) + toxic buildup (extreme)|| 37|| immobilized
+|-
+| tox gas (severe) + toxic buildup (extreme)|| 67|| immobilized
+|}
+
+As can be seen, the reduction in [[Shooting Accuracy]] due to [[toxic buildup]] alone is negligible, however the effects of Tox Gas are substantial. Under the test conditions (initial exposure to 100% and decreasing gas density over time), it took 37 seconds for a pawn to be downed from extreme toxic buildup. Without additional source of gas, it can be assumed toxic buildup will not reach 100% under normal conditions. This is actually advantageous, as there is enough time to capture any surviving pawns after the raid is over as the death on downed chance still applies.
+
+At a density of 100% tox gas, toxic buildup takes about 45 seconds to reach 100%, resulting in guaranteed death.
+
+The [[Tox immunity]] and [[Total antitoxic lungs]] genes render a pawn immune to tox gas. Wearing a [[gas mask]] will prevent the direct effects of tox gas but will only substantially reduce the toxic buildup effect, not totally eliminate it. While additional protection factors can mitigate toxic buildup, the genes may still be preferable since gas masks prevent the wearing of helmets.
+
+Tox gas follows general gas mechanics. A high density of the gas can easily be reached in smaller spaces (for example a small valley).
+
+Note that a pawn with Breathing 60% or less will die instantly upon reaching severe tox gas buildup. This includes an otherwise healthy pawn who is missing a lung. A single [[Detoxifier lung]] is not efficient enough to prevent this. 
+
+== Analysis ==
+ {{stub|reason=Uses, management, strategies, vent use? etc}}
+Although toxic buildup is often dangerous, the tox gas effect itself is a more serious concern when dealing with [[Pirates#Waster_Pirates|Waster Pirates]]. If your colonists are not immune, they suffer the full irritant effect of the gas ''regardless of their resistance to toxins'' - it is not blocked by any combination of equipment, genes or bionics except for those listed here.
+
+Only humans are affected by the irritant effect of tox gas - animals {{Check Tag|Entities?|Are entities from Anomaly affected by the tox gas if so is it only a few or are there some exceptions.}} ignore the gas effect entirely, but are still affected by toxic buildup. 
+
+Tox gas buildup has no lingering effects once it has dissipated, so is largely ineffective against raiders that aren't already injured. To use this effectively, one possibility is to combine tox gas and explosives - blasts that inflict high damage but don't immediately incapacitate can quickly down if boosted with pain shock, toxic buildup or breathing penalties.
+
+When using tox gas to kill en-mass it is worth noting that the corpses may rot from toxic buildup and thus miss out from potential food and any leathers from them, not only does this reduce potential wealth gain from raids but also poses a risk of [[Lung rot]] if there is a high density of corpses and colonists have any reason to go to the kill zone such as to do repairs, replace traps, cleaning, etc. Any valuable survivors may also develop cancers or [[Dementia]] which can render them far less useful.
+
+To defend against tox gas it's best to handle any equivalent dangers first and then move particularly vulnerable defenders. 
+Alternatively, any combination of war animals, turrets and mechanoids could handle more hazardous areas while your colonists focus on keeping them covered. 
+
+Unless you do not care about pollution, creating tox gas by shooting or burning it is not recommended as the [[toxic wastepack]]s will eventually detoriate.
+
+== Version history ==
+* [[Biotech DLC]] Release - Added.
+* [[Version/1.4.3555|1.4.3555]] - All gasses, including tox gas, can now travel through [[vent]]s.
+* [[Version/1.4.3580|1.4.3580]] - Fix: Being carried by a pawn removes any tox gas buildup on a pawn.  
+* [[Version/1.5.4062|1.5.4062]] - Fix: Error on tox gas death.
+
+[[Category:Gas]]

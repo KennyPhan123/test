@@ -1,0 +1,193 @@
+{{BackToTutorials}}<br/>
+
+In this tutorial you will learn different ways to make XML mods compatible and how to link existing and modded recipes, facilities and buildings with eachother.
+
+=What you'll learn=
+
+You'll learn:
+# How to implement your changes into existing Defs
+# How to fix compatibility between XML mods
+# How to make modded recipes and buildings interact with eachother without overwriting the base game
+# How to link facilities to buildings
+# How to add Biomes to animals for the sake of spawning them<br/><br/>
+
+=Overwriting defs=
+===Core defs===
+'''Don't.''' 
+
+Use [[Modding Tutorials/PatchOperations| xpath]] instead. 
+===Mod defs===
+{{Main|Modding Tutorials/PatchOperations#PatchOperationFindMod}}
+'''Don't.'''
+
+Use [[Modding Tutorials/PatchOperations| xpath]] instead. You can use [[Modding Tutorials/PatchOperations#PatchOperationFindMod|PatchOperationFindMod]] or [[Modding Tutorials/PatchOperations#PatchOperationConditional|PatchOperationConditional]] to cleverly add your Defs and Patches.
+
+====Example====
+<source lang="XML"><?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>SomeOtherMod</li>
+        </mods>
+        <match Class="PatchOperationReplace">
+            <xpath>/Defs/ThingDef[defName="ExampleDefFromSomeOtherMod"]/isTechHediff</xpath>
+            <value>
+                <isTechHediff>true</isTechHediff>
+            </value>
+        </match>
+    </Operation>
+</Patch>
+</source>
+
+=Referencing defs=
+===RecipeDef===
+
+In case your mod adds a new recipe for the [[Electric stove]], you might think it's necessary to patch or overwrite part of its ThingDef. This is however completely unnecessary - the C# code base contains a tag which allows you to make your ''recipe'' choose which ''building'' to attach to (instead of the other way round):<br/>
+
+<source lang="xml"><?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<RecipeDef>
+		<defName>BakeBread</defName>
+			<recipeUsers>
+				<li>ElectricStove</li>
+			</recipeUsers>
+			<!-- more tags -->
+		<!-- more tags -->
+	</RecipeDef>
+</Defs></source><br/>
+
+If you want your ''building'' to choose which ''recipes'' to display, you do the following:<br/>
+
+<source lang="xml"><?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef>
+		<defName>BakeryOven</defName>
+		<recipes>
+			<li>BakeBread</li>
+		</recipes>
+		<!-- more tags -->
+	</ThingDef>
+</Defs></source><br/>
+
+The BakeBread recipe will now show up in both the BakeryOven and Electric Stove, without the mod having to modify Electric Stove's <recipes> list.<br/><br/>
+
+There's also the option to define the recipeUsers in the Bread ThingDef:
+
+<source lang="xml"><?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef>
+		<defName>DeliciousBread</defName>
+		<recipeMaker>
+			<recipeUsers>
+				<li>BakeryOven</li>
+				<li>ElectricStove</li>
+			</recipeUsers>
+		</recipeMaker>
+		<!-- more tags -->
+	</ThingDef>
+</Defs></source><br/>
+
+And if all else fails, there's still xpath:
+
+<source lang="xml"><?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="BakeryOven"]/recipes</xpath>
+		<value>
+			<li>BakeBread</li>
+		</value>
+	</Operation>
+</Patch>
+</source>
+
+===Facilities===
+
+Buildings with the "CompAffectedByFacilities" compClass can choose which facilities should link to them. In the base game it isn't used the other way round - facilities don't do this - but the C# code base has a tag for it:<br/>
+
+<source lang="xml"><?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef>
+		<defName>BadIdeaShredder</defName>
+		<comps>
+			<li>
+				<compClass>CompFacility</compClass>
+				<statOffsets>
+					<ResearchSpeedFactor>0.05</ResearchSpeedFactor>
+				</statOffsets>
+				<linkableBuildings>
+					<li>ResearchBench</li>
+				</linkableBuildings>
+			</li>
+		</comps>
+		<!-- more tags -->
+	</ThingDef>
+</Defs></source><br/>
+
+Linking existing facilities to modded buildings is also possible by doing what existing buildings already do:<br/>
+
+<source lang="xml"><?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef>
+		<defName>MyFirstWorkshop</defName>
+		<comps>
+			<li>
+				<compClass>CompAffectedByFacilities</compClass>
+				<linkableFacilities>
+					<li>ToolCabinet</li>
+				</linkableFacilities>
+			</li>
+		</comps>
+		<!-- more tags -->
+	</ThingDef>
+</Defs></source><br/>
+
+BadIdeaShredder can now be attached to the vanilla ResearchBench, and the vanilla ToolCabinet can now be attached to MyFirstWorkshop.<br/><br/>
+
+===Animals===
+If you want your animal to show up in certain biomes, you don't need patch those biomes. You can add the biomes by defName and the game will resolve the cross reference.
+
+<source lang ="XML">
+<Defs>
+	<ThingDef>
+		<defName>MyExampleAnimal</defName>
+		<race>
+			<wildBiomes>
+				<TropicalRainforest>0.08</TropicalRainforest>
+				<TemperateForest>0.09</TemperateForest>
+				<BorealForest>0.09</BorealForest>
+			</wildBiomes>
+		</race>
+		<!-- more tags -->
+	</ThingDef>
+</Defs>
+</source>
+
+== Conditional on DLC or other mods ==
+Sometimes you only need something to be there when a specific mod or DLC is present. For that we use MayRequire and MayRequireAnyOf.
+
+'''Note:''' the following examples use the DLC for the required content, but it could just as easily require "sarg.alphagenes" as "Ludeon.RimWorld.Biotech".
+
+MayRequire requires the presence of all listed content. For example a list of pawns may include:
+<pre>
+<Tribal_Child MayRequire="Ludeon.RimWorld.Biotech">10</Tribal_Child>
+</pre>
+This requires that the [[Biotech DLC]] be enabled for this entry in the list to be used. 
+
+Multiple mods/DLC may be listed to required all of them at once for example:
+<pre>
+<li MayRequire="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Ideology">DarklightBrazier</li>
+</pre>
+Which requires both the [[Royalty DLC]] and the [[Ideology DLC]] to be enabled at the same time - if only one is enabled, it won't be included.
+
+Finally there is MayRequireAnyOf which enables content when any of the list is present. For example:
+<pre>
+<li MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Biotech">
+</pre>
+Would enable the content when Royalty and/or Biotech are enabled. 
+
+=Next up=
+
+* [[Modding_Tutorials/Modifying defs|Def Class Compatibility]] explains compatibility from the Def Class side of things.
+* [[Modding Tutorials/Compatibility with DLLs|Create a DLL patch]] continues explanations on compatibility patching and referencing existing items.
+
+[[Category:Modding tutorials]]

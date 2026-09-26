@@ -1,0 +1,194 @@
+{{Anomaly}}
+{{About|the group activities added by the [[Anomaly DLC]]|the individual psychic abilities added by the [[Royalty DLC]]|Psycasts|other rituals such as those from the [[Ideology DLC]]|Rituals|the ideoligious precept that requires the [[Ideology DLC]]|Psychic rituals (precept)}} 
+
+'''Psychic rituals''' are rituals like those in [[Ideology DLC]] but with the psychic side of [[Royalty DLC]]. They are performed at an [[Psychic ritual spot]] and can be improved with stuff like [[void sculpture]]s and [[shard beacon]]s and [[Apparel]] like [[ritual mask]]s and [[ceremonial hood]]s.{{Check Tag|Verify|What benefit from this apparel that isn't just psy sense?}} They allow to psychically induce an insane [[Archotech]] machine-god who can distort reality.
+
+== Mechanics ==
+Each ritual requires one pawn to be the Invoker, with up to four or six additional colonists able to participate as Chanters, depending on the ritual. All rituals except for Void Provocation also require either [[Bioferrite]] or a [[Shard]] which is consumed at the completion of the ritual, and rituals targeting a specific pawn require the pawn to able to walk or be carried to the ritual site, though they do not need to be conscious. Pawns with 0% [[Psychic sensitivity]] such as [[Ghoul]]s, [[psychically deaf]] pawns and [[psychically dead]] pawns, cannot be a participant '''nor''' the target of a ritual.
+
+[[Children]]{{BiotechIcon}} may participate in rituals in any position as long as they are not babies. The only exception is the Chronophagy ritual, where they cannot be the Invoker.
+
+Slaves and temporary pawns such as refugees and guests may also participate in rituals so long as they meet the requirements for psychic sensitivity and age.
+
+The quality of any ritual is based on the following factors.
+* The [[Psychic sensitivity]] of the Invoker. An Invoker with 100% Sensitivity will grant a {{+|12%}} bonus, this increases proportionally up to a maximum of  {{+|25%}} at 281%{{Check Tag|282%?|Conflicting reports}} sensitivity.{{Check Tag|Penalty?|Wb lower sensitivity?}} The Psychic Sensitivity of any Chanters do not affect the outcome.
+* The number of Chanters. Filling all spots (whether there are four or six) grants a {{+|20%}} bonus, with each pawn contributing an equal portion of the bonus.
+* The number '''and''' [[Quality]] of any nearby [[Void sculpture]]s, up to six sculptures. Normal and Good give {{+|2%}} each, Excellent and Masterwork gives {{+|3%}} each and legendary gives {{+|5%}}.
+* The number of nearby [[Shard beacon]]s. Each beacon provides an {{+|8%}} bonus, to a max of {{+|32%}} at four Beacons.
+* Psychic ritual quality offset from the [[Psychic rituals (precept)|Psychic rituals]] [[Precept]].{{IdeologyIcon}} Invokers and Chanters with Exalted Psychic Rituals will increase the quality by {{+|10%}} * (Number of pawns with precept/Number of pawns participating), while pawns with the Disapproved precept will reduce it by {{--|10%}} * (Number of pawns with precept/Number of pawns participating)
+
+== List of rituals ==
+{{Stub|section=1|reason=PsychicRitualRoles.xml defines valid states for targets of rituals}}
+{| {{STDT| sortable c_07 text-valign:top}}
+|-
+! Ritual !! Ritual Effect !! Ritual Duration !! Ritual Cooldown !! Ritual Cost !! Required Research
+|- id="Void provocation"
+! width=64px height=64px | [[Void provocation]]<br>{{Icon Small|Void provocation|64}}
+| ''{{Q|Void provocation|Description}}''
+----
+Triggers an entity related event to occur, outside of the normal storyteller timing, but with a quality dependent chance to render the invoker comatose.
+| {{Ticks/gametime|{{Q|Void provocation|Ritual Duration}}}}
+| {{Ticks/gametime|{{Q|Void provocation|Ritual Cooldown}}}}
+| ''None''
+| [[Research#{{Q|Void provocation|Required Research}}|{{Q|Void provocation|Required Research}}]]<!--
+
+-->
+|- id="Draw animals"
+! width=64px height=64px | [[Draw animals]]<br>{{Icon Small|Draw animals|64}}
+| ''{{Q|Draw animals|Description}}''
+----
+Causes a herd of [[animals]] to enter the map, but with a quality dependent chance for the herd to be [[manhunter]]s infected with [[scaria]].
+| {{Ticks/gametime|{{Q|Draw animals|Ritual Duration}}}}
+| {{Ticks/gametime|{{Q|Draw animals|Ritual Cooldown}}}}
+| {{Required Resources|Draw animals}}
+| [[Research#{{Q|Draw animals|Required Research}}|{{Q|Draw animals|Required Research}}]]<!--
+
+-->
+|- id="Draw shamblers"
+! width=64px height=64px | [[Draw shamblers]]<br>{{Icon Small|Draw shamblers|64}}
+| ''{{Q|Draw shamblers|Description}}''
+----
+Causes a horde of [[shambler]]s to enter the map, with the [[combat power]] of the horde being quality dependent.
+| {{Ticks/gametime|{{Q|Draw shamblers|Ritual Duration}}}}
+| {{Ticks/gametime|{{Q|Draw shamblers|Ritual Cooldown}}}}
+| {{Required Resources|Draw shamblers}}
+| [[Research#{{Q|Draw shamblers|Required Research}}|{{Q|Draw shamblers|Required Research}}]]<!--
+
+-->
+|- id="Chronophagy"
+! width=64px height=64px | [[Chronophagy]]<br>{{Icon Small|Chronophagy|64}}
+| ''{{Q|Chronophagy|Description}}''
+----
+De-ages, and removes some age related ailments from, the invoker while aging the target.
+| {{Ticks/gametime|{{Q|Chronophagy|Ritual Duration}}}}
+| {{Ticks/gametime|{{Q|Chronophagy|Ritual Cooldown}}}}
+| {{Required Resources|Chronophagy}}
+| [[Research#{{Q|Chronophagy|Required Research}}|{{Q|Chronophagy|Required Research}}]]<!--
+
+-->
+|- id="Psychophagy"
+! width=64px height=64px | [[Psychophagy]]<br>{{Icon Small|Psychophagy|64}}
+| ''{{Q|Psychophagy|Description}}''
+----
+Provides a buff to the invoker's [[psychic sensitivity]] with a quality dependent duration, at the cost of rendering the target permanently [[psychically dead]].
+| {{Ticks/gametime|{{Q|Psychophagy|Ritual Duration}}}}
+| {{Ticks/gametime|{{Q|Psychophagy|Ritual Cooldown}}}}
+| {{Required Resources|Psychophagy}}
+| [[Research#{{Q|Psychophagy|Required Research}}|{{Q|Psychophagy|Required Research}}]]<!--
+
+-->
+|- id="Skip abduction"
+! width=64px height=64px | [[Skip abduction]]<br>{{Icon Small|Skip abduction|64}}
+| ''{{Q|Skip abduction|Description}}''
+----
+Skips a random, comatose hostile pawn to the [[psychic ritual spot]].
+| {{Ticks/gametime|{{Q|Skip abduction|Ritual Duration}}}}
+| {{Ticks/gametime|{{Q|Skip abduction|Ritual Cooldown}}}}
+| {{Required Resources|Skip abduction}}
+| [[Research#{{Q|Skip abduction|Required Research}}|{{Q|Skip abduction|Required Research}}]]<!--
+
+-->
+|- id="Draw fleshbeasts"
+! width=64px height=64px | [[Draw fleshbeasts]]<br>{{Icon Small|Draw fleshbeasts|64}}
+| ''{{Q|Draw fleshbeasts|Description}}''
+----
+Causes a horde of [[fleshbeasts]] to enter the map, with the [[combat power]] of the horde being quality dependent.
+| {{Ticks/gametime|{{Q|Draw fleshbeasts|Ritual Duration}}}}
+| {{Ticks/gametime|{{Q|Draw fleshbeasts|Ritual Cooldown}}}}
+| {{Required Resources|Draw fleshbeasts}}
+| [[Research#{{Q|Draw fleshbeasts|Required Research}}|{{Q|Draw fleshbeasts|Required Research}}]]<!--
+
+-->
+|- id="Provoke pit gate"
+! width=64px height=64px | [[Provoke pit gate]]<br>{{Icon Small|Provoke pit gate|64}}
+| ''{{Q|Provoke pit gate|Description}}''
+----
+Causes a pit gate to form on the map, with the [[combat power]] of the defending [[fleshbeasts]] being quality dependent.{{Check Tag|Verify|Verify quality effect - replicate on provoke pit gate page as well}}
+| {{Ticks/gametime|{{Q|Provoke pit gate|Ritual Duration}}}}
+| {{Ticks/gametime|{{Q|Provoke pit gate|Ritual Cooldown}}}}
+| {{Required Resources|Provoke pit gate}}
+| [[Research#{{Q|Provoke pit gate|Required Research}}|{{Q|Provoke pit gate|Required Research}}]]<!--
+
+-->
+|- id="Imbue death refusal"
+! width=64px height=64px | [[Imbue death refusal]]<br>{{Icon Small|Imbue death refusal|64}}
+| ''{{Q|Imbue death refusal|Description}}''
+----
+Grants the target one charge of the [[death refusal]] ability per ritual with the maximum amount of stacked charges being two, allowing them to resurrect from [[death]], at the cost of reducing their [[skills]] by a quality dependent amount.
+| {{Ticks/gametime|{{Q|Imbue death refusal|Ritual Duration}}}}
+| {{Ticks/gametime|{{Q|Imbue death refusal|Ritual Cooldown}}}}
+| {{Required Resources|Imbue death refusal}}
+| [[Research#{{Q|Imbue death refusal|Required Research}}|{{Q|Imbue death refusal|Required Research}}]]<!--
+
+-->
+|- id="Philophagy"
+! width=64px height=64px | [[Philophagy]]<br>{{Icon Small|Philophagy|64}}
+| ''{{Q|Philophagy|Description}}''
+----
+Transfers a quality dependent amount of [[skill]] experience from the target's highest skill to the invoker.
+| {{Ticks/gametime|{{Q|Philophagy|Ritual Duration}}}}
+| {{Ticks/gametime|{{Q|Philophagy|Ritual Cooldown}}}}
+| {{Required Resources|Philophagy}}
+| [[Research#{{Q|Philophagy|Required Research}}|{{Q|Philophagy|Required Research}}]]<!--
+
+-->
+|- id="Pleasure pulse"
+! width=64px height=64px | [[Pleasure pulse]]<br>{{Icon Small|Pleasure pulse|64}}
+| ''{{Q|Pleasure pulse|Description}}''
+----
+Improves the [[mood]] and libido of pawns on the map at the cost of slowing their [[global work speed]], with duration of the effect dependent on quality. Does not effect pawns with no psychic sensitivity. The intensity of the positive mood buff scales with psychic sensitivity, but the effect on global work speed or lovin' does not.
+| {{Ticks/gametime|{{Q|Pleasure pulse|Ritual Duration}}}}
+| {{Ticks/gametime|{{Q|Pleasure pulse|Ritual Cooldown}}}}
+| {{Required Resources|Pleasure pulse}}
+| [[Research#{{Q|Pleasure pulse|Required Research}}|{{Q|Pleasure pulse|Required Research}}]]<!--
+
+-->
+|- id="Neurosis pulse"
+! width=64px height=64px | [[Neurosis pulse]]<br>{{Icon Small|Neurosis pulse|64}}
+| ''{{Q|Neurosis pulse|Description}}''
+----
+Improves [[global work speed]] and reduces [[recreation]] loss of pawns on the map at the cost of their [[mood]] and [[mental break threshold]], with duration of the effect dependent on quality. Does not effect pawns with no psychic sensitivity. The intensity of the negative mood buff scales with psychic sensitivity, but the effect to global work speed does not.
+| {{Ticks/gametime|{{Q|Neurosis pulse|Ritual Duration}}}}
+| {{Ticks/gametime|{{Q|Neurosis pulse|Ritual Cooldown}}}}
+| {{Required Resources|Neurosis pulse}}
+| [[Research#{{Q|Neurosis pulse|Required Research}}|{{Q|Neurosis pulse|Required Research}}]]<!--
+
+-->
+|- id="Blood rain"
+! width=64px height=64px | [[Blood rain (ritual)|Blood rain]]<br>{{Icon Small|Blood rain (ritual)|64}}
+| ''{{Q|Blood rain (ritual)|Description}}''
+----
+Causes the [[blood rain]] weather event, which inflicts slowly increasing [[melee damage factor]] buffs and [[mood]] penalties on those exposed to it before finally driving them berserk, for a quality dependent amount of time.
+| {{Ticks/gametime|{{Q|Blood rain (ritual)|Ritual Duration}}}}
+| {{Ticks/gametime|{{Q|Blood rain (ritual)|Ritual Cooldown}}}}
+| {{Required Resources|Blood rain (ritual)}}
+| [[Research#{{Q|Blood rain (ritual)|Required Research}}|{{Q|Blood rain (ritual)|Required Research}}]]<!--
+
+-->
+|- id="Brainwipe"
+! width=64px height=64px | [[Brainwipe]]<br>{{Icon Small|Brainwipe|64}}
+| ''{{Q|Brainwipe|Description}}''
+----
+Eliminates a variety of [[thought]]s, and [[opinion]]s, reduces [[Resistance]], [[Will]],{{IdeologyIcon}} and [[Certainty]]{{IdeologyIcon}} to 0, and removes [[unwaveringly loyal]] and [[inhumanized]] at the cost of rendering the target comatose for a quality dependent amount of time.
+| {{Ticks/gametime|{{Q|Brainwipe|Ritual Duration}}}}
+| {{Ticks/gametime|{{Q|Brainwipe|Ritual Cooldown}}}}
+| {{Required Resources|Brainwipe}}
+| [[Research#{{Q|Brainwipe|Required Research}}|{{Q|Brainwipe|Required Research}}]]
+|}
+
+== NPC rituals == 
+{{Stub|section=1|reason=Needs table same as above, but with their unique versions. Ensure parity with upper table, but lower priority than getting the main table finalized}}
+NPCs have their own similar, but mechanically unique psychic rituals
+
+== Analysis ==
+{{Stub|section=1|reason= offensive and defence uses- e.g. fleshbeasts are good for killing sieges and also for killing pirate bases as the ritual circle is free and instant to.build}}
+=== Intentionally bad rituals ===
+Some psychic rituals have effects from low qualities that can be valuable. For example, a low quality [[Draw animals]] has a very high likelihood of drawing manhunters. Like normal manhunters, these animals will then proceed to attack any raiders on the map, essentially acting as a substitute [[psychic animal pulser]] for the cost of {{Icon Small|bioferrite||10}} [[bioferrite]]. Similarly, low numbers of shamblers or fleshbeasts might be preferable when attempting to safely capture them. Shamblers hordes will frequently have a single member carrying a [[Shard]], which is likewise easier to get hold of from a smaller group. As many stats (noticeably [[Global Work Speed]]) are lowered for human pawns under the age of 18, not having the best possible Chronophagy ritual to prevent the Invoker from becoming too young might be preferable as well. Finally, ritual quality only increases the number of defenders{{Check Tag|Detail needed|Is this just the initial spawn, or is it the recurring spawn, and does it affect the beasts inside the pit or just the external defenders?}} for a pit gate but does not affect the loot inside the pit itself - as such, if the gate is generated for looting and not for using the fleshbeasts it spawns, then a lower quality is best.
+
+As such it can be beneficial to have two psychic ritual sites - one with as many of the buffs as possible, and another with no buffs at all, and selecting which site to use depending on the desired outcome. This can be taken further by an invoker with low, but non-zero [[psychic sensitivity]]. A [[psychically deaf]] pawn equipped with a single item of [[prestige armor]]{{RoyaltyIcon}} has one the smallest non-zero psychic sensitivities with absolutely minimal equipment.
+
+== Version history ==
+* [[Anomaly DLC]] Release - Added.
+
+[[Category: Psychic rituals]]
+[[Category: Game mechanics]]

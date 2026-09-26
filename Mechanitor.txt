@@ -1,0 +1,244 @@
+{{Biotech}}
+'''Mechanitors''' (pronounced ''Mek-AN-it-TOR'')<ref>Tynan Sylvester Interview, Hot Potato 2022 [https://youtu.be/SaqYff8kEs8?t=3607]</ref> are pawns who have a [[mechlink]] installed and are used to create and control [[mechanitor#Allied mechanoids|friendly mechanoids]].
+
+== Mechlink ==
+Colonists can become mechanitors through a [[mechlink]]. Mechlinks are self-installed implants, meaning a solo colonist can become a mechanitor. Multiple mechanitors may exist in a colony, and function normally. A mechanitor in [[cryptosleep]] will maintain control of mechanoids linked to them.
+
+Other than [[Scenario system#The_Mechanitor|starting out]] with one, they can be obtained in the following ways:
+* Destroying an [[ancient exostrider midsection]], which generates on most new maps. This allows you to call in a mechanoid ship, with the mechlink and some hostile mechanoids. Note that the Mechanitor starting [[scenario]] prevents the spawning of the exostrider by default.
+* The "discovered mechanitor complex" quest, with hostile mechanoids guarding it.
+
+Either way, you will have to extract the mechlink from the long-dead [[corpse]] of an ancient mechanitor. They can also be extracted from your dead colonist mechanitors, assuming it isn't destroyed.
+
+Pawns that are [[psychically deaf]] can't become mechanitors, and pawns that are [[Incapable|incapable of Smithing]] cannot gestate or repair mechs. To be able to unlock mechanitor research the pawn can't be [[Incapable| incapable of Intellectual]]. Also, pawns with [[trauma savant]] can't summon a [[diabolus]] directly from the [[comms console]] and must summon them by using the "summon mech threat" button of the pawn.
+
+Mechanitors also decrease the severity of [[Scanning sickness]] at twice the rate of normal rate, allowing them to recover faster.
+
+== Summary ==
+Mechanitors are required to control, build, and repair your [[Mechanitor#Allied mechanoids|allied mechanoid]]s. They are required to initiate the mech gestation processes, and at least one mechanitor must be present in order to work on mech-related [[research]]. Mechanitors are limited to controlling mechs they have enough bandwidth for (See [[#Bandwidth]] for detail). They can't tame mechanoids that are already hostile, even if they were once part of your colony.
+
+Mechanoids require [[power]] and create [[pollution]] when recharged normally.
+
+=== Mechanoid control ===
+Mechs are fully autonomous. Mechanoids assigned to work tasks have an effective [[Skill]] of 10, though most have a 50% [[Global Work Speed]], and some of them work even slower. You cannot order mechanoid work in any direct way, though you can indirectly control it through setting [[zone]]s. Specifically, mechs are put into '''control groups''', and the control group as a whole can then be assigned to one of four orders:
+
+* '''Work''': Do available work tasks. Start charging after reaching a configurable % of power left (defaults to 5%).
+* '''Escort''': Follow the mechanitor around and fight enemies. Start charging after reaching a configurable % of power left (defaults to 5%).
+* '''Recharge''': Look for available recharging stations and use them. Enter dormant self-charging if full or no available charging stations.
+* '''Dormant self-charging''': Turns off the mechs. While dormant, mechs recharge a very small amount of power (+1% power / day) without a charger or any pollution. Mechs can be woken up again when they reach 15% energy.
+
+Control groups and orders may be changed, however the mechanitor must be controllable (not [[downed]] and not under a [[mental break]]) and their mechs must be on the same map. If they are on different maps, mechs will continue to do their tasks, however control groups and their orders won't be able to be changed unless done so from "Mechs" menu. By default, a mechanitor has 2 control groups, but this can be increased through the use of [[control sublink]]s and the [[control pack]].
+
+Mechs can also be drafted for combat, where they are controlled like any colonist. However, the mechanoid can only be ordered to move ''to'' spaces within a 25-tile radius from their master, and they can only be ordered to do other commands while ''in'' said radius. Mechs can be drafted outside of this range (but not if the mechanitor is downed), where they can defend themselves, carry out previous combat commands, or be commanded to go near the mechanitor.
+
+If the mechanitor dies or runs out of [[bandwidth]], mechanoids that exceed the bandwidth cost will go into the Uncontrolled state, starting from those gestated or resurrected last. Mechanoids in the uncontrolled state will ignore previous [[Allowed area|area]] designations. They will not be uncontrolled if the mechanitor is downed, in a caravan, etc., and mechs with enough bandwidth are unaffected. After 1 game-day, or {{ticks|60000}} uncontrolled, there is a chance for a mech to go feral with a {{MTB}} of 10 in-game [[time|days]]. Any other uncontrolled mechanoids within a 25 tile radius will also go feral. This cascading effect does not cause chain reactions: of three uncontrolled mechanoids positioned left, center, and right 25 tiles apart, if the left mechanoid goes feral, the center mechanoid will also become feral, but the mechanoid on the right will not.
+
+=== Upgrades ===
+All mechanitor upgrades are installed like the mechlink itself.
+* [[Control sublink]]: Increases work speed by {{+|6%}} per sublink, and increases control groups by {{+|1}}, to a cumulative max bonus of {{+|6}} additional control groups and {{+|36%}} work speed. 
+** [[Standard control sublink]]s can be installed 3 times.
+** [[High control sublink]]s can be installed 3 times on pawns with 3 standard sublinks already installed.
+* [[Mech gestation processor]]: Increases [[Mechanitor#Gestation|mech gestation]] speed by 33.3% per implant. Can be installed up to 6 times.
+* [[Remote repairer]]: Allows repairing mechanoids from range. Can be installed up to 3 times to increase range.
+* [[Remote shielder]]: Allows creation of bullet-blocking shield on a mechanoid. Can be installed up to 3 times.
+* [[Repair probe]]: Increases mech repair speed by 33.3% per implant. Can be installed up to 6 times.
+
+== Allied mechanoids ==
+With the release of the [[Biotech DLC]], '''mechanoids''' may be built, gestated, and controlled by a colony - specifically, by a mechanitor.
+=== Acquisition ===
+Mechanitors are required to build, gestate, and control your own mechanoids. [[Research]] must be done while a valid mechanitor is present in the colony, and only a mechanitor may initiate any of the mech creation processes. First, creating your own mechs requires the [[Research#Basic Mechtech|Basic Mechtech]] research, which in turn requires the [[Research#Electricity|Electricity]] research to be completed first.
+
+# Mechanitors must have enough [[bandwidth]] for the mechanoid in question. The larger and more complex the mechanoid is, the more bandwidth is required.
+# All mechanoids require a subcore to create, along with other materials like [[steel]]. Simple mechs use a [[basic subcore]] (from a [[subcore encoder]]), while more complex ones require a [[standard subcore]] (from a [[subcore softscanner]]) or [[high subcore]] (from a [[subcore ripscanner]]). The ripscanner in particular requires killing a human pawn to create a subcore.
+# After being "built" for a tiny amount of a mechanitor's work, mechs must gestate at a [[mech gestator]] or [[large mech gestator]]. 
+:: Gestation times are measured in cycles, where larger mechs require more cycles, and each cycle will need to be initiated by the mechanitor after the previous one is completed. When cycling is done, the mechanitor must take the mech out. If power is lost during gestation, the cycle will be paused, but no other adverse effects will occur. 
+
+More complex mechanoids require more research. Mechanoid research in particular requires killing one of three mechanoid commanders - the [[diabolus]], [[war queen]], and [[apocriton]], in order of progression - and studying their specific item before it is possible.
+
+Hostile mechanoids cannot be tamed or converted in any way, even if once part of your colony. You can create every mechanoid in the game, except for the [[termite]] and [[apocriton]].
+
+==== Gestation ====
+{{Stub|section=1|reason= Initiating time modified by anything? What happens if the mechanitor dies mid cycle?}}
+Rather than traditional work to make them, creating mechanoids requires the undertaking of some number of gestation cycles. A mechanitor must work at the gestator for {{Ticks|1800}}{{Check Tag|Modified?|Is this time value modified by any stat or skill?}} in order to initiate each cycle, but once initiated each cycle will run independently for its duration. Initiating a gestation cycle is considered [[Work#Smith|Smithing]] work. 
+
+Each gestation cycle lasts for a baseline of 2 days, modified by the initiating mechanitor's [[Mech Gestation Speed]]. Mech Gestation Speed is controlled by the mechanitor's [[Crafting]] skill and the number of [[mech gestation processor]]s they have installed. This varies the resulting duration from 64 hrs with 0 Crafting skill and no processors, to 14.77 hrs with 20 Crafting and 6 processors. Gestation cycle time is updated when Mechanoid Gestation Speed is, even if a cycle is already running - if you start a cycle, then install a [[Mech gestation processor]] or level the Crafting skill, then it will reduce the remaining cycle time proportional to ratio of the new speed to the old. For a full breakdown of the factors affecting mech gestation speed and the resulting cycle durations, see [[Mech Gestation Speed]].
+
+If a cycle is interrupted temporarily (e.g. by losing power), the cycle will pause until the interruption is ended (e.g. by power being restored), but no other adverse effects will occur
+
+=== General information ===
+Mechanitors are required to control mechanoids. A mechanitor has a limited amount of [[bandwidth]], which limits the number of mechanoids they can command. Larger and more complex mechanoids require more bandwidth.
+
+In general, [[mechanoid]]s are immune to [[fire]], toxicity, and [[temperature]] extremes, despite having a Comfortable Temperature. They are vulnerable to [[EMP]] attacks, being stunned by them. Mechanoids do not need to eat, sleep, and have no mood. However, they require [[power]], and cause [[pollution]] in the process. 
+
+Mechs considered "light" use a regular [[mech recharger]] and [[mech gestator]]. Mechs considered "medium" or heavier use the [[large mech recharger]] and [[large mech gestator]].
+
+==== Power ====
+Player mechanoids use a variable amount of power, depending on their state.
+* They use 10% power / day when active: labor mechs doing work, or combat mechs being awake at all.
+* All labor mechs use 3% power / day while idle, or not doing work.
+* Mechanoids can be commanded to enter a state of dormancy, preventing power drain, instead recharging at a very slow rate of +1% power / day. Mechs that run out of power will also enter this state.
+* When [[downed]], or in the world map on a [[caravan]], they use 0% power.
+
+They can be recharged at a [[mech recharger]] or [[large mech recharger]], which quickly recharges them - +50% power / day. This leads to a theoretical uptime of 83.3% - 5 days working, 1 day charging. The mech recharger itself creates waste. Once its waste meter is filled, [[toxic wastepack]]s are created. The amount of waste is directly correlated to the mech's bandwidth, where 1 bandwidth = 5 wastepacks.
+
+==== Repair ====
+
+Mechanitors can repair friendly mechanoids regardless of who actually controls it, at the cost of Energy. Damaged parts are repaired first in random order before missing parts are replaced, although replacing a completely destroyed part takes roughly the same amount of time as repairing 1 point of damage to a non-destroyed part. The overall Energy cost depends on the mech's weight class, and the speed of repair on the Mechanitor's crafting skill, starting at 80% for skill level 0 and +10% speed for every level, to a max of 280% at level 20{{Check Tag|rate in dps?| 100% looks like about 1 dmg per second based on observation, but I can't find a better source}}. If killed, Light mechanoids can be resurrected with a [[Mech gestator]] and all other mechs using a [[Large mech gestator]] at the size-dependent cost of some [[steel]] and 1 gestation cycle.
+
+{| class="wikitable"
+|-
+! Weight<br>Class !! Energy cost per 100 units of damage !! Steel cost to resurrect
+|-
+! Light 
+| 66 || 25
+|-
+! Medium 
+| 33|| 50
+|-
+! Heavy 
+| 20   || 100
+|-
+! Ultraheavy 
+| 33  || 150
+|}
+
+=== Work speed ===
+Most mechanoids have a natural [[Global Work Speed]] of 50%. [[Tunneler (Mechanoid)|Tunnelers]] have a Global Work Speed of 150%, and the [[agrihand]] and [[constructoid]] have special modifiers to their specific job's work speed (applied after all Global Work Speed calculations). 
+
+Work speed can be increased in a number of ways, and final work speed is controlled by the following equation:
+{| class="wikitable"
+|-
+| '''Final work speed =''' (Base Work Speed &times; Mech booster) + (6% * Num. Sublinks) + Mechanoid Labor Bonus
+|}
+* Being in range of a [[mech booster]] boosts workspeed by 50%, multiplicative. This does not multiply any future factors to work speed. 
+* Each [[control sublink (standard)|control sublink]] installed into the mechanitor increases [[Global Work Speed]] by {{+|6%}}, after the mech booster is applied. Up to 3 standard and 3 high control sublinks can be installed at a time, for a {{+|36%}} boost. 
+* If their mechanitor follows an [[ideoligion]]{{IdeologyIcon}} with the [[Mechanoid labor|Mechanoid Labor: Enhanced]] precept, mechs gain an additive {{+|20%}} boost to [[Global Work Speed]], at the cost of colonist work speed. This boost is additive with sublinks and the booster but its effect is not multiplied by the boosters.
+
+As most mechs start with 50% Global Work Speed, additive boosts are larger than they seem. For example, Labor: Enhanced will boost most mechs from 50% to 70% - that's a {{Good|x140%}} increase.
+
+For example, with a work speed of 50%:
+{| class="wikitable"
+|-
+! Control<br>Sublinks !! Work Speed !! Mech Boosted !! Mech Boosted<br>+ [[Mechanoid labor|Labor: Enhanced]]{{IdeologyIcon}}
+|-
+! 0 
+| 50% ||  75% ||  95%
+|-
+! 1 
+| 56% ||  81% || 101%
+|-
+! 2 
+| 62% ||  87% || 107%
+|-
+! 3 
+| 68% ||  93% || 113%
+|-
+! 4 
+| 74% ||  99% || 119%
+|-
+! 5 
+| 80% || 105% || 125%
+|-
+! 6 
+| 86% || 111% || 131%
+|}
+
+Work speed can be further modified by regular factors, such as [[light]] and the [[Manipulation]] stat.
+
+=== Raid points ===
+{{Main|Raid points}}
+The market value of mechs, and of any weapons they carry, do count as wealth for [[raid points|raid point calculations]]. Mechs also contribute towards "[[raid points#Pawn points|pawn points]]" relative to their mech's combat power. The exact percentage depends on current [[wealth]] and can be viewed in the [[raid points#Pawn points|pawn points]] section. The combat power of all combat mechs can be viewed [[Mechanoid hive#Pawns|here]].
+
+== Bandwidth ==
+{{About|section=1|bandwidth generally|the stat for [[mechanoids]]|Bandwidth  Cost|the [[mechanitor]] stat|Mech Bandwidth}}
+'''Bandwidth''' controls how many mechs a single mechanitor can control at any one time. The mechlink itself gives {{+|6}} bandwidth. To increase it further, you must build or craft items.
+
+Each mechanoid has its own [[bandwidth cost]]. The sum of the bandwidth cost of all mechanoids under the control of a single mechanitor must be equal to, or below, the [[mech bandwidth]] of the mechanitor. Mechanoids cannot be gestated without enough bandwidth. If a mechanitor's bandwidth is lowered below the total bandwidth cost, then the mechanoids will become uncontrolled.{{Check Tag|Which? How many? How Selected?}} Uncontrolled mechanoids may leave or become hostile to your colony after enough time. A mech's bandwidth also dictates how many [[toxic wastepack]]s they will produce after recharging.
+
+=== Bandwidth cost ===
+{{Recode|section=1|reason=Consider Merge wastepacks into main table and replacing section with intrapage link to table. Discussion welcome}}
+The heavier the mechanoid is, the more bandwidth it takes up:
+
+{{Mech Bandwidth}}
+
+=== Increasing mech bandwidth ===
+Apparel and gear items must be worn, and band nodes must be [[power]]ed, for bandwidth to actually increase.
+
+* [[Band node]]: {{+|1}}
+* [[Airwire headset]]: {{+|3}}
+* [[Mechlink]]: {{+|6}}
+* [[Array headset]]: {{+|6}}
+* [[Mechcommander helmet]]: {{+|6}}
+* [[Bandwidth pack]]: {{+|9}}
+* [[Integrator headset]]: {{+|9}}
+* [[Mechlord helmet]]: {{+|12}}
+* [[Mechlord suit]]: {{+|12}}
+* [[Cerebrex node]]:{{OdysseyIcon}} {{+|15}}
+
+Therefore, the maximum bandwidth possible without band nodes is acquired with a mechlink, bandwidth pack, mechlord helmet and mechlord suit for a total of {{Good|{{#expr:6+9+12+12}}}} for builds only reliant on the Biotech DLC. With the [[Odyssey DLC]], the cerebrex node replaces the bandwidth pack for a total of {{Good|{{#expr:6+15+12+12}}}}.
+
+To connect to a band node, select a band node, click the '''Tune to...''' button and select an available Mechanitor. Tuning for the first time lasts '''5 seconds''', re-tuning lasts '''3 days'''. Band nodes stay tuned to a pawn when they leave the map. A band node is no longer tuned when the connected mechanitor [[Death|dies]]. When band nodes no longer receive [[power]], they shutdown and because of that, mechanitors bandwidth gets lowered, which can lead to unconnected [[mechanoids]].
+
+== Mech signaling ==
+Mechanoid bosses may be called in by a mechanitor via the Summon Mech Threat gizmo. 
+
+* [[Diabolus]] - Powered [[comms console]]
+* [[War queen]] - [[Mechband antenna]]
+* [[Apocriton]] - [[Mechband dish]]
+
+Except for the comms console, the building used to call in the mech will be destroyed. After a delay, the respective boss will drop in from the outskirts of the map. There is a cooldown before spawning in another boss.
+
+== Controllable mechanoids ==
+<div><li style="display: inline-table;">
+Click to <div class="mw-collapsible">
+<div class="mw-collapsible-content">
+{| {{STDT|sortable c_06 text-center}}
+|-
+! style="vertical-align: top;" colspan="2" | Mechanoid 
+! style="vertical-align: top;"| Class 
+! style="vertical-align: top;"| Armor<br>(S/B/H) 
+! style="vertical-align: top;"| Body<br>Size 
+! style="vertical-align: top;"| Health<br>Scale 
+! style="vertical-align: top;"| Move<br>Speed 
+! style="vertical-align: top;" data-sort-type="number"| Melee DPS<ref name="Actual">Note: This is the actual base average derived from the [[Weapons#Listed_DPS_on_pawns|melee verb system]] updated in [[Version/1.1.2610|1.1.2610]], it may sometimes disagree with the listed value in the in-game infobox. It may also change depending on the stats and the melee verbs available to the wielder</ref><br>([[Melee Hit Chance|Post Hit Chance]]) 
+! style="vertical-align: top;"| Ranged weapon 
+! style="vertical-align: top;"| Bandwidth 
+! style="vertical-align: top;"| Research 
+! style="vertical-align: top;"| Cost 
+! style="vertical-align: top;"| [[Gestation cycle|Cycles]] 
+! style="vertical-align: top;"| Market Value<ref name="Weapon value">Note: This value includes that of the weapon it spawns with.</ref>
+{{#ask: [[Type::Mechanoid]] [[Resource 1::+]]
+ | named args=yes
+ | ? # - = ?Pagename
+ | ?Name=?Name
+ | ?Armor - Sharp = ?Armor - Sharp
+ | ?Armor - Blunt = ?Armor - Blunt
+ | ?Armor - Heat = ?Armor - Heat
+ | ?Body Size = ?Body Size
+ | ?Bandwidth Cost = ?Bandwidth Cost
+ | ?Health Scale = ?Health Scale
+ | ?Move Speed Base = ?Move Speed Base
+ | ?Required Research = ?Required Research
+ | ?Gestation Cycles = ?Gestation Cycles
+ | ?Market Value Base # = ?Market Value Base
+ | ?weaponTags = ?weaponTags
+ | format=template
+ | template=Mechanoid Table Row
+ | sort = Required Research, name
+}}
+|}
+{{Reflist}}
+</div>
+</div>
+</li></div>
+
+== Version history ==
+* [[Biotech DLC]] Release - Added.
+* [[Version/1.4.3527|1.4.3527]] - Fix: Abandoning a colony with mechs in it and making new a base will cause a mech control group error and show mechs are still active.
+* [[Version/1.4.3555|1.4.3555]] - Mechs now count as partial pawns for determining [[raid points]]. Added [[Mechanoid labor|Mechanoid labor]] precept{{IdeologyIcon}}. Combat mechs now count as Autonomous Weapons for the [[Autonomous weapons]] precept. {{IdeologyIcon}} We now display market value on colony mechs’ inspect pane.
+* [[Version/1.4.3580|1.4.3580]] - Fix: Bandwith loss warning shown when pawn drops non-worn mechanitor equipment
+* [[Version/1.6.4566|1.6.4566]] - Mechanitors can now summon mechanoid bosses while in space.
+* [[Version/1.6.4850|1.6.4850]] - Fix: Mechanoids repairing too fast when ticking at a lower rate.
+{{Nav|mechanoid|wide}}
+[[Category:Characters]]
+[[Category:Game mechanics]]

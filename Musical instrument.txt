@@ -1,0 +1,68 @@
+{{Royalty}}
+{{Stub|reason=Concert mechanics, mechanical detail on mood from listening}}
+A '''Musical instrument''' may refer to one of several [[recreation]]al [[building]] types that provide the "Music" recreation type:  
+*[[Harp]]
+*[[Harpsichord]]
+*[[Piano]]
+*[[Drum]]
+Each instrument requires its own [[research]] of the same name in order to be built.
+
+A pawn must have a [[Hearing]] capacity above {{Bad|0%}} to get thoughts from listening to instruments, and a [[Manipulation]] capacity above {{Bad|0%}} to play any of them.
+Nobles can put on concerts with the instruments, similar to a [[Events#Party|party]], giving a [[mood]] bonus to the noble and attendees.
+
+{| {{STDT|sortable c_01 text-center}}
+! Type
+! Size
+! Audience<br>area
+! [[Recreation]]<br>Power
+! Resources<br>Required
+! Market<br>Value
+|- style="text-align: center;"
+! [[Harp]]       
+| {{Q|Harp|Size}}
+| 12 tiles
+| {{#expr:{{Q|Harp|Recreation Power}}*100}}%
+| {{Required Resources|Harp|sep=&nbsp;+|simple=1}}
+| {{Icon Small|silver}} {{Q|Harp|Market Value Base}}
+|- style="text-align: center;"
+! [[Harpsichord]] 
+| {{Q|Harpsichord|Size}} || 16 tiles
+| {{#expr:{{Q|Harpsichord|Recreation Power}}*100}}% 
+| {{Required Resources|Harpsichord|sep=<nowiki> </nowiki>+|simple=1}} 
+| {{Icon Small|silver}} {{Q|Harpsichord|Market Value Base}}
+|- style="text-align: center;"
+! [[Piano]]
+| {{Q|Piano|Size}} || 20 tiles
+| {{#expr:{{Q|Piano|Recreation Power}}*100}}% 
+| {{Required Resources|Piano|sep=<nowiki> </nowiki>+|simple=1}} 
+| {{Icon Small|silver}} {{Q|Piano|Market Value Base}}
+|}
+
+== Mood from listening ==
+
+{| class="wikitable"
+|-
+!Thought !! Caption !! Cause !! Mood Effect !! Expiration time (days) !! Stack Limit !! Stacking Multiplier || Hearing distance
+|-
+| [[Mood#Gatherings|Held concert]] || They loved me. They really loved me. || Hold a concert || {{+|8}} || 10 || 10 || 1 || -
+|-
+| [[Mood#Gatherings|Attended concert]] || I enjoyed listening to that performance. || Attend a concert || {{+|8}} || 10 || 10 || 1 || -
+|-
+| [[Harp|Listening to harp]] || The harp is so soothing. || Listen to harp music || {{+|2}} || N/A || 1 || N/A || 12
+|-
+| [[Harpsichord|Listening to harpsichord]] || The complexity of the harpsichord fulfills my mind. || Listen to harpsichord music || {{+|4}} || N/A || 1 || N/A || 16
+|-
+| [[Piano|Listening to piano]] || The piano's range makes me feel melancholy, excited,<br>and whimsical at the same time. What a sound. || Listen to piano music || {{+|6}} || N/A || 1 || N/A || 20
+|}
+
+Pawns with {{Bad|0%}} [[Hearing]] do not get the mood bonus.
+
+<gallery>
+Concert_Harp.png|Pawns attending a harp concert that is held by a noble
+Harp_Harpsichord.png|Two pawns playing the harp and the harpsichord, with a third pawn walking by
+Piano_Play.png|Pawn playing the piano
+</gallery>
+
+{{Nav|joy}}
+{{disambiguation}}
+[[Category:Recreation|#Musical Instrument]]

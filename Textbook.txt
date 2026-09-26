@@ -1,0 +1,116 @@
+{{Infobox main|exotic
+| name = Textbook
+| image = Textbook.png
+| description = A book which focuses on teaching skills.
+<!-- Base Stats -->
+| type = Exotic item
+| type2 = Book
+| hp = 60
+| deterioration = 5
+| marketvalue = 160
+| mass base = 0.5
+| flammability = 1
+| stack limit = 1
+| rotatable = true
+| has quality = True
+<!-- Technical -->
+| defName = TextBook
+| thingSetMakerTags = RewardStandardMidFreq
+<!-- Unused -->
+| always haulable = true
+| draw gui overlay = true
+| graphic class = Graphic_Single
+| parent name = BookBase
+| selectable = true
+| use hit points = true
+}}
+'''Textbooks''' are a type of [[book]] that provide [[recreation]] while increasing [[skill]]s.
+
+== Acquisition ==
+Textbooks, like all books, can be purchased from [[Trade#Caravan|trade caravan]]s, [[orbital trader]]s and [[faction base]]s, or earned through [[quest]]s.
+
+When starting a new game, there is a chance for your starting colonists to carry books as [[possessions]] based on their [[trait]]s or [[backstory]].
+
+== Summary ==
+Textbooks can be read by colonists as a [[recreation]] activity, with a [[recreation power]] of 100%. All books will also train [[intellectual]] at a rate of 250 XP per in-game hour.
+
+Each textbook has one or more associated [[skill]]s. Colonists who read the book will gradually gain experience in those skills. The rate at which experience is gained and the maximum level to which the skill can be improved are both determined by the [[quality]] of the textbook. It is also modified by the [[passion]]s and [[Global Learning Factor]] of the colonist. The skill limit is checked against the colonist's learned skill level, and does not account for skill offsets from aptitudes given by traits, health conditions, or [[Genes#Aptitudes|genes]]{{BiotechIcon}}.
+
+It is possible to order colonists to prioritize high-quality textbooks or textbooks with specific skills by adjusting reading policies in the [[assign]] tab. It is also possible to order your colonists to only read textbooks, if you prefer to focus on skill-building.
+
+Textbooks have a 25% chance of generating with two skills instead of one. Reading the book will train both skills at the same time, but the amount of XP provided for both skill will be divided by 1.6.
+
+Colonists will try to avoid reading textbooks that they cannot learn anything from, unless no better book is available.
+<!--Please replicate any changes to this table on the Books page to ensure parity-->
+{| class="wikitable"
+|+ Effects of Quality on Reading
+|-
+! rowspan=2 | Quality !! colspan=2 | XP Rate !! rowspan=2 | Max level
+|-
+! 1 skill !! 2 skills
+|-
+! Awful
+| 125 / Hour || 78 / Hour || 2
+|-
+! Poor
+| 188 / Hour || 117 / Hour || 5
+|-
+! Normal
+| 250 / Hour || 156 / Hour || 8
+|-
+! Good 
+| 312 / Hour || 195 / Hour || 10
+|-
+! Excellent 
+| 375 / Hour || 234 / Hour || 12
+|-
+! Masterwork 
+| 438 / Hour || 273 / Hour || 14
+|-
+! Legendary 
+| 500 / Hour || 312 / Hour || 16
+|}
+
+Like any other book, textbooks will also train [[intellectual]] at a rate of 0.1 XP per {{Ticks|1}}, or 250 XP per in-game hour, in addition to the skills that the textbook generated with. This is calculated separately from the textbook's specific skills, and there is no soft limit to how high intellectual can be trained this way. However, this XP is gained at a fixed rate, and is not affected by the passions or learning rate of the pawn, quality of the book or the [[reading bonus]] of the room.
+
+If the [[Odyssey DLC]] is active, textbooks have 1% chance to generate with a quest. Reading a book containing a quest has a chance to trigger such quest with a {{MTB}} of {{ticks|12500}}. Only a single quest may be generated per book.
+
+All books can be efficiently stored in [[small bookcase|small]] and full-size [[bookcase]]s, allowing them to provide a [[reading bonus]] to any reading and [[research]] activities taking place within the same room. Each book stored in a nearby bookcase will increase the effectiveness of reading.
+
+When reading for recreational purposes, colonists will choose which books to read at random. You can use the [[assign]] tab to specify which types of book a colonist is allowed to read, but you cannot assign a colonist to read any one specific book automatically.
+
+You can manually force a colonist to read a specific book by selecting the colonist, right-clicking either the book itself or the bookcase containing it, then issuing the "read" command. The colonist will then read the target book for an hour before putting it away.
+
+== Analysis ==
+Textbooks are generally an excellent way of raising the skills of your colonists, and they easily outclass other forms of recreation in this regard. For reference, a [[billiards table]] will provide 0.004 [[shooting]] XP per {{Ticks|1}}, for a learning rate of 10 XP per hour.
+
+However, it should be noted that textbooks are the only recreation source with a maximum skill limit. An awful-quality textbook will train shooting faster than a billiards table only if the reader has a skill level below 2, and is utterly ineffective otherwise.
+
+Textbooks that teach the [[shooting]] and [[melee]] skills are highly valuable, as colony defense remains an important concern for all colonists at all times. [[Medical]] is another high-priority skill, as having a large number of skilled doctors in your colony will increase the chances of recovering survivors from a hostile raid. Textbooks teaching other skills are also valuable for training up new recruits with low skills, or re-specializing colonists with nothing better to do.
+
+More niche skills like [[artistic]] and [[intellectual]] are not as desirable for textbooks. These skills are usually only practiced by a few specialists within the colony, and can easily be trained while performing the relevant work.
+
+Textbooks with 2 skills provide a higher cumulative amount of XP, but less XP per skill. This generally makes dual-skill textbooks more valuable for raising skills overall, and single-skill textbooks more useful for raising a specific skill.
+
+== Gallery ==
+=== Held ===
+<gallery>
+Textbook Open east.png|East
+Textbook Open north.png|North
+Textbook Open south.png|South
+</gallery>
+=== Stored ===
+<gallery>
+Textbook Vertical east.png|East
+Textbook Vertical north.png|North
+Textbook Vertical south.png|South
+</gallery>
+
+== Version history ==
+* [[Version/1.5.4062|1.5.4062]] - Added.
+* [[Odyssey DLC]] Release - Textbooks can generate with a quest that has a chance to be granted while reading the book.
+
+
+{{Nav|questitems|wide}}
+{{nav|joy|wide}}
+[[Category:Books]]

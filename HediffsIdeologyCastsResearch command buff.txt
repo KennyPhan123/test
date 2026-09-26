@@ -1,0 +1,35 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Ideology/Casts}}
+|}
+----
+{| {{STDT| c_06}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Research command buff" <!-- defName="ResearchCommandBuff", ParentName="WorkRoleAuraBuffHediffBase" -->
+! Research command buff
+----
+* Def Name:<br />ResearchCommandBuff
+* Label:<br />research command
+* Debug Label Extra:<br />other
+| This person's research speed is boosted because they are near someone who is using the research command ability.
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|52%|100%|95%}}
+* Is Bad: {{Good|false}}
+* '''Comps'''
+** ''Disappears''
+*** Show Remaining Time: {{Bad|false}}
+** ''Disappears On Death''
+** ''Link''
+*** Require Link On Other Pawn: {{Good|false}}
+*** Max Distance: '''10 (cells)'''
+*** Custom Mote: '''Mote_WorkCommandLinkLine'''
+|<!-- Stages -->
+{| {{STDT| c_06}}
+! Label !! Parameters
+|-
+! Research command
+|<!-- Parameters -->
+* [[Research Speed]] Offset: {{+|30%}}
+|}<noinclude>
+|}</noinclude>

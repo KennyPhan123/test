@@ -1,0 +1,91 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Local/Infections}}
+|}
+----
+{| {{STDT| c_15}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Sleeping sickness" <!-- defName="SleepingSickness", ParentName="InfectionBase" -->
+! Sleeping sickness
+----
+* Def Name:<br />SleepingSickness
+* Label:<br />sleeping sickness
+| An infectious disease caused by an insect-borne parasite. Sleeping sickness is not as deadly as some other diseases, but progresses slowly. The body takes a long time to clear the infection.
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|80%|80%|35%}}
+* Is Infection: {{Bad|true}}
+* Initial Severity: '''0.1%'''
+* Lethal Severity: {{Bad|100%}}
+* Makes [[Thoughts#Sick|Sick]] Thought: {{Bad|true}}
+* Tendable: {{Good|true}}
+* '''Comps'''
+** ''Tend Duration''
+*** Base Tend Duration Hours: '''32'''
+*** Severity Per Day Tended: {{---|7%}}
+** ''Immunizable''
+*** Severity Per Day Not Immune: {{++|12%}}
+*** Immunity Per Day Sick: {{+|10%}}
+*** Severity Per Day Immune: {{---|17.6%}}
+*** Immunity Per Day Not Sick: {{---|2%}}
+* '''Remove On Redress Chance By Days Curve:'''
+<div><li style="display: inline-table;">
+{| {{STDT| c_15}}
+! <abbr title="Days as a World Pawn">Days</abbr> !! <abbr title="Chance to remove on Pawn Generator Redress">Chance</abbr>
+|-
+! 0
+| 0%
+|-
+! 2
+| 0%
+|-
+! 7
+| 50%
+|-
+! 20
+| 100%
+|}</li></div>
+|<!-- Stages -->
+{| {{STDT| c_15}}
+! Label !! Parameters
+|-
+! minor
+|<!-- Parameters -->
+* Pain Offset: {{++|2%}}
+* [[Consciousness]] Offset: {{--|2%}}
+* [[Manipulation]] Offset: {{--|2%}}
+|-
+! minor
+|<!-- Parameters -->
+* Min Severity: '''43.75%'''
+* Pain Offset: {{++|3%}}
+* [[Consciousness]] Offset: {{--|4%}}
+* [[Manipulation]] Offset: {{--|4%}}
+|-
+! major
+|<!-- Parameters -->
+* Min Severity: '''62.5%'''
+* Vomit {{MTB}} Days: '''3.5'''
+* Pain Offset: {{++|5%}}
+* [[Consciousness]] Offset: {{--|15%}}
+* [[Manipulation]] Offset: {{--|6%}}
+|-
+! extreme
+|<!-- Parameters -->
+* Min Severity: '''87.5%'''
+* Life Threatening: {{Bad|true}}
+* Vomit {{MTB}} Days: '''1.75'''
+* Pain Offset: {{++|10%}}
+* [[Consciousness]] Offset: {{--|20%}}
+* [[Manipulation]] Offset: {{--|20%}}
+|-
+! extreme
+|<!-- Parameters -->
+* Min Severity: '''93.75%'''
+* Life Threatening: {{Bad|true}}
+* Vomit {{MTB}} Days: '''1'''
+* Pain Offset: {{++|15%}}
+* [[Consciousness]] Max: {{Bad|10%}}
+* [[Manipulation]] Offset: {{--|20%}}
+|}<noinclude>
+|}</noinclude>

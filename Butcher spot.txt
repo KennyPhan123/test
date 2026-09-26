@@ -1,0 +1,57 @@
+{{infobox main|production
+| name = Butcher spot
+| image = Butcher spot.png
+| description = A place for butchering animals. Due to the lack of equipment, butchering here yields only 70% of the meat and leather of each creature.
+| type = Building
+| type2 = Production
+| placeable = true
+| passability = standable
+| minifiable = false
+| size = 1 ˣ 1
+| terrain affordance = light
+| work to make = 0
+<!-- Technical -->
+| work efficiency factor = 0.7
+| facility = tool cabinet
+}}
+The '''butcher spot''' is a [[Production]] site used by [[Work#Cook|cooks]] to butcher [[animals]] and [[human]]s into [[meat]] and [[leather]] without needing to construct a [[butcher table]], at the cost of a 30% loss in return.
+
+== Acquisition ==
+Butcher spots do not require a colonist to construct or [[deconstruct]], nor is there a cost, build time, or [[skill]] requirements for placing them. Instead, they are simply selected from the menu and placed directly by the player.
+
+== Summary ==
+{{Stub|section=1|reason=This section is included in the [[RimWorld_Wiki:To-do#Butchery project|Butchery project]] - there are a number of factors that are in need of verification and potentially addition to this section. See that page for details}}
+The butcher spot offers only 70% efficiency compared to the butcher table. This means that 30% of the [[meat]] and [[leather]] will be lost in the butchering process compared to the return from the table. 
+
+It has no [[cleanliness]] penalty, unlike the table.
+
+The butcher spot is ''not'' associated with the kitchen room role. For the exact calculations, see the [[kitchen]] room role.
+
+Butchering requires a fresh (not rotten) [[corpse]] of an animal or human. Butchering requires {{Ticks|450}} of work, modified by the [[butchery speed]] of the cook and up to two nearby [[tool cabinet]]s, and yielding a return in meat and leather modified by:
+* The base yields of the animal 
+* The [[butchery efficiency]] of the cook
+* The maturity stage of the animal.{{Check Tag|Detail needed}}
+* A 66% multiplier for damaged corpses  i.e. any animal not [[tame]]d and then cleanly slaughtered. {{Check Tag|Fact Check|Version change-log only mentions meat - needs confirmation that it doesn't affect leather}}
+* A percentage multiplier for lost body parts.
+* A 70% multiplier for being a butcher spot instead of a table.
+
+{{Recipe List}}
+
+==== Human corpses ====
+{{See also|Human resources#Human_butchering{{!}}Human resources}}
+Butchering a human inflicts a non-stacking 6-day {{--|6}} [[mood]] penalty for <u>all</u> colonists, prisoners, and [[slave]]s,{{IdeologyIcon}} as well an ''additional'' 6-day {{--|6}} for the butcher. The good news is that the colony-wide penalty only stacks once, but the penalty for the butcher can stack 10(!) times with a 0.75 stacking multiplier. Pawns with any of the [[Psychopath]], [[Bloodlust]], or [[Cannibal (trait)|Cannibal]] traits ignore both penalties, so if you are going this direction it would pay to [[Training#Cooking|train]] one as a back-up [[cooking|cook]] to get the most out of each corpse.
+
+== Analysis ==
+Unlike other the [[crafting spot]] or the [[hand tailor bench]], the butcher spot does not work slower than its more advanced version, the [[butcher table]], but outright loses reduces the amount of meat and leather you get from each animal. 
+
+As such, any time a table is practical to construct and use, it should be, especially when butchering high value animals like [[thrumbo]]s. 
+
+That said, the spot is still useful for when building materials are tight, such as on [[sea ice]], or when you don't want to dedicate the time to build a butcher table, such as on caravan and event maps.
+
+== Version history ==
+* [[Version/0.19.2009|0.19.2009]] - Added.
+
+{{Nav|production|wide}}
+
+[[Category:Production]]
+[[Category:Food Production]] [[Category:Resource Production]]

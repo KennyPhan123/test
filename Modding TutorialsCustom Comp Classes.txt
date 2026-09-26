@@ -1,0 +1,39 @@
+{{BackToTutorials}}
+Creating a custom comp class is a convenient way to add new functionality to RimWorld. Comps aren't a formal concept in the code: they're a design pattern used in different places. They allow for a more modular approach to adding functionality to different objects.
+
+=The types of Components=
+These are the places where the Comps design pattern is used, each with differing behaviour suited for their respective area. From most specific to most generic:
+==HediffComp==
+A relatively simple Comp for adding more complex behaviour to Hediffs.
+
+==ThingComp==
+{{Main|Modding Tutorials/ThingComp}}
+A very powerful Component that is tied to a specific Thing. These are often used to store data, give special functionality to the Thing they're tied to and are one of the building blocks of RimWorld modding and RimWorld in general. While not as powerful as a [[Modding Tutorials/Def classes|fully custom class]], they provide plenty of functionality for a lot of general use cases without compatibility issues.
+
+==WorldObjectComp==
+Like a ThingComp, but for WorldObjects.
+
+==MapComponent==
+{{Main|Modding Tutorials/GameComponent}}
+Much like a ThingComp, except these exist at the Map level. They're most useful for keeping tracks of multiple things at once, storing data, and can serve as a coordinator or general managing entity.
+
+==WorldComponent==
+{{Main|Modding Tutorials/GameComponent}}
+Similar to a MapComponent, but lives on the World level.
+
+==GameComponent==
+{{Main|Modding Tutorials/GameComponent}}
+Similar to a WorldComponent, but lives at the Game level.
+
+The distinction between a GameComponent and a WorldComponent might not be too obvious, but a GameComponent gets instantiated when a new Game is started:
+* Upon start of the tutorial
+* When the player starts the Scenario Configuration (rolling for colonists)
+* When a save is loaded from the main menu
+
+==StorytellerComp==
+These are a specific type of Component that determines the behaviour of the storyteller.
+
+=Which one to use=
+Use whatever is most appropriate, really. Does it deal with a Pawn's health? HediffComp. Is it functionality at Thing level? ThingComp. Does it have to do with two pawns, or multiple items on a map? Probably a MapComponent, or maybe a WorldComponent.
+
+[[Category:Modding tutorials]][[Category:Modding]]

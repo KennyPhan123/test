@@ -1,0 +1,119 @@
+{{infobox main|animal|
+| page verified for version = A14D
+| name = Tortoise
+| image = Tortoise.png
+| description = This heavily armored land-dwelling reptile is known for its slow moving speed and surprisingly vicious bite. Because of its natural armor, it is tough to kill and can do serious damage during drawn-out melee fights.
+| type = Animal
+| movespeed = 1
+| armorblunt = 35
+| armorsharp = 50
+| min comfortable temperature = 0
+| max comfortable temperature = 50
+| toxic resistance = 0.5
+| toxic environment resistance = 0
+| flammability = 0.7
+| marketvalue = 200
+| eggsmin = 1
+| eggsmax = 3
+| eggs_avg = 2
+| eggtime = 6.66
+| fertilized egg name = Tortoise egg (fert.)
+| combatPower = 70
+| bodysize = 0.5
+| healthscale = 0.6
+| hungerrate = 0.0825
+| diet = omnivorous grazer
+| leathername = lizardskin
+| wildness = 0.75
+| manhuntertame = 0
+| manhunter = 0
+| trainable = none
+| mateMtb = 12
+| lifespan = 180
+| juvenileage = 0.15
+| maturityage = 0.2222
+| tradeTags = AnimalUncommon
+| attack1dmg = 8
+| attack1type = Bite
+| attack1cool = 2.6
+| attack1part = beak
+| attack2dmg = 3
+| attack2type = Blunt
+| attack2cool = 2.6
+| attack2part = head
+| attack2chancefactor = 0.2
+| isCoastal = false
+| livesin_temperateforest = 0.3
+| livesin_temperateswamp = 0.6
+| livesin_tropicalrainforest = 0.5
+| livesin_tropicalswamp = 0.5
+| livesin_glowforest = 0.5
+}}
+{{info|'''Tortoises''' are crawling omnivores which live in {{Habitats}}.}}
+
+== Acquisition ==
+{{PAGENAME}}s can be found in {{Habitats}}. They can either be tamed by a [[Work #Handle|handler]] or self-tame in a random event. 
+
+{{PAGENAME}}s can be bought and sold in other [[Trade#Faction base|faction bases]] and from [[Trade#Exotic goods trader 2|exotic goods traders]]. {{PAGENAME}}s purchased from traders will be already tamed.
+
+== Analysis ==
+Tortoises are the single best animal for meat : nutrition input, or ''nutrition efficiency''. This is due to their remarkably low hunger rate. A tortoise farm can also produce a lot of leather. However, tortoises are not [[pen animal]]s. They must be re-tamed every  {{#expr:12 - 6*{{P|Wildness}} round 2}} days, or carefully slaughtered just before they become un-tame, which requires a lot of micromanagement. Players may prefer to ranch animals like the [[ibex]] and [[horse]], as they do not require nearly as much work to farm.
+
+===Nutrition===
+When slaughtered, a tortoise yields {{#vardefineecho:baby_meat|{{Meat Leather Curve|{{#expr:{{P|Body Size}}*0.2*140}}}}}} meat and {{Meat Leather Curve|{{#expr:{{P|Body Size}}*0.2*40}}}} [[lizardskin]] as a baby; {{Meat Leather Curve|{{#expr:{{P|Body Size}}*0.5*140}}}} meat and {{Meat Leather Curve|{{#expr:{{P|Body Size}}*0.5*40}}}} lizardskin as a juvenile; or {{Meat Leather Curve|{{#expr:{{P|Body Size}}*140}}}} meat and {{Meat Leather Curve|{{#expr:{{P|Body Size}}*40}}}} lizardskin as an adult. 1 meat is worth 0.05 nutrition. A tortoise's [[Tortoise egg (fert.)|fertilized egg]] only provides {{Q|Tortoise egg (fert.)|Nutrition}} nutrition, compared to the {{#expr:{{#var:baby_meat}}*0.05}}  of a butchered baby. Therefore, a tortoise should always be allowed to hatch.
+
+An adult tortoise consumes {{P|Real Hunger Rate}} nutrition per day, and a fertilized female creates an average of {{#expr: {{P|Eggs Per Clutch Average}}/{{P|Egg Laying Interval}} round 2}} offspring per day.
+* When offspring are slaughtered as babies, a female tortoise will produce {{#expr:{{Meat Production|{{PAGENAME}}|baby}} round 2}} nutrition of meat per day, giving a potential nutrition efficiency of {{%|{{Meat Production|{{PAGENAME}}|baby}}/{{P|Real Hunger Rate}} round 3}}.
+* If the offspring are allowed to grow to adulthood, they will consume an additional {{#expr:{{Nutrition Consumption|{{PAGENAME}}|adult}} - {{P|Real Hunger Rate}} round 2}} nutrition per day, but will instead yield {{#expr:{{Meat Production|{{PAGENAME}}|adult}} round 2}} nutrition per day as they are slaughtered, resulting in a potential nutrition efficiency of {{%|{{Meat Production|{{PAGENAME}}|adult}}/{{Nutrition Consumption|{{PAGENAME}}|adult}} round 3}}.
+This does not consider the food required of male tortoises. A female:male ratio of {{#vardefineecho:femaleratio|{{#expr: 2/3*24*{{P|Egg Laying Interval}}/{{P|Mate Mtb Hours}}}}}}:1 reaches an optimal [[Animals#Mating|fertilization rate]]. With this ratio of tortoises, you reach a "true" nutrition efficiency of {{%|{{Meat Production|{{PAGENAME}}|Adult|{{#var:femaleratio}}|1 round 2}}/{{Nutrition Consumption|{{PAGENAME}}|Adult|{{#var:femaleratio}}|1}} round 3}}. For reference, the next best animal, the [[chicken]], has a nutrition efficiency of {{%|{{Meat Production|Chicken|Baby|2}}/{{Nutrition Consumption|Chicken|Baby|2|1}} round 3}}, after considering their female:male ratio. Chickens do not produce leather. The next best animal that produces leather is the [[ibex]].
+
+Some care must be used when managing tortoise eggs, as tortoises themselves are omnivorous and do not seem to discriminate against eating their unhatched young. Make use of restriction zones and hauling labor to pull freshly laid eggs away from animal pens and into safe hatcheries to maximize yield.
+
+=== Combat ===
+Tortoises are poor animals for combat. They do little damage, move slowly, and due to their low health scale, they aren't durable, either. Tortoises can occasionally be seen beating much larger predators, such as [[lynx]] and [[cougar]]s. This isn't because tortoises are great at combat, but rather a consequence of RimWorld's combat RNG. [[Armor]] has a chance to completely negate damage, so tortoises have a higher-than-usual chance to win. And if a tortoise loses, you usually won't see their corpse (it'll be consumed right away).
+
+Because of their low damage and high-ish armor, tortoises can be used to train the Melee and Medical skills. A well-armored colonist can land many melee blows on a tortoise without much risk. This trains their Melee skill. A doctor can tend to the colonist's and tortoise's wounds, which trains Medical. Rinse and repeat a few times until the poor beast finally dies. Note that beating up human [[prisoner]]s is even less of a risk (prisoners do not fight back).
+
+As [[manhunter]]s, tortoises are trivial to deal with, due to their slow speed. If you have any sort of ranged weapon, [[kiting]] tactics can be used to easily defeat a tortoise pack. Even if you don't have a ranged weapon, you could run to the nearest [[door]] and close it.
+
+== Training ==
+{{TrainingTable}}
+
+== Health == 
+=== Body parts ===
+{{Animal Health Table|TurtleLike}}
+=== Armor ===
+{| class="wikitable"
+! Armor
+|-
+| {{Apparel Protection Chart
+| set1name= {{P|Name}} (Sharp) | set1armor1={{P|Armor - Sharp}} 
+| set2name= {{P|Name}} (Blunt) | set2armor1={{P|Armor - Blunt}} 
+| set3name= {{P|Name}} (Heat) | set3armor1={{P|Armor - Heat}} 
+| color= grey, blue, red
+}} 
+|}
+{{Pawn Attack Table}}
+
+== Gallery ==
+<gallery>
+Tortoise east.png|Facing east
+Tortoise north.png|Facing north
+Tortoise south.png|Facing south
+</gallery>
+<gallery>
+File:Dessicated tortoise east.png|Dessicated facing east
+File:Dessicated Tortoise north.png|Dessicated facing north
+File:Dessicated Tortoise south.png|Dessicated facing south
+</gallery>
+== Version history ==
+* [[Version/0.7.581|0.7.581]] - Added.
+* [[Version/0.12.906|0.12.906]] - Can now lay eggs.
+* 0.18/1.0 - Now provides the new [[lizardskin]], which merged its previous leather type, tortoise leather, with cobraskin and iguana skin.
+* 1.0 - Tortoise armor was reduced from 50% to 30%. 
+* ? - Armor increased back up to 50%.
+
+{{nav|animal}}
+
+[[Category:Animals]]
+[[Category:Wild animal]]

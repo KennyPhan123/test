@@ -1,0 +1,52 @@
+{{Biotech}}
+{{Stub|reason=1) Two-way links}}
+{{Verified|1.5.4104}}{{Stat
+| def name = MeleeDoorDamageFactor
+| label = melee door damage factor
+| description = A special multiplier on the amount of melee damage inflicted on [[door]]s.
+| default base value = 1
+| min value = 0
+| hide at value = 1
+| to string style = PercentZero
+| show on animals = false
+| show on humanlikes = false
+| show on mechanoids = true
+| category = PawnCombat
+| display priority in category = 5000
+}}
+
+== Bases ==
+* [[Mechanoids]]
+** {{Icon Small|Centurion|24}} [[Centurion]]: {{Good|×150%}}
+** {{Icon Small|War queen|24}} [[War queen]]: {{Good|×150%}}
+
+== Stat Def Data ==
+{| {{STDT}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Melee Door Damage Factor" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />MeleeDoorDamageFactor
+* '''Label:'''<br />melee door damage factor
+| A special multiplier on the amount of melee damage inflicted on doors.
+|
+* Display Order:<br />'''110'''
+* Def Name:<br />'''PawnCombat'''
+* Label:<br />'''Combat'''
+* Display All By Default:<br />{{Bad|false}}
+|
+* '''To String Style:''' PercentZero
+* '''Default Base Value:''' {{%|1}}
+* '''Hide At Value:''' {{%|1}}
+* '''Min Value:''' {{%|0}}
+* '''Show On Animals:''' {{Bad|false}}
+* '''Show On Humanlikes:''' {{Bad|false}}
+* '''Show On Mechanoids:''' {{Good|true}}
+| -
+| 5000
+<!--</StatDef>-->
+|}
+
+== Version history ==
+* [[Biotech (DLC)]] Release - Added.
+
+{{nav|stats|wide}}

@@ -1,0 +1,71 @@
+{{BackToTutorials}}
+{{:Modding Tutorials/Under Review}}
+<br/>
+=TODO=
+* Add examples for each node
+* Add base-game quest and explain every part of it
+* Compare single-QuestNode approach to "proper" fragmented QuestNode approach
+
+==Preamble==
+Who this is for: Brave modders that want to tackle the quest system
+
+Who this is not for: Beginners that have not invested a large amount of time into how the games basic components work
+
+Making or modifying quests is a complicated endeavor. Ludeon itself appears to have given up on using the <code>QuestScriptDef</code> "properly" with the new quests from Ideology, and some modders have followed their example. This tutorial is for the '<code>proper</code>' Quest system that was implemented with Royalty and offers the most extendibility (for what it's worth, the quests are still extremely difficult to modify or extend).
+
+"Modern" quests simply have one single bloated <code>QuestNode</code> generating all <code>QuestPart</code>s, ignoring the <code>Slate</code> and compartmentalized <code>QuestNode</code> approach entirely. This is certainly a functional way of creating a <code>Quest</code>, but far away from the potential extendibility of "proper" quest logic.
+
+=Types=
+==Generation time==
+These types are normally restricted to the generation time of a given quest. This means these are instanced and not scribed at any point, acting only as the builders for the later generated quest objects.
+===QuestScriptDef===
+The <code>QuestScriptDef</code> is the root container for any given quest. It contains the <code>root</code> <code>QuestNode</code>, which determines the behaviour of the generated <code>Quest</code>.
+
+===QuestNode===
+<code>QuestNode</code>s are types meant to pass or modify slate data and create <code>QuestPart</code>s. I personally like to divide the "responsibility" of <code>QuestNode</code>s into two categories: <code>Slate</code>-Modifiers and <code>QuestPart</code>-Generators. 
+
+====Slate-Modifiers====
+Responsible for manipulating data in the <code>Slate</code>, so that later <code>QuestNode</code>s (most likely <code>QuestPart</code>-Generators) can consume it.
+
+Here you retrieve pawns to affect, factions to interact with, maps to use, basically the context-data for your actual moving parts.
+
+====QuestPart-Generators====
+Create <code>QuestPart</code> instances and append it to the Quest instance that is currently being generated.
+
+Following methods in <code>QuestNode</code> are of note:
+====TestRunInt()====
+This method is called when the quest is being considered for generation. It is responsible for setting up slate data for other <code>TestRunInt()</code> calls of other nodes, emulating the (later executed) normal <code>RunInt()</code> call, '''without actually having a real effect'''. The idea being that the <code>QuestNode</code> performs a dry run, only modifying other generation time values and not actually modifying anything on the players map.
+
+The TestRunInt() has the temporary <code>Slate</code> provided as an argument, which contains the other Test-Run slate modifications instead of the global static Slate.
+
+====RunInt()====
+The "real" execution of the <code>QuestNode</code>, modifying <code>Slate</code>data and/or creating <code>QuestPart</code> instances.
+
+===Slate===
+The <code>Slate</code> is basically a <code>Dictionary<string, object></code>, being used as the main transport medium for data related to quest generation - like pawns, maps, points to use for threats, etc.
+Access to the slate can be done manually in-code with <code>slate.Get<T>()</code>, or by using the <code>SlateRef</code> type.
+
+===SlateRef===
+Controls the access to the slate, allowing the <code>QuestScriptDef</code>s XML to provide the key names to use.
+
+==Run time==
+The produced objects from the generation time quest types.
+===Quest===
+The produced result of a <code>QuestScriptDef</code>, containing a list of quest parts. This is the thing you see listed in the Quests tab of the game.
+
+===QuestPart===
+<code>QuestPart</code>s are the logic blocks making up a <code>Quest</code>, the main hook being based on receiving quest related signals and acting upon them.
+
+===Signal===
+<code>Signal</code>s are basically a simple string, sometimes accompanied with additional data called <code>NamedArgument</code>, which act as keyed object types, containing any instance the signal creator inserts into it.
+
+=How quest generation works=
+These steps may not be 100% accurate, as far as I can tell there is not a lot of modders that have dug this deep in the guts of the quest generation logic, so if some things are off, I sincerely apologize, but this is the best you'll get.
+# When the game wants to generate a random quest (so-called natural quests) it considers all of the <code>QuestScriptDef</code>s loaded into the <code>DefDatabase</code>, picking a random one by weight determined by the ''QuestScriptDef.rootSelectionWeight''.
+# It then checks if the <code>root</code> <code>QuestNode</code> of the ScriptDef successfully passes the ''TestRunInt()'' with an emulated slate
+# Once the <code>QuestScriptDef</code> is considered valid, the static <code>QuestGen</code> class comes into play, receiving the ''Generate()'' call with the chosen <code>QuestScriptDef</code>
+# It now populates the ''QuestGen.slate'' with the initial <code>Slate</code> values, which is normally ''Map map'' (the target for the quest) and ''int points'' (the threat/reward points to use)
+# The main call-stack that calls all the <code>QuestNode</code> ''RunInt()'' looks as follows: ''QuestGen.Generate()''->''(QuestScriptDef)root.Run()''->''(QuestNode)root.Run()''->''(QuestNode)this.RunInt()''
+# Once the <code>QuestPart</code>s are populated, the <code>Quest</code> is fully generated and made available
+
+[[Category:Modding tutorials]]

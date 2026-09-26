@@ -1,0 +1,60 @@
+{{Infobox main|building
+| name = Ship part (defoliator)
+| type = Building
+| type2 = Ruins
+| image = PoisonShip.png
+| description = An ancient ship part, torn off of a craft of unknown origin. It might be thousands of years old. This one contains a device which annihilates plant life near itself without directly affecting flesh creatures. These kinds of weapons are sometimes scattered across farmlands or forests to remove the enemy's food supply and hiding places without permanently ruining the territory. They're usually associated with orbital-drop mechanoid armies.
+| size = 6*3
+| hp = 1200
+| flammability = 0
+| beauty = -200
+| cover = 1
+| blockswind = true
+| terrain affordance = light
+| destroyyield = {{Icon Small|steel slag chunk||4}} + {{Icon Small|steel||60}} + {{Icon Small|component||1}} + {{Icon Small|plasteel||10}} + {{Icon Small|advanced component||1}}
+| page verified for version = 1.6.4566
+}}
+{{About|the plant killer device|the psychic emanator device|ship part (psychic droner)}}
+{{For|general info on ship part events|crashed ship parts}}
+'''Defoliator ship parts''' drop as part of a map [[Event]]. A crashed ship part, accompanied by small [[fire]]s and [[mechanoids]], lands at a random [[roof|unroofed]] location when the event triggers. This ship part carries a  toxic device that poisons nearby flora.
+
+== Summary ==
+This ship part slowly poisons an expanding radius of ground around it, destroying any native flora and cultivated crops. This will also kill [[anima tree]]s,{{RoyaltyIcon}} [[gauranlen tree]]s,{{IdeologyIcon}} [[polux tree]]s,{{BiotechIcon}} [[harbinger tree]]s,{{AnomalyIcon}} and [[archean tree]]s.{{OdysseyIcon}}
+
+The effect starts off with a 5 tile radius increasing over time to a maximum radius of 100 tiles over 20 days. The radius growth speed changes over time as shown in the graph below. The current area of effect can be seen by clicking on the ship part until it reaches 50 tile radius, after which it is no longer visible.
+{| class="wikitable"
+| {{Graph:Chart | width = 400 | height = 200 | xAxisTitle = Days since arrival | yAxisTitle = Foliage kill radius | type = line | x = 0, 1.5, 6, 20 | y1 = 5, 18, 40, 100}}
+|-
+|}
+With [[Biotech DLC]] {{BiotechIcon}} the ship part will additionally [[Pollution|pollute]] 6 tiles in an expanding circle each day, around a radius of roughly 55 tiles. While the plant kill radius will vastly out-pace the pollution, polluted tiles will remain even after the ship part is destroyed.
+
+== Analysis ==
+{{For|general advice on dealing with the guarding mechanoids|Crashed ship parts}}
+Relatively harmless compared to the psychic ship, as long as the foliage killing area does not affect your crops or special trees. The final range of the foliage kill area can be predicted with the help of the [[Plan|planning tool]].
+
+Quite often the defoliator will not affect any important plants. In those cases, and as long as the terrain pollution is not a long-term concern, the defoliator may even prove beneficial; the game tries to maintain the same amount of vegetation in the map, so the defoliator will make natural plant spawns more dense outside its area of effect. This can make [[trees]], [[berry bush]]es, [[wild healroot]] and other useful naturally occurring plants more common in the immediate vicinity of the colony, cutting walking distances to harvest them. As it removes tree cover on the affected area, it may provide a tactical advantage in future fights.
+
+If the defoliator kills the anima tree, it's possible that the tree tries to respawn inside its kill radius and die again, repeating the consequential mood debuff. The likelihood increases with the kill radius, so if the tree is in danger it may be wise to destroy the ship part before it happens.
+
+The dropped advanced component is a notable reward early on. Since crashed ship part incidents are likely to have happened by the point the colony is researching advanced industrial projects, the looted components are helpful and may save a trade trip or at least some money when aiming to build things like [[ground-penetrating scanner]]s before [[Research#Advanced fabrication|Advanced fabrication]] is researched.
+
+== Gallery ==
+<gallery heights=250px widths=250px>
+Poison ship.png|A recently-arrived defoliator ship part, having defoliated some of its environment.
+Poison ship selected.png|Defoliation radius is visible when the ship piece is selected.
+Poison ship 2.jpg|Once the defoliator ship is deconstructed, growing zones harmed by poison can be replanted.
+</gallery>
+== Trivia ==
+* Crashed ship parts not only have a [[Flammability]] of 0%, but also take no damage from attacks with the [[Damage Types|Flame]] damage type. This is in contrast to, for example, a [[stone]] [[wall]] which will not be ignited by [[molotov cocktails]] but will take the 10 flame damage from the initial attack.
+* Note that this event was once called a "'''poison ship'''", and references to that may still be seen in the game or this Wiki.
+
+== Version history ==
+* B19/1.0 - Poison ship part plant-killing circle stops expanding at radius 50.{{Check Tag|Verify|Source? Not mentioned on the changelog, and if it's true there's no mention on when it was changed to 100 max radius}}
+* Version 1.1 or prior - '''poison ship''' renamed to '''defoliator ship'''.
+* [[Version/1.1.0|1.1.0]] - [[Mechanoid]]s now immediately spawn in a dormant state around the ship, as opposed to previously when they would spawn only as a result of the ship taking fire. Other than triggering a "Flee" response in your (non-drafted) colonists if they get too close, everything else, including previous strategies for combating them, appears to remain the same since the Mechanoids stay in that dormant state until provoked. It is likely in this update that the no build area was changed - previously the mechs would attack if building or placing an item within bulged rectangle around the ship part, with a base size of {14 wide × 9 high} plus an extra 1×6-tile row along the top/bottom of the ship part and an extra 1×3 column along each side.
+* ? prior to 25/7/20 - Poison/defoliator ship no longer generates snow in the poisoned area.
+* ? Prior to 2/08/22 - Description changed from "''A mysterious crashed piece of a spaceship. It may contain exotic materials, computers, even AI personas. This one seems to be poisoning the ground around it.''" -> "''An ancient ship part, torn off of a craft of unknown origin. It might be thousands of years old. This one contains a device which annihilates plant life near itself without directly affecting flesh creatures. These kinds of weapons are sometimes scattered across farmlands or forests to remove the enemy's food supply and hiding places without permanently ruining the territory. They're usually associated with orbital-drop mechanoid armies.''"
+* After 1.6 (undocumented, likely [[Version/1.6.4566|1.6.4566]]) - Awoken mechs now sometimes stand on the right side of the ship instead of always standing on the left.
+
+[[Category:Game mechanics]]
+[[Category:Miscellaneous]]

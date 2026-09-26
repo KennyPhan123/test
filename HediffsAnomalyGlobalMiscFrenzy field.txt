@@ -1,0 +1,49 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Anomaly/Global/Misc}}
+|}
+----
+{| {{STDT| c_21}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Frenzy field" <!-- defName="FrenzyField" -->
+! [[Frenzy inducer|Frenzy field]]
+----
+* Def Name:<br />FrenzyField
+* Label:<br />frenzy field
+|<!-- Description -->
+<div style="max-width: 200px;">
+This person is under the influence of a psychic field which sharpens their mental energy. They're channeling the nervous anger to move and work faster. However, any mental breaks will be violent.
+</div>
+|<!-- Details -->
+* Hediff Class: '''Hediff_FrenzyField'''
+* Initial Severity: '''0.1%'''
+* Max Severity: '''100%'''
+* Always Show Severity: {{Good|true}}
+* Ever Curable By Item: {{Bad|false}}
+|<!-- Stages -->
+{| {{STDT| c_21}}
+! Label !! Parameters
+|-
+! very mild
+|<!-- Parameters -->
+* Become Visible: {{Bad|false}}
+|-
+! mild
+|<!-- Parameters -->
+* Min Severity: '''5%'''
+* [[Move Speed]] Offset: {{+|0.1 {{CS}}}}
+* [[Global Work Speed]] Offset: {{+|20%}}
+|-
+! moderate
+|<!-- Parameters -->
+* Min Severity: '''35%'''
+* [[Move Speed]] Offset: {{+|0.2 {{CS}}}}
+* [[Global Work Speed]] Offset: {{+|30%}}
+|-
+! extreme
+|<!-- Parameters -->
+* Min Severity: '''65%'''
+* [[Move Speed]] Offset: {{+|0.4 {{CS}}}}
+* [[Global Work Speed]] Offset: {{+|50%}}
+|}<noinclude>
+|}</noinclude>

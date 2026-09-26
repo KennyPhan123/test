@@ -1,0 +1,143 @@
+{{BackToTutorials}}
+
+This tutorial shows you several ways to modify existing ''Defs'' and alternatives to changing the XML format for them.<br/>
+
+There are several ways to achieve this goal. The table below is the [https://en.wikipedia.org/wiki/TL;DR TL;DR] version of this article. C# related operations are marked '''bold'''.<br/><br/>
+
+{| class="wikitable"
+|-
+! Method !! Pros !! Cons !! When to use
+|-
+| Overwrite the Def || Braindead easy || So incompatible you gotta be braindead || When you don't care about the original, or anyone else
+|-
+| XPath change || Highly specific, highly compatible || Limited to XML-defined Defs || When you need to change a few XML values
+|-
+| Adding a '''(self-made)''' Comp || Very flexible, well-supported, highly-compatible || Does not work on every Def || When you want to add functionality
+|-
+| '''DefModExtension''' || Very simple, well-supported, highly-compatible || Static data || When you want to add fields/data
+|-
+| '''SubClassing''' || Fairly powerful, half the work is already done || Compatibility issues, not very flexible || When neither a Comp nor a DefModExtension works
+|-
+| '''Custom Def''' || Full control || Very specific to your mod || When the given Defs don't suffice for you
+|}
+
+=Requirements=
+
+* [[Modding Tutorials/XML Defs|Understanding Defs]] helps.
+* For the C# portions:
+** [[Modding Tutorials/Decompiling source code|Decompiling source code]] is required.
+** This tutorial requires you to know [[Modding Tutorials/Writing custom code|how to write custom code]].
+** [[Modding Tutorials/Def classes|Introduction to Def Classes]] is highly recommended.<br/><br/>
+
+=Overwriting Defs=
+{{Main|Modding_Tutorials/Compatibility_with_defs}}
+If two mods share the same defName for a single type of ''Def'', the last mod wins. If mod A adds a ResearchDef with defName Pemmican and mod B also adds a ResearchDef with defName Pemmican, the game will use mod B's Pemmican.
+==Pros==
+Braindead easy.
+
+==Cons==
+No compatibility.
+
+==When to use==
+Not.
+
+=XPath=
+{{Main|Modding Tutorials/PatchOperations}}
+XPath allows you to change specific values of Defs (multiple in a single operation, if you want) across mods with surgical precision.
+
+==Pros==
+Highly flexible, highly compatible.
+
+==Cons==
+Limited to Defs defined in XML (no meat, corpses or other generated Defs). More complex operations require more fiddly syntax.
+
+==When to use==
+All the time.
+
+=Adding a (self-made) Comp=
+{{Main|Modding Tutorials/ThingComp}}
+ThingComps are like little modules you can add to any ThingWithComp to give them added functionality.
+
+===Pros===
+Very flexible, well-supported and highly-compatible. There are many ready-made (example) Comps available that can be employed to do a wide variety of things.
+
+===Cons===
+Not suited for every type of functionality.
+
+===When to use===
+When you want to add functionality, non-static data or behaviour.
+
+=DefModExtensions=
+{{Main|Modding Tutorials/DefModExtension}}
+DefModExtensions can be seen as a way to add fields to Defs.
+
+===Pros===
+Very simple, very lightweight, highly compatible.
+
+===Cons===
+Static data only.
+
+===When to use===
+When you want to add (static) fields/data to Defs.
+
+=Subclassing=
+{{Main|Modding_Tutorials/Def_classes}}
+Inherit from a Def and explicitly tell RimWorld to use that specific Type. 
+
+==Pros==
+They're you're own Type, so you can extend their functionality until your heart is content.
+
+==Cons==
+* Still bound to the base Def without access to its private methods
+* Using them requires a lot of casting
+* Only one custom class per Def
+* They don't offer a lot of extra functionality over DefModExtensions or [https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods C# Extension methods]
+
+==When to use==
+When neither a Comp nor a DefModExtension works.
+
+=Custom Def=
+{{Main|Modding Tutorials/Def_classes}}
+(Optionally) inherit from a Def and tell RimWorld to use your custom Def.
+
+==Pros==
+Fully your own Type, complete control. No incompatibility issues, because they're all yours.
+
+==Cons==
+Implementation from scratch.
+
+==When to use==
+If your Def is really unique to your mod or specific goal.
+
+=Other ways=
+Sometimes creative, sometimes hacky:
+==Checking for tags==
+
+Instead of using custom defClasses and comps you could also use tags. This is especially useful for lightweight features and simple compatibility.<br/><br/>
+
+Some tags are never used by a certain Thing such as ApparelTag on a Building. If a tag is never used it doesn't throw an error and therefore you could introduce as many useless tags as you want to a mod without the game complaining. When other mods check for these tags they can also do it without a problem. This way you could add tags of whatever name you want and let others check for this tag for compatibility.<br/><br/>
+
+===Pros===
+Lightweight, easy.
+
+===Cons===
+Risk of potential side-effects. Kinda hacky.
+
+==Changing the class used by the Def==
+A lot of ''Defs'' have a field entry that specifies the C# class they are tied to. For instance, the ''GameConditionDef'' for the Eclipse has a ''conditionClass'' of ''GameCondition_Eclipse''. Modders who wish to add some sparkles to the Eclipse could create a new GameCondition class called ''GameCondition_EclipseWithSparkles'' and use XPath to change the conditionClass to MyNameSpace.GameCondition_EclipseWithSparkles.
+
+===Pros===
+Pretty easy. Keeps most values of the original Def intact as well.
+
+===Cons===
+Subverts any Harmony patches on the original Class, so potential issues with compatibility.
+
+==Harmony patching==
+{{Main|Modding Tutorials/Harmony}}
+If you still want to use Harmony in the face of all these alternatives, you might have fallen for the [https://exceptionnotfound.net/the-golden-hammer-anti-pattern-primers/ Golden Hammer Design Pattern]. But sure, go ahead.
+
+=See also=
+
+* [[Modding Tutorials/Compatibility with defs|Compatibility with defs]] explains compatibility from the XML side of things.<br/>
+
+[[Category:Modding tutorials]]

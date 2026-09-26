@@ -1,0 +1,162 @@
+{{Infobox biome
+| name = Tropical swamp
+| image = TropicalSwamp.png
+| type = Biome
+| texture = TropicalSwampTexture.png
+| canbuildbase = Yes
+| allowFarmingCamps = Yes
+| animal density = 6.5
+| plant density = 0.99
+| movement difficulty = 4
+| max temperature = 55
+| min temperature = 15
+| min rainfall = 2000
+| min swampiness = 0.5
+| forageability = 0.75
+| wild plant regrow days = 13
+| disease mtb days = 30
+| description = A plant-choked, steamy swamp seething with parasites and pathogens. Much of the land is too marshy to build on. Difficult movement, aggressive animals, and rampant disease make living here a nightmare.
+<!-- weather -->
+| clear = 18
+| fog = 1
+| rain = 2
+| dry thunderstorm = 0.3
+| rainy thunderstorm = 1.7
+| foggy rain = 1
+| hard snow = 4
+| soft snow = 4
+| gray pall = 1
+| blind fog = 1
+| overcast = 2
+| torrential rain = 0.5
+<!-- fish -->
+| max fish population = 780
+| freshwater_common_tilapia = Yes
+| freshwater_uncommon_catfish = Yes
+| freshwater_uncommon_piranha = Yes
+| saltwater_common_bluefish = Yes
+| saltwater_uncommon_tuna = Yes
+| saltwater_uncommon_flounder = Yes
+}}
+'''Tropical swamp''' is a hot and wet [[biome]] in RimWorld.
+<!-- return 28f + (tile.temperature - 20f) * 1.5f + (tile.rainfall - 600f) / 165f + tile.swampiness * 3f -->
+== Summary ==
+Tropical swamp are famous for having many diseases, including [[Sleeping sickness]]: a slow-progressing, long-lasting disease that is exclusive to the tropics. Many trees make it difficult to clear land and rapid plant growth makes it difficult to keep it clear. 
+
+In the lists below the number in brackets represents the relative commonality.
+
+=== Flora ===
+<div class="ul-column-width-200">
+{{#ask: [[Type::Plant]] [[Lives In Tropical Swamp::>>0]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Tropical Swamp #
+}}
+</div>{{#set:Flora Commonality Sum | {{#expr: {{#ask: [[Type::Plant]] [[Lives In Tropical Swamp::>>0]] | ?Lives In Tropical Swamp = | mainlabel=- | sep=+ }} }} }}{{#set:Grazing Score|{{Grazing Score}} }}
+
+=== Fauna ===
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Tropical Swamp::>>0]] [[Coastal Animal::false]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Tropical Swamp
+}}
+</div>{{#set:Fauna Commonality Sum | {{#expr: {{#ask: [[Type::Animal]] [[Lives In Tropical Swamp::>>0]] [[Coastal Animal::false]] | ?Lives In Tropical Swamp = | mainlabel=- | sep=+ }} }} }}
+
+Additionally, these animals can spawn in coastal maps:
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Tropical Swamp::>0]] [[Coastal Animal::true]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Tropical Swamp
+}}
+</div>
+
+If the map is [[polluted]],{{BiotechIcon}} then the game may choose to spawn in wild animals from this list instead:
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Tropical Swamp (Polluted)::>0]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Tropical Swamp (Polluted)
+}}
+</div>
+
+=== Diseases ===
+Tropical swamp has a disease {{MTB}} of 30 days. The following diseases can occur in a Tropical swamp:
+{| {{STDT|c_07 sortable}}
+! Disease
+! Commonality{{#set:Disease commonality sum|{{#expr:160+140+100+100+80+80+30+30+100+100+10}} }}
+|-
+| [[Malaria]] || 160{{#set:Malaria commonality|160}}
+|-
+| [[Sleeping sickness]] || 140{{#set:Sleeping sickness commonality|140}}
+|-
+| [[Flu]] || 100{{#set:Flu commonality|100}}
+|-
+| [[Plague]] || 100{{#set:Plague commonality|100}}
+|-
+| [[Gut worms]] || 80{{#set:Gut worms commonality|80}}
+|-
+| [[Muscle parasites]] || 80{{#set:Muscle parasites commonality|80}}
+|-
+| [[Fibrous mechanites]] || 30{{#set:Fibrous mechanites commonality|30}}
+|-
+| [[Sensory mechanites]] || 30{{#set:Sensory mechanites commonality|30}}
+|-
+| [[Flu#Animals|Animal flu]] || 100{{#set:Animal flu commonality|100}}
+|-
+| [[Plague#Animals|Animal plague]] || 100{{#set:Animal plague commonality|100}}
+|-
+| [[Organ decay]] || 10{{#set:Organ decay commonality|10}}
+|}
+
+=== Fish ===
+{{Odyssey|section=1|No category}}
+The table below contains the list of all of the fish that can be caught - as well as where they can be caught.
+{| {{STDT|c_23 sortable}}
+! Fish
+! Water body
+! Rarity
+|-
+| [[Tilapia]] || Freshwater || Common
+|-
+| [[Catfish]] || Freshwater || Uncommon
+|-
+| [[Piranha]] || Freshwater || Uncommon
+|-
+| [[Bluefish]] || Saltwater || Common
+|-
+| [[Tuna]] || Saltwater || Uncommon
+|-
+| [[Flounder]] || Saltwater || Uncommon
+|}
+
+== Analysis ==
+{{Stub|section=1|reason=Missing analysis/survival strategy}}
+
+== Gallery ==
+<gallery>
+TropicalSwamp.png|A Tropical Swamp
+<!--TropicalSwampPolluted.png|A [[polluted]] Tropical Swamp {{BiotechIcon}}-->
+TropicalSwampTexture.png|Tropical swamp's texture on the world map
+Tropical Swamp fertility and terrain affordance.png|A screenshot of a tropical swamp with the terrain affordance and fertility overlays 
+</gallery>
+
+== Version history ==
+* [[Version/0.18.1722|0.18.1722]] - Added
+
+{{nav|biomes|wide}}
+[[Category:Biomes]]
+[[Category:Hot Biomes]]

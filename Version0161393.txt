@@ -1,0 +1,97 @@
+{{Version Nav}}
+RimWorld Alpha 16 – Wanderlust is released! This update adds a spherical world and the ability to travel across it with multiple caravans, having simultaneous encounters on the way and settling new colonies.
+
+If you’re on Steam, your game will update automatically. Because of huge structural changes to the game, this update will break save games. If you want to continue an old save just change to the “alpha15” beta branch on Steam. To do so, go to Steam library, right-click RimWorld, click Properties, click the Betas tab, and use the drop-down to select the branch you want.
+
+If you’re not on Steam, just download from your permanent personal download link – it’s always updated to the latest version.
+
+==Release Trailer==
+
+<youtube>https://www.youtube.com/watch?v=2hYecyqAE90</youtube>
+
+==Changes==
+
+===Spherical planet===
+* World map is now modeled as a sphere covered with hexagons (and a few pentagons).
+* New map generation to make nicer mountain ranges, hill clusters, and continents.
+* Nice backdrop with stars and sun.
+* Time of day is modeled on the planet view; local time of day corresponds to how the sunlight hits the planet.
+* Time zones are now modeled, out of necessity.
+* New planet generation parameter: temperature. You can make worlds that are overall hotter or overall colder.
+* New planet generation parameter: rainfall. You can make worlds where there is overall more or less precipitation.
+* New biome: sea ice.
+* Factions can now have many bases; non-player factions generate with lots of bases.
+
+===Multiple simultaneous maps===
+* There can now be multiple local maps active at once. For example, you can have your colony running as well, as a group of soldiers attacking an enemy base, at the same time.
+* The character bar at the top of the screen shows all of your colonists and allows you to change which map you’re looking at. It groups characters togehter by the map they’re on.
+* You can settle multiple colonies at once. However, for balance and performance reasons, the default limit is one colony at a time. This can be increased in the options menu if you want to experiment, but we don’t recommend it.
+
+===Caravans===
+* Player can now gather up groups of colonists, prisoners, and animals, and form caravans to travel across the world surface.
+* Caravans are formed using a special “create caravan” dialog, which allows you to easily decide what people, animals, and items should be included in the caravan up to its carry weight limit. The colonists do the busywork.
+* Caravans appear as units in the world map, where they can be ordered around similarly to drafted soldiers in the local map.
+* Caravans can be ambushed by enemy factions or manhunting animals. This produces a temporary local map.
+* Caravans can incidentally meet friendly traders and trade.
+* Caravans can visit other faction bases and trade with them. Faction bases have more stock and better prices than traders who come and visit your colony.
+* Caravans can attack faction bases. The game generates a simple faction base map with defenders and loot, and you raid it. If you defeat the defenders, you can move in and take over the base (for now, generated bases are quite simple.)
+* Caravans can settle and form new colonies.
+* You can abandon your bases to shift to new ones.
+* Caravans move at different speeds depending on the biome, the time of year (cold biomes close off with the winter snows), local hilliness, the movement speeds of people in the caravan, and whether there are wounded to carry.
+* It is possible to abandon people and items from caravans. Abandoning people will, depending on the context, produce sad thoughts from their friends and relatives, especially if you abandon them in circumstances that seem impossible to survive.
+
+===Travel victory===
+* New game ending: A friendly person offers a ship, but it is distant, across the world map. If you travel there, you can escape the planet and complete the game. But, traveling there will take a long time and you’ll need to stop at various points to build up supplies or solve problems.
+
+===Transport pods===
+* You can build transport pod launchers and transport pods. These let you launch their contents long distances across the world map, over oceans or mountains.
+* Pods can be targeted on empty world tiles, to send a caravan of people and gear there.
+* Pods can be targeted on enemy bases, where you can perform “drop-in” raids and drop right on top of the base, or drop outside it – just like raiders do to you!
+* Pods can be targeted on existing combat maps or other bases you control. This allows you to do things like resupply an ongoing siege with artillery shells (just like raiders do when besieging you), reinforce a weak caravan that just got ambushed, or send supplies and people between two bases you control.
+* Pods are loaded by selecting several and creating a “launch group”. An interface like that for creating caravans appears, allowing you to define what and who should be included. The colonists do the detail work.
+* Transport pods require chemfuel, which can be bought, founded, drilled from the ground, or refined from wood or food using the new refinery building.
+
+===Usability improvements===
+* New research screen! Research projects are laid out visually according to their dependencies in a left-to-right arrangement similar to the Civilization games. Modders need to manually place their projects, but if two overlap the game will automatically move them apart.
+* Redesigned how medical system generates text feedback. Tooltips now contain much more information with less ambiguity. Wound tendings are now of any percentage quality (not just good/poor).
+* Game now warns you when you order slaughter of a bonded animal (because of the mood impact).
+* Added visual feedback thought bubbles for when pawns gain certain good and bad thoughts, so it’s easier to see when something just bothered or pleased them.
+* Rich soil is darker in color and so easier to see.
+* Added a “hold fire” toggle on drafted pawns that makes them not automatically shoot at enemies.
+* In order to avoid annoying players by having animals always follow their masters, even into combat, players can configure when animals will follow their masters. There are two toggles: Follow while drafted, follow while hunting/taming
+
+===Drugs and health===
+* Drug rebalance. Increase drug addictiveness in general. Drugs can now damage the body in various ways: Alcohol can cause brain damage or liver cirrhosis or liver cancer, smokeleaf can cause asthma or lung cancer, psychite can damage kidneys, wake-up and go-juice can damage the brain, and generalized overdoses can cause brain damage.
+* Drugs are more lucrative on the market.
+* Added a third toggle in drug policy saying whether you can use the drug to feed an addiction, separately from joy usage.
+* There is now a random chance of a overdose when taking drugs, even if just taking one dose.
+* Added a way to administer specific drugs to people, including prisoners, animals, and downed people. So you can give Luciferium to someone who needs it.
+* Malari-block reworked into Penoxycyline, which prevents a wide variety of infections (not just malaria).
+* Drug chemical effects are modulated by body size. So elephants need a lot of beer to get hammered; squirrels not so much.
+* Luciferium occasionally heals old wounds/scars. Luciferium is harder to get (less of it in old shrines, higher prices).
+* Stats now stack differently (more additive, less multiplying) to reduce some exploits.
+
+===Misc===
+* Reworked surgery failure into three modes – minor, catastrophic, and ridiculous. Ridiculous hits all body parts, minor and catastrophic hit parts near the surgery site.
+* Reworked trade prices across the board. Simplified trade price calculations and added rich tooltips to feed them back.
+* The mood effects from room impressiveness have been redesigned and rebalanced. Characters now have consistently reasonable thoughts about the quality of their personal room, so there is a reason to make better rooms (though high-quality rooms aren’t absolutely necessary). Mood effects from eating in or convalescing in nice/poor rooms are also more reasonable and better-fed back.
+* Rebalanced plant growth timings.
+* UI can now be scaled to arbitrary scaling factors, for players who play in really high resolution.
+* Rescued people (especially space refugees etc) should sometimes join the colony. If the environment isn’t survivable (e.g. bad temperature, toxic fallout) they should always join the colony.
+* Animals carrying inventory now have visible packs on.
+* Added new separate bills to stonecut each type of stone.
+* Prisoners are now temporarily marked “guilty” when they do certain actions, like killing a colonist or attempting escape. Guilty prisoners can be executed without mood penalties.
+* Faction names are now much more interesting and varied, and are separate from specific community names.
+* New Peaceful difficulty mode, for players who just want to build stuff. Disables major involuntary threats like raids.
+* Rename Megatherium -> Megasloth
+* New alert: Unhappy nudity
+* Backstories can be translated now
+* New translation tool gives a readout of exactly what translation data remains to be written and what data is unused.
+* Added proper chick peeping sounds.
+* You can now only request one trader per 4 days from a faction.
+* Colonists now get mood boosts for defeating big enemies or enemy faction leaders.
+* Cleaning and harvesting jobs are now given in batches (more efficient and sensible AI).
+* Default medical care for non-colonists is now herbal meds. Switches to best meds on recruit.
+* Rebalanced most range weapons so more time is in cooldown and less is in aiming – especially for light weapons.
+* Pawns generated below age 20 now have no adulthood backstory.
+* Hundreds of other balance improvements, exploit solutions, AI improvements, and bugfixes.

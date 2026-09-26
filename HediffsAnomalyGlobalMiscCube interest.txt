@@ -1,0 +1,56 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Anomaly/Global/Misc}}
+|}
+----
+{| {{STDT| c_21}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Cube interest" <!-- defName="CubeInterest" -->
+! [[Golden cube#Cube obsession|Cube interest]]
+----
+* Def Name:<br />CubeInterest
+* Label:<br />cube interest
+|<!-- Description -->
+<div style="max-width: 200px;">
+This person is drawn to the golden cube. If separated from the cube for too long, they'll start to experience negative effects.
+</div>
+|<!-- Details -->
+* Hediff Class: '''Hediff_CubeInterest'''
+* Always Show Severity: {{Good|true}}
+* Initial Severity: '''10%'''
+* Max Severity: '''100%'''
+* Is Bad: {{Good|false}}
+* '''Report String Overrides'''
+** Job Def: '''GotoWander'''
+*** Report String: Wandering and thinking about the cube.
+** Job Def: '''Wait_Wander'''
+*** Report String: Wandering and thinking about the cube.
+** Job Def: '''Wait_Asleep'''
+*** Report String: Asleep, dreaming about the cube.
+** Job Def: '''Meditate'''
+*** Report String: Meditating on the cube.
+** Job Def: '''Pray'''
+*** Report String: Praying for the cube.
+** Job Def: '''MeditatePray''' {{IdeologyIcon}}
+*** Report String: Praying for the cube.
+|<!-- Stages -->
+{| {{STDT| c_21}}
+! Label !! Parameters
+|-
+! curious
+| -<!-- Parameters -->
+|-
+! fascinated
+|<!-- Parameters -->
+* Min Severity: '''33%'''
+* [[Sleep Fall Rate]] Factor: {{Good|×80%}}
+* [[Global Work Speed]] Factor: {{Bad|×90%}}
+|-
+! obsessed
+|<!-- Parameters -->
+* Min Severity: '''66%'''
+* [[Sleep Fall Rate]] Factor: {{Good|×60%}}
+* [[Global Work Speed]] Factor: {{Bad|×80%}}
+* [[Mental Break Threshold]] Offset: {{++|4%}}
+|}<noinclude>
+|}</noinclude>

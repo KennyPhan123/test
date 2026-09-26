@@ -1,0 +1,139 @@
+<!-- variables are suffixed with ACL (for Ancient Complex Loot) to avoid any name clash if transcluded on the same page as other loot tables with similar variables - due to global scope of variables
+!-->{{#vardefine:ACLlootAllWeights|
+  {{#expr:
+    {{#vardefineecho:ACLlootMeal|1}} +
+    {{#vardefineecho:ACLlootMedicine|1}} +
+    {{#vardefineecho:ACLlootLuciferium|1}} +
+    {{#vardefineecho:ACLlootJoywire|0.15}} +
+    {{#vardefineecho:ACLlootSilver|1}} + 
+    {{#vardefineecho:ACLlootChemfuel|1}} + 
+    {{#vardefineecho:ACLlootUranium|1}} +
+    {{#vardefineecho:ACLlootBioferrite|0.5}} +
+    {{#vardefineecho:ACLlootMaterials|1}} +
+    {{#vardefineecho:ACLlootAdComp|0.15}} +
+    {{#vardefineecho:ACLlootGlitterMed|0.15}} +
+    {{#vardefineecho:ACLlootTechprint|0.05}} +
+    {{#vardefineecho:ACLlootGenepack|0.5}} +
+    {{#vardefineecho:ACLlootMiscHigh|0.05}} +
+    {{#vardefineecho:ACLlootSerum|0.25}} +
+    {{#vardefineecho:ACLlootBook|0.7}} +
+    0
+  }} }}
+{| {{STDT| sortable c_06 text-center}}
+! style="width:15em;" | Item
+! style="width:60em;" | Randomly picked among
+! style="width:3em;" | Amount
+! style="width:3em;" | Chance
+|-
+! {{Loot Item|Packaged survival meal}}
+| 
+| 3 - 9
+| style="text-align:right;" | {{#expr: (100 * {{#var:ACLlootMeal}} / {{#var:ACLlootAllWeights}}) round 1}}%
+|-
+! Medicine
+| {{Loot Item|herbal medicine}}, {{Loot Item|medicine}}
+| 5 - 9
+| style="text-align:right;" | {{#expr: (100 * {{#var:ACLlootMedicine}} / {{#var:ACLlootAllWeights}}) round 1}}%
+|-
+! {{Loot Item|Luciferium}}
+| 
+| 7 - 18
+| style="text-align:right;" | {{#expr: (100 * {{#var:ACLlootLuciferium}} / {{#var:ACLlootAllWeights}}) round 1}}%
+|-
+! {{Loot Item|Joywire}}
+| 
+| 1
+| style="text-align:right;" | {{#expr: (100 * {{#var:ACLlootJoywire}} / {{#var:ACLlootAllWeights}}) round 1}}%
+|-
+! {{Loot Item|Silver}}
+| 
+| 45 - 150
+| style="text-align:right;" | {{#expr: (100 * {{#var:ACLlootSilver}} / {{#var:ACLlootAllWeights}}) round 1}}%
+|-
+! {{Loot Item|Chemfuel}}
+| 
+| 15 - 45
+| style="text-align:right;" | {{#expr: (100 * {{#var:ACLlootChemfuel}} / {{#var:ACLlootAllWeights}}) round 1}}%
+|-
+! {{Loot Item|Uranium}}
+| 
+| 45 - 75
+| style="text-align:right;" | {{#expr: (100 * {{#var:ACLlootUranium}} / {{#var:ACLlootAllWeights}}) round 1}}%
+|-
+! {{Loot Item|Bioferrite}}
+| 
+| 30 - 50
+| style="text-align:right;" | {{#expr: (100 * {{#var:ACLlootBioferrite}} / {{#var:ACLlootAllWeights}}) round 1}}%
+|-
+! Rare materials
+| {{Loot Item|Hyperweave}}, {{Loot Item|Plasteel}}
+| 15 - 35
+| style="text-align:right;" | {{#expr: (100 * {{#var:ACLlootMaterials}} / {{#var:ACLlootAllWeights}}) round 1}}%
+|-
+! {{Loot Item|Advanced component}}
+| 
+| 2 - 4
+| style="text-align:right;" | {{#expr: (100 * {{#var:ACLlootAdComp}} / {{#var:ACLlootAllWeights}}) round 1}}%
+|-
+! {{Loot Item|Glitterworld medicine}}
+| 
+| 2 - 5
+| style="text-align:right;" | {{#expr: (100 * {{#var:ACLlootGlitterMed}} / {{#var:ACLlootAllWeights}}) round 1}}%
+|-
+! {{Loot Item|Techprint}}
+| 
+| 1
+| style="text-align:right;" | {{#expr: (100 * {{#var:ACLlootTechprint}} / {{#var:ACLlootAllWeights}}) round 1}}%
+|-
+! {{Loot Item|Genepack}}
+| 
+| 1
+| style="text-align:right;" | {{#expr: (100 * {{#var:ACLlootGenepack}} / {{#var:ACLlootAllWeights}}) round 1}}%
+|-
+! High value
+| <!--
+!-->{{Loot Item|antigrain warhead}}, <!--
+!-->{{Loot Item|archotech arm}}, <!--
+!-->{{Loot Item|archotech eye}}, <!--
+!-->{{Loot Item|archotech leg}}, <!--
+!-->{{Loot Item|doomsday rocket launcher}}, <!--
+!-->{{Loot Item|healer mech serum}}, <!--
+!-->{{Loot Item|orbital bombardment targeter}}, <!--
+!-->{{Loot Item|orbital power beam targeter}}, <!--
+!-->{{Loot Item|psychic animal pulser}}, <!--
+!-->{{Loot Item|psychic emanator}}, <!--
+!-->{{Loot Item|psychic insanity lance}}, <!--
+!-->{{Loot Item|psychic shock lance}}, <!--
+!-->{{Loot Item|psychic soothe pulser}}, <!--
+!-->{{Loot Item|reinforced barrel}}, <!--
+!-->{{Loot Item|resurrector mech serum}}, <!--
+!-->{{Loot Item|techprof subpersona core}}, <!--
+!-->{{Loot Item|tornado generator}}, <!--
+!-->{{Loot Item|triple rocket launcher}}, <!--
+!-->{{Loot Item|vanometric power cell}}, <!--
+!-->{{Loot Item|archite capsule}}, <!--
+!-->{{Loot Item|deathrest capacity serum}}, <!--
+!-->{{Loot Item|biomutation lance}}, <!--
+!-->{{Loot Item|biomutation pulser}}
+| 1
+| style="text-align:right;" | {{#expr: (100 * {{#var:ACLlootMiscHigh}} / {{#var:ACLlootAllWeights}}) round 1}}%
+|-
+! [[Serum]]{{AnomalyIcon}}
+| <!--
+!-->{{Loot Item|juggernaut serum}}, <!--
+!-->{{Loot Item|metalblood serum}}, <!--
+!-->{{Loot Item|mind-numb serum}}, <!--
+!-->{{Loot Item|voidsight serum}}
+| 1 - 2
+| style="text-align:right;" | {{#expr: (100 * {{#var:ACLlootSerum}} / {{#var:ACLlootAllWeights}}) round 1}}%
+|-
+! [[Book]]
+| <!--
+!-->{{Loot Item|novel}}, <!--
+!-->{{Loot Item|schematic}}, <!--
+!-->{{Loot Item|textbook}}, <!--
+!-->{{Loot Item|tome}}
+| 1
+| style="text-align:right;" | {{#expr: (100 * {{#var:ACLlootBook}} / {{#var:ACLlootAllWeights}}) round 1}}%
+|-
+|}<noinclude>[[Category:Customized table templates]]</noinclude>

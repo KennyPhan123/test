@@ -1,0 +1,91 @@
+{{Version Nav|date=2025-07-28}}
+
+Hello, we’re back with another update for RimWorld! If you need to report a bug, or you’re having a problem while playing, please join us on the official RimWorld development Discord.
+
+Today’s update fixes several issues people were experiencing with Odyssey. This includes multiple corner problems where buildings through corners affected room roles, beds could become prisoner beds through corners, and enemies could set fire to your stuff through corners. It also fixes diagonal walls leaking room vacuum under certain circumstances, issues with player shuttles being lost to water, as well as gravship launches causing your electrical connections to scramble.
+
+We’re also aware of a bug where quest shuttles incorrectly try to land on water, potentially causing them to warp into your buildings. We’re working on a solution - a fix for it is currently available on the Steam unstable beta branch!
+
+This update should be compatible with all savegames and mods.
+
+And if you’re enjoying Odyssey, consider leaving a review on Steam! Expansions don’t get a ton of reviews, and every one helps us out a lot.
+
+Have a great week,
+- Tia
+
+==Changelog==
+* Made crater descriptions more generic.
+* Clarified the orbital scanner description.
+* Clarified the gravcore description.
+* Made ritual text more generic to fit more situations.
+* Added flooring to subroom prefabs on orbital platforms.
+* Reduced the chance of the gravship landing spot being over deep water.
+* Gravcores are no longer asked for in trade request quests.
+* Reduced psilocap catatonic breakdown chance from 4% to 1% and psilocap creative inspiration chance from 6% to 2%.
+* Made the breathless gene suppress the normal vacuum resistant gene, removing its metabolic impact.
+* Prevented hospitality quests from being acceptable in space due to it causing various bugs.
+* Removed unnecessary PawnRenderNode_Apparel cast in Apparel dynamic setup for modders
+* Prevented traps spawning next to exterior doors.
+* Prevented outfit stands from being uninstalled because they destroy their inventory if deconstructed while minified.
+* Updated some player names per request.
+
+===Fixes===
+* Fix: Corner punching turrets, buildings through corners affecting room roles, beds becoming prisoner beds through corners, and enemies setting fire to buildings through corners.
+* Fix: Flickables are reset to be powered on when gravship launches.
+* Fix: Power connections are scrambled on gravship launch.
+* Fix: Diagonal walls could incorrectly leak room vacuum.
+* Fix: Issues with shuttle crash quest after moving maps.
+* Fix: Player shuttles could be lost in water when landing.
+* Fix: Issues with nomadic precept not saving/loading properly (resetting to poor mood on load).
+* Fix: Mechanoid signal quest sometimes didn’t drop the grav engine.
+* Fix: Areas previously occupied by gravship weren’t being updated by the pathfinder, so pawns would appear to walk over empty space.
+* Fix: Cannot fill in Odyssey craters without Anomaly enabled.
+* Fix: Could place the gravship hull off of substructure.
+* Fix: Roof overlay not updated after gravship leaves grav anchored map.
+* Fix: Roof zones are left on map after gravships leave.
+* Fix: Lava emergence causing freezes in very specific circumstances.
+* Fix: Reduced the possibility of getting a double grav engine.
+* Fix: Draw styles were using area instead of selected cell number.
+* Fix: VTR issues with frenzy field and sleep suppression.
+* Fix: Gravship overlapping prison cell for "prisoner willing to join" quest.
+* Fix: Pawns standing on the same cell as another building (most commonly doors) can take friendly fire when within safe range.
+* Fix: Issues with age reversal demand time not being set correctly from chronophagy, and reset on save/load.
+* Fix: Wolverine wasn't configured to be a predator despite having prey size.
+* Fix: Orbit layer not using correct world size if loaded into an existing 1.6 save.
+* Fix: Strange signal quest disappearing if target map is destroyed.
+* Fix: Pawns won't fish if the closest water body to them has no fishable cells.
+* Fix: Error in PawnsAvailable quest part after switching maps.
+* Fix: Improve fallback for spawning shuttle on map from caravan.
+* Fix: Shuttles now properly apply peace talk outcomes on landing.
+* Fix: Issues with using gravship scenario ScenParts outside of odyssey scenario.
+* Fix: Cypress tree being destroyed by floodwater, unlike all other trees.
+* Fix: Archonexus reset does not reset grav engine inspected status (prevents the gravship quest from being obtained again, so no gravcores can be obtained).
+* Fix: Slow startup performance (InitializeShortHashDictionary) with lots of modded content.
+* Fix: Ancient mechanitor complex can fail to generate on a map where it should be able to fit.
+* Fix: Map gen exception and broken UI if ancient reactor fails to find a place to spawn, adjust order so they fail to find a place less often.
+* Fix: Training decay time not taking into account sentience-catalyst-adjusted wildness.
+* Fix: Alligator eggs hatching into sea turtles.
+* Fix: Quest pawn arrival could break in space.
+* Fix: UI cascade error when pawn targeted with skip dies.
+* Fix: Tended goodwill being reset if the pawn is downed again after being tended.
+* Fix: Gases on gravship never dissipate after landing.
+* Fix: Error when accepting bestower quest.
+* Fix: Incorrect index calculations in river flow code.
+* Fix: Loading non-Biotech save with Biotech enabled creates record-related errors.
+* Fix: Abandoning a map with an ancient exostrider on it doesn't count as abandoning your chance to get a mechanitor, so the complex never generates.
+* Fix: Player not considered to have a grav engine while gravship in flight.
+* Fix: Linux build didn’t inherit launch arguments configured in Steam.
+* Fix: Apparel setup was not passing parent tag def into render node.
+* Fix: Enemies in Odyssey structures will now respond better to colonists being unreachable.
+* Fix: Pawns with ranged weapons missing melee attack float menu option when in melee range.
+* Fix: Statue doesn't visually update until save/reload if you use transmute steel on it.
+* Fix: Error when slave rebellion tries to trigger while slave is in gene extractor.
+* Fix: Strange signal quest was acceptable in space.
+* Fix: Unnatural healing/healer serum removing sentience catalyst.
+* Fix: Sentience catalyst can target wild people.
+* Fix: Apocriton doesn't have parts for heavy shield apparel.
+* Fix: Incorrect message when trying to set prisoner as pilot.
+* Fix: Typo in plant grove description.
+* Fix: Typo in mechhive location description.
+* Fix: Typo in lava snail description.
+* Fix: Various typos.

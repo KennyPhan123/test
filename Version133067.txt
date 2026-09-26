@@ -1,0 +1,99 @@
+{{Version Nav}}
+
+UPDATE: An issue with this hotfix where health conditions would appear on the wrong body part has been fixed. It may appear one more time if you saved today but not thereafter. Older saves will not have the issue. I'm sorry that bug occurred.
+
+---
+
+Hi all,
+
+The Ideology release has been great - thanks for all your feedback! We've been working hard to translate this torrent of feedback into a set of improvements for you as fast as possible. Today we've got an update with miscellaneous improvements and fixes. This patch improves the base game, Ideology, and Royalty.
+
+EDIT: It should be compatible with all saves and mods. (A few mods were incompatible but have been updated - thanks to the authors CrashM, Void, and avil!)
+
+Non-English languages have also been updated with the latest translations from the gracious volunteer translators (you can join them here).
+
+Big thanks to everyone who helped test the unstable build on the official testing Discord. Love to have more people come help, so if you're willing please.. join us. The improvement process is ongoing.
+
+-Ty
+@TynanSylvester
+
+Full change list
+
+== Improvements ==
+* Blind people no longet get the darkness mood debuff.
+* Reduced min colony wealth to 150k for firing archonexus endgame quest.
+* Adding new desired apparel no longer regenerates role apparel.
+* Ancient non-deconstructible stuff has disable deconstruct command tooltip and inpect pane information on how to remove it.
+* Avoid repeating normal memes when generating non-player factions.
+* Make arrested pawn a prisoner as soon as we start carrying them to bed instead of waiting to arrive.
+* Allow starting the bestowing ceremony via right click.
+* Added anima grass growth rate from meditiation penlaty to anima tree based on proximity to artificial buildings.
+* Pregnant animals are slaughtered after other animals in order from most recent to least recent pregnancy.
+* Building damage factors are drawn for projectile weapons in their info card.
+* Optimize ritual obligation alert to not generate unused text anymore, significantly reducing performance spikes for larger pawn counts.
+* Dying hair requires dye
+* Metallic fence and walls now use stuff-specific ui and blueprint graphics.
+* Mechanoid breach raids spawn with one breacher.
+* Improvements to the junk spawning scatterers.
+* Breach raids never have 'drop-in' arrival mode.
+* Prisoners now produce a mood malus if they escape.
+* Shuttle and spacedrone can now overlap zones and adjusted other impassable buildings so they cannot overlap zones.
+* Mortars don't drop their barrels if under 50% fuel.
+* Gray out pawns that can't take any role in ritual.
+* Biosculpter pod plays a sound when nutrition is added.
+
+== Fixes ==
+
+* Fix: Typo 'skill' instead of 'skull'.
+* Fix: After a gladiator duel, the downed prisoner will be carried back to their bed but they won't actually be put in the bed, they will remain downed on top of the bed instead
+* Fix: LordJob_LoadAndEnterTransporters blocking rituals.
+* Fix: "Parsed 34.9 as int" warning on startup.
+* Fix: Pawns can end up with overlapping apparel requirements.
+* Fix: Desired apparel was generated as apparel requirement but not available when manually selecting it.
+* Fix: Bestowing quest can get bugged if accepting it on a different map from one it was generated on.
+* Fix: If you design an ideoligion which has two words in its pawn "noun" you will not be able to bring people to trial.
+* Fix: Inverted anyMemeRequired condition in PreceptApparelRequirement.
+* Fix: Dromedary description mentions it is not rideable, but it is.
+* Fix: Portrait did not update after look change.
+* Fix: Ideology background doesn't display after installing Ideology.
+* Fix: Pawns walking over structures causes construction to halt.
+* Fix: Trees adjacent to no-cut growing zones are cut down.
+* Fix: Players can edit deities outside normal+dev ideo configurations.
+* Fix: Error spam when trying to add some ideo buildings.
+* Fix: Essential roles can be removed.
+* Fix: Rituals with no spectators can show weird numbers in the quality factors preview. Disabled ritual seat outcome effect for rituals without spectators.
+* Fix: Stacking building damage factors don't display if they have the same value.
+* Fix: PreceptComp descriptions can be uncapitalized.
+* Fix: Modded factions cause ideo errors.
+* Fix: Gender supremacy memes have opposite agreeing traits.
+* Fix: Typo on anima tree linking ritual.
+* Fix: NullReferenceException on unequipped low-shield pack.
+* Fix: Ability.Activate only starts cooldown if there are any ability components.
+* Fix: Ritual ambience sound preview kept playing the old one after changing style categories that affected it.
+* Fix: Deep drills produce chunks over themselves and their interaction cells.
+* Fix: Authors label is not truncated with '...' on mod ui.
+* Fix: Animal sacrifice ritual cancelled just before it ends.
+* Fix: Enter closes form caravan UI.
+* Fix: Inspect pane overlap when canceling, or removing a pawn from, a caravan.
+* Fix: Musical instruments don't give recreation.
+* Fix: Plant cutting toggle on growing zones causes plants to never be harvested.
+* Fix: 'Copy CSV' button is broken on some debug tables.
+* Fix: Biosculpter pod only shows pawn label for an occupant not who it is biotuned to.
+* Fixes to anima tree linking feedback for spectator role.
+
+== Technical ==
+* Added explicit look mode parameter to CompSpawnImmortalSubplantsAround
+* Sanitize the mod load folder slashes.
+* Fix: Uncapitalized letter after colon.
+* Faction -> HomeFaction in JobDriver_TakeToBed.
+* Graphic_Appearance now checks things for IConstructible to determine stuff rather than the IConstructible implementations.
+* Added missing TKey's on tips.
+* Move ShowingGizmosForRitualsTmp field.
+* GetHairMats -> CalculateHairMats
+* Removed debug code in GenStep_ScatterGroup.
+* Fix: Back-compatibility not preserving prisoner status.
+* Fix: Null reference exception in Need_Indoors for pawns with null ideo.
+* Fix: No-expansion ideos are shared between factions.
+* Fix: Uncapitalized property.
+* Fix: A divide by zero in PawnWeaponGenerator.
+* Small fix to Command_BestowerCeremony feedback code.

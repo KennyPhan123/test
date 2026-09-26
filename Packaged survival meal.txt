@@ -1,0 +1,135 @@
+{{Infobox main|food
+| name = Packaged survival meal
+| image = Packaged survival meal a.png
+| description = A high-quality packaged meal, manufactured for use in survival situations. While it never rots, it can still deteriorate if left outside. Great for traveling.
+<!-- Base Stats -->
+| type = Food
+| type2 = Meal
+| hp = 50
+| deterioration = 0.25
+| marketvalue = 24
+| mass base = 0.3
+| flammability = 1
+| stack limit = 10
+| path cost = 14
+<!-- Ingestion -->
+| food type = meal
+| taste = Simple
+| max num to ingest at once = 1
+| nutrition = 0.9
+<!-- Creation -->
+| work to make = 450
+| work speed stat = Cooking Speed
+| production facility 1 = Fueled stove
+| production facility 2 = Electric stove
+| research = Packaged survival meal
+| skill 1 = cooking
+| skill 1 level = 8
+| resource 1 = Nutrition
+| resource 1 type = non-vegan
+| resource 1 amount = 0.3
+| resource 2 = Nutrition
+| resource 2 type = vegan
+| resource 2 amount = 0.3
+| bulk product amount = 4
+<!-- Technical -->
+| defName = MealSurvivalPack
+| preferability = Simple
+<!-- Unused -->
+| always haulable = true
+| draw gui overlay = true
+| eat effect = EatVegetarian
+| graphic class = Graphic_Single
+| graphic path = Things/Item/Meal/SurvivalPack
+| label = packaged survival meal
+| parent name = MealBase
+| resource readout priority = Last
+| selectable = true
+| social properness matters = true
+| sound eat = Meal_Eat
+| thing class = Meal
+| ticker type = Rare
+| use hit points = true
+}}
+{{Info|'''Packaged survival meals''', sometimes abbreviated as 'PSM', are a high-tech never expiring food option. Note that they can still [[deteriorate]].}}
+
+== Acquisition ==
+Packaged survival meals can be cooked at a [[fueled stove]] or [[electric stove]] once the [[Research#Packaged survival meal|Packaged survival meal]] research project has been completed. It requires a [[Cooking]] skill of 8 to be made.
+
+One packaged survival meal requires 0.30 nutrition from meat and 0.30 nutrition from vegetables and {{Ticks|{{P|Work To Make}}}} ticks. Alternatively, it can be made in batches of 4 at the cost of 1.2 nutrition of each type and {{ticks|1440}} of work.
+ 
+It can also be purchased from [[trade]]rs, or occasionally recovered from non-tribal [[raider]]s.
+
+Additionally, some [[scenario]]s give packaged survival meals {{Icon Small|packaged survival meal}} on startup. The ingredients used on each depend on the starting [[ideoligion]]'s{{IdeologyIcon}} precepts, with '''cannibalism: preferred''' and above containing human meat {{Check Tag|Needs testing|Cannibalism has been tested but meat eating and fungus has not been. presumably disapproved would have no impact due to the precept being fine with neutral meals but required would have meals containing meat}}.
+* The [[Scenario system#Crashlanded|Crashlanded scenario]] gives 50 {{Icon Small|packaged survival meal}}.
+* The [[Scenario system#The_Rich_Explorer|Rich Explorer scenario]] and the [[Scenario system#The_Mechanitor|Mechanitor scenario]]{{BiotechIcon}} each give 40 {{Icon Small|packaged survival meal}}.
+* The [[Scenario system#The_Sanguophage|Sanguophage scenario]]{{BiotechIcon}} gives 30 {{Icon Small|packaged survival meal}}.
+
+== Summary ==
+As most [[meals|cooked meal]]s, each unit of packaged survival meal is worth 0.90 nutrition. As each one requires 0.6 units of raw food, packaged survival meals have has a nutrition efficiency of 150%. 
+
+Packaged survival meals do not rot, but can still [[deteriorate]].
+
+They have no innate mood impact, but if made from [[insect meat]], [[human meat]], or [[twisted meat]],{{AnomalyIcon}} the usual mood penalties apply. Any [[ideoligion]]{{IdeologyIcon}} related ingredients will also take effect. With the [[Ideology DLC]]{{IdeologyIcon}} packaged survival meals have three colors, red if containing meat, green if containing solely vegetables and yellow is default and can be created if the meal solely uses animal products.
+
+== Analysis ==
+As packaged survival meals have a lower nutrition efficiency than most other [[meals|cooked meal]]s in exchange for not requiring refrigeration, its regular colony use is not recommended. Instead, its use lies as emergency rations, long-range caravans unable to forage, and as a trading good.
+
+Packaged survival meals will always be accepted by trade caravans and orbital traders in trade. Their market value is not affected by their ingredients; [[insect meat]] and [[human meat]] can be converted into packaged survival meals to sell at full value.
+
+=== Comparison to pemmican ===
+When packaged survival meals {{Icon Small|packaged survival meal}} are compared to [[pemmican]]{{Icon Small|pemmican}}:
+
+* {{Icon Small|packaged survival meal}} have slightly worse nutrition per ingredient (50% vs. 60%)
+* {{Icon Small|packaged survival meal}} lack the nutritional flexibility that pemmican has, only offering a single chunk of 0.9 nutrition vs. the precise 0.05 bites of pemmican. See the [[Pemmican#Benefits of discrete nutrition|Pemmican]] page for details.
+* {{Icon Small|packaged survival meal}} are ''slightly'' more efficient in terms of carry weight (3 nutrition/kg vs. 2.78 nutrition/kg, or ~8% more/kg carried).
+* {{Icon Small|packaged survival meal}} are significantly more efficient in storage space (9 nutrition/stack vs. 3.75 nutrition/stack).
+* {{Icon Small|packaged survival meal}} require 43% less work to make.
+* {{Icon Small|packaged survival meal}} never expire, while pemmican expires after 70 days if not refrigerated or frozen.
+* {{Icon Small|packaged survival meal}} are slightly less valuable in terms of wealth (0.038 nutrition/$ vs. 0.036 nutrition/$).
+* {{Icon Small|packaged survival meal}} are accepted by all traders; pemmican may not be.
+
+This makes researching and producing packaged survival meals a good choice for long-term travel or emergency rations, once a colony has both the required stove and cook.
+
+=== Money making ===
+{{Rewrite|section=1|reason=needs rewrite to bring it in line with the guide, with some worked examples of work required that takes into account ingredient acquisition and contradts it against other money making options including just selling the raw ingredients}}
+{{See also|Money making guide}}
+Packaged survival meals are a useful and sustainable way to make money:
+* They don't rot, useful for both long term storage and caravanning to faction bases.
+* They're easy to store (especially compared to [[raw food]]).
+* They have a high work/profit ratio, but a high material cost.
+* They can be sold to any trader.
+* Any stored stock also acts as an emergency food supply. 
+Each PSM needs 6 units of meat and 6 units of vegetables, and has a market value of {{P|Market Value Base}} {{Icon Small|silver}}. This makes hunting animals and gathering berries to make PSMs a fast way to earn money, though it's not worth it if the ingredients must be purchased. 
+
+The use of [[human meat]], [[insect meat]], [[raw fungus]], or [[twisted meat]]{{AnomalyIcon}} doesn't lower the value of the PSM. This is useful for colonies that don't approve of those ingredients otherwise, though keep in mind the potential mood penalties for butchering humans or eating the PSMs if the stock is also used as an emergency food supply.
+
+Since PSMs use a lot of raw food, care must be taken to convert and/or sell more food than is sustainable. Outside of specific emergency purchases, focus should be placed first on maintaining the colony's food supply, with excess vegetable production scaled to excess meat and animal product production capacity. Keep in mind that even if production is misscaled, the nutrition losses versus normal meals are minor and a colony can always swap to eating the meals rather than selling them until an equilibrium is found.
+
+== Gallery ==
+<gallery>
+Packaged survival meal a.png|One packaged survival meal
+Packaged survival meal b.png|Partial stack
+Packaged survival meal c.png|Full stack
+</gallery>
+<gallery>
+Carnivore packaged survival meal a.png|One carnivore packaged survival meal
+Carnivore packaged survival meal b.png|Partial stack
+Carnivore packaged survival meal c.png|Full stack
+</gallery>
+<gallery>
+Vegetarian packaged survival meal a.png|One vegetarian packaged survival meal
+Vegetarian packaged survival meal b.png|Partial stack
+Vegetarian packaged survival meal c.png|Full stack
+</gallery>
+
+== Version history ==
+* [[Version/1.2.2719|1.2.2719]] - Fix: Incorrect calculation for packaged survival meal bulk recipe.
+
+<gallery>
+Packaged survival meal old 2.png|Texture from A14
+Packaged survival meal old.png|Texture from before A14
+</gallery>
+
+{{nav|Food|wide}}
+[[Category:Food]] [[Category:Processed Food]] [[Category:Meal]]

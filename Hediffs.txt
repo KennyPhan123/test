@@ -1,0 +1,886 @@
+{| align=center
+! {{Hediffs Nav}}
+|}
+----
+<div>
+{{See also|Disease|Injury|Ailments|Artificial body parts}}
+
+A '''Hediff''' (short for ''he''alth ''diff''erence) is a modifier applied to either the whole or a specific part of a pawn, producing the wide variety of effects. These represent themselves in-game as [[disease]]s, [[injury|injuries]], [[ailments]], [[artificial body parts]], and so on.
+
+== Summary ==
+Hediffs typically consist of stats modifiers and '''Stages''', which can be a singular unchanging stage, or multiple stages that switch between each other based on severity. Each stage will typically consist of [[capacity]] and [[stat]] modifiers that increase in degree based on severity, where each stage is activated upon reaching a certain minimum severity. For instance, you can have an "Initial" stage that is applied immediately, a "Moderate" stage that appears upon reaching at least 20% severity, a "Severe" stage at 40% severity, and an "Extreme" stage at 60% severity. Most hediffs have a defined min and max severity (typically 0.1% and 100% respectively), an initial severity, and even a lethal severity. Stages will be denoted by a numbered list
+ <nowiki># '''''Stage Label'''''</nowiki>
+# '''''Stage Label'''''
+in the following tables. Hediffs with a single unlabeled stage will be labeled with the hediff label instead.
+
+Most hediffs use 'Comps', or Components, which mainly serve as helpers for defining a generalized behavior. Comps will be denoted by bullet points
+* '''''Comp Name'''''
+. Comps that have an identical name and corresponding property will be merged into one. A number of hediffs also inherit modifiers from other hediffs, which use the same format as Comps, but will typically have "Base" at the end of the label. There are a couple of "Prop" outliers like "Injury Props" and "Added Part Props," which also share the bullet point
+* '''''Props'''''
+format.
+
+'''Hediff Givers''' (and '''Hediff Giver Sets''') are a special type that handles how certain hediffs are applied, handling hediffs like [[bleeding]], [[temperature]], and birthday related illnesses. Within the hediff defining files, also exists numerous '''ThingDef'''s and '''RecipeDef'''s alongside the '''HediffDef'''s, which handle things like the corresponding items and implanting / removal surgeries. These ThingDef's and RecipeDef's are currently not included due to the additional size and increased complexity that would be added with such content.
+
+<div class="mw-collapsible">
+=== Example Table ===
+	<div class="mw-collapsible-content">
+	{| id="Example table" {{STDT| sortable}}
+	! Name !! style="max-width: 500px;" | Description<br />(''Short'') !! Details !! Stages
+|- id="Example 1" <!-- defName="" -->
+! Name
+----
+* Def Name: defName
+* Label: label
+* Label Noun: labelNoun
+* Pretty Label: prettyLabel
+| Description
+----
+(''Short description'')
+|<!-- Details -->
+* Stat Modifier 1: '''Stat Modification'''
+* Stat Modifier 2: '''Stat Modification'''
+|<!-- Stages -->
+{| {{STDT}}
+! Label !! Parameters
+|-
+! Stage 1 Label
+| Stage 1 Parameters
+|-
+! Stage 2 Label
+| Stage 2 Parameters
+|-
+! Stage 3 Label
+| Stage 3 Parameters
+|}
+|- id="Example 2" <!-- defName="" -->
+! Name
+----
+* Def Name: defName
+* Label: label
+* Label Noun: labelNoun
+* Pretty Label: prettyLabel
+| Description
+----
+(''Short description'')
+|<!-- Details -->
+* Makes Sick Thought: {{Bad|true}}
+* Lethal Severity: '''100%'''
+* Scenario Can Add: {{Good|true}}
+* Tendable: {{Good|true}}
+* Hediff Class: '''HediffsWithComps'''
+* Default Label Color: {{Color|50%|50%|50%}}
+|<!-- Stages -->
+{| {{STDT}}
+! Label !! Parameters
+|-
+! Minor
+|<!-- Parameters -->
+* Become Visible: {{Good|true}}
+* Pain Offset: {{++|5%}}
+* [[Consciousness]] Offset: {{--|5%}}
+* [[Manipulation]] Offset: {{--|5%}}
+|-
+! Moderate
+|<!-- Parameters -->
+* Min Severity: '''20%'''
+|-
+! Major
+|<!-- Parameters -->
+* Min Severity: '''40%'''
+* Pain Offset: {{++|10%}}
+* [[Consciousness]] Offset: {{--|20%}}
+* [[Manipulation]] Offset: {{--|20%}}
+|-
+! Severe
+|<!-- Parameters -->
+* Min Severity: '''60%'''
+* Vomit {{MTB}} Days: '''0.5'''
+* Pain Offset: {{++|20%}}
+* [[Consciousness]] Offset: {{--|30%}}
+* [[Manipulation]] Offset: {{--|30%}}
+|-
+! Extreme
+|<!-- Parameters -->
+* Min Severity: '''80%'''
+* Life Threatening: {{Bad|true}}
+* Pain Offset: {{++|30%}}
+* [[Consciousness]] Max: {{Bad|10%}}
+|}
+|}
+	</div>
+</div>
+
+<div class="mw-collapsible">
+== Core {{RimworldIcon}} ==
+	<div class="mw-collapsible-content">
+<div class="mw-collapsible">
+=== Debug ===
+	<div class="mw-collapsible-content">
+{| id="Debug" {{STDT}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Core/Debug}}
+|}
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+=== Drugs ===
+{{Main|Drugs}}
+
+Most drugs consist of a 'high' hediff, with some drawbacks that are usually outweighed by the short term benefits.
+
+There is a tolerance that is built up with long term use, reducing the overall effectiveness of the drug, and coming with long term side effects that scale with severity.
+
+Addiction is the most substantial drawback, creating a chemical [[need]] for said drug that hinders many of the affected pawn's [[capacities]] unless satisfied. Recovery from addiction is often a lengthy process, increasing the liklihood of suffering from addiction induced [[mental break]]s that may lead to relapse. 
+	<div class="mw-collapsible-content">
+<div class="mw-collapsible">
+==== Bases ====
+	<div class="mw-collapsible-content">
+{| id="Drug Bases" {{STDT| c_24 sortable}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Core/Drugs/Bases}}
+|}
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+==== Beer ====
+{{Main|Beer}}
+	<div class="mw-collapsible-content">
+{| id="Beer" {{STDT| c_24 sortable}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Core/Drugs/Beer}}
+|}
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+==== Ambrosia ====
+{{Main|Ambrosia}}
+	<div class="mw-collapsible-content">
+{| id="Ambrosia" {{STDT| c_24 sortable}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Core/Drugs/Ambrosia}}
+|}
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+==== Go-juice ====
+{{Main|Go-juice}}
+	<div class="mw-collapsible-content">
+{| id="Go-juice" {{STDT| c_24 sortable}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Core/Drugs/Go-juice}}
+|}
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+==== Luciferium ====
+{{Main|Luciferium}}
+	<div class="mw-collapsible-content">
+{| id="Luciferium" {{STDT| c_24 sortable}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Core/Drugs/Luciferium}}
+|}
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+==== Penoxycyline ====
+{{Main|Penoxycyline}}
+	<div class="mw-collapsible-content">
+{| id="Penoxycyline" {{STDT| c_24 sortable}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Core/Drugs/Penoxycyline}}
+|}
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+==== Psychite ====
+Psychite tea, Flake, and Yayo all share the same tolerance and addiction hediffs.
+	<div class="mw-collapsible-content">
+{| id="Psychite" {{STDT| c_24 sortable}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Core/Drugs/Psychite}}
+|}
+
+<div class="mw-collapsible">
+===== Flake =====
+{{Main|Flake}}
+	<div class="mw-collapsible-content">
+{| id="Flake" {{STDT| c_24}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Core/Drugs/Psychite/High on flake}}
+|}
+	</div>
+</div>
+
+<div class="mw-collapsible">
+===== Psychite tea =====
+{{Main|Psychite tea}}
+	<div class="mw-collapsible-content">
+{| id="Psychite tea" {{STDT| c_24}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Core/Drugs/Psychite/High on psychite tea}}
+Hediffs/Drugs/Psychite/High on yayo
+|}
+	</div>
+</div>
+
+<div class="mw-collapsible">
+===== Yayo =====
+{{Main|Yayo}}
+	<div class="mw-collapsible-content">
+{| id="Yayo" {{STDT| c_24}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Core/Drugs/Psychite/High on yayo}}
+|}
+	</div>
+</div>
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+==== Smokeleaf ====
+{{Main|Smokeleaf}}
+	<div class="mw-collapsible-content">
+{| id="Smokeleaf" {{STDT| c_24 sortable}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Core/Drugs/Smokeleaf}}
+|}
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+==== Wake-up ====
+{{Main|Wake-up}}
+	<div class="mw-collapsible-content">
+{| id="Wake-up" {{STDT| c_24 sortable}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Core/Drugs/Wake-up}}
+|}
+	</div>
+</div>
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+=== Global ===
+	<div class="mw-collapsible-content">
+<div class="mw-collapsible">
+==== Misc ====
+	<div class="mw-collapsible-content">
+{| id="Core Global Misc" {{STDT| sortable}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Core/Global/Misc}}
+|}
+
+
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+==== Needs ====
+	<div class="mw-collapsible-content">
+{| id="Global needs" {{STDT|}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Core/Global/Needs}}
+|}
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+==== Temperature ====
+	<div class="mw-collapsible-content">
+{| id="Global temperature" {{STDT| sortable}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Core/Global/Temperature}}
+|}
+	</div>
+</div>
+
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+=== Local ===
+	<div class="mw-collapsible-content">
+<div class="mw-collapsible">
+==== Chronic ====
+	<div class="mw-collapsible-content">
+{| id="Core Local Chronic" {{STDT| c_11 sortable}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Core/Local/Chronic}}
+|}
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+==== Infections ====
+	<div class="mw-collapsible-content">
+{| id="Core Local Infections" {{STDT| c_15 sortable}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Core/Local/Infections}}
+|}
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+==== Injuries ====
+	<div class="mw-collapsible-content">
+{| id="Core Local Injuries" {{STDT| c_10 sortable}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Core/Local/Injuries}}
+|}
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+==== Misc ====
+	<div class="mw-collapsible-content">
+{| id="Core Local Misc" {{STDT| c_11 sortable}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Core/Local/Misc}}
+|}
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+==== Terrain Attacks ====
+	<div class="mw-collapsible-content">
+{| id="Terrain Attacks" {{STDT| c_06 sortable}}
+! Name !! Description !! Details !! Stages
+{{:Hediffs/Core/Local/Terrain Attacks/Sand}}
+{{:Hediffs/Core/Local/Terrain Attacks/Dirt}}
+{{:Hediffs/Core/Local/Terrain Attacks/Mud}}
+{{:Hediffs/Core/Local/Terrain Attacks/Gravel}}
+{{:Hediffs/Core/Local/Terrain Attacks/Water}}
+|}
+	</div>
+</div>
+
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+=== Body Parts ===
+	<div class="mw-collapsible-content">
+<div class="mw-collapsible">
+==== Base ====
+	<div class="mw-collapsible-content">
+{| id="Core Body Parts Base" {{STDT| c_01 sortable}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Core/Body Parts/Base}}
+|}
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+==== Medieval ====
+	<div class="mw-collapsible-content">
+{| id="Medieval Body Parts" {{STDT| c_01 sortable}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Core/Body Parts/Medieval}}
+|}
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+==== Prosthetic ====
+	<div class="mw-collapsible-content">
+{| id="Core Prosthetic Body Parts" {{STDT| c_01 sortable}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Core/Body Parts/Prosthetic}}
+|}
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+==== Bionic ====
+	<div class="mw-collapsible-content">
+{| id="Core Bionic Body Parts" {{STDT| c_01 sortable}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Core/Body Parts/Bionic}}
+|}
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+==== Archotech ====
+	<div class="mw-collapsible-content">
+{| id="Core Archotech Body Parts" {{STDT| c_08 sortable}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Core/Body Parts/Archotech}}
+|}
+	</div>
+</div>
+
+==== Natural ====
+No HediffDef's (Only ThingsDef's and RecipeDef's)
+
+==== Special ====
+None
+
+	</div>
+</div>
+
+<div class="mw-collapsible">
+=== Psycasts ===
+	<div class="mw-collapsible-content">
+{| id="Core Psycasts" {{STDT| c_07}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Core/Psycasts}}
+|}
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+=== Hediff Giver Sets ===
+	<div class="mw-collapsible-content">
+{| id="Core Hediff Giver Sets" {{STDT| sortable}}
+! Def Name !! Class !! Hediff !! Details
+|-
+{{:Hediffs/Core/Hediff Giver Sets}}
+|}
+	</div>
+</div>
+
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+== Royalty {{RoyaltyIcon}} ==
+{{Royalty|section=1}}
+	<div class="mw-collapsible-content">
+<div class="mw-collapsible">
+=== Local ===
+	<div class="mw-collapsible-content">
+<div class="mw-collapsible">
+==== Misc ====
+	<div class="mw-collapsible-content">
+{| id="Royalty Local Misc" {{STDT| c_11 sortable}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Royalty/Local/Misc}}
+|}
+	</div>
+</div>
+
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+=== Body Parts ===
+	<div class="mw-collapsible-content">
+<div class="mw-collapsible">
+==== Prosthetic Empire ====
+	<div class="mw-collapsible-content">
+{| id="Royalty Body Parts Prosthetic Empire" {{STDT| c_22 sortable}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Royalty/Body Parts/Prosthetic Empire}}
+|}
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+==== Bionic Empire ====
+	<div class="mw-collapsible-content">
+{| id="Royalty Body Parts Bionic Empire" {{STDT| c_02 sortable}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Royalty/Body Parts/Bionic Empire}}
+|}
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+==== Archotech Empire Royal ====
+	<div class="mw-collapsible-content">
+{| id="Archotech Empire Royal" {{STDT| c_08 sortable}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Royalty/Body Parts/Archotech Empire Royal}}
+|}
+	</div>
+</div>
+
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+=== Psycasts ===
+	<div class="mw-collapsible-content">
+{| id="Royalty Psycasts" {{STDT| c_07 sortable}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Royalty/Psycasts}}
+|}
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+=== Buildings ===
+	<div class="mw-collapsible-content">
+<div class="mw-collapsible">
+==== Condition Causers ====
+	<div class="mw-collapsible-content">
+{| id="Condition Causers" {{STDT| c_07}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Royalty/Buildings/Condition Causers}}
+|}
+	</div>
+</div>
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+=== Weapon Traits ===
+	<div class="mw-collapsible-content">
+{| id="Weapon Traits" {{STDT| c_07 sortable}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Royalty/Weapon Traits}}
+|}
+	</div>
+</div>
+
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+== Ideology {{IdeologyIcon}} ==
+{{Ideology|section=1}}
+	<div class="mw-collapsible-content">
+<div class="mw-collapsible">
+=== Casts ===
+	<div class="mw-collapsible-content">
+{| id="Casts" {{STDT| c_06 sortable}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Ideology/Casts}}
+|}
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+=== Various ===
+	<div class="mw-collapsible-content">
+{| id="Ideology Various" {{STDT| c_06 sortable}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Ideology/Various}}
+|}
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+=== Precepts ===
+{{Main|Precepts}}
+	<div class="mw-collapsible-content">
+<div class="mw-collapsible">
+==== Scarification ====
+	<div class="mw-collapsible-content">
+{| {{STDT| c_06}}
+! Name !! Description !! Details !! Stages
+{{:Hediffs/Ideology/Precepts/Scarification}}
+|}
+	</div>
+</div>
+
+	</div>
+</div>
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+== Biotech {{BiotechIcon}} ==
+{{Biotech|section=1}}
+	<div class="mw-collapsible-content">
+<div class="mw-collapsible">
+=== Global ===
+	<div class="mw-collapsible-content">
+<div class="mw-collapsible">
+==== Misc ====
+	<div class="mw-collapsible-content">
+{| id="Biotech Global Misc" {{STDT| c_18 sortable}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Biotech/Global/Misc}}
+|}
+	</div>
+</div>
+
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+=== Local ===
+	<div class="mw-collapsible-content">
+<div class="mw-collapsible">
+==== Misc ====
+	<div class="mw-collapsible-content">
+{| id="Biotech Local Misc" {{STDT| c_18 sortable}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Biotech/Local/Misc}}
+|}
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+==== Injuries ====
+	<div class="mw-collapsible-content">
+{| id="Biotech Local Injuries" {{STDT| c_18}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Biotech/Local/Injuries}}
+|}
+	</div>
+</div>
+
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+=== Body Parts ===
+	<div class="mw-collapsible-content">
+<div class="mw-collapsible">
+==== Detoxifier ====
+	<div class="mw-collapsible-content">
+{| id="Biotech Body Parts Detoxifier" {{STDT| c_02 sortable}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Biotech/Body Parts/Detoxifier}}
+|}
+	</div>
+</div>
+
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+=== Various ===
+	<div class="mw-collapsible-content">
+{| id="Biotech Various" {{STDT| c_18 sortable}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Biotech/Various}}
+|}
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+=== Mechanitor ===
+	<div class="mw-collapsible-content">
+{| id="Biotech Mechanitor" {{STDT| c_12 sortable}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Biotech/Mechanitor}}
+|}
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+=== Mechs ===
+	<div class="mw-collapsible-content">
+{| id="Mechs" {{STDT| c_18}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Biotech/Mechs}}
+|}
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+=== Buildings ===
+	<div class="mw-collapsible-content">
+<div class="mw-collapsible">
+==== Deathrest ====
+	<div class="mw-collapsible-content">
+{| id="Deathrest" {{STDT| c_18 sortable}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Biotech/Buildings/Deathrest}}
+|}
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+==== Misc ====
+	<div class="mw-collapsible-content">
+{| id="Biotech Buildings Misc" {{STDT| c_18}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Biotech/Buildings/Misc}}
+|}
+	</div>
+</div>
+
+	</div>
+</div>
+
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+== Anomaly {{AnomalyIcon}} ==
+{{Anomaly|section=1}}
+	<div class="mw-collapsible-content">
+=== Global ===
+<div class="mw-collapsible">
+==== Misc ====
+	<div class="mw-collapsible-content">
+{| id="Anomaly Global Misc" {{STDT| c_21 sortable}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Anomaly/Global/Misc}}
+|}
+
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+=== Local ===
+	<div class="mw-collapsible-content">
+<div class="mw-collapsible">
+==== Injuries ====
+	<div class="mw-collapsible-content">
+{| id="Anomaly Local Injuries" {{STDT| c_21 sortable}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Anomaly/Local/Injuries}}
+|}
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+==== Chronic ====
+	<div class="mw-collapsible-content">
+{| id="Anomaly Local Chronic" {{STDT| c_11 sortable}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Anomaly/Local/Chronic}}
+|}
+	</div>
+</div>
+
+	</div>
+</div>
+
+=== Body Parts ===
+<div class="mw-collapsible">
+==== Prosthetic ====
+	<div class="mw-collapsible-content">
+{| id="Anomaly Prosthetic Body Parts" {{STDT| c_21 sortable}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Anomaly/Body Parts/Prosthetic}}
+|}
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+=== Mutants ===
+	<div class="mw-collapsible-content">
+{| id="Mutants" {{STDT| c_21 sortable}}
+! Name !! Description !! Details !! Stages
+|-
+{{:Hediffs/Anomaly/Mutants}}
+|}
+	</div>
+</div>
+
+<div class="mw-collapsible">
+
+=== Hediff Giver Sets ===
+	<div class="mw-collapsible-content">
+{| id="Anomaly Hediff Giver Sets" {{STDT| c_21 sortable}}
+! Def Name !! Class !! Hediff !! Details
+|-
+{{:Hediffs/Anomaly/Hediff Giver Sets}}
+|}
+	</div>
+</div>
+
+	</div>
+</div>
+</div>
+
+[[Category:Health|#Hediffs]]

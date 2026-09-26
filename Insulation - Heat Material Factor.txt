@@ -1,0 +1,57 @@
+{{Stub|reason=1) Two-way links}}
+{{See also|Insulation - Cold (Material Factor)}}
+{{Verified|1.5.4104}}{{Stat
+| def name = StuffPower_Insulation_Heat
+| label = Insulation - Heat
+| label for full stat list = Insulation - Heat (material factor)
+| description = How much an [[apparel]] made of this [[material]] improves a wearer's [[maximum comfortable temperature]] when worn.
+| default base value = 0
+| hide at value = 0
+| to string style = TemperatureOffset
+| category = StuffStatFactors
+| display priority in category = 4506
+}}
+
+== Bases ==
+<div><li style="display: inline-table;">
+{| {{STDT| sortable}}
+! Material !! Stuff Categories !! [[Property:Insulation - Heat Factor|Insulation -<br />Heat<br />Factor]]
+|-
+{{#ask: [[Insulation - Heat Factor::+]]
+| ?Stuff Category
+| ?Insulation - Heat Factor
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Name
+}}
+|}
+</li><div>
+
+== Stat Def Data ==
+{| {{STDT}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Insulation - Heat (Material Factor)" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />StuffPower_Insulation_Heat
+* '''Label:'''<br />Insulation - Heat
+* '''Label For Full Stat List:'''<br />Insulation - Heat (material factor)
+| How much an apparel made of this material improves a wearer's maximum comfortable temperature when worn.
+|
+* Display Order:<br />'''74'''
+* Def Name:<br />'''StuffStatFactors'''
+* Label:<br />'''Multipliers when made of this'''
+* Display All By Default:<br />{{Good|true}}
+|
+* '''Default Base Value:''' 0
+* '''Hide At Value:''' 0
+* '''To String Style:''' TemperatureOffset
+| -
+| 4506
+<!--</StatDef>-->
+|}
+
+== Version history ==
+{{Stub|section=1|reason=General}}
+
+{{nav|stats|wide}}

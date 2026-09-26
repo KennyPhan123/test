@@ -1,0 +1,24 @@
+{{Version Nav}}
+Alpha15c is currently on Steam’s ‘unstable’ branch for public testing. This update fixes some important bugs and yield significant CPU usage optimizations. It also adjusts a few balance points for a better experience. I invite everyone willing to choose the unstable branch and test it out! I invite feedback in this forum thread and in the comments here.
+
+Save compatibility: Savegames from the unmodded game will be compatible from earlier Alpha 15 versions.
+
+Mods compatibility: Data and XML mods will be 100% compatible from earlier Alpha 15 version. The API for code mods is also unchanged, and so should remain compatible. However, since the core game has been recompiled, some mods may need to be recompiled as well before they work again. Mod authors may want to look at Alpha15c to check and prepare compatibility. (This shouldn’t require any actual code or data changes, but may require recompiling your code).
+
+Once Alpha15c is confirmed stable, I will release it to all users. Hopefully within a day or two.
+
+==Changes==
+
+* Fix: Luciferium is not addictive; it gives the positive effect forever with no downside.
+* Fix: Malari-block high never goes away.
+* Optimized a bunch of pawn ticking code to be much, much faster.
+* Rebalanced drugs to be a bit more profitable and a bit more more dangerous.
+* Food selection algorithm prefers meals by 16 cells instead of 7.
+* Fix: Game doesn’t assign short hashes if you subclass any Def class. This makes many mods impossible.
+* Fix: Standing lamps and sun lamps are available without research.
+* Fix 2618: On Linux, system language can break the game.
+* Fix: Raiders can steal during tutorial.
+* Fix 2620: Learning Helper: Items remain after save-scum.
+* Fix 2611: Scenario ‘Can’t Hunt’ etc doesn’t work.
+* Translations update.
+* Some other misc minor fixes, rebalancings and text changes.

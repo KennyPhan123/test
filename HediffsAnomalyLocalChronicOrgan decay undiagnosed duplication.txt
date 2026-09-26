@@ -1,0 +1,81 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Anomaly/Local/Chronic}}
+|}
+----
+{| {{STDT| c_11}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Organ decay undiagnosed duplication" <!-- defName="OrganDecayUndiagnosedDuplicaton", ParentName="OrganDecayUndiagnosedBase" -->
+! Organ decay (undiagnosed duplication)
+----
+* Def Name:<br />OrganDecayUndiagnosedDuplicaton
+* Label:<br />organ decay
+|<!-- Description -->
+<div style="max-width: 500px;">
+This person is showing early signs of a severe condition which will cause their organs to rapidly deteriorate. They will begin to display symptoms within a matter of days.
+</div>
+|<!-- Details -->
+<!-- DiseaseBase -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|90%|100%|35%}}
+<!-- ChronicDiseaseBase -->
+* Chronic: {{Good|true}}
+* Allow Mothball If Low Priority World Pawn: {{Good|true}}
+<!-- OrganDecayDetailsBase -->
+* Always Show Severity: {{Good|true}}
+* Initial Severity: '''0.1%'''
+* Min Severity: '''0.1%'''
+* Max Severity: '''100%'''
+<!-- OrganDecayUndiagnosedBase -->
+* '''Comps'''
+** ''Remove If Other Hediff''
+*** Hediffs:
+**** '''[[Hediffs#Organ_decay|Organ decay]]'''
+**** '''[[Hediffs#Organ_decay_accelerated|Organ decay (accelerated)]]'''
+** ''Surgery Inspectable''
+*** Surgical Detection Desc:<br />{PAWN_nameDef} is showing early signs of a severe condition which will cause their organs to rapidly deteriorate. {SURGEON_nameDef} can't yet tell exactly what is causing this, but {PAWN_nameDef} will become very ill within the next few days.
+<!-- OrganDecayUndiagnosedDuplicaton -->
+** ''Severity Per Day''
+*** Severity Per Day Range: '''{{++|50%}} ~ {{++|200%}}'''
+*** Show Hours To Recover: {{Good|true}}
+** ''Replace Hediff''
+*** ''Hediffs:'' Hediff: '''[[Hediffs#Organ_decay|Organ decay]]'''
+**** Count Range: '''3~5'''
+**** Severity Range: '''2%~15%'''
+**** Parts To Affect:
+***** '''[[Heart]]'''
+***** '''[[Lung]]'''
+***** '''[[Kidney]]'''
+*** Letter Label:<br /><span>Organ decay: {PAWN_nameDef}</span>
+*** Letter Desc:
+<span>{PAWN_nameDef} can no longer hide {PAWN_possessive} crippling condition. The duplication process has left {PAWN_possessive} body riddled with rotting organs. {PAWN_nameDef} has organ decay affecting the following body parts:
+
+{ORGANS}
+
+Replace the organs soon to keep {PAWN_nameDef} healthy. You can use bionic organs or natural ones taken from donors.</span>
+* '''Remove On Redress Chance By Days Curve:'''<!-- DiseaseBase -->
+<div><li style="display: inline-table;">
+{| {{STDT| c_11}}
+! <abbr title="Days as a World Pawn">Days</abbr> !! <abbr title="Chance to remove on Pawn Generator Redress">Chance</abbr>
+|-
+! 0
+| 0%
+|-
+! 2
+| 0%
+|-
+! 7
+| 50%
+|-
+! 20
+| 100%
+|}</li></div>
+|<!-- Stages -->
+{| {{STDT| c_11}}
+! Label !! Parameters
+|-
+! diagnosed
+|<!-- Parameters -->
+* Become Visible: {{Bad|false}}
+|}<noinclude>
+|}</noinclude>

@@ -1,0 +1,201 @@
+<noinclude>
+<!--Top Nav Box-->
+{| align=center
+| {{Architect_Nav}}
+|}
+----
+<!-- End of Nav --> 
+</noinclude>
+{{TOCright}}
+
+Colonists can build '''structures''' of various materials, each with different beauty, flammability, and hit-points. Enclosed areas will automatically prompt colonists to build a roof unless you apply a no roof region, or if the structure is too large (over 300 cells). Structures leave ash on the ground when burnt.
+
+== Walls ==
+{{Main|Wall}}
+Walls are impassable structures capable of supporting a roof. Walls obstruct a pawn's line of sight, though pawns can lean into a free space next to a wall to fire at enemies from behind cover. Walls obstruct the spread of light, enclose [[rooms]] for [[temperature]], [[cleanliness]], [[beauty]] and other mechanics. They can be made out of any non-textile building material. [[Power conduit]]s may be constructed inside walls to remove their beauty penalty. Smoothing natural stone walls allows conduits to be placed beneath them. Walls require 5 materials to construct.
+
+=== Constructed walls ===
+{{Building Stats Table|Wall|header = false}}
+
+=== Natural walls ===
+{{Stub|section=1|reason=Odyssey ores/rocks}}
+These cannot be constructed, only mined, but act largely like walls and are provided for comparisons sake. All natural walls have negative beauty.
+{| {{STDT| sortable c_25 text-center}}
+! colspan=2 | Material !! HP !! Flammability !! Beauty !! Value <ref>Not sellable.</ref>
+|-
+! {{Icon Small|Compacted plasteel|24}} 
+! [[Compacted plasteel]]
+| {{Q|Compacted plasteel|Max Hit Points Base}} 
+| {{Q|Compacted plasteel|Flammability Base}}
+| {{Q|Compacted plasteel|Beauty Base|0}}
+| {{Q|Compacted plasteel|Market Value Base|0}}
+|-
+! {{Icon Small|Silver ore|24}}
+! [[Silver ore]]
+| {{Q|Silver ore|Max Hit Points Base}} 
+| {{Q|Silver ore|Flammability Base}}
+| {{Q|Silver ore|Beauty Base|0}}
+| {{Q|Silver ore|Market Value Base|0}}
+|-
+! {{Icon Small|Compacted steel|24}}
+! [[Compacted steel]]
+| {{Q|Compacted steel|Max Hit Points Base}} 
+| {{Q|Compacted steel|Flammability Base}}
+| {{Q|Compacted steel|Beauty Base|0}}
+| {{Q|Compacted steel|Market Value Base|0}}
+|-
+! {{Icon Small|Uranium ore|24}}
+! [[Uranium ore]]
+| {{Q|Uranium ore|Max Hit Points Base}} 
+| {{Q|Uranium ore|Flammability Base}}
+| {{Q|Uranium ore|Beauty Base|0}}
+| {{Q|Uranium ore|Market Value Base|0}}
+|-
+! {{Icon Small|Jade (ore)|24}}
+! [[Jade (ore)|Jade]]
+| {{Q|Jade (ore)|Max Hit Points Base}} 
+| {{Q|Jade (ore)|Flammability Base}}
+| {{Q|Jade (ore)|Beauty Base|0}}
+| {{Q|Jade (ore)|Market Value Base|0}}
+|-
+! {{Icon Small|Gold ore|24}}
+! [[Gold ore]]
+| {{Q|Gold ore|Max Hit Points Base}} 
+| {{Q|Gold ore|Flammability Base}}
+| {{Q|Gold ore|Beauty Base|0}}
+| {{Q|Gold ore|Market Value Base|0}}
+|-
+! {{Icon Small|Compacted machinery|24}} 
+! [[Compacted machinery]]
+| {{Q|Compacted machinery|Max Hit Points Base}} 
+| {{Q|Compacted machinery|Flammability Base}}
+| {{Q|Compacted machinery|Beauty Base|0}}
+| {{Q|Compacted machinery|Market Value Base|0}}
+|-
+! {{Icon Small|Granite|24}} 
+! [[Granite]]
+| {{Q|Granite|Max Hit Points Base}} 
+| {{Q|Granite|Flammability Base}}
+| {{Q|Granite|Beauty Base|0}}
+| {{Q|Granite|Market Value Base|0}}
+|-
+! {{Icon Small|Limestone|24}} 
+! [[Limestone]]
+| {{Q|Limestone|Max Hit Points Base}} 
+| {{Q|Limestone|Flammability Base}}
+| {{Q|Limestone|Beauty Base|0}}
+| {{Q|Limestone|Market Value Base|0}}
+|-
+! {{Icon Small|Marble|24}} 
+! [[Marble]]
+| {{Q|Marble|Max Hit Points Base}} 
+| {{Q|Marble|Flammability Base}}
+| {{Q|Marble|Beauty Base|0}}
+| {{Q|Marble|Market Value Base|0}}
+|-
+! {{Icon Small|Slate|24}} 
+! [[Slate]]
+| {{Q|Slate|Max Hit Points Base}} 
+| {{Q|Slate|Flammability Base}}
+| {{Q|Slate|Beauty Base|0}}
+| {{Q|Slate|Market Value Base|0}}
+|-
+! {{Icon Small|Sandstone|24}} 
+! [[Sandstone]]
+| {{Q|Sandstone|Max Hit Points Base}} 
+| {{Q|Sandstone|Flammability Base}}
+| {{Q|Sandstone|Beauty Base|0}}
+| {{Q|Sandstone|Market Value Base|0}}
+|-
+! {{Icon Small|Burrow wall|24}} 
+! [[Burrow wall]]{{OdysseyIcon}}
+| {{Q|Burrow wall|Max Hit Points Base}} 
+| {{Q|Burrow wall|Flammability Base}}
+| {{Q|Burrow wall|Beauty Base|0}}
+| {{Q|Burrow wall|Market Value Base|0}}
+|-
+! {{Icon Small|Vacstone|24}} 
+! [[Vacstone]]{{OdysseyIcon}}
+| {{Q|Vacstone|Max Hit Points Base}} 
+| {{Q|Vacstone|Flammability Base}}
+| {{Q|Vacstone|Beauty Base|0}}
+| {{Q|Vacstone|Market Value Base|0}}
+|}
+<references/>
+
+=== Smoothed walls ===
+{{Recode|section=1|reason=Once [[smoothed vacstone]] created, automate table. add icons }}
+Smoothed walls are created from natural stone walls. Pawns assigned to the Construct work-type will smooth natural stone walls and rough stone floors designated for smoothing via the Smooth Surface order (Architect tab>Floors.)
+The pawn [[stat]] Smoothing Speed governs this task and is dependent on a pawn's Global Work Speed, Construction [[skill]], Manipulation and Sight. Natural stone walls have a [[beauty]] penalty, while smoothed walls increase beauty and [[wealth]]. Smoothed walls despite having the same HP as natural walls, can be fully repaired by pawns assigned to Construct. As such they are superior to natural walls as support structures for your colony.
+{| {{STDT| sortable c_25 text-center}}
+! Material !! HP !! Work Required !! Flammability !! Beauty !! Value<ref>Not sellable.</ref><ref>In versions prior to [[Version/1.5.4241|1.5.4241]], all smooth walls had an actual value of 1 for wealth calculations.</ref> !! Cover Effectiveness
+|-
+! [[Smoothed granite]]
+| 900 || {{Ticks|6500}} || 0% || 1 || 7 || 75%
+|-
+! [[Smoothed limestone]]
+| 700 || {{Ticks|6500}} || 0% || 1 || 7 || 75%
+|-
+! [[Smoothed marble]]
+| 450 || {{Ticks|6500}} || 0% || 2 || 7 || 75%
+|-
+! [[Smoothed sandstone]]
+| 400 || {{Ticks|6500}} || 0% || 1 || 7 || 75%
+|-
+! [[Smoothed slate]]
+| 500 || {{Ticks|6500}} || 0% || 1 || 7 || 75%
+|-
+! [[Smoothed vacstone]] {{OdysseyIcon}}
+| 600 || {{Ticks|6500}} || 0% || 1 || 7 || 75%
+|}
+<references/>
+
+=== Gravship hull {{OdysseyIcon}} ===
+{{Main|Gravship hull}}
+Gravship hulls can be constructed once the Basic gravtech research project has been completed. They are [[Vacuum#Pressurization|airtight]], non flammable, and must be built on [[Gravship substructure]]. Gravship hulls require 7 materials to construct.
+Compared to walls, Gravship hulls: have 40% more hit points, cost 40% more Stuff to make, and take 222.22% more work to make.
+{{Building Stats Table|Gravship hull|header = false}}
+
+=== Fortified wall {{OdysseyIcon}} ===
+{{Main|Fortified wall}}
+Fortified walls cannot be constructed or deconstructed, and are found in maps from the [[Odyssey DLC]]. Fortified walls have 7,500 hit points, second only to [[compacted plasteel]].
+
+== Doors ==
+=== Door ===
+{{Main|Door}}
+Doors provide entry points through walls for colonists while still keeping out enemies and wild animals. Pawns manually open doors which causes a delay as they try to pass through, as opposed to autodoors which open on demand and allow faster passage. All doors are generally locked to hostile entities, including prisoners, raiders and mad animals. A door can be marked to "Hold open," which means the next time it is opened, it will stay open, and then all pawns can pass through. A door can also be marked "Forbid". Colonists and tamed animals don't use forbidden doors, even if they're held open. However visitors, traders, and colonists on [[Mood#Mental breaks|mental breakdowns]] ignore the forbidden status.
+{{Building Stats Table|Door|header=false}}
+
+=== Autodoor ===
+{{Main|Autodoor}}
+Autodoors are regular doors that open and close 4x as fast, but need to constantly draw 50 W of power. Lacking sufficient power, they lose the speed bonus and act like regular doors, until power is returned.
+Powered autodoors made of stone open slightly faster than regular wooden doors. Powered autodoors made of any material other than stone open fast enough that pawns are not slowed down when passing through.
+In all other aspects, an autodoor is identical to a regular door made of the same material.
+Construction requires 30% additional work, 40 steel and 2 components on top of the 25 base material for the regular door.
+{{Building Stats Table|Autodoor|header=false}}
+
+=== Vac barrier {{OdysseyIcon}} ===
+{{Main|Vac barrier}}
+
+== Bridge ==
+=== Bridge ===
+{{Main|Bridge}}
+Bridges are structures that can be built on water. Bridges allow more rapid movement across water. Once built, they can support many structures, including wooden walls, but not particularly heavy structures including any other type of wall. Bridges allow for easier building in swampy biomes. [[Floor]]s may not be built atop bridges.
+Bridges cost 12 wood each. They can be damaged or destroyed by fire or explosions, including whatever was built on top.
+
+=== Heavy bridge {{OdysseyIcon}} ===
+{{Main|Heavy bridge}}
+
+== Column ==
+{{Main|Column}}
+Columns are passable structures which are capable of holding a roof which do not block sight, or movement and look quite nice. They have x/1.875 (.533x) of a wall's normal health, 4x the beauty, and 4x the value. They also have 25% cover effectiveness and do not slow down pawns. These were introduced in 1.1.
+{{Building Stats Table|Column|header=false}}
+
+== Version history ==
+* [[Version/0.3.410|0.3.410]] - The unpowered "Simple Door" added.
+* [[Version/0.4.460|0.4.460]] - Stone wall health raised from 400 to 650.
+* Beta 19/1.0 Update - You can now smooth natural rough rock walls into high-quality walls
+* [[Version/1.5.4062|1.5.4062]] - Market value of smoothed walls was unified to 7 (previously: sandstone 18, granite, limestone and slate 20, marble 25).
+
+{{Nav|structure|wide}}
+[[Category:Buildings]]

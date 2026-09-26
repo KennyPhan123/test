@@ -1,0 +1,57 @@
+{{Stub|reason=1) Two-way links}}
+{{Verified|1.5.4104}}{{Stat
+| def name = StuffPower_Insulation_Cold
+| label = Insulation - Cold
+| label for full stat list = Insulation - Cold (material factor)
+| description = How much an [[apparel]] made of this [[material]] improves a wearer's [[minimum comfortable temperature]] when worn.
+| default base value = 0
+| hide at value = 0
+| to string style = TemperatureOffset
+| category = StuffStatFactors
+| display priority in category = 4507
+}}
+{{See also|Insulation - Heat (Material Factor)}}
+
+== Bases ==
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_03}}
+! Material !! Stuff Categories !! [[Property:Insulation - Cold Factor|Insulation -<br />Cold<br />Factor]]
+|-
+{{#ask: [[Insulation - Cold Factor::+]]
+| ?Stuff Category
+| ?Insulation - Cold Factor
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Name
+}}
+|}
+</li><div>
+
+== Stat Def Data ==
+{| {{STDT}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Insulation - Cold (Material Factor)" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />StuffPower_Insulation_Cold
+* '''Label:'''<br />Insulation - Cold
+* '''Label For Full Stat List:'''<br />Insulation - Cold (material factor)
+| How much an apparel made of this material improves a wearer's minimum comfortable temperature when worn.
+|
+* Display Order:<br />'''74'''
+* Def Name:<br />'''StuffStatFactors'''
+* Label:<br />'''Multipliers when made of this'''
+* Display All By Default:<br />{{Good|true}}
+|
+* '''Default Base Value:''' 0
+* '''Hide At Value:''' 0
+* '''To String Style:''' TemperatureOffset
+| -
+| 4507
+<!--</StatDef>-->
+|}
+
+== Version history ==
+{{Stub|section=1|reason=General}}
+
+{{nav|stats|wide}}

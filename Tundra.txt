@@ -1,0 +1,161 @@
+{{Infobox biome
+| name = Tundra
+| image = Tundra.png
+| type = Biome
+| texture = TundraTexture.png
+| canbuildbase = Yes
+| allowFarmingCamps = false
+| animal density = 1.1
+| plant density = 0.19
+| movement difficulty = 1
+| max temperature = 0
+| forageability = 0.5
+| wild plant regrow days = 28
+| disease mtb days = 80
+| description = These mostly-frozen plains bear almost no trees and little vegetation. There are a few small animals interspersed with large herds of migratory grazers and their predators.
+<!-- weather -->
+| clear = 18
+| fog = 1
+| rain = 2
+| dry thunderstorm = 1
+| rainy thunderstorm = 1
+| foggy rain = 1
+| hard snow = 4
+| soft snow = 4
+| gray pall = 1
+| windy = 2
+| overcast = 2
+| blizzard = 1
+<!-- fish -->
+| max fish population = 600
+| freshwater_common_salmon = Yes
+| freshwater_uncommon_frostfish = Yes
+| saltwater_common_salmon = Yes
+| saltwater_common_cod = Yes
+| saltwater_uncommon_dogfish = Yes
+}}
+'''Tundra''' is a cold [[biome]] in RimWorld.
+<!-- return 0f - tile.temperature -->
+== Summary ==
+Animal migrations may occur once or twice per year. Growing periods are generally very short or non-existent. 
+
+In the lists below the number in brackets represents the relative commonality.
+
+=== Flora ===
+<div class="ul-column-width-200">
+{{#ask: [[Type::Plant]] [[Lives In Tundra::>>0]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Tundra
+}}
+</div>{{#set:Flora Commonality Sum | {{#expr: {{#ask: [[Type::Plant]] [[Lives In Tundra::>>0]] | ?Lives In Tundra = | mainlabel=- | sep=+ }} }} }}{{#set:Grazing Score|{{Grazing Score}} }}
+
+=== Fauna ===
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Tundra::>>0]] [[Coastal Animal::false]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Tundra
+}}
+</div>{{#set:Fauna Commonality Sum | {{#expr: {{#ask: [[Type::Animal]] [[Lives In Tundra::>>0]] [[Coastal Animal::false]] | ?Lives In Tundra = | mainlabel=- | sep=+ }} }} }}
+
+Additionally, these animals can spawn in coastal maps:
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Tundra::>0]] [[Coastal Animal::true]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Tundra
+}}
+</div>
+
+If the map is [[polluted]],{{BiotechIcon}} then the game may choose to spawn in wild animals from this list instead:
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Tundra (Polluted)::>0]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Tundra (Polluted)
+}}
+</div>
+
+=== Diseases ===
+Tundra has a disease {{MTB}} of 80 days. The following diseases can occur in a Tundra:
+{| {{STDT|c_07 sortable}}
+! Disease
+! Commonality{{#set:Disease commonality sum|{{#expr:100+80+30+40+40+30+100+80+10}} }}
+|-
+| [[Flu]] || 100{{#set:Flu commonality|100}}
+|-
+| [[Plague]] || 80{{#set:Plague commonality|80}}
+|-
+| [[Gut worms]] || 30{{#set:Gut worms commonality|30}}
+|-
+| [[Fibrous mechanites]] || 40{{#set:Fibrous mechanites commonality|40}}
+|-
+| [[Sensory mechanites]] || 40{{#set:Sensory mechanites commonality|40}}
+|-
+| [[Muscle parasites]] || 30{{#set:Muscle parasites commonality|30}}
+|-
+| [[Flu#Animals|Animal flu]] || 100{{#set:Animal flu commonality|100}}
+|-
+| [[Plague#Animals|Animal plague]] || 80{{#set:Animal plague commonality|80}}
+|-
+| [[Organ decay]] || 10{{#set:Organ decay commonality|10}}
+|}
+
+=== Fish ===
+{{Odyssey|section=1|No category}}
+The table below contains the list of all of the fish that can be caught - as well as where they can be caught.
+{| {{STDT|c_23 sortable}}
+! Fish
+! Water body
+! Rarity
+|-
+| [[Salmon]] || Freshwater || Common
+|-
+| [[Frostfish]] || Freshwater || Uncommon
+|-
+| [[Salmon]] || Saltwater || Common
+|-
+| [[Cod]] || Saltwater || Common
+|-
+| [[Dogfish]] || Saltwater || Uncommon
+|}
+
+== Analysis ==
+Tundra is the coldest biome that still allows for outdoor crop growth. It is a step harder to start in than the [[boreal forest]], as more crops need to be grown before the long winter starts.
+
+* '''Food and Growing: Moderate to Very Difficult''' - Growing seasons range from 20 days to 0 days long. Forageable plants and animals are less frequent, but are present. There is plenty of regular soil and some rich soil, so greenhouses don't need [[hydroponics]] to be established.
+
+* '''Disease: Easy''' - Disease events are uncommon. [[Healroot]] still grows naturally during the summer, and healroot plants will survive (but not grow in) the cold. Furthermore, there is an increased chance of the non-lethal mechanite diseases.
+
+* '''Temperature: Moderate to Very Difficult''' - Warmer tundra tiles can give you some time to prepare before freezing temperatures kick in, and there are some trees to make [[campfire]]s in a pinch. In the coldest tundra tiles, outdoor temperatures won't go above freezing. In any case, [[steam geyser]]s can be enclosed inside your starter base for free heating.
+
+* '''Fires: Easy''' - Low plant life means fires are not difficult to fight.
+
+Overall starting difficulty ranges from moderate to difficult, depending on how long the growing season lasts. Significant preparation needs to be done each summer until [[greenhouse]]s are established. Once greenhouses are established, the difficulty is similar to most other biomes, with less disease than warm biomes but winters forcing more insulative clothing.
+
+== Gallery ==
+<gallery>
+Tundra.png|A Tundra
+<!-- TundraPolluted.png|A [[polluted]] Tundra {{BiotechIcon}} -->
+TundraTexture.png|Tundra's texture on the world map
+</gallery>
+
+== Version history ==
+* [[Version/0.8.657|0.8.657]] - Added
+
+{{nav|biomes|wide}}
+[[Category:Biomes]]
+[[Category:Cold Biomes]]

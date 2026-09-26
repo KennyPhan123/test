@@ -1,0 +1,108 @@
+{{infobox main|misc|
+|name = Ground-penetrating scanner
+|image = Ground-penetrating scanner.png|Ground-penetrating scanner
+|description = A sensor unit used by researchers to search for buried resources. The chance to find a resource depends on the operator's research ability. It consumes a lot of electricity. If you find a buried resource, you'll need to use deep drills to extract it. It doesn't work under a roof.
+|type = Building
+|type2 = Misc
+|placeable = true
+|path cost = 50
+|passability = pass through only
+|cover = 0.4
+|minifiable = false
+|size = 3 ˣ 3
+|flammability = 0.5
+|hp = 200
+|beauty = -8
+|power = -700
+|terrain affordance = heavy
+|research = ground-penetrating scanner
+|skill 1 = Construction
+|skill 1 level = 8
+|work to make = 12000
+|resource 1 = Steel
+|resource 1 amount = 150
+|resource 2 = Component
+|resource 2 amount = 4
+|resource 3 = Advanced component
+|resource 3 amount = 1
+|destroyyield = nothing
+}}
+A '''ground-penetrating scanner''' detects and illuminates underground deposits of resources, which can be mined with a [[deep drill]].
+
+== Acquisition ==
+{{Acquisition}}
+
+They can also be found at mining [[work site]]s{{IdeologyIcon}} belonging to non-tribal{{Check Tag|Verify|They definitely spawn at outlander sites, wb pirates and empire?}} factions, however as they cannot be minified they can only be used on that map or deconstructed.
+
+==Summary==
+Ground-penetrating scanners consume 700 W of [[power]] and do not function under a roof. Scanning falls under Intellectual work. When operating a ground scanner, there is a mean of {{ticks/gametime|180000}} of work to find a deposit of ores. Finding a deposit is guaranteed after {{ticks/gametime|360000}} of work. These values are then modified by the [[Research Speed]] of the operator.
+
+Each deposit can contain one of {{lc:{{#ask:[[Category:Metal]] AND [[Name::!Bioferrite]] AND [[Name::!Obsidian]]}}, or [[jade]]}} with a distribution detailed on the table further below. These found ores can then be mined with a [[deep drill]]. Scanners technically ''create'' ore deposits. You will never find ores with a deep drill without a scanner, and scanners can find an infinite amount of resources in a given map. The scanner will never generate deposits under terrain that does not naturally support light structures nor beyond the buildable area of the map; deposits that would overlap with these areas will wrap around them instead. Notably, deposits can be generated under heavy bridges. Newly generated deposits can overwrite tiles from previously found resources, however. Any natural or artificial structure or floor will be ignored when generating a deposit, meaning deposits can appear under mountains and player bases.
+
+The ground-penetrating scanner can only function in biomes that have suitable drillable resources, which does not include asteroids in [[orbit]]{{OdysseyIcon}} or the [[sea ice]] biome. A warning will be displayed as a notification in the top left if you construct a ground-penetrating scanner in a biome that does not have suitable drillable resources.
+
+Generated deposits are notified through a letter and they can be seen on screen when selecting either a ground-penetrating scanner or installed deep drill as long as one scanner is powered. The underground deposits are displayed with an overlay that colors each deposit tile on a scale from green to red as resources are extracted.
+
+Multiple ground-penetrating scanners can operate simultaneously. Each scanner maintains its own scanning progress.
+<gallery widths="400px" heights="400px" class="left" mode="nolines">
+File:Deepdrill Mineral Example.png|'''Mineral drilling example. Hovering the mouse over a deposit tile displays the ore and quantity remaining under that tile.'''
+File:Ground-penetrating scanner Avoidance.png|'''Deposits are generated avoiding the edge of the map and water tiles.'''
+</gallery>
+===Ores===
+The resources contained in a deposit correlates with the size of the deposit. Each cell of resources contains 300 units of the resource. Below is an estimate of the different deposit sizes:
+{{Deep Ore Deposit Table}}
+<!--variables for table-->
+{{#vardefine:celltrueA|style="background:PaleGreen;" {{!}}{{Check}}}}
+{{#vardefine:celltrueB|style="background:DarkSeaGreen;" {{!}}{{Check}}}}
+<!--end of variable declaration-->
+Alternative table:
+{| {{STDT| c_25 text-center}}
+! style="text-align:left; width: 7em;" | Resource
+! style="width: 4em;" | 1-5 
+! style="width: 4em;" | 6-10 
+! style="width: 4em;" | 11-15 
+! style="width: 4em;" | 16-20 
+! style="width: 4em;" | 21-30 
+! style="width: 4em;" | 31-40
+|-
+| style="text-align:left;" |{{Icon Small|Steel}} [[Steel]] ||-||-||-||-||{{#var:celltrueA}}||{{#var:celltrueA}}
+|-
+| style="text-align:left;" |{{Icon Small|Silver}} [[Silver]] ||-||{{#var:celltrueB}}||{{#var:celltrueB}}||{{#var:celltrueB}}||-||-
+|-
+| style="text-align:left;" |{{Icon Small|Jade}} [[Jade]]||{{#var:celltrueA}}||-||-||-||-||-
+|-
+| style="text-align:left;" |{{Icon Small|Gold}} [[Gold]]||{{#var:celltrueB}}||-||-||-||-||-
+|-
+| style="text-align:left;" |{{Icon Small|Uranium}} [[Uranium]]||{{#var:celltrueA}}||{{#var:celltrueA}}||-||-||-||-
+|-
+| style="text-align:left;" |{{Icon Small|Plasteel}} [[Plasteel]] ||{{#var:celltrueA}}||{{#var:celltrueA}}||-||-||-||-
+|}
+</li><div>
+
+== Analysis ==
+Ground-penetrating scanners can provide minerals, such as [[steel]] and [[plasteel]], indefinitely. These resources can bottleneck mid/late game colonies. Ores are finite, [[trade]]rs only carry a few hundred [[steel]] each, and [[electric smelter|smelter]]s are limited by [[raider]]s. Each ground deposit provides an average of 9000 steel. As long as you have a decent miner, a ground scanner or two is a worthwhile investment. Even if you don't have a spare researcher to scan for ores, any idle colonist can be set to research to contribute to the scanning effort.
+
+As you can just scan for more ore, it typically isn't worth it to travel halfway across the map for a single deposit. Other than the [[power]] consideration, your deep drillers will have to travel a long way back and forth, and will be less secure against [[raid]]s. If you do need to travel, you might want to create a [[bed]]room and dining area to reduce walking time. The drill can be put in a room with high beauty, to please the miner.
+
+*The ground-penetrating scanner itself is not usable if there is a roof over it, though they can be placed in rooms if you need to regulate the [[temperature]]. A minimum of 24 tiles is required for temperature regulation; the 9 tiles of open roof will make heating inefficient, but it is possible. Having a larger room with double-thick walls allows for more efficient heating.
+* Scanning is considered a Research task. Using a [[research bench]] or [[long-range mineral scanner]] will always be higher priority, and will be done first whenever possible. If you want pawns to actively scan for ore, you can either turn off any of your [[hi-tech research bench]]es, or set an [[allowed area]] that ''excludes'' areas with research benches.
+
+=== Comparison to long-range scanners ===
+The [[long-range mineral scanner]] can find readily mineable ores on the world map, as opposed to ores that need to be drilled. The long-ranged scanner costs the same research as Deep Drill + Ground Scanner combination, though the former is required to research [[Research#Starflight Sensors|Starflight Sensors]].
+
+Long-range scanners create much less ore (2300 vs 9000 average [[steel]]),  find ores roughly {{ticks/gametime|60000}} slower, and your colonists will have to leave the map to access it. You'll often need to fight hostile threats, you'll need to get there, and any colonists on the trip aren't defending against colony [[raid]]s. Many ores are very heavy, meaning [[pack animal]]s or [[transport pod]]s are needed to get ore back. But long-range scanners have a few key advantages. You can search for a specific mineral, unlike the ground scanner. It is much faster to mine ores than drill at ground deposits. The ground scanner may create deposits near the edges of the map, making it impractical to actually mine them. And while long-range scanners are prone to ambushes, deep drills are prone to infestation events. In biomes where the ground-penetrating scanner doesn't work, the long-range scanner becomes the only way to find mineable ores.
+
+This makes the ground-penetrating scanner a more general, automated way to get material in the lategame and endgame. If you need specific ores, like plasteel or uranium, the long-range scanner is both faster to mine and faster to scan, but requires all the logistics that come with a long-range scanner. Also, which option to prefer can depend on quantity and quality of miners. Ground-penetrating scanners allow multiple miners to drill at 1 large ore deposit, while long-range scanners are fast enough to mine that a single miner is sufficient.
+
+=== Ideology ===
+{{Ideology|section=1}} <!--- ensure rough parity with LRMS page -->
+As scanning rates is dependent on [[Research Speed]], the bonuses offered by both [[research specialist]]s and the [[Ideoligion#Research|Research]] precept can make for significantly faster returns. This gives research specialists a niche even once all normal [[research]] is complete and may warrant maintaining an NPC ideoligion if it grants access to the specialist. Note however that the opposite is also true: Slow research precepts may considerably slow down the scanning speed.
+
+== Version history ==
+* Beta 19 - power usage was significantly reduced from 1500W to 800W. Its build cost was also changed, previously costing 400 steel and 12 components.
+* [[Version/1.1.0|1.1.0]] - Reworked; previously it showed all minerals on the map instantly. Now it requires work by a pawn and will periodically find new mineral patches, forever. Its power cost was also slightly lowered to 700W.
+* [[Version/1.1.2564|1.1.2564]] - Rebalance. Random find time 4 work days->3 work days. Guaranteed find time 8 work days -> 6 work days. Now displays feedback about the current user's scanning speed, the random scan interval for this user, and the progress to a guaranteed find.
+* [[Version/1.6.4518|1.6.4518]] - Fix: Ground penetrating scanner no longer works on sea ice biomes. Fix: Ground penetrating scanner no longer finds ore under bridges.
+
+{{nav|misc|wide}}
+[[Category:Miscellaneous]]

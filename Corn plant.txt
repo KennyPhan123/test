@@ -1,0 +1,57 @@
+{{Infobox main|plant
+| name = Corn plant
+| image = Corn plant a.png
+| description = A tall grain plant which produces ears of soft, edible seeds. While corn takes a long time to grow, it yields lots of food compared to other crops. Harvested corn takes a long time to spoil.
+| type = Plant
+| type2 = Domesticated
+| path cost = 14
+| hp = 150
+| flammability = 1
+| beauty outdoors = 1
+| grow days = 11.3
+| sow work = 170
+| harvest work = 200
+| product = corn
+| yield = 22
+| min fertility = 0.7
+| fertility sensitivity = 1
+| nutrition = 0.4
+| food type = plant
+| sowTags = Ground
+}}
+The '''corn plant''' has a long growing cycle and a very high yield of 22 pieces of [[corn]]. It cannot be sown in hydroponics. Corn plants have a base growing time of 11.3 days, need a minimum soil fertility of 70%, and have a fertility sensitivity rating of 100%. Corn has the second-highest base yield per day (approx. 2.7% less than [[rice]]), but requires the least farming labor to maintain due to its long growing cycle. 
+
+Like most [[domesticated plants]], they are subject to [[blight]].
+
+== Growing ==
+The following table details how long it takes for corn plants to grow in each growable ground type, factoring in the plant resting time and being in ideal growing conditions:
+{{Grow Table}}
+
+== Analysis ==
+In regular soil, corn plants provide slightly less nutrition per day (per tile) than [[rice plant]]s (97%) and slightly more than [[potato plant]]s (102%). Their primary advantage is their incredible labor efficiency: corn provides {{#expr: ({{P|Harvest Yield}}/({{P|Harvest Work}}+{{P|Sow Work}}))/({{Q|Potato plant|Harvest Yield}}/({{Q|Potato plant|Harvest Work}}+{{Q|Potato plant|Sow Work}})) *100 round 0 }}% the [[nutrition]] per work of potatoes, and {{#expr: ({{P|Harvest Yield}}/({{P|Harvest Work}}+{{P|Sow Work}}))/({{Q|Rice plant|Harvest Yield}}/({{Q|Rice plant|Harvest Work}}+{{Q|Rice plant|Sow Work}})) *100 round 0 }}% that of rice. This is because corn has the highest harvest yield, meaning fewer sowings and harvests for a given amount of food, but it is balanced by a long grow time.
+
+These long harvest cycles mean that losing a single harvest to [[blight]], [[fire]], [[cold snap]]s, or other misfortune is far more consequential than losing a crop of faster-growing plants. And depending on the climate, corn might not reach maturity before winter hits. If your harvest comes in mid-fall, you may want to either forbid sowing to save labour or temporarily switch to rice in order to get a little more food. It's also recommended to either keep an emergency food stockpile or other alternative food source on hand in case of crop loss. When possible, planting in rich soil will help mitigate the weaknesses associated with its long grow time, while planting in low-fertility soil will exacerbate them.
+
+Corn's exceptional shelf life means that the colony does not need to invest in freezer space for corn, as even the slightest winter will keep corn fresh until next year's harvest. Thus a corn harvest only needs to be placed in a simple shed.
+
+=== Trade ===
+Corn is arguably the most work efficient means of generating wealth. For {{Ticks|370}} of work, you get {{Icon Small|silver}} {{#expr:{{Q|Corn|Market Value Base}} * {{P|Harvest Yield}}}} Market Value ({{Icon Small|silver}} 163.5 / game hour), and it does not need to be processed any further. This is amazing value; it even beats [[flake]] in terms of pure work efficiency.
+
+Corn has a few disadvantages when compared to [[drug]]s. Corn is heavier. Due to the large quantities of corn, it takes more hauling work. Fewer traders accept corn, which is especially relevant when calling traders in with a [[comms console]]. For example, if you want to buy goods from an exotic goods trader, you could sell [[flake]] directly to them. With corn, you would have to call in a bulk goods trader and ''then'' the exotic goods trader, which takes time and consumes goodwill (which, in this case, means consuming money).
+
+== Gallery ==
+<gallery>
+Corn plant immature.png|Immature corn plant
+Corn plant a.png|Mature variant A
+Corn plant b.png|Mature variant B
+</gallery>
+
+== Version history ==
+* [[Version/0.9.722|0.9.722]] - added.
+* Beta 19/1.0 - Min fertility 50% -> 100%. 
+* [[Version/1.3.3066|1.3.3066]] - Nutrition increased from 0.3 -> 0.4
+
+{{Nav|plant|wide}}
+
+[[Category:Plants]]
+[[Category:Domesticated plants]]

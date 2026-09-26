@@ -1,0 +1,48 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Local/Misc}}
+|}
+----
+{| {{STDT| c_11}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Trauma savant" <!-- defName="TraumaSavant", ParentName="DiseaseBase" -->
+! Trauma savant
+----
+* Def Name:<br />TraumaSavant
+* Label:<br />trauma savant
+* Label Noun:<br />trauma
+| An exceptional condition caused by trauma to the brain. The brain, in the face of injury, has developed extreme abilities in some areas, while losing the ability to speak.
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|90%|100%|35%}}
+* Initial Severity: '''0.1%'''
+* '''Remove On Redress Chance By Days Curve:'''
+<div><li style="display: inline-table;">
+{| {{STDT| c_11}}
+! <abbr title="Days as a World Pawn">Days</abbr> !! <abbr title="Chance to remove on Pawn Generator Redress">Chance</abbr>
+|-
+! 0
+| 0%
+|-
+! 2
+| 0%
+|-
+! 7
+| 50%
+|-
+! 20
+| 100%
+|}</li></div>
+|<!-- Stages -->
+{| {{STDT| c_11}}
+! Label !! Parameters
+|-
+! Trauma savant
+|<!-- Parameters -->
+* Opinion Of Others Factor: '''×0%'''
+* Part Ignore Missing {{HP}}: {{Good|true}} (to avoid penalties from brain injuries, so manipulation is 100%+)
+* [[Talking]] Max: {{Bad|0%}}
+* [[Hearing]] Max: {{Bad|0%}}
+* [[Manipulation]] Offset: {{+|50%}} 
+|}<noinclude>
+|}</noinclude>

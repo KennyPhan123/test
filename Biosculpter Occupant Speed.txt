@@ -1,0 +1,93 @@
+{{Ideology}}
+{{Verified|1.5.4104}}{{Stat
+| def name = BiosculpterOccupantSpeed
+| label = biosculpter occupant speed
+| description = A multiplier on how quickly this person will complete a [[biosculpter pod]] cycle.
+| default base value = 1
+| hide at value = 1
+| effective maximum = 2
+| to string style = PercentZero
+| scenario randomizable = true
+| show on animals = false
+| show on mechanoids = false
+| category = PawnMisc
+| display priority in category = 1900
+| parts = StatPart_BiosculptingSpeedFactor
+}}
+{{See also|Biosculpter Pod Speed Factor}}
+
+== Factors ==
+This stat determines how long a pawn will stay in a biosculpter pod in order to complete the cycle. This is affected by the [[transhumanist]] meme and it's respective [[Biosculpting (precept)|biosculpting]] precept, which will increase the occupant speed to {{Good|200%}}.
+<div><li style="display: inline-table;">
+{| {{STDT| c_20 sortable}}
+! Issue !! Precepts !! Biosculpter Pod<br />Cycle Speed Factor
+|-
+! [[Biosculpting (precept)|Biosculpting]] {{IdeologyIcon}}
+| Accelerated
+| {{Good|×200%}}
+|}
+</li></div>
+
+== Table ==
+{| {{STDT| c_20 sortable}}
+|- {{#vardefine: medicTime | 6}}{{#vardefine: regenTime | 25}}{{#vardefine:ageTime | 8}}{{#vardefine: pleasureTime | 4}} 
+! rowspan=2| Circumstances !!  colspan=4 | Cycle [[Time|Days]] (Tuned Time) 
+|-
+! Medic !! Bioregeneration !! Age reversal !! Pleasure
+|-
+! Default
+| {{#var: medicTime}} ({{#expr: 0.75 * {{#var: medicTime}} round 2}})
+| {{#var: regenTime}} ({{#expr: 0.75 * {{#var: regenTime}} round 2}})
+| {{#var:ageTime}} ({{#expr: 0.75 * {{#var:ageTime}} round 2}})
+| {{#var: pleasureTime}} ({{#expr: 0.75 * {{#var: pleasureTime}} round 2}})
+|-
+! Sterile
+| {{#expr: (1/1.15)*{{#var: medicTime}} round 2}} ({{#expr: 0.75 * (1/1.15)*{{#var: medicTime}} round 2}})
+| {{#expr: (1/1.15)*{{#var: regenTime}} round 2}} ({{#expr: 0.75 * (1/1.15)*{{#var: regenTime}} round 2}})
+| {{#expr: (1/1.15)*{{#var:ageTime}} round 2}} ({{#expr: 0.75 * (1/1.15)*{{#var:ageTime}} round 2}})
+| {{#expr: (1/1.15)*{{#var: pleasureTime}} round 2}} ({{#expr: 0.75 * (1/1.15)*{{#var: pleasureTime}} round 2}})
+|-
+! Transhumanist
+| {{#expr: 0.5*{{#var: medicTime}} round 2}} ({{#expr: 0.75 * 0.5*{{#var: medicTime}} round 2}})
+| {{#expr: 0.5*{{#var: regenTime}} round 2}} ({{#expr: 0.75 * 0.5*{{#var: regenTime}} round 2}})
+| {{#expr: 0.5*{{#var:ageTime}} round 2}} ({{#expr: 0.75 * 0.5*{{#var: ageTime}} round 2}})
+| {{#expr: 0.5*{{#var: pleasureTime}} round 2}} ({{#expr: 0.75 * 0.5*{{#var: pleasureTime}} round 2}})
+|-
+! Transhumanist and Sterile
+| {{#expr: (0.5/1.15)*{{#var: medicTime}} round 2}} ({{#expr: 0.75 * (0.5/1.15)*{{#var: medicTime}} round 2}})
+| {{#expr: (0.5/1.15)*{{#var: regenTime}} round 2}} ({{#expr: 0.75 * (0.5/1.15)*{{#var: regenTime}} round 2}})
+| {{#expr: (0.5/1.15)*{{#var:ageTime}} round 2}} ({{#expr: 0.75 * (0.5/1.15)*{{#var:ageTime}} round 2}})
+| {{#expr: (0.5/1.15)*{{#var: pleasureTime}} round 2}} ({{#expr: 0.75 * (0.5/1.15)*{{#var: pleasureTime}} round 2}})
+|}
+
+== Stat Def Data ==
+{| {{STDT| c_20}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Biosculpter Occupant Speed" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />BiosculpterOccupantSpeed
+* '''Label:'''<br />biosculpter occupant speed
+| A multiplier on how quickly this person will complete a biosculpter pod cycle.
+|
+* Display Order:<br />'''130'''
+* Def Name:<br />'''PawnMisc'''
+* Label:<br />'''Misc'''
+* Display All By Default:<br />{{Bad|false}}
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Hide At Value:''' {{%|1}}
+* '''To String Style:''' PercentZero
+* '''Show On Animals:''' {{Bad|false}}
+* '''Show On Mechanoids:''' {{Bad|false}}
+* '''Scenario Randomizable:''' {{Good|true}}
+|
+* '''Parts:'''
+** '''StatPart_BiosculptingSpeedFactor'''
+| 1900
+<!--</StatDef>-->
+|}
+
+== Version history ==
+* [[Version/1.3.3066|1.3.3066]] - Added.
+
+{{nav|stats|wide}}

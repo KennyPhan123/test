@@ -1,0 +1,127 @@
+{{Version Nav}}
+
+Version 1.5.4104 is up now on the unstable branch! A smaller one which will be be live on stable later.<ref>'''Rimworld official development''' Discord builds channel, [https://discord.com/channels/684960023020961812/687923435292065840/1242762194018504759 Update post of May 22nd, 2024].</ref>
+* Replaced gender-specific words with symbols in schematic texts.
+* Remove healer mech serums from animal operation options.
+* Fix: Luciferium addiction doesn't cause medical emergency alert when pawn is deathless.
+* Fix: "BlockedByRoof" translation key in Royalty instead of Core.
+* Fix: Scaria isn't removed on shambler resurrection.
+* Fix: Colony mutants in buildings don't show on the colonist bar.
+* Fix: Auto activate monolith scenario part doesn't have edit interface.
+* Fix: Some music sequences ending harshly instead of fading out.
+* Fix: Luciferium addiction remains on turned mutants.
+* Fix: Turret packs can replace other turrets when throw misses.
+
+
+== Official Announcement<ref>Ludeon Blog post [https://ludeon.com/blog/2024/05/update-1-5-4104-released/ Update 1.5.4104 released]</ref> ==
+{{center|https://ludeon.com/blog/wp-content/uploads/2024/05/steam_cover_anomalysmallupdate.png}}
+
+Hey everyone! We’re back with a small update containing some changes, improvements and fixes for RimWorld and its expansions. This update should be compatible with all savegames and mods.
+
+We do these updates with the help of players from the RimWorld community! If you’re interested in helping us test, or you have a bug to report, please join us on the official RimWorld development Discord.
+
+Bye for now!
+– Tia
+
+
+==='''Changelog'''===
+
+* Adjusted render node worker to support multiple graphics per node without dirtying/reaching the render tree.
+* Thoughts for each genetic chemical dependency are tracked independently instead of lumped together into a single confusing thought.
+* Remove deathless regeneration coma on resurrection.
+* Tweak some Anomaly incident occurrence rates so that they’re less prevalent in ambient mode.
+* Clarify the label for “anomaly disabled” mode.
+* Added labelNoParenthesis rule symbol to pawns and things.
+* Updated Spanish LanguageWorker.
+* Ghouls can now be ordered to rest in medical beds.
+* Pawns will now satisfy genetic chemical dependencies when in caravans if their drug policy allows it.
+* Harbinger trees now consume corpses part by part even if they have no nutrition.
+* Adjusted distance ranges on some sounds.
+* Replaced gender-specific words with symbols in schematic texts.
+* Don’t store virtual relationship records which can never imply another relationship.
+* Changed fade shadows to not multiply together.
+* Remove healer mech serums from animal operation options.
+
+==='''Fixes'''===
+
+* Fix: Minor grammar irregularity with addiction counsel.
+* Fix: MechbandDish description typo.
+* Fix: StaggerDurationFactor stat does not work without Biotech.
+* Fix: Arresting beggars auto-fails.
+* Fix: Genetic chemical dependency thought not properly nullified by mind numb serum.
+* Fix: Remote repairer hediff can be duplicated.
+* Fix: Autobongs making non-organic entities high.
+* Fix: Creepjoiners have entity faction when enslaved
+* Fix: Increased carried thing layer to resolve some apparel issues.
+* Fix: Beam verbs and incinerator hitting cells without line of sight.
+* Fix: Headgear not always rendering correctly when crawling.
+* Fix: Preferred xenotypes not working correctly between prisoners and slaves.
+* Fix: Incorrect label argument used in activity suppression tooltip.
+* Fix: Various specific save/load errors with awoken corpses and hypnotized pawns.
+* Fix: No “missing bed” feedback for “take to bed” warden order.
+* Fix: Mech booster is rotatable.
+* Fix: Apparel without CompColorable causes errors in styling station.
+* Fix: High Mechtech can be selected in research without building a multi-analyzer.
+* Fix: Message spam when capturing an enemy during a psychic ritual siege.
+* Fix: Left behind pawns dying counts towards “colonists killed” stat if they die.
+* Fix: Becoming a shambler incorrectly taints utility items.
+* Fix: Feedback for sky-lantern participants who can’t reach any wood, added better ritual feedback functions.
+* Fix: Unnecessary loading warning appearing for transport pods without colonists.
+* Fix: Creepjoiner letters not using gendered kind labels.
+* Fix: Suspending lovin’ causing errors.
+* Fix: Ritual dialog tooltip slightly cutoff.
+* Fix: Refugees can send leaving messages multiple times.
+* Fix: Misleading extra warnings if complexes were previously activated before entering
+* Fix: Some circumstances where temp factions wouldn’t be properly hostile to anomaly entities or insects.
+* Fix: Unable to place non downed pawns in a cryptosleep pod.
+* Fix: Error when entity dies during bioferrite extraction.
+* Fix: Error on inspect pane for ghouls without hunger needs.
+* Fix: Herd animals trained to attack won’t target shamblers.
+* Fix: Psychic ritual failing when invoker gets psychic shock.
+* Fix: Farskip not working on colony ghouls.
+* Fix: Several scenarios where collapsed roofs can destroy pit gates.
+* Fix: Hediff and mutant abilities not saving cooldown.
+* Fix: Fleshmass stomach not preventing gut worms letter.
+* Fix: Colony mechs and ghouls can’t be selected in split caravan dialog.
+* Fix: Modded violent work types disabling ghoul melee skill.
+* Fix: HediffDef aptitudes displaying as active without Anomaly installed.
+* Fix: Recluse thoughts not nullified properly by mind numb serum.
+* Fix: Inhumanized not nullifying childbirth related memories.
+* Fix: Biofuel refinery accepts dye as organic matter, but it doesn’t have any nutritional value.
+* Fix: Sunlamp light radius inaccurate.
+* Fix: Error using “Damage until down” method on pawn with shield belt.
+* Fix: More consistent handling of ActivitySuppressionToggleTooltipDesc and ActivitySuppressionTooltipDisabled translation keys.
+* Fix: High activity alerts display HP percent.
+* Fix: Activation inspect pane string has hardcoded “s”.
+* Fix: Inconsistent text ‘Start’ vs ‘Begin’ bestowing ceremony.
+* Fix: Newborn babies can generate with parents’ PawnKindDefs startingHediffs.
+* Fixed some scenarios where skyfallers would drop through mountain roofs.
+* Fixed some situational issues with creepjoiners leaving after being ghoulified.
+* Fix: Genes and traits that increase skills on growth moment stack.
+* Fix: Schematic generation error if only remaining projects are excluded.
+* Fix: Activity suppression and studying not respecting allowed areas when selecting an interaction cell.
+* Fix: Some undesired behavior with creepjoiner letters.
+* Fix: Include common book symbols in book doer rule pack grammar requests.
+* Fix: Relaxing socially not respecting standard seat reservations.
+* Fix: Lay down driver sometimes causing errors on load.
+* Fix: Having “give psylink” debug action on debug palette without royalty active causes errors.
+* Fix: Deadlife shamblers opening doors.
+* Fix: Unable to place non downed pawns in a cryptosleep pod.
+* Fix: Error when entity dies during bioferrite extraction.
+* Fix: Errors for ghouls without hunger needs.
+* Fix: Sun/Edge shadows not always drawing if off-screen to the right.
+* Fix: Tending pawns get medicine after using initial stack even if they have more.
+* Fix: Security doors count as 2 doors for prisoners, reducing their prison break mtb by 50%. Added informative text explaining that having only security doors in a prison multiplies escape mtb by 110%.
+* Fix: Error when turning pawn with ideoligion role into a ghoul.
+* Fix: Harbinger tree provocation not working on ambient horror mode.
+* Fix: Pawns leaving allowed area to rope animals.
+* Fix: Luciferium addiction doesn’t cause a medical emergency alert when a pawn is deathless.
+* Fix: “BlockedByRoof” translation key in Royalty instead of Core.
+* Fix: Scaria isn’t removed on shambler resurrection.
+* Fix: Colony mutants in buildings don’t show on the colonist bar.
+* Fix: Auto activate monolith scenario part doesn’t have edit interface.
+* Fix: Some music sequences ending harshly instead of fading out.
+* Fix: Luciferium addiction remains on turned mutants.
+* Fix: Turret packs can replace other turrets when throw misses.
+
+== Source ==

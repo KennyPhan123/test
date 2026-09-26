@@ -1,0 +1,107 @@
+{{Stub|reason=Its half complete?}}
+'''Sleep furniture''' refers to all the [[buildings]], [[spot]]s, and [[furniture]] that allow pawns to [[sleep]] on them to provide additional [[Rest Effectiveness]], [[Comfort]], and [[Surgery Success Chance Factor]].
+
+'''Note:''' This term is never used in-game. It is used here only to discuss the general class of similar objects without being confused for specific examples, such as [[bed]], or implicitly excluding other classes of furniture for sleeping, such as [[sleeping spot]]s or [[bedroll]]s.
+
+== Examples ==
+The following are the current examples present in game:
+<ul class=ul-column-width-200><li>{{#ask: [[Name::!~Animal*]] [[Rest Effectiveness::+]]
+ | format = template
+ | template = DLC Icons
+ | link = none
+ | sep = </li><li>
+ | sort = From DLC, Name
+}}</li></ul>
+
+Animals equivalents are:
+<ul class=ul-column-width-200><li>{{#ask: [[Name::~Animal*]] [[Rest Effectiveness::+]]
+ | format = template
+ | template = DLC Icons
+ | link = none
+ | sep = </li><li>
+ | sort = From DLC, Name
+}}</li></ul>
+
+Sleep furniture facilities are:
+* [[Dresser]] (for {{#ask: [[Facility::Dresser]] | format = template | template = DLC Icons | link = none | sep = ,&nbsp; | sort = From DLC, Name}})
+* [[End table]] (for {{#ask: [[Facility::End table]] | format = template | template = DLC Icons | link = none | sep = ,&nbsp; | sort = From DLC, Name}})
+* [[Vitals monitor]] (for {{#ask: [[Facility::Vitals monitor]] | format = template | template = DLC Icons | link = none | sep = ,&nbsp; | sort = From DLC, Name}})
+* [[Sleep accelerator]]{{IdeologyIcon}} (for {{#ask: [[Facility::Sleep accelerator]] | format = template | template = DLC Icons | link = none | sep = ,&nbsp; | sort = From DLC, Name}})
+
+== Mechanics ==
+Colonists will sleep on a piece of sleep furniture that they are assigned to, according to their [[schedule]]. If unassigned, colonists will automatically assign themselves to an available piece of furniture. This can be overridden with the ''"Set owner"'' button. Rooms will turn into a bedroom if there is 1 item of sleep furniture, or a barracks if there are multiple. Colonists prefer separate bedrooms, and receive [[mood]]lets depending on how [[room stats|Impressive]] their room is. Impressiveness is based on [[Wealth]], [[Space]], [[Beauty]], and [[Cleanliness]].
+
+Sleep furniture can also be assigned to a special purpose:
+*'''For Colonists:''' Reserve for [[colonists]]. Colonists will only automatically assign themselves to sleep furniture designated like this. This is the default option but swapping back from the other options below will require selecting this mode. They are colored green.
+*'''For Prisoner:''' Reserve for [[prisoner]]s, creating a [[prison]]. Prison beds must be in an enclosed [[room]] (walls, doors, and other impassible objects count). Colonists and prisoners can't share the same room; when one is set to prisoner, all sleep furniture in the room is set to prisoner. There must be an empty prison piece of sleep furniture in order to capture prisoners or arrest pawns. They are colored orange.
+*'''For Slave:'''{{IdeologyIcon}} Reserve for [[slave]]s. Unlike prisoners, colonists and slaves can sleep in the same room, though colonists get a {{--|3}} moodlet for doing so. They are colored yellow.
+*'''Medical:''' Removes ownership. Pawns will rest in medical sleep furniture whenever they are [[sick]] or [[injury|injured]], and rescuers will prioritize bringing a pawn to them. Selecting colonists and slaves that are sick, injured, or have an operation scheduled allows them to be ordered to ''"rest until healed"'' via the right click menu of a medical bed. The pawn will then go to that bed and sleep there instead of at their designated beds, and instead of doing their regular tasks. At any time, the colonist can be given another task and, if they can move, they will leave the bed and perform that task. Does not overwrite bed designation - a medical bed can be for colonists, prisoners, or slaves. They are colored blue.
+
+If a pawn cannot reach any suitable sleep furniture they will instead search for a space on the ground within a 12 tile radius to sleep. Certain [[terrain]] types are not considered valid to sleep on without furniture, these are: [[Mud]], [[Water]] (any depth, including toxic water and hot spring water), [[Marsh]], Insect sludge, Space and Lava. Multiple pawns cannot sleep on the same tile. Aside from these two rules, there are no special restrictions for selecting a ground tile to sleep on - in particular, pawns may sleep on passable buildings, on [[fence]]s, on [[chunk]]s, on [[campfire]]s, in open [[Door|doorways]], and on [[traps]]. If a pawn cannot find furniture or ground space to sleep on they will simply not sleep. When a pawn collapses from [[Thoughts#Exhaustion|Exhaustion]], the usual criteria for ground sleeping is disregarded, instead the pawn will sleep on whatever tile they happen to occupy, which may include the aforementioned invalid terrain types. However, it is still impossible to share a tile with another sleeping pawn, and if the only available tile is occupied, the collapsing pawn will stay awake.
+
+=== Sharing beds ===
+Some sleep furniture can have two pawns sleep on them at the same time and can be assigned to up to two pawns at a time. These are all 2-tiles wide and 2-tiles long and, with some exceptions, are typically denoted with the word "double" in the name. These include:
+* [[Double bed]]
+* [[Royal bed]]
+* [[Double bedroll]]
+* [[Double sleeping spot]]
+* [[Slab double bed]]{{IdeologyIcon}}
+* [[Rusted double bed]] {{OdysseyIcon}}
+
+Pawns dislike sharing a bed with others that they are not in a [[Romance|relationship]] with, and experience a mood penalty{{Check Tag|Details|Use thought template}} dependent on their [[opinion]] of the pawn they are sharing the bed with ranging from {{--|10}} at {{--|100}} opinion, increasing by {{+|1}} for every {{+|20}} opinion to a maximum of '''-0''' mood at {{+|100}} opinion. 
+
+Pawns do not require sleeping in the same bed as the pawn they are in a relationship with to avoid a mood penalty,{{Check Tag|Details|Use thought template}} simply having a bed in the same room as the their partner's bed is sufficient, however sharing a bed is required for [[lovin']].
+
+=== Rest Effectiveness ===
+
+=== Comfort ===
+
+=== Surgery Success Chance Factor ===
+
+=== Deathrest ===
+{{Biotech|section =1}}
+{{stub|section=1|reason =general}}
+{{Main|Deathrest}}
+Pawns can [[deathrest]] on all sleeping furniture that is under a [[roof]].
+
+{{Deathrest Time Table}}
+
+== Comparison table ==
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_08 text-center}}
+! rowspan="2" | Furniture
+! rowspan="2" style="border:#428659 1px; border-style: none solid none none;" | Resources to make
+! colspan="2" | Rest effectiveness
+! rowspan="2" style="border:#428659 1px; border-style: none none none solid;" | Surgery Success Chance Factor
+! rowspan="2" style="border:#428659 1px; border-style: none solid none none;" | Immunity Gain Speed Factor
+! colspan="3" | Comfort
+! rowspan="2" style="border:#428659 1px; border-style: none none none solid;" | Facilities
+! rowspan="2" | Has quality{{Ref label|Quality|A}}
+|-
+! style="background-color:#66a385; border:#428659 1px; border-style: solid none none none;" data-sort-type="number" | Normal<br/>(made from {{Icon Small|Stone blocks}})
+! style="background-color:#66a385; border:#428659 1px; border-style: solid none none none;" data-sort-type="number" | With {{Icon Small|Sleep accelerator}}<br/>(made from {{Icon Small|Stone blocks}})
+! style="background-color:#66a385; border:#428659 1px; border-style: solid none none none;" | Normal
+! style="background-color:#66a385; border:#428659 1px; border-style: solid none none none;" | With {{Icon Small|Dresser}} OR {{Icon Small|End table}}
+! style="background-color:#66a385; border:#428659 1px; border-style: solid none none none;" | With {{Icon Small|Dresser}} AND {{Icon Small|End table}}
+|-
+{{#ask: [[Rest Effectiveness::+]]
+ | ?Name = ?Name
+ | ?Resource 1 = ?R1
+ | ?Rest Effectiveness = ?Rest
+ | ?Stuff Tags = ?Stuff
+ | ?Surgery Success Chance Factor = ?Surgery
+ | ?Immunity Gain Speed Factor = ?Immunity
+ | ?Comfort Base = ?Comfort
+ | ?Facility = ?Facility
+ | ?Has Quality = ?Quality
+ | named args = yes
+ | format = template
+ | template = Sleep Furniture Table Row
+ | link = none
+ | sort = From DLC, Name
+}}
+|}
+</li></div>
+{{Note|Quality|A}} For the effects of qualities, see [[quality]] or the individual pages.
+
+[[Category:Furniture|#Sleep furniture]]

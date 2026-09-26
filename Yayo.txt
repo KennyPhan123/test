@@ -1,0 +1,142 @@
+{{Infobox main|drug
+| name = Yayo
+| image = Yayo c.png
+| description = A refined powdery preparation of the psychite drug. When snorted, it produces a rapid euphoric high, dramatically reduces the user's need for rest, and suppresses pain. Like all forms of psychite, it is addictive, though it is not as addictive as the cruder flake.<br/>Because of its high cost and refined appearance, many cultures associate yayo with degenerate wealth. Whether in the throneroom or the boardroom, many hare-brained policy schemes have been developed during yayo-fueled binge parties.
+<!-- Base Stats -->
+| type = Drug
+| type2 = Hard Drug
+| tech level = Industrial
+| marketvalue = 21
+| stack limit = 150
+| mass base = 0.05
+| hp = 50
+| deterioration = 2
+| flammability = 1
+| rotatable = false
+| path cost = 14
+<!-- Ingestion -->
+| food type = processed
+| joy offset = 0.8
+| joy kind = Chemical
+| addictiveness = 0.01
+| max num to ingest at once = 1
+| ingestion time = 150
+<!-- Creation -->
+| production facility 1 = Drug lab
+| research = Psychite refining
+| work to make = 350
+| work speed stat = Drug Synthesis Speed
+| resource 1 = Psychoid leaves
+| resource 1 amount = 8
+| bulk product amount = 4
+<!-- Technical -->
+| defName = Yayo
+| preferability = NeverForNutrition
+| drug category = Hard
+| is pleasure drug = true
+| tradeTags = Drugs
+}}
+{{Info|'''Yayo''' is a potent [[mood]] enhancing [[hard drugs|hard]] [[Drugs|drug]] that significantly improves the mood of a pawn and provides additional bonuses, at the risk of addiction and overdose. It is also used in the manufacturing of [[go-juice]].}}
+
+== Acquisition ==
+{{Acquisition}}
+
+It can also be found on [[raider]]s and [[Trade|purchased]].
+
+== Usage ==
+{{Ingredient List|noCollapse=true}}
+
+== Summary ==
+Yayo is a highly potent mood enhancing drug that has a variety of effects. These can be broken into effects that occur:
+* Instantaneously and one time upon using the drug.
+* While high on the drug.
+* While having a built-up tolerance to the drug.
+* While addicted to the drug.
+* While withdrawing from the drug.
+
+'''Note that psychite tolerance, addiction and withdrawal are shared by [[psychite tea]], [[flake]] and yayo.'''
+
+=== Upon snorting ===
+A pawn taking yayo will do so right where they stand without looking for a place to sit first. Yayo is taken nasally, taking {{ticks|{{P|Ingestion Time}} }}. It has the following one time effects:
+
+* {{+|{{%|{{P|Joy Offset}} }} }} {{P|Joy Kind}} [[recreation]]
+* If the pawn has the [[chemical interest]] or [[chemical fascination]] trait:
+** {{+|30%}} [[Chemical need]]
+* {{+|40%}} [[Rest]]
+* {{Bad|{{%|{{#vardefineecho:overdoseChance|0.01}} }} }} Chance for a [[Overdose#Major|major overdose]]
+* {{++|18% to +{{%|{{#vardefineecho:maxOverdoseSeverity|0.35}} }} }} [[Overdose]] severity (same across all [[hard drugs]])
+* '''+{{%|{{#vardefineecho:highSeverity|0.75}} * 0.25}} to +{{%|{{#var:highSeverity}} }}''' Yayo high severity, depending on tolerance ''(see "Yayo high" below)''
+* {{++|{{%|{{#vardefineecho:toleranceSeverityOffset|0.04}} }} }} Psychite tolerance severity, divided by body size ''(see "Psychite tolerance" below)
+* {{Bad|{{%|{{P|Addictiveness}} }} }} Psychite [[addiction]] chance ''(see "Psychite addiction" below)''
+* If the pawn has an addiction already:
+** {{+|{{%|{{#vardefineecho:needOffset|0.9}} }} }} Psychite need ''(see "Psychite addiction" below)''
+** {{--|{{%|{{#vardefineecho:addictionSeverityOffset|0.2}} }} }} Addiction progress ''(see "Psychite withdrawal" below)''
+
+=== Yayo high ===
+{{Quote|"Active yayo in the bloodstream. Generates an intense euphoric high."|High on yayo description}}
+
+Each yayo increases the yayo high severity by the following formula:
+
+<code>Increase in severity = {{#var:highSeverity}} * (100 - (tolerance * 75 round 0))</code>
+
+Therefore with 0% tolerance the severity increases by {{%|{{#var:highSeverity}} }}, with 100% tolerance by {{%|{{#var:highSeverity}}*0.25}}. It decreases by {{%|{{#vardefineecho:highSeverityPerDay|1.5}} }} per day again, meaning that the high of a single dose lasts between {{#vardefineecho:highDurationMin|{{#expr: {{#var:highSeverity}}*0.25/({{#var:highSeverityPerDay}}/24) round 1}} }} and '''{{Plural|{{#vardefineecho:highDurationMax|{{#expr: {{#var:highSeverity}}/({{#var:highSeverityPerDay}}/24)}} round 1}}|hour}}'''. The maximum severity of a yayo high is 100% which is reached with {{#expr: 1/{{#var:highSeverity}} round 1}} to {{#expr: 1/{{#var:highSeverity}}/0.25 round 1}}&nbsp;yayo. Regardless of the yayo high severity, the effects are always the same. Only their duration changes accordingly:
+
+* {{+|35}} [[Mood]] (''"Feeling pumped! Let's do this!"'')
+* {{+|15%}} [[Moving]]
+* {{Good|×50%}} [[Pain]]
+* {{Good|×33%}} [[Sleep Fall Rate]]
+
+Without any tolerance, a dose of yayo will last for {{Plural|{{#vardefineecho:highDurationMax|{{#expr: {{#var:highSeverity}}/({{#var:highSeverityPerDay}}/24)}} }}|hour}}.
+
+{{:Psychite}}
+
+== Analysis ==
+Yayo is one of three drugs that can be produced from psychoid leaves, the others being [[flake]] and [[psychite tea]]. Yayo can also be further refined into [[go-juice]] with the addition of 2 [[neutroamine]]. As a rough guideline, yayo is for using, and flake is for selling.
+
+=== Drug ===
+As a mood control drug, yayo is generally superior to flake. Yayo is safer: it has a much lower addiction chance (1% vs 5%), a lower major overdose chance (1% vs 1.5%), and each unit of yayo lasts twice as long as flake, meaning there are less chances to overdose/become addicted. They both give {{+|35}} mood and '''x50%''' pain, but yayo also gives {{+|15%}} [[Moving]]. Flake's only real advantages as a taken drug are 1. the increased chemical Recreation per leaf, and 2. flake's smaller discrete doses. Yayo is worth two flake and each high lasts twice as long, but it has to be taken all at once. You can "split up" flake for 2 separate mood emergencies.
+
+Psychite tea only gives {{+|12}} mood and {{Good|x80%}} Sleep Fall Rate, but is considerably safer than both flake and yayo. '''Adults''' can safely drink tea once every 2 days without getting addicted. This makes tea far more useful for regular use. However, all 3 psychite drugs contribute towards the same tolerance, so tea's safe usage interval does not apply if a colonist has used flake or yayo. Yayo is more appropriate for mood emergencies, or as an ersatz combat drug if [[go-juice]] isn't available. In absolute emergencies, you can take yayo, flake, and psychite tea simultaneously for a {{+|82}} mood buff.
+
+For the [[Psychite dependency]] gene,{{BiotechIcon}} addiction and major overdoses are non-factors. As psychite tea provides less mood and rest, it is inferior to both flake and yayo. Yayo is more expensive to produce than flake, but satisfies the same dependency for the same time. If producing psychoid isn't an issue, then yayo can be helpful for the increase to Moving.
+
+=== Drug comparison table ===
+{| class="wikitable sortable"
+! Drug     !! Mood buff !! Moving !! Pain !! Tiredness !! Consciousness !! Sight !! Global working speed
+|-
+| Yayo     || +35       || +15%   || ×50% || ×33%      ||    -          ||    -  ||    -    
+|-
+| Flake    || +35       ||    -   || ×50% || ×33%      ||    -          ||    -  ||    -    
+|-
+| Go juice ||  +5       || +50%   || ×10% ||    -      || +20%          || +35%  ||    -    
+|-
+| Wake-up  ||   -       || +10%   ||    - || ×80%      || +10%          ||    -  || +50%    
+|}
+
+=== Trade ===
+On the market, yayo is worth 50% more [[silver]] than flake, with a 20% increase in the [[Work To Make]] and a 100% increase in ingredient cost. Flake gives 33% more silver per leaf for only 7% more work.
+
+Specifically, yayo will sell for {{Icon Small|silver||{{#expr:{{P|Market Value Base}}/{{P|Resource 1 Amount}} }} }} silver per leaf, and flake will sell for {{Icon Small|silver||{{#expr:{{Q|Flake|Market Value Base}}/{{Q|Flake|Resource 1 Amount}} }} }} silver per leaf.
+
+If the work required to create drugs is a bottleneck, then flake remains more efficient when you sell the remaining leaves raw. For example, a pawn requires {{Ticks|35000}} of work and 800 psychoid leaves to synthesize 100 yayo worth {{Icon Small|silver||2100}}. With the same amount of work, a pawn could use 560 leaves to craft 140 flake worth {{Icon Small|silver||1960}}. The remaining 240 psychoid leaves are worth {{Icon Small|silver||456}}, for a total of {{Icon Small|silver||2416}}. However, psychoid leaves will eventually rot away without refrigeration, and fewer traders accept raw leaves. Therefore, if long term refrigeration is an issue, then yayo may be necessary.
+
+If caravan weight is a limiting factor, yayo is worth more proportional to [[mass]], however the low weight of all the options means this is unlikely to be relevant as a single [[muffalo]] can carry almost 20 stacks of flake worth over 20,000 silver. 
+
+Note that the third possible product for psychoid leaves, [[psychite tea]], is economically inferior to both yayo and flake. Its primary advantage instead lies in ease and safety of use by colonists. It is produced at a [[campfire]] or stove with the [[Cooking]] skill and requires only the [[Research#Psychoid brewing|Psychoid Brewing]] research, and thus may be a more accessible in the early game. And being a social drug, it has a safe dose interval (of 2 days in an adult) and no possibility of overdose. 
+
+== Trivia ==
+* Yayo is slang for Cocaine in Spanish derived from Santiago Luis Polanco Rodriguez, but it's more commonly known from the quote "Chichi, get the Yayo" from Scarface (1983).<sup>[https://en.wikipedia.org/wiki/Scarface_(1983_film)]</sup>
+
+== Gallery ==
+<gallery>
+Yayo a.png|One yayo
+Yayo b.png|Partial stack
+Yayo c.png|Full stack
+</gallery>
+
+== Version history ==
+* [[Version/0.15.1279|0.15.1279]] - Added.
+* [[Version/1.2.2719|1.2.2719]] - Reduced yayo new addiction chance from 10% to 1%, and removed the min tolerance to addict.
+
+{{Nav|drugs|wide}}
+[[Category:Drug]] [[Category:Hard Drug]]

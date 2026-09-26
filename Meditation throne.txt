@@ -1,0 +1,110 @@
+{{Royalty}}
+{{Project|Psyfocus}}
+{{See also|altphrase=For other types of seats, see|Chairs}}
+{{Infobox main|furniture
+| name = Meditation throne
+| image = Throne south.png
+| description = A large, ornate chair designed for a dignity-focused psycaster to sit and meditate. Reigning on a throne is a form of meditation that builds up psyfocus. For dignity psycasters, more impressive meditation thrones and thronerooms increase the rate of psyfocus gain.
+| type = Building
+| type2 = Furniture
+| placeable = true
+| path cost = 30
+| cover = 0.4
+| minifiable = true
+| size = 1 ˣ 1
+| mass base = 40
+| flammability = 1
+| hp = 150
+| sell price multiplier = 0.7
+| beauty = 15
+| comfort = 0.75
+| terrain affordance = light
+| research = Complex furniture
+| skill 1 = Construction
+| skill 1 level = 4
+| work to make = 10000
+| stuff tags = Metallic, Woody, Stony
+| resource 1 = Stuff
+| resource 1 amount = 125
+| has quality = true
+| room role = Throne room
+}}
+A '''meditation throne''' is a type of [[furniture]] which a designated noble colonist can sit on to meditate for recreation and to regain [[psyfocus]]. If placed at a [[table]], it can also be used like a regular chair - providing comfort and a place to eat and socialize. 
+
+== Acquisition ==
+{{Acquisition}}
+
+It can also be found for sale at [[traders]], as a [[quest]] reward, and in [[Empire]] [[faction base]]s.
+
+== Summary ==
+A meditation throne will create a throne room. It can be used by nobles as a [[meditation focus]]; in order for the throne to be used for meditation, you must assign a noble to it. In addition, a meditation throne acts as seating, for all intents and purposes.
+
+=== Psyfocus ===
+The meditation throne is a Dignified meditation focus, with a base strength of +15% psyfocus / day. If it is in a [[throne room]] that meets the pawns [[Throne#Throne rooms|requirements]], its focus strength is improved by 8%. It otherwise has the exact same meditation effectiveness as the [[Grand meditation throne]], so it is more important to use the throne that meets the title's requirements. 
+
+Additionally, both thrones' effectiveness are affected by room [[Room_stats#Levels_of_impressiveness|impressiveness]]. A meditation throne has a maximum of +33% psyfocus / day in an Unbelievably impressive room that meets throne requirements.
+
+<div><li style="display: inline-table;">
+{{#vardefine:basesensitivitybonus|0.15}}
+{| {{STDT| c_07 text-center}}
+! Impressiveness Value
+! 0
+! 30
+! 60
+! 100
+! 170+
+|- 
+! Description at Value
+| Awful
+| Mediocre
+| Slightly Impressive
+| Very Impressive
+| Unbelievably Impressive 
+|- 
+!Strength Offset
+| -5%
+| +0%
+| +4%
+| +8%
+| +10%
+|}
+
+{| class="wikitable"
+! Graph
+|-
+| {{Graph:Chart| width = 400 | height = 100 | type = line | xAxisTitle = Room Impressiveness | yAxisTitle = Strength Offset (%) | x = 0, 30, 60, 100, 170, 200 | y = -5, 0, 4, 8, 10, 10 | xAxisMin = 0 | xAxisMax = 200 | yAxisMin = -5 | yAxisMax = 12 | xGrid = | yGrid = }}
+|}
+</li></div>
+'''N.B.''' The room impressiveness descriptors only relate to descriptors the room will have at that specific value. The descriptors themselves do not control the value. A room with 50 room impressiveness will be listed "Slightly Impressive" but will not make the cut off for the 4% increase.
+
+=== Chair ===
+Pawns can sit at a meditation throne as a chair, including for [[table|dining]], [[television]] watching, [[research bench]]es, etc.
+
+All seating have a [[Comfort]] value. This is a measure of how high a pawn can refill their comfort meter while using the piece of furniture. A pawn sitting in a meditation throne with a higher comfort value can achieve a higher level. It does not affect the rate at which comfort increases only the maximum level. Comfort levels over 100% have no additional effect. Comfort varies by [[quality]] but not material. Meditation thrones of the same quality level will all have the same comfort, regardless of what they're constructed from.
+
+{{Comfort Quality Table}}
+
+== Analysis == 
+Thrones are required for a throne room. A proper throne room is required to receive royal [[titles]] from Acolyte onwards. Without a throne, a noble will receive a {{--|6}} [[mood]]let, even if they are [[Ascetic]]. [[Titles#Baron|Barons]] or higher will need a [[grand meditation throne]] instead.
+
+You can combine throne rooms with Dining and Recreation rooms. This takes advantage of the high Impressiveness for all 3 rooms. If doing so, you might as well put a noble's throne in front of a [[table]] or recreation object. Note that production facilities cannot be in a non-Ascetic noble's throne room. Production facilities still need to be moved away if you want your Ascetic to accept a new [[title]].
+
+If spare thrones are available, such as when your noble has upgraded to the grand meditation throne, then you can place the regular meditation throne as a regular chair. You may want to keep/build a few meditation thrones if planning to take the [[Royal Ascent]] quest, as many of the Stellarch's guards will be royal psycasters.
+
+=== Chair ===
+As a chair, thrones provide more comfort than [[stool]]s and [[dining chair]]s, but less than an [[armchair]]. Their only benefit over armchairs is material; armchairs require a [[textile]], while thrones can be made out of stone, wood, or metal. Compared to dining chairs, thrones have a higher [[Work To Make]] and require 70 more resources for only +0.05 more comfort. Thrones can be made out of stone, which could be useful in [[Biomes|wood-poor environment]]s. However, stone drastically increases the work required.
+
+Chairs in general are useful for preventing the "Uncomfortable" [[Mood#Situation Needs|mood debuff]], and can even grant mood buffs at high qualities. As long as it is being sat on, a normal [[quality]] meditation throne can maintain the {{+|6}} ''Very Comfortable'' [[mood]]let all day. Excellent quality thrones, with a comfort of 93%, will maintain {{+|10}} ''Luxuriantly Comfortable'' while being sat on. This is equal to 2 [[beer]]s a day, without the addiction chance or decreased manipulation. Excellent quality is relatively achievable - a level 13 constructor has a ~25% chance to build an excellent or better throne.
+
+Thus, every dining table, recreation item, and production bench that allows sitting should have at least some chair installed on them. Priority should be given to objects in continuous use, such as stoves and research benches, with less used objects such as [[poker table]]s and dining tables changed over last. However, if possible, armchairs should be used instead. 
+
+{{Building Stats Table}}
+
+== Version history ==
+* ? - Renamed '''Throne''' to '''Meditation throne''', and use was changed to psycaster meditation.
+* ? - Beauty increased from 4 to 15.
+* [[Version/1.2.2719|1.2.2719]] - Fix: Pawns not gaining comfort from throne while meditating.
+* [[Version/1.6.4566|1.6.4566]] - Fix: Error if cached throne becomes despawned.
+
+{{Nav|furniture|wide}}
+[[Category:Furniture]] [[Category:Chair]]

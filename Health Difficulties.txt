@@ -1,0 +1,59 @@
+<includeonly>:''Main article: [[Health Difficulties]]''</includeonly>
+<includeonly>These are the general types of [[Injury|injuries]] that can be inflicted on a [[colonist]]. A bladed weapon would cut you, while a firearm would inflict gunshots, etc.</includeonly>
+<noinclude>A table of the default [[health]] difficulties for RimWorld damage.</noinclude>
+{| {{STDT| sortable c_08 text-center}}
+!Name !! [[Pain]]<ref>Pain per point of damage. See [[pain]] for how it works. Injuries to artificial parts do not cause any pain.</ref> !! Scar pain<ref>Pain per point of damage from scars. See [[pain]] for how it works.</ref> !! Old Label !! Combines?<ref>Whether or not this injury stacks to become something like 'Burn &times;2'</ref> !!  Bleeding !!  Infection Chance <ref>Base chance of getting infected if left untreated.</ref>!!  Become Old Chance !!  Naturally Heals !!  Destroyed<ref>Prefix for external injuries that result in body part loss (e.g. Shot off left arm).</ref> !!  Destroyed Out<ref>Prefix for internal injuries that result in body part loss (e.g. Torn out kidney).</ref> !!  Treated !!   Inner Treated !!  Solid Treated
+|-
+!Beam Burn
+| 1.25 || 0.625 || Old beam wound || No|| 6% || 30% || ?% || Yes || Burned off || Burned out || Bandaged || Sutured || Set
+|-
+!Burn
+| 1.875 || 0.625 || Burn scar || Yes || 0% || 30% || 1% || Yes || Burned off || Burned out || Bandaged || Sutured || Set
+|-
+!Chemical Burn<ref>Used when a pawn with [[Death acidifier]] hediff is killed.</ref>
+| 1.875 || 0.625 || Burn scar || Yes || 0% || 30% || 1% || Yes || Burned off (chemical)|| Burned out (chemical)|| Bandaged || Tended || Tended
+|-
+!Crush
+| 1.25  || 0.625 || Scar || Yes || 1% || 15% || 1% || Yes || Crushed || Crushed || Bandaged || Sutured || Set 
+|-
+!Crack
+| 1.0   || 0.625 || Scar || ?<ref>Not defined in the files whether or not it combines.</ref> || 0% || 0% || 0% || Yes || Shattered || Shattered || Set || Set || Set
+|-
+!Cut
+| 1.25  || 0.625 || Cut scar || Yes || 6% || 15% || 1% || Yes || Cut off || Cut out || Bandaged || Sutured || Set
+|-
+!Surgical Cut
+| 1.25  || 0.625 || Cut scar || Yes || 6% || 15% || 1% || Yes || Cut off || Cut out || Bandaged || Sutured || Set
+|-
+!Scratch
+| 1.25 || 0.625  || Scratch scar || No || 6%  || 15% || 1% || Yes || Torn off || Torn out || Bandaged || Sutured || Set
+|-
+!Bite
+| 1.25 || 0.625  || Bite scar || No || 6%  || 30% || 1% || Yes || Bitten off || Bitten out || Bandaged || Sutured || Set
+|-
+!Stab
+| 1.25 || 0.625  || Stab scar || No || 6%  || 15% || 1% ||  Yes || Cut off || Cut out || Bandaged || Sutured || Set
+|-
+!Gunshot
+| 1.25 || 0.625  || Old gunshot || No || 6%  || 15% || 1% || Yes || Shot off || Shot out || Bandaged || Sutured || Set
+|-
+!Shredded
+| 1.25 || 0.625  || Scar || Yes || 6%  || 20% ||  1% || Yes || Torn off || Torn out || Bandaged || Sutured || Set
+|-
+!Bruise
+| 1.25 || 0.625 || Old bruise || No || 0% || 0% || 0% || Yes || Destroyed || Destroyed || Bandaged || Sutured || Set
+|-
+!Frostbite
+| 1.25 || 0.625 || Frostbite scar || Yes || 0% || 25% ||  1% || Yes || Lost to frostbite || N/A <ref>Internal organs cannot be affected by frostbite.</ref> || Bandaged || Sutured || Set
+|-
+!Missing Body Part<ref>Only applies to missing limbs. No values provided besides a name. Cannot be treated except for limb/organ transplants.</ref>
+| - || - || - || -|| 12% || - || -|| -|| Gone || Gone || - || - || -
+|-
+!Misc<ref>Default/debug damage type. Doesn't occur in the normal game.</ref>
+| 1.25 || 0.0 || Scar || No || 6% || ? <ref>Undefined.</ref> || 1% || Yes || Destroyed || Destroyed || Bandaged || Sutured || Set
+|}
+
+<references/>
+
+
+[[Category:Health]]

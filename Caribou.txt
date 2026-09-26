@@ -1,0 +1,111 @@
+{{infobox main|animal
+| page verified for version = 1.3.3101
+| name = Caribou
+| image = Caribou.png
+| description = A large member of the deer family, well-adapted to life in cold climates. Caribou can be milked, but refuse to carry packs.
+| type = Animal
+| movespeed = 5
+| min comfortable temperature = -50
+| max comfortable temperature = 40
+| toxic resistance = 0.5
+| toxic environment resistance = 0
+| flammability = 0.7
+| marketvalue = 300
+| filth rate = 16
+| milktime = 2
+| milk = 10
+| herdanimal = true
+| combatPower = 110
+| bodysize = 1
+| healthscale = 2
+| hungerrate = 0.275
+| diet = herbivorous
+| leathername = plainleather
+| wildness = 0.75
+| manhuntertame = 0
+| manhunter = 0.1
+| roamMtb = 2
+| trainable = none
+| mateMtb = 12
+| gestation = 6.66
+| offspring = 1
+| lifespan = 18
+| juvenileage = 0.2
+| maturityage = 0.3
+| tradeTags = AnimalFarm, AnimalCommon
+| baby name = caribou calf
+| attack1dmg = 10
+| attack1type = Blunt
+| attack1cool = 2
+| attack1part = front left leg
+| attack2dmg = 10
+| attack2type = Poke
+| attack2cool = 2
+| attack2part = front left leg
+| attack3dmg = 10
+| attack3type = Blunt
+| attack3cool = 2
+| attack3part = front right leg
+| attack4dmg = 10
+| attack4type = Poke
+| attack4cool = 2
+| attack4part = front right leg
+| attack5dmg = 10
+| attack5type = Bite
+| attack5cool = 2
+| attack5part = teeth
+| attack5chancefactor = 0.5
+| attack6dmg = 13
+| attack6type = Blunt
+| attack6cool = 2.6
+| attack6part = head
+| isCoastal = false
+| livesin_borealforest = 0.5
+| livesin_tundra = 2
+| livesin_coldbog = 0.5
+| livesin_glacialplain = 0.5
+}}
+The '''Caribou''', called '''caribou calves''' as babies, is a large [[Herbivore|herbivorous]] [[animal]] that provides [[meat]], [[plainleather]] and, if tamed, [[milk]].
+
+== Acquisition ==
+Caribou can be found in {{Habitats|{{PAGENAME}}|or}}. They can either be tamed by a [[Work #Handle|handler]] or self-tame in a random event.
+
+Caribou can be bought and sold in other [[Trade#Faction base|faction bases]] and from [[Trade#Exotic goods trader 2|exotic goods traders]]. Caribou purchased from traders will be already tamed.
+
+== Summary ==
+{{Pen Animal Note}}
+
+A caribou can be milked for up to {{Icon Small|milk}} {{P|Milk Amount}} units of milk {{#ifeq:{{P|Milking Interval Days}}|1|per day|every {{P|Milking Interval Days}} days}}, depending on your pawn's [[Animal Gather Yield]]. Milking an animal takes {{Ticks|400}} of work, regardless of the amount of milk produced, and only modified by the [[Animal Gather Speed]] of the handler.
+
+== Analysis ==
+Caribou are animals to be hunted in colder biomes, and serve little other purpose. They are one of the few animals to come in herds ''and'' that have a manhunter chance, meaning the entire herd can revenge on a bad shot.
+
+As tamed animals, caribou are almost entirely inferior to [[yak]]s, as 2 caribou produce less milk and eat more than 1 yak. Yaks are also [[pack animal]]s while caribou aren't.
+
+===Milking===
+Female caribou produce {{Icon Small|milk}} {{P|Daily Milk Average}} per day, or {{#vardefineecho:milk_nutr_per_day|{{#expr:{{P|Daily Milk Average}}*0.05}}}} [[nutrition]] in milk per day. A caribou consumes {{P|Real Hunger Rate}} nutrition per day. This results in a nutrition efficiency of {{%|{{#var:milk_nutr_per_day}}/{{P|Real Hunger Rate}} round 3}} from milk alone (or {{Icon Small|milk}} {{#expr: {{P|Daily Milk Average}}/{{P|Real Hunger Rate}} round 2}} per day per 1 nutrition consumed).
+
+Yaks produce {{%|(({{Q|Yak|Daily Milk Average}}/{{P|Daily Milk Average}})-1) round 2}} more milk than caribou on average, but eat only {{%|(({{Q|Yak|Real Hunger Rate}}/{{P|Real Hunger Rate}})-1) round 2}} more food.
+
+== Training ==
+{{TrainingTable}}
+
+== Health ==
+{{Animal Health Table|QuadrupedAnimalWithHooves}}
+{{Pawn Attack Table}}
+
+== Gallery ==
+<gallery>
+Caribou east.png|Facing east
+Caribou north.png|Facing north
+Caribou south.png|Facing south
+</gallery>
+<gallery>
+Dessicated caribou east.png|Dessicated facing east
+Dessicated Caribou north.png|Dessicated facing north
+Dessicated Caribou south.png|Dessicated facing south
+</gallery>
+
+{{nav|animal}}
+[[Category:Animals]]
+[[Category:Wild animal]]

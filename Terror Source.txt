@@ -1,0 +1,87 @@
+{{Ideology}}
+{{Stub|reason=1) Corresponding Property 2) Two-way links 3) replicate part of info on [[terror sculpture]]}}
+{{See also|Terror|Slavery}}
+{{Verified|1.5.4104}}{{Stat
+| def name = TerrorSource
+| label = terror
+| description = The intensity of [[terror]] this object induces when viewed.
+| default base value = 0
+| hide at value = 0
+| format string = {0}%
+| to string style = Integer
+| show if undefined = false
+| show on pawns = false
+| category = Basics
+| display priority in category = 3600
+| parts = StatPart_Quality_Offset, StatPart_CorpseCasket
+}}
+
+== Bases ==
+* [[Terror sculpture]]: '''0%'''
+* [[Gibbet cage]]: '''0%'''
+* [[Skullspike]]: '''25%'''
+
+== Offsets ==
+* [[Terror sculpture]] Quality Offset:
+{| {{STDT| c_06}}
+! [[Quality]] !! Offset
+|-
+| Awful || {{+|3%}}
+|-
+| Poor || {{+|6%}}
+|-
+| Normal || {{+|10%}}
+|-
+| Good || {{+|15%}}
+|-
+| Excellent || {{+|20%}}
+|-
+| Masterwork || {{+|30%}}
+|-
+| Legendary || {{+|40%}}
+|}
+
+* [[Gibbet cage]] Offset when occupied: {{+|25%}}
+
+== Stat Def Data ==
+{| {{STDT| c_06}}
+! Name !! Description !! Category !! Parameters !! Complex Parameters !! Display Priority In Category
+|- id="Terror Source" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />TerrorSource
+* '''Label:'''<br />terror
+| The intensity of terror this object induces when viewed.
+|
+* Display Order: '''10'''
+* Def Name:<br />'''Basics'''
+* Label:<br />'''Basics'''
+* Display All By Default: {{Good|true}}
+|
+* Default Base Value: '''0'''
+* Hide At Value: '''0'''
+* To String Style: '''Integer'''
+* Format String:<br />"{0}%"
+* Show On Pawns: {{Bad|false}}
+* Show If Undefined: {{Bad|false}}
+|
+* '''Parts:'''
+** '''StatPart_Quality_Offset'''
+*** Offset Awful: {{+|3}}
+*** Offset Poor: {{+|6}}
+*** Offset Normal: {{+|10}}
+*** Offset Good: {{+|15}}
+*** Offset Excellent: {{+|20}}
+*** Offset Masterwork: {{+|30}}
+*** Offset Legendary: {{+|40}}
+*** Thing Defs: '''[[Terror sculpture]]'''
+** '''StatPart_CorpseCasket'''
+*** Offset Occupied: {{+|25}}
+*** Thing Defs: '''[[Gibbet cage]]'''
+| 3600
+<!--</StatDef>-->
+|}
+
+== Version history ==
+* [[Ideology (DLC)]] Release - Added.
+
+{{nav|stats|wide}}

@@ -1,0 +1,60 @@
+{{Version Nav}}
+
+Hey all, just a quick update. This is yesterday's unstable test build with some fixes and stabiliztion<sub>[sic]</sub>.
+
+Everything should be compatible.
+
+Another bit of news - we have completed our first pass of the ideoligion save and load feature. EDIT: This feature is live on the 'unstable' Steam branch.
+
+Thanks for the feedback everyone, and to our very diligent devs!
+
+You can come help us test the unstable version or report any bugs you found on the official development Discord.
+
+Changelog since last main version:
+
+* Reduce [[nutrition]] required for [[Biosculpter pod|biosculpting]] from 20 to 10 for healing and age reversal cycles.
+* Adjust trees-related thoughts. Negatives for killing trees are reduced. Positives for seeing trees are amplified.
+* Bug mitigation for null map in QuestPart_SubquestGenerator_RelicHunt.
+* Fix: Pawns will attempt to harvest trees in growing zomes marked as no cutting.
+* Imported new player creative content.
+* Reversed meme order in UI. Low impact at top, high at bottom.
+* Assign mapPawns.FreeColonistsAndPrisonersSpawned to a local variable in Alert_RitualObligation to avoid repeated expensive calls.
+* Add caching to pen-related calcualtions related to WorkGiver_TakeToPen to address large performance spikes when having many animals in a pen.
+* Chance of resentment on failed conversion attempt reduced from 36% to 20%. Chance of fight reduced from 4% to 2%.
+* If a pawn has sight under 50%, he should gain a [[psychic sensitivity]] bonus of up to 50%.
+* Assign mapPawns.FreeColonistsAndPrisonersSpawned to a local variable in Alert_RitualObligation to avoid repeated expensive calls.
+* Add caching to pen-related calcualtions related to WorkGiver_TakeToPen to address large performance spikes when having many animals in a pen.
+* Change back HomeFaction to Faction in JobDriver_TakeToBed, improve related comment.
+* Changed all culture icon colors to full white.
+* Changed implementation of delivering pawns to their bed after gladiator duel.
+* Small optimization: Check a flag before calling a complex function when checking for repeating memes during ideo generation.
+* Add short comments for couple recent fixes.
+* [[Skull]]s are stackable.
+* Clarified 'right-click' info in beggars quest.
+* Removed duplicate blind check in ThoughtWorker_Dark.
+* Connecting to a [[Gauranlen tree]] gives 25`45% connection strength to the connector depending on ritual quality.
+* [[Psychically deaf]] pawns cannot connect with Gauranlen trees.
+* [[Bonsai tree]]s no longer are auto-harvested on reaching max growth
+* Added debug tool to stop timed raids once started.
+* Text fixes for certainty tooltip.
+* Fix: Missing eye wound graphic and tattoos visible on beheaded pawn.
+* Fix: 'The maximum number of (role) is xx' flickering on edit ritual dialog
+* Fix: Dueling slaves without beds assigned results in errors
+* Fix: Possible string concatenation issue.
+* Fix: Failing to generate a new unique name for a precept can leave it with a null name.
+* Fix: When a styled standing lamp is failed to build, a non-styled blueprint replaces it.
+* Fix: Inverted desired connection strength check in alert.
+* Fix: Slave ideo buildings lacking causes empty alert.
+* Fix: Another quest node relating to animals could possibly use dryads.
+* Fix: [[Dryads]] can show up as animals for hospitality quests.
+* Fix: Cannibal [[tribes]] can sometimes generate without cannibal precept.
+* Fix: Sterilized roosters can still fertilize eggs.
+* Fix: Female pawns can infrequently gain beards on style change.
+* Fix: Exception when selecting leader with building precept that has no requirements.
+* Fix: Wrong zone checked for auto cut
+* Fix: Duplicate building precepts from multiple ideos only shows first building in architect menu.
+* Fix: Missing body parts constantly draw bandages on pawns. Now they go away once it has been tended to.
+* Fix: Typos.
+
+== Source ==
+* https://steamcommunity.com/games/294100/announcements/detail/2996567278480632055

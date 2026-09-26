@@ -1,0 +1,61 @@
+{{Anomaly}}
+{{Infobox main|building
+| name = Bioferrite generator
+| image = BioferriteGenerator north.png
+| description = An electrical generator that works by pressurizing and igniting bioferrite, then harvesting energy from the resulting heat.<br/>Because of the destruction of psychically active bioferrite, this device generates an uncomfortable psychic drone which disturbs those who pass nearby.
+| type = Building
+| type2 = Power
+| placeable = true
+| passability = pass through only
+| blockswind = false <!-- Keep an eye on this, it may not be intentional -->
+| cover = 0.9
+| minifiable = false
+| size = 3 ˣ 2
+| flammability = 0.75
+| hp = 400
+| beauty = -40
+| power = 4000
+| glowradius = 8
+| glowcolor = (80, 141, 223)
+| heatpersecond = 12
+| terrain affordance = heavy
+| research = Bioferrite generator
+| skill 1 = Construction
+| skill 1 level = 6
+| work to make = 12000
+| resource 1 = Steel
+| resource 1 amount = 50
+| resource 2 = Bioferrite
+| resource 2 amount = 100
+| resource 3 = Component
+| resource 3 amount = 4
+| resource 4 = Shard
+| resource 4 amount = 1
+| fuel filter = Bioferrite
+| fuel capacity = 60.0
+| fuel consumption rate = 6
+}}
+
+'''Bioferrite generator''' is a [[Building]] which uses [[Bioferrite]] to generate [[Power]].
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+[[File:Bioferrite generator mood radius.jpg|thumb|left|The radius of the Bioferrite generator's negative mood effect]]
+A bioferrite generator consumes {{Icon Small|bioferrite||6}} [[bioferrite]] per day and generates a constant 4000W as long as it is switched on and fueled. It can hold up to 60 bioferrite at a time, for a maximum run time of 10 days. Bioferrite consumption is not dependent on how much power is actually drawn.  Bioferrite has to be delivered to the generator by a [[Work#Haul|hauler colonist]] or [[lifter]].{{BiotechIcon}} It can be switched off; in the off state it will neither consume bioferrite nor produce power. 
+
+Pawns that are near the generator will receive a {{Thought|desc=The buzz of that blasted machine will make me mad. It's like nails on a chalkboard.|label=Bioferrite generator|value=-6|stack=1}}{{Check Tag|Persistence?|Does this persist or end immediately aftet leaving AoE?}} in a 8.9-tile radius. Despite the description, [[Psychic Sensitivity]] does not affect the mood penalty, and even Psychically Deaf pawns will experience the debuff.
+
+Generators are temporarily disabled by sources of [[EMP]], with downtime scaling to the EMP damage dealt.{{Check Tag|Verify}} During this time, it will not generate any power. Unlike mechanoids, generators do not adapt to EMP and thus can be continuously restunned.
+
+== Analysis ==
+Once available, bioferrite generators are capable of sustaining significant power operations, producing '''x4''' the power of other fueled generators.
+
+The Bioferrite Generator can be considered an upgrade to the [[Electroharvester]] in terms of generating power from any captive entities, as it can generate more potential power without increasing the chance for escape or risk outright killing the entity through occasional damage, even for entities that produce very little Bioferrite for their mass, like [[shambler]]s and [[sightstealer]]s. However, this comes at the cost of consuming some of the Bioferrite being produced, while the Electroharvester only affects Anomaly Research. Thus it might be better to wait until you can acquire later entities like [[revenant]]s, [[devourer]]s and/or [[fleshmass nucleus]], which produce more Bioferrite for their mass, before making the switch.
+
+== Version history ==
+* [[Anomaly DLC]] Release - Added.
+
+{{Nav|power|wide}}
+[[Category:Power]]

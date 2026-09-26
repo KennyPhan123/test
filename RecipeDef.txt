@@ -1,0 +1,15 @@
+<small>< [[Modding Tutorials]]</small>
+
+A '''RecipeDef''' is used in conjunction with a work bench structure to make things. Ingredients go in, products come out.
+
+Some of the key concepts are as follows:
+
+* Ingredients - the things a recipe needs to be enacted. Will be consumed. Can be defined in general categories (e.g. any meat, any food, etc.).
+
+Take a look at the bill interface and note that there is a way to select what ingredients your colonists are allowed to use to do a recipe. For example, the cooking recipe bills default to disallow the use of human meat.
+
+* ParentIngredientFilter - This is a hard filter on the ingredients which the recipe can accept. Items not passing this filter are not displayed at all in the bill interface's ingredient selection interface. Not mandatory. If not defined, accepts anything.
+
+* DefaultIngredientFilter - This is the default ingredient filter configured on new bills. For example, meals default to not be made with human meat. The player can reconfigure this. Not mandatory. If not defined, accepts anything by default.
+
+[[Category:Defs]]

@@ -1,0 +1,81 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Local/Chronic}}
+|}
+----
+{| {{STDT| c_11}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Organ decay"<!-- defName="OrganDecay", ParentName="OrganDecayBase" -->
+! Organ decay
+----
+* Def Name:<br />OrganDecay
+* Label:<br />organ decay
+|<!-- Description -->
+An untreatable degenerative disease affecting a single organ. The cause may be bacterial or viral. The illness seems to strike randomly from an unknown natural reservoir; it is not directly contagious between people.
+
+This organ will slowly lose function before dying completely. Replace it with a bionic or natural organ.
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|90%|100%|35%}}
+* Chronic: {{Good|true}}
+* Allow Mothball If Low Priority World Pawn: {{Good|true}}
+* Always Show Severity: {{Good|true}}
+* Min Severity: '''0.1%'''
+* Initial Severity: '''0.1%'''
+* Max Severity: '''100%'''
+* Lethal Severity: {{Bad|100%}}
+* Can Affect Bionic Or Implant: {{Good|false}}
+* Only Life Threatening To: '''[[Heart]]'''
+* '''Remove On Redress Chance By Days Curve:'''
+<div><li style="display: inline-table;">
+{| {{STDT| c_11}}
+! Days !! Chance
+|-
+! 0
+| 0%
+|-
+! 2
+| 0%
+|-
+! 7
+| 50%
+|-
+! 20
+| 100%
+|}{{Graph:Chart|width=200|height=200|xAxisTitle=Days|yAxisTitle=Remove On Redress Chance|yAxisFormat=%|type=line|x=0, 2, 7, 20|y=0, 0, 0.5, 1|xGrid=|yGrid=}}</li></div>
+* '''Comps'''
+** ''Destroy Organ''
+*** Destroy Organ Message Text: {PAWN_labelShort}'s {1} was destroyed by organ decay.
+*** Damage Type: '''[[Damage Types#Decayed|Decayed]]'''
+** ''Severity Per Day''
+*** Severity Per Day Range: '''{{++|1.66%}} ~ {{++|3.34%}}''' (30 ~ 60 days)
+|<!-- Stages -->
+{| {{STDT| c_11}}
+! Label !! Parameters
+|-
+! minor
+|<!-- Parameters -->
+* Min Severity: '''0%'''
+* Pain Offset: {{++|5%}}
+* Part Efficiency Offset: {{--|10%}}
+|-
+! moderate
+|<!-- Parameters -->
+* Min Severity: '''20%'''
+* Pain Offset: {{++|10%}}
+* Part Efficiency Offset: {{--|25%}}
+|-
+! severe
+|<!-- Parameters -->
+* Min Severity: '''40%'''
+* Pain Offset: {{++|15%}}
+* Part Efficiency Offset: {{--|50%}}
+|-
+! extreme
+|<!-- Parameters -->
+* Min Severity: '''60%'''
+* Pain Offset: {{++|25%}}
+* Part Efficiency Offset: {{--|75%}}
+* Life Threatening: {{Bad|true}}
+|}<noinclude>
+|}</noinclude>

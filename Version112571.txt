@@ -1,0 +1,41 @@
+{{Version Nav}}
+
+Balance updates and bugfixes today!
+If you're willing to help test the unstable build in future, please join us here: https://discord.gg/EV2PNt7
+
+Feedback is welcome all around. The most direct place to offer it is the Discord channel above, but I'm watching forums, Reddit, and everywhere else I can collect feedback. Thanks in advance to those who contribute thoughts, and to all those who have offered feedback so far.
+
+Changes:
+*Baron can now do Animals work.
+*Count can now do commoner work. Count is now only unable to do same as Baron, plus Animals.
+*Balanced down ultratech and bladelink melee weapons a bit. Reduced illegal bladelink usage detection chance 5% to 3%.
+*Psychic entropy base recovery rate reduced from 5 to 4.
+*Improve psychic entropy recovery rate on pawns without psychic amplifiers from 4 to 8.
+*Psycasts rebalance:
+**[[Painblock]] duration 30 to 120.
+**[[Burden]] duration 30 to 20.
+**[[Blinding pulse]] radius 5 to 4, range 25 to 20.
+**Entropy link duration 60 to 120.
+**[[Beckon]] range 25 to 20, duration 10 to 8.
+**[[Vertigo pulse]] range 25 to 20, cost 25 to 30.
+**[[Wallraise]] range 25 to 20, cost 25 to 35.
+**[[Smokepop]] range 25 to 20, cost 35 to 30.
+**[[Berserk]] cost 35 to 40, range 25 to 15, duration 30 to 15.
+**[[Berserk pulse]] cost 60 to 65, range 25 to 15, duration 60 to 15.
+**[[Invisibility]] cost 30 to 45, range 10 to 15.
+**[[Manhunter pulse]] radius 30 to 28, cost 40 to 50.
+*Psychic harmonizer impact reduced 20%.
+*Psychic hangover now affects manipulation and its mood impact is increased from 8 to 12.
+*Psychic melee weapons are now biocodable.
+*Unstable power cell, mortar, and bullet shields now have market value since they can be claimed and used by the player.
+*Mech cluster spawning now handles collisions better (and doesn't wipe other buildings if it doesn't have to).
+*Condition causers terrain affordance needed: Light -> Heavy
+*Play sounds when psychic entropy limiter is toggled on or off.
+*Fix: Steam builds sometimes have no steam_appid.txt because STEAM is not defined in BuildMaker
+*Fix: Food batch boundary issue when interacting with animal using food that might have already been reserved. Also fixed uneeded default value for QuestNode_Letter.
+*Fix: Error producing cast in QuestPart_letter.
+*Fix: Potential attempt at destroying equipment when no equipment is held.
+*Fix: Helpers leave after fixed 10 days during raid quests even if there are multiple raids.
+*Fix: Circadian half-cycler breaks parties.
+*Fix: Temporary faction members who are downed, put in bed, then quest is complete aren't tendable.
+*Added dead pawn filter for look targets to letter quest node to fix spurious message.

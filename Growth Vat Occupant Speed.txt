@@ -1,0 +1,99 @@
+{{Biotech}}
+{{Verified|1.5.4104}}{{Stat
+| def name = GrowthVatOccupantSpeed
+| label = growth vat occupant speed
+| description = A multiplier on how quickly this person will grow when in a [[growth vat]].
+| default base value = 1
+| hide at value = 1
+| effective maximum = 1.3
+| to string style = PercentZero
+| scenario randomizable = true
+| cacheable = true
+| show on animals = false
+| show on mechanoids = false
+| category = PawnMisc
+| display priority in category = 1850
+| parts = StatPart_GrowthVatSpeedFactor
+}}
+
+== Factors ==
+{{Recode|section=1|reason=Fix table header color}}
+<div><li style="display: inline-table;">
+{| {{STDT| c_20 sortable}}
+! Issue !! Precepts !! Growth Vat Speed Factor
+|-
+! [[Growth vats (precept)|Growth vats]] {{IdeologyIcon}} {{BiotechIcon}}
+| Essential
+| {{Good|×130%}}
+|}
+</li></div>
+
+* Pawns have a base of {{good|100%}}. This is typically not shown to players in the inspection panel.
+* Pawns with the [[Growth vats (precept)|Growth Vats: Essential]] precept receive a {{good|x130%}} increase to this stat.
+
+This bonus only applies to pawns with the relevant Ideology and does not speed up the gestation of embryos or infants.
+
+{| {{STDT| c_20 sortable}}
+! rowspan="2"| Biological Age  !! colspan="2" | Time in vat !! No Vat
+|-
+! Base Vat !! [[Growth vats (precept)|Vats: Essential]]{{IdeologyIcon}}<ref>Growth Vats: Essential does not apply to pawns without the [[ideoligion]], i.e. [[embryo]]s and [[babies]] age normally.</ref>  !!  400% Aging<ref>Default child aging value from 0 to 11. Note that children will start to age slower from this speed after reaching 11 biological years of age. See [[Children#Aging]] for more details.</ref>
+|-
+! +1 Year<ref name="Non-baby">Assuming a child between age 3 and 11</ref>
+| {{#expr: 1 * 3 round 1}} days || {{#expr: 1 * 3/1.3 round 1}} days || {{#expr: 60 / 4 round 1}} days 
+|-
+! +3 Years<ref name="Non-baby"/>	
+| {{#expr: 3 * 3 round 1}} days || {{#expr: 3 * 3/1.3 round 1}} days || {{#expr: 3 * 60 / 4 round 1}} days
+|-
+! Embryo to 0
+| 9 days || 9 days || 18 days 
+|-
+! Embryo to 3 
+| {{#expr: 9 + (3 * 3) round 1}} days || {{#expr: 9 + (3*3) round 1}} days|| {{#expr: 18 + 3 * 60 / 4 round 1}} days 
+|-
+! Embryo to 18 
+| {{#expr: 9 + (18 * 3) round 1}} days || {{#expr: 9 + (3*3) + (15 * 3/1.3) round 1}} days|| 322 days
+|-
+! Age 0 to 3
+| {{#expr: (3 * 3) round 1}} days || {{#expr: 3 * 3 round 1}} days || {{#expr: 3 * 60 / 4 round 1}} days 
+|-
+! Age 3 to 13
+| {{#expr: 10 * 3 round 1}} days || {{#expr: 10 * 3/1.3 round 1}} days || 152.4 days
+|-
+! Age 13 to 18
+| {{#expr: (5 * 3) round 1}} days || {{#expr: (5 * 3/1.3) round 1}} days || 106.6 days
+|}
+<references/>
+
+== Stat Def Data ==
+{| {{STDT| c_20}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Growth Vat Occupant Speed" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />GrowthVatOccupantSpeed
+* '''Label:'''<br />growth vat occupant speed
+| A multiplier on how quickly this person will grow when in a growth vat.
+|
+* Display Order:<br />'''130'''
+* Def Name:<br />'''PawnMisc'''
+* Label:<br />'''Misc'''
+* Display All By Default:<br />{{Bad|false}}
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Hide At Value:''' {{%|1}}
+* '''To String Style:''' PercentZero
+* '''Show On Animals:''' {{Bad|false}}
+* '''Show On Mechanoids:''' {{Bad|false}}
+* '''Scenario Randomizable:''' {{Good|true}}
+* '''Cacheable:''' {{Good|true}}
+|
+* '''Parts:'''
+** '''StatPart_GrowthVatSpeedFactor'''
+| 1850
+<!--</StatDef>-->
+|}
+
+== Version history ==
+{{Stub|section=1|reason=General Version history}}
+* [[Biotech (DLC)]] Release - Added.
+
+{{nav|stats|wide}}

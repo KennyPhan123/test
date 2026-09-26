@@ -1,0 +1,32 @@
+{{Version Nav}}
+
+This update includes various new features, adjustments and bug fixes.
+
+EDIT: It's been released to everyone!
+
+Thanks to everyone who has been contributing unstable build feedback in official unstable build testing Discord server
+
+== Change list ==
+* Implemented renounce title button on pawn bio tab. You can now have your royal colonists renounce their title if you wish.
+* Implement mech shield generator charge cycle. Shields now go down for a random day every 10 days, if you're willing to wait.
+* [[Mechanoid cluster|Mech cluster]] condition causers and mortars now sometimes take several days to initiate threatening the colony. This gives more time to prepare and attack the cluster.
+* We now generate random rewards only up to 5500$, the rest will go into market value fillers like [[gold]], [[plasteel]], and [[uranium]]. This avoids absurd rewards with large numbers of unique quest items in modded or ultra late-game scenarios.
+* Added bulk recipes for [[pemmican]] and [[drugs]].
+* Restricted hunting decrees from targeting colony animals.
+* Make mortar/bullet shields shut down when the cluster is defeated.
+* Added new visual effects that play when something is disabled by EMP (makes it clearer when mechs and their builds are EMP-affected).
+* Monument blueprints are now automatically placed when a monument marker is placed. They're also automatically removed when the player cancels the monument.
+* Reduce hospitality threat frequency from 18h to 24h and adjusted rewards to match.
+* Reduce [[love enhancer]] impact 50%.
+* Give more time for harvest decrees, especially with fast-growing plants.
+* Fix: Trade request quest can request and give the same ThingDef
+* Fix: Trade request quest generation fails in rare cases
+* Fix: Harvest decrees can ask for cave plants.
+* Fix: Missing CanPawnAcceptQuest check in QuestsTab.
+* Fix: Tribal faction namer uses undefined key.
+* Fix: Traveling colonists not being able to accept quests and refactor MainTabWindow_Quests.
+* Fix: When the Steam version fails to initialize the Steam API, clicking on a mod requirement throws an exception.
+* Fix: Pawns losing ownership of their bed/throne if sent in transport pods.
+* Fix: Random error from NaturalRandomQuestChooser; total weight is zero
+* Fix: NamesFromRulepack debug output causes errors when root keyword isn't r_name.
+* Misc minor typo fixes.

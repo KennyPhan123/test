@@ -1,0 +1,86 @@
+{{Project|Plants}}
+{{Infobox main|plant
+| name = Cotton plant
+| image = Cotton plant a.png
+| description = A mid-size crop that yields fine white cotton fibers. These are used to make cloth.
+| type = Plant
+| type2 = Domesticated
+| path cost = 14
+| blockswind = false
+| hp = 85
+| flammability = 1
+| beauty outdoors = 1
+| grow days = 8
+| sow work = 170
+| harvest work = 200
+| product = cloth
+| yield = 10
+| min fertility = 0.7
+| fertility sensitivity = 1
+| nutrition = 0.2
+| food type = plant
+| sowTags = Ground, Hydroponic
+}}
+{{Info|The '''cotton plant''' is a player-growable production crop with a moderate yield and slightly longer growing cycle. A mature cotton plant yields 10 [[cloth]].}}
+
+== Growing ==
+Cotton plants have a base growing time of {{P|Grow Days}} days, need a minimum soil fertility of {{#expr:{{P|Fertility Min}}*100}}%, and have a fertility sensitivity rating of {{#expr:{{P|Fertility Sensitivity}}*100}}%. The following table details how long it takes for cotton plants to grow in each growable ground type, factoring in the plant resting time and being in ideal growing conditions:
+{{Grow Table}}
+
+== Economy ==
+First, be aware that the cotton plant's raw product is "[[cloth]]".  There is no intermediary product or process, no bales of raw cotton which then need to be cleaned, spun, woven, etc. - in Rimworld, cloth comes off the plant ready for the tailor, sitting in big piles out in your cotton fields. 
+
+Cloth has a market value of {{#vardefineecho:ClothCost |{{#show:Cloth|?Market Value Base|link=no}} }} {{Icon small|silver}} [[silver]]. Assuming normal quality, the manufactured product with the largest profit margin is the [[duster]], having a 30%<ref>Your mileage may vary; see [[quality]] for more information on skill level's impact on the average market value of produced goods.</ref> profit margin, or the [[corset]]/[[formal vest]]{{RoyaltyIcon}} with the [[Royalty DLC]], having a 64.44% profit margin. The following table details silver per day, per plant. It only factors in the 50% selling markdown, the market value of the products, and the yield per day:
+
+<div><li style="display: inline-table;"> 
+{| {{STDT| c_24 text-center}}
+! Ground Type
+----
+Cloth
+! Gravel !! Soil !! Rich Soil !! Hydroponics
+|- 
+! Raw 
+<!-- The formula is Base Yield/day * cloth cost * selling markdown. For the stated numbers, this is [Base Yield/day * 0.75], rounded to the second decimal. -->
+| {{#expr: {{#show:{{PAGENAME}}|?Harvest Yield Per Day (70)|link=none}}  * {{#var:ClothCost}} * 0.5 round 2}} <!--0.35-->
+| {{#expr: {{#show:{{PAGENAME}}|?Harvest Yield Per Day (100)|link=none}} * {{#var:ClothCost}} * 0.5 round 2}} <!--0.51-->
+| {{#expr: {{#show:{{PAGENAME}}|?Harvest Yield Per Day (140)|link=none}} * {{#var:ClothCost}} * 0.5 round 2}} <!--0.71-->
+| {{#expr: {{#show:{{PAGENAME}}|?Harvest Yield Per Day (280)|link=none}} * {{#var:ClothCost}} * 0.5 round 2}} <!--1.43-->
+|- 
+! [[Duster]]
+<!-- The profit margin is (product value - 1.5*cloth required)/product value. I also assumes normal quality for the product.
+The formula then is Base Yield/day * cloth cost * selling markdown * (1+profit margin). For the stated numbers, this is [Base Yield/day * 0.75 * 1.3], rounded to the second decimal. 
+If full automation is desired, replace the 1.3 by
+1 + ( {{Market Value Calculator|Duster|cloth}} - {{#var:ClothCost}}*{{#show:Duster|?Resource 1 Amount|link=none}} ) / ( {{#var:ClothCost}}*{{#show:Duster|?Resource 1 Amount|link=none}} )-->
+| {{#expr: {{#show:{{PAGENAME}}|?Harvest Yield Per Day (70)|link=none}}  * {{#var:ClothCost}} * 0.5 * 1.3 round 2}} <!--0.46-->
+| {{#expr: {{#show:{{PAGENAME}}|?Harvest Yield Per Day (100)|link=none}} * {{#var:ClothCost}} * 0.5 * 1.3 round 2}} <!--0.66-->
+| {{#expr: {{#show:{{PAGENAME}}|?Harvest Yield Per Day (140)|link=none}} * {{#var:ClothCost}} * 0.5 * 1.3 round 2}} <!--0.92-->
+| {{#expr: {{#show:{{PAGENAME}}|?Harvest Yield Per Day (280)|link=none}} * {{#var:ClothCost}} * 0.5 * 1.3 round 2}} <!--1.86-->
+|-
+! [[Corset]]{{RoyaltyIcon}}<br/>[[Formal vest]]{{RoyaltyIcon}}
+<!-- As above, but the profit margin is 64.44%
+If full automation is desired, replace the 1.6444 by
+1 + ( {{Market Value Calculator|Corset|cloth}} - {{#var:ClothCost}}*{{#show:Corset|?Resource 1 Amount|link=none}} ) / ( {{#var:ClothCost}}*{{#show:Corset|?Resource 1 Amount|link=none}} )-->
+| {{#expr: {{#show:{{PAGENAME}}|?Harvest Yield Per Day (70)|link=none}}  * {{#var:ClothCost}} * 0.5 * 1.6444 round 2}} <!--0.58-->
+| {{#expr: {{#show:{{PAGENAME}}|?Harvest Yield Per Day (100)|link=none}} * {{#var:ClothCost}} * 0.5 * 1.6444 round 2}} <!--0.84-->
+| {{#expr: {{#show:{{PAGENAME}}|?Harvest Yield Per Day (140)|link=none}} * {{#var:ClothCost}} * 0.5 * 1.6444 round 2}} <!--1.17-->
+| {{#expr: {{#show:{{PAGENAME}}|?Harvest Yield Per Day (280)|link=none}} * {{#var:ClothCost}} * 0.5 * 1.6444 round 2}} <!--2.34-->
+|}
+</li></div>
+<references />
+
+Normal quality cloth dusters are actually profitable when compared to [[devilstrand]] dusters. This is because cloth dusters have a higher '''work:ingredient value''' ratio compared to devilstrand dusters; a larger market value gain relative to the total value of the ingredients.
+
+== Gallery ==
+<gallery>
+Cotton plant immature.png|Immature cotton plant
+Cotton plant a.png|Mature variant A
+Cotton plant b.png|Mature variant B
+</gallery>
+
+== Version history ==
+* Beta 19/1.0 - Min fertility 50% -> 100%. 
+
+{{Nav|plant|wide}}
+
+[[Category:Plants]]
+[[Category:Domesticated plants]]

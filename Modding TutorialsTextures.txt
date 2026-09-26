@@ -1,0 +1,112 @@
+{{DISPLAYTITLE:Mod Textures}}
+
+{{BackToTutorials}}
+
+{{:Modding_Tutorials/Under_Review}}
+
+(Work in progress) This is a guide for creating and adding textures to RimWorld mods.
+
+== Creating Mod Textures ==
+
+As a Unity game, RimWorld is capable of loading textures using a variety of formats. Most textures used in mods are transparent PNG files, but RimWorld is also capable of loading JPG, PSD, and even [https://en.wikipedia.org/wiki/DirectDraw_Surface DDS files].
+
+# While RimWorld's vanilla textures are drawn in a vector style, vector art is not required and many of the original Core textures were actually raster assets. Using whichever technique you are more comfortable with!
+# RimWorld texture resolutions are independent of their draw size in-game, and are generally sized relative to their draw size on screen. Most original vanilla textures use a resolution of 64 pixels per tile, but newer DLC textures and most mod artists use a resolution of 128 ppt as a baseline. Some mod artists will use texture resolutions of 256 ppt or higher, but this is generally considered excessive, not to mention highly detailed textures can clash with RimWorld's art style. Textures that are too large will also take up a lot more VRAM and RimWorld will simply crash if the GPU's VRAM is filled.
+# The final dimension of a RimWorld texture should be a multiple of four and ideally a power of two (32x32, 64x64, 128x128, 256x256, etc). This makes it easier for GPUs to load and work with.
+# RimWorld's art style dictates that interactive objects such as items and buildings should have a thick black outline, generally equal to 2px of thickness per 64px of tile resolution. Plants generally have a green instead of black outline.
+# It is strongly recommended that you reference vanilla textures when creating mod textures. Ludeon publishes an [https://www.dropbox.com/sh/mz6zjq3f1d654f3/AACX_OMdBG_J78hF2Ph-HzM3a?e=1&dl=0|Official RimWorld Art Source] that contains almost all vanilla and DLC textures for modders to reference for this purpose.
+# Textures should be placed in the Textures folder of the [[Modding_Tutorials/Mod_Folder_Structure|mod folder structure]]. Note that all textures from all mods are loaded into the same content loader, thus it is strongly recommended that you either prefix your texture names or place them in a uniquely named folder to minimize the chance of colliding with another mod.
+# Texture file resolution begins in the Textures folder. Thus, if you have a texture that is placed in <code>Textures/MyMod/MyTexture.png</code>, then the path you need to use to reference it would simply be <code>MyMod/MyTexture</code>.
+# All textures from the vanilla game and all mods are loaded into the same space in the Unity content finder, thus reusing the same path as a vanilla texture or another mod will cause the last one loaded to overwrite the other(s). This can be done intentionally for a re-texture mod, but otherwise it's strongly recommended that you prefix either your folders or files with a unique name to reduce the chance of unintended collision. (i.e. <code>MyMod/Things/MyTexture</code> or <code>Things/MyMod_MyTexture</code>)
+
+== Texture Masking ==
+
+Stuffable or paintable objects can use a texture mask to determine which parts of the texture should be colored or not. For a typical texture mask, black is used to prevent coloring and 100% red is used to specify that the primary color should be drawn. A darker shader of red will result in less of the color being multiplied in; for example, <code>#BB0000</code> would result in the stuff or paint color being applied at 75% strength.
+
+The following example from the [[Modding_Tutorials/Basic_Melee_Weapon|Basic Melee Weapon tutorial]] makes it so that only the blade of the machete is painted with the stuff color, leaving the handle the default texture color.
+
+<div class="TwoColumnCollapsibleLayout">
+<div class="TwoColumnCollapsibleLayout-section">
+<div class="TwoColumnCollapsibleLayout-subtitle">Weapon Texture</div>
+<div class="TwoColumnCollapsibleLayout-text">
+[[File:ExampleWeapon Machete.png|none]]
+</div>
+</div>
+<div class="TwoColumnCollapsibleLayout-section">
+<div class="TwoColumnCollapsibleLayout-subtitle">Texture Mask</div>
+<div class="TwoColumnCollapsibleLayout-text">
+[[File:ExampleWeapon Machete_m.png|none]]
+</div>
+</div>
+</div>
+
+Very rarely, a second color channel is used for certain textures, such as the assignment color on beds (colonist, medical, prisoner, etc). Areas of the texture that should be painted with the secondary color should use green instead of red. Red and green can be mixed if blending is desired, as the strength of the color applied is based on the value of the red or green color channel.
+
+== Use-specific Recommendations ==
+
+The following are texture recommendations for specific use cases.
+
+=== Weapons ===
+
+Melee weapons should be drawn with the point of the weapon facing to the right, as when pawns are facing west it will be mirrored horizontally. <code><equippedAngleOffset></code> in the weapon's <code><graphicData></code> is used to angle the weapon into a more natural orientation, with the vast majority of vanilla melee weapons being -65 degrees, -25 degrees ([[Ikwa|ikwa]]), or -20 degrees ([[Thrumbo horn|thrumbo horns]], [[Elephant tusk|elephant tusks]]).
+
+[[File:MeleeExampleGrid.png|none|border]]
+
+Ranged weapons should also be drawn aiming to the right, with the additional consideration that the barrel or point of origin for projectiles should be vertically centered in the texture to ensure that it lines up with where projectiles are actually spawned.
+
+[[File:RifleExampleGrid.png|none|border]]
+
+For weapons with lopsided extensions such as a suppressed pistol, it is generally recommended to keep the body of the weapon centered and to expand the canvas so that the weapon looks correct when wielded. You can increase the <code><drawSize></code> of a weapon in its <code><graphicData></code> to compensate if necessary.
+
+[[File:PistolExampleGrid.png|none|border]]
+
+Projectiles should be drawn facing upwards, with the center of the texture at the exact coordinate position of the projectile in-game. Note that unlike weapons, projectile textures are ''not'' flipped when facing west.
+
+[[File:ProjectileExampleGrid.png|none|border]]
+
+=== Apparel ===
+
+By default, headwear and body apparel textures are overlaid 1:1 onto heads and bodies respectively, thus it is strongly recommended that you start with a vanilla body or apparel texture as a template. (Please see links above for the official art source.)
+
+Headwear requires a minimum of 3 textures, one each for south, north, and east facings. A west facing is optional; RimWorld will mirror your east texture if none is provided, so you only need to provide one for asymmetric apparel or if you want the west texture to be different from the east texture. An additional texture can be used to represent the apparel on the ground, thus a total of 3+1 textures is recommended for headwear, 6+2 if you use texture masks.
+
+Body apparel has the same texture usage, but for each of the 5 vanilla body types (male, female, thin, hulk, and fat) for a total of 15+1 textures or 30+2 with texture masks.
+
+Utility packs such as tox gas canisters can be set to render using a single texture but with offsets based on body type. This only works for utility-slot items and has the same texture requirements as headwear (3+1, or 6+2 with masks).
+
+=== Plants ===
+''See [[Modding_Tutorials/Plant_Rendering|Plant Rendering]].''
+
+=== Pawns ===
+''See [[Modding_Tutorials/Pawn_Rendering|Pawn Rendering]].'' (Placeholder)
+
+=== Buildings ===
+
+For buildings, it is generally recommended to use a canvas sized precisely for the <code><drawSize></code> of the building. Centering the texture against the canvas also ensures that you do not have to mess with draw offsets to make it align properly.
+
+The following is a sample texture for a <code><size>(2,2)</size></code> table with <code><drawSize>(3,3)</drawSize></code> which results in a canvas size of 384x384 at 128 pixels per tile.
+
+[[File:BuildingExampleGrid.png|none|border]]
+
+
+=== Walls and Conduits ===
+
+Walls and conduits use a special graphic type called a "linked atlas". This is a spritesheet of 16 separate subtextures representing all possible tile link configurations printed onto a single master texture.
+
+The red overlaid areas are culled from the texture and will not be shown. The green arrows indicate link directions.
+
+[[File:WallExampleGrid.png|none|border]]
+
+=== Terrain ===
+
+Terrain in RimWorld uses a single texture painted over a 16x16 tile area. This texture should be tileable in all directions to ensure smooth display over large areas.
+
+[[File:TerrainExampleGrid.png|none|border]]
+
+== Tips and Tricks ==
+
+* Unless you are using a Unity asset bundle to disable compression, textures loaded into RimWorld will be compressed in memory. This can result in a white outline around your textures due to the fact that some art programs will discard all color data in fully transparent pixels. This can be fixed by either instructing your art program to preserve color data (preferably black) in transparent pixels, or by adding an extra 1% opacity black outline around the regular outline of the object texture.
+
+
+[[Category:Modding]]
+[[Category:Modding tutorials]]

@@ -1,0 +1,390 @@
+{{DISPLAYTITLE:Pawn Generation Process}}
+{{BackToTutorials}}
+
+{{:Modding_Tutorials/Under_Review}}
+
+Last updated for: <code>1.6.4871 rev591</code>
+
+This guide explains the pawn generation process of RimWorld and its individual steps.
+
+== WARNING ==
+
+This guide is intended to be used to reference the order in which sections of pawn data is generated in order to diagnose issues with mod code running too early or too late. '''You should avoid Harmony patching these methods if there are existing mechanisms for affecting that particular aspect,''' as pawn generation is a very performance-sensitive system in RimWorld. If you have any questions regarding pawn generation mechanisms, please make use of online resources such as the '''#mod-development''' channel on [https://discord.gg/rimworld the RimWorld Discord].
+
+== Entry Point ==
+
+The root method that services pawn generation requests is <code>Verse.PawnGenerator.GeneratePawn(PawnGenerationRequest)</code>, which is called from dozens of external methods.
+
+This then calls <code>Verse.PawnGenerator.GenerateOrRedressPawnInternal(PawnGenerationRequest)</code> after validating the request conditions, which will then call <code>RedressPawn(Pawn, PawnGenerationRequest)</code> if it decides to redress (recycle) an existing pawn or <code>GenerateNewPawnInternal(ref PawnGenerationRequest)</code> if it decides to generate a fresh pawn.
+
+== Existing Pawn Redressing ==
+
+(Placeholder)
+
+== New Pawn Generation ==
+
+New pawn generation begins in <code>Verse.PawnGenerator.GenerateNewPawnInternal(ref PawnGenerationRequest)</code>. This method's primary purpose is to call <code>TryGenerateNewPawnInternal(ref PawnGenerationRequest, out string, bool, bool)</code> and retry if the attempt fails. After 70 failed attempts the pawn generator will log an error and begin ignoring scenario requirements. After 100 attempts the pawn generator will begin ignoring validators. After 120 failed attempts the pawn generator will give up and return null.
+
+<div class="TutorialTableWrapper">
+{| class="TutorialCodeTable"
+! # !! Description || Called Method(s)
+|-
+| class="TutorialCodeTable-description" | '''1'''
+| class="TutorialCodeTable-description" | '''Create the Pawn object'''
+| <source lang="xml">
+Verse.ThingMaker.MakeThing(ThingDef)
+</source>
+|-
+| class="TutorialCodeTable-description" | '''2'''
+| class="TutorialCodeTable-description" | '''Set the new pawn's faction'''
+| <source lang="xml">
+Verse.Pawn.SetFactionDirect(Faction)
+</source>
+|-
+| class="TutorialCodeTable-description" | '''3'''
+| class="TutorialCodeTable-description" | '''Initialize the pawn's internal components and trackers'''
+| <source lang="xml">
+Rimworld.PawnComponentsUtility.CreateInitialComponents(Pawn);
+</source>
+|-
+| class="TutorialCodeTable-description" | '''4'''
+| class="TutorialCodeTable-description" | {{AnomalyIcon}} '''Validate that Anomaly is enabled and the request allows creepjoiners if the pawn is currently considered a creepjoiner'''
+| <source lang="xml">
+(inline)
+</source>
+|-
+| class="TutorialCodeTable-description" | '''5'''
+| class="TutorialCodeTable-description" | '''Set gender''' (PawnGenerationRequest > PawnKindDef > random roll)
+| <source lang="xml">
+(inline)
+</source>
+|-
+| class="TutorialCodeTable-description" | '''6'''
+| class="TutorialCodeTable-description" | '''Set age'''
+| <source lang="xml">
+Verse.PawnGenerator.GenerateRandomAge(Pawn, PawnGenerationRequest)
+</source>
+|-
+| class="TutorialCodeTable-description" | '''7'''
+| class="TutorialCodeTable-description" | '''Set initial needs levels'''
+| <source lang="xml">
+pawn.needs.SetInitialLevels()
+</source>
+|-
+| class="TutorialCodeTable-description" | '''8'''
+| class="TutorialCodeTable-description" | '''Adjust food and rest need levels if the pawn is a newborn'''
+| <source lang="xml">
+(inline)
+</source>
+|-
+| class="TutorialCodeTable-description" | '''9'''
+| class="TutorialCodeTable-description" | '''Apply humanlike pawn overrides'''
+| <source lang="xml">
+(inline)
+</source>
+|-
+| class="TutorialCodeTable-description" | 
+| class="TutorialCodeTable-description" | a. Apply randomized faction if none was specified in the request
+| <source lang="xml">
+(inline)
+</source>
+|-
+| class="TutorialCodeTable-description" | 
+| class="TutorialCodeTable-description" | b. Apply request skin color override if applicable
+| <source lang="xml">
+(inline)
+</source>
+|-
+| class="TutorialCodeTable-description" | 
+| class="TutorialCodeTable-description" | c. Select head type - can be randomized or one forced by pawn genes
+| <source lang="xml">
+pawn.story.TryGetRandomHeadFromSet(IEnumerable<HeadTypeDef>)
+</source>
+|-
+| class="TutorialCodeTable-description" | 
+| class="TutorialCodeTable-description" | d. {{IdeologyIcon}} Assign favorite color from the request or a randomly chosen ColorDef
+| <source lang="xml">
+(inline)
+</source>
+|-
+| class="TutorialCodeTable-description" | 
+| class="TutorialCodeTable-description" | e. {{BiotechIcon}} Assign a [[xenotype]] based on request and faction, if applicable. Note that this only applies the xenotype label; genes are not applied until step 9i
+| <source lang="xml">
+GetXenotypeForGeneratedPawn(PawnGenerationRequest)
+AdjustXenotypeForFactionlessPawn(Pawn, ref PawnGenerationRequest, ref XenotypeDef)
+</source>
+|-
+| class="TutorialCodeTable-description" | 
+| class="TutorialCodeTable-description" | f. Pick a [[List_of_Player-created_Pawns|solid]] or random bio (name and backstories)
+| <source lang="xml">
+RimWorld.PawnBioAndNameGenerator.GiveAppropriateBioAndNameTo(Pawn, FactionDef, PawnGenerationRequest, XenotypeDef)
+</source>
+|-
+| class="TutorialCodeTable-description" | 
+| class="TutorialCodeTable-description" | g. Override name from request if applicable (such as for children)
+| <source lang="xml">
+(inline)
+</source>
+|-
+| class="TutorialCodeTable-description" | 
+| class="TutorialCodeTable-description" | h. Apply traits
+| <source lang="xml">
+GenerateTraits(Pawn, PawnGenerationRequest)
+</source>
+|-
+| class="TutorialCodeTable-description" | 
+| class="TutorialCodeTable-description" | i. Apply body type
+| <source lang="xml">
+GenerateBodyType(Pawn, PawnGenerationRequest)
+</source>
+|-
+| class="TutorialCodeTable-description" | 
+| class="TutorialCodeTable-description" | j. Generate genes
+| <source lang="xml">
+GenerateGenes(Pawn, XenotypeDef, PawnGenerationRequest)
+</source>
+|-
+| class="TutorialCodeTable-description" | 
+| class="TutorialCodeTable-description" | k. Generate skill passions and levels
+| <source lang="xml">
+GenerateSkills(Pawn, PawnGenerationRequest)
+</source>
+|-
+| class="TutorialCodeTable-description" | '''10'''
+| class="TutorialCodeTable-description" | '''Generate random pawn relations if pawn is not a newborn'''
+| <source lang="xml">
+GeneratePawnRelations(Pawn, ref PawnGenerationRequest)
+</source>
+|-
+| class="TutorialCodeTable-description" | '''11'''
+| class="TutorialCodeTable-description" | '''If the pawn is a player animal, make it tamed and enable Tameness training'''
+| <source lang="xml">
+(inline)
+</source>
+|-
+| class="TutorialCodeTable-description" | '''12'''
+| class="TutorialCodeTable-description" | '''Generate an appropriate RoyalTitleDef for the pawn, if applicable''' - Note that RoyalTitleDefs are not locked to {{RoyaltyIcon}}Royalty. Also includes permits, favor, and psycaster levels
+| <source lang="xml">
+(inline)
+</source>
+|-
+| class="TutorialCodeTable-description" | '''13'''
+| class="TutorialCodeTable-description" | {{RoyaltyIcon}} '''Enable bedroom and apparel demands if applicable to PawnKindDef'''
+| <source lang="xml">
+(inline)
+</source>
+|-
+| class="TutorialCodeTable-description" | '''14'''
+| class="TutorialCodeTable-description" | {{IdeologyIcon}} '''Randomize join status''' - "join as colonist" vs. "join as slave"
+| <source lang="xml">
+pawn.guest.RandomizeJoinStatus()
+</source>
+|-
+| class="TutorialCodeTable-description" | '''15'''
+| class="TutorialCodeTable-description" | '''Initialize work assignments for player-controlled pawns with a work settings tracker'''
+| <source lang="xml">
+pawn.workSettings.EnableAndInitialize()
+</source>
+|-
+| class="TutorialCodeTable-description" | '''16'''
+| class="TutorialCodeTable-description" | '''Generate an appropriate name for faction-controlled animals and mechs''' - Only applicable to mechs if {{BiotechIcon}} Biotech is enabled
+| <source lang="xml">
+pawn.GenerateNecessaryName()
+</source>
+|-
+| class="TutorialCodeTable-description" | '''17'''
+| class="TutorialCodeTable-description" | {{IdeologyIcon}} '''Set Ideo if applicable''' - Based on request, only for non-babies
+| <source lang="xml">
+(inline)
+</source>
+|-
+| class="TutorialCodeTable-description" | '''18'''
+| class="TutorialCodeTable-description" | {{IdeologyIcon}} '''If the pawn has a MindStateTracker and it craves human meat, set an initial value for when it last ate human meat''' - In order to prevent cannibals from being immediately unhappy
+| <source lang="xml">
+pawn.mindState.SetupLastHumanMeatTick()
+</source>
+|-
+| class="TutorialCodeTable-description" | '''19'''
+| class="TutorialCodeTable-description" | '''If the pawn has a SurroundingsTracker, clear its state'''
+| <source lang="xml">
+pawn.surroundings.Clear()
+</source>
+|-
+| class="TutorialCodeTable-description" | '''20'''
+| class="TutorialCodeTable-description" | '''Generate initial hediffs'''
+| <source lang="xml">
+GenerateInitialHediffs(Pawn, PawnGenerationRequest)
+</source>
+|-
+| class="TutorialCodeTable-description" | '''21'''
+| class="TutorialCodeTable-description" | '''If the request asked for a dead pawn and the pawn is not dead, kill it'''
+| <source lang="xml">
+pawn.Kill()
+</source>
+|-
+| class="TutorialCodeTable-description" | '''22'''
+| class="TutorialCodeTable-description" | '''Humanlike style item setup'''
+| <source lang="xml">
+(inline)
+</source>
+|-
+| class="TutorialCodeTable-description" | 
+| class="TutorialCodeTable-description" | a. Choose a random hair style
+| <source lang="xml">
+PawnStyleItemChooser.RandomHairFor(Pawn)
+</source>
+|-
+| class="TutorialCodeTable-description" | 
+| class="TutorialCodeTable-description" | b. Choose a random beard style
+| <source lang="xml">
+PawnStyleItemChooser.RandomBeardFor(Pawn)
+</source>
+|-
+| class="TutorialCodeTable-description" | 
+| class="TutorialCodeTable-description" | c. {{IdeologyIcon}} Choose a random tattoo style - forces to NoTattoo for babies or if Ideology is disabled
+| <source lang="xml">
+PawnStyleItemChooser.RandomTattooFor(Pawn) - for both face and body
+</source>
+|-
+| class="TutorialCodeTable-description" | '''23'''
+| class="TutorialCodeTable-description" | '''Apply all AbilityDefs specified in the PawnKindDef if provided'''
+| <source lang="xml">
+(inline)
+</source>
+|-
+| class="TutorialCodeTable-description" | '''24'''
+| class="TutorialCodeTable-description" | '''Notify all Scenario parts that a new pawn has been generated''' - This is where forced traits and hediffs from the scenario are applied
+| <source lang="xml">
+Find.Scenario.Notify_NewPawnGenerating(Pawn, PawnGenerationContext)
+</source>
+|-
+| class="TutorialCodeTable-description" | '''25'''
+| class="TutorialCodeTable-description" | '''Run validation checks for the generated pawn and discard if any fail''' - Any failures will immediately return a null from this attempt
+| <source lang="xml">
+(inline)
+</source>
+|-
+| class="TutorialCodeTable-description" | 
+| class="TutorialCodeTable-description" | a. If the pawn is dead and the request did not allow for dead pawns, discard it
+| <source lang="xml">
+(inline)
+</source>
+|-
+| class="TutorialCodeTable-description" | 
+| class="TutorialCodeTable-description" | b. If the request does not allow dead or downed pawns and the pawn is downed, discard it
+| <source lang="xml">
+(inline)
+</source>
+|-
+| class="TutorialCodeTable-description" | 
+| class="TutorialCodeTable-description" | c. If the request requires the capability for violence and the pawn is incapable, discard it
+| <source lang="xml">
+(inline)
+</source>
+|-
+| class="TutorialCodeTable-description" | 
+| class="TutorialCodeTable-description" | d. If the PawnKind requires capability in specific skills and this pawn is incapable, discard it
+| <source lang="xml">
+(inline)
+</source>
+|-
+| class="TutorialCodeTable-description" | 
+| class="TutorialCodeTable-description" | e. If the PawnKind requires any minimum skill levels and this pawn does not meet those requirements, discard it
+| <source lang="xml">
+(inline)
+</source>
+|-
+| class="TutorialCodeTable-description" | 
+| class="TutorialCodeTable-description" | f. If the PawnKind requires a mimimum combined skill level and the pawn does not meet that requirement, discard it
+| <source lang="xml">
+(inline)
+</source>
+|-
+| class="TutorialCodeTable-description" | 
+| class="TutorialCodeTable-description" | g. If the request is for a player starting pawn, the pawn does not meet the scenario requirements, and the pawn generator has not hit the threshold for ignoring scenario requirements, discard it
+| <source lang="xml">
+(inline)
+</source>
+|-
+| class="TutorialCodeTable-description" | 
+| class="TutorialCodeTable-description" | h. If the request provided a special pre-gear validator, the pawn does not pass the validator, and the pawn generator has not hit the threshold for ignoring the validator, discard it
+| <source lang="xml">
+(inline)
+</source>
+|-
+| class="TutorialCodeTable-description" | '''26'''
+| class="TutorialCodeTable-description" | '''Generate pawn gear''' - Does not apply for newborns, mechanoids, or if the request forces no gear (naked brutality)
+| <source lang="xml">
+GenerateGearFor(Pawn, PawnGenerationRequest)
+</source>
+|-
+| class="TutorialCodeTable-description" | 
+| class="TutorialCodeTable-description" | a. Generate starting apparel
+| <source lang="xml">
+PawnApparelGenerator.GenerateStartingApparelFor(Pawn, PawnGenerationRequest)
+</source>
+|-
+| class="TutorialCodeTable-description" | 
+| class="TutorialCodeTable-description" | b. Generate inventory items
+| <source lang="xml">
+PawnInventoryGenerator.GenerateInventoryFor(Pawn, PawnGenerationRequest)
+</source>
+|-
+| class="TutorialCodeTable-description" | 
+| class="TutorialCodeTable-description" | c. Generate equipped weapon (can be disabled by request)
+| <source lang="xml">
+PawnWeaponGenerator.TryGenerateWeaponFor(Pawn, PawnGenerationRequest)
+</source>
+|-
+| class="TutorialCodeTable-description" | '''27'''
+| class="TutorialCodeTable-description" | '''If pawn is dead, notify PawnApparelTracker that the pawn died''' - This is what causes clothing to be tainted
+| <source lang="xml">
+pawn.apparel.Notify_PawnKilled()
+</source>
+|-
+| class="TutorialCodeTable-description" | '''28'''
+| class="TutorialCodeTable-description" | '''Run post-gear pawn validator, if provided''' - As with pre-gear validator, if the pawn does not pass this validator and the pawn generator has not reached the threshold for ignoring validators then the pawn will be discarded
+| <source lang="xml">
+(inline)
+</source>
+|-
+| class="TutorialCodeTable-description" | '''29'''
+| class="TutorialCodeTable-description" | {{AnomalyIcon}} '''Apply a MutantDef if one is specified by the request or PawnKindDef'''
+| <source lang="xml">
+MutantUtility.SetFreshPawnAsMutant(Pawn, MutantDef)
+</source>
+|-
+| class="TutorialCodeTable-description" | '''30'''
+| class="TutorialCodeTable-description" | '''Add the pawn to the static list of pawns being generated'''
+| <source lang="xml">
+(inline)
+</source>
+|-
+| class="TutorialCodeTable-description" | '''31'''
+| class="TutorialCodeTable-description" | '''If the pawn has a faction, notify the faction of a new member joining'''
+| <source lang="xml">
+pawn.Faction.Notify_PawnJoined(Pawn);
+</source>
+|-
+| class="TutorialCodeTable-description" | '''32'''
+| class="TutorialCodeTable-description" | '''Apply <code>existingDamage</code> entries from PawnKindDef''' - Used by {{AnomalyIcon}} Anomaly for pawns with surgical scars and other similar pre-existing injuries
+| <source lang="xml">
+ApplyMiscDamage(Pawn, PawnKindDef)
+</source>
+|-
+| class="TutorialCodeTable-description" | '''33'''
+| class="TutorialCodeTable-description" | '''Flag pawn's renderer as dirty''' - Forces a regeneration of its render tree
+| <source lang="xml">
+pawn.Drawer?.renderer?.SetAllGraphicsDirty()
+</source>
+|-
+| class="TutorialCodeTable-description" | '''34'''
+| class="TutorialCodeTable-description" | '''Remove the pawn from the static list of pawns being generated''' - Run in a <code>finally</code> block, even if an above step returns early or causes an error
+| <source lang="xml">
+(inline)
+</source>
+|-
+|}
+</div>
+
+[[Category:Modding tutorials]]

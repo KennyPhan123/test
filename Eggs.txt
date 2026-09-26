@@ -1,0 +1,53 @@
+<!--Do not delete-->{{#set:Image = [[File:Egg small a.png]]}}<!--Do not delete-->{{Info|'''Eggs''' are a type of [[animal]] product and [[raw food]]. They are carried inside a female of an egg-laying species until they are ready to be laid, at which point they become a workable item and the female's egg-laying timer resets to zero.}} When there are two or more eggs in a stack, the image will change to represent a pile of eggs.
+
+== Egg production by animal ==
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_08 text-center}}
+! Animal !! Fert. Egg !! Unfert. Egg !! Can lay<br>unfertilized !! Nutrition<br/>per Egg !! Avg Eggs<br/>per Clutch !! Laying<br/>Interval !! Avg Eggs<br/>per Day !! Egg Nutrition<br/>per Day !! <abbr title="Assuming they sleep on the ground and mate as soon as possible.">Needed<br/>Males / Female</abbr> !! Daily Hunger<br/>Rate !! Daily Egg Nutrition<br/>per Hunger
+|-
+{{#ask: [[Egg Laying Interval::+]]
+| named args=yes
+| ?Name = ?Name
+| ?Eggs Per Clutch Average = ?Eggs Per Clutch Average
+| ?Egg Laying Interval = ?Egg Laying Interval
+| ?Eggs Per Season Average = ?Eggs Per Season Average
+| ?Can Lay Unfertilized Eggs = ?Can Lay Unfertilized Eggs
+| ?Real Hunger Rate = ?Real Hunger Rate
+| format = Template
+| template = Egg Table Row
+| link = none
+| sort = From DLC, Name
+}}
+|}
+</li></div>
+
+== Fertilization ==
+If a male of the same species is not present or fails to copulate with the female before she finishes laying the egg, the female is described as "Unfertilized" in her inspect pane. Once the female lays the egg, it will be spawned as a new item and show <code>(unfert.)</code> after the egg name. Many types of animals do not lay unfertilized eggs. For example, a female [[ostrich]]'s egg-laying timer stops at 50% until fertilization occurs.
+
+If a male of the same species is present and copulates with the female before she finishes laying the egg, the female will show "Fertilized" on her inspect pane. Once the female lays the egg, it will be spawned as a new item and show <code>(fert.)</code> after the egg name.
+
+Both fertilized and unfertilized eggs are edible. If eaten raw, both generate the "[[Thoughts#Ate raw food|Ate raw food]]" thought. Eggs can be used as a substitute for [[meat]] when cooking [[meals]]. Each can substitute for 5 meat, e.g. a fine meal requires only one egg and 5 vegetables.
+
+== Unfertilized eggs ==
+[[File:Eggs unfertilized.png|28px|left|thump|An unfertilized egg.]]
+All unfertilized eggs rot in 15 days unless refrigerated or frozen. 
+
+== Fertilized eggs ==
+[[File:Egg fertilized.png|28px|left|thump|A fertilized egg.]]
+When protected from [[Ovivore|ovivorous]] animals, bad temperatures, and outdoors deterioration, fertilized eggs will hatch into a baby animal, even if both parents die. The progress to hatching time is displayed on the inspect pane when the egg is selected. 
+
+Fertilized eggs do not rot like most food, but they can [[deteriorate]] if left outside and unroofed or get ruined by bad temperatures. Extreme temperatures will kill the animal within the egg, transforming fertilized eggs into unfertilized eggs that are unable to hatch. Eggs are safe between {{Temperature|0|50}}.
+
+An [[egg box]] can be used to direct egg laying animals where to lay both fertilized and unfertilized eggs.
+
+== Consumption ==
+Fertilized and unfertilized eggs can be eaten for their base nutrition. They can also be used as a [[cooking]] ingredient, where they can also be substituted for an amount of meat of equivalent nutrition in meals that require meat, and used in place of any nutrition in vegetarian meals.
+
+Letting fertilized eggs hatch and butchering the hatchling for meat often results in more total nutrition than using the fertilized eggs for cooking, but this is species dependent and more time is spent at the butcher's table.
+
+== Version history == 
+* [[Version/0.12.906|0.12.906]] - Added
+* [[Version/1.6.4518|1.6.4518]] - Fertilized eggs now turn into unfertilized eggs upon being ruined. Added unfertilized versions of all eggs.
+{{nav|Food|wide}}
+
+[[Category:Food|#Eggs]] [[Category:Raw Food|#Eggs]] [[Category:Animal Products|#Eggs]]

@@ -1,0 +1,54 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Anomaly/Global/Misc}}
+|}
+----
+{| {{STDT| c_21}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Light exposure" <!-- defName="LightExposure" -->
+! [[Noctol|Light exposure]]
+----
+* Def Name:<br />LightExposure
+* Label:<br />light exposure
+|<!-- Description -->
+<div style="max-width: 300px;">
+Even the slightest exposure to light causes great discomfort to this creature, slowing it and weakening its attacks.
+</div>
+|<!-- Details -->
+* Hediff Class: '''Hediff_LightExposure'''
+** Severity per second lit (light > 30%): {{++|40%}}
+** Severity per second unlit: {{---|25%}}
+* Min Severity: '''0%'''
+* Max Severity: '''100%'''
+* Initial Severity: '''0%'''
+* Ever Curable By Item: {{Bad|false}}
+|<!-- Stages -->
+{| {{STDT| c_21}}
+! Label !! Parameters
+|-
+! initial
+|<!-- Parameters -->
+* Become Visible: {{Bad|false}}
+|-
+! moderate
+|<!-- Parameters -->
+* Min Severity: '''10%'''
+* [[Melee Cooldown (Pawn)]] Offset: {{++|125%}}
+* [[Move Speed]] Factor: {{Bad|×90%}}
+* Pain Offset: {{++|5%}}
+|-
+! serious
+|<!-- Parameters -->
+* Min Severity: '''40%'''
+* [[Melee Cooldown (Pawn)]] Offset: {{++|150%}}
+* [[Move Speed]] Factor: {{Bad|×80%}}
+* Pain Offset: {{++|10%}}
+|-
+! extreme
+|<!-- Parameters -->
+* Min Severity: '''80%'''
+* [[Melee Cooldown (Pawn)]] Offset: {{++|200%}}
+* [[Move Speed]] Factor: {{Bad|×50%}}
+* Pain Offset: {{++|15%}}
+|}<noinclude>
+|}</noinclude>

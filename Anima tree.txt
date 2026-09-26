@@ -1,0 +1,252 @@
+{{Royalty}}
+{{Project|Psyfocus}}
+{{Infobox main|plant
+| name = Anima tree
+| image = Anima tree a.png
+| description = A rare tree with warm, skin-smooth bark and long iridescent leaves. Infused with bioluminescent micro-organisms, anima trees develop a unique form of psychic symbiosis with surrounding lifeforms, allowing them to grow in a wide variety of biomes.<br/>If a person (psycaster or not) meditates near an anima tree, it will grow anima grass around its base. Once enough grass is grown, it becomes possible to carry out a psychic linking ritual with the tree and upgrade a person's psychic powers. Only tribal peoples know the secret of this ritual. Tribal psycasters are also able to draw psyfocus from anima trees while meditating to them.<br/>Anima trees' psychic properties are weakened if artificial structures are placed nearby. They refuse to be caged or studied, and must remain part of nature.<br/>Most tribes believe that anima trees are not simply trees, but are rather the physical extremities of a single world spirit.
+| type = Plant
+| type2 = Tree
+| path cost = 42
+| passability = pass through only
+| blockswind = true
+| cover = 0.25
+| minifiable = false
+| hp = 400
+| flammability = 0
+| beauty = 5
+| beauty outdoors = 1
+| grow days = 25
+| glowradius = 3.75
+| glowcolor = (110, 116, 125)
+| lifespanDaysPerGrowDays = 0
+| harvest work = 800
+| product = wood
+| yield = 25
+| min fertility = 0.02
+| fertility sensitivity = 0
+| nutrition = 2
+| immune to blight = true
+| livesin_temperateforest = 0
+| livesin_temperateswamp = 0
+| livesin_tropicalrainforest = 0
+| livesin_tropicalswamp = 0
+| livesin_aridshrubland = 0
+| livesin_desert = 0
+| livesin_borealforest = 0
+| livesin_coldbog = 0
+| livesin_tundra = 0
+}}
+The '''anima tree''' is a tree added by the [[Royalty DLC]]. It acts as a meditation focus and source of [[psylink]]s for pawns with the [[Psyfocus#Natural|Natural]] focus type, but is sensitive to artifical structures around it.
+
+== Growth ==
+One anima tree spawns on most [[World generation#Landing site|landing site]] maps. On larger map sizes, up to two may spawn. The [[extreme desert]], [[ice sheet]], [[sea ice]], and [[glacial plain]]s{{OdysseyIcon}} [[biome]]s are too inhospitable for anima trees to spawn. [[Glowforest]]s{{OdysseyIcon}} will not have an anima tree at first, but one will eventually spawn.
+
+Anima trees are immune to [[fire]], [[toxic fallout]], can survive up to {{Temperature|-50}}, and will survive in the [[sun blocker|absence of light]]. [[Thrumbo]]s will not eat anima trees, but [[alphabeaver]]s can. It is also susceptible to both [[defoliator]]s and [[defoliator ship]]s. [[Anima grass]] is vulnerable to fire, and will rot if left without light, but will not be eaten by grazing animals. Note that while the anima tree has no lifespan, any anima grass only lives for {{Q|Anima grass|Lifespan}} [[time|days]].
+
+=== Regrowth ===
+Destruction of the anima tree causes the {{Thought|desc=Such a pain in my head when the tree died. And it keeps echoing...|label=Anima scream|value=-6|stack=3|duration=5}}. The mood effect scales with [[Psychic Sensitivity]].
+
+After roughly 30 days, it will grow back in a [[Events#Anima tree sprout|random event]] at a random location away from artificial buildings. This can be used to move a tree from an inopportune location at the cost of mood.
+Specifically, the game searches for an outdoors, standable tile with non-zero fertility, at least 15 tiles from the map edge, at least 40 tiles from an artificial structure, and with at least 22 non-zero fertility tiles within a 10 tile radius. If it can't find a tile that fits those criteria, it loosens the requirements to 10 tiles from artificial structures, and 18 fertile tiles within a 20 tile radius.
+
+=== Archonexus Quest ===
+{{Ideology|section=1}}
+{| role="presentation" class="wikitable mw-collapsible mw-collapsed"
+| '''This section contains spoilers for the Archonexus {{IdeologyIcon}} quest. If you wish to enjoy this quest first hand, you probably shouldn't read this section.'''
+|-
+| The first two archonexus structures, the [[major archotech structure]] and [[grand archotech structure]], spawn anima grass continuously, up to a cap of 35. {{Check Tag|Verify cap for both}}{{Check Tag|Can this grass be used for linking rituals?}}
+The final structure, the [[archonexus core]], spawns full anima trees, as well as grass, sometimes as many as 200 trees on a single map.{{Check Tag|Cap?}} However this is unlikely to be useful, as the game can be ended as soon as the archonexus core is discovered.
+|}
+
+== Meditation mechanics ==
+Meditating at an anima tree requires a [[Psyfocus#Natural|Natural]] [[meditation focus]], which a pawn can only gain from their childhood [[background]]. Only Tribal backstories can have the focus type, and several of them do not provide it. Pawns do not need to have psylink levels to meditate. [[Schedule]] meditation and place a [[meditation spot]] so that your colonists will actively meditate near the tree.
+
+Meditation at the tree serves three purposes; firstly, it grows anima grass for the granting of psylink. Secondly, it acts as the second best meditation focus, after [[animus stone]]s, for Natural meditation, increasing the rate at which psycasters meditating to the tree gain psyfocus. Thirdly, it is a form of solitary recreation which grants joy at the default rate (0.0144% per tick, calculated before recreation tolerance).
+
+=== Anima grass ===
+Meditating near an anima tree creates '''anima grass''' around the base of the tree. Once at least 20 grass has been grown, a level of psylink can be granted to a pawn with the Natural meditation focus type.
+
+Anima grass is created proportional to the pawn-hours spent meditating to it. Multiple pawns can meditate at the same time to speed up the spawning of the anima grass. At 100% effectiveness, one pawn-hour of meditation grows approximately 16% of one anima grass patch. After 12 pawn-hours of cumulative meditation time, grass growth slows by 50% to 8% of growth per pawn-hour. After 24 pawn-hours of meditation time, it slows to 25%, or 4% of growth per pawn-hour. Finally, it drops to 15% of the normal growth rate after 48 pawn-hours of meditation time. This counts all pawns that have meditated during a 24 hour period. This rate is also affected by the [[#Artificial buildings|artificial buildings]] surrounding the tree, up to a -30% of the growth. A full -30% penalty does not stop growth after 24 pawn-hours, suggesting that factor is applied multiplicatively. If there are multiple trees on a map, each will have its own anima grass and threshold, allowing more grass to be grown before hitting diminishing returns.
+
+The pawn must have Natural meditation available in order to grow anima grass. However, the health, psylink level, and [[psychic sensitivity]] of the meditating pawns has no effect on the amount of grass generated, even if they are psychically deaf. In addition, it is not necessary for pawns to use the anima tree as a focus in order to contribute towards grass growth. For example, a natural [[Ascetic]] pawn that is meditating at a wall will count towards grass growth.
+
+{| class="wikitable"
+! Pawn-Hours<br>/Day 
+! Grass grown<br>/Day
+! Graph
+|-
+! 12 hours 
+| {{#expr: (12/5)}}
+| rowspan="5"| {{Graph:Chart
+| width = 200
+| height = 200
+| type = line
+| x = 0,  12,  24,  48,  60, 100
+| y = 0, 2.4, 3.6, 4.8, 5.16, 6.36
+| xAxisTitle = Pawn-Hours/Day
+| yAxisTitle = Grass grown/Day
+| yAxisMin = 0
+}}
+|-
+! 24 hours 
+| {{#expr: (12/5) + (12/5)*0.5 + (0/5)*0.25 + (0/5)*0.15}}
+|-
+! 36 Hours 
+| {{#expr: (12/5) + (12/5)*0.5 + (12/5)*0.25 + (0/5)*0.15}}
+|-
+! 48 Hours 
+| {{#expr: (12/5) + (12/5)*0.5 + (24/5)*0.25 + (0/5)*0.15}}
+|-
+! 60 Hours 
+| {{#expr: (12/5) + (12/5)*0.5 + (24/5)*0.25 + (12/5)*0.15}}
+|}
+
+=== Linking ritual ===
+The linking ritual takes approximately 5 hours and requires 20 anima grass.
+
+This ritual can grant a psylink to a pawn without one or improve the level of an existing psylink; even one granted using a [[psylink neuroformer]] or through an Empire [[Titles|bestowing ceremony]]. This only works on pawns with the Natural meditation type and a non-zero [[psychic sensitivity]]. [[Children]]{{BiotechIcon}} cannot link to the anima tree but can participate in the ritual otherwise. Once the ritual is complete, 20 anima grass will die, and some amount of anima grass will be restored based on the number of participants.
+
+{| class="wikitable"
+! Additional Participants 
+! Grass restored
+|-
+! 0 
+| 0
+|-
+! 1-2
+| 1
+|-
+! 3
+| 3
+|-
+! 4
+| 4
+|-
+! 5
+| 5
+|-
+! 6
+| 6
+|-
+! 7+
+| 8
+|}
+
+Any remaining or regrown grass can then be used for future linking rituals, however note that the grass has a limited lifespan of {{Q|Anima grass|Lifespan}} [[time|days]].
+
+=== Meditation focus ===
+Psycasters regain psyfocus at a base rate of {{+|50%}} psyfocus per day spent meditating. Foci in range of the psycaster's [[meditation spot]] and of a focus type they share increase this rate additively. Anima trees have a base meditation focus strength of {{+|28%}} psyfocus per day. Each [[animus stone]] within 9.9 tiles increases the meditation effectiveness by {{+|2%}}, while each [[small nature shrine|small]] or [[large nature shrine]] within 9.9 tiles increases it by {{+|1%}}. Up to four buildings can affect the tree, for a maximum bonus of {{+|8%}} from 4 animus stones. This rate is also affected by the [[#Artificial buildings|artificial buildings]] surrounding the tree.
+
+Note that psycasters are allowed to meditate at an [[animus stone]] while contributing towards grass growth. Since animus stones are a better meditation focus, pawns will end up meditating at the animus stone assuming everything is in range, resulting in more psyfocus gain. For example, if 4 animus stones are near an anima tree, a psycaster will get {{+|40%}} psyfocus per day from meditating to a stone, rather than the {{+|36%}} if they were forced to meditate at the tree itself. Therefore, the maximum Natural meditation focus strength a pawn while meditating to the tree is {{+|42%}}, for an anima tree with no artificial buildings within 27.9 tiles and surrounded by five animus stones.
+
+=== Artificial buildings ===
+Building an artificial building within a 27.9 tile build radius will reduce the anima grass growth rate and meditation strength (the 27.9 tile radius is displayed in red while the anima tree is selected). The reduction is set by the following curve:
+
+<div><li style="display: inline-table;">
+{| {{STDT| c_07 text-center}}
+! Artificial items<br>in range !! Strength<br>offset !! Graph
+|-
+|  0 || '''0%'''
+| rowspan="4" | {{Graph:Chart
+ | width = 200 | height = 200 | type = line | xAxisTitle = Artificial items in range | yAxisTitle = Strength offset
+ | x = 0,  5,  10,  50
+ | y = 0, -8, -15, -30
+}}
+|-
+|  5 || {{--| 8%}}
+|-
+| 10 || {{--|15%}}
+|-
+| 50 || {{--|30%}}
+|} 
+</li></div>
+
+Keep in mind that a pawn will preferentially meditate at the highest rate natural building, so two animus stones next to an anima tree will give +4% (+28%-28%+2%+2%) but two animus stones on their own will only give +2% (+34%-34%+2%). Without the artificial building penalty, both situations would be equivalent +36% (+34%+2%) as a pawn would always meditate at the animus stone and the anima tree would be ignored, though grass still grows. 
+
+The following buildings are not considered artificial for this purpose:
+<div class="ul-column-width-200">
+* [[Snowman]]
+* [[Torch lamp]]
+* [[Horseshoe pin]]
+* [[Hoopstone ring]]
+* [[Grave]]
+* [[Campfire]]
+* [[Small nature shrine]] {{RoyaltyIcon}}
+* [[Large nature shrine]] {{RoyaltyIcon}}
+* [[Animus stone]] {{RoyaltyIcon}}
+* [[Shard beacon]] {{AnomalyIcon}}
+* [[Fleshmass heart]] {{AnomalyIcon}} and all related structures
+* All [[spot]]s
+* All [[floor]]ing
+* All types of smoothed stone walls</div>
+
+[[Ruins]] also do not have any penalty '''so long as the ruins remain unclaimed;''' claiming the ruins will cause them to apply the usual penalty. Despite their similarity to other exempted objects, [[monument marker]]s {{RoyaltyIcon}} are considered artificial.
+
+Selecting the tree displays two circles around the tree:
+* The smaller (9.9 tiles radius), green circle is the range at which animus stones and nature shrines can link to the tree.
+* The larger (27.9 tiles radius), red circle indicates where artificial structures will disrupt the tree. The "Build radius warning" option, turned on by default, will create a red line whenever you try to place a building within the radius.
+
+== Analysis ==
+The anima tree is an infinitely grindable source of psycast levels, making it a very powerful tool for Tribal starts or if you recruit tribal pawns that are good psycaster candidates. Compared to any other source of psylink, the anima tree is available at the start of the game, has a short recharge time, and has no resource cost.
+*Royal [[title]]s can be farmed with sufficient [[prisoner]]s and/or [[gold]], but this costs resources, and the desired rooms will also cost resources and boost colony [[wealth]]. While these are not significant problems in the late game, it does make it difficult to use titles in the early game.
+*The [[psylink neuroformer]] item is only offered from [[quest]]s every 45 days at minimum. Neuroformers can also be obtained by raiding [[empire]] bases, but this is inconsistent.
+*The [[Blindsight]]{{IdeologyIcon}} blinding ritual can be farmed for psylink levels by installing [[bionic eye]]s, but this requires the blindsight meme and potentially multiple bionic eyes per psycast level. 
+
+The downside is the anima tree's random placement that can't be manually moved, which can cause long travel times and thus pose some risk to colonist safety. It is possible to build near the anima tree at the cost of the artificial building penalty. In addition, building near the tree may force sub-optimal base placement, e.g., placing the base near the edge of the map.
+
+=== Buildings ===
+There are two philosophies for building near the anima tree:
+* Option 1: Leaving the anima tree clear from artificial structures. You can still install attractive [[floor]]s and plant flowers (where grass won't spawn) to keep the area [[beauty|beautiful]] and meditators happy without affecting the tree. A bed and dining room just outside of the radius can help lower travel time. This method is ideal if you dedicate a colonist's entire workday to meditation. Psycasters can gain psyfocus at the maximum rate of 92% per day, or 3.83% per hour. 
+
+* Option 2: Ignoring the artificial penalty entirely. Create your entire base right next to the anima tree, and surround the tree with [[wall]]s. This makes the travel time much shorter, and keeps your pawns safer against raids during meditation. In [[biome]]s where the [[Events#Beavers!|Beavers!]] event can happen (arid shrubland, tundra), it also keeps the ''tree'' safe. 
+** Make sure not to build a [[roof]] or floor over the tree, or where grass can spawn. Use the [[remove roof area]] tool in the Zoning tab so that your builders don't cut down the tree.
+** While building close to the tree impacts the rate at which you gain psyfocus, the psyfocus gain provided by the tree is an "offset" on top of a pawn's base psyfocus gain of 50%/day. With 50 buildable items in the vicinity, the anima tree will not provide any bonus to meditation but any items providing bonuses will still provide the benefit. The lowest possible psyfocus gain is 50% per day while the maximum amount lost is -34% per day, if a single animus stone is used. A pawn will actually meditate at the animus stone over the anima tree but anima trees do not provide a bonus to animus stones, 2 animus stones are needed to see any bonus beyond 50% psyfocus gain per day. This will generate psyfocus at a rate of 2.08% per hour. With 5 animus stones, the rate will be 58% per day, or 2.42% per hour. 
+In either case, a ring of flooring around the tree and grass spawning area can be useful to prevent [[fire|wildfires]] destroying the grass.
+
+Psycasters lose psyfocus at a maximum rate of 7.5% per day. The least a psycaster will need to meditate using option 1 is for 1.95 hours with 5 animus stones. The least a psycaster will need to meditate using option 2 with 5 animus stones is for 3.10 hours. During that additional 1.15 hours or 2875 ticks, a pawn with default movement speed of 4.6 cells per second, or 0.077 cells per tick, could walk 221 cells. Since a return trip is required, anima trees outside of 110 cells from the likely point of travel experience a time penalty greater or equal than the penalty caused by artificial buildings. 
+
+If only using small nature shrines (as 5 animus stones are expensive and difficult to acquire, especially at the stage of game when anima grass is most desired) the times to meditate become 3.42%/hr vs. 2.17%/hr (note that the addition of shrines allows the full -30% penalty). During that additional 1.26 hours or 3150 ticks, a pawn with default movement speed of 4.6 cells per second, or 0.077 cells per tick, could walk 242 cells. Since a return trip is required, anima trees outside of 121 cells from the likely point of travel experience a time penalty greater or equal than the penalty caused by artificial buildings.
+
+On the default map size of 250x250, the furthest point from the center is 125 to 176 cells depending on direction. However, trees on the far edge of the map should probably be chopped in hopes of a better location as those locations will likely not be built around anyways. An anima tree in a central location should left building free, with likely starting locations such as dining halls and bedrooms placed within 86 cells of the edge of the build radius warning. 
+
+With longer meditation times, the travel time becomes less significant but the building penalty still applies to anima grass growth. It becomes difficult to see any advantage to a tree being enclosed by buildings for the purposes of creating psycasters or using high cost psycasts. It is also easier to make a pawn move faster than it is to place an anima tree for a slow pawn. Colonist risk far from safety is still a factor. 
+
+=== Pawn scheduling ===
+For maximum growth, [[schedule]] one or more colonists to just meditation, only stopping to eat or sleep. This also reduces travel time, useful if you have built away from the anima tree. Meditating will provide some [[recreation]]; while they will rapidly become [[Recreation#Recreation tolerance|bored]] with it, it will still keep the bar full if done all day. If a ruin or natural wall is within 6 tiles, consider [[roof]]ing over their meditation spot to keep them out of the [[weather|rain]] and [[toxic fallout]]. 
+
+If the colony is built very close to anima tree, then an alternate method is to schedule meditation for all tribal colonists in place of recreation. Meditation does fill up the recreation meter, even if colonists will get bored of it. If a large portion of colonists are set to meditation, then you will quickly hit the soft limit for grass growth.
+
+While the grass does not grow faster when meditated at by a psycaster, they are still ideal choices. The psyfocus gain from meditation not only replaces their need to meditate elsewhere; it also all but guarantees that they will be consistently at 100% psyfocus. This especially synergizes with high-psyfocus-cost, non-combat psycasts such as [[word of trust]] or [[word of inspiration]], and is valuable for keeping casters combat-ready as well.
+
+Temporary pawns from quests with a natural meditation focus can meditate at the tree even if they are incapable of working. 
+
+[[Prisoner]]s with a psylink will meditate a few hours per day to maintain their psyfocus. Building a prison barrack around the tree with natural meditation focus psycaster prisoners will slowly generate anima grass. Note that colonists will not choose to meditate in a bedroom or singular prison cell even if a [[meditation spot]] is assigned to them.
+
+=== Light ===
+While the anima tree itself will not die at 0% light, [[anima grass]] will eventually rot after spending too long below 51% light. This presents a challenge if a [[sun blocker]] is deployed and the colony can't deal with it (or [[darkness (meme)|wants it]]), or if in a [[glowforest]].{{OdysseyIcon}} With enough meditators, 20 grass can be grown before the first grass rots. Alternatively, a [[sun lamp]] can solve the issue at the cost of [[power]] and the artifical building penalty.
+
+== Gallery ==
+<gallery>
+Anima tree a.png|Anima tree variant A
+Anima tree b.png|Anima tree variant B
+Anima tree c.png|Anima tree variant C
+Anima tree d.png|Anima tree variant D
+Anima tree e.png|Anima tree variant E
+Stump chopped anima a.png|[[Chopped anima stump]] variant A
+Stump chopped anima b.png|[[Chopped anima stump]] variant B
+Stump smashed anima a.png|[[Smashed anima stump]] variant A
+Stump smashed anima b.png|[[Smashed anima stump]] variant B
+</gallery>
+
+== Version history ==
+* [[Version/1.1.2647|1.1.2647]] - Added.
+* [[Version/1.1.2654|1.1.2654]] - Regrowth check cycle: 40 days -> 30 days. Added warning message when designating an anima tree for cutting and using it to give a psychically dull or deaf pawn psylink. Now sends a letter when enough anima grass is available for linking. 
+* [[Version/1.2.2719|1.2.2719]] - Anima trees are enhanced by nearby animus stones. Will no longer be destroyed by meteors, crashed ship parts, or shuttles. Anima grass progress rate now reduces after they're heavily used within a single day. All Psylink levels now take 20 anima grass instead of 18 for levels 1 and 2, 20 for 3 and 4, and 22 for 5 and 6. Soften anima tree glow. Remove anima grass glow. Fix: Anima tree doesn't heal properly. Fix: Just claimed artificial structures don't affect nature focus objects.
+* [[Version/1.3.3066|1.3.3066]] - Fix: Anima trees can display negative meditation values. Fix: No feedback on anima tree right click if pawn cannot use natural focus or already is max level.
+* [[Version/1.3.3067|1.3.3067]] - Anima grass growth rate is now slowed, like the psyfocus penalty, when the tree is near artificial buildings. Fix: Typo on anima tree linking ritual.
+* [[Version/1.3.3074|1.3.3074]] - Prevent thrumbos from eating anima trees.
+* [[Version/1.3.3087|1.3.3087]] - Description updated.
+* [[Version/1.3.3101|1.3.3101]] - Fix: Psychically deaf pawns get anima linking alert and can start the ceremony.
+
+{{Nav|plant|wide}}
+[[Category:Plants]] [[Category:Trees]]

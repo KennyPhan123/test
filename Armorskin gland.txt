@@ -1,0 +1,127 @@
+{{Royalty}}
+{{infobox main
+| name = Armorskin gland
+| image = Health item bionic.png
+| description = This bionic gland releases chemicals and nanomachines that toughen the skin and add flexible subdermal keratin plates at strategic points. This makes the user more resistant to damage across their whole body. Unfortunately, These changes make the skin appear leathery, with wrinkles across the whole body and face, which is generally considered ugly.
+| type = Medical Items
+| type2 = Body Parts
+| tech level = Spacer
+| hp = 50
+| production facility 1 = Fabrication bench
+| research = Skin hardening
+| skill 1 = Crafting
+| skill 1 level = 8 
+| resource 1 = Plasteel
+| resource 1 amount = 20
+| resource 2 = Advanced component
+| resource 2 amount = 6
+| work to make = 26000
+| marketvalue  = 1475
+| armorblunt  = 20
+| armorsharp  = 52
+| armorheat  = 40
+| mass base = 4
+| coverage = Head, Left Ear, Right Ear, Left Eye, Right Eye, Nose, Jaw, Torso, Neck, Left Shoulder, Left Arm, Left Hand, Left Fingers, Right Shoulder, Right Arm, Right Hand, Right Fingers, Left Leg, Left Foot, Left Toes, Right Leg, Right Foot, Right Toes
+| layer = Internal
+| thingSetMakerTags = RewardStandardMidFreq
+| tradeTags = Bionic, ImplantEmpireCommon
+| techHediffsTags = Advanced, ImplantEmpireCommon
+| tags = ArmorGland
+| incompatibleWithHediffTags = ArmorGland
+}}
+The '''Armorskin Gland''' is an implant added by the [[Royalty DLC]] that gives the host pawn natural armor, in exchange for making them uglier and slower. It is the middle option of the three skin gland implants, with protection and penalties between that of the [[Toughskin gland|toughskin]] and [[Stoneskin gland|stoneskin gland]]s.
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+Pawns with an armorskin gland implanted in their torso{{Check Tag|Verify}} gain an offset to their intrinsic Sharp/Blunt/Heat Armor by {{P|Armor - Sharp}}/{{P|Armor - Blunt}}/{{P|Armor - Heat}}% respectively. All skin glands, including [[vacskin gland]]s,{{OdysseyIcon}} are mutually exclusive and there are no other sources of intrinsic armor for [[human]]s {{Hover title|Version/1.6.4630|as of the time of writing}}. As such, the base values before the offset is always 0%/0%/0%. Intrinsic armor is considered as its own layer for the purposes of [[Apparel#Protection|armor calculations]] and is the final layer considered after all [[apparel]]. Intrinsic armor still protects body parts replaced by [[artificial body parts]] and body parts that would not logically have skin, such as eyes.
+
+It also reduces [[pawn beauty]] by {{--|1}}, potentially resulting in an [[opinion]] malus with other humans that are not [[ascetic]], [[kind]], and [[Sight|blind]] depending on other beauty effects. It also multiplies the pawn's [[moving]] by a factor of {{Bad|x90%}}.
+
+Moving, in turn, affects the following [[stats]]: {{#ask: [[Moving Importance::+]]}}. This results in a directly proportional change to a pawn's [[move speed]], and a change in [[melee dodge chance]] equivalent to losing {{--|{{#expr: {{Q|Melee Dodge Chance|Moving Importance}}*0.1}}}} levels of [[Melee]] skill. Due to how the stat is fit to a post-process curve, this can result in the melee dodge chance dropping to 0% for pawns with skill under 7, when replacing one leg, or under 10 for both legs.
+
+As an artificial part, armorskin glands will give a mood buff to anyone with the [[Body modder]] trait, and a mood penalty to anyone with the [[Body purist]] trait.
+
+=== Installation ===
+Installing the part requires {{Ticks|2500}} of work, 2x medicine of [[Herbal medicine|herbal]] quality or better, and a [[Skills#Medical|Medical skill]] of 5.
+
+Removing the part requires {{Ticks|2500}} of work, 1x medicine of [[Herbal medicine|herbal]] quality or better, and a [[Skills#Medical|Medical skill]] of 5.
+
+If the operation fails, the part will be destroyed.
+
+== Analysis ==
+{{Stub|section=1|reason=Almost missing analysis. Also ghouls specifically}}
+It provides a noticeable amount of protection. Keep in mind that armor penetration usually negates a part of the implant's armor rating, making it less protective than expected.
+
+Comparison table of the different types of skin gland:
+{| class="wikitable sortable text-center"
+|-
+! rowspan=2 | Type !! colspan=3 | Armor !! rowspan=2 | [[Moving]] !! rowspan=2 | [[Beauty (Pawn)|Beauty]]
+|-
+! Sharp !! Blunt !! Heat 
+|-
+! [[Toughskin gland]] 
+| {{Good|{{Q|Toughskin gland|Armor - Sharp}}%}} || {{Good|{{Q|Toughskin gland|Armor - Blunt}}%}} || {{Good|{{Q|Toughskin gland|Armor - Heat}}%}} || {{Bad|×95}} || -
+|-
+! [[Armorskin gland]] 
+| {{Good|{{Q|Armorskin gland|Armor - Sharp}}%}} || {{Good|{{Q|Armorskin gland|Armor - Blunt}}%}} || {{Good|{{Q|Armorskin gland|Armor - Heat}}%}} || {{Bad|×90}} || {{--|1}}
+|-
+! [[Stoneskin gland]] 
+| {{Good|{{Q|Stoneskin gland|Armor - Sharp}}%}} || {{Good|{{Q|Stoneskin gland|Armor - Blunt}}%}} || {{Good|{{Q|Stoneskin gland|Armor - Heat}}%}} || {{Bad|×85}} || {{--|2}}
+|-
+! [[Vacskin gland]]{{OdysseyIcon}}
+| '''{{Q|Vacskin gland|Armor - Sharp|0}}%''' || '''{{Q|Vacskin gland|Armor - Blunt|0}}%''' || '''{{Q|Vacskin gland|Armor - Heat|0}}%'''|| {{Bad|×90}} || -
+|}
+{| class="wikitable"
+|-
+! Sharp
+|-
+| {{Apparel Protection Chart
+| color = red, grey, black, #9a7bc8
+| set1name   = Toughskin (Sharp) 
+| set1armor1 = {{Q|Toughskin gland|Armor - Sharp}} 
+| set2name   = Armorskin (Sharp) 
+| set2armor1 = {{Q|Armorskin gland|Armor - Sharp}} 
+| set3name   = Stoneskin (Sharp) 
+| set3armor1 = {{Q|Stoneskin gland|Armor - Sharp}} 
+| set4name   = Vacskin (Sharp)
+| set4armor1 = {{Q|Vacskin gland|Armor - Sharp|0}}
+}}
+|-
+! Blunt
+|-
+| {{Apparel Protection Chart
+| color = red, grey, black, #9a7bc8
+| set1name   = Toughskin (Blunt) 
+| set1armor1 = {{Q|Toughskin gland|Armor - Blunt}} 
+| set2name   = Armorskin (Blunt) 
+| set2armor1 = {{Q|Armorskin gland|Armor - Blunt}}  
+| set3name   = Stoneskin (Blunt) 
+| set3armor1 = {{Q|Stoneskin gland|Armor - Blunt}} 
+| set4name   = Vacskin (Blunt)
+| set4armor1 = {{Q|Vacskin gland|Armor - Blunt|0}}
+}}
+|-
+! Heat
+|-
+| {{Apparel Protection Chart
+| color = red, grey, black, #9a7bc8
+| set1name   = Toughskin (Heat) 
+| set1armor1 = {{Q|Toughskin gland|Armor - Heat}} 
+| set2name   = Armorskin (Heat) 
+| set2armor1 = {{Q|Armorskin gland|Armor - Heat}}  
+| set3name   = Stoneskin (Heat) 
+| set3armor1 = {{Q|Stoneskin gland|Armor - Heat}} 
+| set4name   = Vacskin (Heat)
+| set4armor1 = {{Q|Vacskin gland|Armor - Heat|0}}
+}}
+|}
+
+== Version history ==
+* [[Royalty DLC]] Release - Added.
+* [[Version/1.1.2563|1.1.2563]] - [[Toughskin gland|Toughskin]], armorskin, and [[stoneskin gland|stoneskin]] glands no longer stack
+* [[Version/1.1.2598|1.1.2598]] - Buffed from 35/20/40% to 52/20/40%
+
+{{nav|body parts|wide}}
+[[Category:Medical Item]] [[Category:Body Part]] [[Category:Implant]]

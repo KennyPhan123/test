@@ -1,0 +1,240 @@
+{{Split|reason= Individual pages for each ritual ala psycasts with a primary table providing the basics and links to it. This is too disjointed. Nav template also necessary}}
+{{Stub|reason=Role change ritual. Also rituals are not ideology-specific mechanics. Should non-ideology related rituals have a separate page? Adapt the empty sections at the bottom of page}}
+{{About|regular rituals|Psychic Rituals added by the [[Anomaly]] DLC|Psychic ritual}}
+'''Rituals''' are primarily options for [[ideoligions]],{{IdeologyIcon}} with a handful available through other DLC.{{RoyaltyIcon}}{{BiotechIcon}}{{OdysseyIcon}} They allow pawns to participate, with a variety of props, in the hope of eliciting some outcome. These outcomes range from simple but significant mood boosts to attracting new recruits to the colony.
+
+== Mechanics ==
+{{Stub|section=1|reason=General mechanics.}}
+Every ritual has a Quality, expressed as a percentage, associated with it. This value is influenced by a set of factors unique to each ritual type and determines the chance of positive and negative outcomes, with some ritual effects scaling to the outcome tier and others applying only at specific tiers.
+
+Do note that Quality is '''not''' the chance of success. 100% Quality only means that the chance of success cannot be improved further.
+
+The exact relationship between quality and success chance is not known, however the following approximation has been created through testing.
+
+Quality expressed as a number between 0 and 1; so 100%=1; 50%=0.5;
+* Terrible: 1/(4+(16×Q))
+* Boring: 3/(4+(16×Q))
+* Fun: 3×Q/(1+(4×Q))
+* Unforgettable: Q/(1+(4×Q))
+
+{| class="wikitable" style="margin: auto; text-align:center;"
+|{{Graph:Chart|width=400|height=220|xAxisTitle=Quality|yAxisTitle=Probability|legend=Result|type=stackedarea|
+|x=0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1
+|y1=0.25, 0.178571429, 0.138888889, 0.113636364, 0.096153846, 0.083333333, 0.073529412, 0.065789474, 0.05952381, 0.054347826, 0.05
+|y2=0.75, 0.535714286, 0.416666667, 0.340909091, 0.288461538, 0.25, 0.220588235, 0.197368421, 0.178571429, 0.163043478, 0.15
+|y3=0, 0.214285714, 0.333333333, 0.409090909, 0.461538462, 0.5, 0.529411765, 0.552631579, 0.571428571, 0.586956522, 0.6
+|y4=0, 0.071428571, 0.111111111, 0.136363636, 0.153846154, 0.166666667, 0.176470588, 0.184210526, 0.19047619, 0.195652174, 0.2
+|y1Title=Terrible|y2Title=Boring|y3Title=Fun|y4Title=Unforgettable|colors= #80000A, #ff8000, #93c47d, forestgreen}}
+|
+{| class="wikitable sortable text-valign:center mw-collapsible mw-collapsed"
+|+ Ritual Outcomes by Quality
+|- 
+! rowspan=2| Ritual<br/>Outcomes !! colspan = 11 |Q
+|- style="background-color:#Fa33300"
+!0% !! 10% !! 20% !! 30% !! 40% !! 50% !! 60% !! 70% !! 80% !! 90% !! 100%
+|-
+!Terrible
+| 25.00% || 17.86% || 13.89% || 11.36% || {{0}}9.62% || {{0}}8.33% || {{0}}7.35% || {{0}}6.58% || {{0}}5.95% || {{0}}5.43% || {{0}}5.00%
+|-
+!Boring
+| 75.00% || 53.57% || 41.67% || 34.09% || 28.85% || 25.00% || 22.06% || 19.74% || 17.86% || 16.30% || 15.00%
+|-
+!Fun
+| {{0}}0.00% || 21.43% || 33.33% || 40.91% || 46.15% || 50.00% || 52.94% || 55.26% || 57.14% || 58.70% || 60.00%
+|-
+!Unforgettable
+| {{0}}0.00% || {{0}}7.14% || 11.11% || 13.64% || 15.38% || 16.67% || 17.65% || 18.42% || 19.05% || 19.57% || 20.00%
+|}
+|}
+
+=== Ritual roles ===
+Every ritual has one or more roles for pawns to fill - some are required for the ritual to occur, such as the gladiators in the [[Rituals#Gladiator duel|gladiator duel]], others are optional and either increase the quality of the ritual, apply the potential bonuses to the attending pawns, or both. Some ritual roles can be filled by multiple pawns at the same time, while others are limited to one pawn. 
+
+Some ritual roles have additional requirements, such as the pawn being of the correct ideoligion, being the correct ideoligious [[role]], not being [[downed]], or having sufficient [[capacity]]. 
+
+Pawns can spectate any ritual, regardless of whether their ideoligion matches that of the ritual itself.
+
+=== Ideoligious ritual additional rewards ===
+{{Ideology|section=1}}
+{{Stub|section=1|reason=Details}}
+When creating a ritual for an ideoligion, you have the option of adding a custom additional reward. If the ritual achieves either of the two positive outcomes (fun or unforgettable, or their equivalents), the bonus reward will trigger in addition to the ritual-specific rewards.
+
+None of the additional rewards can be applied to the funeral ritual. {{Check Tag|Verify}}
+
+{| class="wikitable"
+! Reward !! Description !! Required Meme
+|-
+| None
+| ''Adding an additional reward is optional.'' || ''Any''
+|-
+| Nearby faction goodwill 
+| ''You will gain goodwill from the nearest faction base.''
+* Gain [[goodwill]] from the [[faction]]{{Check Tag|Non-hostile?|What if the closest faction base is a perma-hostile faction like pirates?}} that owns the nearest [[faction base]]{{Check Tag|Verify|Check work sites & quest maps}} to the site of the ritual.{{Check Tag|Verify|E.g. If I have two colonies, can they affect different factions, if I do this on a non-colony map (e.g. ambush or site map) }}.
+** The amount of goodwill gained depends on the quality of the ritual - {{+|10}} for Fun and {{+|20}} for Unforgettable.{{Check Tag|Verify Numbers}}
+| ''Any''
+|-
+| Random recruit 
+| ''50% chance of random recruit of the same ideoligion joining your colony.''
+* A 50% chance that a pawn of your ideoligion will join from the map edge.{{Check Tag|Detail needed|What pawnkind? What Equipment? How Soon? etc}}
+| ''Any''
+|-
+| Discover ancient complex 
+| ''You will discover the location of an ancient complex nearby.''
+* Grants an [[ancient complex]] quest.
+* Won't trigger if you already know the location of any type of unexplored complex.{{Check Tag|All types?|Including relic hunt. Not sure about random quest ones. Mechanitor complex?}} The ritual window will warn you if that is the case.
+| ''Any''
+|-
+| Farm animals wander in 
+| ''A group of farm animals will be attracted and join the colony.''
+* A group{{Check Tag|How many?|Ideally include range}} of tamed 'farm animals' (such as [[cow]]s, [[sheep]], [[chicken]]s or [[goat]]s) will join from a map edge. Farm animals don't spawn in the wild and can only be found through trade or ritual rewards.
+| <ul><li>[[Rancher]]</li><li>[[Animal personhood]]</li><li>[[Nature primacy]]</li></ul>
+|-
+| Gauranlen pod sprout 
+| ''A [[Gauranlen pod]] will sprout at a random location on the map, if it can.''
+* Cannot spawn in extreme biomes.{{Check Tag|Detail Needed|Where? What radius? When? Etc}}
+| <ul><li>[[Tree connection]]</li><li>[[Nature primacy]]</li></ul>
+|-
+| Insect jelly 
+| ''Insect jelly deposits will be deposited from underground.''
+* The amount of [[insect jelly]] received depends on the quality of the ritual - 26 for Fun and 40 for Unforgettable.{{Check Tag|Verify Numbers}}
+* {{Check Tag|Detail Needed|Where? What radius? When? Etc}}
+* Note: The [[Insectoid]] faction must be enabled.
+| <ul><li>[[Tunneler (meme)|Tunneler]]</li></ul>
+|-
+| Psyfocus recharge {{RoyaltyIcon}} 
+| ''The psyfocus of all participants will be recharged to full.''
+* The [[psyfocus]] of all participants with a [[psylink]], regardless of role, is set to 100%. 
+** There is no effect on pawns without [[psylink]].
+| ''Any''
+|}
+
+== Overview table ==
+{{Ritual table}}
+
+== Analysis ==
+=== Funeral ===
+This is the only ritual involving the (possible) non-player caused death. It is generally considered the worst ritual, as it requires the death of a pawn - an expensive cost when other rituals are available with the same effects.
+
+Please note, you start a funeral by selecting your priest (or equivalent) and right clicking on the grave containing the deceased. The priest must be the same ideology as the deceased to access this.
+
+=== Social festival ===
+
+=== Dance party ===
+This is tied with "drum party" for the most "success bonuses" and shortest cooldown.
+
+=== Drum party ===
+This is tied with "dance party" for the most "success bonuses" and shortest cooldown.
+
+=== Skylantern festival ===
+<gallery>
+Skylantern Festival.png|Pawns celebrating the Skylantern festival by releasing skylanterns.
+</gallery>
+As the quality depends only on number of participants, this is arguably the best ritual for farming development points in the early game.
+
+Strategy:
+With 4 participants at Very Low expectations, the quality will be 80% giving a 57% chance of 6 points and 19% chance of 8 points as the only (scheduled) ritual. This can be achieved with the [[Quests#Noble_Wimp|Noble Wimp]]{{RoyaltyIcon}} quest on Day 8 in any scenario with 3 starting colonists.
+The remaining points can be easily obtained by raiding a work site (+3, requires Raiding: Respected) or enslaving and converting a prisoner (+2, requires Slavery:Honorable, note there is no downside to this precept at Very Low colony expectations); both precepts are available to any ideoligion.
+
+While reforming, the ritual can be immediately re-scheduled to the next day. Note that this requires some luck in aligning the initial date with the starting date of your colony.
+
+=== Christmas tree ===
+
+=== Symbol burning ===
+
+=== Smokeleaf circle ===
+The ritual indirectly results in your colonists getting the [[Smokeleaf joint#Stoned on smokeleaf|stoned on smokeleaf]] condition, which applies to them for approximately 18 hours. This results in a -30% consciousness debuff, making participants slow and ineffective workers or combatants. An unforgettable festival gives only a +8 mood buff (plus a short-lived mood buff from Stoned on Smokeleaf), so it is less effective for mood than dance or drum festivals. Furthermore, costing {{Icon Small|Smokeleaf leaves}} 150, the [[Burnbong]] is the equivalent of 37.5 smokeleaf joints.
+
+=== Cannibal feast ===
+
+=== Scarification ===
+{{Stub|section=1|reason=Can be done on prisoners? dev points?}}
+Is a ritual that will add scarification to a random part of the person who will get the scarification will get a mood buff of 'Got scarified' depending on what intensity of scarification in the ideology.
+
+=== Blinding ceremony ===
+This ritual causes significant pain, enough to incapacitate a Wimp. If the target gets incapacitated by the painshock, the ritual will be canceled. Giving a Wimp target go-juice before the ritual will prevent painshock and allow the ritual to proceed.
+
+=== Animal sacrifice ===
+Animal sacrifice does not cause the violent death penalty for butchering, and is thus an alternative to slaughtering.
+
+=== Prisoner sacrifice ===
+?
+
+=== Gladiator duel ===
+This ritual always has 100% quality if one of the fighters dies. There are a number of ways to maximize the chances of that happening:
+* Give the fighters [[go-juice]] or [[yayo]]. Getting downed by pain shock will end the ritual with a lower score. A [[war mask]], [[veil]], or [[cultist mask]] would also help. You can also use [[Painblock]].
+* Place a single melee weapon in the ring. One of the duelists will have an advantage and there will be a {{+|20%}} ''Weapon used'' quality bonus even if nobody dies. Note that duelists must have a [[manipulation]] [[capacity]] greater than 0% to pick up a weapon. [[Body part weapons]] do not count for this bonus. 
+* Choose one fighter with a high and the other with a low [[Melee]] skill to give the first one an advantage.
+* Remove '''one''' of the weaker fighter's hands. Do not remove both as pawns with 0% Manipulation cannot participate in the ritual.
+
+You can also minimize the chance of that happening:
+* You'll want to increase the [[pain]] level and lower the [[pain shock threshold]]. Give the fighters a [[torture crown]] or a [[mindscrew]]. Maybe some scars. Send a couple wimps to fight. Send a couple people that are already close to being downed, with no injuries to critical organs or the head.
+* If you do give them weapons, give them something blunt with low maximum damage, like a wood [[club]].
+* Give them some serious armor.
+
+Strip both gladiators before battle to prevent any clothes becoming [[tainted]] when they die. You can also pre-equip them with [[tainted]] clothes so that's not a problem.
+
+As adding the [[Ideoligion#Raider|Raider]] or [[Supremacist]] memes to an ideoligion automatically adds the Gladiator Duel ritual, it can be used to exceed the normal limit of 6 rituals. Simply have 6 non-gladiator duel rituals already enabled, and add the relevant meme either at creation or using a fluid ideoligion. Note that if you remove a ritual at any time, you will have to restart the process as it will still attempt to impose the 6 ritual limit.
+
+[[Wild man|Wild men]] cannot be used in gladiator duels, even if imprisoned.
+
+[[Child]]{{BiotechIcon}} [[slave]]s cannot be used, nor can child [[prisoner]]s.
+
+Duelists will not interacting while in ritual.
+
+Abilities such as [[fire spew]]{{BiotechIcon}} will not be used.
+
+The duel will end if a duelist has a mental break.
+
+If the duel is cancelled, then the duelists will drop any weapons they have picked up.
+
+=== Prisoner execution ===
+Execute a prisoner. Increases the suppression of [[slaves]].
+
+When Ideology is disabled, even with the "Satisfying" outcome, some pawns will get negative impressions (-2 Justified execution) **in addition** to the positive mood buff. This downside does not trigger for pawns with [[Bloodlust]] or guest pawns belonging to the [[Empire]] faction. {{Check Tag|Detail Needed|Spectacular affected too? Other traits?}}
+
+=== Trial ===
+''"Charge someone with a terrible wrongdoing and initiate a trial where they will be either convicted or exonerated. If the target is convicted, they can be freely imprisoned, executed or banished without penalty. The chance of conviction depends on the social abilities of the accuser and accused."''
+
+A trial is a good way to get rid of a colonist without a mood penalty, since the colonist will be considered guilty if the trial succeeds.
+
+=== Conversion ritual ===
+Reduce a pawn's [[certainty]], or outright convert a pawn to your ideoligion.
+
+=== Tree connection ===
+
+== Gallery ==
+<gallery>
+Ritual conversion ritual interface.png|Interface for starting a ritual showing the quality factors, expected outcomes, duration and participants
+Ritual_funeral_in_progress.png|Funeral ritual taking place after a dead colonist was interned in a jade sarcophagus
+Ritual tree connection in progress.png|Gauranlen tree connection/linking ritual in progress
+Ritual skylantern festival in progress.png|Skylanterns being let go during a skylantern festival
+Ritual scarification in progress.png|Scarification ritual after the subject has been cut
+Ritual animal sacrifice in progress.png|Toxalope animal sacrifice aftermath
+Ritual cannibal feast in progress.png|Cannibal feast
+Ritual trial in progress.png|Trial in progress for a captured raider
+Ritual conversion ritual in progress.png|Conversion ritual attempting to convert a prisoner to the colony's ideology
+Ritual blinding ceremony in progress.png|Colonist after they have been blinded in a blinding ceremony
+Ritual prisoner sacrifice in progress.png|Prisoner after being killed during a prisoner sacrifice ritual
+Ritual gladiator duel in progress.png|Two prisoners made to fight during a gladiator duel
+Ritual symbol burning in progress.png|Effigy set ablaze in a symbol burning ritual
+Ritual smokeleaf circle in progress.png|Smokeleaf circle ritual in progress including colonists downed due to their consciousness being dropped by the smokeleaf high
+Ritual social festival in progress.png|Social festival
+Ritual drum party in progress.png|Drum party with the maximum number of effective drums
+Ritual christmas tree in progress.png|Christmas tree
+Ritual dance party in progress.png|Dance party with the maximum number of effective speakers
+Ritual role change in progress.png|Role change
+</gallery>
+
+== Version history ==
+* [[Version/1.3.3066|1.3.3066]] - Throne speeches have been re-tooled into rituals.
+* [[Version/1.3.3067|1.3.3067]] - Fix: After a gladiator duel, the downed prisoner will be carried back to their bed but they won't actually be put in the bed, they will remain downed on top of the bed instead. Fix: Typo on anima tree linking ritual. Fix: If you design an ideoligion which has two words in its pawn "noun" you will not be able to bring people to trial.
+* [[Version/1.3.3087|1.3.3087]] - Fix: Blood from animal sacrifice automatically cleans itself before ritual even completes. Colorize the Tree Connection ritual icon to match the Gauranlen color.
+* [[Version/1.3.3101|1.3.3101]] - Fix: [[Wild man|Wild person]] can be used in gladiator duels, causes manhunter revenge. Wild man prisoners are no longer allowed to be used as duelists.  Fix: Duelists can pick up weapons during the duel even if they have no manipulation capacity. Fix: Scarification ritual now accepts prisoner targets again and doesn't break when target is a prisoner. Fix: You can start conversion ritual with a moral guide that can't speak. Fix: Non-colonist can be chosen as scarification target. 
+* [[Version/1.3.3117|1.3.3117]] - Ritual setup dialog now says what ideoligion the ritual comes from. Fix: Ritual timings are 1 day off. Pawns of any ideo can now spectate any ritual, even if it's not of their own ideo.
+* [[Version/1.3.3200|1.3.3200]] - Fix: Blood from scarification is from cutter, not cuttee. Fix: Psyfocus ritual reward does not recharge psyfocus to max.
+* [[Version/1.4.3523|1.4.3523]] - Fix: Ritual spectators will stand on beds or in doorways.
+* [[Version/1.4.3555|1.4.3555]] - Fix: Prisoners can refuse to attend their own execution due to temperature in the ritual area.
+* [[Version/1.4.3580|1.4.3580]] - Fix: Duels continue indefinitely if the duelists don't have beds.
+* [[Version/1.5.4062|1.5.4062]] - Fix: Pawns can be rescued in rituals. Fix: Required roles can leave rituals. Fix: Pawns participating in duels can equip weapons they are otherwise unable to do so (bladelinked, biocoded, bonded, etc). Fix: Duelists interacting while in ritual.  Fix: Ensure duelists drop their weapons if the duel is called off/canceled. Fix: Duels and misc ritual saving/loading. Fix: Abilities are used during duels. Fix: Slaves are unable to attack in duels without having an aggressive reaction set. Fix: Duel not ending if a fighter starts a mental break. Fix: Public Execution Ritual error. Fix: Errors on beginning conversion ritual. Fix: Loading a save during public execution causes an error, ritual never completes. Fix: Missing graphic in “begin ritual” window without ideology active. Fix: Spectators can reserve altar interaction spots during rituals.
+
+[[Category:Game mechanics]]

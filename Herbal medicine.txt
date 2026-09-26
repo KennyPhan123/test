@@ -1,0 +1,78 @@
+{{Infobox main|medicine
+| name = Herbal medicine
+| image = Herbal medicine.png
+| description = A pack of herbal concoctions typically extracted from the healroot plant. It is less potent than industrial pharmaceuticals, but much better than nothing.
+<!-- Base Stats -->
+| type = Medical Items
+| type2 = Medicine
+| tech level = Neolithic
+| hp = 60
+| deterioration = 6
+| marketvalue = 10
+| beauty = -4
+| mass base = 0.35
+| flammability = 1.3
+| stack limit = 25
+| path cost = 14
+| rotatable = false
+| days to rot = 150
+<!-- Medical -->
+| medical potency base = 0.6
+| medical quality max = 0.7
+<!-- Technical -->
+| defName = MedicineHerbal
+<!-- Unused -->
+| always haulable = true
+| draw gui overlay = true
+| e type = Medicine
+| graphic class = Graphic_Single
+| graphic path = Things/Item/Resource/MedicineHerbal
+| label = herbal medicine
+| parent name = ResourceBase
+| resource readout priority = Middle
+| selectable = true
+| sound drop = Standard_Drop
+| sound interact = Standard_Drop
+| thing class = Medicine
+| ticker type = Rare
+| use hit points = true
+}}
+{{Info|'''Herbal medicine''' is a natural [[Medicine (disambiguation)|medicine]] used in [[doctoring]] to improve the results of medical treatment over not using medicine at all, but is [[Medical Potency|significantly less effective]] than [[medicine|industrial-tech]] and [[glitterworld medicine]].}}  
+
+== Acquisition ==
+Herbal medicine can be harvested from [[healroot]] and [[wild healroot]], purchased from neolithic [[trade]]rs, or found on [[Tribal]] pawns. 
+
+A [[gauranlen tree]]{{IdeologyIcon}} [[dryad]] that has specialized into the [[Medicinemaker dryad]] caste will create four units of herbal medicine every two days.
+
+== Summary ==
+{{Stub|reason=Tend speed effects}}
+Any form of medicine can be used whenever a [[doctoring|doctor]] tends to an [[injury]] or [[disease]]. In most cases, medicine does not directly cause healing. Instead, using medicine and better types of medicine will increase [[tend quality]], increasing the [[injury#Healing rate|rate of healing]] for injuries, or slowing down progression of a disease. For [[gut worms]] and [[muscle parasites]], tend quality is directly used to cure the disease.
+
+With a Medical Potency of 60%, herbal medicine has a 60% multiplier on both [[tend quality]] and [[Doctoring#Operation_Success_Rate|surgery success]]. Herbal medicine has a maximum tend quality of 70%.
+
+In addition, herbal medicine will spoil in 150 days, or 2.5 years, if not refrigerated. See [[Temperature#Temperature thresholds|Temperature]] for details. It will also [[Deterioration|deteriorate]] when left outdoors, under the usual conditions.
+
+=== Experience ===
+{{Medicine Experience Gain Table}}
+
+== Usage ==
+Herbal medicine can also be used to make [[industrial-tech medicine]]. This requires {{Required Resources|Medicine}}, and a crafter with at least 4 Intellectual and 4 Crafting in order to do.
+{{Ingredient List|noCollapse=true}}
+
+== Analysis ==
+Herbal medicine is a cost-efficient choice for treating injuries and illnesses. With a good doctor, herbal medicine will be sufficient to treat almost all [[disease]]s, where its maximum tend quality of 70% will suffice. Even if you don't have a good doctor, if a patient is sufficiently far ahead of their disease, then herbal can be used to save industrial medicine.
+
+It often isn't practical to use herbal medicine for surgery, as a 60% medical potency means surgery has a greater chance to fail. But in the right setup and significant investment, it is possible to reach the 98% [[surgery|surgery success chance cap]], even with herbal medicine. For example, the following conditions give 98% success with herbal medicine:
+* Surgeon with 19 [[Medical]] skill, and with (at least) 125% [[Manipulation]] and 100% [[Sight]]
+* [[Sterile tile|Sterile room]] (0.6 Cleanliness) that is well-[[light|lit]]
+* [[Hospital bed]] of ''excellent [[quality]] or higher''
+
+For reference, [[medicine]] would allow a skill 8, manipulation 100% surgeon to perform with the same failure chance.
+
+Note that some surgeries, like [[carcinoma]] removal, are more difficult than usual. Others, like [[ovum]] extraction,{{BiotechIcon}} are much easier and require less stringent conditions. It is also possible to use herbal medicine for [[prisoner]]s and other pawns you don't care about, even if you don't reach the surgery success cap.
+
+== Version history ==
+* [[Version/0.8.657|0.8.657]] - Added
+* Beta 19/1.0 - now has a limit to maximum tend quality.
+
+[[Category:Medical Item]] [[Category:Medicine]]

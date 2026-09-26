@@ -1,0 +1,88 @@
+{{See also|Shelf}}
+{{Infobox main|furniture
+| name = Small shelf
+| image = ShelfSmall_south.png
+| description = A small triple-stack shelf that holds three times as much as empty ground. Items stored inside will never deteriorate and don't affect the beauty of their surroundings.<br>Since shelf space is limited, shelves cannot hold chunks, buildings, plants and large corpses.
+| type = Building
+| type2 = Furniture
+| placeable = true
+| path cost = 50
+| passability = pass through only
+| cover = 0.4
+| minifiable = true
+| size = 1 ˣ 1
+| mass base = 4
+| flammability = 1
+| hp = 50
+| sell price multiplier = 0.7
+| beauty = 0.5
+| terrain affordance = light
+| research = Complex furniture
+| work to make = 250
+| stuff tags = Metallic, Woody, Stony
+| resource 1 = Stuff
+| resource 1 amount = 10
+| has quality = false 
+| room role = Storeroom
+}}
+A '''small shelf''' is an item of [[furniture]] item that stores up to three stacks of items and protects them from [[deterioration]].
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+A small shelf acts like a [[stockpile zone]] that can hold 3 items in its tile. They cannot hold chunks, minified buildings, plants, or with a body size greater than 0.75. For a list of corpses that fit in a shelf when fully grown, see {{#ask: [[Body Size::<0.75]] | ?Body Size | ?Type | sort = Type, Type2, Name | limit = 0 | searchlabel = here}}. It also protects items from [[deterioration]] and removes their [[beauty]] penalty. Instead, the beauty of the area covered by the shelf is only the combined beauty of the shelf itself and the underlying [[floor]] or [[terrain]].
+
+Shelves slow passage, but do not block movement. This trait makes it possible for pawns to pick up/place items without actually stepping on its tile. They can be reinstalled as needed.
+
+A small shelf is identical to a [[shelf]] that takes one tile instead of two, other than the slight difference in work.
+
+=== Storage settings ===
+[[File:Shelf linking.png|thumb|left|150px|Linking small shelves and blueprints.]]
+The default storage settings is to contain general items at the "Preferred" priority level, but this can be changed at will, even while the shelf is still in an unfinished blueprint form. 
+
+Shelves can also be "linked" together in groups. Linked shelves will share the same storage settings. In order to link shelves, select the shelves you want to link (shift-click to select multiple items), then select the "Link settings" gizmo. You can link shelves, even if they are uncompleted. The link will keep the storage settings of the first shelf selected in a link.
+
+Shelves can be named, just like storage areas. It is done by clicking the "Rename" icon in the top left of the building info popup. This will give the shelf or the group it is linked to the name, which then can be used in [[bills]] to move the products to the specified shelf group. This allows for shelves to act in the same way as storage areas.
+
+== Analysis ==
+[[File:Shelf trick.png|thumb|left|200px|The "shelf trick". Shelves next to a worker's seat increase efficiency.]]
+A shelf's main use is to store items. Each shelf gives thrice the storage space per tile. They can store and "mask" many ugly items in your workstation, allow more [[meat]] into your freezer, protect weapons and mortar shells from [[deterioration]], etc. The removal of beauty penalty and their slight beauty boost make shelves convenient anywhere you want quick access to items, like medicine in a hospital. 
+
+Shelves can also make workers more efficient. Unlike actual storage zones, shelves allow a pawn to place or remove an item without walking on top of them. Working pawns can pick items off an adjacent shelf without needing to leave their seat, which significantly improves crafting time. This technique is best combined with "drop on floor when finished" and having other pawns restock the shelves. Even outside of workstations, not having to stand on top of the tile saves a very small amount of hauling time.
+
+Eventually, any item that can be put on a shelf should be stored on a shelf - this saves space, which saves walking time, reduces the number of [[cooler]]s and [[firefoam popper]]s required, decreases the [[wall]]s required, etc.
+
+=== Material analysis ===
+You should make the shelves as cheap as possible - the material of a shelf is largely irrelevant. Material impacts beauty, HP, and flammability. Of these stats:
+* The beauty and wealth increases are minimal, unless impractical materials like [[gold]] are used. If colonists spend only a short time near the shelf, such as in warehouse storage areas, then both stats don't matter at all. 
+* HP is redundant, as shelves should be very rarely under attack. In any case, shelves of cheap materials are cheap to replace.
+* Flammability rarely matters, as a nonflammable shelf doesn't protect any items on it. If flammability is a concern, then [[stone]] is cheap, durable, and nonflammable.
+For the purposes of [[raid points#Wealth points|raid points]], wealth from buildings is halved. Therefore the impact of shelf material on raids is practically nonexistent, unless you're playing on a 500% threat scale [[difficulty]], or if you're using shelves made of [[gold]].
+Compared to 2 small shelves, the regular shelf takes 83% the work, but is a bigger loss if destroyed from a targeted [[tantrum]]. Either way, the differences are small - place mini shelves where they would fit, and regular shelves elsewhere.
+{{Building Stats Table}}
+
+== Styles ==
+{{Ideology|section=true}}
+[[Ideoligion]]s allow the selection of styles which then change the texture of the certain items and buildings when constructed by the colony. These style variants can be crafted if the colony has the selected style, or can be looted from raiders from factions with the requisite style.
+
+<gallery>
+File:Small shelf techist.png|Techist variant facing south
+File:Small shelf techist east.png|Techist variant facing east
+File:Small shelf techist north.png|Techist variant facing north
+</gallery>
+
+== Gallery ==
+<gallery>
+File:Small shelf standard south.png|Standard variant facing south
+File:Small shelf standard east.png|Standard variant facing east
+File:Small shelf standard north.png|Standard variant facing north
+</gallery>
+
+== Version history ==
+* [[Version/1.4.3523|1.4.3523]] - Added.
+* [[Version/1.4.3525|1.4.3525]] - Fix: Shelves cause non-haulable things in the same cell to not affect beauty.
+* [[Version/1.5.4062|1.5.4062]] - Allow creating storage groups for single shelves by clicking the "rename" button on the inspect pane. Removed quality from the building.
+
+{{Nav|furniture|wide}}
+[[Category:Furniture]]

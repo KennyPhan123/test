@@ -1,0 +1,86 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Royalty/Psycasts}}
+|}
+----
+{| {{STDT| c_07}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Neural heat" <!-- defName="PsychicEntropy", ParentName="DiseaseBase" -->
+! Neural heat
+----
+* Def Name:<br />PsychicEntropy
+* Label:<br />neural heat
+| Despite being called "heat", neural heat is not a measure of temperature. It refers to a type of chaotic psychic energy in the mind which builds up when using psychic powers and dissipates over the course of a few seconds or minutes.<br /><br />If neural heat is pushed past normal limits, it may cause temporary psychic breakdown and unconsciousness due to psychic shock. These conditions don't cause permanent damage.
+----
+Chaotic energy in the mind which builds up when using psychic powers. If pushed past normal limits, it may cause psychic breakdown and unconsciousness.
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|90%|100%|35%}}
+* Initial Severity: '''0.1%'''
+* Is Bad: {{Bad|true}}
+* Description Hyperlinks:
+** '''[[Hediffs#Psychic breakdown|Psychic breakdown]]'''
+** '''[[Hediffs#Psychic shock|Psychic shock]]'''
+* Remove On Redress Chance By Days Curve:
+<div><li style="display: inline-table;">
+{| {{STDT| c_07}}
+! Days !! Chance
+|-
+! 0
+| 0%
+|-
+! 2
+| 0%
+|-
+! 7
+| 50%
+|-
+! 20
+| 100%
+|}{{Graph:Chart|width=200|height=200|xAxisTitle=Days|yAxisTitle=Remove On Redress Chance|type=line|x=0, 2, 7, 20|y=0, 0, 0.5, 1|interpolate=monotone|xGrid=|yGrid=}}</li></div>
+* '''Comps'''
+** ''Disappears On Death''
+** ''Severity From Entropy''
+|<!-- Stages -->
+{| {{STDT| c_07}}
+! Label !! Parameters
+|-
+! safe
+|<!-- Parameters -->
+* Min Severity: '''0%'''
+|-
+! overloaded
+|<!-- Parameters -->
+* Min Severity: '''100%'''
+* Hediff Giver: '''Add Severity'''
+** Hediff: '''[[Hediffs#Psychic breakdown|Psychic breakdown]]''' (bear in mind that when you go to a high level you also have to fall through the lower ones)
+** Severity Amount: '''2'''
+** {{MTB}} Hours: '''2'''
+|-
+! very overloaded
+|<!-- Parameters -->
+* Min Severity: '''133%'''
+* Hediff Giver: '''Add Severity'''
+** Hediff: '''[[Hediffs#Psychic breakdown|Psychic breakdown]]'''
+** Severity Amount: '''4'''
+** {{MTB}} Hours: '''2'''
+|-
+! extreme
+|<!-- Parameters -->
+* Min Severity: '''166%'''
+* Hediff Giver: '''Add Severity'''
+** Hediff: '''[[Hediffs#Psychic breakdown|Psychic breakdown]]'''
+** Severity Amount: '''6'''
+** {{MTB}} Hours: '''2'''
+|-
+! overwhelming
+|<!-- Parameters -->
+* Min Severity: '''200%'''
+* Hediff Giver: '''Refresh'''
+** Hediff: '''[[Hediffs#Psychic shock|Psychic shock]]'''
+* Hediff Giver: '''Add Severity'''
+** Hediff: '''[[Hediffs#Psychic breakdown|Psychic breakdown]]'''
+** Severity Amount: '''8'''
+** {{MTB}} Hours: '''2'''
+|}<noinclude>
+|}</noinclude>

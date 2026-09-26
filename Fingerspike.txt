@@ -1,0 +1,149 @@
+{{Anomaly}}
+{{Stub|reason=General but also specifically mechanical summary }}
+{{infobox main|entity
+| name = Fingerspike
+| image = Fingerspike.png
+| description = A fleshy dog-sized creature with a single spiked limb. Despite their short legs, fingerspikes can move remarkably fast.
+<!-- Base Stats -->
+| type = Entity
+| type2 = Basic
+| flammability = 1.25
+<!-- Containment -->
+| minimum containment strength = 20
+| anomaly knowledge = 1
+| knowledge category = Basic
+| study interval = 120000
+| bioferrite density = 2
+| gets cold containment bonus = true
+| min monolith level for study = 1
+| requires holding platform = true
+| base escape interval MTB days = 60
+<!-- Pawn Stats -->
+| combatPower = 25
+| movespeed = 5.1
+| healthscale = 0.5
+| bodysize = 0.6
+| diet = none
+| lifespan = 10
+| trainable = None
+| toxic resistance = 0.5
+| min comfortable temperature = -40
+| max comfortable temperature = 60
+<!-- Production -->
+| meatname = Twisted meat
+| meatyield = 70
+<!-- Combat -->
+| damage = 7
+| damage type = RangedStab
+| armorPenetration = 100
+| range = 3.9
+| mode = Single-Shot
+| warmup = 30
+| cooldown = 120
+| burst = 1
+| velocity = 55
+| DPS = DPS
+| attack1dmg = 7
+| attack1type = Stab
+| attack1part = MiddleSpike
+| attack1cool = 2
+| attack1label = spike
+| attack1labelNoLocation = spike
+| attack1alwaysTreatAsWeapon = true
+| attack1chancefactor = 0.5
+| attack2dmg = 3
+| attack2type = Blunt
+| attack2part = HeadAttackTool
+| attack2cool = 2
+| attack2label = head
+| attack2ensureLinkedBodyPartsGroupAlwaysUsable = true
+| attack2chancefactor = 0.2
+<!-- Technical -->
+| defName = Fingerspike
+| label = fingerspike
+<!-- Other -->
+| lifestages = Fully Formed Entity
+| body = Fingerspike
+| renderTree = Fingerspike
+| deathAction Class="DeathActionProperties_Vanish" = 
+| workerClass = DeathActionWorker_Vanish
+| filth = Filth_TwistedFlesh
+| filthCountRange = 1~3
+| meatExplosionSize = Small
+| lifeStageAges: def = EntityFullyFormed
+<!-- Class="CompProperties_CanBeDormant" -->
+| maxDistAwakenByOther = 3
+| wakeUpDelayRange = 100~200
+| jobDormancy = true
+<!-- Class="CompProperties_WakeUpDormant" -->
+| wakeUpOnDamage = true
+| wakeUpCheckRadius = 4.9
+| wakeUpIfAnyTargetClose = true
+| wakeUpWithDelay = true
+| activateMessageKey = MessageFingerspikeDisturbed
+| activatePluralMessageKey = MessageFingerspikeDisturbedPlural
+| wakeUpTargetingParams = 
+| canTargetBuildings = false
+| canTargetAnimals = false
+| canTargetMechs = false
+| canTargetHumans = true
+<!-- ThingDef Name="BaseFleshbeast" ParentName="BasePawn" Abstract="True" = 
+| thingClass = Pawn
+| category = Pawn
+| selectable = true
+| containedPawnsSelectable = true
+| containedItemsSelectable = true
+| tickerType = Normal
+| altitudeLayer = Pawn
+| useHitPoints = false
+| hasTooltip = true
+| soundImpactDefault = BulletImpact_Flesh
+| drawHighlight = true
+| tradeability = None
+| hiddenWhileUndiscovered = true
+| renderTree = Misc
+| thinkTreeMain = Fleshbeast
+| thinkTreeConstant = FleshbeastConstant
+| intelligence = ToolUser
+| specificMeatDef = Meat_Twisted
+| overrideShouldHaveAbilityTracker = true
+| disableIgniteVerb = true
+| canOpenFactionlessDoors = false
+| needsRest = false
+| hasGenders = false
+| bloodDef = Filth_Blood
+| bloodSmearDef = Filth_BloodSmear
+| soundMeleeDodge = Pawn_MeleeDodge
+| fleshType = Fleshbeast
+| isImmuneToInfections = true
+| bleedRateFactor = 0.5
+| hediffGiverSets = Fleshbeast
+| corpseHiddenWhileUndiscovered = true
+| inspectorTabs = ITab_Pawn_Health, MayRequire="Ludeon.RimWorld.Anomaly" = ITab_Entity, ITab_Pawn_Log
+| Class="CompProperties_InspectString" = 
+| compClass = CompInspectStringEmergence
+| inspectString = Emerged from {SOURCEPAWN_labelShort}.
+| drawGUIOverlay = true
+-->
+}}
+'''Fingerspikes''' are [[entities]], and type of [[fleshbeast]], added by the [[Anomaly DLC]]. 
+
+== Occurrence == 
+Fingerspikes show up at any and every flesh beast attack/event and can also be found in ancient dangers.
+
+== Summary ==
+They are incredibly weak and most colonists can even kill them in melee by ranged fighters or unarmed.
+
+== Analysis ==
+The biggest danger comes from the fact that they spawn in the explosion of trispikes and fly behind the melee lines of your colonists potentially stopping the ranged colonists from shooting at dangerous targets. While harmless, it is also barely worth holding them due to extremely low yields.
+
+== Health ==
+{{Animal Health Table|Fingerspike}}
+{{Pawn Attack Table}}
+
+== Version history == 
+* [[Anomaly DLC]] Release - Added.
+
+{{Nav|entity|wide}}
+[[Category: Entities]]
+[[Category: Fleshbeasts]]

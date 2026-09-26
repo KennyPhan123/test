@@ -1,0 +1,100 @@
+{{See also|Small shelf}}
+{{Infobox main|furniture
+| name = Shelf
+| image = Shelf south.png
+| description = A shelf for storing miscellaneous items. Items stored in this will not affect room beauty and they won't deteriorate, even if outside.
+| type = Building
+| type2 = Furniture
+| placeable = true
+| path cost = 50
+| passability = pass through only
+| cover = 0.4
+| minifiable = true
+| size = 2 ˣ 1
+| mass base = 8
+| flammability = 1
+| hp = 100
+| sell price multiplier = 0.7
+| beauty = 0.5
+| terrain affordance = light
+| research = Complex furniture
+| work to make = 500
+| stuff tags = Metallic, Woody, Stony
+| resource 1 = Stuff
+| resource 1 amount = 20
+| has quality = false
+| room role = Storeroom
+}}
+A '''shelf''' is an item of [[furniture]] item that stores up to six stacks of items and protects them from [[deterioration]].
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+A shelf acts like a [[stockpile zone]] that can hold 3 items a tile, or 6 items per shelf. They cannot hold [[chunk]]s, minified [[buildings]], [[plants]], [[toxic wastepack]]s {{BiotechIcon}} or corpses with a body size greater than 0.75. For a list of corpses that fit in a shelf when fully grown, see {{#ask: [[Body Size::<0.75]] | ?Body Size| ?Type | sort = Type, Type2, Name | limit = 0| searchlabel = here}}. It also protects items from [[deterioration]] and removes their [[beauty]] penalty. Instead, the beauty of the area covered by the shelf is only the combined beauty of the shelf itself and the underlying [[floor]] or [[terrain]].
+
+Shelves slow passage, but do not block movement. This trait makes it possible for pawns to pick up/place items without actually stepping on its tile. They can be reinstalled as needed.
+
+A shelf is functionally identical to a [[small shelf]] that takes up two tiles rather than one. There are a few minor differences as a building.
+
+=== Storage settings ===
+[[File:Shelf linking.png|thumb|left|150px|Linking small shelves and blueprints.]]
+The default storage settings is to contain general items at the "Preferred" priority level, but this can be changed at will, even while the shelf is still in an unfinished blueprint form. 
+
+Shelves can also be "linked" together in groups. Linked shelves will share the same storage settings. In order to link shelves, select the shelves you want to link (shift-click to select multiple items), then select the "Link settings" gizmo. You can link shelves, even if they are uncompleted. The link will keep the storage settings of the first shelf selected in a link.
+
+Shelves can be named, just like storage areas. It is done by clicking the "Rename" icon in the top left of the building info popup. This will give the shelf or the group it is linked to the name, which then can be used in [[bills]] to move the products to the specified shelf group. This allows for shelves to act in the same way as storage areas.
+
+== Analysis ==
+[[File:Shelf_trick.png|thumb|left|200px|The "shelf trick". Shelves next to a worker's seat increase efficiency.]]
+A shelf's main use is to store items. Each shelf gives thrice the storage space. They can store and "mask" many ugly items in your workstation, allow more [[meat]] into your freezer, protect weapons and mortar shells from [[deterioration]], etc. The removal of beauty penalty and their slight beauty boost make shelves convenient anywhere you want quick access to items, like medicine in a hospital. 
+
+Shelves can also make workers more efficient. Unlike actual storage zones, shelves allow a pawn to place or remove an item without walking on top of them. Working pawns can pick items off an adjacent shelf without needing to leave their seat, which significantly improves crafting time. This technique is best combined with "drop on floor when finished" and having other pawns restock the shelves. Even outside of workstations, not having to stand on top of the tile saves a very small amount of hauling time.
+
+Eventually, any item that can be put on a shelf should be stored on a shelf - this saves space, which saves walking time, reduces the number of [[cooler]]s and [[firefoam popper]]s required, decreases the [[wall]]s required, etc.
+
+=== Material analysis ===
+You should make the shelves as cheap as possible - the material of a shelf is largely irrelevant. Material impacts beauty, HP, and flammability. Of these stats:
+* The beauty and wealth increases are minimal, unless impractical materials like [[gold]] are used. If colonists spend only a short time near the shelf, such as in warehouse storage areas, then both stats don't matter at all. 
+* HP is redundant, as shelves should be very rarely under attack. In any case, shelves of cheap materials are cheap to replace.
+* Flammability rarely matters, as a nonflammable shelf doesn't protect any items on it. If flammability is a concern, then [[stone]] is cheap, durable, and nonflammable.
+For the purposes of [[raid points#Wealth points|raid points]], wealth from buildings is halved. Therefore the impact of shelf material on raids is practically nonexistent, unless you're playing on a 500% threat scale [[difficulty]], or if you're using shelves made of [[gold]].
+
+Compared to 2 small shelves, the regular shelf takes 83% the work, but is a bigger loss if destroyed from a targeted [[tantrum]]. Either way, the differences are small - place mini shelves where they would fit, and regular shelves elsewhere.
+
+{{Building Stats Table}}
+
+== Styles ==
+{{Ideology|No category}}
+[[Ideoligion]]s allow the selection of styles which then change the texture of the certain items and buildings when constructed by the colony. These style variants can be crafted if the colony has the selected style, or can be looted from raiders from factions with the requisite style.
+
+<gallery>
+Shelf south.png|Base Variant
+Techist shelf.png|Techist Variant
+</gallery>
+
+== Gallery ==
+<gallery>
+Shelf south.png|Facing south
+Shelf north.png|Facing north
+Shelf east.png|Facing east
+</gallery>
+
+== Version history ==
+<!--Added as Equipment rack in or prior to Version/0.1.334-->
+* Alpha 16, it was known as the '''Equipment rack''' and could only store apparel, [[mortar shell]]s, or weapons.
+* [[Version/0.17.1546|0.17.1546]] - Renamed from '''Equipment rack''' to '''Shelf''', can now store anything instead of only apparel, mortar shells, and weapons
+* [[Version/1.1.0|1.1.0]] - Shelves were given a path cost. This made them slower to move on top of, but also enabled the behavior of placing items on them without walking on top of them. Prior to this, players would use the "stool trick" for crafting stations, where several stools were placed around a crafting station that had high-priority stockpiles on top of them. Stools had a path cost (but allowed stockpile zones), achieving a similar effect. Description now states that they hide beauty of things inside of them.
+* [[Ideology DLC]] Release - Received styles via new [[Ideoligion]] [[style]] system. 
+* [[Version/1.3.3200|1.3.3200]] - Added special thing filters for meat and veg ingredient-filled meals, insect meat, and cannibal food.
+* [[Version/1.3.3287|1.3.3287]] - Fix: Shelves, chairs and stools don't have style dominance.
+* [[Version/1.4.3523|1.4.3523]] - Shelves can now hold 3 items stacks per tile, or 6 items total, making them much more efficient for space. Removed ability to store [[chunk]]s, [[corpse]]s, minified [[building]]s, and other large items. Resource amount lowered from 30 to 20, work to make lowered from 600 to 500. Shelves can be linked into groups for easier management. [[Small shelf]] variant added.
+* [[Version/1.4.3525|1.4.3525]] - Fix: Shelves cause non-haulable things in the same cell to not affect beauty.
+* [[Version/1.5.4062|1.5.4062]] - Allow creating storage groups for single shelves by clicking the "rename" button on the inspect pane. Removed quality from the building
+
+<gallery>
+EquipmentRack.png|Equipment rack
+</gallery>
+
+{{Nav|furniture|wide}}
+[[Category:Furniture]]

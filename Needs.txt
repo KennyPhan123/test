@@ -1,0 +1,75 @@
+<!--Top Nav Box-->
+{| align=center
+| {{Character_Properties_Nav}}
+|}
+----
+<!-- End Nav -->
+__NOTOC__
+<onlyinclude>
+
+Pawns have basic '''needs''' that can trigger a variety of effects based on their current level, often being [[thoughts]], [[mood]], and changes to [[capacities]] and [[health]].
+
+== List of basic pawn needs ==
+* [[Saturation|Food]]: [[human]]s and [[animal]]s need [[nutrition]] to stay healthy. An empty food bar indicates [[starvation]], leading to [[malnutrition]] in various stages, and eventually [[death]]. Hunger lowers mood, and starvation [[Social fight|increases the irritability]] of a person. [[Ghoul]]s {{AnomalyIcon}} will eventually turn traitor against the colony if left unfed.
+* [[Rest]]: how rested the person or creature still is. An empty rest bar builds [[Rest#Levels of Rest|exhaustion]], which will eventually result in the exhausted pawns falling asleep on the spot. Being tired also puts the person in a bad mood and hampers their [[immunity gain speed]].
+
+=== Human only ===
+* [[Recreation]]: the need to spend time on varied enjoyable activities. Unsatisfied recreation will trigger {{Thought|desc=We need more variation in the recreation activities, and I need more time to enjoy them./We need more variation in the recreation activities, and I need more time to enjoy them. This place is really dull./It's been so long since I did anything for fun on my own time.|label=Recreation unfulfilled/deprived/starved|value=-5|value2=-10|value3=-20}}.
+* [[Beauty]]: the desire to exist in a visually pleasing environment.  May trigger a mild mood penalty when unsatisfied, and a substantial mood bonus when satisfied. [[Sight|Blind pawns]] have no need for, nor appreciation of beauty.
+* [[Comfort]]: people want to sit in comfortable [[chair]]s and sleep in cozy [[bed]]s. Otherwise they get mildly irritated, but when satisfied it makes them quite happy.
+* [[Outdoors]]: the need to be outside, ie. not under a [[roof]] or [[Mountain#Roofs|mountain top]].  Pawns that are indoors for too long grow increasingly unhappy.
+* [[Indoors]]: the need to be inside, ie. under a roof or mountain top. Pawns that are outdoors for too long grows increasingly unhappy. Only appears and replaces Outdoors needs if pawn has the [[Undergrounder]] trait or the pawn has an [[ideoligion]]{{IdeologyIcon}} with the [[Indoors (precept)|Indoors: Preferred]] precept.
+* [[Chemical (Need)|Chemical]]: the general need to consume [[social drugs|social]] and [[hard drugs]] of any kind, distinct from [[addiction]]s. Pawns that spend too long without consuming drugs will become increasingly unhappy. Only appears if pawn has the [[Chemical interest]] or [[Chemical fascination]] trait.
+* [[Learning]]: present only in [[children]].{{BiotechIcon}}  Children need new lessons and experiences to [[Growth moments|grow up well]], and will become unhappy without them.  Children will only do learning activities when their [[schedule]] is set to Recreation or Anything.  A satisfied learning need helps children gain growth tiers faster, giving them more passions and choices during growth moments.
+* [[Reproduction#Play|Play]]:{{BiotechIcon}} present only in [[babies]]. Babies need to be played with by adults, or else they will become unhappy.
+* [[Kill satiety]]:{{BiotechIcon}} present only in [[Kill thirst|specific]] [[Xenogerm|genetically modified]] humans. Humans with unfilled kill satiety will start to suffer {{Thought|desc=Must kill... It has been too long since I have killed somebody up close and personal.|label=Kill thirst|value=-4}}, scaling up to {{Thought|desc=Must kill... It has been too long since I have killed somebody up close and personal.|label=Kill thirst|value=-18}}. Kill satiety fully refills after the afflicted pawn kills another human in melee combat.
+* [[Deathrest]]:{{BiotechIcon}} present only in specific [[Sanguophages|genetically modified humans]].{{BiotechIcon}}  People with the deathrest gene must deathrest every few days or quadrums. Deathresting means entering a regenerative coma for several days, during which the rester appears dead.  A variety of special buildings can connect to a deathresting person and give them bonuses upon waking. Going too long without deathrest will cause deathrest exhaustion, which massively degrades physical capacities.
+* [[Hemogen]]:{{BiotechIcon}} present in [[Hemogenic]] pawns.{{BiotechIcon}}  It decays over time, is consumed and required by hemogenic abilities, is refilled by [[bloodfeeder|bloodfeeding]] or consuming [[hemogen pack]]s and [[human meat]]. When low, it inflicts increasingly severe [[mood]], [[pain]], and [[consciousness]] penalties.
+
+=== Mechanoid only ===
+* [[Power|Energy]]:{{BiotechIcon}} present only in colony owned [[mechanoid]]s.{{BiotechIcon}} A reserve of bioelectric energy needed for a mechanoid to function, energy recharges very slowly when left on dormant self-charging mode, and can be sped up by letting mechs draw power from a [[mech recharger]]. If it reaches zero, the mech will be forced into dormant self-charging mode unless hauled to a recharge station.
+
+=== Drug addictions ===
+
+Any [[Drugs|drug]] addictions a pawn has developed become ''needs'' for that pawn, and need to be satisfied like the need for food and rest.  Failure to do so puts the pawn into [[withdrawal]], which can be an extremely disrupting or even [[Luciferium|fatal]] situation. 
+
+After a person has successfully withdrawn from the drug, the need will disappear entirely.
+
+=== The ''Needs'' window of a pawn ===
+
+[[File:Colonist needs beauty.png|frame|right|Example view of a colonist's needs window with the beauty level highlighted.]]
+
+This window is shown if you select a colonist's ''needs'' tab.  It can also be displayed for prisoners, guests and tame animals, but will display fewer statistics in some of these cases (eg. animals do not have ''beauty'' and ''comfort'' needs, and no ''thoughts'' at all).
+
+The colonist in the displayed example has no positive or negative ''mood thoughts'' yet, besides a default thought reflecting his current expectations: in this case, particularly low expectations trigger a very positive mood thought for +30 mood.
+
+==== Showing more information ====
+
+You can mouse over the various meters to have the game give you more information in a tooltip.  In the example, the ''beauty'' meter is currently selected, and the tooltip displays its current level ("49%") with some text detailing the meaning.  Some of the meters display very detailed explanations when selected.
+
+==== How to read the levels ====
+
+The '''red and green triangles''' show the current tendencies of the meters: in this example, the ''mood'' level is growing, the ''outdoors'' level is not changing, and all the other levels are shrinking.
+
+The '''white triangles''' show where the mood, beauty and comfort levels will settle if the current situation of the pawn does not change: the pawn from the example will have a little higher overall mood, somewhat lower beauty level, and zero comfort.
+
+If a meter has white triangles, the tendency of the meter will be ''falling'' if the white marker is ''inside'' the bar, and ''rising'' if the marker is outside the bar.  That is because the white marker shows the eventual end point for the level.
+
+Since the white markers represent the current, immediate situation, their positions will change often, and not necessarily have a substantial impact on the need level.
+
+The '''black hatch marks''' on the level meters represent the '''threshold points''' where the [[mood]] of the colonist will change because of a [[thought]] that would occur at that point.  In the example, the ''beauty'' level is at 49%, right in the middle, but the white marker indicates that it will fall to somewhat below 35%, the position of the second hatch mark.  This will then incur the thought "Unsightly environment" and a -5 mood penalty.
+
+The hatch marks on the mood gauge show the thresholds for minor, major and extreme [[mental break]]s.  Mental breaks are not good...
+
+==== This is confusing, I still don't understand... ====
+
+The main aspect to focus on when looking at the needs window is the position of the white mood marker in relation to the current level of the mood bar.  The mood bar will always try to catch up with the marker, and various [[thought]]s will appear or disappear in the process, changing the mood of the colonist.
+
+Do not get confused by the white marker seemingly always being in the "wrong position" – this is not true, because it actually ''does'' reflect the current situation of the colonist, while the meter level grows and shrinks more slowly.
+
+The meter levels display the ''long term situation'' of the pawn, while the markers show you the ''immediate circumstances''.  Short-term events do not instantly lead to a mental breakdown or euphoric mood, but eventually they will.  This is how you would expect the character to react psychologically if it was a real person.
+
+The markers on the ''comfort'' and ''beauty'' bar are much less important, you will usually only look at them if you want to precisely examine how the current environment of the pawn impacts these needs.  The ''food'', ''rest'' and ''recreation'' bar do not even have markers: they are naturally falling towards zero, unless the pawn is eating, sleeping or relaxing – like fuel meters.
+</onlyinclude>
+{{nav|status levels|wide}}
+[[Category:Status Level]]

@@ -1,0 +1,43 @@
+{{Version Nav}}
+
+EDIT 2: It appears there's a lot of incompatibility between mods at the moment. Mainly this derives from a recent change in how the Harmony mod worked, which was itself compelled by a change in Unity/.NET. This broke compatibility with many other mods. Here is a full article about Harmony from its author explaining what happened.
+
+The recommended fix for now is:
+
+# Disable the Replace Stuff mod.
+# Place the mods HubsLib and Harmony directly after Core/Royalty in the mod load order.
+
+That should address most issues, but a some mods may still need to be updated over the next days.
+
+I'm talking to modders more so we can pass along info about this kind of thing more clearly in the future.
+
+I originally reverted the hotfix after getting these crash reports, but I've released it again since we haven't found any crashes from the hotfix itself.
+
+ORIGINAL POST FOLLOWS:
+
+A new hotfix for 1.1 has been released. It should be compatible with all mods and saves. The version is 1.1.2559.
+
+Note that some recent changes within mods were breaking the game for some people. The mod Harmony changed how it interacts with other mods, so some other mods are now broken until they update.
+
+== Change list for this hotfix update ==
+
+* Avoid spawning quest [[Imperial shuttle|shuttle]]s near fires, hostile things and map edges.
+* Map mouse drag sensitivity improvements, it's now configurable via Prefs. Improved middle button scrolling for world camera as well.
+* Decrease minimum comfortable temperature for [[yak]], [[donkey]], and [[goat]].
+* Increase min points for mech cluster incident 300 -> 500.
+* [[Burden]] range increased from 25 to 30. Stun entropy cost increased from 10 to 12. Stun range decreased from 25 to 20.
+* Harvest decrees now check the temperature of the next 15 days to see if anything can grow.
+* Hide items that Tribute Collector is not willing to trade from trade screen.
+* [[Art bench]] no longer crafts [[harp]] and [[harpsichord]]; they are on the [[crafting spot]] and [[Smithing bench|smithies]]. Art bench didn't make sense since it uses the art work type, but these instruments take crafting skill.
+* [[Prisoner]] relations gain on release string when injured changed to 'Untended injury'
+* Adjust [[mini-slugger]] description to reflect its long range.
+
+== Fixes ==
+
+* Mitigate bug where save file lacking rules causes designators to be broken.
+* Fix: If you shoot a mech turret and it explodes and it hurts your quest helper, the quest helper's faction will hate you for it.
+* Fix Unrelated stats showing on mechanoids InfoCard
+* Fix: False "No acceptable food" alert on berries and reserved food.
+* Fix: Leaving a bandit camp mid-fight causes the quest to be incompletable
+* Fix: Compact weaponry act as replacement parts.
+* Fix: Missing "pawn != null" checks in ApparelScoreRaw.

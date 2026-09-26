@@ -1,0 +1,76 @@
+{{Biotech}}
+{{See also|Mech gestator}}
+{{Infobox main|building
+| name = Large mech gestator
+| image = MechGestatorLarge MenuIcon.png
+| description = A tank of mechanite-rich fluid with support tubes for feeding in materials and nutrients. Mechanitors can use it to produce new mechanoids or to resurrect dead mechanoids. This tier of mech gestator is capable of generating medium, heavy, and ultraheavy mechs.<br/>The process uses harsh chemicals which are stored in toxic wastepacks. Haulers must remove the wastepacks from time to time.
+| type = Building
+| type2 = Biotech (Buildings)
+| placeable = 
+| path cost = 
+| passability = pass through only
+| blockswind = 
+| cover = 0.5
+| minifiable = 
+| size = 4 * 3
+| flammability = 0.5
+| mass base = 35
+| hp = 350
+| beauty = 
+| power = -500
+| terrain affordance = 
+| research = Standard mechtech
+| skill 1 = Construction
+| skill 1 level = 6
+| work to make = 16000
+| resource 1 = Steel
+| resource 1 amount = 300
+| resource 2 = Component
+| resource 2 amount = 6
+| thingCategories = 
+| room role = Laboratory
+}}
+The '''large mech gestator''' is a [[building]] added by the [[Biotech DLC]] that allows for the creation and resurrection of larger [[mechanoids]] by a [[mechanitor]]
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+The large mech gestator is used to build and revive all medium, heavy, and ultraheavy mechanoids. It cannot gestate light mechanoids. Consumes 500 W of power when gestating a mech, and 50 W otherwise. If power is lost during gestation, the cycle will pause, but no other adverse effects will occur. The gestator can only be worked by a [[mechanitor]], and that mechanitor that works the gestator will be bonded to the mechs created.
+
+<div><li style="display: inline-table;">
+{| {{STDT|sortable c_03 text-center}}
+! Mech !! Materials !! [[Gestation cycle|Gestation<br/>Cycles]] !! Required<br/>Research
+|-
+{{#ask: [[Production Facility 1::Large mech gestator]] OR [[Production Facility 2::Large mech gestator]] OR [[Production Facility 3::Large mech gestator]] OR [[Production Facility 4::Large mech gestator]]
+| named args = true
+| ?Name = ?Name
+| ?Gestation Cycles = ?Gestation Cycles 
+| ?Required Research = ?Required Research
+| format = template
+| template = :Mech gestator
+| link = none
+| limit = 300
+| sort = From DLC, Type, Type2, Name}}
+|}
+</li><div>
+In between each [[gestation cycle]], the mechanitor must initiate the next one, which is considered Smithing work.
+
+Resurrection bills are split into the classes and can only be used on dead friendly mechanoids. 
+* '''Resurrect Medium Mech:''' Requires {{Icon Small|Steel||50}} [[steel]], and 1 [[gestation cycle]] taking {{Ticks|1800}} to initiate.
+* '''Resurrect Heavy Mech:''' Requires {{Icon Small|Steel||100}} [[steel]], and 1 [[gestation cycle]] taking {{Ticks|1800}} to initiate.
+* '''Resurrect Ultraheavy Mech:''' Requires {{Icon Small|Steel||150}} [[steel]], and 1 [[gestation cycle]] taking {{Ticks|1800}} to initiate.
+
+== Analysis ==
+Functions identically to the [[mech gestator]], outside of which [[mechanoids]] it can gestate, the building's size, and its power consumption.
+
+Most large mechanoids are dedicated for combat. Only [[tunneler]]s are able to do work tasks, and even then, it can hold a fair fight. If you don't plan on using the heavier combat mechanoids, then the uses of the large mech gestator are limited.
+
+== Version history ==
+* [[Biotech DLC]] Release - Added.
+* [[Version/1.4.3529|1.4.3529]] - Fix: Some Biotech buildings can have un-reachable fires in the center cell.
+* [[Version/1.5.4062|1.5.4062]] - Fix: Mech gestators spawning mechs early.
+
+{{Nav|biotech|wide}}
+{{Nav|mechanoid|wide}}
+[[Category:Biotech (Buildings)]]

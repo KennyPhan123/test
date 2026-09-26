@@ -1,0 +1,78 @@
+{{infobox main|structure
+| name = Sterile tile
+| image = ground sterile tile.png
+| description = Sterile tiles with special cleanliness-enhancing properties. Extra-clean rooms improve outcomes in hospitals and research labs. This tile is very slow to build, but quick to clean.
+<!-- Base Stats -->
+| type = Floor
+| marketvalue = 24
+| beauty = -1
+| flammability = 0
+<!-- Building -->
+| size = 1 ˣ 1
+| placeable = True
+| cleanliness = +0.6
+| cleaning time factor = 0.6
+| filth multiplier = 1
+| speed = 1
+<!-- Creation -->
+| research = Sterile materials
+| work to make = 1600
+| skill 1 = Construction
+| skill 1 level = 6
+| resource 1 = Steel
+| resource 1 amount= 3
+| resource 2 = Silver
+| resource 2 amount = 12
+| deconstructable = true
+<!-- Wiki -->
+| page verified for version = 1.3.3101
+}}
+{{Info|'''Sterile tile''' is a type of [[floor]]. It has the highest [[Room stats#Cleanliness|cleanliness stat]] of all floors and is non-flammable.}}
+
+== Acquisition ==
+Sterile tiles can be constructed once the [[Research#{{P|Required Research}}|{{P|Required Research}}]] research project has been completed. Each tile requires {{Required Resources}}, {{Ticks|{{P|Work To Make}}}} of work, and a [[{{P|Skill 1}}]] skill of {{P|Skill 1 Level}}.
+
+This tile is relatively slow to construct, taking almost 19x longer than a standard [[wood floor]].
+
+== Summary ==
+Sterile tiles boost [[cleanliness]] by {{+|{{P|Cleanliness}}}}, meaning an entire room of sterile tiles will have {{P|Cleanliness}} Cleanliness. In addition, they only take {{Good|{{%|{{P|Cleaning Time Factor}}}}}} of the time to clean, but have {{Bad|{{P|Beauty Base}}}} [[beauty]] per tile. Sterile tiles are non-flammable and do not penalize walk speed.
+
+== Analysis ==
+Cleanliness is important for a few different types of [[rooms]] and buildings. Having a high base cleanliness from sterile tiles means a greater margin before [[filth]] accumulation matters and, in some cases, provides additional bonuses. The following are affected:
+* '''Hospitals:''' In a full room of sterile tiles, surgery success is increased by roughly {{Good|x1.02}} from 0 cleanliness. [[Infection]] chance per wound is also multiplied by x30%, compared to x50% at 0 cleanliness.
+** While the maximum surgery success chance (98%) is possible without sterile tile, the extra cleanliness provides a buffer when patients start bleeding all over the floor and the extra tend quality can all save a pawn's life. Sterile tiles should be installed when you can afford it.
+* '''Laboratories:''' [[Research]] is accelerated in a clean room by up to {{+|9%}} in a sterile room, when compared to 0 cleanliness.
+* '''Kitchens:''' [[Cooking]] in a dirty room has a chance to give [[food poisoning]]. However, the cleanliness only needs to be at -2.0 or higher to avoid the higher chance. Therefore, even [[Terrain|dirt]] floor is sufficiently clean so long as filth is removed.
+** [[Straw matting]] is sufficient and prevents 95% of accumulated dirt and trash. For larger kitchens, this will save on cleaning time. For tiny kitchens, the cleaning time speed makes sterile tile faster.
+* '''[[Biosculpter pod]]s:'''{{IdeologyIcon}} Pods run up to {{+|15%}} faster in a sterile room. As room space doesn't matter, you can make a 2x3 room with just the pod inside it, which is easily affordable.
+* '''[[Gene assembler]]s:'''{{BiotechIcon}} Gene assemble is accelerated in a clean room by up to {{+|9%}} in a sterile room, when compared to 0 cleanliness.
+
+While Cleanliness will also increase room impressiveness, the material cost and [[beauty]] penalty makes it inefficient for doing so. [[Sculpture]]s, when combined with [[steel tile]]s, [[stone tile]]s, or even [[paved tile]] are more cost effective (with a competent artist). If Cleanliness is desired, then steel tiles have 0 beauty, give +0.2 cleanliness, and have the same clean time as sterile tile.
+
+In general, sterile tiles aren't an immediate priority to research. Get power, weapons, and enough defenses first so that your colony doesn't fall apart. Then you should get sterile tiles to help save lives and speed up research. The research is also a prerequisite for [[hospital bed]]s (and by extension [[vitals monitor]]s), which provide a further boost to medical success.
+
+=== Other clean flooring ===
+[[Steel tile]]s only provide 0.2 cleanliness, but have the same 60% cleaning time and do not impact beauty. However, steel tiles are cheaper, costing {{Icon Small|steel}} 7 [[steel]] ($16) rather than {{Required Resources}} ($24). In addition, steel tiles only require Smithing to be researched. If silver is low (but steel is high), or if sterile tiles have not been researched yet, then these are the best alternatives, and complete replacements for kitchen.
+
+[[Concrete]] and [[paved tile]]s have 0 cleanliness, and take a bit longer to clean (80% clean time), but are much cheaper. They only take {{Icon Small|steel}} 1 [[steel]] and {{Icon Small|steel}} 2 [[steel]], respectively, making them suitable before you can afford sterile tile. Concrete has -1 beauty, while paved tile has 0.
+
+[[Silver tile]]s and [[gold tile]]s are much more beautiful, and also have 0.2 Cleanliness. However, they are ''much'' more expensive than sterile tile, giving them an entirely separate use case - increasing general mood, not hospital effectiveness.
+
+=== Room creation ===
+As sterile tiles are relatively expensive, it is ideal to combine research rooms with [[biosculpter pod]]s{{IdeologyIcon}} to make the most of the buff. [[Gene assembler]]s{{BiotechIcon}} could also be added, although since [[xenogerm]] assembly is relatively short anyway, this is generally not worth the cost of sterile tile. However, research rooms should not be combined with a hospital as the research bench will get a penalty for not being in a dedicated room.
+
+Hospitals should initially be made small to save on resources, although not too small. The smallest room size to maintain cleanliness for triage is 4x5, but a single blood spill will make it dirty every time, not to mention the small size of the room reducing patient capacity. Increasing the size of the room will proportionally reduce the cleanliness impact from each individual pile of filth. Later on, increasing the room size can be done to improve the room impressiveness as well as give more space for hospital beds.
+
+Note that the floor under a [[door]] doesn't count for Cleanliness, so you don't need to place sterile tiles on a doorway. However, [[filth]] under a door ''does'' count, and colonists stepping from dirt or sand to flooring have a high chance to create filth, so players should still place ''some'' flooring under doors.
+
+=== In combination with straw matting ===
+Combining sterile tiles with [[straw matting]] can increase the cleanliness of a room, while decreasing the amount of filth. Put sterile tile under objects that won't be walked over, such as [[bed]]s, [[table]]s, and [[shelves]], and put straw matting elsewhere. [[Flower pot]]s or sculptures will offset the beauty from both tiles. Straw matting under the door is ideal as it won't reduce the cleanliness of the room but will prevent filth on that spot that can.
+
+Another strategy is to use short entryways (roughly 3-4 tiles long) made of straw. Separate the entryway from the main room with doors so that the cleanliness and beauty penalties of straw don't hurt the room's impressiveness (the doors between the entryway and main room don't need to remain closed, however, as their only purpose is to create a separate room).
+
+== Version history ==
+* [[Version/0.12.906|0.12.906]] - Added
+* [[Version/1.4.3523|1.4.3523]] - Beauty decreased from 0 to -1. Cleaning time factor added. Description changed from ''Sterile tiles with special cleanliness-enhancing properties. Extra-clean rooms improve outcomes in hospitals and research labs. This tile is very slow to build.'' to ''Sterile tiles with special cleanliness-enhancing properties. Extra-clean rooms improve outcomes in hospitals and research labs. This tile is very slow to build, but quick to clean.''
+
+{{Nav|floor|wide}}
+[[Category:Floor]]

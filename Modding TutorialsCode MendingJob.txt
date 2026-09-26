@@ -1,0 +1,400 @@
+{{DISPLAYTITLE:Example Mending Job}}
+{{BackToTutorials}}
+
+This is a basic RimWorld mod tutorial for having a pawn mend a piece of apparel or gear to learn the basics of Jobs, JobDrivers, and Toils. 
+
+== Goals ==
+In this tutorial you will:
+
+* Create a basic job to allow a pawn to mend apparel or weapons
+* Create a basic FloatMenuOptionProvider to order pawns to take the job
+* Learn how Jobs, JobDrivers, and Toils relate to one another in pawn behavior
+
+[[File:Example_Mending_FloatMenuOptionProvider.png|none|border]]
+
+== Recommended Reading ==
+For this tutorial, you are expected to have already familiarized yourself with setting up a solution, with the basics of how a FloatMenuOptionProvider functions, and how to set up a mod. If you have not yet reviewed these details, all of these topics can be found below:
+* [[Modding_Tutorials/Mod_Folder_Structure|Mod Folder Structure]]
+* [[Modding_Tutorials/Setting_up_a_solution|Setting Up a Solution]]
+* [[Modding_Tutorials/Decompiling_source_code|Decompiling Source Code]]
+* [[Modding_Tutorials/Code_FloatMenuOptionProvider|Example FloatMenuOptionProvider]]
+
+== Sample Repository ==
+A working implementation of this mod can be found [https://github.com/RWDevathon/ExampleMending in this GitHub repository]. You can use it to compare against your work or as a basis for modification! The repository contains comments explaining each part, if you prefer learning by seeing the larger picture. The comments in the repository will be explained in greater detail here.
+
+== Folder Setup ==
+
+First, you will want to create the files and folders necessary for this mod:
+
+<source>
+Mods
+└ MyModFolder
+  ├ About
+  │ ├ About.xml
+  │ └ Preview.png
+  ├ Assemblies
+  ├ Defs
+  │ └ Example_JobDefs.xml
+  ├ Languages
+  │ ├ English
+  │   └ Keyed
+  │     ├ FloatMenuOptions.xml
+  └ Source
+</source>
+
+Please check out the [[Modding_Tutorials/Mod_Folder_Structure|mod folder structure guide]] for more information about individual folders.
+
+== Instructions ==
+
+=== Overview of Jobs, JobDrivers, and Toils ===
+
+RimWorld's handling of Pawn behavior is all done through Jobs, regardless of whether that Pawn is a player colonist, a wild animal, or a hostile mechanoid. Jobs can be assigned through various means, and for this tutorial we are only focusing on Jobs which are assigned directly by players to their colonists. Jobs represent tasks to be completed by a pawn, such as building a structure from start to finish or putting on a new pair of pants or just moving from point A to point B.
+
+A Job's actual behavior is handled by a JobDriver, the C# worker class responsible for determining how the job is to be completed, under what conditions it should be aborted, if the job can even be legally started, and what the results of the job are. All Jobs have JobDefs defined in xml to handle most of the data inputs such as various strings to be used when doing the job. It is up to the JobDriver to decide what to do with this data. A JobDriver breaks down the Job into what are called Toils. A Toil represents a singular element, or subtask, of a Job.
+
+The lifecycle of our Job is as such:
+* Our FloatMenuOptionProvider will offer an option to the player to order a Pawn to mend a piece of apparel or a weapon, creaing a Job from a JobDef.
+* The JobDef, defined in xml, specifies basic data and what JobDriver to use, and RW creates the Job from this data.
+* The JobDriver specified in our JobDef will be initiated and will try to reserve the apparel/weapon so no one else touches it while the Job is in progress.
+* The JobDriver, assuming it successfully reserved the gear, will then create a series of Toils for the Pawn to complete, one after the other.
+* The Pawn will complete each Toil, one immediately following the last, until every Toil is complete or the Job is cancelled/completed.
+* Once finished, the Job is destroyed and the Pawn is assigned a new Job depending on their normal behavior. For drafted Pawns, that's waiting for player input. For undrafted Pawns, that's their work/personal assignments.
+'''A Pawn always has a Job. Even downed, despawned, and dead Pawns have Jobs.''' The complexity of Jobs differs greatly, obviously, but each follows these basic steps.
+
+=== Create your solution ===
+
+The first step of assigning jobs to pawns to repair damaged gear is to set up the solution and work on assigning jobs via C#. Assuming you have completed both the [[Modding_Tutorials/Setting_up_a_solution|Setting Up a Solution]] and [[Modding_Tutorials/Code_FloatMenuOptionProvider|Example FloatMenuOptionProvider]] tutorials, this should be straightforward.
+
+Place a newly created solution in the Source folder with an appropriate name, and configure it to build to the Assemblies folder.
+
+=== Create the FloatMenuOptionProvider subclass ===
+
+In order to give a pawn a job to mend apparel or weapons, we must first create the methods responsible for identifying them and determining whether they are valid targets for mending. FloatMenuOptionProvider gives us a number of methods and variables we can adjust and work with in order to establish our goal. For the purposes of this tutorial, we will assume that only one pawn will be assigned the job at a time, and that they can mend any and all apparel or gear, regardless of whether the player can craft that gear normally or not.
+
+We will begin by making our subclass, and overriding the GetSingleOptionFor method that targets a Thing (Note: This is different than in the previous tutorial, which overrode the method for targeting a Pawn) with conditions checking whether the Thing clicked on is an Apparel item or whether it has an equippable comp on it (which all weapons have):
+
+<source lang="cs">
+using RimWorld;
+using Verse;
+using Verse.AI;
+
+namespace ExampleMendingJob
+{
+    public class FloatMenuOptionProvider_MendingExample : FloatMenuOptionProvider
+    {
+        protected override bool Drafted => true;
+
+        protected override bool Undrafted => true;
+
+        protected override bool Multiselect => false;
+
+        protected override FloatMenuOption GetSingleOptionFor(Thing clickedThing, FloatMenuContext context)
+        {
+            if (clickedThing is Apparel || clickedThing.HasComp<CompEquippable>())
+            {
+                return FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption("Example_MendItem".Translate(clickedThing.Label), () =>
+                {
+                }), context.FirstSelectedPawn, clickedThing);
+            }
+            return null;
+        }
+    }
+}
+</source>
+
+This is enough to ensure the float menu option will appear in game only on apparel/weapons, albeit not doing anything if selected.
+
+As before, it is highly recommended that you [[Modding_Tutorials/Decompiling_source_code|decompile]] the <code>FloatMenuOptionProvider</code> class so that you can learn all of the properties and methods that you can override. In this example, we are only overriding a small handful of them in order to compile and run the code.
+
+=== Translation Keys ===
+
+As mentioned in the previous tutorial, it is important to provide translation keys for strings included in code that are going to be presented to players so that other languages can translate the text without recreating the entire assembly. For this tutorial, we only need one key, included below:
+
+FloatMenuOptions.xml:
+<source lang="xml">
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+    <!-- 0 is the first argument passed to translate, which is the gear clicked on in this case. -->
+    <Example_MendItem>Mend {0}</Example_MendItem>
+
+</LanguageData>
+</source>
+
+=== Hiding Unnecessary Options ===
+
+Given that players interact with apparel and weapons relatively frequently, it would be annoying to include a mend option on the menu on every single float menu for a piece of gear that is right-clicked on when a single player pawn is selected. We also must account for cases where assigning a job to mend apparel makes no sense because it cannot be completed or would be immediately complete.
+
+Here are four cases where we should definitely hide the option:
+* The Thing we clicked on does not use hit points at all (ie. it is indestructible). While this should NOT ever be the case for apparel, this is a cheap condition computationally, which can save performance if done before later checks when the player right-clicks on items like steel, silver, or other indestructible Things.
+* The Thing we clicked on has full health already.
+* The selected Pawn cannot reach the Thing, and thus could not mend the item if they were given the job. If we did not check this, the job we create in the next step might error!
+* The item is on fire, which should prevent it from being mended.
+
+<source lang="cs">
+public class FloatMenuOptionProvider_MendingExample : FloatMenuOptionProvider
+{
+    protected override bool Drafted => true;
+
+    protected override bool Undrafted => true;
+
+    protected override bool Multiselect => false;
+
+    // This is where we define the FloatMenuOption that we want to display to players (and in this case, what choosing the option does).
+    // Note that returning null here is safe, and will simply display no option. It can be a useful fallback in case TargetThingValid/TargetPawnValid are returning true incorrectly.
+    protected override FloatMenuOption GetSingleOptionFor(Thing clickedThing, FloatMenuContext context)
+    {
+        // It is always wise to put computationally cheaper conditions before more expensive ones, given that float menu option providers will run on most inputs.
+        if (!clickedThing.def.useHitPoints || (clickedThing.MaxHitPoints <= clickedThing.HitPoints) || !context.FirstSelectedPawn.CanReach(clickedThing, PathEndMode.Touch, Danger.Deadly) || clickedThing.IsBurning())
+        {
+            return null;
+        }
+
+        if (clickedThing is Apparel || clickedThing.HasComp<CompEquippable>())
+        {
+        }
+        return null;
+    }
+}
+</source>
+
+This is not a comprehensive list of all potential cases where the option should be hidden, but it should reduce or prevent errors and useless job assignments.
+
+=== Assigning Jobs ===
+
+With our conditions settled, it's now time to provide the FloatMenuOption that will assign the job to mend gear to the Pawn. Prioritized tasks - those given by the player directly to pawns over their normal work assignments - can be created using a helpful utility method called FloatMenuUtility.DecoratePrioritizedTask:
+
+<source lang="cs">
+public class FloatMenuOptionProvider_MendingExample : FloatMenuOptionProvider
+{
+    protected override bool Drafted => true;
+
+    protected override bool Undrafted => true;
+
+    protected override bool Multiselect => false;
+
+    protected override FloatMenuOption GetSingleOptionFor(Thing clickedThing, FloatMenuContext context)
+    {
+        // It is always wise to put computationally cheaper conditions before more expensive ones, given that float menu option providers will run on most inputs.
+        if (!clickedThing.def.useHitPoints || (clickedThing.MaxHitPoints <= clickedThing.HitPoints) || !context.FirstSelectedPawn.CanReach(clickedThing, PathEndMode.Touch, Danger.Deadly) || clickedThing.IsBurning())
+        {
+            return null;
+        }
+
+        if (clickedThing is Apparel || clickedThing.HasComp<CompEquippable>())
+        {
+            return FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption("Example_MendItem".Translate(clickedThing.Label), () =>
+            {
+              // This is where the actual assignment of the job will take place.
+            }), context.FirstSelectedPawn, clickedThing);
+        }
+        return null;
+    }
+}
+</source>
+
+FloatMenuUtility.DecoratePrioritizedTask takes a FloatMenuOption, which will be provided an action, as well as the actor and targets. This method is how almost every "forced" task that players can tell pawns to do is created.
+
+Inside the delegate for the FloatMenuOption, we will add these two lines:
+
+<source lang="cs">
+Job job = JobMaker.MakeJob(Example_JobDefOf.Example_MendingJob, new LocalTargetInfo(clickedThing));
+context.FirstSelectedPawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
+</source>
+
+The first line will create the Job using a specified JobDef and indicating the job is to be done on the clicked thing. '''Note: The missing reference to Example_JobDefOf.Example_MendingJob is explained in the next step.'''
+The second line tells the currently selected pawn to take the newly created job.
+
+=== Assigning a Specific Job ===
+
+In the first line above, you'll notice we specify that our JobDef is Example_JobDefOf.Example_MendingJob. Included in that is the defName of a JobDef that we will now create:
+
+Defs/Example_JobDefs.xml:
+<source lang="xml">
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <JobDef>
+        <defName>Example_MendingJob</defName>
+    </JobDef>
+
+</Defs>
+</source>
+
+The other part of that line, Example_JobDefOf, is a DefOf. A DefOf is effectively a "promise", wherein we create a class in C# and define a variable whose name and type match our xml - in this case, a JobDef called Example_MendingJob.
+
+In your project, create a new file with the following class and variable:
+
+<source lang="cs">
+using RimWorld;
+using Verse;
+
+namespace ExampleMendingJob
+{
+    [DefOf]
+    public class Example_JobDefOf
+    {
+        static Example_JobDefOf()
+        {
+            DefOfHelper.EnsureInitializedInCtor(typeof(Example_JobDefOf));
+        }
+        
+        public static JobDef Example_MendingJob;
+    }
+}
+</source>
+
+Note the following:
+* The [DefOf] annotation on the class is RimWorld's way of specifying that the following class should be scanned after Defs have been loaded to provide each variable with a value, matching the name of the variable to the defName of a Def of that type from the xml.
+* DefOf variables can reference Defs of any type from any mod or even from vanilla - not all of Ludeon's Defs are included in their own DefOf's, but you can simply make your own if you need to reference them.
+* The constructor exists for a single purpose: to warn a developer in the event that a DefOf reference was used before all Defs have been loaded. If this happens, the reference will not have been filled yet, and will return null, which can cause errors. It is there to raise a warning, but it will not prevent errors itself.
+* There are alternative ways of referencing xml Defs in C# code, such as the DefDatabase, if necessary/preferable, but each way has its own tradeoffs. This method is recommended for this tutorial.
+
+With this DefOf created, our FloatMenuOptionProvider should no longer be complaining about a missing reference because we promised that the JobDef truly does exist. If there is truly no Def with the right name, then the code will error at run-time with potentially catastrophic results, so make sure that your DefOf's are correctly matched to existing Defs!
+
+=== The JobDriver ===
+
+As mentioned in the overview, Jobs use JobDriver worker classes to handle how they operate. Let's add a few more details to our JobDef:
+
+Defs/Example_JobDefs.xml:
+<source lang="xml">
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <JobDef>
+        <defName>Example_MendingJob</defName>
+        <driverClass>ExampleMendingJob.JobDriver_Mend</driverClass>
+        <reportString>mending TargetA.</reportString>
+        <suspendable>false</suspendable>
+    </JobDef>
+
+</Defs>
+</source>
+
+We are about to create the JobDriver_Mend class, which will be the worker for the Job responsible for the Pawn completing it. We provide a reportString here as well - that is text that will be shown on the Pawn's inspect panel when they are doing the job to say what they're up to (TargetA will be automatically translated into the label of the Thing they are interacting with). Setting suspendable to false here means that our prioritized task shouldn't be interrupted randomly and will complete as we would expect it to.
+
+Create the JobDriver_Mend class:
+
+<source lang="cs">
+using RimWorld;
+using System.Collections.Generic;
+using Verse;
+using Verse.AI;
+
+namespace ExampleMendingJob
+{
+    public class JobDriver_Mend : JobDriver
+    {
+        public int ticksToNextMend = 0;
+        public const int ticksBetweenMending = GenTicks.TicksPerRealSecond;
+
+        public override bool TryMakePreToilReservations(bool errorOnFailed)
+        {
+            return true;
+        }
+
+        protected override IEnumerable<Toil> MakeNewToils()
+        {
+            yield break;
+        }
+    }
+}
+</source>
+
+All subclasses of JobDriver must override two methods, which we will handle separately. The two variables included will be used to make sure that mending is done roughly once every real second, which is 60 ticks.
+
+==== TryMakePreToilReservations ====
+This method is responsible for reserving Things that are about to be worked on, and returns true if those Things were successfully reserved. If it returns false, then the Job is aborted before it begins, and oftentimes a warning will be provided that a Job was created but failed to start - this is a sign that something, like our FloatMenuOptionProvider, created the Job improperly.
+
+While it is possible to run arbitrary C# here, it is not a good idea to do so here, as the Job has not officially begun yet. This method is just responsible for setting up reservations and last-minute checks.
+
+In order to mend gear, we need to reserve the item that is going to be repaired:
+
+<source lang="cs">
+public override bool TryMakePreToilReservations(bool errorOnFailed)
+{
+  return pawn.Reserve(job.GetTarget(TargetIndex.A).Thing, job);
+}
+</source>
+
+All JobDrivers keep the pawn doing the job as a local variable that we can access. Reserve will return true if the item is successfully reserved for the job, and because we only need to reserve a single item, we can return its boolean directly.
+
+==== MakeNewToils ====
+
+MakeNewToils is responsible for creating and returning the Toil(s) that form the composition of the Job. The completion of these Toils results in the Job's completion. What each of these Toils represents is up to the JobDriver to determine.
+
+<source lang="cs">
+protected override IEnumerable<Toil> MakeNewToils()
+{
+    // This Toil, from a utility class, handles all the details of the Pawn pathing to the specified Thing. We can assume that the Pawn is touching the Thing after the completion of this Toil if it succeeds.
+    // If this Toil fails, such as if the target item were destroyed while pathing so it cannot actually reach it, then the Job is cancelled.
+    yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.Touch);
+
+    // There is no utility method for the mending Toil, so we will create our own.
+    // A Toil is effectively just an empty task until it is told what it should do. The string below is just a debug name, and does not need to be translated.
+    Toil mend = ToilMaker.MakeToil("JobDriver_Mend_Toil");
+    // We can define an action that should happen only when this toil starts. We will use it to ensure the first mending occurs after a full second of the job passed.
+    mend.initAction = () =>
+    {
+        ticksToNextMend = ticksBetweenMending;
+    };
+    // tickAction is called once per tick as it implies, and is where the bulk of the Toil happens. 
+    mend.tickAction = () =>
+    {
+        // We want to keep the pawn facing toward the item, just in case they or the item is moved slightly.
+        Pawn actor = mend.actor;
+        actor.rotationTracker.FaceTarget(TargetThingA);
+        // Reduce the timer to the next mending by one, and if it hit (or is below) zero, then do some mending and add onto the timer again.
+        ticksToNextMend--;
+        if (ticksToNextMend <= 0f)
+        {
+            ticksToNextMend += ticksBetweenMending;
+            // If the thing is fully mended, we're done. End the job as a success and that's it.
+            if (TargetThingA.HitPoints < TargetThingA.MaxHitPoints)
+            {
+                TargetThingA.HitPoints++;
+            }
+            else
+            {
+                actor.jobs.EndCurrentJob(JobCondition.Succeeded);
+            }
+        }
+    };
+    // The mending job should fail if the item is no longer touchable for whatever reason, should only complete when it says so, and handles its own rotation.
+    mend.FailOnCannotTouch(TargetIndex.A, PathEndMode.Touch);
+    mend.defaultCompleteMode = ToilCompleteMode.Never;
+    mend.handlingFacing = true;
+    yield return mend;
+}
+</source>
+
+The example above explains each line as it can, but a few things should be noted:
+* Toils are created and returned all at once, as soon as the Job is created and assigned. They are '''not''' created when it is time for that Toil to begin, which means that you should treat each Toil as independent of each other when writing them and use the appropriate methods when initializing variables they use.
+* It is strongly recommended that you examine the JobDrivers of vanilla classes when you are making your own, as there are a lot of helpful utility classes and methods that you might otherwise miss.
+* Our mend Toil handles completing the Job itself, but that is not how all Jobs end. Some end based on a delayed timer, and some may end simply when their Toils are all completed or when interrupted.
+
+=== Testing ===
+
+With the JobDriver created, you should now be able to test. Make sure to test that the FloatMenuOptionProvider is showing option as appropriate, but also not showing the option when it should be invalid, or else you may find yourself facing strange bugs!
+
+When debugging Jobs, it can be helpful to go from start to finish:
+* Make sure that the FloatMenuOptionProvider (or whatever is providing the Job) is correctly identifying when it is legal to do the Job.
+* Check that the correct Job is being created with the correct JobDef, which has the correct JobDriver listed in it and other details provided.
+* If you're confident the right JobDriver is being used, then you can start sifting through your code to identify why individual Toils may be misbehaving.
+
+[[File:Example_Mending_JobInProgress.png|none|border]]
+
+=== Room for Improvement ===
+
+If you've done everything right, you've got a way to mend damaged apparel and weapons - but this is a very simple example with numerous ways to improve. From here, try experimenting with some of the following:
+* Some things can be mended which probably shouldn't be, such as wood logs or beer, because they're weapons. How might you improve the FloatMenuOptionProvider to weed out these edge cases?
+* The mend Toil currently spends an additional second at the end of the Job with the item fully repaired before the job is completed. How could the Toil's tickAction be rewritten to give pawns back those few precious ticks of productivity?
+* The Job doesn't account for the Pawn doing the job at all. If the Pawn has no hands, they're not allowed to pick up a gun, but this code will allow them to mend that gun - what might be needed to make sure they're capable of doing the work?
+* Many Jobs provide the Pawn doing it XP in a skill, and with a work speed that is based on their skills. Maybe mending should be affected by the crafting skill, or give XP in crafting - decompiling vanilla JobDrivers could point the way on having this affect skills and be affected by skills.
+* Unlike most jobs, this JobDriver doesn't make any sound effects or visual effects while in progress. What effects make sense, and how do they tie in?
+* Mending is currently free - but should it be? Perhaps MakeNewToils could be improved so that the gear will be brought by the Pawn somewhere or an item will be brought to the gear to pay to repair it. Alternatively, mending could affect the gear's quality, or even produce additional items as byproducts.
+
+If you get any errors, get stuck, or are looking for additional resources, be sure to check out the [[Modding_Tutorials/Troubleshooting|troubleshooting guide]] or join us on the '''#mod-development''' channel on the [https://discord.gg/rimworld RimWorld Discord server].
+
+[[Category:Modding]]
+[[Category:Modding tutorials]]

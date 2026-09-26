@@ -1,0 +1,125 @@
+{{BackToTutorials}}
+
+{{:Modding_Tutorials/Outdated}} 
+
+Mod settings allow you to offer customisation options to your users.
+=Requirements=
+* If you still haven't [[Modding Tutorials/Setting up a solution|set up a solution]], what the hell man?
+* You need to know [[Modding Tutorials/Writing custom code|how to write custom code]], as that's the entire point of this article.
+
+=What you'll learn=
+You'll learn how to write, save and use mod settings.
+
+=Setting up=
+Adding mod settings requires two classes, one that inherits from Mod and one that inherits from ModSettings.
+
+=The code=
+<source lang="C#">
+//inspired by https://gist.github.com/erdelf/84dce0c0a1f00b5836a9d729f845298a
+using System.Collections.Generic;
+using Verse;
+using UnityEngine;
+
+namespace MyExampleMod
+{
+    public class ExampleSettings : ModSettings
+    {
+        /// <summary>
+        /// The three settings our mod has.
+        /// </summary>
+        public bool exampleBool;
+        public float exampleFloat = 200f;
+        public List<Pawn> exampleListOfPawns = new List<Pawn>();
+
+        /// <summary>
+        /// The part that writes our settings to file. Note that saving is by ref.
+        /// </summary>
+        public override void ExposeData()
+        {
+            Scribe_Values.Look(ref exampleBool, "exampleBool");
+            Scribe_Values.Look(ref exampleFloat, "exampleFloat", 200f);
+            Scribe_Collections.Look(ref exampleListOfPawns, "exampleListOfPawns", LookMode.Reference);
+            base.ExposeData();
+        }
+    }
+
+    public class ExampleMod : Mod
+    {
+        /// <summary>
+        /// A reference to our settings.
+        /// </summary>
+        ExampleSettings settings;
+
+        /// <summary>
+        /// A mandatory constructor which resolves the reference to our settings.
+        /// </summary>
+        /// <param name="content"></param>
+        public ExampleMod(ModContentPack content) : base(content)
+        {
+            this.settings = GetSettings<ExampleSettings>();
+        }
+
+        /// <summary>
+        /// The (optional) GUI part to set your settings.
+        /// </summary>
+        /// <param name="inRect">A Unity Rect with the size of the settings window.</param>
+        public override void DoSettingsWindowContents(Rect inRect)
+        {
+            Listing_Standard listingStandard = new Listing_Standard();
+            listingStandard.Begin(inRect);
+            listingStandard.CheckboxLabeled("exampleBoolExplanation", ref settings.exampleBool, "exampleBoolToolTip");
+            listingStandard.Label("exampleFloatExplanation");
+            settings.exampleFloat = listingStandard.Slider(settings.exampleFloat, 100f, 300f);
+            listingStandard.End();
+            base.DoSettingsWindowContents(inRect);
+        }
+
+        /// <summary>
+        /// Override SettingsCategory to show up in the list of settings.
+        /// Using .Translate() is optional, but does allow for localisation.
+        /// </summary>
+        /// <returns>The (translated) mod name.</returns>
+        public override string SettingsCategory()
+        {
+            return "MyExampleModName".Translate();
+        }
+    }
+}
+</source>
+
+==ExampleSettings==
+===ExposeData===
+Writes settings to disk. For more info on saving, see [[Modding Tutorials/ExposeData|ExposeData]].
+
+==ExampleMod==
+Refer to the source above for practical information; snippets here are supplemental.
+===ExampleSettings===
+An easy reference to our settings.
+===ExampleMod===
+A mandatory constructor.
+===DoSettingsWindowContent===
+It's not mandatory to implement, but since the point of most settings is the provide customisation to the end user, it makes sense to make them available somehow.
+====The GUI====
+Listing_Standard is a barebones but useful class for making a GUI, and it does most of the positioning for you. Listing_Standard.Begin and Listing_Standard.End is required: every GUIGroup in Unity you start has to end. If you want more options to Listing_Standard, there's a good [https://github.com/RimWorld-CCL-Reborn/SettingsHelper/wiki SettingsHelper] available.
+
+The Widgets class is a powerful alternative to Listing_Standard that gives you more fine-grained control, at the cost of more effort. You'll have to set the size and position of each Rect manually. You can use [[Modding Tutorials/TweakValue|TweakValues]] to do this more easily.
+
+====Saving====
+Saving (altered) settings is done automatically by closing the window. You can optionally override WriteSettings() to add additional functionality to writing settings.
+===SettingsCategory===
+RimWorld will only make your settings accessible if SettingsCategory returns a string that isn't null or empty.
+
+=Using your settings=
+* One easy way to call settings is to make them all static and load their values with ExampleSettings.exampleBool. In certain cases, this is not practical.
+* If you can't (or don't want to) make your settings static, you can obtain your settings through the LoadedModManager like so:
+  LoadedModManager.GetMod<ExampleMod>().GetSettings<ExampleSettings>().exampleBool
+* As the above is a lot of code, you can simple add a reference to your settings and resolve it once in a constructor or otherwise.
+
+=On the necessity of HugsLib=
+Some people think HugsLib is a necessity for implementing mod settings. This is not true; the above is 100% supported by vanilla, since A17. HugsLib offers an alternative way of using settings.
+
+=See also=
+[https://github.com/UnlimitedHugs/RimworldHugsLib/wiki/Adding-mod-settings HugsLib] - HugsLib is a popular dependency that aims to ease using settings.
+
+[[Category:Modding]]
+[[Category:Modding tutorials]]

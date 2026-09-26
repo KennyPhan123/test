@@ -1,0 +1,175 @@
+{{BackToTutorials}}
+<br/>
+
+This tutorial gives you a broad idea how to work on a C# solution.
+
+While it is possible to create many mods by modifying or creating XML, writing custom C# code, either as stand-alone classes or as Harmony patches, allows changing almost anything in the game.
+
+=Requirements=
+
+* This tutorial requires you to have [[Modding Tutorials/Setting up a solution|set up a solution]].<br/><br/>
+
+=Creating a class=
+Once you've [[Modding Tutorials/Setting up a solution|set up your solution]] correctly you'll usually be greeted with a class similar like the template below:
+====Template====
+
+Let's go over the template:
+
+<source lang="csharp">/*
+ * Created by SharpDevelop.
+ * User: You
+ * Date: 01-01-1970
+ * Time: 00:00
+ * 
+ * To change this template use Tools | Options | Coding | Edit Standard Headers.
+ */
+using System;
+
+namespace MyNameSpace
+{
+	/// <summary>
+	/// Description of MyClassName.
+	/// </summary>
+	public class MyClassName
+	{
+		public MyClassName()
+		{
+		}
+	}
+}</source><br/>
+
+====Using====
+
+The first thing you notice is ''using System;'' which indicates this class can call anything from the namespace ''System'' without calling it like ''System.Class.SomeDataType'' but rather ''SomeDataType''. This is very useful because we don't have to worry about such calls anymore (for now).<br/>
+
+The next section shows which namespaces you could put in ''using''.<br/><br/>
+
+====Namespace====
+
+Next up is the ''namespace MyNameSpace'' part - in principle everything inside of a namespace knows everything else inside of that namespace. If you were to make a folder inside of your project (''MyProjectName'' not Solution ''MySolutionName''), any classes inside of that folder would have the namespace ''MyNameSpace.MyFolderName''. '''That's a different namespace''' and unless you tell other classes that it exists (''using MyNameSpace.MyFolderName;'') they won't accept calls to parts of that namespace without that namespace as a prefix.<br/>
+
+Anything inside of ''MyNameSpace.MyFolderName'' does however know of everything inside ''MyNameSpace'', just nothing about other subfolders of ''MyNameSpace''.<br/><br/>
+
+By default your project knows nothing. Adding DLL references to the ''References'' folder (as done in the previous tutorial) allows you to reference them with ''using'':
+
+<source lang="csharp">
+namespace MyNameSpace {}		/* Assuming MyNameSpace is your ROOT NAMESPACE (MyProjectName ->
+					Properties -> Application -> Root namespace), this will compile. */
+
+namespace MyNameSpace.MyFolderName {}	/* Assuming this class is inside of the folder MyFolderName inside of
+					MyProjectName, this will compile. Other classes outside of the folder
+					will have to reference this, this class will have to reference classes
+					in different subfolders (but not the ones in the root folder). */
+
+namespace RimWorld {}			/* Don't do this. It will compile if RimWorld is your root namespace
+					but it's bad practice. */
+
+namespace System {}			/* No, just no. */
+</source><br/>
+
+You can set your project's namespace by going to visual studio and right-clicking MyProjectName -> Properties -> Application -> Root namespace(Visual Studio 2019 it is Default namespace). Please take some time to make it unique so no compatibility issues will arise with other mods, for your and everyone else's sanity.<br/><br/>
+
+====Summary====
+
+This summary is part of the template but it's not required. It can help other people understand your code better when you provide the source but besides that you really don't need it.<br/><br/>
+
+====Class and Constructor====
+
+This is your class definition. To access anything inside of a ''public class'' you will need a reference to an instance of that class:<br/>
+
+<source lang="csharp">
+MyClassNamefoo = new MyClassName();
+</source><br/>
+
+The brackets at ''new MyClassName()'' indicate you're creating this instance without ''parameters'' which is possible because your class contains a constructor (anything inside of ''class MyClassName'' which has parameters and isn't a method, often abbreviated '''.ctor''') which accepts a call without parameters:<br/>
+
+<source lang="csharp">
+public class MyClassName
+{
+	public MyClassName()	/* No parameters */
+	{
+	}
+
+	public MyClassName(string foo, int bar)	/* Required parameters of datatypes string and int */
+	{
+	}
+
+	public MyClassName(string foo = "none supplied", int bar = 42)	/* Default parameters " " " */
+	{
+	}
+}</source><br/>
+
+The last implementation of the constructor (''MyNameSpace.MyClassName.MyClassName'' inside of ''MyNameSpace.MyClassName'') is capable of accepting zero to two parameters while the second implementation of the constructor will only accept calls with exactly two parameters.<br/><br/>
+
+=Namespaces=
+Some very useful namespaces in general are the following:<br/><br/>
+
+{|
+! Namespace !! What does it do?
+|-
+| System.Collections.Generic || Makes it so you can use part of the IEnumerable interface, which is used for datatypes like List<>.
+|-
+| System.Linq || Allows for cool operations on the IEnumerable interface such as ''.Where()'' which accepts lambda operations (oh my!).
+|-
+| System.Text.RegularExpressions || Introduces Regular Expressions (RegEx) to C# which allows for intricate operations on strings.
+|-
+| System.Collections || Holds other parts of the IEnumerable interface you will require when inheriting from that class.
+|-
+| System.Text || Contains the ''StringBuilder'' which accepts a list of strings and returns them in a specific way.
+|}<br/>
+
+And the namespaces for RimWorld in particular are these:<br/><br/>
+
+{|
+! Namespace !! What does it do?
+|-
+| RimWorld || Many RimWorld specific classes can be found in this namespace. This and the Verse namespace will be most used.
+|-
+| Verse || Many general use classes can be found in this namespace. This and the RimWorld namespace will be most used.
+|-
+| RimWorld.BaseGen || Everything that creates the layout and contents of the Outposts, Bases and Settlements is in here.
+|-
+| RimWorld.Planet || Everything (almost everything) having to do with the planet is in here.
+|-
+| Verse.AI || Holds the Jobs and general AI. Broadly speaking, what pawns do.
+|-
+| Verse.AI.Group || Holds the squad AI. This is useful when you want 2 or more pawns to work together.
+|-
+| Verse.Grammar || Contains functionality for the Languages folder and other things having to do with text operations such as the art flavour text generator.
+|-
+| Verse.Noise || Something something you'll never need this.
+|-
+| Verse.Sound || Much like Verse.Noise.
+|-
+| Verse.Steam || Steam integration by Tynan - you won't need it.
+|-
+| UnityEngine || Contains many more methods you most likely won't actively use. RimWorld mostly uses it for the GUI, Rect and Color methods.
+|-
+|}<br/>
+
+The difference between RimWorld and Verse is sometimes blurred. "RimWorld" contains things which are reasonably specific to RimWorld functionality. Classes in Verse are more oriented towards general game functionality. Since it can be difficult to guess which namespace holds a class, you might as well add both using statements whenever you want.<br/>
+If you want to use the exact functionality of a base game class you're best off copying all its ''using'' statements, its ''namespace'' and the namespace of its parent.<br/><br/>
+
+=Writing code=
+
+# [[Modding Tutorials/Decompiling source code|Decompile source code]] to take a look at the game's existing code;
+## If you get stuck on anything, any modding questions can be asked on the [https://ludeon.com/forums/index.php?board=14.0 subforum],
+# Compile your class into a .dll;
+## Most IDE's, integrated development environments, have a button that says "Compile" or "Build" - there is usually a hotkey (F5, F8, etc). Compiling is entirely driven by the software, you only have to supply a location for it to compile to - as explained in [[Modding Tutorials/Setting up a solution|Setting up a solution]].
+## Make sure your project's output type is "class library";
+## '' '''Note:''' by default, Visual Studio will compile all the references of the project as well, so you’ll get a copy of UnityEngine.dll and Assembly-CSharp.dll and some others. Just take ''MyModName.dll'' and place it in the ''MyModName/Assemblies'' folder. If you have [[Modding Tutorials/Setting up a solution|set up a solution]] according to the tutorial you don't have this problem,
+# Reference the classes in your .dll (optionally: from the xml data in the MyModName/Defs folder);
+#* {{Main|Modding Tutorials/Linking XML and C#}}
+## '''Example:''' Write a [[Modding_Tutorials/Hello_World|Hello World]] mod
+## '''Example:''' Create a new ThingDef with a <thingClass> that points to a class in your .dll (see, for example, [[Modding_Tutorials/Def classes|Def classes]] and [[Modding_Tutorials/Modifying defs|Modifying defs]])
+# The game should load your class now;<br/><br/>
+
+=Examples=
+* Write a [[Modding_Tutorials/Hello_World|Hello World]] mod: the simplest C# project.
+* [[Plague_Gun]] How to Make a RimWorld Mod - step by step guide by Jecrell.
+
+=See also=
+* [[Modding_Tutorials/Distribution|Distribution]] details how to release your mod.
+
+
+[[Category:Modding tutorials]]

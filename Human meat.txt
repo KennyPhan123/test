@@ -1,0 +1,97 @@
+{{See also|Meat (food type)|Meat|Insect meat}}
+{{Infobox main|food
+| name = Human meat
+| image = Meat human c.png
+| description = Raw butchered flesh. Can be cooked into meals or eaten raw, although most humans dislike the idea.
+<!-- Base Stats -->
+| type = Food
+| type2 = Raw food
+| hp = 60
+| deterioration = 6
+| marketvalue = 0.8
+| beauty = -4
+| mass base = 0.03
+| flammability = 0.5
+| stack limit = 75
+<!-- Ingestion -->
+| food type = meat
+| taste = Raw
+| food poison chance = 0.02
+| days to rot = 2
+| nutrition = 0.05
+<!-- Creation -->
+| production facility 1 = Butcher spot
+| production facility 2 = Butcher table
+| work to make = 450
+| work speed stat = Butchery Speed
+}}
+'''Human meat''' is [[meat]] obtained when a [[Work#Cook|cook]] butchers [[human]]s.
+
+== Acquisition ==
+Human meat is obtained when a [[Work#Cook|cook]] butchers [[human]]s. The base [[Meat Amount|Meat Yield]] are described on the table below but the actual number depends on the [[Butchery Efficiency]] of the butcher, damage of the corpse, and a number of other factors.
+
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_06 text-center}}
+! Animal !! Meat Yield
+|- 
+{{#ask: [[Meat Name::{{PAGENAME}}]] [[:+]]
+| ?Meat Yield
+| format = template
+| template = Ask Table Formatter
+| limit = 500
+| link = none
+| sort= From DLC, name}}
+|}</li></div>
+
+Without the [[Ideology DLC]], butchering a human gives {{--|6}} [[mood]] for all colonists in the colony, and an additional {{--|6}} to the butcher. The former moodlet does not stack, meaning butchering 100 corpses gives the same colony-wide mood as one (the butcher's penalty ''does'' stack). [[Psychopath]]s and pawns with [[bloodlust]] ignore either butchering penalty, as do any [[cannibal]]s.
+
+The mood effects of butchering humans with an [[Ideoligion]]{{IdeologyIcon}} are based on the precept of the ideoligion the pawn follows.
+
+== Usage ==
+{{Ingredient List|noCollapse=true}}
+
+== Summary ==
+As a [[raw food]], human meat can be be eaten raw, with a flat {{Bad|2%}} chance of giving [[food poisoning]], or cooked into a [[meal]] with a food poisoning chance dependent on the skill of the cook and the [[cleanliness]] of the kitchen. [[Animals]] are immune to food poisoning from raw food but not from meals. When used in food recipes that require specific types of [[nutrition]], such as [[fine meal]]s, human meat are classified as meat.
+
+Human meat is like any other [[raw food]]. It can be used to create [[meal]]s, or combined with other ingredients to produce fine, lavish meals, pemmican and kibble. 
+
+Most humans despise eating human meat, which is cannibalism. Raw human meat gives {{Thought|value=-20|stack=1|label=raw cannibalism|desc=I ate the meat of another human, raw, like an animal. This is a nightmare.|duration=1}}, and cooking human meat into [[meal]]s (including in [[nutrient paste meal|nutrient paste]]) gives {{Thought|value=-15|stack=1|label=cooked cannibalism|desc=I ate a meal made from the meat of another human. This is horrible.|duration=1}}. Pawns with the [[Cannibal (trait)|Cannibal]] trait instead gain {{Thought|value=+20|stack=1|label=raw cannibalism|desc=I ate the meat of another human, raw, like an animal. It was so... succulent.|duration=1}} for raw human meat and {{Thought|value=+15|stack=1|label=cooked cannibalism|desc=I ate a meal made from the meat of another human. So pleasurable. If only I had some fava beans and a nice chianti.|duration=1}} for cooked human meat. The moodlets for raw and cooked cannibalism stack with each other, as do any moodlets from meal types.
+
+Depending on the [[Cannibalism (precept)|canibalism precept]] {{IdeologyIcon}} colonists gain instead:
+* Cannibalism abhorrent: {{Thought|value=-20|stack=1|label=ate human meat|desc=I had to eat human meat. This is an offense against everything I believe.|duration=1}}
+* Cannibalism horrible: {{Thought|value=-12|stack=1|label=ate human meat|desc=I had to eat human meat. This was a horrible thing.|duration=1}}
+* Cannibalism dissapproved: {{Thought|value=-5|stack=1|label=ate human meat|desc=I had to eat human meat. I believe such actions are wrong.|duration=1}}
+* Cannibalism acceptable: ''none''
+* Cannibalism preferred: {{Thought|value=+2|stack=1|label=ate human meat|desc=I ate human meat. It makes me feel noble and strong.|duration=1}}
+* Cannibalism required (strong): {{Thought|value=+4|stack=1|label=ate human meat|desc=I ate human meat, as every real human should.|duration=1}}
+* Cannibalism required (ravenous): {{Thought|value=+6|stack=1|label=ate human meat|desc=I ate human meat! The world is right, and I am as I should be.|duration=1}}
+
+Processing human meat, once it has been butchered, incurs no penalties. Human meat can be made into meals, used for animal feed, processed in [[biofuel refinery]] for [[chemfuel]], or put in a [[biosculpter pod]]{{IdeologyIcon}} or [[growth vat]],{{BiotechIcon}} and nobody will feel bad about it unless it is eaten directly.
+
+When consumed by [[Hemogenic]]{{BiotechIcon}} pawns, human meat satisfies the [[Hemogen]]{{BiotechIcon}} need by {{+|3.75}} per 1 [[nutrition]], or {{Icon Small|Human meat||{{#expr:1/{{P|Nutrition}}}}}}, consumed.{{Check Tag|Rounding?|This rounds to +4 for 20 meat, exact rounding mechanics needed}}. Note that only the raw meat provides this hemogen, eating [[corpse]]s or the meat cooked into [[meals]] does not.
+
+Its market value is only {{Icon Small|silver||{{P|Market Value Base}}}} [[silver]], or {{%|{{P|Market Value Base}}/{{Q|Meat|Market Value Base}}|0}} of regular meat. However, processing it into meals or [[chemfuel]] will ignore its origin when considering market value.
+
+Human meat is also used as a building ingredient for the [[cannibal platter]],{{IdeologyIcon}} which requires {{Required Resources|Cannibal platter|simple=1}}.
+
+== Analysis ==
+Butchering a human is already upsetting for a good majority of colonists. So in a colony not filled with cannibals, eating it should only be for absolute emergencies, in extreme [[biome]]s like sea ice, or to please a cannibal on verge of [[mental break]]. For a cannibal, both the cooked cannibalism and raw cannibalism mood buffs stack, for a total of {{+|35}} mood. However, most cannibals still get {{Thought|value=-7|stack=1|label=ate raw food|desc=I had to eat raw food. We should be cooking that kind of food before eating it. We're not animals.|duration=1}}. You can further boost mood with [[fine meal]]s, [[lavish meal]]s, or their [[carnivore fine meal|carnivore]] [[carnivore lavish meal|variant]]s. Alternatively, the massive mood debuff might make human meat situationally useful. It may force a [[tortured artist]] into a mental break, or cause a [[Crisis of belief]] in the [[Ideology DLC]]. As for [[Caravan]]s and Raiding, Human Meat is one of the most abundant food sources that can be acquired while on-site by butchering several of the corpses found from the pawns killed and in [[Gibbet cage]]s,{{IdeologyIcon}} cooking them into Meals for slower spoilage.
+
+Using human meat for carnivorous animals (whenever raw or [[kibble]]) isn't cannibalism, so the animals won't mind. It may be wiser to leave corpses unbutchered, as the butchering itself has a fairly large penalty to both the butcher and the colony. Note that colonists in base game or with the [[Corpses (precept)|Corpses: Ugly]] precept{{IdeologyIcon}} will get {{--|4}} mood from observing them.
+
+In the [[Ideology DLC]], a colony's [[ideoligion]] can make this a different story. With the Cannibalism meme and/or precept, [[raider]]s become a completely viable source of both food and positive moodlets. Setting the precept to Required (Ravenous) gives the greatest mood buffs, +6 per meal, but also gives a strong debuff when human meat isn't available. This is also possible in the base game, with a colony entirely composed of the cannibal trait. By adjusting the [[scenario]] ("Forced trait"), you can set all starting colonists, or every pawn in the game, to be cannibals.
+
+== Gallery ==
+<gallery>
+Meat human a.png|One human meat
+Meat human b.png|Partial stack
+Meat human c.png|Full stack
+</gallery>
+
+== Version history ==
+<gallery>
+Meat human old.png|Old texture
+</gallery>
+
+{{Nav|Food|wide}}
+[[Category:Food]] [[Category:Raw Food]] [[Category:Meat]]

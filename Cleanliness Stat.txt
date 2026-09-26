@@ -1,0 +1,176 @@
+{{Stub|reason=1) Two-way links}}
+{{About|the cleanliness stat of individual objects|the cleanliness of rooms|Rooms#Cleanliness{{!}}Cleanliness (Room)}}
+{{Verified|1.5.4104}}{{Stat
+| def name = Cleanliness
+| label = cleanliness
+| description = How much an object contributes to an area's [[Rooms#Cleanliness|cleanliness score]].
+| default base value = 0
+| min value = -1000
+| max value = 1000
+| hide at value = 0
+| to string style = FloatOne
+| apply factors if negative = false
+| category = BasicsNonPawn
+| display priority in category = 3000
+}}
+
+== Bases ==
+<div><li style="display: inline-table;">
+{| {{STDT| c_01 sortable}}
+! Object / Floor !! Cleanliness
+|-
+{{#ask: [[Cleanliness::+]] [[Type::!Terrain]]
+| ?Cleanliness
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Name
+}}
+|}
+</li>
+
+<li style="display: inline-table;">
+{| {{STDT| c_01 sortable}}
+! Terrain !! Cleanliness
+|-
+| [[Soil]] || {{--|1}}
+|-
+| [[Lichen-covered soil]] || {{--|1}}
+|-
+| [[Marshy soil]] || {{--|2}}
+|-
+| [[Rich soil]] || {{--|1}}
+|-
+| [[Stony soil]] || {{--|1}}
+|-
+| [[Sand]] || {{--|1}}
+|-
+| [[Soft sand]] || {{--|1}}
+|-
+| [[Mud]] || {{--|2}}
+|-
+| [[Broken asphalt]] || {{--|2}}
+|-
+| [[Packed dirt]] || {{--|1}}
+|-
+| [[Marsh]] || {{--|2}}
+|}</li>
+
+<li style="display: inline-table;">
+{| {{STDT| c_01 sortable}}
+! Flith !! Cleanliness
+<!--
+|-
+| BaseFilth || {{--|5}}
+-->
+|-
+| [[Filth#Dirt|Dirt]] || {{--|5}}
+|-
+| [[Filth#Animal filth|Animal filth]] || {{--|5}}
+|-
+| [[Filth#Trash|Trash]] || {{--|5}}
+|-
+| [[Filth#Sand|Sand]] || {{--|5}}
+|-
+| [[Filth#Rock rubble|Rock rubble]] || {{--|5}}
+|-
+| [[Filth#Building rubble|Building rubble]] || {{--|5}}
+|-
+| [[Filth#Scattered slag|Scattered slag]] || {{--|5}}
+|-
+| [[Filth#Scattered sandbags|Scattered sandbags]] || {{--|5}}
+|-
+| [[Filth#Blood|Blood]] <!-- FilthBlood --> || {{--|10}}
+|-
+| [[Filth#Blood smear|Blood smear]] || {{--|10}}
+|-
+| [[Filth#Bugblood|Bugblood]] || {{--|15}}
+|-
+| [[Filth#Machine bits|Machine bits]] || {{--|5}}
+|-
+| [[Filth#Amniotic fluid|Amniotic fluid]] || {{--|5}}
+|-
+| [[Filth#Slime|Slime]] || {{--|5}}
+|-
+| [[Filth#Vomit|Vomit]] || {{--|15}}
+|-
+| [[Filth#Firefoam|Firefoam]] || {{--|5}}
+|-
+| [[Filth#Chemfuel puddle|Chemfuel puddle]] || {{--|15}}
+|-
+| [[Filth#Corpse bile|Corpse bile]] || {{--|20}}
+|-
+| [[Filth#Ash|Ash]] || {{--|15}}
+|-
+| [[Filth#Water puddle|Water puddle]] || {{--|5}}
+|-
+| [[Filth#Hair|Hair]] || {{--|5}}
+|-
+| [[Filth#Spent acid|Spent acid]] || {{--|5}}
+|-
+| [[Filth#Dried blood|Dried blood]]{{IdeologyIcon}} || {{--|5}}
+|-
+| [[Filth#Scattered documents|Scattered documents]]{{IdeologyIcon}} || {{--|5}}
+|-
+| [[Filth#Ragged uniform|Ragged uniform]]{{IdeologyIcon}} || {{--|5}}
+|-
+| [[Filth#Pod slime|Pod slime]]{{IdeologyIcon}} || {{--|5}}
+|-
+| [[Filth#Oil smear|Oil smear]]{{IdeologyIcon}} || {{--|5}}
+|-
+| [[Filth#Flammable bile|Flammable bile]]{{BiotechIcon}} || {{--|15}}
+|-
+| [[Filth#Floordrawing|Floordrawing]]{{BiotechIcon}} || {{--|5}}
+|-
+| [[Filth#Revenant smear|Revenant smear]]{{AnomalyIcon}} || {{--|15}}
+|-
+| [[Filth#Revenant gore pool|Revenant gore pool]]{{AnomalyIcon}} || {{--|15}}
+|-
+| [[Filth#Loose ground|Loose ground]]{{AnomalyIcon}} || {{--|15}}
+|-
+| [[Filth#Gray flesh|Gray flesh]]{{AnomalyIcon}} <!-- Filth_GrayFlesh --> || {{--|5}}
+|-
+| [[Filth#Twisted flesh|Twisted flesh]]{{AnomalyIcon}} || {{--|20}}
+|-
+| [[Filth#Fleshmass debris|Fleshmass debris]]{{AnomalyIcon}} || {{--|20}}
+|-
+| [[Filth#Dark blood|Dark blood]]{{AnomalyIcon}} || {{--|10}}
+|-
+| [[Filth#Dark blood smear|Dark blood smear]]{{AnomalyIcon}} || {{--|10}}
+|-
+| [[Filth#Metalhorror debris|Metalhorror debris]]{{AnomalyIcon}} || {{--|10}}
+|}</li></div>
+
+
+== Stat Def Data ==
+{| {{STDT| c_01}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Cleanliness" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />Cleanliness
+* '''Label:'''<br />cleanliness
+| How much an object contributes to an area's cleanliness score.
+|
+* Display Order:<br />'''12'''
+* Def Name:<br />'''BasicsNonPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />{{Bad|false}}
+|
+* '''Default Base Value:''' 0
+* '''Max Value:''' 1000
+* '''Min Value:''' -1000
+* '''Hide At Value:''' 0
+* '''To String Style:''' FloatOne
+* '''Apply Factors If Negative:''' {{Bad|false}}
+| -
+| 3000
+<!--</StatDef>-->
+|}
+
+== Trivia ==
+Loading screen building tip: <blockquote id="TerrainCleanliness">''Different terrain has different inherent cleanliness levels. Tiles are inherently clean; dirt is inherently dirty.''</blockquote>
+
+== Version history ==
+{{Stub|section=1|reason=General Version history}}
+
+{{nav|stats|wide}}

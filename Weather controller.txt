@@ -1,0 +1,47 @@
+{{Royalty}}
+{{Infobox main|building
+| name = Weather controller
+| image = WeatherController.png
+| description = An ultratech device for controlling weather. Using chemicals and exotic fields, it forces the weather into a particular configuration.
+| type = Building
+| type2 = Mechanoid cluster
+| placeable = false
+| passability = impassable
+| blockswind = true
+| cover = 1
+| size = 6 ˣ 6
+| flammability = 0
+| hp = 1500
+| destroyyield = {{Icon Small|Steel}} 60 + {{Icon Small|Component}} 1 + {{Icon Small|Plasteel}} 10 + {{Icon Small|Steel slag chunk}} 4
+| page verified for version = 1.3.3117
+}}
+'''Weather controllers''' are [[mechanoid cluster]] and quest [[condition causers]] that force a particular [[weather]].
+
+== Summary ==
+Weather controllers force a [[weather]] condition within a 10 [[world]]-tile radius. It has no impact on [[caravan]]s, but affects every settled or player-visited tile in range. A weather controller inside your colony takes priority over a weather controller from the world map, and most recent in the case of multiples. 
+
+All in-game weather controllers and similar forced weather events in [[quests]] cause a 'bad' weather type:
+* Fog
+* Foggy Rain
+* Rainy Thunderstorm
+* Blind Fog{{OdysseyIcon}}
+
+'Bad' weather excludes [[flashstorm]]s, which are a distinct event, and dry thunderstorms, which would cause fires to start everywhere continuously if included.
+
+== Analysis ==
+Since weather penalizes colonists and ranged enemies equally, Rainy weather controllers are one of the least harmful condition causers, and can be left indefinitely without much issue. Since it slows down colonists working outside, you may want to destroy them eventually. Forced fog controllers are a more hazardous weather and should be removed in most circumstances.
+
+When outdoors, forced weather will reduce the [[Weapons#Accuracy|accuracy]] of ranged weapons. If a shooter and their target are both under a [[roof]]ed tile, then they are not affected by weather, no matter what's between them, including unroofed tiles. {{Check Tag|Do enemies prefer roofed paths?}} In addition, all forms of rain and snow reduce [[move speed|movement speed]] and give the {{Thought|desc=I'm soaking wet.|label=soaking wet|value=-3|stack=1|duration=0.1}}.
+
+Forced rain will limit and automatically extinguish wildfires even from [[lightning]], but it is suggested you roof over major walkways and [[killbox]]es to limit other negative effects, like unroofed electronics short circuiting and accelerated item decaying. Forced fog prevents all rain, which typically results in uncontained [[fire]]s growing indefinitely.
+
+=== Melee colonies ===
+Melee-focused colonies, such as for challenge runs or those relying on trained [[animals]], [[mechanitor|mechanitor controlled]]{{BiotechIcon}} [[scyther]]s, or [[ghoul]]s,{{AnomalyIcon}} can benefit significantly from weather controllers, with it up to halving the {{DPS}} of ranged enemies but having no effect on melee {{DPS}}. Fog or foggy rain has the maximum reduction in ranged accuracy for weather at 50% and is ideal for this purpose as it has no or minimal accompanying [[Move speed]] penalty, allowing your pawns to close the distance as fast as possible. Against melee enemies, fog is the most dangerous forced weather for the same reasons. 
+
+=== Power generation ===
+Weather controllers can significantly impact power generation. Stormy weather raises both the windspeed floor and the maximum and so increases both the reliability and output of power generation from [[wind turbine]]s. At the new maximum, wind turbines produce 3450W - less consistent than, and not quite competitive with, [[geothermal generator]]s but not limited in location or number by [[steam geyser]]s. Moderately sized wind farms paired with the correct weather controller can provide sufficient power for even late game power hungry colonies, especially when outfitted with [[batteries]] and [[hidden conduit]]s. Foggy conditions makes turbines less productive, but foggy rain might be more productive than variable weather depending on world tile average rainfall. {{Check Tag|How much?}}
+
+== Version history ==
+* [[Royalty DLC]] Release - Added.
+
+[[Category:Miscellaneous]]

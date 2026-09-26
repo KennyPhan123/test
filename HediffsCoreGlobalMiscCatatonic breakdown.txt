@@ -1,0 +1,49 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Global/Misc}}
+|}
+----
+{| {{STDT| c_11}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Catatonic breakdown" <!-- defName="CatatonicBreakdown", ParentName="DiseaseBase" -->
+! Catatonic breakdown 
+----
+* Def Name:<br />CatatonicBreakdown
+* Label:<br />catatonic breakdown
+* Label Noun:<br />a catatonic breakdown
+| A state of mental shock which leads to a total inability to function. The victim collapses, effectively unconscious.
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|90%|100%|35%}}
+* Initial Severity: '''0.1%'''
+* '''Remove On Redress Chance By Days Curve:'''
+<div><li style="display: inline-table;">
+{| {{STDT| c_01}}
+! Days !! Chance
+|-
+! 0
+| 0%
+|-
+! 2
+| 0%
+|-
+! 7
+| 50%
+|-
+! 20
+| 100%
+|}{{Graph:Chart|width=200|height=200|xAxisTitle=Days|yAxisTitle=Remove On Redress Chance|yAxisFormat=%|type=line|x=0, 2, 7, 20|y=0, 0, 0.5, 1|interpolate=monotone|xGrid=|yGrid=}}</li></div>
+* '''Comps'''
+** ''Disappears''
+*** Disappears After Ticks: {{Ticks/gametime/days|100000}} ~ {{Ticks/gametime/days|300000}}
+** ''Recovery Thought''
+*** Thought: '''[[Thoughts#Catharsis|Catharsis]]'''
+|<!-- Stages -->
+{| {{STDT| c_11}}
+! Label !! Parameters
+|-
+! Catatonic breakdown
+|<!-- Parameters -->
+* [[Consciousness]] Max: {{Bad|10%}}
+|}<noinclude>
+|}</noinclude>

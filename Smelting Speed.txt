@@ -1,0 +1,20 @@
+{{See also| Electric smelter}}
+{{Verified|1.2.2900}}
+{{Stat
+| default base value = 1
+| min value = 0.1
+| effective maximum = {{Q|Manipulation|Effective Maximum}} * {{Q|Global Work Speed|Effective Maximum}}
+| to string style = PercentZero
+| description = The speed at which this person smelts things. Since smelting is dumb labor, smelting speed is not affected by any skill.
+| category = PawnWork
+}} Its maximum possible value is {{%|{{P|Effective Maximum}} }}.
+
+== Factors ==
+* [[Manipulation]]: [[Manipulation Importance::1|100%]] importance. No allowed defect. [[Manipulation Limit::-|No]] max (effectively {{%|{{Q|Manipulation|Effective Maximum}} }}).
+* [[Sight]]: [[Sight Importance::0.3|30%]] importance. No allowed defect. [[Sight Limit::1|100%]] max.
+* [[Global Work Speed Factor::true| ]][[Global Work Speed]] (effectively in the range of {{Bad|×{{%|{{Q|Global Work Speed|Stat Minimum}} }} }} to {{Good|×{{%|{{Q|Global Work Speed|Effective Maximum}} }} }}).
+
+== Version history ==
+[[Version/1.1.0|1.1.0]] - Apparently merged into [[General Labor Speed]] however it is unclear if this actually occurred and a later reversion of this change went unreported, or if it never occurred at all.
+
+{{nav|stats|wide}}

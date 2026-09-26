@@ -1,0 +1,217 @@
+{{Biotech}}
+{{Infobox main|building
+| name = Growth vat
+| image = GrowthVat_south.png
+| description = A vat of fluid which can gestate an embryo or accelerate a child's growth.<br/>While growing or gestating, the vat must be fed with a constant supply of nutrition to provide the feedstock for growth. Gestating an embryo takes twice the nutrition of accelerating a child's growth.<br/>Embryos are gestated for 9 days before a baby is formed. There is a risk of health complications.<br/>Child growth can only be accelerated up to age 18, but not beyond. While growing, a child's skills will slowly increase. Children raised in growth vats will have lower skills and gain fewer passions than normal.<br/>The device uses chemical injections, electrical stimulation, and simple mechanite treatments to push the body to grow. Growth vats are often used to quickly manufacture engineered workers or warriors.
+| type = Building
+| type2 = Biotech (Buildings)
+| placeable = 
+| path cost = 42
+| passability = pass through only
+| blockswind = 
+| cover = 0.5
+| minifiable = False
+| size = 1 * 2
+| flammability = 0.5
+| hp = 500
+| mass base = 30
+| beauty = 
+| power = -80
+| glowradius =
+| glowcolor = 
+| heatpersecond = 
+| terrain affordance = 
+| research = Growth vats
+| skill 1 = 
+| skill 1 level = 
+| work to make = 8000
+| resource 1 = Steel
+| resource 1 amount = 150 
+| resource 2 = component
+| resource 2 amount = 4
+| buildingTags = Biotech
+| room role = Laboratory
+}}
+The '''growth vat''' is a building added by the [[Biotech DLC]]. It allows the gestation and accelerated aging of [[babies]] and [[children]].
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+{{Stub|section=1|reason=Vatgrown childhood?}}
+While hosting a human, growth vats require a constant 200W of [[power]] as well as [[nutrition]]. Both [[raw food|raw]] and processed foods, including [[nutrient paste meal|nutrient paste]] and [[hay]], can be inserted. None of the usual mood bonuses or maluses from different food types, such as from [[human meat]], are applied. Hosting an embryo costs 6 [[nutrition]] per day and aging a child costs 3 nutrition per day. The vat's contents can be ejected immediately by the player by canceling vat growth; if it was an embryo, it will be destroyed. When no pawn is inside, the power consumption reduces to 80W.
+
+If the vat has no power or nutrition, the being inside will enter [[bio-starvation]], increasing in severity by 50% per day starved, and decreasing 10% per day properly supplied or spent outside the vat. Bio-starvation increases nutrition consumption in a vat by {{Bad|+10%}} at all severities, and [[Death|kills]] at 100%. If a bio-starved pawn leaves the vat, a number of status effects will be applied to them. See [[bio-starvation]] for a full list.
+
+While in the vat the needs (like sleep) and ongoing status effects are suspended {{Check Tag|All effects?|Currently confirmed with food poisoning, gene loss shock, regrowing genes. Are diseases affected?}}
+.
+
+=== Baby creation ===
+Growth vats can be used to grow an [[embryo]] in 9 days, twice as fast as natural pregnancy, and regardless of either parent's [[Reproduction#Fertility|Fertility]] (as long as it's above 0%). This comes without risk to the mother, but the baby can still arrive [[Reproduction#Outcomes|sick]].
+
+Growth vats have a [[Reproduction#Outcomes|birth quality]] of 70%. There is roughly an 89.1% chance for the baby to be born healthy.
+
+=== Children ===
+Colonists under 18 can also have their aging sped up by 20x, i.e., it takes 3 days to age 1 year. This ignores the default 4x aging multiplier for [[babies]] and [[children]], so a vat is 5x faster than that. While in the vat, a pawn's needs are frozen like in [[cryptosleep casket|cryptosleep]], and children will not gain growth points. Every 3 days that a baby or child is in the vat, they'll received 8000 experience (before passions or other multipliers) towards a random skill.  The skill selected is entirely random and does not prefer passions, though it will ignore skills that are disabled due to backstory or traits.  The experience ignores the daily limit of XP to a skill and is not affected by global learning rate (for example, the Fast Learner trait), but is modified by the child's current passion level in the skill chosen.
+
+As a child spends a maximum of 54 days inside a growth vat from birth to age 18, a child gains a maximum of 18 of these experience bonuses, for a total of 144,000 pre-passion experience.  If distributed evenly across skills, a child can expect to see an average of 12,000 experience per skill before passions.  Ignoring passions that are changed at growth moments, this average XP would cause a no-passion skill to reach level 2, a regular passion skill level 4, and a burning passion skill level 5.  Exact distribution will vary randomly, and passions can be altered at growth moments, affecting this gain rate.  Overall, however, it is very unlikely for any given skill to reach more than level 8 even with a burning passion in it from the start. A child grown entirely within a vat will have no passions and 3 random traits. 
+
+Non-[[psychopath]] parents (including surrogates) will have a {{--|4}} ''My child is in a growth vat'' [[mood]]let while their kid is inside. This can be altered by [[ideoligion]].{{IdeologyIcon}}
+
+{| class="wikitable"
+! rowspan="2"| Biological Age  
+! colspan="2" | Time in vat<br>Nutrition
+! No Vat
+|-
+! Base Vat !! [[Ideoligion#Growth vats|Vats: Essential]]{{IdeologyIcon}}<ref>Growth Vats: Essential does not apply to pawns without the [[ideoligion]], i.e. [[embryo]]s and [[babies]] age normally.</ref>  !!  400% Aging<ref>Default child aging value from 0 to 11. Note that children will start to age slower from this speed after reaching 11 biological years of age. See [[Children#Aging]] for more details.</ref>
+|-
+! +1 Year<ref name="Non-baby">Assuming a child between age 3 and 11</ref>
+| {{#expr: 1 * 3 round 1}} day
+----
+{{#expr: 1 * 3 * 3 round 2}} nutrition
+| {{#expr: 1 * 3/1.3 round 1}} day
+----
+{{#expr: 1 * 3/1.3 * 3 round 2}} nutrition
+| {{#expr: 60 / 4 round 1}} days 
+|-
+! +3 Years<ref name="Non-baby"/>	
+| {{#expr: 3 * 3 round 1}} day
+----
+{{#expr: 3 * 3 * 3 round 1}} nutrition
+| {{#expr: 3 * 3/1.3 round 1}} day
+----
+{{#expr: 3 * 3/1.3 * 3 round 2}} nutrition
+| {{#expr: 3 * 60 / 4 round 1}} days
+|-
+! Embryo to 0
+| 9 days
+----
+{{#expr: 9 * 6 round 2}} nutrition
+| 9 days
+----
+{{#expr: 9 * 6 round 2}} nutrition
+| 18 days
+|-
+! Embryo to 3 
+| {{#expr: 9 + (3 * 3) round 1}} days
+----
+{{#expr: 9 * 6 + (3 * 3) * 3 round 1}} nutrition
+| {{#expr: 9 + (3*3) round 1}} days
+----
+{{#expr: 9 * 6 + (3 * 3) * 3 round 1}} nutrition
+| {{#expr: 18 + 3 * 60 / 4 round 1}} days 
+|-
+! Embryo to 18 
+| {{#expr: 9 + (18 * 3) round 1}} days 
+----
+{{#expr: 9 * 6 + (18 * 3) * 3 round 1}} nutrition
+| {{#expr: 9 + (3*3) + (15 * 3/1.3) round 1}} days
+----
+{{#expr: 9 * 6 + ((3*3) + (15 * 3/1.3))*3 round 1}} nutrition
+| 322 days
+|-
+! Age 0 to 3
+| {{#expr: (3 * 3) round 1}} days 
+----
+{{#expr: 3 * 3 * 3 round 1}} nutrition
+| {{#expr: 3 * 3 round 1}} days 
+----
+{{#expr: 3 * 3 * 3 round 1}} nutrition
+| {{#expr: 3 * 60 / 4 round 1}} days 
+|-
+! Age 3 to 13
+| {{#expr: 10 * 3 round 1}} days 
+----
+{{#expr: 10 * 3 *3 round 1}}  nutrtion
+| {{#expr: 10 * 3/1.3 round 1}} days 
+----
+{{#expr: 10 * 3/1.3 * 3 round 1}}  nutrtion
+| 152.4 days
+|-
+! Age 13 to 18
+| {{#expr: (5 * 3) round 1}} days 
+----
+{{#expr: (5 * 3) * 3 round 1}} nutrition
+| {{#expr: (5 * 3/1.3) round 1}} days 
+----
+{{#expr: (5 * 3/1.3) * 3 round 1}} nutrition
+| 106.6 days
+|}
+<references/>
+
+=== Ideology ===
+[[Ideoligion]]s{{IdeologyIcon}} can have an optional [[Ideoligion#Growth vats|Growth Vats precept]] with two options:
+* "Growth vats: Essential" boosts grow vat speed by +30% (children grow 26x faster) if the child has the ideoligion. Babies and embryos are '''not''' boosted. It negates the parent mood penalty. When [[expectations]] are moderate or higher, it gives parents a {{--|2}} ''Child not in growth vat'' mood for their child not being in a vat (stacking up to 3 times), pregnant pawns gain a {{--|5}} ''Natural pregnancy'' mood when pregnant, and all colonists gain a {{--|3}} ''No growth vats'' moodlet if the colony has no growth vats.{{Check Tag|Verify|Not readily apparent in xmls. Confirm in game}}
+
+* "Growth vats: Prohibited" gives negative mood for growth vats in your colony, and when any embryo or child is in a growth vat. The ''My child is in a growth vat'' increases to {{--|8}} (stacking 3 times, nullified by the [[psychopath]] trait), and gives a {{+|1}} ''Child not in growth vat'' mood for their child not being in a vat (stacking 3 times). All colonists gain a {{--|3}} ''Growth vat'' moodlet if the colony has a growth vat.
+If neither precept is chosen, the ideoligion has no effect.
+
+== Analysis ==
+If the [[Children#Learning|Learning]] need is nonexistent, then growth vats will not negatively impact a pawn's development:
+* Babies (0-3) can be placed in the growth vat to speed up reaching toddler age. There are no apparent ill effects on the baby, and they even train an age-3 valid skill (Shooting, Melee, Social). This can be especially useful for children with low metabolic efficiency (such as [[Yttakin]]) who require another colonist to feed them very frequently and can cause spurious starvation warnings.
+** However, parents who dislike growth vats gain the {{--|4}} [[mood]]let, and it negates the [[mood]] buffs from having a happy baby in the colony.
+* If a child (3-13) is at growth tier 8, then no more growth points can be obtained, though children can learn from Work Watching or Lessons. Either way, the benefits are minor: these children will be a few days from growing up naturally.
+* Aging a teen (13-17) to 18 has no ill effect. Using the growth vat will prevent the colonist from working, but removes the [[body size]] and work penalties from being underaged.
+
+In these cases, vats exchange time for the cost of nutrition and power. Each vat doesn't consume much power, while nutrition can usually be solved by simply growing more food. For reference, growing a child is just under 2 colonists' worth of food. An embryo is roughly equal to 4 colonists for the duration, consuming 60 [[simple meal]]s over the 9 days.
+
+===Vatgrowing children===
+====Baseliners====
+Vatgrowing a ''baseliner'' through the child stage will create a weak pawn. A vatgrown pawn will have 0 passions, very weak skills, and 3 random [[trait]]s - a [[Events#Wanderer_joins|wanderer]] or just about any [[prisoner]] recruit is likely to just be ''better'', without consuming nearly as much nutrition. While a vatgrowth pawn can still fight, haul, and clean, these roles can be also be fulfilled by a [[mechanitor]].
+
+====Gene modification====
+The [[gene]] system can turn "blank" pawns into capable soldiers or workers, so a good [[xenogerm]] can greatly increase the viability of vat growing. For example, a simple [[xenogerm]] consisting of [[Great shooting]], [[Psychite dependency]], and [[Psychically deaf (gene)|Psychically deaf]] will create a pawn with a passion and 8 free levels of Shooting, easy mood regulation through [[yayo]], and a hunger rate of only 70%. Furthermore, they can be made into [[shooting specialist]]s{{IdeologyIcon}} right after growing. 
+
+While raising children the regular way will still create better pawns, vat growing allows you to create dozens of pawns relatively quickly. A bunch of shooting specialists with Great Shooting will tear apart raids despite having poor traits and other skills. 
+
+=== Nutrition ===
+While [[raw food]] can be put into the dispenser, virtually any means of cooking a meal gives more [[nutrition]] per food item. The absolute best way to prepare food is the [[nutrient paste meal]], which triples nutrition. However, colonists won't automatically dispense nutrient paste for a growth vat; they will only haul meals on the floor to it. See [[Nutrient paste dispenser#Manually producing meals|Nutrient paste#Manually producing meals]] for how you can stockpile nutrient paste.
+
+Without nutrient paste researched, or if you don't want to micromanage everything, [[baby food]] is the next best way to prepare vegetables. [[Simple meal]]s are the next best way to prepare other food items.
+
+There are no penalties to anyone for using [[insect meat]], already-butchered [[human meat]], or other usually undesirable food items in a vat.
+
+=== Organ harvesting ===
+{{Main|Human resources}}
+Children can be organ harvested as soon as they are 3 years old.
+
+* It takes a total of 90 [[simple meal]]s or 1620 [[baby food]] to grow a set of organs (54 [[nutrition]] to grow an embryo, 27 nutrition to grow a newborn to 3). Depending on preparation method, this costs 900 (meals) or 810 (baby food) items of virtually any [[raw food]]. 810 corn is worth {{Icon Small|silver||{{#expr: 810 * {{Q|Corn|Market Value Base}} }} }}, plus preparation time. [[Human meat]] is cheaper.
+* You can harvest 1 [[kidney]] ({{Icon Small|silver||{{Q|Kidney|Market Value Base}} }}), 1 [[lung]] ({{Icon Small|silver||{{Q|Lung|Market Value Base}} }}), and ''either'' a [[heart]] or a [[liver]] ( {{Icon Small|silver||{{Q|Liver|Market Value Base}} }}), for a total of {{Icon Small|silver||{{#expr: {{Q|Lung|Market Value Base #}} + {{Q|Kidney|Market Value Base #}} + {{Q|Heart|Market Value Base #}} }} }}.
+** If you can create [[prosthetic heart]]s, you can spend a prosthetic heart ({{Q|Prosthetic heart|Market Value Base}}) to get both a heart and a liver, for a net total of {{Icon Small|silver||{{#expr: {{Q|Lung|Market Value Base #}} + {{Q|Kidney|Market Value Base #}} + {{Q|Liver|Market Value Base #}} + {{Q|Heart|Market Value Base #}} - {{Q|Prosthetic heart|Market Value Base #}} }} }}.
+
+Therefore, each vat-child nets a profit of {{Icon Small|silver||{{#expr: {{Q|Lung|Market Value Base #}} + {{Q|Kidney|Market Value Base #}} + {{Q|Heart|Market Value Base #}} - (810 * {{Q|Corn|Market Value Base #}}) }} }} in organs by using corn, before [[Trade Price Improvement]] and [[difficulty]]. But, other than the usual organ harvesting penalties, vatgrowing organs has 2 downsides:
+
+# Children have lower HP. If an operation fails, then even a "minor" failure is likely to outright kill.
+# Children will be related to ''somebody'' in the colony. If the parents are not a [[psychopath]], then their mood will be greatly hit.
+
+Basically, an organ harvesting operation using a Cannibalism: Acceptable and Organ Use: Acceptable [[ideoligion]]{{IdeologyIcon}}, with a psychopath/prisoner mother and psychopath/[[slave]]{{IdeologyIcon}} father (male prisoners cannot fertilize [[embryo]]s and slaves are cheap and disposable) is highly profitable, and comes with no mood downsides. You can give the child [[EMP grenade]]s and make them "guilty", removing the moodlet for colonist death. All that's needed is a good doctor, some medicine, and preferably a [[hospital bed]]. Without a pro-organ ideoligion, mood impacts start to matter more, but... it can still be profitable.
+
+Of course, creating a proper organ farm should be compared to the money you'd get from a "normal" [[Human resources]] setup. At a certain point, selling [[human leather]] and [[raider]] organs should be enough money to buy anything you'd need.
+
+=== Grow soldiers ===
+Growth vat can be used to create an army of genetically-modified soldiers. All you need is (the best strategy):
+* Prisoners. A lot of them. Used to obtain embryos. Optional, but strongly recommended. Try to use different men and women for every embryo: your soldier will not have debuff "my brother died". Don't use your colonists, or they will have a trait "my son died X3" after every battle.
+* Genetic lab. Implant at least strong shooting and melee to your army.
+* Powerful production facility to give your army at least some equipment.
+* Crypto caskets. For peaceful time.
+
+=== Food ===
+If you have no other source of Animal Protein this is your best bet aside from buying and raiding. To efficiently use growth vats as a food source you must do the following:
+* When creating your [[Ideoligion]] {{IdeologyIcon}}, choose the [[Cannibal]] {{IdeologyIcon}} meme, for obvious reasons. You should also strongly consider using the "Growth Vats: Essential" Precept (henceforth to be referred to as "the Precept" or "P"), as it increases the throughput of your growth vats by a considerable amount.
+* To get the Embryos, you'll need to get a lot of female Prisoners and male Slaves. Consider stockpiling fertilized Ova and disposing of all the affected Slaves and Prisoners. You'll have a Grace window of at least 52 days before the first Moodlets start coming in. 
+* The Setup
+** To maintain one Baseline Colonist you'll need at least 4 (3.34 w/P) growth vats constantly running. 
+** One ideal [[hydroponics basin]] setup (24 basins growing [[rice]]) converted into [[nutrient paste meal]]s can sustain up to 12.6 (12.3 w/P) Growth Vats.
+** To efficiently Butcher and Cook the Subjects you'll also need a Pawn with a cooking skill of at least 10 and 100% manipulation (such as a [[Fabricor]])
+** Additionally this method supplies [[human leather]] and organs, though harvesting the latter will reduce the amount of meat gained. 
+** You can also use the subject pawns for new fertilized ova.
+For optimal distribution, 91.5% (90% w/P, always round up when applying) of your hydroponics basins should be dedicated to making rice for nutrient paste for the vats, the rest should be making rice for cooking.
+Two sets of 24 hydroponic basins and 22 growth vats can grow enough Nutrition to produce roughly 10 (11.5 w/P) [[fine meal]]s per day, which is enough to support 5 colonists, so this is clearly not very efficient. The construction and maintenance cost of the hydroponic basins and growth vats are also considerable.
+
+== Version history ==
+* [[Biotech DLC]] Release - Added.
+* [[Version/1.4.3682|1.4.3682]] - Fix: Embryo skin color not preserved in growth vat between save/load.
+* [[Version/1.4.3704|1.4.3704]] - Fix: Magenta square fetus graphics when reloading.
+
+{{Nav|biotech|wide}}
+[[Category:Biotech (Buildings)]]

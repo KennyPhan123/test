@@ -1,0 +1,92 @@
+{{Royalty}}
+{{Infobox main
+| name = Drill arm
+| image = Health item prosthetic.png
+| type = Medical Items
+| type2 = Body Parts
+| tech level = Industrial
+| description = A mechanical arm replacement for speeding up mining. It has a built-in snake drill, which allows the miner to rapidly find and exploit weak lines in the rock. It also has a general-purpose manipulator. It is somewhat ungainly, which slows down movement slightly.
+| meleeattack1dmg = 13
+| meleeattack1type = Stab
+| meleeattack1part = Drill
+| meleeattack1cool = 2
+| meleeattack1ap = 20
+| body part = Shoulder
+| mode = Melee
+| production facility 1 = Machining table
+| research = Specialized limbs
+| skill 1 = Crafting
+| skill 1 level = 5
+| resource 1 = Steel
+| resource 1 amount = 60
+| resource 2 = Component
+| resource 2 amount = 8
+| work to make = 15000
+| damage type = Sharp
+| mass = 4
+| marketvalue = 425
+| max hit points base = 50
+| tradeTags = ImplantEmpireCommon
+| techHediffsTags = ImplantEmpireCommon, DrillArm
+| thingSetMakerTags = RewardStandardLowFreq
+}}
+The '''drill arm''' is an [[artificial body part]] that provides both the functionality of a normal arm, while also increasing [[Mining Speed]] and [[Deep Drilling Speed]] but penalises [[Moving]].
+
+== Acquisition ==
+{{Acquisition}}
+
+They can also be [[trade|bought]] from [[Outlanders]] and [[Empire]] settlements, and are occasionally found installed on [[raiders]].
+
+The pawns that populate Mining [[work site]]s owned by an Outlander or [[Pirate]] factions, including minor factions, very commonly spawn with drill arms.
+
+== Summary ==
+=== Body part ===
+Drill arms replace the user's organic arm. They are universal and can be installed on either the left or right. 
+
+The drill arm has a part efficiency of '''100%'''. This fully replaces the functionality of a normal arm but provides no enhancement - when coupled with the arm body part having a [[Manipulation]] importance of 50%, it results in an increase in manipulation of up to 50% when replacing a missing or totally inoperable hand or arm. Manipulation, in turn, affects a great many [[stats]]. For a full list of affected stats, see [[Manipulation#Affected stats|Manipulation]].
+
+=== Other effects ===
+Each drill arm also provides {{+|160%}} [[Mining Speed]] and a {{+|70%}} [[Deep Drilling Speed]]. The effects of two installed arms stack. These bonuses apply as offsets to the base value of the stat, and are then multiplied by [[Global Work Speed]], [[Skill]] factors and [[Capacity]] factors meaning the final increase from installing a drill arm can be significantly more than the nominal values.  See those pages for details. 
+
+Each drill arm also inflicts a {{--|8%}} [[Moving]] penalty. Moving, in turn, affects the following [[stats]]: {{#ask: [[Moving Importance::+]]}}. This results in a directly proportional change to a pawn's [[move speed]], and a penalty to [[melee dodge chance]] equivalent to losing {{--|{{#expr: {{Q|Melee Dodge Chance|Moving Importance}}*0.08}}}} levels of [[Melee]] skill per arm replaced.
+
+=== Combat ===
+A drill arm replaces the natural "Fist" attack of the replaced arm with a more powerful [[Damage Types#{{P|Attack 1 Type}}|{{P|Attack 1 Type}}]] attack. How often this attack is used will depend on the other melee verbs available to the pawn, including those added by traditional melee weapons. For further details on how this system functions, see the [[Weapons#Melee_formulas|Weapons]] page.
+
+<div><li style="display: inline-table;"> 
+{| {{STDT|sortable c_06 text-center}}
+! colspan="2" | Name !! Damage !! DPS !! AP !! Damage Type
+|-
+! {{Icon Small|{{PAGENAME}}|32}}
+! {{PAGENAME}}
+| {{P|Attack 1 Damage}}
+| {{P|MeleeDPS}}
+| {{P|Attack 1 AP}}%
+| [[Damage Types#{{P|Attack 1 Type}}|{{P|Attack 1 Type}}]]
+|}
+</li></div>
+
+=== Installation ===
+Installing the part requires {{ticks|2500}} of work, 2x medicine of [[Herbal medicine|herbal]] quality or better, and a [[Skills#Medical|Medical skill]] of 4.
+
+Removing the part requires {{ticks|2000}} of work, 1x medicine of [[Herbal medicine|herbal]] quality or better, and has no [[Skills#Medical|Medical skill]] requirements.
+
+If the operation fails, the part will be destroyed.
+
+== Analysis ==
+Drill arms offer an extreme boost to mining speed. With 1 drill arm, a Mining 0 pawn mines as fast as a baseline Mining 13 pawn, and drills as fast as a Mining 7 pawn. While the drill arm disables the use of a work-enhancing [[bionic arm]] or [[archotech arm]], if a pawn's primary job is to mine, then the drill arm offers a clear benefit. (Note that this implant does not increase [[Mining Yield]], so your Mining 0 pawns won't get much out of any [[ore]]s they mine.) 
+
+The increased mining speed can be very helpful to your colony. A fast miner can easily construct a huge mountain base. [[Deep drill]]s in particular are slow to operate, so a drill arm can expedite expansion in the late-game. You might even want 2 drill arms for your dedicated miners. 
+
+This comes at a cost of movement speed. In addition to the reduced efficiency in regards to day-to-day work, installing a drill arm will hinder a pawn's performance in combat. For ranged fighters, slower movement means that [[kiting]] tactics are no longer as viable. For melee fighters, the moving penalty directly encumbers a pawn's [[melee dodge chance]]. This can be eventually compensated, partially, by using [[bionic leg]]s.
+
+Drill arms can also be used as a viable replacement for a destroyed or dysfunctional arm. There are no wooden arm replacements, and [[prosthetic arm]]s are only {{Bad|50%}} as effective as a regular arm, resulting in {{--|25%}} Manipulation per arm. For comparison, the drill arm offers full Manipulation in exchange for {{--|8%}} Moving, plus the bonuses to mining.
+
+== Version history==
+* [[Royalty DLC]] Release - Added.
+* [[Version/1.1.2565|1.1.2565]] - part efficiency 50% -> 100%, boost 180% -> 160%, movement penalty.
+* [[Version/1.5.4062|1.5.4062]] - Now attaches at the shoulder like every other arm part, instead of the arm. Previously attaching another artificial arm on the shoulder would prevent future installations of a drill arm, since there was no more organic shoulder.
+
+{{Nav|body parts|wide}}
+{{Nav|weapon|wide}}
+[[Category:Medical Item]] [[Category:Body Part]] [[Category:Artificial Body Part]]

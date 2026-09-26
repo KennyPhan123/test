@@ -1,0 +1,208 @@
+{{Move|reason=Name not used in game; move to Food, and update other pages|destination=Food (need)}}
+'''Saturation''' is the game mechanic that controls [[Characters]]' needs for [[Food]], and is directly tied to [[Eating]], the game mechanic which fills that need. A character with a higher saturation value has eaten recently, and is more full than another character with a low saturation level. You can view saturation of all humans and tamed animals by viewing the "Food" bar and the corresponding mouseover text in the [[Needs]] tab.
+
+== General mechanics ==
+Saturation is measured in units of [[nutrition]]. There are 2 distinct measures of saturation.
+
+* '''Maximum nutrition''', or how much nutrition a pawn can store at any one time. It is dependent on the [[body size]] of the species as well as the ''body size factor'' and ''food max factor'' according to the pawns life stage. The function is <code>species_body_size × body_size_factor × food_max_factor</code>. For adult specimens ''body size factor'' and ''food max factor'' are both 1. An adult [[human]] (with a body size of {{Q|Human|Body Size}}) can therefore hold up to {{Q|Human|Body Size}} nutrition.
+** For young humans the formula results in:
+*** ''Baby (0-2 years)'': {{Q|Human|Body Size}} × 0.2 × 0.625 = {{#expr:{{Q|Human|Body Size}}*0.2*0.625}} maximum nutrition
+*** ''Child (3-12 years)'': {{Q|Human|Body Size}} × 0.35 × 2.286 = {{#expr:{{Q|Human|Body Size}}*0.35*2.286}} maximum nutrition
+*** ''Teenager (13-17 years)'': {{Q|Human|Body Size}} × 0.8 × 1.25 = {{#expr:{{Q|Human|Body Size}}*0.8*1.25}} maximum nutrition (therefore same as adults)
+** For young insects:
+*** ''Larva'': species_body_size × 0.2 × 2 = species_body_size × 0.4
+*** ''Immature'': species_body_size × 0.5 × 1.5 = species_body_size × 0.75
+** For other young animals:
+*** ''Baby (birds)'': species_body_size × 0.1 × 6 = species_body_size × 0.6
+*** ''Baby (other)'': species_body_size × 0.2 × 3 = species_body_size × 0.6
+*** ''Juvenile'': species_body_size × 0.5 × 1.5 = species_body_size × 0.75
+* '''Hunger Rate''', or how much nutrition a pawn loses per day. Adult baseline humans hunger at a rate of 1.6 nutrition per day. This is determined by species and the [[Hunger Rate Factor]] explained below.
+
+In general, humans hunger more than similar animals. An [[alpaca]] has the same [[body size]] as a human, but only hungers at a rate of 0.44 nutrition per day. A [[megasloth]] is four times larger than a human, but hungers at the same rate. Generally, predators hunger slowly - a [[cougar]] eats less than half as much as a [[husky]], for instance.
+
+=== Levels of saturation ===
+Characters' saturation level is grouped into four thresholds: Fed, Hungry, Ravenously Hungry, and Malnourished. Each threshold exhibits different effects on a character, especially their [[Thoughts]]. 
+
+The saturation level boundaries are indicated by small notches on the "Food" bar in the tab of eating pawns.
+
+{| class="wikitable"
+! Label
+! Saturation
+! Mood modifier<br/>(Humans)
+! Production Rate<br/>(Animals)
+! [[Immunity gain speed]]
+|-
+| Fed
+| Greater than 25%
+| (none)
+| ×100%
+| ×100%
+|-
+| Hungry
+| 12.5% to 25%
+| -6
+| ×50%
+| ×100%
+|-
+| Ravenously Hungry
+| >0% to 12.5%
+| -12
+| ×25%
+| ×90%
+|-
+| Malnourished
+| 0%
+| -20
+| ×0%
+| ×70%
+|}
+
+Speed of animals' production ([[wool]], [[milk]], [[egg]]s or [[chemfuel]]) is also dependent on the saturation level, as seen above. Note that production is completely stopped only when 0% saturation; the "[[malnutrition]]" ailment does not have a direct impact on animal products.
+
+=== Malnutrition ===
+Once a pawn reaches 0% saturation, they will start becoming malnourished. 
+
+When malnourished, pawns gain severity in "[[malnutrition]]". Malnutrition is an [[ailment]], with an entirely separate progression to hunger or saturation. When malnourished, ''malnutrition'' severity rises by 2% every hour, and once it reaches 100%, the pawn will die. When a pawn is fed, their malnutrition does not immediately go away, though a pawn will no longer gain malnutrition (as Saturation is no longer at 0%). 
+
+For as long as the malnutrition ailment is active, pawns will gain increased hunger. This does not increase the rate of malnutrition severity, just the amount of food eaten after a pawn has been fed. The malnutrition severity decreases at the same rate it increases.
+
+== Saturation changes ==
+Saturation goes down every tick (1/2500 of a game hour, or 1/60 a second at level 1 game speed), depending on the character's current saturation and modifiers on their hunger rate.
+
+The following table describes saturation changes of an adult baseline human (100% hunger rate, 1.6 nutrition/day, 1.0 max nutrition):
+
+{| class="wikitable"
+! Saturation
+! Threshold range
+! Change per hour
+! Change per day
+! Game time in state<ref>Game time spent in the state from the upper threshold before crossing the lower threshold, assuming nothing is eaten</ref>
+! Game time since 100% food<ref>Game time spent before entering the state, assuming nothing is eaten and the starting saturation is 100%</ref>
+|-
+| Fed
+| 100% - 25%
+| -6.67%
+| -160%
+| {{#expr: 0.75 / (1.6/24) round 3}} hours  <!-- (% Saturation) / (Hunger Rate per hour) --->
+| {{#expr: 0 round 3}} hours
+|-
+| Hungry
+| 25% - 12.5%
+| -3.33%
+| -80%
+| {{#expr: 0.125 / (0.8/24) round 3}} hours 
+| {{#expr: (0.75 / (1.6/24) ) round 3}} hours  
+|-
+| Ravenously Hungry
+| 12.5% - >0%
+| -1.67%
+| -40%
+| {{#expr: 0.125 / (0.4/24) round 3}} hours 
+| {{#expr: (0.75 / (1.6/24) ) + ( 0.125 / (0.8/24) ) round 3}} hours
+|-
+| Malnourished
+| 0%
+| 0% <ref>Malnourished state does not impact saturation directly. Rather, it increases the "[[Malnutrition]]" [[ailment]] by 2% per hour, and if this reaches 100%, a pawn dies. This ailment will increase hunger rate of a pawn, but only after they have eaten again.</ref>
+| 0%
+| 50 hours
+| {{#expr: (0.75 / (1.6/24) ) + ( 0.125 / (0.8/24) ) + (0.125 / (0.4/24) )  round 3}} hours
+|}
+{{Reflist}}
+
+From 100% saturation, a human can survive up to 72.5 hours before dying from malnutrition.
+
+Saturation is increased by [[eating]] [[food]]. For reference, 1 unit of [[raw food]] ([[rice]], [[meat]], etc.) gives 0.05 nutrition, or 5% of a human's saturation meter. A [[simple meal]], [[fine meal]], or [[nutrient paste meal]] gives 0.9 nutrition, or 90% of a human's meter.
+
+== Hunger Rate Factor ==
+Hunger rate can be modified by a variety of effects and conditions. The final hunger rate can be calculated with the formula:
+ (Base Rate * (1 + Sum of Offsets)) * Multipliers
+
+=== Offsets ===
+All hunger rate factor offset modifiers stack additively. Once added up, they stack multiplicatively with other modifiers to hunger.
+
+* Stomach hediffs:
+** [[Gut worms]]: {{++|100%}}
+** [[Reprocessor stomach]]{{RoyaltyIcon}}: {{---|25%}}<ref name="implants">Note that the effect of these implants is displayed on the item and hediff info cards as a multiplier ('''''x75%''''' and '''''x25%''''' respectively), but they work like an offset on the actual Hunger rate stat.</ref>
+** [[Nuclear stomach]]{{RoyaltyIcon}}: {{---|75%}}<ref name="implants"/>
+
+* [[Smokeleaf joint#Stoned on smokeleaf|Stoned on smokeleaf]]: {{++|30%}}
+* [[Go-juice#Withdrawal|Go-juice withdrawal]]: {{++|50%}}
+* [[Hypothermic slowdown]]:
+** Moderate: {{---|10%}}
+** Serious: {{---|40%}}
+** Extreme: {{---|95%}}
+* [[Malnutrition]]:
+** Trivial: {{++|50%}}
+** Minor, Moderate, Severe and Extreme: {{++|60%}}
+* [[Hunger pangs]] persona trait{{RoyaltyIcon}}: {{++|50%}}
+* [[Neural supercharger]]{{IdeologyIcon}}: {{++|20%}}
+* [[Growth vat#Summary|Bio-starvation]] (outside of [[growth vat|vat]]){{BiotechIcon}}: {{++|50%}}
+* [[Adrenal heart]] ([[ghoul]] only){{AnomalyIcon}}: {{++|15%}}
+{{Reflist}}
+=== Multipliers ===
+All of these modifiers stack multiplicatively with each other and with the hunger rate factor offsets listed above.
+
+* [[Gourmand]] trait: {{Bad|x150%}}
+* Life stages:
+** Human [[baby]]: {{Good|x12.5%}}
+** Human [[child]]: {{Good|x80%}}
+** Human [[teenager]]: {{Good|x90%}}
+** Insect larva: {{Good|x40%}}
+** Insect immature: {{Good|x75%}}
+** Other animal baby (including birds): {{Good|x40%}}
+** Other animal juvenile: {{Good|x75%}}
+* [[Sleep accelerator]]{{IdeologyIcon}}: {{Bad|x120%}}
+* Genetic [[metabolic efficiency]] {{BiotechIcon}}: 
+** Positive sum of metabolic efficiency: {{---|10%}} per point above 0 (Minimum {{Good|x50%}} multiplier at +5 points).
+** Negative sum of metabolic efficiency: {{++|25%}} per point below 0 (Maximum {{Bad|x225%}} multiplier at -5 points).
+
+
+Despite its name and description, the [[Digestion]] stat has no impact on hunger rate.
+
+== Overeating ==
+Pawns will attempt to eat as their next action once their saturation level reaches 30% to avoid being hungry. Pawns make no effort to avoid "overeating", so any excess nutrition in the food is lost. A default pawn that eats a simple meal (0.9 nutrition) as soon as it is hungry (0.30 saturation) will go to 1.0 saturation and waste up to 0.20 nutrition of food (22% of the meal). In practice, the process of eating takes some time, so not all the food is wasted.
+
+This effect is stronger in animals with lower body sizes - a [[Labrador retriever]] with 0.75 body size will get hungry at .1875 saturation and waste .3375 nutrition from the same simple meal. Smaller food sources like [[berries]] or [[haygrass]] (0.05 nutrition) have less of this waste, as the waste will never exceed a single item's worth of nutrition.  
+
+This makes [[kibble]], [[pemmican]], and [[baby food]]{{BiotechIcon}} particularly useful as feed for smaller sized animals. These foods provide more nutrition than raw food, but will waste far less nutrition than a regular meal would.
+
+== Analysis ==
+An adult baseline human will eat roughly 2 [[simple meal]]s, 32 units of [[pemmican]], or 32 units of [[raw food]] per day.
+
+Cooking food effectively "creates" nutrition. A [[simple meal]] is worth 0.9 nutrition, but only costs 0.5 nutrition of food to make. This gives simple meals a 180% ''nutrition efficiency'', before the overeating described above.
+
+Due to the low food consumption of animals, as well as the efficiency of meals, it is possible for animals to generate more food than they eat. For example, a female [[cow]] produces {{Icon Small|milk}} {{Q|Cow|Daily Milk Average}} per day, or {{#vardefineecho:milk_nutr_per_day|{{#expr:{{Q|Cow|Daily Milk Average}}*0.05}}}} [[nutrition]] in milk per day. A cow consumes {{Q|Cow|Real Hunger Rate}} nutrition per day. While cows cannot consume milk, almost all animals can consume meals, no matter what the meal is made out of. So when a cow's milk is turned into [[nutrient paste meal]]s or even [[simple meal]]s, it can feed itself with plenty of food to spare. This gets even sillier with [[chicken]]s, which produce more nutrition in [[egg]]s than they consume per day, even before the eggs are cooked. (Note that chickens cannot eat their own eggs directly, and that they are very prone to overeating.)
+
+=== Conserving food via malnutrition ===
+In extreme situations, it may be advisable to deliberately keep pawns hungry to conserve food. {{Check Tag|Verify Mal|Malnutrition increases hunger rate after they eat again, and the worked example below only covers feeding when hungry. Another example for mal would be good to provide proof and say when best time in malnourished to eat is}} Time spent in malnutrition nullifies 100% of a pawn's hunger rate, while necessitating 50% (trivial severity) to 60% (minor severity or higher) more food for an equivalent amount of time during recovery. Note that this requires significant micromanagement to pull off. Forbid the food and unforbid it when pawns are about to fall unconscious.
+
+Consider a human that has just reached 0% saturation, with a 0.9 nutrition (one simple meal) to eat.
+
+If the food is eaten immediately, said human is fed for a total of 21 hours:
+{| class="wikitable"
+! Hours survived !! State
+|-
+| 9.75 || Fed
+|-
+| 3.75 || Hungry
+|-
+| 7.50 || Ravenously hungry
+|}
+
+If we instead delay eating for 13.75 hours, a meal will feed them for another 13.75 hours and allow for full recovery from the incurred malnutrition, for a total of 27 hours fed.
+{| class="wikitable"
+! Hours survived !! State
+|-
+| 13.75 || Starving up to 27.5% malnutrition (minor)
+|-
+| 3.75 || Fed state with 27.5–20% malnutrition (minor)
+|-
+| 2.50 || Fed state with 20–15% malnutrition (trivial)
+|-
+| 2.50 || Hungry state with 15–10% malnutrition (trivial)
+|-
+| 5.00 || Ravenously hungry state with 10–0% malnutrition (trivial)
+|}
+
+{{Nav|status levels|wide}}
+[[Category:Status Level]]

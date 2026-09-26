@@ -1,0 +1,81 @@
+{{Stub|reason=1) Two-way links}}
+{{About|the effect on an item's melee damage from quality|the multiplier to melee damage from the wielder|Melee Damage Factor}}
+{{Verified|1.5.4104}}{{Stat
+| def name = MeleeWeapon_DamageMultiplier
+| label = melee damage multiplier
+| description = A damage multiplier applied to [[melee]] combat.
+| default base value = 1
+| min value = 0
+| to string style = PercentZero
+| scenario randomizable = true
+| show if undefined = false
+| category = Weapon_Melee
+| display priority in category = 5008
+| parts = StatPart_Quality
+}}
+
+== Factors ==
+<div><li style="display: inline-table;">
+{| {{STDT| c_04}}
+! [[Quality]] !! Factor
+|-
+! Awful
+| {{Bad|×80%}}
+|-
+! Poor
+| {{Bad|×90%}}
+|-
+! Normal
+| '''×100%'''
+|-
+! Good
+| {{Good|×110%}}
+|-
+! Excellent
+| {{Good|×120%}}
+|-
+! Masterwork
+| {{Good|×145%}}
+|-
+! Legendary
+| {{Good|×165%}}
+|}
+</li></div>
+
+== Stat Def Data ==
+{| {{STDT| c_06}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Melee Damage Multiplier" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />MeleeWeapon_DamageMultiplier
+* '''Label:'''<br />melee damage multiplier
+| A damage multiplier applied to melee combat.
+|
+* Display Order:<br />'''48'''
+* Def Name:<br />'''Weapon_Melee'''
+* Label:<br />'''Weapon (melee)'''
+* Display All By Default:<br />{{Bad|false}}
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0}}
+* '''To String Style:''' PercentZero
+* '''Show If Undefined:''' {{Bad|false}}
+* '''Scenario Randomizable:''' {{Good|true}}
+|
+* '''Parts:'''
+** '''StatPart_Quality:'''
+*** Factor Awful: {{Bad|{{%|0.8}}}}
+*** Factor Poor: {{Bad|{{%|0.9}}}}
+*** Factor Normal: '''{{%|1}}'''
+*** Factor Good: {{Good|{{%|1.1}}}}
+*** Factor Excellent: {{Good|{{%|1.2}}}}
+*** Factor Masterwork: {{Good|{{%|1.45}}}}
+*** Factor Legendary: {{Good|{{%|1.65}}}}
+| 5008
+<!--</StatDef>-->
+|}
+
+== Version history ==
+{{Stub|section=1|reason=General}}
+
+{{nav|stats|wide}}

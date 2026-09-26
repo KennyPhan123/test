@@ -1,0 +1,73 @@
+{{see also|Textiles|Fabrics}}
+{{TOCright}}
+'''Leathers''' are a category of [[material]] obtained when a [[Skills#Cooking|cook]] butchers an [[animal]] at a [[butcher table]] or [[Butcher spot|spot]]. The type of leather is determined by the species butchered, with some leather types being produced by several species. See the individual pages of each leather for further details. The amount obtained depends on the [[Leather Amount]] of the butchered animal and the [[Butchery Efficiency]] of the butcher. Some animals, including [[dryads]], [[insectoids]], [[chicken]]s, and [[duck]]s, do not yield leather when butchered. 
+
+Note that [[Patchleather]] is unique in that while it is classed as a leather for [[stuff]] selection, it is obtained by combining other leathers rather than directly from an animal.
+
+== Comparison table ==
+Below is a list of material effects for leathers. When a [[stuff]]able item is created from a leather, each of its base stats is multiplied by a factor for that stat belonging to the material used. Take "Armor - Sharp" for example. For this stat, [[Plainleather]] has a ''factor'' of {{Q|Plainleather|Armor - Sharp Factor}} and a [[duster]] has base stat of {{Q|Duster|Armor Factor - Sharp}}. Thus, the final "Armor - Sharp" of a Plainleather Duster before [[quality]] multipliers is: {{Q|Plainleather|Armor - Sharp Factor}} * {{Q|Duster|Armor Factor - Sharp}} or {{#expr: {{Q|Plainleather|Armor - Sharp Factor}}*{{Q|Duster|Armor Factor - Sharp}} *100}}%
+
+This process is then repeated for each stat. The material's HP factor is applied to the items base HP, flammability factor to flammability etc. Insulation is not expressed as a percentage and is thus slightly different. For an example of how to calculate the insulation for a given piece of apparel, see [[Apparel#Insulation|Apparel]]
+
+Market value is the notable exception to this direct multiplicative relationship, but the value of a material does have a direct effect on that of the final product. See [[Market Value]] for details.
+
+<includeonly><onlyinclude>
+|-
+! {{DLC Icons|{{{Name}}} }}
+| data-sort-value="{{{Beauty Factor}}}" | ×{{{Beauty Factor}}}
+| data-sort-value="{{{Max Hit Points Factor}}}" | ×{{{Max Hit Points Factor}}}
+| data-sort-value="{{{Armor - Sharp Factor}}}" | ×{{{Armor - Sharp Factor}}}
+| data-sort-value="{{{Armor - Blunt Factor}}}" | ×{{{Armor - Blunt Factor}}}
+| data-sort-value="{{{Armor - Heat Factor}}}" | ×{{{Armor - Heat Factor}}}
+| data-sort-value="{{{Insulation - Cold Factor}}}" | +{{Temperature|{{{Insulation - Cold Factor}}}||delta}}
+| data-sort-value="{{{Insulation - Heat Factor}}}" | +{{Temperature|{{{Insulation - Heat Factor}}}||delta}}
+| data-sort-value="{{{Market Value Base}}}" | {{{Market Value Base}}} {{Icon Small|silver}}
+</onlyinclude></includeonly><div><li style="display: inline-table;">
+{| {{STDT| sortable c_22 text-center}}
+! Name 
+! data-sort-type=number | Beauty 
+! data-sort-type=number | Max Hit Points 
+! data-sort-type=number | Armor - Sharp 
+! data-sort-type=number | Armor - Blunt 
+! data-sort-type=number | Armor - Heat 
+! data-sort-type=number | Insulation - Cold 
+! data-sort-type=number | Insulation - Heat 
+! data-sort-type=number | Market Value
+{{#ask: [[Stuff Category::Leathery]]
+ | named args = true
+ | ?Name
+ | ?Beauty Factor
+ | ?Max Hit Points Factor
+ | ?Armor - Sharp Factor
+ | ?Armor - Blunt Factor
+ | ?Armor - Heat Factor
+ | ?Insulation - Cold Factor
+ | ?Insulation - Heat Factor
+ | ?Market Value Base
+ | format = template
+ | template = :Leathers
+ | link = none
+ | sort = From DLC, Name
+}}
+|}
+</li></div>
+
+All leathers have the following modifiers in common:
+* [[Property:Work To Make|Work To Make Factor]] and [[Property:Work To Build|Work To Build Factor]] of 1.
+* [[Property:Flammability Factor|Flammability Factor]] of 1.
+
+== Descriptions ==
+{{List|Leather}}
+
+== Gallery ==
+{{#set:Image|[[File:Leather b.png]]}}
+<gallery>
+Leather a.png|Partial stack
+Leather b.png|Full stack
+</gallery>
+
+== Version history ==
+[[Version/0.7.581|0.7.581]] - Leather harvesting from animals added.
+
+{{nav|materials|wide}}
+[[Category:Material|#Leathers]] [[Category:Textile|#Leathers]]

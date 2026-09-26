@@ -1,0 +1,109 @@
+{{Project|Psyfocus}}
+{{Infobox main|building
+| name = Campfire
+| image = Campfire.png
+| description = Cooks meals and produces heat, and burns out after a few days. As with all heat sources, it must be placed indoors so it has a closed space to heat. Refuelable.
+| type = Building
+| type2 = Temperature
+| placeable = true
+| path cost = 42
+| passability = pass through only
+| cover = 0.2
+| minifiable = false
+| size = 1 ˣ 1
+| flammability = 0
+| hp = 80
+| work speed factor = 0.5
+| glowradius = 10
+| glowcolor = (252, 187, 113)
+| heatpersecond = 21
+| maxheattemperature = 28
+| terrain affordance = light
+| work to make = 200
+| resource 1 = Wood
+| resource 1 amount = 20
+| deconstructyieldfraction = 0
+| destroyyield = nothing
+| fuel filter = Wood
+| fuel capacity = 20.0
+| fuel consumption rate = 10.0
+| initial fuel percent = 1 <!-- 100% -->
+| fuel consumption per tick in rain = 0.0006
+}}
+The '''campfire''' is building that produces [[light]], [[temperature]], allows the execution of simple cooking bills and the burning of [[apparel]], [[weapons]] and [[drugs]]. It also functions as a social gathering spot.
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+{| class="wikitable"
+| [[File:Forbid Off.png|Automatic refuel toggle on|64px]]
+| [[File:Forbid On.png|Automatic refuel toggle off|64px]]
+| [[File:Gather Spot Active.png|Gather spot toggle|64px]]
+|-
+| Automatic refuel<br/>toggle on
+| Automatic refuel<br/>toggle off
+| Gather spot toggle
+|}
+
+Campfires must be lit to function, which requires fuel. A lit campfire consumes {{Icon Small|wood}} 10 [[wood]] per day, and consumes an additional {{Icon Small|wood}} 0.0006 wood per {{Ticks|1}}, or a total of {{Icon Small|wood}} {{#expr: 10+ (0.0006*60000)}} wood per day, if it is lit while unroofed in the [[Weather|rain or snow]]. It can hold up to 20 fuel at a time, for a maximum run time of {{#expr:20/10}} days or {{#expr: 24 * (20/(10+ (0.0006*60000))) round 2}} in-game hours in the rain. It is constructed with a full fuel capacity.  Fuel is delivered to the campfire by a [[Work#Haul|haulers]] as long as refueling is enabled.  When deconstructing a campfire, no wood is reclaimed.
+
+[[File:Campfire illumination area.png|300px|thumb|left|The white area (6 tiles out) is 50% illumination, required for best [[Surgery Success Chance Factor|surgery success chance]]; the yellow (7th tile) represents 30% or better, adequate for all general labor, avoiding [[mood]] penalties, and for growing [[Decorative Plants|decorative plants]] indoors in [[plant pot]]s.]]
+A lit campfire outputs [[light]] in a 10 tile radius, with the nearest {{P|Light Radius}} tiles at or above 30% light level and considered "lit", to a maximum of 50%. The provided light in this area is bright enough to prevent work speed penalties, grow decorative plants, and prevent the debuff [[Thoughts_list#In_darkness|"In darkness"]]. However, campfires are not bright enough to grow most [[crop]]s indoors, which require 51% illumination. Light does not "stack", so no amount of campfires will ever give more than 50% illumination (e.g. for [[rice plant]]s, etc).
+
+Lit campfires will also heat enclosed [[rooms]] to a maximum [[temperature]] of {{Temperature|28}} at a rate of [[Temperature|21 heat per second]], equivalent to a [[heater]]. Outdoor campfires, like other temperature effects, won't cause any temperature changes, but otherwise function as normal.
+
+Campfires can act as a [[Recreation#Relaxing socially|gather spot]] for colonists to [[Recreation|recreate]], even if unlit. This is toggled on by default, but can be toggled off via the gizmo when the campfire is selected.
+
+{{Pyromaniac Building Note}}
+
+=== Bills ===
+The following items can be crafted at the campfire. Note that the campfire has a [[Property:Work Speed Factor|Work Speed Factor]] of {{P|Work Speed Factor}}, meaning that all bills will take {{#expr:1/{{P|Work Speed Factor}} round 1}}x as long as at most other work stations.
+
+{{Recipe List}}
+
+==== Burning ====
+Burning bills are worked by [[Work#Haul|haulers]]. All times are scaled by the worktable efficiency of {{P|Work Speed Factor}} and the [[General Labor Speed|general labor speed]] of the hauler performing the bill. In all cases, the item is completely destroyed leaving nothing behind.
+
+==== Burn apparel ====
+{{Quote|Burn unwanted apparel to completely destroy it.|Burn apparel description}}
+Apparel requires {{Ticks|60/{{P|Work Speed Factor}} }} work to burn (modified by the [[general labor speed]] of the hauler), regardless of the item or material. [[Shield belt]]s and [[smokepop pack]]s cannot be burned (though [[firefoam pop pack]]s can).
+
+==== Burn weapon ====
+{{Quote|Burn unwanted weapon to completely destroy it.|Burn weapon description}}
+Weapons require {{Ticks|60/{{P|Work Speed Factor}} }} work to burn (modified by the [[general labor speed]] of the hauler), regardless of the item or material. Only flammable melee weapons, and ranged weapons made from wood ([[pila]], [[short bow]] / [[recurve bow]] / [[greatbow]] / [[flamebow]] {{BiotechIcon}}), can be burned.
+
+==== Burn drugs ====
+{{Quote|Burn unwanted drugs to completely destroy them.|Burn drugs description}}
+Drugs require {{Ticks|60/{{P|Work Speed Factor}} }} work to burn (modified by the [[general labor speed]] of the hauler), but burns in entire stacks.
+
+=== Ritual ===
+Campfires are used by the [[Rituals#Drum party|Drum Party]] [[ritual]].{{IdeologyIcon}} If a lit campfire is used to start the ritual, the ritual will gain +20% quality, increasing the chance of a positive outcome. At least one [[drum]] is required in a twelve tile radius.
+
+Campfires can also be used for the [[Rituals#Skylantern festival|Skylantern Festival]] and the [[Rituals#Leader speech|Leader Speech]] [[ritual]]s.,{{IdeologyIcon}} but there is no quality bonus for these rituals. The campfire must be lit for the skylantern festival, but not for the leader speech.
+
+== Analysis ==
+Campfires have a wide array of uses. They can heat rooms in cold [[biome|climates]], they can be used to cook food, and they produce light, all before you have access to [[Electricity]]. There are multiple alternatives, even before electricity: 
+* [[Fueled stove]]s cook x2 faster than a campfire, allow access to [[fine meal]]s and [[lavish meal]]s, and do not consume wood when not cooking food. They do consume a lot more wood during use. But fueled stoves are more efficient, so long as you have nearby trees to chop.
+* [[Torch lamp]]s are much more efficient for light, and produce meager amounts of heat.
+* There is no direct alternative for heat before you have electricity. However, you can build your shelter inside a [[steam geyser]], which creates sufficient (if too much) heat on its own.
+The main benefit is that campfires are "all-in-one". If you are burning wood for heat, you might as well use it for cooking and light. Also, they allow cooking without using steel for a fueled stove. Conversely, if you don't need heat and can afford to use a fueled stove, then you can skip a campfire.
+
+After researching Electricity, Campfires are generally not resource- or work- efficient. A stable power source, [[heater]]s, [[electric stove]]s, and [[standing lamp]]s all replace their functions. However, campfires don't require [[steel]] or [[component]]s. Once you do have these supplies, then it is best to upgrade quickly. In the late game, campfires have a minor use, as they can be used as a heating alternative during a [[solar flare]] or other power outage.
+
+Campfires can't be set to a specific temperature, meaning colonists are more likely to receive unhappy moods from being slightly too hot or cold when the room is heated with a campfire instead of a higher tech heater. If it's too hot, you can remove tiles of the [[roof]] or hold open [[door]]s to let some heat out.
+
+=== Tips ===
+* You can place campfires near [[growing zone]]s and/or [[table|dining areas]], in order to reduce hauling time.
+* It is recommended to have a single gathering spot per colony, in your preferred "recreation area". Toggle off any campfires that don't meet this requirement. 
+* Place a campfire under a [[roof]] due to the extra fuel consumption from rain; 1 wall and tile of roof are enough.
+
+== Version history ==
+* [[Version/1.1.0|1.1.0]] - Refueling is now toggleable.
+* [[Version/1.5.4062|1.5.4062]] - Fix: Making baby food at campfires ignores work restrictions.
+
+{{Nav|temperature|wide}}
+{{Nav|Production|wide}}
+[[Category:Temperature]]
+[[Category:Production]] [[Category:Drug Production]] [[Category:Food Production]]
+[[Category:Lamp]]

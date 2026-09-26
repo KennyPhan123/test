@@ -1,0 +1,342 @@
+<!--Top Nav Box-->
+{| align=center
+| {{Health_Nav}}
+|}
+----
+<!-- End Nav -->
+
+{{TOCright}}
+
+<!--
+Data found in
+HediffDefs\Hediffs_Infections.xml
+HediffDefs\Hediffs_GlobalMisc.xml
+HediffDefs\Incidents_Bad_Disease.xml
+BiomeDefs\Biomes.xml
+-->
+<includeonly>:''Main article: [[Disease]]''</includeonly>{{About|treatable illnesses|physical damage|Injury|chronic health conditions|Ailments}}
+
+'''Diseases''' are temporary and treatable ailments, that pass away after a certain amount of time or treatment.
+
+== Contract ==
+Most diseases are contracted as part of an [[event]]. Your colony's [[biome]] determines how common diseases are, as well as how common each disease is. However, some diseases happen situationally, regardless of biome:
+*[[Infection]] may occur after a bleeding [[injury]], burn, or frostbite is inflicted. Tending the injury in a clean room reduces the chance of infection.
+*[[Lung rot]] occurs randomly when inhaling enough [[rot stink]].
+*[[Blood rot]]{{RoyaltyIcon}} and [[paralytic abasia]]{{RoyaltyIcon}} are exclusively part of [[quest]]s, while [[infant illness]]{{BiotechIcon}} can only happen during [[Reproduction#Birth|birth]].
+
+Note that with the exception of [[Scaria]], diseases are '''not contagious''' in RimWorld. Disease does not ever spread between colonists, though disease events often simulate "outbreaks" by inflicting multiple colonists at the same time.
+
+The drug [[penoxycyline]] protects against [[Malaria]], [[Plague]], and [[Sleeping sickness]]. The disease event still happens, but colonists will not be affected.
+
+== Summary ==
+Humans and animals can get diseases. Most diseases uses the ''severity'' mechanic. As a disease progresses, its symptoms progressively get worse. If a fatal disease's severity reaches 1.0 (100%), then [[death]] occurs. Most diseases go from minor -> major -> extreme. How fast a disease progresses depends on the disease itself.
+
+== Diseases ==
+'''Note:''' Base values of severity and immunity gain speed used in the table.<br>Treatment's reduction of severity depends on tend quality. 50% tend quality equals half the reduction.
+<div><li style="display: inline-table;">
+{| {{STDT| c_20 text-left}}
+|-
+! Disease !! Fatal? !! Description !! Severity !! Treatment 
+|-
+! [[Infection]]
+| {{Check}} || Generic infection of individual [[injury|wounds]]. 
+*Fast moving and dangerous. 
+** < 1.25 days to kill if untreated. <1.5 days for immunity.
+*Mild symptoms until extreme severity (>0.87). ({{++|5%}} to {{++|12%}} pain) 
+|
+* Severity: +0.84 / day
+* Immunity: +0.644 / day
+* Treatment: -0.53 severity / day <br>(at 100% quality)
+| 
+* Bed rest and medicine
+* Amputation of infected body part
+|-
+! [[Flu]]
+| {{Check}} ||  ''Relatively'' mild and common disease.
+*Non-elderly adults can survive without treatment, with just bedrest.
+*Lowers [[consciousness]], [[manipulation]], [[breathing]] ({{--|5%}} to {{--|20%}}).
+|
+* Severity: +0.249 / day
+* Immunity: +0.239 / day
+* Treatment: -0.077 severity / day <br>(at 100% quality)
+| 
+* Bed rest and medicine
+|-
+! [[Malaria]]
+| {{Check}} || Common in tropical [[biomes]].
+* Attacks [[blood filtration]], slowing immunity speed.
+* Later stages cause [[pain]] and reduces [[consciousness]].
+| 
+* Severity: +0.370 / day
+* Immunity: +0.314 / day
+* Treatment: -0.232 severity / day<br>(at 100% quality)
+| 
+* Bed rest and medicine
+|-
+! [[Plague]]
+| {{Check}} || Fast moving and ''extremely'' painful.
+* ~1.5 days to kill if untreated.
+*Constant [[pain]] ({{++|20%}} to {{++|85%}}).
+*Also reduces [[consciousness]] and [[manipulation]] (up to {{--|30%}}).
+||
+* Severity: +0.666 / day
+* Immunity: +0.522 / day
+* Treatment: -0.362 severity / day <br>(at 100% quality)
+|
+* Bed rest and medicine
+|-
+! [[Sleeping sickness]]
+| {{Check}} || Very slow-moving infection. Native only to [[biome|rainforests and swamps]].
+*Relatively easy to treat if rested. 
+* Threat is the amount of rest / medicine required.
+*Mainly lowers [[consciousness]] & [[manipulation]] ({{--|2%}} to {{--|20%}}).
+||
+* Severity: +0.12 / day
+* Immunity: +0.11 / day
+* Treatment: -0.07 severity / day <br>(at 100% quality)
+| 
+*  Bed rest and medicine
+|-
+! [[Scaria]]
+| {{Check}} || Drives [[animal]]s to become [[manhunter]]s and humans [[berserk]]. 
+*Exclusive to animals in [[manhunter pack]]s and the [[scarlands]]{{OdysseyIcon}}.
+*Pawns with scaria may cause [[scaria infection]]s when attacking, instead of regular [[infection]]
+**Letting a scaria infection progress to 100% will cause scaria.
+||
+* Kills in 5 days, unless cured
+| 
+* Surgery
+**{{Icon Small|medicine}} 3 [[medicine]]
+**[[Skills#Medical |Medical Skill]] 8+
+|-
+! [[Lung rot]]
+| {{Check}} || 
+Occurs after enough exposure to [[rot stink]]. Avoid rot stink to avoid.
+* Resisted by sources of [[Toxic Environment Resistance]].
+* Easily treatable overall. Can drain medicine.
+* Impairs [[breathing]] slightly. Minimal symptoms overall.
+||
+* Severity: +0.300 / day
+* Treatment: -1.000 severity / day <br>(at 100% quality)
+|
+* Medicine
+Resolves from:
+*Min {{ticks/gametime|360000}}
+*Max {{ticks/gametime|480000}}
+|-
+! [[Gut worms]]
+| {{cross}} || Doubles hunger rate.
+*Also painful ({{++|20%}} pain).
+|| 
+* No progression
+* Cured at 300% total Tend Quality
+|
+* Medicine (48hr per tend)
+* Stomach replacement or removal
+|-
+! [[Muscle parasites]]
+| {{cross}} || Heavily impairs work.
+*Significant tiredness.
+*Lowered [[manipulation]] and [[movement speed]] ({{--|30%}}).
+*Also painful ({{++|20%}} pain).
+||
+* No progression
+* Cured at 300% total Tend Quality
+| 
+* Medicine (48hr per tend)
+|-
+! [[Fibrous mechanites]]
+| {{cross}} || Very long-lasting, but ''improves'' working.
+*Painful, significant tiredness.
+*Significantly increases [[manipulation]], [[movement speed|moving]] and [[blood pumping]] ({{+|50%}} to all).
+||
+* Severity: +0.25 / day
+* Treatment: -1.00 severity / day <br>(at 100% quality)
+| 
+* Medicine
+**Prevents pain increase only
+Resolves from:
+*Min {{ticks/gametime|900000}}
+*Max {{ticks/gametime/days|1800000}}
+|-
+! [[Sensory mechanites]]
+| {{cross}} || Very long-lasting, but ''improves'' many stats.
+*Painful, significant tiredness.
+*Significantly increases [[sight]], [[hearing]], and [[talking]] ({{+|50%}} to all).
+*Increases [[manipulation]] ({{+|30%}}).
+||
+* Severity: +0.25 / day
+* Treatment: -1.00 severity / day <br>(at 100% quality)
+| 
+* Medicine
+**Prevents pain increase only
+Resolves from:
+*Min {{ticks/gametime|900000}}
+*Max {{ticks/gametime/days|1800000}}
+|-
+! [[Organ decay]]
+| {{Check}} || No natural cure. Only targets specific organs.
+*Causes increasingly worse pain and weakened part efficiency of the afflicted organ, ultimately destroying it at 1 severity.
+*Only treatable by replacing the organ.
+*Only targets the heart, lungs and kidneys.
+*Can appear rarely as a disease event, or on [[Creepjoiner]]s.{{AnomalyIcon}}
+||
+* Severity: +0.0166 to 0.0334 / day
+| 
+* Replacing the organ
+**Does not affect bionic or prosthetic organs
+Reaches max severity after:
+*Min {{ticks/gametime|1800000}}
+*Max {{ticks/gametime/days|2400000}}
+|-
+! [[Blood rot]]{{RoyaltyIcon}}
+| {{Check}} || ''Extremely'' long lasting blood affliction.
+*[[Quest]] only.
+*Mild and easily treated, but can be a drain on medicine.
+||
+* Severity: +0.40 / day
+* Treatment: -1.00 severity / day <br>(at 100% quality)
+|
+* Medicine
+* Surgery for immediate cure
+**{{Icon Small|Glitterworld medicine}} 10 [[glitterworld medicine]]
+**[[Skills#Medical |Medical Skill]] 5+
+Resolves from:
+* Min {{ticks/gametime/days|60000*30}}
+* Max {{ticks/gametime/days|60000*40}}
+|-
+! [[Paralytic abasia]]{{RoyaltyIcon}}
+| {{Cross}} || Complete immobility. ''Extremely'' long lasting.
+*[[Quest]] or [[Events#Transport pod crash|transport pod crash]] only.
+||
+* No progression
+* 1% per day to instantly cure
+|
+* Waiting
+* Surgery for immediate cure
+**{{Icon Small|Glitterworld medicine}} 10 [[glitterworld medicine]]
+**[[Skills#Medical |Medical Skill]] 5+
+Always resolves after:
+* Min {{ticks/gametime/days|60000*30}}
+* Max {{ticks/gametime/days|60000*40}}
+|-
+! [[Infant illness]]{{BiotechIcon}}
+| {{Check}} || Inflicted after a sick [[Reproduction#Birth|birth]] of a [[baby]].
+*4 different types of illness, from mild to grave. Switches every 1-3 days.
+*Uniquely, reducing severity to 0 cures the disease (no immunity required).
+||
+* Starts as Major severity (0.40)
+* Severity gain depends on the type
+** From -0.25 to +0.5 severity / day
+* Immunity: +0.10 / day
+* Treatment: -0.35 severity / day <br>(at 100% quality)
+| 
+* Medicine and bed rest
+|}
+</li><div>
+
+== Treatment ==
+Most diseases can be tended to, just like an [[injury]] or [[ailment]], by a [[Doctoring|Doctor]] pawn and when the afflicted pawn is assigned to [[Work|Patient]] themselves. Tend Quality is determined by a variety of factors, including the doctor's [[skill]] and the quality of [[Medicine]] used. Generally, higher quality tends reduce the total time until recovery, though mechanics vary. How often a disease can be tended depends on the disease itself.
+
+There are 3 types of diseases to tend to:
+* The disease will progress over time, and treatment slows down progression. Immunity is gained over time, dependent on [[Immunity Gain Speed]] and independent of tend quality. Once immune, the disease will slowly fade and the colonist will stop being a patient. This applies to most fatal diseases, including the [[flu]], [[infection]], and [[plague]].
+* The disease does not progress. Treatment must reach a ''total tend quality'' (300%) before the disease is cured. For example, 4 tends at 80% quality would equal 320% total tend quality. Applies to [[gut worms]] and [[muscle parasites]].
+* The disease progresses over time, and treatment slows and even prevents progression. The disease fades only after a certain time. Applies to [[lung rot]], [[fibrous mechanites]], [[sensory mechanites]], and [[blood rot]].{{RoyaltyIcon}}
+
+Certain diseases have specialized cures. For example, [[infection]] in a non-vital part can be cured by amputating or [[Artificial body part|replacing]] a limb, [[blood rot]] can be instantly cured with [[glitterworld medicine]], and [[gut worms]] can be treated by replacing the stomach. In addition, a [[healer mech serum]] immediately cures any disease.
+
+=== Immunity gain ===
+{{Main|Immunity Gain Speed}}
+Some diseases are a race between the increasing severity of the disease and the increasing immunity to it. This immunity gain is controlled by several factors:
+* Base immunity gain speed for the particular disease. 
+* InfectionLuck, an uncontrollable generated value that adds randomness to the diseases progression. Each disease has a variance in Immunity gain speed of 20% up or down. 
+* The [[Immunity Gain Speed]] stat of the patient
+
+Immunity Gain Speed is affected by the following:
+* '''[[Food]]''': Pawns above 12.5% [[Saturation]] do not have any penalties to immunity.
+* '''[[Rest]]''': Actively resting gives a bonus to speed. Resting in any [[bedroll]] or [[bed]] increases the stat, a [[hospital bed]] increases it further, and a hospital bed with an attached [[vitals monitor]] increases it the most.
+* '''Age''': As a pawn gets closer to and past their species' life expectancy, immunity gain speed decreases. 
+** For baseline humans, immunity gain speed is gradually lost after age 54. [[Genes]]{{BiotechIcon}} like [[Mild cell instability|cell instability]] can affect the pawns lifespan and, in turn, affect this progression.{{Check Tag|Verify|Verify and also confirm on Immunity Gain Speed page}}
+* '''[[Blood Filtration]]''': Mostly increased via [[luciferium]]. Reduced with [[kidney]] or [[liver]] damage, slightly improved with a [[detoxifier kidney]]{{BiotechIcon}}.
+* '''Direct boosts''': The [[Super-immune]] trait, [[Immunoenhancer]]{{RoyaltyIcon}}, and [[gene]]s{{BiotechIcon}} can increase immunity speed.
+
+Note that these only apply to diseases with immunity mechanics. For example, you don't need to give a pawn with [[gut worms]] bedrest.
+
+== Disease frequency ==
+
+=== Disease frequency by AI storyteller ===
+Disease frequency is controlled directly by the [[AI_Storytellers#Disease frequency|Disease frequency]] AI storyteller setting. 
+
+This value can be changed in custom storyteller settings, but has the following default values by difficulty:
+
+{| {{STDT| c_20 text-center}}
+! Difficulty !! Disease interval multiplier
+|-
+| Peaceful || 3
+|-
+| Community builder || 2.5
+|-
+| Adventure story || 1.3
+|-
+| Strive to survive || 1.0
+|-
+| Blood and dust || 0.95
+|-
+| Losing is fun || 0.9
+|-
+|}
+
+=== Disease frequency by biome ===
+The frequency of diseases and the selection chance of each disease is [[biome]] specific.
+<includeonly><onlyinclude>
+|-
+! {{DLC Icons|{{{?Name}}} }}
+! {{{?Disease MTB Days}}}
+| {{#if:{{{?Fibrous mechanites}}}|{{%|{{{?Fibrous mechanites}}} / {{{?Disease commonality sum}}} round 3}}|–}}
+| {{#if:{{{?Flu}}}|{{%|{{{?Flu}}} / {{{?Disease commonality sum}}} round 3}}|–}}
+| {{#if:{{{?Gut worms}}}|{{%|{{{?Gut worms}}} / {{{?Disease commonality sum}}} round 3}}|–}}
+| {{#if:{{{?Malaria}}}|{{%|{{{?Malaria}}} / {{{?Disease commonality sum}}} round 3}}|–}}
+| {{#if:{{{?Muscle parasites}}}|{{%|{{{?Muscle parasites}}} / {{{?Disease commonality sum}}} round 3}}|–}}
+| {{#if:{{{?Organ decay}}}|{{%|{{{?Organ decay}}} / {{{?Disease commonality sum}}} round 3}}|–}}
+| {{#if:{{{?Plague}}}|{{%|{{{?Plague}}} / {{{?Disease commonality sum}}} round 3}}|–}}
+| {{#if:{{{?Sensory mechanites}}}|{{%|{{{?Sensory mechanites}}} / {{{?Disease commonality sum}}} round 3}}|–}}
+| {{#if:{{{?Sleeping sickness}}}|{{%|{{{?Sleeping sickness}}} / {{{?Disease commonality sum}}} round 3}}|–}}
+| {{#if:{{{?Animal flu}}}|{{%|{{{?Animal flu}}} / {{{?Disease commonality sum}}} round 3}}|–}}
+| {{#if:{{{?Animal plague}}}|{{%|{{{?Animal plague}}} / {{{?Disease commonality sum}}} round 3}}|–}}
+</onlyinclude></includeonly>
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_20 text-center}}
+! rowspan="2" | Biome !! rowspan="2" | Disease<br/>{{MTB}} (days) !! colspan="11" | Chance of specific disease
+|- style="background-color:#c2a3e0;"
+! style="border-left-color:#ad85d6;" | [[Fibrous mechanites]] !! [[Flu]] !! [[Gut worms]] !! [[Malaria]] !! [[Muscle parasites]] !! [[Organ decay]] !! [[Plague]] !! [[Sensory mechanites]] !! [[Sleeping sickness]] !! [[Flu#Animals|Animal flu]] !! [[Plague#Animals|Animal plague]]
+|-
+{{#ask: [[Type::Biome]] [[Name::!Lake]] [[Name::!Ocean]]
+ | ?Name = ?Name
+ | ?Disease MTB Days = ?Disease MTB Days
+ | ?Disease commonality sum = ?Disease commonality sum
+ | ?Fibrous mechanites commonality = ?Fibrous mechanites
+ | ?Flu commonality = ?Flu
+ | ?Gut worms commonality = ?Gut worms
+ | ?Malaria commonality = ?Malaria
+ | ?Muscle parasites commonality = ?Muscle parasites
+ | ?Organ decay commonality = ?Organ decay
+ | ?Plague commonality = ?Plague
+ | ?Sensory mechanites commonality = ?Sensory mechanites
+ | ?Sleeping sickness commonality = ?Sleeping sickness
+ | ?Animal flu commonality = ?Animal flu
+ | ?Animal plague commonality = ?Animal plague
+ | format = template
+ | template = :Disease
+ | named args = true
+ | link = none
+ | sort = From DLC, Name
+}}
+|}
+</li></div>
+
+== Version history ==
+* [[Version/0.7.581|0.7.581]] - Added with flu, plague, malaria, sleeping sickness.
+* [[Version/0.9.722|0.9.722]] - Diseases can now cause vomiting.
+
+{{Nav|disease|wide}}
+[[Category:Health|#Disease]]

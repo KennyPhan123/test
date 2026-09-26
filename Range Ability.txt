@@ -1,0 +1,53 @@
+{{Stub|reason=1) Version history 2) Two-way links}}
+{{Verified|1.5.4104}}{{Stat
+| def name = Ability_Range
+| label = range
+| description = The maximum distance to a target of this ability, or to the center of the target location.
+| default base value = 25
+| min value = 0
+| hide at value = 0
+| show if undefined = false
+| category = Ability
+| display priority in category = 1001
+}}
+
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_07 text-center}}
+! Ability !! Range (Cells)
+|-
+{{#ask:
+[[Ability Range::+]]
+| ?Ability Range
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Name
+}}
+|}
+</li><div>
+
+== Stat Def Data ==
+{| {{STDT}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Range" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />Ability_Range
+* '''Label:'''<br />range
+| The maximum distance to a target of this ability, or to the center of the target location.
+|
+* Display Order:<br />'''60'''
+* Def Name:<br />'''Ability'''
+* Label:<br />'''Ability'''
+* Display All By Default:<br />{{Bad|false}}
+|
+* '''Default Base Value:''' 25
+* '''Min Value:''' 0
+* '''Hide At Value:''' 0
+* '''Show If Undefined:''' {{Bad|false}}
+| -
+| 1001
+<!--</StatDef>-->
+|}
+
+
+{{nav|stats|wide}}

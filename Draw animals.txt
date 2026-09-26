@@ -1,0 +1,49 @@
+{{Anomaly}}
+{{Stub|reason= General - Missing real summary and analysis. Also needs participant kinds and numbers}}
+{{Infobox main|psycast
+| name = Draw animals
+| image = Draw animals.png
+| type = Psychic ritual
+| description = Create a psychic pulse which will draw a distant herd of animals into the local area. You can then hunt or make use of them as you choose. If not done correctly, this may attract scaria-infected manhunters.
+| research = Draw animals
+| ritual duration = 10000
+| ritual cooldown = 600000
+| resource 1 = Bioferrite
+| resource 1 amount = 10 
+}}
+'''Draw animals''' is a [[psychic ritual]] that causes a group of animals to enter the map upon which it is cast, with the risk of them arriving as manhunters.
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+* Triggers either a [[Events#Herd_migration:_.28Animal.29|herd migration]] event or a [[manhunter pack]] event after {{Ticks|2500}} to {{Ticks|7500}} of the ritual's completion.
+** The herd migration event will trigger on any [[biome]] that has wild animals, even biomes that normally cannot have this event.
+** The manhunter pack event behaves like a normal manhunter pack event. Its [[raid point]] is calculated based on the map's wealth at the time of the ritual's completion.
+** The game will send a letter notifying the player which event will happen when the ritual is finished.
+* The chance for either of the events to be selected is dependent on the ritual's quality - the higher the quality the less chance for the event to be [[manhunter pack]] and the more chance for the event to be [[Events#Herd_migration:_.28Animal.29|herd migration]]. 
+** At 100% quality, the chance for a manhunter event to happen is 1%.
+{| class="wikitable"
+! Manhunter pack chance by Quality
+|-
+! {{Graph:Chart|width=400|height=100|type=area|xAxisTitle=Quality (%) |yAxisTitle=Chance for manhunter pack (%)|x=0,75,90,100|y=75,10,5,1}}
+|}
+{| class="wikitable"
+! Herd migration chance by Quality
+|-
+! {{Graph:Chart|width=400|height=100|type=area|xAxisTitle=Quality (%) |yAxisTitle=Chance for herd migration (%)|x=0,75,90,100|y=25,90,95,99}}
+|}
+
+== Analysis ==
+It is unlikely that you will get any use out of the Herd Migration effect summoned if you do not deliberately take action to capitalize on it. Merely marking the animals to be hunted by pawns is a bad idea, as migrating animals will enter your tile and move in a straight line towards an exit point, leaving within a few hours if not intercepted. One should have hunters Drafted and actively moved into position to attack the herd, or draw them closer to your traditional defenses.
+
+If used for the purposes of hunting animals for food, while it is ideal for the ritual to be successful, even a failed ritual can be somewhat salvaged. While a majority of Scaria-infected manhunter animals will rot instantly upon death, a number of them will remain fresh for a time, allowing you to butcher them as normal. Depending on your colony wealth, the number of viable corpses after a manhunter raid may well be more then a successful call animals, which is capped to four or five animals.
+
+If used for the purposes of defense, manhunter swarms at high colony wealth can quite effectively handle quite a wide variety of threats, and will attack any non-downed pawn they come across. This means any traders that visit your tile during the manhunter siege will likely not survive, but manhunters will also attack human raiders, awake mechanoids, and entities, but not insectoid. Notably, this makes Draw Animals the only psychic ritual that can summon something that will attack entities. This may be useful for softening up a shambler hoard or a pit gate's many fleshbeasts prior to moving in your own colonists.
+
+== Version history ==
+* [[Anomaly DLC]] Release - Added.
+* ? - Description changed from ''{{Hover title|Create a psychic pulse which draws a distant herd of animals to the local area. You can then hunt or make use of them as you choose. If not done correctly, this may attract scaria-infected manhunters.|"[...] which draws a distant herd of animals to the local area. [...]"}}'' changed to ''{{Hover title|Create a psychic pulse which will draw a distant herd of animals into the local area. You can then hunt or make use of them as you choose. If not done correctly, this may attract scaria-infected manhunters.|"[...] which will draw a distant herd of animals into the local area. [...]"}}''. {{Check Tag|Verify old version existed}}
+
+{{Nav|psychic rituals|wide}}
+[[Category: Psychic rituals]]

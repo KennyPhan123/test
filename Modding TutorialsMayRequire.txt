@@ -1,0 +1,439 @@
+{{DISPLAYTITLE:MayRequire}}
+{{BackToTutorials}}
+
+<code>MayRequire</code> is an [[Modding_Tutorials/Introduction_to_XML|XML attribute]] introduced alongside the [[Royalty DLC]] that allows for easy conditional loading of XML content. <code>MayRequire</code> makes it easier to load content that is optionally dependent on DLCs or other mods.
+
+== Details ==
+
+<code>MayRequire</code> is inserted as an XML attribute in a supported XML node with a value being one or more <code>packageId</code> values separated by commas.
+
+The <code>packageId</code> for official DLCs are:
+
+* Royalty: <code>Ludeon.RimWorld.Royalty</code>
+* Ideology: <code>Ludeon.RimWorld.Ideology</code>
+* Biotech: <code>Ludeon.RimWorld.Biotech</code>
+* Anomaly: <code>Ludeon.RimWorld.Anomaly</code>
+* Odyssey: <code>Ludeon.RimWorld.Odyssey</code>
+
+The <code>packageId</code> for mods can be found in their [[About.xml]] file.
+
+=== <code>MayRequireAnyOf</code> ===
+
+By default, <code>MayRequire</code> will only allow the use of that node if ''all'' of the DLCs or mods it designates are loaded. If you instead want to load the specified node if ''any'' of the specified DLCs or mods are loaded, you can use <code>MayRequireAnyOf</code> instead.
+
+=== Specifying Multiple Targets ===
+
+Both <code>MayRequire</code> and <code>MayRequireAnyOf</code> can accept a comma-delimited list of <code>packageId</code> values. For example, if you wanted to create a <code>ThingDef</code> that is only loaded if both the [[Royalty]] and [[Ideology]] DLCs are loaded, you could use the following syntax:
+
+<source lang="xml">
+<ThingDef MayRequire="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Ideology">
+</source>
+
+== List Entries ==
+
+<code>MayRequire</code> can be on any <code>li</code> node to only load that entry if the specified DLC or mod is loaded:
+
+<div class="TutorialTableWrapper">
+{| class="TutorialCodeTable"
+! XML Example !! Description
+|-
+| <source lang="xml">
+<SurgeryOutcomeEffectDef Name="SurgeryOutcomeBase">
+  <defName>SurgeryOutcomeBase</defName>
+  <outcomes>
+    <li Class="SurgeryOutcomeSuccess" />
+    
+    <!-- irrelevant nodes omitted -->
+    
+    <li Class="SurgeryOutcome_FailureWithHediff"  MayRequire="Ludeon.RimWorld.Biotech">
+      <chance>0.03</chance>
+      <failedHediff>Sterilized</failedHediff>
+      <applyToRecipes>
+        <li MayRequire="Ludeon.RimWorld.Biotech">ImplantIUD</li>
+        <li MayRequire="Ludeon.RimWorld.Biotech">RemoveIUD</li>
+      </applyToRecipes>
+      <failure>true</failure>
+      <totalDamage>10</totalDamage>
+      <applyEffectsToPart>true</applyEffectsToPart>
+      <letterLabel>Surgery failed on {PATIENT_labelShort}: Sterilized</letterLabel>
+      <letterText>{SURGEON_labelShort} has failed while operating on {PATIENT_labelShort} ({RECIPE_label}), leaving {PATIENT_objective} sterile.</letterText>
+    </li>
+    
+    <!-- irrelevant nodes omitted -->
+    
+  </outcomes>
+  
+  <!-- irrelevant nodes omitted -->
+  
+</SurgeryOutcomeEffectDef>
+</source>
+| class="TutorialCodeTable-description" |
+<code>MayRequire</code> is used in the list of possible surgery outcomes to add the possibility of accidentally sterilizing the patient as a result of a surgery failure.
+
+Note that the use of <code>MayRequire</code> on the list nodes of the <code><applyToRecipes></code> is technically unnecessary as the entire outcome node would not have loaded without [[Biotech]] active.
+|-
+| <source lang="xml">
+<DesignationCategoryDef>
+  <defName>Zone</defName>
+  <label>zone</label>
+  <order>800</order>
+  <specialDesignatorClasses>
+    <li>Designator_Cancel</li>
+    <li>Designator_Deconstruct</li> 
+    <li>Designator_ZoneAddStockpile_Resources</li>
+    <li>Designator_ZoneAddStockpile_Dumping</li>
+    <li>Designator_ZoneAdd_Growing</li>
+    <li>Designator_ZoneDelete</li>
+    <li>Designator_AreaHomeExpand</li>
+    <li>Designator_AreaHomeClear</li>
+    <li>Designator_AreaAllowedExpand</li>
+    <li>Designator_AreaAllowedClear</li>
+    <li>Designator_AreaBuildRoof</li>
+    <li>Designator_AreaNoRoof</li>
+    <li>Designator_AreaIgnoreRoof</li>
+    <li>Designator_AreaSnowClearExpand</li>
+    <li>Designator_AreaSnowClearClear</li>
+    <li MayRequire="Ludeon.RimWorld.Biotech">Designator_AreaPollutionClearExpand</li>
+    <li MayRequire="Ludeon.RimWorld.Biotech">Designator_AreaPollutionClearClear</li>
+  </specialDesignatorClasses>
+</DesignationCategoryDef>
+</source>
+| class="TutorialCodeTable-description" |
+<code>MayRequire</code> is used in the DesignationCategoryDef for the "Zone" architect menu to add designators for pollution clearing areas.
+|-
+| <source lang="xml">
+<AlienRace.ThingDef_AlienRace Name="ARR_RaceBase" ParentName="HumanRace" Abstract="True">
+
+  <!-- irrelevant nodes omitted -->
+
+  <comps>
+    <li Class="ARimReborn.CompProperties_ClassUser" MayRequire="Aelanna.ARimReborn.ClassesAndJobs" />
+  </comps>
+
+  <inspectorTabs>
+    <li MayRequire="Aelanna.ARimReborn.ClassesAndJobs">ARimReborn.ITab_Pawn_Classes</li>
+  </inspectorTabs>
+
+</AlienRace.ThingDef_AlienRace>
+</source>
+| class="TutorialCodeTable-description" |
+<code>MayRequire</code> can be used to omit entire code components.
+
+In this modded example, both a ThingComp and an inspector tab are only added if a specific sub-mod is loaded.
+|-
+| <source lang="xml">
+<Operation Class="PatchOperationSequence">
+  <operations>
+    <li Class="PatchOperationAdd" MayRequire="Ludeon.Rimworld.Biotech"> <!-- Only runs if Biotech is active -->
+      <xpath>Defs/ThingDef[defName="MechGestator"]/recipes<xpath>
+      <value>
+        <li>MyCustomMech</li>
+      </value>
+    </li>
+    <li Class="PatchOperationAdd" MayRequire="MyProject.OtherModPackageId"><!-- Only runs if the specific mod is active -->
+      <xpath>Defs/ThingDef[defName="OtherModWorkbench"]/recipes</xpath>
+      <value>
+        <li>MyCustomResource</li>
+      </value>
+    </li>
+  </operations>
+</Operation>
+</source>
+| class="TutorialCodeTable-description" |
+<code>MayRequire</code> can be used in lieu of PatchOperationFindMod in a PatchOperationSequence.
+
+'''Warning''': PatchOperationSequence can obfuscate errors, so it is strongly recommended that you individually test patches first before you place them in a sequence. Please see [[Modding_Tutorials/PatchOperations|PatchOperations]] for more information.
+|-
+|}
+</div>
+
+== Def References ==
+
+<code>MayRequire</code> can be used on any field that references [[Modding_Tutorials/Defs|Defs]] by their <code>defName</code>, including single fields, lists, and special parsed lists such as stat blocks and item count lists. 
+
+'''Note''': When used in direct references or in a list of direct references, Def references have a special behavior in that <code>MayRequire</code> only serves to suppress cross-resolution errors if the targeted DLC or mod is not loaded. '''If RimWorld finds the targeted Def, it will be loaded into the list regardless of whether the specified DLC or mod is loaded or not.''' This does not apply to special parsed lists (see below).
+
+<div class="TutorialTableWrapper">
+{| class="TutorialCodeTable"
+! XML Example !! Description
+|-
+| <source lang="xml">
+<LifeStageDef ParentName="HumanlikeAdolescent">
+  <defName>HumanlikeBaby</defName>
+  <label>baby</label>
+
+  <!-- irrelevant nodes omitted -->
+
+  <thinkTreeMainOverride MayRequire="Ludeon.RimWorld.Biotech">HumanlikeBaby</thinkTreeMainOverride>
+  <thinkTreeConstantOverride MayRequire="Ludeon.RimWorld.Biotech">HumanlikeBabyConstant</thinkTreeConstantOverride>
+
+  <!-- irrelevant nodes omitted -->
+
+</LifeStageDef>
+</source>
+| class="TutorialCodeTable-description" |
+<code>MayRequire</code> is used in human LifeStageDefs for Def references such as the ThinkTreeDefs for certain lifestages. These Defs only exist in the Biotech DLC, and thus must have errors suppressed if the DLC is not loaded.
+|-
+| <source lang="xml">
+<ThingDef ParentName="BasePawn">
+  <defName>Human</defName>
+  <label>human</label>
+  
+  <!-- irrelevant nodes omitted -->
+  
+  <recipes>
+    <li>ExciseCarcinoma</li>
+    <li>AdministerMechSerumHealer</li>
+    <li>RemoveBodyPart</li>
+    <li>Euthanize</li>
+    <li>Anesthetize</li>
+    <li>CureScaria</li>
+    <li MayRequire="Ludeon.RimWorld.Biotech">Vasectomy</li>
+    <li MayRequire="Ludeon.RimWorld.Biotech">ReverseVasectomy</li>
+    <li MayRequire="Ludeon.RimWorld.Biotech">TubalLigation</li>
+    <li MayRequire="Ludeon.RimWorld.Biotech">ExtractOvum</li>
+    <li MayRequire="Ludeon.RimWorld.Royalty">CureBloodRot</li>
+    <li MayRequire="Ludeon.RimWorld.Royalty">CureAbasia</li>
+    <li MayRequire="Ludeon.RimWorld.Biotech">ExtractHemogenPack</li>
+    <li MayRequire="Ludeon.RimWorld.Biotech">BloodTransfusion</li>
+    <li MayRequire="Ludeon.RimWorld.Biotech">ImplantXenogerm</li>
+    <li MayRequire="Ludeon.RimWorld.Biotech">ImplantIUD</li>
+    <li MayRequire="Ludeon.RimWorld.Biotech">RemoveIUD</li>
+    <li MayRequire="Ludeon.RimWorld.Biotech">TerminatePregnancy</li>
+  </recipes>
+  
+  <!-- irrelevant nodes omitted -->
+  
+</ThingDef>
+</source>
+| class="TutorialCodeTable-description" |
+<code>MayRequire</code> is used in the Human [[Modding_Tutorials/ThingDef|ThingDef]] to set surgery recipes that are only relevant to specific DLCs. Without <code>MayRequire</code>, these would cause errors as the specified [[Modding_Tutorials/Defs|Defs]] only exist in their respective DLCs.
+|-
+| <source lang="xml">
+<ThingDef Name="TorchLamp" ParentName="BuildingBase">
+  <defName>TorchLamp</defName>
+  <label>torch lamp</label>
+  
+  <!-- irrelevant nodes omitted -->
+  
+  <statBases>
+    <MaxHitPoints>75</MaxHitPoints>
+    <WorkToBuild>100</WorkToBuild>
+    <Flammability>0</Flammability>
+    <MeditationFocusStrength>0.0</MeditationFocusStrength>
+    <StyleDominance MayRequire="Ludeon.RimWorld.Ideology">5</StyleDominance>
+  </statBases>
+  
+  <!-- irrelevant nodes omitted -->
+  
+</ThingDef>
+</source>
+| class="TutorialCodeTable-description" |
+<code>MayRequire</code> can be used in "special parsers" such as those for <code>statBases</code>. These are usually used to create shorthand notation wherein the node name is the <code>defName</code> and the value is the stat value. The vanilla torch lamp uses the <code>StyleDominance</code> stat from [[Ideology]] to affect the room it is placed in.
+|-
+| <source lang="xml">
+<ThingDef ParentName="ApparelMakeableBase">
+  <defName>Apparel_Duster</defName>
+  
+  <!-- irrelevant tags omitted -->
+  
+  <equippedStatOffsets>
+    <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.05</SlaveSuppressionOffset>
+  </equippedStatOffsets>
+  
+  <!-- irrelevant tags omitted -->
+</ThingDef>
+</source>
+| class="TutorialCodeTable-description" |
+<code>equippedStatOffsets</code> is another example of a stat block. In this example, the vanilla [[Duster]] apparel has a [[Slavery|SlaveSuppressionOffset]] stat offset from [[Ideology]].
+|-
+| <source lang="xml">
+<BiomeDef>
+  <defName>TemperateForest</defName>
+  <wildPlants>
+    <Plant_Grass>5.0</Plant_Grass>
+    <Plant_GrayGrass MayRequire="Ludeon.RimWorld.Biotech">2</Plant_GrayGrass>
+    <Plant_TallGrass>2.0</Plant_TallGrass>
+    <Plant_Brambles>1.0</Plant_Brambles>
+    <Plant_Ripthorn MayRequire="Ludeon.RimWorld.Biotech">0.8</Plant_Ripthorn>
+    <!-- many entries omitted -->
+  </wildPlants>
+  <pollutionWildAnimals MayRequire="Ludeon.RimWorld.Biotech">
+    <Toxalope MayRequire="Ludeon.RimWorld.Biotech">0.4</Toxalope>
+    <WasteRat MayRequire="Ludeon.RimWorld.Biotech">0.1</WasteRat>
+    <!-- many entries omitted -->
+  </pollutionWildAnimals>
+  <!-- irrelevant nodes omitted -->
+</BiomeDef>
+</source>
+| class="TutorialCodeTable-description" |
+<code>MayRequire</code> is used in <code>BiomeDef</code> entries to specify wild plants and animals that are only present in DLCs.
+|-
+| <source lang="xml">
+<FactionDef ParentName="FactionBase">
+  <defName>Mechanoid</defName>
+  <label>mechanoid hive</label>
+  <pawnGroupMakers>
+    <li>
+      <!-- All types-->
+      <kindDef>Combat</kindDef>
+      <commonality>100</commonality>
+      <options>
+        <Mech_Scyther>10</Mech_Scyther>
+        <Mech_Pikeman>10</Mech_Pikeman>
+        <Mech_Lancer>10</Mech_Lancer>
+        <Mech_CentipedeBlaster>10</Mech_CentipedeBlaster>
+        <Mech_Militor MayRequire="Ludeon.RimWorld.Biotech">20</Mech_Militor>
+        <Mech_Centurion MayRequire="Ludeon.RimWorld.Biotech">2</Mech_Centurion>
+        <Mech_Warqueen MayRequire="Ludeon.RimWorld.Biotech">1</Mech_Warqueen>
+        <Mech_Apocriton MayRequire="Ludeon.RimWorld.Biotech">1</Mech_Apocriton>
+      </options>
+    </li>
+    <!-- many other nodes omitted -->
+  </pawnGroupMakers>
+  <!-- many other nodes omitted -->
+</FactionDef>
+</source>
+| class="TutorialCodeTable-description" |
+<code>MayRequire</code> is used by official content <code>FactionDef</code> entries to specify <code>PawnKindDef</code> types that only exist in DLCs.
+|-
+| <source lang="xml">
+<FactionDef ParentName="FactionBase" Name="OutlanderFactionBase" Abstract="True">
+  <disallowedMemes>
+    <li MayRequire="Ludeon.RimWorld.Ideology">Structure_Animist</li>
+    <li MayRequire="Ludeon.RimWorld.Ideology">Nudism</li>
+    <li MayRequire="Ludeon.RimWorld.Ideology">Blindsight</li>
+  </disallowedMemes>
+  <structureMemeWeights>
+    <Structure_TheistEmbodied MayRequire="Ludeon.RimWorld.Ideology">1</Structure_TheistEmbodied>
+    <Structure_TheistAbstract MayRequire="Ludeon.RimWorld.Ideology">2</Structure_TheistAbstract>
+    <Structure_Ideological MayRequire="Ludeon.RimWorld.Ideology">1</Structure_Ideological>
+    <Structure_Archist MayRequire="Ludeon.RimWorld.Ideology">1</Structure_Archist>
+    <Structure_OriginChristian MayRequire="Ludeon.RimWorld.Ideology">1</Structure_OriginChristian>
+    <Structure_OriginIslamic MayRequire="Ludeon.RimWorld.Ideology">1</Structure_OriginIslamic>
+    <Structure_OriginHindu MayRequire="Ludeon.RimWorld.Ideology">1</Structure_OriginHindu>
+    <Structure_OriginBuddhist MayRequire="Ludeon.RimWorld.Ideology">1</Structure_OriginBuddhist>
+  </structureMemeWeights>
+  <!-- many nodes omitted -->
+</FactionDef>
+</source>
+| class="TutorialCodeTable-description" |
+<code>MayRequire</code> must be used for meme and precept references in <code>FactionDef</code> entries, as they only exist if [[Ideology]] is loaded.
+|-
+| <source lang="xml">
+<FactionDef ParentName="FactionBase" Name="OutlanderFactionBase" Abstract="True">
+  <xenotypeSet>
+    <xenotypeChances>
+      <Hussar MayRequire="Ludeon.RimWorld.Biotech">0.05</Hussar>
+      <Dirtmole MayRequire="Ludeon.RimWorld.Biotech">0.05</Dirtmole>
+      <Genie MayRequire="Ludeon.RimWorld.Biotech">0.025</Genie>
+      <Neanderthal MayRequire="Ludeon.RimWorld.Biotech">0.025</Neanderthal>
+    </xenotypeChances>
+  </xenotypeSet>
+  <!-- many nodes omitted -->
+</FactionDef>
+</source>
+| class="TutorialCodeTable-description" |
+<code>MayRequire</code> must be used for xenotype references in <code>FactionDef</code> entries, as they only exist if [[Biotech]] is loaded.
+|-
+|}
+</div>
+
+== Optional Defs ==
+
+<code>MayRequire</code> can be used to conditionally load entire Defs. This is far easier to use than the prior option of using [[Modding_Tutorials/PatchOperations|PatchOperations]] to inject new Defs.
+
+<div class="TutorialTableWrapper">
+{| class="TutorialCodeTable"
+! XML !! Description
+|-
+| <source lang="xml">
+<ThingDef MayRequire="Ludeon.RimWorld.Ideology" ParentName="Brazier">
+  <defName>DarklightBrazier</defName>
+  <label>darklight brazier</label>
+  <description>A specially treated brazier that illuminates its surroundings with darklight and creates heat. These satisfy royal brazier requirements.</description>
+  
+  <!-- irrelevant content omitted -->
+
+</ThingDef>
+</source>
+| class="TutorialCodeTable-description" |
+<code>MayRequire</code> is used to activate [[Royalty]]'s darklight brazier stat if [[Ideology]] is also loaded.
+|-
+| <source lang="xml">
+<StatDef ParentName="MeditationFocusBase" MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Biotech">
+  <defName>MeditationFocusGain</defName>
+  <label>meditation psyfocus gain</label>
+  
+  <!-- irrelevant content omitted -->
+  
+</StatDef>
+</source>
+| class="TutorialCodeTable-description" |
+<code>MayRequireAnyOf</code> is used to activate the MeditationFocusGain stat if either [[Royalty]] or [[Biotech]] is loaded.
+|-
+| <source lang="xml">
+<ThingDef ParentName="ApparelMakeableBase" MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Biotech">
+  <defName>Apparel_Cape</defName>
+  <label>cape</label>
+  
+  <!-- irrelevant content omitted -->
+  
+</ThingDef>
+</source>
+| class="TutorialCodeTable-description" |
+<code>MayRequireAnyOf</code> is used to activate the [[Cape]] apparel if either [[Royalty]] or [[Biotech]] is loaded.
+|-
+|}
+</div>
+
+== Miscellaneous ==
+
+The following are specific, non-standard usages of <code>MayRequire</code> from official content XML:
+
+<div class="TutorialTableWrapper">
+{| class="TutorialCodeTable"
+! XML !! Description
+|-
+| <source lang="xml">
+<PawnKindDef Abstract="True" Name="BasePlayerPawnKind">
+  <race>Human</race>
+  <apparelIgnorePollution MayRequire="Ludeon.RimWorld.Biotech">true</apparelIgnorePollution>
+  <!-- many nodes omitted -->
+</PawnKindDef>
+</source>
+| class="TutorialCodeTable-description" |
+<code>MayRequire</code> is used by <code>PawnKindDef</code> for the <code>apparelIgnorePollution</code> node.
+
+'''NOTE''': Analysis of game code seems to indicate that this particular use of <code>MayRequire</code> does not actually have any effect, and may have been put here merely as a flag.
+|-
+| <source lang="xml">
+<LifeStageDef ParentName="HumanlikeAdolescent">
+  <defName>HumanlikeBaby</defName>
+  <label>baby</label>
+  <thinkTreeMainOverride MayRequire="Ludeon.RimWorld.Biotech">HumanlikeBaby</thinkTreeMainOverride>
+  <thinkTreeConstantOverride MayRequire="Ludeon.RimWorld.Biotech">HumanlikeBabyConstant</thinkTreeConstantOverride>
+  <!-- many nodes omitted -->
+</LifeStageDef>
+<LifeStageDef Name="LifeStageHumanlikeChild" ParentName="HumanlikeAdolescent">
+  <defName>HumanlikeChild</defName>
+  <label>child</label>
+  <workerClass MayRequire="Ludeon.RimWorld.Biotech">LifeStageWorker_HumanlikeChild</workerClass>
+  <!-- many nodes omitted -->
+</LifeStageDef>
+</source>
+| class="TutorialCodeTable-description" |
+<code>MayRequire</code> is used for think tree override and worker classes in <code>LifeStageDef</code> entries for functionality related to children and growth in [[Biotech]].
+
+'''NOTE''': Analysis of game code seems to indicate that the latter use of <code>MayRequire</code> does not actually have any effect, and may have been put here merely as a flag. The WorkerClass code is itself locked to [[Biotech]].
+|-
+|}
+</div>
+
+=== Exceptions ===
+
+* <code>MayRequire</code> does '''NOT''' work on top-level XML nodes that are not <code>Def</code>s. This means that <code>Operation</code> tags cannot use <code>MayRequire</code>, though as previous indicated, <code>PatchOperationSequence</code> lists can. Again, this is not recommended because <code>PatchOperationSequence</code> can obfuscate errors.
+* Prior to RimWorld 1.6, MayRequire was bugged and did not ignore the <code>_steam</code> suffix appended to Steam copies of a mod when you have both a local mod and a Steam mod with the exact same packageId. This meant that if you had a local copy, then only the local copy would be recognized by MayRequire. This could be worked around by using <code>MayRequireAnyOf</code> with both packageIds, i.e. <code>MayRequireAnyOf="MyName.MyMod,MyName.MyMod_steam"</code>. This should not be necessary in 1.6 and later versions.
+
+[[Category:Modding]]
+[[Category:Modding tutorials]]

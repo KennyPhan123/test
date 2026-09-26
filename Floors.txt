@@ -1,0 +1,88 @@
+<noinclude>
+<!--Top Nav Box-->
+{| align=center
+| {{Architect_Nav}}
+|}
+----
+<!-- End of Nav -->
+</noinclude>
+{{stub|reason=General, also non-edifice floor coverings}} 
+{{TOCright}}
+'''Floors''' are a type of construction that cover the natural [[terrain]] with an artificial surface. Floors do not prevent other constructions to be built on top of them. There are many types of floor, with different resource costs, flammabilities, beauties, cleanlinesses, and other effects.  
+
+== Effects ==
+{{Rewrite|section=1|reason=Tone, detail, cleanup and expansion - bring information around to mechanical effects (e.g. Cleanliness good because directly affects impressiveness/research speed etc). Potential split needed - Summary (effects of flooring) and analysis (Selection and strategies) per Format Standard}}
+Constructed floors can bring benefits such as increased movement speed, [[beauty]], and [[Room_stats#Cleanliness|cleanliness]], as well as preventing wild [[plants]] from growing and [[fire]] from spreading.
+
+=== Movement speed ===
+Player made flooring virtually always provides a movement speed advantage over natural terrain, no floor, or any non-constructed flooring. Flooring a frequent path will reduce the time required to walk between the two areas. See [[Terrain|Environment#Terrain]]
+
+Flooring prevents natural plant growth. Natural soil allows the growth of vegetation such as tall grass, bushes, and brambles, all of which cause a walking speed reduction. [[Tree]]s prevent movement altogether, and also prevent [[roof]]s from being built over them. 
+[[File:Floors.png|500px|thumb|right|Different flooring (and unfloored areas) in different locations]]
+
+=== Beauty ===
+Colonists are affected by the beauty of the surrounding flooring in two ways - directly, by the [[Beauty]] status level, and indirectly, by the effect of beauty on the impressiveness of some [[Room roles|room types]]. Colonists have mood effects from the beauty of their direct surroundings, especially those locations where they spend most of the day or night such as a bedroom, kitchen, workshop, research lab, etc. See the [[Beauty]] page for further details.
+
+The total beauty of a room also affects its impressiveness, which contributes to the mood benefit of rooms such as bedrooms, dining rooms, rec rooms, and hospitals. See the [[Room stats]] page for further details.
+
+Different floors can also be used for purely aesthetic purposes as per player preference, or to color-designate different rooms for different purposes.
+
+=== Cleanliness ===
+Flooring is an important factor when calculating a room's [[Room stats#Cleanliness|Cleanliness]], which is important for most rooms but particularly for kitchens, hospitals and laboratories.
+
+This is done in two ways. First, it covers up the existing [[terrain]] which almost always has a cleanliness penalty, and prevents that penalty from applying to the room. Second some floor types have a cleanliness bonus which further improves the cleanliness. 
+
+Flooring rooms and areas surrounding rooms where cleanliness is important reduces [[filth]] being tracked from the terrain into the clean room. Any time a pawn walks on a filth generating terrain like natural soil or sand, there is a 10% chance filth can stick to that pawn. Anytime a pawn with filth stuck to them walks over terrain capable of accepting filth, like flooring or natural stone, the filth has a 5% chance of dropping off the pawn and onto the ground. [[Straw_matting|Straw-Matting]] is the only floor with a filth-multiplier. When filth fails to drop on straw matting, it doesn't remove the filth from the pawn. It simply delays the dropping of the filth.
+
+Cleanliness improves success rates in hospitals as they help prevent the possibility of infection. It also affects [[research speed]] and the chance for food to cause [[food poisoning]].
+
+=== Cleaning time ===
+{{Main|Cleaning Time Multiplier}}
+Different floors take different amounts of time to clean ranging from 60% to 200%. While most metal floors are cleaned at 60% of the usual time, floors made out of stone blocks and the other metal floors take 80% of the time. All types of carpet have the longest cleaning time at 200% with the remaining floors at 100%.
+
+=== Flammability ===
+Unoccupied non-flammable flooring can act as a fire break if placed in two tile wide sections. Players may add additional non-flammable tiles to extend the fire break as a precaution against flammable items  occupying one of the tiles within the fire break.
+
+=== No plant growth ===
+Any flooring placed outdoors will prevent grass, bushes or trees from spreading there.  This can be useful to keep any trees from growing in the path of a [[wind turbine]] and reducing its power output.  Surrounding fields with flooring will prevent trees growing there, which your growers must clear first before they sow nearby.  It can also be used to create fire breaks to keep wildfires from spreading to your base if non-flammable materials were used.
+
+Flooring can even help with security in certain biomes.  While giving a movement bonus to raiders, covering your killbox in flooring will prevent any trees growing there for raiders to take cover behind.
+
+=== Removing floors ===
+Floors can be removed with the '''Remove floor''' order, which is found under the Architect/Floors tab. After floors are removed, the tile will retain its old terrain type.
+
+Most floors return, on average, half of the resources spent at construction when removed. This can be a useful source of materials when raiding settlements or temporary camps, or simply a way to recycle unneeded floors in your own colony. Notable exceptions include [[flagstone]], [[burned floors]] and smoothed floors.
+
+== Comparison table ==
+{{For|naturally generated surfaces|Terrain}}
+
+Note that albeit [[bridge]] and [[smooth stone]] aren't technically floors, they are included here for comparison since they can be artificially created by the player.
+
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_25 text-center}}
+! Name !! Variants !! [[Fine floor|Fine]] !! Resources per tile !! data-sort-type="number" | Work to Build || data-sort-type="number" | Beauty !! data-sort-type="number" | Move Speed Modifier !! data-sort-type="number" | Flammability !! data-sort-type="number" | Cleanliness !! data-sort-type="number" | Cleaning Time Multiplier !! data-sort-type="number" | Filth Multiplier !! data-sort-type="number" | Wealth
+|-
+{{Floor Table Row|?Name=Bridge}}
+|-
+{{Floor Table Row|?Name=Smooth stone}}
+|-
+{{#ask: [[Type::Floor]] [[Name::!Rough stone]] [[Name::!Rough-hewn stone]]
+ | named args = yes
+ | ?Name = ?Name
+ | format = template
+ | template = Floor Table Row
+ | sort = From DLC, Name
+}}
+|}
+</li></div>
+
+== Version History== 
+* [[Version/0.11.877|0.11.877]] - You can now remove floors to reveal the terrain underneath.
+* [[Version/1.4.3523|1.4.3523]] - Cleaning time factor added.
+
+==See also==
+* [[Environment#Terrain|Terrain]]
+<references/>
+
+{{nav|floor|wide}}
+[[Category:Buildings]]

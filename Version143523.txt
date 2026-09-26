@@ -1,0 +1,220 @@
+{{Version Nav}}
+
+RimWorld update 1.4 is also released! 
+
+Compatibility:
+Unmodded savegames from 1.3 will load in 1.4.
+Many mods have already been updated by wonderful modders during the 1.4 preview over the last few weeks. However, some are not yet updated and won't work on 1.4.
+If you want to keep playing version 1.3, please use Steam beta branch "version-1.3-latest". To do this, r-click RimWorld in the Steam library, go to properties, open the betas tab, and select the version from the dropdown.
+
+This update was released alongside the [[Biotech DLC]].
+
+== New stuff - base game ==
+* Painting and color customization
+* Added custom color lights. Players can change their lamp colors to any color after completing “colored lights” research.
+* Added painting system: Paint walls, floors, and some furniture and buildings with dye harvested from the tinctoria crop.
+* Under the “Orders” tab, you can direct colonists to “paint wall”, “paint floor”, and “remove paint.”
+* Choose from a large variety of colors to customize your colony!
+* Moved the [[tinctoria]] crop and its harvestable [[dye]] from Ideology to Core.
+* Added many new carpet colors.
+
+=== Turrets, gas, gear, and medicine ===
+* Added two new turret types: Foam turret and rocketswarm launcher.
+* The [[foam turret]] spits firefoam to extinguish nearby blazes. It stands idle until activated by a colonist.
+* The rocket swarm turret is a defensive launcher - when triggered, it blankets a wide area in a barrage of small missiles. It must be activated by a colonist to fire.
+* Added new gas system and health conditions.
+* Rotten corpses and meat now release disgusting rot stink gas. Colonists that are chronically exposed to rot stink may develop the new “lung rot” disease.
+* Blind smoke blocks shots like the old smoke.
+* Added firefoam pop pack. It’s a utility pack carried by firefighters. When triggered, the pack releases a burst of fire-retardant foam onto the user and nearby area.
+* Added recipe for bulk medicine creation.
+* Added an explicit “tend (without medicine)” option to drafted pawns which appears after the tend with medicine order.
+
+=== Shelves ===
+* Shelves hold up to 3 stacks of most items. Exceptions include large corpses, chunks, and minified things.
+* Added a single-tile small shelf.
+* Shelves can be linked into groups for easier management.
+
+=== UI ===
+* Completely overhauled the options menu. Options are grouped into different tabs, including a new mod tab. Screenshake was added as a new option.
+* Completely reworked mods manager and mods mismatch UI.
+* Added tile inspector. View info about a specific tile by holding the “alt” key.
+* Added pawn icons to many menus.
+* Created a square grid float menu for paint and carpets.
+* Weapons are displayed below drafted colonist portraits.
+
+=== Miscellaneous ===
+* In addition to all the prisoners you got before, now you’ll get a new class of prisoner who is unwaveringly loyal to their home. They can’t be recruited, but they can be sold, sent home for diplomatic benefits, used for gene extraction or blood farming in Biotech, or used in rituals and enslaved in Ideology. (We did it this way because we wanted to make all the uses for prisoners besides recruitment more viable. Adding a new stream of unwaveringly loyal prisoners does that without destroying the population progression balance.) They can be disabled in the storyteller settings.
+* Starting colonists can begin with certain possessions. These can come from backstories, health conditions, and rarely from a pool of items.
+* Added a toggleable heat overlay that shows the air temperature indoors and outdoors.
+* Added a search bar to the quests list.
+* Added "bald" hair style.
+* Added a “storeroom” role for rooms with lots of shelves.
+* Added chopped and smashed stump types for trees.
+* Added an option to randomize the menu background every game launch.
+* Added stats for crop growth rate, age, and lifespan and the length of time to clean filth on surfaces
+* Added a "cut all blight" command to blighted plants.
+* Added prisoner recruitment last resistance reduction info in prisoner tab.
+* Added “research bench required” alert.
+* Added build hopper command to nutrient paste dispenser.
+* Drafted colonists can pick up downed people and carry them around.
+
+== Improvements and adjustments - base game ==
+=== Performance ===
+* Major startup and load time improvements. Launching RimWorld and loading savegames are both roughly 37% faster. On an example system, this is a startup time improvement from 33 to 21 seconds. Loading a fresh savegame dropped from 7.9 to 4.6 seconds.
+
+=== Pawns ===
+* Pyromaniacs are happier around fires and get a stacking (up to 4x) mood buff for nearby fires. This includes torches and campfires.
+* Colonists can be ordered to re-arm turrets while drafted.
+* Pawns no longer hunt animals outside their allowed area.
+* Wild people no longer get mood debuffs for sleeping outside or on the ground.
+* Ascetics no longer get a negative mood debuff when eating nutrient paste meals.
+* Allow amputation on body parts with scars and other permanent injuries.
+* “Wimp” trait’s pain shock threshold has been increased from 50% to 60%.
+* Very hungry pawns now wake up if there is food available and they aren't very tired.
+* Pawns kicked out of bed (due to healing completing, bedroom becoming a prison, etc.) are moved to the bottom of the bed to prevent them from interfering with other pawns wanting to use the same bed.
+* Wardens take downed pawns to bed so they can medically rest for non-urgent reasons (Eg. building immunity to an infection) and urgent reasons (Eg. need tending or have an operation).
+
+=== UI ===
+* Screenshot mode no longer draws inspect pane, gizmos, and paths for selected objects.
+* Adjustments to world creation faction config. Instead of +/- buttons, there is a simple list of factions with an "add" button.
+* Improved pawn name rendering with "disable tiny fonts" active.
+* Adjust default medicine settings window. Added a title, increased the size of text and unified the space between elements.
+* Added small circular dots around the radius of a downed projectile interceptor.
+* Display recipe ingredients/products tooltip when hovering over recipe float menu options.
+* When multiple identical messages are sent, the original message is highlighted instead of adding a new message.
+* Letters are bundled together if they can’t all fit on the screen.
+
+=== Miscellaneous ===
+* Carried things can now be added to caravans.
+* Trade menu always shows player currency, even when it is at 0.
+* Updated SFX for a number of designators in the architect menu.
+* Predators limit their hunting range to the same as their scavenging range.
+* Items deteriorate at 3x the regular rate when in an unroofed area during toxic fallout.
+* Reduced the rate of toxic buildup from game conditions by 20%.
+* Sterilized egg layers no longer produce eggs.
+* Shelf cost reduced from 30 to 20, WorkToBuild reduced from 600 to 500.
+* Techprints give a flat 2000xp bonus, unaffected by learning rate.
+* Beggar quest asks for max 700 market value items.
+* Hide pawn headgear when in bed.
+* Rename the rest need to sleep (this avoids confusion with pawns that are "resting" but not recovering the rest need)
+* Added stat entries to meals displaying ingredients and dietary type.
+* Combined hunger rate and food consumption stats.
+* Prevent trees marked for extraction to be cut for construction.
+* Growing zone description now has information on the average and maximum age and maturity of the plants in the zone, if there are any.
+* Growing zones and stockpiles now have a description for how many cells are in the zone.
+* Allow players to select Things pawns are holding by either slow clicking, using the widget when the carrying pawn is selected, or using the "next thing in cell" button.
+* Add command to pawns and buildings for selecting their held things.
+* Locked many dev gizmos behind god mode toggle.
+* Backstory mod source is shown if it's not from an official expansion.
+* Remove standing lamps (red, green, and blue) and darklamps from the game. Old saves convert any of these lamps to standing lamps set to the appropriate color.
+* When selecting a steam geyser, the geothermal generator build gizmo is shown (if unlocked).
+* Moved ranged weapon, melee weapon, armor, clothing and art stock gen to a tagged based system and adjusted market value selection weight for all items.
+* Keep selection on things which become despawned in some circumstances.
+* Selection is preserved as a blueprint becomes a frame and finally a finished building.
+
+== Improvements and adjustments - Royalty == 
+* Imperial champions can use spears and longswords.
+* Skip and chaos skip have a max body size set.
+* Gunlink no longer counts as clothing for nudity.
+* Limit noble wimp to knight or praetor.
+* Ensure persona weapons are unbound if you leave them on a temporary map.
+== Improvements and adjustments - Ideology ==
+* “Ideology system inactive” games can set and use all styles of buildings, items and floors.
+* Moved ideology buildings to new Ideology architect tab.
+* Downed pawns can perform duties in a ritual if their ritual role allows them to be downed.
+* Allow style selection in bill configuration dialog in classic mode.
+* Added a gizmo to blueprints in classic ideology mode that allows changing the built style.
+* Ensure ideoligions are recalculated after an archonexus win.
+* Added complex furniture as a prerequisite for reliquary and styling station.
+* Negative thoughts related to not having enough scarification scars do not apply at very low expectations or lower.
+* "No slaves in colony" thought does not apply at "Very low" expectations or below.
+* Rituals are called off if the target is reserved by another pawn during the ritual.
+* Ritual opportunity letters are skipped for most rituals for the first 10 days of play.
+* Ideoligion building missing alerts now specify what building it is a variant of. It also displays where you can find it in the architect menu or which buildings produce it.
+* Added “cannot be assigned” reason to pawn portrait tooltip on the ritual begin window.
+* Randomizing precepts no longer brings up a confirmation dialog if the user has not edited precepts.
+
+== Dev tools ==
+* Added a debug option "palette" that allows the user to select a set of debug actions/tools to appear on a resizable and draggable window.
+* Debug actions use a node tree for navigation.
+* Added pin icons to the debug menu allowing users to pin multiple debug tools to the palette at once.
+* Implemented dev mode camera controls dialog with saveable presets.
+* Added a simple debug tool for framerate/ticks per second performance benchmarking.
+* Added dev add/remove hediff buttons to a pawn’s health card.
+* Added gear-related debug options to gear screen.
+
+== Technical ==
+* Made loading savegames a bit faster by optimizing DefFromNodeUnsafe.
+* When loading a savegame, cache the parsed version when it's loaded instead of parsing it each time when BackCompatibilityConverter method is called.
+* Removed old WoolCamel back-compat since it's causing problems for modders.
+* Cache some stat values to prevent large numbers of calculations.
+* Converted backstories to use the def system for better moddability and expandability.
+* Replaced CrownType with headTypeDef
+* Carpet defs are generated from blueprints, creating variants for each color.
+* Allow defs to specify Action<>, Func<>, etc. as a data type for members.
+* Allow open-ended ranges for IntRange in defs, eg: "~10" to represent values <= 10 and "10~" to represent values >= 10.
+* Merged LanguageWorker.PostProcesssedKeyedTranslation() and LanguageWorker.PostProcessed().
+* Pawns can now path to a destination if the destination is a Thing that's being held.
+* Changed some pawn visual calculations to happen once per frame instead of each tick.
+* Made Projectile.DamageAmount and Projectile.ArmorPenetration virtual for better modder support.
+* Check if food need is null in MeditationUtility.CanMeditate.
+
+== Bugfixes ==
+* Fix: Meals with meat shown as "acceptable for everyone".
+* Fix: Pawns will now try to make the largest pile possible when dropping an item instead of adding the dropped item to an arbitrary pile. This was causing a loop for pawns trying to merge two stacks in the same cell if they couldn't fully pick up one of the stacks.
+* Fix: Stranger in black can have 0 shooting skill.
+* Fix: Fluid ideology is loaded as non-fluid. (Only new saved ideoligions are affected) Ideoligions loaded from "Create custom (fluid)" are set to fluid. Ideoligions loaded from "Create custom (fixed)" are set to fixed.
+* Fix: Ritual spectators will stand on beds or in doorways.
+* Fix: Some apparel is smeltable when it would not give anything for smelting.
+* Fix: Smelted armor returns chemfuel.
+* Fix: Incorrect float menu label for prioritizing surgery when there is medicine available, but none of it matches medicine restriction.
+* Fix: Proximity activator is not triggered by skip psycasts happening in its range.
+* Fix exploit: Growing multiple plants in single spot in hydroponics basin.
+* Fix: Wild people can steal ingredients while they are being cooked.
+* Fix: Drug take to inventory in policy can exceed def-defined limit.
+* Fix: Hidden and temporary factions can own work sites.
+* Fix: Having ideology installed in classic mode causes nudity thoughts to be ignored.
+* Fix: During ideoligion reform, hairstyle and tattoo changes remain even if reform is canceled.
+* Fix: You can shoot through some ancient buildings, but can't pass through them.
+* Fix: "Cannot feed: No food" displayed while pawn has "nothing" food restriction.
+* Fix: Bestower shuttle won't leave if one of the guards is downed or left the map.
+* Fix: Shuttle stays forever if all passengers cannot get on board.
+* Fix: SetBiotuned() method resets the biosculpter timer.
+* Fix: Zone area restrictions can cause an endless loop of pawns trying to tend to a pawn outside the allowed area.
+* Fix: Pawns will no longer drop the thing they're carrying when going to pick up another thing as part of a hauling task.
+* Fix: Sleeping pawns wearing burkas don’t have hair rendered, even though you can see their face/head.
+* Fix: Bestower could suffer from heatstroke with minimal goodwill loss.
+* Fix: Classic ideoligion pawns cannot extract skulls.
+* Fix: Shuttle crash quest fails if you have VIP boarded.
+* Fix: Some offenses done to slave upset the slave’s home faction in ways that don’t make sense.
+* Fix: Public execution can be started for any ideoligion from any ideogram and still get a quality bonus.
+* Fix: High Life harvest yield for Drug Use: Essential precept doesn't work.
+* Fix: Nullified thoughts being counted against food optimality.
+* Fix: Geysers have a deconstruct gizmo in god mode which causes and error when clicked.
+* Fix: Explosive projectiles disappear when impacting a shield. They now detonate when impacting.
+* Fix: Deep drilling job not canceling when forbidden or exhausted the resource.
+* Fix: "Simulate not owning __" options default to true when Prefs.data is null.
+* Fix: Incorrect values given when evaluating how much each item is worth when giving as a gift to other factions.
+* Fix: Rebelling slaves could be sold to tribute collectors.
+* Fix: Berserker trance makes pawn guilty even though they cannot attack allies.
+* Fix: Guilty status for melee and ranged combat cannot be created by drafting a pawn.
+* Fix: Placing 0 work buildings beside/on mechanoids wakes them up. This can be used as an exploit to trigger mechanoids when hostile raiders are nearby.
+* Fix: Jumping resets "Fire at will" toggle.
+* Fix exploit: Player is able to claim ruined furniture on non-home maps and draw out an enemy attack on the claimed furniture. Now ruins are only claimable if there is no non-downed hostile pawn on the map.
+* Fix: Ability comp data is not persisted between saves.
+* Fix: Hay is listed as possible nutrition in biosculpter pods.
+* Fix: When forming a caravan, downed pawns are sometimes left behind near the map edge.
+* Fix: Permit shuttle fails when sent to a worksite.
+* Fix: Bonsai tree reminds of unharvested resources even though it's a decorative plant.
+* Fix: Doctors sometimes go to bed and attempt to start surgery on themselves.
+* Fix: Firefoam popper apparel items can pop during surgery.
+* Fix: Relics can stack with other items of the same type.
+* Fix: Plasma swords don't provide pyromaniacs a mood buff.
+* Fix: BuildableDef.PlaceWorkers recreates returned list every frame instead of cached value.
+* Fix: Missing feedback when trying to tame an animal with no acceptable food.
+* Fix: No feedback when trying to order fire extinguishing from a pawn incapable of firefighting.
+* Fix: When searching in an information panel, clicking any stat will scroll to the top.
+* Fix: Pawns resting in caravans don't show the 'Z' icon on their portraits to indicate rest.
+* Fix: Global work speed not applying to pruning speed, hacking speed, medical tend speed and medical operation speed.
+* Fix: Resurrected executed prisoners retain the execute option and usually immediately get executed after being resurrected.
+* Fix: Colonists deconstructing walls even though they are not assigned to construction.

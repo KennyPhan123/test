@@ -1,0 +1,127 @@
+<!-- variables are suffixed with HCR (for Hermetic Crate Ruins) to avoid any name clash if transcluded on the same page as other loot tables with similar variables - due to global scope of variables
+!-->{{#vardefine:HCRlootAllWeights|
+  {{#expr:
+    {{#vardefineecho:HCRlootGravPanel|1.5}} +
+    {{#vardefineecho:HCRlootBook|1}} +
+    {{#vardefineecho:HCRlootMedicine|1}} +
+    {{#vardefineecho:HCRlootLuciferium|1}} +
+    {{#vardefineecho:HCRlootSilver|1}} + 
+    {{#vardefineecho:HCRlootChemfuel|1}} + 
+    {{#vardefineecho:HCRlootMaterials|1}} +
+    {{#vardefineecho:HCRlootAdComp|0.5}} +
+    {{#vardefineecho:HCRlootGlitterMed|0.5}} +
+    {{#vardefineecho:HCRlootSeed|0.5}} +
+    {{#vardefineecho:HCRlootHunterPack|0.25}} +
+    {{#vardefineecho:HCRlootSentCat|0.5}} +
+    {{#vardefineecho:HCRlootMiscHigh|0.2}} +
+    0
+  }} }}
+{| {{STDT| sortable c_06 text-center}}
+! style="width:15em;" | Item
+! style="width:60em;" | Randomly picked among
+! style="width:3em;" | Amount
+! style="width:3em;" | Chance
+|-
+! {{Loot Item|Gravlite panel}}
+| 
+| 15 - 35
+| style="text-align:right;" | {{#expr: (100 * {{#var:HCRlootGravPanel}} / {{#var:HCRlootAllWeights}}) round 1}}%
+|-
+! [[Book]]
+| <!--
+!-->{{Loot Item|schematic}}, <!--
+!-->{{Loot Item|textbook}}, <!--
+!-->{{Loot Item|map}}
+| 1
+| style="text-align:right;" | {{#expr: (100 * {{#var:HCRlootBook}} / {{#var:HCRlootAllWeights}}) round 1}}%
+|-
+! Medicine
+| {{Loot Item|herbal medicine}}, {{Loot Item|medicine}}
+| 3 - 6
+| style="text-align:right;" | {{#expr: (100 * {{#var:HCRlootMedicine}} / {{#var:HCRlootAllWeights}}) round 1}}%
+|-
+! {{Loot Item|Luciferium}}
+| 
+| 5 - 12
+| style="text-align:right;" | {{#expr: (100 * {{#var:HCRlootLuciferium}} / {{#var:HCRlootAllWeights}}) round 1}}%
+|-
+! {{Loot Item|Silver}}
+| 
+| 30 - 100
+| style="text-align:right;" | {{#expr: (100 * {{#var:HCRlootSilver}} / {{#var:HCRlootAllWeights}}) round 1}}%
+|-
+! {{Loot Item|Chemfuel}}
+| 
+| 10 - 30
+| style="text-align:right;" | {{#expr: (100 * {{#var:HCRlootChemfuel}} / {{#var:HCRlootAllWeights}}) round 1}}%
+|-
+! Rare materials
+| {{Loot Item|Hyperweave}}, {{Loot Item|Plasteel}}
+| 10 - 20
+| style="text-align:right;" | {{#expr: (100 * {{#var:HCRlootMaterials}} / {{#var:HCRlootAllWeights}}) round 1}}%
+|-
+! {{Loot Item|Advanced component}}
+| 
+| 1 - 3
+| style="text-align:right;" | {{#expr: (100 * {{#var:HCRlootAdComp}} / {{#var:HCRlootAllWeights}}) round 1}}%
+|-
+! {{Loot Item|Glitterworld medicine}}
+| 
+| 1 - 3
+| style="text-align:right;" | {{#expr: (100 * {{#var:HCRlootGlitterMed}} / {{#var:HCRlootAllWeights}}) round 1}}%
+|-
+! Seed
+| {{Loot Item|Polux seed}}, {{Loot Item|Harbinger seed}}, {{Loot Item|Archean seed}}
+| 1
+| style="text-align:right;" | {{#expr: (100 * {{#var:HCRlootSeed}} / {{#var:HCRlootAllWeights}}) round 1}}%
+|-
+! {{Loot Item|Hunter pack}}
+| 
+| 1
+| style="text-align:right;" | {{#expr: (100 * {{#var:HCRlootHunterPack}} / {{#var:HCRlootAllWeights}}) round 1}}%
+|-
+! {{Loot Item|Sentience catalyst}}
+| 
+| 1
+| style="text-align:right;" | {{#expr: (100 * {{#var:HCRlootSentCat}} / {{#var:HCRlootAllWeights}}) round 1}}%
+|-
+! Misc. Item
+| <!--
+In the XML this loot is a combination of an explicit list of items and a filtering on SingleUseWeapon and SkillNeurotrainer. It's implemented here as a hard-coded list because:
+- it's impossible to sort the items if using a combination of a query and a manual list
+- using a single query to get everything hits the wiki limits on query complexity (due to too many implied OR to specify the list of pages)
+!-->{{Loot Item|Antigrain warhead}}, <!--
+!-->{{Loot Item|Archotech arm}}, <!--
+!-->{{Loot Item|Archotech eye}}, <!--
+!-->{{Loot Item|Archotech leg}}, <!--
+!-->{{Loot Item|Assault rifle}}, <!--
+!-->{{Loot Item|Beam repeater}}, <!--
+!-->{{Loot Item|Bionic arm}}, <!--
+!-->{{Loot Item|Bionic eye}}, <!--
+!-->{{Loot Item|Bionic heart}}, <!--
+!-->{{Loot Item|Bionic leg}}, <!--
+!-->{{Loot Item|Bionic spine}}, <!--
+!-->{{Loot Item|Charge lance}}, <!--
+!-->{{Loot Item|Charge rifle}}, <!--
+!-->{{Loot Item|Doomsday rocket launcher}}, <!--
+!-->{{Loot Item|Flatscreen television}}, <!--
+!-->{{Loot Item|Grand sculpture}}, <!--
+!-->{{Loot Item|Healer mech serum}}, <!--
+!-->{{Loot Item|Joywire}}, <!--
+!-->{{Loot Item|Marine armor}}, <!--
+!-->{{Loot Item|Marine helmet}}, <!--
+!-->{{Loot Item|Megascreen television}}, <!--
+!-->{{Loot Item|Orbital bombardment targeter}}, <!--
+!-->{{Loot Item|Orbital power beam targeter}}, <!--
+!-->{{Loot Item|Painstopper}}, <!--
+!-->{{Loot Item|Power claw}}, <!--
+!-->{{Loot Item|Resurrector mech serum}}, <!--
+!-->{{Loot Item|Skilltrainer}} (any), <!--
+!-->{{Loot Item|Techprof subpersona core}}, <!--
+!-->{{Loot Item|Tornado generator}}, <!--
+!-->{{Loot Item|Triple rocket launcher}}, <!--
+!-->{{Loot Item|Orbital mech cluster targeter}}
+| 1
+| style="text-align:right;" | {{#expr: (100 * {{#var:HCRlootMiscHigh}} / {{#var:HCRlootAllWeights}}) round 1}}%
+|-
+|}<noinclude>[[Category:Customized table templates]]</noinclude>

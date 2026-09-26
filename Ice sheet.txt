@@ -1,0 +1,158 @@
+{{Infobox biome
+| name = Ice sheet
+| image = IceSheet.png
+| type = Biome
+| texture = IceSheetTexture.png
+| canbuildbase = Yes
+| allowRoads = false
+| allowRivers = false
+| allowFarmingCamps = false
+| animal density = 0.2
+| plant density = 0
+| movement difficulty = 1.5
+| max temperature = -10
+| forageability = 0
+| wild plant regrow days = 0
+| disease mtb days = 90
+| description = Sheets of ice which can be kilometers thick. There is no soil for plants to grow in. The only animals here are migrating to somewhere else - or badly lost.<br/>Ice sheet is extremely inhospitable. There is no soil for plants and almost no animal life. Long-term survival is a challenge.
+| Extreme Biome = true
+<!-- weather -->
+| clear = 12
+<!-- | fog = 0
+| rain = 0
+| rainy thunderstorm = 0
+| foggy rain = 0-->
+| dry thunderstorm = 2
+| hard snow = 40
+| soft snow = 20
+| gray pall = 1
+| windy = 1
+| overcast = 1
+| blizzard = 2
+<!-- fish -->
+| max fish population = 600
+| freshwater_common_salmon = Yes
+| freshwater_uncommon_frostfish = Yes
+| saltwater_common_salmon = Yes
+| saltwater_common_cod = Yes
+| saltwater_uncommon_dogfish = Yes
+}}
+'''Ice Sheet''' is a cold [[biome]] in RimWorld.
+<!-- -20f + (0f - tile.temperature) * 2f -->
+== Summary ==
+The only land possible to farm is stony patches around hills and mountains, but they need to be [[heater|heated]] indoors and also have [[sun lamp]]s. You will need to hunt, trade and cannibalize until you get a [[heater]] and a [[sun lamp]]. Later, [[moisture pump]]s can create larger growable areas and [[hydroponics]] can be used instead of ground. Geothermal vents can be used for free heating. With so few animals here, any predators that roam in will become hungry soon and target your colonists and animals.
+
+In the lists below the number in brackets represents the relative commonality.
+
+=== Flora ===
+<div class="ul-column-width-200">
+{{#ask: [[Type::Plant]] [[Lives In Ice Sheet::>>0]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Ice Sheet
+}}
+</div>{{#set:Flora Commonality Sum | {{#expr: {{#ask: [[Type::Plant]] [[Lives In Ice Sheet::>>0]] | ?Lives In Ice Sheet = | mainlabel=- | sep=+ }} }} }}
+
+=== Fauna ===
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Ice Sheet::>>0]] [[Coastal Animal::false]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Ice Sheet
+}}
+</div>{{#set:Fauna Commonality Sum | {{#expr: {{#ask: [[Type::Animal]] [[Lives In Ice Sheet::>>0]] [[Coastal Animal::false]] | ?Lives In Ice Sheet = | mainlabel=- | sep=+ }} }} }}
+
+Additionally, these animals can spawn in coastal maps:
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Ice Sheet::>0]] [[Coastal Animal::true]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Ice Sheet
+}}
+</div>
+
+If the map is [[polluted]],{{BiotechIcon}} then '''no''' wild animal will spawn.
+
+=== Diseases ===
+Ice Sheet has a disease {{MTB}} of 90 days. The following diseases can occur in a Ice Sheet:
+{| {{STDT|c_07 sortable}}
+! Disease
+! Commonality{{#set:Disease commonality sum|{{#expr:100+80+30+30+100+80+10}} }}
+|-
+| [[Flu]] || 100{{#set:Flu commonality|100}}
+|-
+| [[Plague]] || 80{{#set:Plague commonality|80}}
+|-
+| [[Fibrous mechanites]] || 30{{#set:Fibrous mechanites commonality|30}}
+|-
+| [[Sensory mechanites]] || 30{{#set:Sensory mechanites commonality|30}}
+|-
+| [[Flu#Animals|Animal flu]] || 100{{#set:Animal flu commonality|100}}
+|-
+| [[Plague#Animals|Animal plague]] || 80{{#set:Animal plague commonality|80}}
+|-
+| [[Organ decay]] || 10{{#set:Organ decay commonality|10}}
+|}
+
+=== Fish ===
+{{Odyssey|section=1|No category}}
+The table below contains the list of all of the fish that can be caught - as well as where they can be caught.
+{| {{STDT|c_23 sortable}}
+! Fish
+! Water body
+! Rarity
+|-
+| [[Salmon]] || Freshwater || Common
+|-
+| [[Frostfish]] || Freshwater || Uncommon
+|-
+| [[Salmon]] || Saltwater || Common
+|-
+| [[Cod]] || Saltwater || Common
+|-
+| [[Dogfish]] || Saltwater || Uncommon
+|}
+
+== Analysis ==
+{{See also|Ice Sheet Guide}}
+
+While not as resource-starved as the [[sea ice]], the ice sheet lacks food and reaches dangerous levels of cold, making it a difficult biome to get started in. Taking advantage of the starting ruins and geothermal vents can greatly help early survival.
+
+* '''Growing and Food: Extreme''' - No plants grow in the ice sheet. The few animals present can provide some food in a pinch. [[Trading]] can provide food if there is a nearby settlement and the colony has valuables to sell (valuable and accessible ores, human organs, starting items). Otherwise, the colony will need to rely on [[cannibalism]], or, with a large body of water, [[fishing]],{{OdysseyIcon}} to survive until a [[sun lamp]] setup can be established.
+** Cannibalism is the most reliable source of food in the early game. The [[storyteller]] will send [[raid]]s and [[event]]s at the same rate despite the cold, and if you only have 1 or 2 colonists, [[PopulationIntent]] will try and generate more colonists recruitment events (to eat).
+** [[Fishing]]{{OdysseyIcon}} in a coastal tile can be feasible if colonists can survive outdoor temperatures, or if an enclosed, heated  room can be made.
+** There are rough patches of soil. By enclosing an area of stony soil, heating it, and producing light with a [[sun lamp]], crops can grow without the need for [[hydroponics]]. Still, hydroponics are worth researching eventually for the added space and fertility. If [[Ideology]] is installed, [[nutrifungus]]{{IdeologyIcon}} can be grown with just a closed room with heat, and [[fungal gravel]]{{IdeologyIcon}} can be installed to create growing space under a mountain.
+
+* '''Disease: Moderate''' - Disease events are rare, but [[healroot]] cannot grow at all, meaning medicine supplies will be low before a [[greenhouse]] can be established.
+
+* '''Temperature: Very Difficult''' - Outdoor temperatures will be below freezing except in the hottest days, and only during the daytime. [[Steam geyser]]s generate heat in an enclosed room, so they are essential for survival until a [[power]] grid can be established. To survive outdoors for extended periods of time, warm clothing is required. Due to the cold climate, [[raider]]s and other human pawns will typically arrive with warm clothes for the colony to use.
+** In the colder months, it can get cold enough that only [[mechanoid]] raids can generate past the early game.
+
+* '''Fires: Easy''' - Plants do not grow, so wildfires are nonexistent.
+
+* '''Predators: Moderate''' - Predators are rare, but they will get hungry. [[Polar bear]]s can be a serious threat to colonists too far outdoors.
+
+Overall, ice sheet is very difficult when starting out. Once the colony's food, temperature, and mood are stable, progression is relatively normal, since stones and ores generate at the normal rate. Therefore, it can be suitable for players wanting to play on an extreme biome, but without the tedium of the more extreme sea ice biome.
+
+== Gallery ==
+<gallery>
+IceSheet.png|An Ice Sheet
+<!-- IceSheetPolluted.png|A [[polluted]] Ice Sheet{{BiotechIcon}} -->
+IceSheetTexture.png|Ice Sheet's texture on the world map
+</gallery>
+
+== Version history ==
+* [[Version/0.11.877|0.11.877]] - Added
+
+{{nav|biomes|wide}}
+[[Category:Biomes]]
+[[Category:Cold Biomes]]

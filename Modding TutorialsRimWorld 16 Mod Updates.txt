@@ -1,0 +1,108 @@
+{{DISPLAYTITLE:RimWorld 1.6 Mod Updates}}
+
+{{BackToTutorials}}
+
+
+'''NOTICE''': This is a repository of information for mod developers updating their mods to RimWorld 1.6. '''THERE MAY BE ODYSSEY DLC SPOILERS HERE.'''
+
+For questions and clarifications, please come visit us at the #mod-development channel on the [https://discord.gg/rimworld RimWorld Discord server].
+
+== General Tips ==
+
+If you are updating a mod between RimWorld versions for the first time:
+
+# Update your supportedVersions in your About.xml
+# Consider using [[Modding_Tutorials/Mod_Folder_Structure|LoadFolders]] to freeze your previous version content.
+# Try to recompile your assemblies. Address any issues that come up.
+# Try to load your mod. Work the error list top to bottom.
+# Check your mod functionality. This is a great time to create a functionality checklist for future updates if you haven't made one already!
+# Check back after further patches. Updates and additional content may be released in post-release patches for months to come, don't assume that mods never break once updated!
+
+== Official Documentation ==
+
+The following docs have been provided directly by Ludeon for players and mod authors:
+
+<big>'''1.6 Change Log''': [https://docs.google.com/document/d/e/2PACX-1vRCjqVtPQDFGu4POiKTUd_8o3U2Asdhx99SOvcgU66ABdYtk3Cgndd53yJ6BC4tZX530pp_m6lf4Z9P/pub Official Google Doc] - describes all base game changes in RimWorld 1.6.</big>
+
+<big>'''1.6 Modder Primer''': [https://docs.google.com/document/d/e/2PACX-1vRKE9u5ZW_zG45pxzwNvy4sxvozDeqtxlxpac5jwenOeW6liQCPgmPl9bIbtcMuqL1NPIDHOLFg64M_/pub Official Google Doc] - technical document intended for modders.</big>
+
+== RimWorld 1.6 Base Game Changes ==
+
+=== Designators ===
+
+* As part of the new vanilla designator shapes system, the virtual DraggableDimensions property has been replaced with DrawStyleCategory, which returns a DrawStyleCategoryDef. You can use one of the several vanilla presets or create your own Def to determine what kinds of shapes can be drawn with your designator.
+
+=== Buildings ===
+
+* <code><placingDraggableDimensions></code> has been changed to <code><drawStyleCategory></code> to utilize the new vanilla designator shapes system. This is a DrawStyleCategoryDef, and you can use one of the several vanilla presets or create your own if that makes more sense. The vanilla presets are: Default2D, Fill2D, Default1D, FilledRectangle, Walls, Conduits, Defenses, Zones, Areas, Orders, Mine, Paint, Plans, RemovePlans, RemoveZones, Foundations, Floors, Cancel, and Plants.
+* <code><soundAmbient></code> has been removed in 1.6 in favor of a new ThingComp. The following is from the Toxifier Generator:
+<source>
+<li Class="CompProperties_AmbientSound">
+    <sound>Toxifier_Working</sound>
+    <disabledOnUnpowered>true</disabledOnUnpowered>
+</li>
+</source>
+
+=== Pawns ===
+
+* <code><wildness></code> is no longer a field on RaceProperties, but is now a StatDef that goes in a race's <code><statBases></code>. Note that as a StatDef, it is now capitalized as well (<code><Wildness></code>).
+* <code><forceGender></code> is a new field in RaceProperties. Unsure why this exists in addition to the existing <code><fixedGender></code> field on PawnKindDef.
+
+=== Damage ===
+
+* DamageDefs now have an <code><ignoreShields></code> flag that causes them to ignore shield belts. This does not allow projectiles using them to ignore projectile interceptors such as high or low shields. Shield belts now check for both <code><ignoreShields></code> and <code><isRanged></code>.
+
+=== Hediffs ===
+
+* <code><causesNeed></code> has been removed. For drugs specifically, you should now use <code><chemicalNeed></code> on the HediffDef root, or for non-drug needs you can use the <code><enablesNeeds></code> list in HediffStage.
+* <code><disablesNeeds></code> has been moved to HediffStage as well.
+
+=== Terrains ===
+
+* <code><holdSnow></code> has been renamed to <code><holdSnowOrSand></code>.
+
+=== Plants ===
+
+* <code><hideAtSnowDepth></code> has been renamed to <code><hideAtSnowOrSandDepth></code>.
+
+=== Scenarios ===
+
+* There is a new <code>ScenarioBase</code> abstract base for ScenarioDefs. You should inherit from this in order to inherit some new fields that deal with the map layering system; omitting them will cause errors on load.
+
+=== Interactions ===
+
+* <code>InteractionUtility</code> has been renamed <code>SocialInteractionUtility</code>. There is still a class called <code>InteractionUtility</code> that appears to be for ordering pawns to interact with objects.
+
+=== Misc ===
+
+* ActiveDropPodInfo has been renamed to ActiveTransporterInfo - potentially used by Odyssey shuttles now?
+* The targetParams <code><canTargetMutants></code> has been renamed to <code><canTargetSubhumans></code>.
+* PawnFinder's lists that contain the word "TransportPods" have been renamed to "Transporters" instead, so <code>AllMapsCaravansAndTravelingTransportPods_Alive_Colonists</code> is now <code>AllMapsCaravansAndTravelingTransporters_Alive_Colonists</code>, for example.
+
+== Visual Studio and Burst ==
+
+If you've decompiled the dll, exported all code to .cs files, and opened that in Visual Studio and are getting constant crashes and hangs:
+
+Edit the file Properties/AssemblyInfo.cs and delete all the lines with "`BurstCompiler`". It's not like you're re-compiling it, so these are not needed anyway.
+
+== Odyssey DLC Compatibility ==
+
+The following features appear to be DLC-locked. Note that this information has been gathered via datamining and may not reflect the final state of the game at release, nor is it necessarily comprehensive:
+
+* Gravships
+* Transport Shuttles
+* Landmarks, Tile Mutators, and several new GenSteps
+* Space, Asteroid Quests, Oxygen, Vacuum
+* Aggressive Habitat Animals (needs clarification)
+* Coastal Animals (needs clarification)
+* Fishing
+* Mixed Biome Maps
+* Extended animal capabilities: Foraging, Targeted Attack, Sentience
+* New Weather: Droughts, Frozen Water, Floods, Sandstorms
+* Plant Cultivation (needs clarification)
+* New Questgivers: Traders, Beggars, Books, Orbital Scanners (?)
+* Substructure (needs clarification)
+* New Precepts: Fishing, Space, Colony Moving
+
+[[Category: Modding]]
+[[Category: Modding tutorials]]

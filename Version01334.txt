@@ -1,0 +1,129 @@
+{{Version Nav}}
+
+It’s finally here – Alpha 1!
+
+Everyone who has the game got this on January 27th via email. If you didn’t get it, more info here.
+
+(Mac users: Please install the Mods folder alongside your app folder, not inside it. This will be rearranged for next build, but for now Mods needs to be there. Also, if your mouse right-click isn’t working, go fullscreen.)
+
+This version brings a host of improvements on the venerable build 254b from last November.
+
+To install the new version, just delete the old one and unzip the new one somewhere. Old saves will be unusable in the new version.
+
+== Release Trailer ==
+
+<youtube>https://www.youtube.com/watch?v=0LdBGkUbf9A</youtube>
+
+== Changes (Summary) ==
+
+=== Stockpiling ===
+Resources no longer vanish into a magical storage number in the sky. Everything in the game is now present on the map at all times.
+
+* Players can now designate stockpile zones. These are areas on the ground where colonists are supposed to store certain kinds of items. Zones don’t cost anything because they’re not physical – they’re just AI directives.
+* Stockpile zones can be configured using a hierarchical interface to accept any combination of items. You could have one that takes all resources, or all guns, or just [[Autopistol|pistols]], or only [[molotov cocktail]]s, [[potatoes]], and dead animals.
+* Stockpile zones can have priorities. Haulers will fill the highest-priority zones first, and even move items from lower-priority zones to higher-priority ones.
+* The storage and priority interface is also used for storage buildings, like food hoppers, [[grave]]s, and the (currently-pointless) equipment racks.
+
+One nice natural side-effect of this change is that your colonists will no longer starve if they have a huge food reserve but no nutrient paste dispenser. They can eat the raw food right from the stockpile – though it’s not efficient, and they hate eating raw potatoes. Also note that animals will sometimes eat food out of your stockpile.
+
+Putting everything on the map required re-jiggering a lot of existing systems (which is why we did it now, so we won’t have to re-jigger even more systems to do it later):
+
+* Selling goods to space traders now requires that you physically move goods to an outdoor launch pad. This is done by building the pad and configuring stockpile zones on top of it.
+* Nutrient dispensers can no longer draw food magically from the sky reservoir. You must build food hoppers adjacent to them, and keep those hoppers filled with raw foods.
+* There is a new Cooking work type added. Currently, all it does it refill food hoppers. In future it will actually cook stuff. However, we added it now because sometimes you want filling the hoppers to be at a different priority from general hauling.
+
+=== Adaptive Tutor ===
+There was a janky tutor before, but he basically ran on a rail and told you the same things every game, whether you needed to know them or not. The new adaptive tutor is much smarter in providing only the information players need.
+
+The AT watches everything you do and keeps an internal database of how much he thinks you understand various game concepts. A concept is something like, “you can zoom the camera”, or “you can capture enemies by doing X”. He also watches what’s happening in the game, and works out a measure of how much you need to know each different concept at the moment. And, in his database of concepts, each concept has a natural priority. For examples, camera movement is considered more essential than opening the wiki.
+
+Finally, the AT keeps track of the player’s “relax desire”. This is how much the player probably doesn’t want to see another tutor message right now. People only want to absorb information so fast, so we don’t want to overwhelm. Relax desire peaks just after a message appears, and falls off over time.
+
+Evaluating all these together, the AT shows you training messages if the combination of their priority and immediate need-to-know exceeds the player’s desire to relax. The final outcome is:
+
+* If you already know a concept, you’ll likely demonstrate it before the tutor tries to teach you anything in it, and you’ll never see the message for it.
+* If there’s nothing you urgently need to know, the tutor will give you nice long intervals between messages.
+* If you really need to know something, it gets bumped to the front of the list and overwhelms the relax desire, and is shown nearly immediately. This is for cases like, “You can rescue your bleeding-to-death colonist by doing X”.
+
+There’s more to do to perfect this guy (like making messages point to elements on the map or on the UI), but so far I think it’s a great improvement on the old non-adaptive tutor.
+
+Also, the AT’s database of player knowledge is now saved separately from maps, so it will stay between games. To reset it, delete Knowledge.xml in your RimWorld saves folder.
+
+=== Modding ===
+
+Modding support is started but not finished.
+
+Many of the definitions in the game – some buildings, all sounds, hair, training concepts – are now exposed in a Mods folder, in the Core mod, in editable XML files. However, some data is still not exposed, like most Thing properties (especially the ones essential to making weapons or plants), race definitions for making animals or alternate humanoids, trader profiles, storyteller tunings, and so on. In addition, there’s not yet a system to install, activate, and deactivate mods. All you can do is destructively edit the core files.
+
+Development tools have been added to the game. You can activate them with the “development mode” checkbox in the menus. For more info on these, check out the basic RimWorld modding document.
+
+This system will be finished in a future release. Hopefully soon, because I grew up as a modder and can’t wait to see what people will do modding RimWorld.
+
+=== Menu Art ===
+
+You’ll notice some beautiful new art for our menus. Thank Ricardo Tomé, Portuguese digital painting expert, for spicing up the menu backgrounds and giving some life to the AI Storytellers.
+
+=== Character Art, Apparel, and Hair ===
+
+The character art in game has been redone by [https://www.deviantart.com/rhopunzel Rhopunzel], combined with some fun color-randomizing code by yours truly. So pawns can come in a variety of body shapes, skin colors, and head shapes.
+
+And that’s just when they’re naked. In addition, there is a new apparel system. Characters can wear multiple layers of clothing, and the clothing itself is randomized. So you could have a guy in a green T-shirt. Or a dude in a white T-shirt, with an armor vest and a tan duster. The number of combinations is nearly infinite. Finally, hairdos are now randomized as well.
+
+Currently, they’re just randomized for everyone and cannot be changed. In future, [[apparel]] will be fleshed out systemically, and you’ll see different clothing and hairdos for people from different cultures. One pirate band will wear all leather and spiky mohawks. A nearby tribe will send raiding parties in animal skins with tribal hairdos. And you could enforce an all-pink-clothes-with-pink-afro colony uniform if you wanted.
+
+Overall we’re looking to get to a point where colonists and pirates can be characterized and recognized just by looking at them. The tools to do that are now in, but they’re used haphazardly. Upcoming versions will have characters spawn with proper clothing and change their clothing as appropriate. Clothes will also help protect characters, affect their movement speed, and so on.
+
+=== Fixes and Tunings ===
+
+Tons of things have been fixed and tuned, including recruiting chances, storyteller difficulties, and so on.
+
+=== Creative Content ===
+
+If you got the Name in Game or Backstory in Game pack and had your content approved before Friday or so (when I content-locked the Alpha for final stability testing), your content will be in the game. It’s quite refreshing to have a nice deep pool of content to draw from. There aren’t a massive number of backstories – you can become familiar with individuals if you play a lot – but there are enough that the game isn’t under pressure to repeat anything.
+
+Also, the options menu now has an “encouraged spawn list” of names. Put a last name on here, and the game will prefer spawning characters from this list. So you’ll want to put your own name on the list, and perhaps those of your friends, and watch yourself spawn in!
+
+Great thanks to all the testers and the two creative rewards moderators who helped make this happen. Have fun and watch out for the raging muffalo!
+
+== Changes (List) ==
+
+* Starting moving game content out of hardcoding and into external, modifiable xml and content files. This is the beginnings of the [[modding|mod system]].
+* Redid storage allowance system into a nice hierarchy, so you can allow/disallow storage of individual kinds of items in a stockpile, or do it by categories. All with a nice collapsible-category interface.
+* AI's now haul construction-blocking items to the nearest open square instead of hauling them all the way to storage.
+* Had to scrap and try a new approach to having fixed default categories on the storage buildings.
+* Integrated storyteller portraits in entry menus.
+* Unified thing dropping placement code.
+* [[Storyteller|Kassandra]] is now Cleopatra.
+* Updated credits.
+* Stockpiling AI can now collect resources for multiple building sites when taking resources to building sites. So if there is a long wall, they can collect a pile of metal and lay down a dozen wall sections at once instead of going back and forth for each one. They still only collect from one resource pile.
+* Stockpiling AI: Pawns will now draw from several resource piles if it helps them build more efficiently. So they can pick up from multiple resource piles, carry the resources in one trip, and then deposit them in multiple building sites. Very efficient and fun to watch!
+* Included Rho’s new RimWorld logo and Ricardo’s happy/sad Randy portrait.
+* Colonist will now eat from [[Nutrient paste dispenser|dispensers]] in prisoners’ rooms as well as store meals in prisoners’ rooms if there is no prisoner present.
+* You can now rename stockpiles.
+* Some fairly easy but extremely impactful optimizations: eliminated 30k/frame of memory allocs from switching to the same font over and over. Game no longer tries to make tooltips from every rock square in the map (only pawns make tooltips now). Some others.
+* Terrain, building, and terrain scatterable definitions are now all moddable. Concept definitions (used by the adaptive tutor) as well.
+* Imported the latest player creative content.
+* Continuing to tune the adaptive tutor and put in more lessons and cues.
+* Rho did nicer thicker outlines for characters.
+* Worker AI rejiggered to allow prioritization of different classes of targets within one work type. The upshot is that they’ll try to finish existing unfinished buildings before carrying resources to blueprints.
+* Adaptive tutor now saves its estimates of the player’s knowledge as a separate file that will persist between games. Delete Knowledge.xml (in savegames’ parent folder) to reset it.
+* Returned adaptive tutor and reworked the internal numbers to all be percentages.
+* Major optimizations on the algorithm for regenerating rooms. Will help during mining.
+* Deconstructing is now done by designating a target, which the colonists go deconstruct.
+
+=== New Content ===
+
+* Created audio authoring system, supporting one-shots and sustained sounds, various filters, pitch, volume settings, mappings from in-game parameters.
+* Created live-modding system, which allows modification of game content while the game is running. This includes the package editor and the definition editor.
+* Created apparel system and introduced the first batch of apparel from Rho’s art.
+* Created a system to randomize, remember, and manage colors for apparel and characters’ skin.
+* Lots of new art from Rho.
+* Added [[jacket]] from Rho.
+* AI can now add to existing stacks in storage, as well as handle various contingencies with lack of space, and so on.
+* Created adaptive tutor system. It watches everything you do and tries to determine your knowledge of various concepts. If it detects a concept is needed but knowledge hasn’t been demonstrated, it shows a helpful note. Effectively it tries to replicate a good teacher sitting behind you, saying only the things that are really needed.
+* Added preferred names list, so you can encourage the game to spawn your Name in Game or Backstory in Game character.
+
+=== Bug Fixes ===
+
+* Fixed another batch of stockpiling bugs, largely around configuration of special storage buildings.
+* Various bugfixes.

@@ -1,0 +1,46 @@
+{{Version Nav|unstable=1}}
+
+Build 1.3.3096
+
+All the above (Version/1.3.3095) plus:
+* Fix: Incorrect body part index recovery code.
+<br/>
+----
+
+1.3.3096b is up!
+
+We're still working towards a clean implementation of fluid ideos.
+
+* Wind turbine, skullspike and neural supercharger can now be walked through like most other buildings.
+* Skulls now keep track of the name of the pawn they originated from.
+* Biosculpter healing cycle can now heal asthma, bad back, cataracts, frail, hearing loss and artery blockage (one per cycle).
+* Fix: Beggars quest sending 'charity fulfilled' history event even when quest failed.
+* Biosculpter healing cycle and now restore tongue.
+* Biosculpters restore small missing parts (eyes, ears, fingers, toes, tongue).
+* Biosculpters now list what will be cured and what can possibly be cured in the tooltip for the healing cycle if the biosculpter is tuned to a pawn.
+* Fix: Scarification ritual now accepts prisoner targets again and doesn't break when target is a prisoner.
+* Fix: Ideo reform dialog does not support more than 5 memes horizontally.
+* Add missing gender constants for deity, foeLeader and founder.
+* Fix: Two-column credit entries have overlapping rows if left entry is taller than the right one.
+* Added new ancient junk - additional mech parts for more visual variation, more ancient cars.
+* Fix: MinifiedTree error on debug MakeColony tool.
+* We now avoid using sun blocker as a threat if any colonist or prisoner has an ideo with darkness/tunneler, since it's kind of meaningless to them.
+* Fix: SitePartWorker_SleepingMechanoids checks for wrong faction type in IsAvailable.
+* Add beautyRelated tag to tongue.
+* Fix: Incorrect devpoits value in ritual outcome letter.
+* Ideo.Notity_GuestStatusChanged -> Notify_MemberGuestStatusChanged
+* Fix: You can start conversion ritual with a moral guide that can't speak.
+* Add note about work to deconstruct to 'work to build' stat description.
+* Fix: Bionic tongue links to wrong recipe def.
+* Adjust some thought descriptions so that they still make sense for blind people.
+* Timbershrooms can now grow wild in caves.
+* Barkskin dryad blunt armor increased from 30% to 40%, sharp armor increased from 60% to 70%.
+
+
+Fluid ideo stuff:
+* Next reform development points cost is now based on how many previous reforms have occured. It starts at 10 for the first reform and rises to 20 after 5 reforms.
+* Reforming an ideo no longer not re-randomizes all precepts. Incompatible precepts are now removed and require precepts added depending on meme choices.
+* Fix: Rituals cannot be started after reforming ideo.
+* Rituals no longer block reforming a fluid ideo, instead they are cancelled with a warning given to the player.
+* Removed unused fluid ideo constants.
+* Reduced devpoints gain for converting 3->1.

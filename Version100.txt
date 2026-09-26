@@ -1,0 +1,344 @@
+{{Version Nav|date=2018-10-17}}
+
+It’s finally here! I just hit the button to release RimWorld 1.0. Thank you to everyone! I have many people to be grateful to (many of whom I mentioned in the last update).
+
+Some logistical details (I also mentioned last time):
+
+If you’re playing an unmodded game, just keep playing. Version 1.0 will be compatible with un-modded savegames from Beta 19 and Beta 18.
+
+If you’re playing a modded game, you should follow these two steps now:
+
+In Steam Library, right-click on RimWorld, select Properties, go to the Betas tab and select the “beta19” beta.
+Back up your mod files.
+Copy all the files in C:\Program Files (x86)\Steam\steamapps\workshop\content\294100
+Paste them all in C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods
+I’m recommending modders don’t update in-place to prevent the above problem, but can’t guarantee everyone will get the message.
+
+1.0 is mostly the same as Beta 19, with a lot of bugfixes. The only significant new feature is a new food restriction system that allows you to determine what your colonists and prisoners are allowed to eat.
+
+Time to celebrate over here! Thanks again everyone.
+
+==Release Trailer==
+
+<youtube>https://www.youtube.com/watch?v=3tDrxOASUog</youtube>
+
+==Release Date==
+
+October 17th, 2018
+
+==Unoffical Changelog==
+No changelog was provided with the release of 1.0.0. However [https://www.reddit.com/r/RimWorld/comments/8uk3u4/10_complete_changelog_since_initial_10_unstable/ reddit user schnightmare compiled a list] of changes from Tynan's posts on the official Ludeon forums. 
+The veracity of this changelog is not guaranteed, and items on the list may have been added and subsequently removed or changed between 1.0 unstable and 1.0 release. It is merely presended as a useful resource. 
+
+===June 20th===
+*Fix: Blueprint graphics for wall/sandbags/door don't match the edge detect shader properly (missing inner solid transparent field)
+*Removed some text that doesn't pluralize well.
+*Unified table style so all tables fit the cell more precisely.
+*A bit more text content.
+*Added multicount silver graphics.
+*Adjust some apparel draw sizes. Won't be visible in-game until we fix bug that causes drawSize to do nothing on apparel items.
+*Added new multicount graphics for steel.
+*Multi-stackcount graphics for stone blocks.
+*Various item art improvements.
+*Add wood log full stack graphic.
+*Adjust [[smokeleaf joint]] graphics for size.
+*Refined wood log graphics.
+*Unified health item graphics.
+*Simplyify body part item graphics.
+*[[Uranium]] is no longer a [[small volume material|small-volume ingredient]].
+*Precious lump more likely to form with uranium, less likely with jade.
+*Made StatPart_Difficulty more sensible (though it's not actually used anywhere :/)
+*Buff [[flak vest]] and [[flak pants]].
+*Start with flak vest, flak pants, plasteel helmet.
+*Food poisoning chance is now affected by difficulty.
+*Wanderer joins letter text specifically notes that you can’t question the pawn.
+*Fill in some text_todo for new body parts.
+*Wall smoothing work amount 9000 -> 6500.
+*Changed "abandon" gizmo order.
+*When RegionTraverser finds a small region, put it to the front of the queue instead of the back.
+*When health tab is empty, instead of writing "(no injuries)" we now write "(no health conditions)" in the center.
+*Fix: "Show what will buy" gizmo overlaps "choose landing location" buttons.
+*Fix: Index out of bounds exception in ToTitleCaseSmart() while generating names.
+*We no longer warn about proximity goodwill change when settling near permanent enemies because it's pointless.
+*Fix: "Romance attempt" interaction repetitive text.
+*Some minor changes to string.Flatten() and string.MergeMultipleSpaces().
+*GrammarResolver is now more careful while removing excessive whitespace. This fixes issues with incorrect linebreaks in letters.
+*Rebalanced some prosthetics-related thoughts.
+*Refine shadow data for buildings.
+*Clean up some shooting accuracy code, collected constants together.
+*Clarified refugee pod crash letter and made it specific to the pawn who is crashing. Added _title text output from pawns. So now you can use [PAWN_title] in any text.
+*Fix minigun and charge blaster balance. Minimum accuracy for ranged weapons changed to 0.01.
+*Fix: Missing translation tags for direct hit chance and miss radius.
+*-Balance down watermill 1400 -> 1200 watts. -Healroot grow time 10 -> 7 (crop version only, wild version remains at 10). -Flak pants occupy middle layer (can’t be worn under power armor).
+*Tie forcedMissRadius to whether a weapon is explosive; remove it from non-explosive weapons and adjust accuracy.
+*Fix: Adjusted forced miss is not applied properly.
+*Move verb-related ConfigErrors into VerbProperties.
+*Pass a little extra information into ApplyPatches.
+*Abstract mod loading into a variety of overridable functions.
+*Fix: Phrasing mistake.
+*Fix: Typo.
+*Added stat minValue where appropriate.
+*Raiders are no longer allowed to self-tend.
+*Fix 3443: Colonist with low Animals skill gets 'Product Wasted' when shearing alpaca, but alpaca still has 100% wool
+*Fix 3439: Item stash contains Silver, Silver, Silver, Silver, and Silver
+*Fixed back compatibility issue with ScenPart_IncidentBase.
+*Fix 3435: Backwards compatibility: Issues with missing/changed defs edition
+*Allow tribalwear for all starts (for naked brutality scenario, mostly).
+*More content for interaction descriptions.
+*Fixed issues with hediffs B18 back compatibility.
+*Fixed some B18 back compatibility issues.
+*Reduced predator prevalence in most biomes about 30%.
+*Balance prevalence of harvestable wild plants (mostly reducing raspberries).
+*Goodwill daily gain and fall for factions reduced 0.5 -> 0.25
+*Adjusted and added some content for world feature name generation.
+*Fix: Semi-frequent errors on world generation from name use checking by text generators.
+*RulePack refactoring. Fix: Tribe factions use outlander union names for name generation.
+*Rulepacks refactor and naming consistency.
+*Some minor rule pack refactors.
+*Fix: Waterwheels don't rotate the right direction.
+*Integrate backstory translations using the same fuzzy-match logic used for loading.
+*Improved tribal name generators. Removed various duplicate rules in favor of probability markers.
+*More naming content for trade ships.
+*More content for world name generator.
+*Update string replacement symbols for Tynan easter egg backstory.
+*More random naming content for pirate factions.
+*Fix: Some world text still clips with the planet.
+*Adjust mortar description to explain its inaccuracy.
+*Exclude wav and png files from VSCode.
+*Name generation tests now inject the name "Smithee" for ANYPAWN. This is so that rules which require a pawn name (e.g. art titles relating to a Tale about a pawn) get tested as well.
+*A bit more content for weapon art namer.
+*Refactor some naming data into global to reduce duplication.
+*Added more variations to art name generation, and restructured for greater re-use between art types.
+*Syllables are now global for text generation and renamed to SylE (English) and SylG (Galician).
+*More content for artwork naming.
+*Rename some RulePack XML files.
+*Fix: Art namers don't appear on namer test rulepack list (since their names didn't start with Namer). Renamed them to NamerArtXXX. Fix: Some bracket mistakes from last commit.
+*Reorganized and renamed various art generation text symbols. Removed a bunch of redundant references (re-defining things already defined in global utility def).
+*Increase deep counts per cell somewhat (this is balanced because we now have drill-caused infestations)
+*Credits update (testers)
+*Delete two meta files that Unity keeps deleting.
+*Display “(various) x5” instead of just “(various)” when various things are selected.
+*Grayscale-out disabled Commands.
+*Fix 3436: Exception while saving Maneuver_Smash_MeleeHit
+*Fix 3441: Gray turns into __Gray__ when drafted. (Underline on entire textbox rather than name) (maybe)
+*Fix another smattering of old text-replacement tokens.
+
+===June 21st===
+*Differentiated colors of different variants of the same faction type.
+*Remove uranium cost from shield belt.
+*Applied Jon's new properly-aligned wood floor texture, and made the burned version for it. Applied Jon's proper headless projectile graphics for firefoam and incendiary shells that match the item graphics (e.g. no head).
+*Rebalanced deep resources: More resources per cell, smaller but more numerous lumps, plasteel and uranium more common, silver moved to same low commonality as jade and gold.
+*Revert some recent increases to sowing time.
+*Reduce food poison chances significantly.
+*Adjusted poker table graphics to standard table style (filling the cells).
+*Solve a quirk where some items are faster to craft at crafting spot than on proper benches (e.g. tribalwear). Solution: -Set crafting spot to 50% speed. -Crafting spot and butcher spot are both now subject to temperature and outdoors work speed penalties. -Made smokeleaf joint and pekoe makeable at drug lab. -Adjusted work speed penalties, outdoors 80%->90%, bad temperature 60%->70%.
+*Group melee-related stats away from ranged-related stats.
+*Group Miss Radius and Direct Hit Chance stats.
+*Add Direct Hit Chance to shot report.
+*Fixed bugs, made a debug output for, and rebalanced the code that adjusts backstory selection chances to try to achieve a relatively even spread of work disable commonalities.
+*Fix 3442: Typo in Mini-Turret's description
+*Intercept_Object_HitChancePerFillPercent 0.10 -> 0.15
+*-Random intercept chance for wild projectiles is now the same as hitting cover for world objects adjacent to the target. This solves issues where if two people are hunkered behind sandbags, it can be weirdly likely to hit the neighbor of your true target since the sandbags don’t protect him at all, while they do protect your true target. Unfortunately this doesn’t perfectly solve the issue when the shooter misses *behind* the target since the sandbags aren’t adjacent to the target point. Still have to work on that. -Fix: Shots can randomly intercept targets who are inside the destination cell (now it only hits using the target cell impact code). -Improve on-map shooting debug output. -Increased chance factor for randomly intercepting world objects for wild shots 0.07 -> 0.10. -Intercept_Pawn_HitChanceFactor_LayingDown 0.10 -> 0.15. -Condense shooting-related tunable constants into ShootTunings
+*Fix: If a hunt target gets up after being downed, it still gets slaughtered in melee.
+*Added XML translation handles so it's easier to translate list elements.
+*Added RulePack.rulesFiles field which just instantiates specially formatted Rule_Files so translators can add more Rule_Files. Added MayTranslate attribute.
+*Fix 3448: Buildings marked for deconstruction yield no resources, so colonists should not refuel them
+*Added translation repos clone/push scripts.
+*Minor clarity text changes in bill config dialog.
+*Open doors no longer always intercept stray bullets. Chance reduced to 5%
+===June 22nd===
+*Caravan BaseJoyGainPerHour 0.31 -> 0.35
+*Fix: Smoothed stone floors have no market value.
+*Condensed all the dependent RoomStats into a single worker class driven by a SimpleCurve in the def instead of using complex case-specific math. Adjusted a few numbers. Renamed defaultScore -> roomlessScore to be clearer.
+*Refactor cleanliness calculations into a SimpleCurve.
+*Reviewed heat generation from buildings game-wide. Made a new debug output to help analyze it. Some buildings produce heat that didn’t before (stoves, etc).
+*Multi-analyzer advanced component cost 2->1.
+*Fix: Various recipes have no work speed stat, and so work speed is unaffected by injury or traits. -Make chemfuel at organic bench. -Make stone blocks. -Burn drugs/apparel, cremate corpse. To fix, added a UnskilledProductionSpeed stat that is affected by health conditions only.
+*Reworked brewing speed into drug cooking speed, applied it to brewing, pekoe and smokeleaf. Smokeleaf making is no longer weirdly divorced from all health conditions. Renamed drug production speed to drug synthesis speed to distinguish it better from drug cooking. Reworked recipe skill debug output into a table.
+*Incendiary launcher can now target locations. Minigun can no longer target locations.
+*Reduced various infection chances (around 25%).
+*Watermill cost 340/20/1 -> 280 wood, 80 steel, 3 components.
+*Increase animal gestation times roughly 20% game-wide.
+*Adjusted some constructionSkillPrerequisites and UI icon draw sizes. Campfire no longer has a construction skill requirement. Short bow crafting skill requirement 3->2.
+*Saguaro cactus wood yield 10 -> 20.
+*Minor text fixes.
+*Added TranslationHandle attributes where appropriate. Translation handles are now sanitized properly.
+*Added translation report syntax suggestion for helpTexts.0. Moved some code from Pawn_RotationTracker to FaceTarget() so it can be reused by e.g. JobDriver_SitFacingBuilding which fixes some rotation issues.
+*Finished working on translation handles. Moved translation handles code to a separate file. Fixed some issues. Translation report now suggests using translation handles instead of raw indexes.
+*Fix 3451: Faction Kinship of Abetra of def TribeRough has no usable PawnGroupMakers
+*Added a sound that plays when the build script is finished.
+
+===June 23rd===
+*Text adjustments on prosthetic appreciation/disgust (since prosthophile/phobe was renamed).
+*Fix: All character art in the game is slightly offset to the left by one pixel on the north and south view. Corrected apparel. Also resized some oversized art and made minor art fixes.
+*Wild men now show up in the Wildlife tab.
+*Fix: All character art in the game is slightly offset to the left by one pixel on the north and south view. Corrected bodies.
+*Fix: All character art in the game is slightly offset to the left by one pixel on the north and south view. Corrected head and hair art. Also made some minor art corrections (some fuzzy/bright pixels around hair edges).
+*Add ProstheticAppreciation/Disgust thoughts for Transhumanist/BodyPurist.
+*Reduce PSD size: Tribal headdress. Centered it (I intend to center the rest of the character art so we don't need a weird offset forever).
+*Fix: Stuff offsets not applied if stat value is zero or below because of accidental interaction with applyFactorsIfNegative. Also, moved stuff stat offset application after stat factors, since there’s no sense in multiplying a stat’s offset but its own factor. Adjusted gold, and silver beauty stat offsets. Result: Walls made of super expensive materials now have beauty.
+*Resized ship AI core building (3,3)->(2x2) to make symmetrical ships possible. Resized art to standard size per cell as well and cleaned it up a bit.
+*Reduce centipede health, armor, and melee attack power. Increase scyther armor.
+*PointsPer1000Wealth 7.8 -> 7.5
+*Fix: Shooting small-size targets makes people spray bullets more widely.
+*Fix: Shot spread suddenly becomes a lot wider if the target lays down (this problem still exists for target size).
+*Allow multiselect of wild healroot.
+*Tuned shooting spread curves. Moved shooting spread curves into ShootTunings.
+*Allow running conduit through smoothed walls.
+*Set a minimum aimon chance at 2%.
+*Refactor some shot accuracy code; moved accuracy variables into ShootTunings.
+*Remove meleeshoot functionality.
+*Add debug output to tune wild miss results.
+*Implement new wild-miss behavior.
+
+===June 25th ===
+*Watermill generator requires a 5-wide line of moving water instead of 3-wide.
+*Fix: Def direction of watermill generator is reversed.
+*Corrected nutrient paste dispenser def direction and cleaned up some of the art.
+*Watermill size (4,5) -> (5,6). Including art upscale.
+*Reordered skills and defined the order in defs so mods can insert skills anywhere.
+*Fix: Packaged survival meal now has no research prerequisite.
+*Rename skill: “growing” -> “plants”.
+*Reduced soaking wet thought impact 10 -> 6. Adjusted text to hint about bridges.
+*Minor trait commonality adjustments.
+*Add hediff debug command now shows all HediffDefs on the first page.
+*Reduced food poisoning impact to no longer down the pawn, but rather slow him and put him in pain.
+*Fix 3458: Damaged graphic for side-rotated 1x2 table is offset from the table graphic
+*Humans can now drop their terrain-source filth several times.
+*Added trash as a variant of human filth.
+*Change difficulty labels to the traditional ones.
+*Rearranged construction work priorities. Repair is below construct, and other changes.
+*Crashlanded scenario now starts with 10 wake-up.
+*Adjust GiveUpExit mental break text.
+*Gift silver for one goodwill 20 -> 25.
+*Nutrient paste dispenser no longer requires research.
+*Adjusted multi-analyzer art match other table types in style (i.e. tabletop fills cells).
+*Mining against constructed structures is now much slower than mining against natural walls. This will slow down sappers and insects when they’re digging through your defenses.
+*Remove construction skill requirement for passive cooler.
+*Allow opportunistic haul for pawns with hauling work disabled. Loosed up distance limits on opportunistic hauling. Refactor opportunistic haul tunings into new AITuning class.
+*Rename some classes Tunings -> Tuning
+*Reduce max world feature text size. When there are giant oceans it was making insanely huge text that Z-fights. Slightly reduced mid-tier feature size as well.
+*Minor rebalances to trade requests.
+*Fix: Unnecessary decimals on money amounts in trade request letter.
+*Debuff trade quest rewards 200%~300% -> 180%~260%.
+*Buff sandbags 60%->65% coverage.
+*Clarify skill descriptions.
+*Marble now has +1 beauty offset. So marble walls have 1 beauty. It’s still the weakest stone type.
+*Increase theshold for bionic uneasiness from 2 parts to 3 parts.
+
+===June 25th v2 ===
+*Fix: Stats window displays armor penetration even for weapons that don't interact with armor (e.g. EMP)
+*Rebalanced several weapons to increase damage per-shot (and thus armor rating) without changing DPS much: -Assault rifle -LMG -Minigun -Charge rifle
+*Adjusted mining speed vs walls.
+*Armor penetration stat now has an explanatory description when you select it in the stats page.
+*Bloodlust social fight chance factor 2x -> 4x.
+*Heart attack adjustments.
+*Remove some erroneous newlines in messages.
+*Crashlanded no longer starts with wake-up.
+*Rename SimpleCurve2D -> SimpleSurface.
+*Reduced soaking wet thought impact to -3. Slightly slowed down movement through water. Marsh now counts as a form of shallow water.
+*Changed steel graphics to be more visible.
+*Art cleanup: Ship parts.
+*Change some armor categories (mainly bomb blunt -> sharp)
+*Reduces armor penetration on some specific weapons.
+*Fix: Armor stats’ post-process curves are tuned assuming 100% is perfect protection.
+*Fix 3444: Wide rivers can spawn with unsupported overhead mountains
+*Fix 3455: Extreme slowdown while right-click prioritize float menu is open
+*Implemented three-way roll armor system.
+*Improved art for dessicated animals somewhat.
+*Made special dessicated version of thin body type and applied it to female/thin bodies. This fixes a bug where clothed dessicated corpses that are thin or female draw the skeleton past the edge of the clothes. Also refactored and simplified body graphic loading code a bit and adjusted head stump graphics.
+*Fix: Human skin shader is applied to dessicated skull, making it reddish.
+*Improved art for dessicated humans.
+*Transport pods now write their contents on the inspect pane.
+*Tightened up meal graphics.
+*Changed letter dismissal option text from “OK” to “dismiss”. Thanks, Apple human interface guidelines.
+*Inspirations are now associated with skills and are more likely if a pawn has passions in those skills. Reduced inspiration skill level requirements.
+*Non-tribal colonies start with nutrient paste researched. (this is so tribals don’t get it automatically as well).
+*Revert "Nutrient paste dispenser no longer requires research."
+*Brawlers can no longer get shooting inspirations.
+*Animal infection chance factor 0.20 -> 0.10.
+*Watermill generator now requires heavy terrain, so it can't be built on bridges.
+*Power armor research cost 1600 -> 3000.
+
+===June 26th===
+
+*Building watermills too close together now makes them less effective (water turbulence).
+*Adjust naked brutality description.
+*Reduced “soaking wet” duration and made it happen in rain as well as water.
+*Fix: Minor issues with time speed slowing in combat.
+*Autocannon turret is now significantly more powerful and somewhat more expensive.
+*Fix: Pawns who are incapable of hauling can still do opportunistic hauling jobs.
+*Multi-analyzer no longer requires advanced components. Plasteel is enough.
+*Buffed wind turbine power output 15%.
+*Insect meat is now priced lower than other meat.
+*Fix: Some text still uses the term “joy” instead of “recreation”.
+*
+===June 27th===
+*Added cocoa tree, for growing your own chocolate. This is a useful recreation source at high expectations levels. It takes a lot of grower skill and sowing time, as well as research.
+*Explain armor system better in armor rating stat.
+*Adjusted population intent balance slightly to not be so aggressive about adding people at very low populations.
+*Increase shotgun stagger, slightly buff autopistol and slightly debuff revolver.
+*When a recreation tolerance hits 50%, we now disable taking job of that recreation type until it falls to 30%. "Bored". So instead of endlessly doing the same recreation activity which they aren't getting anything from, pawns will have an unfulfilled recreation need instead until more variety of recreation is available.
+*On recreation tooltip, we now mention the recreation types available current expectations and tolerance fall rate.
+*Need recreation variety alert now lists kinds from items (chemical, gluttonous).
+*Added more detail to “need recreation variety” alert. It mentions current expectations level. It lists the recreation kinds extant on the current map, and which building they come from. It says you can check a building’s recreation kinds in its stats.
+*Expectations and joy tolerance rework. Recreation tolerance drop per day now varies based on expectations. "Need recreation sources" alert now activates whenever there are not enough recreation sources for the specific expectations level on any PlayerHome map. Expectations levels are now defined by defs and queried from a central utility class.
+*Adjusted quest reward item quality generation.
+*We explain how to reorder colonist bar in a tooltip now.
+*Increase centipedes points cost (since their weapons are a bit better now). Sped up centipedes a bit.
+*Bomb explosion now has stopping power.
+*Fix 3460: Doe graphics look unusually big
+*Fix 3462: Watermill generator 'turbulence from another watermill' updating issues
+*Added [[flak jacket]]. Still using jacket art.
+*Refugees now get "Rescued" thought on rescued.
+*Reduced frequency of family members of colonists by 50%.
+*Trade quests now only accept normal or better quality items.
+*Fix: TryAppendRelationsWithColonistsInfo() doesn't append newlines correctly (no newlines before relationship info).
+*Bomb and Flame now have defaultArmorPenetration 0.05. Added DamageDef.defaultStoppingPower.
+*Animals tab now accepts nameless animals as a workaround for nameless animals bug.
+*Fix 3452: Memory leak detected: map (Map-0) is still live when it shouldn't be; this map will not be mentioned again
+*Caravan interface: "pause" -> "rest".
+*Overall armor calculations now correctly handle >100% armor ratings.
+
+===June 28th===
+
+*Remove unnecessary meta file.
+*Reversed def directionality of comms console to make sense and match B18 again.
+*Reversed def directionality of dresser.
+*Fix: Ship engine graphic reversed east/west.
+*Fix: Comms console has chair graphic on interaction spot but doesn’t use it.
+*Plate armor research cost 1800 -> 1400. Plate armor armor rating reduced ~3%.
+*Relations shifts over time are a bit slower (0.25/day -> 0.20/day)
+*Exclude Photoshop .psd files from VSCode.
+*Armor rebalance: Double armor of devilstrand, hyperweave, thrumbofur. Increase other leathers’ armor ratings. Reduce flak pants/jacket to 40/10/10. Thrumbo now has natural armor, but reduced health (thus fewer permanent injuries over long-term use).
+*Changed Thing.SpecialDisplayStats from a property to a method.
+*Costed up autocannon turret and made it no longer stuffed.
+*[[Royal bed]] gold cost 10 -> 50
+*Fix: Some armor can be made on the wrong table.
+*Reset the minimum ticks until mental break upon mental state recovery. MinTicksBelowToBreak 1500 -> 3000.
+*Improve [[transport pod]] contents output to show stack counts and combine same-def items.
+*Display manhunter chance even if it's zero.
+*Less heart attacks for young people.
+*Adjusted pyro and gourmand special mental break rates. No longer related to mood.
+*Add special requested name to get around tech problem on website.
+*Settlement -> SettlementBase, FactionBase -> Settlement
+*Escape ship map is now considered a PlayerHome.
+*Fix: Ship quest's computer core is disconnected from the rest of the ship.
+*Fix 3459: Randomly-generated player faction name is invalid
+*Fix 3466: Obedience-training an animal doesn't auto-assign master
+*Fix 3467: Pawn faces the opposite direction when burying a corpse
+*Fix 3470: ToWild bullets can damage conduits that are underneath walls
+*Fix 3461: Escape pod notification befriending text is still present if there's a pirate inside
+*Fix 3468: Back compatibility-related errors with new joy boredom state.
+*Fix 3464: Exception filling window for Verse.Dialog_InfoCard: System.NullReferenceException: Object reference not set to an instance of an
+
+===June 28th v2===
+
+*Fix: Deep drilling gold is insanely fast since portion size is determined by stack size. Fixed by defining deep portion size directly per-def (for steel it changed from 38 to 35).
+*Rebalanced to make late game production less grindy: -Allow reinstall of deep drills. -Deep drill health 140 -> 300. -Deep drill work per lump 16000 -> 13000. -Deep drill cost 200 steel + 3 components -> 300 steel + 4 components. -Deep drill work to make 5000 -> 10000. -Deep drill power consumption 250 -> 300. -Deep drill research cost 1500 -> 2400. -Deep drill infestations size increased (if player has the points for it) and more randomness to the raid size. -Deep drill infestations cooldown per drill group 8 days -> 7 days. -Long-range mineral scanner MTB 30 days -> 18 days.
+*Wording changes in a few places.
+*The player can now research and build [[flatscreen television]]s.
+*Increased poison ship part radius maximum 50 tiles -> 100 tiles.
+*Moved pekoe production from crafting spot to campfire and stoves. Normalized the way campfire work speed works; it’s automatically 50% of normal, which allowed removing the custom campfire-only recipes for simple meal, pemmican, burn drugs, and burn apparel.
+*Fix: [[Deep drill]] doesn't give comfort but still has a chair icon for the interaction spot.
+*Decrease quest start frequency a bit, normalize it between storytellers.

@@ -1,0 +1,97 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Global/Misc}}
+|}
+----
+{| {{STDT| c_13}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Toxic buildup" <!-- defName="ToxicBuildup" -->
+! Toxic buildup
+----
+* Def Name:<br />ToxicBuildup
+* Label:<br />toxic buildup
+|<!-- Description -->
+Poison in the bloodstream. This can come from various sources, including environmental toxins, venomous bites, or poisoned weapons.
+
+At high doses, toxic buildup is lethal. Even at low doses, it can generate cancers.
+
+If a creature dies with toxic buildup, there's a chance that they cannot be eaten. The higher the toxic buildup, the higher the chance.
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|70%|100%|70%}}
+* Lethal Severity: '''100%'''
+* Can Apply {{DOD}} Chance For Capacity Changes: {{Bad|true}}
+* Makes [[Thoughts#Sick|Sick]] Thought: {{Bad|true}}
+* Scenario Can Add: {{Good|true}}
+* Tale On Visible: '''ToxicityRevealed'''
+* '''Comps'''
+** ''Immunizable''
+*** Comp Class: '''HediffComp_ImmunizableToxic'''
+*** Severity Per Day Not Immune: {{---|8%}}
+** ''Surgery Inspectable''
+*** Surgical Detection Desc: {PAWN_nameDef} is showing early signs of toxic buildup. Keep {PAWN_objective} away from sources of toxins.
+|<!-- Stages -->
+{| {{STDT| c_13}}
+! Label !! Parameters
+|-
+! initial
+|<!-- Parameters -->
+* Become Visible: {{Bad|false}}
+|-
+! initial
+|<!-- Parameters -->
+* Min Severity: '''4%'''
+* [[Consciousness]] Offset: {{--|5%}}
+|-
+! minor
+|<!-- Parameters -->
+* Min Severity: '''20%'''
+* [[Consciousness]] Offset: {{--|10%}}
+|-
+! moderate
+|<!-- Parameters -->
+* Min Severity: '''40%'''
+* Vomit {{MTB}} Days: '''4'''
+* [[Consciousness]] Offset: {{--|15%}}
+* '''Hediff Givers'''
+** ''Random''
+*** Hediff: '''[[Hediffs#Dementia|Dementia]]'''
+*** {{MTB}} Days: '''146'''
+*** Parts To Affect: '''Brain'''
+** ''Random''
+*** Hediff: '''[[Hediffs#Carcinoma|Carcinoma]]'''
+*** {{MTB}} Days: '''438'''
+*** Can Affect Any Live Part: {{Bad|true}}
+|-
+! serious
+|<!-- Parameters -->
+* Min Severity: '''60%'''
+* Vomit {{MTB}} Days: '''1'''
+* [[Consciousness]] Offset: {{--|25%}}
+* '''Hediff Givers'''
+** ''Random''
+*** Hediff: '''[[Hediffs#Dementia|Dementia]]'''
+*** {{MTB}} Days: '''37'''
+*** Parts To Affect: '''Brain'''
+** ''Random''
+*** Hediff: '''[[Hediffs#Carcinoma|Carcinoma]]'''
+*** {{MTB}} Days: '''111'''
+*** Can Affect Any Live Part: {{Bad|true}}
+|-
+! extreme
+|<!-- Parameters -->
+* Min Severity: '''80%'''
+* Vomit {{MTB}} Days: '''0.5'''
+* [[Consciousness]] Max: {{Bad|10%}}
+* [[Consciousness]] Offset: {{--|25%}}
+* '''Hediff Givers'''
+** ''Random''
+*** Hediff: '''[[Hediffs#Dementia|Dementia]]'''
+*** {{MTB}} Days: '''13'''
+*** Parts To Affect: '''Brain'''
+** ''Random''
+*** Hediff: '''[[Hediffs#Carcinoma|Carcinoma]]'''
+*** {{MTB}} Days: '''39'''
+*** Can Affect Any Live Part: {{Bad|true}}
+|}<noinclude>
+|}</noinclude>

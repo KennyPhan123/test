@@ -1,0 +1,106 @@
+{{Version Nav}}
+
+Hello! It’s been almost 2 weeks since Odyssey came out, and we’ve been hard at work fixing bugs and incorporating your feedback. If you’d like to help us by reporting a bug, please join the official RimWorld development Discord.
+Today’s update has improvements and fixes for RimWorld, Odyssey, and the other expansions. This includes things like removing the -3 soaking wet thought when swimming for recreation and reducing memory usage overall.
+
+This update should be compatible with all savegames and mods.
+
+P.S. Send us your gravships on X or BlueSky by mentioning the @LudeonStudios account!
+- Tia
+
+== Changelog ==
+* When consumed, psilocaps now correctly have a small chance to inspire colonists or induce a catatonic state, matching their in-game description.
+* Vultures are more resistant to rot stink and other environmental toxins.
+* Reduced cover effectiveness of passenger shuttle
+* Animals specialist now increases fishing speed and fishing yield.
+* "Fungus preferred" precept is now compatible with the darkness meme, allowing more options in glowforest.
+* In the glowforest, reduced caravan movement difficulty and disease occurrence.
+* Removed HP from gravcores to prevent them from being accidentally destroyed.
+* Hermit crabs now hide in their shell when not moving.
+* Disabled gravship landing on worshipful village.
+* No longer possible to open the world map during the gravship cutscene.
+* Clarified the basic gravtech description.
+* Clarified how gravship substructure is removed.
+* Added “remove foundation” to the floor architect category.
+* Updated some player names per request.
+
+=== Performance ===
+* Performance improvements in the glowforest.
+* Improved load times on Mac.
+* Add debug checks to strip out several heavy profilerblocks.
+* Improvements to world pawn GC algorithm, and debug tools for logging world pawn information.
+* Fix: Significant performance drop when the world map is open.
+* Fix: Higher-than-necessary memory usage during texture atlas baking (causing memory issues with lots of mods).
+* Fix: Bad performance in royal title quest when throne room isn't enclosed.
+* Fix: Significant performance drop when the terrain tab on the world map is open.
+
+=== Fixes ===
+* Fix: Gaining soaking wet thought when swimming for recreation.
+* Fix: Rain sometimes appears pixelated.
+* Fix: Pawns left behind with a grav anchor lose their allowed areas.
+* Fix: Added fallback check to prevent obtaining multiple grav engines from mech signal quest.
+* Fix: Interior courtyard loot rooms could generate cutoff.
+* Fix: Typo in Odyssey AncientOrbitalCorridor def name.
+* Fix: Ancient garrison corridor spawning life support units.
+* Fix: Possible exception in quest info if player silent faction is null.
+* Fix: Rare pathfinding exception with missing faction.
+* Fix: "Type [name] does not have a method named LoadDataFromXmlCustom, but we are trying to create a parser for it using that method."
+* Fix: Mechhive assembler last raid tick not saved.
+* Fix: Bluebird eggs hatch into crows.
+* Fix: Issue with modded statues due to xenotype being set before kindDef.
+* Fix: Can't repair conduits through blocked corners.
+* Fix: Can't extinguish fires on walls that are only diagonally reachable.
+* Fix: Gravship rotation code not respecting default placing rotation of modded content.
+* Fix: Fire on full impassable edifices exposed to vacuum not decaying.
+* Fix: Error when trying to enter pocket map with no home map.
+* Fix: Shuttle mass doesn't update when using “unload all” gizmo.
+* Fix: Collection modified error on gravship launch.
+* Fix: Possible to have gravcore subquest fire while in flight.
+* Fix: Potential fix for trader stock getting cleared.
+* Fix: Quest breaks when mechanitor transponder is decrypted in pocket map.
+* Fix: Ancient mercenaries spawning outside building on cave maps.
+* Fix: Incorrect drop pods are used for pursuing mechanoids from scenario.
+* Fix: Bugged quest generation with refugee betrayal offer after changing maps.
+* Fix: Steam geysers can spawn too close to insect lair entrance, rendering them unusable.
+* Fix: Clean room float menu option is now visible in ancient stockpile.
+* Fix: Modded substructure variants not linking properly.
+* Fix: Flesh tentacle on statue no longer moves.
+* Fix: Prevent hostile minifiable things (hunter traps) from being taken when reforming caravan.
+* Fix: Archaen tree was able to be planted on floors.
+* Fix: Terrain blueprints showing up during gravship landing.
+* Fix: Can no longer switch between pawns during gravship cutscenes using hotkeys.
+* Fix: Fuel radius ring breaking when in space viewing fuel radius on the planet's surface.
+* Fix: Power grid not updating properly when gravship leaves map with grav anchor.
+* Fix: Translation issues in credits.
+* Fix: Splashes and watermills were not respecting river flow direction.
+* Fix: Ideo apparel no longer overrides vacsuits in pawn generation.
+* Fix: Several issues with fish changing and other water body logic.
+* Fix: Error when camping after merging shuttle caravans.
+* Fix: Outdated description on ancient mining charges and ancient explosives crate.
+* Fix: Throne room requirement error spam on gravship jump.
+* Fix: In the new gravship scenario, children now spawn with vacsuits and babies are no longer allowed.
+* Fix: Ancient and mech drop pod textures not consistent.
+* Fix: Prevent vacsuits from spawning on planetary pawns.
+* Fix: XML tags are now stripped out of search results.
+* Fix: Possible for pawns to fish through bridges/substructure.
+* Fix: Mechs can get grav nausea.
+* Fix: Typo in cerebrex node description.
+* Fix: Issue with baking atlases that are smaller than 512x512.
+* Fix: Possible manhunter quest generation error on polluted ice sheet.
+* Fix: Beam repeater not considered ultratech for ideology.
+* Fix: Mechanitor bandwidth not cleared when mechs are left behind on gravship.
+* Fix: Passenger shuttle skyfallers wrong size.
+* Fix: Clean up some cutscene vars causing error on load.
+* Fix: Dev hack gizmo not firing quest event signals.
+* Fix: Error while loading mech resurrection bills without a mech.
+* Fix: Prevent workarounds allowing removal of substructure beneath grav buildings.
+* Fix: Prevent archean trees from being planted on ice.
+* Fix: Gravship shield generator not blocking mortars.
+* Fix: Minified electric inhibitor produces error.
+* Fix: Pawn went catatonic during scarification ritual, leading to infinite stacking scars.
+* Fix: Dormant charging mechs aren't loaded into shuttles.
+* Fix: Birds don't fly out of the map when trapped and starving.
+* Fix: Added back-compat support for infestation quests loading with invalid maps.
+* Fix: New xml reader does not read the "Class" attribute on dictionary elements.
+* Fix: Some textures are invisible on Linux.
+* Fix: Potential fix for grav engines being destroyed due to landing under a mountain.

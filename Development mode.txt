@@ -1,0 +1,1951 @@
+{{Rewrite|reason=Development mode massively changed in 1.4, with the menus overhauled, a bunch of options shifted to other menus, duplicated in some locations, etc.}}
+{{Image wanted|reason=See rewrite above - images of the new debug menus and the menus displaying their dev and god mode options (e.g. the +/- options on the mood bars when its activated}}
+[[File:Dev mode.png|300px|thumb|right|Development mode toolbar (red frame) on top of the screen, next to the colonist bar.]]
+'''Development mode''' is a feature on the [[user interface]] that serves both as a debugging tool for developers and as a cheat menu for most other players.
+
+When active, it is seen as an additional menu on the top of the screen.
+
+== Options ==
+Development mode can be enabled via the '''Options''' in the Menu, accessible via the toolbar or the {{Key|Escape}} key. Under '''Options''', there is an option for "Development Mode". Toggle this option to a tick to turn on development mode.
+
+=== Permanently disable ===
+In the Options menu in-game, you have the choice to 'permanently' disable development mode after you have enabled the developer mode. This prevents you from cheating using this.
+
+Enabling this option creates an empty file called 'DevModeDisabled' in the RimWorld config folder.
+
+You can reset it by deleting this 'DevModeDisabled' file from the RimWorld config folder
+
+The config folder can be located at the following locations:
+
+In Windows:<br>
+- Press the Start/WindowsKey + R > Enter "appdata" and press enter > then navigate to LocalLow -> Ludeon Studios -> Rimworld by Ludeon Studios -> Config<br>
+In Linux:<br>
+- On a console, type: cd "~/.config/unity3d/Ludeon Studios/RimWorld by Ludeon Studios/Config"
+
+== Features ==
+Items are shown from left to right in the picture.
+
+=== [[File:DebugLog.png]] Debug log ===
+An output log for debugging. Shows errors if they occur, as well as debug outputs.
+
+=== [[File:Tweakvalues.png]] Tweak Values ===
+A menu with several options for tweaking values associated with some AI actions, gameplay, UI values, graphics settings, plants, and other performance effecting variables.
+
+=== [[File:ViewSettings.png]] View settings ===
+Toggles special debug visuals, such as shooting hit chances, infestation chances and toggling fog (fog of war) and snow visibility.
+It also allows some debug settings, for example unlimited power, toggling damage, fast research, instant recruit, faster learning (i.e. instant boost to lv 20 upon doing a task), ecology, crafting, caravans, etc. Write Storyteller will add all of the raid point calculation data, considerations, and results on the raid notification letter for example. Another setting which can be useful to enable, is the setting to draw paths, where paths are drawn so you can see where all pawns, animals, colonist, and enemies are pathing to. Those settings will not be saved so you need to enable them each time if you want to use those settings. The tabs at the top of this screen will allow you to switch between view setting toggles, debug actions menu, and debug logging screens without having to close the dev menu each time.
+
+=== [[File:Debug.png]] Debug actions menu ===
+Forces a variety of things to happen. Many things can be done from here; spawning items and pawns, executing events, downing/ killing pawns, they are all done through this menu. The second page of this menu can be found in "show more actions" under more debug actions on the right. The search bar at the top may be used at any time in any part of the dev menu and is especially useful when spawning items into the world.
+
+=== [[File:Debug.png]] Debug logging menu ===
+Where some debugging information can be found, like crop economy, item nutrition, and such. It's also called debug outputs, when clicking on for example apparel or beauties you can see a list of all items that adds beauty points to rooms or buildings. If you want to know which clothing is considered clothing for nudists you can find it here as well.
+
+=== [[File:Inspector.png]] Inspector ===
+Opens the inspector panel and shows you what's happening in the game. Note: You may be required to have this open to see some of the output from the selected debug logging menu selection.
+
+=== [[File:GodMode.png]] God mode ===
+Toggles god mode. While active, all player-buildable buildings are available without research, and are constructed instantly and at no cost when placing down the blueprint. Note that "deconstructing" is instantaneous, but leaves behind resources as appropriate to the item(s) deconstructed. To remove these items, or any others, use the "T: Kill" or T: Destroy" commands under the Debug section. Be mindful that these options remove everything in all layers of a tile and as a result you may need to replace some items such as electrical conduit.
+
+[[Orders#Mine|Mining orders]] are also completed instantly upon designation but return a yield of 1.  
+
+God mode can be also toggled through 'View Settings'.
+
+=== [[File:Devpalette.png]] Inspector ===
+Toggles the DEV Palette to be visible or hidden. Anything in the dev menu at any level may be added to this menu by toggling the pin following the option in the menu. Items may be reordered by dragging the grey striped box to the desired location and easily removed by clicking the last rightmost red X.
+
+
+=== [[File:Pauseonerror.png]] Autopause ===
+Toggles autopause when an error is logged.
+
+=== Search bar ===
+Allows you to find items on the current map and will scan through all the items in the event of multiples.  Does not work on map.  In menus it can be used at any level to quickly find any action or setting through to narrowing item search results when spawning.
+
+== Debug Log ==
+
+Opens the active in progress game log, aka debug log.  If pause on error is enabled this is the window you will see when an error occurs.  The most recent events are at the bottom of the log.  Selecting any line will open more details about the entry and it's stack trace in the lower part of the window. (only visible when an item is selected)  The size of the lower window may be changed with the handle between the window panes or by using the trace size buttons located at the top of the window.  Selecting clear will clear the currently displayed log information within the game, however the information will remain in the log file as usual.
+
+== Tweak Values ==
+
+Opens a menu with various sliders and a few toggles for changing some of the values associated with game pertaining to gameplay, tick rate, UI sizes, graphics settings, among other things and may include some mod options.  (ToDo: generate and populate table of settings)
+
+== View Settings ==
+
+Opens a menu that provides settings for visible layers, AI pathing and considerations, as well as some useful dev settings like infinite electricity, fast crafting, and fast caravans.  Draw paths will enable pathing lines for all non-colonist pawns. (pawn must be visible on screen for line to render) Write storyteller will provide the totals, equations, and values and modifiers for all wealth and pawns when raid events are generated and appends it to the raid letter message body.  Log translation lookup errors has also been relocated to here.
+
+== Debug Action Menu ==
+[[File:Debug actions menu.jpeg|500px|thumb|right|Debug Action Menu with the first three DLC installed.]]
+There are many options in this menu, and several sub-menus. The search bar in the top right will highlight options matching the search criteria, but the spelling must exactly match exactly or any portion of it.
+
+==== Understanding the Buttons ====
+
+Not every command can be listed all at once and frankly would overwhelm nearly anyone so many of these options are multi-level. More than one of these options can appear on a button and, for example, to change an items quality select the "T:set quality..." option and then select the quality you want to make the item.  Special note that the game will only apply settings to objects that allow that effect or descriptor and will attempt to affect everything in every layer under the mouse.  Beware T:Kill, T:Delete, and T:Discard!  To cancel any tool at anytime just right click or press escape.
+
+Commands prefaced with with "T:" are applied to a target.  Upon selection the menu will close and leave a T attached to the cursor with either the name, action, or instructions beside it.  Some pawns may be between cells and you may need to toggle pause to let them move into a targetable position.  Beware target tools will affect every valid object in the selected cell.
+
+Commands ending with an ellipsis "..." denote the items with submenus usually offering options such as quality level, quantity, difficulty level, or what item you want to spawn to name a few of the most common.  Being presented with no option within a submenu usually means there is nothing available to do in the gamespace you are currently in. (e.x. spawning a pawn on the main menu)  
+
+Commands ending in (rect) will require you to select two points to create a rectangle selection area for the selected task. Examples of this would be "Edit Roof (rect)..." which would allow you to remove or place specific roof types.
+
+Commands ending in (Map) will affect the current map in whatever way they normally would otherwise. Example would be "Do Incident (Map)..." to generate a caravan, visitor, or passing thrumbo heard.
+
+===Incidents===
+Creates [[events]] and [[raid]]s on the currently visible map.
+{| class="wikitable"
+|-
+! style=width:13em | Action !! Effect
+|-
+! Do trade caravan arrival 
+| Allows you to select a currently active faction by name and choose the type of caravan arriving. No random in this menu.
+|-
+! Execute raid with points 
+| Creates a random faction raid with specified total raid points. Calls friendlies if allied.
+|-
+! Execute raid with factions 
+| Creates a chosen faction raid with specified total raid points. Calls friendlies if allied.
+|-
+! Execute raid with specifics 
+| Creates a raid where everything can be specified (faction, total raid points, arrival mode and location, etc.).
+|-
+! Do incident (Map) 
+| Creates an event (e.g. a [[disease]], [[heat wave]]/[[cold snap]], [[thrumbo]]s, [[Events#Ambrosia_sprout|ambrosia sprout]], random enemy raid or caravan visit, etc.).
+|-
+! Do incident x10 (Map) 
+| Creates ten times the same kind of event, all at the same time (e.g. 10 [[mech cluster]]s).  Beware calling too many incidents, especially while paused, may result in severe game instability and crashing.  Save before use.
+|-
+! Do incident w/ point (Map) 
+| Creates an event with specified total [[raid points]].
+|}
+
+====Incidents: World mode====
+These functions are visible when you are viewing the world map in your game.  Incidents followed by a NO either cannot be used in the current scope or would otherwise not normally occur on the current map. (Testing required) 
+
+{| class="wikitable"
+|-
+! style=width:13em | Action !! Effect
+|-
+! Do incident (World)… 
+| Creates a global event (e.g. a [[aurora]],  [[eclipse]], [[solar flare]]) Note: Global mod events are included on this menu. 
+|-
+! Do incident x10 (World)… 
+| Creates 10x global event (e.g. a [[aurora]],  [[eclipse]], [[solar flare]]) Note: Global mod events are included on this menu.
+|-
+! Do incident w/ points (World)… 
+| Creates a global event (e.g. a [[aurora]],  [[eclipse]], [[solar flare]]) Note: Global mod events are included on this menu.  This menu may be empty if you have no points based world events installed or enabled.
+|}
+
+=== Quests ===
+Tools for adding [[quests]].  (Colony mode)
+
+{| class="wikitable"
+|-
+! Action !! Effect
+|-
+! Generate quest 
+| Allows you to generate a quest at a given [[raid points|raid point]] value
+|-
+! Generate quests x10 
+| Generate 10 quests of a given raid point value
+|-
+! Generate quests x30 
+| Generate 30 quests of a given raid point value
+|-
+! Generate quest (1x for each point) 
+| Generate 1 quest for each valid point threshold
+|-
+! QuestPart test 
+| Checks if part of a quest works
+|-
+! Log generated quest savedata
+| Makes a log of the generated quest savedata
+|}
+
+=== General ===
+{{Stub|section=1|reason=Kill and destroy are not the same - destroy does not leave building destroy loot, kill does. given error, other differences between kill, destroy and discard likely. testing meeded}}
+A selection of tools not easily categorized into the other section or with effects that could be placed in several sections.
+
+{| class="wikitable"
+|-
+! Action !! Effect
+|-
+! Atlas Rebuild 
+| Rebuilds and refreshes some data pertaining to the map and pawns. Effectively does nothing if you haven't broken anything yet.
+|-
+! T: Spawn Relic{{IdeologyIcon}} 
+| Spawns relic of ideology
+|-
+! T: Set Source Precept{{IdeologyIcon}} 
+| ?
+|-
+! Add Slave{{IdeologyIcon}} 
+| Adds a randomly generated pawn slave in an available slave designated bed.
+|-
+! T: Hack 100%{{IdeologyIcon}} 
+| Sets a hackable terminal to 100% complete.
+|-
+! T: Hack +10%{{IdeologyIcon}} 
+| Adds 10% to the progress of hacking a terminal.
+|-
+! T: Darklight At Position{{IdeologyIcon}} 
+| ?
+|-
+! Max Development Points{{IdeologyIcon}} 
+| Sets ideology development points to it's current max allowing for immediate reform.
+|-
+! Add Development Point{{IdeologyIcon}} 
+| Adds 1 to ideology development points.
+|-
+! Clear Development Points{{IdeologyIcon}} 
+| Sets the ideology development points value to 0.
+|-
+! Destroy All Plants 
+| Destroys all plants on the map.
+|-
+! Destroy All Things 
+| Destroys all items, structures, and entities on the map.
+|-
+! Destroy Clutter 
+| Destroys chunks, filth and rubble.
+|-
+! Finish All [[Research]] 
+| Finishes all research projects.
+|-
+! Replace All Trade Ships 
+| 
+* All current [[trader|trade ships]] leave
+* A random selection of 5 trade ships replace them and hail immediately. This includes modded trade ships, if any.
+|-
+! Add Trade Ship Of Kind 
+| Will spawn trade ship of selected kind.
+|-
+! Change [[weather]]… 
+| Opens a sub menu where the chosen weather can be selected. Doing it once will gradually change the [[weather]]. Using the same command twice will immediately change the weather
+|-
+! Play song... 
+| Plays a song from the games soundtrack.
+|-
+! Play sound... 
+| Opens a sub menu where the chosen sound can be played, for testing for example.
+|-
+! Add Prisoner 
+| Spawns a random prisoner from a random faction.
+|-
+! Add Guest 
+| Spawns a guest from a random faction to visit your colony.
+|-
+! Force Enemy Assault 
+| If there are waiting enemies on the map, force them to begin their attack.
+|-
+! Force Enemy Flee 
+| If there are attacking enemies on the map, force them to flee.
+|-
+! Adaption Progess10 Days
+| Adjusts the progression value as if 10 additional days have passed. Adaption factor is what makes raids a little easier after a pawn dies or other serious hit.
+|-
+! Unload Unused Assets 
+| Will attempt to unload game assets from memory that are not being used.  May help late game on very very old systems especially with low ram.
+|-
+! Name settlement 
+| Allows you to name or rename your faction and settlement
+|-
+! Next lesson 
+| Learning helper, it shows the next lesson from the in-game helper
+|-
+! Regen All Map Mesh Sections 
+| ?
+|-
+! Change Camera Config 
+| Allows you to toggle through various camera panning/zoom easing.
+|-
+! Force Ship Countdown 
+| Forces the end of game event ship has left and rolls ending credits.
+|-
+! Force Start Ship 
+| Forces the ship to begin getting ready to launch.  Must have a ship on the map to be started.
+|-
+! Flash Trade Drop Spot 
+| Shows where the trade drop spot will be.
+|-
+! Kill Faction Leader 
+| Kills the leader of the selected faction.
+|-
+! Kill Kidnapped Pawn 
+| Kills kidnapped pawn.
+|-
+! Kill World Pawn 
+| Kills world pawn, which you can choose from.
+|-
+! Set Faction Relations 
+| Sets your relations with a faction. Can be set to Hostile, Neutral and Ally.
+|-
+! Visitor Gift 
+| Make current visitor leave a random gift.
+|-
+! Refog Map 
+| Hide all enclosed places as if undiscovered
+|-
+! Use Gen Step 
+| ?
+|-
+! Increment Time1 Hour 
+| Moves time 1 hour forward. {{Check Tag|Detail needed|What does and does not advance during this time skip}}
+|-
+! Increment Time6 Hours 
+| Moves time 6 hours forward.{{Check Tag|Detail needed|What does and does not advance during this time skip}}
+|-
+! Increment time 1 day 
+| Moves time 1 day forward.{{Check Tag|Detail needed|What does and does not advance during this time skip}}
+|-
+! Increment Time1 Season 
+| Moves time 1 quadrum forward.{{Check Tag|Detail needed|What does and does not advance during this time skip}}
+|-
+! Storywatcher tick 1 day 
+| Move story events ahead a day - such as an eclipse
+|-
+! Add [[techprint]] to project {{RoyaltyIcon}} 
+| Allows you to select a techprint and which pawn will receive credit for its use.
+|-
+! Apply [[techprint]] on project {{RoyaltyIcon}} 
+| Directly applies the techprint to the research tree bypassing any pawn exp gains.
+|-
+! Kill Random Lent Colonist 
+| Kills a random colonist on loan.
+|-
+! Destroy All Hats 
+| Destroys all hats from the map and if colonists are wearing any hat, those will be destroyed as well.
+|-
+! Pawn Kind Apparel Check 
+| ?
+|-
+! Dump Pawn Atlases 
+| ?
+|-
+! Dump Static Atlases 
+| ?
+|-
+! Pawn Kind Ability Check 
+| ?
+|-
+! T: Glow At Position 
+| Temporarily displays the light for each tile in a radius from click position.
+|-
+! T: HSV At Position 
+| Temporarily displays the HSV value for each tile in a radius from from click position.
+|-
+! Fill Map With Trees 
+| Fill current map with trees.
+|-
+! Flash Blocked Landing Cells 
+| Highlights blocked landing cells, for droppods or other moving objects.
+|-
+! Award 4 [[Titles|honor]] {{RoyaltyIcon}} 
+| Awards 4 [[Titles|Royal honor]] to a selected pawn.
+|-
+! Award 10 [[Titles|honor]]  {{RoyaltyIcon}}
+| Awards 10 [[Titles|Royal honor]] to a selected pawn.
+|-
+! Remove 4 [[Titles|honor]]  {{RoyaltyIcon}} 
+| Removes 4 [[Titles|Royal honor]] from a selected pawn.
+|-
+! Reduce royal [[title]] {{RoyaltyIcon}} 
+| Reduces pawns current [[Titles|Royal title]].
+|-
+! T: Destroy 
+| Left click to destroy an object or pawn. Effectively the same as discard or kill.  Simulates kill death for living objects.  This includes boomalope and boomrats.
+|-
+! T: Discard 
+| Left click to destroy an object or pawn. Effectively the same as destroy or kill.  Simulates kill death for living objects.  This includes boomalope and boomrats.
+|-
+! T: Kill 
+| Left click to destroy an object or pawn. Effectively the same as discard or destroy.  Simulates kill death for living objects.  This includes boomalope and boomrats. 
+|-
+! T: 10 damage 
+| Left click to deal 10 damage to an object or pawn.
+|-
+! T: 5000 damage 
+| Left click to deal 5000 damage to an object or pawn.
+|-
+! Rotate... 
+| Rotates object in the direction selected.
+|-
+! T: Clear area(rect) 
+| Allows you to clear a rectangle of an area by selecting the opposite corners of the desired location.
+|-
+! T: Make Rock(rect)  
+| Allows you to generate solid rock in an area by selecting opposite corners of the desired location. (no selection available at this time. Generated Granite)
+|-
+! T: Explosion ([[Damage Types|bomb]]) 
+| Produces any core explosion type at the targeted location. (EMP, bomb, fire foam, etc)
+|-
+! T: Add Snow 
+| Adds snow to selected cell
+|-
+! T: Remove Snow 
+| Removes snow from selected cell
+|-
+! T: Clear All Snow 
+| Removes every single bit of snow from the map.
+|-
+! T: Push heat (10) 
+| Select a tile for example in a room, it will increase the temperature with 10 C or F.
+|-
+! T: Push heat (1000) 
+| Select a tile for example in a room, it will increase the temperature with 1000 C or F.
+|-
+! T: Push heat (-1000) 
+| Select a tile for example in a room, it will decrease the temperature with 1000 C or F.
+|-
+! T: Finish Plant Growth 
+| Select any plant and it finishes growing so you can harvest it.
+|-
+! T: Grow1 Day 
+| Makes the selected plant advance 1 day in growth progress.
+|-
+! T: Grow To Maturity 
+| Grows a single plant to full maturity. So you can harvest it.
+|-
+! T: Regen Section 
+| Regenerate section
+|-
+! T: Set Color{{IdeologyIcon}} 
+| Allows you to set the color of the target object.
+|-
+! T: Randomize Color{{IdeologyIcon}} 
+| Sets a random color on the selected object.
+|-
+! T: Rot1 day 
+| Select object/pawn/animal,food and it will add +1day rot to it.
+|-
+! T: Force sleep 
+| Allows you to force a pawn to sleep, whether from colony, visitor or any animal.
+|-
+! T: Fuel -20% 
+| Select fueled thing and decrease its amount with 20%.
+|-
+! T: Break down... 
+| Makes a machine break down immediately. Machine must be capable of the breakdown event.
+|-
+! T: Use Scatterer 
+| ?
+|-
+! BaseGen 
+| ?
+|-
+! SketchGen 
+| ?
+|-
+! T: Edit Roof(rect)
+| Allows you to create thick and thin rock roofs, basic constructed roof, or remove any roof. (Yes this includes thick rock roof)
+|-
+! T: Test Flood Unfog 
+| ?
+|-
+! T: Flash Closwalk Cell30 
+| ?
+|-
+! T: Flash Walk Path 
+| ?
+|-
+! T: Flash Skygaze Cell 
+| ?
+|-
+! T: Flash Direct Flee Dest 
+| ?
+|-
+! T: Flash Spectators Cells 
+| ?
+|-
+! T: Check Reachability 
+| Checks if the selected cell/tile is reachable for colonists, raids, or animals.
+|-
+! T: Flash TryFindRandomPawnExitCell 
+| Highlights Exit cell where colonists, pawns animals or visitors/guest can exit the map. In the debuglog it shows as trying to find nearest exit cell for visitor to leave.
+|-
+! T: RandomSpotJustOutsideColony 
+| ?
+|-
+! T: Random Spot Near ThingAvoiding Host??? 
+| ?
+|-
+! Clear All Fog 
+| Removes all fog, it means all rock mountains are revealed and if some areas are undiscovered they will be shown. For example ancient dangers, when doing this command at the beginning of your game.
+|-
+! T: Change Thing Style 
+| When possible you can change the style of selected thing/item/object/building.
+|-
+! T: Force sleep then assault colony 
+| ?
+|-
+! T: Attach Fire 
+| Creates a fire on selected tile/building.
+|-
+! T: Enable wound debug draw 
+| ?
+|-
+! Wound debug export (non-humanlike)? 
+| ?
+|-
+|}
+
+====General: World mode====
+{| class="wikitable"
+|-
+! style=width:13em | Action !! Effect
+|-
+! Atlas Rebuild 
+| ?
+|-
+! Change camera config… 
+| ?
+|-
+|}
+
+=== Pawns ===
+A number of commands to interact with pawns of all types - humans or animals, colonist or otherwise, alive or dead. 
+{| class="wikitable"
+|-
+! Action !! Effect
+|-
+! Set Ideo{{IdeologyIcon}}  
+| Sets pawn's ideology to selected
+|- 
+! Convert To Ideo{{IdeologyIcon}} 
+| Converts pawn to selected ideology.
+|-
+! T: Suppression +10%{{IdeologyIcon}} 
+| Adds 10% to selected slave's suppression level.
+|-
+! T: Suppression -10%{{IdeologyIcon}} 
+| Removes 10% from selected slave's suppression level.
+|-
+! T: Clear suppression schedule{{IdeologyIcon}} 
+| ?
+|-
+! T: Will +1{{IdeologyIcon}} 
+| Adds +1 will to a prisoner.
+|-
+! T: Will -1{{IdeologyIcon}} 
+| Adds -1 will to a prisoner.
+|-
+! T: Start slave rebellion (random){{IdeologyIcon}} 
+| ?
+|-
+! T: Start slave rebellion (aggressive){{IdeologyIcon}} 
+| ?
+|-
+! T: Change style 
+| Changes pawn's hair and tattoos to selected
+|-
+! T: Request style change 
+| Forces pawn to wish it's hair and tattoos
+|-
+! T: Make Faction leader 
+| Forces the selected pawn to become their faction's leader, replacing the previous if existing. If Ideology is enabled, forces the pawn to become the leader of the faction's ideology.{{IdeologyIcon}} 
+|-
+! T: Clear Prisoner Interaction Schedule? 
+| ?
+|-
+! T: Resurrect 
+| Indicate a corpse to resurrect it, healing all damage
+|-
+! T: Damage Until Down 
+| Damages the pawn until it is downed.
+|-
+! T: Damage Legs 
+| Damages the pawn's legs until it is downed.
+|-
+! T: Damage To Death 
+| Damage the pawn to death.
+|-
+! T: Carried Damage To Death 
+| ?
+|-
+! T: 10 damage until dead 
+| Deals an indicated pawn 10 units of damage repeatedly until dead
+|-
+! T: Damage Held Pawn To Death 
+| ?
+|-
+! T: Surgery Fail Minor 
+| Simulate minor [[Doctoring|surgery failure]] on a selected pawn.
+|-
+! T: Surgery Fail Catastrophic 
+| Simulate catastrophic [[Doctoring|surgery failure]] on a selected pawn.
+|-
+! T: Surgery Fail Ridiculous 
+| Simulate ridiculous [[Doctoring|surgery failure]] on a selected pawn.
+|-
+! T: Restore Body Part 
+| Takes you to a submenu of body parts i.e. Left Leg, Right Arm, etc. and allows you to fully restore that part.
+|-
+! Apply damage... 
+| Simulate specific type of [[damage]] to a specific body part.
+|-
+! Apply Hediff... 
+| Add a specific type of [[Injury]] to a specific body part. Also able to add [[ailments]] and [[artificial body parts]]
+|-
+! T: Remove Hediff... 
+| Remove a specific type of [[Injury]] from a pawn. Also able to remove [[ailments]] and [[artificial body parts]]
+|-
+! T: Heal random injury (10) 
+| Remove a random injury. This may need to used multiple times to restore a pawn to health.
+|-
+! T: Activate HediffGiver 
+| ?
+|-
+! Activate HediffGiver World Pawn
+| ?
+|-
+! T: Discover Hediffs 
+| Reveals any hidden (undiagnosed) hediffs affecting the pawn. 
+|-
+! T: Grant Immunities 
+| ?
+|-
+! T: Give Birth 
+| Spawns a random pawn with the age 0
+|-
+! T: Resistance -1 
+| Adds -1 resistance to a prisoner
+|-
+! T: Resistance -10 
+| Adds -10 resistance to a prisoner
+|-
+! T: +20 [[neural heat]] {{RoyaltyIcon}} 
+| Adds 20℅ to pawn's neural heat
+|-
+! T: -20 [[neural heat]] {{RoyaltyIcon}} 
+| Removes 20℅ from pawn's neural heat
+|-
+! T: List Melee Verbs 
+| Select a pawn with this tool to show the frequency of each melee attack.
+|-
+! T: Add/remove pawn relation 
+| Add or remove a pawn's relationship from the [[Social|social]] tab.
+|-
+! T: Add Opinion Talks About 
+| Make other colonist's opinion about a selected pawn higher/lower.
+|-
+! T: Force vomit... 
+| Forces the pawn to vomit
+|-
+! T: [[Psyfocus]] +20% {{RoyaltyIcon}}
+| Adds 20% to pawn's psyfocus
+|-
+! T: [[Psyfocus]] -20% {{RoyaltyIcon}}
+| Removes 20℅ from pawn's psyfocus
+|-
+! T: Food -20% 
+| Make the pawn's [[Needs|hunger]] meter 20% lower. Can be used in pawn's needs list
+|-
+! T: Rest -20% 
+| Make the pawn's [[Needs|rest]] meter 20% lower. Can be used in pawn's needs list
+|-
+! T: Joy -20%
+| Make the pawn's [[Needs|joy]] meter 20% lower. Can be used in pawn's needs list
+|-
+! T: Chemical -20% 
+| Make the pawn's [[Needs|chemical]] meter 20% lower. Requires "Chemical fascination" or "Chemical interest" [[Traits|trait]]. Can be used in pawn's needs list
+|-
+! T: Indoors -20% 
+| Make the pawn's [[Needs|indoors]] meter 20% lower. Requires "Undergrounder" [[Traits|trait]]. Can be used in pawn's needs list
+|-
+! T: Needs misc -20% 
+| ?
+|-
+! T: Certainty -20%{{IdeologyIcon}} 
+| Make the pawn less certain in their current ideology.
+|-
+! Set [[Skill]] 
+| Set a pawn's selected [[Skills|skill]] to a selected level.
+|-
+! Max [[Skill]] 
+| Max a pawn's selected [[Skills|skill]]
+|-
+! T: Max All [[Skill]]s 
+| Max all the pawn's [[Skills|skill]]
+|-
+! [[Mental break]]... 
+| Cause an instant mental breakdown on the indicated pawn
+|-
+! T: Do Voice Call 
+| ?
+|-
+! Mental state... 
+| Start other mental states on the indicated pawn, such as manhunter, social fighting, and panic
+|-
+! T: Stop mental state 
+| Stop a pawn's [[Mental break|mental break]]
+|-
+! [[Inspiration]]... 
+| Give a selected [[Inspiration|inspiration]] to a colonist.
+|-
+! Give [[trait]]... 
+| Give a selected [[Traits|trait]] to a pawn.
+|-
+! Set [[backstory]] 
+| Change a pawn's [[Backstories|backstory]]
+|-
+! Give ability... 
+| Gives pawn a selected ability
+|-
+! Give Psylink... {{RoyaltyIcon}} 
+| Gives pawn a selected psylink level
+|-
+! T: Remove neural heat {{RoyaltyIcon}} 
+| Removes all neural heat from selected pawn.
+|-
+! T: Give good thought... 
+| Give a temporary +10 [[Mood|mood boost]] to a pawn. Can be used in pawn's needs list
+|-
+! T: Give bad thought... 
+| Give a temporary -10 [[Mood|mood debuff]] to a pawn. Can be used in pawn's needs list
+|-
+! T: Clear Bound Unfinished Things 
+| ?
+|-
+! T: Force Birthday 
+| Force a pawn to age. Has a chance to develop age-related [[ailments]], such as [[dementia]] or [[Alzheimer's]].
+|-
+! T: Recruit 
+| Recruits the selected human to the colony
+|-
+! T: Enslave{{IdeologyIcon}} 
+| Enslaves selected pawn to the colony
+|-
+! T: Damage Apparel 
+| ?
+|-
+! Wear apparel (selected) 
+| Immediately equips selected pawn with selected apparel.
+|-
+! Equip primary (selected) 
+| Immediately equips selected pawn with selected weapon.
+|-
+! T: Tame Animal 
+| Tame a selected [[animal]]
+|-
+! T: Train Animal 
+| Put all selected training for an animal to the max level.
+|-
+! T: Try Develop Bound Relation 
+| ?
+|-
+! T: Queue Training Decay 
+| ?
+|-
+! T: Display Relations Info 
+| ?
+|-
+! T: Display Interactions Info 
+| ?
+|-
+! T: Start Marriage Ceremony 
+| Forces marriage ceremony
+|-
+! T: Force Interaction 
+| Select a pawn then select a target pawn and force a social interaction like Slight or Propose
+|-
+! Start Random Gathering 
+| ?
+|-
+! Start Gathering 
+| ?
+|-
+! T: Start Prison Break 
+| Force a prison break to happen.
+|-
+! T: Pass To World 
+| ?
+|-
+! T: Make +1 Year Older 
+| Force a pawn to age one year without developing age-related [[Ailments|ailments]]
+|-
+! T: Make +1 Day Older 
+| Force a pawn to age one day without developing age-related [[Ailments|ailments]]
+|-
+! T: Try Job Giver 
+| Attempts to give the pawn a task.
+|-
+! T: Try Joy Giver 
+| ?
+|-
+! T: EndCurrentJob(InterruptForced) 
+| Immediately stops the current job being done by the selected pawn.
+|-
+! T: CheckForJobOverride 
+| ?
+|-
+! T: Toggle Job Logging
+| ?
+|-
+! T: Toggle Stance Logging
+| ?
+|-
+! T: Kidnap colonist 
+| Forces raiders to kidnap a pawn
+|-
+! T: Face cell (selected)... 
+| Force the selected pawn to face the target cell.
+|-
+! Add Precept{{IdeologyIcon}} 
+| Adds a precept to the chosen ideology.
+|-
+! Remove Precept{{IdeologyIcon}} 
+| Removes a precept from the chosen ideology.
+|-
+! Trigger Date Ritual{{IdeologyIcon}} 
+| Starts a ritual depending on date regardless of actual date.
+|-
+! Add 5 days to obligation timer{{IdeologyIcon}} 
+| ?
+|-
+! Remove ritual obligation{{IdeologyIcon}} 
+| ?
+|-
+! Generate 200 ritual names{{IdeologyIcon}} 
+| ?
+|-
+! T: Set ideo role...{{IdeologyIcon}} 
+| Sets pawn's ideology role to selected
+|-
+! T: Make guilty 
+| Makes pawn to be guilty
+|-
+! T: Force age reversal demand now{{IdeologyIcon}} 
+| ?
+|-
+! T: Reset age reversal demand{{IdeologyIcon}} 
+| ?
+|-
+! Draw breach path 
+| Shows the path that breach raids will take to infiltrate your base, often blasting through man-made or natural walls.
+|-
+|}
+
+=== Spawning ===
+Spawns things - items, pawns, terrain etc.
+{| class="wikitable"
+|-
+! Action !! Effect
+|-
+! Spawn Complex{{IdeologyIcon}} 
+| ?
+|-
+! Remove world pawn... 
+| Destroys the selected world pawn.
+|-
+! Spawn Pawn 
+| Select a moving being - colonists, animals, adversaries, from a list of all in the game. Left click to spawn, right click to cancel. Pawns will spawn in the relevant [[faction]] e.g. Pirate pawns will spawn in [[Pirates]] faction, animals will spawn wild, colonist pawns will spawn in the player's faction.
+|-
+! Spawn [[Weapon]] 
+| Select a weapon from a list of all in the game, including any that are otherwise unavailable such as thr [[mini-turret gun|mini]]. Left click to spawn, right click to cancel. Material, if the item is [[stuff]]able, is randomly selected.
+|-
+! Spawn [[apparel]]... 
+| Select an item of apparel from a list of all in the game, including any that are otherwise unavailable. Left click to spawn, right click to cancel. Material, if the item is [[stuff]]able, is randomly selected.
+|-
+! Try place near thing... 
+| Place an item at or near where you indicate
+|-
+! Try place near thing with style... 
+| ?
+|-
+! Try place near stack of 25... 
+| Place 25 items at or near where you indicate (items with a maximum stack size less than 25 aren't shown)
+|-
+! Try place near stack of 75... 
+| Place 75 items at or near where you indicate (items with a maximum stack size less than 75 aren't shown)
+|-
+! Try place direct thing... 
+| Try to place an item directly where you indicate
+|-
+! Try place direct stack of 25... 
+| Try to place a stack of 25 items directly where you indicate
+|-
+! Try place stack of market value 
+| ?
+|-
+! T: Try add to inventory... 
+| Adds item to pawn inventory.
+|-
+! Spawn thing with wipe mode... 
+| ?
+|-
+! Set terrain... 
+| Select a ground type or flooring and indicate where it should be placed
+|-
+! Set terrain (rect)... 
+| Select a ground type or flooring and select the area where it should be placed
+|-
+! Spawn [[Mechanoid cluster|Mech Cluster]] {{RoyaltyIcon}} 
+| Summons mechanoid cluster to selected point
+|-
+! T: Make [[filth]] x100 
+| Creates filth.
+|-
+! T: Spawn Faction Leader 
+| Spawns the leader of a faction.
+|-
+! Spawn world pawn... 
+| ?
+|-
+! Spawn thing set... 
+| Spawn a selection of event things
+|-
+! Trigger effecter... 
+| ?
+|-
+! Spawn [[Shuttle]] {{RoyaltyIcon}} 
+| ?
+|-
+! Spawn relic{{IdeologyIcon}} 
+| Spawns ideology relic
+|-
+|}
+
+==== Spawning: World mode ====
+{| class="wikitable"
+|-
+! Action !! Effect
+|-
+! T: Spawn Random Caravan 
+| Spawns random caravan on the world map
+|-
+! T: Spawn Random Faction Base 
+| Creates a faction base at selected position.
+|-
+! T: Spawn Site 
+| Spawn site like group manhunter. stockpile resources, wood log resources, and many site things
+|-
+! T: Destroy Site 
+| Destroy the site group manhunter, stockpile resource, and many site things
+|-
+! T: Spawn Site With Points 
+| Same as spawn site but points is like a difficult of you ecounter (like 10000 point on manhunter group, it will spawn 62 manhunter gorrila) 
+|-
+! T: Spawn World Object 
+| it can spawn orbital asteroid, and trader satelite
+|}
+
+=== Map management ===
+{| class="wikitable"
+|-
+! Action !! Effect
+|-
+! Generate Map 
+| ?
+|-
+! Destroy Map 
+| Removes map selected, with anything on it being permanently deleted. Can softlock the game if used on the home map.
+|-
+! Leak Map 
+| ?
+|-
+! Print Leaked Map 
+| ?
+|-
+! Add Game Condition 
+| Start an [[event]] such as a [[heat wave]] or [[toxic fallout]]. 
+|-
+! Remove Game Condition 
+| End an [[event]] such as a [[heat wave]] or [[toxic fallout]]. 
+|-
+! T: Transfer 
+| Transfers a selected pawn to a location on the world map
+|-
+! Change Map 
+| Change the currently displayed map such as Home Base or attacked Bandit Camp
+|-
+! Regenerate Current Map 
+| Resets the current active map to its default state. 
+|-
+! Generate Map With Caves 
+| Generates a new map that contains caves.
+|-
+! Run Map Generator 
+| Generates a new map for various encounters. 
+|-
+! Force Reform in Current Map 
+| ?
+|}
+
+====Map management: World mode====
+{| class="wikitable"
+|-
+! Action !! Effect
+|-
+! Generate Map 
+| ?
+|-
+! Destroy Map 
+| ?
+|-
+! Leak Map 
+| ?
+|-
+! Print Leaked Map 
+| ?
+|-
+! Add Game Condition 
+| Start an [[event]] such as a [[heat wave]] or [[toxic fallout]]. 
+|-
+! Remove Game Condition 
+| End an [[event]] such as a [[heat wave]] or [[toxic fallout]]. 
+|-
+! Change Map 
+| ?
+|-
+! Regenerate Current Map 
+| ?
+|-
+! Generate Map With Caves 
+| ?
+|-
+! Run Map Generator 
+| ?
+|-
+! Force Reform in Current Map 
+| ?
+|}
+
+=== Autotests ===
+{| class="wikitable"
+! Action !! Effect
+|-
+! Make Colony (full) 
+| When tested in dev mode, it spawned 26 colonists, this command simulates a full colony with all tech researched. Included with everything unlocked, like buildings and items that can be placed. For example items/buildings added by mods are shown as well. You can use this as a test to see what consumables, buildings, workbenches, apparel, weapons and other available stuff is added when reaching endgame. All buildable buildings, props and decor, from the architecture tab will be spawned on an electric power grid shown in the picture below. As an addition all the items like consumables like food, drugs and raw resources will be shown in the other photo. 
+<gallery>
+Make colony (full).png| make colony (full) command
+Make colony (full) items.png| make colony (full) command
+</gallery>
+|-
+! Make colony (animals) 
+| For each animal, creates the animal, their desiccated corpse, and one meat and leather.
+|-
+! Make colony (ancient junk){{IdeologyIcon}} 
+| ?
+|-
+! Test force downed x100 
+| ?
+|-
+! Test force kill x100 
+| ?
+|-
+! Test Surgery fail catastrophic x100 
+| ?
+|-
+! Test Surgery fail ridiculous x100  
+| ?
+|-
+! Test generate pawn x1000 
+| ?
+|-
+! T: Generate Pawns Of All Shapes 
+| ?
+|-
+! Check Region Listers 
+| ?
+|-
+! Test time-to-down 
+| ?
+|-
+! Battle Royale All PawnKinds 
+| ?
+|-
+! Battle Royale Humanlikes 
+| ?
+|-
+! Battle Royale By Damagetype 
+| ?
+|}
+
+===Custom Structure Generation===
+{| class="wikitable"
+|-
+! Action !! Effect
+|-
+! Quickspawn structure 
+| ?
+|-
+! Destroy all hostile pawns on map 
+| Immediately removes all hostile pawns from selected tile.
+|-
+|}
+
+===Mods===
+{| class="wikitable"
+|-
+! Action !! Effect
+|-
+! Loaded Files For Mod
+| Display a table of file paths which were loaded for the chosen mod. This action is only available from the main menu.
+|-
+|}
+
+== Debug Logging Menu ==
+[[File:DevModeOutputTab.png|400px|thumb|right|Debug Logging Menu with All DLC installed.]]
+The Debug logging menu, which is the Output Tab, contains information, data, and charts that the developers use to balance rimworld. Many of the charts will take into account player installed mods.
+===Incidents===
+These tools show information about Incidents like Major threats, traders arriving, visitors, and other events that happen on the player map.
+{| class="wikitable"
+|-
+! Action !! Effect
+|-
+! Incident Chances 
+| Displays a chart of events. Shows the weights and requirements of those events.
+|-
+! Incident Chances Sampled
+| Generates the % chances of possible future incidents in your current colony.
+|-
+! Future Incidents 
+| Display additional information about a specific type of Incident
+|-
+! Future Incidents Current Map 
+| Display additional information about a specific type of incident on the currently selected map tile.
+|-
+! Incident Targets List 
+| Displays all possible targets for incidents in the Debug Log
+|-
+! Min Threat Points
+| Displays threat points based on time based.
+|-
+! Current Threat Points
+| Shows the current [[Raid_points|Raid Points]] of your currently selected colony.
+|-
+! Pawn Arrival Candidates 
+| Shows what factions and pawn types can arrive as raiders, visitors, and others to your colony.
+|-
+! Trader Kinds 
+| Displays possible trader types and the average value of their goods.
+|-
+! Trader Kind Things 
+| Displays what items various traders sell or buy.
+|-
+! Trader Stock Market Values 
+| Displays average market value of trader and caravans.
+|-
+! Trader Stock Generation 
+| Displays a single example trader stock of a specific type of trader into the Debug Log.
+|-
+! Trader Stock Generators Defs 
+| Displays the average market value of various tradeable items into the Debug Log
+|-
+! Pawn Group Gen Sampled 
+| Displays possible groups of faction's pawns based on available raid points into the Debug Log.
+|-
+! Raid Faction Sampled 
+| Generates many samples of raids and displays the % chance each occurred. Organized by faction and raid points. Takes into account current faction relations.
+|-
+! Raid Strategy Sampled 
+| Generates many sample raids of a chosen faction and display % chance each raid type occurred. 
+|-
+! Raid Arrivemode Sampled 
+| Generates many sample raids of a chosen faction and displays % chance of arrival types.
+|-
+! Threats Generator 
+| Generates 20 days of possible threats on a schedule similar to that of a Shiplaunch startup. Displayed in Debug Log.
+|-
+! Raids Info Sampled
+| Generates 100 possible raids  at a specific [[Raid_points|Raid Point]] value and displays all information in a table.
+|-
+! Pod Contents Possible Defs 
+| Displays all possible resource pod crash incident items in the Debug Log.
+|-
+! Pod Contents Test 
+| Generates 100 random transport pod crashes and displays the randomly chosen items in the Debug Log.
+|-
+! Peace Talks Chances 
+| Displays Peace Talk result chances in the Debug Log at various Negotation Ability levels.
+|}
+
+===Quests===
+{| class="wikitable"
+|-
+! Action !! Effect
+|-
+! Mission Ancient Complex 
+| Generates threat sizes for ancient complexes based on various Raid Point, colonist count and wealth amounts.
+|}
+
+===General===
+Displays information on various game mechanics.
+{| class="wikitable"
+|-
+! Action !! Effect
+|-
+! Stun Chances
+| ?
+|-
+! Quest Rewards Sampled 
+| Choose a quest type and average values of rewards are shown at various Raid Point and Quest Star Ratings.
+|-
+! Quest Defs
+| Displays quest requirements and other information in a table.
+|-
+! Quest Selection Weights
+| Displays quest selection weights at a chosen Raid Point value.
+|-
+! Decree Selection Weights
+| Displays Royal decree selection weights.
+|-
+! Royal Titles
+| Displays requirements and other information about Royal Titles.
+|-
+! Honor Availability (slow)
+| Generates 200 days of quests and displays possible honor from those quests.
+|-
+! Plants
+| Displays a table of plant information.
+|-
+! Plant Current Proportion
+| Displays current and expected proportions of plants on the current map.
+|-
+! Biomes
+| Displays information about each biome.
+|-
+! Biome Animals Spawn Ch
+| Displays animal's chances to spawn on each biome.
+|-
+! Biome Animals Typical
+| Displays the expected average number of each animal on each biome.
+|-
+! Biome Plants Expected
+| Displays the expected average number of each plant on each biome.
+|-
+! Animal Wild Counts on Map
+| Displays the expected animal count and actual animal count on the current map
+|-
+! Plants Count on Map
+| Displays the expected plant count and actual plant count on the current map
+|-
+! Biome Ranching
+| Displays the ranching potential of each biome in each season by nutrition produced in a small field. Divided into soil types.
+|-
+! Weapon Classes
+| Displays all weapon classes for each weapon.
+|-
+! Weapons Ranged
+| Displays various information about all ranged weapons in a table. Exportable.
+|-
+! Turrets
+| Displays various information about turrets in a table. Exportable.
+|-
+! Weapons Melee
+| Displays material statistics for melee weapons. May not be currently functional.
+|-
+! Tools
+| Displays melee weapon attack statistics. Includes body parts like fists and hooves.
+|-
+! Research Projects
+| Displays Research project information like cost and requirements.
+|-
+! Things Existing List
+| Displays how many instances of a chosen item are on the map.
+|-
+! Thing Fillage and Passable
+| Displays the fill % and passability of various items. 
+|-
+! Thing Path Costs
+| Displays the Path Cost of all items.
+|-
+! Thing Damage Data
+| Displays hit points, flammability deterioration and other similar stats of items.
+|-
+! Unfinished Things
+| Displays all possible unfinished items and the locations where their bills were created.
+|-
+! Thing Masses
+| Displays the mass of all items, how many of an item certain pawns could carry and nutrition of an item per weight.
+|-
+! Thing Fill Percents
+| Displays Fill percents.
+|-
+! Thing Nutritions
+| Displays nutrition, market value, and nutrition per value.
+|-
+! Bodies
+| Choose a pawn type and body parts and part statistics are displayed.
+|-
+! Installable Body Parts
+| Displays all installable body parts and the surgery statistics to install those parts.
+|-
+! Body Parts
+| Displays information on all body parts of all pawn types.
+|-
+! Surgeries
+| Displays information on all possible surgeries.
+|-
+! Hits to Kill
+| ? - Does a lot of calculations. May crash game.
+|-
+! Prosthetics
+| Displays information on all prosthetics and bionics.
+|-
+! Transhumanist Body Parts
+| Displays all health conditions and which ones do and do not satisfy Transhumanist.
+|-
+! Infections
+| Displays diseases information and survivability chances at different tend levels.
+|-
+! Infection Simulator
+| Simulates a LOT of infections. Consider not pressing this button.
+|-
+! Joy Givers
+| Displays Recreation types, chances and requirements.
+|-
+! Joy Kinds
+| Displays and Recreation Kinds.
+|-
+! Joy Jobs
+| Displays Recreation jobs and information like the duration and skill type gained.
+|-
+! Drawer Types
+| Displays a list of all drawn objects in the game and their type and draw information.
+|-
+! Dynamic Drawn Things Now
+| How many of each drawn object exists in the current game.
+|-
+! Dynamic Drawn Things By Category
+| How many of each category of drawn thing exists in the current game.
+|-
+! Mining Resource Generation
+| Displays information about mineable resources.
+|-
+! Natural Rocks
+| Displays information about all natural rocks. 
+|-
+! Ancient Junk
+| Displays information about ancient junk.
+|-
+! Meditation Foci
+| Displays information about each meditation focus like their base meditation rate and offsets.
+|-
+! Default Stuffs
+| Displays the possible materials used to create each item.
+|-
+! Beauties
+| Displays the beauty and market value of each object.
+|-
+! Stuff Beauty
+| Displays the beauty factor and offset of each material.
+|-
+! Things Power And Heat
+| Displays power usage, and heating/cooling power, and other information of each buildable object. 
+|-
+! Food Poison Chances
+| Displays the base food poison chance of each consumable.
+|-
+! Tech Levels
+| Displays every item's tech level.
+|-
+! Stuffs
+| Displays information about each stuff type
+|-
+! Burning and Smelting Things
+| Displays the burnability and smeltable of all items. Also displays what default recipes include destroying these objects.
+|-
+! Medicines
+| ?
+|-
+! Shooting Accuracy
+| ?
+|-
+! Temperature Data
+| Displays daily, recent, seasonal, and other measures of temperature for the current map tile.
+|-
+! Temperature Overlay Color
+| Displays the color shown for each temperature when using the Temperature Overlay.
+|-
+! Weather Chances
+| Displays current weather event chances based on environmental factors and cooldowns. 
+|-
+! Celestial Glow
+| Displays the sun visibility for different days of the year, hours of the day and latitudes.
+|-
+! Sun Angle
+| Displays the sun angle for different days of the year, hours of the day and lattitudes.
+|-
+! Fall Color
+| Fall color amounts of each latitude and each day of the year.
+|-
+! Pawns List All On Map
+| Displays a list of all pawns on the map.
+|-
+! Wind Speeds
+| Displays wind speeds for the next 72 hours.
+|- 
+! Map Pawns List
+| Displays a list of all pawns on the map and breaks them down by faction. Displayed in Debug Log.
+|-
+! Lords
+| Displays all currently active LordJobs on the map. Shows all active members of each LordJob. Displays in Debug Log.
+|-
+! Log Enroute
+| ?
+|-
+! Body Part Tag Groups
+| Displays Body Part Tag Groups of a selected pawn time. 
+|-
+! Minifiable Tags
+| Displays a list of all objects that are minifiable (able to be uninstalled).
+|-
+! Thing Set Maker Test
+| Generates multiple examples of a specific Thing Set. For example, can generate 100 trader stocks. Displays in Debug Log.
+|-
+! Thing Set Maker Possible
+| Displays a list of all items and what Thing Sets do and do not contain them.
+|-
+! Thing Set Maker Sampled
+| Generates a large number of a specific Thing Set and shows the % chance each item occurred in that set. 
+|-
+! Rewards Generation
+| Select a Faction and a Raid Point amount to display multiple examples of possible quest rewards.
+|-
+! Rewards Generation Sampled
+| Displays the % chance of rewards in a sample of quest rewards at a given raid point value
+|-
+! Work Disables
+| Displays the chances a given work Type (ie: Firefighting) is disabled on a chosen Pawn Type.
+|-
+! Food Preferability 
+| Displays Food Preferability Tags of all consumable items.
+|-
+! Ingestible Max Satisfied
+| Displays the maximum satisfied Royalty DLC title of each consumable item.
+|-
+! Ability Costs
+| Displays the Psyfocus and Heat costs of every ability. 
+|-
+! Site Part Defs
+| Displays Defs and Tags of all sites: BanditCamps, MechClusters, Archonexus map etc.
+|-
+! Map Danger
+| ?
+|-
+! Gen Steps
+| Displays GenSteps class and order of Defs.
+|-
+! World Gen Steps
+| Displays GenSteps class and order of Defs for World Map Defs.
+|-
+! Shuttle Defs To Avoid
+| Displays things a shuttle tries to avoid when choosing a landing site.
+|-
+! Ritual Duration
+| Displays all Rituals and their duration in hours.
+|-
+! Player Wealth
+| Displays Player Wealth in the Debug Log.
+|-
+! Memes and Precepts
+| Displays the text descriptions of all Memes and Precepts in the Debug Log.
+|-
+! Generate Gene Sets x10
+| Generates 10 random gene packs and displays in the Debug Log.
+|-
+! Genes
+| Displays information on all Genes like complexity, metabolic cost, and their defnames.
+|-
+! Xenotypes
+| Displays all xenotypes and their total complexity, metabolic efficiency, and archotech gene count.
+|-
+! Precept Defs
+| Displays information about precepts like their impact, dlc requirement, and effects.
+|-
+! Thing Trade Tags
+| Displays all trade category tags for items and each item within each category.
+|-
+! Structure Color Defs
+| Displays label, rgb and hsl values of each color.
+|-
+! Psychic Rituals
+| Displays information about each Anomaly Ritual: duration, cooldown, cost. etc.
+|-
+! Analysis Details
+| ?
+|-
+! Relic Things
+| Displays all items and if they can be relics, if they are weapons, and related information.
+|-
+! Relic Market Values
+| Displays the market value of all possible relics, including different materials.
+|-
+! Relic Stuffs
+| Displays the % chance each relic is a specific material.
+|-
+! Collections Memory Usage
+| ? - May cause significant performance issues or crashes.
+|-
+! Key Strings
+| Displays the text label for each keyboard key.
+|-
+! Def Names
+| Displays all def names. Select a def name to see all defs in that category.1
+|-
+! Def Names All
+| ?
+|-
+! Def Labels
+| ?
+|-
+! Best Thing Request Group
+| ?
+|-
+! Damage Test
+| Simulates damaging pawns and reports on parts damage and destroyed.
+|-
+! Terrains
+| Displays a table of information of all flooring and terrains. 
+|-
+! Terrain Affordances
+| Displays the terrain affordance of each flooring and terrain.
+|-
+! Wild Miss Results
+| Displays a table of miss chances at various aiming %s and distances.
+|-
+! Thing Path Costs Ignore
+| Displays objects with path and if they are or are not ignored when adjacent to other path cost items.
+|-
+! Difficulty Details
+| Displays difficulty settings and details for the current game.
+|-
+! Manhunter results
+| Displays the chances of manhunting animals by Raid Points.
+|-
+! Population Intents
+| A chart of population intent by current population and days since last population gaining event.
+|-
+! Mech Cluster Building Selection
+| Simulates multiple mech clusters at a specific raid point and displays size and all contained mech buildings.
+|-
+! Permanent Injury Calculation
+| Simulates birthdays for colonists as "Theoretical Injuries" and also displays current "Actual Injuries" on all pawns in separate lists on the Debug Log.
+|-
+! Apparel Pairs
+| Lists all apparel by material and provides information like price and insulation.
+|-
+! Apparel Pairs by Thing
+| Similar list to above but counts how many materials can be used to make each apparel.
+|-
+! Weapon Pairs
+| Lists all weapons by material and provides information like price. 
+|-
+! Weapon Pairs By thing
+| Similar list to above but counts how many materials can be used to make each weapon.
+|-
+! Pawn Groups Made
+| Choose a Faction and example groups of pawn types are made at various Raid Point levels.s
+|-
+! Visitor Gift Chance
+| Displays chance of gifts per faction and calculates chance of gifts over a 1 year period.
+|-
+! Apparel Valid Life Stages
+| Lists what Life Stages are valid for each apparel. IE: Can children wear this hat?
+|-
+! Quality Generation Data
+| ?
+|-
+! Stock Generation Animals
+| ?
+|-
+! Techprints from Factions
+| Lists what Techprints can be received from each faction in the Debug Log.
+|-
+! Techprints from Factions Chance
+| Lists specific weights and chances that each techprint is stocked at a specific faction.
+|-
+! Wall Stuff
+| Lists all materials and what floors they can be used for.
+|-
+! Beggar Quest Items
+| Displays the possibility that beggars demand items at various raid point levels.
+|-
+|}
+
+===Pawns===
+Information about Colonists, Humans, Animals, Mechs and Entities.
+{| class="wikitable"
+|-
+! Action !! Effect
+|-
+! Pawn Kinds Basics 
+| Lists all pawn types and statistics like Combat Power, age, apparel value, etc.
+|-
+! Pawn Kinds Weapon Usage
+| Lists all pawn types and what weapons they can have equipped.
+|-
+! Pawn Kinds Apparel Usage
+| Lists all pawn types and what apparel they can have equipped.
+|-
+! Pawn Kinds Tech Hediff Usage 
+| Lists all pawn types and their chances of having implants
+|-
+! Pawn Kind Gear Sampled 
+| Select a pawn type and samples of gears and weapons are displayed with chances.
+|-
+! Pawn Work Disables Sampled
+| Generates 100 examples of a specific pawn and displays the chances work types are disabled.
+|-
+! Live Pawn Inspiration Chance
+| Lists the selection weight for each possible inspiration chance for each colonist.
+|-
+! Races Food Consumption
+| Lists every pawn type with various food consumption statistics.
+|-
+! Races Butchery
+| Displays butchering statistics for each pawn type.
+|-
+! Animals Basics
+| Lists animal statistics like body size, market value and many others.
+|-
+! Animal Points to Hunt or Slaughter
+| ?
+|-
+! Animal Combat Balance 
+| Lists all animals and their relevant combat statistics.
+|-
+! Mechanoids
+| Lists all mechs and a huge table of various statistics.
+|-
+! Animal Trade Tags
+| Lists all mechs and a huge table of various statistics.
+|-
+! Animal Behavior
+| Lists all mechs and a huge table of various statistics.
+|-
+! Animal Ecosystem
+| Lists all mechs and a huge table of various statistics.
+|-
+! Mental Breaks
+| Displays a table of statistics on Mental Breaks: chance, duration, etc.
+|-
+! Thoughts
+| Displays a table of statistics on Thoughts: mood amount, duration, stacking etc.
+|-
+! Ideo Thoughts
+| Similar table as Thoughts but with only Ideology Thoughts.
+|-
+! Traits Simplified
+| Simulates 4000 colonists and displays statistics on their traits.
+|-
+! Backstory Counts Per Tag
+| Lists how many backstories are applicable for each pawn type.
+|-
+! List Solid Backstories
+| Lists all potential backer pawns in a chosen pawn type.
+|-
+! Show Beard Frequency
+| Generates 100 pawns of a chosen faction and tells you how many had beards.
+|-
+! Entities
+| Lists all entities and displays statistics like Combat Power, bioferrite generation, and more.
+|-
+! World Pawn Relations
+| Lists all World Pawns and allows them to be selected to display any relations they may have.
+|-
+! Virtual Records
+| Displays pawn records like ID and number of references.
+|-
+|}
+
+===Bossgroups===
+{| class="wikitable"
+|-
+! Action !! Effect
+|-
+! Bossgroups
+| Displays information on Biotech Mech bosses.
+|}
+
+===Economy===
+Information on productivity, market value and wealth generation.
+{| class="wikitable"
+|-
+! Action !! Effect
+|-
+! Apparel By Stuff 
+| Lists all apparel made with a chosen material and some statistics.
+|-
+! Apparel Armor 
+| Lists armor statistics for all apparel & material combos.
+|-
+! Apparel Insulation 
+| Lists insulation statistics for all apparel & material combos
+|-
+! Apparel Counts for Nudity
+| Displays whether each apparel does or does not count against Nudists.
+|-
+! Recipe Skills 
+| Lists all recipes for all bills, not just cooking, and work skill, speed and other statistics.
+|-
+! Drugs 
+| Lists drugs and many drug statistics.
+|-
+! Wool 
+| Lists wool types and some statistics.
+|-
+! Animal Economy
+| Lists all animals and many statistics related to their productivity.
+|-
+! Animal Breeding 
+| Lists animal reproduction statistics.
+|-
+! Buildings
+| Lists all buildings and some statistics.
+|-
+! Crops 
+| Lists all crops with statistics on productivity.
+|-
+! Item And Building Acquisition 
+| Lists all items and buildings and statistics on how they are produced and their profitability.
+|-
+! Item Accessibility 
+| Lists how obtainable all items are on the current map. 
+|-
+! Thing Set Make Tags 
+| Lists all items and their tags like if they are quest rewards, animal parts, etc.
+|-
+! Thing Smelt Products 
+| Lists the resources returned when smelting every item.
+|-
+! Recipes 
+| Lists all Bill recipes, not just cooking, and many statistics related to profitability.
+|-
+! Floors 
+| Lists all floors with cost and work to make, beauty and cleanliness stats.
+|-
+! Hediffs Price Impact 
+| Lists all health conditions and their market value change to a pawn.
+|-
+! Roaming VS Economy 
+| Lists all pen animals and their potential profitability per roaming.w
+|-
+! Archonexus Allowed Items
+| Lists all items and how many max could be brought in an archonexus reset. Other statistics too.
+|-
+! Reward Tags
+| Lists what reward tags apply to each item.
+|-
+|}
+
+===Factions===
+{| class="wikitable"
+|-
+! Action !! Effect
+|-
+! All Factions
+| Lists all current factions. Includes hidden factions.
+|-
+! All Factions To Remove
+| ?
+|-
+! All Factions From Pawns
+| Displays how many known pawns are in each faction in the Debug Log.
+|}
+
+===Performance===
+?
+{| class="wikitable"
+|-
+! Action !! Effect
+|-
+! Pawn Generation Histogram 
+| ?
+|}
+
+
+===System===
+Some tests of random number generation, graphics and similar.
+{| class="wikitable"
+|-
+! Action !! Effect
+|-
+! Test Math Perf 
+| Performs some math tests.
+|-
+! Rand Tests 
+| Performs random number generation tests.
+|-
+! Material Report 
+| ?
+|-
+! Material Snapshot 
+| ?
+|-
+! Material Delta 
+| ?
+|-
+! Mesh Pool Stats 
+| Displays number of Planes and PlanesFlip in the Debug Log.
+|-
+! All Graphics Loaded 
+| Displays information of every graphic loaded in the Debug Log.
+|-
+! Loaded Assets 
+| Lists all assets in the Debug Log.
+|-
+! Dynamic Draw Things List 
+| Lists all things registered in the Dynamic draw list in the Debug Log.
+|-
+! Rand By Curve Tests 
+| Random number generation test.
+|-
+! Steam Workshop Status 
+| Tests connection the Steam Workshop. Will open Steam if possible.
+|}
+
+===Text generation===
+{| class="wikitable"
+|-
+! Action !! Effect
+|-
+! Flavorful Combat Test 
+| Select an attack type and damage and multiple flavor texts of the attack are listed in the Debug Log.
+|-
+! Cube Descriptions
+| Approximately 50 cube sculpture descriptions are generated.
+|-
+! Void Sculpture Descriptions
+| Approximately 50 void sculpture descriptions are generated.
+|-
+! Books
+| Select a book type and approximately 25 book descriptions are generated in the Debug Log.
+|-
+! Art Descs Specific Tales 
+| Choose a tale (interesting moment like a 
+|-
+! Names From Rulepack 
+| Displays all possible names one of books, world map features, factions, festivals and similar.
+|-
+! Database Tales List 
+| Displays all potential Tales in the current game.
+|-
+! Database Tales Interest 
+| Displays a count of how many of each tale type are possible in the current game. 
+|-
+! Art Descs Database Tales 
+| ?
+|-
+! Art Descs Random Tales 
+| ?
+|-
+! Art Descs Taleless 
+| ?
+|-
+! Interaction Logs 
+| Simulates a chosen Interaction multiple times in the Debug Log.
+|-
+! Word Count
+| Shows a total word count across the entire game.
+|-
+! Growth Moment Flavor
+| Displays 10 possible Growth Moment texts at a given growth tier in the Debug Log.
+|-
+|}
+
+===UI===
+{| class="wikitable"
+|-
+! Action !! Effect
+|-
+! Pawn Column Test 
+| Displays a chosen UI object at minimum, optimal, and max size.
+|}
+
+===World pawns===
+World Pawns are pawns that may not be currently on the player's map but are still being tracked.
+{| class="wikitable"
+|-
+! Action !! Effect
+|-
+! Colonist Relative Chance 
+| Displays the chance a random human event will have a relative to someone in the current colony.
+|-
+! Kidnapped Pawns 
+| Displays a lists of Kidnapped pawns and by Faction.
+|-
+! World Pawn List 
+| Shows a list of all world pawns (pawns that are not currently on the map, but are still being kept track of by the game).
+|-
+! World Pawn Mothball Info 
+| ?
+|-
+! World Pawn Gc Breakdown 
+| Shows how many world pawns will be deleted by the 'Run World Pawn Gc' option, and how many will be kept, as well as the reasons for keeping them.
+|-
+! World Pawn Dotgraph 
+| ?
+|-
+! Run World Pawn Gc 
+| Deletes any world pawns except those that the game sees a reason to keep, such as if they are a relative of another pawn or a faction leader. This can help improve performance, as the game will have less pawns to keep track of.
+|-
+! Run World Pawn Mothball 
+| ?
+|-
+|}
+
+==Version history==
+* [[Ideology DLC]] Release - Options added: <div class="mw-collapsible mw-collapsed" style="width:4.5%"><div class="mw-collapsible-content" style="width:7000%">
+** T: Spawn Relic 
+** T: Set Source Precept 
+** Add Slave 
+** T: Hack 100% 
+** T: Hack +10% 
+** T: Darklight At Position 
+** Set Ideo  
+** T: Suppression +10% 
+** T: Suppression -10% 
+** T: Clear suppression schedule 
+** T: Will +1 
+** T: Will -1 
+** T: Start slave rebellion (random) 
+** T: Start slave rebellion (aggressive) 
+** T: Enslave 
+** Add Precept 
+** Remove Precept 
+** Trigger Date Ritual 
+** Add 5 days to obligation timer 
+** Remove ritual obligation 
+** Generate 200 ritual names 
+** T: Set ideo role... 
+** Spawn relic 
+</div>
+</div>
+* [[Version/1.3.3066|1.3.3066]] - Options added: <div class="mw-collapsible mw-collapsed" style="width:4.5%"><div class="mw-collapsible-content" style="width:7000%">
+** Do trade caravan arrival 
+** Atlas Rebuild 
+** Add Trade Ship Of Kind .
+** Dump Pawn Atlases 
+** Dump Static Atlases 
+** T: Glow At Position 
+** T: HSV At Position 
+** Fill Map With Trees 
+** Flash Blocked Landing Cells 
+** T: Discard 
+** Rotate Clockwise 
+** Rotate Counter Clockwise 
+** Clear All Fog 
+** T: Change Thing Style 
+** T: Force sleep then assault colony 	
+** T: Enable wound debug draw 
+** Wound debug export (non-humanlike)? 
+** T: Change style 
+** T: Request style change 
+** T: Make Faction leader 
+** T: Clear Prisoner Interaction Schedule? 
+** T: Indoors -20% 
+** T: Needs misc -20% 
+** T: Certainty -20% 
+** T: Do Voice Call 
+** T: Display Relations Info 
+** T: Display Interactions Info 
+** T: Make guilty 
+** Draw breach path 
+** Try place near thing with style... 	
+** Try place stack of market value 
+** Set terrain (rect)... 
+</div>
+</div>
+* [[Version/1.5.4062|1.5.4062]] - Fix: 'Push heat' debug command doesn't do increments; all options do the maximum. Fix: God Mode Toggle causing issues selecting Pawns in the Top Bar.
+* [[Version/1.6.4850|1.6.4850]] - Fix: Exception when hovering certain buildings near the map edge in god mode.
+[[Category:RimWorld game]]

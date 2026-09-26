@@ -1,0 +1,42 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Anomaly/Body Parts/Prosthetic}}
+|}
+----
+{| {{STDT| c_21}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Fleshmass stomach" <!-- defName="FleshmassStomach", ParentName="AddedMutationBase" -->
+! [[Fleshmass stomach]]
+----
+* Def Name:<br />FleshmassStomach
+* Label:<br />fleshmass stomach
+* Label Noun:<br />a fleshmass stomach
+|<!-- Description -->
+A cancerous mass of semi-sentient flesh. The harsh acid it produces is painful, but strong enough to prevent most food poisoning.
+
+The organ has its own neural structures and may become dangerous if removed.
+|<!-- Details -->
+* Hediff Class: '''Hediff_AddedPart'''
+* Default Label Color: {{Color|60%|60%|100%}}
+* Is Bad: {{Good|false}}
+* Price Impact: {{Bad|true}}
+* Counts As Added Part Or Implant: {{Good|true}}
+* Allow Mothball If Low Priority World Pawn: {{Good|true}}
+* Organic Added Bodypart: {{Good|true}}
+* Default Install Part: '''[[Stomach]]'''
+* '''Added Part Props'''
+** Solid: {{Good|true}}
+* '''Comps:''' ''Fleshbeast Emerge''
+** Letter Label: Fleshmass operation
+** Letter Text: Attempting to remove {PAWN_nameDef}'s fleshmass stomach has caused the twisting mass of flesh to attack. The fleshmass has detached from {PAWN_nameDef} and transformed into a fleshbeast!
+|<!-- Stages -->
+{| {{STDT| c_21}}
+! Label !! Parameters
+|-
+! Fleshmass stomach
+|<!-- Parameters -->
+* Pain Offset: {{++|8%}}
+* Food Poisoning Chance Factor: {{Good|×0%}}
+* Make Immune To: [[Gut worms]]
+|}<noinclude>
+|}</noinclude>

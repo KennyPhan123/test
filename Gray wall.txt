@@ -1,0 +1,49 @@
+{{Anomaly}}
+
+{{Infobox main
+| name = Gray wall
+| image = Gray wall.png
+| description = An impassable gray wall.
+<!-- Base Stats -->
+| type = Building
+| type2 = Wall
+| flammability = 0
+<!-- Building -->
+| size = 1 * 1
+| passability = impassable
+<!-- Technical -->
+| defName = GrayWall
+| label = wall
+<!-- ThingDef ParentName="Wall" -->
+| selectable = false
+| destroyable = false
+| useHitPoints = false
+| designationCategory IsNull="True"
+| uiIconPath = Things/Building/Linked/GreyWall_MenuIcon
+| texPath = Things/Building/Linked/GrayWall_Atlas
+| graphicClass = Graphic_Single
+| paintable = false
+| deconstructable = false
+| claimable = false
+| neverBuildable = true
+}}
+
+'''Gray wall''' is an indestructible wall found exclusively in the [[Labyrinth]].
+
+== Summary ==
+Gray walls create an inescapable space outside of the generated rooms, requiring players to force open [[gray door]]s in order to explore further. Rooms in the labyrinth are generated with a 2 layer thick border of gray wall, only cut through with 1 tile wide hallways connecting rooms and the common case of two rooms generating 1 tile away from each other.
+
+== Analysis ==
+One tile wide walls can usually be used to identify adjacent rooms yet to be uncovered by fog, where the obelisk room seems very likely to connect to other rooms with 1 tile wide walls. With its circular shape, this can help to identify the location of this important room.
+
+== Gallery ==
+<gallery>
+Gray wall.png|Single tile
+Gray wall menu icon.png|Menu icon
+Gray wall atlas.png|Atlas
+</gallery>
+
+== Version history ==
+* [[Anomaly (DLC)]] Release - Added.
+
+[[Category:Buildings]]

@@ -1,0 +1,96 @@
+{{Infobox main|stony
+| name = Marble blocks
+| image = Marble blocks C.png
+| description = Blocks of solid marble. Marble is a soft, beautiful stone, known for being easy to sculpt.
+<!-- Base Stats -->
+| type = Material
+| type2 = Stone
+| stuff category = Stony
+| marketvalue = 0.9
+| beauty = -12
+| mass base = 1.25
+| stack limit = 75
+| rotatable = false
+| path cost = 14
+| terrain affordance = Heavy
+<!-- Stat Modifiers -->
+| beauty factor = 1.35
+| beauty offset = 1
+| work to make factor = 1.15
+| work to build factor = 5.5
+| work to build offset = 140
+| max hit points factor = 1.2
+| flammability factor = 0
+| melee blunt damage factor= 1.0
+| melee sharp damage factor= 0.6
+| melee cooldown factor = 1.3
+| door opening speed factor = 0.45
+| rest effectiveness factor = 0.9
+<!-- Creation -->
+| production facility 1 = Stonecutter's table
+| work to make = 1600
+| resource 1 = Stone chunk
+| resource 1 amount = 1
+| product amount = 20
+<!-- Technical -->
+| defName = BlocksMarble
+| stuff adjective = marble
+<!-- Unused -->
+| always haulable = true
+| appearance = Bricks
+| color = (132,135,132)
+| default color = (132,135,132)
+| draw gui overlay = true
+| graphic class = Graphic_Single
+| graphic path = Things/Item/Resource/StoneBlocks
+| label = marble blocks
+| parent name = StoneBlocksBase
+| resource readout priority = Middle
+| selectable = true
+| sound drop = Stone_Drop
+| sound impact stuff = BulletImpactGround
+| sound interact = Stone_Drop
+| sound melee hit blunt = MeleeHit_Stone
+| sound melee hit sharp = MeleeHit_Stone
+| thing class = ThingWithComps
+| use hit points = false
+| volume = 1
+}}
+'''Marble blocks''' are a [[stony]] [[material]] and are the most [[Beauty|beautiful]] of five types of [[stone blocks]].
+
+== Acquisition ==
+Marble blocks are cut from [[marble chunk]]s at a [[{{P|Production Facility 1}}]]. It takes {{Ticks|{{P|Work To Make}}}} of work to cut a single chunk into {{P|Product Amount}} blocks.
+
+== Usage ==
+Marble blocks can be used as a material for [[stuff]]able items with the [[Stony]] stuff tag.
+
+Marble blocks can be used in the following recipes:
+{{Ingredient List}}
+
+== Analysis ==
+=== Comparison to other materials ===
+Marble blocks don't have any unique recipes and are only used in stuffable items and buildings. As such, they must be considered in comparison to the other stone types, which share all the same recipes.
+
+Marble has a uniquely high beauty factor among the various types of stone blocks; it multiplies the beauty of buildings and sculptures made from it by 1.35x. This can make a massive difference for high-beauty objects such as sculptures. Additionally, marble blocks have a beauty offset of 1, which is quite small in comparison to that of [[jade]], [[silver]], or [[gold]], but is still impactful for buildings like walls that are built in large numbers: In a 7x7 bedroom with a 5x5 interior, 23/49 of the tiles consist of walls, so making those walls out of marble instead of wood, steel, or another stone block means an additional ~0.5 beauty experienced by pawns in that room, which can easily make difference in reaching the next beauty threshold for an extra +5 mood bonus, not to mention possible [[impressiveness]] improvements.
+
+Notably, marble boasts the best beauty-to-market-value ratio of any other material in the game. Jade, silver, gold, and others will technically make for more beautiful sculptures, furniture, and walls, but in practice, builds using marble can easily accomplish beauty values that are high enough to max out beauty and impressiveness while not skyrocketing colony [[wealth]] and attracting larger [[raid]]s. Marble is also slightly quicker to build and craft with than most stone block types (excluding [[sandstone blocks|sandstone]]), yet another argument for using it as a material for sculptures.
+
+However, with the lowest {{HP}} factor of any stone block type, marble is a riskier choice for any structures that need high durability, particularly walls that are a pivotal part of the colony's defenses, though it still performs better than wood or even steel in this respect.
+
+=== Stone generally ===
+{{Stone blocks analysis}}
+{{Stonecutting maximization}}
+
+== Gallery ==
+<gallery>
+Marble blocks A.png|Stack of 1 marble blocks
+Marble blocks B.png|Stack of multiple marble blocks
+Marble blocks C.png|Full stack of marble blocks
+</gallery>
+
+== Version history ==
+* [[Version/0.7.581|0.7.581]] - Added, previously there was only generic "stone".
+* Beta 19/1.0 - Slowed constructing buildings with all stone types by 20%
+
+{{Nav|materials|wide}}
+[[Category:Material]] [[Category:Stone]] [[Category:Stone Blocks]]

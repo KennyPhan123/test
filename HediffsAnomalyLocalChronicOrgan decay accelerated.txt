@@ -1,0 +1,88 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Anomaly/Local/Chronic}}
+|}
+----
+{| {{STDT| c_11}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Organ decay accelerated" id="Organ decay creepjoiner" <!-- defName="OrganDecayCreepjoiner", ParentName="OrganDecayBase" -->
+! Organ decay (accelerated)
+----
+* Def Name:<br />OrganDecayCreepjoiner
+* Label:<br />organ decay
+* Debug Label Extra:<br />accelerated
+|<!-- Description -->
+<div style="max-width: 500px;">
+An untreatable degenerative disease affecting a single organ. The cause may be bacterial or viral. The illness seems to strike randomly from an unknown natural reservoir; it is not directly contagious between people.
+
+This organ will slowly lose function before dying completely. Replace it with a bionic or natural organ.
+</div>
+|<!-- Details -->
+<!-- DiseaseBase -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|90%|100%|35%}}
+<!-- ChronicDiseaseBase -->
+* Chronic: {{Good|true}}
+* Allow Mothball If Low Priority World Pawn: {{Good|true}}
+<!-- OrganDecayDetailsBase -->
+* Always Show Severity: {{Good|true}}
+* Initial Severity: '''0.1%'''
+* Min Severity: '''0.1%'''
+* Max Severity: '''100%'''
+<!-- OrganDecayBase -->
+* Can Affect Bionic Or Implant: {{Good|false}}
+* Lethal Severity: {{Bad|100%}}
+* Only Life Threatening To: '''[[Heart]]'''
+* '''Comps:''' ''Destroy Organ''
+** Destroy Organ Message Text:<br />{PAWN_labelShort}'s {1} was destroyed by organ decay.
+** Damage Type: '''[[Damage Types#Decayed|Decayed]]'''
+<!-- OrganDecayCreepjoiner -->
+** ''Severity Per Day''
+*** Severity Per Day Range: '''{{++|5%}} ~ {{++|10%}}''' (10 to 20 days)
+* '''Remove On Redress Chance By Days Curve:'''<!-- DiseaseBase -->
+<div><li style="display: inline-table;">
+{| {{STDT| c_11}}
+! <abbr title="Days as a World Pawn">Days</abbr> !! <abbr title="Chance to remove on Pawn Generator Redress">Chance</abbr>
+|-
+! 0
+| 0%
+|-
+! 2
+| 0%
+|-
+! 7
+| 50%
+|-
+! 20
+| 100%
+|}</li></div>
+|<!-- Stages -->
+{| {{STDT| c_11}}
+! Label !! Parameters
+|-
+! minor
+|<!-- Parameters -->
+* Min Severity: '''0%'''
+* Pain Offset: {{++|5%}}
+* Part Efficiency Offset: {{--|10%}}
+|-
+! moderate
+|<!-- Parameters -->
+* Min Severity: '''20%'''
+* Pain Offset: {{++|10%}}
+* Part Efficiency Offset: {{--|25%}}
+|-
+! severe
+|<!-- Parameters -->
+* Min Severity: '''40%'''
+* Pain Offset: {{++|15%}}
+* Part Efficiency Offset: {{--|50%}}
+|-
+! extreme
+|<!-- Parameters -->
+* Min Severity: '''60%'''
+* Pain Offset: {{++|25%}}
+* Part Efficiency Offset: {{--|75%}}
+* Life Threatening: {{Bad|true}}
+|}<noinclude>
+|}</noinclude>

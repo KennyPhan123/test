@@ -1,0 +1,70 @@
+{{Rewrite|reason= Content and analysis should likely be shifted to other pages (and linked to from here) such as [[Food]], [[Saturation]], [[Animals]], and [[Plants]] as it is beyond the scope of just Nutrition}}
+{{image wanted|reason=Icon - See [[Talk:Nutrition]]}}
+{{For|the stat|Nutrition (Stat)}}
+'''Nutrition''' is a property of [[food]] and [[plants]], that represents the how much [[saturation]] it gives the creature eating it. 1.0 nutrition is enough to satiate a adult [[human]] from 0 saturation; they will seek out food before then, though. Body size impacts how much saturation a creature can hold.
+
+== Food nutrition ==
+<onlyinclude><includeonly>
+|-
+! [[{{{Image}}}|24px|link={{{Name}}}]]
+! style="text-align:left;" | {{DLC Icons|{{{Name}}} }}
+| {{{Nutrition}}}
+| {{{Type}}} {{#if:{{{Type2}}}| - {{{Type2}}}}}
+</includeonly></onlyinclude>
+
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_08 text-center}}
+! class="unsortable" | !! Food !! Nutrition !! Type
+{{#ask: [[Category:Food||Drug]] [[Nutrition::>0]]
+| ?Image
+| ?Name
+| ?Nutrition
+| ?Type
+| ?Type2
+| format = template
+| template = :Nutrition
+| named args = true
+| link = none
+| limit = 100
+| sort = From DLC, Type, Type2, Name
+}}
+|}
+</li></div>
+
+== Usage ==
+{{Recode|section=1|reason=1) Chemfuel - do we add a recipe to the chemfuel page or just describe kt here? 2) Also biosculpter pod}}
+Nutrition is used to determine the amount of a food ingredient is required to make an item. The following items require nutrition to make.
+{{Ingredient List|noCollapse=true}}
+
+== Plant nutrition ==
+While rooted plants can't be eaten directly by [[human]] [[pawns]], plants provide nutrition when eaten by [[herbivore|herbivorous]] [[animal]]s. [[Dendrovore]]s like [[alphabeaver]]s can consume [[trees]], while the [[thrumbo]] can eat both trees as well as the typical herbivore diet of [[grass]], [[dandelions]], [[healroot]], [[ambrosia]], and fungi. All plants are completely destroyed upon animal consumption, trees do not leave stumps in this case.
+
+Hungry, herbivorous animals will find and consume accessible plants after plant growth reaches maturity, typically around 65% of its total growing time and when it first becomes available for colonist [[Orders#Harvest|harvest]]. Nutrition provided upon consumption is a plant stat, where the final value is a species base value multiplied for plant growth. 
+{| class="wikitable"
+|-
+| Nutrition (final value) = Species' base value * Growth percentage multiplier
+|}
+
+The food requirements of an animal is largely species dependent.  The relevant stats are called '''Grass to Maintain''' and '''Food Consumption.''' Food Consumption is the nutrition eaten per day and can be modified by a number of different factors, such as pregnancy.
+
+Tamed animals will eat mature plants and consumable items they have access to, either in their [[pen]], surrounding the [[Caravan hitching spot]] they are roped to, or in their assigned [[zone]]. Tamed non-pen animals can traverse closed [[door]]s and [[fence gate]]s to reach food if it's all within their assigned zone. 
+
+=== Crops ===
+The '''harvest yield''' is a crop stat for the quantity of items the plant is converted into when a human [[Orders#harvest|harvest]]s the plant. Harvesting completely destroys most plants, except ambrosia, [[berries]] bushes, [[cocoa tree]]s, and [[agave]] fruit, which can produce multiple harvests before the organism dies at the end of its '''life span.'''
+The equation for plant Harvest Yield is
+{| class="wikitable"
+|-
+| Harvest yield = Species' base value * [[AI Storytellers#Harvest yield|Storyteller harvest yield setting]]
+|}
+
+The final quantity of product harvested from a plant is a function of the plant's harvest yield as well as the colonist stat [[Plant Harvest Yield]]. 
+
+=== Analysis ===
+Harvesting a mature crop plant generally produces more nutrition than letting an animal directly consume the living plant, except in cases where the harvesting colonists have exceptionally low plant harvest yield stats. Keep in mind that low colonist Harvest Yield stats have a chance of botching the harvest completely, yielding nothing while killing the plant. 
+
+For example, consuming a full-grown [[haygrass]] plant provides 0.30 nutrition. A 100% harvest yields 18 [[hay]] with 0.05 nutrition each: a total of 0.90 nutrition. Processing the hay further into [[kibble]] increases final nutrition yield at the expense of meat, time, and work. 
+
+However, the viability of free grazing depends on the abundance of plant life on your map, e.g. soil [[Plants#Fertility|fertility]], [[sunlight]], [[temperature]], snow, and [[biome]]. Animal [[malnutrition]] results in slowed Growth rates, [[miscarriage]], [[health]] penalties, and even death by starvation. 
+{{#ask:[[Category:Plants]] [[Nutrition::>0]]
+| ?Nutrition
+}}

@@ -1,0 +1,281 @@
+{{Anomaly}}
+{{Spoiler}}
+{{Infobox main|entity
+| name = Creepjoiner
+| image = Timeless_one.png
+| type = Animal
+| type2 = Human
+| honor value = 3
+| flammability = 0.7
+| movespeed = 4.6
+| baseleatheramount = 75
+| toxic resistance = 0
+| toxic environment resistance = 0
+| vacuum resistance = 0
+| min comfortable temperature = 16
+| max comfortable temperature = 26
+| marketvalue = 1750
+| bodysize = 1
+| healthscale = 1
+| hungerrate = 1
+| diet = omnivorous (human)
+| meatname = human meat
+| leathername = human leather
+| gestation = 18
+| lifespan = 100
+<!-- Containment -->
+| anomaly knowledge = 2
+| knowledge category = Advanced
+| study interval = 120000
+<!-- Melee Combat -->
+<!-- 1. Attack -->
+| attack1label = left fist
+| attack1labelNoLocation = fist
+| attack1type = Blunt
+| attack1dmg = 8.2
+| attack1cool = 2
+| attack1stun = 14
+| attack1part = LeftHand
+<!-- 2. Attack -->
+| attack2label = right fist
+| attack2labelNoLocation = fist
+| attack2type = Blunt
+| attack2dmg = 8.2
+| attack2cool = 2
+| attack2stun = 14
+| attack2part = RightHand
+<!-- 3. Attack -->
+| attack3label = head
+| attack3type = Blunt
+| attack3dmg = 5
+| attack3cool = 2
+| attack3chancefactor = 0.2
+| attack3part = HeadAttackTool
+| attack3ensureLinkedBodyPartsGroupAlwaysUsable = true
+<!-- 4. Attack -->
+| attack4label = teeth
+| attack4type = Bite
+| attack4dmg = 8.2
+| attack4cool = 2
+| attack4chancefactor = 0.07
+| attack4part = Teeth}}
+
+'''Creepjoiners'''<ref>The term ''creepjoiner'' is taken from the game's code, and is not used in-game.</ref> are a phenomenon added by the [[Anomaly DLC]]. They are humans who will randomly arrive at your colony offering to join, typically providing great benefits but often concealing downsides that can range from minor annoyances to debilitatingly dangerous. Creepjoiners can be encountered even before activating the [[void monolith]].
+
+== Event ==
+Creepjoiners always appear as part of an [[event]]. The regular creepjoiner event can happen after 10 days from game start, and reoccurrences are subject to a 60-day cooldown. There are no other requirements, but until the Monolith reaches level 2, the [[metalhorror]] variant is disabled, making creepjoiners slightly rarer.
+
+When the event triggers, they will request to join the colony. They will appear on the edge of the map and make their way to a nearby location - similar to a [[trader]] - where they will linger and wait for someone to be sent to talk to them. Upon doing so, three options are presented: to accept the request to join, to arrest the creepjoiner, or to refuse the creepjoiner's request.
+
+If rejected or if ignored for {{ticks/gametime/days|60000}}, creepjoiners have an equal chance to either depart peacefully or to immediately become hostile and attack.
+
+All creepjoiners are initially [[unwaveringly loyal]]. This condition is permanently removed if they are allowed to join the colony. If arrested before joining, such as by choosing the "''Send <PAWN NAME> to capture <CREEPJOINER NAME>''" option when first speaking to them, they can only be recruited by removing their unwavering status using the [[brainwipe]] [[ritual]]. Creepjoiners can also be [[Slavery|enslaved]],{{IdeologyIcon}} although they start with an extremely high will of 80-90.
+
+==== Farming ====
+It is possible to reliably spawn creepjoiners via [[void provocation]]. The monolith must be kept at level 2, and [[metalhorror]] must be left undiscovered (keeping colony population at 3 or less will prevent it from appearing naturally). In this state, void provocation can spawn a metalhorror-infected creepjoiner, and will do so every time (subject to the 60-day creepjoiner cooldown) after all other advanced entities are discovered. This basically guarantees one creepjoiner per year, with the added benefit of blocking non-metalhorror downsides, including the permanently detrimental ones.
+
+Of course, once such a creepjoiner is accepted into the colony, a metalhorror encounter is inevitable – which means this method can be used to recruit only one creepjoiner per playthrough (or one batch of creepjoiners, but they would need to be gathered over many years into a cryptosleep stash then recruited all at once). Therefore, it's best used as a mechanism to reroll creepjoiners until a highly desirable one appears. Bad creepjoiners can be reliably disposed of without revealing their metalhorrors by simply allowing them to join and immediately banishing – this can even be done with the game paused.
+
+Naturally-occurring creepjoiners and void provocation-summoned creepjoiners are on separate 60-day cooldowns, so a colony actively farming them can expect to average some 1.5 creepjoiners per year.{{Check Tag|Code?|In actual gameplay on 1.6.4566, it clearly works like this, but from looking at the code, it's not clear why it would, could this be a bug?}}
+
+== Summary ==
+Creepjoiners are and behave much like regular [[human]]s, with the following changes:
+* Every creepjoiner has an upside and a possible downside. Potential options for each of these can found in the [[#Benefits|Benefits]] and [[#Drawbacks|Drawbacks]] sections.
+* When first damaged by a pawn, they will turn hostile and possibly have a special effect. See [[#Hostility|Hostility]] section for more detail.
+* Creepjoiners can be studied for Advanced [[Research#Anomaly|void research]] if taken [[prisoner]]. They give 2 Advanced research with a cooldown of 2 days. The creepjoiner must be able to walk to be studied.
+* Creepjoiners cannot be duplicated by the [[corrupted obelisk]].
+* Creepjoiners are unable to romance ordinary pawns, but they can romance other creepjoiners or be forced into relationships by pawns with the [[psychic bonding]] gene.{{BiotechIcon}} Creepjoiners can become [[pregnant]],{{BiotechIcon}} but their children will be normal humans and not inherit any of the unique mechanics of creepjoiners.
+* Creepjoiners have a life expectancy of 100 instead of 80.
+
+[[File:Marriage_Creepjoiners.png|thumb|A marriage ceremony between two creepjoiners. Other pawns from the colony are participating.]]
+
+=== Types ===
+Each creepjoiner type comes with preset equipment, traits, and possible [[#Benefit|benefits]]. A brief summary of each possible type's notable properties is provided here:
+
+* '''Leathery stranger:''' No unique effects.
+* '''Dark scholar:''' Has the [[Psychopath]] trait, 14-20 in the [[Intellectual]] skill, and several surgical scars.
+* '''Deal maker:''' Has the [[Beautiful]] trait and 14-20 in the [[Shooting]] and [[Social (skill)|Social]] skills.
+* '''Drifter:''' No unique effects.
+* '''Blind healer:''' Always spawns missing both eyes, which can be replaced with full functionality by the [[Ailments#Healing method table|usual methods]]. Guaranteed to have the ''unnatural healing'' benefit.
+* '''Timeless one:''' Always between 13 and 16 years old. Not to be confused with [[Ageless]].{{BiotechIcon}}
+* '''Cult escapee:''' Usually has many surgical scars and/or removed body parts. 50% chance to spawn with a [[flesh tentacle]] on either arm.
+* '''Lone genius:''' Has the [[Too smart]] and [[Abrasive]] traits, as well as 13-18 in the [[Intellectual]] skill.
+
+=== Benefits ===
+Every creepjoiner has a single benefit, chosen at random. Most creepjoiner types have a specific list of possible benefits that they are restricted to; for more information, consult the [[#Pawn Kinds|Pawn Kinds]] table at the bottom of the page.
+
+* '''Perfect human:''' Has the [[Industrious]] trait and 14 to 18 in all [[skills]]. Also has the unique [[Perfect memory]] trait, which entirely disables skill decay.
+* '''Occultist:''' Has the unique [[Occultist]] trait.
+* '''Unnatural healing:''' Has the ''unnatural healing'' ability (see below).
+** This benefit has a weight of 0.5 (compared to the weight of 1 for every other benefit), making it less likely to be chosen on its own.
+* '''Shambler overlord:''' Has the ''release deadlife dust'' ability.
+* '''Fleshcrafter:''' Has the ''shape flesh'' ability.
+* '''Alchemist:''' Has the ''transmute steel'' ability.
+* '''Joybringer:''' Has the unique [[Joyous]] trait, which grants {{good|+20}} opinion from all other pawns and a {{Thought|desc=Wherever I go, I can feel the joyous one in the back of my mind. It makes me feel good. Very good.|label=Joyous presence|value=+3|stack=1}} to all colonists on the map.
+* '''Death refusal:''' Starts with four uses of [[death refusal]].
+* '''Body mastery:''' Has the unique [[Body mastery]] trait, which completely removes the pawn's need for [[food]], [[sleep]], and [[comfort]].
+* '''Psychic butcher:''' Has the ''psychic slaughter'' ability.
+
+{| {{STDT| sortable c_07 text-valign:top}}
+|-
+! Name !! Description !! Effects !! Target !! Range !! Warmup<br/> Time !! Cooldown !! Charges
+|- id="Unnatural healing"
+| Unnatural healing<br>[[File:UnnaturalHealing.png|64px]]
+|''Use dark psychic influence to heal someone. The process will stop bleeding, restore blood loss, and can even heal significant injuries. However, it may also have unexpected side effects.'' 
+* Has ability: [[File:UnnaturalHealing.png|16px]] Unnatural healing
+|
+* Replicates the effect of a [[healer mech serum]].
+* Tends all [[bleeding]] wounds at 90-100% [[tend quality]].
+* 25% chance to also replace one of the pawn's arms with a [[flesh tentacle]]. Cannot happen to arms already replaced by an [[artificial body part]], but arms with only replaced hands will be lost.
+| Single non-[[mechanoid]] pawn. Cannot target self. 
+| Touch
+| {{Ticks|270}}
+| {{Ticks/gametime|360000}}
+| 1
+|- id="Psychic slaughter"
+| Psychic slaughter<br>[[File:PsychicSlaughter.png|64px]]
+|''Use dark psychic power to induce chaotic reconfiguration of flesh. This kills a flesh creature in seconds and converts its body into a pile of twisted flesh.'' 
+* Has ability: [[File:PsychicSlaughter.png|16px]] Psychic slaughter
+|
+* On cast, instantly kills target.
+** Generates [[twisted meat]] where the target once stood, yielding an amount roughly equal to the target's [[meat amount]] stat.
+** Slaughtered [[human]]s will not drop their [[apparel]]. Reconfigured [[Boomalope]]s still explode.
+** Lowers [[goodwill]] by {{Bad|-125}} for killing a faction pawn (including animals).
+
+| Single non-[[mechanoid]] pawn. Maximum [[body size]] of 2.5. Cannot target self.
+| 4.9 tiles
+| {{Ticks|120}}
+| {{Ticks/gametime|60000}}
+| 1
+|- id="Transmute steel"
+| Transmute steel<br>[[File:Transmutesteel.png|64px]]
+|''Reconfigure steel at the atomic level, turning it into a random valuable material. Can target a stack of steel or a steel slag chunk.'' 
+* Has ability: [[File:Transmutesteel.png|16px]] Transmute steel
+|
+* Transforms any stack of [[steel]] into an equivalent amount of [[twisted meat]], [[gold]], [[plasteel]], [[bioferrite]], or [[uranium]], chosen at random.
+** Can also target [[steel slag chunk]]s (but ''not'' [[mechanoid slag chunk]]s), yielding 15 of one of the aforementioned resources.
+** Can also target any [[stuff]]able steel item or building, which randomly changes its stuff type to one of the aforementioned resources (excluding twisted meat).
+| 1-75 steel; steel slag chunks; steel items or buildings
+| Touch
+| {{Ticks|120}}
+| {{Ticks/gametime|50000}}
+| 1
+|- id="Release deadlife dust"
+| Release deadlife dust<br>[[File:ReleaseDeadlifeDust.png|64px]]
+|''Release a cloud of dust-like substance that will settle on nearby corpses and raise them as shamblers. The shamblers will only attack your enemies. Deadlife dust is made of nano-scale archites that penetrate and reanimate dead tissue at the cellular level.'' 
+* Has ability: [[File:ReleaseDeadlifeDust.png|16px]] Release deadlife dust
+|
+* Releases a [[deadlife dust]] cloud centered on the caster that reanimates any non-[[mechanoid]] corpse within about a 5-tile radius as a friendly [[shambler]] for {{Ticks/gametime|15000}}. 
+* Once the ability wears off, shamblers drop to the ground as corpses again and can be reanimated.
+* Walls and other structures block the dust cloud. Blocked dust clouds will instead spread out in other directions.
+| All non-[[mechanoid]] corpses in range
+| ~5 tiles
+| {{Ticks|30}}
+| {{Ticks/gametime|60000}}
+| 1
+|- id="Shape flesh"
+| Shape flesh<br>[[File:ShapeFlesh.png|64px]]
+|''Induce a dark archotech to reconfigure a corpse into a horrendous fleshbeast. The fleshbeast will be hostile to all humans, including the one who created it.'' 
+* Has ability: [[File:ShapeFlesh.png|16px]] Shape flesh
+|
+* Transforms any non-[[mechanoid]] [[corpse]] into a hostile [[fleshbeast]].
+* Resultant fleshbeast corresponds to the [[body size]] of the targeted corpse: 
+** {{#ask: [[Body Size::<0.74]] [[Type::!Mechanoid]] | ?Body Size | limit = 0| searchlabel = Between 0 to 0.74}}: {{Icon Small|Fingerspike}} [[Fingerspike]].
+** {{#ask: [[Body Size::>0.75]] [[Body Size::<3.5]] [[Type::!Mechanoid]] | ?Body Size | limit = 0| searchlabel = Between 0.75 to 3}}: {{Icon Small|Toughspike}} [[Toughspike]] or {{Icon Small|Trispike}} [[Trispike]].
+** {{#ask: [[Body Size::>3.51]] [[Type::!Mechanoid]] | ?Body Size | limit = 0| searchlabel = Above 3}}: {{Icon Small|Bulbfreak}} [[Bulbfreak]].
+| Single non-[[mechanoid]] corpse
+| 25 tiles
+| {{Ticks|120}}
+| {{Ticks/gametime|2500}}
+| 1
+|}
+
+=== Drawbacks ===
+Creepjoiners typically have one downside applied to them upon spawning. These downsides are almost always hidden from the player, and only become revealed when their effects first manifest. A list of possible drawbacks includes:
+
+* Nothing.
+* '''Desertion:''' After 9-30 days in the colony, the creepjoiner will suddenly depart. They will immediately attempt to exit the map, abandoning any work they were doing in the process.
+** This drawback has a weight of 3 (compared to the weight of 1 for every other downside), making it more likely to be chosen than any other drawback.
+** [[Prisoner|Imprisoned]] or [[Slave|enslaved]] {{IdeologyIcon}} creepjoiners will wait until they are freed to desert.
+** A creepjoiner captured while deserting and subsequently recruited or enslaved {{IdeologyIcon}} will not attempt to desert again.
+** Creepjoiners can desert even when they are currently [[downed]].
+ '' '''<PAWN NAME> departure:''' <PAWN NAME> thanks you for your hospitality, but says that it is time for <PAWN'S PRONOUN> to move on. ''
+* '''Aggressive:''' After 9-30 days in the colony, the creepjoiner suddenly becomes hostile and attacks.
+* '''Metalhorror:'''  The creepjoiner is secretly infected with a [[metalhorror]].
+** Creepjoiners with this downside will always become hostile if not accepted by the colony.
+** This downside does not appear under normal conditions. Instead, creepjoiners with a metalhorror can only appear as part of a unique incident that appears identical to a regular arrival. It is naturally 5% as likely to appear as a regular creepjoiner, but is one possible outcome of [[void provocation]]. 
+** Outside of the ''ambient horror'' [[AI_Storytellers#Anomaly|storyteller option]], the [[monolith]] must be at least level 2 for this downside to occur.
+* '''Crumbling mind:''' After 1-3 days, the creepjoiner is revealed to be suffering from a [[crumbling mind]].
+** Can be diagnosed early with a surgical inspection: ''<CREEPJOINER NAME> is showing early signs of a severe condition which will soon cause severe mental degradation. <PAWN NAME> can't yet tell exactly what is causing this, but they will become very ill within the next few days.''	
+* '''Void fascination:''' Guaranteed to have the unique [[Void fascination]] trait. Immediately apparent.[[File:AgonyPulseDeath.png|right|450px]]
+* '''Psychic agony:''' The creepjoiner periodically emits an [[Hediffs/Anomaly/Global/Misc/Agony_pulse|agony pulse]], affecting all pawns within 14.9 tiles ''including the creepjoiner themselves.'' This happens once every 30 days on average, with a minimum time of 5 days between each occurrence. 
+** Can be diagnosed early with a surgical inspection: "''<PAWN NAME> detected a faint but painful psychic presence emanating from <CREEPJOINER NAME> but failed to understand what was causing it.''"
+** Affected targets receive {{bad|+100%}} [[pain]], which is enough to instantly down all pawns without a source of pain reduction. After {{ticks|600}} to {{ticks|900}}, this is reduced to a milder {{bad|+25%}} pain that lasts between {{ticks/gametime/days|120000}} and {{ticks/gametime/days|240000}}. 
+** At 100% pain, [[consciousness]] is reduced by 40%, meaning that Agony Pulses can kill pawns when combined with consciousness reductions from other sources. 
+** The agony pulse is ''not'' modulated by [[psychic sensitivity]]; even [[psychically deaf]] pawns will suffer its effects.
+* '''Organ decay:''' After 3-5 days, the creepjoiner will reveal that they are suffering from [[organ decay]] in 3-5 internal organs. This uses a unique variant of organ decay that progresses three times faster than normal, allowing only 10-20 days to treat each instance.
+** Can be diagnosed early with a surgical inspection: ''"<CREEPJOINER NAME> is showing early signs of a severe condition which will cause their organs to rapidly deteriorate. <PAWN NAME> can't yet tell exactly what is causing this, but <CREEPJOINER NAME> will become very ill within the next few days."''
+* '''Disturbing:''' Guaranteed to have the unique [[Disturbing]] trait. Immediately apparent.
+
+=== Hostility ===
+Regardless of whether they are recruited, all creepjoiners will immediately become hostile the first time they get hit by a colonist attack, even if the hit was friendly fire, negated by armor, or a colonist attempts to [[slavery|enslave]]{{IdeologyIcon}} them once their will reaches 0. This can only happen once for each creepjoiner, but will never expire, so there is always the possibility of the creepjoiner turning hostile until it actually happens. Hostility may be triggered even if the pawn was already [[downed]], e.g., through anesthetic.
+
+Each creepjoiner has a special effect, chosen randomly, that will activate when they become hostile:
+
+* '''Basic assault:''' No special effects.
+** It has weight of 3, meaning it's 3 times more likely to be chosen than other hostility responses.
+* '''Sightstealer attack:''' The creepjoiner will scream and summon [[sightstealer]]s to attack the colony. The following message{{Check Tag|Letter?}} will be displayed:
+::'' '''<PAWN NAME>'s howl:''' <PAWN NAME> has let out a twisted half-human scream. In the distance, you can hear other screams answering the call. They are coming... ''
+
+These effects also trigger if the creepjoiner dies by any means.
+
+Another hostility option, fleshbeast emergence in which the creepjoiner turns into a [[fleshbeast]], is defined in the code but never triggers. It is not currently known whether this is a bug or intentional omission.{{Check Tag|Verify if bug}}<!--* '''Fleshbeast emergence:''' The creepjoiner transforms into a [[fleshbeast]] (chosen randomly between [[fingerspike]], [[toughspike]], and [[trispike]]). This destroys the creepjoiner's body outright, rendering them permanently dead even if they had [[death refusal]] or [[deathless]] {{BiotechIcon}}. Disabled if the Creepjoiner has Metalhorror as their downside-->
+
+== Analysis ==
+The abilities possessed by creepjoiners range from modestly useful to potentially colony-changing. Evaluate the possible tradeoffs above, and be prepared to deal with sudden turncoat behavior. Carefully inspect the pawn's entire Bio and Health tab before recruiting them. One must decide whether the potential risks a creepjoiner brings are worth it, but also weigh the downsides of ''not'' recruiting them (such as an aggressive response).
+
+=== Dealing with downsides ===
+==== Hostility ====
+All creepjoiners will become hostile when damaged by the colony for the first time. An easy way to resolve a creepjoiner's hostility is to anaesthetize them then punch them while they're out. They will become hostile, but remain incapacitated, enabling safe capture and re-recruitment. Of course, this will still destroy the creepjoiner if fleshbeast emergence was randomly picked as their way of retaliating.
+
+==== General downsides ====
+Performing a [[surgical inspection]] can reveal some potential downsides early - making it a useful habit to practice with new creepjoiners - but not all of them. Vigilance is still necessary even when the inspection finds nothing.
+
+A creepjoiner's time-based downsides (such as ''organ decay'' or ''crumbling mind'') can be halted by placing them inside a [[cryptosleep casket]] until treatment is available. This will naturally disable the creepjoiner until they're removed from the casket, so prepare to survive without their skills and abilities for what could potentially be an extended period of time.
+
+If a creepjoiner's downsides cannot immediately be determined then it may be useful to keep them physically isolated. [[Allowed area]]s and [[schedule|scheduling]] can be used to mitigate their proximity to other colonists until their downside is revealed for what it is. Having other colonists with [[psychic shock lance]]s is helpful in case of desertion or hostility - the psychic burns, if they occur, can be cured by [[Chronophagy]] or a number of other means.
+
+Before you have ruled out the possibility of desertion, you may want to consider whether or not it is worth giving them expensive or rare items (such as high-quality armor, weapons, or bionic parts). While this equipment can be recovered if the deserting creepjoiner is arrested, there is always the risk that your colonists will not be able to catch them and you will consequently lose the equipment. To catch a deserting creepjoiner, it is advised to attack them to slow them down, and then capture them. Successfully arresting the deserter and then recruiting them again will make them join the colony permanently, without wanting to desert again.
+
+The potential for [[#Hostility|fleshbeast emergence]] should also be ruled out before equipping a creepjoiner with powerful gear or [[genes]] {{BiotechIcon}}. Because it destroys the body outright, any equipped gear or installed parts are destroyed with no chance for recovery. This ignores (and negates!) [[death refusal]] and [[deathless]] {{BiotechIcon}}, so it is important to either rule out the possibility of fleshbeast emergence before applying these powerful effects, or to simply accept the risk that they may be wasted.
+
+=== Benefit analysis ===
+* '''Unnatural healing''' replicates the effects of [[healer mech serum]] whilst also being useful mid-combat by healing all bleeding injuries. Certain conditions like [[crumbling mind]] and [[duplicate sickness]] can only be cured by healer mech serum, unnatural healing, or revival, and many others like scars are made easier to cure due to unnatural healing. Plus, unnatural healing can give [[flesh tentacle]]s, including to [[ghoul]]s.
+
+* '''Transmute steel''' can be used on [[stuff]]able items, which allows larger quantities of steel to be transmuted at a time. In addition, if a stuffable item is turned into [[gold]], the ability's output is essentially multiplied by 10 - a steel [[large sculpture]] takes {{Icon Small|Steel}} 100 [[steel]] (and is worth {{Icon Small|Silver}} 300), while a gold [[large sculpture]] takes {{Icon Small|Gold}} 1000 [[gold]] (and is worth {{Icon Small|Silver}} 10095). Therefore, repeatedly using transmute steel on stuffable items is a great way to make money.
+
+* '''Psychic slaughter''' is not that great in actual combat since the ability has a very short range and a fairly long cooldown. Humans and [[manhunter pack]]s tend to outnumber colonists, especially at higher [[difficulties]], while [[mechanoid]]s are immune. It works against certain [[entities]] - it can be used to instantly kill an awoken [[unnatural corpse]] - but it ''cannot'' be used against [[revenant]]s or [[nociosphere]]s due to them lacking flesh. Still, psychic slaugter can be a good way to get [[twisted meat]] before a [[fleshmass nucleus]] is captured.
+
+=== Containment ===
+Imprisoned creepjoiners are a good source to study if they are not valuable enough to be colonists. While they cannot be harvested for [[bioferrite]] or [[power]], they provide Advanced study while (at base) only being as dangerous as an unarmed human. The enemy AI won't use the psychic slaughter ability.{{Check Tag|Others?}}
+* By installing a [[denture]] and [[wooden hand]]s, then removing them, a prisoner will only be able to make feeble headbutt attacks. Furthermore, they can be given [[peg leg]]s, with one being removable, although a creepjoiner must be able to move to be studied.
+* Brain implants like a [[circadian assistant]]{{RoyaltyIcon}} or [[pilot assistant]]{{OdysseyIcon}} allow the creepjoiner to be [[downed]] via [[EMP]] damage.
+* They can be given the [[dead calm]] [[gene]]{{BiotechIcon}} to prevent prison breaks and berserks entirely.
+
+== Pawn Kinds ==
+{{:Creepjoiner/Pawns}}
+
+== Version history ==
+* [[Version/1.5.4069|1.5.4069]] - Fix: Crash trying to use psychic slaughter on escaping entity in niche circumstances.
+* [[Version/1.6.4518|1.6.4518]] - Fix: Creepjoiner error if map is destroyed
+* [[Version/1.6.4518|1.6.4518]] - The deal maker and dark scholar kinds no longer have a predefined favorite color (previously {{Color|156|31|56}} and {{Color|58|58|58}} respectively). New creepjoiners of these kinds, and any loaded from an older save file, will be assigned a random favorite color.
+* [[Version/1.6.4535|1.6.4535]] - Fix: Statue doesn't visually update until save/reload if you use transmute steel on it.
+* [[Version/1.6.4566|1.6.4566]] - Fix: Error attempting to generate creepjoiner relations.
+* [[Version/1.6.4630|1.6.4630]] - Fix: Faction goodwill was not affected by killing pawn via psychic slaughter.
+* [[Version/1.6.4850|1.6.4850]] - Fix: Creepjoiner body types.
+
+== Notes ==
+<references/>
+
+{{Nav|entity|wide}}
+[[Category: Entities]]

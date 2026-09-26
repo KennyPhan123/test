@@ -1,0 +1,108 @@
+{{Anomaly}}
+{{Infobox main|exotic
+| name = Tome
+| image = Tome.png
+| description = A book which explores dark psychic powers, the void hidden under space, and the dreams of evil superintelligences. These volumes can help a reader harness dark entities and powers.
+<!-- Base Stats -->
+| type = Exotic item
+| type2 = Book
+| hp = 60
+| deterioration = 5
+| marketvalue = 250
+| mass base = 0.5
+| flammability = 1
+| stack limit = 1
+| rotatable = true
+| has quality = True
+<!-- Technical -->
+| defName = Tome
+| thingSetMakerTags = RewardStandardMidFreq
+<!-- Unused -->
+| always haulable = true
+| draw gui overlay = true
+| graphic class = Graphic_Single
+| parent name = BookBase
+| selectable = true
+| use hit points = true
+}}
+'''Tomes''' are a type of [[book]] that provides [[recreation]] while generating [[research]] points for [[Research#Anomaly|Anomaly research]].
+
+== Acquisition ==
+Tomes, like all books, can be purchased from [[Tribal]], [[Outlander]] and [[Empire]] [[Trade#Caravan|trade caravan]]s, [[orbital trader]]s and [[faction base]]s. However, unlike other books, tomes are never carried by bulk traders.
+
+== Summary ==
+Tomes can be read by colonists as a [[recreation]] activity, with a [[recreation power]] of 1. All books will also train [[intellectual]] at a rate of 250 XP per in-game hour.
+
+Tomes function identically to [[schematic]]s, with two major exceptions: They only progress [[dark study]] projects, and they have a chance to cause [[Mental_break#Major_break|major mental breaks]] while being read. Higher [[quality]] tomes provide more research points when read. The chance for the tome to cause a mental break per hour while read is randomly selected when the tome is generated, from a range of 1% to 5%
+
+Tomes have a 25% chance of generating with two research projects instead of one. Reading the book will progress both projects at once, but the number of points generated will be divided by 1.6. Completing one of the two projects will not negate this effect, making the tome less effective overall.
+
+Pawns using a Tome gain a {{Thought|desc=Its almost as if it's speaking out to me personally.|label=Fascinating tome|value=+8|stack=1}} while reading it.
+<!--Please replicate any changes to this table on the Books page to ensure parity-->
+{| class="wikitable"
+|+ Effects of Quality on Research
+|-
+! rowspan=2 | Quality !! colspan=2 | Points
+|-
+! 1 project !! 2 projects
+|-
+! Awful 
+| 0.07 / Hour || 0.05 / Hour
+|-
+! Poor
+| 0.15 / Hour || 0.09 / Hour
+|-
+! Normal
+| 0.23 / Hour || 0.14 / Hour
+|-
+! Good
+| 0.30 / Hour || 0.19 / Hour
+|-
+!Excellent
+| 0.38 / Hour || 0.23 / Hour
+|-
+!Masterwork
+| 0.45 / Hour || 0.28 / Hour
+|-
+!Legendary
+| 0.52 / Hour || 0.33 / Hour
+|}
+
+If the [[Odyssey DLC]] is active, tomes have 15% chance to generate with a quest. Reading a book containing a quest has a chance to trigger such quest with a {{MTB}} of {{ticks|12500}}. Only a single quest may be generated per book.
+
+All books can be efficiently stored in [[small bookcase|small]] and full-size [[bookcase]]s, allowing them to provide a [[reading bonus]] to any reading and [[research]] activities taking place within the same room. Each book stored in a nearby bookcase will increase the effectiveness of reading.
+
+When reading for recreational purposes, colonists will choose which books to read at random. You can use the [[assign]] tab to specify which types of book a colonist is allowed to read, but you cannot assign a colonist to read any one specific book automatically.
+
+You can manually force a colonist to read a specific book by selecting the colonist, right-clicking either the book itself or the bookcase containing it, then issuing the "read" command. The colonist will then read the target book for an hour before putting it away.
+
+== Analysis ==
+The main use of tomes is to progress anomalous research without the need to capture or contain dangerous [[entities]]. Entity study requires the construction of large containment facilities, and comes with the risk that the entities may escape. Tomes require no infrastructure to use, and the only threat they pose are the mental breaks they cause, which can each be dealt with in their own ways.
+
+The main drawback to tomes is that each one can only be used to progress its associated research projects, while entity study can progress any research project within the entity's knowledge category. Another advantage of entity study over tomes is that studied entities can additionally be exploited by [[bioferrite harvester]]s and [[electroharvester]]s for [[bioferrite]] and [[power]] respectively (though the latter does halve the amount of research gained from entity study).
+
+There is a practical use for the tome's ability to cause mental breaks, even after all anomalous research has been completed, as it can [[inspiration|inspire]] colonists with the [[tortured artist]] [[trait]]. As long as the mental breaks can be dealt with, the resulting [[inspired creativity]] can allow for the creation of many high-quality items within a relatively short span of time. To minimize the interval between breaks/inspirations with less micromanagement, tortured artists can be assigned to an [[allowed area]] that contains no form of recreation other than tome-reading.
+
+If you do not intend to give pawns mental breaks, however, then reading tomes over other books is mostly detrimental, especially for pawns with [[Aggressive]]{{BiotechIcon}} genes{{Check Tag|dead calm?|Wb using dead calm to dull impact? }} who will likely have a violent and more harmful mental break. You can adjust your colonists' reading assignments to exclude tomes from the list of allowed books, while still keeping your tomes in bookcases to contribute to a room's reading bonus.
+
+== Gallery ==
+=== Held ===
+<gallery>
+Tome Open east.png|East
+Tome Open north.png|North
+Tome Open south.png|South
+</gallery>
+=== Stored ===
+<gallery>
+Tome Vertical east.png|East
+Tome Vertical north.png|North
+Tome Vertical south.png|South
+</gallery>
+
+== Version history == 
+* [[Anomaly DLC]] Release - Added.
+* [[Odyssey DLC]] Release - Tomes can generate with a quest that has a chance to be granted while reading the book.
+
+{{Nav|questitems|wide}}
+{{nav|joy|wide}}
+[[Category:Books]]

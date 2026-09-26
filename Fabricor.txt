@@ -1,0 +1,109 @@
+{{Biotech}}
+{{infobox main|none|
+| name = Fabricor
+| image = Fabricor east.png
+| description = A small work mechanoid designed to craft all manner of manufactured objects.
+| type = Mechanoid
+| movespeed = 3.4
+| flammability = 0
+| marketvalue = 800
+| armorblunt = 10
+| armorsharp = 20
+| armorheat = 200
+| min comfortable temperature = -100
+| max comfortable temperature = 250
+| toxic resistance = 1
+| toxic environment resistance = 1
+| bandwidth cost = 1
+| bodysize = 0.7
+| healthscale = 1
+| hungerrate = <!-- May not be applicable, or may need custom implementation, if unsure, tag page with {{Stub}} and any known details -->
+| lifespan = 
+| attack1dmg = 6
+| attack1type = Blunt
+| attack1cool = 2.6
+| attack1part = Head
+| page verified for version = 1.4.3525
+| weaponTags = 
+<!-- Creation -->
+| research = High mechtech
+| production facility 1 = Mech gestator
+| gestation cycles = 1
+| resource 1 = Steel
+| resource 1 amount = 100
+| resource 2 = High subcore
+| resource 2 amount = 1
+}}
+A '''fabricor''' is a [[mechanoids|mechanoid]] added by the [[Biotech DLC]].
+
+== Acquisition ==
+{{Acquisition}}
+
+Dead, friendly {{lc:{{PAGENAME}}}}s can also be resurrected at the {{lc:{{P|Production Facility 1}}}} using the "''Resurrect light mechanoid''" bill. This requires the corpse of the friendly {{PAGENAME}}, {{Icon Small|Steel||25}} [[steel]], and 1 [[gestation cycle]] taking {{ticks|1800}} to initiate.
+
+== Summary ==
+{{Mechanoid Summary}}
+
+Dead fabricors may be shredded at the [[machining table]] or [[crafting spot]] for {{Icon Small|Steel||10}} [[steel]]. However, these values are affected by [[Mechanoid Shredding Efficiency|mechanoid shredding efficiency]], as well as missing parts on the fabricor.
+
+=== As an enemy ===  
+As a labor-focused mech, fabricors are never found in mechanoid [[raid]]s, however they can go feral after time spent uncontrolled.
+
+=== As an ally ===
+Mechs under player control require power: Fabricors use 10% of their power per day while active.  If set to dormant self-charging, they instead recharge for +1% power / day, without pollution. They recharge in a [[mech recharger]] (constant 200W), for 50% power/day, creating 5 [[wastepack]]s whenever the recharger's waste is filled up.
+
+=== Work ===
+Fabricors will do most tasks associated with [[Work#Craft|Crafting]], [[Work#Tailor|Tailoring]], [[Work#Smith|Smithing]], and [[Work#Cook|Cooking]]. They have an effective skill of 10 (in all skills), but a [[Global Work Speed]] modifier of 50%, producing items 50% slower without items like the [[mech booster]]. In the settings for bills, the worker field can be set to "Any Mech", which will only allow mechs to work the bill in question.
+
+If forced to haul, fabricors move at {{P|Move Speed Base}} {{CS}}, {{%|1-({{P|Move Speed Base}}/{{Q|Human|Move Speed Base}}) round 2}} slower than a human, but {{%|-1+({{P|Move Speed Base}}/{{Q|Lifter|Move Speed Base}}) round 2}} faster than a lifter.
+
+=== Combat ===
+Fabricors are never equipped with any weapons, and instead exclusively use their body part attacks.
+
+Fabricors have a 62% [[melee hit chance]], equivalent to a pawn with a [[Melee]] skill of 4.
+
+== Analysis ==
+Fabricors are best at menial crafting for items that are not subject to [[quality]] modifiers, such as fabricating [[component]]s and [[advanced component]]s, synthesizing [[drug]]s, assembling [[mortar shell]]s, [[Electric smelter|smelting]], or carving up [[stone block]]s. With a skill of 10, Fabricors have the [[Food poisoning|minimum possible chance]] to cause [[food poisoning]]. Colonies may have dedicated crafters with 10+ skill by the time Fabricors are created - skilled humans can be reserved for creating [[weapon]]s, [[apparel]], and other items. 
+
+Consider the addition of a [[mech booster]] to workshops where Fabricors will be frequently located. More than other mech types, it is easy to dictate where a Fabricor will spend the majority of its time operating, allowing them to fully utilize the mech booster's work speed buff.
+
+In the late game, [[raider]]s tend to leave large quantities of smeltable material: [[weapon]]s, [[tainted]] apparel, and [[steel slag chunk]]s from drop pod raids. Weapons are not worth selling due to their low [[Sell Price Multiplier]], and the others cannot be sold. Fabricors can use a [[electric smelter]] to convert these resources into usable metal with high efficiency. They can work near constantly, and because they actively haul objects to the smelter, they can act as their own haulers. They are more expensive than [[lifter]]s to gestate initially, but fabricors are faster, cost the same amount of bandwidth to control, and they cost the same amount to resurrect. You can use any existing lifters for these hauling jobs, but don't hesitate to build another fabricor even if they'd have to haul their own items.
+
+== Health == 
+=== Body parts ===
+{{Animal Health Table|Mech_Light}}
+=== Armor ===
+{| class="wikitable"
+! Armor
+|-
+| {{Apparel Protection Chart
+| set1name= {{P|Name}} (Sharp) | set1armor1={{P|Armor - Sharp}} 
+| set2name= {{P|Name}} (Blunt) | set2armor1={{P|Armor - Blunt}} 
+| set3name= {{P|Name}} (Heat) | set3armor1={{P|Armor - Heat}} 
+| color= grey, blue, red
+}} 
+|}
+{{Pawn Attack Table}}
+
+== Gallery ==
+<gallery>
+Fabricor east.png| Age 0-99 Fabricor facing east
+Fabricor north.png| Age 0-99 Fabricor facing north
+Fabricor south.png| Age 0-99 Fabricor facing south
+</gallery><gallery>
+FabricorAncient east.png| Age 100+ Fabricor facing east
+FabricorAncient north.png| Age 100+ Fabricor facing north
+FabricorAncient south.png| Age 100+ Fabricor facing south
+</gallery>
+
+== Version history ==
+* [[Biotech DLC]] Release - Added.
+* [[Version/1.4.3534|1.4.3534]] - Given ability to do Cooking tasks.
+* [[Version/1.4.3535|1.4.3535]] - Fix: Food poisoning chance is 100% for fabricors.
+* ? (Prior to 6/Dec/2022) - Fabricors no longer wield [[slugthrower]]s.
+* [[Version/1.4.3580|1.4.3580]] - Fix: Fabricor description mentions it has slug gun, which is no longer true. "''A small work mechanoid designed to craft all manner of manufactured objects. It is equipped with a small slug gun for light defense.''" -> "''A small work mechanoid designed to craft all manner of manufactured objects.''". Fix: Fabricor food poisoning chance is 10x too large. 
+* [[Version/1.4.3641|1.4.3641]] - Fix: Fabricors not making medicine. 
+* [[Version/1.6.4518|1.6.4518]] - Fix: Exception when fabricor tries to hack.
+
+{{nav|mechanoid|wide}}
+[[Category:Mechanoids]]

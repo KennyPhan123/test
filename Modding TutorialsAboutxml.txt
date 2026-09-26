@@ -1,0 +1,262 @@
+{{DISPLAYTITLE:About.xml}}
+{{BackToTutorials}}
+
+<code>About.xml</code> is a required file that identifies your mod to RimWorld. This file defines the internal and viewer-facing names of your mod, contains a short description of your mod that is shown in the in-game mod manager, and defines compatibility issue such as other mods that your mod might be dependent on and load helpers that mod list auto-sorters can use to determine when to load your mod.
+
+== Setup ==
+
+Your <code>About.xml</code> file should be placed directly inside your <code>About</code> folder. Note that the folder name is case-sensitive and must be spelled exactly this way; please see [[Modding_Tutorials/Mod_folder_structure|the mod folder structure guide]] for more information.
+
+<source>
+Mods
+└ MyModFolder
+  └ About
+    └ About.xml
+</source>
+
+The contents of <code>About.xml</code> is a standard XML file with <code>ModMetaData</code> as the root tag:
+
+<source lang="xml">
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+
+  <!-- content goes here -->
+
+</ModMetaData>
+</source>
+
+== Required Tags ==
+
+The following tags are all required for a functioning mod. Please read the tag descriptions carefully:
+
+<div class="TutorialTableWrapper">
+{| class="TutorialCodeTable"
+! XML !! Description
+|-
+| <source lang="xml">
+<packageId>AuthorName.ModName</packageId>
+</source>
+| class="TutorialCodeTable-description" |
+The internal identifier for your mod, used to identify your mod as a dependency, load order helper, or with [[Modding_Tutorials/MayRequire|MayRequire]] attributes. <code>packageId</code>s should be alphanumeric with at least one period separating two strings. You cannot use any other special characters and you cannot end with a period. It is usually recommended that you use <code>YourName.YourModName</code>, <code>YourProjectName.YourModName</code>, <code>YourName.YourSeriesName.YourModName</code>, or something similar.
+
+'''<code>packageId</code> must be globally unique across all mods.''' If RimWorld encounters more than one mod with the same <code>packageId</code>, ''even if they are not in your current mod list'', then an error will be thrown and only the first mod will be usable. The only time that using the same <code>packageId</code> is recommended is if you are forking or continuing a mod and want it to act as a drop-in replacement. In such cases, players must unsubscribe from the original mod to be able to use yours.
+
+Note: <code>packageId</code> is case-insensitive as RimWorld will internally convert all IDs to lowercase; capitalization is done for readability, but two IDs that are identical other than case will resolve as identical.
+|-
+| <source lang="xml">
+<name>My Mod Name</name>
+</source>
+| class="TutorialCodeTable-description" |
+The title of your mod. While the name of your mod does ''not'' need to be globally unique and most references to mods are now using <code>packageId</code>, [[Modding_Tutorials/PatchOperations#PatchOperationFindMod|PatchOperationFindMod]] still uses mod names and thus you should avoid changing the name of your mod unless absolutely necessary.
+|-
+| <source lang="xml">
+<author>Author Name, Another Author Name, A Third Author Name</author>
+</source>
+<div style="text-align: center; font-style: italic;">or</div>
+<source lang="xml">
+<authors>
+  <li>Author Name</li>
+  <li>Another Author Name</li>
+  <li>A Third Author Name</li>
+</authors>
+</source>
+| class="TutorialCodeTable-description" |
+The author of this mod, usually yourself. More than one author can be specified by separating names with commas or by using list nodes.
+|-
+| <source lang="xml">
+<description>This is the description of this mod.</description>
+</source>
+| class="TutorialCodeTable-description" |
+The plain-text description of your mod. This is used as both the content description of your mod in mod managers (including the vanilla mod manager) as well as the initial description of your mod if uploaded to Steam Workshop. In the latter case, you can change your Workshop item description independent of the mod itself, thus it is generally recommended that you keep the description of your mod in About.xml relatively short.
+|-
+| <source lang="xml">
+<supportedVersions>
+  <li>1.6</li>
+</supportedVersions>
+</source>
+| class="TutorialCodeTable-description" |
+The RimWorld versions that your mod supports. A warning will be given to the player if attempting to load the mod under a version you have not explicitly specified support for, but this does not prevent players from loading the mod if they so choose.
+
+It is strongly recommended that you only specify support for versions that you have explicitly tested compatibility for; RimWorld has changed dramatically between versions in the past and even XML-only mods may not be guaranteed to work without version-specific changes.
+|-
+|}
+</div>
+
+== Optional Tags ==
+
+The following tags are optional and should only be used if you need them:
+
+<div class="TutorialTableWrapper">
+{| class="TutorialCodeTable"
+! XML !! Description
+|-
+| <source lang="xml">
+<modVersion>1.0</modVersion>
+</source>
+<div class="text-align: center; text-style: italic;">or</div>
+<source lang="xml">
+<modVersion IgnoreIfNoMatchingField="True">1.0</modVersion>
+</source>
+| class="TutorialCodeTable-description" |
+A version string for your own personal version tracking.
+
+'''WARNING:''' This tag was introduced in RimWorld 1.4 and will generate errors in previous versions unless <code>IgnoreIfNoMatchingField</code> is used. If you intend to support older versions of RimWorld with your mod and you want to use this field, you must add this attribute.
+|-
+| <source lang="xml">
+<modIconPath>Path/To/Icon</modIconPath>
+</source>
+<div class="text-align: center; text-style: italic;">or</div>
+<source lang="xml">
+<modIconPath IgnoreIfNoMatchingField="True">Path/To/Icon</modIconPath>
+</source>
+| class="TutorialCodeTable-description" |
+Adds an icon for your mod that is shown on loading screens. '''Note that the current unstable version of RimWorld 1.5 also automatically loads About/ModIcon.png, so this field is not necessary to show a mod icon. You only need it if you want to store your mod icon in your Textures folder for some reason.''' Mod icons should be 32x32 PNG files with limited colors; Unity's image compression will make icons very crunchy if you try to add too much detail.
+
+'''WARNING:''' This tag was introduced in RimWorld 1.5 and will generate errors in previous versions unless <code>IgnoreIfNoMatchingField</code> is used. If you intend to support older versions of RimWorld with your mod and you want to use this field, you must add this attribute.
+|-
+| <source lang="xml">
+<url>https://steamcommunity.com/workshop/filedetails/?id=2009463077</url>
+</source>
+| class="TutorialCodeTable-description" |
+A web link that can be displayed with your mod info. This can be any link, though most mods will link to their primary download source, such as a Steam Workshop page, GitHub repository, or Ludeon Forum link.
+
+The example URL is the Steam Workshop page for the latest version of [[Modding_Tutorials/Using_Harmony|Harmony]].
+|-
+| <source lang="xml">
+<descriptionsByVersion>
+  <v1.4>A different description.</v1.4>
+</descriptionsByVersion>
+</source>
+| class="TutorialCodeTable-description" |
+Used to specify a different mod description for specific versions of RimWorld. This is not used by Steam Workshop.
+|-
+| <source lang="xml">
+<modDependencies>
+  <li>
+    <packageId>brrainz.harmony</packageId>
+    <displayName>Harmony</displayName>
+    <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+  </li>
+</modDependencies>
+</source>
+| class="TutorialCodeTable-description" |
+Used to specify dependencies for your mod. Players will be warned if a dependency for your mod is not loaded in their mod list, though players may choose to ignore it.
+
+Note that this is not automatically used by Steam Workshop; if you want players to be notified that they should download a dependency, you must add that via Steam Workshop's "Required Items" feature.
+|-
+| <source lang="xml">
+<modDependencies>
+  <li>
+    <packageId>erdelf.HumanoidAlienRaces</packageId>
+    <displayName>Humanoid Alien Races</displayName>
+    <steamWorkshopUrl>steam://url/CommunityFilePage/839005762</steamWorkshopUrl>
+    <alternativePackageIds IgnoreIfNoMatchingField="True">
+      <li>erdelf.HumanoidAlienRaces.dev</li>
+    </alternativePackageIds>
+  </li>
+</modDependencies>
+</source>
+| class="TutorialCodeTable-description" |
+'''1.6+''' New in 1.6, you can specify one or more alternative packageIds that can fulfill a dependency requirement. The example here is for the development/unstable version of Humanoid Alien Races, which has a different packageId from the regular mod. As with all other newly introduced tags, if the mod in question supports versions older than 1.6, then the IgnoreIfNoMatchingField attribute should be used to prevent the game from throwing errors when loading into older versions of RimWorld.
+|-
+| <source lang="xml">
+<modDependenciesByVersion>
+  <v1.4>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+    </li>
+  </v1.4>
+</modDependenciesByVersion>
+</source>
+| class="TutorialCodeTable-description" |
+Used to specify dependencies for your mod that only apply for a specific version. See above for more details.
+|-
+| <source lang="xml">
+<loadBefore>
+  <li>CETeam.CombatExtended</li>
+</loadBefore>
+</source>
+| class="TutorialCodeTable-description" |
+Used to specify mods that your mod should load before. RimWorld will warn the player if your mod is not in the correct place in their mod list.
+
+Mods specified this way must be referenced by their <code>packageId</code>.
+|-
+| <source lang="xml">
+<loadBeforeByVersion>
+  <v1.4>
+    <li>CETeam.CombatExtended</li>
+  </v1.4>
+</loadBeforeByVersion>
+
+</source>
+| class="TutorialCodeTable-description" |
+Same as <code>loadBefore</code>, but only for the specified RimWorld versions.
+|-
+| <source lang="xml">
+<forceLoadBefore>
+  <li>CETeam.CombatExtended</li>
+</forceLoadBefore>
+</source>
+| class="TutorialCodeTable-description" |
+Same as <code>loadBefore</code>, but instead of just a warning, RimWorld will not allow your mod to be loaded after the specified mods. Note that external mod managers such as RimSort and RimPy may not respect this field.
+|-
+| <source lang="xml">
+<loadAfter>
+  <li>erdelf.HumanoidAlienRaces</li>
+</loadAfter>
+</source>
+| class="TutorialCodeTable-description" |
+Used to specify mods that your mod should load after. RimWorld will warn the player if your mod is not in the correct place in their mod list.
+
+Mods specified this way must be referenced by their <code>packageId</code>.
+|-
+| <source lang="xml">
+<loadAfterByVersion>
+  <v1.4>
+    <li>erdelf.HumanoidAlienRaces</li>
+  </v1.4>
+</loadAfterByVersion>
+
+</source>
+| class="TutorialCodeTable-description" |
+Same as <code>loadAfter</code>, but only for the specified RimWorld versions.
+|-
+| <source lang="xml">
+<forceLoadAfter>
+  <li>erdelf.HumanoidAlienRaces</li>
+</forceLoadAfter>
+</source>
+| class="TutorialCodeTable-description" |
+Same as <code>loadAfter</code>, but instead of just a warning, RimWorld will not allow your mod to be loaded before the specified mods. Note that external mod managers such as RimSort and RimPy may not respect this field.
+|-
+| <source lang="xml">
+<incompatibleWith>
+  <li>CETeam.CombatExtended</li>
+</incompatibleWith>
+</source>
+| class="TutorialCodeTable-description" |
+Used to specify mods that your mod is incompatible with. Players will be warned if the specified mods are loaded at the same time that your mod is.
+
+This should generally only be used to specify mods that are fundamentally incompatible with your mod rather than mods that simply have bugs related to your mod.
+|-
+| <source lang="xml">
+<incompatibleWithByVersion>
+  <v1.4>
+    <li>CETeam.CombatExtended</li>
+  </v1.4>
+</incompatibleWithByVersion>
+</source>
+| class="TutorialCodeTable-description" |
+Same as <code>incompatibleWith</code>, but only for the specified versions.
+|-
+|}
+</div>
+
+== Examples ==
+
+As <code>About.xml</code> is required for all mods, you can use existing mods as a reference if you need some examples of working <code>About.xml</code> files. The default installation folder for Steam Workshop mods is under <code>C:\Program Files (x86)\Steam\steamapps\workshop\content\294100</code>
+
+[[Category:Modding]]
+[[Category:Modding tutorials]]

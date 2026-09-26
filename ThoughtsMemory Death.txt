@@ -1,0 +1,113 @@
+<noinclude>{{Verified|1.6.4871}}
+<!-- Source (1.6): \Data\Core\Defs\ThoughtDefs\Thoughts_Memory_Death.xml -->
+{{Main|Thoughts}}</noinclude>
+{| {{STDT| sortable c_12 text-center}}
+! Thought !! Caption !! Cause !! Mood Effect !! Expiration time (days) !! Stack Limit !! Stacking Multiplier
+|-
+! [[Thoughts#Justified execution| Justified execution]]
+| A guilty prisoner or guest was executed. It was justified, but still sad.<br /> ''Nullifying traits: [[Psychopath]], [[Bloodlust]], [[Cannibal]]<br />Nullifying hediffs: [[Inhumanized]]'' || Guilty prisoner or guest executed || {{--|2}} || 6 || 5 || 0.75
+|-
+! [[Thoughts#Someone was euthanized| Someone was euthanized]]
+| A prisoner or guest was euthanized. It was humane, but still sad.<br /> ''Nullifying traits: [[Psychopath]], [[Bloodlust]], [[Cannibal]]<br />Nullifying hediffs: [[Inhumanized]]'' || Prisoner or guest euthanized || {{--|3}} || 6 || 5 || 0.75
+|-
+! [[Thoughts#Someone was executed| Someone was executed]]
+| A prisoner or guest was killed in cold blood. It seemed a bit evil.<br /> ''Nullifying traits: [[Psychopath]], [[Bloodlust]], [[Cannibal]]<br />Nullifying hediffs: [[Inhumanized]]'' || Non-guilty prisoner or guest is executed || {{--|5}} || 6 || 5 || 0.75
+|-
+! [[Thoughts#Someone organ-harvested| Someone was organ-murdered]]
+| A prisoner or guest died because the colony took body parts from them. It's horrible.<br /> ''Nullifying traits: [[Psychopath]], [[Bloodlust]], [[Cannibal]]<br />Nullifying hediffs: [[Inhumanized]]'' || Organ harvested from any pawn other than a colonist || {{--|6}} || 6 || 5 || 0.75
+|-
+! [[Thoughts#Someone ripscanned| Someone was ripscanned]]{{BiotechIcon}}
+| A prisoner died in our ripscanner. Their brain was burned up to feed the machine. It's horrible.<br /> ''Nullifying traits: [[Psychopath]], [[Bloodlust]], [[Cannibal]]<br />Nullifying hediffs: [[Inhumanized]]'' || Prisoner died due to ripscanning || {{--|6}} || 6 || 5 || 0.75
+|-
+! [[Thoughts#Justified execution of colonist| Justified execution of colonist]]
+| A guilty colonist was executed. It was justified, but still sad.<br /> ''Nullifying traits: [[Psychopath]]<br />Nullifying hediffs: [[Inhumanized]]'' || Guilty imprisoned colonist executed || {{--|2}} || 6 || 5 || 0.75
+|-
+! [[Thoughts#Colonist euthanized| Colonist euthanized]]
+| A colonist was euthanized. It was humane, but still sad.<br /> ''Nullifying traits: [[Psychopath]]<br />Nullifying hediffs: [[Inhumanized]]'' || Colonist euthanized || {{--|3}} || 6 || 5 || 0.75
+|-
+! [[Thoughts#Colonist executed| Colonist executed]]
+| A colonist was killed in cold blood. It seemed a bit evil.<br /> ''Nullifying traits: [[Psychopath]]<br />Nullifying hediffs: [[Inhumanized]]'' || Imprisoned colonist executed  || {{--|5}} || 6 || 5 || 0.75
+|-
+! [[Thoughts#Colonist organ-harvested| Colonist organ-harvested]]
+| A colonist died because someone took body parts from them. It's horrible.<br /> ''Nullifying traits: [[Psychopath]]<br />Nullifying hediffs: [[Inhumanized]]'' || Organ harvested from a colonist || {{--|6}} || 6 || 5 || 0.75
+|-
+! [[Thoughts#Colonist ripscanned| Colonist ripscanned]]{{BiotechIcon}}
+| A colonist died in our ripscanner. Their brain was burned up to feed the machine. It's horrible.<br /> ''Nullifying traits: [[Psychopath]]<br />Nullifying hediffs: [[Inhumanized]]'' || Colonist died due to ripscanning || {{--|6}} || 6 || 5 || 0.75
+|-
+! [[Thoughts#Innocent prisoner died| Innocent prisoner died]]
+| One of our prisoners died despite being harmless. We should be able to take care of our prisoners. If we wanted them dead, we could have at least conducted an orderly execution rather than permit that barbarism.<br /> ''Nullifying traits: [[Psychopath]], [[Bloodlust]]<br />Nullifying hediffs: [[Inhumanized]]'' || Non-guilty prisoner dies outside of execution or euthanasia || {{--|5}} || 6 || 5 || 0.75
+|-
+! [[Thoughts#Colonist died| Colonist died]]
+| One of our people died. We should be able to take care of our people.<br /> ''Nullifying traits: [[Psychopath]], [[Bloodlust]]<br />Nullifying hediffs: [[Inhumanized]]'' || Colonist dies outside of execution or euthanasia || {{--|3}} || 6 || 5 || 0.75
+|-
+! [[Thoughts#Bonded animal <name> died| Bonded animal <name> died]]
+| Such a tender, unique animal. This universe is evil!<br> ''Nullifying traits: [[Psychopath]]<br />Nullifying hediffs: [[Inhumanized]]'' || Bonded animal dies || {{--|8}} || 20 || 5 || 0.75
+|-
+! [[Thoughts#My friend <name> died| My friend <name> died]]
+| Such a wonderful person, gone forever. The universe gets darker every day.<br> ''Nullifying traits: [[Psychopath]]. <br />Nullifying hediffs: [[Inhumanized]] <br> Note: Actual mood change depends on relations between the pawn and the dead pawn.'' || Another pawn with positive relations to the original pawn dies || {{--|10}} || 20 || 5 || 0.75
+|-
+! [[Thoughts#My rival <name> died| My rival <name> died]]
+| Serves them right. At least there's some justice in this world. <br />''Nullifying hediffs: [[Inhumanized]]''<br> ''Note: Actual mood change depends on relations between the pawn and the dead pawn.'' || Another pawn with negative relations to the original pawn dies || {{+|10}} || 10 || 5 || 0.75
+|-
+! [[Thoughts#My <relation> <name> died| My son <name> died]]
+| My son is dead. My own flesh and blood...<br />''Nullifying hediffs: [[Inhumanized]]'' || Son of pawn dies || {{--|20}} || 30 || 10 || 0.75
+|-
+! [[Thoughts#My <relation> <name> died| My daughter <name> died]]
+| My daughter is dead. My own flesh and blood...<br />''Nullifying hediffs: [[Inhumanized]]'' || Daughter of pawn dies || {{--|20}} || 30 || 10 || 0.75
+|-
+! [[Thoughts#My <relation> <name> died| My husband <name> died]]
+| My husband is dead. I am alone.<br />''Nullifying hediffs: [[Inhumanized]]'' || Husband of pawn dies || {{--|20}} || 30 || 10 || 0.75
+|-
+! [[Thoughts#My <relation> <name> died| My wife <name> died]]
+| My wife is dead. I am alone.<br />''Nullifying hediffs: [[Inhumanized]]'' || Wife of pawn dies || {{--|20}} || 30 || 10 || 0.75
+|-
+! [[Thoughts#My <relation> <name> died| My fiance <name> died]]
+| My fiance died. Such a man... my future is gone.<br />''Nullifying hediffs: [[Inhumanized]]'' || Fiance of pawn dies || {{--|18}} || 30 || 10 || 0.75
+|-
+! [[Thoughts#My <relation> <name> died| My fiancée <name> died]]
+| My fiancée died. Such a woman... my future is gone.<br />''Nullifying hediffs: [[Inhumanized]]'' || Fiancée of pawn dies || {{--|18}} || 30 || 10 || 0.75
+|-
+! [[Thoughts#My <relation> <name> died| My lover <name> died]]
+| My lover died. I am so alone.<br />''Nullifying hediffs: [[Inhumanized]]'' || Lover of pawn dies || {{--|16}} || 30 || 10 || 0.75
+|-
+! [[Thoughts#My <relation> <name> died| My brother <name> died]]
+| My brother died. My own flesh and blood...<br />''Nullifying hediffs: [[Inhumanized]]'' || Brother of pawn dies || {{--|14}} || 30 || 10 || 0.75
+|-
+! [[Thoughts#My <relation> <name> died| My sister <name> died]]
+| My sister died. My own flesh and blood...<br />''Nullifying hediffs: [[Inhumanized]]'' || Sister of pawn dies || {{--|14}} || 30 || 10 || 0.75
+|-
+! [[Thoughts#My <relation> <name> died| My grandchild <name> died]]
+| My grandchild died. My own flesh and blood...<br />''Nullifying hediffs: [[Inhumanized]]'' || Grandchild of pawn dies || {{--|12}} || 30 || 10 || 0.75
+|-
+! [[Thoughts#My <relation> <name> died| My father <name> died]]
+| My father died. He's gone forever.<br />''Nullifying hediffs: [[Inhumanized]]'' || Father of pawn dies || {{--|8}} || 30 || 10 || 0.75
+|-
+! [[Thoughts#My <relation> <name> died| My mother <name> died]]
+| My mother died. She's gone forever.<br />''Nullifying hediffs: [[Inhumanized]]'' || Mother of pawn dies || {{--|8}} || 30 || 10 || 0.75
+|-
+! [[Thoughts#My <relation> <name> died| My niece <name> died]]
+| My niece died. Such a wonderful child.<br />''Nullifying hediffs: [[Inhumanized]]'' || Niece of pawn dies || {{--|5}} || 30 || 10 || 0.75
+|-
+! [[Thoughts#My <relation> <name> died| My nephew <name> died]]
+| My nephew died. Such a wonderful child.<br />''Nullifying hediffs: [[Inhumanized]]'' || Nephew of pawn dies || {{--|5}} || 30 || 10 || 0.75
+|-
+! [[Thoughts#My <relation> <name> died| My half-sibling <name> died]]
+| My half-sibling died. My own flesh and blood...<br />''Nullifying hediffs: [[Inhumanized]]'' || Half-sibling of pawn dies || {{--|5}} || 30 || 10 || 0.75
+|-
+! [[Thoughts#My <relation> <name> died| My aunt <name> died]]
+| My aunt died.<br />''Nullifying hediffs: [[Inhumanized]]'' || Aunt of pawn dies || {{--|4}} || 30 || 10 || 0.75
+|-
+! [[Thoughts#My <relation> <name> died| My uncle <name> died]]
+| My uncle died.<br />''Nullifying hediffs: [[Inhumanized]]'' || Uncle of pawn dies || {{--|4}} || 30 || 10 || 0.75
+
+|-
+! [[Thoughts#My <relation> <name> died| My grandparent <name> died]]
+| My grandparent died.<br />''Nullifying hediffs: [[Inhumanized]]'' || Grandparent of pawn dies || {{--|4}} || 30 || 10 || 0.75
+|-
+! [[Thoughts#My <relation> <name> died| My cousin <name> died]]
+| My cousin died. My own flesh and blood...<br />''Nullifying hediffs: [[Inhumanized]]'' || Cousin of pawn dies || {{--|4}} || 30 || 10 || 0.75
+|-
+! [[Thoughts#My <relation> <name> died| My kin <name> died]]
+| My kin died.<br />''Nullifying hediffs: [[Inhumanized]]'' || Any other kin of pawn dies || {{--|4}} || 30 || 10 || 0.75
+|}
+<noinclude>[[Category:Thoughts]]</noinclude>

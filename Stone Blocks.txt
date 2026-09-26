@@ -1,0 +1,89 @@
+__NOTOC__
+{{See also|Stone}}<!--Do not delete-->{{#set:Image = [[File:Stoneblocks c.png]]}}<!--Do not delete-->
+'''Stone blocks''' are produced by cutting [[stone chunk]]s on a [[Stonecutter's table]] after researching Stonecutting. Colonist with 'crafting' enabled will perform this task, but performing it does not grant any skill progress. Stone blocks are always produced in batches of 20 per stone chunk. Blocks can also be salvaged by deconstructing abandoned structures.
+
+Stone blocks can be used to build walls and doors, and lay fancy floors with faster walk speed and less ugliness penalty, as well as to build furniture and many production benches. It's also one of the prime materials for crafting [[sculpture]]s.
+
+== Comparison table ==
+Below is a list of material effects for stone blocks. When a [[stuff]]able item is created from a stone block, each of its base stats is multiplied by a factor for that stat belonging to the material used. Take "Hit Points" for example. For this stat, [[granite blocks]] have a ''factor'' of {{Q|granite blocks|Max Hit Points Factor}} and [[wall]]s have a base stat of {{Q|Wall|Max Hit Points Base}}. Thus, the final "Hit Points" of a granite wall is: <code>{{Q|granite blocks|Max Hit Points Factor}} × {{Q|Wall|Max Hit Points Base}} = {{#expr: {{Q|granite blocks|Max Hit Points Factor}}*{{Q|Wall|Max Hit Points Base}}}}</code>
+
+This process is then repeated for each stat. The material's sharp damage factor is applied to the items base sharp damage, flammability factor to flammability etc.
+
+Market value is the notable exception to this direct multiplicative relationship, but the value of a material does have a direct effect on that of the final product. See [[Market Value]] for details.
+
+<includeonly><onlyinclude>
+|-
+! {{DLC Icons|{{{Name}}} }}
+| data-sort-value="{{{Beauty Factor}}}" | ×{{{Beauty Factor}}}
+| data-sort-value="{{{Beauty Offset}}}" | +{{{Beauty Offset}}}
+| data-sort-value="{{{Work To Make Factor}}}" | ×{{{Work To Make Factor}}}
+| data-sort-value="{{{Work To Build Factor}}}" | ×{{{Work To Build Factor}}}
+| data-sort-value="{{{Max Hit Points Factor}}}" | ×{{{Max Hit Points Factor}}}
+| data-sort-value="{{{Melee Sharp Damage Factor}}}" | {{#if: {{{Melee Sharp Damage Factor}}} | ×{{{Melee Sharp Damage Factor}}}|-}}
+| data-sort-value="{{{Market Value Base}}}" | {{{Market Value Base}}} {{Icon Small|silver}}
+</onlyinclude></includeonly><div><li style="display: inline-table;">
+{| {{STDT| sortable c_12 text-center}}
+! Name !! Beauty (Factor) !! Beauty (Offset) !! Work To Make !! Work To Build (Factor) !! Max Hit Points !! Melee Sharp Damage !! Market Value
+{{#ask: [[Category:Stone Blocks]]
+ | named args = true
+ | ?Name
+ | ?Beauty Factor
+ | ?Beauty Offset
+ | ?Work To Make Factor
+ | ?Work To Build Factor
+ | ?Max Hit Points Factor
+ | ?Melee Sharp Damage Factor
+ | ?Market Value Base
+ | format = template
+ | template = :Stone blocks
+ | link = none
+ | sort = From DLC, Name
+}}
+|}
+</li></div>
+
+All stones blocks have the following modifiers in common:
+* [[Property:Work To Build Offset|Work To Build Offset]] of {{Ticks|140}}.
+* [[Property:Flammability Factor|Flammability Factor]] of 0.
+* [[Property:Melee Blunt Damage Factor|Melee Blunt Damage Factor]] of 1.
+* [[Property:Melee Cooldown Factor|Melee Cooldown Factor]] of 1.3.
+* [[Property:Door Opening Speed Factor|Door Opening Speed Factor]] of 0.45.
+* [[Property:Rest Effectiveness Factor|Rest Effectiveness Factor]] of 0.9.
+
+== Walls and Floors ==
+As the table above shows, Marble is the only stone block with a Beauty Offset. This affects the beauty and impressiveness of rooms made from stone blocks, but the game only takes this into account for walls and not floors. Rooms made with marble walls are more beautiful and impressive than other stone walls, but the type of stone used for the floor makes no difference. Any type of stone floor will be equally more beautiful and impressive than dirt.
+
+== Traps ==
+[[Spike trap]]s made from stone blocks have different damage and hit points, based upon the type of stone used per the table above, but also different armor penetration. Granite is the most effective stone, sandstone least, and all other stone types are intermediate. Traps made from any stone will be much slower to build than traps made from non-stony materials. See [[Spike trap]] page for details.
+
+== Descriptions ==
+{{List|Stone Blocks}}
+
+== Gallery ==
+<gallery>
+Stoneblocks a.png|Small stack
+Stoneblocks b.png|Medium stack
+Stoneblocks c.png|Full stack
+Granite blocks A.png|Stack of 1 granite blocks
+Granite blocks B.png|Stack of multiple granite blocks
+Granite blocks C.png|Full stack of granite blocks
+Limestone blocks A.png|Stack of 1 limestone blocks
+Limestone blocks B.png|Stack of multiple limestone blocks
+Limestone blocks C.png|Full stack of limestone blocks
+Marble blocks A.png|Stack of 1 marble blocks
+Marble blocks B.png|Stack of multiple marble blocks
+Marble blocks C.png|Full stack of marble blocks
+Sandstone blocks A.png|Stack of 1 sandstone blocks
+Sandstone blocks B.png|Stack of multiple sandstone blocks
+Sandstone blocks C.png|Full stack of sandstone blocks
+Slate blocks A.png|Stack of 1 slate blocks
+Slate blocks B.png|Stack of multiple slate blocks
+Slate blocks C.png|Full stack of slate blocks
+</gallery>
+
+== Version history ==
+* [[Version/0.2.363|0.2.363]] - Added.
+* Beta 19/1.0 - Slowed constructing buildings with all stone types by 20%
+
+{{nav|materials|wide}}
+[[Category:Material|#Stone blocks]] [[Category:Stone|#Stone blocks]]

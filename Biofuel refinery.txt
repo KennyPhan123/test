@@ -1,0 +1,70 @@
+{{Infobox main|production
+| name = Biofuel refinery
+| image = Biofuel refinery north.png
+| imagesize = 198px
+| description = Refines biological matter like wood or plant matter into chemfuel.
+| type = Building
+| type2 = Production
+| placeable = true
+| path cost = 50
+| passability = pass through only
+| cover = 0.5
+| minifiable = false
+| size = 3 ˣ 2
+| flammability = 1
+| hp = 200
+| power = -170
+| terrain affordance = heavy
+| research = Biofuel refining
+| skill 1 = Construction
+| skill 1 level = 4
+| work to make = 2000
+| resource 1 = Steel
+| resource 1 amount = 150
+| resource 2 = Component
+| resource 2 amount = 3
+| room role = Workshop
+| work table not in room role factor = 0.8
+}}
+The '''biofuel refinery''' is a [[production]] [[building]] that produces [[chemfuel]] from [[wood]] or non-[[hay]] [[raw food]]. 
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+While the refinery is selected, click "Bills" then "Add Bill" to add an order to produce [[chemfuel]]:
+* Make chemfuel from [[wood]]: Turns {{Icon Small|wood}} 70 wood logs, worth {{Icon Small|Silver||{{#expr: {{Q|Wood|Market Value Base}} * 70}} }} into {{Icon Small|chemfuel}} 35 chemfuel, worth {{Icon Small|Silver||{{#expr: {{Q|Chemfuel|Market Value Base}} * 35}} }}. Takes {{Ticks|2000}} of work, scaling with the [[General Labor Speed]] of the crafter.
+* Make chemfuel from [[raw food]]: Turns 3.5 nutrition worth of food ingredients into {{Icon Small|chemfuel}} 35 chemfuel, worth {{Icon Small|Silver||{{#expr: {{Q|Chemfuel|Market Value Base}} * 35}} }}. Takes {{Ticks|2500}} of work, scaling with the [[General Labor Speed]] of the crafter.
+** [[Hay]] or [[meal]]s are not accepted, though [[kibble]] made with hay will work. Most raw ingredients have a nutrition value of 0.05. For such ingredients, 3.5 nutrition requires 70 units, which is the same quantity required of wood.
+
+Food that colonists don't like, such as [[human meat]], [[insect meat]], or [[twisted meat]]{{AnomalyIcon}} can be processed in a biofuel refinery at no consequence. Note that butchering a [[human]] at all comes with a mood penalty in the first place, unless disabled by a [[trait]] or [[ideoligion]].{{IdeologyIcon}}
+
+== Analysis ==
+Biofuel refineries are one of the few ways to produce chemfuel. [[Boomalope]]s are better in both nutrition/chemfuel and work/chemfuel with any amount of Animals proficiency. However, you'll need to actually get boomalopes, and manage the explosive animal. [[Infinite chemreactor]]s are entirely free fuel, but it is exclusively a [[quest]] reward. 
+
+Chemfuel is required in order to create items like [[molotov cocktail]]s and [[high-explosive shell]]s, and refuel items like [[pod launcher]]s and [[firefoam pop pack]]s. Meanwhile, [[chemfuel powered generator]]s are more efficient than [[wood-fired generator|wood generators]] in almost any scenario (see [[Wood-fired generator#Chemfuel_powered_generators|Comparison to chemfuel generators]]).
+
+=== Fuel creation ===
+As a rough order of which fuel takes the least work:
+# [[Insect meat]] and [[human meat]] (if the butchering penalty can be ignored). An [[infestation]] can lead to a massive amount of food, for instance.
+# Harvesting trees, if you have a lot of trees in the nearby area (such as in a [[biomes#Tropical rainforest|Tropical rainforest]]). 
+# Growing plants - specifically [[corn]], if available.
+# Actually sowing trees takes a lot of time - it is never worth it to use wood over raw food if you have to grow wood.
+
+== Gallery ==
+<gallery>
+Biofuel refinery north.png|Facing north
+Biofuel refinery east.png|Facing east
+Biofuel refinery south.png|Facing south
+</gallery>
+
+== Version history ==
+* [[Version/0.16.1393|0.16.1393]] - Added.
+* Before Beta 19, it used to be simply called the Refinery, and meals could be used as organic ingredients.
+
+<gallery>
+OldRefinery.png|The former Refinery texture
+</gallery>
+
+{{Nav|production|wide}}
+[[Category:Production]] [[Category:Resource Production]]

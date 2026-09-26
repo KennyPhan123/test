@@ -1,0 +1,171 @@
+{{Odyssey}}
+{{Infobox biome
+| name = Grassland
+| image = Grassland.jpg
+| type = Biome
+| texture = GrasslandsTexture.png
+| canbuildbase = Yes
+| allowFarmingCamps = Yes
+| animal density = 3.7
+| plant density = 1.0
+| movement difficulty = 1
+| forageability = 1
+| wild plant regrow days = 13
+| disease mtb days = 50
+| min temperature = -10
+| max temperature = 55
+| min rainfall = 800
+| max rainfall = 2500
+| description = An open expanse dominated by tall grasses. These areas are good for farming and ranching, except when there's a drought. The lack of trees and other vegetation means there's always a steady breeze. Steam geysers never appear here due to low geothermal activity.
+<!-- weather -->
+| clear = 12
+| fog = 1
+| rain = 2
+| dry thunderstorm = 1
+| rainy thunderstorm = 1
+| foggy rain = 2
+| hard snow = 1
+| soft snow = 1
+| gray pall = 1
+| windy = 4
+<!-- fish -->
+| max fish population = 540
+| freshwater_common_bass = Yes
+| freshwater_uncommon_catfish = Yes
+| saltwater_common_bluefish = Yes
+| saltwater_uncommon_flounder = Yes
+| saltwater_uncommon_marlin = Yes
+}}
+'''Grasslands''' is a warm [[biome]] in RimWorld added by the [[Odyssey DLC]].
+<!-- return 22.5f + (tile.temperature - 20f) * 2.4f + (tile.rainfall - 800f) / 100f -->
+== Summary ==
+Grasslands never have any [[steam geyser]]s. Grasslands may have [[drought]]s occur with a minimum of 40 days between them. It will never spawn in mountains.
+
+In the lists below the number in brackets represents the relative commonality.
+
+=== Flora ===
+<div class="ul-column-width-200">
+{{#ask: [[Type::Plant]] [[Lives In Grassland::>>0]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Grassland
+}}
+</div>{{#set:Flora Commonality Sum | {{#expr: {{#ask: [[Type::Plant]] [[Lives In Grassland::>>0]] | ?Lives In Grassland = | mainlabel=- | sep=+ }} }} }}{{#set:Grazing Score|{{Grazing Score}} }}
+
+
+=== Fauna ===
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Grassland::>>0]] [[Coastal Animal::false]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Grassland
+}}
+</div>{{#set:Fauna Commonality Sum | {{#expr: {{#ask: [[Type::Animal]] [[Lives In Grassland::>>0]] [[Coastal Animal::false]] | ?Lives In Grassland = | mainlabel=- | sep=+ }} }} }}
+
+Additionally, these animals can spawn in coastal maps:
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Grassland::>0]] [[Coastal Animal::true]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Grassland
+}}
+</div>
+
+If the map is [[polluted]],{{BiotechIcon}} then the game may choose to spawn in wild animals from this list instead:
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Grassland (Polluted)::>0]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Grassland (Polluted)
+}}
+</div>
+
+=== Diseases ===
+Grassland has a disease {{MTB}} of 50 days. The following diseases can occur in a grassland:
+{| {{STDT|c_07 sortable}}
+! Disease
+! Commonality{{#set:Disease commonality sum|{{#expr:100+100+100+50+30+30+50+100+100+10}} }}
+|-
+| [[Flu]] || 100{{#set:Flu commonality|100}}
+|-
+| [[Plague]] || 100{{#set:Plague commonality|100}}
+|-
+| [[Malaria]] || 100{{#set:Malaria commonality|100}}
+|-
+| [[Gut worms]] || 50{{#set:Gut worms commonality|50}}
+|-
+| [[Fibrous mechanites]] || 30{{#set:Fibrous mechanites commonality|30}}
+|-
+| [[Sensory mechanites]] || 30{{#set:Sensory mechanites commonality|30}}
+|-
+| [[Muscle parasites]] || 50{{#set:Muscle parasites commonality|50}}
+|-
+| [[Flu#Animals|Animal flu]] || 100{{#set:Animal flu commonality|100}}
+|-
+| [[Plague#Animals|Animal plague]] || 100{{#set:Animal plague commonality|100}}
+|-
+| [[Organ decay]] || 10{{#set:Organ decay commonality|10}}
+|}
+
+=== Fish ===
+The table below contains the list of all of the fish that can be caught - as well as where they can be caught.
+{| {{STDT|c_23 sortable}}
+! Fish
+! Water body
+! Rarity
+|-
+| [[Bass]] || Freshwater || Common
+|-
+| [[Catfish]] || Freshwater || Uncommon
+|-
+| [[Bluefish]] || Saltwater || Common
+|-
+| [[Marlin]] || Saltwater || Uncommon
+|-
+| [[Flounder]] || Saltwater || Uncommon
+|}
+
+=== Droughts ===
+{{See also|Drought}}
+
+Grasslands may have [[drought]]s. This is separated into two events:
+* The Drought (initial) event always occurs first, lasts 4 days, and is hidden from the player. During drought (initial), [[rain]] cannot occur for 4 days - this includes the [[firewatcher]] that naturally encourages rain when [[fire]] is present. 
+* The proper Drought event disables rain and causes all crops outside [[hydroponics]] to grow at 30% speed, and lasts from 6 to 10 days.
+
+Droughts have a 40 day cooldown before they can fire again.
+
+== Summary ==
+The Grasslands are a relatively easy biome with some caveats. Crops grow year-round, and there's plenty of arable soil and live [[grass]] for livestock to feed on. However, droughts can be challenging for inexperienced players or new colonies. The lack of [[geothermal generator|geothermal power]] can also present a difficulty, as geothermal power is normally a great way to get consistent power. This counters the lack of proper winters, which makes food preservation less urgent.
+
+* '''Growing and Food: Moderate''' - When not in a drought, growing is comfortable with year-round growing seasons. Animals are fairly common, too. Droughts slow food growth, though, so more crops need to be grown than normal. Also, crop destruction and [[blight]] are more harmful due to the slower growth speed. [[Hydroponics]] are immune to drought. Trees are less common than in other temperate biomes.
+
+* '''Disease: Easy''' - Grassland is identical to [[temperate forest]]. For a year-round growing biome, it has a relatively low disease frequency, and [[wild healroot]] grows naturally.
+
+* '''Temperature: Easy-Moderate''' - Temperatures are warm and normally comfortable. [[Heat wave]]s can present an issue for unprepared colonists.
+
+* '''Fires: Difficult''' - Grassland is filled with flammable ''[[grass]]'', and [[drought]]s disable the game's natural [[firewatcher]] for 10-14 days. Installing 2-tile wide firebreaks of non-flammable material around important areas, and using non-flammable materials construction, is recommended.
+
+== Gallery ==
+<gallery>
+Grassland.jpg|A fully generated grassland
+GrasslandsTexture.png|Grassland's texture on the world map
+</gallery>
+
+== History ==
+* [[Odyssey DLC]] Release - Added.
+
+{{nav|biomes|wide}}
+[[Category:Biomes]]
+[[Category:Hot Biomes]]

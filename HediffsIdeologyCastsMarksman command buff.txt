@@ -1,0 +1,36 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Ideology/Casts}}
+|}
+----
+{| {{STDT| c_06}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Marksman command buff" <!-- defName="MarksmanCommandBuff", ParentName="CombatRoleAuraBuffHediffBase" -->
+! Marksman command buff
+----
+* Def Name:<br />MarksmanCommandBuff
+* Label:<br />marksman command
+* Debug Label Extra:<br />other
+| Someone is using the marksman command ability nearby, boosting this person's shooting abilities.
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|52%|100%|95%}}
+* Is Bad: {{Good|false}}
+* '''Comps'''
+** ''Disappears''
+*** Show Remaining Time: {{Bad|false}}
+** ''Disappears On Death''
+** ''Link''
+*** Require Link On Other Pawn: {{Good|false}}
+*** Max Distance: '''10 (cells)'''
+*** Custom Mote: '''Mote_CombatCommandLinkLine'''
+|<!-- Stages -->
+{| {{STDT| c_06}}
+! Label !! Parameters
+|-
+! Marksman command
+|<!-- Parameters -->
+* [[Shooting Accuracy|Shooting Accuracy (Pawn)]] Offset: {{+|4}}
+* [[Aiming Time]] Offset: {{---|40%}}
+|}<noinclude>
+|}</noinclude>

@@ -1,0 +1,140 @@
+{{Infobox main|drug
+| name = Luciferium
+| image = Luciferium b.png
+| description = A concoction of mechanites that dramatically improve the body's functioning in all respects. Over time, it can even heal old scarred-over wounds or brain damage, though it cannot regenerate lost limbs. Unfortunately, without the moderating effects of regular doses every five or six days, the mechanites lose cohesion, causing continuous berserk rages and, eventually, death.<br>After the first dose, there is no way to get the mechanites out, ever.<br>On the urbworlds, they call Luciferium the 'Devil's Bargain'. Many have been forced to kill friends when no more of the seductive red pills could be found.
+<!-- Base Stats -->
+| type = Drug
+| type2 = Medical Drug
+| tech level = Ultra
+| marketvalue = 70
+| stack limit = 150
+| mass base = 0.01
+| hp = 50
+| deterioration = 2
+| flammability = 1
+| rotatable = false
+| path cost = 14
+<!-- Ingestion -->
+| food type = processed
+| addictiveness = 1
+| max num to ingest at once = 1
+<!-- Technical -->
+| defName = Luciferium
+| drug category = Medical
+| is pleasure drug = false
+| preferability = NeverForNutrition
+| tradeTags = Drugs, ExoticMisc
+<!-- Unused -->
+| always haulable = true
+| draw gui overlay = true
+| graphic class = Graphic_StackCount
+| graphic path =  Things/Thing/Drug/Luciferium
+| label = luciferium
+| parent name = DrugPillBase
+| resource readout priority = Last
+| selectable = true
+| social properness matters = true
+| thing class = Drugs
+| use hit points = true
+<!-- Drug Parameters -->
+| blood filtration offset = 0.7
+| blood pumping offset = 0.15
+| breathing offset = 0.1
+| consciousness offset = 0.1
+| digestion offset = 0.2
+| moving offset = 0.05
+| pain factor = 0.8
+| sight offset = 0.15
+}}
+{{Info|'''Luciferium''' is a rare, powerful, expensive and dangerous [[Medical drugs|medicinal]] [[drug]]. It can heal [[Scar|permanent injuries]] (though not missing [[body parts]]) and [[Ailments#Chronic|chronic health condition]]s while also helping to [[Immunity Gain Speed|fight]] [[disease]]. However, it will kill its user if not taken regularly.}}
+
+== Acquisition == 
+Luciferium cannot be crafted, and must be either acquired through [[trade]], as a [[quest]] reward, found in [[ancient shrine]]s, or looted from pirate [[Raiders]] or ancient crates ([[Hermetic crate|hermetic]]{{IdeologyIcon}} or [[Sealed crate|sealed]]{{OdysseyIcon}}).
+
+== Summary ==
+Taking Luciferium directly provides a variety of effects to pawn [[capacities]]:
+* Reduced [[pain]] ({{Good|x80%}})
+* Improved [[consciousness]] ({{+|10%}})
+* Improved [[moving]] ({{+|5%}})
+* Improved [[sight]] ({{+|15%}})
+* Improved [[blood filtration]] ({{+|70%}})
+* Improved [[blood pumping]] ({{+|15%}})
+* Improved [[digestion]] ({{+|20%}})
+* Improved [[breathing]] ({{+|10%}})
+* 1 [[Scar]]/permanent injury or ailment removed every 900,000 to 1,800,000 ticks (15 - 30 in-game days) (Also included but not limited to [[Alzheimer's]], [[Asthma]], [[Cataract]]s, [[Carcinoma]], [[Dementia]], [[Frail]], [[Hearing loss]] and Blindness){{Check Tag|Purely random?|Is that the selection of the injury/ailment random? If it is, note it explicitly. If its not, the order should be noted.}}
+* If a pawn is not addicted: {{+|100%}} luciferium need
+* If a pawn is already addicted: {{+|90%}} lucifierium need (scaled by [[body size]])
+
+=== Luciferium need ===
+Luciferium is a unique drug in that it immediately forces the drug [[addiction]] "Luciferium need". Luciferium addiction is permanent - there is no waiting it out. If not taken regularly, addicts with unmet luciferium needs will suffer and go mad before eventually being killed. Pawns will remain addicted even after applying [[healer mech serum]] or [[resurrector mech serum]]. The only possible way to save someone going through a luciferium withdrawal is to give them more luciferium.
+
+The addiction progress is tracked by the luciferium [[need]]. This need falls by 15% every day. Consuming luciferium satisfies the need by +90%, scaled by [[body size]]. Therefore, an adult human would need to take 1 dose of luciferium every 6 days exactly. Only the first dose sets luciferium need to 100%.
+
+=== Withdrawal ===
+As soon as the luciferium need reaches 0%, the pawn suffers from the following symptoms:
+* Intense [[pain]] ({{++|40%}}) ({{--|15}} mood normally, {{+|7}} mood with the [[Pain (precept)|Pain: Idealized]] precept{{IdeologyIcon}} and {{+|15}} with [[Masochist]] trait)
+* Impaired [[consciousness]] ({{Bad|80% Max}})
+* [[Berserk]] mental breaks (''{{MTB}} of 0.4 days'')
+* Death (''{{MTB}} of 10 days'')
+
+Death is caused by the brain being instantly destroyed, meaning that the [[Deathless]] gene{{BiotechIcon}} does not protect against it.
+
+{{Heal Option Table}}
+
+== Analysis ==
+Luciferium is useful for treating permanent injuries and conditions. Curing many of these would otherwise require the much rarer [[healer mech serum]] or DLC-exclusive options such as the [[biosculpter pod]],{{IdeologyIcon}} the Scarless [[gene]], {{BiotechIcon}} or the [[Unnatural healing]] ability.{{AnomalyIcon}} Note that with the Anomaly DLC, [[Chronophagy]]{{AnomalyIcon}} can cure scars and aging related conditions. Some other ailments require long-term and potentially ineffective medical treatment, or a surgery with an unavoidable chance of instant death. The increase in blood filtration also increases [[Immunity Gain Speed]], which can help fight off otherwise fatal diseases (whenever from old age or poor treatment). For a breakdown of what can be cured by which method, see the [[#Healing method table|healing method table]] or the page of the ailment in question.
+
+In addition to its medical properties, luciferium provides a small but permanent buff to many tasks a pawn can perform, in combat or out. This can make luciferium useful for the [[ship launch]] or the [[Royal Ascent]] quest,{{RoyaltyIcon}} as, once a pawn has left the planet, addiction doesn't matter for gameplay purposes.
+
+Lucifierium isn't ''too'' expensive. 10 doses of luciferium costs a [[market value]] of {{Icon Small|silver||{{#expr:{{P|Market Value Base}}*10}}}} [[silver]] and can sustain a human for a year. If you can get a consistent source of [[trade]] and [[Money making guide|income]], luciferium can be tolerated even if you don't need its medical properties. 
+Sustaining many addicted colonists is difficult, as [[faction base]]s and traders only come with so many doses per restock. However, an extensive trade network can support into the double digits. 
+
+Luciferium can be administered to [[animal]]s via the [[operation]]s menu, substantially improving their combat effectiveness. Sometimes, animals may also take luciferium randomly by themselves if it is within their [[allowed area]].
+
+=== Luciferium management ===
+Luciferium has to be taken every 6 days on the dot, or the withdrawal risks killing them. However, due to the mechanics of a fixed drug schedule, setting their [[drug policy|drug assignment]] to take one pill every 6 days does '''NOT''' work. If this is set, pawns will only begin to take luciferium 6 days after they have taken their last drug. Therefore, even the slightest delay (e.g. the small time spent walking to an open tile to take the drug) will cause the need to slowly decay, potentially killing the pawn. 
+
+Instead, for all adult pawns that take luciferium, players should use the "take for addiction" setting in the drug policy. This has pawns take the drug as soon as their need level hits 10%, which is both self-correcting in the event a dose is delayed, and avoids all waste. Players should also ensure that the pawn's drug policy has them carry at least one dose of the drug, to ensure that it's taken in as timely a manner as possible. For pawns younger than 18, "take for addiction" can be used for safety, though note that it can waste a small amount of dosage.
+
+When creating a caravan with addicted pawns, remember to either bring luciferium manually or have the pawns set up to carry several doses. For long trips or maximum safety, having [[transport pod]]s available to launch additional doses in an emergency is also advisable.
+
+Putting a pawn into a [[cryptosleep casket]] or a [[biosculpter pod]]{{IdeologyIcon}} will suspend their luciferium needs until they are let out. This can be a way to save their life in case the drug runs out. If you run out of luciferium before researching or building them, you can look for [[ancient shrine]]s, as they have ancient cryptosleep caskets.
+
+=== Addiction on non-colony pawns ===
+While it is possible to give prisoners luciferium to make them addicted, it doesn't work out as a way to get more doses in the future, as luciferium addiction works differently to other drugs in relation to non-colonists bringing doses.
+
+Very rarely non-colony pawns with a luciferium addiction may appear. It has been reported that [[Transport pod crash]] and quest reward pawns may come addicted. If this happens, or if pawns are given the addiction through a custom [[Starting scenario#Scenario editor|scenario]], the possibility of outsiders bringing doses of luciferium into your map depends on the relations with their faction and the event or quest that spawned them. Generally only neutral and allied pawns will carry luciferium, and only if they come as a joiner event (Transport pod crash, [[Events#Wanderer_joins|Wanderer]], [[Creepjoiner]]{{AnomalyIcon}}...) or as a temporary guest. Raiders, trading caravans and travelling visitors will not carry luciferium for their own use. Refuguees and beggars don't carry any doses either. When they do carry luciferium, they will have 2-5 doses.
+
+For the average play-through this means that giving out doses to strangers is most likely a waste of expensive doses.
+
+=== Removing luciferium need ===
+As of [[Version/1.6.4630|1.6.4630]], the only way to remove luciferium need from one of your colonists is to turn them into a [[shambler]].{{AnomalyIcon}} Note that having [[death refusal]]{{AnomalyIcon}} prevents a colonist from being raised as a shambler. Also, removing a colonist's luciferium addiction will also remove the beneficial luciferium effects.
+
+# Give the colonist a condition that causes them to be downed and is ''not'' removed when the deadlife dust is applied. [[Anesthetic]] is the easiest option, but [[catatonic breakdown]], [[resurrection sickness]], and [[psychic coma]] also work.
+# Kill the colonist; the exact method does not matter.
+# Use deadlife dust, such as from a [[deadlife pack]]{{AnomalyIcon}} to resurrect the pawn as a shambler. The pawn will no longer have the luciferium need as soon as it is completely raised.
+# Wait for the shambler to expire again (or kill it), and use a [[resurrector mech serum]] to resurrect the pawn. They will be resurrected as a normal pawn and not a shambler, and will not have the luciferium need anymore.
+
+Since shambler corpses are always rotting no matter how fresh they were before being turned into a shambler, the negative side effects of resurrection will most likely occur. You may need another resurrection serum on hand if that is the case — or you can apply [[death refusal]]{{AnomalyIcon}} and kill the pawn again, this way no [[resurrection psychosis]] will be present when they come back to life. This method of removing luciferium addiction from a pawn is very expensive (and, in case of planning to use [[death refusal]]{{AnomalyIcon}}, requires significant progress into [[Anomaly]]{{AnomalyIcon}} content), so consider whether obtaining more luciferium would be easier than this.
+
+== Trivia ==
+* Luciferium is considered to be in the [[Lore#Tech_levels|"Ultra" tech level]].
+* Luciferium is named after Lucifer; the personification of evil in Christian theology. Its nickname, "The Devil's Bargain," is a further hint to this; indeed, addicting a pawn to luciferium is quite like a deal with the devil: unparalleled power at the cost of a lifelong race against the death-clock.
+** The 6 days of peace before luciferium withdrawal begins is more than likely also a reference to the [[Wikipedia:Number of the beast|Number of the beast]].
+* In the [[Scenario editor]] luciferium is listed as a separate health condition than luciferium addiction. This is allows you to create upkeep free luciferium pawns for your custom scenarios.
+
+== Gallery ==
+<gallery>
+Luciferium a.png|One luciferium
+Luciferium b.png|Stack of luciferium
+</gallery>
+
+== Version history ==
+* [[Version/0.15.1279|0.15.1279]] - Added.
+* [[Version/1.1.0|1.1.0]] - Fixed Luciferium not removing [[Frail]]. Now, lucifierum can remove all chronic health conditions.
+* [[Version/1.1.2610|1.1.2610]] -  Reduced market value from 120 to 70.
+* [[Version/1.4.3523|1.4.3523]] - Luciferium now causes death from brain destruction, meaning the [[deathless]] [[gene]] {{BiotechIcon}} cannot stop it.
+
+{{Nav|drugs|wide}}
+
+[[Category:Drug]] [[Category:Medical Drug]]

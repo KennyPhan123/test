@@ -1,0 +1,48 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Anomaly/Body Parts/Prosthetic}}
+|}
+----
+{| {{STDT| c_21}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Flesh whip" <!-- defName="FleshWhip", ParentName="AddedMutationBase" -->
+! [[Flesh whip]]
+----
+* Def Name:<br />FleshWhip
+* Label:<br />flesh whip
+* Label Noun:<br />a flesh whip
+|<!-- Description -->
+A fleshy, muscled tentacle with a blade at the end. The flesh whip makes an excellent melee weapon.
+
+It has its own neural structures and may become dangerous if removed.
+|<!-- Details -->
+* Hediff Class: '''Hediff_AddedPart'''
+* Default Label Color: {{Color|60%|60%|100%}}
+* Is Bad: {{Good|false}}
+* Price Impact: {{Bad|true}}
+* Counts As Added Part Or Implant: {{Good|true}}
+* Allow Mothball If Low Priority World Pawn: {{Good|true}}
+* Organic Added Bodypart: {{Good|true}}
+* Default Install Part: '''Shoulder'''
+* '''Added Part Props'''
+** Solid: {{Good|true}}
+* '''Comps'''
+** ''Fleshbeast Emerge''
+*** Letter Label: Fleshmass operation
+*** Letter Text: Attempting to remove {PAWN_nameDef}'s flesh whip has caused the twisting mass of flesh to attack. The fleshmass has detached from {PAWN_nameDef} and transformed into a fleshbeast!
+** ''Verb Giver''
+{| {{STDT| c_06}}
+! Label !! Capacities !! {{AP}} !! Power !! Cooldown Time
+|-
+! blade
+| [[Damage Types#Cut|Cut]] || 60% || 20.5 (2.5x natural fist) || 2 (seconds)
+|}
+|<!-- Stages -->
+{| {{STDT| c_21}}
+! Label !! Parameters
+|-
+! Flesh whip
+|<!-- Parameters -->
+* [[Beauty (Pawn)]] Offset: {{--|1}}
+|}<noinclude>
+|}</noinclude>

@@ -1,0 +1,55 @@
+{{Royalty}}
+{{Infobox main|psycast
+| name = Skipshield
+| image = Skipshield.png
+| type = Psycast
+| description = Generate a spherical skipgate that sends all incoming and outgoing ground-level projectiles to some distant place. The process is forceful enough to detonate explosive projectiles. People and items are not affected.
+| psylink level = 6
+| casting time = 60
+| ability range = 24.9
+| psyfocus cost = 0.04
+| neural heat gain = 65
+| effect radius = 4.9
+| duration = 900
+| duration multiplier = 
+| goodwill impact =
+| caster must be capable of violence = false
+}}
+'''Skipshield''' is a level {{P|Psylink Level}} [[psycast]] that prevents ranged weapon fire in or out of its radius. 
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+{{Stub|section=1|reason=Verify non-ground level projectiles}}
+[[File:Skip  shield radius.jpg|thumb|left|175px|Radius of the skipshield with unshielded area denoted in red, partially shielded areas in gold (see Note left).<br> Note that despite the shield visually extending beyond the tiles, it does not protect them.]]
+
+Upon casting, skipshield creates a circular shield centered on the targeted tile with a radius of {{P|Effect Radius}} tiles for a duration of {{Ticks|{{P|Duration}}}}, after which it disappears. 
+
+During that time, the shield stops all incoming ground-level fire from passing into or out of the bubble,{{Check Tag|Wb inside?|What about a shooter inside the bubble shooting another pawn inside the bubble?}} and detonating explosive projectiles at the point of impact with the shield radius. Also note that this only applies to ground-level fire,{{Check Tag|Verify}} i.e. fire from ranged [[weapons]] carried by all types of [[pawn]] and [[turrets]], including grenades that cross the boundary of the shield. Fire from [[mortar]]s, [[orbital bombardment targeter|orbital bombardment]], or [[Permits|aerodrone strikes or salvos]] will not be blocked by the shield, nor will explosions crossing the boundary including those from intercepted projectiles.
+
+'''Note:''' Pawns on the tiles shown in [[gold tile|gold]] in the image to the left are shielded from attacks directly targeted at them, however, due to a bug, they can still be hit by attacks aimed at other nearby pawns that miss. 
+
+A pawn does not need to be inside the shield to benefit from the effect, assuming the enemy is not inside the shield and that the shield is between them and their attacker the incoming rounds will be stopped. However, it does not prevent pawns from moving inside the shield and attacking. 
+
+Unlike the other shields, projectiles that deal [[EMP]] damage hitting the shield will not disable the shield.
+
+== Analysis ==
+{{Image wanted|section =1|reason = 1)Shadow effect showing an example with the shield deployed a shooter in position and the unhitable rules shown. 2)  Through wall effect (show target tile and pretexts walls in different materials. both in the [[:Category: Images - Graphics|standard style]]}}
+Skipshield's most obvious use is to cover your own pawns, allowing melee pawns to close, or giving a respite from attacks. If used for this purpose, keep in mind that it doesn't just stop shots going into the shield, but also from going out the other side. This creates a "shadow" - an expanding cone of area on the opposite side of the shield to the shooter where they can't hit. As the psycast can be positioned wherever you like, unlike the [[low-shield pack]], a single shield can effectively cover a greater area with clever positioning. Also consider that it prevents firing out of as well. This can allow you to "switch off" any pawn's ranged attacks, even if you couldn't cover all of your pawns with a single or even multiple casts. This is especially useful when [[raider]]s drop-pod into the middle of your pawns.  
+
+The detonation of explosives on the edge of shield also allows you to bait raiders armed with dangerous weapons such as [[doomsday rocket launcher]]s into harming themselves and their allies, while wasting any disposable weapons. Place the shield between the enemy and the pawn they will target such that the closest of the edge the shield to the enemy is at the point where you want the projectile to detonate. Used properly, this can devastate a raid with only their own weapons.
+
+The radius of the shield is not blocked by walls. Therefore it can be cast on the inside of a fortification and prevent attacks from the outside doing damage to the walls. This is exceedingly useful for protecting against [[termite]]s and other breach raids for a short period to prevent breaches, or buy time.
+
+Psycasts, [[beam graser]]s,{{BiotechIcon}} [[incinerator]]s,{{AnomalyIcon}} and [[beam repeater]]s{{OdysseyIcon}} ignore the skipshield, and can fire in and out. These weapons can be used to attack enemies from safety, but watch out for [[tesseron]]s{{BiotechIcon}} and [[cyclops]]es{{OdysseyIcon}} which will ignore your shields.
+
+If the shield is placed over enemies to negate their fire, the [[diabolus]]'{{BiotechIcon}} [[hellsphere cannon]] also pairs well, as the hellsphere cannon's AOE will hit enemies through the skipshield.
+
+== Version history ==
+* [[Version/1.1.2647|1.1.2647]] - Added as '''Bullet shield'''.
+* [[Version/1.2.2753|1.2.2753]] - '''Bullet Shield''' renamed to '''Skipshield'''. 
+* [[Version/1.4.3523|1.4.3523]] - Fix: Explosive projectiles disappear when impacting a shield. They now detonate when impacting.
+
+{{Nav|psycasts|wide}}
+[[Category: Psycasts]]

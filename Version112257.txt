@@ -1,0 +1,39 @@
+{{Version Nav}} 
+
+We've been hard at work on a hotfix for some important bugs discovered in [[Version/1.1.0|1.1]]. The hotfix build is now released. The build number is 1.1.2257.
+
+Saves and mods should be 100% compatible.
+
+Please let us know if you have any trouble with it!
+
+We're still working and there will be more hotfix builds with language updates and more fixes.
+
+==Fixes==
+* Fixed not being able to uninstall/reinstall unstable power cells after defeating mech cluster.
+* Made smoothed stone count as floor for royal room requirements.
+* Fixed a bug where the mechanoid cluster quest never completes.
+* Mech clusters can no longer drop indoors.
+* Fixed a bug where injured pawns would never do recreation.
+* Added info on new features to ModUpdating.
+* Fixed a bug where turrets have a red cross overlay after loading a 1.0 savegame.
+* Fixed a bug where a "colonist died" thought would appear when a quest helper died.
+* Mood caused mental breaks are now disabled for the wimp from the noble wimp quest.
+* Change string.Replace to Substring for finding relative file path in LanguageData.
+* Fixed a bug where the "Carry to shuttle" command drops the target on the floor if the shuttle is outside the allowed area.
+* The Empire intro quest is now skipped if the player has opted out of royal favor rewards from the Empire.
+* Fixed a bug where arrest success chance can exceed 100%.
+* Fixed a bug where royal apparel generated on non-royal characters to satisfy warmth requirements.
+* Fixed a bug where a different trader would arrive than the one requested.
+* Added monument size limit for quests.
+* Fixed a bug where the noble wimp doesn't leave the colony after the quest ends
+* Fixed a bug where the "Open linked quest" command appears even if the quest is expired/completed/dismissed.
+* Fixed a bug where unnecessary blueprints are removed in DoTerrainChangedEffects
+* Fixed a bug that would cause a black screen if a mod was missing packageID in dependencies.
+* Fixed a few typos.
+
+==Modding features==
+* Added IgnoreIfNoMatchingField attribute to allow having custom data in About.xml.
+* Added the ability to set description and dependency relations on a game version-specific basis for About.xml.
+* Added support for negative conditional load folders support. Rename attributes to IfModActive/IfModNotActive. Allow comma-separated packageId lists as values.
+* Added Language folder support to LoadFolder system.
+* Added MayRequire attrib functionality to individual load folders, to allow using them conditionally.

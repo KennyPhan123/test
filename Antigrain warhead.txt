@@ -1,0 +1,85 @@
+{{infobox main|resource
+| name = Antigrain warhead
+| image = Shell antigrain a.png
+| description = An ultra-tech warhead powered by a grain of antimatter. Usually used by spacecraft or glitterworld war machines, it creates a huge explosion and starts fires around the target. Can be fired from mortars or installed as a trap. Explodes when damaged.
+| type = Resources
+| type2 = Mortar shell
+| tech level = Spacer
+| path cost = 14
+| stack limit = 25
+| beauty = 
+| flammability = 1.0
+| marketvalue = 1200
+| mass base = 1.25
+| hp = 60
+| deterioration = 1.5
+| damage = 550
+| damage type = BombSuper
+| armorPenetration = 130
+| stoppingPower = 2
+| velocity = 41
+| blastRadius = 14.9
+| defName = Shell_AntigrainWarhead
+| thingCategories = MortarShells
+| tradeTags = MortarShell
+| thingSetMakerTags = RewardStandardCore
+| tradeability = Sellable
+| page verified for version = 1.3.3066
+}}
+The '''antigrain warhead''' is a [[mortar shell]] that can be fired by using a [[mortar]] or used as material to make an [[IED antigrain warhead trap]]. It both does massive damage and has a large blast radius, making it exceptionally effective, although rare.
+
+== Acquisition ==
+Antigrain warheads cannot be crafted nor bought from [[trader]]s. Instead they can only be acquired as a reward for performing [[quests]]. Note that quest rewards are selected with a weighted random generator, so there is no way to guarantee access to antigrain warheads in a given play-through. 
+
+They can also rarely be found inside an [[ancient shrine]].
+
+== Summary ==
+{{Image wanted|section=1|reason=Images of damage AoE with damage drop off indicated and stack AoE (1 shell and full stack) with damage drop off indicated, in a style similar to [[:File:Firefoam shell radius.png]] but unlike other shells it'll need to be customised or have multiple images to display damage drop off}}
+When fired from a mortar, {{lc:{{P|Name}}}}s deal [[Damage types#{{P|Damage Type}}|{{P|Damage Type}}]] damage in a {{P|Blast Radius}} tile radius, dealing {{P|Damage Base}} at the center and {{#expr: {{P|Damage Base}}*0.2}} damage at the extreme edge of the radius and linearly interpolated in between. It will also set fire to roughly 22% of the affected tiles.
+
+When damaged beyond 70% of its health, it will explode after between {{ticks|30}} and {{ticks|60}}, dealing [[Damage Type#BombSuper|BombSuper]] damage in a radius around itself. The radius depends on the quantity in the stack, with a single shell covering a 14.9 tile radius, and expanding this radius proportional to the square root of the stack size times 0.4 up to a maximum radius of {{#expr: 14.9+((24*0.4)^0.5) round 2}} tiles at a full stack of 25. As above, it will deal {{P|Damage Base}} at the center of the explosion, {{#expr: {{P|Damage Base}}*0.2}} damage at the extreme edge of the radius and be linearly interpolated in between. It will also set fire to roughly 22% of the affected tiles.
+
+Deterioration damage, however, will not cause an explosion, and the warhead will instead ''"deteriorate to nothing"''.
+
+== Usage ==
+Antigrain warheads can be used in the following recipes:
+{{Ingredient List|noCollapse=true}}
+
+== Analysis ==
+Antigrain warheads deal more than enough damage to one-shot most enemies in the game. This makes them utterly unmatched in siege defense, as they are capable of wiping out entire groups of [[raider]]s in a single blast. Additionally, their blast radius is sufficient to always hit the targeted tile in the blast, giving them reliability in hitting point targets far exceeding that of normally inaccurate mortars. 
+
+Tougher, armored enemies such as the [[centipede]] are a bit more than likely to survive a blast, but will be severely weakened such that finishing them off becomes much easier. Also take note that a direct hit, rare as it is, will likely kill it outright.
+
+[[IED antigrain warhead trap|Installed as a trap]], it can be extremely useful against [[crashed ship parts]] as doing so helps overcome the inaccuracy of mortars.
+
+===Storage===
+As with all mortar shells, it is heavily advised that you keep it in a safe place where it cannot deteriorate, come under fire, or be targeted by a [[Mental break|tantrum]]. In addition to the loss of the antigrain warhead itself, its detonation is likely to cause massive damage to your base, anything inside it, and its occupants. If a tantruming pawn does decide to punch an antigrain warhead, try arresting them. If your pawns are too far, shooting them may be the better option than the alternative - the injuries, mood and social penalties, and even risk of death are still better than the almost-guaranteed death of the tantruming pawn, let alone the collateral damage. For maximum safety, consider sealing it behind a quickly-deconstructable wall, ideally under thick mountain roof on the small chance that a mortar hits that single tile.
+
+== Gallery ==
+<gallery>
+Shell antigrain a.png|One antigrain warhead
+Shell antigrain b.png|Partial stack
+Shell antigrain c.png|Full stack
+ShellAntigrainWarhead.png|Projectile
+</gallery>
+
+== Trivia ==
+The "grain" in antigrain refers to a piece of antimatter the size of a grain of sand, not a different "grain" unit.<ref>" This is the intended meaning as I wrote it. Grain of sand, not grain of barley/Imperial grain." - Tynan Sylvester, [https://www.reddit.com/r/RimWorld/comments/9q1i11/comment/e86hyj2 Reddit comment].</ref>
+
+== Version history ==
+* [[Version/0.18.1722|0.18.1722]] - Added.
+* ? - Description changed from ''{{Hover title|A tiny ultra-tech warhead usually used by spacecraft or glitterworld war machines. Powered by a grain of antimatter, it creates a huge explosion and starts fires around the target. Can be fired from mortars or installed as a trap. Explodes when damaged.|"A tiny ultra-tech warhead [...]"}}'' to ''{{Hover title|An ultra-tech warhead powered by a grain of antimatter. Usually used by spacecraft or glitterworld war machines, it creates a huge explosion and starts fires around the target. Can be fired from mortars or installed as a trap. Explodes when damaged.|"An ultra-tech warhead [...]"}}''.
+* Between [[Version/1.0.2096|1.0.2096]] - [[Version/1.3.3159|1.3.3159]] - Texture changed. 
+* Between [[Version/1.4.3523|1.4.3523]] - [[Version/1.4.3901|1.4.3901]] (inclusive) - Tech level changed from industrial to spacer. 
+
+<gallery>
+Antigrain warhead old.png|Original texture 
+</gallery>
+
+== References ==
+{{Reflist}}
+
+{{nav|security|wide}}
+{{Nav|questitems|wide}}
+
+[[Category: Mortar shells]]

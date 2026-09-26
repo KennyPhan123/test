@@ -1,0 +1,52 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Global/Temperature}}
+|}
+----
+{| {{STDT}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Heatstroke" <!-- defName="Heatstroke" -->
+! Heatstroke
+----
+* Def Name:<br />Heatstroke
+* Label:<br />heatstroke
+| A generalized disruption to body functioning caused by excessive exposure to heat and sun. The victim becomes dizzy, weak, and confused. Recovery is quick once in a cool area, but if heat exposure continues, heat stroke gets worse until death.
+|<!-- Details -->
+* Default Label Color: {{Color|80%|80%|35%}}<!--#cccc59 -->
+* Lethal Severity: '''100%'''
+* Can Apply {{DOD}} Chance For Capacity Changes: {{Bad|true}}
+* Tale On Visible: '''HeatstrokeRevealed'''
+|<!-- Stages -->
+{| {{STDT}}
+! Label !! Parameters
+|-
+! initial
+|<!-- Parameters -->
+* Become Visible: {{Bad|false}}
+|-
+! initial
+|<!-- Parameters -->
+* Min Severity: '''4%'''
+* [[Consciousness]] Offset: {{--|5%}}
+|-
+! minor
+|<!-- Parameters -->
+* Min Severity: '''20%'''
+* [[Moving]] Offset: {{--|10%}}
+* [[Consciousness]] Offset: {{--|10%}}
+|-
+! serious
+|<!-- Parameters -->
+* Min Severity: '''35%'''
+* Pain Offset: {{++|15%}}
+* [[Moving]] Offset: {{--|30%}}
+* [[Consciousness]] Offset: {{--|20%}}
+|-
+! extreme
+|<!-- Parameters -->
+* Min Severity: '''62%'''
+* Life Threatening: {{Bad|true}}
+* Pain Offset: {{++|30%}}
+* [[Consciousness]] Max: {{Bad|10%}}
+|}<noinclude>
+|}</noinclude>

@@ -1,0 +1,112 @@
+{{Rewrite|reason=It would be very useful to have the reasonable optimum steel returns per tick as well as the average ones so we can see what is best in late game colonies. Not theoretical optimums but reasonable ones for example, is deep drilling with a Intellectual 20 scanner and Mining 20, Dual Drill Arms miner better than a 2-archotech-armed smelter, not a Manipulation 355% smelter with every possible bonus}} 
+{{Main|Steel}}
+Calculations for all items in [[Steel#Acquisition analysis]]. Assume healthy pawns in full [[light]] in Strive to Survive [[difficulty]]. All numbers are rounded to 1 decimal point; unrounded numbers used for all calculations.
+
+==Mining steel ore==
+Relevant stats: [[Mining Speed]], [[Mining Yield]], [[difficulty]].
+
+For 8 Mining skill, healthy pawn :
+*{{ticks|1900}} to mine an ore. [[Mining Speed]] = 100%. {{Check Tag|Verify|Empirically tested. I took a stopwatch on a mining 8 pawn, then rounded to a pretty number.}}
+*40 steel per ore. [[Mining Yield]] = 100%.
+
+(1900 ticks / 40 steel) = {{ticks|1900/40}} per steel.
+*Plus travel time.
+
+==Deconstruction==
+Relevant stats: [[Construction Speed]], item in question
+
+For 8 Construction skill, healthy pawn, against a wall:
+*{{ticks|135}} to deconstruct a steel wall. [[Construction Speed]] = 100%.{{Check Tag|Verify|Empirically tested. Margin of error within 1 second}}
+*2.5 steel per wall. All items give half their steel.
+
+(135 ticks / 2.5 steel) = {{ticks|135/2.5}} per steel.
+*Plus travel time.
+
+==Smelting==
+Relevant stats: [[General Labor Speed]], item smelted
+
+===Steel slag chunks===
+For a healthy pawn:
+*{{ticks|400}} per chunk. [[General Labor Speed]] = 100%
+*15 steel per chunk.
+
+(400 ticks / 15 steel) = {{ticks|400/15 round 1}} per steel
+*Plus travel time.
+
+===Weapons and apparel===
+For a healthy pawn:
+*{{ticks|1600}} per item. [[General Labor Speed]] = 100%
+*7 steel per autopistol / steel knife. More steel for any other item (25% of item worth)
+**You also get any other resources used to craft the item, other than [[component]]s/[[advanced component]]s and [[chemfuel]].
+
+(1600 ticks / 7 steel) = {{ticks|1600/7 round 1}} per steel
+
+==Shredding==
+Relevant stats: [[Mechanoid Shredding Efficiency]], [[Mechanoid Shredding Speed]], mechanoid type, Missing Body Parts, whenever done on a [[machining table]]
+
+For 10 Crafting skill, healthy pawn:
+*{{ticks|300}} to shred a mechanoid. [[Mechanoid Shredding Speed]] = 100%. Constant per mechanoid.
+*15 steel per scyther or lancer. 0% Missing Body Parts.
+*5 steel per war urchin -> 2.5 steel @ 50% Missing Body parts
+
+(300 ticks / 15 steel) = {{ticks|300/15 round 1}} per steel (0% missing lancer)<br>
+(300 ticks / 2.5 steel) = {{ticks|300/2.5}} per steel (50% missing w. urchin)
+
+==Deep Drilling==
+Relevant stats: [[Research Speed]], [[Deep Drilling Speed]], [[Mining Yield]]
+
+For 8 Intellectual + 8 Mining skill, healthy pawn(s):
+*{{ticks|180000}} average to find ''any'' deposit. [[Research Speed]] = 100%.
+**(4/7.5) = 53% to get steel. {{ticks|180000*7.5/4}} average to find a steel deposit. (not rounded in calculations)
+*Average 9000 steel per deposit. 
+*(180000 ticks * .53 steel / 9000 ticks) = {{ticks|180000*7.5/4/9000 round 1}} per steel scan
+*{{ticks|14000}} per deep drill cycle. [[Deep Drilling Speed]] = 100%.
+*35 steel per deep drill cycle. [[Mining Yield]] = 100%.
+*(14000 ticks / 35 steel) = {{ticks|14000/35}} per steel spent mining.
+
+{{ticks|(180000*7.5/4/9000) + (14000/35) round 1}} per steel (scan + mine).
+*Plus travel time.
+
+==Long-range mineral scanner==
+Relevant stats: [[Research Speed]], [[Mining Speed]], [[Mining Yield]], [[difficulty]], means of travel
+
+For 8 Intellectual + 8 Mining skill, healthy pawn(s):
+*{{ticks|240000}} average to find  deposit. [[Research Speed]] = 100%.
+*Average 2250 steel. [[Mining Yield]] = 100%.
+*(2400000 ticks / 2250 steel) = {{ticks|240000/2250 round 1}} per steel spent scanning.
+*{{ticks|1900}} to mine an ore. Mining Speed = 100%. {{Check Tag|Verify|Empirically tested. I took a stopwatch on a mining 8 pawn, then rounded to a pretty number.}}
+*40 steel per ore. Mining Yield = 100%.
+*(1900 ticks / 40 steel) = {{ticks|1900/40}} per steel spent mining.
+
+{{ticks|(240000/2250) + (1900/40) round 1}} per steel (scan + mine).
+*Plus travel time, plus combat time (multiple days w/o transport pods)
+
+===Transport pods===
+Other relevant stats: How you get [[chemfuel]]
+*1700 steel per scan. 
+**2250 base steel/scan, -550 steel for 8 [[transport pod]]s + 1 [[pod launcher]], if [[component]]s are created from steel. (1 pod to arrive, 7 pods + 1 launcher to send 1050kg = 2100 steel).
+*(2400000 ticks / 1700 steel) = {{ticks|240000/1700 round 1}} per steel spent scanning.
+*(1900 ticks / 40 steel) = {{ticks|1900/40}} per steel spent mining.
+*Chemfuel variable work based on how you get it and how far you need to go.
+*{{ticks|(2500*9) + (70*9*370/22) round 1}} total to create 350 chemfuel from [[corn]] in a [[biofuel refinery]]. Enough for a 10-tile trip. [[Plant Work Speed]] & [[Harvest Yield]] = 100%
+*{{ticks|1600*9}} to build 8 pods + 1 launcher.
+*(14400 ticks / 1700 steel) = {{ticks|1600*9/1700 round 1}} per steel building pods.
+
+{{ticks|(240000/1700) + (1900/40) + (1600*9/1700) + (2500*9/1700) + ((70*9*370/22)/1700) round 1}} per steel (scan + mine + pod + fuel from corn).
+*Plus loading time, plus combat time
+
+===Transport pods + Farskip===
+{{Royalty|section=1}}
+Other relvant stats: How you get [[chemfuel]], [[psyfocus]] meditation rate. Assuming you send 2 pawns, which may not exactly be safe.
+*2188 average steel per scan. 1 transport pod (-62 steel) to location.
+*(2400000 ticks / 2188 steel) = {{ticks|240000/2188 round 1}} per steel spent scanning.
+*(1900 ticks / 40 steel) = {{ticks|1900/40}} per steel spent mining.
+*{{ticks|1600}} total to build 1 pod. {{ticks|2500}} + {{ticks|70*370/22 round 1}} total for 35 chemfuel fueled from [[corn]] (15 tile trip).
+*1.4 full days (84000 ticks) for 70% psyfocus at 50% psyfocus per day. (70% / [psyfocus per day]) days for 60000 ticks = 1 day.
+**Meditation also counts as Recreation.
+*{{ticks|(60000*.7/.5)/2188 round 1}} per steel meditating for farskip. 50% psyfocus per day.
+*(1900 ticks / 40 steel) = {{ticks|1900/40}} per steel spent mining.
+
+{{ticks|(240000/2188) + (1900/40) + ((1600+2500+(70*370/22))/2188) + (60000*1.4/2188) round 1}} per steel (scan + mine + pod + fuel from corn + meditation).
+
+[[Category:Material|#Steel/Calculations]]

@@ -1,0 +1,39 @@
+{{Version Nav|unstable=1}}
+This update is available on Steam's unstable branch fo{{sic}} testing.
+
+We're testing to ensure full save and mod compatibility. If you're willing to help test the unstable build for compatibility, please join us here: https://discord.gg/FYBsdNX
+
+Change list:
+
+* Increased mini-turret range 25->29.
+* We no longer generate big mech clusters if there's no space for them to spawn anyway (we keep the points, they're just more compact).
+* We no longer generate quests to build monuments bigger than possible (e.g. due to bad terrain).
+* Quests are now consistently sorted by date in the quests tab.
+* Low-tech weapons are no longer biocodable.
+* Psychic animal pulser no longer affects player faction animals.
+* Adjust tuning of chemical desire traits.
+* Add tip about changing storyteller and difficulty through the options menu.
+* Columns and urns are now marked as inert for AI purposes.
+* Pawns can no longer haul away unfinished things that have a bound bill, are located on the worktable or touch the worktable.
+* Expand title rewards letter to include the delivery information (to colony/directly to inventory).
+* Fix: Apparel wearout damage applies to world pawns, so they eventually become naked.
+* Fix: Ground-penetrating scanner text flickering.
+* Fix: Turrets in smoke can target enemies adjacent to them.
+* Fix: Mods cannot override patches (reported by NotFood).
+* Fix: LordToil_HuntEnemies looking for random spot outside colony ownedpawns are not spawned.
+* Fix: Mechanoid ship part disappeared with error message.
+* Fix: Incorrect tip.
+* Fix: Modded floors with 0 market value break monument generation
+* Fix: Aesthetic nose lacking addedPartProps
+* Fix: Bad grammar in title rewards letter.
+
+EDIT: Updated.
+
+* Fix: Pawns will move primary equipment to inventory if pawn becomes incapable of manipulation.
+* Remove spurious error "Added def X without an associated modContentPack". Patched defs don't need to have modContentPack.
+* Fixed sorting of quest tabs.
+* Reworked FindDropPodLocation validator in IncidentWorker_CrashedShipPart.
+* Fix: Mech cluster quests fail to mention some condition causers in their threat list.
+
+==Source==
+* https://steamcommunity.com/games/294100/announcements/detail/1706240323232123176

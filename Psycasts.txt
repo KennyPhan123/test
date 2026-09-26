@@ -1,0 +1,668 @@
+{{Royalty}}
+{{About|the individual abilities added by the [[Royalty DLC]]|the group activities added by the [[Anomaly DLC]]|Psychic rituals}} 
+{{Redirect|Psylink|the item|Psylink neuroformer}}
+'''Psycasts''' are psychic powers available to pawns with psylink levels, added by the [[Royalty (DLC)| Royalty DLC]].
+== Lore ==
+<onlyinclude>An organic connection to a larger psychic field. This allows a person to psychically induce a distant [[archotech]] superintelligence to influence reality in ways that seem impossible. Higher levels of psylink permit the use of more powers. Regardless of psylink level, a person can only use specific powers that they have learned. Psylink comes from a variety of sources. Single-use [[psylink neuroformer]] devices can create a psylink. Tribal peoples also know how to develop it through ritual linking with the legendary [[anima tree]]. As a physical phenomenon in the brain, psylink is poorly-understood by scientists, not least because it seems to actively conceal itself if studied too closely. One thing most agree on is that it somehow connects people to archotechs and harnesses their power, possibly through some sort of negotiation or sympathy mechanism.</onlyinclude>
+
+== Acquisition ==
+To use psycasts, a pawn must first have a psylink level equal to or greater than the level of the chosen psycast. A pawn may have up to 6 levels of psylink, and these levels can be gained through several different methods:
+#  Acquire a [[Psylink neuroformer]] through [[Quests|questing]].
+#  Gain Royalty [[Titles]] by accepting [[Honor]] as a quest reward.
+#  Pawns can meditate at an [[Anima tree]] to grow anima grass. Once 20 grass has grown, a ritual can be performed, consuming the grass and granting one Psylink level to a pawn with the [[Psyfocus#Natural|Natural]] Meditation focus type.
+#  {{IdeologyIcon}}Pawns who get blinded through a Satisfying or Spectacular [[Rituals|Blinding Ceremony]] have a chance to get a psylink level, even if the pawns in question have a different [[Ideoligion]] without the [[Blindsight]] meme. The ceremony can be performed again if the pawns regain their sight through any means including a [[bionic eye]], [[healer mech serum|healer]] or [[resurrector mech serum]], or [[Biosculpter pod#Bioregeneration|biosculpter pod]]. Note that pawns with [[Blindness (precept)|pro-Blindness]] ideoligions at the time of their biosculpting will not have their eyes repaired.
+
+A random psycast of the new level will be learned when gaining a new level of psylink - i.e. a random level 1 psycast is gained when a pawn gains their first level, a level 2 psycast is learned when gaining their second, etc. 
+
+Further psycasts can be gained by using a [[Psytrainer]] which grants the specific psycast mentioned in their name. Additional psycasts are available for purchase from traders, with Empire bases and traders having the most, and tribals having the least. A psycaster can learn any number of psycasts through psytrainers, up to and including every psycast in the game, and limited only by the availability of psytrainers themselves.
+
+Psylinks are considered an implant installed in the brain, but do not count towards [[body modder]], [[body purist]], or any [[Body modification|body modification precepts]].{{IdeologyIcon}}
+
+'''Note:''' If using a psytrainer for a level higher than the current psylink level of the user, the learned psycast will replaced the one usually gained for that level when that level is achieved. Given using the psytrainer after gaining that level either grants an additional power or does not work and thus does not consume the psytrainer, it is always best to only use psytrainers '''after''' the required psylink level has been achieved.
+
+Also note that if a pawn already has a psylink level above what the current title would give, additional titles will not grant psylinks beyond what they normally do for that title. So if a neuroformer has been used to gain psylink level 1, and then the title of Novice is gained and bestowed, the pawn will still only have psylink level 1. This means using neuroformers or rituals on pawns that will gain titles is ultimately a waste, or vice versa.
+
+== Mechanics ==
+A psycaster's effectiveness is controlled by three primary factors: their Neural Heat Limit, their available Psyfocus and the [[Psychic Sensitivity]] of their target.
+== Neural Heat ==
+{{Merge|section=1|destination=Neural Heat Recovery Rate|reason= [[Neural Heat Recovery Rate]] exists as an independent page}} 
+{{Quote|Despite being called "heat", neural heat is not a measure of temperature. It refers to a type of chaotic psychic energy in the mind which is built up when using psychic powers and dissipates over the course of a few seconds or minutes. If neural heat is pushed past normal limits, it may cause temporary psychic breakdown and unconsciousness due to psychic shock. These conditions don't cause permanent damage.|Neural heat description}}
+==== Neural Heat Limit ====
+[[File:Neural Heat Unlimited.png|frame|right|Neural Heat Limiter Off]]
+[[File:Neural Heat limited.png|frame|right|Neural Heat Limiter On]]
+A psycaster's neural heat limit is the primary limitation to how many psycasts they can perform in a given period of time. Each psycast gives the caster a certain amount of neural heat. As long as a pawn stays within their neural heat limit, they'll suffer no ill effects. By default, a pawn will not use a psycast if the neural heat gain would cause them to exceed their limit. This will be represented by the psycast's icon being greyed out on the UI. A pawn can be instructed to ignore their normal heat limit by clicking on the "Neural Heat Limiter", but exceeding the limit can cause [[psychic breakdown]]. 
+
+The neural heat limit is affected by both the psycaster's psychic sensitivity and psylink level. A pawn with a level 1 Psylink and 100% psychic sensitivity will have a neural heat limit of 30.
+
+The equation for a pawn's neural heat limit is:
+{| class="wikitable"
+|-
+| Neural Heat Limit = 30 * Psychic Sensitivity * (0.66... + (0.33... * Psylink level))
+|}
+or simpler:
+{| class="wikitable"
+|-
+| Neural Heat Limit = (2 + Psylink level) * 10 * Psychic Sensitivity
+|}
+
+Assuming 100% psychic sensitivity, this in the following: 
+{| {{STDT| sortable c_07 text-center}}
+|-
+! Psylink Level !! Limit
+|-
+! 1
+| {{#expr: 30 * 1 * (0.66666 + (0.33333 * 1)) round 0}}
+|-
+! 2
+| {{#expr: 30 * 1 * (0.66666 + (0.33333 * 2)) round 0}}
+|-
+! 3
+| {{#expr: 30 * 1 * (0.66666 + (0.33333 * 3)) round 0}}
+|-
+! 4
+| {{#expr: 30 * 1 * (0.66666 + (0.33333 * 4)) round 0}}
+|-
+! 5
+| {{#expr: 30 * 1 * (0.66666 + (0.33333 * 5)) round 0}}
+|-
+! 6
+| {{#expr: 30 * 1 * (0.66666 + (0.33333 * 6)) round 0}}
+|-
+|}
+
+Equipment made from [[bioferrite]]{{AnomalyIcon}} also provide an additive offset to neural heat limit.
+
+The in-game meter for neural heat is rounded to the nearest integer, but in-game behavior suggests that the actual decimal value of heat is tracked by the game, as psycasts may sometimes say they have insufficient heat limit to cast even when the spare heat displayed on the pawn's neural heat meter exactly equals the casting cost.
+
+==== Neural Heat Recovery Rate ====
+Heat naturally decreases over time, with faster rates provided by additional levels of psylink. Unlike the neural heat limit, it is not affected by the pawn's [[psychic sensitivity]]. The default rate of reduction for a pawn without a psylink or with a level 1 psylink is 0.54/s. Every additional psylink level increases the rate by 12.5%.  In addition, the [[pain]] currently felt by the psycasting pawn ''adds'' an additional increase in rate proportional to the primary rate multiplied by three times the pain percentage e.g. at 100% pain, the psycaster will recover neural heat at 400% of their normal rate.
+
+'''Note:''' Offsets to this value, such as from [[eltex]] items, occur to the base recovery rate and are thus subject to the multiplier from the psylink level and pain level - i.e. a normal [[quality]] [[eltex skullcap]] will improve a Psylink Level 1 Psycaster's recovery rate by 0.091/s but increase the rate of a Psylink Level 6 Psycaster's by 0.148/s.
+
+The resulting value follows the equation, assuming at least 1 level of psylink.
+{| class="wikitable"
+|-
+| Neural Heat Recovery Rate = ((0.54+Gear Offsets)*(0.875 + 0.125*Psylink level)) * (1+3*Pain percentage)
+|}
+
+{| {{STDT| sortable c_07 text-center}}
+|-
+! Psylink Level !! Multiplier !! Base rate
+|-
+! 1
+| 1.000x
+| {{#expr: 0.54*1}}00/s 
+|-
+! 2
+| 1.125x
+| {{#expr: 0.54*1.125}}/s 
+|-
+! 3
+| 1.250x
+| {{#expr: 0.54*1.250}}0/s 
+|-
+! 4
+| 1.375x
+| {{#expr: 0.54*1.375}}/s 
+|-
+! 5
+| 1.500x
+| {{#expr: 0.54*1.500}}00/s 
+|-
+! 6
+| 1.625x
+| {{#expr: 0.54*1.6250}}/s 
+|-
+|}
+
+==== Psychic breakdown ====
+{{Split|section=1|destination=Ailments|reason = Possibly be replicated or transcluded on to the [[ailments]] page, but bears discussion}}
+{{Quote|Deep psychic destabilization of the mind. Psychic breakdown last for days, causing mental disturbances of various kinds. It resolves itself with time.|Psychic breakdown description}}
+A pawn can be instructed to exceed their neural heat limit clicking the icon next to the neural heat gauge to disable the limit.  Exceeding the pawn's neural heat limit can cause an effect called Psychic Breakdown.  The severity of the Psychic breakdown has elements of randomness to it, but will generally be more severe the farther past the neural heat limit a pawn goes, and the longer they are past their heat limit.  
+
+{| class="wikitable"
+|-
+! Heat level !! Heat Range !! Breakdown gain
+|-
+! Safe
+| 0% - 99%    || -
+|-
+! Overloaded
+| 100% - 132% || +2 Breakdown severity, MTB 2 hours
+|-
+! Very overloaded
+| 133% - 165% || +4 Breakdown severity, MTB 2 hours
+|-
+! Extreme
+| 166% - 199% || +6 Breakdown severity, MTB 2 hours
+|-
+! Overwhelming
+| 200%+       || +8 Breakdown severity, MTB 2 hours. [[Psychic shock]] (10% max [[Consciousness]] for {{ticks|7500}})
+|}
+For example, this means that if a pawn is consistently kept at 170% of the neural heat limit, they will, on average, increase the severity of their psychic breakdown by +6 every 2 hours. Note that this is only an average value over time.
+
+In addition, if a pawn reaches twice their normal neural heat limit, they'll immediately be incapacitated by [[psychic shock]] for 3 in-game hours, in addition to the effects of any psychic breakdown that may develop.
+
+Psychic breakdowns come in 3 levels of severity:
+{| class="wikitable"
+|-
+! Name !! Severity Range !! [[Consciousness]] !! [[Mood#Situation_Special|Mood]] !! [[Mental breaks]]
+|-
+!Minor 
+|  0 - 4  || -25%                     || -6  || Minor [[mental break]], MTB 5 days
+|-
+!Major 
+|  5 - 10 || -50%                     || -12 || Minor or Major [[mental break]], MTB 5 days
+|-
+!Total
+| 10 - 15 || 10% max (Unconciousness) || -18 || - 
+|}
+
+Psychic breakdowns last a variable number of days, depending on the severity. Severity decreases at a rate of 1 per day. Thus, minor breakdowns last from 1-5 days, major breakdowns last from 6-10 days, and total breakdowns last from 11-15 days. 
+
+Because the severity and duration of the psychic breakdown, as well as the chances of it in the first place, depend on how long and by how much your pawn has exceeded their heat limit using [[#Psycasting stat modifiers|equipment that improves psychic sensitivity or neural heat loss]] can help minimize or even avoid psychic breakdowns even if you have to turn off the neural heat limit during combat.
+
+== Psyfocus ==
+{{Move|section=1|destination=Psyfocus|reason=Detail and structure missing from there should be moved. This should be repurposed as a quick summary (i.e. its mana that places a mid term limit not just a short term limit like heat, this is short list of focuses types and the comparison table, see [[Psyfocus]] for more detail)}}
+{{quote|Psyfocus is a special type of mental structuring which is necessary to use psychic powers. Psyfocus dissipates over time, and must be built by regular meditation. Losing all psyfocus makes someone unable to use psychics, but has no other consequences. Higher levels of psyfocus permit higher-level powers, but also increase the rate of psyfocus dissipation|In-game Description}}
+{{Main|Psyfocus}}
+In addition to the neural heat increase, each psycast consumes a certain percent of psyfocus. Unlike neural heat, psyfocus costs are the same for every caster, and there is no way to exceed or bypass a psyfocus cost. If the psycaster has insufficient psyfocus for the psycast, it cannot be cast at all. Level 3+ psycasts also require the user to have a minimum level of psyfocus stored in order to be useable:
+*Level 3-4: 25% psyfocus minimum
+*Level 5-6: 50% psyfocus minimum
+
+Even without psycasting, psyfocus will naturally degrade by a small amount per day, relative to the amount of psyfocus the psycaster currently has. Below 25% psyfocus, the psyfocus falls at 3.5% per day, between 25 and 50%, psyfocus falls 5.5% per day, and above 50% it falls at 7.5% per day.
+
+===Meditation===
+{{Main|Psyfocus#Meditation}}
+In order to replenish psyfocus, a pawn can spend time meditating. Each pawn will gain a base of 50% psyfocus per day, or 2.08% psyfocus an hour. Meditation foci further improve these rates by adding their listed strength. For example, a meditation foci of +44% would have meditation give 94% psyfocus per day.
+
+There are 6 different types of objects that a pawn can meditate to:
+*'''Natural:''' Available to most, but not all, Tribal [[backstories]]. Natural meditation objects are most effective when no artifical buildings are nearby. Uniquely, a pawn with natural meditation can grow [[anima grass]] and perform the [[anima tree]] linking ritual, allowing pawns to gain psylink levels independent from psylink neuroformers.
+*'''Minimal:''' Available to [[Ascetic]] pawns only. Allows meditation at any wall.
+*'''Artistic:''' The default meditation type, available to any non-Ascetic without the Natural focus. Meditate at sculptures - the higher the quality, the better.
+*'''Morbid:''' Available to pawns with certain [[trait]]s, like [[Psychopath]] or [[Jealous]]. Meditate at graves and sarcophagi - deceased family members or loved ones give a bonus.
+*'''Dignified:''' Available to anyone holding a royal [[title]]. [[Meditation throne]]s are improved by having a throne room befitting of the pawn's title.
+*'''Flame:''' Available to [[Pyromaniac]]s. Meditate at lit campfires and other burning light sources.
+
+The rate of psyfocus gain from meditation can further be increased in the following ways:
+* Using [[Wake-up]] increases the psyfocus gain from meditation by {{+|20%}} per day for the [[Wake-up#Wake-up high|duration of its high]].
+* The [[Psy-meditative]] persona trait grants an additional {{+|10%}} psyfocus gain per day of meditation, while the weapon is held in hand.
+* Each [[psychofluid pump]]{{BiotechIcon}} increases {{+|5%}} psyfocus per day of meditation from a completed [[deathrest]], up to a maximum of {{+|20%}} from 4 pumps. This bonus lasts until the next deathrest.
+* [[Psy-sensitive]] and [[Super psy-sensitive]] genes{{BiotechIcon}} increase psyfocus gain per meditation day by {{+|10%}} and {{+|20%}} respectively. Note that these genes are mutually exclusive.
+
+<div style="float: left;">
+{{:Psyfocus}}
+</div> <br style="clear:both" />
+
+Many meditation foci can be improved by having other buildings in its radius. For example, a [[sculpture]] can be improved by having other, high [[quality]] sculptures in its radius. Conversely, most natural foci are weakened by nearby artificial structures. 
+
+In any case, foci will never truly "add up". Each nearby sculpture past the first only increases psyfocus by +1-2%, rather than its full psyfocus value. Having multiple unrelated foci together will not have an extra effect. For example, a pawn cannot use a [[meditation throne]] and [[brazier]] at the same time, even if they have access to both the Dignified and the Flame meditation types. The better of the two foci will be used in any scenario.
+
+===Alternative psyfocus===
+{{Stub|section=1|reason=Order of operations for calculating meditation gain with base, focus, wakeup, and psymeditative persona weapon - wakeup and psymed are additive with each other, but are they additive or mutiplicative with the others}}
+Other than meditation, the following methods will increase a pawn's psyfocus:
+* Using [[Go-juice]] instantly refills a psycaster's psyfocus by {{Good|15%}}.
+* [[Ideoligion]] [[rituals]] {{IdeologyIcon}} can select fully refilling the psyfocus of all participants as a reward for sufficiently high quality outcomes.{{Check Tag|Detail|Specific terms, mechanics, details etc. E.g. what outcomes specifically?}} .
+* The [[kill-focused]] persona trait grant an instant {{+|20%}} psyfocus on killing an enemy. Note that psyfocus is gained for directly killing a pawn. This includes killing wild animals, downed hostiles, friendly NPCs, colonists, and even [[Animals#Slaughtering|slaughtering]] colony animals will grant psyfocus as long as the weapon is held in hand whilst doing so. Age and body size do not affect this rate. Excess colony animals, especially from rapidly-breeding animals such as [[chicken]]s, can thus be turned into into massive psyfocus gain, allowing continuous use of utility psycasts such as [[Word of inspiration]] or [[Word of trust]] or high cost combat options such as [[Berserk pulse]].
+
+== Psychic Sensitivity ==
+A user's psychic sensitivity increases the [[neural heat]] they can use. The user's sensitivity does not directly increase the duration, impact, or range of any psycast, unless they are also the target.
+
+In addition, the ''target'''s psychic sensitivity can determine how long a psycast lasts. For many psycasts, psychic sensitivity is a multiplier to duration.  For example, a [[psychically hypersensitive]] (Sensitivity of 1.8) pawn will be affected by the Berserk psycast for 54 seconds instead of the normal 30, while a [[psychically dull]] (Sensitivity of 0.5) pawn would only be affected for 15 seconds. A [[psychically deaf]] (Sensitivity of 0) pawn would be immune to these psycasts.
+
+Out of all the psycasts, only Blinding Pulse has its ''impact'' increased by the target's sensitivity. Increased sensitivity results in higher blinding.{{Check Tag|Verify|According to the page itself.}}
+
+=== Psycasting stat modifiers ===
+{{Stub|section=1|reason=needs effective neural heat change like eltex items have (see their pages)}}
+Psychic equipment can improve a psycaster's abilities by providing additional psychic sensitivity and/or by directly increasing the Heat recovery rate. 
+The following modifiers exist:
+{{Psychic Sensitivity Factor Table}}
+Thus the maximum psychic sensitivity possible would be a psychically hypersensitive pawn, genetically modified with the deathrest gene, super psy-sensitivity, having deathrested with four psychofluid pumps, is psychically bonded to a pawn on the same map, blinded and with the Blind psysense precept, with a legendary Eltex staff, vest, shirt, robe and skullcap and an implanted psychic sensitizer for a total value of {{Hover title|link=no|<!--Base-->100%<!--Psychofluid pump-->+100%<!--Psychically Hypersensitive-->+80%<!--Eltex staff-->+75%<!--Eltex skullcap-->+60%<!--Sight-->+50%<!--Super psy-sensitive-->+40% <!--Eltex robe-->+30%<!--Blinded with blind psysense-->+30%<!--Psychic sensitizer-->+25% <!--Eltex vest-->+23%<!--Eltex shirt-->+15%<!--Psychic bonding-->+10%|{{#vardefineecho:maxPsySense|{{#expr:<!--Base-->100<!--Psychofluid pump-->+100<!--Psychically Hypersensitive-->+80<!--Eltex staff-->+75<!--Eltex skullcap-->+60<!--Sight-->+50<!--Super psy-sensitive-->+40<!--Eltex robe-->+30<!--Blinded with blind psysense-->+30<!--Psychic sensitizer-->+25<!--Eltex vest-->+23<!--Eltex shirt-->+15<!--Psychic bonding-->+10}}}}%}} psychic sensitivity and a neural heat limit, assuming psylink level 6, of {{#expr: {{#var:maxPsySense}}/100 * 30 * 2.6666 round 0}}. With Anomaly DLC, the multiplicative bioferrite make them much better than eltex gears, a pawn with bioferrite mask, plate armor, slave collar and weapon, under voidsight, void touched and psychophage can get to 2131%. Note that blindness is not compatible with void touched.
+
+== Psycasts == 
+A psycast is the ability performed by the psycaster. A Psycaster can only perform psycasts of a level equal to or below their psylink level. For example, to manifest Beckon, the psycaster would require psylink level 3. 
+
+=== Regular psycasts ===
+
+{| {{STDT| sortable c_07 text-valign:top}}
+|-
+! Name !! Level !! Description !! data-sort-type=number | Heat Gain !! data-sort-type=number | Casting Time !! data-sort-type=number | Duration !! data-sort-type=number | Range !! data-sort-type=number | Area of Effect !! data-sort-type=number | Psyfocus Cost
+|- id="Burden"
+! [[Burden]]<br>[[File:Burden.png|64px|link=Burden]]
+| 1 
+| ''{{Q|Burden|Description}}''
+----
+* Inflicts the "psychic burden" hediff on the target.
+:''Psychically-induced difficulty in locomotion.''
+** [[Moving]] capped at 40%
+** {{--|{{Q|Burden|Goodwill Impact}}}} Faction Relations when used on allies
+| {{++|{{Q|Burden|Neural Heat Gain}}}}
+| {{Ticks|{{Q|Burden|Casting Time}}}}
+| {{Ticks|{{Q|Burden|Duration}}}}
+| {{Q|Burden|Ability Range}} tiles
+| Target
+| {{--|{{%|{{Q|Burden|Psyfocus Cost}}}}}}
+|- id="Painblock"
+! [[Painblock]]<br>[[File:Painblock.png|64px|link=Painblock]]
+| 1 
+| ''{{Q|Painblock|Description}}''
+----
+* Inflicts the "psychic anesthesia" hediff on the target.
+:''Psychically-induced pain insensitivity.'' 
+** Target [[Pain]] Factor x10% 
+** Duration scales with target's [[Psychic Sensitivity]]
+| {{++|{{Q|Painblock|Neural Heat Gain}}}}
+| {{Ticks|{{Q|Painblock|Casting Time}}}}
+| {{Ticks|{{Q|Painblock|Duration}}}}
+| {{Q|Painblock|Ability Range}} tiles
+| Target
+| {{--|{{%|{{Q|Painblock|Psyfocus Cost}}}}}}
+|- id="Stun"
+! [[Stun (psycast)|Stun]]<br>[[File:Stun.png|64px|link=Stun (psycast)]]
+| 1 
+| ''{{Q|Stun (psycast)|Description}}''
+----
+* [[Stun]]s the target
+** Duration scales with target's [[Psychic Sensitivity]]
+** {{--|{{Q|Stun (psycast)|Goodwill Impact}}}} Faction Relations when used on allies
+| {{++|{{Q|Stun (psycast)|Neural Heat Gain}}}}
+| {{Ticks|{{Q|Stun (psycast)|Casting Time}}}}
+| {{Ticks|{{Q|Stun (psycast)|Duration}}}}
+| {{Q|Stun (psycast)|Ability Range}} tiles
+| Target
+| {{--|{{%|{{Q|Stun (psycast)|Psyfocus Cost}}}}}}
+|- id="Chunk skip"
+! [[Chunk skip]]<br>[[File:ChunkSkip.png|64px|link=Chunk skip]]
+| 1 
+| ''{{Q|Chunk skip|Description}}''
+----
+* The closest 5 [[chunk]]s of any type to the cast location are teleported to locations scattered randomly within the 5x5 square around the target point.
+| {{++|{{Q|Chunk skip|Neural Heat Gain}}}}
+| {{Ticks|{{Q|Chunk skip|Casting Time}}}}
+| ''Instantaneous''
+| {{Q|Chunk skip|Ability Range}} tiles
+| 5x5 tiles
+| {{--|{{%|{{Q|Chunk skip|Psyfocus Cost}}}}}}
+|- id="Solar pinhole"
+! [[Solar pinhole]]<br>[[File:SolarPinhole.png|64px|link=Solar pinhole]]
+| 1 
+| ''{{Q|Solar pinhole|Description}}''
+---- 
+* Creates a 1x1 solar pinhole at the targeted point.
+** Lights up a {{#expr:{{Lit Radius|15|{{#expr:217+217+208}}}} round 2}} tile area around it.
+** Creates heat at a rate of 10 heat per second (compared to the 21 heat per second of a [[heater]] or [[campfire]]), but only when the temperature is below {{Temperature|20}}.
+| '''+{{Q|Solar pinhole|Neural Heat Gain}}'''
+| {{Ticks|{{Q|Solar pinhole|Casting Time}}}}
+| {{Ticks/gametime|{{Q|Solar pinhole|Duration}}}}
+| {{Q|Solar pinhole|Ability Range}} tiles
+| {{Q|Solar pinhole|Effect Radius|Ability Range}} tiles radius
+| {{--|{{%|{{Q|Solar pinhole|Psyfocus Cost}}}}}}
+|- id="Blinding pulse"
+! [[Blinding pulse]]<br>[[File:BlindingPulse.png|64px|link=Blinding pulse]]
+| 2 
+| ''{{Q|Blinding pulse|Description}}''
+----
+* Inflicts the "psychic blindness" hediff on targets within the area of effect. 
+:''Psychically-induced partial blindness.'' 
+** [[Sight]]: {{Bad|x50%}}
+** Effect scales with target's [[Psychic Sensitivity]]
+** {{--|{{Q|Blinding pulse|Goodwill Impact}}}} Faction Relations when used on allies
+| {{++|{{Q|Blinding pulse|Neural Heat Gain}}}}
+| {{Ticks|{{Q|Blinding pulse|Casting Time}}}}
+| {{Ticks|{{Q|Blinding pulse|Duration}}}}
+| {{Q|Blinding pulse|Ability Range}} tiles
+| {{Q|Blinding pulse|Effect Radius|Ability Range}} tiles radius
+| {{--|{{%|{{Q|Blinding pulse|Psyfocus Cost}}}}}}
+|- id="Waterskip"
+! [[Waterskip]]<br>[[File:Waterskip.png|64px|link=Waterskip]]
+| 2 
+| ''{{Q|Waterskip|Description}}''
+----
+* Creates a 3-tile diameter water dump at the targeted location.
+** Extinguishes fires in the area, including on floors, items, and pawns.{{Check Tag|Walls?|How does it work with walls that are on fire?}}
+** Does '''not''' cause [[short circuit]]s like [[rain]].
+** Leaves water puddles in the area of effect, that reduce the flammability of the tile but have no other effect.
+| {{++|{{Q|Waterskip|Neural Heat Gain}}}}
+| {{Ticks|{{Q|Waterskip|Casting Time}}}}
+| ''Instantaneous''
+| {{Q|Waterskip|Ability Range}} tiles
+| 3x3 tiles
+| {{--|{{%|{{Q|Waterskip|Psyfocus Cost}}}}}}
+|- id="Neural heat dump"
+! [[Neural heat dump]]<br>[[File:NeuralHeatDump.png|64px|link=Neural heat dump]]
+| 2 
+| ''{{Q|Neural heat dump|Description}}''
+----
+* Eliminates the caster's neural heat, at the cost of downing the target.  
+** Caster reduces their neural heat to 0 
+** Selected allied target within line-of-sight and 25 tiles falls into [[psychic coma]]. Target does not require psylink to receive neural heat.
+** {{--|{{Q|Neural heat dump|Goodwill Impact}}}} Faction Relations when used on allies
+| '''+{{Q|Neural heat dump|Neural Heat Gain}}'''
+| {{Ticks|{{Q|Neural heat dump|Casting Time}}}}
+| {{Ticks|{{Q|Neural heat dump|Duration}}}}
+| {{Q|Neural heat dump|Ability Range}} tiles
+| Target
+| '''−{{%|{{Q|Neural heat dump|Psyfocus Cost}}}}'''
+|- id="Beckon"
+! [[Beckon]]<br>[[File:Beckon.png|64px|link=Beckon]]
+| 3 
+| ''{{Q|Beckon|Description}}''
+---- 
+* Target is unable to make ranged attacks and is forced to walk towards caster. 
+** This motion lasts the full duration or until the target is struck by an attack.{{Check Tag|Only?|What about other things that are similar mechanically, such as firefoam? What about things that are damage but don't hurt like EMP damage? Etc}} 
+** Duration scales with target's [[Psychic Sensitivity]]
+| {{++|{{Q|Beckon|Neural Heat Gain}}}}
+| {{Ticks|{{Q|Beckon|Casting Time}}}}
+| {{Ticks|{{Q|Beckon|Duration}}}}
+| {{Q|Beckon|Ability Range}} tiles
+| Target
+| {{--|{{%|{{Q|Beckon|Psyfocus Cost}}}}}}
+|- id="Chaos skip"
+! [[Chaos skip]]<br>[[File:ChaosSkip.png|64px|link=Chaos skip]]
+| 3 
+| ''{{Q|Chaos skip|Description}}''
+---- 
+* The target, be it pawn or item, is teleported to a random tile between 7 and 25 tiles away from its starting location.
+** Maximum target [[body size]]: 3.5
+** Line of sight to target is necessary, but unlike with "Skip", the destination of the teleport can be through walls, with luck.
+** Cannot target an [[Apocriton]]{{BiotechIcon}}
+** The target is [[stun]]ned for between {{Ticks|70}} and {{Ticks|120}} after teleporting
+* {{--|{{Q|Chaos skip|Goodwill Impact}}}} Faction Relations when used on allies
+| {{++|{{Q|Chaos skip|Neural Heat Gain}}}}
+| {{Ticks|{{Q|Chaos skip|Casting Time}}}}
+| ''Instantaneous''
+| {{Q|Chaos skip|Ability Range}} tiles
+| Target
+| {{--|{{%|{{Q|Chaos skip|Psyfocus Cost}}}}}}
+|- id="Vertigo pulse"
+! [[Vertigo pulse]]<br>[[File:VertigoPulse.png|64px|link=Vertigo pulse]]
+| 3 
+| ''{{Q|Vertigo pulse|Description}}''
+----
+''Psychically-induced loss of spatial orientation. This will cause flesh creatures to vomit.'' 
+* Targets within the radius become dizzy and wander in a 3 tile radius from their initial position
+* Living targets have a chance to vomit.
+* Duration scales with target's [[Psychic Sensitivity]]
+* {{--|{{Q|Vertigo pulse|Goodwill Impact}}}} Faction Relations when used on allies
+| {{++|{{Q|Vertigo pulse|Neural Heat Gain}}}}
+| {{Ticks|{{Q|Vertigo pulse|Casting Time}}}}
+| {{Ticks|{{Q|Vertigo pulse|Duration}}}}
+| {{Q|Vertigo pulse|Ability Range}} tiles
+| {{Q|Vertigo pulse|Effect Radius|Ability Range}} tiles radius
+| {{--|{{%|{{Q|Vertigo pulse|Psyfocus Cost}}}}}}
+|- id="Smokepop"
+! [[Smokepop]]<br>[[File:Smokepop.png|64px|link=Smokepop]]
+| 4 
+| ''{{Q|Smokepop|Description}}''
+----
+* Creates a 7-tile diameter cloud of [[blind smoke]] at the targeted location.
+| {{++|{{Q|Smokepop|Neural Heat Gain}}}}
+| {{Ticks|{{Q|Smokepop|Casting Time}}}}
+| ''Instantaneous'', Smoke dissipates in ~30 seconds
+| {{Q|Smokepop|Ability Range}} tiles
+| Tile
+| {{--|{{%|{{Q|Smokepop|Psyfocus Cost}}}}}}
+|- id="Skip"
+! [[Skip]]<br>[[File:Skip.png|64px|link=Skip]]
+| 4 
+| ''{{Q|Skip|Description}}''
+---- 
+* Target, pawn or item, is teleported to a selected tile visible to the target.
+** Maximum target [[body size]]: 3.5
+** Cannot target an [[Apocriton]]{{BiotechIcon}}
+* {{--|{{Q|Skip|Goodwill Impact}}}} Faction Relations when used on allies
+| {{++|{{Q|Skip|Neural Heat Gain}}}}
+| {{Ticks|{{Q|Skip|Casting Time}}}}
+| ''Instantaneous''
+| {{Q|Skip|Ability Range}} tiles
+| Target/Tile
+| {{--|{{%|{{Q|Skip|Psyfocus Cost}}}}}}
+|- id="Focus"
+! [[Focus]]<br>[[File:Focus.png|64px|link=Focus]]
+| 4 
+| ''{{Q|Focus|Description}}''
+---- 
+''Psychically-induced mental focus, increasing sight, hearing and movement capacities.''
+* [[Sight]]: {{Good|x1.3}}
+* [[Hearing]]: {{Good|x1.3}}
+* [[Moving]]: {{Good|x1.3}}
+* Duration scales with target's [[Psychic Sensitivity]]
+| {{++|{{Q|Focus|Neural Heat Gain}}}}
+| {{Ticks|{{Q|Focus|Casting Time}}}}
+| {{Ticks|{{Q|Focus|Duration}}}}
+| {{Q|Focus|Ability Range}} tiles
+| Target
+| {{--|{{%|{{Q|Focus|Psyfocus Cost}}}}}}
+|- id="Wallraise"
+! [[Wallraise]]<br>[[File:Wallraise.png|64px|link=Wallraise]]
+| 4 
+| ''{{Q|Wallraise|Description}}''
+----
+''A fragile wall made of rubble. It will collapse in time.' 
+* Creates a cross-shaped set of wall 3 blocks across and 3 blocks wide at the target location. Wall has 100 HP and lasts for 4 hours or {{ticks|10000}}.
+** Walls cannot intersect other walls, but will shunt items out of the way.
+| {{++|{{Q|Wallraise|Neural Heat Gain}}}}
+| {{Ticks|{{Q|Wallraise|Casting Time}}}}
+| {{Ticks|{{Q|Wallraise|Duration}}}}
+| {{Q|Wallraise|Ability Range}} tiles
+| Tile
+| {{--|{{%|{{Q|Wallraise|Psyfocus Cost}}}}}}
+|- id="Berserk"
+! [[Berserk (psycast)|Berserk]]<br>[[File:Berserk.png|64px|link=Berserk (psycast)]]
+| 5 
+| ''{{Q|Berserk (psycast)|Description}}''
+----
+* Target goes [[Mental break#Berserk|berserk]], attacking the nearest creature regardless of previous affiliation.
+** Cannot target any of the [[mechanoid commander]]s,{{BiotechIcon}} nor can it target a [[Dreadmeld]].{{AnomalyIcon}}
+* {{--|{{Q|Berserk (psycast)|Goodwill Impact}}}} Faction Relations when used on allies
+* Duration scales with target's [[Psychic Sensitivity]]
+| {{++|{{Q|Berserk (psycast)|Neural Heat Gain}}}}
+| {{Ticks|{{Q|Berserk (psycast)|Casting Time}}}}
+| {{Ticks|{{Q|Berserk (psycast)|Duration}}}}
+| {{Q|Berserk (psycast)|Ability Range}} tiles
+| Target
+| {{--|{{%|{{Q|Berserk (psycast)|Psyfocus Cost}}}}}}
+|- id="Flashstorm"
+! [[Flashstorm (psycast)|Flashstorm]]<br>[[File:Flashstorm.png|64px|link=Flashstorm (psycast)]]
+| 5 
+| ''{{Q|Flashstorm (psycast)|Description}}''
+----
+* Creates a [[Weather|flashstorm]] at target location. 
+* {{--|35}} Goodwill impact.
+| {{++|{{Q|Flashstorm (psycast)|Neural Heat Gain}}}}
+| {{Ticks|{{Q|Flashstorm (psycast)|Casting Time}}}}
+| {{Ticks|{{Q|Flashstorm (psycast)|Duration}}}}
+| {{Q|Flashstorm (psycast)|Ability Range}} tiles
+| {{Q|Flashstorm (psycast)|Effect Radius|Ability Range}} tiles radius
+| {{--|{{%|{{Q|Flashstorm (psycast)|Psyfocus Cost}}}}}}
+|- id="Invisibility"
+! [[Invisibility]]<br>[[File:Invisibility.png|64px|link=Invisibility]]
+| 5 
+| ''{{Q|Invisibility|Description}}''
+---- 
+''Psychically-induced invisibility. This actually affects others nearby, making their brains unable to perceive the sight of this individual, even if the eyes are unaffected.'' 
+* Targeted creature cannot be attacked or targeted by any non-AoE psychic powers. This includes psycasts on self.
+** Despite the description, pawns with 0% [[psychic sensitivity]] are '''not'''  immune to this effect, and are unable to see pawns with Invisibility cast on them. 
+| {{++|{{Q|Invisibility|Neural Heat Gain}}}}
+| {{Ticks|{{Q|Invisibility|Casting Time}}}}
+| {{Ticks|{{Q|Invisibility|Duration}}}}
+| {{Q|Invisibility|Ability Range}} tiles
+| Target
+| {{--|{{%|{{Q|Invisibility|Psyfocus Cost}}}}}}
+|- id="Berserk pulse"
+! [[Berserk pulse]]<br>[[File:BerserkPulse.png|64px|link=Berserk pulse]]
+| 6 
+| ''{{Q|Berserk pulse|Description}}''
+---- 
+All creatures within the radius go [[Mental break#Berserk|berserk]], attacking the nearest creature regardless of previous affiliation.
+* Mechanoid bosses{{BiotechIcon}} and the [[Dreadmeld]]{{AnomalyIcon}} are immune.
+* {{--|{{Q|Berserk pulse|Goodwill Impact}}}} Faction Relations when used on allies.
+* Duration scales with target's [[Psychic Sensitivity]].
+| {{++|{{Q|Berserk pulse|Neural Heat Gain}}}}
+| {{Ticks|{{Q|Berserk pulse|Casting Time}}}}
+| {{Ticks|{{Q|Berserk pulse|Duration}}}}
+| {{Q|Berserk pulse|Ability Range}} tiles
+| {{Q|Berserk pulse|Effect Radius|Ability Range}} tiles radius
+| {{--|{{%|{{Q|Berserk pulse|Psyfocus Cost}}}}}}
+|- id="Mass chaos skip"
+! [[Mass chaos skip]]<br>[[File:MassChaosSkip.png|64px|link=Mass chaos skip]]
+| 6 
+| ''{{Q|Mass chaos skip|Description}}''
+----
+* Targets within radius is teleported to a random tile between 7 and 25 tiles away from its starting location
+** Maximum target [[body size]]: 3.5
+** Has no effect on the [[Apocriton]]{{BiotechIcon}}
+* {{--|{{Q|Mass chaos skip|Goodwill Impact}}}} Faction Relations when used on allies.
+| {{++|{{Q|Mass chaos skip|Neural Heat Gain}}}}
+| {{Ticks|{{Q|Mass chaos skip|Casting Time}}}}
+| ''Instantaneous''
+| {{Q|Mass chaos skip|Ability Range}} tiles
+| {{Q|Mass chaos skip|Effect Radius|Ability Range}} tiles radius
+| {{--|{{%|{{Q|Mass chaos skip|Psyfocus Cost}}}}}}
+|- id="Skipshield"
+! [[Skipshield]]<br>[[File:Skipshield.png|64px|link=Skipshield]]
+| 6 
+| ''{{Q|Skipshield|Description}}''
+----
+* Makes a 4.9-tile radius circle that cannot be shot through, into, or out of. Does not {{Hover title|E.g. from mortars, orbital bombardment targeters, or aerodrone strikes or salvos|block non-ground-level projectiles}}.
+| {{++|{{Q|Skipshield|Neural Heat Gain}}}}
+| {{Ticks|{{Q|Skipshield|Casting Time}}}}
+| {{Ticks|{{Q|Skipshield|Duration}}}}
+| {{Q|Skipshield|Ability Range}} tiles
+| {{Q|Skipshield|Effect Radius|Ability Range}} tiles radius
+| {{--|{{%|{{Q|Skipshield|Psyfocus Cost}}}}}}
+|- id="Manhunter pulse"
+! [[Manhunter pulse]]<br>[[File: ManhunterPulse.png|64px|link=Manhunter pulse]]
+| 6 
+| ''{{Q|Manhunter pulse|Description}}''
+---- 
+All animals within the radius go [[Mental break#Manhunter|Manhunter]], attacking the nearest human regardless of previous affiliation. 
+* Duration scales with target's [[Psychic Sensitivity]]. 
+* {{--|{{Q|Manhunter pulse|Goodwill Impact}}}} Faction Relations when used on allies, such as animals of allied caravans.
+| {{++|{{Q|Manhunter pulse|Neural Heat Gain}}}}
+| {{Ticks|{{Q|Manhunter pulse|Casting Time}}}}
+| {{Ticks|{{Q|Manhunter pulse|Duration}}}}
+| {{Q|Manhunter pulse|Ability Range}} tiles
+| {{Q|Manhunter pulse|Effect Radius|Ability Range}} tiles radius
+| {{--|{{%|{{Q|Manhunter pulse|Psyfocus Cost}}}}}}
+|-
+|}
+
+=== Special psycasts ===
+
+Officially added in 1.2, these psycasts cost a great amount of psyfocus in return for some useful utility, often outside combat.
+
+{| {{STDT| sortable c_07 text-valign:top}}
+|-
+! Name !! Level !! Description !! data-sort-type=number | Heat Gain !! data-sort-type=number | Casting Time !! data-sort-type=number | Duration !! data-sort-type=number | Range !! data-sort-type=number | Area of Effect !! data-sort-type=number | Psyfocus Cost
+|- id="Word of trust"
+! [[Word of trust]]<br>[[File:WordOfTrust.png|64px|link=Word of trust]]
+| 1 
+| ''{{Q|Word of trust|Description}}''
+---- 
+* Reduces Resistance of target prisoner by {{---|20}}, scaled by target's [[Psychic Sensitivity]].
+| '''+{{Q|Word of trust|Neural Heat Gain}}'''
+| {{Ticks|{{Q|Word of trust|Casting Time}}}}
+| ''Instantaneous''
+| ''Adjacent tile''
+| Target
+| {{--|{{%|{{Q|Word of trust|Psyfocus Cost}}}}}}
+
+|- id="Word of joy"
+! [[Word of joy]]<br>[[File:WordOfJoy.png|64px|link=Word of joy]]
+| 2 
+| ''{{Q|Word of joy|Description}}''
+---- 
+''The affected pawn gains the Joybuzz status, providing 30 joy at the cost of -20% consciousness for 7 days.''
+* Duration scales with target's [[Psychic Sensitivity]].
+* {{--|{{Q|Word of joy|Goodwill Impact}}}} Faction Relations when used on allies.
+| '''+{{Q|Word of joy|Neural Heat Gain}}'''
+| {{Ticks|{{Q|Word of joy|Casting Time}}}}
+| {{Ticks|{{Q|Word of joy|Duration}}}}
+| ''Adjacent tile''
+| Target
+| {{--|{{%|{{Q|Word of joy|Psyfocus Cost}}}}}}
+|- id="Word of love"
+! [[Word of love]]<br>[[File: WordOfLove.png|64px|link=Word of love]]
+| 3 
+| ''{{Q|Word of love|Description}}''
+---- 
+''Psychically-induced romantic desire. This increases an individual's opinion of someone else, and increases the likelihood of romantic advances and marriage proposals, while reducing the chance of a breakup.'' 
+* Greatly increases relations between target(s), nearly guaranteeing a relationship forms if recursively cast on two pawns.
+| '''+{{Q|Word of love|Neural Heat Gain}}'''
+| {{Ticks|{{Q|Word of love|Casting Time}}}}
+| {{Ticks|{{Q|Word of love|Duration}}}}
+| ''Adjacent tile''
+| Target
+| {{--|{{%|{{Q|Word of love|Psyfocus Cost}}}}}}
+|- id="Word of serenity"
+! [[Word of serenity]]<br>[[File:WordOfSerenity.png|64px|link=Word of serenity]]
+| 4 
+| ''{{Q|Word of serenity|Description}}''
+---- 
+Instantly ends any mental break by forcing the target into a 6 hour [[psychic coma]].
+* The psyfocus cost depends on the level of the mental break; [[social fight]]s and [[Mental break#Minor break|minor breaks]] cost 30% psyfocus, [[Mental break#Major break|major breaks]] cost 50%, and [[Mental break#Extreme break|extreme breaks]] cost 70%.
+* Coma duration scales with target's [[Psychic Sensitivity]]
+| '''+{{Q|Word of serenity|Neural Heat Gain}}'''
+| {{Ticks|{{Q|Word of serenity|Casting Time}}}}
+| {{Ticks|{{Q|Word of serenity|Duration}}}}
+| ''Adjacent tile''
+| Target
+| {{--|{{%|{{Q|Word of serenity|Psyfocus Cost}}}} - 70%}}
+|- id="Word of inspiration"
+! [[Word of inspiration]]<br>[[File:WordOfInspiration.png|64px|link=Word of inspiration]]
+| 5 
+| ''{{Q|Word of inspiration|Description}}''
+---- 
+Targeted pawn will receive a random [[inspiration]] based upon their passions and skills.
+| '''+{{Q|Word of inspiration|Neural Heat Gain}}'''
+| {{Ticks|{{Q|Word of inspiration|Casting Time}}}}
+| ''Instantaneous''<br><small>(Inspiration lasts its normal duration)</small>
+| ''Adjacent tile''
+| Target
+| {{--|{{%|{{Q|Word of inspiration|Psyfocus Cost}}}}}}
+|- id="Farskip"
+! [[Farskip]]<br>[[File:Farskip.png|64px|link=Farskip]] 
+| 5 
+| ''{{Q|Farskip|Description}}''
+---- 
+Stuns for between 3 and 10 seconds; teleports allies within 5 tiles to distant colonist on map; also teleports tamed animals within 5 tiles if not cast on a colony map; if used while in caravan, whole caravan will be teleported (unusable if overburdened).
+| '''+{{Q|Farskip|Neural Heat Gain}}'''
+| {{Ticks|{{Q|Farskip|Casting Time}}}}
+| ''Instantaneous''
+| User
+| {{Q|Farskip|Effect Radius}} tiles radius 
+| {{--|{{%|{{Q|Word of love|Psyfocus Cost}}}}}}
+|- id="Neuroquake"
+! [[Neuroquake]]<br>[[File:Neuroquake.png|64px|link=Neuroquake]] 
+| 6 
+| ''{{Q|Neuroquake|Description}}''
+----  
+Causes berserk mental state in a 60-tile radius, except for a 5-tile safe radius around the caster.
+* Mechanoid bosses{{BiotechIcon}} and the [[Dreadmeld]]{{AnomalyIcon}} are immune.
+* {{--|12}} [[mood]] for all pawns present.
+* {{--|10}} Faction Relations for all factions, no matter the distance you are from their bases.
+* {{--|75}} Faction Relations if berserk affects allies.
+* Caster put in [[psychic coma]] for 5 days.
+| '''+{{Q|Neuroquake|Neural Heat Gain}}'''
+| {{Ticks|{{Q|Neuroquake|Casting Time}}}}
+| {{Ticks/gametime|{{Q|Neuroquake|Duration}}}}
+| User
+| Safe: {{Q|Neuroquake|Effect Radius}} tiles radius<br>Berserk: 60 tiles radius
+| {{--|{{%|{{Q|Neuroquake|Psyfocus Cost}}}}}}
+|-
+|}
+
+== Version history ==
+* [[Royalty DLC]] Release - Added.
+* [[Version/1.1.2571|1.1.2571]] - Entropy link duration 60 to 120.
+* [[Version/1.1.2647|1.1.2647]] - Overhaul to some mechanics. Empire no longer gets angry at psycast use, removed psychic hangover, added meditation mechanics. [[Entropy link]] removed and replaced with [[Neural heat dump]]. [[Waterskip]], [[Flashstorm (psycast)|flashstorm]], [[Bullet shield]] added.
+* [[Version/1.1.2654|1.1.2654]] - Desired psyfocus level now configurable  and pawns will meditate enough to maintain it without needing scheduling. Reduce psyfocus decay rates 0.5% at each level. Wall, Grave, Sarcophagus, Animus stone, Sculptures and Nature Shrine psyfocus gain increased. 
+* [[Version/1.2.2719|1.2.2719]] - [[Solar pinhole]], [[Chunk skip]], [[Farskip]], [[Neuroquake]], [[Word of trust]], [[Word of joy]], [[word of inspiration]], [[Word of love]], [[Word of serenity]] added. Meditation focus objects now enhanced by objects placed nearby. Fix: Colonists can lose their psylink entirely when being [[Resurrector mech serum|resurrected]]. Fix: Psylink counts as an artificial part for a [[traits#transhumanist|transhumanist]]. Fix: Many neural heat gizmos shown if many psycasters are selected.
+* [[Version/1.2.2753|1.2.2753]] - Neural heat overload no longer causes psylink degradation or any other permanent damage.
+* [[Version/1.4.3555|1.4.3555]] - Fix: Tribal [[children]] {{BiotechIcon}} who grow up in a colony don't get the 'natural' meditation focus type.
+* Between [[Version/1.2.3005|1.2.3005]] and [[Version/1.4.3641|1.4.3641]] - Psylink description changed from ''"An organic connection to a larger psychic field. This allows a person to use specific psychic powers that they have learned to influence reality in ways that seem impossible. Higher levels of psylink permit the use of more powers. Regardless of psylink level, a person can only use specific powers that they have learned. Psylink comes from a variety of sources. Single-use psylink neuroformer devices can create a psylink. Tribal peoples also know how to develop it through ritual linking with psychically-connected lifeforms. As a physical phenomenon in the brain, psylink is poorly-understood by scientists, not least because it seems to actively conceal itself if studied too closely. One thing most agree on is that it somehow connects people to archotechs and harnesses their power, possibly through some sort of negotiation or sympathy mechanism."'' -> ''"An organic connection to a larger psychic field. This allows a person to psychically induce a distant archotech superintelligence to influence reality in ways that seem impossible. Higher levels of psylink permit the use of more powers. Regardless of psylink level, a person can only use specific powers that they have learned. Psylink comes from a variety of sources. Single-use psylink neuroformer devices can create a psylink. Tribal peoples also know how to develop it through ritual linking with the legendary anima tree. As a physical phenomenon in the brain, psylink is poorly-understood by scientists, not least because it seems to actively conceal itself if studied too closely. One thing most agree on is that it somehow connects people to archotechs and harnesses their power, possibly through some sort of negotiation or sympathy mechanism."''
+
+{{Nav|psycasts|wide}}
+[[Category: Royalty]]
+[[Category: Abilities]]

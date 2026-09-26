@@ -1,0 +1,22 @@
+{{Verified|1.2.2900}}{{Stat
+| default base value = 1
+| to string style = PercentZero
+| description = The speed at which the character performs medical operations.
+| category = PawnWork
+}}
+
+==Factors==
+* [[Skills#Medical|Medical]][[Skill::Medical| ]]: [[Skill Base Factor::0.4|40%]] plus [[Skill Bonus Factor::0.06|6%]] per skill level.
+* [[Manipulation]]: [[Manipulation Importance::1|100%]] importance, [[Manipulation Limit::-|No]] max
+* [[Sight]]: [[Sight Importance::0.7|70%]] importance, [[Sight Limit::1|100%]] limit
+* [[Global Work Speed Factor::true| ]][[Global Work Speed]]
+* [[Medical specialist]] role {{IdeologyIcon}}: {{Good|x1.5}}
+
+Note that all below values are then multiplied by the Global Work Speed of the pawn. 
+
+{{Stat Factors Table}}
+
+== Version history ==
+* [[Version/1.4.3523|1.4.3523]] - Fix: Global work speed not applying to medical operation speed.
+
+{{nav|stats|wide}}

@@ -1,0 +1,86 @@
+{{Version Nav}}
+
+Hello, it’s Tia! I’m here to share a small update just before the holidays. ❄️️
+
+Today’s update comes with a looong list of fixes. Loads of these were made with the help of our testers - a big ol’ hug and huge thank you for helping us squash those bugs! Now children are less likely to run headfirst into danger and bestowers will get the heck outta there if they’re breathing in poisonous gas. We also added a few tools to help out our modders and community translators do their thing. The changelog is below to read over.
+
+If you want to keep playing on the previous version of 1.4, you can use the Steam beta branch "version-1.4.3563". To do this, r-click RimWorld in the Steam library, go to properties, open the betas tab, and select the version from the dropdown.
+
+2022 was a wild and fantastic year for us at Ludeon Studios. We released RimWorld’s third expansion, Biotech, which brought babies and children, new mechanoids, the mechanitor, gene modding, and xenotypes to the game. We ran several Steam Deck betas and became verified - now people can play RimWorld anywhere, anytime! Our team grew in size with several incredibly talented individuals at the helm. Who knows what we'll get up to in 2023.
+
+The RimWorld community has been with us at every step, and your voices make a difference and actually shape the game. So keep talking to us in the Discord! Please continue to share your feedback and fanart and memes and screenshots and videos and mods and edits with us. We love your creativity and I’m regularly blown away by what people make and do in RimWorld.
+
+You can find us at the official RimWorld development Discord where we test and submit bugs, on the RimWorld subreddit, or at the Ludeon Studios twitter.
+
+Mushy gushy feelings aside… I wish everyone a wonderful holiday season and an excellent start to your 2023! See you guys next year, haahaaah…
+
+Sincerely,
+Tia
+
+== Changelog ==
+* Bestowers will leave if they are exposed to dense tox gas or rot stink.
+* Display genes regrowing duration on gene extractor float menu options if available.
+* Check if region has deadly danger before giving nature running learning.
+* Reduced explosive radius of tox shells when detonated by damage.
+* Added null check for Trait.ToString() per modder request.
+* Added a utility method and flag for determining what buildings are hoppers per modder request. (thing.IsHopper())
+* Added new translation key for backstory title per translator request.
+* Fixed some issues related to the FloatRange widget.
+* Updated player name-in-game content.
+* Reduced performance impact of idle mechs.
+* Update game UI to display that bionic stomachs prevent gut worms.
+* Show rejected float menu option for slaves attempting to use non-slave medical beds.
+
+=== Fixes ===
+* Fix: Horizontal sliders not working correctly on Linux. Created custom horizontal sliders to bypass Unity's GUI.HorizontalSlider().
+* Fix: Archonexus quest generates "Caravan lost" letters for any pawns left behind.
+* Fix: Consume drug commands not appearing.
+* Fix: Furskin_Average3 head uses the wrong graphic.
+* Fix: Cannot absorb xenogenes from target if target has custom xenotype and selected pawn is baseliner.
+* Fix: Tattoos render below heavy brow.
+* Fix: New sliders affecting other sliders in the same window.
+* Fix: Traits selected during growth moments don't modify skills.
+* Fix: Being carried by a pawn removes any tox gas buildup on a pawn.
+* Fix: Unresolvable symbol in Tales_DoublePawn.xml: [executioner] should be [EXECUTIONER_nameDef].
+* Fix: (*DateTime)...(/DateTime) not working in some translation keys.
+* Fix: Faulty report string "Extracting limestone reliquary to inventory."
+* Fix: Child not allowed to enter shuttle called via permit.
+* Fix: Second sentence of the biosculpter age reversal complete message begins in lower case.
+* Fix: Typo "worshiped".
+* Fix: Solar Pinhole cannot be created over non-edifice buildings.
+* Fix: Fabricor food poisoning chance is 10x too large.
+* Fix: Fabricor description mentions it has slug gun, which is no longer true.
+* Fix: Children cause the "anima linking ready" alert to be active when no adults can link.
+* Fix: Sliders active after mouse up outside of window.
+* Fix: Hemogen packs give "ate vegetarian" mood.
+* Fix: Errors trying to get hemogen from packs in niche circumstances.
+* Fix: Embryo and growth vat embryo insertion command tooltips display incorrect gestation duration.
+* Fix: Furskin gene hair/fur color not staying when implanted with a skin color xenogene.
+* Fix: Inconsistencies with psychic bond distance between a pawn in a suspended container and a spawned pawn.
+* Fix: Incorrect dialog when completing research other than active project in some modded cases.
+* Fix: Potential exception throwing another error when trying to get lord.LordJob.ToString() with null job.
+* Fix: LetterCrafted(Legendary|Masterwork)Message(Art): Crafted item gender determination issue.
+* Fix: Some non-sensical zone overlapping buildings.
+* Fix: FloatRange widget doesn't have its current dragged handle reset on mouse up outside window.
+* Fix: Deathless pawns who have the deathless gene removed don't have their health updated.
+* Fix: Searching for gene in create xenogerm dialog doesn't highlight selected genes.
+* Fix: Bandwith loss warning shown when pawn drops non-worn mechanitor equipment.
+* Fix: Shared ritual gizmos flickering.
+* Fix: Inspect pane displaying incorect power consumption with research.
+* Fix: Some buildings able to overlap zones where nonsensical.
+* Fix: Typo in chunk skip description.
+* Fix: Typo in colonist ripscanned thought description.
+* Fix: Duels continue indefinitely if the duelists don't have beds.
+* Fix: Exception trying to visit sick pawn with neversleep gene.
+* Fix: Babies being assigned child body type on load.
+* Fix: Radiotalking doesn't adhere to child's allowed area.
+* Fix: Wrong description and tooltip shown for custom xenotype pawns
+* Fix: Ambrosia ingestion float menu option displays untranslated key "ConsumeThing".
+* Fix: Ambrosia ingestion command displays untranslated key "ConsumeThing".
+* Fix: BulletShieldGenerator sounds in incorrect folder.
+* Fix: Selecting autobong blueprint causes NullReferenceException.
+* Fix: Biostats calculate incorrectly for xenogerms created with 3 of the same gene.
+* Fix: Create xenogerm dialog skips when scrolling.
+
+== Source ==
+* [https://store.steampowered.com/news/app/294100/view/3647383152079059752 Update 1.4.3580 fixes and wishing you a happy 2023!]

@@ -1,0 +1,61 @@
+{{Infobox main
+| name = Peg leg
+| image = Woodlog a.png
+| type = Medical Items
+| type2 = Body Parts
+| description = A wood log fashioned into a crude but effective artificial leg.
+| class = Medieval
+| marketvalue = 1.2
+| max hit points base = 30
+<!-- Creation -->
+| skill 1 = medical
+| skill 1 level = 3
+| work to make = 1500
+| work speed stat = Medical Operation Speed
+| resource 1 = Wood
+| resource 1 amount = 1
+| resource 2 = Herbal medicine
+| resource 2 amount = 2
+<!-- Technical -->
+| tradeTags = TechHediff
+| techHediffsTags = Poor
+| body part = Leg
+}}
+{{Info|'''Peg legs''' are a [[artificial body part]] that replaces a pawn's leg. It is the worst kind of leg available, but is better than having a missing leg.}}
+
+== Acquisition ==
+Unlike most other prostheses, peg legs don't have a separate item form. Instead, when ordering a [[Health#Operations|surgical operation]] on a pawn, {{Required Resources}} is consumed and the peg leg is added to the pawn. Converting a log to a peg leg does not take any work. Notably, when removed the peg leg turns back into a wooden log.
+
+== Summary ==
+Peg legs replace the user's [[Table of Human Body Parts|entire organic leg]]. The peg leg has a part efficiency of 60%. This partially replaces the functionality of a normal leg - when coupled with each leg body part having a [[Moving]] importance of 50%, it results in restoring 30% [[moving]] per missing leg replaced, or a loss of 20% when replacing a healthy leg. 
+
+Moving, in turn, affects the following [[stats]]: {{#ask: [[Moving Importance::+]]}}. This results in a directly proportional change to a pawn's [[move speed]], and a change in [[melee dodge chance]] equivalent to losing {{#expr: {{Q|Melee Dodge Chance|Moving Importance}}*0.2}} levels of [[Melee]] skill per leg replaced. Due to how the stat is fit to a post-process curve, this can result in the melee dodge chance dropping to 0% for pawns with skill under 9, when replacing one leg, or under 12 for both legs.
+
+Installing a leg replacement can affect a pawn's character quality by affecting their Moving capacity. A replacement part with lower than 100% part efficiency will reduce the pawn's value if replacing a healthy part, but installing even a simple peg leg when the leg was entirely missing will increase their value.
+
+As an artificial part, peg legs will give a mood buff to anyone with the [[Body modder]] trait, and a mood penalty to anyone with the [[Body purist]] trait.
+
+=== Installation ===
+Installing the part requires {{Ticks|1500}} of work, {{Icon Small|wood||1}} [[wood]], 2x medicine of [[Herbal medicine|herbal]] quality or better, and a [[Skills#Medical|Medical skill]] of 3.
+
+Removing the part requires {{Ticks|2000}} of work, 1x medicine of [[Herbal medicine|herbal]] quality or better, and has no [[Skills#Medical|Medical skill]] requirements.
+
+If the operation fails, the wood will be destroyed.
+
+== Analysis == 
+The peg leg is certainly better than a missing or otherwise inoperative leg, but you should strongly consider replacing it with a [[prosthetic leg|modern prosthesis]] as soon as possible. Movement is important for combat, many types of work, and general efficiency (getting up from bed to work...), making it a very valuable stat. For pawns that don't move as much, like researchers, this upgrade is less important.
+
+In cases where only the foot is missing, a [[wooden foot]] only has half the [[Moving]] penalty, which means it restores more movement, and it has the exact same material and research requirements.
+
+=== Prisoners ===
+Alternatively, peg legs can be installed on your [[prisoner]]s, making them easier to stop when starting a prison escape or going [[berserk]]. As peg legs actively make the pawn worse, it isn't recommended to install peg legs on those who you would like to recruit, at least until you can make [[bionic leg]] replacements.
+
+Unlike healthy organic legs, peg legs can be removed; removing them will result in no leg, and removing both will permanently incapacitate a pawn. This is great if you want to keep prisoners long term without them attempting to a break out, such as for selling them, harvesting [[hemogen pack]]s,{{BiotechIcon}} or [[gene extractor|extract genes]]{{BiotechIcon}} from. However, if the [[Dead calm]] gene{{BiotechIcon}} can be applied to them instead, it is superior as they won't require a colonist or [[slave]]{{IdeologyIcon}} to feed them and legs won't have to be reinstalled if they are to be sold.
+
+{{Moving Part Efficiency Table}}
+
+== Version history ==
+* [[Version/0.7.581|0.7.581]] - Added
+
+{{Nav|body parts|wide}}
+[[Category:Medical Item]] [[Category:Body Part]] [[Category:Artificial Body Part]]

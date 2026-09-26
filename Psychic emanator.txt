@@ -1,0 +1,78 @@
+{{Infobox main|building
+| image = Psychic emanator.png
+| description = An ancient device that projects a soothing psychic field around itself. This improves the mood of anyone nearby. Works through walls.
+| type = Building
+| type2 = Special
+| cover effectiveness = 0.2
+| flammability = 0
+| hp = 100
+| cover = 0.20
+| mass base = 15
+| marketvalue = 1300
+| path cost = 14
+| power = -200
+| reward item = true
+| size = 1 ˣ 1
+| deconstruct yield = {{Icon Small|steel||25}} + {{Icon Small|advanced component||3}}
+| destroyyield = nothing
+| tradeability = Sellable
+| tradeTags = ExoticBuilding
+}}
+The '''psychic emanator''' is a special building only received as a [[quest]] reward that provides a [[mood]] bonus to all [[human]] pawns around it when powered. 
+
+== Acquisition == 
+Psychic emanators cannot be constructed nor bought from [[trader]]s. Instead they can only be acquired as a reward for performing [[quests]]. Note that quest rewards are selected with a weighted random generator, so there is no way to guarantee access to an emanator in a given play-through. They may also be found occasionally inside the following containers:
+
+{| {{STDT| sortable c_18 text-center}}
+! colspan=2| Container
+! Chance
+|-
+! {{Icon small|Security crate}}
+! [[Security crate]]{{IdeologyIcon}}
+| {{#expr: 8.4/19 round 2}}% / {{#expr: 8.4/23 round 2}}%<sup>All DLC</sup>
+|-
+! {{Icon small|Gray box}}
+! [[Gray box]]{{AnomalyIcon}}
+| 1.06%
+|-
+! {{Icon small|Flesh sack}}
+! [[Flesh sack]]{{AnomalyIcon}}
+| 1.17%
+|-
+! {{Icon small|Sealed crate}}
+! [[Sealed crate]]{{OdysseyIcon}}
+| ?/1%<sup>All DLC</sup>
+|-
+|}
+
+== Summary ==
+[[File:Psychic emanator radius.png|thumb|left|200px|Psychic emanator radius of effect]] When provided with {{#expr:-{{P|Power Consumption}}}}W of [[power]], a psychic emanator projects an aura in a 14.9-tile radius around itself. This radius is not blocked by any structure, including [[walls]]. All human pawns within the radius experience a {{Thought|desc=The psychic emanator makes me feel strange, but also very relaxed.|label=Psychic emanator soothe|value=+5}} bonus, directly scaled to the [[psychic sensitivity]] of the pawn. That is, a [[psychically hypersensitive]] pawn, with the resulting 180% sensitivity, will experience a {{+|9}} mood bonus, while a [[psychically deaf]] pawn with 0% sensitivity will have no change to their mood at all. All humans in range experience the thought - [[colonist]], [[raider]], and [[guest]]; adult, child and [[baby]]{{BiotechIcon}} alike.
+
+The mood bonus only lasts for as long as a pawn remains within its area of effect.
+
+The effects of multiple emanators do not stack.
+
+== Analysis ==
+The mood bonus from the emanator immediately ends once the pawn moves out of its somewhat short range, however Mood [[Mood#Mechanics|moves gradually]] in response to changes. Having the mood stabilize at the higher level obviously helps while inside the radius, but the mood will also take time to tick down to baseline after leaving the area. The higher the mood bonus, the longer it will be in effect - a psychically hypersensitive pawn will have over an hour of time before their mood stabilizes. As such, it is advisable to place the emanator in places where pawns stay for long periods of time, or frequently spend time in. 
+
+Suggestions include:
+* Hospitals to help negate some of the negative effects of being bedridden with an illness. Note that pawns that are immobile or unconscious cannot break and are therefore a low priority for mood management.
+* Near prison cells to reduce mental breaks.
+* Near work spaces to provide a mood bonuses throughout the day - a pawn that spends all of its time in the field and then goes out of it to eat and sleep effectively has it 24/7. Ideal places include workshops, kitchens, [[meditation]] locations,{{RoyaltyIcon}} and any worksite that does not require the pawn to range over a large area.
+* In shared spaces such as dining and rec rooms - this is less efficient on a per pawn basis but will increase the happiness of the colony as a whole more effectively.
+* In Nurseries, due to [[children]]{{BiotechIcon}} causing either a {{Thought|desc=It's sad to see that the young folk are struggling.|label=sad youngsters|value=-2|stack=3}} or {{Thought|desc=It's nice to see that the young folk are doing well.|label=happy youngsters|value=+2|stack=3}} to colonists without the [[Psychopath]] trait, babies do not have many mood offsets and frequently have their moods decrease due to their play need not being satisfied or just not going to sleep.
+* In areas frequented by particularly break-prone pawns, such as those with the [[Depressive]] trait or that have recently lost family members.
+* To negate the effects of the [[Sleep suppressor]]{{AnomalyIcon}} and [[Frenzy inducer]].{{AnomalyIcon}}
+
+As mood does not change while sleeping, it should not be placed near bedrooms.
+
+Because of the rarity and high value of the emanator, you can wall to prevent angry pawns from destroying it during a [[tantrum]], or raiders from damaging or stealing it. 
+
+If targeted at improving the mood of a specific pawn or pawns, consider enhancing their [[psychic sensitivity]] to maximize the effect on their mood. [[Eltex]] clothing{{RoyaltyIcon}} is ideal, especially if the mood boost is not intended to be permanent, but a variety of methods exist. For a full list of potential enhancers, see the [[Psychic Sensitivity]] page.
+
+== Version history ==
+* [[Version/0.18.1722|0.18.1722]] - Added. 
+
+{{Nav|special|wide}}
+{{Nav|questitems|wide}}
+[[Category:Special]]

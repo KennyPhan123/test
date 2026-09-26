@@ -1,0 +1,90 @@
+<includeonly>{{main|Apparel layers|Table of Human Body Part Groups}}</includeonly><noinclude>{{Stub|reason=Mouth coverage point (e.g. [[face mask]])}}</noinclude>
+Each item of {{#ifeq: Apparel|{{PAGENAME}}|apparel|[[apparel]]}} or [[utility]] gear is worn on a specific location of the wearer's body. That location is determined by two things:
+
+# The [[Table of Human Body Part Groups|body part groups]] it covers.
+# The '''layer''' or '''layers''' it occupies.
+
+Apparel combinations are limited by layer and coverage - an item cannot be worn with another item that covers the same body parts and on the same layer. Thus, items covering the same parts but on different layers are compatible, as are items on the same layer but with no overlap in coverage. Items that cover multiple layers conflict with items on all layers. 
+
+Layers are also used to determine the order in which {{#ifeq: Apparel|{{PAGENAME}}|[[#Protection|armor calculations]]|[[Apparel#Protection|armor calculations]]}} are performed, with the outermost layer's armor applying first, and progressing through the layers until the attack is stopped or there are no more layers.
+
+The layers, from innermost to outermost, are: <!---Order defined in RimWorld\Data\Core\Defs\Misc\ApparelLayerDefs\ApparelLayerDefs.xml-->
+* '''Skin:''' The closest layer to the body, and mostly used for apparel below the head.
+* '''Middle:''' The second closest layer to the body, and mostly used for apparel below the head.
+* '''Outer:''' The third layer from the body, and mostly used for apparel below the head. Note that it will be ''displayed'' on the pawn's sprite above all other layers, even though it is considered below the following layers for actual mechanical effects.
+* '''Belt:''' Technically the fourth layer. A distinct layer for [[utility]] items to allow them to be worn alongside any other apparel but not with each other. 
+* '''Headgear:''' The fifth layer, and used for headwear. There are several items that cover body parts typically covered by the other layers however, in which case this will be above them.
+* '''Eyes:''' The outermost layer. A distinct layer only used for the [[blindfold]]{{IdeologyIcon}} to allow it to be worn alongside headwear.
+
+Which body parts currently have items that occupy each of the layers is shown in the table on the below; layers and body parts which are not currently used by gear were omitted. As such, the hands and feet which are not covered by any apparel or any layer, are omitted. 
+<div><li style="display: inline-table;">
+{| {{STDT| c_06 text-center}}
+! {{Hover title|link=no|The coverage group as defined in the code|Body Part Group}}
+! {{Hover title|link=no|What body parts are actually covered|<small>Coverage</small>}}
+! Skin !! Middle !! Outer !! Headgear !! {{Hover title|link=no|Despite confusingly being named the same as the coverage, Eyes is the title of this layer, and is only used for the Blindfold|Eyes}} !! Belt
+! Image
+|-
+! style='text-align: left' | Full Head
+! style='text-align: right; font-size: 0.8em; font-weight: normal; border-style: none solid none none; border-width: 1px' | Head, Ears, Nose, Jaw, Eyes
+| || || || '''&times;'''  || ||
+| rowspan=9 | [[File:Human Body Areas Located.png|200px]]
+|-
+!  style='text-align: left' |<span style='font-weight: normal; padding-left: 1em'>{{Hover title|link=no|Mutually exclusive with Full Head - covers only a subset of what Full Head does|Upper Head}}<span>
+! style='text-align: right; font-size: 0.8em; font-weight: normal; border-style: none solid none none; border-width: 1px' | Head, Ears
+| || || || '''&times;'''  || ||
+|-
+!  style='text-align: left' |<span style='font-weight: normal; padding-left: 1em'>{{Hover title|link=no|Mutually exclusive with Full Head - covers only a subset of what Full Head does|Eyes}}<span>
+! style='text-align: right; font-size: 0.8em; font-weight: normal; border-style: none solid none none; border-width: 1px' | Eyes
+| || || || || '''&times; ||
+|-
+!  style='text-align: left' | Shoulders
+! style='text-align: right; font-size: 0.8em; font-weight: normal; border-style: none solid none none; border-width: 1px' | Left & Right Shoulders
+| '''&times;''' || '''&times;''' || '''&times;''' ||  || ||
+|-
+!  style='text-align: left' | Arms
+! style='text-align: right; font-size: 0.8em; font-weight: normal; border-style: none solid none none; border-width: 1px' | Left & Right Arm
+| '''&times;''' || '''&times;''' || '''&times;''' ||  || ||
+|-
+!  style='text-align: left' | Torso
+! style='text-align: right; font-size: 0.8em; font-weight: normal; border-style: none solid none none; border-width: 1px' | Torso
+| '''&times;''' || '''&times;''' || '''&times;''' ||  || ||
+|-
+!  style='text-align: left' | Waist
+! style='text-align: right; font-size: 0.8em; font-weight: normal; border-style: none solid none none; border-width: 1px' | Waist
+|  || || || || || '''&times;'''
+|-
+!  style='text-align: left' | Neck
+! style='text-align: right; font-size: 0.8em; font-weight: normal; border-style: none solid none none; border-width: 1px' | Neck
+| '''&times;''' || '''&times;''' || '''&times;''' || '''&times;''' || ||
+|-
+! style='text-align: left' | Legs
+! style='text-align: right; font-size: 0.8em; font-weight: normal; border-style: none solid none none; border-width: 1px' | Left & Right Leg
+| '''&times;''' || '''&times;''' || '''&times;''' ||  || ||
+|}
+</li><div>
+<gallery>
+|Human Body Clothing Coverage Areas
+</gallery>
+
+=== Examples ===
+* You ''can't'' wear pants as well as tribalwear, since both cover the "skin" layer and cover the legs.
+* You ''can'' wear pants and a button-down shirt, since while they both use the "skin" layer they don't cover the same parts.
+* You ''can'' wear pants and a duster, since while they both cover the legs pants use the "skin" layer while a duster uses the "outer" layer.<noinclude>
+=== Comparison table ===
+{| {{STDT|sortable c_06 text-center}}
+! colspan='2'|Name !! Covers Full Head !! Covers Upper Head !! Covers Shoulders !! Covers Arms !! Covers Torso !! Covers Neck !! Covers Legs !! |Occupies Skin  !! Occupies Middle !! Occupies Outer !! Occupies Head
+|-
+{{#ask: [[Layer::+]] [[Type::!Medical Items]]
+ | named args=yes
+ | ?Name=?Name
+ | ?From DLC=?From DLC
+ | ?Coverage=?Coverage
+ | ?Layer=?Layer
+ | format = template 
+ | template = Apparel Layer Table Row 
+ | sort = Layer
+ | limit = 500
+}}
+|}
+</noinclude>
+[[Category:Game mechanics]]

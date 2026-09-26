@@ -1,0 +1,84 @@
+{{Stub|reason = Add consideration of how [[Ideoligion]] affects consumption of meat, insect meat, and human meat together and separately}}
+{{About|the food|the precept related to its consumption|Insect meat (precept)}}
+{{See also|Meat|Human meat}}
+{{Infobox main|food
+| name = Insect meat
+| image = Insect meat c.png
+| description = Raw butchered flesh. If necessary, can be cooked into meals, or even eaten raw. Extremely unappetizing.
+<!-- Base Stats -->
+| type = Food
+| type2 = Raw food
+| hp = 60
+| deterioration = 6
+| marketvalue = 0.5
+| beauty = -4
+| mass base = 0.03
+| flammability = 0.5
+| stack limit = 75
+<!-- Ingestion -->
+| taste = Raw
+| food type = meat
+| food poison chance = 0.02
+| days to rot = 2
+| nutrition = 0.05
+<!-- Creation -->
+| production facility 1 = Butcher spot
+| production facility 2 = Butcher table
+| work to make = 450
+| work speed stat = Butchery Speed
+}}
+'''Insect meat''' is a type of [[meat]] obtained from butchering [[insectoids]]. It is acts as any other meat, but most humans dislike eating it even when cooked into meals.
+
+== Acquisition ==
+Insect meat is produced when a [[Skills#Cooking|cook]] butchers any [[insectoid]] at a [[butcher table]] or [[butcher spot]]. The amount obtained depends on the [[Meat Amount]] of the butchered insectoid, as well as the [[Butchery Efficiency]] of the butcher and a number of other factors. 
+
+The base yield for each insectoid is as follows:
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_06 text-center}}
+! Animal !! Meat Yield
+|- 
+{{#ask: [[Meat Name::{{PAGENAME}}]] [[:+]]
+| ?Meat Yield
+| format = template
+| template = Ask Table Formatter
+| limit = 500
+| link = none
+| sort= From DLC, name}}
+|}</li></div>
+
+== Summary ==
+As a [[raw food]], insect meat can be be eaten raw, with a flat {{Bad|2%}} chance of giving [[food poisoning]], or cooked into a [[meal]] with a food poisoning chance dependent on the skill of the cook and the [[cleanliness]] of the kitchen. [[Animals]] are immune to food poisoning from raw food but not from meals. When used in food recipes that require specific types of [[nutrition]], such as [[fine meal]]s, insect meat is classified as meat. By default, cooks will not cook with insect meat, but you can make them do so by allowing insect meat in cooking [[bill]]s.
+
+Colonists consider insect meat disgusting, and will suffer {{Thought|desc=I ate some gray, slimy insect meat. It was, possibly, the most disgusting thing I've ever tasted.|label=Ate insect meat|value=-6|stack=1|duration=1}} when eaten raw, and {{Thought|desc=I ate a meal cooked from gray, slimy insect meat. The seasoning partly covered the taste, but there were glands and fluid pockets in there that I can't identify.|label=Ate cooked insect meat|value=-3|stack=1|duration=1}} for eating meals with it. Pawns will also gain the mood effect of the preparation itself - for example, eating it as a [[nutrient paste meal]] gives an additional penalty of {{Thought|desc=I had to eat a disgusting, tasteless meal. I know it keeps you alive, but nobody wants to swallow that glop.|label=Ate nutrient paste meal|value=-4|stack=1|duration=1}}, for {{--|7}} mood total.
+
+The mood penalties from insect meat are negated and replaced with {{Thought|desc=I ate some insect meat. So smooth and succulent.|label=Ate insect meat|value=+6|stack=1|duration=1}} or {{Thought|desc=I ate a meal that contained insect meat. I could still taste hints of bug-slime!|label=Ate cooked insect meat|value=+6|stack=1|duration=1}} respectively, if the eating pawn has an [[ideoligion]]{{IdeologyIcon}} with the [[Insect meat (precept)|Insect Meat: Loved]] precept. This mood buff also stacks with any meal preparation methods.
+
+Its market value is only {{Icon Small|silver||{{P|Market Value Base}}}}, or {{%|{{P|Market Value Base}} / {{Q|Meat|Market Value Base}} round 2}} of regular meat. However, this has no effect on the market value of any [[meal]] you might cook out of it.
+
+== Analysis ==
+[[Infestation]]s can result in massive amounts of insect meat. While initially unattractive, it can be of significant value.
+
+*'''Colonist food:''' Eating cooked insect meat is only a {{--|3}} moodlet. If desired, you can cook it into a [[fine meal]] or [[carnivore fine meal]], resulting in a net gain of {{+|2}} mood. It can also be cooked into [[lavish meal]]s for {{+|9}} mood, which is higher than fine meals without insect meat. "Wasted" food from lavish meals doesn't matter if you would've thrown out the insect meat in the first place. This makes insect meat useful if meat, or food in general, is in low supply.
+
+: If the [[Insect meat (precept)|Insect Meat: Loved]]{{IdeologyIcon}} precept is used, then insect meat becomes a no-brainer. With the right set up, colonies can be fed exclusively on insect meat and be ecstatic about it, making it a very powerful tool to control colony mood. There is no functional downside for the Insect Meat: Loved precept and no upside for the Insect Meat: Despised precept.
+
+* '''Animal food:''' Omnivorous and carnivorous animals can eat insect meat or insect corpses without penalty. [[Ghoul]]s{{AnomalyIcon}} are in the same boat.
+
+* '''Kibble Production:''' Insect meat may be used as the required meat for kibble production and fed to animals without penalty.
+
+* '''[[Chemfuel]]:''' When processed in a [[biofuel refinery]], insect meat is treated like any other organic food. Chemfuel can be sold for a profit, used in a [[chemfuel generator]], or consumed in any other way without penalty. At a profit of {{Icon Small|silver||{{#expr: (35*{{Q|Chemfuel|Market Value Base}}) - (70*{{P|Market Value Base}}) round 1}}}} per 1 game-hour, refining insect meat is an efficient way for unskilled pawns to generate income.
+
+* '''Decreasing mood:''' The mood penalty from insect meat can be combined with the penalty from [[nutrient paste]] when trying to lower a pawn's mood, such as when trying to trigger a [[tortured artist]], create an anti-raider [[psychic harmonizer|psychic beacon]] ,{{RoyaltyIcon}} or [[Conversion|convert]]{{IdeologyIcon}} a pawn via [[Mental_break#Crisis of belief|Crisis of belief]]. [[Human meat]] offers a stronger penalty, but butchering a human offers a mood penalty to the average colonist.
+
+== Gallery ==
+<gallery>
+Insect meat a.png|One insect meat
+Insect meat b.png|Partial stack
+Insect meat c.png|Full stack
+</gallery>
+
+== Trivia ==
+* Note that in the game's code, Insect Meat is referred to as "Meat_MegaSpider".
+
+{{Nav|Food|wide}}
+[[Category:Food]] [[Category:Raw Food]] [[Category:Meat]]

@@ -1,0 +1,146 @@
+{{infobox main|animal
+| page verified for version = 1.3.3101
+| name = Dromedary
+| image = Dromedary east.png
+| description = A large land mammal adapted to arid environments. Domesticated since ancient times, its wool and leather are both exceptionally good at insulating against the desert heat, and its milk is quite nourishing. It can be used as a pack animal and mount, but its bouncing gait makes it slower to ride than a horse.<br>By storing water in its large humps and reclaiming moisture from its breath as it exhales, it can go weeks without drinking.<br>When in a caravan, people can ride dromedaries to increase the caravan's speed.
+| type = Animal
+| movespeed = 4.3
+| min comfortable temperature = -22
+| max comfortable temperature = 60
+| toxic resistance = 0.5
+| toxic environment resistance = 0
+| flammability = 0.7
+| marketvalue = 300
+| filth rate = 16
+| ridingspeed = 1.3
+| milktime = 2
+| milk = 18
+| herdanimal = true
+| combatPower = 90
+| bodysize = 2.1
+| healthscale = 1.6
+| hungerrate = 0.535
+| diet = herbivorous
+| leathername = camelhide
+| wildness = 0.25
+| manhuntertame = 0
+| manhunter = 0
+| roamMtb = 3
+| trainable = none
+| mateMtb = 12
+| packanimal = true
+| gestation = 6.66
+| offspring = 1
+| lifespan = 45
+| juvenileage = 0.25
+| maturityage = 0.3333
+| tradeTags = AnimalFarm, AnimalCommon
+| baby name = dromedary calf
+| attack1dmg = 9
+| attack1type = Blunt
+| attack1cool = 2
+| attack1part = front left leg
+| attack2dmg = 9
+| attack2type = Poke
+| attack2cool = 2
+| attack2part = front left leg
+| attack3dmg = 9
+| attack3type = Blunt
+| attack3cool = 2
+| attack3part = front right leg
+| attack4dmg = 9
+| attack4type = Poke
+| attack4cool = 2
+| attack4part = front right leg
+| attack5dmg = 10
+| attack5type = Bite
+| attack5cool = 2
+| attack5part = teeth
+| attack5chancefactor = 0.7
+| attack6dmg = 7
+| attack6type = Blunt
+| attack6cool = 2
+| attack6part = head
+| attack6chancefactor = 0.2
+| isCoastal = false
+| livesin_aridshrubland = 0.7
+| livesin_desert = 0.7
+| livesin_extremedesert = 0.2
+}}
+'''Dromedaries''', called '''dromedary calves''' as babies, are desert-dwelling [[herbivore]]s that provide [[milk]] and act as [[pack animal]]s.
+
+== Acquisition ==
+Dromedaries are notable for requiring no minimum skill level to tame. They can be found in {{Habitats}}.
+
+Dromedaries can be bought and sold in other [[Trade#Faction base|faction bases]] and from [[Trade#Exotic goods trader 2|exotic goods traders]]. Dromedaries purchased from traders will be already tamed.
+
+== Summary ==
+{{Pen Animal Note|Dromedaries}}
+
+A dromedary can be milked for up to {{Icon Small|milk}} {{P|Milk Amount}} units of milk {{#ifeq:{{P|Milking Interval Days}}|1|per day|every {{P|Milking Interval Days}} days}} depending on your pawn's [[Animal Gather Yield]]. Milking an animal takes {{Ticks|400}} of work, regardless of the amount of milk produced, and only modified by the [[Animal Gather Speed]] of the handler.
+
+Dromedaries are also [[pack animal]]s. They will carry up to 73.5kg of weight in a [[caravan]]. They can additionally be ridden for up to 130% caravan speed.
+
+== Analysis ==
+Dromedaries are an "all-in-one" animal, well suited for arid environments. Dromedaries produce milk, are pack animals, and are ridable, a combo entirely unique to dromedaries. In a [[desert]] or [[extreme desert]], dromedaries are the only native animal to produce milk, and the only native animal that is a pack animal. [[Camelhide]] is also a great [[textile]] for heat insulation.
+
+Dromedaries are much larger than most other animals found in a desert and extreme desert.
+
+===Nutrition===
+When slaughtered, a dromedary yields 59 meat and 23 leather as a calf; 147 meat and 42 as a juvenile; or 294 meat and 84 leather as an adult. 
+
+*'''Milking'''
+Female dromedaries produce {{Icon Small|milk}} {{P|Daily Milk Average}} per day, or {{#vardefineecho:milk_nutr_per_day|{{#expr:{{P|Daily Milk Average}}*0.05}}}} [[nutrition]] in milk per day. A dromedary consumes {{P|Real Hunger Rate}} nutrition per day. This results in a nutrition efficiency of {{%|{{#var:milk_nutr_per_day}}/{{P|Real Hunger Rate}} round 3}} from females' milk alone (or {{Icon Small|milk}} {{#expr: {{P|Daily Milk Average}}/{{P|Real Hunger Rate}} round 2}} per day per 1 nutrition consumed). Dromedaries provide the least milk of all animals.
+
+*'''Slaughtering + Milking'''
+Slaughtered as calves, and including the production of milk, the nutrition efficiency of a population of dromedaries varies from {{%|({{Meat Production|{{PAGENAME}}|baby|1|1}} + {{#var:milk_nutr_per_day}})/{{Nutrition Consumption|{{PAGENAME}}|baby|1|1}} round 3}} to {{%|({{Meat Production|{{PAGENAME}}|baby|1|0}} + {{#var:milk_nutr_per_day}})/{{Nutrition Consumption|{{PAGENAME}}|baby|1|0}} round 3}} depending on how many more female dromedaries there are than bulls. 
+
+If the dromedaries are allows to grow to adulthood before they are slaughtered, this changes to {{%|({{Meat Production|{{PAGENAME}}|baby|1|1}} + {{#var:milk_nutr_per_day}})/{{Nutrition Consumption|{{PAGENAME}}|adult|1|1}} round 3}}-{{%|({{Meat Production|{{PAGENAME}}|adult|1|0}} + {{#var:milk_nutr_per_day}})/{{Nutrition Consumption|{{PAGENAME}}|adult|1|0}} round 3}}.
+
+===Compared to Yaks===
+[[Yak]]s are competitive with dromedaries, and choosing between them is more of a matter of preference. They are both pack animals that produce milk. Yaks produce {{#expr: (({{Q|Yak|Daily Milk Average}}/{{P|Daily Milk Average}})-1)*100 round 0}}% more milk on average, but dromedaries with a longer milking interval will demand less labor from handlers and haulers. As pack animals, they carry the same load, but dromedaries allow riders to speed up caravans while yaks do not. They are otherwise very similar - carrying the same load and eating the same amount. Dromedaries can be found in deserts, while yaks can be found in cooler biomes.
+
+== Training ==
+{{TrainingTable}}
+
+== Health ==
+{{Animal Health Table|QuadrupedAnimalWithHoovesAndHump}}
+{{Pawn Attack Table}}
+
+== Gallery ==
+<gallery>
+Dromedary east.png|Facing east
+Dromedary north.png|Facing north
+Dromedary south.png|Facing south
+</gallery>
+<gallery>
+Dessicated dromedary east.png|Dessicated facing east
+Dessicated Dromedary north.png|Dessicated facing north
+Dessicated Dromedary south.png|Dessicated facing south
+</gallery>
+<gallery>
+Dromedary pack east.png|Packing bags facing east
+Dromedary pack north.png|Packing bags facing north
+</gallery>
+== Sounds ==
+<gallery>
+Pawn Dromedary Death 1a.wav|Death Sound 1 
+Pawn Dromedary Death 1b.wav|Death Sound 2
+</gallery>
+
+== Version history ==
+* [[Version/0.7.581|0.7.581]] - Added as '''Camel'''
+* [[Version/0.12.906|0.12.906]] - Can now be shorn for a new [[wool]] type: [[Camelhair]], and milked for [[milk]]. 
+* Beta 19/1.0 - Leg damage 11 -> 8
+* 1.1 - Dromedaries no longer produce wool in the form of camelhair.
+* [[Version/1.3.3067|1.3.3067]] - Fix: Dromedary description mentions it is not rideable, but it is. Description changed from ''{{Hover title|A large land mammal adapted to arid environments. Domesticated since ancient times, its wool and leather are both exceptionally good at insulating against the desert heat, and its milk is quite nourishing. It can be used as a pack animal, but its bouncing gait makes it too uncomfortable to ride for any distance.
+By storing water in its large humps and reclaiming moisture from its breath as it exhales, it can go weeks without drinking.|"[...] but its bouncing gait makes it too uncomfortable to ride for any distance. [...]"}}'' changed to ''{{Hover title|A large land mammal adapted to arid environments. Domesticated since ancient times, its wool and leather are both exceptionally good at insulating against the desert heat, and its milk is quite nourishing. It can be used as a pack animal and mount, but its bouncing gait makes it slower to ride than a horse. By storing water in its large humps and reclaiming moisture from its breath as it exhales, it can go weeks without drinking.|"[...] but its bouncing gait makes it slower to ride than a horse. [...]"}}''.
+
+<gallery>
+Camelhair.png|Camelhair
+</gallery>
+
+{{nav|animal}}
+[[Category:Animals]]
+[[Category:Pack Animal]]
+[[Category:Wild animal]]

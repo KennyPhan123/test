@@ -1,0 +1,45 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Biotech/Various}}
+|}
+----
+{| {{STDT| c_10}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Hemogen craving" <!-- defName="HemogenCraving" -->
+! Hemogen craving
+----
+* Def Name:<br />HemogenCraving
+* Label:<br />hemogen craving
+|<!-- Description -->
+<div style="max-width: 200px;">Due to a lack of hemogen, this person's body is breaking down hemogen reserves in their bone marrow. This causes disorientation and a painful craving for human blood.</div>
+|<!-- Details -->
+* Hediff Class: '''Hediff_HemogenCraving'''
+* Default Label Color: {{Color|100%|20%|20%}}
+* Initial Severity: '''1%'''
+* Max Severity: '''100%'''
+* Ever Curable By Item: {{Bad|false}}
+* '''Comps:''' ''Severity From Hemogen''
+** Severity Per Hour Empty: {{++|5%}}
+** Severity Per Hour Hemogen: {{---|10%}}
+|<!-- Stages -->
+{| {{STDT| c_10}}
+! Label !! Parameters
+|-
+! minor
+|<!-- Parameters -->
+* Pain Offset: {{++|5%}}
+* [[Consciousness]] Max: {{Bad|90%}}
+|-
+! moderate
+|<!-- Parameters -->
+* Min Severity: '''35%'''
+* Pain Offset: {{++|10%}}
+* [[Consciousness]] Max: {{Bad|80%}}
+|-
+! major
+|<!-- Parameters -->
+* Min Severity: '''70%'''
+* Pain Offset: {{++|15%}}
+* [[Consciousness]] Max: {{Bad|50%}}
+|}<noinclude>
+|}</noinclude>

@@ -1,0 +1,191 @@
+{{infobox main|drug
+| name = Smokeleaf joint
+| image = Joint c.png
+| description = Smokeleaf leaves prepared in small rolls for smoking. The drug improves mood, but also increases appetite, reduces focus and slows movement. Smokeleaf use can produce a dependency.<br>Joints can be produced at a crafting spot without equipment, and are a fixture in many traditional low-industriousness cultures.
+| type = Drug
+| type2 = Social drug
+| tech level = Neolithic
+| marketvalue = 11
+| stack limit = 150
+| mass base = 0.05
+| beauty = -4
+| hp = 50
+| deterioration = 6
+| flammability = 1.3
+<!-- Ingestion -->
+| food type = plant, processed
+| joy offset = 0.8
+| joy kind = Chemical
+| addictiveness = 0.02
+| max num to ingest at once = 1
+| ingestion time = 720
+<!-- Creation --> 
+| production facility 1 = Crafting spot
+| production facility 2 = Drug lab
+| work to make = 450
+| work speed stat = Drug Cooking Speed
+| resource 1 = Smokeleaf leaves
+| resource 1 amount = 4
+| bulk product amount = 4
+<!-- Technical -->
+| drug category = Social
+| tradeTags = Drugs
+}}
+'''Smokeleaf joints''' are [[social drugs]] that are relatively safe to use, easy to produce, and provide a moderately potent [[mood]] and [[recreation]] buff, balanced by some drawbacks. Care should be taken however, as the [[consciousness]] debuff its high inflicts can cause death in pawns with already lowered consciousness.
+
+== Acquisition ==
+{{Acquisition}} 
+
+Despite being [[Cooking]]-based, the [[Crafting]] work-type must be enabled in the [[Work]] menu in order to perform this activity.
+
+It can also be found on [[raider]]s and [[Trade|purchased]].
+
+== Summary ==
+Smokeleaf is a moderately potent mood enhancing social drug that has a variety of effects. These can be broken into effects that occur:
+* Instantaneously and one time upon using the drug.
+* While high on the drug.
+* While having a built-up tolerance to the drug.
+* While addicted to the drug.
+* While withdrawing from the drug.
+
+=== Upon smoking ===
+A pawn smoking a smokeleaf joint will look for a place to sit first, but is still able to smoke without one. Smokeleaf joints are smoked, taking {{ticks|{{P|Ingestion Time}} }}. It has the following one time effects:
+
+* {{+|{{%|{{P|Joy Offset}} }} }} {{P|Joy Kind}} [[recreation]]
+* If the pawn has the [[chemical interest]] or [[chemical fascination]] trait:
+** {{+|20%}} [[Chemical need]]
+* {{--|10%}} [[Rest]]
+* '''+{{%|{{#vardefineecho:highSeverity|0.5}} * 0.25}} to +{{%|{{#var:highSeverity}} }}''' Stoned on smokeleaf severity, depending on tolerance ''(see "Stoned on smokeleaf" below)''
+* {{++|{{%|{{#vardefineecho:toleranceSeverityOffset|0.03}} }} }} [[#Tolerance|Tolerance]] severity, divided by body size ''(see "Tolerance" below)''
+* If the pawn has {{%|{{#vardefineecho:minToleranceToAddict|0.15}} }} tolerance already:
+** {{Bad|{{%|{{P|Addictiveness}} * ( 1 + 4 * {{#var:minToleranceToAddict}} / 0.5) }} to {{%|{{P|Addictiveness}} * 15}} }} [[Addiction]] chance ''(see "Addiction" below)''
+* If the pawn has an addiction already:
+** {{+|{{%|{{#vardefineecho:needOffset|0.9}} }} }} Smokeleaf need ''(see "Addiction" below)''
+** {{--|{{%|{{#vardefineecho:addictionSeverityOffset|0.06}} }} }} Addiction progress ''(see "Addiction" below)''
+
+=== Stoned on smokeleaf ===
+{{Quote|"Smokeleaf's active chemical in the bloodstream. Generates a soft feeling of fuzzy well-being."|Stoned on smokeleaf description}}
+
+Each joint smoked increases the stoned on smokeleaf severity by the following formula:
+
+<code>Increase in severity = {{#var:highSeverity}} * (100 - (tolerance * 75 round 0))</code>
+
+Therefore with 0% tolerance the severity increases by {{%|{{#var:highSeverity}} }}, with 100% tolerance by {{%|{{#var:highSeverity}}*0.25}}. It decreases by {{%|{{#vardefineecho:highSeverityPerDay|1}} }} per day again, meaning that the high of a single dose lasts between {{#vardefineecho:highDurationMin|{{#expr: {{#var:highSeverity}}*0.25/({{#var:highSeverityPerDay}}/24)}} }} and {{Plural|{{#vardefineecho:highDurationMax|{{#expr: {{#var:highSeverity}}/({{#var:highSeverityPerDay}}/24)}} }}|hour}}. The maximum severity of a smokeleaf high is 100% which is reached with {{#expr: 1/{{#var:highSeverity}} round 1}} to {{Plural|1/{{#var:highSeverity}}/0.25 round 1|joint}}. Regardless of the smokeleaf high severity, the effects are always the same. Only their duration changes accordingly:
+* {{+|13}} [[Mood]] (''"I'm, like, stoned, man."'')
+* {{--|30%}} [[Consciousness]] ('''WARNING:''' If a pawns consciousness drops to 0% they die.)
+* {{--|10%}} [[Moving]]
+* {{++|30%}} [[Saturation|Hunger]] rate factor offset. (Note: The offsets to the factor are additive with each other, while the factor itself is multiplicative with the hunger rate.)
+* {{---|20%}} [[Pain]]
+
+Without any tolerance, a smokeleaf joint will last for {{Plural|{{#vardefineecho:highDurationMax|{{#expr: {{#var:highSeverity}}/({{#var:highSeverityPerDay}}/24)}} }}|hour}}.
+
+=== Tolerance ===
+{{Main|Tolerance}}
+{{Quote|"A built-up tolerance to smokeleaf. The more severe this tolerance is, the more smokeleaf it takes to get the same effect."|Tolerance description}}
+Each smokeleaf joint consumed increases the tolerance of the pawn by the following formula:
+
+<code>Increase in tolerance = {{%|{{#var:toleranceSeverityOffset}} }} / body size</code>
+
+Thus smaller or not fully grown pawns gain more tolerance per drug use than bigger or fully grown ones. An adult [[human]] has a body size of {{Q|Human|Body Size}}. Tolerance decreases at a rate of {{%|{{#vardefineecho:toleranceSeverityPerDay|0.015}} }} per day.
+
+See sections ''"Stoned on smokeleaf"'' and ''"Addiction"'' for how tolerance affects stoned on smokeleaf severity and addiction chance respectively.
+
+If the tolerance is above a certain thresholds it imposes a chance over time to gain the following [[ailments]]:
+
+<ul><li><span style="color:firebrick>'''Carcinoma'''</span><br/>
+'''Tolerance above 36%''' imposes a chance to get [[carcinoma]] proportional to the tolerance held. Carcinoma gained this way will affect only lungs and only one lung at a time.
+{| class="wikitable" style="text-align:right"
+|-
+! Tolerance !! Average carcinoma interval !! Graph
+|-
+| 36% || 99999 Days
+| rowspan="3" | {{Graph:Chart| width = 400 | height = 100 | type = line | xAxisTitle = Tolerance (%) | yAxisTitle = MTB Carcinoma (Days) | x = 40, 40, 100 | y = 250, 180, 135 | xAxisMin = 36 | yAxisMax = 250}}
+|-
+| 40% || 180 Days
+|-
+| 100% || 135 Days
+|}</li>
+<li><span style="color:firebrick>'''Asthma'''</span><br/>
+'''Tolerance above 45%''' imposes a chance to get [[asthma]] proportional to the tolerance held. Asthma gained this way will affect both lungs.
+{| class="wikitable" style="text-align:right"
+|-
+! Tolerance !! Average asthma interval !! Graph
+|-
+| 45% || 99999 Days
+| rowspan="3" | {{Graph:Chart| width = 400 | height = 100 | type = line | xAxisTitle = Tolerance (%) | yAxisTitle = MTB Asthma (Days) | x = 50, 50, 100 | y = 250, 180, 135 | xAxisMin = 45 | yAxisMax = 250}}
+|-
+| 50% || 180 Days
+|-
+| 100% || 135 Days
+|}</li></ul>
+
+=== Addiction ===
+{{Quote|"A chemical addiction to smokeleaf. Long-term use of smokeleaf has caused neurological adaptations at the cellular level, so the brain can no longer function properly without the drug. Without regular doses of smokeleaf, withdrawal symptoms will begin. However, extended abstinence will force the brain to adapt back to its normal state, resolving the addiction."|Addiction description}}
+Once a pawn has a [[#Tolerance|tolerance]] of {{%|{{#var:minToleranceToAddict}} }} or above, each dose carries a chance of addiction that scales with tolerance. Due to the minimum tolerance to addict, smokeleaf joints can be safely consumed once every {{Plural|{{#var:toleranceSeverityOffset}}/{{#var:toleranceSeverityPerDay}}|day}} without risking addiction, so long as the pawn has a body size of 1 or higher and their tolerance is not already elevated before starting the schedule.
+
+The chance of addiction is as follows:
+{| class="wikitable" style="text-align:right"
+|-
+! Tolerance !! Addiction chance !! Graph
+|-
+| 0% || 0%
+| rowspan="4" | {{Graph:Chart
+  | width = 400 | height = 100 | type = line | xAxisTitle = Tolerance (%) | yAxisTitle = Addiction Chance (%)
+  | x = 0, {{#expr:{{#var:minToleranceToAddict}}*100}}, {{#expr:{{#var:minToleranceToAddict}}*100}}, 50, 80, 100
+  | y = 0, 0, {{#expr:{{P|Addictiveness}} * ( 1 + 4 * {{#var:minToleranceToAddict}} / 0.5) * 100}}, {{#expr:{{P|Addictiveness}} * 5 * 100}}, {{#expr:{{P|Addictiveness}} * 15 * 100}}, {{#expr:{{P|Addictiveness}} * 15 * 100}}
+}}
+|-
+| {{%|{{#var:minToleranceToAddict}} }} || {{%|{{P|Addictiveness}} * ( 1 + 4 * {{#var:minToleranceToAddict}} / 0.5) }}
+|-
+| 50% || {{%|{{P|Addictiveness}} * 5}}
+|-
+| 80% || {{%|{{P|Addictiveness}} * 15}}
+|}
+
+The addiction progresses by {{%|{{#vardefineecho:addictionSeverityPerDay|0.0333}} }} per day from the initial 50%. Once it reaches 100% the addiction is healed, meaning it takes about {{Plural|0.5/{{#var:addictionSeverityPerDay}} round 1|day}} to overcome the addiction. Consuming smokeleaf during an addiction will reduce the addiction progress by {{%|{{#var:addictionSeverityOffset}} }} again ''(see "Upon smoking" above)''.
+
+Developing an addiction means a pawn has a smokeleaf [[Needs#Drug addictions|need]]. The need for smokeleaf falls by {{%|{{#vardefineecho:needFall|0.5}} }} per day, consuming smokeleaf satisfies the need by {{%|{{#var:needOffset}} }} ''(see "Upon smoking" above)'', meaning the pawn will need to consume smokeleaf at least every {{Plural|{{#var:needOffset}}/{{#var:needFall}} round 1|day}} to prevent withdrawal symptoms.
+
+=== Withdrawal ===
+{{Quote|"Because of a smokeleaf dependence, this person needs to regularly consume the drug to avoid withdrawal symptoms."|Need description}}
+As soon as the smokeleaf need reaches 0% the pawn suffers from the following withdrawal symptoms:
+* {{--|20}} [[Mood]] (''"I really wish I could smoke. I feel jittery, and my gut has that anxious sensation all the time."'')
+* {{--|20%}} [[Consciousness]] ('''WARNING:''' If a pawns consciousness drops to 0% they die.)
+* {{--|15%}} [[Moving]]
+* <span style="color:firebrick>'''Mental break'''</span> chances:
+** [[Food binge]]: on average every {{#vardefineecho:foodBingeMtb|30}} days. This averages to {{Plural|1/{{#var:addictionSeverityPerDay}}/{{#var:foodBingeMtb}} round 1|food binge}} during each withdrawal.
+** [[Hard drug binge]]: on average every {{#vardefineecho:drugBingeMtb|50}} days. This averages to {{Plural|1/{{#var:addictionSeverityPerDay}}/{{#var:drugBingeMtb}} round 1|hard drug binge}} during each withdrawal.
+
+== Analysis ==
+Smokeleaf joints are a relatively safe drug that's easy to acquire. Adult humans can safely take smokeleaf once every 2 days without getting addicted or facing any adverse health effect.
+
+However, smokeleaf comes with ''significant'' penalties to [[Consciousness]] and [[Moving]]. The Consciousness penalty will make pawns slower at nearly every task in the game, and lowers their effectiveness in combat. This makes smokeleaf poor as a "general" mood-boosting drug - you don't want your soldiers stoned just before a battle. It is best used when you don't care about productivity. [[Prisoner]]s and [[noble|noble guests]]{{RoyaltyIcon}} don't work, for example. It can also be great for mood emergencies. As a painkiller, Smokeleaf subtracts pain by 20%. compared to [[Beer]], [[Psychite tea]], [[Flake]], [[Yayo]] and [[Go-juice]] which only reduce pain by a multiplier while also having heavier risks involved. This is less useful for combat due to its aforementioned debuffs, and relegates it to mood control for pawns with scars, or the long-lasting [[Fibrous mechanites|Fibrous]]/[[Sensory mechanites|Sensory]] Mechanites. 
+
+Notably, a smokeleaf high with no tolerance lasts exactly as long as extracting genes at a [[gene extractor]]{{BiotechIcon}}. This makes smokeleaf a decent option for preventing pawns from having mental breaks around the end of an extraction.
+
+Since smokeleaf lowers Consciousness, it also puts pawns at a slightly higher risk of death. Pawns will die if they reach 0% Consciousness, so the combination of injury and smokeleaf could kill them. And don't administer smokeleaf to pawns below 30% Consciousness, as it will instantly kill them. However, putting a pawn under [[anesthetic]] while they are stoned on smokeleaf will not kill them, despite anesthetic reducing a pawn's consciousness to 1%.
+
+It is recommended to set a [[drug policy]] to disable "For Recreation". Otherwise, pawns will take smokeleaf joints freely, and run the risk of getting addicted.
+
+=== Trade ===
+Smokeleaf is one of the better drugs for trade. Unlike [[beer]] or [[psychite]], you technically don't need research to create smokeleaf joints. However, a [[drug lab]] does require research, and it makes smokeleaf twice as fast to create.
+
+* For ''work'' efficiency, smokeleaf is mostly inferior to [[flake]]. Smokeleaf takes more work to harvest ({{++|{{%|-1 + (5/4)*({{Q|Psychoid plant|Harvest Yield Per Work}}/{{Q|Smokeleaf plant|Harvest Yield Per Work}}) round 3}} }} work per drug), more base work to synthesize ({{++|{{%|-1+{{Q|Smokeleaf joint|Work To Make}}/{{Q|Flake|Work To Make}} round 3}} }} work per drug), and each joint is worth less ({{Bad|{{%|{{Q|Smokeleaf joint|Market Value Base}}/{{Q|Flake|Market Value Base}} round 3}} }} value per drug). Smokeleaf joints use Cooking, while Flake uses Intellectual. 
+: Without the [[Research#Psychite refining|Psychite Refining]] research, smokeleaf is one of the better drugs. If you have drug labs available, smokeleaf is around as efficient as [[beer]]. Beer will take more work to plant and harvest, while smokeleaf will take more time to cook.
+
+* For ''growth'' efficiency or ''speed'', smokeleaf is arguably the best plant in the game. In rich soil or [[hydroponics]], smokeleaf will give the most money, per tile, per day growing. In regular soil or worse, [[hop plant]]s (beer) will be slightly better.
+
+== Gallery ==
+<gallery>
+Joint a.png|One smokeleaf joint
+Joint b.png|Partial stack
+Joint c.png|Full stack
+</gallery>
+
+== Version history ==
+* [[Version/0.15.1279|0.15.1279]] - Added.
+* Version 1.0 the effect of the mood buff was decreased from 15 to 13.
+* [[Version/1.5.4062|1.5.4062]] - Drug tolerance gain is now divided by body size and not body size squared - this also had the effect of making the suggested safe dose intervals for children correct. 
+
+{{Nav|drugs|wide}}
+[[Category:Drug]] [[Category:Social Drug]]

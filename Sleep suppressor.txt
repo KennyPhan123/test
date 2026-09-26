@@ -1,0 +1,65 @@
+{{Anomaly}}
+{{Infobox main|building
+| name = Sleep suppressor
+| image = Sleep suppressor north.png 
+| description = A scavenged archotech shard mounted in an electrical control frame. The device creates a psychic pulsation in the local area which alters the brain chemistry of those nearby, halting the buildup of fatigue toxins and removing the need for sleep. However, it also irritates anyone nearby.
+| type = Building
+| type2 = Anomaly (Buildings)
+| marketvalue = 545
+| placeable = true
+| path cost = 
+| passability = 
+| blockswind = 
+| cover = 0.4
+| minifiable = 
+| size = 2 ˣ 1
+| mass base = 100
+| flammability = 0.5
+| hp = 200
+| sell price multiplier = 0.7
+| power = -300
+| terrain affordance = heavy
+| research = Sleep suppressor
+| thingCategories =
+| work to make = 6000
+| resource 1 = Shard
+| resource 1 amount = 1
+| resource 2 = Bioferrite
+| resource 2 amount = 100
+| resource 3 = Steel
+| resource 3 amount = 25
+}}
+The '''sleep suppressor''' is a building added by the [[Anomaly DLC]] that reduces the [[sleep fall rate]] of nearby humans, but also inflicts a mood debuff.
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+{{Recode|section=1|reason=Time in/until state like [[Comfort]] and other stat pages - for both gain and decay. Exact rate will need to be extracted from the C# but estimate can be used in the meantime}}
+{{Image wanted|section=1|reason=AoE in [[:Category:Images - Graphics|standard style]]}}
+Human pawns within an 8 tile radius of a powered sleep suppressor will gain a {{--|6}} [[mood]] debuff, and slowly build Sleep Suppression while they remain within the radius. Human pawns that have been [[inhumanized]] will not receive the lowered mood thought.
+
+Sleep Suppression progresses in several stages:
+* Very Mild (0% - 9.9%): No effect
+* Mild (10% - 29.9%): Sleep Fall Rate x50%
+* Moderate (30% - 65.9%) Sleep Fall Rate x15%
+* Extreme (66% - 100%) Sleep Fall Rate x0%
+
+When outside of the radius, pawns lose progression on sleep suppression very quickly at around 1% severity every {{Ticks|60}}.
+
+== Analysis ==
+The sleep suppressor is very effective when placed within your workshop and laboratory, where pawns are likely to sit in place for long periods of time needed to build up the sleep suppression to the maximum. This effectively allows pawns to craft or research for longer periods of time before they need to stop to satisfy other needs, like hunger or recreation. It can be combined with a [[frenzy inducer]] to make pawn work even more efficient, though at the risk of more destructive mental breaks.
+
+The sleep suppressor is especially useful for [[slaves]]{{IdeologyIcon}} as they already have no recreation needs and higher mood due to slave expectation buff. Assuming the slave is going to work near a sleep suppressor all of the time, their only required need is food. Putting it next to [[deep drill]] operated by a slave allows for a exceptionally productive work.
+
+In theory, one could also be built in the rec room and dining room, to keep those pawns awake close to indefinitely, though these rooms are much less frequently idled in by an efficient colony, making the extra costs to have additional units in these areas much less favourable. 
+
+Like other similar buildings such as the [[frenzy inducer]], these should be turned off when moods are low in the colony. A happy pawn is more efficient than a sleepless pawn in the long run, after all.
+
+The Sleep Suppression effect builds through walls. Accordingly, it can be placed near bedrooms, causing pawns to build the effect overnight and lose less sleep in the day.
+
+== Version history ==
+* [[Anomaly DLC]] Release - Added
+
+{{Nav|anomaly|wide}}
+[[Category:Anomaly (Buildings)]]

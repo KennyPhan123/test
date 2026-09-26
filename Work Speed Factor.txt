@@ -1,0 +1,25 @@
+{{About|the multiplier on work speed|the mulitplier on products|Work Efficiency Factor}}
+{{Stat
+| default base value = 1
+| min value = 0.1
+| to string style = PercentZero
+| description = Work speed is multiplied by this value.
+| category = Building
+}} This acts as a multiplier on the time a job takes to be completed at the work table. For example, a value of 50% would result in the job to take twice as long as if it would be done with a value of 100%.
+
+The default value is {{#expr:{{P|Default Base Value}}*100}}%. The minimum value is {{#expr:{{P|Stat Minimum}}*100}}%.
+
+== Offset ==
+First of all the following offset might affect the ''Work Speed Factor'':
+* {{+|{{#expr:{{Q|Tool cabinet|Work Speed Offset}}*100}}%}} for a maximum of {{Q|Tool cabinet|Max Simultaneous Facilities}} [[Tool cabinet]]s per workstation
+
+== Factors ==
+After the offset the following factors might affect the ''Work Speed Factor'':
+* '''×[[Property:Unpowered Work Speed Factor|Unpowered Work Speed Factor]]''' if unpowered (currently only the [[Electric tailor bench]] has an ''Unpowered Work Speed Factor'' of '''{{#expr:{{Q|Electric tailor bench|Unpowered Work Speed Factor}}*100}}%''', all other electric work tables stop working entirely when unpowered)
+* '''×70%''' if the [[temperature]] is below {{Temperature|10}} or above {{Temperature|34}}
+* '''×80%''' if the work table is [[outdoors]]
+* '''×80%''' if the work table does not match the required [[Rooms#Role|room role]], if applicable
+
+== Version history ==
+* [[Version/1.6.4518|1.6.4518]] - Workbenches that are outdoors now get an 80% workspeed multiplier (from 90%).
+* [[Version/1.6.4518|1.6.4518]] - Some production buildings now have a work speed penalty if they are not in the correct room.

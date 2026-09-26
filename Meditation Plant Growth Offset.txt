@@ -1,0 +1,86 @@
+{{Royalty}}
+{{Stub|reason=1) Corresponding Property 2) Two-way links}}
+{{Verified|1.5.4104}}{{Stat
+| def name = MeditationPlantGrowthOffset
+| label = meditation plant growth offset
+| description = An offset applied to the growth rate of [[plants]], like [[anima grass]], from [[meditation]]. This value can change based on the number of artificial buildings nearby.
+| default base value = 0
+| to string style = PercentZero
+| show if undefined = false
+| show zero base value = false
+| show on default value = false
+| category = Meditation
+| display priority in category = 4000
+| parts = StatPart_ArtificialBuildingsNearbyOffset
+}}
+
+== Bases ==
+<div><li style="display: inline-table;">
+{| {{STDT| c_14}}
+! Plant !! Meditation Plant Growth Offset Base
+|-
+! {{Icon Small|Anima tree|24}} [[Anima tree]] {{RoyaltyIcon}}
+| 0
+|}
+</li></div>
+
+== Offsets ==
+[[Meditation Plant Growth Offset]] is affected by the number of artifical buildings within a 34.9 cell radius:
+<div><li style="display: inline-table;">
+{| {{STDT| c_07}}
+! Nearby Artificial Buildings !! Meditation Plant Growth Offset Offset
+|-
+! 0
+| '''0'''
+|-
+! 5
+| {{--|8%}}
+|-
+! 10
+| {{--|15%}}
+|-
+! 50
+| {{--|30%}}
+|}
+{{Graph:Chart|width=300|height=150|xAxisTitle=Number of Nearby Artificial Buildings|yAxisTitle=Meditation Plant Growth Offset|type=line|x=0, 5, 10, 50|y=0.0, -0.08, -0.15, -0.3|yAxisMin=-0.3|interpolate=monotone|xGrid=|yGrid=}}
+</li></div>
+
+== Stat Def Data ==
+{| {{STDT| c_14}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Meditation Plant Growth Offset" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />MeditationPlantGrowthOffset
+* '''Label:'''<br />meditation plant growth offset
+| An offset applied to the growth rate of plants, like anima grass, from meditation. This value can change based on the number of artificial buildings nearby.
+|
+* Display Order:<br />'''13'''
+* Def Name:<br />'''Meditation'''
+* Label:<br />'''Meditation'''
+* Display All By Default:<br />{{Good|true}}
+|
+* '''Default Base Value:''' {{%|0}}
+* '''Show If Undefined:''' {{Bad|false}}
+* '''Show Zero Base Value:''' {{Bad|false}}
+* '''Show On Default Value:''' {{Bad|false}}
+* '''To String Style:''' PercentZero
+|
+* '''Parts:'''
+** '''StatPart_ArtificialBuildingsNearbyOffset:'''
+*** Radius: '''34.9'''
+*** '''Curve:'''
+**** '''Points:'''
+***** (0,   0.0)
+***** (5,  -0.08)
+***** (10, -0.15)
+***** (50, -0.3)
+{{Graph:Chart|width=300|height=150|xAxisTitle=Number of Nearby Artificial Buildings|yAxisTitle=Meditation Plant Growth Offset|type=line|x=0, 5, 10, 50|y=0.0, -0.08, -0.15, -0.3|yAxisMin=-0.3|interpolate=monotone|xGrid=|yGrid=}}
+| 4000
+<!--</StatDef>-->
+|}
+
+== Version history ==
+{{Stub|section=1|reason=General}}
+* ? - Added.
+
+{{nav|stats|wide}}

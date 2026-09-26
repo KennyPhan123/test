@@ -1,0 +1,68 @@
+__NOTOC__
+{{see also|Materials}}
+'''Metals''' are the most versatile [[material]]s. They can be used for [[buildings]] as well as [[armor]] and [[weapons]]. Metals are also required to build [[Vacuum#Pressurization|airtight]]{{OdysseyIcon}} walls for use in [[orbit]].
+
+== Comparison table ==
+Below is a list of material effects for metals. When a [[stuff]]able item is created from a metal, each of its base stats is multiplied by a factor for that stat belonging to the material used. Take "Armor - Sharp" for example. For this stat, [[steel]] has a ''factor'' of {{Q|steel|Armor - Sharp Factor}} and [[plate armor]] has base stat of {{Q|plate armor|Armor Factor - Sharp}}. Thus, the final "Armor - Sharp" of a set of steel plate armor before [[quality]] multipliers is: {{Q|steel|Armor - Sharp Factor}} * {{Q|plate armor|Armor Factor - Sharp}} or {{%|{{Q|steel|Armor - Sharp Factor}}*{{Q|plate armor|Armor Factor - Sharp}} }}.
+
+This process is then repeated for each stat. The material's HP factor is applied to the items base HP, flammability factor to flammability etc. Insulation is not expressed as a percentage and is thus slightly different. For an example of how to calculate the insulation for a given piece of apparel, see [[Apparel#Insulation|Apparel]].
+
+Market value is the notable exception to this direct multiplicative relationship, but the value of a material does have a direct effect on that of the final product. See [[Market Value]] for details.
+<includeonly><onlyinclude>
+|-
+! {{DLC Icons|{{{Name}}} }}
+| data-sort-value="{{{Beauty Factor}}}" | ×{{{Beauty Factor}}}
+| data-sort-value="{{{Beauty Offset}}}" | +{{{Beauty Offset}}}
+| data-sort-value="{{{Work To Make Factor}}}" | ×{{{Work To Make Factor}}}
+| data-sort-value="{{{Work To Build Factor}}}" | ×{{{Work To Build Factor}}}
+| data-sort-value="{{{Max Hit Points Factor}}}" | ×{{{Max Hit Points Factor}}}
+| data-sort-value="{{{Flammability Factor}}}" | ×{{{Flammability Factor}}}
+| data-sort-value="{{{Armor - Sharp Factor}}}" | {{#if: {{{Armor - Sharp Factor}}}|×{{{Armor - Sharp Factor}}}}}
+| data-sort-value="{{{Armor - Blunt Factor}}}" | {{#if: {{{Armor - Blunt Factor}}} |×{{{Armor - Blunt Factor}}}}}
+| data-sort-value="{{{Armor - Heat Factor}}}" | {{#if: {{{Armor - Heat Factor}}} |×{{{Armor - Heat Factor}}}}}
+| data-sort-value="{{{Insulation - Cold Factor}}}" | {{#if: {{{Insulation - Cold Factor}}} |+{{Temperature|{{{Insulation - Cold Factor}}}||delta}}}}
+| data-sort-value="{{{Melee Blunt Damage Factor}}}"| {{#if: {{{Melee Blunt Damage Factor}}} | ×{{{Melee Blunt Damage Factor}}} }}
+| data-sort-value="{{{Melee Sharp Damage Factor}}}" | {{#if: {{{Melee Sharp Damage Factor}}} | ×{{{Melee Sharp Damage Factor}}} }}
+| data-sort-value="{{{Melee Cooldown Factor}}}"| {{#if: {{{Melee Cooldown Factor}}} | ×{{{Melee Cooldown Factor}}} }}
+| data-sort-value="{{{Door Opening Speed Factor}}}"| {{#if: {{{Door Opening Speed Factor}}} | ×{{{Door Opening Speed Factor}}} }}
+| data-sort-value="{{{Rest Effectiveness Factor}}}"| {{#if: {{{Rest Effectiveness Factor}}} | ×{{{Rest Effectiveness Factor}}} }}
+| data-sort-value="{{{Market Value Base}}}" | {{{Market Value Base}}} {{Icon Small|silver}}
+</onlyinclude></includeonly><div><li style="display: inline-table;">
+{| {{STDT| sortable c_12 text-center}}
+! Name !! Beauty (Factor) !! Beauty (Offset) !! Work To Make !! Work To Build !! Max Hit Points !! Flammability !! Armor - Sharp !! Armor - Blunt !! Armor - Heat !! Insulation - Cold !! Melee Blunt Damage !! Melee Sharp Damage !! Melee Cooldown !! Door Opening Speed !! Rest Effectiveness !! Market Value
+{{#ask: [[Stuff Category::Metallic]]
+ | named args = true
+ | ?Name
+ | ?Beauty Factor
+ | ?Beauty Offset
+ | ?Work To Make Factor
+ | ?Work To Build Factor
+ | ?Max Hit Points Factor
+ | ?Flammability Factor
+ | ?Armor - Sharp Factor
+ | ?Armor - Blunt Factor
+ | ?Armor - Heat Factor
+ | ?Insulation - Cold Factor
+ | ?Melee Blunt Damage Factor
+ | ?Melee Sharp Damage Factor
+ | ?Melee Cooldown Factor
+ | ?Door Opening Speed Factor
+ | ?Rest Effectiveness Factor
+ | ?Market Value Base
+ | format = template
+ | template = :Metals
+ | limit = 100
+ | link = none
+ | sort = From DLC, Name
+}}
+|}
+</li></div>
+
+All metals have the following modifiers in common:
+* [[Property:Insulation - Heat Factor|Insulation - Heat]] of 0°C.
+
+== Descriptions ==
+{{List|Metal}}
+
+{{nav|materials|wide}}
+[[Category:Material|#Metals]]

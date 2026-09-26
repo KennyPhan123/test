@@ -1,0 +1,132 @@
+{{Odyssey}}
+{{About|the ore|the material also called obsidian|obsidian}}
+{{Infobox main|Structure
+| name = Obsidian ore
+| image = MineableObsidian.png
+| description = Volcanic rock formed by rapidly cooling lava. It can be mined for obsidian glass.
+<!-- Base Stats -->
+| type = Structure
+| hp = 1200
+| flammability = 0
+| rotatable = false
+<!-- Building -->
+| size = 1 * 1
+| passability = impassable
+| cover = 1
+| blockswind = true
+<!-- Mineable -->
+| mineable = true
+| isResourceRock = true
+| mineable thing = Obsidian
+| mineable yield = 40
+| mineable scatter commonality = 
+| mineable scatter lump size range = 
+| veinMineable = true
+<!-- Technical -->
+| defName = MineableObsidian
+| label = obsidian
+<!-- Other -->
+| category = Building
+| selectable = true
+| drawerType = MapMeshOnly
+| filthLeaving = Filth_RubbleRock
+| scatterableOnMapGen = false
+| artificialForMeditationPurposes = false
+| thingClass = Mineable
+| linkType = CornerFiller
+| linkFlags = Rock, MapEdge
+| altitudeLayer = Building
+| castEdgeShadows = true
+| coversFloor = true
+| neverMultiSelect = true
+| saveCompressible = true
+| holdsRoof = true
+| staticSunShadowHeight = 1.0
+| blockLight = true
+| fertility = 0
+| canOverlapZones = false
+| isInert = true
+| isNaturalRock = true
+| canBuildNonEdificesUnder = false
+| deconstructible = false
+| supportsWallAttachments = true
+<!--
+| damageMultipliers = Thump
+| multiplier = 4
+-->
+| texPath = Things/Building/Linked/RockFlecked_Atlas
+| graphicClass = Graphic_Single
+| shaderType = CutoutComplex
+| color = (65,60,60)
+| colorTwo = (45,45,45)
+}}
+
+'''Obsidian (ore)''' is a rare natural [[structure]] that can be [[mine]]d to obtain {{Icon Small|Obsidian}} [[obsidian]].
+
+== Occurrence ==
+Mineral obsidian veins can only spawn in maps with the [[Landmarks#Obsidian_deposits|obsidian deposits]] feature, exclusive to the [[lava field]] biome. They never occur outside of obsidian deposits. Veins are fairly large, 20 to 40 tiles in size. 
+
+=== Number of veins in map ===
+The number of veins is a function of the hilliness and the size of the map. Standard size maps have 5 obsidian veins on small hills, 7 on large hills, and 9 on mountainous terrain. Lava field maps cannot have flat terrain.
+<!--
+Hilliness values come from GenStep_RocksFromGrid.GetResourceBlotchesPer10KCellsForMap(). The code caters for flat terrain but lava field maps are never flat.
+The 0.1 factor comes from TileMutatorWorker_ObsidianDeposits.GeneratePostTerrain().
+Conversion from 10K to map size comes from GenStep_Scatterer.CountFromPer10kCells().
+!-->{{#vardefine: smallhills | {{#expr: 8 * 0.1}} }}<!--
+!-->{{#vardefine: largehills | {{#expr: 11 * 0.1}} }}<!--
+!-->{{#vardefine: mountainous | {{#expr: 15 * 0.1}} }}<!--
+!-->{{#vardefine: map200 | {{#expr: 200*200}} }}<!--
+!-->{{#vardefine: map225 | {{#expr: 225*225}} }}<!--
+!-->{{#vardefine: map250 | {{#expr: 250*250}} }}<!--
+!-->{{#vardefine: map275 | {{#expr: 275*275}} }}<!--
+!-->{{#vardefine: map300 | {{#expr: 300*300}} }}<!--
+!-->{{#vardefine: map325 | {{#expr: 325*325}} }}<!--
+!-->
+{| {{STDT| c_25 text-right}}
+! Map size
+! Small hills
+! Large hills
+! Mountainous
+|-
+! style=text-align:left; | 200 x 200 (small)
+| {{#expr: {{#var: map200}} * {{#var: smallhills}}/10000 round 0}}
+| {{#expr: {{#var: map200}} * {{#var: largehills}}/10000 round 0}}
+| {{#expr: {{#var: map200}} * {{#var: mountainous}}/10000 round 0}}
+|-
+! style=text-align:left; | 225 x 225 (small)
+| {{#expr: {{#var: map225}} * {{#var: smallhills}}/10000 round 0}}
+| {{#expr: {{#var: map225}} * {{#var: largehills}}/10000 round 0}}
+| {{#expr: {{#var: map225}} * {{#var: mountainous}}/10000 round 0}}
+|-
+! style=text-align:left; | 250 x 250 (medium - default)
+| {{#expr: {{#var: map250}} * {{#var: smallhills}}/10000 round 0}}
+| {{#expr: {{#var: map250}} * {{#var: largehills}}/10000 round 0}}
+| {{#expr: {{#var: map250}} * {{#var: mountainous}}/10000 round 0}}
+|-
+! style=text-align:left; | 275 x 275 (medium)
+| {{#expr: {{#var: map275}} * {{#var: smallhills}}/10000 round 0}}
+| {{#expr: {{#var: map275}} * {{#var: largehills}}/10000 round 0}}
+| {{#expr: {{#var: map275}} * {{#var: mountainous}}/10000 round 0}}
+|-
+! style=text-align:left; | 300 x 300 (large)
+| {{#expr: {{#var: map300}} * {{#var: smallhills}}/10000 round 0}}
+| {{#expr: {{#var: map300}} * {{#var: largehills}}/10000 round 0}}
+| {{#expr: {{#var: map300}} * {{#var: mountainous}}/10000 round 0}}
+|-
+! style=text-align:left; | 325 x 325 (large)
+| {{#expr: {{#var: map325}} * {{#var: smallhills}}/10000 round 0}}
+| {{#expr: {{#var: map325}} * {{#var: largehills}}/10000 round 0}}
+| {{#expr: {{#var: map325}} * {{#var: mountainous}}/10000 round 0}}
+|-
+|}
+
+== Summary ==
+Obsidian tiles have 1,200 health each, making them one of the fastest ores to mine. Each mined block has a base yield of {{Icon Small|Obsidian}} 40 obsidian, modified by factors such as the Difficulty setting and the [[Mining yield]] of the pawn.
+
+== Analysis ==
+Mining obsidian ore is the best way to acquire obsidian, a great material for crafting sharp melee weapons like [[longsword]]s. Veins are large enough to yield the materials for a few longswords. With several veins spawning per map it's feasible to spam craft obsidian weapons to farm high quality weapons.
+
+== Version history ==
+* [[Odyssey DLC]] Release - Added.
+
+[[Category:Natural wall]]

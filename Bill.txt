@@ -1,0 +1,81 @@
+__NOTOC__
+{{Rewrite|reason=Tone, page integration in this page and elsewhere on this wiki, mechanics}}
+{{Stub|reason=Needs to convey detail sufficient for a new players}}
+[[File:Work bill meals 1.png|425px|thumb|right|First, regular [[fine meal]]s are cooked. Next are [[vegetarian fine meal]]s.<br>If there's no meat for fine meals, vegetarian meals are cooked first. <br> Simple meals are made last, and only made if the current supply is eaten.]]
+
+A '''bill''' is used to:
+* request work to be done at a workstation, such as those under [[Production]].
+* request an [[Doctoring#Operations|operation]] on a pawn
+
+== Selection ==
+Pawns assigned to the correct [[Work]] type will attempt to work at [[production]] buildings and similar buildings that have active bills. For information on which work types correlate to which production benches and the priority order within those work types, see [[Work]]. 
+
+Bills are attempted from the top of the list, down. 
+
+Bills that cannot be worked by the current pawn will be skipped. Reasons for this skipping include:
+* The ingredients for the bill are not available, either at all, or within the set ingredient radius.
+* The pawn working the bench does not have the requisite skills to perform the bill
+* The pawn working the bench does not meet the criteria set by the bill in the worker selection - e.g. not in the skill band, not the pawn specified etc. 
+* The bill is suspended, either manually or because the conditions to suspend the bill have been met. 
+* The bill creates an item with an author, such as items with quality, another pawn has started but not completed the bill leaving an unfinished item, and the pawn currently working the bench is not that author.
+
+If no bills can be performed, the pawn will not work that bench.  
+
+== Bill management ==
+Bills at workstations and on pawns can be managed with the following general commands:
+* Delete a bill: Click the red X.
+* Suspend or resume a bill: Click the yellow S.
+* Change the order of bills: Click the yellow up or down triangles.
+* Hovering over a bill with a restricted ingredient radius will outline the limited area (if small enough to see on screen).
+
+== Bills at workstations ==
+[[File:Work bill duster.png|425px|thumb|right|Dusters will be created until there is 1 duster that is: <br> 1. Made out of [[devilstrand]] or [[hyperweave]]. <br> 2. On the ground - i.e., not being worn by a pawn. <br> 3. Not 50% HP or lower ("tattered apparel")<br>Automated tailoring when pawns [[Apparel policies|are assigned to take off]] < 50% HP clothing.<br>Pawns auto-wear dusters if they aren't wearing one, activating the bill again.]]
+
+Besides general commands, bills at workstations have these additional commands:
+* Change the quantity or repetitions: Click -/+
+* Change the mode: Choose 'Do X times', 'Do until you have X', 'Do forever'.
+
+Bills can be copied and pasted to retain any modifications to the bill. So long as two benches share the same base bill, for example a fueled stove and another fueled stove, or an electric stove, you can copy the bills accross.
+
+==== Modes ====
+* 'Do X times' &nbsp;&nbsp;(The remaining repetitions is shown to the left.)
+* 'Do until you have X' &nbsp;&nbsp;(The quantity you currently have and have requested is shown to the left.)
+**  This mode has an option to 'Pause when satisfied' which pauses the bill when the set quantity is reached. (Items not in a stockpile are not counted.)
+**  'Unpause at: x' will automatically resume a paused bill when the quantity drops to that number.
+**  These settings allow you to keep from having too much or too little of a given product, with little or no further management.
+* 'Do forever' 
+** Work will only stop when there are no materials left. 
+** Useful for bills such as 'Butcher creature,' 'Disassemble mechanoid' or 'Burn (tainted) apparel.'
+
+==== Details ====
+Click [Details] to change the bill's default configuration.
+* Set location to take completed product: 'Take to best stockpile', 'Drop on floor', or 'Take to ''x''' (where ''x'' is a stockpile or storage group of your choice)
+** 'Take to best stockpile' means the worker will walk the product to the highest-priority stockpile/shelf with space available and place it there. Typically useful for infrequently-performed tasks where you want the product at its destination as soon as possible.
+** 'Drop on floor' means that the worker simply drops the product at their feet, on the same tile as the production building's interaction spot (if there's no room in that tile, the product will overflow onto another tile). This can save a great deal of time for everyday production, as the pawn spends more of their time working instead of walking to and from the best stockpile; haulers will pick up the product and bring it to the best storage later. However, items dropped on the floor aren't counted as part of the colony's inventory unless they're in a stockpile. If you're using the 'Do until you have X' option, you will need to define a stockpile at the worker's feet (probably one with 'Low' priority, so haulers will carry the items elsewhere); otherwise, the worker may create product in excess of what you want, as items pile up around their feet without being counted.
+** 'Take to ''x''' is similar to 'Take to best stockpile', except that you can specify any stockpile or group of shelves allowed to hold the product, regardless of priority. You can set up a single small shelf next to the production building, name it 'Drop off', 'Kitchen drop off', 'Workshop drop off' or something similar so that it's considered a storage group, allow it to hold the products from the production building, and finally set its priority to 'Low'. Then, set the bill's product destination to be 'Take to Drop off'. The worker will walk any products to this nearby shelf for later retrieval by a hauler, then get started on their next task. If the shelf is close enough, they may simply have to turn and place the product on the shelf without taking a step. You can also set up a single 'drop off' shelf to be the destination for multiple nearby production buildings.
+* Set ingredient radius: Sets the maximum distance at which pawns will get ingredients. Particularly useful for stone cutting, to prevent the worker from walking far away from the workbench to grab distant stone chunks.
+* Worker: Allows a variety of limits, including being able to define a skill level, being able to restrict a task to certain types of pawns, or being able to force one pawn to be the only worker on a task.
+* Allowed skill: Sets the minimum and maximum skill level, usually to prevent pawns with low skills from making poor products. You can also lower the maximum skill level to define a bill as a "practice" task for less-skilled pawns to hone their abilities on (usually ones where the products aren't affected by skill) or prevent your higher skill crafters from spending time on work that doesn't require their skills.
+* Hit points: Sets the minimum and maximum percentage hit points for ingredients.
+* Ingredients: Sets which resources can be used on this bill.
+
+----
+
+=== Bills on pawns ===
+Besides general commands, bills on pawns have these additional commands:
+* To add a bill to a living creature click Health, Operations, Add Bill.
+** Note: this only applies to colonists, pets, prisoners, downed friendlies, and downed animals.
+* To add a bill to a downed mechanoid, click Health, Modifications, Add Bill.
+
+Notes:
+*Certain body parts can be harvested and sold or transplanted to another pawn. However, damaged body parts cannot be harvested. 
+* Any bill for an operation requires medicine. By default, the best allowed medicine (see Health|Overview) for animals and non-colonists is herbal medicine. If the appropriate medicine for that pawn is not in stock, doctors cannot carry out prescribed bills. Attempting to prioritize the operation will state 'Cannot operate (need material)'. Either ensure the right medicine is in stock or adjust the pawn's allowed medicine.
+
+==Gallery==
+[[File:Bills.png|400px|thumb|center|Assorted bills on a [[machining table]].]]
+
+== Version history == 
+* B19/1.0 - Workbench bills can now be be assigned to specific colonists and can be copied and pasted 
+* [[Version/1.4.3682|1.4.3682]] - Items in fogged areas no longer count as complete for bills.
+
+[[Category:Game mechanics]]

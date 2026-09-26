@@ -1,0 +1,19 @@
+<noinclude>{{Stub|reason=General, also what is thenrange calculation for nearby animals turning manhunter, both the target and similar amimals nearby}} 
+{{Main|Orders}}{{#set:Image|File:Hunt.png}}</noinclude>
+[[{{Q|Hunt|Image}}|left]] '''Hunt''' is an [[order]] used to mark wild [[animals]] to be automatically hunted and killed by [[Work#Hunt|hunters]]. Once a hunter's target is [[downed]], they will finish it off at point-blank range by cutting its throat. Hunters will only hunt animals inside their allowed areas. If a properly configured [[stockpile zone]] is present and has room, the hunter will then haul the [[corpse]] back before resuming hunting. These corpses can then be butchered by [[Work#Cook|cooks]] to yield [[meat]] and [[leather]], with type and quantity of both depending on the animal hunted.
+
+Animals can be marked for hunting in the [[Work#Wildlife|Wildlife]] menu. Multiple animals can be selected clicking and dragging the mouse down the "Mark animals for Hunting" column. This tab also shows the revenge chance for each animal and has a special icon for [[Animals#Predation|predators]]. All wild animals on the current map are shown there. If an animal is injured or [[downed]], it will be highlighted as such. Such animals may be 'finished off' for easy meat.
+
+Hunters only hunt when equipped with a [[Weapons#Ranged Weapons|ranged weapon]], when their Hunting task is active in the [[Work]] menu, and when all other jobs of a higher priority are finished.
+
+Some animals have a chance to "revenge" when harmed, that is turn [[manhunter]] and attack any nearby [[human]]s. Each time an animal is injured, a check whether the animal will turn manhunter is performed. When an animal turns manhunter there is a chance that any animal of the same species within a radius of 25 tiles with valid path-finding to the attacker will also turn manhunter. When marking an animal for hunting with a chance to turn manhunter, a warning will be displayed. 
+
+Hunters are coded to shoot marked animals from a maximum distance to minimize the risk of injury should the target turn [[manhunter]]. However, animals will flee from nearby gunshots and may inadvertently move closer to the hunter. Weapons with a long range and high damage per shot are the safest for hunting weapons, such as the [[greatbow]] and [[bolt-action rifle]], while short-range weapons, low damage weapons and weapons that predominantly get their {{DPS}} from low-damage but high rates of fire, such as the [[machine pistol]] are poor choices. {{Check Tag|Fact check|Doesn't distance directly decrease manhunter chance}} The [[hunting stealth]] of the hunter directly scales the chance of manhunting.<noinclude>
+
+== Version history ==
+* [[Version/0.14.1234|0.14.1234]] - Projectiles fired by hunting colonists no longer intercept random targets.
+* [[Version/1.4.3523|1.4.3523]] - Pawns no longer hunt animals outside their allowed area.
+
+{{Nav|order|wide}}
+[[Category:Orders]]
+</noinclude>

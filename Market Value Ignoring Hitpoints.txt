@@ -1,0 +1,226 @@
+{{See also|Market Value}}{{Verified|1.5.4104}}{{Stat
+| def name = MarketValueIgnoreHp
+| label = market value ignoring hitpoints
+| min value = 0
+| round to five over = 200
+| minified thing inherits = true
+| to string style = Money
+| show on untradables = false
+| scenario randomizable = true
+| always hide = true
+| category = BasicsImportant
+| display priority in category = 2510
+| worker class = StatWorker_MarketValue
+| parts = StatPart_Quality, StatPart_WornByCorpse, StatPart_IsCorpseFresh, StatPart_WeaponTraitsMarketValueOffset, StatPart_Biocoded, StatPart_ReloadMarketValue, StatPart_Genes
+}}
+
+== Stat Parts ==
+=== Quality ===
+For items with quality, their Market Value is multiplied by these values depending on quality:
+<div><li style="display: inline-table;">
+{| {{STDT}}
+! [[Quality]] !! Factor !! Max Gain
+|-
+! Awful
+| {{Bad|×50%}} || -
+|-
+! Poor
+| {{Bad|×75%}} || -
+|-
+! Normal
+| '''×100%''' || -
+|-
+! Good
+| {{Good|×125%}} || {{+|{{Format Number|500|Money}}}}
+|-
+! Excellent
+| {{Good|×150%}} || {{+|{{Format Number|1000|Money}}}}
+|-
+! Masterwork
+| {{Good|×250%}} || {{+|{{Format Number|2000|Money}}}}
+|-
+! Legendary
+| {{Good|×500%}} || {{+|{{Format Number|3000|Money}}}}
+|}
+</li></div>
+
+=== Worn By Corpse ===
+If [[apparel]] is [[Apparel#Tainted_apparel|tainted]], Market Value is multiplied by 10%.
+
+=== Is Corpse Fresh ===
+If a corpse is not fresh, Market Value is multiplied by 0, (i.e. it has no value).
+
+=== Weapon Traits Market Value Offset ===
+Certain [[Persona traits|persona weapon traits]] have offsets to Market Value:
+<div><li style="display: inline-table;">
+{| {{STDT| sortable}}
+! Weapon trait !! Offset
+|-
+! [[Kind thoughts]]
+| {{+|{{Format Number|500|Money}}}}
+|-
+! [[Calm thoughts]]
+| {{+|{{Format Number|300|Money}}}}
+|-
+! [[Mad muttering]]
+| {{--|{{Format Number|500|Money}}}}
+|-
+! [[Mad wailing]]
+| {{--|{{Format Number|1000|Money}}}}
+|-
+! [[Kill-focused]]
+| {{+|{{Format Number|500|Money}}}}
+|-
+! [[Kill-happy]]
+| {{+|{{Format Number|500|Money}}}}
+|-
+! [[Kill-sorrow]]
+| {{--|{{Format Number|500|Money}}}}
+|-
+! [[Kill thirst (persona trait)|Kill thirst]]
+| {{--|{{Format Number|700|Money}}}}
+|-
+! [[Psy-meditative]]
+| {{+|{{Format Number|500|Money}}}}
+|-
+! [[Painless]]
+| {{+|{{Format Number|400|Money}}}}
+|-
+! [[Fast mover]]
+| {{+|{{Format Number|600|Money}}}}
+|-
+! [[Hunger pangs]]
+| {{--|{{Format Number|600|Money}}}}
+|-
+! [[Neural cooling]]
+| {{+|{{Format Number|500|Money}}}}
+|-
+! [[Jealous (persona trait)|Jealous]]
+| {{--|{{Format Number|600|Money}}}}
+|}
+</li></div>
+
+=== Biocoded ===
+If a weapon is [[biocoded]], Market Value is multiplied by 0, (i.e. it has no value).
+
+=== Reload Market Value ===
+If an item is reloadable, the Base Market Value of the item used for ammo will be multiplied by the maximum amount needed to reload the item (the amount that will fully reload the item). This value is subtracted from the market value.
+
+If an item is destroyed when empty (i.e. it has charges but can't be reloaded), then the market value is multiplied by the ratio of remaining charges to maximum charges. If the market value is negative, it will be adjusted to 0.
+
+=== Genes ===
+{{Biotech|section=1}}
+Market Value is multiplied by the following factors: '''Number of Genes Factor''', '''Archite Cost Factor''', and '''Gene Market Value Factors'''
+
+'''Number of Genes Factor''' = <code>The larger value of: 3.5 - (0.5 × Total Gene Count) and 0.5</code>
+<div><li style="display: inline-table;">
+{| {{STDT| c_17}}
+! Total Gene Count !! Number of Genes Factor
+|-
+! 0
+| 3.5
+|-
+! 1
+| 3
+|-
+! 2
+| 2.5
+|-
+! 3
+| 2
+|-
+! 4
+| 1.5
+|-
+! 5
+| 1
+|-
+! 6+
+| 0.5
+|}
+</li></div>
+
+'''Archite Cost Factor''' = <code>1 + (3 × Total [[File:Archite capsule required.png|Archite capsule|20x20px]] Archite Count)</code>
+
+<div><li style="display: inline-table;">
+'''Gene Market Value Factors''':
+{| {{STDT| c_17 sortable}}
+! Gene !! Market Value Factor
+|-
+! [[Never sleep]]
+| {{Bad|×125%}}
+|-
+! [[Fire spew]]
+| {{Bad|×150%}}
+|-
+! [[Piercing spine]]
+| {{Bad|×150%}}
+|-
+! [[Acid spray]]
+| {{Bad|×150%}}
+|-
+! [[Resurrect]]
+| {{Bad|×150%}}
+|-
+! [[Superfast wound healing]]
+| {{Bad|×125%}}
+|-
+! [[Super immunity]]
+| {{Bad|×125%}}
+|-
+! [[Deathless]]
+| {{Bad|×200%}}
+|-
+! [[Archite metabolism]]
+| {{Bad|×150%}}
+|}
+All available '''Gene Market Value Factors''' are multiplied by each other before being used as a factor.
+</li></div>
+
+== Stat Def Data ==
+{| {{STDT}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Market Value Ignoring Hitpoints" <!-- ParentName="MarketValueBase" --><!--<StatDef>-->
+|
+* '''Def Name:'''<br />MarketValueIgnoreHp
+* '''Label:'''<br />market value ignoring hitpoints
+| -
+|
+* Display Order:<br />'''1'''
+* Def Name:<br />'''BasicsImportant'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />{{Good|true}}
+|
+* Worker Class: '''StatWorker_MarketValue'''
+* Min Value: '''0'''
+* To String Style: '''Money'''
+* Round To Five Over: '''200'''
+* Minified Thing Inherits: {{Good|true}}
+* Show On Untradeables: {{Bad|false}}
+* Scenario Randomizable: {{Good|true}}
+* '''Always Hide:''' {{Good|true}}
+|
+* '''Parts:'''
+** '''''StatPart_Quality:'''''
+*** Factor Awful: {{Bad|×{{%|0.5}}}}
+*** Factor Poor: {{Bad|×{{%|0.75}}}}
+*** Factor Normal: '''×{{%|1}}'''
+*** Factor Good: {{Good|×{{%|1.25}}}}
+*** Max Gain Good: {{+|500}}
+*** Factor Excellent: {{Good|×{{%|1.5}}}}
+*** Max Gain Excellent: {{+|1000}}
+*** Factor Masterwork: {{Good|×{{%|2.5}}}}
+*** Max Gain Masterwork: {{+|2000}}
+*** Factor Legendary: {{Good|×{{%|5}}}}
+*** Max Gain Legendary: {{+|3000}}
+** '''StatPart_WornByCorpse'''
+** '''StatPart_IsCorpseFresh'''
+** '''StatPart_WeaponTraitsMarketValueOffset'''
+** '''StatPart_Biocoded'''
+** '''StatPart_ReloadMarketValue'''
+** '''StatPart_Genes{{BiotechIcon}}'''
+| 2510
+<!--</StatDef>-->
+|}
+
+{{nav|stats|wide}}

@@ -1,0 +1,289 @@
+{{Version Nav}}
+
+The 1.2 release of RimWorld adds a variety of new content and a few new systems.
+
+There are a few major parts to this update.
+
+For many years, some specific balance changes have been requested repeatedly by dedicated players, but I didn't implement them because I thought they would harm the game for more casual players. Now, we added a custom plasystyle system. You can adjust a couple dozen different settings like threat scaling, colonist instakill chances, and crop yield. This means advanced players can set up the game exactly as they prefer. All the old playstyle settings are still available; I expect custom difficulties to be a feature mainly for experienced power gamers looking for something just for them.
+
+The larger part of this update is in all the new content. There are several entirely new patterns for quest generation that see you interacting with poor refugees, acting as airborne shock troops for Imperial nobles, or defending crashed shuttles. We built a system that lets your colonists carry utility items or special armor with consumable abilities like grenades, shields, or jump packs. We added a whole new class of psycasts designed for non-combat economic or social purposes. Imperial titles can now give several new kinds of permits including the right to use a shuttle, and there is a new system for choosing between them, so you can customize your noble into different types. Persona weapons now actually have personality with randomized traits. And there are many other additions described in the full list below.
+
+== Release Trailer ==
+
+<youtube>https://www.youtube.com/watch?v=fNvMWicpizU</youtube>
+
+== New stuff: Base game ==
+
+* Custom playstyle system: You can now select a new custom playstyle setting. This opens up a new menu that allows you to customize a large number of different settings exactly as you prefer. For example, you can make a game with lots of enemies, but high yields from crops and mining. The settings are:
+** Storyteller ignore wealth, and instead replace it with a factor from time alone. This can make the game fall off the rails easily, but is appropriate for someone who wants a pure challenge.
+** Player friendly fire chances.
+** Colonist instakill chance. This setting allows you to apply a damage filter that prevents colonists being killed by a single shot, because that can feel arbitrary. Colonists can still be downed by one shot and bleed out soon after, or take permanent injuries in one shot.
+** Overall threat scale
+** Major threats toggle
+** Quests threats toggle
+** Intro threats toggle
+** Predators hunt humans toggle
+** Extreme weather toggle
+** Harvest, mining, and butchering yield
+** Quest rewards
+** Raid loot
+** Trade prices
+** Turret rearm cost
+** Scaria rot chance
+** Enemy death on downed chance
+** Colonist mood
+** Food poison chance
+** Animal revenge chance
+** Infection chance
+** Disease frequency
+** Hive insect spawn rate
+** Deep drill infestation chance
+** Ancient structure threats toggle
+** Passive hives at map generation toggle
+** Toggles to allow/disallow player building traps, turrets, and mortars
+** Damage adaptation growth rate: Adaptation means the storyteller makes the game more challenging over time as long as you are not taking losses. This is separate from the story effects of wealth and population. This adjusts the rate of that challenge growth.
+** Damage adaptation effect: Adaptation means the storyteller makes the game more challenging over time as long as you are not taking losses. This is separate from the story effects of wealth and population. This adjusts the effect of that adaptation value on actual threats.
+
+* Raid loot generation: Previously raids would just drop whatever rewards were associated with the characters in that raid. Now, each raid generates a single core reward like a stack of drugs, medicine, jade, or plasteel. The reward is chosen semi-randomly according to the raider faction, and placed in the inventory of a few of the raiders. This allows us and users to accurately tune raid rewards, and solves issues where higher difficulties got bigger rewards.
+
+* Utility gear system: Wearable belts have been expanded into a system of wearable utility items. One person can wear one utility item. Utility items can be passive like a shield belt, but most give an ability the player can trigger. Most have a certain number of charges before they run out. Some can be reloaded, while others are consumed by use.
+** Utility item: [[Smokepop belt]]. Previously, this was triggered automatically by the wearer taking damage, and disappeared on use. Now it can be triggered at any time, and it can be used several times, and can be reloaded with chemfuel. The AI knows how to use this to obscure turret shots.
+** Utility item: [[Shield belt]]. Same as before.
+** Utility item: [[Psychic insanity lance]]. Previously, this could only be used directly, and once. Now it's a utility item that can be carried and used twice before exhaustion.
+** Utility item: [[Psychic shock lance]]. Same as the psychic insanity lance, this was changed from a one-use item to a two-use utility item.
+
+* Automatic caravan setup: The caravan setup screen now automatically loads enough food and medicine for the journey. This can be overridden if desired. This interface was also restructured to ask for the route first, and to clean up placement of some UI elements. Overall, caravan forming takes less effort and fewer clicks.
+
+* 'Smash mechanoid' bill: This allows tribals to break down mechanoid corpses without a machining table, albeit at a slower rate.
+
+* New system for handling time limits on caravan encounter maps. Previously on encounter maps, the player caravan was just automatically reformed after a certain amount of time. Now, the colonists will be detected by enemies after some time. Later, enemy reinforcements will begin arriving to attack. The player can choose when to leave, and this scenario can play out even on maps where other enemies remain (e.g. If player is executing a siege).
+
+* Direct button to use drugs from inventory: This makes combat drugs more usable.
+
+* New visual effects:
+** Building destruction. Screen shake, dust, and so on.
+** Improvements to orbital bombardments. You can see and hear incoming projectiles and other details are improved.
+** EMP state on mechs or turrets, with electrical arcs and sparks.
+
+* New sound effects:
+** Many types of building destructions of various sizes and materials
+** EMP blast and EMP state
+** Windmill, watermill, wood generator, chemfuel generator ambience
+** Quest accepted, succeeded, concluded, failed
+** Mech serum used
+** Toxic buildup gained
+** Melee dodge
+** Power claw hit/miss
+** Human bite hit/miss
+
+== New stuff: Royalty expansion ==
+* Major [[quest]] - [[Imperial shuttle|Shuttle]] defense: An Imperial shuttle has been damaged and needs a place to land. They're being hunted by [[raiders]]! If you accept the quest, the shuttle crash-lands on your colony map. Some civilians, plus a some Imperial soldiers, will get out and defend themselves at the shuttle as a raid comes after them. You have to help defend them until a rescue shuttle arrives to pick them up. Get to tha shuttle! Go!
+
+* Major quest - Bandit camp mission: The quest giver wants troops to help assault a bandit camp. He will provide a shuttle to bring you to and from the camp. A specific number of people must be provided. This creates a self-contained combat challenge without the fiddliness and time commitment of full travel.
+
+* Major quest *- Refugee hospitality: A ragged group of travelers arrives. They ask to stay at your colony for a while. They have no rewards to offer, but there are other reasons to take them in. They will work for you during their time at the colony. If you keep their mood high, some of them may offer to join you permanently. After they leave, there is a chance they will pay you back later. One new aspect of this quest is that the travelers aren't part of any major faction, which means you can choose to capture them, harvest them, or sell them * though they may rebel or flee if you try. There is also chance they will betray and attack you, and a chance that some other party will contact you and offer a reward to betray and kill the travelers. Overall, this quest is designed to break out of the predictable challenge/reward structure of traditional quests and create more of a fluid, unpredictable situation with many options and outcomes.
+
+* Bestower: Titles are no longer given instantly when enough honor has been acquired, and psylink neuroformers are no longer sent to you by drop pods. Instead, a colonist with enough honor for a new title can invoke the bestower, a ceremonial priest-like figure who arrives by shuttle with a retinue of guards. He goes to the colonist's throne room, confirming that it satisfies the title requirements, and does the bestowing ceremony there. The ceremony itself gives the psylink upgrade and title. You can also betray the bestower to steal psylink neuroformers if you wish.
+
+* Hood apparel: A simple hood used by the bestower.
+
+* Permit selection system: When a colonist gains a royal title, you can now choose which royal permits you want to come with that title. There are more permits to choose from than before. Some permits require minimum titles before they can be chosen. This lets you customize your nobles somewhat.
+** New permit: Transport shuttle. This permit calls a transport shuttle. You can load whatever you like in it and send it on a one-way trip across the world map. This can be used for attacking sites, extracting fighters from combat, simple travel, sending gifts, and so on.
+** New permits: Call laborer team and call laborer gang. These permits call a group of laborers to work for you. They are the civilian equivalent of calling military aid.
+** New permits: Call orbital strike and call orbital salvo. The Empire will use their ships to bombard targets that you designate.
+
+* Psycasts can now have psyfocus costs: This lets us create psycasts that are useful over the long term instead of just in combat. The player can use them any time, but must restore psyfocus somehow.
+* Psycast - Solar Pinhole: Generate a microscopic skipgate linked to the core of a nearby star. Solar material leaks through the pinprick in spacetime, illuminating and warming the surrounding area until it closes.
+* Psycast - Word of Trust: Speak to the prisoner while using psychic suggestion to reduce his resistance to recruitment. This psycast can only reduce a prisoner’s resistance, but cannot recruit him.
+* Psycast - Word of Joy: Speak happy, calming words to someone while using psychic suggestion to implant a joyfuzz loop in his mind. The joyfuzz will suppress uncomfortable thoughts and sensations in the target to improve mood. This has the side-effect of dulling sensation and decision-making, which reduces consciousness.
+* Psycast - Word of Love: Speak about someone's romantic virtues while using psychic suggestion to implant romantic desire in the listener. For days afterward, the listener will feel psychically-induced romantic attraction towards the other person. This greatly increases opinion and makes them much more likely to attempt romantic advances and marriage proposals if they get the chance. This psycast can be used to connect two other peopl, induce love for the caster, or force oneself to love another.
+* Psycast - Word of Serenity: Use calming words and psychic suggestion to end a mental break on a person or animal. The target will fall into a short psychic sleep. The psyfocus cost depends on the intensity of the target's mental break.
+* Psycast - Word of Inspiration: Speak words encouraging creativity while psychically hypercharging the target's mind with new ideas. The target will experience a random inspiration appropriate to them.
+* Psycast - Chunk skip: Skip the 5 chunks of rock or slag to scatter them near the target point. This is useful for producing cover during offensive operations.
+* Psycast - Farskip: Skip the caster, along with anyone standing near him, to an ally at a distant location. This can send people far across the planet, but only works if there is a willing ally on the other side to use as a navigation beacon. The skipped people will always appear near a random ally on the target map.
+* Psycast - Neuroquake: Find a discontinuity in the psychic field and unfold it, releasing a massive amount of psychic energy. Every creature on the map outside of a safe circle near the caster will be driven violently insane. Casting this takes three hours of meditation, and afterwards, the caster will go into a three-day psychic coma. The disturbing neuroquake echoes will inflict pain on everyone for many kilometers around, causing diplomatic consequences with all factions.
+
+* Gear:
+** [[Broadshield pack]]: A single-use man-portable bullet shield projector. Deployed on the ground, it generates a circular shield that allows bullets out but not in. The unit is designed to last only a short time before burning out. These can be crafted, but doing so requires a special broadshield unit that can be harvested from mechanoid shields.
+** [[Jump pack]]: A single-person burst rocket for short-ranged flight. The jump pack allows anyone to leap long distances at high speed, even over obstacles. It must be recharged after several uses.
+** [[Locust armor]]: [[Recon armor]] with a built-in jump pack.
+** [[Grenadier armor]]: [[Marine armor]] with a built-in grenade launcher.
+** [[Phoenix armor]]: [[Cataphract armor]] with a built-in flame launcher and extreme heat resistance.
+
+* Persona weapon traits: Now persona weapons have individual traits to reflect their individual personalities. Each weapon will have one or two traits. Some traits are good, some are bad, some are just different. Traits affect the weapon's market value, so a weapon with a negative trait will be cheaper. The traits are:
+** Psychic hypersensitizer: Psychic sensitivity +40% when wielded.
+** Psychic sensitizer: Psychic sensitivity +20% when wielded.
+** Psychic quiet: Psychic sensitivity -15% when wielded.
+** Psychic fog: Psychic sensitivity -30% when wielded.
+** Kind thoughts: Thought while bonded “[weaponName]’s kind thoughts +6”
+** Calm thoughts: Thought while bonded “[weaponName]’s calm thoughts +3”
+** Mad muttering: Thought while bonded “[weaponName]’s muttering -3”.
+** Mad wailing: Thought while bonded “[weaponName]’s wailing -6”.
+** Kill-focused: A pawn who kills someone with the weapon gains 20% psyfocus instantly.
+** Kill-happy: A pawn who kills someone with the weapon gains a “weaponname’s kill happiness +6” thought for 3 days. It stacks but the effect falls off fast.
+** Kill-sorrow: A pawn who kills someone with the weapon gains a “weaponname’s kill sorrow -3” thought lasting 3 days. It stacks but the effect falls off fast.
+** Painless: Pain locked to zero while wielded due to a psychic brain hediff.
+** Fast mover: Move faster while equipped due to a psychic brain hediff.
+** Hunger pangs: Hunger +50% while bonded due to a psychic brain hediff.
+** Neural cooling: Neural heat fall rate improved by 0.15 per second.
+** Psy-meditative: Wielder psyfocus gains from meditation increased by 10% (like increasing focus effectiveness by 10%).
+** Freewielder: The weapon does not bond. Anyone can grab it and use it.
+** Jealous: If you use another weapon while bonded, get a memory thought “weaponname’s jealous rage -15” for 1 day.
+** Kill thirst: If weapon has not killed anyone in 20 days, bonded pawn has a “[weaponName]’s kill thirst -4” thought.
+
+* Meditation enhancers: Meditation focus objects can now be enhanced by other objects placed nearby. This gives a reason to construct more integrated and expansive meditation temples instead of just a single object.
+** [[Anima tree]] and [[animus stone]] are enhanced by nearby animus stones.
+** [[Sculptures]] are enhanced by nearby sculptures.
+** [[Grave]] is enhanced by nearby graves.
+
+* Flame meditation focus: This is usable by pyromaniacs. They can focus on torches, campfires, or braziers. These are enhanced by nearby torches, campfires, or braziers.
+
+* Gloomlight mechanoid building: This building has two purposes. First, it emits a sickly light, so adds some visual interest to mech clusters, especially at night. Second, it can be reinstalled as a light or deconstructed for valuable resources. However, it is quite fragile so probably won't survive indiscriminate bombardment of a mech cluster. Similar to the unstable power cell, it's a reward which can be claimed only if the cluster is approached a certain way.
+
+* Bandits set up problem causer incident: This is a new way hostiles can threaten you besides raiding you. Now, sometimes they will set up a camp near your colony from which they will harass you using some kind of problem causer device, like a weather controller or smoke spewer. You have to attack the camp and eliminate it.
+
+* Shuttle pad for Empire bases: When you attack an Empire base it will have a shuttle pad, often with a shuttle on the pad about to take off. This just distinguishes these bases from other factions better.
+* Throne rooms in Empire bases:
+
+* Speech inspirations: When your noble gives an inspiring speech, each listener has a 5% chance of getting an [[inspiration]] in addition to the [[mood]] bonus.
+
+* Abasia disease incident: This random incident makes someone in the colony get paralytic abasia, which paralyzes them for a while.
+
+* Blood rot disease incident: This random incident makes someone in the colony get blood rot, which requires regular medical treatment for a while.
+
+* Abasia joiner incident: In this random incident, someone joins you, but they have paralytic abasia, so they must recover from that before they can work. It's your choice whether you want to heal them and let them join, or handle them another way.
+
+* Visual effects redone for all skip psycasts. It now has a resemblance to a charged black hole or a spherical cut in spacetime. The new effect is more science-themed and avoids magic-like elements to focus on the hard sci-fi RimWorld feel.
+
+* Visual effect redone for invisibility psycast. It now looks like light distortion, instead of a transparent glowing person. The new effect is more science-themed and avoids magic-like elements to focus on the hard sci-fi RimWorld feel.
+
+* Added visual effect for wallraise rocks expiring.
+
+* New sound effects:
+** Skip psycasts
+** Mech cluster defeated
+** Shuttle entry, exit, and ambience
+** Mechanoid assembled
+** Techprint applied
+** Meditation gain psyfocus
+** Mech building ambience: Sun blocker, smoke spewer, weather affecter, psychic harmer, EMI dynamo
+** Bionic slash hit/miss
+** Drill arm hit/miss
+** Field hand hit/miss
+** Mech turret small and large ambient calls
+** Bullet shield and mortar shield ambience
+** Proximity activator and countdown activator ambience
+
+== Improvements and adjustments ==
+
+
+* Renamed royal favor to honor.
+* Underground resources readout now shows what resource is in each underground cell and how many there are.
+* Desired psyfocus UI controls are more robust.
+* Refined room stats readout.
+* Storyteller now ignores HP for purposes of wealth calculation.
+* Monument placing feedback is improved. When you try to place a monument, now the specific reason it can't be placed is highlighted on the map and noted in a message.
+* Map generator doesn't generate little inaccessible islands any more (since they break various aspects of gameplay).
+* Anima tree will no longer be destroyed by meteors, crashed ship parts, or shuttles.
+* Empire soldiers now have more distinctive haircuts.
+* Pawns can now only bond one persona weapon at a time (otherwise trait effects can stack in broken ways).
+* Anima trees now reduce their anima grass progress rate after they're heavily used within a single day. This still permits power-leveling the anima grass with many meditators, but at reduced effectiveness.
+* Empire is no longer enemy with civil NPC factions. We added a warning to inform players if they call Empire military aid when there are enemies on the map that the aid won't fight (this is a rare scenario).
+* Display meat icon in butchery recipe float menu option.
+* Removed naming animals through nuzzling. Animals only get names by bonding, or if given names by the player (so you can implicitly tell which animals are bonded by seeing which have names).
+* Speech duration reduced from 5 hours to 4 hours.
+* Plasmasword damage increased from 19 to 20. Extra flame damage chance increased from 30% to 50%. Flame damage amount increased from 8 to 10. Persona plasmasword damage increased from 20 to 22. Persona plasmasword extra flame damage chance increased from 50% to 70%. Monosword damage reduced from 27 to 25. Persona monosword damage reduced from 29 to 27.
+* Stele and nature shrine now have terrain affordances appropriate for their sizes.
+* Certain sounds now change speed if game speed changes, so they stay in sync with on-screen motion.
+* Eltex gear's psychic sensitivity effect now scales with quality. Added feedback for this.
+* All anima tree psylink levels now take 20 anima grass (instead of 18 or 22).
+* On the research tab, we now draw icons for techprint faction and research bench requirements (the latter as hyperlinks).
+* Quest helpers no longer spawn with the greedy trait.
+* Relabel skill neurotrainers to "skilltrainer" and give them their own category similar to psytrainers.
+* Removed special letter icon for choice letters.
+* Sort transporter contents list so humans are unloaded first, followed by animals, then by items.
+* Optimized UI gizmo drawing by skipping the layout phase.
+* Pawns of the same home faction (i.e. quest lodgers) will no longer arrest each other.
+* Soften anima tree glow. Remove anima grass glow.
+* Orbital mech cluster targeter will no longer spawn a cluster with condition causer.
+* Re-label ruffle shirt to formal shirt, royal vest to formal vest, royal robe to prestige robe (since these apparel may have other uses beside royalty).
+* Change threat text color to a lighter red for better readability. Applied it to more text where it makes sense.
+* Gear tab now expands if it needs space and there is space, before using scroll bar.
+* Added labelMale and labelFemale to traits.
+* Updated Korean language worker.
+* You can now navigate debug menus with keyboard alone.
+* All textures now use trilinear filtering instead of bilinear filtering for better sharpness at some zoom levels.
+* All textures now use kaiser filtered mipmaps instead of box filtered for better sharpness at some zoom levels.
+* Many, many other smaller improvements.
+
+== Technical == 
+
+
+* Added temporary factions system. These are used in the refugee quest, but can be used in other places as well.
+* Refactored quest generation to run the generation script in C# instead of in XML data. This was done for all the new quests and will make quest coding easier in future.
+* PatchOperationInsert: Only apply node normalization for text nodes, just in case.
+
+== Bugfixes ==
+
+
+* Fix: Log files can get extremely big. We now handle direct log messages as well (e.g. internal Unity messages or mods using Debug.Log directly) when handling max message count.
+* Fix: Anima tree doesn't heal properly.
+* Fix: Joy meditation can cause pawns to fall out of bed.
+* Fix: Condition causer destroyed message sent whenever it was despawned instead of just when it was actually destroyed.
+* Fix: Text rounding issue with re-enter cooldown text.
+* Fix: Pawn bio tab -> double empty lines in tooltips just before the line that says when a backstory unlocks a psyfocus type.
+* Fix: Haircuts don't display their partly-transparent sections. This mostly made the shaved haircut invisible.
+* Fix: Many neural heat gizmos shown if many psycasters are selected.
+* Fix: Situational thoughts with reason don't give access to PAWN symbol.
+* Fix: Pawns interrupting their throne meditation for other jobs.
+* Fix: Curing scaria doesn't remove manhunting.
+* Fix: Not saving drawAimPie field in Stance_Warmup.
+* Fix: Insect glowpods affect anima meditation.
+* Fix: Uncapitalized tagged content in some circumstances.
+* Fix: Uncolored names in some letters. Added a color tag for quest threats.
+* Fix: LOS calcs for purpose of royal aid don't match LOS for guns.
+* Fix: Humans with 0% hearing get thoughts from listening to instruments.
+* Fix: Sounds with tempoAffectedByGameSpeed stop playing forever when the game is paused.
+* Fix: Pawn can get random inspiration while not capable of being conscious.
+* Fix: Bug where items from <costList> would never be returned from deconstructing a building if the stackCount of that item was exactly 1.
+* Fix: Peace talks can generate for factions with goodwill rewards disabled.
+* Fix: Inconsistent stat report for stuff, not reporting all stat factors/offsets if you open it via hyperlink.
+* Fix: Thoughts about not being master of a bonded animal appear even if pawn is too low-skilled to be master of their bonded animal.
+* Fix: Banishing quest lodgers causes "banished" thoughts.
+* Fix: Downed refugee icon on the quest info has permanent red tint from DamageFlasher.
+* Fix: The call to InnerThing.GetStatValue ignores the null check.
+* Fix: Siege buildings retain their faction after siege ended.
+* Fix: Manhunter animal quest and incedent don't cap out at 100 animals.
+* Fix: "Considered: Fine" stat appears on floors with royalty not active.
+* Fix: Psylink counts as an artificial part for a transhumanist.
+* Fix: Pawns not gaining comfort from throne while meditating.
+* Fix: Royalty-only stats appear in scenario editor with Royalty.
+* Fix: Colonists can lose their psylink entirely when being resurrected.
+* Fix: Pawns can spawn with missing heads.
+* Fix: References to Braziers in core.
+* Fix: While paused, musical instruments constantly loop, this also occurs while in the trade menu.
+* Fix: Pawn in cryptosleep requires bedroom.
+* Fix: Some raid pawn kind defs allow Brawler trait while having ranged weapons.
+* Fix: It's possible to use doors as electricity-less coolers.
+* Fix: Exception when selecting brazier construction ghost.
+* Fix: Undignified throne room alert causes FPS drop for a throne that is outdoors.
+* Fix: Just claimed artificial structures don't affect nature focus objects.
+* Fix: Throwing grenades only 1 cell away makes the graphic distorted
+* Fix: Pawns meditate in bed without being sick. They should go for a better meditation spot.
+* Fix: Mechanoids not waking up if you skip them.
+* Fix: Mechanoid capacity tooltip displays hidden capacity impactors.
+* Fix: "Created at" stat has duplicates for things with bulk and normal recipes.
+* Fix: Non-royal colonists will not wear royal apparel even if outfit requires it.
+* Fix: Empire is hostile to neutral [[ancients]] by default.
+* Fix: Several world feature names not being used.
+* Fix: Can't right click directly on pawn to prioritize hunting.
+* Fix: Psychic drone level increased letter doesn't mention affected gender.
+* Fix: RadialDistinctThingsAround doesn't work correctly for 1:X size things.
+* Fix: Text that says research speed will be multiplied by eg. 200% because of tech level is incorrect.
+* Fix: "s" on the end of "colonists" isn't colored in quest text.
+* Fix: Quest lodgers show up on history graph.
+* Fix: Incorrect calculation for packaged survival meal bulk recipe.
+* Fix: Wild men who are incapable of violence can hunt animals for food.
+* Fix: Shuttles sometimes land on natural roofs.
+* Fix: Some enemies spawn with smoke launchers who shouldn't.
+* Many more small fixes.

@@ -1,0 +1,31 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Drugs/Bases}}
+|}
+----
+{| {{STDT| c_24}}
+! Def Name !! Description !! Details !! Stages</noinclude>
+|- id="AddictionBase" <!-- defName="", Name="AddictionBase", Abstract="True" -->
+! AddictionBase
+| -
+|<!-- Details -->
+* Default Label Color: {{Color|100%|0%|50%}}
+* Initial Severity: '''50%'''
+* Max Severity: '''100%'''
+* Scenario Can Add: {{Good|true}}
+* '''Remove On Redress Chance By Days Curve:'''
+{| {{STDT| c_24}}
+! Days !! Chance
+|-
+! 0
+| 0
+|-
+! 10
+| 0
+|-
+! 60
+| 25%
+|}{{Graph:Chart|width=200|height=200|xAxisTitle=Days|yAxisTitle=Remove On Redress Chance|type=line|x=0, 10, 60|y=0, 0, 0.25|interpolate=monotone|xGrid=|yGrid=}}
+| -<!-- Stages -->
+<noinclude>
+|}</noinclude>

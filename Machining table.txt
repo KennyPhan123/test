@@ -1,0 +1,138 @@
+{{Infobox main|production
+| name = Machining table
+| image = MachiningTable.png
+| imagesize = 192px
+| description = A work station for assembling machinery like guns and ammunition, or breaking down dead mechanoids.
+| type = Building
+| type2 = Production
+| placeable = true
+| path cost = 50
+| passability = pass through only
+| cover = 0.5
+| minifiable = true
+| size = 3 ˣ 1
+| mass base = 20
+| flammability = 1
+| hp = 180
+| sell price multiplier = 0.7
+| cleanliness = -2
+| power = -350
+| glowradius = 5
+| glowcolor = (73, 123, 138)
+| terrain affordance = medium
+| facility = tool cabinet
+| research = Machining
+| thingCategories = BuildingsProduction
+| skill 1 = Construction
+| skill 1 level = 4
+| work to make = 3000
+| resource 1 = Steel
+| resource 1 amount = 150
+| resource 2 = Component
+| resource 2 amount = 5
+| room role = Workshop
+| work table not in room role factor = 0.8
+}}
+The '''machining table''' is an industrial-level [[production]] bench that [[Work#Craft|crafters]] will use to produce a number of items as well as disassemble [[mechanoid]]s.  Like most production benches, the machining table must be configured with one or more [[bill]]s before a crafting colonist will begin work.
+It has a [[cleanliness]] value of -2.
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+Pawns will do Smithing work at a machining table. If a job is interrupted for any reason, the crafter will drop the piece, usually on the workbench, and it will be in an unfinished state until the crafter finishes it. A crafter cannot work on another crafter's piece. The piece will indicate the name of the crafter and how much work is remaining. The stockpile filter includes an entry for unfinished items which allows the player to control where they are stored. Up to two nearby tool cabinets can be connected to a machining table to increase work speed.
+
+The table outputs [[light]] in a 5 tile radius while it is powered on, with the nearest {{P|Light Radius}} tiles being above 50% light level and considered lit. As the machining table can only be used while it is powered, and it emits light when powered, this means there is no need for additional light sources to prevent work speed penalties to the operator. The light emitted by the table itself is sufficient.
+
+{{Cleanliness Note}}
+
+=== Bills ===
+The following items can be crafted at the machining table.
+{{Recipe List}}
+
+<gallery>
+UnfinishedWeapon.png|Unfinished melee weapon
+UnfinishedGun.png|Unfinished gun
+UnfinishedTechArmor.png|Unfinished piece of armor
+UnfinishedBelt.png|Unfinished belt
+UnfinishedPack.png|Unfinished pack
+</gallery>
+
+=== Shred mechanoid or drone===
+The "shred mechanoid or drone" bill converts [[mechanoid]] or [[drone]] [[corpse]]s into usable [[materials]]. This requires {{Ticks|300}} of work, modified by the [[Mechanoid Shredding Speed]] of the pawn doing the shredding but regardless of the type of mechanoid or drone shredded, and produces material dependent on the type of mechanoid shredded, any missing body parts, and the [[Mechanoid Shredding Efficiency]] of the shredder. This bill is directly equivalent to the [[Crafting spot#Smash mechanoid|"Smash mechanoid or drone"]] bill at the [[crafting spot]], with the only difference being that the crafting spot instead takes {{Ticks|450/{{Q|Crafting spot|Work Speed Factor}}}} of work. The material returned is the same regardless of the method.  
+
+With the [[Biotech DLC]], the bill has options to separately specify whether to shred enemy mechanoids and friendly mechanoids. By default, only enemy mechanoids are enabled to prevent the shredding of friendly mechanoids that may be resurrected.
+
+{| class="wikitable sortable mw-collapsible we-collapsed"
+|+ style="white-space: nowrap;" | Shredding/Smashing returns by Mechanoid
+|-
+! Mechanoid !! Return
+|-
+| [[Centipede blaster]] || {{Icon Small|steel||30}} [[steel]] + {{Icon Small|plasteel||10}} [[plasteel]] 
+|- 
+| [[Centipede burner]] || {{Icon Small|steel||30}} [[steel]] + {{Icon Small|plasteel||10}} [[plasteel]] 
+|-
+| [[Centipede gunner]] || {{Icon Small|steel||30}} [[steel]] + {{Icon Small|plasteel||10}} [[plasteel]] 
+|-
+| [[Termite]] || {{Icon Small|steel||30}} [[steel]] + {{Icon Small|plasteel||10}} [[plasteel]]
+|-
+| [[Lancer]] || {{Icon Small|steel||15}} [[steel]]
+|-
+| [[Pikeman]] || {{Icon Small|steel||15}} [[steel]]
+|-
+| [[Scyther]] || {{Icon Small|steel||15}} [[steel]]
+|-
+| [[Agrihand]]{{BiotechIcon}} || {{Icon Small|steel||10}} [[steel]]
+|-
+| [[Apocriton]]{{BiotechIcon}} || {{Icon Small|steel||15}} [[steel]]
+|-
+| [[Centurion]]{{BiotechIcon}} || {{Icon Small|steel||50}} [[steel]] + {{Icon Small|plasteel||20}} [[plasteel]]
+|-
+| [[Cleansweeper]]{{BiotechIcon}} || {{Icon Small|steel||10}} [[steel]]
+|-
+| [[Constructoid]]{{BiotechIcon}} || {{Icon Small|steel||10}} [[steel]] 
+|-
+| [[Cyclops]]{{OdysseyIcon}} || {{Icon Small|steel||15}} [[steel]] 
+|-
+| [[Diabolus]]{{BiotechIcon}} || {{Icon Small|steel||50}} [[steel]] + {{Icon Small|plasteel||20}} [[plasteel]]
+|-
+| [[Fabricor]]{{BiotechIcon}} || {{Icon Small|steel||10}} [[steel]]
+|-
+| [[Legionary]]{{BiotechIcon}} || {{Icon Small|steel||15}} [[steel]]
+|-
+| [[Lifter]]{{BiotechIcon}} || {{Icon Small|steel||10}} [[steel]]
+|-
+| [[Militor]]{{BiotechIcon}} || {{Icon Small|steel||10}} [[steel]]
+|-
+| [[Paramedic]]{{BiotechIcon}} || {{Icon Small|steel||10}} [[steel]]
+|-
+| [[Scorcher]]{{BiotechIcon}} || {{Icon Small|steel||15}} [[steel]]
+|-
+| [[Tesseron]]{{BiotechIcon}} || {{Icon Small|steel||15}} [[steel]]
+|-
+| [[Tunneler]]{{BiotechIcon}} || {{Icon Small|steel||20}} [[steel]] + {{Icon Small|plasteel||10}} [[plasteel]]
+|-
+| [[War queen]]{{BiotechIcon}} || {{Icon Small|steel||50}} [[steel]] + {{Icon Small|plasteel||20}} [[plasteel]]
+|-
+| [[War urchin]]{{BiotechIcon}} || {{Icon Small|steel||10}} [[steel]]
+|}
+
+{| class="wikitable sortable mw-collapsible we-collapsed"
+|+ style="white-space: nowrap;" | Shredding/Smashing returns by Drone
+|-
+! Mechanoid !! Return
+|-
+| [[Hunter drone]]{{OdysseyIcon}} || {{Icon Small|steel||tbd}} [[steel]] 
+|- 
+| [[Sentry drone]]{{OdysseyIcon}} || {{Icon Small|steel||20}} [[steel]] 
+|-
+| [[Wasp drone]]{{OdysseyIcon}} || {{Icon Small|steel||5}} [[steel]]
+|}
+
+== Analysis ==
+Build the machining table as soon as you want to craft any of the items that it offers. Machining itself is a particularly vital technology. It allows creation of many items, from ranged [[weapon]]s to [[flak vest]]s to [[EMP grenade]]s, [[mortar shell]]s, and [[shield belt]]s.
+
+While you could loot gear off [[raider]]s, this is not nearly as consistent as creating them yourself. Armor will likely be both damaged and [[tainted]], while specialty weapons like EMP grenades are very rarely used. Skilled crafters can create high [[quality]] gear, which will surpass what raiders normally bring. Raids from the [[empire]]{{RoyaltyIcon}} may come with better gear - but they use [[death acidifier]]s to prevent the usual looting.
+
+{{Nav|production|wide}}
+[[Category:Production]] [[Category:Resource Production]] [[Category:Apparel Production]]

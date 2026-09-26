@@ -1,0 +1,64 @@
+{{Infobox main|production
+| name = Brewery
+| image = Table brewery north.png
+| imagesize = 192px
+| description = A work station with all the equipment needed to mix wort for beer production. Wort must be fermented to finally become beer.
+| type = Building
+| type2 = Production
+| placeable = true
+| path cost = 50
+| passability = pass through only
+| cover = 0.5
+| minifiable = true
+| size = 3 ˣ 1
+| mass base = 20
+| flammability = 1
+| hp = 180
+| sell price multiplier = 0.7
+| terrain affordance = medium
+| research = Beer brewing
+| work to make = 2000
+| resource 1 = Wood
+| resource 1 amount = 120
+| resource 2 = Steel
+| resource 2 amount = 30
+| room role = Workshop
+| work table not in room role factor = 0.8
+}}
+{{Info|The '''brewery''' is a [[production]] bench used by [[Work#Cook|cooks]] to produce [[wort]], a precursor to [[beer]].}}
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary == 
+The brewery is the second stage on the path to creating [[beer]]. After harvesting [[hops]], pawns with the [[Work#Cook|Cook]] work type enabled will take 25 hops to the brewery and make 5 [[wort]]. Wort will then be brought by haulers to a [[fermenting barrel]] where they will ferment and turn into beer.
+
+Breweries are similar to [[stove]]s in that you add bills to the brewery, but the only option is "Make wort". Production speed is determined by the pawn's [[Drug Cooking Speed]], itself largely controlled by their [[Cooking]] skill. Brewing has no [[quality]], nor can beer cause [[food poisoning]], so skill level has no other effect than speed.
+
+Breweries have no other function other than making wort for producing beer.
+
+{{Recipe List}}
+
+== Analysis == 
+[[File:BreweryStrategy.png|thumb|left|300px|An example brewery set up]]
+Hops have a comparatively long rot time of {{Q|Hops|Days To Start Rot Base}} days, and so can be easily stored in stockpiles near to the brewery, rather than in a nearby fridge. This allows your cooks to spend more time at the brewery and less time walking to and from the stockpile.
+
+For further efficiency, [[shelf|shelves]] can be used directly adjacent to the brewery's interaction spot to eliminate moving all together, so long as the shelves can be kept stocked by haulers. For more information, see the [[Shelf#Analysis|Shelf Analysis section]].
+
+The brewery is ''not'' associated with the kitchen room role. For the exact calculations, see the [[Rooms#Roles|kitchen]] room role.
+{{Clear}}
+
+== Gallery ==
+<gallery>
+Table brewery north.png|Facing north
+Table brewery east.png|Facing east
+Table brewery south.png|Facing south
+</gallery>
+
+== Version history ==
+<gallery>
+Brewery old.png|Old Brewery Texture, changed sometime prior to B19
+</gallery>
+
+{{Nav|production|wide}}
+[[Category:Production]] [[Category:Drug Production]]

@@ -1,0 +1,464 @@
+{{DISPLAYTITLE:Basic Ranged Weapon}}
+{{BackToTutorials}}
+
+This is a basic RimWorld mod tutorial for the purpose of creating a simple ranged weapon using only XML. Be sure to check out the [[Modding_Tutorials/Basic_Melee_Weapon|basic melee weapon tutorial]] as well.
+
+== Goals ==
+* Create a new '''saw launcher''' item, a ranged weapon
+* Give it a '''custom projectile''' with a '''custom damage type'''
+* Give it '''custom melee and ranged sound effects'''
+
+[[File:ExampleRangedWeapon.png|none|border]]
+
+== Recommended Reading ==
+* [[Modding_Tutorials/Mod_folder_structure|Mod Folder Structure]]
+* [[Modding_Tutorials/XML_Defs|Defs]]
+* [[Modding_Tutorials/ThingDef|ThingDef]]
+* [[Modding_Tutorials/Basic_Melee_Weapon|Tutorial: Basic Melee Weapon]]
+
+== Sample Repository ==
+A working implementation of this mod can be found [https://github.com/Aelanna/ExampleRangedWeapon in this GitHub repository]. You can use it to compare against your work or as a basis for modification!
+
+== Folder Setup ==
+
+First, you will want to create the files and folders necessary for this mod:
+
+<source>
+Mods
+└ MyModFolder
+  ├ About
+  │ ├ About.xml
+  │ └ Preview.png
+  ├ Defs
+  │ ├ DamageDefs
+  │ │ └ ExampleDamage_Ranged.xml
+  │ ├ SoundDefs
+  │ │ └ ExampleSounds_RangedWeapon.xml
+  │ └ ThingDefs
+  │   └ ExampleWeapons_Ranged.xml
+  ├ Sounds
+  │ └ ExampleMod
+  │   ├ Example_SawLaunch.ogg
+  │   └ Example_SawMelee.ogg
+  └ Textures
+    └ ExampleMod
+      ├ Example_SawBlade.png
+      └ Example_SawLauncher.png
+</source>
+
+Please check out the [[Modding_Tutorials/Mod_folder_structure|mod folder structure guide]] for more information about individual folders.
+
+=== About.xml ===
+
+Your <code>About.xml</code> is used to identify your mod to RimWorld; please see [[Modding_Tutorials/About.xml|the About.xml reference page]] for more information. Be sure to replace "AuthorName" with your own name:
+
+<source lang="xml">
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+
+  <!-- This is the internal identifier for your mod. -->
+  <!-- It is recommended that you make it unique to as to avoid potential collisions with other authors; -->
+  <!--     if Rimworld detects multiple mods with the same packageId then it will refuse to load all of them. -->
+  <packageId>AuthorName.ExampleRangedWeapon</packageId>
+
+  <!-- This is both the displayed name of your mod as well as the name used for patch targeting. -->
+  <name>Example Ranged Weapon</name>
+
+  <!-- Your name goes here. -->
+  <author>AuthorName</author>
+
+  <!-- These are the RimWorld game versions that your mod supports. -->
+  <!-- It is recommended that you only list versions that you have explicitly tested to ensure they work, -->
+  <!-- as even basic XML options can change between major versions of the game. -->
+  <supportedVersions>
+    <li>1.6</li>
+  </supportedVersions>
+
+  <!-- This is the description of your mod shown in both the vanilla mod manager as well as modded managers. -->
+  <description>This is an example ranged weapon mod made for the RimWorld Wiki.</description>
+
+</ModMetaData>
+</source>
+
+=== Sample Assets ===
+
+You can use these as the example assets:
+
+<div class="TwoColumnCollapsibleLayout">
+<div class="TwoColumnCollapsibleLayout-section">
+<div class="TwoColumnCollapsibleLayout-subtitle">Ranged Sound Effect</div>
+<div class="TwoColumnCollapsibleLayout-text">
+[[File:Example_SawLaunch.ogg|none]] ([[:File:Example_SawLaunch.ogg|link]])
+</div>
+</div>
+<div class="TwoColumnCollapsibleLayout-section">
+<div class="TwoColumnCollapsibleLayout-subtitle">Melee Sound Effect</div>
+<div class="TwoColumnCollapsibleLayout-text">
+[[File:Example_SawMelee.ogg|none]] ([[:File:Example_SawMelee.ogg|link]])
+</div>
+</div>
+<div class="TwoColumnCollapsibleLayout-section">
+<div class="TwoColumnCollapsibleLayout-subtitle">Projectile Texture</div>
+<div class="TwoColumnCollapsibleLayout-text">
+[[File:Example_SawBlade.png|none]]
+</div>
+</div>
+<div class="TwoColumnCollapsibleLayout-section">
+<div class="TwoColumnCollapsibleLayout-subtitle">Weapon Texture</div>
+<div class="TwoColumnCollapsibleLayout-text">
+[[File:Example_SawLauncher.png|none]]
+</div>
+</div>
+</div>
+
+== Instructions ==
+
+=== 1. Create the weapon ThingDef ===
+
+Our first step is to create the XML that represents our new weapon. Whenever possible, this is best accomplished by first copying a vanilla [[Modding_Tutorials/ThingDef|ThingDef]] and modifying it; in this case we will use the vanilla [[pump shotgun]] as our starting point, as it is the most similar existing weapon to what we want to create. The XML for the pump shotgun can be found in <code>Data/Core/Defs/ThingDefs_Misc/Weapons/RangedIndustrial.xml</code>.
+
+In our own <code>ExampleWeapons_Ranged.xml</code>, we'll add the following content:
+
+<source lang="xml">
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Example weapon: saw launcher -->
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <!-- pasted content omitted -->
+  </ThingDef>
+
+</Defs>
+</source>
+
+=== 2. Modify the weapon ThingDef ===
+
+In order to differentiate our weapon from the vanilla pump shotgun, we'll make the following changes:
+
+<div class="TutorialTableWrapper">
+{| class="TutorialCodeTable"
+! XML !! Description
+|-
+| <source lang="xml">
+<defName>ExampleGun_SawLauncher</defName>
+</source>
+| class="TutorialCodeTable-description" |
+The <code>defName</code> of a ThingDef is its identity and must be globally unique across all mods and official content. It is strongly recommended that it is prefixed with a project or mod name, so in this case we will use "ExampleGun_" as our prefix.
+|-
+| <source lang="xml">
+<label>saw launcher</label>
+</source>
+| class="TutorialCodeTable-description" |
+A ThingDef's label is its in-game name. Unless it is a proper name, it should be in lowercase so that it can be injected naturally into sentences that use it. RimWorld will automatically capitalize it as necessary if used in titles or as the start of a sentence.
+|-
+| <source lang="xml">
+<description>A heavy industrial circular saw used for both construction and demolition.\n\nSome madman has modified this tool to allow its blades to be shot out at high velocity, rendering it a short-ranged but devastating weapon.</description>
+</source>
+| class="TutorialCodeTable-description" |
+A ThingDef's description is used when inspecting the item's details.
+|-
+| <source lang="xml">
+<graphicData>
+  <texPath>ExampleMod/Example_SawLauncher</texPath>
+  <graphicClass>Graphic_Single</graphicClass>
+</graphicData>
+</source>
+| class="TutorialCodeTable-description" |
+This is where define the texture of our weapon. Similar to how defNames must be unique across all mods, the <code>texPath</code> of our texture must be unique across all mods if we want to avoid an asset collision. We will use the folder <code>ExampleMod</code> as our "namespace".
+
+For ranged weapons such as our saw launcher, the texture defined in our <code><graphicData></code> will be used for both items on the ground as well as the equipped weapon texture. The texture of the fired projectiles will be defined in a separate <code>ThingDef</code>.
+|-
+| <source lang="xml">
+<costList>
+  <Steel>80</Steel>
+  <ComponentIndustrial>4</ComponentIndustrial>
+</costList>
+</source>
+| class="TutorialCodeTable-description" |
+Since our saw launcher is a more complex tool than the pump shotgun with more functionality, we will have it cost 80 [[steel]] and 4 [[components]].
+|-
+| <source lang="xml">
+<statBases>
+  <WorkToMake>15000</WorkToMake>
+  <Mass>9.9</Mass>
+  <AccuracyTouch>0.85</AccuracyTouch>
+  <AccuracyShort>0.80</AccuracyShort>
+  <AccuracyMedium>0.70</AccuracyMedium>
+  <AccuracyLong>0.56</AccuracyLong>
+  <RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown>
+</statBases>
+</source>
+| class="TutorialCodeTable-description" |
+Our saw launcher requires more time to craft than a pump shotgun, weighs far more, has lower accuracy at range, and has a longer recovery cooldown duration.
+|-
+| <source lang="xml">
+<equippedStatOffsets>
+  <ConstructionSpeed>0.10</ConstructionSpeed>
+</equippedStatOffsets>
+</source>
+| class="TutorialCodeTable-description" |
+While there is no <code>StatDef</code> that specifically affects deconstruction speed, <code>ConstructionSpeed</code> does affect the speed at which colonists deconstruct buildings and is appropriate enough to justify our use of it. Our saw launcher will grant a 10% construction speed bonus to its wielder.
+|-
+| <source lang="xml">
+<verbs>
+  <li>
+    <verbClass>Verb_Shoot</verbClass>
+    <hasStandardCommand>true</hasStandardCommand>
+    <defaultProjectile>ExampleBullet_SawBlade</defaultProjectile>
+    <warmupTime>1.2</warmupTime>
+    <range>12.9</range>
+    <soundCast>ExampleWeapon_SawLauncher</soundCast>
+    <soundCastTail>GunTail_Heavy</soundCastTail>
+    <muzzleFlashScale>0</muzzleFlashScale>
+  </li>
+</verbs>
+</source>
+| class="TutorialCodeTable-description" |
+The <code>verbs</code> list defines the ranged attacks available for a weapon. Here we will specifically modify the <code>defaultProjectile</code> to use a custom projectile that we will define later, increase the <code>warmupTime</code> to represent the awkwardness of its use as a weapon, lower its <code>range</code> to <code>12.9</code> to match the chain shotgun, change the <code>soundCast</code> to use a custom <code>SoundDef</code>, and reduce the <code>muzzleFlashScale</code> to 0.
+|-
+| <source lang="xml">
+<tools>
+  <li>
+    <label>handle</label>
+    <capacities>
+      <li>Blunt</li>
+    </capacities>
+    <power>9</power>
+    <cooldownTime>2</cooldownTime>
+  </li>
+  <li>
+    <label>blade</label>
+    <capacities>
+      <li>Demolish</li>
+    </capacities>
+    <power>13</power>
+    <cooldownTime>2</cooldownTime>
+    <soundMeleeHit>ExampleWeapon_SawLauncherMelee</soundMeleeHit>
+    <soundMeleeMiss>ExampleWeapon_SawLauncher</soundMeleeMiss>
+  </li>
+</tools>
+</source>
+| class="TutorialCodeTable-description" |
+To better model our saw launcher's primary use as a demolition tool, we will change the <code>barrel</code> tool from the pump shotgun into a <code>blade</code> tool that utilizes the <code>Demolish</code> capacity to perform building-destroying attacks similar to a [[breach axe]]. Our saw will have a higher power but far slower cooldown, giving it a lower overall damage output that better suits its overall versatility.
+
+Also note that we set custom <code>SoundDef</code> references for <code>soundMeleeHit</code> and <code>soundMeleeMiss</code>. We will create these two <code>SoundDef</code> entries in a later step.
+|-
+| <source lang="xml">
+<recipeMaker>
+  <skillRequirements>
+    <Crafting>5</Crafting>
+  </skillRequirements>
+  <displayPriority>436</displayPriority>
+</recipeMaker>
+</source>
+| class="TutorialCodeTable-description" |
+Our saw launcher will have the same Crafting skill requirement as the pump shotgun, and we will place it just after the [[chain shotgun]] in the crafting recipe list.
+|-
+|}
+</div>
+
+=== 4. Create and modify the projectile ThingDef  ===
+
+Now we need to create the <code>ThingDef</code> that defines our weapon's projectile. Similarly to the weapon itself, we will copy the pump shotgun's <code>Bullet_Shotgun</code> projectile, which is immediately after the weapon's <code>ThingDef</code> in the same file:
+
+<source lang="xml">
+<!-- Example projectile: saw blade -->
+<ThingDef ParentName="BaseBullet">
+  <!-- pasted content omitted -->
+</ThingDef>
+</source>
+
+Now, we will modify the following:
+
+<div class="TutorialTableWrapper">
+{| class="TutorialCodeTable"
+! XML !! Description
+|-
+| <source lang="xml">
+<defName>ExampleBullet_SawBlade</defName>
+</source>
+| class="TutorialCodeTable-description" |
+Since the projectile itself is a <code>ThingDef</code> as well, it must similarly have a globally-unique <code>defName</code>. We must also make sure that we match our <code>defName</code> in the <code>verbs</code> of our weapon.
+|-
+| <source lang="xml">
+<label>saw blade</label>
+</source>
+| class="TutorialCodeTable-description" |
+While the <code>label</code> of our projectile is not shown in the weapon's stat card, it is visible if the player hovers over it with their mouse while it is in flight and the game is paused.
+|-
+| <source lang="xml">
+<graphicData>
+  <texPath>ExampleMod/Example_SawBlade</texPath>
+  <graphicClass>Graphic_Single</graphicClass>
+</graphicData>
+</source>
+| class="TutorialCodeTable-description" |
+In the <code>graphicData</code> for our projectile, we will specify the texture used for the projectile in flight.
+|-
+| <source lang="xml">
+<projectile>
+  <damageDef>ExampleDamage_Saw</damageDef>
+  <damageAmountBase>25</damageAmountBase>
+  <stoppingPower>1.5</stoppingPower>
+  <armorPenetrationBase>0.19</armorPenetrationBase>
+  <speed>55</speed>
+</projectile>
+</source>
+| class="TutorialCodeTable-description" |
+Here we will specify the various values related to the damage dealt by this projectile upon impact. We will be using a custom <code>damageDef</code>, and we want our saw blade to deal higher base damage and slightly higher armor penetration, while having much lower stopping power.
+|-
+|}
+</div>
+
+=== 5. Create and modify a DamageDef  ===
+
+Next, we need to create a custom <code>DamageDef</code> for our custom projectile, because none of our vanilla options are entirely accurate or appropriate for our use case. Unlike our previous two <code>ThingDef</code> entries, we will create this one entirely from scratch since it will be relatively simple. We will start by creating the following in our <code>ExampleDamage_Ranged.xml</code> file:
+
+<source lang="xml">
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Example damage type: ranged cut -->
+  <DamageDef ParentName="Arrow">
+
+    <!-- further tags will go here -->
+
+  </DamageDef>
+
+</Defs>
+</source>
+
+The reason we want to use <code>Arrow</code> as our parent is because the vanilla <code>Arrow</code> damage type already does most of what we want: it is a ranged damage type for purposes of shield belt penetration, it inflicts <code>Cut</code> injuries, and it is opposed by <code>Sharp</code> armor. This means we only have to add the following overrides to customize our new damage type:
+
+<div class="TutorialTableWrapper">
+{| class="TutorialCodeTable"
+! XML !! Description
+|-
+| <source lang="xml">
+<defName>ExampleDamage_Saw</defName>
+</source>
+| class="TutorialCodeTable-description" |
+As always, we need to ensure our <code>defName</code> is unique amongst all <code>DamageDef</code> entries, so we will prefix it with "ExampleDamage_".
+|-
+| <source lang="xml">
+<label>saw</label>
+</source>
+| class="TutorialCodeTable-description" |
+This label will be seen in the damage breakdown for our weapon and projectile stat cards. All the usual recommendations for <code>label</code> fields apply here as well.
+|-
+| <source lang="xml">
+<deathMessage>{0} has been sliced to death by a saw blade.</deathMessage>
+</source>
+| class="TutorialCodeTable-description" |
+Our <code>deathMessage</code> is the text that will be shown in the combat log when a pawn is killed by our <code>DamageDef</code>. The <code>{0}</code> is an ''injection'' and will be replaced by the name of the pawn by RimWorld's grammar resolver system.
+|-
+|}
+</div>
+
+=== 6. Create custom SoundDefs  ===
+
+We're almost done! The last thing we need to do is to create the two custom <code>SoundDef</code> entries so our new weapon can have a unique melee and ranged attack sound effect. We will start by creating two <code>SoundDef</code> entries in our <code>ExampleSounds_RangedWeapon.xml</code> file:
+
+<source lang="xml">
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Example sound: saw launcher firing -->
+  <SoundDef>
+    <defName>ExampleWeapon_SawLauncher</defName>
+
+    <!-- configuration tags go here -->
+
+  </SoundDef>
+
+  <!-- Example sound: saw launcher melee -->
+  <SoundDef>
+    <defName>ExampleWeapon_SawLauncherMelee</defName>
+
+    <!-- configuration tags go here -->
+
+  </SoundDef>
+
+</Defs>
+</source>
+
+==== <code>ExampleWeapon_SawLauncher</code> ====
+
+The following tags go into our <code>ExampleWeapon_SawLauncher</code> <code>SoundDef</code>:
+
+<div class="TutorialTableWrapper">
+{| class="TutorialCodeTable"
+! XML !! Description
+|-
+| <source lang="xml">
+<context>MapOnly</context>
+</source>
+| class="TutorialCodeTable-description" |
+Setting <code>context</code> to <code>MapOnly</code> specifies that our sound effect should only play while the player's focus is on a regular map such as a settlement or quest map, and will stop playing if the player switches to the [[Menus#World|world map]].
+|-
+| <source lang="xml">
+<subSounds>
+  <li>
+    <grains>
+      <li Class="AudioGrain_Clip">
+        <clipPath>ExampleMod/Example_SawLaunch</clipPath>
+      </li>
+    </grains>
+    <volumeRange>40~45</volumeRange>
+    <pitchRange>0.8940217~1.084783</pitchRange>
+  </li>
+</subSounds>
+</source>
+| class="TutorialCodeTable-description" |
+This is the meat of our <code>SoundDef</code>:
+
+The <code>grains</code> list in our <code>SoundDef</code> determines the actual sound files that should be associated with it.
+
+<code>volumeRange</code> determines the volume level at which our sound should play, which will be randomly within this range every time it is played. The exact volume range of each sound effect is not always the same, as different sound files may have different baseline volume levels; you may have to adjust this value based on whether it feels too quiet or loud in your testing.
+
+<code>pitchRange</code> is used to randomize the exact pitch of the sound by pitch-shifting within the specified range each time it is played. This can give more perceived variation to your sounds, which helps to ensure that it does not sound repetitive.
+|-
+|}
+</div>
+
+==== <code>ExampleWeapon_SawLauncherMelee</code> ====
+
+The following tags go into our <code>ExampleWeapon_SawLauncherMelee</code> <code>SoundDef</code>:
+
+<div class="TutorialTableWrapper">
+{| class="TutorialCodeTable"
+! XML !! Description
+|-
+| <source lang="xml">
+<context>MapOnly</context>
+</source>
+| class="TutorialCodeTable-description" |
+As with the previous entry, we want this sound to only play on regular maps as well.
+|-
+| <source lang="xml">
+<subSounds>
+  <li>
+    <grains>
+      <li Class="AudioGrain_Clip">
+        <clipPath>ExampleMod/Example_SawMelee</clipPath>
+      </li>
+    </grains>
+    <volumeRange>45~50</volumeRange>
+    <pitchRange>0.8940217~1.084783</pitchRange>
+  </li>
+</subSounds>
+</source>
+| class="TutorialCodeTable-description" |
+Our melee sound effect will be very similar to our ranged sound effect, but we will use a different grain clip and adjust the volume slightly higher, as the melee sound should be more impactful.
+|-
+|}
+</div>
+
+=== 7. Done! ===
+
+Your first ranged weapon is complete! Boot up RimWorld and you should be able to see and enable the "Example Ranged Weapon" mod in your mod manager. You can then use [[Development mode|dev mode tools]] to spawn the weapon directly, or craft it at a [[Machining table|machining table]].
+
+If you get any errors, be sure to check out the [[Modding_Tutorials/Troubleshooting|troubleshooting guide]] or join us on the '''#mod-development''' channel on the [https://discord.gg/rimworld RimWorld Discord server].
+
+[[Category:Modding]]
+[[Category:Modding tutorials]]

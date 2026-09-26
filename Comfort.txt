@@ -1,0 +1,114 @@
+{{About|the need|the related ideoligious precept|Comfort (precept)}}{{For|discussion on comfortable temperature ranges|Temperature#On_pawns{{!}}Temperature}}
+'''Comfort''' has two related meanings in ''Rimworld'':
+* Colonists have a [[need]] for "comfort", which influences their [[mood]].
+* [[Furniture]] has a property ([[stat]]) called "[[Comfort (Stat)|comfort]]"; using the furniture fills the ''comfort'' need.
+
+== Comfort need ==
+The ''comfort need'' is satisfied by sitting in or resting on comfortable [[furniture]].
+
+The ''comfort need'' mechanic is similar to the "rest" and "beauty" mechanics: the ''comfort need bar'' of a pawn grows while they are using comfortable furniture, and slowly decays otherwise.
+
+The maximum level of the colonist ''comfort need'' that can be obtained depends on the ''comfort stat'' of the furniture item being used. The maximum possible ''comfort'' level is the ''comfort stat'' of the furniture item in percent, capped at 100%. E.g. a bed with ''comfort stat'' of 0.75 can raise the ''comfort need'' gauge to at most 75%.  When the comfortable situation ends, the ''need'' level will gradually revert back to 0%.
+
+So long as the comfort need is below the comfort stat of the furniture item, it rises by 3.6% every {{ticks|150}}, equivalent to 60% per in-game hour. This rise and fall is independent of the comfort stat of the furniture so long as it is remains above the need of the pawn. I.e. a chair with a comfort of 100% is not slower to fill the need than a chair with a comfort of 105%. 
+
+When the comfort stat is below their need, or is non-existent, it falls at a rate of 4% per hour
+
+''Comfort'' levels of 60% or higher give increasingly beneficial mood thoughts, starting at "Comfortable {{+|4}}". A particularly low ''comfort'' level of less than 10% incurs the "Uncomfortable {{--|3}}" thought and mood penalty.  This usually only occurs when the pawn had to sleep on the ground without even a sleeping spot.  It is, however, unrelated to the "Slept on ground {{--|4}}" negative mood effect which would also occur in this situation. The following thoughts are related to comfort:
+
+''Comfort'' levels over 100% have no additional effect.
+
+{| class="wikitable"
+! Thought
+! Threshold
+! Effect
+! Real time in state<ref>Real time spent in the state before crossing the lower threshold, assuming no comfort is gained</ref>
+! Game time in state<ref>Game time spent in the state before crossing the lower threshold, assuming no comfort is gained</ref>
+! Real time since 100% comfort<ref>Real time spent before entering the state, assuming no comfort is gained and the starting comfort is 100%</ref>
+! Game time since 100% comfort<ref>Game time spent before entering the state, assuming no comfort is gained and the starting comfort is 100%</ref>
+|-
+! Uncomfortable
+| 0% - 9%
+| {{--|3}}
+| -
+| - 
+| {{Ticks|150 * (1-0.09)/0.0024 round 3}}
+| {{#expr: (1-0.09)/0.04}} hours
+|-
+! ''<none>''
+| 10% - 59%
+| 0
+| {{Ticks|150 * (59-10)/0.24 round 3}}
+| {{#expr: (59-10)/4}} hours
+| {{Ticks|150 * (1-0.59)/0.0024 round 3}}
+| {{#expr: (1-0.59)/0.04}} hours
+|-
+! Comfortable
+| 60% - 69%
+| {{+|4}}
+| {{Ticks|150 * (69-60)/0.24 round 3}}
+| {{#expr: (69-60)/4}} hours
+| {{Ticks|150 * (1-0.69)/0.0024 round 3}}
+| {{#expr: (1-0.69)/0.04}} hours
+|-
+! Very comfortable
+| 70% - 79%
+| {{+|6}}
+| {{Ticks|150 * (79-70)/0.24 round 3}}
+| {{#expr: (79-70)/4}} hours
+| {{Ticks|150 * (1-0.79)/0.0024 round 3}}
+| {{#expr: (1-0.79)/0.04}} hours
+|-
+! Extremely comfortable
+| 80% - 89%
+| {{+|8}}
+| {{Ticks|150 * (89-80)/0.24 round 3}}
+| {{#expr: (89-80)/4}} hours
+| {{Ticks|150 * (1-0.89)/0.0024 round 3}}
+| {{#expr: (1-0.89)/0.04}} hours
+|-
+! Luxuriantly comfortable
+| 90% - 100%
+| {{+|10}}
+| {{Ticks|150 * (100-90)/0.24 round 3}}
+| {{#expr: (100-90)/4}} hours
+| -
+| -
+|}
+{{Reflist}}
+In most situations, the dominating source of "comfort" for a colonist is sleeping in a bed. Even a simple [[sleeping spot]] provides 0.4 of ''comfort'' and would leave the pawn at 40% of ''comfort need'' after sleeping on it for a few hours.
+
+To obtain ''comfort need'' gains, the pawn has to be actually "using" the piece of furniture, such as doing work on a workbench with a chair, or actively resting in a bed.  Pawns moving over comfortable furniture, or drafted pawns forced to stand on it, do not gain comfort.
+
+== Furniture stat ==
+{{Main|Comfort (Stat)}}
+Every piece of furniture has a ''comfort'' stat, listed in the item's information panel. The ''comfort'' stat is determined by the base value for the item, the item's [[quality]] level, and sometimes other nearby pieces of furniture providing an "offset" to the base value.
+
+''Example'': a [[bed]] of "normal" quality has a base value of 0.75, that can be modified with an adjacent [[end table]] by +0.05, as well as a nearby [[dresser]] by another +0.05, yielding an effective ''comfort'' stat for this bed of 0.85.
+
+Furniture of normal quality has the following ''comfort'' stat values:
+{{#ask:  [[Comfort Base::+]] OR [[Comfort Offset::+]] | ?Comfort Base | ?Comfort Offset }}
+Note: The comfort of animal beds and sleeping boxes has no effect, despite having a ''comfort stat'', because animals do not have a ''comfort need'' that could be satisfied. Instead, their only use is faster [[rest]] gain, and better medical outcomes.
+
+== Strategy ==
+
+'''tl;dr''':  Use your best armchair for your research bench, not your TV viewing corner.
+
+This section is '''only''' concerned with the raw effectiveness of ''comfort'' with regards to colonist ''mood'', as there are no other ''comfort'' related effects in the game.  We completely ignore the decor, ''beauty'' or role-playing value of furniture in this discussion.
+
+The value of the ''comfort'' stat is governed by two facts:
+# Comfort ''need'' falls rather slowly over time (about 5% per hour), but rises very quickly, to the currently effective ''comfort'' stat.
+# All ''comfort need'' levels between 10% and 60% are equally mood-neutral.
+
+This means that furniture with less than 0.6 ''comfort'' has hardly any effect.  Even a [[sleeping spot]] would leave the pawn at 40% ''comfort'' when beginning a workday, and it would then require about 6 hours of complete ''comfort'' starvation for the negative mood effect to appear.  In actual games, this is both quite rare and not very impactful.  It also means that ''long-term use'' of furniture drowns out ''comfort'' effects that occurred earlier.
+
+Especially [[stool]]s in front of workbenches are almost useless, because all they do is keep the ''comfort level'' at 50%.  However, a pawn who slept in a bed even of ''poor'' quality runs a rather low risk of dropping to 10% ''comfort level'' regardless if stools are used or not.  Do not bother crafting stools for workbenches, use dining chairs right away.  Stools still make sense for a cheap eating setup, because colonists can only eat from a table if they have a seat.
+
+In other cases, the ''comfort stat'' of furniture is impactful only if the furniture is used for non-trivial durations – this is mainly the case for all kinds of beds as well as work station chairs that are used intensively (eg. in front of research benches and certain crafting stations).
+
+Beds are always used for daily and for an extended duration, so their ''comfort'' stat matters.  However, because colonists tend to spend long periods of time in bed, as long as the bed's comfort is 1 or higher, they typically will achieve a full comfort bar by the time they wake up. This may not be the case if pawn requires less sleep than normal, such as if they are a [[quick sleeper]], use a [[circadian assistant]],{{RoyaltyIcon}} a [[sleep accelerator]]{{IdeologyIcon}} or have an enhanced [[Rest Rate Multiplier]].
+
+Seating furniture, such as high quality chairs and armchairs, should be put in front of heavily used workstations, and not in places where this might be more intuitive like the "comfy TV section" in your recreation hall, for example.  This, of course, ignores the role-playing aspect and ''beauty'' impact of these structures entirely.  "Recreation furniture" is also less effective because the colonist usually goes to sleep after recreation time in a typical colony schedule, which completely drowns out any positive effect from recreation furniture.
+
+{{nav|status levels|wide}}
+[[Category:Status Level]]

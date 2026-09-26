@@ -1,0 +1,108 @@
+{{infobox main|animal
+| page verified for version = A14C
+| name = Gazelle
+| image = Gazelle east.png
+| description = A small, extremely quick antelope known for its amazingly long leap.
+| type = Animal
+| movespeed = 6
+| min comfortable temperature = -10
+| max comfortable temperature = 40
+| toxic resistance = 0.5
+| toxic environment resistance = 0
+| flammability = 0.7
+| marketvalue = 150
+| filth rate = 8
+| herdanimal = true
+| combatPower = 40
+| bodysize = 0.7
+| healthscale = 0.7
+| hungerrate = 0.15
+| diet = herbivorous
+| leathername = plainleather
+| wildness = 0.75
+| manhuntertame = 0
+| manhunter = 0
+| roamMtb = 2
+| trainable = none
+| mateMtb = 12
+| gestation = 5.661
+| offspring = 1
+| lifespan = 12
+| juvenileage = 0.1
+| maturityage = 0.2222
+| tradeTags = AnimalCommon
+| attack1dmg = 5.5
+| attack1type = Blunt
+| attack1cool = 1.5
+| attack1part = front left leg
+| attack2dmg = 5.5
+| attack2type = Poke
+| attack2cool = 1.5
+| attack2part = front left leg
+| attack3dmg = 5.5
+| attack3type = Blunt
+| attack3cool = 1.5
+| attack3part = front right leg
+| attack4dmg = 5.5
+| attack4type = Poke
+| attack4cool = 1.5
+| attack4part = front right leg
+| attack5dmg = 7
+| attack5type = Bite
+| attack5cool = 2
+| attack5part = teeth
+| attack5chancefactor = 0.7
+| attack6dmg = 7
+| attack6type = Blunt
+| attack6cool = 2
+| attack6part = head
+| attack6chancefactor = 0.2
+| isCoastal = false
+| livesin_temperateforest = 0.3
+| livesin_aridshrubland = 0.7
+| livesin_desert = 0.6
+| livesin_lavafield = 0.7
+}}
+The '''gazelle''' is a [[herbivorous]] [[animal]] native to {{Habitats}}.
+
+== Acquisition ==
+Gazelles can be found in {{Habitats}}. They can either be tamed by a [[Work #Handle|handler]] or self-tame in a random event. 
+
+Gazelles can be bought and sold in other [[Trade#Faction base|faction bases]]. Gazelles purchased from traders will be already tamed.
+
+== Summary ==
+{{Pen Animal Note|Gazelle}}
+
+== Analysis ==
+
+=== Nutrition ===
+When slaughtered, a gazelle yields {{#vardefineecho:baby_meat|{{Meat Leather Curve|{{#expr:{{P|Body Size}}*0.2*140}}}}}} meat and {{Meat Leather Curve|{{#expr:{{P|Body Size}}*0.2*40}}}} leather as a baby; {{Meat Leather Curve|{{#expr:{{P|Body Size}}*0.5*140}}}} meat and {{Meat Leather Curve|{{#expr:{{P|Body Size}}*0.5*40}}}} leather as a juvenile; or {{Meat Leather Curve|{{#expr:{{P|Body Size}}*140}}}} meat and {{Meat Leather Curve|{{#expr:{{P|Body Size}}*40}}}} leather as an adult. 1 meat is equal to 0.05 nutrition.
+
+An adult gazelle consumes {{P|Real Hunger Rate}} nutrition per day, and a female creates up to {{#expr: 1/{{P|Gestation Period Days}} round 2}} offspring per day.
+* When offspring are slaughtered as babies, a female gazelle will produce {{#expr:{{Meat Production|{{PAGENAME}}|baby}} round 2}} nutrition of meat per day, giving an optimal nutrition efficiency of {{%|{{Meat Production|{{PAGENAME}}|baby}}/{{P|Real Hunger Rate}} round 3}}.
+* If the offspring are allowed to grow to adulthood, they will consume an additional {{#expr:{{Nutrition Consumption|{{PAGENAME}}|adult}} - {{P|Real Hunger Rate}} round 2}} nutrition per day, but will instead yield {{#expr:{{Meat Production|{{PAGENAME}}|adult}} round 2}} nutrition per day as they are slaughtered. The female gazelle would reach an optimal nutrition efficiency of {{%|{{Meat Production|{{PAGENAME}}|adult}}/{{Nutrition Consumption|{{PAGENAME}}|adult}} round 3}}.
+When considering a population of equal numbers of males and females, these nutrition efficiencies fall to {{%|{{Meat Production|{{PAGENAME}}|baby|1|1}}/{{Nutrition Consumption|{{PAGENAME}}|baby|1|1}} round 3}} for baby slaughter and {{%|{{Meat Production|{{PAGENAME}}|adult|1|1}}/{{Nutrition Consumption|{{PAGENAME}}|adult|1|1}} round 3}} for adult slaughter.
+
+Gazelles are inferior to [[ibex]]es in virtually every way, but they are a reasonable animal to farm if they are all that is available.
+
+== Training ==
+{{TrainingTable}}
+
+== Health ==
+{{Animal Health Table|QuadrupedAnimalWithHooves}}
+{{Pawn Attack Table}}
+
+== Gallery ==
+<gallery>
+Gazelle east.png|Facing east
+Gazelle north.png|Facing north
+Gazelle south.png|Facing south
+</gallery>
+<gallery>
+Dessicated gazelle east.png|Dessicated facing east
+Dessicated Gazelle north.png|Dessicated facing north
+Dessicated Gazelle south.png|Dessicated facing south
+</gallery>
+{{nav|animal}}
+[[Category:Animals]]
+[[Category:Wild animal]]

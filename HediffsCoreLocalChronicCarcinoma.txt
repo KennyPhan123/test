@@ -1,0 +1,99 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Local/Chronic}}
+|}
+----
+{| {{STDT| c_11}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Carcinoma" <!-- defName="Carcinoma", ParentName="ChronicDiseaseBase" -->
+! Carcinoma
+----
+* Def Name:<br />Carcinoma
+* Label:<br />carcinoma
+* Label Noun:<br />a carcinoma
+|<!-- Description -->
+A lump of cancerous tissue. Without treatment, the carcinoma will grow over time, causing worsening symptoms and eventually killing the patient.
+
+A skilled doctor can excise the carcinoma. An unskilled doctor may be able to simply amputate the body part which contains the carcinoma.
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|90%|100%|35%}}
+* Initial Severity: '''30%'''
+* Chronic: {{Good|true}}
+* Allow Mothball If Low Priority World Pawn: {{Good|true}}
+* Chance To Cause No Pain: '''30%'''
+* Tendable: {{Good|true}}
+* Remove On Quest Lodgers: {{Good|true}}
+* '''Remove On Redress Chance By Days Curve:'''
+<div><li style="display: inline-table;">
+{| {{STDT| c_11}}
+! Days !! Chance
+|-
+! 0
+| 0%
+|-
+! 2
+| 0%
+|-
+! 7
+| 50%
+|-
+! 20
+| 100%
+|}{{Graph:Chart|width=200|height=200|xAxisTitle=Days|yAxisTitle=Remove On Redress Chance|yAxisFormat=%|type=line|x=0, 2, 7, 20|y=0, 0, 0.5, 1|xGrid=|yGrid=}}</li></div>
+* '''Comps'''
+** ''Tend Duration''
+** Base Tend Duration Hours: '''96''' (4 Days)
+** Severity Per Day Tended: {{---|0.27%}}
+** ''Growth Mode''
+*** Severity Per Day Growing: {{++|0.3%}}
+**** Range: {{++|0.135%|n}} ~ {{++|0.495%|n}}
+**** Average: {{++|0.315%|n}}
+*** Severity Per Day Growing Random Factor: '''{{Good|×45%}} ~ {{Bad|×165%}}'''
+**** Average: {{Bad|×105%|n}}
+*** Severity Per Day Remission: {{---|0.2%}}
+**** Range: {{---|0.14%|n}} ~ {{---|0.3%|n}}
+**** Average: {{---|0.22%|n}}
+*** Severity Per Day Remission Random Factor: '''{{Bad|×70%}} ~ {{Good|×150%}}'''
+**** Average: {{Good|×110%|n}}
+|<!-- Stages -->
+{| {{STDT| c_11}}
+! Label !! Parameters
+|-
+! minor
+|<!-- Parameters -->
+* Part Efficiency Offset: {{--|10%}}
+* Pain Offset: {{++|10%}}
+|-
+! minor
+|<!-- Parameters -->
+* Min Severity: '''15%'''
+* Part Efficiency Offset: {{--|25%}}
+* Pain Offset: {{++|20%}}
+|-
+! major
+|<!-- Parameters -->
+* Min Severity: '''40%'''
+* Part Efficiency Offset: {{--|50%}}
+* Pain Offset: {{++|35%}}
+|-
+! major
+|<!-- Parameters -->
+* Min Severity: '''60%'''
+* Part Efficiency Offset: {{--|80%}}
+* Pain Offset: {{++|50%}}
+|-
+! extreme
+|<!-- Parameters -->
+* Min Severity: '''80%'''
+* Part Efficiency Offset: {{--|90%}}
+* Pain Offset: {{++|60%}}
+|-
+! extreme
+|<!-- Parameters -->
+* Min Severity: '''100%'''
+* Part Efficiency Offset: {{--|100%}}
+* Pain Offset: {{++|70%}}
+* Destroy Part: {{Bad|true}}
+|}<noinclude>
+|}</noinclude>

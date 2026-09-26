@@ -1,0 +1,42 @@
+{{Verified|1.5.4104}}{{Stat
+| min value = 0.1
+| default base value = 1
+| to string style = PercentZero
+| description = A multiplier on how fast this cleans up [[filth]] from the ground.
+| category = PawnWork
+}}
+
+== Factors ==
+{| {{STDT}}
+! [[Pawn]] !! Factor
+|-
+| [[Cleansweeper]]{{BiotechIcon}} || {{Bad|×50%}}
+|}
+
+== Stat Def Data ==
+{| {{STDT}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Cleaning Speed Multiplier" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />CleaningSpeed
+* '''Label:'''<br />cleaning speed multiplier
+| A multiplier on how fast this cleans up filth from the ground.
+|
+* Display Order:<br />'''140'''
+* Def Name:<br />'''PawnWork'''
+* Label:<br />'''Work'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Hide At Value:''' {{%|1}}
+* '''Min Value:''' {{%|0.1}}
+* '''Show Developmental Stage Filter:''' Child, Adult
+* '''Show On Player Mechanoids:''' {{Good|true}}
+* '''To String Style:''' PercentZero
+|
+* Show On Pawn Kind: '''[[Cleansweeper]]'''{{BiotechIcon}}
+| 2500
+<!--</StatDef>-->
+|}
+
+{{nav|stats|wide}}

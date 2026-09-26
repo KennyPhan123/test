@@ -1,0 +1,110 @@
+{{Infobox main|furniture
+| name = Hospital bed
+| image = Hospital bed south.png
+| description = A bed specially designed for use in hospitals. Adjustable for a patient and festooned with built-in equipment, it improves medical outcomes over normal beds.
+| type = Building
+| type2 = Furniture
+| tech level = Industrial
+| placeable = true
+| path cost = 42
+| passability = pass through only
+| cover = 0.4
+| minifiable = true
+| size = 1 ˣ 2
+| mass base = 35
+| flammability = 1
+| hp = 150
+| sell price multiplier = 0.7
+| rest effectiveness = 1
+| immunity gain speed factor = 1.11
+| medical quality offset = 0.1
+| surgery success chance factor = 1.1
+| comfort = 0.8
+| terrain affordance = light
+| facility = dresser, end table, sleep accelerator, vitals monitor
+| research = Hospital bed
+| skill 1 = Construction
+| skill 1 level = 8
+| work to make = 2800
+| stuff tags = Metallic
+| resource 1 = Stuff
+| resource 1 amount = 40
+| resource 2 = Steel
+| resource 2 amount = 80
+| resource 3 = Component
+| resource 3 amount = 5
+| has quality = True
+| room role = Bed-associated rooms
+}}
+{{Info|A '''hospital bed''' improves the quality of medical treatments and recovery from both disease and injury.}}
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+{{For|a description of mechanics shared by all sleep furniture|Sleep furniture#Mechanics{{!}}Sleep furniture mechanics}}
+{{PAGENAME}}s are a form of [[sleep furniture]]. Only one pawn can sleep on one at a time. The hospital bed functions similarly to most beds, but offers superior medical outcomes and can be linked to a [[vitals monitor]] for further bonuses.
+
+=== Rest Effectiveness ===
+[[Rest Effectiveness]] is a measure how fast a pawn will regain [[rest]]. A pawn sleeping in a bed with 125% rest effectiveness would regain rest 25% faster, and thus require 80% of the time to sleep. 
+Rest effectiveness varies by [[quality]]. Stone materials would offer less rest effectiveness, but hospital beds cannot be made out of stone.
+{{Rest Effectiveness Quality Table}}
+
+=== Comfort ===
+[[Comfort]] is a measure of how high a pawn can refill their comfort meter while using the piece of furniture. A pawn sleeping in a bed with a higher comfort value can achieve a higher level. It does not affect the rate at which comfort increases only the maximum level. Comfort levels over 100% have no additional effect.
+Comfort varies by [[quality]] but not material. Beds of the same quality level will all have the same comfort, regardless of what they're constructed from.
+An adjacent [[end table]] and a nearby [[dresser]] will each increase the base comfort by a further +0.05. This increase is applied before the quality multiplier.
+{{Comfort Quality Table}}
+
+=== Surgery Success Chance Factor ===
+The [[Surgery Success Chance Factor]] is exactly what it sounds like - a multiplier on the chance for a successful surgery assuming it is performed in this bed. The base value depends on the bed type with most beds and bedrolls having a base value of 100%, then modified by the bed's quality level. Construction material does not matter. It is improved by a linked vitals monitor. 
+
+{{Surgery Success Chance Factor Quality Table}}
+
+=== Healing ===
+A pawn resting in a {{lc:{{PAGENAME}}}} of any quality will have their [[Immunity Gain Speed]] multiplied by {{Good|x{{P|Immunity Gain Speed Factor}}}}, increased to {{Good|x{{#expr:{{P|Immunity Gain Speed Factor}} + 0.02}}}} with a linked vitals monitor, and heal an additional {{+|14}} HP from [[injury|injuries]] per day.
+
+The hospital bed also increases medical tend quality by {{+|10%}},{{Check Tag|Mechanics?|Is it an offset or % boost?}} increased to {{+|17%}} with a linked vitals monitor.
+
+== Analysis ==
+The massive increase in tend quality and surgery success chance make hospital beds a worthwhile investment. This especially applies in [[biome]]s like the [[Biomes#Tropical_rainforest|Tropical Rainforest]] or [[Biomes#Tropical_swamp|Tropical Swamp]], where [[disease]]s like [[malaria]] are much more frequent. A pawn with a high [[medical]] skill and [[herbal medicine]] can suffice for most cases early game, but a hospital bed minimizes the risk of poor tend results and allows pawns to recover quicker.
+
+As hospital beds are locked behind a 1200 point research project, as well as needing [[Research#Sterile_materials|Sterile Materials]] (600 points) and [[Microelectronics]] (3000 research points), it is not always advisable to prioritize them. If weapons or defenses are needed, get them first.
+
+=== Bed comparison ===
+When compared to a [[bed|regular bed]]: 
+
+'''Pros:'''
+* {{+|6}} HP recovered per day [[Injury#Healing_Rate|injury healing rate,]] equal to {{+|75%}} tend quality for injuries.
+* {{+|4%}} immunity gain speed 
+* {{+|10%}} medical tend quality. However, each type of [[medicine]] has its own cap on tend quality.
+* {{+|10%}} increased surgery success chance. '''Note:''' This is still subject to the hard cap of 98% success chance, and that that cap is achievable with a regular bed in the right hospital.
+* {{+|5%}} increased base comfort. However, an excellent bed with [[end table]] and [[dresser]] reaches 100% comfort, the point at which more comfort does nothing.
+: Note that an excellent hospital bed reaches 100% comfort with just a [[dresser]], meaning you don't need an end table (which could get in the way of a vitals monitor).
+
+A hospital bed's benefits are further increased by a [[vitals monitor]]. 
+
+'''Cons:''' 
+* Nearly impossible to acquire early game; requires [[Research#Hospital_bed|Hospital Bed]] research and several prerequisites.
+* Requires at least Construction level 8.
+* More expensive. Costs {{Icon Small|steel}} 80 steel & {{Icon Small|component}} 5 components more.
+** Can't be made out of wood or stone.
+** Takes 2.5x longer to construct.
+
+While a regular bed can reach all of maximum tend quality, surgery success, and base comfort, hospital beds do have advantages. In practice, they help pawns recover from both injury and disease faster, compensate for poor doctors or injured doctors, and help mitigate penalties from [[blood]] and other [[filth]] in the hospital.
+
+For general bedrooms, hospital beds are generally not worth the cost, unless the pawn is [[sickly]], [[Immunity_Gain_Speed#Age|very old]], or otherwise needs immediate access to quality care in their bedrooms. 
+
+{{Building Stats Table}}
+
+== Version history ==
+{| class="wikitable"
+! Version !! 
+|-
+| [[Version/0.19.2009|Beta 19]] || 
+* Now requires [[component|components]] to build, instead of [[medicine]].
+|}
+
+{{Nav|furniture|wide}}
+[[Category:Furniture]]
+[[Category:Sleep furniture]]

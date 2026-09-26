@@ -1,0 +1,88 @@
+{{Royalty}}{{infobox main|
+| name = Psychic harmonizer
+| image = Health item archotech.png
+| type = Medical Items
+| type2 = Body Parts
+| tech level = Archotech
+| description = This brain implant projects the user's mood in a spherical psychic field, forcing others nearby to feel a blurred, simplified version of their emotions. It can be an powerful tool to keep morale high, but if the user becomes unhappy, it can lead to collective disaster.
+| mass base = 4
+| hp = 50
+| flammability = 1.0
+| marketvalue  = 1030
+| tradeTags = ImplantEmpireRoyal
+| techHediffsTags = ImplantEmpireRoyal
+| thingSetMakerTags = ImplantEmpireRoyal
+}}
+The '''Psychic Harmonizer''' is a special psychic implant that projects the mood of the user to other pawns.
+
+==Acquisition==
+Psychic harmonizers cannot be crafted, and instead must be acquired through [[trade]] or as a [[quest]] reward.
+
+== Summary ==
+Once implanted in a pawn, the harmonizer projects a psychic effect with a radius of 30 tiles that affects nearby pawns (of the same faction) with a [[mood|moodlet]]. 
+
+This moodlet is dependent on the implantee's current mood value. It is linearly interpolated between these values:{{Check Tag|Rounding?}}
+* {{--|8}} moodlet at 0% implantee mood.
+*  '''0''' moodlet at 50% implantee mood
+* {{+|10}} moodlet at 100% implantee mood.
+
+This value is then multiplied by the [[Psychic Sensitivity]] of ''both'' the implantee and the subject of the effect. for example, if a 100% mood implantee has 200% sensitivity, they'd give +20 mood buff. If both the implantee and subject have 200% sensitivity, the subject would receive a +40 mood buff. The final value is uncapped and limited only by the maximum achievable psychic sensitivities of the pawns involved. 
+
+The effects of multiple psychic harmonizers can stack. However, if a pawn has a psychic harmonizer implant, they cannot be impacted by another psychic harmonizer.
+
+It only impacts members of the same faction. [[Slaves]]{{IdeologyIcon}} are considered to be part of their owners' faction for the purposes of the psychic harmonizer, not of their original faction. 
+=== Installation ===
+Installing the part requires {{Ticks|2500}} of work, 2x medicine of [[Herbal medicine|herbal]] quality or better, and a [[Skills#Medical|Medical skill]] of 5.
+
+Removing the part requires {{Ticks|2500}} of work, 1x medicine of [[Herbal medicine|herbal]] quality or better, and a [[Skills#Medical|Medical skill]] of 5.
+
+If the operation fails, the part will be destroyed.
+
+==Analysis==
+Psychic harmonizers can be an extremely powerful tool to keep your pawns happy, if you install it in a pawn who is easily pleased. But if the pawn gets upset, it can quickly cause a "death spiral" of mood.
+
+If used on a prisoner: the harmonizer is effective on pawns of the same faction as the prisoner. This can be used to keep other prisoners of that particular faction happy, or it can be used to reduce the mood of their faction's raiders.
+
+===Pawn Choice===
+The following aspects lend well to being a (mobile) harmonizer pawn:
+
+* Positive [[mood]] traits. [[Sanguine]] and [[Optimist]] have the most straightforward effect on the implantee's mood. Other traits like [[Body modder]], [[Masochist]], and [[Bloodlust]] also work well. Note that traits that impact [[Mental Break Threshold]], like [[Iron-willed]] and [[Nervous]], have 0 impact on the harmonizer. 
+* High mood in general: [[Joywire]]s and [[Bliss lobotomy|Bliss lobotomies]]{{AnomalyIcon}} provide a {{+|30}} and {{+|20}} mood boost respectively, or a {{+|50}} mood boost together. If a pawn is happy all day, they are a good candidate.
+* Pawns that have the [[Happy]]{{BiotechIcon}} or [[Very happy]]{{BiotechIcon}} genes, which give {{+|5}} and {{+|10}} mood, respectively.
+* Pawns that have gone through a humanity break and become [[inhumanized]]{{AnomalyIcon}} gain a {{+|8}} mood boost.
+* High [[Psychic Sensitivity]]. The mood effect scales with the implanted pawn's sensitivity, so assuming you can keep the pawn consistently happy, a higher sensitivity is better. High sensitivity also means a greater effect from a [[psychic drone]], so be very careful with this. [[Eltex]] gear and [[psychic foil helmet]]s can be used to modify psychic sensitivity as needed.
+* Pawns that will naturally be near other pawns. For example, a [[psycast]]er can meditate all day (which also counts as [[Recreation]]) in 1 place, a passionate crafter can sit in a chair all day, gaining mood from the passion and the [[comfort]] of their chair, and a genetically happy, joywired, inhuman, lobotomized, limbless torso can keep other patients happy in your hospital.
+* "Disposable" pawns. [[Drug]]s, [[joywire]]s may slow the work of a hauler, but do you really need that extra work speed?
+
+Unconscious pawns are especially good with a harmonizer, though with the downside of being unable to move. See below for details.
+
+===Comatose pawns===
+A pawn's mood does not change when unconscious. If you can stack mood to 100%, then make a pawn comatose, you'll end up with a permanent {{+|10}} moodlet in the area (so long as the pawn is fed). Because the pawn is unconscious, even a [[psychic drone]] won't bother them, meaning you can stack Psychic Sensitivity as much as you want. Simply being [[downed]] due to [[Moving]] is not enough. The following methods can achieve this:
+
+* [[Deathrest]]:{{BiotechIcon}}  A pawn with the [[Deathrest]] gene can willingly enter deathrest, where mood is frozen, at any time. They can stay deathresting indefinitely and do not need any resources. They can also be woken on command. 
+
+* Brain damage: The goal is to get Consciousness below 30% (but above 0%). You can use an already comatose pawn, but if needed, the fastest way to cause brain damage is to fail to install a brain implant (like a [[painstopper]]). If further Consciousness reduction is needed, you can use a [[joywire]] (-20%) and [[circadian half-cycler]] (-15%). Certain [[psychic rituals]]{{AnomalyIcon}} can also be used to deliberately induce brain damage on targets, though you will need to repeat them multiple times to get from 100% consciousness down to 30% using psychic rituals alone. Also note that psychic rituals induce a {{Bad|-18}} moodlet on targets, which will get in the way of keeping them at 100% mood until they are in a coma.
+
+If you need to make the pawn conscious again, then either [[go-juice]] or [[wake-up]] can be used for a Consciousness boost
+ 
+Regardless of method, your patient should have the highest mood and highest Psychic Sensitivity as possible. Using some combination of [[yayo]], [[flake]], [[psychite tea]], [[beer]], [[lavish meal]]s, and [[fine meal]]s should get all but the most devastated pawns to 100% mood (assuming they can take drugs at all).
+
+=== Defensive use against Enemy Raids ===
+[[File:Psychic_Harmonizer_Defense.png|400px|right]]
+Always remember that installed harmonizers only affect pawns of the same faction, and that a psychic sensitivity of >0 is essential for both the prisoner and raider.
+* Ensure the prisoner is as unhappy as possible; use [[mindscrew]]s, feed them [[kibble]], and do whatever else you can to unappease their ideological requirements ([[Ideology DLC]]).
+* Build a long corridor/maze to maximize the time enemy raiders spend in the influence zone of the harmonizers. The spacing of prison cells will depend on the width of your corridor; for a 5-tile wide corridor, a spacing of 25-tiles between cells is optimal. Building the corridor underneath overhead mountain is ideal to stop drop pods from skipping the corridor.
+* It's advisable to make the prison cells at least 3-tiles in area so as to fit a sleeping spot, and a heater or cooler. Again, refer to the prisoners' ideologies when creating the worst possible cell for them.
+* It's also strongly recommended that you remove all prisoners' legs to prevent them from having mental breaks and escape attempts.
+
+A single prisoner at 0 mood, with a psychic sensitivity of 125%, will cause -14 mood in a raider with 100% psychic sensitivity. This will stack by adding more prisoners within the harmonizers' range, but remember that harmonized prisoners cannot be affected by the harmonizers of other prisoners. By pairing this with other negative moodlets (or simply using enough prisoners), it is possible to make a raiding party go berserk and attack each other until they flee or give up. The longer the corridor, the more chance they will break before reaching your colonists.
+
+This strategy is expensive to set up, but requires only kibble (and potentially power/wood for temperature control in prison cells) to maintain. 
+Eventually the prisoners will die of natural causes and need to replaced, so be sure to harvest their installed implants before they die.
+
+This will not be effective against sieges unless you can force them to attack.
+
+Above is an example image (the plans in the image show the 25-tile spacing for the corridor width of 5-tiles) of an optimized corridor of psychically-harmonic deterrence, made for 1 specific enemy faction:
+
+{{nav|body parts|wide}}
+[[Category:Medical Item]] [[Category:Body Part]] [[Category:Implant]]

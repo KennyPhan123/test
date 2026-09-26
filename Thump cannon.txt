@@ -1,0 +1,71 @@
+{{Infobox main|weapon
+| name = Thump cannon
+| image = ThumpCannon.png
+| description = A breaching explosive launcher used by mechanoids. It fires a concussion bomb that is extremely effective against walls and structures, but does much less damage to small targets.
+| type = Equipment
+| type2 = Weapons
+| tech level = Spacer
+| mass base = 20
+| class = Mechanoid
+| damage = 9
+| damage type = Thump
+| armorPenetration = 13
+| range = 24.9
+| accuracyTouch = 80
+| accuracyShort = 87
+| accuracyMedium = 77
+| accuracyLong = 64
+| mode = Single-Shot
+| missRadius = 1.9
+| blastRadius = 1.1
+| warmup = 60
+| cooldown = 240
+| velocity = 50
+| marketvalue = 1400
+| DPS = DPS
+| stoppingPower = 3
+| meleeattack1dmg = 9
+| meleeattack1type = blunt
+| meleeattack1part = Barrel
+| meleeattack1cool = 2.6
+| meleeattack1ap = 13
+| meleeattack2dmg = 9
+| meleeattack2type = Poke
+| meleeattack2part = Barrel
+| meleeattack2cool = 2.6
+| meleeattack2ap = 13
+| has quality = False
+| weaponTags = MechanoidGunBreach
+| thingSetMakerTags = 
+| tradeability = None
+| page verified for version = 1.3.3066
+}}
+The '''thump cannon''' is a [[mechanoid]]-only weapon equipped on [[termite]]s with a low base damage rating but with exceptional damage multipliers against buildings.
+
+This weapon cannot be independently obtained in normal play. It is provided here for comparisons sake.
+
+== Acquisition ==
+Thump cannons spawn on all [[termite]]s. However, it is not possible to obtain it directly in normal play. Pawns carrying it will not drop it on [[death]], [[downing]], or complete loss of [[manipulation]] like other weapons. It can be spawned in by the [[Development mode#Debug actions menu|Debug actions menu]] but, like all [[unobtainable items|unobtainable weapons]], will disappear after being dropped.
+
+== Summary ==
+Thump cannons do [[damage types#Thump|Thump damage]] which has a 15x damage multiplier to impassable buildings, 7.5x multiplier to passable buildings, a 4x multiplier against plants. Furthermore, walls and natural rock walls have a further 2x multiplier when taking Thump damage resulting in a 30x multiplier. Thus, for base damage before [[quality]] modifiers, the thump cannon deals:
+* [[Pawns]]: {{#expr: {{P|Damage Base}}}}
+* Impassable [[buildings]]: {{#expr: {{P|Damage Base}}*15}}
+* Passable buildings: {{#expr: {{P|Damage Base}}*7.5}}
+* [[Plants]]: {{#expr: {{P|Damage Base}}*4}}
+* [[Walls]] & natural rock walls: {{#expr: {{P|Damage Base}}*30}}
+
+For the purposes of [[Apparel#Protection|armor calculation]], thump cannons are considered Sharp damage.
+
+== Analysis ==
+Due to Thump damage's multipliers, thump cannon are only moderately damaging to living targets but do massive damage to buildings and walls. A single shot can destroy 3-tile wide stretch of wood wall, and three can breach any wall short of [[plasteel]]. The thump cannon can down unarmored pawns in five hits on average, and most often kill from brain damage.
+
+{{Weapon Stats Table}}
+
+== Version history ==
+* [[Version/1.3.3066|1.3.3066]] - Added
+* [[Version/1.3.3200|1.3.3200]] - Reduced range from 25.9 to 24.9. [[Damage types#Thump|Thump damage]] multiplier versus [[wall]]s reduced from 4x to 2x.
+
+{{Nav|weapon|wide}}
+[[Category:Weapons]] [[Category:Mechanoid Weapons]]
+[[Category:Unobtainable items]]

@@ -1,0 +1,77 @@
+{{Project|Psyfocus}}
+{{Infobox main|furniture
+| name = Wall torch lamp
+| image = Wall torch lamp.png
+| description = A wall-mounted wooden torch for lighting an area. It is not as bright as a regular torch lamp, but it can be mounted on walls. Produces a small amount of heat.
+| type = Building
+| type2 = Furniture
+| edifice = false
+| placeable = true
+| path cost = 0
+| passability = standable
+| cover = 0.15
+| minifiable = false
+| size = 1 ˣ 1
+| flammability = 0
+| hp = 50
+| glowradius = 9
+| glowcolor = (184,136,83)
+| heatpersecond = 3.5
+| maxheattemperature = 23
+| terrain affordance = light
+| styledominance = 5
+| work to make = 100
+| resource 1 = Wood
+| resource 1 amount = 15
+| deconstruct yield = nothing
+| destroyyield = nothing
+| fuel filter = Wood
+| fuel capacity = 15.0
+| fuel consumption rate = 2.0
+| initial fuel percent = 1 <!-- 100% -->
+| fuel consumption per tick in rain = 0.0006
+}}
+The '''wall torch lamp''' is wall-mounted piece of [[furniture]] that burns [[wood]] to light an area, while also generating a small amount of [[Temperature|heat]]. It is a wall-mounted equivalent to the [[torch lamp]], providing less light in return for not taking up a tile. 
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+[[File:Wall torch lamp illumination area.png|300px|thumb|left|The white area (4-5 tiles out) is 50% illumination, required for best [[Surgery Success Chance Factor|surgery success chance]]; the yellow (5th or 6th tile) represents 30% or better, adequate for all general labor, avoiding [[mood]] penalties, and for growing [[Decorative Plants|decorative plants]] indoors in [[plant pot]]s.]]
+A wall torch lamp outputs [[light]] in a 9-tile radius, with the nearest {{P|Light Radius}} tiles being above 50% light level and considered lit. It heats the room to a maximum [[temperature]] of {{Temperature|{{P|Max Heat Temperature}} }} at a rate of {{P|Heat Per Second}} heat per second.{{Check Tag|Exact mechanic unclear|Provides comparison with other heat sources but doesn't explain how much it actually heats}}
+
+The lit wall torch lamp consumes {{Icon Small|wood}} {{P|Fuel Consumption Rate}} [[wood]] per day, and consumes an additional {{Icon Small|wood}} 0.0006 wood per {{Ticks|1}}, or a total of {{Icon Small|wood}} {{#expr: 10+ (0.0006*60000)}} wood per day, if it is lit while unroofed in the [[Weather|rain or snow]]. It can hold up to {{Icon Small|wood}} {{P|Fuel Capacity}} wood at a time, for a maximum run time of {{#expr:{{P|Fuel Capacity}}/{{P|Fuel Consumption Rate}}}} days or {{#expr: 24 * ({{P|Fuel Capacity}}/({{P|Fuel Consumption Rate}}+ (0.0006*60000))) round 2}} in-game hours in the rain. It is constructed with a full fuel capacity. Fuel is delivered to the torch lamp by a [[Work#Haul|haulers]] as long as refueling is enabled. It cannot be "turned off" or paused, only deconstructed, in which case ''no wood'' is recovered, regardless of any "fuel" remaining.
+
+{{Wall Mount Note}}
+
+== Analysis ==
+Compared to regular [[torch lamp]]s, wall torch lamps do not take up space, but have a smaller light radius. This makes wall torch lamps appropriate for smaller rooms and regular torch lamps better when placed in the middle of a larger room. Both variants have identical fuel consumption, and identical work to make, but wall torch lamps take less wood to make and can store less wood at a time.
+
+== Styles ==
+{{Ideology|section=1}}
+{{Image wanted|section=1|reason=Cleaner images including unlit states. Will need to be [[Modding Tutorials/Assets#AssetStudio|extracted]]}}
+[[Ideoligion]]s allow the selection of styles which then change the texture of the certain items and buildings when constructed by the colony. These style variants can be crafted if the colony has the selected style, or can be looted from raiders from factions with the requisite style.
+
+<gallery>
+Wall_torch_lamp_standard.png|Base Variant
+Wall torch lamp morbid.png|Morbid Variant
+Wall torch lamp totemic.png|Totemic Variant
+Wall torch lamp spikecore.png|Spikecore Variant
+Wall torch lamp rustic.png|Rustic Variant
+</gallery>
+
+<!--
+<gallery>
+Torch lamp unlit.png|Base Variant Unlit
+Morbid torch lamp unlit.png|Morbid Variant Unlit
+Totemic torch lamp unlit.png|Totemic Variant Unlit
+Spikecore torch lamp unlit.png|Spikecore Variant Unlit
+Rustic torch lamp unlit.png|Rustic Variant Unlit
+</gallery>
+-->
+
+== Version history ==
+* [[Version/1.5.4062|1.5.4062]] - Added.
+
+{{Nav|furniture|wide}}
+[[Category:Furniture]] [[Category:Lamp]]

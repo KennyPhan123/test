@@ -1,0 +1,154 @@
+{{infobox main|building|
+| name = Solar generator
+| image = Solar generator.png
+| description = Produces electricity from sunlight. Does not work in the dark or under artificial light.
+| type = Building
+| type2 = Power
+| placeable = true
+| path cost = 50
+| passability = pass through only
+| blockswind = false
+| cover = 0.5
+| minifiable = false
+| size = 4 ˣ 4
+| flammability = 0.7
+| hp = 300
+| power = 1700
+| terrain affordance = medium
+| research = solar panel
+| skill 1 = Construction
+| skill 1 level = 6
+| work to make = 2500
+| resource 1 = Steel
+| resource 1 amount = 100
+| resource 2 = Component
+| resource 2 amount = 3
+}}
+A '''solar generator''' is [[building]] that generates [[power]] from sunlight.
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+{{stub|section=1|reason=Need analysis of how latitude affects power generation and graph of daily light cycle}}
+Solar generators produce up to 1700 W of [[power]] at 100% natural [[light]]. Power is a direct product of light level; for example, 50% daylight gives 850 W. An [[eclipse]] blocks the sun, but [[weather]] conditions like rain, fog, or snow will ''not'' reduce any power. A [[roof]] reduces power output, proportional to the tiles covered. However, there's no "overshadow" from mountains, despite any graphics of long shadows seen in the game.
+
+Solar generators only operate by the world light level; light from ordinary sources such as a [[standing lamp]] or [[sun lamp]] will not cause them to generate power. The latitude of your starting position will affect solar cycles, with equator zones giving the strong consistent output and the north pole struggling to reach peak output.
+
+Lightning striking causes the generator to create a small amount of power.
+
+Generators are temporarily disabled by sources of [[EMP]], with downtime scaling to the EMP damage dealt.{{Check Tag|Verify}} During this time, it will not generate any power. Unlike mechanoids, generators do not adapt to EMP and thus can be continuously restunned.
+
+== Analysis ==
+Solar generators are "free" energy; once built, they do not need fueling, they simply give and keep giving... while they have sunshine. They do not give their maximum power from start to finish; as daylight grows, the power they provide slowly grows to their full capacity, and then tapers off again back to zero as dusk and night approach. 
+
+The exact amount of sun depends on your latitude and season. See [[Sunlight]] for details. In a single day near the equator, there are roughly:
+*9 hours of full sunlight - from 8h to 17h
+*8 hours of no sunlight - from 20h to 4h.
+*7 hours of reduced sunlight - from 4h to 8h, and 17h to 20h.
+
+[[Batteries]] are the easiest way to make power consistent, allowing power use at night, so long as an [[eclipse]] or [[short circuit]] doesn't happen. 
+
+Alternatively, you can accept that not all items need to be powered 24/7. Most production benches are only used when colonists are awake, and many buildings like [[Electric smelter|smelters]] and [[Electric crematorium|crematorium]]s don't need to be used daily. The most pertinent case is with [[sun lamp]]s, which shuts down as night begins. Two solar generators will roughly power a sun lamp. However, the solar generator's full output doesn't always align with the sun lamp's on period, so batteries remain helpful.
+
+===Comparison===
+Compared to [[wind turbine]]s, solar generators take up less space (so are easier to protect) and provide fairly consistent power. While wind works day and night, even with a [[battery]], power may turn off randomly at a crucial moment. However, using solar requires research, and they consistently shut off at night, or during an [[eclipse]].
+
+It is worth noting that solar generators are low-lying - you can place them in front of a wind turbine, without blocking the wind.
+
+=== Minimum daily average output ===
+This table lists the daily energy output of a solar panel in clear weather on the shortest day of the year, which is Aprimay 1 in the northern hemisphere and Septober 1 in the southern hemisphere. A solar panel will produce at least this much energy each day, assuming clear weather. This can be used to compare solar panels to other power sources, or to decide how many solar panels you need to meet demand.
+
+{| class="mw-collapsible mw-collapsed wikitable"
+! Latitude !! Output (Wd)&nbsp;
+|-
+| 90°S || 325.0
+|-
+| 85°S || 325.3
+|-
+| 80°S || 340.2
+|-
+| 75°S || 392.1
+|-
+| 70°S || 450.9
+|-
+| 65°S || 510.9
+|-
+| 60°S || 570.1
+|-
+| 55°S || 658.8
+|-
+| 50°S || 721.9
+|-
+| 45°S || 766.0
+|-
+| 40°S || 801.3
+|-
+| 35°S || 831.3
+|-
+| 30°S || 857.8
+|-
+| 25°S || 882.0
+|-
+| 20°S || 904.9
+|-
+| 15°S || 927.0
+|-
+| 10°S || 949.0
+|-
+| 5°S || 971.3
+|-
+| 0° || 994.4
+|-
+| 5°N || 971.3
+|-
+| 10°N || 949.0
+|-
+| 15°N || 927.1
+|-
+| 20°N || 905.1
+|-
+| 25°N || 882.3
+|-
+| 30°N || 858.1
+|-
+| 35°N || 831.7
+|-
+| 40°N || 801.8
+|-
+| 45°N || 766.6
+|-
+| 50°N || 722.7
+|-
+| 55°N || 660.0
+|-
+| 60°N || 571.3
+|-
+| 65°N || 512.2
+|-
+| 70°N || 452.4
+|-
+| 75°N || 0.0
+|-
+| 80°N || 0.0
+|-
+| 85°N || 0.0
+|-
+| 90°N || 0.0
+|}
+
+{| class="wikitable"
+! Solar power on the shortest day of the year
+|-
+| {{Graph:Chart|width=400|height=200|xAxisTitle=Latitude (degrees)|yAxisTitle=Output (Wd)|xAxisMin=-90|xAxisMax=90|type=line
+  |x=-90,-85,-80,-75,-70,-65,-60,-55,-50,-45,-40,-35,-30,-25,-20,-15,-10,-5,0,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90
+  |y=325,325.3,340.2,392.1,450.9,510.9,570.1,658.8,721.9,766,801.3,831.3,857.8,882,904.9,927,949,971.3,994.4,971.3,949,927.1,905.1,882.3,858.1,831.7,801.8,766.6,722.7,660,571.3,512.2,452.4,0,0,0,0}}
+|}
+
+== Version history ==
+<gallery>
+SolarCollector.png|Original sprite
+</gallery>
+
+{{nav|power|wide}}
+[[Category:Power]]

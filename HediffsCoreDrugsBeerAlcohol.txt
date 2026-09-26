@@ -1,0 +1,74 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Drugs/Beer}}
+|}
+----
+{| {{STDT| c_24}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Alcohol" <!-- defName="AlcoholHigh" -->
+! Alcohol
+----
+* Def Name: AlcoholHigh
+* Label: alcohol
+* Label Noun: drunkenness
+| Alcohol in the bloodstream. It makes people happy, but reduces capacities.
+|<!-- Details -->
+* Hediff Class: '''Hediff_Alcohol'''
+* Default Label Color: {{Color|100%|0%|50%}}
+* Scenario Can Add: {{Good|true}}
+* Is Bad: {{Good|false}}
+* '''Comps'''
+** '''Effecter'''
+*** State Effecter: '''Drunk'''
+*** Severity Indices: '''3~5'''
+** '''Severity Per Day:''' {{--|75%}}
+*** Show Hours To Recover: {{Good|true}}
+|<!-- Stages -->
+{| {{STDT| c_24}}
+! Label !! Parameters
+|-
+! Warm
+|<!-- Parameters -->
+* Pain Factor: {{Good|×90%}}
+* Social Fight Chance Factor: {{Bad|×150%}}
+* [[Manipulation]] Offset: {{--|2%}}
+|-
+! Tipsy
+|<!-- Parameters -->
+* Min Severity: '''25%'''
+* Pain Factor: {{Good|×80%}}
+* Social Fight Chance Factor: {{Bad|×250%}}
+* [[Consciousness]] Post Factor: {{Bad|×90%}}
+* [[Moving]] Offset: {{--|5%}}
+|-
+! Drunk
+|<!-- Parameters -->
+* Min Severity: '''40%'''
+* Pain Factor: {{Good|×50%}}
+* Social Fight Chance Factor: {{Bad|×400%}}
+* Vomit {{MTB}} Days: '''0.75'''
+* Tale: '''Drunk'''
+* [[Consciousness]] Post Factor: {{Bad|×65%}}
+* [[Moving]] Offset: {{--|10%}}
+|-
+! Hammered
+|<!-- Parameters -->
+* Min Severity: '''70%'''
+* Pain Factor: {{Good|×30%}}
+* Social Fight Chance Factor: {{Bad|×500%}}
+* Vomit {{MTB}} Days: '''0.2'''
+* Pain Offset: {{++|5%}}
+* [[Consciousness]] Post Factor: {{Bad|×50%}}
+* [[Moving]] Offset: {{--|10%}}
+|-
+! Blackout
+|<!-- Parameters -->
+* Min Severity: '''90%'''
+* Pain Factor: {{Good|×10%}}
+* [[Consciousness]] Max: {{Bad|10%}}
+* '''Hediff Givers:''' '''Random'''
+** Hediff: '''[[Hediffs#Moderate chemical damage|Moderate chemical damage]]'''
+** {{MTB}} Days: '''10'''
+** Parts To Affect: '''Brain'''
+|}<noinclude>
+|}</noinclude>

@@ -1,0 +1,70 @@
+{{Biotech}}
+{{Stub|reason=1) Two-way links}}
+{{See also|Mech Repair Speed}}
+{{Verified|1.5.4104}}{{Stat
+| def name = MechRemoteRepairDistance
+| label = mech remote repair distance
+| description = How far away a [[mech]] can be during [[Remote repairer|remote repair]].
+| default base value = 0
+| min value = 0
+| effective maximum = 19.9
+| show if undefined = false
+| show on animals = false
+| show on humanlikes = true
+| show on mechanoids = false
+| category = Mechanitor
+| display priority in category = 2000
+| worker class = StatWorker_Mechanitor
+}}
+
+== Offsets ==
+* [[Hediffs]]
+** [[Hediffs#Remote repairer|Remote repairer]]<ref>See {{Icon Small|Remote repairer|24}} [[Remote repairer]] (Item)</ref>:
+<div><li style="display: inline-table;">
+{| {{STDT| c_18}}
+! Level !! Offset
+|-
+! 1
+| {{+|7.9}}
+|-
+! 2
+| {{+|13.9}}
+|-
+! 3
+| {{+|19.9}}
+|}</li></div>
+<references />
+
+== Explanation ==
+This stat is only shown on mechanitors (i.e. they have an installed [[mechlink]]). Furthermore, it is only affected by the [[Remote repairer]]. The value is 0 by default and the final value is simply equal to the offset from the current level (installed count) of the ''Remote repairer''. It represents the maximum distance in cells or tiles that a pawn can use the remote repair ability on player controlled mechanoids (excluding [[War urchin]]s, which cannot be repaired). It is effectively limited to a maximum of '''{{P|Effective Maximum}}''' cells/tiles: A mechanitor with a level 3 remote repairer ({{+|19.9}}).
+
+== Stat Def Data ==
+{| {{STDT| c_18}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Mech Remote Repair Distance" <!-- ParentName="MechanitorStatBase" --><!--<StatDef>-->
+|
+* '''Def Name:'''<br />MechRemoteRepairDistance
+* '''Label:'''<br />mech remote repair distance
+| How far away a mech can be during remote repair.
+|
+* Display Order:<br />'''105'''
+* Def Name:<br />'''Mechanitor'''
+* Label:<br />'''Mechanitor'''
+* Display All By Default:<br />{{Good|true}}
+|
+* Worker Class: '''StatWorker_Mechanitor'''
+* Default Base Value: '''0'''
+* Min Value: '''0'''
+* Show On Animals: {{Bad|false}}
+* Show On Humanlikes: {{Good|true}}
+* Show On Mechanoids: {{Bad|false}}
+* '''Show If Undefined:''' {{Bad|false}}
+| -
+| 2000
+<!--</StatDef>-->
+|}
+
+== Version history ==
+* [[Biotech (DLC)]] Release - Added.
+
+{{nav|stats|wide}}

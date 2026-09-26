@@ -1,0 +1,107 @@
+{{Infobox main|weapon
+| name = EMP launcher
+| image = EMPLauncher.png
+| description = A wide-barreled EMP shell launcher. The shell will upon impact release a burst of electromagnetic energy, stunning mechanical targets (mechanoids, turrets, mortars) and depleting shields in the area of effect.
+| type = Equipment
+| type2 = Weapons
+| tech level = Industrial
+| class = Industrial
+| damage = 50
+| damage type = EMP
+| armorPenetration = 0
+| range = 23.9
+| burst = 1
+| mode = Single-Shot
+| warmup = 210
+| cooldown = 210
+| velocity = 40	
+| DPS = DPS
+| missRadius = 1.9
+| blastRadius = 1.1
+| production facility 1 = Machining table
+| research = Microelectronics
+| resource 1 = Steel
+| resource 1 amount = 75
+| resource 2 = Component
+| resource 2 amount = 8
+| marketvalue = 505
+| mass base = 3.4
+| work to make = 30000
+| work speed stat = General Labor Speed
+| meleeattack1dmg = 9
+| meleeattack1type = blunt
+| meleeattack1part = Stock
+| meleeattack1cool = 2.0
+| meleeattack1ap = 13
+| meleeattack2dmg = 9
+| meleeattack2type = blunt
+| meleeattack2part = Barrel
+| meleeattack2cool = 2.0
+| meleeattack2ap = 13
+| meleeattack3dmg = 9
+| meleeattack3type = Poke
+| meleeattack3part = Barrel
+| meleeattack3cool = 2.0
+| meleeattack3ap = 13
+| page verified for version =
+| skill 1 = Crafting
+| skill 1 level = 4
+| has quality = True
+| weaponTags = Gun, GrenadeEMP
+| tradeTags = WeaponRanged
+}}
+{{Info|The '''EMP launcher''' is a ranged [[weapon]] that fires EMP bolts that explode on impact, creating a small [[EMP]] pulse that downs shields, and stuns [[mechanoid]]s, [[mortar]]s and [[turret]]s.}}
+
+== Acquisition ==
+{{Acquisition}}
+
+EMP launchers can also be [[trade|purchased]] from orbital pirate merchants and orbital combat suppliers or [[outlander]] [[faction base]]s.
+
+== Summary ==
+{{For|a full exploration of the effects of EMP damage|EMP}}
+
+EMP launchers have a decent range of 23.9, but a very long warmup/coolown cycle. For players, it is the 2nd slowest non-consumable weapon, tied with the [[smoke launcher|other]] [[incendiary launcher|launchers]] and only faster than the [[pila]]. It also has a forced miss radius, meaning colonist health or shooting skill doesn't matter, and [[careful shooter]] is purely a detriment.
+
+EMP damage does not deal physical damage. Instead, it stuns [[turret]]s, [[mechanoid]]s, and [[mortar]]s; more damage means a longer stun time. A normal [[quality]] EMP launcher deals 50 EMP damage, for a stun of 25 seconds. After being stunned, mechanoids become "Adapted" and gain immunity against further stuns for {{Ticks|2200}}. Immunity is applied on stun, and the duration is not extended by stunning an already adapted mechanoid. EMP also disables [[shield belt]]s, causes [[brain shock]] on humanoids with brain implants, and vomiting on those with certain stomach implants.
+
+Launchers are fired like any other ranged weapon, so won't fire over walls. A circular zone will generate to indicate line of fire, then another 3x3 indicator with a circular center will become the aiming spot. Unless a wall is in the way, the blast will be within 1 tile of the intended target.
+
+Unlike [[EMP grenades]], the launcher has [[quality]], which affects stun time.
+
+== Analysis  ==
+EMP weapons in general are always useful for taking out [[mechanoid]]s and other defense structures. The small blast radius is a detriment; because it's smaller than the miss radius, it cannot reliably hit a specific tile or target. The launcher also has a very large warmup/cooldown, making it less useful on mobile targets like [[scyther]]s.
+
+=== Comparison to EMP grenades ===
+{{See also|EMP grenades}}
+The key difference between EMP grenades and launchers is the effect of quality. Unlike grenades, launchers are affected by [[quality]]; Masterwork and Legendary launchers see an increase in damage (i.e. stun duration). Legendary launchers will stun for long enough that EMP adaptation ends before the stun, making it technically possible to 100% stun lock them. In practice, it is almost impossible to get the timing perfect even before accounting for the risk of missed shots, unless you have multiple colonists with legendary launchers.
+
+The increased range of the launcher seems like a major benefit, but is less practical than it seems. Most mechanoids (''all'' mechanoids without the [[Biotech DLC]]{{BiotechIcon}}) will outrange the launcher. Range may be useful depending on the terrain and cover layout, and also helps when shutting down [[low-shield pack]]s{{RoyaltyIcon}} or [[mech low-shield|mechanoid shields]]{{RoyaltyIcon}}.
+
+Meanwhile, EMP grenades are fired much faster, giving combat flexibility and making it easier to aim at mobile targets. The larger blast radius means that they can hit more targets, and are simply more accurate, able to always hit a specific tile.
+
+Overall, excellent or lower EMP launchers see a lot less practical use than EMP grenades, relegated to tasks where range is very helpful (against certain Biotech mechanoids, when there's cover, or fighting against low-shield packs). Even legendary launchers are niche, due to the decreased blast radius.
+
+{| class="wikitable"
+! Source !! Damage !! Stun Duration !! Post-Stun Adaption Duration !! Ideal Stun Uptime
+|-
+| Awful EMP launcher                            || 45   || {{Ticks|{{#expr: 30*45 }} }}   || {{Ticks|{{#expr: 2200-(30*45)}} }}   || {{%| (30*45) / ((30*45)+(2200-(30*45))) round 4}}
+|-
+| EMP Grenades, Poor/Norm/Good/Exc EMP launcher || 50   || {{Ticks|{{#expr: 30*50 }} }}   || {{Ticks|{{#expr: 2200-(30*50)}} }}   || {{%| (30*50) / ((30*50)+(2200-(30*50))) round 4}}
+|-
+| Masterwork EMP launcher                       || 62.5 || {{Ticks|{{#expr: 30*62.5 }} }} || {{Ticks|{{#expr: 2200-(30*62.5)}} }} || {{%| (30*62.5) / ((30*62.5)+(2200-(30*62.5))) round 4}}
+|-
+| Legendary EMP launcher                        || 75   || {{Ticks|{{#expr: 30*75 }} }}   || {{Ticks|0}} (''{{Ticks|{{#expr: 2200-(30*75)}} }}'') || 100%
+|}
+
+{{Weapon Stats Table}}
+
+== Version history ==
+{{Image wanted|section=1|reason=Pre-1.5 textures}}
+* [[Version/1.1.0|1.1.0]] - Added
+* [[Version/1.2.2753|1.2.2753]] - Projectiles are now rendered with a visual arc and ground shadow.
+* [[Version/1.5.4062|1.5.4062]] - Received a new sprite.
+* [[Version/1.6.4566|1.6.4566]] - Fix: Incorrectly marked as incendiary weapons for the purpose of [[pyromaniac]]s.
+
+{{Nav|weapon|wide}}
+[[Category:Equipment]] [[Category:Weapons]] [[Category:Industrial Weapons]] [[Category:EMP Weapons]]
+[[Category:Ranged Weapons]] [[Category:Single-Shot Weapons]] [[Category:Launchers]]

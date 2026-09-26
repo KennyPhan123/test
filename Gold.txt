@@ -1,0 +1,126 @@
+{{Infobox main|metallic
+| name = Gold
+| image = Gold c.png
+| description = The most seductive metal of them all. While it is too soft to be of much practical use, it is strikingly beautiful and never tarnishes. Millions have died in attempting to feed the endless human thirst for gold.
+<!-- Base Stats -->
+| type = Material
+| type2 = Metal
+| stuff category = Metallic
+| marketvalue = 10
+| beauty = -4
+| mass base = 0.008
+| stack limit = 500
+| path cost = 14
+| rotatable = false
+| terrain affordance = Medium
+<!-- Stat Modifiers -->
+| beauty factor = 4
+| beauty offset = 20
+| work to make factor = 0.9
+| work to build factor = 0.9
+| max hit points factor = 0.6
+| flammability factor = 0.4
+| armor - sharp factor = 0.72
+| armor - blunt factor = 0.36
+| armor - heat factor = 0.36
+| insulation - cold factor = 3
+| insulation - heat factor = 0
+| melee blunt damage factor = 1.0
+| melee sharp damage factor = 0.75
+| melee cooldown factor = 1
+| door opening speed factor = 1
+| rest effectiveness factor = 1
+<!-- Technical -->
+| defName = Gold
+| stuff adjective = golden
+<!-- Unused -->
+| always haulable = true
+| color = (255,235,122)
+| construct effect = ConstructMetal
+| draw gui overlay = true
+| graphic class = Graphic_Single
+| graphic path = Things/Item/Resource/Gold
+| label = gold
+| parent name = ResourceBase
+| resource readout priority = Middle
+| selectable = true
+| small volume = true
+| sound drop = Silver_Drop
+| sound impact stuff = BulletImpactMetal
+| sound interact = Silver_Drop
+| sound melee hit blunt = MeleeHit_Metal_Blunt
+| sound melee hit sharp = MeleeHit_Metal_Sharp
+| thing class = ThingWithComps
+| use hit points = false
+| volume = 0.1
+}}{{Info|'''Gold''' is a very [[Beauty|beautiful]] and valuable resource.}}  Too soft (and valuable) for simple weaponry, it is prized for both art and electronics.
+
+Gold is necessary to build items needed for tech progression, such as the [[multi-analyzer]], [[advanced component]]s, and various parts of the [[ship]]. 
+
+== Acquisition ==
+Most traders will have some gold for sale, as will all settlements.  Gold is sometimes found on the bodies of [[raider]]s, as well as the Ancients found in random [[cryptosleep casket]]s.  Gold can rarely be found from mining [[Mine|gold veins]] or drilling with [[deep drill]]s.
+
+{{Transmute Steel Acquisition Note}}
+
+==== Ore ====
+[[File:Gold_ore.png|frameless|left|Gold ore in game]]
+
+'''Gold ore''' tiles have 1,500 health each, making them one of the faster ores to mine. They can be found in smaller veins, ranging from 2 to 8 tiles in size. Each mined block has a base yield of 40 gold, however this is modified by factors such as the [[Difficulty]] setting and the [[Mining_Yield|mining yield]] of the pawn.
+
+== Usage ==
+Gold can be used as a material for [[stuff]]able items with the [[Metallic]] stuff tag, however as a [[small volume material]] (SVM), you need x10 the gold as you would non-SVM materials.
+
+Gold can be used in the following recipes:
+{{Ingredient List}}
+
+=== Honor ===
+{{Royalty|section=1}}
+Gold can also be sold to [[royal tribute collector]]s for [[honor]]. Collectors will arrive roughly twice a year, so long as you are not hostile to the [[empire]]. Gold is sold at a rate of 200 gold : 3 honor, or 0.015 honor per gold.
+
+{| class="wikitable"
+! Gold Spent !! Honor || Equiv. Market Value
+|-
+! {{Icon Small|gold}} 67 
+| 1 || {{#expr: {{Q|Gold|Market Value Base}}*67}}
+|-
+! {{Icon Small|gold}} 134 
+| 2 || {{#expr: {{Q|Gold|Market Value Base}}*134}}
+|-
+! {{Icon Small|gold}} 200 
+| 3 || {{#expr: {{Q|Gold|Market Value Base}}*200}}
+|}
+
+== Analysis ==
+A small amount of gold is necessary for creating the [[multi-analyzer]] ({{Icon Small|gold}} 20), and later on, [[advanced component]]s ({{Icon Small|gold}} 3 per unit). You can plan ahead by grabbing a small stockpile of gold before you have the research to make these buildings.
+
+Gold also has its uses for the [[Royalty DLC]]. It is required to build the [[royal bed]]s and [[grand meditation throne]]s{{RoyaltyIcon}} demanded from the highest class [[noble]]s, or it can be sold for [[honor]].
+
+=== As beautiful furniture ===
+Other than the items that gold is required to craft, it is best used on the following items:
+
+* Golden [[sculptures]] are among the most beautiful and valuable items in the game. They are the best gold item to sell, due to the [[quality]] multiplier and art's further x1.1 [[Sell Price Multiplier]]. (If lacking a good artist, then other items may be preferred for selling.) 
+* Golden [[fence]]s have {{+|20}} beauty per {{Icon Small|gold}} 10 fence, due to gold's ''beauty offset''.  50 gold fences would give {{+|1000}} beauty, while a normal quality gold sculpture takes equivalent gold for {{+|220}} beauty. Only a masterwork or legendary sculpture can beat fences for beauty/gold. However, 50 fences take 50 tiles of space, and for the purposes of pawn beauty need, the pawn most likely won't be looking at most of the fences; sculptures are much more space efficient.
+* [[Gold tile]]s are less efficient in beauty / gold than sculptures, but have logistic advantages: they cannot be destroyed by [[raider]]s and do not take up building space.
+However, gold is not a very practical material to use. See below for details.
+
+=== Comparison to other materials ===
+While gold is the most beautiful material, selling gold and using [[silver]] to create furniture or tile is a more efficient use of resources. Even with 0% [[Trade Price Improvement]], 1 gold can be sold for 6 silver, or 4.8 silver in [[difficulty|Losing is Fun]]. The gold : silver ratio can be further improved by better negotiators and by processing gold into sculptures and selling them.
+
+At normal [[quality]], a gold [[small sculpture]] would give {{+|220}} beauty. The required {{Icon Small|Gold}} 500 gold could instead be sold for, at the very minimum, {{Icon Small|silver}} 2400 silver. This is enough for 2 silver [[large sculpture]]s, which gives {{+|412}} beauty with the same quality. While the silver sculptures would take double the space and four times the work, the material benefit outweighs the downside.
+
+This can be further improved by using [[jade]] instead of silver if jade can be bought. {{Icon Small|silver}} 2400 silver can be used to buy a minimum of {{Icon Small|Jade}} 286 [[jade]], which can be processed into two jade large sculptures for {{+|560}} beauty. [[Wood]] and [[stone blocks]] are even cheaper but less space efficient than silver/jade.
+
+Therefore, gold is inefficient in most circumstances. The following cases can make gold buildings worthwhile:
+* The colony has reached the endgame, where resources and [[wealth]] don't matter. In this case, gold is superior as it has more beauty per tile.
+* An artist or constructor has [[inspired creativity]], as 1 gold sculpture is equivalent to 2 silver sculptures or 4 wood sculptures.
+* [[Transmute steel]]{{AnomalyIcon}} is used on a [[steel]] building or sculpture, as if the target is turned into gold, then 1 steel is effectively converted into 10 gold.
+
+== Gallery ==
+<gallery>
+Gold a.png|One gold
+Gold b.png|Partial stack
+Gold c.png|Full stack
+</gallery>
+
+{{Nav|materials|wide}}
+[[Category:Material]] [[Category:Metal]]

@@ -1,0 +1,36 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Anomaly/Global/Misc}}
+|}
+----
+{| {{STDT| c_21}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Rage speed" <!-- defName="RageSpeed" -->
+! [[Chimera|Rage speed]]
+----
+* Def Name:<br />RageSpeed
+* Label:<br />rage speed
+|<!-- Description -->
+<div style="max-width: 200px;">
+This creature has been enraged by its wounds and is moving faster.
+</div>
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Is Bad: {{Good|false}}
+* '''Comps'''
+** ''Effecter''
+*** State Effecter: '''RageSpeedState'''
+** ''Disappears''
+*** Disappears After Ticks: '''{{Ticks/gametime/hours|3600}}'''
+*** Show Remaining Time: {{Good|true}}
+|<!-- Stages -->
+{| {{STDT| c_21}}
+! Label !! Parameters
+|-
+! Rage speed
+|<!-- Parameters -->
+* Pain Factor: {{Good|×0%}}
+* [[Move Speed]] Factor: {{Good|×175%}}
+* [[Stagger Time Multiplier]] Factor: {{Good|×0%}}
+|}<noinclude>
+|}</noinclude>

@@ -1,0 +1,145 @@
+{{Biotech}}
+{{Stub|reason=1) Two-way links 2) Do StatDefs inherit attributes? (i.e. MayRequireAnyOf="Ludeon.RimWorld.Biotech,Ludeon.RimWorld.Anomaly" from MechStatBase)}}
+{{Verified|1.5.4104}}{{Stat
+| min value = 0
+| default base value = 5
+| description = How many [[toxic wastepack]]s this [[mechanoid]] will generate at a [[mech recharger]] when going from 0 to 100% energy. Larger mechanoids will generally create more toxic wastepacks.
+| category = Mechanoid
+}}
+
+== Calculating Wastepacks Per Recharge ==
+All Mechanoids have a base value of 5. This value is multiplied post process by a mech's '''Bandwidth Cost''' stat to produce the final value:
+
+<code>[[Wastepacks Per Recharge]] = '''Base Wastepacks Per Recharge''' × '''[[Bandwidth Cost]]'''</code>
+
+Simply put, just multiply bandwidth cost by 5.
+
+Here is a table with the final amount of toxic wastepacks produced per full charge cycle for each mechanoid:
+{| {{STDT| sortable}}
+! [[Mechanoid]] !! Wastepacks Per Recharge
+<!-- Races_Mechanoid -->
+<!--
+|-
+! Name="BaseMechanoid" (Name="BaseMechanoidWalker", Name="LightMechanoid", Name="HeavyMechanoid")
+| 5 (5*1)
+-->
+<!--
+|-
+! Name="MechCentipede"
+| 20 (5*4)
+-->
+|-
+! [[File:Centipede east.png|24x24px|Centipede blaster]] [[Centipede blaster]]
+| 20
+|-
+! [[File:CentipedeGunner east.png|24x24px|Centipede gunner]] [[Centipede gunner]]
+| 20
+|-
+! [[File:CentipedeBurner east.png|24x24px|Centipede burner]] [[Centipede burner]]
+| 20
+|-
+! [[File:MechanoidLancer.png|24x24px|Lancer]] [[Lancer]] <!-- Name="LancerMechanoidWalker" -->
+| 15
+|-
+! [[File:Scyther east.png|24x24px|Scyther]] [[Scyther]]
+| 10
+|-
+! [[File:MechanoidPikeman.png|24x24px|Pikeman]] [[Pikeman]]
+| 10
+|-
+! [[File:Termite.png|24x24px|Termite]] [[Termite]]
+| 5<ref name="NoGestation">This mech cannot be gestated by a mechanitor, so this is irrelevant</ref>
+<!-- Biotech Races_Mechanoids_Light -->
+|-
+! [[File:Militor east.png|24x24px|Militor]] [[Militor]] {{BiotechIcon}}
+| 5
+|-
+! [[File:Lifter east.png|24x24px|Lifter]] [[Lifter]] {{BiotechIcon}}
+| 5
+|-
+! [[File:Constructoid east.png|24x24px|Constructoid]] [[Constructoid]] {{BiotechIcon}}
+| 5
+|-
+! [[File:Fabricor east.png|24x24px|Fabricor]] [[Fabricor]] {{BiotechIcon}}
+| 5
+|-
+! [[File:Agrihand east.png|24x24px|Agrihand]] [[Agrihand]] {{BiotechIcon}}
+| 5
+|-
+! [[File:Cleansweeper east.png|24x24px|Cleansweeper]] [[Cleansweeper]] {{BiotechIcon}}
+| 5
+|-
+! [[File:War urchin east.png|24x24px|War urchin]] [[War urchin]] {{BiotechIcon}}
+| 5<ref name="NoRecharge">This mech cannot be recharged, so this is irrelevant</ref>
+|-
+! [[File:Paramedic east.png|24x24px|Paramedic]] [[Paramedic]] {{BiotechIcon}}
+| 5
+<!-- Biotech Races_Mechanoids_Medium -->
+|-
+! [[File:Legionary east.png|24x24px|Legionary]] [[Legionary]] {{BiotechIcon}}
+| 10
+|-
+! [[File:Tesseron east.png|24x24px|Tesseron]] [[Tesseron]] {{BiotechIcon}}
+| 15
+|-
+! [[File:Scorcher east.png|24x24px|Scorcher]] [[Scorcher]] {{BiotechIcon}}
+| 5
+<!-- Biotech Races_Mechanoids_Heavy -->
+|-
+! [[File:Tunneler Mechanoid east.png|24x24px|Tunneler]] [[Tunneler]] {{BiotechIcon}}
+| 15
+<!-- Biotech Races_Mechanoids_SuperHeavy -->
+<!--
+|-
+! Name="SuperHeavyMechanoid"
+| 25 (5*5)
+-->
+|-
+! [[File:ApocritonAncient east.png|24x24px|Apocriton]] [[Apocriton]] {{BiotechIcon}}
+| 10<ref name="NoGestation" />
+|-
+! [[File:Centurion east.png|24x24px|Centurion]] [[Centurion]] {{BiotechIcon}} <!-- Name="MechCenturion" -->
+| 25
+|-
+! [[File:Warqueen east.png|24x24px|War queen]] [[War queen]] {{BiotechIcon}} <!-- Name="MechWarqueen" -->
+| 25
+|-
+! [[File:Diabolus east.png|24x24px|Diabolus]] [[Diabolus]] {{BiotechIcon}} <!-- Name="MechDiabolus" -->
+| 25
+|}
+<references />
+
+== Stat Def Data ==
+{| {{STDT}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Wastepacks Per Recharge" <!-- ParentName="MechStatBase" --><!--<StatDef>-->
+|
+* '''Def Name:'''<br />WastepacksPerRecharge
+* '''Label:'''<br />wastepacks per recharge
+| How many toxic wastepacks this mechanoid will generate at a mech recharger when going from 0 to 100% energy. Larger mechanoids will generally create more toxic wastepacks.
+|
+* Display Order:<br />'''13'''
+* Def Name:<br />'''Mechanoid'''
+* Label:<br />'''Mechanoid'''
+* Display All By Default:<br />{{Good|true}}
+|
+* Show On Animals: {{Bad|false}}
+* Show On Humanlikes: {{Bad|false}}
+* Show On Mechanoids: {{Good|true}}
+* '''Default Base Value:''' 5
+* '''Min Value:''' 0
+* '''Show If Undefined:''' {{Bad|false}}
+|
+* '''Post Process Stat Factors:'''
+** '''[[Bandwidth Cost]]'''
+* '''Parts:'''
+** '''StatPart_Hyperlinks:'''
+*** Thing Defs: '''[[Toxic wastepack]]'''
+| 2000
+<!--</StatDef>-->
+|}
+
+== Version history ==
+* [[Biotech (DLC)]] Release - Added.
+
+{{nav|stats|wide}}

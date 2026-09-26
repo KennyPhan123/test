@@ -1,0 +1,161 @@
+<noinclude>{{Verified|1.5.4104}}
+&larr; <small>[[Stat]]</small>
+{| {{STDT|sortable}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category</noinclude>
+<!-- Core Stats_Pawns_WorkMedical -->
+<div id="Core Stats_Pawns_WorkMedical"><!--<Defs>-->
+|- id="Medical Tend Speed" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />MedicalTendSpeed
+* '''Label:'''<br />medical tend speed
+| Speed at which the character tends to wounds and illnesses.
+|
+* Display Order:<br />'''140'''
+* Def Name:<br />'''PawnWork'''
+* Label:<br />'''Work'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0.1}}
+* '''To String Style:''' PercentZero
+* '''Never Disabled:''' {{Good|true}} <!-- NPCs incapable of doctoring can self-tend -->
+* '''Scenario Randomizable:''' {{Good|true}}
+|
+* '''Stat Factors:'''
+** '''[[Global Work Speed]]'''
+* '''Skill Need Factors:'''
+** '''SkillNeed_BaseBonus:'''
+*** Skill: '''[[Medical]]'''
+*** Base Value: '''{{%|0.4}}'''
+*** Bonus Per Level: '''{{+|{{%|0.06}}}}'''
+{{Graph:Chart|width=300|height=150|xAxisTitle=Medicine Level|yAxisTitle=Medical Tend Speed|type=rect|x=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20|y=0.40, 0.46, 0.52, 0.58, 0.64, 0.70, 0.76, 0.82, 0.88, 0.94, 1.00, 1.06, 1.12, 1.18, 1.24, 1.30, 1.36, 1.42, 1.48, 1.54, 1.60|xGrid=|yGrid=}}
+* '''Capacity Factors:'''
+** Capacity: '''[[Sight]]'''
+*** Weight: '''{{%|0.8}}'''
+*** Max: '''{{%|1.3}}'''
+** Capacity: '''[[Manipulation]]'''
+*** Weight: '''{{%|1}}'''
+| 4650
+<!--</StatDef>-->
+|- id="Medical Tend Quality" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />MedicalTendQuality
+* '''Label:'''<br />medical tend quality
+| The base quality of tending given when tending wounds and illnesses.<br id="n" /><br id="n" />The actual tend quality will also be affected by factors like medicine used, facilities, luck, and so on.
+|
+* Display Order:<br />'''140'''
+* Def Name:<br />'''PawnWork'''
+* Label:<br />'''Work'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0}}
+* '''To String Style:''' PercentZero
+* '''Never Disabled:''' {{Good|true}} <!-- NPCs incapable of doctoring can self-tend -->
+|
+* '''Skill Need Factors:'''
+** '''SkillNeed_BaseBonus:'''
+*** Skill: '''[[Medical]]'''
+*** Base Value: '''{{%|0.20}}'''
+*** Bonus Per Level: '''{{+|{{%|0.10}}}}'''
+{{Graph:Chart|width=300|height=150|xAxisTitle=Medicine Level|yAxisTitle=Medical Tend Quality|type=rect|x=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20|y=0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2|xGrid=|yGrid=}}
+* '''Capacity Factors:'''
+** Capacity: '''[[Sight]]'''
+*** Weight: '''{{%|0.7}}'''
+*** Max: '''{{%|1.4}}'''
+** Capacity: '''[[Manipulation]]'''
+*** Weight: '''{{%|1}}'''
+*** Max: '''{{%|1.4}}'''
+* '''Post Process Curve:'''
+** '''Points:'''
+*** (0, 0)
+*** (1.0, 1.0)
+*** (2.0, 1.5)
+*** (4.0, 2.0)
+{{Graph:Chart|width=300|height=150|xAxisTitle=Medical Tend Quality Before Curve|yAxisTitle=Medical Tend Quality After Curve|type=line|x=0, 1.0, 2.0, 4.0|y=0, 1.0, 1.5, 2.0|interpolate=monotone|xGrid=|yGrid=}}
+| 4651
+<!--</StatDef>-->
+|- id="Medical Operation Speed" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />MedicalOperationSpeed
+* '''Label:'''<br />medical operation speed
+| The speed at which the character performs medical operations.
+|
+* Display Order:<br />'''140'''
+* Def Name:<br />'''PawnWork'''
+* Label:<br />'''Work'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0.1}}
+* '''To String Style:''' PercentZero
+|
+* '''Stat Factors:'''
+** '''[[Global Work Speed]]'''
+* '''Skill Need Factors:'''
+** '''SkillNeed_BaseBonus:'''
+*** Skill: '''[[Medical]]'''
+*** Base Value: '''{{%|0.4}}'''
+*** Bonus Per Level: '''{{+|{{%|0.06}}}}'''
+{{Graph:Chart|width=300|height=150|xAxisTitle=Medicine Level|yAxisTitle=Medical Operation Speed|type=rect|x=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20|y=0.40, 0.46, 0.52, 0.58, 0.64, 0.70, 0.76, 0.82, 0.88, 0.94, 1.00, 1.06, 1.12, 1.18, 1.24, 1.30, 1.36, 1.42, 1.48, 1.54, 1.60|xGrid=|yGrid=}}
+* '''Capacity Factors:'''
+** Capacity: '''[[Sight]]'''
+*** Weight: '''{{%|0.7}}'''
+*** Max: '''{{%|1}}'''
+** Capacity: '''[[Manipulation]]'''
+*** Weight: '''{{%|1}}'''
+| 4652
+<!--</StatDef>-->
+|- id="Medical Surgery Success Chance" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />MedicalSurgerySuccessChance
+* '''Label:'''<br />medical surgery success chance
+| The base chance that a character will succeed when performing a medical operation.<br id="n" /><br id="n" />The actual success chance is also affected by factors like facilities, room cleanliness, medicine used, the difficulty of the surgery, and inspirations.<br id="n" /><br id="n" />No matter how high this stat is, there is always a small chance of failure on any operation.
+|
+* Display Order:<br />'''140'''
+* Def Name:<br />'''PawnWork'''
+* Label:<br />'''Work'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|1.00}}
+* '''Min Value:''' {{%|0.01}}
+* '''To String Style:''' PercentZero
+* '''Scenario Randomizable:''' {{Good|true}}
+|
+* '''Skill Need Factors:'''
+** '''SkillNeed_Direct:'''
+*** Skill: '''[[Medical]]'''
+*** '''Values Per Level:'''
+**** 0.10
+**** 0.20
+**** 0.30
+**** 0.40
+**** 0.50
+**** 0.60
+**** 0.70
+**** 0.75
+**** 0.80
+**** 0.85
+**** 0.90
+**** 0.92
+**** 0.94
+**** 0.96
+**** 0.98
+**** 1.00
+**** 1.02
+**** 1.04
+**** 1.06
+**** 1.08
+**** 1.10
+{{Graph:Chart|width=300|height=150|xAxisTitle=Medicine Level|yAxisTitle=Medical Surgery Success Chance|type=rect|x=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20|y=0.10, 0.20, 0.30, 0.40, 0.50, 0.60, 0.70, 0.75, 0.80, 0.85, 0.90, 0.92, 0.94, 0.96, 0.98, 1.00, 1.02, 1.04, 1.06, 1.08, 1.10|xGrid=|yGrid=}}
+* '''Capacity Factors:'''
+** Capacity: '''[[Sight]]'''
+*** Weight: '''{{%|0.4}}'''
+*** Max: '''{{%|1}}'''
+** Capacity: '''[[Manipulation]]'''
+*** Weight: '''{{%|1}}'''
+| 4653
+<!--</StatDef>-->
+<!--</Defs>--></div>
+<noinclude>
+|}</noinclude>

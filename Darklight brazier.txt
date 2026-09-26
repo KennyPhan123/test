@@ -1,0 +1,69 @@
+{{Royalty}}
+{{Ideology}}
+{{Project|Psyfocus}}
+{{See also|Brazier}}
+{{Infobox main|furniture
+| name = Darklight brazier
+| image = Darklight brazier.png
+| description = A specially treated brazier that illuminates its surroundings with darklight and creates heat. These satisfy royal brazier requirements.
+| type = Building
+| type2 = Furniture
+| placeable = true
+| path cost = 42
+| passability = pass through only
+| cover = 0.15
+| minifiable = true
+| size = 1 ˣ 1
+| mass base = 15
+| flammability = 0
+| hp = 80
+| sell price multiplier = 0.7
+| glowradius = 10
+| glowcolor = (78, 226, 229)
+| heatpersecond = 3.5
+| maxheattemperature = 23
+| terrain affordance = light
+| research = Complex furniture
+| thingCategories = BuildingsFurniture
+| work to make = 1000
+| stuff tags = Metallic, Stony
+| resource 1 = Stuff
+| resource 1 amount = 50
+| fuel filter = Wood
+| fuel capacity = 30.0
+| fuel consumption rate = 1.5
+| initial fuel percent = 0 <!-- 0% -->
+| fuel consumption per tick in rain = 0.0006
+| page verified for version = 1.3.3117
+}}
+The '''darklight brazier''' is an alternate form of the [[brazier]] that pleases those who like [[darklight]]. It is added by the [[Royalty DLC]], but only present if the [[Ideology DLC]] is also active.
+
+== Acquisition ==
+{{Acquisition}} The [[Lighting (precept)|Lighting: Darklight Preferred]] precept is not required to construct darklight braziers.
+
+== Summary ==
+{{Stub|section=1|reason=Psyfocus mechanics}}
+[[File:Darklight brazier illumination area.png|300px|thumb|left|The white area (6 tiles out) is 50% illumination, required for best [[Surgery Success Chance Factor|surgery success chance]]; the yellow (7th tile) represents 30% or better, adequate for all general labor, avoiding [[mood]] penalties, and for growing [[Decorative Plants|decorative plants]] indoors in [[plant pot]]s.]]
+A lit darklight brazier outputs [[light]] in a 10 tile radius, with the nearest {{P|Light Radius}} tiles at or above 30% light level and considered "[[Light|Lit]]", to a maximum of 50%. The provided light in this area is bright enough to prevent work speed penalties, grow decorative plants, and prevent the debuff [[Thoughts_list#In_darkness|"In darkness"]]. However, braziers are not bright enough to grow most [[crop]]s indoors, which require 51% illumination. Lit darklight braziers will also heat enclosed [[rooms]] to a maximum [[temperature]] of {{Temperature|{{P|Max Heat Temperature}} }} at a rate of {{P|Heat Per Second}} heat per second.{{Check Tag|Exact mechanic unclear|Provides comparison with other heat sources but doesn't explain how much it actually heats}}
+
+The brazier consumes {{Icon Small|Wood}} 1.5 [[wood]] per day as long as it is lit, and consumes an additional {{Icon Small|Wood}} 0.0006 wood per {{Ticks|1}}, or a total of {{Icon Small|Wood}} {{#expr: 1.5+ (0.0006*60000)}} wood per day, if it is lit while unroofed in the [[Weather|rain]]. It can hold up to 30 fuel at a time, for a maximum run time of {{#expr:30/2}} days. Fuel is delivered to the brazier by a [[Work#Haul|haulers]] as long as refueling is enabled. An uninstalled brazier both stops consuming fuel and retains its fuel level when reinstalled.
+
+{{Pyromaniac Building Note}}
+
+Two lit [[brazier]]s or darklight braziers are required in the throne room of every [[noble]] of Acolyte rank or above. Braziers and darklight braziers are interchangable and any combination of the buildings will count.
+
+The darklight brazier differs from the [[brazier]] only in fuel cost and in that it puts out [[darklight]] that does not count as "bright light" for the [[Lighting (precept)|Lighting: Darklight Preferred]] precept. Instead, it gives those with the precept a {{Thought| desc=This dim light is perfect. I feel focused and energized.| label=darklight| value=+4| stack=1}}, and prevents [[surgery]] penalties for being in darkness.
+
+== Analysis ==
+{{Stub|reason=Compared to other psyfoci need but see Main TODO list for the Large Project}}
+Superior to the regular [[brazier]], even if your colonists do not prefer darklight. It consumes less fuel, costs the same material to make, and pleases nobles all the same.
+
+{{Building Stats Table}}
+
+== Version history ==
+* [[Version/1.3.3101|1.3.3101]] - Added.
+* [[Version/1.5.4062|1.5.4062]] - Increased work to build from 100 to 1000. Hide meditation focus radius ring from torches and braziers.
+
+{{Nav|furniture|wide}}
+
+[[Category:Furniture]] [[Category:Lamp]]

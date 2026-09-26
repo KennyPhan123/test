@@ -1,0 +1,28 @@
+{{Version Nav}} 
+
+Another day, another hotfix! This is build 1.1.2560.
+
+Side note: There were some recent major changes in a few key mods, so there are still some mods with compatibility problems with each other. More info on this in the last hotfix update and a writeup from the author of the Harmony mod. Let's give them a few days to get things settled!
+
+This hotfix is small. Its primary purpose is to fix a bug that would cause mechanoid clusters to never be defeated if you saved and reloaded the game after the associated quest arrived but before accepting it. I just wanted to get this out quickly since while this bug is rare, it is quite annoying when it occurs.
+
+If this bug affected your savegame, you can defeat any existing broken mech clusters like so:
+
+# Turn on development mode in the options menu
+# Look in the quests menu at the quest that won't end
+# Turn on the checkbox "Dev: Debug" under the quest description.
+# Scroll down.
+# To the right of the 'send signal' box, click the '...' button. Select the entry similar to Quest0.cluster.AllEnemiesDefeated.
+# Turn off development mode in the options menu.
+
+==Change list==
+
+* Fixed a bug that would cause [[mechanoid cluster]]s to never be defeated if you saved and reloaded the game after the associated quest arrived but before accepting it.
+* Languages update
+* Updated Readme.txt with information about needing quotes around the -savedatafolder command when the path has spaces.
+* Fixed a bug that would cause trade request [[quests]] imported from 1.0 saves to give no rewards.
+* Fixed a bug that would cause no psyamp reward after quests if the recieved was not spawned.
+* Fixed a bug that would cause random joining animals to have names despite having no bond.
+* Fixed a bug that would cause a harmless error message on slaughtering a [[cobra]]
+
+We will be fixing some more lingering issues over the coming week. Thanks for the great bug reports.

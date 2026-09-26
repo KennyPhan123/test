@@ -1,0 +1,88 @@
+{{See also|Lavish meal|Vegetarian lavish meal}}
+{{Infobox main|food
+| name = Carnivore lavish meal
+| image = Carnivore lavish meal a.png
+| description = A masterpiece of the culinary arts, this meal nourishes the body, mind, and soul.
+<!-- Base Stats -->
+| type = Food
+| type2 = Meal
+| hp = 50
+| deterioration = 10
+| marketvalue = 40
+| mass base = 0.44
+| flammability = 1
+| stack limit = 10
+| path cost = 14
+<!-- Ingestion -->
+| food type = meal
+| taste = Lavish
+| ingested direct thought = AteLavishMeal
+| max num to ingest at once = 1
+| days to rot = 4
+| nutrition = 1
+<!-- Creation -->
+| work to make = 800
+| work speed stat = Cooking Speed
+| production facility 1 = Fueled stove
+| production facility 2 = Electric stove
+| skill 1 = cooking
+| skill 1 level = 8
+| resource 1 = Nutrition
+| resource 1 type = meat
+| resource 1 amount = 1.25
+| bulk product amount = 4
+<!-- Technical -->
+| defName = MealLavish_Meat
+| preferability = Lavish
+| tradeability = Buyable
+<!-- Unused -->
+| always haulable = true
+| draw gui overlay = true
+| graphic class = Graphic_Single
+| graphic path = Things/Item/Meal/Lavish
+| label = lavish meal
+| parent name = MealRottable
+| resource readout priority = Last
+| selectable = true
+| social properness matters = true
+| sound eat = Meal_Eat
+| thing class = Meal
+| ticker type = Rare
+| use hit points = true
+}}
+{{Info|A '''Carnivore lavish meal''' is a variant of the [[lavish meal]] created out of meat.}}
+
+== Acquisition ==
+Carnivore lavish meals meals can be [[Work#Cook|cooked]] at a [[{{P|Production Facility 1}}]] or [[{{P|Production Facility 2}}]]. A carnivore lavish meal requires 1.25 units of nutrition from [[meat]], {{Ticks|{{P|Work To Make}} }} of work to make, and a Cooking skill of 8.
+
+== Summary ==
+A carnivore lavish meal can be eaten by humans or animals for 1 [[nutrition]]. As it takes 1.25 nutrition of [[raw food]] to create, carnivore lavish meals provide 80% nutrition efficiency, so preparing one loses food (even compared to regular lavish meals).
+
+Eating a lavish meal or its variants gives the {{Thought|desc=That lavish meal was amazing. It nourished my body and my soul.|label=ate lavish meal|value=+12|stack=1|duration=1}}. This replaces the {{Thought|desc=I ate a really tasty fine meal. Yum!|label=ate fine meal|value=+5|stack=1|duration=1}} from [[fine meal]] if present. If the meal was made out of [[insect meat]], [[human meat]], or [[twisted meat]]{{AnomalyIcon}} their respective moodlets will be applied.
+
+Lavish meals will also satisfy the food requirements of any [[conceited noble]]{{RoyaltyIcon}}.
+
+== Analysis ==
+Carnivore lavish meals provide a very powerful mood buff when combined with usually undesirable meat. 
+
+[[Insect meat]] and [[human meat]] can typically be acquired in large quantities, where the "wasted" food from making lavish meals does not matter. Insect meat only gives {{--|3}} mood when cooked, for a net {{+|9}} mood buff for any colonist. Human meat usually gives {{--|15}} mood (plus {{--|6}} for several days for butchering), but those with the [[Cannibal (trait)|Cannibal]] trait will be incredibly pleased, for a net mood of {{+|27}}. A colonist's [[ideoligion]]{{IdeologyIcon}} can make them enjoy either meat on their own, while getting the full boost from the lavish meal.
+
+== Gallery ==
+<gallery>
+Carnivore lavish meal a.png|One carnivore lavish meal
+Carnivore lavish meal b.png|Partial stack
+Carnivore lavish meal c.png|Full stack
+</gallery>
+
+== Version history ==
+* [[Version/1.3.3066|1.3.3066]] - Added
+* [[Version/1.3.3074|1.3.3074]] - New graphics.
+* [[Version/1.3.3387|1.3.3387]] - Changed the nutrients needed for lavish carnivore meals to 1.25 (previously 2.5)
+
+<gallery>
+Carnivore lavish meal old 2.png|Old sprite from version 1.3.3074
+Carnivore lavish meal old.png|Texture between version 1.3.3066 and 1.3.3074
+</gallery>
+{{nav|Food|wide}}
+
+[[Category:Food]] [[Category:Processed Food]] [[Category:Meal]]

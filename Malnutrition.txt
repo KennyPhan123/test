@@ -1,0 +1,70 @@
+__NOTOC__
+{{Move|destination=Ailments|reason=Standardisation. Alternatively should all ailments have a summary on [[Ailments]] and a page of details? Discussion needed}}
+'''Malnutrition''', referred to as ''starvation'' in the moodlets, is a health condition that occurs once any pawn's [[saturation]] reaches 0%. After this point, malnutrition increases by anywhere between {{%|0.0151|2}} to {{%|0.02265|2}} per hour, with initial symptoms including a faster hunger rate, slight loss of consciousness, and an increased chance of social fighting. Advanced symptoms include loss of consciousness, and eventually, death. Malnutrition will begin decrease by anywhere between {{%|0.0151|2}} to {{%|0.02265|2}} per hour after the pawn is fed, during which time they continue to suffer from the different stages of the condition. The malnutrition increase/decrease rate is random, but will always be the same for a specific pawn.
+
+Unless forbidden to do so, a malnourished pawn will eat literally whatever they can get their hands on (whether it be a [[lavish meal]], some raw [[food]], or even a human corpse) in order to prevent themselves from further starving to [[Death|death]].  Once the pawn has eaten something, the malnutrition will gradually decrease, and until it is gone the pawn will have increased [[Saturation|hunger]].
+
+A pawn suffering from malnutrition will not have their wounds heal.
+
+== Stages ==
+
+{| class="wikitable" style="text-align:center"
+! Label
+! Severity
+! [[Consciousness]]
+! [[Hunger Rate Factor]]
+! [[Social fight]] chance
+! [[Mood]]
+|-
+! Trivial  
+| {{0|0.}}0 - 0.19
+| {{0}}{{--|5%}}
+| {{++|50%}}
+| {{Bad|x1.5}}
+| {{--|20}}
+|-
+! Minor    
+| 0.2 - 0.39
+| {{--|10%}}
+| rowspan="4" | {{++|60%}}
+| {{Bad|x2}}{{0|.0}}
+| {{--|26}}
+
+|-
+! Moderate 
+| 0.4 - 0.59
+| {{--|20%}}
+| {{Bad|x2.5}}
+| {{--|32}}
+|-
+! Severe   
+| 0.6 - 0.79
+| {{--|30%}}
+| {{Bad|x3}}{{0|.0}}
+| {{--|38}}
+|-
+! Extreme  
+| 0.8 - 0.99
+| {{Bad|max. 10%}}
+| –
+| {{--|44}}
+|-
+! Extreme  
+| 1
+| colspan="4" | '''[[Death]]'''
+|}
+
+'''Note:''' Because malnutrition decreases Consciousness, it can be very dangerous to wounded prisoners, recent surgery patients, or others who may already have a Consciousness at 10% or lower and are unable to feed themselves. Dropping 5 or 10% more can kill just that quick.
+
+== Prevention ==
+Malnutrition will affect [[Consciousness]] which affects most actions a pawn can take, including [[trade]], [[movement speed]], and [[shooting accuracy]]. Thus prevention is important.
+
+Straightforward: Make sure there's a decent surplus of food in your freezer. Don't take on more colonists, guests, prisoners, and slaves than your food supplies can handle. Remember that intensive [[Animals#Taming|taming]] will demand a lot of food. Ensure that meals are easily accessible - raw food is significantly less efficient in terms of nutrition than even [[simple meal]]s. 
+
+Don't be afraid to resort to using a [[nutrient paste dispenser]] in certain circumstances (e.g. [[toxic fallout]], wildfire that wipes out a significant chunk of wildlife, migration); [[nutrient paste meal]]s are the most efficient way to get nutrition from food out of any meal, yielding 0.9 [[nutrition]], the same as a simple or fine meal, from only 6 of any ingredient and you can't get [[food poisoning]] from it.
+
+== Version history ==
+* Alpha 16 - Malnutrition also increases the hunger rate and likelihood that affected pawns will start a social fight if slighted or insulted.
+[[Category:Health]]
+* [[Version/1.0.0|1.0.0]] - Minor starvation alone (below 25% severity) no longer always causes miscarriages, but still can, if combined with other factors
+* [[Version/1.5.4062|1.5.4062]] - Hourly malnutrition increase/decrease rate changed from {{%|0.01511111066666666666666666666667|5}} to {{%|0.022666666|5}} to a rate of {{%|0.0151|5}} to {{%|0.02265|5}}

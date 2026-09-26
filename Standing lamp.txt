@@ -1,0 +1,101 @@
+{{See also|Sun lamp}}
+{{Infobox main|furniture
+| name = Standing lamp
+| image = Standing lamp.png
+| description = An electrical standing lamp that lights an area. People need light to move and work at full speed.
+| type = Building
+| type2 = Furniture
+| placeable = true
+| path cost = 14
+| passability = pass through only
+| cover = 0.2
+| minifiable = true
+| size = 1 ˣ 1
+| mass base = 4
+| flammability = 1
+| hp = 50
+| sell price multiplier = 0.7
+| power = -30
+| glowradius = 12
+| glowcolor = (214,148,94)
+| terrain affordance = light
+| research = Electricity
+| styledominance = 5
+| thingCategories = BuildingsFurniture
+| work to make = 300
+| resource 1 = Steel
+| resource 1 amount = 20
+| destroyyield = nothing
+}}
+{{Info|A '''standing lamp''' is a [[furniture]] item that produces [[light]].}}
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+[[File:Standing lamp illumination area.png|300px|thumb|left|The white area (7 tiles out) is 50% illumination, required for best [[Surgery Success Chance Factor|surgery success chance]]; the yellow (8-9 tiles) represents 30% or better, adequate for all general labor, avoiding [[mood]] penalties, and for growing [[Decorative Plants|decorative plants]] indoors in [[plant pot]]s.]]
+Standing lamps consume 30W* of [[power]] to produce light, with a maximum of 50% illumination in a small radius**.  The provided light in this area is bright enough to prevent work speed penalties, grow decorative plants, and prevent the debuff [[Thoughts_list#In_darkness|"In darkness"]]. However, standing lamps are not bright enough to grow most [[crop]]s indoors, which require 51% illumination. Light does not "stack", so no amount of standing lamps will ever give more than 50% illumination (e.g. for [[rice plant]]s, etc). 
+
+If the [[Ideology (DLC)|Ideology DLC]]{{IdeologyIcon}} is enabled, standing lamps can be set to darklight mode by selecting them and clicking "Change to darklight" after building, which will convert the light to [[darklight]]{{Check Tag|Radius change?|Specify even if no}} that does not count as "bright light" for the [[Lighting (precept)|Lighting: Darklight Preferred]] precept. Instead, it gives those with the precept a {{Thought| desc=This dim light is perfect. I feel focused and energized.| label=darklight| value=+4| stack=1}}, and prevents [[surgery]] penalties for being in darkness.
+
+Lamps can be uninstalled freely. Unlike most other [[power]]ed structures, the lamp will not short circuit when unroofed in the [[weather|rain]]. 
+
+: ''(* Initially; this drops to 15 watts with [[Standing_lamp#Advanced_light|Advanced Lights]], see below)''
+: ''(** 6 tiles diagonally, 7-9 orthogonally depending how you measure - see image, left)''
+
+==== Visual representation ====
+The lighting that can be seen represented by in-game visual differences does not always correspond to the ''actual'' % of light on a tile. Also note that areas that are not in direct line of sight with a lamp can be quite well lit. Using multiple lamps close to each other also gives the appearance of "white light" and a more well-lit area, though this has no actual effect in-game.
+
+In the image below, the entire corridor is fully lit at 50%, even though the lamps are not in direct line with each tile. However, the tiles diagonally above the lamps, on the other side of walls, are in total darkness, whereas they appear to be partially lit in the screenshot.
+
+[[File:Illumination in 1-square wide corridor.png|300px|thumb|center| Line of sight is not always a limitation with light sources.]]
+
+=== Advanced lights ===
+{{Stub|reason=Written detail on menu, options, color mixing in overlapping light radii etc.|section=1}}
+With the [[Research#Advanced lights|Advanced Lights]] research, the power cost of standing lamps are halved, to {{#expr:-0.5*{{P|Power Consumption}}}}W of power. Lights can also be changed to a variety of different colors, which have no gameplay effect. Standing lamps of different colors will blend together.
+<div><ul>
+<li style="display: inline-block; vertical-align: top;">
+[[File:ColoredLights.jpg|300px|thumb|none|(pre 1.4) Combining different colored lights for a "rainbow" feel to your colony. Light % is not additive above the maximum that single colored lights provide.]]
+</li>
+<li style="display: inline-block; vertical-align: top;">
+[[File:Advanced lights color picker.png|300px|thumb|none|Interface for choosing a lamp's color.]]
+</li>
+<li style="display: inline-block; vertical-align: top;">
+[[File:Gizmo lamp advanced lights.png|300px|thumb|none|Gizmos that appear when selecting a lamp with the advanced lights research completed.]]
+</li>
+</ul></div>
+{{Clear}}
+
+== Analysis ==
+Lights in general is useful as it improves work speed, movement speed, and prevents the [[mood]] hit from darkness. Electric lights take less maintenance than [[torch lamp]]s and their variants, so they are worth using after the colony establishes a power grid.
+
+Compared to [[wall lamp]]s, the standing lamp building itself slows movement to {{Bad|x48%}}, but does not require a wall for installation, so it can be placed in the middle of a room. This makes standing lamps a useful option in the middle of large, open-space rooms where the radius of [[wall lamp]]s cannot reach. The standing lamp produces light in a larger radius (≈8 -> ≈9 tiles), costs more steel to construct (15 -> 20), and takes 30 ticks (330 -> 300) less work to make. Both lamps consume the same amount of power.
+
+== Styles ==
+{{Ideology|section=1}}
+[[Ideoligion]]s allow the selection of styles which then change the texture of the certain items and buildings when constructed by the colony. These style variants can be crafted if the colony has the selected style, or can be looted from raiders from factions with the requisite style.
+
+<gallery>
+Standing lamp.png|Base variant
+Morbid standing lamp.png|Morbid variant
+Totemic standing lamp.png|Totemic variant
+Spikecore standing lamp.png|Spikecore variant
+Rustic standing lamp.png|Rustic variant
+Techist standing lamp.png|Techist variant
+</gallery>
+<gallery>
+Standing darklamp.png|Base darklight variant
+Morbid standing darklamp.png|Morbid darklight variant
+Totemic standing darklamp.png|Totemic darklight variant
+Spikecore standing darklamp.png|Spikecore darklight variant
+Rustic standing darklamp.png|Rustic darklight variant
+Techist standing darklamp.png|Techist darklight variant
+</gallery>
+
+== Version history ==
+* [[Ideology DLC]] Release - '''Standing darklamp''' added. Received styles via new [[Ideoligion]] [[style]] system. 
+* [[Version/1.4.3523|1.4.3523]] - The Colored Lights research was replaced by the Advanced Lighting research. Light color selection system added, including darklight option. '''Standing lamp (red)''', '''standing lamp (blue)''', and '''standing lamp (green)''' unlockable variants, as well as the '''standing darklight'''{{IdeologyIcon}} merged into the '''standing lamp''', in both role and in existing saves.
+* [[Version/1.4.3555|1.4.3555]] - Fix: Lamps unconnected to a power grid do not properly have reduced power consumption once advanced lights is researched until you reload.
+
+{{Nav|furniture|wide}}
+[[Category:Furniture]] [[Category:Lamp]]

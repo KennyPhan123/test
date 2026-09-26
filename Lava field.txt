@@ -1,0 +1,169 @@
+{{Odyssey}}
+{{Infobox biome
+| name = Lava field
+| image = Lava Fields.jpg
+| type = Biome
+| texture = LavaFieldsTexture.png
+| canbuildbase = Yes
+| allowRoads = No
+| allowFarmingCamps = Yes
+| animal density = 2.2
+| plant density = 0.45
+| movement difficulty = 1.5
+| forageability = 0.50
+| disease mtb days = 90
+| min temperature = -10
+| description = Barren wastes burned clean by volcanic heat. Periodic lava eruptions can burn people and buildings, but also enrich the soil with mineral deposits.
+| wild plant regrow days = 27
+<!-- weather -->
+| clear = 18
+| fog = 1
+| rain = 2
+| dry thunderstorm = 1
+| rainy thunderstorm = 1
+| foggy rain = 0.5
+| hard snow = 4
+| soft snow = 4
+| gray pall = 1
+| overcast = 2
+| windy = 1
+<!-- fish -->
+| max fish population = 480
+| freshwater_common_bass = Yes
+| freshwater_uncommon_catfish = Yes
+| saltwater_common_bluefish = Yes
+| saltwater_uncommon_flounder = Yes
+| saltwater_uncommon_marlin = Yes
+}}
+'''Lava field''' is a warm [[biome]] in RimWorld added by the [[Odyssey DLC]].
+<!-- Beyond a noise check, it requires the tile to be valid for either desert or Arid shrubland. Then, it uses the desert it shrubland formula (the first one valid) minus 0.0001 plus 0.0002 if the terrain is not flat.
+Because of the above, there is no good way to show the effective limits this biome has for selection. I'll use the inclusive method
+-->
+== Summary ==
+Lava fields are the only biome to naturally have mineable [[obsidian]]. Lava fields have multiple volcanic events, as described in the [[#Events|Events section]].
+
+Do note that the spawn chance of this biome is unusual. The selected tile needs to be a valid placement for either a [[desert]] or an [[arid shrubland]] and will be evaluated as said biome, and have the correct random number associated. It also can't spawn on flat tiles. <!-- the result of the small penalty and the small bonus-->
+
+In the lists below the number in brackets represents the relative commonality.
+
+=== Flora ===
+<div class="ul-column-width-200">
+{{#ask: [[Type::Plant]] [[Lives In Lava Field::>>0]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Lava Field
+}}
+</div>{{#set:Flora Commonality Sum | {{#expr: {{#ask: [[Type::Plant]] [[Lives In Lava Field::>>0]] | ?Lives In Lava Field = | mainlabel=- | sep=+ }} }} }}{{#set:Grazing Score|{{Grazing Score}} }}
+
+=== Fauna ===
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Lava Field::>>0]] [[Coastal Animal::false]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Lava Field
+}}
+</div>{{#set:Fauna Commonality Sum | {{#expr: {{#ask: [[Type::Animal]] [[Lives In Lava Field::>>0]] [[Coastal Animal::false]] | ?Lives In Lava Field = | mainlabel=- | sep=+ }} }} }}
+
+Additionally, these animals can spawn in coastal maps:
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Lava Field::>0]] [[Coastal Animal::true]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Lava Field
+}}
+</div>
+
+If the map is [[polluted]],{{BiotechIcon}} then the game may choose to spawn in wild animals from this list instead:
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Lava Field (Polluted)::>0]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Lava Field (Polluted)
+}}
+</div>
+
+=== Diseases ===
+Lava field has a disease {{MTB}} of 65 days. The following diseases can occur in a lava field:
+{| {{STDT|c_07 sortable}}
+! Disease
+! Commonality{{#set:Disease commonality sum|{{#expr:100+100+60+60+30+30+100+100+10}} }}
+|-
+| [[Flu]] || 100{{#set:Flu commonality|100}}
+|-
+| [[Plague]] || 100{{#set:Plague commonality|100}}
+|-
+| [[Gut worms]] || 60{{#set:Gut worms commonality|60}}
+|-
+| [[Muscle parasites]] || 60{{#set:Muscle parasites commonality|60}}
+|-
+| [[Fibrous mechanites]] || 30{{#set:Fibrous mechanites commonality|30}}
+|-
+| [[Sensory mechanites]] || 30{{#set:Sensory mechanites commonality|30}}
+|-
+| [[Flu#Animals|Animal flu]] || 100{{#set:Animal flu commonality|100}}
+|-
+| [[Plague#Animals|Animal plague]] || 100{{#set:Animal plague commonality|100}}
+|-
+| [[Organ decay]] || 10{{#set:Organ decay commonality|10}}
+|}
+
+=== Fish ===
+The table below contains the list of all of the fish that can be caught - as well as where they can be caught.
+{| {{STDT|c_23 sortable}}
+! Fish
+! Water body
+! Rarity
+|-
+| [[Bass]] || Freshwater || Common
+|-
+| [[Catfish]] || Freshwater || Uncommon
+|-
+| [[Bluefish]] || Saltwater || Common
+|-
+| [[Flounder]] || Saltwater || Uncommon
+|-
+| [[Marlin]] || Saltwater || Uncommon
+|}
+
+=== Events ===
+Lava fields have three unique events:
+* [[Events/Odyssey#Volcanic debris|Volcanic debris]]: 8-12 pieces of debris will land on unroofed tiles, damaging the area in an explosion and creating temporary shallow lava that will cool into cooled lava over time. 
+* [[Events/Odyssey#Lava Emergence|Lava Emergence]]: The lava will make temporary shallow lava that pawns can walk through. After a few days, the [[lava|shallow lava]] turns into removable [[lava|cooled lava]]. When the cooled lava is removed using the remove flooring command, the terrain returns to original type. The lava emergence can flow over any pathable terrain and over chunks or items on the ground. The lava cannot flow through walls, doors, fences, barricades, graves, columns and other objects. 
+* [[Events/Odyssey#Lava Flow|Lava Flow]]: Lava will emerge from the edge of the map and will flow only over buildingless tiles with volcanic rock as the underlying terrain (this excludes cooled lava terrain created on non volcanic rock terrain). The Lava Flow will create [[lava|shallow lava]] that is pathable and leave behind [[lava|cooled lava]] terrain after a few days, destroying any replaced flooring. The lava cannot flow through walls, doors, fences, barricades, graves, columns and other objects.  The shallow lava can light adjacent flammable objects on fire.
+
+== Summary ==
+Lava fields are similar to [[arid shrubland]]s, but uniquely challenging due to the lava and debris.
+
+* '''Food and Growing: Easy (''excluding fires'')''' - Growing seasons are long or year-round, and while some of the map is covered in volcanic rock, rich soil is fairly common.
+
+* '''Disease: Easy-Moderate''' - Like arid shrubland, diseases do not happen frequently in lava fields, but [[wild healroot]] does not grow naturally. This presents a challenge if there is no pawn with Plants 8.
+
+* '''Temperature: Moderate''' - Lava fields range from temperate to warm. [[Heat wave]]s can present a challenge in the warmer end of lava fields. Also, trees may not be accessible during a lava event unless a [[heavy bridge]] or [[gravship substructure]] is built to walk over the lava.
+
+* '''Fires: Very Difficult''' - Lava causes fires, igniting flammable buildings in its wake. [[Boomalope]]s and [[boomrat]]s both spawn in this biome.
+
+* '''Special:''' Lava emergences and debris can cause base damage. Shallow lava on the map is dangerous for pawns to walk through, and may cause accidents when auto pathing.
+
+== Gallery ==
+<gallery>
+Lava Fields.jpg|A fully generated lava field
+LavaFieldsTexture.png|Lava field's texture on the world map
+</gallery>
+
+== History ==
+* [[Odyssey DLC]] Release - Added.
+
+{{nav|biomes|wide}}
+[[Category:Biomes]]

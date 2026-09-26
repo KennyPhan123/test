@@ -1,0 +1,164 @@
+{{Infobox biome
+| name = Boreal forest
+| image = BorealForest.png
+| type = Biome
+| texture = BorealForestTexture.png
+| canbuildbase = Yes
+| allowFarmingCamps = false
+| animal density = 2.8
+| plant density = 0.4
+| movement difficulty = 1
+| min rainfall = 600
+| min temperature = -10
+| forageability = 0.75
+| wild plant regrow days = 25
+| disease mtb days = 60
+| description = Forests of coniferous trees. Despite the harsh winters, boreal forests sustain a diverse population of small and large animals, and have warm summers.
+<!-- weather -->
+| clear = 18
+| fog = 1
+| rain = 2
+| dry thunderstorm = 1
+| rainy thunderstorm = 1
+| foggy rain = 1
+| hard snow = 4
+| soft snow = 4
+| gray pall = 1
+| overcast = 1
+| blizzard = 1
+| torrential rain = 1
+<!-- fish -->
+| max fish population = 500
+| freshwater_common_salmon = Yes
+| freshwater_uncommon_frostfish = Yes
+| saltwater_common_salmon = Yes
+| saltwater_common_cod = Yes
+| saltwater_uncommon_dogfish = Yes
+}}
+'''Boreal forest''' is a moderately cold [[biome]] in RimWorld.
+<!-- return 15 -->
+== Summary ==
+A colder version of the [[temperate forest]], but warmer and significantly more populated than a [[tundra]].
+
+In the lists below the number in brackets represents the relative commonality.
+
+=== Flora ===
+<div class="ul-column-width-200">
+{{#ask: [[Type::Plant]] [[Lives In Boreal Forest::>>0]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Boreal Forest
+}}
+</div>{{#set:Flora Commonality Sum | {{#expr: {{#ask: [[Type::Plant]] [[Lives In Boreal Forest::>>0]] | ?Lives In Boreal Forest = | mainlabel=- | sep=+ }} }} }}{{#set:Grazing Score|{{Grazing Score}} }}
+
+=== Fauna ===
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Boreal Forest::>>0]] [[Coastal Animal::false]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Boreal Forest
+}}
+</div>{{#set:Fauna Commonality Sum | {{#expr: {{#ask: [[Type::Animal]] [[Lives In Boreal Forest::>>0]] [[Coastal Animal::false]] | ?Lives In Boreal Forest = | mainlabel=- | sep=+ }} }} }}
+
+Additionally, these animals can spawn in coastal maps:
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Boreal Forest::>0]] [[Coastal Animal::true]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Boreal Forest
+}}
+</div>
+
+If the map is [[polluted]],{{BiotechIcon}} then the game may choose to spawn in wild animals from this list instead:
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Boreal Forest (Polluted)::>0]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Boreal Forest (Polluted)
+}}
+</div>
+
+=== Diseases ===
+Boreal Forest has a disease {{MTB}} of 60 days. The following diseases can occur in a boreal forest:
+{| {{STDT|c_07 sortable}}
+! Disease
+! Commonality{{#set:Disease commonality sum|{{#expr:100+100+50+30+30+50+100+100+10}} }}
+|-
+| [[Flu]] || 100{{#set:Flu commonality|100}}
+|-
+| [[Plague]] || 100{{#set:Plague commonality|100}}
+|-
+| [[Gut worms]] || 50{{#set:Gut worms commonality|50}}
+|-
+| [[Fibrous mechanites]] || 30{{#set:Fibrous mechanites commonality|30}}
+|-
+| [[Sensory mechanites]] || 30{{#set:Sensory mechanites commonality|30}}
+|-
+| [[Muscle parasites]] || 50{{#set:Muscle parasites commonality|50}}
+|-
+| [[Flu#Animals|Animal flu]] || 100{{#set:Animal flu commonality|100}}
+|-
+| [[Plague#Animals|Animal plague]] || 100{{#set:Animal plague commonality|100}}
+|-
+| [[Organ decay]] || 10{{#set:Organ decay commonality|10}}
+|}
+
+=== Fish ===
+{{Odyssey|section=1|No category}}
+The table below contains the list of all of the fish that can be caught - as well as where they can be caught.
+{| {{STDT|c_23 sortable}}
+! Fish
+! Water body
+! Rarity
+|-
+| [[Salmon]] || Freshwater || Common
+|-
+| [[Frostfish]] || Freshwater || Uncommon
+|-
+| [[Salmon]] || Saltwater || Common
+|-
+| [[Cod]] || Saltwater || Common
+|-
+| [[Dogfish]] || Saltwater || Uncommon
+|}
+
+== Analysis ==
+Boreal forest is a step up in difficulty from [[temperate forest]], but not much harder than a temperate forest tile with a winter. The growing season will be shorter, meaning more food will need to be produced and stored in the early game, there are less animals and plants, and winters will be colder, but gameplay is otherwise similar.
+
+*'''Growing: Moderate''' - Growing seasons are shorter, but soil is plentiful and warmer boreal forests can have growing seasons of 30 days.
+
+* '''Disease: Easy''' - Diseases happen less frequently than in warm biomes, and [[wild healroot]] grows naturally. Medicine may run dry during the winter if not enough is grown or bought.
+
+* '''Temperature: Moderate''' - The temperature can reach dangerous levels during the winter or [[cold snap]]s. [[Heat wave]]s may occur during warmer tiles in the summer, but are fairly rare.
+
+* '''Fires: Easy-Moderate''' - There are plenty of trees and wild plants around to catch fire, but less than a temperate or tropical biome.
+
+* '''Predators: Moderate''' - Animals in general are less common than in warm biomes, but predators are still common and are more likely to get hungry during the winter.
+
+Overall starting difficulty is moderate, with the main challenge coming from the short growing season, thus forcing early game colonies to prepare food, [[cloth]], and [[medicine]] in advance. Once [[greenhouse]]s are established so that the colony can grow crops year-round, the difficulty is similar to most other biomes, with less disease than warm biomes, but winters forcing colder clothing.
+
+== Gallery ==
+<gallery>
+BorealForest.png|A Boreal Forest
+<!-- BorealForestPolluted.png|A [[polluted]] Boreal Forest {{BiotechIcon}} -->
+BorealForestTexture.png|Boreal Forest's texture on the world map
+</gallery>
+
+== Version history ==
+* [[Version/0.8.657|0.8.657]] - Added
+
+{{nav|biomes|wide}}
+[[Category:Biomes]]
+[[Category:Cold Biomes]]

@@ -1,0 +1,30 @@
+{{Version Nav|date=2021-7-23|unstable=1}}
+
+Build 1.3.3069c is up on the unstable branch! 
+
+* Fix: Ancient complex mission quest attempts to run without royalty installed.
+* Removed scarification ceremony from nature primacy.
+* Ensure that Alert_IdeoBuildingDisrespected is discarded if not valid anymore.
+* Reduce nutrition required for biosculpting from 20 to 10 for healing and age reversal cycles.
+* Adjust trees-related thoughts. Negatives for killing trees are reduced. Positives for seeing trees are amplified.
+* Implement stacking multiple alerts for blinding and scarification ritual obligations.
+* Added warning for desired apparel overlapping with role apparel requirement.
+* Change Man in Black incident to prefer generating a joiner with non-player ideo.
+* After finishing the ritual, if a duelist has no bed assigned to him he will get one assigned if available
+* Add a new 'Rough living' issue.
+* Integrated 4 different shopping cart visual variants.
+* Fix: Leader speech ritual icon doesn't match the new ability icon.
+* Fix: You can bypass cooldown on role abilities that are rituals (eg. leader speech) by starting the ritual directly from a thing.
+* Implemented new monkey graphics.
+* Changed StatPart_SightPsychicSensitivityOffset to use GenMath.LerpDoubleClamped.
+* Bug mitigation for null map in QuestPart_SubquestGenerator_RelicHunt.
+* Add a local variable for candidate animals in Alert_RitualObligation to avoid repeated expenisve calls.
+* Invalidate the district cache in AnimalPenEnclosureCalculator on District.Notify_RoomShapeOrContainedBedsChanged call.
+* Optimization for WorkGiver_GrowerHarvest based on feedback.
+* Improvements to retaining a thing style upon botched construction and auto-rebuild.
+* Draw an icon beside initial player selected ideoligion in ideo UI.
+* Improvements to dying hair job.
+* Release animal to wild checkbox is now paintable.
+* Removing apparel desire no longer shuffles role apparel. Instead of not allowing adding overlapping apparel requirements, we warn the player of overlaps and reject "Accept" input.
+* Reduce nutrition required for biosculpting from 20 to 10 for healing and age reversal cycles.
+* Adjust trees-related thoughts. Negatives for killing trees are reduced. Positives for seeing trees are amplified.

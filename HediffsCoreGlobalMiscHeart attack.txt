@@ -1,0 +1,42 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Global/Misc}}
+|}
+----
+{| {{STDT| c_10}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Heart attack" <!-- defName="HeartAttack" -->
+! Heart attack
+----
+* Def Name:<br />HeartAttack
+* Label:<br />heart attack
+* Label Noun:<br />a heart attack
+| A disruption in the heart's normal beating rhythm. Heart attacks can be debilitatingly painful. They can worsen and lead to death, or recover.
+|<!-- Details -->
+* Hediff Class: '''Hediff_HeartAttack
+* Default Label Color: {{Color|100%|20%|20%}}
+* Initial Severity: '''40%'''
+* Lethal Severity: '''100%'''
+* Tendable: {{Good|true}}
+|<!-- Stages -->
+{| {{STDT| c_10}}
+! Label !! Parameters
+|-
+! painful
+|<!-- Parameters -->
+* Life Threatening: {{Bad|true}}
+* Pain Offset: {{++|40%}}
+* [[Consciousness]] Post Factor: {{Bad|×50%}}
+|-
+! debilitating
+|<!-- Parameters -->
+* Min Severity: '''60%'''
+* Life Threatening: {{Bad|true}}
+* Pain Offset: {{++|60%}}
+* [[Consciousness]] Max: {{Bad|10%}}
+|-
+! fatal
+|<!-- Parameters -->
+* Min Severity: '''100%'''
+|}<noinclude>
+|}</noinclude>

@@ -1,0 +1,70 @@
+'''Backstories''' define the skills and restrictions of the [[colonist]] in question and may either enhance or impair the colonist's competence regarding specific [[skills]].
+
+== Summary ==
+{{Rewrite|section=1|reason=What pages are up to date, what should be obsoleted}}
+All colonists will have a childhood backstory, but only colonists generated at age 20 or older will have an adulthood backstory. Teenage colonists that age naturally to 20 years old will not gain an adulthood backstory. Currently there are 36 childhood backstories and about 85 adult backstories. Several adult backstories are not available in the character creation phase, but can randomly appear on [[raider]]s and wanderers.
+
+During the Kickstarter, it was possible to buy an add-on that allowed the addition of a backstory or character into the game. As a result, some backstories are always together, in a colonist that always has the same name. This can have the unintended situation of the same person returning to life multiple times. These characters can be found at [[List of Player-created Pawns]].
+
+All of the generic backstories are displayed below, however individual sets of backstories can be found here, ordered by their file structure:
+* [[Backstories/ImperialCommon Adult]]{{RoyaltyIcon}}
+* [[Backstories/ImperialCommon Child]]{{RoyaltyIcon}}
+* [[Backstories/ImperialFighter Adult]]{{RoyaltyIcon}}
+* [[Backstories/ImperialFighter Child]]{{RoyaltyIcon}}
+* [[Backstories/ImperialRoyal Adult]]{{RoyaltyIcon}}
+* [[Backstories/ImperialRoyal Child]]{{RoyaltyIcon}}
+* [[Backstories/InsectsRelated Child]]
+* [[Backstories/Offworld Glitterworld Adult]]
+* [[Backstories/Offworld Medieval Adult]]
+* [[Backstories/Offworld Medieval Child]]
+* [[Backstories/Offworld Nonspecific Adult]]
+* [[Backstories/Offworld Nonspecific Child]]
+* [[Backstories/Offworld Specific Adult]]
+* [[Backstories/Offworld Specific Child]]
+* [[Backstories/Outsider Adult]]
+* [[Backstories/Pirate Adult]]
+* [[Backstories/Solid]]{{AnomalyIcon}}
+* [[Backstories/Special]]
+* [[Backstories/Tribal Adult]]
+* [[Backstories/Tribal Child]]
+
+=== Random vs player-generated ===
+The mechanism for selecting whether a given generated pawn will use a randomly selected set of backstories (a "shuffledBio") or use one of the player generated characters (a "solidBio") is complex. 
+
+First it checks what type of pawn it is. If its a regular pawn, there is a 25% chance it will attempt to give it a solidBio. If its a [[faction]] leader, it will always attempt to give it a solidBio.
+
+Then there's a 50/50 roll performed and it either:
+# Randomly shuffles the list of ALL pawnbios; or 
+# Picks 20 pawn bios at random. 
+
+Once it has either list it then goes looking for one that (in this order):
+# Is the right gender (if one is specifically set as required)
+# It has the right last name (if required),
+# If the pawn to be created is a faction leader - that the bio has the pirateKing tag. Only pirateKings can be faction leaders.
+# That it has the correct backstoryCategories for the pawn its attempting to generate (i.e. Pirate, Offworld, ImperialRoyal etc.)
+# That the bio hasn't been used already (to prevent duplicate Humps running around)
+# That the backstories don't disable any workTags tagged as required (if any are so tagged)
+
+If this fails for all the pawnBios in whichever list it chose, then it defaults back to the shuffledBios.
+
+If it succeeds and it picks one of the nine "Rare" bios that refer to Ludeon staff, then it attempts to pick a different bio 50% of the time, and if it rolls that 50% but fails to pick a new one, it just defaults to a shuffledBio.
+
+== Backstory List ==
+{{Recode|reason=1) Posessions 2) Lots of missing spawn categories: for example Scientist, Researcher, Farmer, Cult, Hunter, Miner, Madman, Logger, Vatgrown, TribalHunter, TribalFarmer, TribalMiner 3) Add Solid_Rare.xml and InsectRelated_Child.xml}}
+=== Generic adult backstories ===
+<!-- The below is an embed. See [[List of adulthood backstories]] for the actual article. -->
+{{:List of adulthood backstories}}
+
+=== Generic childhood backstories ===
+<!-- The below is an embed. See [[List of childhood backstories]] for the actual article. -->
+{{:List of childhood backstories}}
+
+== Version history ==
+* [[Version/0.3.410|0.3.410]] - Pawns now spawn with backstories from appropriate spawn category for their [[faction]].
+* Alpha 16 - Backstories became translatable, although translated backstories appeared first in Alpha 17.
+* [[Version/1.1.0|1.1.0]] - Added a bunch of new backstories across multiple categories, including a variety of new [[tribes|tribal]] backstories.
+* [[Version/1.3.3066|1.3.3066]] - Fix: Typos in backstories.
+* [[Version/1.4.3523|1.4.3523]] - Converted backstories to use the def system for better moddability and expandability.
+* [[Version/1.4.3555|1.4.3555]] - Fix: Teenagers getting random backstories on save/load.
+
+[[Category:Characters]]

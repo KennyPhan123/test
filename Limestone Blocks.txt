@@ -1,0 +1,92 @@
+{{Infobox main|stony
+| name = Limestone blocks
+| image = Limestone blocks C.png
+| description = Blocks of solid limestone.
+<!-- Base Stats -->
+| type = Material
+| type2 = Stone
+| stuff category = Stony
+| marketvalue = 0.9
+| beauty = -12
+| mass base = 1.1
+| stack limit = 75
+| path cost = 14
+| rotatable = false
+| terrain affordance = Heavy
+<!-- Stat Modifiers -->
+| beauty factor = 1
+| beauty offset = 0
+| work to make factor = 1.3
+| work to build factor = 6
+| work to build offset = 140
+| max hit points factor = 1.55
+| flammability factor = 0
+| melee blunt damage factor= 1
+| melee sharp damage factor= 0.6
+| melee cooldown factor = 1.3
+| door opening speed factor = 0.45
+| rest effectiveness factor = 0.9
+<!-- Creation -->
+| production facility 1 = Stonecutter's table
+| work to make = 1600
+| resource 1 = Stone chunk
+| resource 1 amount = 1
+| product amount = 20
+<!-- Technical -->
+| defName = BlocksLimestone
+| stuff adjective = limestone
+<!-- Unused -->
+| always haulable = true
+| appearance = Bricks
+| color = (158,153,135)
+| default color = (158,153,135)
+| draw gui overlay = true
+| graphic class = Graphic_Single
+| graphic path = Things/Item/Resource/StoneBlocks
+| label = limestone blocks
+| parent name = StoneBlocksBase
+| resource readout priority = Middle
+| selectable = true
+| sound drop = Stone_Drop
+| sound impact stuff = BulletImpactGround
+| sound interact = Stone_Drop
+| sound melee hit blunt = MeleeHit_Stone
+| sound melee hit sharp = MeleeHit_Stone
+| thing class = ThingWithComps
+| use hit points = false
+| volume = 1
+}}
+'''Limestone blocks''' are a [[stony]] [[material]] and are the second-strongest of the five types of [[stone blocks]].
+
+== Acquisition ==
+Limestone blocks are cut from [[limestone chunk]]s at a [[{{P|Production Facility 1}}]]. It takes {{Ticks|{{P|Work To Make}}}} of work to cut a single chunk into {{P|Product Amount}} blocks.
+
+== Usage ==
+Limestone blocks can be used as a material for [[stuff]]able items with the [[Stony]] stuff tag.
+
+Limestone blocks can be used in the following recipes:
+{{Ingredient List}}
+
+== Analysis ==
+=== Comparison to other materials ===
+Limestone blocks don't have any unique recipes and are only used in stuffable items and buildings. As such, they must be considered in comparison to the other stone types, which share all the same recipes.
+
+Limestone blocks are a close second to [[granite blocks]] for the most durable building stone. Other than that, they have no distinguishing features compared to the other stone types.
+
+=== Stone generally ===
+{{Stone blocks analysis}}
+{{Stonecutting maximization}}
+
+== Gallery ==
+<gallery>
+Limestone blocks A.png|Stack of 1 limestone blocks
+Limestone blocks B.png|Stack of multiple limestone blocks
+Limestone blocks C.png|Full stack of limestone blocks
+</gallery>
+
+== Version history ==
+* [[Version/0.7.581|0.7.581]] - Added, previously there was only generic "stone".
+* Beta 19/1.0 - Slowed constructing buildings with all stone types by 20%
+
+{{Nav|materials|wide}}
+[[Category:Material]] [[Category:Stone]] [[Category:Stone Blocks]]

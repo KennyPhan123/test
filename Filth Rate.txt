@@ -1,0 +1,36 @@
+{{Stat
+ | default base value = 1
+ | min value = 0
+ | to string style = FloatOne
+ | description = How much [[filth]] this creature produces. It's best to keep filth-producing animals outdoors or on [[straw matting]] where their filth won't be a problem.
+ | category = BasicsPawn
+}}
+
+The ''filth rate'' is set by the property of the pawn in question and has no further modifiers. It therefore effectively ranges from '''[[Effective Minimum::1]]''', the default value, up to '''[[Effective Maximum::24]]''' for [[elephant]]s and [[megasloth]]s.
+
+Note that as mentioned above how much filth is actually deposited also depends on the [[filth multiplier]] of the [[floor]], however straw matting is the only floor that has a value other than 100%.
+
+== List of animals ==
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_01 text-center}}
+! Animal !! Filth Rate !! Type
+|-
+{{#ask: [[Animal Filth Rate::+]]
+ | ?Animal Filth Rate
+ | ?Type
+ | format = template
+ | template = Ask Table Formatter
+ | link = none
+ | limit = 200
+ | sort = From DLC, Name
+}}
+|}
+</li></div>
+
+== See also ==
+* [[Filth]]
+* [[Filth multiplier]]
+* [[Straw matting]]
+
+{{Nav|stats|wide}}
+{{Verified|1.4.3901}}

@@ -1,0 +1,83 @@
+'''Psychite''' refers to a family of [[drugs]] made from [[psychoid leaves]], which are harvested from a [[psychoid plant]]. These include:
+:* {{Icon Small|Psychite tea|24}}[[Psychite tea]]
+:* {{Icon Small|flake|24}} [[Flake]]
+:* {{Icon Small|yayo|24}} [[Yayo]]
+All three drugs share the same "Psychite" drug [[need]] and contribute towards psychite addiction, tolerance, and withdrawal.
+
+[[Go-juice]], despite requiring yayo to create, is not considered a psychite substance.
+
+{{Disambiguation}}<includeonly>
+
+<!-- The follwing is transcluded on Psychite tea, Flake and Yayo pages -->
+<onlyinclude>=== Psychite tolerance ===
+{{Main|Tolerance}}
+{{Quote|"A built-up tolerance to psychite. The more severe this tolerance is, the more psychite-based drugs like yayo or flake it takes to get the same effect."|Tolerance description}}
+
+Each {{#vardefineecho:page|{{P|Name}} }} consumed increases the psychite tolerance of the pawn by the following formula:
+
+<code>Increase in tolerance = {{%|{{#var:toleranceSeverityOffset}} }} / body size</code>
+
+Thus smaller or not fully grown pawns gain more tolerance per drug use than bigger or fully grown ones. An adult [[human]] has a body size of {{Q|Human|Body Size}}. Psychite tolerance decreases at a rate of {{%|{{#vardefineecho:toleranceSeverityPerDay|0.015}} }} per day.
+
+See sections ''"{{#var:page}} high"'' and ''"Psychite addiction"'' for how psychite tolerance affects {{#var:page}} high severity and psychite addiction chance respectively.
+
+If the psychite tolerance is above a certain thresholds it imposes a chance over time to gain the following [[ailment]]:
+
+<ul><li>{{Bad|Chemical damage (severe)}}
+
+'''Tolerance above 45%''' imposes a chance proportional to the tolerance held to get [[chemical damage]] (severe). Chemical damage (severe) gained this way will affect only kidneys and only one kidney at a time.
+{| class="wikitable" style="text-align:right"
+! Tolerance !! Chemical damage (severe)<br/>average interval !! Graph
+|-
+| 45% || 99999 Days
+| rowspan="3" | {{Graph:Chart| width = 400 | height = 100 | type = line | xAxisTitle = Tolerance (%) | yAxisTitle = MTB (Days) | x = 50, 50, 100 | y = 250, 180, 135 | xAxisMin = 45 | yAxisMax = 250}}
+|-
+| 50% || 180 Days
+|-
+| 100% || 135 Days
+|}</li></ul>
+
+=== Psychite addiction ===
+{{Quote|"A chemical addiction to psychite. Long-term presence of psychite has caused neurological adaptations at the cellular level, so the brain can no longer function properly without the drug. Without regular doses of psychite from drugs like flake or yayo, withdrawal symptoms will begin. However, extended abstinence will force the brain to adapt back to its normal state, resolving the addiction."|Addiction description}}
+{{#switch: {{#var:page}}
+| Flake | Yayo = Each dose of {{#var:page}} carries a {{%|{{P|Addictiveness}} }} chance of a psychite addiction regardless of tolerance. There is therefore no safe dose interval.
+| Psychite tea = Once a pawn has a psychite tolerance of {{%|{{#var:minToleranceToAddict}} }} or above, each dose carries a chance of psychite addiction that scales with tolerance. Due to the minimum tolerance to addict, {{lc:{{#var:page}} }} can be safely consumed once every {{Plural|{{#var:toleranceSeverityOffset}}/{{#var:toleranceSeverityPerDay}} round 1|day}} without risking addiction, so long as the pawn has a body size of 1 or higher and their tolerance is not already elevated before starting the schedule.
+
+The chance of addiction is as follows:
+<table class="wikitable" style="text-align:right">
+<th> Tolerance </th><th> Addiction chance </th><th> Graph </th>
+<tr>
+<td> 0% </td><td> 0% </td>
+<td rowspan="4"> {{Graph:Chart
+ | width = 400 | height = 100 | type = line | xAxisTitle = Tolerance (%) | yAxisTitle = Addiction Chance (%)
+ | x = 0, {{#expr:{{#var:minToleranceToAddict}}*100}}, {{#expr:{{#var:minToleranceToAddict}}*100}}, 50, 80, 100
+ | y = 0, 0, {{#expr:{{P|Addictiveness}} * ( 1 + 4 * {{#var:minToleranceToAddict}} / 0.5) * 100}}, {{#expr:{{P|Addictiveness}} * 5 * 100}}, {{#expr:{{P|Addictiveness}} * 15 * 100}}, {{#expr:{{P|Addictiveness}} * 15 * 100}}
+}} </td>
+</tr><tr>
+<td> {{%|{{#var:minToleranceToAddict}} }} </td><td> {{%|{{P|Addictiveness}} * ( 1 + 4 * {{#var:minToleranceToAddict}} / 0.5) }} </td>
+</tr><tr>
+<td> 50% </td><td> {{%|{{P|Addictiveness}} * 5}} </td>
+</tr><tr>
+<td> 80% </td><td> {{%|{{P|Addictiveness}} * 15}} </td>
+</tr></table>
+}}
+
+The addiction progresses by {{%|{{#vardefineecho:addictionSeverityPerDay|0.0333}} }} per day from the initial 50%. Once it reaches 100% the addiction is healed, meaning it takes about {{Plural|0.5/{{#var:addictionSeverityPerDay}} round 1|day}} to overcome the addiction. Consuming {{#var:page}} during a psychite addiction will reduce the addiction progress by {{%|{{#var:addictionSeverityOffset}} }} again ''(see "Upon {{#switch:{{#var:page}} | Flake = smoking | Psychite tea = drinking | Yayo = snorting}}" above)''.
+
+Developing a psychite addiction has the following one time effect:
+* {{Bad|15%}} [[Chemical damage]] (severe) chance
+
+Developing an addiction also means a pawn has a psychite [[Needs#Drug addictions|need]]. The need for psychite falls by {{%|{{#vardefineecho:needFall|0.5}} }} per day, consuming psychite satisfies the need by {{%|{{#var:needOffset}} }} ''(see "Upon {{#switch:{{#var:page}} | Flake = smoking | Psychite tea = drinking | Yayo = snorting}}" above)'', meaning the pawn will need to consume {{#var:page}} at least every {{Plural|{{#var:needOffset}}/{{#var:needFall}} round 1|day}} to prevent withdrawal symptoms.
+
+=== Psychite withdrawal ===
+{{Quote|"Because of a psychite addiction, this person needs to regularly consume the drug to avoid withdrawal symptoms."|Need description}}
+As soon as the psychite need reaches 0%, the pawn suffers from the following withdrawal symptoms:
+* {{--|35}} [[Mood]] (''"God I'm tired. Everything's so slow and boring. Especially me."'')
+* {{--|20%}} [[Consciousness]]
+* {{--|20%}} [[Moving]]
+* {{--|20%}} [[Manipulation]]
+* {{++|30%}} [[Sleep Fall Rate]] (meaning the pawn needs to sleep about a 30% sooner)
+* {{Bad|300%}} [[Social Fight Chance Factor]] (Note: This factor is not added or multiplied, but set.)
+* {{Bad|Mental break}} chances:
+** [[Hard drug binge]]: on average every {{#vardefineecho:bingeMtb|40}} days. This averages to {{Plural|1/{{#var:addictionSeverityPerDay}}/{{#var:bingeMtb}} round 1|hard drug binge}} during each withdrawal.
+** [[Psychotic wandering]]: on average every {{#vardefineecho:wanderingMtb|10}} days. This averages to {{Plural|1/{{#var:addictionSeverityPerDay}}/{{#var:wanderingMtb}} round 1|psychotic wandering}} during each withdrawal.</onlyinclude></includeonly>

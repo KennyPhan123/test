@@ -1,0 +1,66 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Local/Chronic}}
+|}
+----
+{| {{STDT| c_11}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Dementia" <!-- defName="Dementia", ParentName="ChronicDiseaseBase" -->
+! Dementia
+----
+* Def Name:<br />Dementia
+* Label:<br />dementia
+| Neural degradation which causes deficits in the ability to think and remember. Dementia has various causes including aging, specific illnesses, and toxins.
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|90%|100%|35%}}
+* Initial Severity: '''0.1%'''
+* Chronic: {{Good|true}}
+* Allow Mothball If Low Priority World Pawn: {{Good|true}}
+* '''Remove On Redress Chance By Days Curve:'''
+<div><li style="display: inline-table;">
+{| {{STDT| c_11}}
+! Days !! Chance
+|-
+! 0
+| 0%
+|-
+! 2
+| 0%
+|-
+! 7
+| 50%
+|-
+! 20
+| 100%
+|}{{Graph:Chart|width=200|height=200|xAxisTitle=Days|yAxisTitle=Remove On Redress Chance|yAxisFormat=%|type=line|x=0, 2, 7, 20|y=0, 0, 0.5, 1|xGrid=|yGrid=}}</li></div>
+* '''Comps:''' ''Skill Decay''
+** '''Decay Per Day Percentage Level Curve<ref>This skill decay is measured as a percentage of the total xp required to level up for the current skill level, which is multiplied by the severity of dementia before being subtracted. This xp loss applies to all learnable skills for a pawn.</ref>:'''
+<div><li style="display: inline-table;">
+{| {{STDT| c_11}}
+! Skill<br />Level !! Decay<br />Per<br />Day
+|-
+! 4
+| 5%
+|-
+! 12
+| 15%
+|-
+! 20
+| 25%
+|}{{Graph:Chart|width=200|height=200|xAxisTitle=Skill Level|yAxisTitle=Skill Level Percentage Decay Per Day|yAxisFormat=%|type=line|x=4, 12, 20|y=0.05, 0.15, 0.25|xGrid=|yGrid=}}</li></div>
+<references />
+|<!-- Stages -->
+{| {{STDT| c_11}}
+! Label !! Parameters
+|-
+! Dementia
+|<!-- Parameters -->
+* Part Efficiency Offset: {{--|15%}}
+* [[Talking]] Offset: {{--|25%}}
+* [[Hearing]] Offset: {{--|25%}}
+* '''Mental State Givers:'''
+** Mental State: '''[[Confusion|Confused wandering]]'''
+** {{MTB}} Days: '''5'''
+|}<noinclude>
+|}</noinclude>

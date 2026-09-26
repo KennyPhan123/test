@@ -1,0 +1,62 @@
+{{Royalty}}
+{{Infobox main|psycast
+| name = Skip
+| image = Skip.png
+| type = Psycast
+| description = Teleport the target to a desired position not too far from its starting point. Objects which are too large cannot be teleported.
+| psylink level = 4
+| casting time = 15
+| ability range = 27.9
+| psyfocus cost = 0.02
+| neural heat gain = 25
+| effect radius =
+| duration =
+| duration multiplier = 
+| goodwill impact = -15
+| caster must be capable of violence = false
+}}
+'''Skip''' is a level {{P|Psylink Level}} [[psycast]] that can teleport a target pawn or item to a desired position. 
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+Upon casting, Skip will skip the target [[pawn]] or item to a nearby target destination. Valid targets for Skip include any pawn with a body size of 3.5 or less, and any haulable items within 28 tiles of the caster, respecting line of sight. Valid destinations for Skip are any walkable tiles within 28 tiles of the target of Skip, respecting line of sight of the target - the target location does not need to be within 28 tiles of the caster, nor within their line of sight - only within range and sight of the target. For a list of pawns of body size ≤3.5, see {{#ask: [[Body Size::≤3.5]] | ?Body Size | ?Type | sort = Type, Type2, Name | limit = 0 | searchlabel = here}}.  Note that despite having a body size of 1, [[Apocriton]]s{{BiotechIcon}} cannot be targeted by Skip, by reason of "Psychic Resistance".
+
+Upon arriving at their destination, pawns will be very briefly stunned for {{Ticks|30}}, preventing them from moving or taking action for the duration.
+
+Additionally, note that Skip is considered a harmful ability, and will incur a goodwill penalty of {{Bad|−15}} when cast on pawns from a neutral or allied faction. However, Skip will not apply a goodwill penalty if used on temporary colonists, such as quest lodgers or an imperial laborer gang.
+
+[[Psychic sensitivity]] has no impact on being skipped, [[psychically deaf]] raiders and [[hunter drone]]s{{OdysseyIcon}} are just as vulnerable to being skipped around as any other valid pawn.
+
+== Analysis ==
+[[File:skip radius.PNG|thumb|left|175px|Area of effect of Skip, both the target selection and teleport radii. Yellow tile indicates caster / skip target location, white tiles indicate valid target / destination location, and red tiles indicate invalid targets for both.]]
+Skip is considered by many to be the single best psycast in the game, and for good reason. The ability to near-instantly reposition pawns within a considerable range allows one to almost entirely dictate the flow, and outcome of combat. Additionally, Skip's low neural heat gain and psyfocus cost allow it to be used several times in succession, allowing for unparalleled battlefield control. Used well, Skip can trivialize combat encounters, though not necessarily all on its own.
+
+While the only real limit on the use of Skip is one's imagination, there are several obvious uses for it:
+* '''Moving enemies to a disadvantageous location:''' Skip can be used to move melee attackers away from your own pawns, or place ranged attackers outside of [[cover]], potentially within range of your melee fighters. Skipping a ranged attacker into melee is especially effective, as otherwise deadly attackers like [[centipede]]s are toothless in melee, and Skip itself has great range (better or slightly worse than most weapons). 
+:In addition, skip can be used to bring enemies of any type into actively harmful positions, such as on top of an [[IED]], [[fire]], or on a thrown [[frag grenade]]. It can also cluster enemies together for a [[berserk pulse]] or [[vertigo pulse]], though the high range and area of effect of the latter render this mostly unnecessary.
+
+* '''Moving colonists into combat:''' This involves skipping your melee fighters directly into the enemy's ranks, or skipping your ranged pawns into flanking positions behind enemy cover. However, in terms of offensive measures, using Skip on enemies tends to be a better value proposition, as bringing fighters into the enemy's lines is a big risk. Still, with expendable fighters such as [[ghoul]]s{{AnomalyIcon}} or tamed [[megasloth]]s (or perhaps an especially well-armored pawn), teleporting into the enemy lines can be highly disruptive. 
+
+* '''Saving pawns:''' Skip can bring an injured or downed pawn into relative safety. Or it can send pawns undergoing a [[mental break]] away from combat. The same applies to pawns lit on [[fire]]. Or it can remove pawns from an imminent threat like a [[frag grenade]] or a [[diabolus]]'{{BiotechIcon}} [[hellsphere cannon]]{{BiotechIcon}}.
+
+*'''Self-skip:''' Skip can be used to allow the psycaster to travel blindingly fast. The skip user can blink to a downed pawn and blink out, allowing the caster to act as a superb paramedic. It is worth noting that skipping a downed pawn from another faction inflicts a goodwill penalty, but carrying said pawn and casting skip on the carrier does not.
+
+*'''Fleeing raiders:''' Skip can be used to retrieve any fleeing raiders, should one be inclined to attempt capture. Bleeding pawns can be skipped away from the map edge repeatedly until extreme [[blood loss]] renders them unconscious, allowing one to bypass the extra [[Downed#Death_on_down|death on down]] chance.
+
+Finally, while Skip's ability to target objects is generally less useful than relocating pawns, it still has some merit. It can act as a superior [[Chunk skip]], creating a wall of cover and/or taking the enemy's cover away.  In terms of offensive measures, Skip can also be used to skip stacks of [[chemfuel]] or more commonly [[mortar shell]]s directly on top of enemies - preferably once already damaged and "hissing", as enemies will attempt to flee from the imminent explosion, if provided the chance. However, the practical applications of this are rather dubious, as if given the opportunity to set up and prime said items, the time would likely have been better spent setting up IEDs and placing enemies on top of them, instead. While the explosive items can be teleported on an enemy group, doing this requires a nearby supply of shells, the shells to be within line of sight of the enemies, and a weapon capable of damaging them (as most ranged weapons can't target shells).
+
+== Version history ==
+* [[Royalty DLC]] Release - Added.
+* [[Version/1.1.2598|1.1.2598]] - Fix: Using skip, some areas are painted as if you can teleport there, but there are walls. Also, Fix: Can’t use skip psycast on top of power conduits.
+* [[Version/1.1.2647|1.1.2647]] - Skip range and radius increased from 25 to 28.
+* [[Version/1.2.2719|1.2.2719]] - Visual effects redone for all skip psycasts. It now has a resemblance to a charged black hole or a spherical cut in spacetime. The new effect is more science-themed and avoids magic-like elements to focus on the hard sci-fi RimWorld feel. Also, Fix: [[Mechanoids]] not waking up if you skip them.
+* [[Console version/1.23|1.23 (Console}]] - Fix: "Skip" psy power causing game errors when using
+* [[Version/1.3.3117|1.3.3117]] - Fix: Skip abilities don't update cover grid.
+* [[Version/1.3.3159|1.3.3159]] - Fix: Skip psycast can cause duplication bugs.
+* [[Version/1.4.3523|1.4.3523]] - Now has a maximum [[body size]] of 3.5.
+* [[Version/1.6.4535|1.6.4535]] - Fix: UI cascade error when pawn targeted with skip dies.
+
+{{Nav|psycasts|wide}}
+[[Category: Psycasts]]

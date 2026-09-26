@@ -1,0 +1,44 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Local/Misc}}
+|}
+----
+{| {{STDT| c_11}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Chemical damage (severe)" id="Severe chemical damage" <!-- defName="ChemicalDamageSevere", ParentName="DiseaseBase" -->
+! Chemical damage (severe)
+----
+* Def Name:<br />ChemicalDamageSevere
+* Label:<br />chemical damage
+* Debug Label Extra:<br />severe
+| Chemical damage at the cellular level.
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|90%|100%|35%}}
+* Initial Severity: '''0.1%'''
+* '''Remove On Redress Chance By Days Curve:'''
+<div><li style="display: inline-table;">
+{| {{STDT| c_11}}
+! <abbr title="Days as a World Pawn">Days</abbr> !! <abbr title="Chance to remove on Pawn Generator Redress">Chance</abbr>
+|-
+! 0
+| 0%
+|-
+! 2
+| 0%
+|-
+! 7
+| 50%
+|-
+! 20
+| 100%
+|}</li></div>
+|<!-- Stages -->
+{| {{STDT| c_11}}
+! Label !! Parameters
+|-
+! Chemical damage
+|<!-- Parameters -->
+* Part Efficiency Offset: {{--|80%}}
+|}<noinclude>
+|}</noinclude>

@@ -1,0 +1,455 @@
+<noinclude>{{Verified|1.5.4104}}
+&larr; <small>[[Stat]]</small>
+{| {{STDT|sortable}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category</noinclude>
+<!-- Core Stats_Basics_General -->
+<div id="Core Stats_Basics_General"><!--<Defs>-->
+|- id="Max Hit Points" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />MaxHitPoints
+* '''Label:'''<br />max hit points
+| The maximum hit points of an object.<br id="n" /><br id="n" />This represents how much damage it can take before being destroyed.
+|
+* Display Order:<br />'''2'''
+* Def Name:<br />'''BasicsNonPawnImportant'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' 100% <!-- for some reason the xml has this set as 100, instead of the usual 0~1 -->
+* '''Min Value:''' {{%|1}}
+* '''Round Value:''' {{Good|true}}
+* '''To String Style:''' Integer
+* '''Round To Five Over:''' 200
+* '''Show Non Abstract:''' {{Good|true}}
+* '''Scenario Randomizable:''' {{Good|true}}
+* '''Show On Pawns:''' {{Bad|false}}
+| -
+| 99997
+<!--</StatDef>-->
+|- id="Mass" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />Mass
+* '''Label:'''<br />mass
+| The physical mass of an object.
+|
+* Display Order:<br />'''10'''
+* Def Name:<br />'''Basics'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Good|true}}'''
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0}}
+* '''To String Style:''' FloatTwoOrThree
+* '''Format String:''' {0} kg
+* '''Minified Thing Inherits:''' {{Good|true}}
+* '''Show On Unhaulables:''' {{Bad|false}}
+|
+* '''Parts:'''
+** '''StatPart_BodySize'''
+** '''StatPart_NaturalNotMissingBodyPartsCoverage'''
+** '''StatPart_GearAndInventoryMass'''
+** '''StatPart_UnfinishedThingIngredientsMass'''
+** '''StatPart_AddedBodyPartsMass'''
+| 1500
+<!--</StatDef>-->
+|- id="Market Value" <!-- ParentName="MarketValueBase" --><!--<StatDef>-->
+|
+* '''Def Name:'''<br />MarketValue
+* '''Label:'''<br />market value
+| The market value of an object.<br id="n" /><br id="n" />The actual trade price will be adjusted by negotiation skill, relationship status, and other contextual factors.
+|
+* Display Order:<br />'''1'''
+* Def Name:<br />'''BasicsImportant'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Good|true}}'''
+|
+* Worker Class: '''StatWorker_MarketValue'''
+* Min Value: '''{{%|0}}'''
+* To String Style: '''Money'''
+* Round To Five Over: '''200'''
+* Minified Thing Inherits: '''{{Good|true}}'''
+* Show On Untradeables: '''{{Bad|false}}'''
+* Scenario Randomizable: '''{{Good|true}}'''
+|
+''StatParts'':
+* '''''StatPart_Quality:'''''
+** Factor Awful: {{Bad|'''{{%|0.5}}'''}}
+** Factor Poor: {{Bad|'''{{%|0.75}}'''}}
+** Factor Normal: '''{{%|1}}'''
+** Factor Good: {{Good|'''{{%|1.25}}'''}}
+** Max Gain Good: {{+|'''500'''}}
+** Factor Excellent: {{Good|'''{{%|1.5}}'''}}
+** Max Gain Excellent: {{+|'''1000'''}}
+** Factor Masterwork: {{Good|'''{{%|2.5}}'''}}
+** Max Gain Masterwork: {{+|'''2000'''}}
+** Factor Legendary: {{Good|'''{{%|5}}'''}}
+** Max Gain Legendary: {{+|'''3000'''}}
+* '''StatPart_WornByCorpse'''
+* '''StatPart_IsCorpseFresh'''
+* '''StatPart_WeaponTraitsMarketValueOffset'''
+* '''StatPart_Biocoded'''
+* '''StatPart_ReloadMarketValue'''
+* '''StatPart_Genes{{BiotechIcon}}'''
+* '''Parts:'''
+** '''StatPart_Health:'''
+*** '''Curve:'''
+**** '''Points:'''
+***** (0.0, 0.0)
+***** (0.5, 0.1)
+***** (0.6, 0.5)
+***** (0.9, 1.0)
+{{Graph:Chart|width=300|height=150|xAxisTitle=Hit Point Percentage|yAxisTitle=Sell Price Multiplier|type=line|x=0.0, 0.5, 0.6, 0.9|y=0.0, 0.1, 0.5, 1.0|interpolate=monotone|xGrid=|yGrid=}}
+** '''StatPart_Age{{BiotechIcon}}:'''
+*** Use Biological Years: '''{{Good|true}}'''
+*** Humanlike Only: '''{{Good|true}}'''
+*** '''Curve:'''
+**** '''Points:'''
+***** (3,0.5)
+***** (13,0.9)
+***** (18,1)
+{{Graph:Chart|width=300|height=150|xAxisTitle=Age (Biological)|yAxisTitle=Sell Price Multiplier|type=line|x=3, 13, 18|y=0.5, 0.9, 1|xAxisMin=3|interpolate=monotone|xGrid=|yGrid=}}
+| 2510
+<!--</StatDef>-->
+|- id="Market Value Ignoring Hitpoints" <!-- ParentName="MarketValueBase" --><!--<StatDef>-->
+|
+* '''Def Name:'''<br />MarketValueIgnoreHp
+* '''Label:'''<br />market value ignoring hitpoints
+| -
+|
+* Display Order:<br />'''1'''
+* Def Name:<br />'''BasicsImportant'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Good|true}}'''
+|
+* Worker Class: '''StatWorker_MarketValue'''
+* Min Value: '''{{%|0}}'''
+* To String Style: '''Money'''
+* Round To Five Over: '''200'''
+* Minified Thing Inherits: '''{{Good|true}}'''
+* Show On Untradeables: '''{{Bad|false}}'''
+* Scenario Randomizable: '''{{Good|true}}'''
+* '''Always Hide:''' {{Good|true}}
+|
+''StatParts'':
+* '''''StatPart_Quality:'''''
+** Factor Awful: {{Bad|'''{{%|0.5}}'''}}
+** Factor Poor: {{Bad|'''{{%|0.75}}'''}}
+** Factor Normal: '''{{%|1}}'''
+** Factor Good: {{Good|'''{{%|1.25}}'''}}
+** Max Gain Good: {{+|'''500'''}}
+** Factor Excellent: {{Good|'''{{%|1.5}}'''}}
+** Max Gain Excellent: {{+|'''1000'''}}
+** Factor Masterwork: {{Good|'''{{%|2.5}}'''}}
+** Max Gain Masterwork: {{+|'''2000'''}}
+** Factor Legendary: {{Good|'''{{%|5}}'''}}
+** Max Gain Legendary: {{+|'''3000'''}}
+* '''StatPart_WornByCorpse'''
+* '''StatPart_IsCorpseFresh'''
+* '''StatPart_WeaponTraitsMarketValueOffset'''
+* '''StatPart_Biocoded'''
+* '''StatPart_ReloadMarketValue'''
+* '''StatPart_Genes{{BiotechIcon}}'''
+| 2510
+<!--</StatDef>-->
+|- id="Sell Price Multiplier" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />SellPriceFactor
+* '''Label:'''<br />sell price multiplier
+| A multiplier on the price at which you can sell items.
+|
+* Display Order:<br />'''12'''
+* Def Name:<br />'''BasicsNonPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Show If Undefined:''' {{Bad|false}}
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0}}
+* '''To String Style:''' PercentZero
+* '''Show On Untradeables:''' {{Bad|false}}
+| -
+| 2509
+<!--</StatDef>-->
+|- id="Honor Value" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />RoyalFavorValue
+* '''Label:'''<br />honor value
+| The amount of honor your trader will earn for giving this to a tribute collector.
+|
+* Display Order:<br />'''1'''
+* Def Name:<br />'''BasicsImportant'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Good|true}}'''
+|
+* '''Default Base Value:''' {{%|0}}
+* '''Min Value:''' {{%|0}}
+* '''To String Style:''' FloatMaxThree
+* '''Show If Undefined:''' {{Bad|false}}
+* '''Show If Mods Loaded:'''
+** '''Royalty {{RoyaltyIcon}}'''
+| -
+| 2508
+<!--</StatDef>-->
+|- id="Flammability" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />Flammability
+* '''Label:'''<br />flammability
+| How easily an object catches fire and how quickly a fire will grow as it burns.
+|
+* Display Order:<br />'''10'''
+* Def Name:<br />'''Basics'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Good|true}}'''
+|
+* '''Default Base Value:''' {{%|0}}
+* '''Min Value:''' {{%|0}}
+<!-- Normalize to: 1 is wood, 0 is stone, 2 is like dry wispy paper or volatile fuel.-->
+* '''Max Value:''' 2
+* '''To String Style:''' PercentZero
+* '''Scenario Randomizable:''' {{Good|true}}
+* '''Minified Thing Inherits:''' {{Good|true}}
+| -
+| 3000
+<!--</StatDef>-->
+|- id="Work To Make" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />WorkToMake
+* '''Label:'''<br />work to make
+| The base amount of work it takes to make an item, once all materials are gathered.
+|
+* Display Order:<br />'''12'''
+* Def Name:<br />'''BasicsNonPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0}}
+* '''To String Style:''' WorkAmount
+* '''Round To Five Over:''' 300
+* '''Show If Undefined:''' {{Bad|false}}
+* '''Scenario Randomizable:''' {{Good|true}}
+| -
+| 3100
+<!--</StatDef>-->
+|- id="Deterioration Rate" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />DeteriorationRate
+* '''Label:'''<br />deterioration rate
+| The rate at which this item deteriorates when left outside, in average hit points per day.<br id="n" /><br id="n" />Deterioration rate is also affected by things like weather, roofs, toxic fallout, or being left in shallow water.
+|
+* Display Order:<br />'''12'''
+* Def Name:<br />'''BasicsNonPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Show If Undefined:''' {{Bad|false}}
+* '''Default Base Value:''' {{%|0}}
+* '''Min Value:''' {{%|0}}
+* '''To String Style:''' FloatTwo
+* '''Format String:''' {0} / day
+* '''Scenario Randomizable:''' {{Good|true}}
+|
+* '''Parts:'''
+** '''StatPart_Quality:'''
+*** Factor Awful: '''{{Bad|{{%|2}}}}'''
+*** Factor Poor: '''{{Bad|{{%|1.5}}}}'''
+*** Factor Normal: '''{{%|1}}'''
+*** Factor Good: '''{{Good|{{%|0.8}}}}'''
+*** Factor Excellent: '''{{Good|{{%|0.6}}}}'''
+*** Factor Masterwork: '''{{Good|{{%|0.3}}}}'''
+*** Factor Legendary: '''{{Good|{{%|0.1}}}}'''
+** '''StatPart_EnvironmentalEffects:'''
+*** Factor Offset Unroofed: '''{{+|{{%|0.5}}}}'''
+*** Factor Offset Outdoors: '''{{+|{{%|0.5}}}}'''
+*** Protected By Edifice Factor: '''{{%|0}}'''
+** '''StatPart_Pollution{{BiotechIcon}}:'''
+*** Multiplier: '''{{%|1.5}}'''
+** '''StatPart_NoxiousHaze{{BiotechIcon}}:'''
+*** Multiplier: '''{{%|3}}'''
+** '''StatPart_ToxicFallout:'''
+*** Multiplier: '''{{%|3}}'''
+** '''StatPart_NearHarbingerTree{{AnomalyIcon}}:'''
+*** Multiplier: '''{{%|2}}'''
+** '''StatPart_ShamblerCorpse{{AnomalyIcon}}:'''
+*** Multiplier: '''{{%|5}}'''
+| 2500
+<!--</StatDef>-->
+|- id="Beauty" <!-- Name="Beauty" --><!--<StatDef>-->
+|
+* '''Def Name:'''<br />Beauty
+* '''Label:'''<br />beauty
+| How enjoyable an object is to look at.<br id="n" /><br id="n" />Beautiful objects fulfill characters' need for beauty.
+|
+* Display Order:<br />'''12'''
+* Def Name:<br />'''BasicsNonPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|0}}
+* '''Min Value:''' {{%|-1000}}
+* '''Hide At Value:''' {{%|0}}
+* '''Round Value:''' {{Good|true}}
+* '''To String Style:''' Integer
+* '''Round To Five Over:''' 100
+* '''Apply Factors If Negative:''' {{Bad|false}}
+|
+* '''Parts:'''
+** '''StatPart_Quality:'''
+*** Factor Awful: '''{{Bad|{{%|-0.1}}}}'''
+*** Factor Poor: '''{{Bad|{{%|0.5}}}}'''
+*** Factor Normal: '''{{%|1}}'''
+*** Factor Good: '''{{Good|{{%|2}}}}'''
+*** Factor Excellent: '''{{Good|{{%|3}}}}'''
+*** Factor Masterwork: '''{{Good|{{%|5}}}}'''
+*** Factor Legendary: '''{{Good|{{%|8}}}}'''
+** '''StatPart_ContentsBeauty'''
+| 3000
+<!--</StatDef>-->
+|- id="Outdoor Beauty" <!-- ParentName="Beauty" --><!--<StatDef>-->
+|
+* '''Def Name:'''<br />BeautyOutdoors
+* '''Label:'''<br />outdoor beauty
+| How enjoyable something is to look at if it's outside.<br id="n" /><br id="n" />Beautiful objects fulfill peoples' need for beauty.
+|
+* Display Order:<br />'''12'''
+* Def Name:<br />'''BasicsNonPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|0}}
+* '''Min Value:''' {{%|-1000}}
+* '''Hide At Value:''' {{%|0}}
+* '''Round Value:''' {{Good|true}}
+* '''To String Style:''' Integer
+* '''Round To Five Over:''' 100
+* '''Apply Factors If Negative:''' {{Bad|false}}
+|
+* '''Parts:'''
+** '''StatPart_Quality:'''
+*** Factor Awful: '''{{Bad|{{%|-0.1}}}}'''
+*** Factor Poor: '''{{Bad|{{%|0.5}}}}'''
+*** Factor Normal: '''{{%|1}}'''
+*** Factor Good: '''{{Good|{{%|2}}}}'''
+*** Factor Excellent: '''{{Good|{{%|3}}}}'''
+*** Factor Masterwork: '''{{Good|{{%|5}}}}'''
+*** Factor Legendary: '''{{Good|{{%|8}}}}'''
+** '''StatPart_ContentsBeauty'''
+| 3000
+<!--</StatDef>-->
+|- id="Cleanliness" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />Cleanliness
+* '''Label:'''<br />cleanliness
+| How much an object contributes to an area's cleanliness score.
+|
+* Display Order:<br />'''12'''
+* Def Name:<br />'''BasicsNonPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|0}}
+* '''Max Value:''' 1000
+* '''Min Value:''' {{%|-1000}}
+* '''Hide At Value:''' {{%|0}}
+* '''To String Style:''' FloatOne
+* '''Apply Factors If Negative:''' {{Bad|false}}
+| -
+| 3000
+<!--</StatDef>-->
+|- id="Comfort" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />Comfort
+* '''Label:'''<br />comfort
+| How comfortable an object is to sit or lay on.<br id="n" /><br id="n" />Using comfortable objects fulfills a character's need for comfort.
+|
+* Display Order:<br />'''12'''
+* Def Name:<br />'''BasicsNonPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Show If Undefined:''' {{Bad|false}}
+* '''Default Base Value:''' {{%|0}}
+* '''Max Value:''' 1000
+* '''Min Value:''' {{%|-1000}}
+* '''To String Style:''' FloatTwo
+* '''Apply Factors If Negative:''' {{Bad|false}}
+|
+* '''Parts:'''
+** '''StatPart_Quality:'''
+*** Factor Awful: '''{{Bad|{{%|0.76}}}}'''
+*** Factor Poor: '''{{Bad|{{%|0.88}}}}'''
+*** Factor Normal: '''{{%|1}}'''
+*** Factor Good: '''{{Good|{{%|1.12}}}}'''
+*** Factor Excellent: '''{{Good|{{%|1.24}}}}'''
+*** Factor Masterwork: '''{{Good|{{%|1.45}}}}'''
+*** Factor Legendary: '''{{Good|{{%|1.7}}}}'''
+| 3000
+<!--</StatDef>-->
+|- id="Nutrition" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />Nutrition
+* '''Label:'''<br />nutrition
+| How nutritious this food is.
+|
+* Display Order:<br />'''2'''
+* Def Name:<br />'''BasicsNonPawnImportant'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|0}}
+* '''Min Value:''' {{%|0}}
+* '''Show If Undefined:''' {{Bad|false}}
+* '''To String Style:''' FloatTwo
+|
+* '''Parts:'''
+** '''StatPart_BodySize'''
+** '''StatPart_NaturalNotMissingBodyPartsCoverage'''
+** '''StatPart_PlantGrowthNutritionFactor'''
+** '''StatPart_IsFlesh'''
+** '''StatPart_IsCorpseFresh'''
+| 3000
+<!--</StatDef>-->
+|- id="Food Poison Chance" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />FoodPoisonChanceFixedHuman
+* '''Label:'''<br />food poison chance
+* '''Label For Full Stat List:'''<br />food poison chance (food stat)
+| The chance this food will cause food poisoning.
+|
+* Display Order:<br />'''12'''
+* Def Name:<br />'''BasicsNonPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|0}}
+* '''Min Value:''' {{%|0}}
+* '''Hide At Value:''' {{%|0}}
+* '''To String Style:''' PercentZero
+|
+* '''Parts:'''
+** '''StatPart_MaxChanceIfRotting'''
+| 4000
+<!--</StatDef>-->
+|- id="Shooting Accuracy" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />ShootingAccuracyTurret
+* '''Label:'''<br />shooting accuracy
+* '''Label For Full Stat List:'''<br />shooting accuracy (turrets)
+| Base chance to not miss per cell of shot distance.<br id="n" /><br id="n" />Chance to hit is also affected by many other factors. A hit chance explanation for any shot can be seen by selecting a shooter and mousing over a target.
+|
+* Display Order:<br />'''12'''
+* Def Name:<br />'''BasicsNonPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Worker Class:''' StatWorker_ShootingAccuracy
+* '''Default Base Value:''' {{%|0.96}}
+* '''To String Style:''' PercentOne
+* '''To String Style Unfinalized:''' FloatOne
+* '''Show If Undefined:''' {{Bad|false}}
+| -
+| 4000
+<!--</StatDef>-->
+<!--</Defs>--></div>
+<noinclude>
+|}</noinclude>

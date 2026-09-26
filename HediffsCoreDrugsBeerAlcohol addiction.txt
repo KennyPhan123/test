@@ -1,0 +1,56 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Drugs/Beer}}
+|}
+----
+{| {{STDT| c_24}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Alcohol addiction" <!-- defName="AlcoholAddiction", ParentName="AddictionBase" -->
+! Alcohol addiction
+----
+* Def Name: AlcoholAddiction
+* Label: alcohol addiction
+| A chemical addiction to alcohol. Long-term presence of alcohol has caused neurological adaptations at the cellular level, so the brain can no longer function properly without the drug.
+<br />Without regular doses of alcohol, withdrawal symptoms will begin. However, extended abstinence will force the brain to adapt back to its normal state, resolving the addiction.
+|<!-- Details -->
+* Hediff Class: '''Hediff_Addiction'''
+* Causes Need: '''Chemical_Alcohol'''
+* Default Label Color: {{Color|100%|0%|50%}}
+* Initial Severity: '''50%'''
+* Max Severity: '''100%'''
+* Scenario Can Add: {{Good|true}}
+* '''Remove On Redress Chance By Days Curve:'''
+<div><li style="display: inline-table;">
+{| {{STDT| c_24}}
+! Days !! Chance
+|-
+! 0
+| 0%
+|-
+! 10
+| 0%
+|-
+! 60
+| 25%
+|}{{Graph:Chart|width=200|height=200|xAxisTitle=Days|yAxisTitle=Remove On Redress Chance|type=line|x=0, 10, 60|y=0, 0, 0.25|interpolate=monotone|xGrid=|yGrid=}}</li></div>
+* '''Comps'''
+** '''Severity Per Day:''' {{---|3.33%}}
+*** Show Days To Recover: {{Good|true}}
+|<!-- Stages -->
+{| {{STDT| c_24}}
+! Label !! Parameters
+|-
+! (Empty)
+| -<!-- Parameters -->
+|-
+! Withdrawal
+|<!-- Parameters -->
+* Social Fight Chance Factor: {{Bad|×200%}}
+* [[Consciousness]] Offset: {{--|20%}}
+* [[Moving]] Offset: {{--|30%}}
+* [[Manipulation]] Post Factor: {{Bad|×50%}}
+* '''Mental State Givers:'''
+** Mental State: '''[[Social drug binge]]'''
+** {{MTB}} Days: '''10'''
+|}<noinclude>
+|}</noinclude>

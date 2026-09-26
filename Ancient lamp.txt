@@ -1,0 +1,58 @@
+{{Ideology}}
+{{Project|Ruins}}
+{{Infobox main|building
+| name = Ancient lamp
+| image = Ancient lamp.png
+| description = An ancient self-powered lamp. Its internal power supply is badly depleted, but it still emits a weak glow.
+<!-- Base Stats -->
+| type = Building
+| type2 = Ruins
+| hp = 50
+| flammability = 0.5
+| rotatable = false
+| path cost = 14
+<!-- Building -->
+| size = 1 ˣ 1
+| placeable = false
+| passability = pass through only
+| cover = 0.20
+| terrain affordance = Light
+| glowradius = 5.5
+| glowcolor = (71,43,6,0)
+<!-- Technical -->
+| defName = AncientLamp
+| label = ancient lamp
+| page verified for version = 1.3.3117
+<!-- ThingDef Name="BuildingBase" Abstract="True"-->
+| category = Building
+| thingClass = Building
+| drawerType = MapMeshOnly
+| repairEffect = Repair
+| filthLeaving = Filth_RubbleBuilding
+| SellPriceFactor = 0.70
+<!-- ThingDef ParentName="BuildingBase" -->
+| altitudeLayer = Building
+| selectable = true
+| leaveResourcesWhenKilled = false
+| soundImpactDefault = BulletImpact_Metal
+| graphicClass = Graphic_Single
+| texPath = Things/Building/Ruins/AncientLamp
+}}
+'''Ancient lamps''' are buildings found [[ruins]] added by the [[Ideology DLC]]. They provide perpetual, but dim [[light]]ing
+
+== Summary == 
+[[File:Ancient lamp illumination area.png|300px|thumb|left|The white area (tile occupied by lamp) is 50% illumination, required for best [[Surgery Success Chance Factor|surgery success chance]]; the yellow (2 tiles out) represents 30% or better, adequate for all general labor, avoiding [[mood]] penalties, and for growing [[Decorative Plants|decorative plants]] indoors in [[plant pot]]s.]]
+An ancient lamp produces [[light]] in a 4 tile radius, with the nearest {{P|Light Radius}} tiles at or above 30% light level and considered "[[Light|Lit]]", to a maximum of 50%. The provided light in this area is bright enough to prevent work speed penalties, grow decorative plants, and prevent the debuff [[Thoughts_list#In_darkness|"In darkness"]]. However, ancient lamps are not bright enough to grow most [[crop]]s indoors, which require 51% illumination. Light does not "stack", so no amount of lamps will ever give more than 50% illumination (e.g. for [[rice plant]]s, etc).
+
+== Analysis ==
+The ancient lamp provides a very small amount of light immediately around itself, unconditionally. This light is incredibly weak, barely able to reach the tiles next to it, making it unsuitable for most tasks.
+
+However, if the terrain is in your favor, you can build a [[simple research bench]] right next to it, so that the colonist is in light to increase your research speed very slightly. You can also fit a second work station, such as a [[hand tailor bench]] on the opposite side. This gives its light a niche similar to the [[unstable power cell]]{{RoyaltyIcon}} and [[mech node]], without the costs associated with those two structures (both having -20 beauty, the mech node being far more valuable to just deconstruct for plasteel and components, and the unstable power cell exploding violently if it's damaged).
+
+It also provides no heat, which may make it slightly preferable to torches in conditions where heat cannot be easily managed, or where wood is scarce. However, it cannot satisfy ideological requirements (e.g. darklight or styles).
+
+== Version history ==
+* [[Ideology DLC]] Release - Added.
+
+{{Nav/Ruins}}
+[[Category:Ruins]] [[Category:Lamp]]

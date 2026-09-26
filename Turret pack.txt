@@ -1,0 +1,75 @@
+{{Anomaly}}
+{{Stub|reason=Integration with [[tactical turret]], effect of solar flares, stun damage, EMP, emi dynamos on the turret, both if they happen after deploying and before. Nudity mood interactions (infobox too) - test in-game before adding. analysis needs value proposition etc. Do smart raiders avoid deployed tactical turrets like they do normal turrets?}}
+{{Infobox main
+| name = Turret pack
+| image = Turret pack.png
+| description = A wearable pack that allows the user to deploy a battery-powered turret. The pack contains a propulsion device, letting the user launch the turret a short distance. These turrets are effective for flanking and distracting enemies. However, the turret's limited AI can't be directly controlled, so it can cause friendly fire incidents. The turret battery lasts for several hours.
+| type = Gear
+| type2 = Utility
+| tech level = Industrial
+| hp = 100
+| beauty = -3
+| marketvalue = 235
+| flammability = 0.6
+| mass base = 3
+| production facility 1 = Machining table
+| research = Turret pack
+| work to make = 10000
+| work speed stat = General Labor Speed
+| skill 1 = Crafting
+| skill 1 level = 5
+| resource 1 = Steel
+| resource 1 amount = 70
+| resource 2 = Components
+| resource 2 amount = 2
+| lifestage = 
+| clothing for nudity = 
+| coverage = Waist
+| layer = Belt
+| range = 22.9
+| warmup = 60
+| equipdelay = 2
+| defName = Apparel_PackTurret
+| thingCategories = ApparelUtility
+| thingSetMakerTags = 
+| tags = 
+| tradeTags = Clothing
+| page verified for version = 
+}}
+The '''turret pack''' is a single-use [[utility]] item added by [[Anomaly DLC]]. It allows the user to deploy a small, short lived [[tactical turret]] to shoot at their enemies.
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+[[File:Turret pack deploy gizmo.png|thumb|left|Gizmo for deploying the turret]]<onlyinclude>When equipped, a {{lc:{{P|Name}}}} is worn in the waist [[Utility|utility slot]]. Pawns that are [[incapable]] of violence can equip, but not use, the pack. Once the wearer is [[draft]]ed, it can be manually activated by the player to target an empty space and within 22.9 tiles and [[line of sight]]. 
+
+After a {{Ticks|{{P|Aiming Time Base}}}} warm-up, a [[tactical turret]] will be thrown towards the target tile and deploy there. Note that the warmup time before launch is affected by the [[Aiming Time]] stat of the wearer and that the turret acts as a projectile and therefore has travel time. The [[tactical turret]] thrown is almost identical to a [[steel]] [[mini-turret]] except that the range is reduced from 29 tiles to 20 and the [[flammability]] is increased from 28% to {{%|{{Q|Tactical turret|Flammability Base}}}}.  It's powered by a battery that lasts {{Ticks|12500}}, whether it's shooting or not, after which it will shut down but remain in place.
+
+Like other turrets, tactical turret have a 50% chance to explode when damaged below 20% health. The exploding turret will spark and emit a hissing sound for {{Ticks|240}} before exploding, dealing 50 [[Damage Types#Bomb|Bomb damage]] in a 3.9 tile radius centered around the lower left tile of the turret. Bomb damage is multiplied {{Up|x8}} against [[wall]]s, {{Up|x4}} against other impassable structures and plants, and {{Up|x2}} against passable buildings. All nearby raiders will attempt to move out of the blast radius before detonation. The turret does benefit from [[cover]] but cannot fire around full cover like a pawn. For further detail about the turret, see the [[tactical turret]] page.
+
+The pack has a single use and cannot be recharged or reloaded - once the turret is launched, the pack disappears completely and no resources can be salvaged from it. The turret itself can be deconstructed for {{Icon Small|steel||20}} [[steel]], even after it shuts down.  If destroyed, it leaves {{Icon Small|steel||10}} [[steel]].
+
+{{Utility Note}}
+
+== Analysis ==
+The thrown turret deals damage at the same rate as a [[mini-turret]], which is not very quickly.  In most circumstances, its value comes mainly from how it attracts enemy attention:
+* When fighting in the field, every 100 damage the enemy spends destroying a thrown turret is 100 damage that didn't hit your colonists—modulo considerations like armor and positioning.  Place the turrets where enemies will likely attack them first while you do your shooting; ideally put them in [[cover]] so they last longer, ideally outside your own line of fire.
+* You might get an enemy to spend their [[doomsday rocket launcher|doomsday]] or [[triple rocket launcher|triple]] rocket launchers blowing up a turret.  Make sure you're outside the blast radius.
+* Throwing the turret into the middle of enemy lines might cause some disruption, especially if it explodes.
+* The turret may distract a powerful threat long enough to let an unlucky colonist flee to safety.
+
+== Graphs ==
+{| class="wikitable"
+|-
+! {{Hover title|link=no|dotted=yes|DPS taking into account both weapon accuracy and pawn/turret accuracy|True DPS}} over Range
+|-
+| {{Weapon Iterated DPS Chart|Tactical turret gun|Normal|0.96}}
+|}
+
+== Version history ==
+* [[Anomaly DLC]] Release - Added.
+* [[Version/1.6.4518|1.6.4518]] - Added a minimum crafting skill requirement to turret packs.
+
+{{nav|utility|wide}}
+[[Category:Utility]]

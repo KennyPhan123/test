@@ -1,0 +1,158 @@
+{{Infobox biome
+| name = Temperate swamp
+| image = TemperateSwamp.png
+| description = Wetlands choked with vegetation and disease. Dense overgrowth makes it hard to move around, and clearing areas for building takes a long time. Much of the terrain is too marshy to support heavy structures.
+| type = Biome
+| texture = TemperateSwampTexture.png
+| canbuildbase = Yes
+| allowFarmingCamps = Yes
+| animal density = 4.3
+| plant density = 0.8
+| movement difficulty = 4
+| min average temperature = 0
+| max average temperature = 25
+| min temperature = -10
+| min rainfall = 600
+| min swampiness = 0.5 
+| forageability = 0.75
+| wild plant regrow days = 15
+| disease mtb days = 40
+<!-- weather -->
+| clear = 18
+| fog = 1
+| rain = 2
+| dry thunderstorm = 1
+| rainy thunderstorm = 1
+| foggy rain = 1
+| hard snow = 4
+| soft snow = 4
+| gray pall = 1
+| blind fog = 1
+| overcast = 2
+| torrential rain = 0.5
+<!-- fish -->
+| max fish population = 660
+| freshwater_common_bass = Yes
+| freshwater_uncommon_catfish = Yes
+| saltwater_common_bluefish = Yes
+| saltwater_uncommon_marlin = Yes
+| saltwater_uncommon_flounder = Yes
+}}
+'''Temperate swamp''' is a temperate [[biome]] in RimWorld.
+<!-- return 15f + (tile.temperature - 7f) + (tile.rainfall - 600f) / 180f + tile.swampiness * 3f -->
+== Summary ==
+A more wet version of the [[Temperate forest]]. Like in all swamps, diseases are more common. The marshy soil will probably require bridges before constructing buildings and the terrain is really slow to travel, but this biome also has more fertile soil. 
+
+In the lists below the number in brackets represents the relative commonality.
+
+=== Flora ===
+<div class="ul-column-width-200">
+{{#ask: [[Type::Plant]] [[Lives In Temperate Swamp::>>0]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Temperate Swamp
+}}
+</div>{{#set:Flora Commonality Sum | {{#expr: {{#ask: [[Type::Plant]] [[Lives In Temperate Swamp::>>0]] | ?Lives In Temperate Swamp = | mainlabel=- | sep=+ }} }} }}{{#set:Grazing Score|{{Grazing Score}} }}
+
+=== Fauna ===
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Temperate Swamp::>>0]] [[Coastal Animal::false]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Temperate Swamp
+}}
+</div>{{#set:Fauna Commonality Sum | {{#expr: {{#ask: [[Type::Animal]] [[Lives In Temperate Swamp::>>0]] [[Coastal Animal::false]] | ?Lives In Temperate Swamp = | mainlabel=- | sep=+ }} }} }}
+
+Additionally, these animals can spawn in coastal maps:
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Temperate Swamp::>0]] [[Coastal Animal::true]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Temperate Swamp
+}}
+</div>
+
+If the map is [[polluted]],{{BiotechIcon}} then the game may choose to spawn in wild animals from this list instead:
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Temperate Swamp (Polluted)::>0]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Temperate Swamp (Polluted)
+}}
+</div>
+
+=== Diseases ===
+Temperate Swamp has a disease {{MTB}} of 40 days. The following diseases can occur in a Temperate Swamp:
+{| {{STDT|c_07 sortable}}
+! Disease
+! Commonality{{#set:Disease commonality sum|{{#expr:100+100+100+50+30+30+50+100+100+10}} }}
+|-
+| [[Flu]] || 100{{#set:Flu commonality|100}}
+|-
+| [[Plague]] || 100{{#set:Plague commonality|100}}
+|-
+| [[Malaria]] || 100{{#set:Malaria commonality|100}}
+|-
+| [[Gut worms]] || 50{{#set:Gut worms commonality|50}}
+|-
+| [[Fibrous mechanites]] || 30{{#set:Fibrous mechanites commonality|30}}
+|-
+| [[Sensory mechanites]] || 30{{#set:Sensory mechanites commonality|30}}
+|-
+| [[Muscle parasites]] || 50{{#set:Muscle parasites commonality|50}}
+|-
+| [[Flu#Animals|Animal flu]] || 100{{#set:Animal flu commonality|100}}
+|-
+| [[Plague#Animals|Animal plague]] || 100{{#set:Animal plague commonality|100}}
+|-
+| [[Organ decay]] || 10{{#set:Organ decay commonality|10}}
+|}
+
+=== Fish ===
+{{Odyssey|section=1|No category}}
+The table below contains the list of all of the fish that can be caught - as well as where they can be caught.
+{| {{STDT|c_23 sortable}}
+! Fish
+! Water body
+! Rarity
+|-
+| [[Bass]] || Freshwater || Common
+|-
+| [[Catfish]] || Freshwater || Uncommon
+|-
+| [[Bluefish]] || Saltwater || Common
+|-
+| [[Marlin]] || Saltwater || Uncommon
+|-
+| [[Flounder]] || Saltwater || Uncommon
+|}
+
+== Analysis ==
+{{Stub|section=1|reason=Missing analysis/survival strategy}}
+
+== Gallery ==
+<gallery>
+TemperateSwamp.png|A temperate swamp
+<!--TemperateSwampPolluted.png|A [[polluted]] temperate swamp{{BiotechIcon}}-->
+TemperateSwampTexture.png|Temperate swamp's texture on the world map
+Swamp fertility and terrain affordance.PNG|A screenshot of a temperate swamp with the terrain affordance and fertility overlays 
+</gallery>
+
+== Version history ==
+* [[Version/0.18.1722|0.18.1722]] - Added
+
+{{nav|biomes|wide}}
+[[Category:Biomes]]
+[[Category:Temperate Biomes]]

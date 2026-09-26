@@ -1,0 +1,387 @@
+{{BackToTutorials}}
+
+This tutorial provides you with an introduction to Def Classes in C#. It shows what effects each part of the C# code has on the XML format. First a vanilla example, then it will guide you through making your own.<br/><br/>
+
+=Requirements=
+
+* This tutorial requires you to know [[Modding Tutorials/Writing custom code|how to write custom code]].
+* [[Modding Tutorials/Decompiling source code|Decompiling source code]] is required.<br/><br/>
+
+=Vanilla defClasses=
+
+This chapter helps you develop a broad understanding of the def classes. First we take a look at tags inside <ThingDef>, then we take a look at tags inside those tags and finally we take a look at &lt;li&gt; items.<br/><br/>
+
+==Tags==
+
+The structure of a base game defClass might look like this:<br/>
+
+<source lang="csharp">using RimWorld;
+using System;
+using UnityEngine;
+
+namespace SomeNameSpace
+{
+	public class SomeDef : Def
+	{
+		public SomeType someTagName;
+		public SomeOtherType someOtherTagName;
+
+		public SomeType someGetClass
+		{
+			get
+			{
+				return (SomeType)this.someOtherTagName;
+			}
+		}
+	}
+}</source><br/>
+
+A few notes could be made about this code.<br/>
+* Without the ''using'' part, you'd have to call for '''''Namespace'''.Class.Method()'' instead of ''Class.Method()'' or ''((Class)partOfClass).Method()'',<source lang="csharp">using ...;	/* this tells the compiler which namespaces to look for when searching for class and method calls. */</source><br/>
+* The ''':''' is inheritance and means you can access all methods in the parent and you can call back to for example the ''Tick()'' method using '''''base'''.Tick()'',<source lang="csharp">public class SomeDef : Def	/* inherits "everything" from Def, !! except for privates !! */</source><br/>
+* Everything of the following format '''is an XML tag''':<source lang="csharp">public SomeType someTagName	/* shows up as <ThingDef><someTagName>SomeType value</someTagName></ThingDef> */</source><br/>
+* Besides these tags there's also script-only methods in the code:<source lang="csharp">public SomeType someGetClass	/* this is only used in C#. XML doesn't change anything about this */</source><br/>
+* Specifically ''get'' methods are only there for easily accessing or calculating certain values:<source lang="csharp">return ...;	/* example: "public bool IsApparel()" returns "this.apparel != null". This could be checked easily but Thing.IsApparel() is more readable sometimes */</source><br/>
+
+In practice one could find the following code:<br/>
+
+<source lang="csharp">using RimWorld;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using UnityEngine;
+
+namespace Verse
+{
+	public class ThingDef : BuildableDef	/* BuildableDef inherits from Def */
+	{
+		public bool alwaysHaulable;
+
+		public bool designateHaulable;
+
+		public StuffProperties stuffProps;	/* the StuffProperties class defines what this might look like in XML */
+
+		public bool IsStuff
+		{
+			get
+			{
+				return this.stuffProps != null;	/* with some types you can check whether they're defined by checking if they're not equal to null */
+			}
+		}
+
+		public bool EverHaulable
+		{
+			get
+			{
+				return this.alwaysHaulable || this.designateHaulable;	/* "return A || B" will return true if either A or B is true, and false if both are false. */
+			}
+		}
+	}
+}</source><br/>
+
+<source lang="xml"><?xml version="1.0" encoding="utf-8"?>
+<ThingDefs>
+	<thingDef>
+		<alwaysHaulable>true</alwaysHaulable>
+		<stuffProps>
+			<!-- whatever you'd find in StuffProperties -->
+		</stuffProps>
+	</thingDef>
+</ThingDefs></source><br/>
+*Note: these are snippets of Verse.ThingDef. To find the full source please [[Modding Tutorials/Decompiling source code|decompile the source code]] yourself.<br/><br/>
+
+==Subtags==
+
+To explain how subtags work we'll take a look at (parts of) StuffProperties. The contents of the StuffProperties class, formally called Verse.StuffProperties, are very similar to the ThingDef class. The structure is mostly the same.<br/>
+In case you're wondering why we didn't have to add "using Verse;" to access Verse.StuffProperties, "namespace Verse {}" basically includes a ''using'' statement.<br/>
+
+<source lang="csharp">using RimWorld;
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace Verse
+{
+	public class StuffProperties
+	{
+		public bool smeltable;
+
+		public StuffAppearance appearance;
+
+		public SoundDef soundImpactStuff;
+
+		public List<StatModifier> statOffsets;
+
+		public List<StuffCategoryDef> categories = new List<StuffCategoryDef>();
+	}
+}</source><br/>
+*Note: These are snippets of Verse.StuffProperties. To find the full source please [[Modding Tutorials/Decompiling source code|decompile the source code]] yourself.<br/><br/>
+
+Because SomeDef defines which subtags it has you have to modify Verse.SomeDef to alter which subtags it has (this includes modified versions of existing subtags, you have to modify SomeDef at some point).<br/>
+This is one of the reasons you might be better off [[Modding Tutorials/Modifying defs#Custom comp|writing a custom comp]].<br/><br/>
+
+==Lists==
+
+Some tags include a list (it contains &lt;li&gt; subtags). If you look at the subtags of StuffProperties you can see two List<SomeType> elements. If you look at the XML you can see a clear distinction between the two:<br/>
+
+<source lang="xml"><?xml version="1.0" encoding="utf-8"?>
+<ThingDefs>
+	<thingDef>
+		<stuffProps>
+			<categories>
+				<li>Metallic</li>	/* Metallic is a defName from a StuffCategoryDef */
+			</categories>
+			<statOffsets>
+				<Beauty>6</Beauty>	/* Beauty is a defName from a StatDef, but the list's type is StatModifier */
+			</statOffsets>
+		</stuffProps>
+	</thingDef>
+</ThingDefs></source><br/>
+
+A clear difference between the two is that one of them defines a list and the other one doesn't. If you look at RimWorld.StatModifier you can find another cause:<br/>
+
+<source lang="csharp">using System;
+using System.Xml;
+using Verse;
+
+namespace RimWorld
+{
+	public class StatModifier
+	{
+		public StatDef stat;
+
+		public float value;
+
+		public void LoadDataFromXmlCustom(XmlNode xmlRoot)
+		{
+			CrossRefLoader.RegisterObjectWantsCrossRef(this, "stat", xmlRoot.Name);
+			this.value = (float)ParseHelper.FromString(xmlRoot.FirstChild.Value, typeof(float));
+		}
+	}
+}</source><br/>
+*Note: These are snippets of RimWorld.StatModifier. To find the full source please [[Modding Tutorials/Decompiling source code|decompile the source code]] yourself.<br/><br/>
+
+Because of this code the two act completely differently. One is a list with integer keys and StuffCategoryDef values, the other is a list with StatDef keys and float values.<br/><br/>
+
+=Making your own=
+
+This is where you create custom defs for your mod and C# code to go along with them.
+
+So if you have your own objects that you've created, and have C# code to go with them, it's fairly straightforward to add a custom def.  On the other hand, if you want to add a custom def to a core def that gets used everywhere in the code, it will be extremely difficult and you might be better off with a different approach.
+
+
+==XML/Code Requirements==
+To make a custom def, you need:
+# The XML must have <code><ThingDef Class="MyNamespace.MyCustomDefName"></code>
+# There must be a definition of the <code>class MyCustomDefName : ThingDef</code>
+# Code needs to access the new fields - probably using casting, such as <code>var def = thing.def as MyCustomDefName;</code>
+
+==Simple Example==
+Suppose you add a new gun to RimWorld (assuming you're violent), that has a special feature.
+
+Your XML might look something like this:
+
+<source lang="xml"><?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="BaseHumanGun" Class="MyNamespace.MyCustomDef_ThingDef">
+		<defName>MyCoolNewGun</defName>
+		<thingClass>MyNamespace.MyCoolNewGun</thingClass>
+	        <etc/>
+		<myNewFloat>1.1</myNewFloat>
+		<myNewBool>true</myNewBool>
+		<myNewThingDefList>
+			<li>Silver</li>
+			<li>Pistol</li>
+		</myNewThingDefList>
+	</ThingDef>
+</Defs></source>
+
+Two things were added to the XML for the custom defs: the Class="MyNamespace.MyCustomDef_ThingDef" and the new definitions.
+
+Corresponding C# code might look like this:
+
+<source lang="csharp">using RimWorld;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using UnityEngine;
+
+
+namespace MyNamespace
+{
+	public class MyCustomDef_ThingDef : ThingDef // Here we are adding our custom defs
+	{
+		public float myNewFloat;
+
+		public bool myNewBool;
+
+		public List<ThingDef> myNewThingDefList = new List<ThingDef>();
+	}
+	public class MyCoolNewGun : etc //etc etc
+	{
+	  //etc
+	}
+}</source>
+
+And now that that exists you can call on it with any ThingDef as input like so:<br/>
+
+<source lang="csharp">
+  // maybe var weapon=new MyNamespace.MyCoolNewGun();
+  // or maybe a function was called with a parameter "weapon"
+
+  if (weapon as myNamespace.MyCoolNewGun != null) // make sure it actually IS a MyCoolNewGun, HAS the code, etc:
+  {
+      // use the thingdef:
+      var def = weapon.def as MyNamespace.MyCustomDef_ThingDef;
+      var theFloat = def.myNewFloat;
+
+      // or access directly:
+      var myBool = ((MyNamespace.MyCustomDef_ThingDef)weapon.def).myNewBool;
+      //     this will throw an exception if somehow the weapon isn't a MyCoolNewGun!
+
+      // use the defs, etc
+      // this works in beta 0.18.1722
+  }
+</source>
+
+
+==Further Example==
+You might want to add a whole class of guns with this new feature:
+
+Your XML might look something like this:
+
+<source lang="xml"><?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef Name="MyCoolNewGun" ParentName="BaseHumanGun" Class="MyNamespace.MyCustomDef_ThingDef" Abstract="true">
+		<thingClass>MyNamespace.MyCoolNewGun</thingClass>
+	        <etc/>
+		<myNewFloat>1.1</myNewFloat>
+		<myNewBool>true</myNewBool>
+		<myNewThingDefList>
+			<li>Silver</li>
+			<li>Pistol</li>
+		</myNewThingDefList>
+	</ThingDef>
+
+	<ThingDef ParentName="MyCoolNewGun">
+	 	<defName>MyCoolNewPistol</defName>
+		<myNewFloat>2.2</myNewFloat>
+	</ThingDef>
+
+	<ThingDef ParentName="MyCoolNewGun">
+		 <defName>MyCoolWaterPistol</defName>
+		 <myNewBool>false</myNewBool>
+		 <etc />
+	</ThingDef>
+</Defs></source>
+
+Each will inherit the parent's def class and link in with your code, and you can have a whole class of things using your cool new weapon mod.
+
+==When Not To Use It==
+
+There are two big catches:
+
+#  If you modify an existing definition to use your class, and someone else does too, there might be mod conflicts.  Oops.
+#  Your defs only work for your own code.  An example:
+
+===Problem Example===
+''The following method shows you '''why not to use''' custom defs. In some cases you could attempt to use this method but it's generally considered the least favourable way to deal with things.''
+
+For this example we're gonna '''try to''' change the <race> tag to contain more tags. The value of these tags isn't exactly important to this example.
+
+<source lang="xml"><?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef Name="BaseRace" Class="MyNamespace.ThingDefWithCustomRaceProps">
+	</ThingDef>
+
+	<ThingDef Name="BaseAnimalRace" ParentName="BaseRace" Class="MyNamespace.ThingDefWithCustomRaceProps">
+	</ThingDef>
+
+	<ThingDef ParentName="BaseAnimalRace" Class="MyNamespace.ThingDefWithCustomRaceProps">
+		<race Class="MyNamespace.RacePropertiesCustom">
+			<myNewFloat>1.1</myNewFloat>
+			<myNewBool>true</myNewBool>
+			<myNewThingDefList>
+				<li>Silver</li>
+				<li>Pistol</li>
+			</myNewThingDefList>
+		</race>
+	</ThingDef>
+</Defs></source><br/>
+
+Without assigning the Class to each ThingDef inheriting from and being inherited by a certain thingDef with a certain Class, '''the mod will cause errors'''.
+
+Now for the code we will have to create two C# classes, namely MyNamespace.ThingDefWithCustomRaceProps and MyNamespace.RacePropertiesCustom:
+
+<source lang="csharp">using RimWorld;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using UnityEngine;
+
+
+namespace MyNameSpace
+{
+	public class ThingDefWithCustomRaceProps : ThingDef
+	{
+		new public RacePropertiesCustom race;	/* requires the new keyword to overwrite the existing race */
+	}
+}</source><br/>
+
+And for the RacePropertiesCustom we make the following script:<br/>
+
+<source lang="csharp">using RimWorld;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using UnityEngine;
+
+namespace MyNameSpace
+{
+	public class RacePropertiesCustom : RaceProperties
+	{
+		public float myNewFloat;
+
+		public bool myNewBool;
+
+		public List<ThingDef> myNewThingDefList = new List<ThingDef>();
+	}
+}</source><br/>
+
+One might think that's all required to make it work. However!
+
+Wherever the race variable tag is called in the game's code, it's called like <code>((ThingDef)someVariable).race.someMethod()</code>.  It's NOT calling your code!  It's calling the base game's code.
+
+Everywhere you need someMethod() to use your code, you need to cast the race:  ThingDefWithCustomRaceProps like <code>(ThingDefWithCustomRaceProps)((ThingDef)someVariable).race.someMethod()</code>.  '''EVERY''' single time.  It means copying and rewriting large portions of code, finding out they're called by certain other methods that also require the same treatment to call the new custom method to fix the custom thingDef class you made.
+
+If your mod is restricted to something very small in scope, this might be okay.  But if it affects a large part of the game...you will have to do a lot of work to make it fit, and you might want to go another route.
+
+
+
+==Inheritance==
+Class = "MyNamespace.myCustomClass" does not inherit in XML. That means Def classes require a pretty hefty overhaul of XML code to work. First of all you will have to change anything in the inheritance to refer to the same class:<br/>
+
+<source lang="xml"><?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef Name="BaseThing" Class="MyNamespace.MyCustomClass">
+	</ThingDef>
+
+	<ThingDef Name="BaseSpecificThing" ParentName="BaseThing" Class="MyNamespace.MyCustomClass">
+	</ThingDef>
+
+	<ThingDef ParentName="BaseSpecificThing" Class="MyNamespace.MyCustomClass">
+	</ThingDef>
+</Defs></source><br/>
+
+And in case you have more ThingDefs which require the changes that come with MyNamespace.MyCustomClass you'll have to set all of their classes for it to work.<br/>
+Applied to core defs this way of doing things introduces incompatibilities with other mods that modify the same def. Creating compatibility patches is inevitable.<br/><br/>
+
+=See also=
+
+* [[Modding Tutorials/Compatibility with defs|XML Def Compatibility]] explains compatibility from the XML side of things.
+* [[Modding Tutorials/Modifying defs|Def Class Compatibility]] explains compatibility from the C# side of things.<br/>
+
+[[Category:Modding tutorials]]

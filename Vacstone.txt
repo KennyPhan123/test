@@ -1,0 +1,80 @@
+{{Odyssey}}
+{{Stub|reason=general}}
+{{Image wanted|reason=Sprite}}
+{{About|the wall-like, stone structure|the material that items and structures can be made from|Vacstone blocks}}
+{{See also|Smoothed vacstone}}
+
+{{Infobox main|Structure
+| name = Vacstone
+| image = Vacstone.png
+| description = Compacted rock and dust harvested from asteroids.
+<!-- Base Stats -->
+| type = Structure
+| hp = 600
+| flammability = 0
+| beauty = -2
+| rotatable = false
+<!-- Building -->
+| size = 1 * 1
+| passability = impassable
+| cover = 1
+| blockswind = true
+<!-- Technical -->
+| defName = Vacstone
+| label = vacstone
+<!-- ThingDef Name="BuildingNaturalBase" Abstract="True" -->
+| category = Building
+| selectable = true
+| drawerType = MapMeshOnly
+| filthLeaving = Filth_RubbleRock
+| scatterableOnMapGen = false
+| artificialForMeditationPurposes = false
+<!-- ThingDef Name="RockBase" ParentName="BuildingNaturalBase" Abstract="True" -->
+| castEdgeShadows = true
+| thingClass = Mineable
+| texPath = Things/Building/Linked/Rock_Atlas
+| graphicClass = Graphic_Single
+| linkType = CornerFiller
+| linkFlags = Rock, MapEdge
+| altitudeLayer = Building
+| coversFloor = true
+| neverMultiSelect = true
+| saveCompressible = true
+| holdsRoof = true
+| staticSunShadowHeight = 1.0
+| blockLight = true
+| mineable = true
+| fertility = 0
+| canOverlapZones = false
+| isInert = true
+| isNaturalRock = true
+| canBuildNonEdificesUnder = false
+| deconstructable = false
+| supportsWallAttachments = true
+| damageMultipliers = Thump
+| multiplier = 4
+<!-- ThingDef Name="UglyRockBase" ParentName="RockBase" Abstract="True" -->
+| mineableYieldWasteable = false
+<!-- ThingDef ParentName="UglyRockBase" Name="GraniteBase" -->
+| color = (105,95,97)
+| mineableThing = ChunkVacstone
+| mineableDropChance = 0.25
+| smoothedThing = SmoothedVacstone
+}}
+
+'''Vacstone''' is a natural structure that can be [[mine]]d to obtain a {{Icon Small|vacstone block}} vacstone {{Icon Small|Stone chunk}} chunk. Do note that this is not a guarantee. Vacstone is only found within asteroids in [[orbit]].
+
+== Summary ==
+'''Vacstone''' tiles have 600 health each, making it the third hardest stone block to mine. Each mined block has ~25% chance base to yield a {{Icon Small|Stone chunk}} vacstone stone chunk, each of which can be transform into {{Icon Small|Vacstone block}} 20 vacstone blocks.
+
+This tile can also be [[Structure#Smoothed_walls|smoothed]] to create [[smoothed vacstone]].
+
+== Analysis ==
+Vacstone is used to craft advanced gravstructures like large thrusters, gravlite panels, and gravlite power cores. Therefore, the player needs to visit orbit to improve their gravship (it is unknown if vacstone can drop as a meteorite). The fact that vacstone is mined in orbit necessitates some preparation. Vacstone can be mined without vacuum protection suits if done right. For that, the player lands with one of the gravships' doors on the side of the asteroid and mines a room into the asteroid, which is then equipped with oxygen pumps (and heaters if necessary). The player can then gradually mine out the asteroid while being protected from the vacuum. Extreme caution should be taken, as even minor mistakes can kill colonists from vacuum exposure. Mining using vacuum-resistant suits is therefore much safer. If the [[Biotech DLC]] is enabled, then a combination of [[Tunneler]]s{{BiotechIcon}} and [[Lifter]]s{{BiotechIcon}} can be used to quickly gather vacstone while pawns safely reside inside the ship.
+
+The player can alternatively consider hauling the vacstone chunks onboard the ship and wait until they are back on solid ground to cut them. While this method is less space-efficient, it allows the player to retreat from orbit as soon as possible instead of waiting for all chunks to be cut into blocks.
+
+== Version history ==
+* [[Odyssey DLC]] Release - Added.
+
+[[Category:Natural wall]]

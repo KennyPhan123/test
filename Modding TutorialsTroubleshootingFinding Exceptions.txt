@@ -1,0 +1,65 @@
+{{BackToTutorials}}
+{{:Modding Tutorials/Under Review}}
+<br/>
+== Preamble: ==
+Who this is for: Modders trying to chase down the exact cause of an exception
+
+This approach can be used to track down any type of exception, but the one you are most likely to encounter in RW modding will be a NRE (NullReferenceException), meaning some code is trying to access a member of a NULL instance, this tutorial will elaborate on this exact scenario.
+
+=== What you need: ===
+# An exception
+# A decompiler of your choice
+
+=== Example ===
+This example adds a debug action for my convenience to call another method and an actual static method that spawns potatoes on the same cell as the pawn is standing on
+<source lang="csharp">
+using RimWorld;
+using Verse;
+
+namespace ExceptionShowcase
+{
+
+    public static class ExceptionShowcase
+    {
+        /// <summary>
+        /// This is a debug action, it shows up in the debug actions menu of your game. This specific one is a ToolMapForPawns, which means the method is passed the Pawn p that was targeted by the user
+        /// You don't need this, it's just an easy way for me to make this showcase execute a method on-demand
+        /// </summary>
+        /// <param name="p">The automatically assigned pawn that you select with the mouse</param>
+        [DebugAction("Showcase", "Spawn Potatoes", actionType = DebugActionType.ToolMapForPawns, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        public static void MyDebugAction(Pawn p)
+        {
+            SpawnPotatoesOnPawn(p);
+        }
+
+        /// <summary>
+        /// This is the actual method that we are working on
+        /// </summary>
+        /// <param name="pawn">The pawn to spawn potatoes on</param>
+        public static void SpawnPotatoesOnPawn(Pawn pawn)
+        {
+            // only spawn the potatoes if the pawn can eat them
+            bool willEat = FoodUtility.WillEat(pawn, ThingDefOf.RawPotatoes);
+
+            if(!willEat)
+            {
+                // if the pawn would not eat the potatoes, don't spawn them and just exit the method
+                return;
+            }
+
+            // get the position and map of the pawn
+            IntVec3 position = pawn.Position;
+            Map map = pawn.Map;
+
+            // GenSpawn will make a new item of the def and put it on the map and position that we specify
+            GenSpawn.Spawn(ThingDefOf.RawPotatoes, position, map);
+        }
+    }
+}
+
+
+</source>
+
+It executes as expected, I am presented with a DebugAction in the menu, it spawns a Targeter, I select a pawn and it spawns potatoes on that pawns position.
+
+[[Category:Modding tutorials]]

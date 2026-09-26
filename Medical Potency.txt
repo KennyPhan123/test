@@ -1,0 +1,60 @@
+{{Verified|1.5.4104}}{{Stat
+| def name = MedicalPotency
+| label = medical potency
+| description = How effective this is when used to tend wounds and [[disease]]s, or do [[surgery]].<br/>Higher medical potency improves the quality of tending, and acts as a multiplier on the chance of success during surgery.<br/>Medical potency is just one factor in medical outcomes, among many others, including doctor ability, equipment, [[cleanliness]], and luck.
+| default base value = 0
+| min value = 0.2
+| to string style = PercentZero
+| show if undefined = false
+| category = BasicsNonPawnImportant
+| display priority in category = 4000
+}}
+
+== Bases ==
+Every [[Medicine (disambiguation)|medicine]] has a [[Medical Potency]] stat as listed:
+<div><li style="display: inline-table;">
+{| {{STDT| c_01 sortable}}
+! Medicine !! [[Property:Medical Potency Base|Base]]
+|-
+{{#ask: [[Medical Potency Base::+]]
+| ?Medical Potency Base
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Name
+}}
+|}
+</li></div>
+
+== Use ==
+When a [[Medicine (disambiguation)|medicine]] is used to provide [[Treatment|treatment]], its Medical Potency is used to calculate the outcome of the [[Medical Tend Quality]]. See [[Medical Tend Quality]] for further information on how this is calculated.
+
+When a [[Medicine (disambiguation)|medicine]] is used in an [[operation]], its Medical Potency is used to calculate the probability of success of the operation. See [[Operation|Operations]] for further information on how this is calculated.
+
+== Stat Def Data ==
+{| {{STDT| c_01}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Medical Potency" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />MedicalPotency
+* '''Label:'''<br />medical potency
+| How effective this is when used to tend wounds and diseases, or do surgery.<br/><br/>Higher medical potency improves the quality of tending, and acts as a multiplier on the chance of success during surgery.<br/>Medical potency is just one factor in medical outcomes, among many others, including doctor ability, equipment, cleanliness, and luck.
+|
+* Display Order:<br />'''2'''
+* Def Name:<br />'''BasicsNonPawnImportant'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />{{Bad|false}}
+|
+* '''Default Base Value:''' {{%|0.0}}
+* '''Min Value:''' {{%|0.2}}
+* '''To String Style:''' PercentZero
+* '''Show If Undefined:''' {{Bad|false}}
+| -
+| 4000
+<!--</StatDef>-->
+|}
+
+== Version history ==
+{{Stub|section=1|reason=General Version history}}
+
+{{nav|stats|wide}}

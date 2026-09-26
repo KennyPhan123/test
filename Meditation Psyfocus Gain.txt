@@ -1,0 +1,66 @@
+{{Stub|reason=1) Two-way links 2) Version history says added by DLC,  no royaltybanner, is it defined in core? Did it swap over at some point? should the banner be added? 3) worked examples showing math}}
+{{Verified|1.5.4104}}{{Stat
+| def name = MeditationFocusGain
+| label = meditation psyfocus gain
+| description = The amount of [[psyfocus]] a person gains per day of [[meditation]], ignoring bonuses from focus objects.
+| default base value = 0.5
+| min value = 0
+| format string = {0} / day
+| format string unfinalized = {0} / day
+| to string style = PercentZero
+| show on animals = false
+| show on mechanoids = false
+| show on entities = false
+| category = BasicsPawn
+| display priority in category = 4010
+| show if mods loaded any = Royalty, Biotech
+}}
+
+== Offsets ==
+* [[Persona traits|Persona weapon traits]] {{RoyaltyIcon}}
+** [[Persona weapon]] with [[Psy-meditative]] when equipped: {{+|10%}}
+* [[Hediffs]]
+** [[Hediffs#Psychofluid rush|Psychofluid rush]] ([[Psychofluid pump]]):{{BiotechIcon}}  {{+|5%}} per pump; max of 4 for a total of {{+|20%}}
+** [[Hediffs#High on wake-up|High on wake-up]] ([[Wake-up]]): {{+|20%}}
+* [[Genes]] {{BiotechIcon}}
+** [[Psy-sensitive]]: {{+|10%}}
+** [[Super psy-sensitive]]: {{+|20%}}
+
+== Stat Def Data ==
+{| {{STDT}}
+! Name !! Description !! Category !! Parameters !! Complex Parameters !! Display Priority In Category
+|- id="Meditation Psyfocus Gain" <!-- ParentName="MeditationFocusBase" MayRequireAnyOf="Royalty, Biotech" --><!--<StatDef>-->
+|
+* '''Def Name:'''<br />MeditationFocusGain
+* '''Label:'''<br />meditation psyfocus gain
+----
+* May Require Any Of:
+** '''[[Royalty]] {{RoyaltyIcon}}'''
+** '''[[Biotech]] {{BiotechIcon}}'''
+| The amount of psyfocus a person gains per day of meditation, ignoring bonuses from focus objects.
+|
+* Display Order: '''11'''
+* Def Name:<br />'''BasicsPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default: {{Bad|false}}
+|
+* Format String:<br />"{0} / day"
+* Format String Unfinalized:<br />"{0} / day"
+* To String Style: '''PercentZero'''
+* Default Base Value: '''{{%|0.5}}'''
+* Min Value: '''{{%|0}}'''
+* Show On Animals: {{Bad|false}}
+* Show On Mechanoids: {{Bad|false}}
+* Show On Entities: {{Bad|false}}
+|
+* Show If Mods Loaded Any:
+** '''[[Royalty]] {{RoyaltyIcon}}'''
+** '''[[Biotech]] {{BiotechIcon}}'''
+| 4010
+<!--</StatDef>-->
+|}
+
+== Version history ==
+* [[Royalty (DLC)]] Release - Added.
+
+{{nav|stats|wide}}

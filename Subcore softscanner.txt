@@ -1,0 +1,72 @@
+{{Biotech}}
+{{Infobox main|building
+| name = Subcore softscanner
+| image = SubcoreSoftscanner north.png
+| description = A pod with thousands of tiny tissue probes and a high-energy brain scanner. Once a person is inserted, the system uses the probes and scanner to sense a neuro-psychic pattern that it can analog-transfer to a new standard-tier mechanoid subcore. The person will be left temporarily sick, but unharmed.<br>Subcores are mechanoid brains and producing any mechanoid requires one. Standard-tier subcores produced by this softscanner can only power standard-tier mechanoids.<br>Higher tier subcores can be created by building a subcore ripscanner.
+| type = Building
+| type2 = Biotech (Buildings)
+| placeable = 
+| path cost = 
+| passability = pass through only
+| blockswind = 
+| mass base = 25
+| cover = 0.3
+| minifiable = false
+| size = 2x3
+| flammability = 0.5
+| hp = 250
+| beauty = 0
+| power = 150
+| terrain affordance = Light
+| research = Standard mechtech
+| skill 1 = Construction
+| skill 1 level = 5
+| work to make = 8000
+| resource 1 = Steel
+| resource 1 amount = 200
+| resource 2 = Plasteel
+| resource 2 amount = 50
+| resource 3 = Component
+| resource 3 amount = 4
+| thingCategories = 
+| room role = Laboratory
+}}
+The '''subcore softscanner''' is a building added by the [[Biotech DLC]] that allows for the creation of [[standard subcore]]s by scanning [[human]] minds.
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+The subcore softscanner takes 150 W of [[power]]. Its only purpose is to produce a [[standard subcore]], which is an ingredient used in the gestation of the following mechanoids:
+{{Ingredient List|Standard subcore|noCollapse=1}}
+
+The scanner must be loaded with {{Icon Small|Steel}} 50 [[Steel]] and {{Icon Small|Component}} 4 [[Component]]s before each scan. Then any colonist, [[prisoner]] or [[slave]]{{IdeologyIcon}} (who is not a temporary faction member or [[baby]]) without scanning sickness can be selected for scanning by using the "Insert Person" button when selecting the subcore softscanner building. Upon selection, colonists and slaves will walk to the scanner if able, however prisoners or downed persons must be carried to the building by someone else. The scanning process takes {{Ticks|7500}} and inflicts scanning sickness upon completion.
+
+=== Scanning sickness ===
+<onlyinclude>{{quote|"This person was scanned by a softscanner to produce a mechanoid subcore. The high-energy scanning device has caused disturbances in their brain chemistry which will take time to resolve themselves. There won't be any long-term damage."|In-game description}}
+A person scanned in a [[subcore softscanner]] to produce a [[standard subcore]] is afflicted with scanning sickness starting with a severity of 4 and decreasing in severity by 1 per in-game day for non-mechanitor pawns and severity decreasing by 2 per day for [[mechanitor]] pawns. This has the following effects:
+* [[Consciousness]]: {{Bad|x75%}} (Post factors)
+* [[Manipulation]]: {{Bad|x75%}} (Post factors)
+* [[Moving]]: {{Bad|x75%}} (Post factors)
+* [[Vomiting]] {{MTB}}: {{Bad|1.5 days}}
+* [[Mood]]: {{--|8}}</onlyinclude>
+
+== Analysis ==
+Scanning sickness reduces a colonist's [[consciousness]], [[moving]], and [[manipulation]] by 25% for four in-game days, which results in a severe reduction in productivity. As such, [[prisoner]]s are ideal candidates for scanning as they cannot do work anyways. The second best choice would be a [[slave]]{{IdeologyIcon}} or low productivity refugee. Another alternative would be a [[Mechanitor]], due to their accelerated recovery rate.
+
+Standard subcores are used in the gestation of a variety of useful mech types, such as [[tunneler]]s for mining ore deposits or [[scyther]]s for general melee combat. The softscanner is not expensive to build, but if you do not need or want any of the mechs that are gestated using standard subcores, then it is safe to skip.
+
+Note that every mech that requires a standard subcore is created at a [[large mech gestator]] and uses the [[large mech recharger]]. These two buildings cost {{Icon Small|steel||{{#expr: {{Q|Large mech gestator|Resource 1 Amount}} + {{Q|Large mech recharger|Resource 1 Amount}} }} }} [[steel]] and {{Icon Small|component||{{#expr: {{Q|Large mech gestator|Resource 2 Amount}} + {{Q|Large mech recharger|Resource 2 Amount}} }} }} [[component]]s. This is in addition to costs of the softscanner itself and the gestation of the mechs.
+
+== See also ==
+* [[Subcore encoder]] - Creates [[basic subcore]]s.
+* [[Subcore ripscanner]] - Creates [[high subcore]]s.
+
+== Version history ==
+* [[Biotech DLC]] Release - Added.
+* [[Version/1.4.3534|1.4.3534]] - Added more feedback to subcore scanners.
+* [[Version/1.4.3541|1.4.3541]] - Fix: Softcore{{Sic}} scanner tooltip formating.
+* [[Version/1.4.3555|1.4.3555]] - In the 'Completed scan' message sent when subcore scan is cancelled, changed 'cancel load' to 'cancel scan'.
+
+{{Nav|biotech|wide}}
+[[Category:Biotech (Buildings)]]

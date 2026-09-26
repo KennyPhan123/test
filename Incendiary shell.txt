@@ -1,0 +1,77 @@
+{{Infobox main|resource
+| name = Incendiary shell
+| image = Shell incendiary c.png
+| description = A shell filled with flammable gel and a small explosive charge. Starts fires when detonated. Can be fired from mortars or installed as a trap. Explodes when damaged.
+| type = Crafted resources
+| type2 = Mortar shell
+| tech level = Industrial
+| path cost = 14
+| stack limit = 25
+| beauty = 
+| flammability = 1.0
+| marketvalue = 55
+| mass base = 1.25
+| hp = 60
+| deterioration = 1.5
+| damage = 10
+| damage type = Flame
+| velocity = 41
+| blastRadius = 2.9
+| skill 1 = Crafting
+| skill 1 level = 4
+| work to make = 800
+| production facility 1 = Machining table
+| research = Mortars
+| resource 1 = Steel
+| resource 1 amount = 10
+| resource 2 = Chemfuel
+| resource 2 amount = 20
+| defName = Shell_Incendiary
+| thingCategories = MortarShells
+| tradeTags = MortarShell
+| page verified for version = 1.3.3066
+}}
+The '''incendiary shell''' is a type of [[mortar shell]] that explodes into a conflagration, dealing flame damage and setting the area alight.
+
+== Acquisition ==
+{{Acquisition}} The steel cost is increased to 20 if the [[AI Storytellers#Classic mortars|Classic Mortars]] difficulty option is enabled.
+
+They can also be purchased from [[traders]].
+
+== Summary ==
+[[File:Incendiary shell radius.png||250px|thumb|left|White, the radius of the shell's AoE when fired or when a single shell cooks off. Gold, radius when an entire stack cooks off.]]
+When fired from a mortar, {{lc:{{P|Name}}}}s deal {{P|Damage Base}} [[Damage types#{{P|Damage Type}}|{{P|Damage Type}}]] damage in a {{P|Blast Radius}} tile radius. They also set the area on fire and creating [[chemfuel puddle]]s which themselves burn.
+
+When damaged beyond 70% of its health, it will explode after between {{Ticks|30}} and {{Ticks|60}}, dealing 10 [[Damage Type#Flame|Flame]] damage in a radius around itself. The radius depends on the quantity in the stack, with a single shell covering a 2.9 tile radius, and expanding this radius proportional to the square root of the stack size times 0.4 up to a maximum radius of {{#expr: 2.9+((24*0.4)^0.5) round 2}} tiles at a full stack of 25. Note that, unlike shells fired from a mortar, shells that explode from damage do not leave chemfuel puddles.
+
+== Usage ==
+Incendiary shells can be used in the following recipes:
+{{Ingredient List|noCollapse=true}}
+
+== Analysis ==
+Incendiary shells can be useful against [[siege]]s. Enemy sieges come packed with explosive [[mortar shell]]s of their own, and lighting a stack of shells on fire will likely provoke the siege into attacking and stopping their bombardment. While [[high-explosive shell]]s can do that role nearly as well, incendiary shells cost less [[steel]] and are more likely to "hit" because fire can spread without needing a direct hit. Still, because [[rain]] will greatly reduce the effectiveness of incendiary shells, and enemy [[firefoam pop pack]]s can do the same, it is recommended to keep some high-explosive shells in case.
+
+Otherwise, incendiary shells are of limited use. The other "main" target of mortars, stationary [[mechanoid]]s, are completely immune to fire. Against ordinary raids, fire spreads too slowly to be useful in combat, and the incendiary shell deals little damage on direct impact, making high-explosive the better choice. Note that the game will automatically cause [[rain]] if fires get too far out of control.
+
+[[Siege]]s can and will use incendiary shells against you, which will ravage rooms floored with [[carpet]], fields of [[plants]], and storage rooms filled with flammable items. [[Firefoam popper]]s are ideal for protecting against fire. These incendiary shells can also be looted once the siege is repelled.
+
+Finally, [[IED incendiary trap]]s have a variety of different uses and can be more useful than actually firing incendiary shells. See that page for details.
+
+=== Storage ===
+As with all explosive items, these should be stored in separate storage containers. For maximum protection, put each stack of shells in a separate 1x1 stone box to prevent chain reactions. Pawns currently in a tantrum should be stopped at all costs, whether it be by arresting, creating another stockpile zone with a higher priority than the shell zone and prioritizing hauling the shells, or simply by shooting the pawn.
+
+== Gallery ==
+<gallery>
+Shell incendiary a.png|One incendiary shell
+Shell incendiary b.png|Partial stack
+Shell incendiary c.png|Full stack
+ShellIncendiary.png|Projectile
+</gallery>
+
+== Version history ==
+* [[Version/0.18.1722|0.18.1722]] - Added to replace mortar type system.
+* 1.1 - crafting cost was increased (15 --> 20 steel and chemfuel cost).
+* [[Version/1.3.3066|1.3.3066]] - Steel requirement decreased from 20 -> 10 unless Classic Mortar difficulty option selected.
+
+{{Nav|security|wide}}
+[[Category: Mortar shells]]

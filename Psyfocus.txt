@@ -1,0 +1,604 @@
+{{Royalty}}
+{{Project|Psyfocus}}
+{{Quote|Psyfocus is a special type of mental structuring which is necessary to use psychic powers. Psyfocus dissipates over time, and must be built by regular meditation. Losing all psyfocus makes someone unable to use psychics, but has no other consequences. Higher levels of psyfocus permit higher-level powers, but also increase the rate of psyfocus dissipation|In-game Description}}
+
+'''Psyfocus''' limits [[psycast]] use and is normally replenished through meditation.
+{{TOCright}}
+
+== Summary ==
+Psyfocus is a value ranging from 0% to 100%, obtained by any pawn with a [[psylink]]. Every [[psycast]] immediately consumes a certain percentage of psyfocus. Psyfocus costs do not depend on the caster, although some psycasts, such as [[Word of serenity]], vary by target. Unlike [[neural heat]], positive psyfocus costs cannot be bypassed. 
+
+Higher level psycasts require a minimum amount of psyfocus to be cast, regardless of their psyfocus cost:
+* Level 3-4 psycasts require a minimum of 25% psyfocus
+* Level 5-6 psycasts require a minimum of 50% psyfocus
+
+=== Degradation ===
+In addition to spending it to use psycasts, psyfocus naturally falls a certain amount per day. The amount depends on current psyfocus:
+* Below 25% psyfocus, it falls at 3.5% per day.
+* From 25% to below 50%, it falls at 5.5% per day.
+* At 50% or higher, it falls at 7.5% per day.
+
+Normal psyfocus degradation is paused while a pawn is actually meditating.
+
+== Meditation ==
+With a few exceptions, psyfocus can only be gained through '''meditation'''. 
+
+Pawns have a base [[Meditation Psyfocus Gain]] of +50% per full day, or +2.08% per hour, of pure meditation. The daily gain rate is the pawn's current Meditation Psyfocus Gain plus the selected focus object's current [[Meditation Psyfocus Bonus]]. For example, an [[Ascetic]] pawn can use a wall as a ''Minimal'' focus. The wall adds +22%/day to the pawn's base +50%/day, for a total of +72%/day. Meditation also counts as solitary relaxation recreation.
+
+Pawns in a caravan also regain psyfocus when the caravan is stationary and not resting at night. This uses each pawn's Meditation Psyfocus Gain without a focus-object bonus (normally +50% per day before natural degradation). It does not count as meditation, so normal psyfocus degradation continues. This allows psycasts to be used on long caravan journeys if the caravan stops to recharge.
+
+A pawn's target psyfocus level can be set with the psyfocus gizmo while the pawn is selected. When [[schedule]]d for "''Anything''", the pawn may start meditating if its psyfocus is below both its target and 95%. Meditation may also occur during Recreation or Meditation time, regardless of the target set by the gizmo.
+
+The rate of psyfocus gain from meditation can further be increased in the following ways:
+* Using [[Wake-up]] increases the psyfocus gain from meditation by {{+|20%}} per day for the [[Wake-up#Wake-up high|duration of its high]].
+* The [[Psy-meditative]] persona trait grants an additional {{+|10%}} psyfocus gain per day of meditation, while the weapon is held in hand.
+* After a completed [[deathrest]], each [[psychofluid pump]]{{BiotechIcon}} adds {{+|5%}}/day to Meditation Psyfocus Gain, up to {{+|20%}}/day from 4 pumps. This bonus lasts until the next deathrest.
+* [[Psy-sensitive]] and [[Super psy-sensitive]] genes{{BiotechIcon}} increase psyfocus gain per meditation day by {{+|10%}} and {{+|20%}} respectively. Note that these genes are mutually exclusive.
+
+The maximum meditation psyfocus gain is {{#expr:50 + 44 + 10 + 20 + 20 + 20}}% per day, or {{#expr:(50 + 44 + 10 + 20 + 20 + 20)/24 round 1}}% per hour. This can be achieved by a non-tribal pawn meditating at a legendary sculpture surrounded by 8 masterwork sculptures, wielding a Psy-meditative persona weapon, while high on wake-up, having completed deathrest with 4 psychofluid pumps and possessing the super psy-sensitive gene.
+
+== List of meditation foci ==
+<onlyinclude>
+{| {{STDT| sortable c_07 text-center}}
+|-
+! Focus object !! Focus type !! Listed bonus<br>per day !! Psyfocus gain/hour<br>at listed bonus !! Maximum bonus<br>per day !! Psyfocus gain/hour<br>at maximum
+|-
+! ''None''
+| ''All''
+| -
+| {{#expr: (0.5)/0.24 round 1}}% 
+| -
+| {{#expr: (0.5)/0.24 round 1}}% 
+|- 
+! [[Anima tree]]
+| [[Psyfocus#Natural|Natural]]
+| +28%
+| {{#expr: (0.5+0.28)/0.24 round 1}}% 
+| +36% 
+| {{#expr: (0.5+0.36)/0.24 round 1}}% 
+|-
+! [[Animus stone]]
+| [[Psyfocus#Natural|Natural]]
+| +34%
+| {{#expr: (0.5+0.34)/0.24 round 1}}% 
+| +42% 
+| {{#expr: (0.5+0.42)/0.24 round 1}}% 
+|- 
+! [[Small nature shrine]]
+| [[Psyfocus#Natural|Natural]]
+| +22%
+| {{#expr: (0.5+0.22)/0.24 round 1}}% 
+| +30%
+| {{#expr: (0.5+0.30)/0.24 round 1}}% 
+|- 
+! [[Large nature shrine]]
+| [[Psyfocus#Natural|Natural]]
+| +30%
+| {{#expr: (0.5+0.30)/0.24 round 1}}% 
+| +38%
+| {{#expr: (0.5+0.38)/0.24 round 1}}% 
+|- 
+! [[Grave]]
+| [[Psyfocus#Morbid|Morbid]]
+| +6%
+| {{#expr: (0.5+0.06)/0.24 round 1}}% 
+| +34%
+| {{#expr: (0.5+0.34)/0.24 round 1}}% 
+|-
+! [[Sarcophagus]]
+| [[Psyfocus#Morbid|Morbid]]
+| +10%
+| {{#expr: (0.5+0.10)/0.24 round 1}}% 
+| +38%
+| {{#expr: (0.5+0.38)/0.24 round 1}}% 
+|-
+! [[Small sculpture]]
+| [[Psyfocus#Artistic|Artistic]]
+| +12 - 28%
+| {{#expr: (0.5+0.12)/0.24 round 1}} - {{#expr: (0.5+0.28)/0.24 round 1}}% 
+| +44% 
+| {{#expr: (0.5+0.44)/0.24 round 1}}% 
+|-
+! [[Large sculpture]]
+| [[Psyfocus#Artistic|Artistic]]
+| +12 - 28%
+| {{#expr: (0.5+0.12)/0.24 round 1}} - {{#expr: (0.5+0.28)/0.24 round 1}}% 
+| +44% 
+| {{#expr: (0.5+0.44)/0.24 round 1}}% 
+|-
+! [[Grand sculpture]]
+| [[Psyfocus#Artistic|Artistic]]
+| +12 - 28%
+| {{#expr: (0.5+0.12)/0.24 round 1}} - {{#expr: (0.5+0.28)/0.24 round 1}}% 
+| +44% 
+| {{#expr: (0.5+0.44)/0.24 round 1}}% 
+|-
+! [[Terror sculpture]] {{IdeologyIcon}}
+| [[Psyfocus#Artistic|Artistic]]
+| +12 - 28%
+| {{#expr: (0.5+0.12)/0.24 round 1}} - {{#expr: (0.5+0.28)/0.24 round 1}}% 
+| +44% 
+| {{#expr: (0.5+0.44)/0.24 round 1}}% 
+|-
+! [[Void sculpture]]{{AnomalyIcon}}
+| [[Psyfocus#Artistic|Artistic]]
+| +12 - 28%
+| {{#expr: (0.5+0.12)/0.24 round 1}} - {{#expr: (0.5+0.28)/0.24 round 1}}%
+| +44%
+| {{#expr: (0.5+0.44)/0.24 round 1}}%
+|-
+! [[Cube sculpture|Cube sculptures]]{{AnomalyIcon}}
+| [[Psyfocus#Artistic|Artistic]]
+| +12 - 28%
+| {{#expr: (0.5+0.12)/0.24 round 1}} - {{#expr: (0.5+0.28)/0.24 round 1}}%
+| +44%
+| {{#expr: (0.5+0.44)/0.24 round 1}}%
+|-
+! [[Statue]]{{OdysseyIcon}}
+| [[Psyfocus#Artistic|Artistic]]
+| +12 - 28%
+| {{#expr: (0.5+0.12)/0.24 round 1}} - {{#expr: (0.5+0.28)/0.24 round 1}}%
+| +44%
+| {{#expr: (0.5+0.44)/0.24 round 1}}%
+|-
+! [[Large stele]]
+| [[Psyfocus#Artistic|Artistic]]
+| +15%
+| {{#expr: (0.5+0.15)/0.24 round 1}}% 
+| +15% 
+| {{#expr: (0.5+0.15)/0.24 round 1}}% 
+|-
+! [[Grand stele]]
+| [[Psyfocus#Artistic|Artistic]]
+| +18%
+| {{#expr: (0.5+0.18)/0.24 round 1}}% 
+| +18% 
+| {{#expr: (0.5+0.18)/0.24 round 1}}% 
+|-
+! [[Walls]]
+| [[Psyfocus#Minimal|Minimal]]
+| +22%
+| {{#expr: (0.5+0.22)/0.24 round 1}}% 
+| +22% 
+| {{#expr: (0.5+0.22)/0.24 round 1}}% 
+|-
+! [[Brazier]]
+| [[Psyfocus#Flame|Flame]]
+| +15%
+| {{#expr: (0.5+0.15)/0.24 round 1}}% 
+| +31% 
+| {{#expr: (0.5+0.31)/0.24 round 1}}% 
+|-
+! [[Darklight brazier]]{{IdeologyIcon}}
+| [[Psyfocus#Flame|Flame]]
+| +15%
+| {{#expr: (0.5+0.15)/0.24 round 1}}% 
+| +31% 
+| {{#expr: (0.5+0.31)/0.24 round 1}}% 
+|-
+! [[Campfire]]
+| [[Psyfocus#Flame|Flame]]
+| +12%
+| {{#expr: (0.5+0.12)/0.24 round 1}}% 
+| +28% 
+| {{#expr: (0.5+0.28)/0.24 round 1}}% 
+|-
+! [[Torch lamp]]
+| [[Psyfocus#Flame|Flame]]
+| +10%
+| {{#expr: (0.5+0.10)/0.24 round 1}}% 
+| +18% 
+| {{#expr: (0.5+0.18)/0.24 round 1}}% 
+|-
+! [[Wall torch lamp]]
+| [[Psyfocus#Flame|Flame]]
+| +10%
+| {{#expr: (0.5+0.1)/0.24 round 1}}%
+| +18%
+| {{#expr: (0.5+0.18)/0.24 round 1}}%
+|-
+! [[Darktorch]]{{IdeologyIcon}}
+| [[Psyfocus#Flame|Flame]]
+| +10%
+| {{#expr: (0.5+0.10)/0.24 round 1}}% 
+| +18% 
+| {{#expr: (0.5+0.18)/0.24 round 1}}% 
+|-
+! [[Fungus darktorch]]{{IdeologyIcon}}
+| [[Psyfocus#Flame|Flame]]
+| +10%
+| {{#expr: (0.5+0.10)/0.24 round 1}}% 
+| +18% 
+| {{#expr: (0.5+0.18)/0.24 round 1}}% 
+|-
+! [[Blood torch]]{{BiotechIcon}}
+| [[Psyfocus#Flame|Flame]]
+| +10%
+| {{#expr: (0.5+0.1)/0.24 round 1}}%
+| +18%
+| {{#expr: (0.5+0.18)/0.24 round 1}}%
+|-
+! [[Meditation throne]]
+| [[Psyfocus#Dignified|Dignified]]
+| +15%
+| {{#expr: (0.5+0.15)/0.24 round 1}}% 
+| +33%
+| {{#expr: (0.5+0.33)/0.24 round 1}}% 
+|-
+! [[Grand meditation throne]]
+| [[Psyfocus#Dignified|Dignified]]
+| +15%
+| {{#expr: (0.5+0.15)/0.24 round 1}}% 
+| +33%
+| {{#expr: (0.5+0.33)/0.24 round 1}}% 
+|-
+! [[Void monolith]]{{AnomalyIcon}}
+| [[Psyfocus#Void|Void]]
+| +30%
+| {{#expr: (0.5+0.30)/0.24 round 1}}%  
+| +30%
+| {{#expr: (0.5+0.30)/0.24 round 1}}% 
+|-
+! [[Harbinger tree]]{{AnomalyIcon}}
+| [[Psyfocus#Void|Void]]
+| +14%
+| {{#expr: (0.5+0.14)/0.24 round 1}}%  
+| +14%
+| {{#expr: (0.5+0.14)/0.24 round 1}}% 
+|-
+! [[Twisted obelisk]]{{AnomalyIcon}}
+| [[Psyfocus#Void|Void]]
+| +24%
+| {{#expr: (0.5+0.24)/0.24 round 1}}%
+| +24%
+| {{#expr: (0.5+0.24)/0.24 round 1}}%
+|-
+! [[Corrupted obelisk]]{{AnomalyIcon}}
+| [[Psyfocus#Void|Void]]
+| +24%
+| {{#expr: (0.5+0.24)/0.24 round 1}}%
+| +24%
+| {{#expr: (0.5+0.24)/0.24 round 1}}%
+|-
+! [[Warped obelisk]]{{AnomalyIcon}}
+| [[Psyfocus#Void|Void]]
+| +24%
+| {{#expr: (0.5+0.24)/0.24 round 1}}%
+| +24%
+| {{#expr: (0.5+0.24)/0.24 round 1}}%
+|-
+! [[Holding platform]]{{AnomalyIcon}}
+| [[Psyfocus#Void|Void]]
+| +16%
+| {{#expr: (0.5+0.16)/0.24 round 1}}%  
+| +16%
+| {{#expr: (0.5+0.16)/0.24 round 1}}% 
+|-
+! [[Holding spot]]{{AnomalyIcon}}
+| [[Psyfocus#Void|Void]]
+| +16%
+| {{#expr: (0.5+0.16)/0.24 round 1}}%
+| +16%
+| {{#expr: (0.5+0.16)/0.24 round 1}}%
+|-
+! [[Psychic ritual spot]]{{AnomalyIcon}}
+| [[Psyfocus#Void|Void]]
+| +8%
+| {{#expr: (0.5+0.08)/0.24 round 1}}%  
+| +28%
+| {{#expr: (0.5+0.28)/0.24 round 1}}% 
+|}
+
+Flame values above assume the focus is lit; holding values assume it is occupied. Their unlit or empty strength is 0%. Sculpture values vary with quality. Nearby bonuses and other conditions can further change the current strength.
+</onlyinclude>
+Each pawn has one or more meditation types. Each type allows the pawn to use different objects as a focus. A pawn with multiple types can use any type available to them.
+
+== Meditation types ==
+=== Natural ===
+----
+Available with a [[Backstories|childhood backstory]] in the ''Tribal'', ''AdultTribal'', or ''ChildTribal'' spawn category. The pawn's faction and the backstory title alone do not determine this focus type. In RimWorld 1.6, Accursed Child and Forest Child have the ''Tribal'' category and grant Natural focus. Two childhood backstories are named Sole Survivor: the one tagged ''Tribal'' grants Natural focus, while the untagged one does not.
+
+Natural focus objects are weakened by nearby artificial buildings within 27.9 tiles. The curves below show control points: values between points are linearly interpolated, and values outside the listed range remain at the nearest endpoint.
+
+'''[[Anima tree]]:'''
+[[{{Q|Anima tree|Image}}|64px|left|link=Anima tree]]
+Anima trees have a base meditation focus strength of +28%. Each animus stone within 10 tiles increases the meditation effectiveness by +2%, while each small or large natural shrine within 10 tiles increases it by +1%. Up to 4 buildings can affect the tree, for a maximum bonus of +8% for 4 animus stones. Its effectiveness is limited by artificial buildings within a 27.9 tile radius. Note that this does not include flooring and torch lamps.
+
+The maximum meditation focus strength is thus +36% for an anima tree with no artificial buildings within 27.9 tiles and surrounded by 4 animus stones. Also note that unlike other natural buildings, meditating at the anima tree also produces anima grass for additional psylink levels for pawns with the natural focus. 
+
+{| {{STDT| c_07 text-center}}
+! Artificial buildings in range
+! 0
+! 5
+! 10
+! 50
+|- 
+! Strength Offset
+| -0%
+| -15%
+| -30%
+| -50%
+|}
+
+'''[[Animus stone]]:'''
+[[{{Q|Animus stone|Image}}|64px|left|link=Animus stone]]
+Animus stones have a base meditation focus strength of +34%. Each animus stone within 10 tiles increases its focus strength by +2%, while nearby nature shrines do not increase it. Up to 4 additional stones can affect one stone. Like the [[anima tree]], its effectiveness is limited by artificial buildings within a 27.9 tile radius. Note that this does not include flooring and torch lamps.
+
+The maximum meditation focus strength is +42% for an animus stone with no artificial buildings within 27.9 tiles and surrounded by 4 additional animus stones.
+
+{| {{STDT| c_07 text-center}}
+! Artificial buildings in range
+! 0
+! 5 
+! 10
+! 50
+|- 
+! Strength Offset
+| -0%
+| -8%
+| -16%
+| -34%
+|}
+
+'''[[Small nature shrine]]:'''
+[[{{Q|Small nature shrine|Image}}|64px|left|link=Small nature shrine]]
+Small nature shrines have a base meditation focus strength of +22%. Each [[animus stone]] within 9.9 tiles adds +2%, up to four stones (+8%); the shrine does not increase an animus stone's strength. Nearby artificial buildings reduce the shrine's strength according to the curve below.
+
+The shrine itself can reach +30% with four nearby animus stones and no artificial-building penalty. In a layout where all four stones are within 9.9 tiles of one another, a stone can instead reach +40% (+34% base plus +2% from each of the other three stones). At a given [[meditation spot]], the pawn selects the compatible focus within range and line of sight with the highest current strength; it need not be an animus stone.
+
+{| {{STDT| c_07 text-center}}
+! Artificial buildings in range
+! 0
+! 5
+! 10
+! 50
+|- 
+! Strength Offset
+| -0%
+| -6%
+| -12%
+| -22%
+|}
+
+'''[[Large nature shrine]]:'''
+[[{{Q|Large nature shrine|Image}}|64px|left|link=Large nature shrine]]
+Large nature shrines have a base meditation focus strength of +30%. Each [[animus stone]] within 9.9 tiles adds +2%, up to four stones (+8%); the shrine does not increase an animus stone's strength. Nearby artificial buildings reduce the shrine's strength according to the curve below.
+
+The shrine itself can reach +38% with four nearby animus stones and no artificial-building penalty. In a layout where all four stones are within 9.9 tiles of one another, a stone can instead reach +40% (+34% base plus +2% from each of the other three stones). At a given [[meditation spot]], the pawn selects the compatible focus within range and line of sight with the highest current strength; it need not be an animus stone.
+
+{| {{STDT| c_07 text-center}}
+! Artificial buildings in range
+! 0
+! 5
+! 10
+! 50
+|- 
+! Strength Offset
+| -0%
+| -6%
+| -13%
+| -30%
+|}
+
+=== Morbid ===
+----
+Available with any of: [[Psychopath]], [[Bloodlust]], [[Cannibal (trait)|Cannibal]], [[Masochist]], [[Jealous]], [[Undergrounder]], [[Tortured artist]], or [[Disturbing]]{{AnomalyIcon}}.
+
+Morbid meditation is used by pawns with the appropriate traits and requires graves or sarcophagi. Filled graves or sarcophagi are more effective. The extra relationship bonus requires a humanlike corpse in the primary grave or sarcophagus. The game starts with the deceased pawn and follows recorded direct pawn relations in either direction, virtual relations, and chains through other pawns. If this search reaches the meditator, the bonus applies; for example, a recorded parent, spouse, or former spouse can qualify. Positive social opinion alone does not.
+
+'''[[Grave]]:'''
+[[{{Q|Grave|Image}}|64px|left|link=Grave]]
+Graves have a base Meditation Focus Strength of +6%. This increases by +10% if the grave is full, and a further +10% if the corpse meets the relationship condition above. It is further increased by being within 10 tiles of up to 4 additional graves or sarcophagi. Each of these 4 grants an additional +1%, or +2% if full, for a maximum bonus of +8%. Only the primary grave needs a corpse meeting that condition. 
+
+The maximum meditation focus strength is thus +34% for a grave containing a corpse that meets the relationship condition, with 4 additional full graves or sarcophagi nearby.
+{{Clear}}
+
+'''[[Sarcophagus]]:'''
+[[{{Q|Sarcophagus|Image}}|64px|left|link=Sarcophagus]]
+Sarcophagi have a base Meditation Focus Strength of +10%. This increases by +10% if the sarcophagus is full, and a further +10% if the corpse meets the relationship condition above. It is further increased by being within 10 tiles of up to 4 additional graves or sarcophagi. Each of these 4 grants an additional +1%, or +2% if full, for a maximum bonus of +8%. Only the primary sarcophagus needs a corpse meeting that condition. 
+
+The maximum meditation focus strength is thus +38% for a sarcophagus containing a corpse that meets the relationship condition, with 4 additional full graves or sarcophagi nearby.
+{{Clear}}
+
+=== Artistic ===
+----
+Available when the childhood backstory lacks the ''Tribal'' spawn category and the pawn has neither the [[Ascetic]] trait nor the [[Void fascination]] trait{{AnomalyIcon}}. The ''AdultTribal'' and ''ChildTribal'' categories can allow both Natural and Artistic focus.
+
+Artistic meditation uses artwork as a focus, with higher-quality art being more effective.
+
+'''[[Small sculpture]] / [[Large sculpture]] / [[Grand sculpture]] / [[Terror sculpture]] {{IdeologyIcon}}:'''
+[[{{Q|Small sculpture|Image}}|64px|left|link=Sculptures]]
+These sculptures share the same Artistic meditation focus rules. Their strength depends on [[quality]], from +12% at awful to +28% at legendary. Up to eight nearby [[Small sculpture|small]], [[Large sculpture|large]], or [[Grand sculpture|grand]] sculptures within 9.9 tiles can add a quality-dependent bonus: +1% each at normal through excellent quality, or +2% each at masterwork or legendary quality. Awful and poor supporting sculptures add nothing. The current supporting-building list contains only those three ordinary sculpture types.
+
+A legendary Artistic focus can therefore reach +44% when supported by eight masterwork or legendary small, large, or grand sculptures. [[Void sculpture|Void sculptures]]{{AnomalyIcon}}, [[Cube sculpture|cube sculptures]]{{AnomalyIcon}}, and [[Statue|statues]]{{OdysseyIcon}} can themselves serve as Artistic foci through the same inherited quality rules, but they do not count as supporting sculptures in the current definitions. 
+
+{| {{STDT| c_07 text-center}}
+! Quality
+! Awful
+! Poor
+! Normal
+! Good
+! Excellent
+! Masterwork
+! Legendary
+|- 
+! Base Strength
+| +12%
+| +16%
+| +20%
+| +22%
+| +24%
+| +26%
+| +28%
+|- 
+! Strength Offset
+| +0%
+| +0%
+| +1%
+| +1%
+| +1%
+| +2%
+| +2%
+|}
+
+'''[[Large stele]]:'''
+[[{{Q|Large stele|Image}}|64px|left|link=Large stele]]
+Large steles have a base Meditation Focus Strength of +15%.
+
+Steles have no additional meditation focus-strength modifiers.
+{{Clear}}
+
+'''[[Grand stele]]:'''
+[[{{Q|Grand stele|Image}}|64px|left|link=Grand stele]]
+Grand steles have a base Meditation Focus Strength of +18%.
+
+Steles have no additional meditation focus-strength modifiers.
+{{Clear}}
+
+=== Minimal ===
+----
+Available with the [[Ascetic]] trait.
+
+[[Ascetic]] pawns can use walls as Minimal meditation foci. A wall provides a fixed +22%/day bonus; another compatible focus object may provide a larger bonus.
+
+'''[[Wall]]:'''
+[[{{Q|Wall|Image}}|64px|left|link=Wall]]
+Walls have a Meditation Psyfocus Bonus of +22%/day, with no additional focus-strength modifiers.
+{{Clear}}
+
+=== Flame ===
+----
+Available with the [[Pyromaniac]] trait.
+
+[[Pyromaniac]]s can meditate at lit flame focus objects. These objects have 0% strength while unlit. Each counts up to eight eligible nearby ''lit'' buildings within 9.9 tiles; the bonus depends on the focus object.
+
+{| {{STDT| sortable c_07 text-center}}
+! Focus object !! Strength when lit !! Bonus per eligible neighbor !! Maximum strength
+|-
+! [[Brazier]] / [[Darklight brazier]]{{IdeologyIcon}}
+| +15% || +2% || +31%
+|-
+! [[Campfire]]
+| +12% || +2% || +28%
+|-
+! [[Torch lamp]] / [[Wall torch lamp]]
+| +10% || +1% || +18%
+|-
+! [[Darktorch]]{{IdeologyIcon}} / [[Fungus darktorch]]{{IdeologyIcon}}
+| +10% || +1% || +18%
+|-
+! [[Blood torch]]{{BiotechIcon}}
+| +10% || +1% || +18%
+|}
+
+All of these foci count nearby lit [[Campfire|campfires]], [[Torch lamp|torch lamps]], [[Brazier|braziers]], [[Darklight brazier|darklight braziers]], [[Darktorch|darktorches]], and [[Fungus darktorch|fungus darktorches]]. Torch lamps and wall torch lamps ''also'' count nearby lit [[Wall torch lamp|wall torch lamps]]. Blood torches are not on any of these support lists, including their own. Which nearby flames count therefore depends on the focus object.
+
+=== Dignified ===
+----
+Available with an active [[Titles|royal title]] that permits dignified meditation (the [[Freeholder]] title does not).
+
+Dignified meditation uses a throne; its focus strength depends on whether the pawn's title requirements are met and on the throne room's impressiveness.
+
+'''[[Meditation throne]] / [[Grand meditation throne]]:'''
+[[{{Q|Meditation throne|Image}}|64px|left|link=Throne]]
+Both thrones have identical meditation statistics and mechanics. They start with a meditation focus strength of +15%. If it is in a [[Room roles|throne room]] that meets the pawn's [[Titles|title requirements]], its focus strength is improved by +8%.
+
+The throne's focus strength also depends on the room's [[impressiveness]], as shown below.
+
+<div><li style="display: inline-table;">
+{{#vardefine:basesensitivitybonus|0.15}}
+{| {{STDT| c_07 text-center}}
+! Impressiveness Value
+! 0
+! 30
+! 60
+! 100
+! 170
+|- 
+! Description at Value
+| Awful
+| Mediocre
+| Slightly Impressive
+| Very Impressive
+| Unbelievably Impressive 
+|- 
+!Strength Offset
+| -5%
+| +0%
+| +4%
+| +8%
+| +10%
+|}
+
+{| class="wikitable"
+! Graph
+|-
+| {{Graph:Chart|width=400|height=100|type=line| xAxisTitle = Room Impressiveness | yAxisTitle = Strength Offset (%)|x=0, 30, 60, 100, 170, 200|y=-5, 0, 4, 8, 10, 10|xAxisMin = 0 |  xAxisMax = 200|  yAxisMin = -5 | yAxisMax = 12 |xGrid = |yGrid = }}
+|}
+</li></div>
+The room descriptions in the table apply at the listed scores; the numerical impressiveness score determines the focus-strength bonus. For example, a room at 50 is labeled "Slightly Impressive" but receives less than the +4% shown at 60. At 240 or higher, the room is labeled "Wondrously Impressive" while the bonus remains at its +10% maximum.
+
+With the title requirements met and room impressiveness at 170 or higher, either throne reaches a maximum Meditation Psyfocus Bonus of +33%/day.
+
+=== Void ===
+{{Anomaly|section=1}}
+----
+Available with the [[Void fascination]] trait or the [[Inhumanized]] status.
+
+Void meditation was added with the Anomaly DLC and is used by pawns who have either become inhumanized or have the Void Fascination trait.
+
+'''[[Void monolith]]:'''
+[[{{Q|Void monolith|Image}}|64px|left|link=Void monolith]]
+The monolith gives a +30%/day Meditation Psyfocus Bonus. Its focus-bearing center occupies 3x3 tiles (9 tiles) at every level. At level 1, two impassable side attachments add 6 tiles, filling a 5x3 rectangle (15 tiles). At levels 2–4 and in the Embraced ending (internal level 5), the top attachment and two front corners add another 5 tiles. The structure then spans a 5x5 bounding rectangle but occupies only 20 of its 25 tiles: 9 center tiles and 11 attachment tiles. The front center remains open.
+
+The attachments added at levels 1 and 2 can block sight to the central building, which is the meditation focus. Because a meditation spot must have line of sight to its focus, the number of candidate tiles decreases as the monolith advances. On clear, standable ground, there are 68 candidate tiles at level 0, 34 at level 1, and 4 from level 2 through the [[Void Awakening (ending)#Embrace the Void|Embraced]] ending. Their locations are shown below.
+
+[[File:Void_monolith_meditation_spot_tiles_by_stage.png|thumb|center|800px|Candidate meditation spot tiles by monolith stage on clear, standable ground.]]
+
+The game's line-of-sight algorithm causes an asymmetric distribution of meditation candidate spot tiles. Simply put, take a candidate spot on the southwest side of the level 2 monolith as an example: the game's line-of-sight determination treats its sight line as passing through the opening when it crosses a tile boundary, so it becomes a candidate spot. In contrast, its mirrored spot's sight line is treated as passing through the right-front attachment of the monolith when it crosses a tile boundary, so the mirrored spot does not become a candidate spot.
+
+{{Clear}}
+
+'''[[Harbinger tree]]:'''
+[[{{Q|Harbinger tree|Image}}|64px|left|link=Harbinger tree]]
+Harbinger trees have a Meditation Focus Strength of +14%, with no additional focus-strength offsets defined.
+{{Clear}}
+
+'''[[Twisted obelisk]] / [[Corrupted obelisk]] / [[Warped obelisk]]:'''
+Each obelisk has a Meditation Focus Strength of +24% and no additional focus-strength offsets.
+{{Clear}}
+
+'''[[Holding spot]]:'''
+[[{{Q|Holding spot|Image}}|64px|left|link=Holding spot]]
+An occupied holding spot provides +16% Meditation Psyfocus Bonus; an empty spot provides 0%. The offset depends only on whether the spot is occupied, not on the captured entity's type.
+{{Clear}}
+
+'''[[Holding platform]]:'''
+[[{{Q|Holding platform|Image}}|64px|left|link=Holding platform]]
+An occupied holding platform provides +16% Meditation Psyfocus Bonus; an empty platform provides 0%. The offset depends only on whether the platform is occupied, not on the captured entity's type.
+{{Clear}}
+
+'''[[Psychic ritual spot]]:'''
+[[{{Q|Psychic ritual spot|Image}}|64px|left|link=Psychic ritual spot]]
+A psychic ritual spot has a base Meditation Psyfocus Bonus of +8%/day. Each [[Void sculpture|void sculpture]] within range adds +2%/day to the ritual spot's Meditation Psyfocus Bonus. This is independent of sculpture quality and stacks up to 6 sculptures. Each [[Shard beacon|shard beacon]] within range adds another +2%/day. This can be stacked up to 4 times. Neither the void sculpture nor the shard beacon needs to be in range of the meditation spot for the bonus to be in effect, they only have to affect the ritual spot.
+Therefore the maximum Meditation Psyfocus Bonus from a psychic ritual spot is +28%/day and requires the ritual spot to be surrounded by 6 void sculptures of any quality and 4 shard beacons. 
+{{Clear}}
+
+== Other ways to increase psyfocus ==
+Other than meditation, the following methods will increase a pawn's psyfocus:
+* Using [[Go-juice]] instantly restores 15 percentage points of a psycaster's psyfocus, up to 100%.
+* Eligible [[Ideoligion]] [[rituals]] {{IdeologyIcon}} can select "recharge psyfocus" as a reward. If the ritual produces a positive outcome, it restores all participants' psyfocus to 100%. Ritual quality affects the chance of a positive outcome; this reward has no fixed quality threshold.
+* The [[Kill-focused]] persona weapon trait restores 20 percentage points of psyfocus to its wielder when the wielder is credited with killing a pawn while the weapon is equipped. The victim can be human or animal, hostile or friendly; [[Animals#Slaughtering|slaughtering]] colony animals also qualifies. The amount does not depend on the victim's age or body size, and psyfocus cannot exceed 100%.
+
+== Version history ==
+* [[Royalty DLC]] release - Introduced psyfocus, psycasts, and meditation.
+* [[Version/1.2.2719|1.2.2719]] - Fix: Just claimed artificial structures don't affect nature focus objects.
+* [[Version/1.3.3200|1.3.3200]] - Fix: Psyfocus ritual reward does not recharge psyfocus to max.
+* [[Version/1.4.3558|1.4.3558]] - Tribal [[babies]]{{BiotechIcon}} becoming [[children]]{{BiotechIcon}} get natural meditation focus.
+* [[Version/1.4.3563|1.4.3563]] - Fix: [[Children]]{{BiotechIcon}} generated at [[New Tribe|tribal game start]] don't have [[Psyfocus|natural meditation focus]].{{RoyaltyIcon}}
+* [[Version/1.5.4046|1.5.4046]] - Reduced the meditation focus strength offsets from animus stones and nature shrines.
+* [[Anomaly DLC]] release - Added Void meditation and its focus objects, including the void monolith.
+* [[Odyssey DLC]] release - Added [[statue]]s, which can serve as Artistic meditation foci.
+* [[Version/1.6.4566|1.6.4566]] - Fixed an error when a cached meditation throne was despawned.
+
+[[Category:Game mechanics]]

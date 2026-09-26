@@ -1,0 +1,504 @@
+<!--Top Nav Box-->
+{| align=center
+| {{Gameplay_Nav}}
+|}
+----
+<!-- End of Nav -->
+{{Stat|description = An item's quality is how well-made it is.}}
+
+Many [[Skills#Crafting|crafted]] items and some [[Skills#Construction|structures]] have a stat called ''quality''.  This stat influences various attributes of the item, according to the tables below.
+
+== Effects of quality ==
+{{Stub|section=1|reason=[[Bioferrite]] psy buffs, [[eltex]], any other quality dependent effects}}
+=== General ===
+Effects that are common to several, or all, types of objects.
+{| {{STDT|sortable center}}
+! Quality !! Beauty<br/>Factor{{Ref label|Negative Beauty|A}} !! Market Value<br/>Factor !! Deterioration Rate<br/>Factor{{Ref label|Deterioration Rate Factor|B}} !! Psychic Sensitivity<br/>Offset Factor {{RoyaltyIcon}} {{Ref label|Psychic Sensitivity Offset|C}}
+|-
+! style="text-align:left;" | Awful      
+| -0.1 || 0.50             || 2.00 || 0.50
+|-
+! style="text-align:left;" | Poor       
+|  0.5 || 0.75             || 1.50 || 0.66
+|-
+! style="text-align:left;" | Normal     
+|  1.0 || 1.00             || 1.00 || 0.83
+|-
+! style="text-align:left;" | Good       
+|  2.0 || 1.25 (max +500)  || 0.80 || 1.00
+|-
+! style="text-align:left;" | Excellent  
+|  3.0 ||  1.5 (max +1000) || 0.60 || 1.16
+|-
+! style="text-align:left;" | Masterwork 
+|  5.0 || 2.5 (max +2000)  || 0.30 || 1.32
+|-
+! style="text-align:left;" | [[#Legendary items|Legendary]]
+|  8.0 ||  5 (max +3000)   || 0.10 || 1.50
+|}
+:{{Note|Negative Beauty|A}} This multiplier will not be applied to negative [[beauty]] scores.
+:{{Note|Deterioration Rate Factor|B}} This factor does not apply to the damage taken by [[apparel]] from being worn. 
+:{{Note|Psychic Sensitivity Offset|C}} This only applies to items with a buff specifically noted as a "Psychic Sensitivity Offset", such as an [[eltex helmet]] {{RoyaltyIcon}}, not items that just offset [[psychic sensitivity]], like the [[psychic foil helmet]] or [[prestige marine armor]] {{RoyaltyIcon}}.
+
+Note that [[market value]]s above 200 and [[beauty]] above 100 will be rounded to nearest 5. See respective pages for more detail on rounding.
+
+=== Weapons ===
+In addition to the general effects listed above, quality also affects several factors unique to [[weapons]], both ranged and melee. These include:
+
+{{#ask: [[Type2::Weapons]][[Has Quality::True]]
+    | format = template
+    | template = DLC Icons
+    | link = none
+    | sort = From DLC, Name
+    | sep =  &nbsp;•&nbsp;
+    | limit = 100
+}}
+
+{| {{STDT|sortable center}}
+! Quality !! Melee Damage<br/>Factor !! Melee AP<br/>Factor !! Ranged Accuracy<br/>Factor !! Ranged Damage<br/>Factor !! Ranged AP<br/>Factor
+|-
+! style="text-align:left;" | Awful      
+| 0.80 || 0.80 ||  80% ||  90% || 90% 
+|-
+! style="text-align:left;" | Poor       
+| 0.90 || 0.90 ||  90% || 100% || 100%
+|-
+! style="text-align:left;" | Normal     
+| 1.00 || 1.00 || 100% || 100% || 100%
+|-
+! style="text-align:left;" | Good       
+| 1.10 || 1.10 || 110% || 100% || 100%
+|-
+! style="text-align:left;" | Excellent  
+| 1.20 || 1.20 || 120% || 100% || 100%
+|-
+! style="text-align:left;" | Masterwork 
+| 1.45 || 1.45 || 135% || 125% || 125%
+|-
+! style="text-align:left;" | Legendary  
+| 1.65 || 1.65 || 150% || 150% || 150%
+|}
+
+=== Apparel and utility ===
+In addition to the general effects listed above, quality also affects several factors unique to [[apparel]] and [[utility]] items. These include:
+
+{{#ask: [[Type2::Clothing||Armor||Utility]][[Has Quality::True]]
+    | format = template
+    | template = DLC Icons
+    | link = none
+    | sort = From DLC, Name
+    | sep =  &nbsp;•&nbsp;
+    | limit = 100
+}}
+
+{| {{STDT| sortable center}}
+! Quality !! Protection<br/>Factor !! Insulation<br/>Factor !! Smokepop Pack<br/>Radius Factor !! Shield Max<br/>Energy Factor !! Shield Recharge<br/>Rate Factor !! Jump Range<br/>Factor {{RoyaltyIcon}} 
+|-
+! style="text-align:left;" | Awful      
+| 0.60 || 0.80 || 0.84 || 0.60 || 0.90 || 0.75
+|-
+! style="text-align:left;" | Poor       
+| 0.80 || 0.90 || 0.92 || 0.80 || 0.95 || 0.90
+|-
+! style="text-align:left;" | Normal     
+| 1.00 || 1.00 || 1.00 || 1.00 || 1.00 || 1.00
+|-
+! style="text-align:left;" | Good       
+| 1.15 || 1.10 || 1.08 || 1.20 || 1.05 || 1.06
+|-
+! style="text-align:left;" | Excellent  
+| 1.30 || 1.20 || 1.16 || 1.40 || 1.10 || 1.13
+|-
+! style="text-align:left;" | Masterwork 
+| 1.45 || 1.50 || 1.30 || 1.70 || 1.20 || 1.19
+|-
+! style="text-align:left;" | Legendary  
+| 1.80 || 1.80 || 1.50 || 2.10 || 1.30 || 1.25
+|}
+
+=== Buildings ===
+In addition to the general effects listed above, quality also affects several factors unique to [[furniture]] and [[buildings]] that provide [[recreation]]. These include:
+
+{{#ask: [[Type::Building]][[Has Quality::True]]
+    | format = template
+    | template = DLC Icons
+    | link = none
+    | sort = From DLC, Name
+    | sep =  &nbsp;•&nbsp;
+}}
+
+{| {{STDT|sortable center}}
+! Quality !! Comfort<br/>Factor !! Rest Effectiveness<br/>Factor !! Surgery Success<br/>Chance Factor!! Recreation Power<br/>Factor !! Meditation Psyfocus<br/>Bonus {{RoyaltyIcon}} {{Ref label|Meditation Bonus|A}} !! Meditation Psyfocus<br/>Bonus Offset {{RoyaltyIcon}} {{Ref label|Meditation Bonus|A}}
+|-
+! style="text-align:left;" | Awful      
+| 0.76 || 0.86 || 0.90 || 0.76 || +12% || +0%
+|-
+! style="text-align:left;" | Poor       
+| 0.88 || 0.92 || 0.95 || 0.88 || +16% || +0%
+|-
+! style="text-align:left;" | Normal     
+| 1.00 || 1.00 || 1.00 || 1.00 || +20% || +1%
+|-
+! style="text-align:left;" | Good       
+| 1.12 || 1.08 || 1.05 || 1.12 || +22% || +1%
+|-
+! style="text-align:left;" | Excellent  
+| 1.24 || 1.14 || 1.10 || 1.24 || +24% || +1%
+|-
+! style="text-align:left;" | Masterwork 
+| 1.45 || 1.25 || 1.15 || 1.40 || +26% || +2%
+|-
+! style="text-align:left;" | Legendary  
+| 1.70 || 1.60 || 1.30 || 1.80 || +28% || +2%
+|}
+:{{Note|Meditation Bonus|A}} Only applies to [[Sculptures]]. Note that this is NOT a factor, but instead a flat bonus.
+
+=== At higher quality levels ===
+If a crafted or built item is at least ''excellent'', a piece of random artwork will be engraved on it.  This is only meant to add depth and has no further effect. Clothing will not have this artwork.
+
+If a crafted or built item is at least ''masterwork'', there will be a proper [[letter]] that a colonist has created a masterwork / legendary item.
+
+Masterwork and legendary items never generate on enemies, and legendary items are never sold by traders or in bases.{{Check Tag|Verify/Detail}}  They are only available through player creation or as quest rewards, though masterwork items can be bought and spawn in [[ancient shrine]]s.
+
+== How quality is determined ==
+When an item requiring a quality is crafted or built, that is, when crafting ''finishes'', the quality is randomly determined using a standard distribution.  Expected values by skill level of the crafter are given in the table below.
+
+* The column "Avg. Result" shows the mean quality for each skill level, where awful = 0, poor = 1, normal = 2, etc.  The mean quality becomes "normal" at skill level 6, however already at skill level 4 the character will have a 50% chance to craft something that is at least of "normal" quality (median quality).
+* The "Avg. Value" column gives the average market value multiplier for that skill level.  At skill level 6 you can expect a character to stop wasting material value from crafting.
+
+As quality is rolled once an object is finished, it is possible to have builders work on something until it is almost done, then have the master finish it to get a better quality on the item. This tactic is particularly useful for high work buildings such as [[royal bed]]s, as it both alleviates the high workload on the good builder and allows their "apprentice" to grind experience. Note however, that as crafted items and art assign "authors" to the unfinished work, this strategy cannot be used for those items (except by forbidding the unfinished item until the author has enough experience). 
+
+{| {{STDT| sortable center}} style = 'width: auto'
+|-
+! data-sort-type='number' | Skill level
+! Awful
+! Poor
+! Normal
+! Good
+! Excellent
+! Masterwork
+! Avg. Result
+! Avg. Value{{ref label|Market Value|A}}
+|-
+! 0 Barely heard of it
+| 64.62% || 30.18% || 5.00% || 0.20% || 0.00% || 0.00% || 0.41 || style="background-color:#F8696B;" | x0.60
+|-
+! 1 Utter beginner
+| 43.39% || 43.59% || 12.15% || 0.86% || 0.01% || 0.00% || 0.71 || style="background-color:#F98283;" | x0.68
+|-
+! 2 Beginner
+| 20.24% || 53.17% || 23.56% || 2.95% || 0.08% || 0.00% || 1.09 || style="background-color:#FA9B9C;" | x0.77
+|-
+! 3 Basic familiarity
+| 9.12% || 50.76% || 33.45% || 6.38% || 0.29% || 0.00% || 1.38 || style="background-color:#FBB4B5;" | x0.84
+|-
+! 4 Some familiarity
+| 4.77% || 45.23% || 39.44% || 9.95% || 0.61% || 0.00% || 1.56 || style="background-color:#FCCDCD;" | x0.89
+|-
+! 5 Significant familiarity
+| 2.27% || 34.68% || 47.20% || 14.65% || 1.19% || 0.01% || 1.78 || style="background-color:#FDE6E6;" | x0.94
+|-
+! 6 Capable amateur
+| 0.98% || 24.28% || 52.11% || 20.40% || 2.21% || 0.02% || 1.99 || x1.00
+|-
+! 7 Weak professional
+| 0.38% || 15.50% || 53.32% || 26.87% || 3.87% || 0.06% || 2.19 || style="background-color:#F3FAF5;" | x1.05
+|-
+! 8 Employable professional
+| 0.13% || 9.00% || 50.83% || 33.50% || 6.39% || 0.15% || 2.37 || style="background-color:#E8F5EC;" | x1.09
+|-
+! 9 Solid professional
+| 0.05% || 5.62% || 46.95% || 38.14% || 8.98% || 0.26% || 2.51 || style="background-color:#DDF1E2;" | x1.13
+|-
+! 10 Skilled professional
+| 0.02% || 3.33% || 40.22% || 43.77% || 12.22% || 0.44% || 2.66 || style="background-color:#D2ECD9;" | x1.17
+|-
+! 11 Very skilled professional
+| 0.00% || 1.86% || 32.22% || 49.05% || 16.13% || 0.74% || 2.82 || style="background-color:#C7E7CF;" | x1.21
+|-
+! 12 Expert
+| 0.00% || 0.98% || 24.55% || 52.64% || 20.64% || 1.19% || 2.96 || style="background-color:#BCE3C6;" | x1.25
+|-
+! 13 Strong expert
+| 0.00% || 0.62% || 19.91% || 53.93% || 23.93% || 1.61% || 3.06 || style="background-color:#B1DEBD;" | x1.28
+|-
+! 14 Master
+| 0.00% || 0.38% || 15.79% || 54.30% || 27.39% || 2.14% || 3.15 || style="background-color:#A5D9B3;" | x1.30
+|-
+! 15 Strong master
+| 0.00% || 0.23% || 12.25% || 53.76% || 30.94% || 2.82% || 3.24 || style="background-color:#9AD5AA;" | x1.33
+|-
+! 16 Region-known master
+| 0.00% || 0.13% || 9.29% || 52.40% || 34.50% || 3.68% || 3.32 || style="background-color:#8FD0A0;" | x1.36
+|-
+! 17 Region-leading master
+| 0.00% || 0.08% || 6.88% || 50.31% || 37.98% || 4.75% || 3.40 || style="background-color:#84CB97;" | x1.39
+|-
+! 18 Planet-known master
+| 0.00% || 0.04% || 4.98% || 47.61% || 41.31% || 6.06% || 3.48 || style="background-color:#79C78D;" | x1.42
+|-
+! 19 Planet-leading master
+| 0.00% || 0.02% || 3.53% || 42.66% || 46.16% || 7.63% || 3.58 || style="background-color:#6EC284;" | x1.45
+|-
+! 20 Legendary master
+| 0.00% || 0.01% || 2.44% || 37.42% || 50.61% || 9.52% || 3.67 || style="background-color:#63BE7B;" | x1.49
+|}
+:{{note|Market Value|A}} As market value multipliers are capped (see section [[Quality#General|General]]), the real value is lower for all items with a market value above 1333 {{Icon Small|silver}} at Normal quality.
+
+== Legendary items ==
+'''Legendary''' items can never be made naturally, even by a level 20 craftsman; an external quality modifier is required. In the base game, legendary items can only be made with the [[Inspired creativity]] inspiration. Alternatively, [[production specialist]]s{{IdeologyIcon}} have a chance to create legendary items without an inspiration. See [[#Production specialists|below]] for details.
+
+=== Inspired creativity ===
+When a pawn gains the ''Inspired Creativity'' inspiration, the next item, structure, or piece of art with a quality level will automatically be two levels higher – thus, if "excellent" or "masterwork" is rolled, a ''legendary'' item is produced instead. Even the most capable crafters have only a 60% chance per inspiration to produce a ''legendary'' item. 
+
+''Inspired creativity'' makes it impossible to craft an item of ''poor'' or ''awful'' quality; at least ''normal'' will be rolled, even at 0 skill level.
+
+Since the inspiration takes effect only when the item is finished, it is useful to raise the skill level of the ''inspired'' person as high as possible before actually producing an item; for example you can train ''crafting'' on several items that do not have the ''quality'' stat (eg. [[component]]s or bionic body parts) before using up the inspiration.
+
+It is also possible to keep an unfinished item in stock, and wait for an ''inspiration'' to occur before actually finishing it; this will still reap the full effect, without requiring you to dedicate a lot of work during the 8-day time window of the inspiration.  This strategy is particularly useful for work intensive projects that are always in demand (e.g. [[marine armor]] or a [[grand sculpture]])
+
+Pawns with the [[tortured artist]] trait can be purposefully given mental breaks by giving them poor treatment such as awful bedrooms or nutrient paste to intentionally trigger Inspired Creativity inspirations. Similarly, if the [[Royalty DLC]] is enabled, the use of the [[word of inspiration]] psycast can be used to generate more creativity inspirations, though other inspirations may be granted instead. Otherwise, keeping pawns in high moods is the only way to increase inspiration frequency.
+
+====Quality with Inspired Creativity====
+{| {{STDT| sortable center}} style = 'width: auto'
+|-
+! data-sort-type='number' | Skill level
+! Normal
+! Good
+! Excellent
+! Masterwork
+! Legendary
+! Avg. Result
+! Avg. Value{{ref label|Market Value|A}}
+|-
+! 0 Barely heard of it
+| 64.62% || 30.18% || 5.00% || 0.20% || 0.00% || 2.41 || style="background-color:#E8F5EC;" | x1.10
+|-
+! 1 Utter beginner
+| 43.39% || 43.59% || 12.15% || 0.86% || 0.01% || 2.71 || style="background-color:#D2ECD9;" | x1.18
+|-
+! 2 Beginner
+| 20.24% || 53.17% || 23.56% || 2.95% || 0.08% || 3.09 || style="background-color:#A5D9B3;" | x1.30
+|-
+! 3 Basic familiarity
+| 9.12% || 50.76% || 33.45% || 6.38% || 0.29% || 3.38 || style="background-color:#84CB97;" | x1.40
+|-
+! 4 Some familiarity
+| 4.77% || 45.23% || 39.44% || 9.95% || 0.61% || 3.56 || style="background-color:#63BE7B;" | x1.48
+|-
+! 5 Significant familiarity
+| 2.27% || 34.68% || 47.20% || 14.64% || 1.21% || 3.78 || style="background-color:#5eba76;" | x1.59
+|-
+! 6 Capable amateur
+| 0.98% || 24.28% || 52.11% || 20.39% || 2.24% || 3.99 || style="background-color:#5eba76;" | x1.72
+|-
+! 7 Weak professional
+| 0.38% || 15.49% || 53.32% || 26.87% || 3.94% || 4.18 || style="background-color:#59b670;" | x1.87
+|-
+! 8 Employable professional
+| 0.13% || 9.00% || 50.83% || 33.50% || 6.54% || 4.37 || style="background-color:#54b26b;" | x2.04
+|-
+! 9 Solid professional
+| 0.05% || 5.62% || 46.95% || 38.14% || 9.24% || 4.51 || style="background-color:#4faf66;" | x2.19
+|-
+! 10 Skilled professional
+| 0.02% || 3.32% || 40.22% || 43.77% || 12.67% || 4.66 || style="background-color:#49ab60;" | x2.37
+|-
+! 11 Very skilled professional
+| 0.00% || 1.86% || 32.22% || 49.05% || 16.87% || 4.81 || style="background-color:#44a75b;" | x2.58
+|-
+! 12 Expert
+| 0.00% || 0.98% || 24.55% || 52.64% || 21.83% || 4.95 || style="background-color:#3fa356;" | x2.79
+|-
+! 13 Strong expert
+| 0.00% || 0.62% || 19.91% || 53.93% || 25.54% || 5.04 || style="background-color:#399f50;" | x2.93
+|-
+! 14 Master
+| 0.00% || 0.38% || 15.79% || 54.30% || 29.53% || 5.13 || style="background-color:#349c4b;" | x3.08
+|-
+! 15 Strong master
+| 0.00% || 0.23% || 12.25% || 53.76% || 33.76% || 5.21 || style="background-color:#2e9846;" | x3.22
+|-
+! 16 Region-known master
+| 0.00% || 0.13% || 9.28% || 52.40% || 38.19% || 5.29 || style="background-color:#279440;" | x3.36
+|-
+! 17 Region-leading master
+| 0.00% || 0.08% || 6.88% || 50.31% || 42.73% || 5.36 || style="background-color:#20903b;" | x3.50
+|-
+! 18 Planet-known master
+| 0.00% || 0.04% || 4.99% || 47.61% || 47.36% || 5.42 || style="background-color:#188d35;" | x3.63
+|-
+! 19 Planet-leading master
+| 0.00% || 0.02% || 3.53% || 42.65% || 53.80% || 5.50 || style="background-color:#0e8930;" | x3.81
+|-
+! 20 Legendary master
+| 0.00% || 0.01% || 2.44% || 37.42% || 60.13% || 5.58 || style="background-color:#00852a;" | x3.98
+|}
+:{{note|Market Value|A}} As market value multipliers are capped (see section [[Quality#General|General]]), the real value is lower for all items with a market value above 750 {{Icon Small|silver}} at Normal quality.
+
+=== Production specialists ===
+{{Ideology|section=1|No category}}
+With the advent of the [[Ideology DLC]], the addition of the [[production specialist]]s adds the chance to get "legendary" items without an inspiration. When created by a production specialist, any item, structure or piece of art with a quality level will automatically be one level higher – thus, if "masterwork" is rolled, a ''legendary'' item is produced instead. 
+
+Being a production specialist makes it impossible to craft an item of ''awful'' quality; at least ''poor'' will be rolled, even at 0 skill level.
+
+This bonus stacks with ''Inspired Creativity'' inspirations, resulting in works three levels higher i.e. if ''good'' is rolled, a ''legendary'' item is produced instead.
+
+==== Quality with Production Specialist ====
+{| {{STDT| sortable center}} style = 'width: auto'
+|-
+! data-sort-type='number' | Skill level
+! Poor
+! Normal
+! Good
+! Excellent
+! Masterwork
+! Legendary
+! Avg. Result
+! Avg. Value{{ref label|Market Value|A}}
+|-
+! 0 Barely heard of it
+| 64.62% || 30.18% || 5.00% || 0.20% || 0.00% || 0.00% || 1.41 || style="background-color:#FBB4B5;" | x0.85
+|-
+! 1 Utter beginner
+| 43.39% || 43.59% || 12.15% || 0.86% || 0.01% || 0.00% || 1.71 || style="background-color:#FDE6E6;" | x0.93
+|-
+! 2 Beginner
+| 20.24% || 53.17% || 23.56% || 2.95% || 0.08% || 0.00% || 2.09 || style="background-color:#F3FAF5;" | x1.02
+|-
+! 3 Basic familiarity
+| 9.12% || 50.76% || 33.45% || 6.38% || 0.29% || 0.00% || 2.38 || style="background-color:#E8F5EC;" | x1.10
+|-
+! 4 Some familiarity
+| 4.77% || 45.23% || 39.44% || 9.95% || 0.61% || 0.00% || 2.56 || style="background-color:#D2ECD9;" | x1.15
+|-
+! 5 Significant familiarity
+| 2.27% || 34.68% || 47.20% || 14.65% || 1.19% || 0.01% || 2.78 || style="background-color:#C7E7CF;" | x1.20
+|-
+! 6 Capable amateur
+| 0.98% || 24.28% || 52.11% || 20.40% || 2.21% || 0.02% || 2.99 || style="background-color:#BCE3C6;" | x1.26
+|-
+! 7 Weak professional
+| 0.38% || 15.50% || 53.32% || 26.87% || 3.87% || 0.06% || 3.19 || style="background-color:#9AD5AA;" | x1.33
+|-
+! 8 Employable professional
+| 0.13% || 9.00% || 50.83% || 33.50% || 6.39% || 0.15% || 3.37 || style="background-color:#84CB97;" | x1.40
+|-
+! 9 Solid professional
+| 0.05% || 5.62% || 46.95% || 38.14% || 8.98% || 0.26% || 3.51 || style="background-color:#6EC284;" | x1.45
+|-
+! 10 Skilled professional
+| 0.02% || 3.33% || 40.22% || 43.77% || 12.22% || 0.44% || 3.66 || style="background-color:#63BE7B;" | x1.52
+|-
+! 11 Very skilled professional
+| 0.00% || 1.86% || 32.22% || 49.05% || 16.13% || 0.74% || 3.82 || style="background-color:#5eba76;" | x1.60
+|-
+! 12 Expert
+| 0.00% || 0.98% || 24.55% || 52.64% || 20.64% || 1.19% || 3.96 || style="background-color:#5eba76;" | x1.68
+|-
+! 13 Strong expert
+| 0.00% || 0.62% || 19.91% || 53.93% || 23.93% || 1.61% || 4.06 || style="background-color:#5eba76;" | x1.74
+|-
+! 14 Master
+| 0.00% || 0.38% || 15.79% || 54.30% || 27.39% || 2.14% || 4.15 || style="background-color:#59b670;" | x1.81
+|-
+! 15 Strong master
+| 0.00% || 0.23% || 12.25% || 53.76% || 30.94% || 2.82% || 4.24 || style="background-color:#59b670;" | x1.88
+|-
+! 16 Region-known master
+| 0.00% || 0.13% || 9.29% || 52.40% || 34.50% || 3.68% || 4.32 || style="background-color:#59b670;" | x1.95
+|-
+! 17 Region-leading master
+| 0.00% || 0.08% || 6.88% || 50.31% || 37.98% || 4.75% || 4.40 || style="background-color:#54b26b;" | x2.03
+|-
+! 18 Planet-known master
+| 0.00% || 0.04% || 4.98% || 47.61% || 41.31% || 6.06% || 4.48 || style="background-color:#54b26b;" | x2.11
+|-
+! 19 Planet-leading master
+| 0.00% || 0.02% || 3.53% || 42.66% || 46.16% || 7.63% || 4.58 || style="background-color:#4faf66;" | x2.22
+|-
+! 20 Legendary master
+| 0.00% || 0.01% || 2.44% || 37.42% || 50.61% || 9.52% || 4.67 || style="background-color:#49ab60;" | x2.33
+|}
+:{{note|Market Value|A}} As market value multipliers are capped (see section [[Quality#General|General]]), the real value is lower for all items with a market value above 750 {{Icon Small|silver}} at Normal quality.
+
+==== Quality with Production Specialist + Inspired Creativity ====
+{| {{STDT| sortable center}} style = 'width: auto'
+|-
+! data-sort-type='number' | Skill level
+! Good
+! Excellent
+! Masterwork
+! Legendary
+! Avg. Result
+! Avg. Value{{ref label|Market Value|A}}
+|-
+! 0 Barely heard of it
+| 64.62% || 30.18% || 5.00% || 0.20% || 3.41 || style="background-color:#84CB97;" | x1.40
+|-
+! 1 Utter beginner
+| 43.39% || 43.59% || 12.15% || 0.87% || 3.71 || style="background-color:#63BE7B;" | x1.54
+|-
+! 2 Beginner
+| 20.24% || 53.17% || 23.56% || 3.03% || 4.09 || style="background-color:#59b670;" | x1.79
+|-
+! 3 Basic familiarity
+| 9.12% || 50.76% || 33.45% || 6.67% || 4.38 || style="background-color:#54b26b;" | x2.05
+|-
+! 4 Some familiarity
+| 4.77% || 45.23% || 39.44% || 10.56% || 4.56 || style="background-color:#4faf66;" | x2.25
+|-
+! 5 Significant familiarity
+| 2.27% || 34.68% || 47.20% || 15.85% || 4.77 || style="background-color:#44a75b;" | x2.52
+|-
+! 6 Capable amateur
+| 0.98% || 24.27% || 52.11% || 22.64% || 4.96 || style="background-color:#3fa356;" | x2.81
+|-
+! 7 Weak professional
+| 0.38% || 15.49% || 53.32% || 30.81% || 5.15 || style="background-color:#349c4b;" | x3.11
+|-
+! 8 Employable professional
+| 0.13% || 8.99% || 50.83% || 40.05% || 5.31 || style="background-color:#279440;" | x3.41
+|-
+! 9 Solid professional
+| 0.05% || 5.62% || 46.95% || 47.38% || 5.42 || style="background-color:#188d35;" | x3.63
+|-
+! 10 Skilled professional
+| 0.02% || 3.33% || 40.22% || 56.43% || 5.53 || style="background-color:#0e8930;" | x3.88
+|-
+! 11 Very skilled professional
+| 0.00% || 1.86% || 32.22% || 65.92% || 5.64 || style="background-color:#00852a;" | x4.13
+|-
+! 12 Expert
+| 0.00% || 0.98% || 24.55% || 74.47% || 5.73 || style="background-color:#00852a;" | x4.35
+|-
+! 13 Strong expert
+| 0.00% || 0.63% || 19.91% || 79.46% || 5.79 || style="background-color:#00852a;" | x4.48
+|-
+! 14 Master
+| 0.00% || 0.38% || 15.80% || 83.82% || 5.83 || style="background-color:#00852a;" | x4.59
+|-
+! 15 Strong master
+| 0.00% || 0.23% || 12.25% || 87.52% || 5.87 || style="background-color:#00852a;" | x4.69
+|-
+! 16 Region-known master
+| 0.00% || 0.13% || 9.29% || 90.58% || 5.90 || style="background-color:#00852a;" | x4.76
+|-
+! 17 Region-leading master
+| 0.00% || 0.08% || 6.88% || 93.04% || 5.93 || style="background-color:#00852a;" | x4.83
+|-
+! 18 Planet-known master
+| 0.00% || 0.04% || 4.99% || 94.97% || 5.95 || style="background-color:#00852a;" | x4.87
+|-
+! 19 Planet-leading master
+| 0.00% || 0.02% || 3.53% || 96.45% || 5.96 || style="background-color:#00852a;" | x4.91
+|-
+! 20 Legendary master
+| 0.00% || 0.01% || 2.44% || 97.55% || 5.98 || style="background-color:#00852a;" | x4.94
+|}
+:{{note|Market Value|A}} As market value multipliers are capped (see section [[Quality#General|General]]), the real value is lower for all items with a market value above 750 {{Icon Small|silver}} at Normal quality.
+
+== Version history ==
+* [[Version/0.8.657|0.8.657]] - Sculptures and melee weapons have a quality.
+* [[Version/0.9.722|0.9.722]] - High-quality weapons have art engraved into them. All weapons now have quality levels, including guns and bows. Quality affects accuracy.
+* [[Version/0.19.2009|Beta 19]] - Shoddy (between Awful and Poor) and Superior (between Good and Excellent) qualities removed.

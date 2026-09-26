@@ -1,0 +1,81 @@
+{{Anomaly}}
+{{Spoiler}}
+{{Stub|reason=General page stub.}}
+{{Infobox main|entity
+| name = Warped obelisk
+| image = Warped obelisk.png
+| description = A large metallic pillar that emanates a putrid psychic energy. The pillar hums ominously and appears to be increasing in activity. It's not clear what will happen when it reaches its full capacity.<br />You can send colonists to suppress the obelisk to prevent it from activating. You can also mark the obelisk for study to try to learn its purpose and perhaps make use of it.<br />You can attack the obelisk to destroy it, but doing so may unleash unnatural and dangerous phenomena.
+<!-- Base Stats -->
+| type = Entity
+| type2 = Advanced
+| hp = 3000
+| flammability = 0
+<!-- Meditation -->
+| meditation psyfocus bonus = 0.24
+| focus type = Void
+<!-- Activity -->
+| starting range = 0.2~0.4
+| change per day base = 0.2
+| change per damage = 0.001
+| warning = 0.9
+| activity worker class = ObeliskActivityWorker
+| activity research factor curve = (0, 0.5), (0.5, 1), (0.99, 2)
+<!-- Containment - Studiable -->
+| anomaly knowledge = 2
+| knowledge category = Advanced
+| study interval = 120000
+| min monolith level for study = 1
+| study enabled by default = false
+| show toggle gizmo = true
+| can be activity deactivated = true
+<!-- Building -->
+| size = 3 × 3
+| passability = impassable
+| paintable = false
+| deconstructable = false
+| claimable = false
+| destroyyield = {{Icon Small|Shard|24|1}}
+| cover = 1
+<!-- Technical -->
+| defName = WarpedObelisk_Abductor
+| label = warped obelisk
+}}
+The '''warped obelisk''' <small>(also referred to as the "Abductor")</small> is one three potential [[obelisk]]s that may arrive at your colony. It will kidnap creatures and colonists on activation, sending them to an alternate dimension called the [[labyrinth]].
+
+== Occurrence ==
+{{Stub|section=1|reason=Detail as to when they can spawn as a major threat, what that means etc. Ensure parity between this page and all three [[obelisk]] page - consider templatization if necessary}}
+An obelisk can {{Check Tag|Spawn Chance}} spawn in the map as a [[major threat]] event sometime after day 50 when the [[void monolith]] level is 1 or greater. An obelisk has a chance to spawn 120 days after the last of any type.
+
+== Summary == 
+=== Obelisk mechanics ===
+Like the other [[obelisk]]s, the warped obelisk has an activity level, which can be suppressed as wardening work. Reaching 100% activation will cause a special, dangerous event and cause the obelisk to be destroyed afterwards. At full HP, an obelisk gains +20% activity per day, but damaging it will raise activity, and once it falls below 80% HP, the daily rate will rapidly increase.
+
+Obelisks can be studied for advanced anomaly research, with the rate of study increasing with activity level.
+
+=== Abduction ===
+When suppressing or studying the warped obelisk, there is a chance that the interacting pawn is warped to the [[labyrinth]]. Inside the labyrinth, you can find gray boxes and corpses with food, organs, and weapons.
+
+After 10 Anomaly research points from studying the obelisk, a teleport button will appear. (15-80 day cooldown)
+: ''"You've completed your investigation of the obelisk. It creates a bridge to a point in a spacetime void separated from ours along usually inaccessible spatial dimensions. The void plane is filled with a gray labyrinthine structure of astronomical scale. Someone trapped there could return by finding the obelisk's mirror version inside the gray rooms and hallways. The gray structures seem to have been created by an archotech superintelligence, but there's no way to know their purpose, age, or spatial limits. The obelisk is damaged and unstable, so its energy level rises unless suppressed. If it were to fully activate, it could begin to abduct individuals at random. You can now intentionally provoke a response from the warped obelisk."''
+
+It can be escaped by finding another warped obelisk in the labyrinth map. Activating it will cause all pawns (including enemies) and items on the labyrinth to be teleported to the home tile.
+
+=== Full activation ===
+If the activity level of the warped obelisk reaches 100%, it will teleport random pawns on the map into the labyrinth, drop a [[shard]], and then explode. Colonists, prisoners, and animals all can be teleported. Do note that the obelisk's explosion is extremely deadly within 1 tile as it causes 800 [[Damage Types#Vaporize|vaporize]] base damage within a 2.9 radius, which translates to a 5x5 square.
+
+=== Destruction ===
+After interacting with the warped obelisk inside the labyrinth, the warped obelisk in the main tile will be gone even if it has not reached its full activation. Unlike the other obelisks, there is no way to deactivate the warped obelisk using [[shard]]s.
+
+== Analysis ==
+{{Obelisk Analysis|pawn_count=7}}
+
+If wanting to rescue a pawn inside the labyrinth immediately, one way to do so is attack the obelisk and force its full activation, which will bring more pawns (and thus more firepower) into the sub-map. Alternatively, the teleport gizmo can be used to bring a selected pawn inside.
+
+{{Obelisk Destruction|pawn_count=7}}
+
+== Version history == 
+* [[Anomaly DLC]] Release - Added.
+* [[Version/1.6.4566|1.6.4566]] - Fix: Labyrinth teleporting targets to non-origin maps if origin Obelisk was destroyed. Fix: Labyrinths returning pawns to a different map than the one they were on.
+
+{{Nav|entity|wide}}
+[[Category: Entities]]

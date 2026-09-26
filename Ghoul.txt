@@ -1,0 +1,468 @@
+{{Anomaly}}
+{{infobox main|entity
+| name = Ghoul
+| image = Ghoul.png
+| description = Ghouls are engineered murder machines, twisted by dark psychic influences.<br>Ghouls are very dangerous in melee combat. However, the process of their creation leaves them incapable of higher levels of thought, preventing them from holding weapons or tools. They cannot work and outside combat they wander in a half-conscious stupor.<br>Many people find the constant twitching of ghouls disturbing.
+More disturbing is their dependence on raw meat. If they go hungry they will turn hostile, even attacking their creators to sate their hunger.
+| type = Entity
+| type2 = Basic
+| flammability = 0.7
+| movespeed = 4.6
+| baseleatheramount = 75
+| min comfortable temperature = {{#expr: {{Q|Human|Min Comfortable Temperature}}-40}}
+| max comfortable temperature = {{#expr: {{Q|Human|Min Comfortable Temperature}}+40}}
+| marketvalue = 275
+| bodysize = 1
+| healthscale = 1
+| hungerrate = 1
+| diet = strict carnivorous
+| leathername = Human leather
+| lifespan = 80
+| packanimal = No
+| psychic sensititvity = 0
+| pain factor = 0
+| max nutrition = 2
+<!-- Creation -->
+| research = Ghoul infusion
+| resource 1 = Shard
+| resource 1 amount = 1
+| resource 2 = Bioferrite
+| resource 2 amount = 30
+<!-- Containment -->
+| minimum containment strength = 35
+| anomaly knowledge = 1.5 <!-- 1 from human + 0.5 offset -->
+| knowledge category = Basic
+| study interval = 120000
+| gets cold containment bonus = true
+| min monolith level for study = 1
+| base escape interval MTB days = 120
+<!-- Pawn Stats -->
+| combatPower = 90
+<!--|maturityage = 18-->
+| attack1dmg = 8.2
+| attack1type = Blunt
+| attack1cool = 2
+| attack1part = left fist
+| attack1stun = 14
+| attack2dmg = 8.2
+| attack2type = Blunt
+| attack2cool = 2
+| attack2part = right fist
+| attack2stun = 14
+| attack3dmg = 5
+| attack3type = Blunt
+| attack3cool = 2
+| attack3part = head
+| attack3chancefactor = 0.2
+| attack4part = teeth
+| attack4type = Bite
+| attack4dmg = 8.2
+| attack4cool = 2
+| attack4chancefactor = 0.5
+| attack5part = left claw
+| attack5type = Scratch
+| attack5dmg = 7.0
+| attack5cool = 2
+| attack5chancefactor = 1.5
+| attack6part = right claw
+| attack6type = Scratch
+| attack6dmg = 7.0
+| attack6cool = 2
+| attack6chancefactor = 1.5
+<!-- Doesn't work -->
+| attack7dmg = 8.2
+| attack7type = Bite
+| attack7cool = 2
+| attack7part = teeth
+| attack7chancefactor = 0.07
+}}
+'''Ghouls''' are [[human]]s that have been warped into powerful, twisted combat [[entities]] with very few needs. Ghouls can appear as enemy units or be created by the player as part of the colony. 
+
+== Acquisition ==
+Ghouls can appear in games with the AI storyteller's [[AI Storytellers#Monolith setting|monolith setting]] set to either "Standard with Monolith" and the "Ambient Horror" enabled. "The Anomaly" starting [[Scenario_system#Default_Scenarios|scenario]] begins the player with one friendly player-controlled ghoul.
+
+Wild ghouls can be encountered as a [[Entities#Basic|basic entity]] at [[monolith]] level 1 or higher or if ambient horror is enabled. Any ghoul encountered in the wild will be permanently hostile to the player. These ghouls can be captured for study or to extract [[bioferrite]] from, like any other entity. Capturing a wild ghoul alive can be difficult, as they cannot be downed by [[pain]] and psychic weaponry is ineffective.
+
+Once a ghoul has been encountered, the [[Ghoul infusion (research)|ghoul infusion]] research project becomes available. After completing the research, the player can schedule the ghoul infusion operation on any colonist, [[prisoner]], or [[slave]]{{IdeologyIcon}} for {{Icon Small|Bioferrite||30}} [[bioferrite]] and {{Icon Small|Shard||1}} [[shard]], permanently turning that pawn into a ghoul. Regardless of whether the pawn was a member of your colony, they will be under the player's control once the operation is completed - there is no need to recruit them beforehand.
+
+== Summary == 
+A ghoul is a colonist that is limited to only melee combat. They cannot wield [[weapons]] or [[apparel]], do any work, take [[drugs]] or use any special abilities they would have in life. Ghouls can be restricted to [[zones]] and [[drafted]] like normal colonists. In combat, they can be directly commanded to melee attack or use the ability provided by ghoul-specific body parts. Ghouls will fight adjacent [[fire]]s, but do not seek out fires to extinguish. All ghouls are [[incapable|capable]] of violence no matter their [[backstories]], [[traits]], or [[genes]].{{BiotechIcon}}
+
+=== Properties ===
+Ghouls do not age at all, even if not yet at maturity. Note that this means that ghouls created from younger pawns will never have the full [[body size]] and body part health of an adult. They retain most properties they had in life:
+* [[Melee]] and [[Shooting]] skills (even though ghouls can't shoot) and passions are retained. Other skills and passions are disabled.
+* [[Traits]] and [[backstories]] are retained, which can cause a ghoul to be incapable of firefighting.
+* Some hediffs are retained, including [[void touched]]. [[Luciferium]] need and the luciferium hediffs are ''not'' retained. {{Check Tag|Check|What is the full list of hediffs that are retained and aren't?}}
+* Body types and non-cosmetic [[genes]]{{BiotechIcon}} are retained. After converted, they can still undergo gene extraction or be implanted with new [[xenogerm]]{{BiotechIcon}}.
+* The natural attacks of a human are retained, but ghouls also gain a left and right claw attack and an additional bite attack.
+
+Ghouls have 100% [[vacuum resistance]],{{OdysseyIcon}} meaning they can survive in space.
+
+All ghouls are given two hediffs that implement the majority of the stat changes experienced by ghouls. These hediffs are "Ghoul" and "Regeneration".
+
+'''Ghoul:'''
+* [[Pain]]: '''×0%'''
+* [[Max Nutrition]]: 2
+* [[Psychic sensitivity]]: '''×0%'''
+* [[Minimum Comfortable Temperature]]: {{---|{{Temperature|40||delta}}}}
+* [[Maximum Comfortable Temperature]]: {{+|{{Temperature|40||delta}}}}
+* Minimum Containment Strength: {{++|35}}
+* [[Talking]]: {{Bad|x0%}}
+
+'''Regeneration:'''
+* Regenerate 100 HP/day
+
+Separate from these hediffs, ghouls also don't bleed when injured. The regeneration hediff will heal any wound, including missing limbs or scars that the ghoul has, at a rate of 0.1 HP/{{Ticks|60}}. Ghoul regeneration heals wounds in the order they were received, one wound at a time, until that wound is fully healed. The one exception is fully missing body parts: these will be converted into a generic "wound" and healed after all other injuries. Regeneration prevents wounds from scarring, even eye and brain injuries that would otherwise always scar, but does not prevent or cure [[trauma savant]]. Note that if the ghoul regeneration has already began to heal the missing body part when another injury is dealt, it will not switch targets; it will continue to heal the missing limb once it has begun.
+
+Ghoul regeneration is separate from a pawn's normal [[Injury#Healing Rate|healing rate]]. The ghoul continues to heal the same as a regular pawn, separate from ghoul regeneration. As with normal human pawns, a ghoul's ''natural'' healing is affected by [[genes]],{{BiotechIcon}} [[healing enhancer]]s,{{RoyaltyIcon}} and [[juggernaut serum]].{{AnomalyIcon}} Ghoul regeneration is ''not'' affected by these factors. See [[Injury#Healing|healing]] for more information on healing mechanics for all pawns.
+
+A ghoul won't get sick like a regular pawn from [[infection]] or other diseases. They are immune to rotstink gas, but not tox gas or toxic buildup. 
+
+=== Needs ===
+Ghouls can only eat raw [[meat]] and fresh [[corpse]]s. They will automatically try to eat available food in their assigned zone. Friendly ghouls that are not fed will eventually go berserk, betraying the colony and never becoming friendly again. Once their Food need reaches 0, a hidden Meat Hunger hediff begins increasing in severity by 0.9 per day. It becomes visible at 0.1 severity, displaying the initial stage after 2.67 hours without food, followed by the moderate stage at 0.5 severity after 13.33 hours, and the extreme stage at 0.8 severity after 21.33 hours. At the initial stage, the ghoul cannot betray. At the moderate stage, it has {{MTB}} of 8 hours to betray, while the extreme stage has a {{MTB}} of 2 hours. The hediff reaches maximum severity of 1.0 after 26.67 hours without food. After the ghoul eats, the severity decreases by 1.0 per hour. A ghoul can therefore still betray shortly after eating as long as its hunger remains above moderate or extreme severity.
+
+Beyond food, ghouls have no other needs, [[mood]], or relationships. Any needs created by genes or addiction will be disabled. They can't have [[mental break]]s and won't be counted as a colonist for things like pawn death, the [[recluse]] trait,{{BiotechIcon}} or [[diversity of thought]] precepts.{{IdeologyIcon}} They also can't be part of any kind ritual. Despite the in-game description, colonists do not gain negative mood for being near a friendly ghoul. However, when a pawn becomes a ghoul or spawns as a ghoul, any pawn who is either their blood relative, or has a social opinion of 20 or higher towards them will gain {{Thought|value=-6|label=<Name> became a ghoul|desc=That vacant look... Are they even in there anymore?|stack=5|duration=20}}.
+
+Captured ghouls do not require food.
+
+=== Ghoul-specific upgrades ===
+Ghouls can have all types of normal human body parts installed. However, there are also some ghoul-specific upgrades available by researching [[Research#Ghoul_enhancements|ghoul enhancements]] in the Anomaly tech tree:
+
+* [[Adrenal heart]]: Passively increases hunger and grants an ability to gain a burst of {{Good|x0.7}} attack cooldown and {{Good|+4.00}} movement speed for 15 seconds. The cooldown is 29.17 seconds.
+* [[Corrosive heart]]: Allows the ghoul to spew acid on a 2 hour cooldown, but only has 85% part efficiency.
+* [[Ghoul barbs]]: Increases melee damage by {{Good|x150%}} at the cost of {{Bad|-0.25}} speed.
+* [[Ghoul plating]]: [[Incoming Damage Multiplier]] {{Good|x0.5}} at the cost of {{Bad|-0.75}} speed. 
+* [[Metalblood heart]]: On a 6 hour cooldown, gain the [[Hediffs#Metalblood|metalblood hediff]] for 40 seconds, which gives {{Good|x50%}} damage resistance and {{Bad|x400%}} fire and burn vulnerability. This is the same hediff as that from the [[metalblood serum]] and does not stack.
+* [[Blood warmer]]: A kidney replacement that actively heats the ghoul's blood. Each installed, up to a maximum of 2, lowers Minimum Comfortable Temperature by {{Good|{{Temperature|-26||delta}} }}, allowing for a cumulative lower Minimum Comfortable Temperature bonus of {{Good|{{Temperature|-52||delta}} }}.
+
+Ghouls can be administered [[serums]] including their exclusive [[ghoul resurrection serum]], but not drugs. They aren't affected by any mood effect from a serum.
+
+===Raid points===
+{{Main|Raid points#Pawn points}}
+
+Ghouls are worth less [[raid points]] than regular colonists and most [[friendly mechanoids|combat mechanoids]]{{BiotechIcon}}. Like mechs, each friendly ghoul adds between 20% and 40% of their combat power in raid points (combat power is set to 90 for ghouls, so 18-36 points), depending on [[wealth]], which is then adjusted by threat scale and other factors as normal. The value of the ghoul itself and its implants will also contribute to colony wealth, although ghouls and ghoul-specific implants are worth little.
+
+== Analysis ==
+{{Rewrite|section=1|reason=[[Flesh tentacle]] strat should be represented in tables, not just wooden hand}}
+
+Ghouls are very powerful guard dogs and melee attackers:
+* With melee upgrades of [[ghoul barbs]], [[power claw]]s, [[juggernaut serum]], and the [[strong melee damage]] [[gene]],{{BiotechIcon}} their attacks will destroy any body part of any human they hit (no matter the armor), frequently one-hit killing enemies in [[cataphract armor]].
+* Due to their regeneration and the affordability of [[ghoul resurrection serum]], it's safe to use ghouls as tanks and meatshields, as limb loss is meaningless, and death has little consequence so long as the corpse is intact.
+* Ghouls don't bleed, feel pain, have [[mental break]]s, or sleep, making them more effective and reliable in combat. For example, ghouls make excellent bait for [[sightstealer]]s, as they can remain patrolling outside forever.
+
+While an individual ghoul cannot match up to the absolute best melee colonists with [[cataphract armor]],{{RoyaltyIcon}} high [[quality]] [[persona weapon]]s,{{RoyaltyIcon}} and special abilities from [[utility]] items / [[psycast]]s{{RoyaltyIcon}} / [[gene]]s,{{BiotechIcon}} ghouls are incredibly cost effective. They are cheap to obtain, maintain, and worth remarkably little [[wealth]] and [[raid point]]s. They can outright beat regular melee colonists during the early- and mid-game, and even in the late-game they are fairly competitive.
+
+The main difficulty of keeping ghouls around is that they can only eat raw [[meat]] and fresh [[corpse]]s, although their hunger rate can be reduced by [[nuclear stomach]]s{{RoyaltyIcon}} and through [[gene]]s.{{BiotechIcon}} Even without those factors, [[raid]]s are a consistent source of free meat. Rotten corpses can be converted into [[twisted meat]] through [[harbinger tree]]s, and a [[fleshmass nucleus]] is a constant source of meat once obtained.
+
+Ghouls won't do most work, but can do a few tasks if manually [[draft]]ed: they can hunt animals by melee attacking them (but will not carry the corpses back), and they can extinguish [[fire]]s. Also, in the [[Scenario_system#The Anomaly|Anomaly starting scenario]], the ghoul allows you to skip early defenses, indirectly reducing amount of work that needs to be done.
+
+Ghouls can benefit from the [[frenzy inducer]] and the [[Pollution stimulus (gene)|pollution stimulus]] gene.{{BiotechIcon}} You can build a room with pollution and a frenzy inducer for your ghouls to take advantage of their effects. Additionally, this can double as a freezer for your [[twisted meat]], a containment cell for the [[fleshmass nucleus]], and a frostbite chamber for [[toughspike]]s.
+
+=== Ghoul choice ===
+Ghoulification is a great way to make use of an otherwise terrible pawn or a colonist you can't save from death. The converted ghoul will quickly regrow lost limbs and remove detrimental health conditions. Because ghouls are cheap and disposable, converting pawns indiscriminately can be a viable option in the midgame onwards.
+
+The best base pawns to turn into ghouls are ones with positive combat [[trait]]s, such as [[tough]], [[jogger]], [[brawler]], and [[nimble]]. Passion and skill in melee helps, too. Ghouls made from [[body mastery]] [[creepjoiner]]s don't need to eat at all, but this significantly reduces the trait options, and food is an almost negligible cost in the mid- and late-game.
+
+If Biotech is installed, [[xenotype]]s{{BiotechIcon}} are important to consider before [[genetics|gene modding]] is readily available. While it is always possible to implant genes with a [[xenogerm]] later, a ghoul with a good melee xenotype will be stronger in the early game before then. [[Yttakin]] are the best base xenotype, starting with [[Robust]] and [[Strong melee damage]], as well as [[Naked speed]], which is a pure buff for ghouls. The other strong melee damage xenotypes can be good options, too.
+=== Organ Harvesting ===
+Non-critical organs can be harvested from a subject before a ghoul infusion is used on them, which will then regrow after they are turned into a ghoul.
+
+=== Hunger management ===
+Hunger is the primary cost of ghouls, as they cannot eat anything but raw meat and corpses, thus preventing the use of [[crop]]s for stable food or [[meal]]s to get the most out of food. However, certain upgrades can be used to reduce the food cost, which have no downsides for ghouls:
+* The [[nuclear stomach]]:{{RoyaltyIcon}} An [[artificial body part]] which multiplies [[hunger rate]] by {{Good|x25%}}. Note that [[cancer]], the primary downside of the nuclear stomach, is not a concern for ghouls.
+* The [[robust digestion]] gene:{{BiotechIcon}} A gene that multiplies the nutrition gained from raw meat, but not corpses, by {{Good|x1.8}}.
+* A [[metabolic efficiency]] of 5+:{{BiotechIcon}} This multiplies [[hunger rate]] by {{Good|x50%}}.
+
+These stack to make for a ghoul that only requires as little as {{Icon Small|Meat||{{#expr: ({{Q|Ghoul|Real Hunger Rate}}*0.25<!--Nuclear stomach-->*0.5<!--Metabolic efficiency of 5+-->)/({{Q|Meat|Nutrition}}*1.8 <!--Robust digestion-->) round 2}}}} [[meat]] per day and significantly increases the time that can be safely spent between meals.
+
+Ideally, all corpses should be butchered by a competent cook for maximum nutrition, but preventing berserking is more important.
+
+=== Body parts ===
+Due to their massive improvement to resilience and damage, [[ghoul barbs]] and [[ghoul plating]] are essential upgrades for ghouls. For the heart upgrade, get the [[metalblood heart]] if you don't plan to produce [[metalblood serum]]s. But if you do, instead upgrade your ghoul with the [[adrenal heart]] to improve combat power or the [[corrosive heart]] for the painful [[acid spray]] attack.
+
+Ghouls can also make effective use of [[body part weapon]]s. As they cannot hold conventional weapons, implanted weaponry offers them a powerful upgrade, and in combination with [[ghoul barbs]] ghouls offer {{DPS}} comparable to high-tier melee options. The ghoul can then be enhanced similarly to other melee pawns, such as with [[juggernaut serum]] and the [[strong melee damage]] gene.{{BiotechIcon}}
+
+====Weapon choice====
+[[Power claw]]s offer the highest damage, albeit with a small [[Moving]] penalty per claw. Note that combining a power claw and [[flesh tentacle]] will result in the same base {{DPS}} as two power claws, due to how the melee verb system selects and disregards certain attacks. As the flesh tentacle doesn't penalize [[Moving]] and boosts [[melee hit chance]], this is the optimal choice. A similar effect can be obtained by replacing the other hand with a [[wooden hand]] instead of the tentacle; the wooden hand reduces Manipulation, but the overall {{DPS}} is still close to that of two claws. Other hand and arm replacements will not work.
+
+[[Flesh whip]]s come in a close second in term of {{DPS}} and do not have a Moving penalty. Flesh whips have a higher base {{AP}} than power claws, but its {{AP}} is not affected by the [[melee damage factor]] (MDF), so having a MDF of {{#expr: {{Q|Flesh whip|Attack 1 AP}}/{{Q|Power claw|Attack 1 AP}} * 100 round 0}}% or more will result in the power claw having more {{AP}}. Ghoul barbs and the strong melee damage gene{{BiotechIcon}} result in an MDF of 225%. Flesh whips can be combined with flesh tentacles or wooden hands in the same way as power claws.
+
+Ghouls may be targeted by the [[twisted obelisk]].
+
+{| class="wikitable sortable"
+|+ Ghoul melee damage at melee level 20 and no other hediff or gene
+|-
+! Upgrades !! Move Speed !! Melee DPS !! Melee AP
+|-
+|-
+| None || 4.6 c/s || 3.29 || 11%
+|-
+| 1 Power claw || 4.23 c/s || 8.28 || 28%
+|-
+| 2 Flesh whips || 4.6 c/s || 9.22 || 60%
+|-
+| Power claw + Wooden hand || 4.23 c/s || 9.64 || 33%
+|-
+| 2 Power claws || 3.86 c/s || 9.90 || 33%
+|-
+| Ghoul barbs + 1 Power claw || 4.00 c/s || 12.42 || 41%
+|-
+| Ghoul barbs + 2 Flesh whips || 4.35 c/s || 13.84 || 60%
+|-
+| Ghoul barbs + Power claw + Wooden hand || 4.00 c/s || 14.45|| 49%
+|-
+| Ghoul barbs + 2 Power claws || 3.65 c/s || 14.85 || 49%
+|-
+| Barbs + Juggernaut + Strong Melee Damage{{BiotechIcon}} + 1 Power claw || 4.46 c/s || 27.72 || 92%
+|-
+| Barbs + Juggernaut + Strong Melee Damage{{BiotechIcon}} + 2 Flesh whips || 4.85 c/s || 31.13 || 60%
+|-
+| Barbs + Juggernaut + Strong Melee Damage{{BiotechIcon}} + Power claw + Wooden hand || 4.46 c/s || 32.52 || 111%
+|-
+| Barbs + Juggernaut + Strong Melee Damage{{BiotechIcon}} + 2 Power claws || 4.07 c/s || 33.52 || 111%
+|}
+
+=== Genetics ===
+{{Biotech|section=1}}
+Ghouls primarily benefit from genes that improve their [[Incoming Damage Multiplier]], melee skill and damage, and movement speed. Having genes that improve their metabolic rate is also helpful. Ghouls will inherit genes from their underlying [[xenotype]]s, meaning that some make for better ghoul candidates than others. 
+
+<div class="mw-customtoggle-Genes" style="display:center;background:rgba(128,128,128,0.5);color:white;padding:10px;border-radius:5px;outline:none;user-select:none">
+{{Center|Show/Hide Gene Analysis}}</div>
+<div class="mw-collapsible mw-collapsed" id="mw-customcollapsible-Genes">
+Below are ''all'' genes that have positive effects on ghouls. Other genes either have negative effects, no effects, or only positive in term of metabolic efficiency.
+
+{| class="wikitable"
+|+ Good Genes
+|-
+! Gene !! Improves !! Metabolic Cost !! Commentary
+|-
+|-
+| [[Robust]] || {{Good|x75%}} [[Incoming Damage Multiplier]] ||style="text-align:center;" | {{Bad|-2}} || Reduces damage taken by ghouls, improving their capability to soak incoming damage for longer.
+|-
+| [[Strong melee damage]] || {{Good|x150%}} [[Melee Damage Factor]] ||style="text-align:center;" | {{Bad|-2}} || Increases damage dealt by ghouls
+|-
+| [[Naked speed]] || {{Good|+0.1}} [[Movement speed]] ||style="text-align:center;" | {{Good|+2}} || Slight increase to movement speed while giving free metabolic efficiency
+|-
+| [[Fast runner]] || {{Good|+0.2}} [[Movement speed]] ||style="text-align:center;" | {{Bad|-3}} || Double the movement speed bonus of Naked Speed
+|-
+| [[Very fast runner]] ||{{Good|+0.4}} [[Movement speed]] ||style="text-align:center;" | {{Bad|-5}} || Huge increase to movement speed, but very metabolically costly.
+|-
+| [[Strong melee]] || [[Melee]] Skill {{Good|+4}} || style="text-align:center;" | {{Bad|-1}} || Improves Melee skill which boosts melee hit chance and melee dodge chance
+|-
+| [[Great melee]] || [[Melee]] Skill {{Good|+8}} || style="text-align:center;" | {{Bad|-3}} || Larger Improvement to Melee skill
+|-
+| [[Unstoppable]] || [[Stagger Time Multiplier]] {{Good|x0%}} || style="text-align:center;" | {{Bad|-2}} || Removes stagger from receiving damage
+|-
+| [[Fire resistant]] || [[Flammability]] {{Good|x10%}}, [[Flame]] damage {{Good|x25%}} || style="text-align:center;" | {{Bad|-2}} || Resist flame damage and avoid being set on fire
+|-
+| [[Partial antitoxic lungs]] || [[Toxic Environment Resistance]] {{Good|+50%}} || style="text-align:center;" | {{Bad|-1}} || Resist toxic fallout and tox gas
+|-
+| [[Total antitoxic lungs]] || [[Toxic Environment Resistance]] {{Good|+100%}} || style="text-align:center;" | {{Bad|-2}} || Immune to toxic fallout and tox gas
+|-
+| [[Cold tolerant]] || [[Minimum Comfortable Temperature]] {{Good|−10 °C (36 °F)}} || style="text-align:center;" | {{Bad|-1}} || Resistance to hypothermia
+|-
+| [[Cold super-tolerant]] || [[Minimum Comfortable Temperature]] {{Good|−20 °C (36 °F)}} || style="text-align:center;" | {{Bad|-2}} || Larger resistance to hypothermia
+|-
+| [[Heat tolerant]] || [[Maximum Comfortable Temperature]] {{Good|+10 °C (36 °F)}} || style="text-align:center;" | {{Bad|-1}} || Resistance to heatstroke
+|-
+| [[Heat super-tolerant]] || [[Maximum Comfortable Temperature]] {{Good|+20 °C (36 °F)}} || style="text-align:center;" | {{Bad|-2}} || Larger resistance to heatstroke
+|-
+| [[Robust digestion]] || [[Raw Nutrition Multiplier]] {{Good|x180%}} || style="text-align:center;" | {{Bad|-2}} || Increase nutrition given by raw meat
+|-
+| [[Elongated fingers]] || [[Manipulation]] {{Good|x110%}} || style="text-align:center;" | {{Bad|-1}} || Slightly increase manipulation, which affects melee hit chance
+|-
+| [[Smooth tail]] || [[Manipulation]] {{Good|+5%}} || style="text-align:center;" | {{Bad|-1}} || Slightly increase manipulation
+|-
+| [[Superfast wound healing]] || [[Injury Healing Factor]] {{Good|x400%}} || style="text-align:center;" | {{Bad|-3}} || Quadruple the normal healing factor to roughly 25 HP/day
+|-
+| [[Pollution stimulus (gene)|Pollution stimulus]] || Up to [[consciousness]] {{Good|+5%}} and [[move speed]] {{Good|x120%}}  || style="text-align:center;" | {{Bad|-1}} || Speed boost when exposed to pollution
+|}
+
+There are many genes whose negative effects don't affect ghouls at all; thus they can be used to improve their metabolic efficiency. Some of the notable genes are:
+{| class="wikitable"
+|+ Free Metabolic Efficiency
+|-
+! Gene !! Changes !! Metabolic Cost !! Commentary
+|-
+| [[Awful animals|Awful Skill]] || Skill {{Bad|-8}} || style="text-align:center;" | {{Good|+2}} || Ghouls only use Melee skill, any other skill can be ignored
+|-
+| [[Poor animals|Poor Skill]] || Skill {{Bad|-4}} || style="text-align:center;" | {{Good|+1}} || Ghouls only use Melee skill
+|-
+| [[Hyper-aggressive]] || Mental Breaks and Social Fights  || style="text-align:center;" | {{Good|+3}} || Ghouls don't social fight or have mental break
+|-
+| [[Aggressive]] || Mental Breaks and Social Fights || style="text-align:center;" | {{Good|+2}} || Ghouls don't social fight or have mental break
+|-
+| [[Very sleepy]] || Sleep Fall Rate || style="text-align:center;" | {{Good|+4}} || Ghouls don't need rest
+|-
+| [[Sleepy]] || Sleep Fall Rate  || style="text-align:center;" | {{Good|+2}} || Ghouls don't need rest
+|-
+| [[Very unhappy]] || Mood Penalty  || style="text-align:center;" | {{Good|+5}} || Ghouls are unaffected by mood penalties
+|-
+| [[Unhappy]] || Mood Penalty  || style="text-align:center;" | {{Good|+3}} || Ghouls are unaffected by mood penalties
+|-
+| [[Deathrest]] || Need for deathrest || style="text-align:center;" | {{Good|+6}} || Ghouls don't need deathrest
+|-
+| [[Hemogen drain]] || {{Bad|−8}} Hemogen per day || style="text-align:center;" | {{Good|+6}} || Ghouls don't need hemogen
+|-
+| [[Pyrophobia]] || [[Mental_break#Fleeing_fire|Fleeing fire]] mental break  || style="text-align:center;" | {{Good|+4}} || Ghouls don't have mental breaks
+|-
+| [[Kill thirst]] || Causes need to kill humanoids|| style="text-align:center;" | {{Good|+4}} || Ghouls don't have needs beyond hunger
+|-
+| [[Extra pain]] || Increases pain|| style="text-align:center;" | {{Good|+2}} || Ghouls don't feel pain
+|-
+| [[Nearsighted]] || Decreases shooting accuracy|| style="text-align:center;" | {{Good|+2}} || Ghouls can't shoot
+|-
+| [[Weak immunity]] || More likely to die from diseases|| style="text-align:center;" | {{Good|+2}} || Ghouls are immune to diseases
+|-
+| [[Psychically deaf]] || Psychic sensitivity {{Down|-100%}}|| style="text-align:center;" | {{Good|+2}} || Ghouls have no psychic sensitivity
+|-
+| [[Psychically dull]] || Psychic sensitivity {{Down|-50%}}|| style="text-align:center;" | {{Good|+1}} || Ghouls have no psychic sensitivity
+|-
+| [[Genes#Drugs|Drug dependency]] || Need for a specific drug|| style="text-align:center;" | {{Good|+3}} or {{Good|+4}} || Ghouls have no drug needs and can't take drugs
+|}
+
+==== Archite genes ====
+Archite genes are generally not worth adding to a ghoul xenogerm.
+* [[Scarless]], [[Non-senescent]], [[Ageless]] and [[Perfect immunity]] are redundant in a ghoul. 
+* [[Gene implanter]] cannot be activated from ghouls. 
+* [[Deathless]] could be considered before having access to ghoul resurrection serums, but once the serums are available, their shorter coma period is preferable. 
+* [[Archite metabolism]] can be an option if not enough positive metabolism genes have been yet gathered, but maximum metabolism efficiency can be eventually achieved while using all the beneficial genes. 
+* The main draws of [[Breathless]]{{OdysseyIcon}} on ghouls are the bonus to minimum comfortable temperature and immunity to tox gas, as ghouls are already immune to vacuum exposure. However toxic buildup and gas immunity can also be achieved by a combination of [[Genes#Resistance and sensitivity|toxic resistance genes]] and [[detoxifier lung]]s. The temperature bonus could have an use when stacked will all other genes that improve cold resistance for ghouls in polar biomes or [[orbit]], but those require more metabolism points that could be spent on more impactful genes. For cold protection, blood warmers are cheaper and more accessible for a miniscule DPS penalty.
+</div>
+
+=== Medical quirks ===
+Because ghouls rapidly regenerate their organs, you can harvest their organs before turning them into a ghoul:
+* Harvesting a spare [[lung]] and [[kidney]] is possible for normal pawns.
+** You can harvest all six organs from a [[sanguophage]].
+** If you have a [[detoxifier lung]] and [[detoxifier kidney|kidney]], you can install them to the pawn and harvest the second natural lung and kidney. After the ghoul has finished regenerating one of each organ, you can then safely remove the artificial organs.
+** By spending a [[ghoul resurrection serum]] afterwards, you can also harvest the [[heart]] in the same manner as above.
+* Ghouls can still have genes implanted or harvested.
+
+Becoming a ghoul does not remove [[hediffs#duplicate sickness|duplicate sickness]], [[paralytic abasia]], [[cirrhosis]] or [[lung rot]]. However, if you then kill the ghoul and revive them with a ghoul resurrection serum, it will remove the sickness but not the paralytic abasia or the cirrhosis. Lung rot can be "cured" by removing one lung at a time and letting them regenerate.
+
+=== The ideal ghoul ===
+Here is a setup for an ideal ghoul. The following features are very hard to achieve, but once achieved, they can be duplicated using the [[Corrupted obelisk]] any number of times:
+* [[Void touched]]: available during the [[Endings#The Void|Anomaly ending]], gives 100 hp/day regeneration on top of ghoul regeneration and natural generation.
+* Level 20 melee skill: massively improves melee hit and dodge chance.
+* All keystone and good genes listed above. Other metabolically-efficient genes should be included to bring the efficiency up to +5.
+* [[Tough]] trait: [[Incoming Damage Multiplier]] x50%.
+* [[Jogger]] trait: [[Move Speed]] +0.4.
+* [[Nimble]] trait: [[Melee Dodge Chance]] +15. This gives a small increase in the final melee dodge chance.
+* [[Trauma savant]]: arguably the hardest to achieve, while only giving a very small improvement for melee hit chance.
+* [[Fleshmass lung]]: will give some tox resistance for the ghoul if you don't install detoxifier lungs for them.
+* [[Flesh whip]]: will give some melee damage for the ghoul if you don't install a [[power claw]].
+
+Once you have a colonist or slave with these features, duplicate them using the [[corrupted obelisk]] and turn the duplicate into a ghoul, keeping the original. The ghouls can have these body parts installed to upgrade them further:
+* [[Ghoul plating]]: [[Incoming Damage Multiplier]] x50%, while [[Move Speed]] -0.7.
+* [[Ghoul barbs]]: [[Melee Damage Factor]] x150%, while [[Move Speed]] -0.25.
+* [[Adrenal heart]]: gives a massive buff for move speed and melee damage when used.
+* [[Power claw]] + [[flesh tentacle]] (or [[wooden hand]]): greatly improves a ghoul's melee damage. This is optional if the ghoul already has 2 flesh whips.
+* [[Detoxifier lung]]s: gives tox resistance and a slight boost for move speed.
+* [[Nuclear stomach]]: Food Consumption x25%.
+* [[Stoneskin gland]]: sharp armor +70%, blunt armor +30%, heat armor +50% while moving x85%. This will also be the final armor values of the ghoul.
+* Regular [[juggernaut serum]] administering: [[Move speed]] +0.5, [[Melee Damage Factor]] x150%, [[Injury Healing Factor]] x200%.
+* [[Metalblood serum]] administering: [[Incoming Damage Multiplier]] x50%, while flame and burn weakness x400%. The flame weakness is cancelled out by the fire resistant gene.
+* [[Frenzy inducer]]'s field: +0.4 move speed.
+* Pollution stimulus: x120% move speed.
+* [[Healing enhancer]]: natural healing factor x150%.
+* Bionic eyes and legs: improve melee hit and dodge change, and also move speed. These can also be skipped without reducing the power of the ghoul by much. Archotech eyes and legs could be used instead, but the sheer amount of punishment you will likely have your ghoul be taking means that they will break eventually. Giving them to a ranged pawn to help them better support the ghoul is a better use of resources. 
+
+Note that power claws, bionic eyes, and bionic legs may be destroyed in combat if they take too much damage, so be ready to replace them if you decide to give them to the ghoul. Other body parts are less likely to be lost as the ghoul are more likely to be downed or die before that. Overall, the ghoul would have these stats:
+* Daily Food Consumption 0.32 with Raw Food Multiplier x180%: this means they need only 3-4 twisted meat per day to live.
+* Healing 200 hp/day, plus roughly 96 hp/day (208 HP/day when lying on hospital bed) from the 800% Injury Healing Factor and 150% Natural Healing Factor.
+* Incoming Damage Multiplier 9.4%: this improves the amount of damage ghouls can take by over 10 times, which means it can take roughly 2925 damage points/day, or 2.9 points/s (after armor and melee dodge) just to negate the healing effect of the ghoul. In practice, the ghoul can fight an infinite number of [[chimera]]s one at a time.
+* Melee Dodge Chance 38%.
+
+Their damage and movement speed would be as follows:
+{| class="wikitable"
+|+ Ghoul weapon combos
+|-
+! Weapons !! Move speed !! Move speed (ghoul frenzy) !! Melee hit damage !! Melee DPS !! Melee AP
+|-
+| 2 [[flesh whip]]s || 6.93 c/s || 12.02 c/s || 69.19 || 32.07 || 60%
+|-
+| 1 [[power claw]] + 1 [[wooden hand]] || 6.47 c/s || 11.23 c/s || 74.25 || 34.39 || 111%
+|-
+| 2 [[power claw]]s || 6.08 c/s || 10.55 c/s || 74.25 || 34.41 || 111%
+|}
+
+
+=== Containment ===
+Enemy ghouls are passable for containment, but are generally worse in the role than [[sightstealer]]s. Sightstealers provide more [[bioferrite]] and the same knowledge gain, and are easier to contain. They require less containment strength, do not regenerate lost body parts, and can feel [[pain]], meaning an escaping sightstealer is easier to subdue. Ghouls can make for a good supplementary source of dark study in the early game, though, and they provide somewhat more electricity with an [[electroharvester]].
+
+In the early game, be careful when engaging enemy ghouls in melee combat. They cannot be [[downed]] due to [[pain]], so they will fight much longer than regular human raiders. Ghouls never show up in [[raid]]s or assaults; only one ghoul will appear per event, as a minor threat.
+
+== Gallery ==
+<!-- Ordered top down visually, unless there would be another preferred format -->
+=== Hairs ===
+<gallery>
+Ghoul Hair Furious south.png|Furious, facing south
+Ghoul Hair Furious east.png|Furious, facing east
+Ghoul Hair Furious north.png|Furious, facing north
+Ghoul Hair Hungry south.png|Hungry, facing south
+Ghoul Hair Hungry east.png|Hungry, facing east
+Ghoul Hair Hungry north.png|Hungry, facing north
+Ghoul Hair Ravenous south.png|Ravenous, facing south
+Ghoul Hair Ravenous east.png|Ravenous, facing east
+Ghoul Hair Ravenous north.png|Ravenous, facing north
+Ghoul Hair Twisted south.png|Twisted, facing south
+Ghoul Hair Twisted east.png|Twisted, facing east
+Ghoul Hair Twisted north.png|Twisted, facing north
+Ghoul Hair Vengeful south.png|Vengeful, facing south
+Ghoul Hair Vengeful east.png|Vengeful, facing east
+Ghoul Hair Vengeful north.png|Vengeful, facing north
+Ghoul Hair Warped south.png|Warped, facing south
+Ghoul Hair Warped east.png|Warped, facing east
+Ghoul Hair Warped north.png|Warped, facing north
+Ghoul Hair Wicked south.png|Wicked, facing south
+Ghoul Hair Wicked east.png|Wicked, facing east
+Ghoul Hair Wicked north.png|Wicked, facing north
+</gallery>
+
+=== Heads ===
+<gallery>
+Ghoulskin Head Heavy south.png|Heavy, facing south
+Ghoulskin Head Heavy east.png|Heavy, facing east
+Ghoulskin Head Heavy north.png|Heavy, facing north
+Ghoulskin Head Narrow south.png|Narrow, facing south
+Ghoulskin Head Narrow east.png|Narrow, facing east
+Ghoulskin Head Narrow north.png|Narrow, facing north
+Ghoulskin Head Normal south.png|Normal, facing south
+Ghoulskin Head Normal east.png|Normal, facing east
+Ghoulskin Head Normal north.png|Normal, facing north
+Ghoulskin Head Wide south.png|Wide, facing south
+Ghoulskin Head Wide east.png|Wide, facing east
+Ghoulskin Head Wide north.png|Wide, facing north
+</gallery>
+
+=== Bodies ===
+<gallery>
+Ghoulskin Fat south.png|Fat, facing south
+Ghoulskin Fat east.png|Fat, facing east
+Ghoulskin Fat north.png|Fat, facing north
+Ghoulskin Female south.png|Female, facing south
+Ghoulskin Female east.png|Female, facing east
+Ghoulskin Female north.png|Female, facing north
+Ghoulskin Hulk south.png|Hulk, facing south
+Ghoulskin Hulk east.png|Hulk, facing east
+Ghoulskin Hulk north.png|Hulk, facing north
+Ghoulskin Male south.png|Male, facing south
+Ghoulskin Male east.png|Male, facing east
+Ghoulskin Male north.png|Male, facing north
+Ghoulskin Thin south.png|Thin, facing south
+Ghoulskin Thin east.png|Thin, facing east
+Ghoulskin Thin north.png|Thin, facing north
+</gallery>
+
+== Trivia ==
+Ghouls cannot get pregnant through any method. A pregnant pawn that is turned into a ghoul will have the pregnancy removed. A pawn that is in labor when being turned into a ghoul will have the labor hediff removed, but a non-ghoul baby will also be produced normally.
+
+== Version history == 
+* [[Anomaly DLC]] release - Added.
+* [[Version/1.6.4566|1.6.4566]] - Fix: Ghouls couldn't right-click-use serums.
+* [[Version/1.6.4850|1.6.4850]] - 
+** Fix: Ghouls can no longer go on caravans alone.
+** Fix: Ghouls now exit shuttles drafted like other colonists.
+
+{{Nav|entity|wide}}
+[[Category: Entities]]

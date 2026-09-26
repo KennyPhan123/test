@@ -1,0 +1,119 @@
+{{Biotech}}
+{{Infobox main
+| name = Xenogerm
+| image = Xenogerm.png
+| type = Medical Items
+| type2 = Body Parts
+| tech level = Industrial
+| description = A self-contained biological organ containing one or more implantable xenogenes.<br/>Once implanted inside a host's body, the xenogerm modifies the host's genes, gene expression, and phenotypic development using viruses, hormones, bio-synthesized drugs, and possibly mechanites. Depending on the xenogerm, the host will develop any of a wide variety of exotic traits and abilities, transforming them into a different human xenotype.<br/>Xenogerm implantation is a traumatic process. Once implanted with a xenogerm, a person will be bedridden for days as the transformation sets in.<br/>During storage and transport, xenogerms are kept safe in sealed containers.
+| production facility 1 = Gene assembler
+| research = Xenogenetics
+| work speed stat = Research Speed
+| mass = 0.5
+| marketvalue = 100
+| max hit points base = 100
+}}
+A '''xenogerm''' is a specialized [[Biotech DLC|biotechnological]] organ used to change the [[Xenotype]] of a human pawn.
+
+== Acquisition ==
+Xenogerms are created at a [[gene assembler]] by combining the [[genes]] from [[genepack]]s stored in nearby [[gene bank]]s. The gene packs are not consumed. Creating a xenogerm is considered a form of research, and requires the [[intellectual]] skill. The actual time to create a xenogerm depends on the genetic complexity of the genes it contains. The base amount of work to assemble a xenogerm is {{Ticks|7500}}, with an additional {{Ticks|1250}} of work per level of complexity. For example, a xenogerm with a complexity of 3 would take {{Ticks|11250}} of work to assemble: <code>(7500 + (1250 * 3))</code>. These times are then scaled by the [[Assembly Speed Factor]] of the assembler and the [[{{Q|Xenogerm|Work Speed Stat}}]] of the pawn using the assembler.
+
+Normally, xenogerms can be created for free. However, if they contain any archite genes, then the required number of [[File:Archite capsule required.png|16px|Archite Capsules]] [[archite capsules]] will need to be provided before gene recombination can begin.
+
+== Summary ==
+The purpose of a xenogerm is to change the xenotype of the pawn it is installed into. This is done through an implantation surgery. The effects of xenogermination are instant, and will change the affected pawn upon the surgery's completion. Xenogerms have a minimum metabolic efficiency of -5. Xenogerms below -5 metabolic efficiency cannot be assembled, and cannot be implanted if they would lower a pawn's metabolic efficiency to less than -5.
+
+Xenogerms completely overwrite a pawn's ''[[xenogene]]s'', genes which are not passed down through [[reproduction]]. This will outright remove xenotypes that are defined by ''xenogenes'', such as [[genies]] or [[sanguophages]]. Xenotypes using ''germline'' genes, such as [[impids]], will not have those genes removed. However, germline genes will be suppressed if they would conflict with the xenogerm. For example, a [[fast runner]] xenogerm will completely suppress the [[slow runner]] germline gene found on a [[Dirtmole]].
+
+Multiple xenogerms can be implanted in the same pawn, though each one overwrites the last. This includes archite genes, which effectively means that any archite capsules previously spent on the pawn will be lost.
+
+=== Operation ===
+[[File:Gizmo xenogerm order implantation.png|75px|thumb|left]]
+Since each xenogerm is unique, its implantation must be ordered manually. There are three ways to do this:
+* Select the xenogerm. Click on the "Order implantation" gizmo. Select the desired patient from the list.
+* Select your patient. Right-click the xenogerm, then click "Order implantation".
+* Select your patient. Open their health tab, then view their queued surgeries. Select "Add bill", then choose "Implant xenogerm". Choose the desired xenogerm from the list that appears.
+
+Once the bill is ready, a doctor will need to perform the implantation surgery. The operation requires 4 medicine of [[Herbal medicine|herbal quality]] or higher, and requires {{Ticks|2000}} of work.
+
+After implantation is complete, the patient will enter a "xenogermination coma". This lasts about 2 days, depending on the quality of the surgery, and will cause a total inability to move. See the section below on more details on how this time is calculated.
+
+In addition, the patient's genes will need between {{Ticks/gametime/years|6000000}} and {{Ticks/gametime/years|8400000}} to regrow. Extracting their genes with a [[gene extractor]] during this time will kill them. However, it is safe to implant another xenogerm during this time.
+
+==== Breakdown of Xenogermination Time ====
+There are a number of factors and specific effects on xenogermination time, which the list below will break down.
+
+<div><li style="display: inline-table;">
+Click to <div class="mw-collapsible mw-collapsed">
+<div class="mw-collapsible-content">
+* The time spent in a xenogermination coma depends on the quality of the surgery, clamped within 0% and 100%
+** At 0% quality, the duration will be 3 days
+** At 100% quality, the duration will be 1 day
+** This means that the duration in days can be found with the equation: 3 - (Quality × 2)
+* The quality of the surgery depends on the following factors:
+** The surgery has a base quality of 100%
+** Multiplied by the [[medical surgery success chance]] of the surgeon.
+** Multiplied by the [[surgery success chance factor]] of the patient's bed.
+** Doubled if the doctor has an [[inspired surgery]]
+** Multiplied by the [[Medical Potency]] of the medicine used, based on a <abbr title="piecewise linear">simple</abbr> curve.
+*** x0.7 at 0% potency, x1 at 100% potency, x1.3 at 200% potency
+*** 88% for [[herbal medicine]] (60% potency)
+*** 100% for [[Medicine|industrial medicine]] (100% potency)
+*** 118% for [[glitterworld medicine]] (160% potency)
+** Multiplied based on the overall complexity of the xenogerm
+*** Factor starts at 100% at 0 complexity
+*** -2% for each point of complexity
+*** Minimum factor of 60%, at 20 points of complexity
+** Multiplied based on patient's age
+*** 100% up to age 20
+*** -1.25% for each year after 20
+*** Minimum of 50% at the age of 60
+</div></div></li></div>
+
+== Avoiding Metabolic Surprises ==
+
+When applying a xenogerm to a xenotype with [[germline gene]]s, the resulting Metabolic Efficiency (ME) may be different from the one reported by the Gene assembler. This is due to overridden genes not being accounted for. For instance, adding a xenogerm of [[great animals]] to a Waster results on a ME of {{--|5}}, rather than the {{--|3}} reported by the Gene assembler, due to the overridden [[awful animals]] gene that all baseline Waster have.
+
+To calculate the actual ME when applied to a Xenotype, you can follow this procedure:
+* Note the xenotype's baseline ME.
+* Make note of all the overridden genes' ME and sum it together.
+* Take the Gene assembler's reported ME, add the xenotype's baseline ME, and subtract the sum of overridden genes' ME
+
+<div class="mw-customtoggle-Example_ME" style="display:inline-block;background:rgba(128,128,128,0.5);color:white;padding:10px;border-radius:5px;outline:none;user-select:none">Example</div>
+
+<div id="mw-customcollapsible-Example_ME" class="mw-collapsible mw-collapsed">
+
+Applying [[Very fast runner]] and [[Weak melee damage]] to a Neanderthal:
+* Assembler's reported ME : '''assembler_ME''' = -4
+* Neanderthal's baseline ME : '''xenotype_ME''' = +2
+* Neanderthal's baseline Slow Runner = +3
+* Neanderthal's baseline Strong Melee Damage = -2
+* Total ME of overridden genes : '''overridden_ME''' = +3 + -2 = +1
+* Final ME = assembler_ME + xenotype_ME - overridden_ME = -4 + 2 - (+1) = -3
+
+Therefore, we know that applying a Xenogerm of Very Fast Runner and Weak Melee Damage to a Neanderthal will induce a ME of {{--|3}} in the pawn.
+</div>
+
+In case the actual ME is less than {{--|5}}, you will be unable to apply the Xenogerm to the pawn.
+
+== Analysis ==
+The use of a xenogerm depends on what genes are contained within it. For example, it can used to counter unfavorable genes from the germline such as [[weak melee damage]] on a [[Impid]] with a passion in melee, or as a medical tool in the event of life-threatening illness by implanting [[strong immunity]]. When making a xenotype with hybrids or children ideally it should be applied within the infancy stage as the pawn cannot work or learn regardless, and the coma will be the least impactful.
+
+For purifying genepacks into just 1 or 2 genes, a xenogerm can be applied to a baseliner prisoner or any other undesirable pawn to kill them later with a [[Gene extractor]] and attempt to acquire a genepack with the desirable genes.
+
+Xenogerms also satisfy [[body modder]]s and [[transhumanist]]s{{IdeologyIcon}} and conversely disgust [[body purist]]s and [[Flesh_purity|flesh purists]]{{IdeologyIcon}}. Pawns with a xenotype preferred by their ideoligion will also refuse the implantation of new genes. Purely cosmetic genes can be inserted into a Body Modder for a free {{+|4}} mood with no impact compared to other options like [[denture]]s.
+
+The only way to completely remove xenogenes are to kill the pawn by putting them through a [[Gene extractor]] while regrowing their genes and then [[Death#Resurrection|resurrecting]] them.
+
+Xenogermination coma can technically be healed by a healer mech serum, but the item is too rare for this to be practical. However, if a colonist with the mostly-equivalent [[unnatural healing]]{{AnomalyIcon}} ability is available (and tentacle limbs are not undesirable), there is little reason not to use it to instantly wake an important pawn.
+
+== Version history ==
+* [[Biotech DLC]] Release - Added
+* [[Version/1.4.3534|1.4.3534]] - Fix: Pawns will continue to create a xenogerm until they pass out.
+* [[Version/1.4.3613|1.4.3613]] - Fix: Xenogerms with different genes and name stack in trade screen.
+* [[Version/1.5.4062|1.5.4062]] - Fix: Error when creating xenogerm in certain circumstances. 
+
+{{Nav|body parts|wide}}
+{{Biotech navbox}}
+
+[[Category:Medical Item]] [[Category:Body Part]] [[Category:Implant]]

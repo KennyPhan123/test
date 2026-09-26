@@ -1,0 +1,92 @@
+{{Ideology}}{{Stub|reason=Format standard and expansions}}{{infobox main|animal|
+| page verified for version = 1.3.3066
+| name = Woodmaker dryad
+| image = Woodmaker.png
+| description = A slow, bumbling caste of dryad which specializes in wood production. Together with its Gauranlen tree, this dryad can generate a wood-like material on an ongoing basis. However, it is slow and ineffective at work or combat.<br>In general, dryads are mammal-like creatures that have a symbiotic relationship with the Gauranlen tree. They reproduce together with their tree, which contains a hidden dryad queen. Dryads can morph into various specialized castes.
+| type = Animal
+| type2 = Dryad
+| movespeed = 3
+| basemeatamount = 2
+| baseleatheramount = 0
+| min comfortable temperature = -50
+| max comfortable temperature = 50
+| toxic resistance = 1
+| toxic environment resistance = 0
+| flammability = 0.7
+| bodysize = 0.667
+| healthscale = 0.8
+| diet = none
+| wildness = 0
+| petness = 0
+| manhunter = 1
+| manhuntertame = 0
+| trainable = none
+| meatname = immature dryad meat
+| lifespan = 80
+| tradeTags = AnimalDryad
+| attack1dmg = 8
+| attack1type = Scratch
+| attack1cool = 2
+| attack1part = front left paw
+| attack1stun = 14
+| attack2dmg = 8
+| attack2type = Scratch
+| attack2cool = 2
+| attack2part = front right paw
+| attack2stun = 14
+| attack3dmg = 9
+| attack3type = Bite
+| attack3cool = 2
+| attack3part = teeth
+| attack3chancefactor = 0.9
+| attack3stun = 14
+| attack4dmg = 4
+| attack4type = Blunt
+| attack4cool = 2
+| attack4part = head
+| attack4chancefactor = 0.2
+| isCoastal = false
+}}
+'''Woodmaker dryads''' are a caste of [[Dryads]], a type of [[animal]] added by the [[Ideology DLC]].  
+
+== Summary ==
+{{Dryad Summary}}
+
+Woodmaker dryads generate [[wood]] x32 every two days. Maintaining 4 woodmaker dryads requires between 8.2 (Skill 0, non-Connection ideoligion) and 3.6 (Skill 20, connection ideoligion) in-game hours of pruning per day. This equals approximately {{ticks|20500}} and {{ticks|9000}} for 64 wood. 
+In comparison, for the same yield:
+* [[Fibercorn]] requires {{ticks|{{#expr: (64/{{Q|Fibercorn|Harvest Yield #}})*({{Q|Fibercorn|Harvest Work #}} + {{Q|Fibercorn|Sow Work #}}) round 2}}}}
+* [[Timbershroom]] requires {{ticks|{{#expr: (64/{{Q|Timbershroom|Harvest Yield #}})*({{Q|Timbershroom|Harvest Work #}} + {{Q|Timbershroom|Sow Work #}}) round 2}}}}
+* [[Cypress tree]] requires {{ticks|{{#expr: (64/{{Q|Cypress tree|Harvest Yield #}})*({{Q|Cypress tree|Harvest Work #}} + {{Q|Cypress tree|Sow Work #}}) round 2}}}}
+Note however, that these are base times and base yields. [[Plant Work Speed]] significantly affects the amount of work required, and [[Plant Harvest Yield]] affects trees but not dryads.
+
+== Analysis ==
+{{Recode|section=1|reason=Replicate the images with in-wiki charts. Table with options and productivity (e.g rows by skill, with columns with wood/work with dryads, w/dryads with precept, with fibercorn, with best tree [also consider FH and Plant specs?]) might also be beneficial. Attempted to add some hard numbers below but clunky and could be better.}}
+Woodmaker dryads produce a very consistent source of wood, that "grows" even during extreme cold. They create wood without upsetting pawns with the [[Cutting trees]] precept.
+===Comparison to other sources of wood===
+[[File:WoodWorkChart.png|450px|Wood Work Chart]] [[File:WoodWorkChart8Plants.png|450px|Wood Work Chart (8-20 Plants Skill]]
+
+Woodmaker dryads are fairly consistent for work per wood, which makes them good without a skilled planter. At 6 [[Plants skill]], most trees are on-par with dryads - and trees happen to require 6 skill in the first place. Beyond this however, planting outstrips dryads even before exploiting the bonuses to [[plant work speed]]. Using these bonuses, such as [[field hand]]s{{RoyaltyIcon}} or the [[plants specialist]], makes planting outstrip dryads by an order of magnitude. Before travel time, a skill 20, double field handed, planting specialist planting a mid-tier tree such as [[birch tree|birch]] produces {{#expr:9000<!--See summary above-->/((64 /0.0056) / (1.47*11.66<!--PHY and PWS-->)) round 1}}x more wood per work than the same pawn, with the [[Gauranlen connection]] precept, tending trees.
+
+If restricted to work-inefficient [[fibercorn]] due to the [[Cutting trees]] precept, dryads compare better. A healthy baseline pawn requires a Plants skill of 6 to produce as much wood as a skill 0 pawn maintaining 4 woodmaker dryads. At Plants skill 14, using fibercorn produces more wood per unit-work than a skill 20 pruner, and is equal to a skill 14 pruner with Tree Connection.
+
+Woodmaker dryads have a major advantage - they are remarkably efficient for space. They produce wood at a reasonably fast rate: 4 dryads are equal to 64 oak trees planted in rich soil, or about 76 hydroponics basins full of fibercorn. Note that that is 76 ''full basins'', not plantable tiles. Therefore, dryads allow for quick, cheap, and compact tree farms that are easily walled away from raiders. They also don't require research and are unaffected by soil quality. Finally, they are much more resistant against temperature, making them useful in [[biome]]s with harsh winters, like tundras or ice sheets.
+
+== Health == 
+{{Animal Health Table|QuadrupedAnimalWithPawsAndTail}}
+{{Pawn Attack Table}}
+
+== Gallery ==
+<gallery>
+Woodmaker.png|Facing east
+DryadWoodmaker north.png|Facing north
+DryadWoodmaker south.png|Facing south
+Dessicated DryadWoodmaker east.png|Desiccated facing east
+</gallery>
+
+== Version history ==
+* [[Ideology DLC]] Release - Added.
+* [[Version/1.3.3076|1.3.3076]] - Fix: Dryads are affected by disease incidents.
+* [[Version/1.3.3101|1.3.3101]] - output every 2 days increased from 25 wood to 32 wood.
+{{nav|animal}}
+[[Category:Animals]]
+[[Category:Dryad]]

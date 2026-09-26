@@ -1,0 +1,54 @@
+{{Stub|reason=1) StatWorker 2) Two-way links 3) Version history 4) explain wind turbine exception to description}}
+{{Verified|1.5.4104}}{{Stat
+| def name = PowerPlantMaxPowerOuput
+| label = max power output
+| description = The maximum [[power]] that this [[generator]] can output in ideal conditions.
+| default base value = 0
+| min value = 0
+| to string style = Integer
+| show on non power plants = false
+| category = Building
+| display priority in category = 1000
+| worker class = StatWorker_MaxPowerOutput
+}}
+
+== Bases ==
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_01 text-center}}
+! Power Plant !! Max Power<br />Output (Watts)
+|-
+{{#ask: [[Power Consumption::>0]]
+| ?Power Consumption
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Name
+}}
+|}
+</li><div>
+
+== Stat Def Data ==
+{| {{STDT}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Max Power Output" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />PowerPlantMaxPowerOuput
+* '''Label:'''<br />max power output
+| The maximum power that this generator can output in ideal conditions.
+|
+* Display Order:<br />'''50'''
+* Def Name:<br />'''Building'''
+* Label:<br />'''Building'''
+* Display All By Default:<br />{{Bad|false}}
+|
+* '''Worker Class:''' StatWorker_MaxPowerOutput
+* '''Default Base Value:''' 0
+* '''Min Value:''' 0
+* '''To String Style:''' Integer
+* '''Show On Non Power Plants:''' {{Bad|false}}
+| -
+| 1000
+<!--</StatDef>-->
+|}
+
+{{nav|stats|wide}}

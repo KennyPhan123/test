@@ -1,0 +1,58 @@
+{{Stub|reason=1) Two-way links}}{{See also|Armor - Blunt (Material Factor)|Armor - Heat (Material Factor)}}
+{{Verified|1.5.4104}}{{Stat
+| def name = StuffPower_Armor_Sharp
+| label = Armor - Sharp
+| label for full stat list = Armor - Sharp (material factor)
+| description = Armor against sharp damage like bullets, knife stabs, and animal bites.
+| default base value = 0
+| min value = 0
+| to string style = PercentZero
+| show if undefined = false
+| category = StuffStatFactors
+| display priority in category = 4510
+}}
+
+== Bases ==
+<div><li style="display: inline-table;">
+{| {{STDT| sortable}}
+! Material !! Stuff Categories !! [[Property:Armor - Sharp Factor|Armor -<br />Sharp<br />Factor]]
+|-
+{{#ask: [[Armor - Sharp Factor::+]]
+| ?Stuff Category
+| ?Armor - Sharp Factor
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Name
+}}
+|}
+</li><div>
+
+== Stat Def Data ==
+{| {{STDT}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Armor - Sharp (Material Factor)" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />StuffPower_Armor_Sharp
+* '''Label:'''<br />Armor - Sharp
+* '''Label For Full Stat List:'''<br />Armor - Sharp (material factor)
+| Armor against sharp damage like bullets, knife stabs, and animal bites.
+|
+* Display Order:<br />'''74'''
+* Def Name:<br />'''StuffStatFactors'''
+* Label:<br />'''Multipliers when made of this'''
+* Display All By Default:<br />{{Good|true}}
+|
+* '''Default Base Value:''' {{%|0}}
+* '''Min Value:''' {{%|0}}
+* '''To String Style:''' PercentZero
+* '''Show If Undefined:''' {{Bad|false}}
+| -
+| 4510
+<!--</StatDef>-->
+|}
+
+== Version history ==
+{{Stub|section=1|reason=General}}
+
+{{nav|stats|wide}}

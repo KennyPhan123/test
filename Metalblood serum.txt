@@ -1,0 +1,110 @@
+{{Anomaly}}
+{{Infobox main|drug
+| name = Metalblood serum 
+| image = Metalblood serum.png
+| description = A syringe full of rust-colored liquid that constantly hardens and liquifies. When injected into the bloodstream, the metalblood substance can harden the flesh when it anticipates a blow, making the user more resistant to damage. However, the bioferrite-based chemistry of this serum also makes the user particularly vulnerable to fire.
+<!-- Base Stats -->
+| type = Drug
+| type2 = Serum
+| tech level = Industrial
+| hp = 60
+| deterioration = 
+| marketvalue = 200
+| mass base = 0.5
+| flammability = 0.7
+| stack limit = 10
+| path cost = 14
+| rotatable = false
+<!-- Ingestion -->
+| food type = processed
+| joy offset = 
+| joy kind = 
+| addictiveness = 
+| max num to ingest at once = 1
+| ingestion time = 100
+<!-- Creation -->
+| production facility 1 = Serum lab
+| skill 1 = Crafting
+| skill 1 level = 4
+| research = Metalblood serum
+| work to make = 1080
+| work speed stat = Drug Synthesis Speed 
+| resource 1 = Twisted meat
+| resource 1 amount = 10
+| resource 2 = Bioferrite
+| resource 2 amount = 20
+<!-- Technical -->
+| defName = MetalbloodSerum
+| drug category = Medical
+| is pleasure drug = 
+| preferability = NeverForNutrition
+| thingSetMakerTags = RewardStandardLowFreq
+| page verified for version = 1.6.4566
+}}
+The '''metalblood serum''' is a [[serum]], a consumable item added by the [[Anomaly DLC]], that makes the user more durable but weaker against [[fire]]. 
+
+== Acquisition ==
+{{Acquisition}}
+
+It can also occasionally be bought from Bulk Goods, Exotic, and Slaver trade ships. It can also be bought from Shaman trade caravans. {{Check Tag|Detail Needed|What about trade caravans?}}
+
+== Summary == 
+Metalblood serum is a powerful defensive serum. Unlike drugs, serums do not have a severity-based high, have no addiction, tolerance, or withdrawal mechanics and do not count as any kind of drug for the purposes of the [[Chemical (need)|Chemical need]], the [[chemical interest]], [[chemical fascination|fascination]], or [[teetotaler]] traits, or the [[Drug use]] precepts.{{IdeologyIcon}}
+
+=== Upon injection ===
+{{quote|text=This creature has the metalblood compound in their bloodstream. This substance can rapidly harden the flesh when it anticipates a blow, making the user more resistant to damage. However, the bioferrite-based chemistry of this serum also makes the user particularly vulnerable to fire.|Metalblood hediff description}}
+A pawn taking the serum will do so right where they stand without looking for a place to sit first. The serum is taken by injection, taking {{Ticks|{{P|Ingestion Time}}}}. Pawns can be ordered to inject the serum through the usual means, but it can also be ordered from the item itself. This option allows [[ghoul]]s to take serums without using an operation bill.
+
+The serum applies the "'''metalblood'''" hediff with the following effects for {{Ticks|300000}} or 5 in-game days:
+* {{Good|x50%}} [[Incoming Damage Multiplier]], stacking multiplicatively with other sources such as the [[Tough]] trait.
+* {{Bad|x400%}} [[Flame]] damage
+* {{Bad|x400%}} [[Burn]] damage
+
+Flame damage is also affected by Incoming Damage Multiplier,{{Check Tag|Burn damage?|Is burn damage also affected by the IDM? Or just Flame?}} so effective [[Flame]] damage multiplier of metalblood serum is {{Bad|x200%}}.
+
+== Analysis ==
+Metalblood serum provides any colonist the same benefit as the [[Tough]] trait - widely regarded as one of the most beneficial traits in the game - with a fire weakness downside that can often be ignored or planned around. Many combat scenarios will not involve hostiles using flame weaponry, which renders the fire weakness moot. Using metalblood serum makes [[phoenix armor]]{{RoyaltyIcon}} a more attractive gear choice given the increased heat armor it provides. [[Fire resistant]] gene{{BiotechIcon}} completely compensates for the Flame damage modifier, resulting in  an effective {{Good|x50%}} damage multiplier from flames.
+On the other hand, the [[Tinderskin]] gene stacks multiplicatively as well, resulting in a {{Bad|x800%}} Flame damage multiplier.
+
+Special care should be taken to identify enemy [[impid]]s,{{BiotechIcon}} [[tesseron]]s,{{BiotechIcon}} [[scorcher]]s,{{BiotechIcon}} [[cyclopes]],{{OdysseyIcon}} [[centipede burner]]s and raiders armed with [[molotov cocktail]]s or [[incendiary launcher]]s, as they will pose the largest threats to pawns utilizing metalblood serum.
+
+[[Sanguophages]]{{BiotechIcon}} already have the [[Robust]] gene which gives them extra damage mitigation, but they also have Tinderskin, making them situational candidates for using the serum. [[Genies]],{{BiotechIcon}} [[highmate]]s{{BiotechIcon}} and other [[Delicate]] pawns benefit greatly from using metalblood serum, assuming they can then be kept away from taking fire damage.
+
+The effect stacks with all other sources of Incoming Damage Multiplier: Tough trait, Robust gene and [[ghoul plating]]. Stacking all of these on a ghoul with a metalblood serum achieves the maximum possible damage reduction with a {{Good|x9%}} Incoming Damage Multiplier.
+
+Keeping a single colonist constantly dosed with metalblood serum will require 4 [[bioferrite]] and 2 [[twisted meat]] per day. Butchering [[entities]] is likely to be the most consistent method of acquiring twisted meat if a [[fleshmass nucleus]] has not been captured.
+
+{| class="wikitable" | 
+|+ Incoming Damage Multiplier
+|-
+! Sources !! Incoming Damage <br/> Multiplier !! Effective Fire Damage Multiplier
+|-
+| Metalblood Serum || {{Good|x50%}} || {{Bad|x200%}}
+|-
+| Metalblood Serum + [[Tough]] || {{Good|x25%}} || x100%
+|-
+| [[Delicate]] || {{Bad|x115%}} ||{{Bad|x115%}} 
+|-
+| Metalblood Serum + Delicate || {{Good|x58%}} || {{Bad|x230%}}
+|-
+| Metalblood Serum + [[Robust]] gene || {{Good|x38%}} || {{Good|x76%}}
+|-
+| Metalblood Serum + [[Robust]] gene + Tough || {{Good|x19%}} || {{Good|x38%}}
+|-
+| Metalblood Serum + [[Fire resistant]] gene || {{Good|x50%}} || {{Good|x50%}} 
+|-
+| Metalblood Serum + [[Fire resistant]] gene + [[Robust]] gene + Tough || {{Good|x19%}} || {{Good|x19%}}
+|-
+| Metalblood Serum + [[Tinderskin]] Gene || {{Good|x50%}} || {{Bad|x800%}}
+|-
+| Metalblood Serum + [[Tinderskin]] Gene + [[Robust]] gene || {{Good|x38%}} || {{Bad|x600%}}
+|-
+| Metalblood Serum + [[Fire resistant]] gene + [[Robust]] gene + Tough + [[Ghoul plating]] || {{Good|x9%}} || {{Good|x9%}}
+|-
+|}
+
+== Version history == 
+* [[Anomaly DLC]] Release - Added.
+
+{{Nav|drugs|wide}}
+[[Category:Drug]] [[Category:Serum]]

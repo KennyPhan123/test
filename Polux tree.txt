@@ -1,0 +1,99 @@
+{{Biotech}}{{stub|reason=Artificial building mechanics, analysis}}{{infobox main|plant|
+| name = Polux tree
+| image = PoluxTreeB.png
+| description = After generations of exposure, these trees have evolved to metabolize pollutants. By drawing pollutants from the ground through wide root networks, they slowly clean polluted terrain in their vicinity. However, they cannot do this if buildings are constructed over their roots.<br>Unlike most methods of cleaning polluted terrain, polux trees do not create toxic wastepacks.
+| type = Plant
+| type2 = Wild
+| hp = 300
+| flammability = 1
+| beauty outdoors = 6
+| grow days = 10
+| sow work = 400
+| product = wood
+| yield = 30
+| harvest work = 1000
+| min fertility = 0.05
+| fertility sensitivity = 0
+| min grow light = 0
+| immune to blight = true
+| pollution = any
+}}
+The '''Polux tree''' is a tree added by the Biotech DLC. It grows within [[polluted]] environments and is capable of absorbing pollution in an area similar to a [[pollution pump]] (7 tile wide circle). Unlike pollution pumps, polux trees do not generate any [[toxic wastepack]]s after absorbing the surrounding pollution. This makes them a safer way to remove pollution. 
+
+== Growing ==
+Like the [[gauranlen tree]],{{IdeologyIcon}} the polux tree does not naturally occur in any ecology. It naturally appears on maps with [[pollution]], and can be spawned by the "polux tree" [[event]],
+
+Every 15 days, the current pollution level and current tree population are checked. If the current amount of trees are below the assigned value, a tree may be spawned.{{Check Tag|Chance?|% Chance, if applicable.}} These numbers also determine the amount of starting trees in your colony.
+* No pollution (0-25%): 0 polux trees
+* Light pollution (25%-50%): 0 polux trees
+* Moderate pollution (50%-75%): 1 polux tree
+* Extreme pollution (75%-100%): 3 polux trees
+
+Polux trees never spawn within 16 tiles of each other.
+
+[[Polux seed]]s can also be bought from [[trader]]s, obtained from [[quest]] rewards or looted from [[Hermetic crate|hermetic]] or [[sealed crate]]s. These seeds can be planted on any tile with a fertility stat. It cannot be planted closer than 4 tiles to another polux tree, or within 1 tile from any other tree or cactus. It also cannot be placed within 1 tile of a growing zone.
+
+== Summary ==
+* Cleans 1 tile of [[pollution]] every {{ticks/gametime|25000}}.
+* Needs {{Ticks/gametime|150000}} to clean 1 deteriorated [[toxic wastepack]] (6 tiles). 
+* Is only 20% as fast as a [[wastepack atomizer]].
+
+Polux trees are considered "super", meaning that pawns with the [[Trees (precept)|Trees: Desired precept]]{{IdeologyIcon}} will receive the "amazing tree" thought after seeing one. Despite both being [[dendrovore]]s, [[thrumbo]]s will not eat polux trees, while [[alphabeaver]]s will. Polux trees are immune to [[blight]].
+
+They technically take damage from [[toxic spewer]]s and [[toxic fallout]], but regenerate faster than they take damage. They are flammable, and thus should be protected from wildfires.
+
+== Analysis ==
+Polux trees are one of a few consequence-free ways of cleaning [[pollution]]. Unlike [[wastepack atomizer]]s, they are available without research, but are much slower and require no artifical buildings in their radius. The easiest way to use polux trees is to plant them nearby, and leave toxic wastepacks in a stockpile zone next to the tree. Wastepacks outdoors deteriorate into pollution every 8 days assuming no rain or cold temperatures, creating 6 tiles of pollution. If pollution already exists on the tile, it is also possible to plant a polux seed in a pre-polluted area.
+
+Due to the tree's relatively low waste-clearing speed and the fact that low amounts of pollution do not have much impact on your colony, there is an argument that [[polux seed]]s are not worth their {{Icon Small|Silver||{{Q|Polux seed|Market Value Base}}}} price tag. As long as the pollution is physically far away, the only negatives of it are wastepack infestations and [[acidic smog]]. Polux trees do not stop infestations, as they occur on wastepack destruction, not pollution in general. Meanwhile, acidic smog can be mitigated almost entirely by using [[sun lamp]] greenhouses and non-solar energy. Even then, at only 10% or so pollution (200 wastepacks), smog is a rare event.
+
+In addition, they should be compared to other forms of [[Toxic wastepack#Analysis|wastepack management]]. Freezers can store large amounts of waste that can be cleaned or dumped later on. Dumping near a tribal faction can only cause tribal raids. Leaving the wastepacks and letting them decay far away is another option, as mentioned above. This is before considering the more exploitative methods of disposal, such as polluting a [[pit gate]]{{AnomalyIcon}} or destroying [[transport pod]]s before they land.
+
+That being said, these trees don't contribute to your colony [[wealth]], inviting lower [[raid point]]s than a [[cooler|freezer]] or the {{Icon Small|Silver||{{Q|Wastepack atomizer|Market Value Base}}}} [[wastepack atomizer]] does. In very long runs, a tree can absorb up to a considerable amount of waste. For example a single polux tree can absorb 245 [[wastepack]] in roughly 10 years which is equivalent to a single cooler's capacity in hot [[biomes]], it is a lot when considering that a [[cooler]] takes a 9*9 area and 200W of constant [[power]] while tree's only cost is buying and setting it up and it can clean even more [[pollution]].
+
+=== Sustainability ===
+==== Mechs ====
+* Every day, a polux tree cleans {{#expr: (24)/10 round 1}} tiles. 
+* One [[bandwidth]] worth of mechs produces 5 wastepacks every 6 days. Since each wastepack produces 6 tiles of pollution, this is {{#expr: 5*6/6 round 1}} tiles per day.
+* Therefore, even 2 polux trees are not enough to fully support even a single mech at full uptime.
+
+==== Toxifier generators ====
+* A [[toxifier generator]] produces 2 tiles of waste per day.
+# Therefore, a polux tree can theoretically support {{#expr: 2.4/2 round 1}} toxifier generators. For example, 5 polux trees can support 6 toxifier generators.
+
+Note that the tree cannot be placed near the generator, meaning that a [[pollution pump]] and haulers are typically required. Although since pollution doesn't spread under natural rock, it is possible to get around this by having the generator inside a 2*2 hole in a mountain with two sides open (one for wires, one for pollution) and a tree nearly overlap the generator to clean additional [[pollution]].
+
+==== How many stacks of wastepacks can a tree support ====
+* Every day, a polux tree cleans {{#expr: (24)/10 round 1}} tiles. 
+* Assuming the wastepacks are only outdoors and unroofed, without being rained on, then a wastepack will suffer 4 points of deterioration per day. ​This means that one stack will fully decompose over {{#expr: (100/4) round 1}} days from health point loss, as opposed to taking {{#expr: (8*5) round 1}} days from innate decay (8 days per pack).
+* Each wastepack produces 6 tiles of waste, meaning that each stack of wastepacks produces {{#expr: 5*6 / (100/4) round 1}} tiles of pollution per day.
+* This means that a single polux tree can theorectically support a stockpile of {{#expr: (24/10)/((6*5)/(100/4)) round 1}} stacks of wastepacks deteriorating.
+
+However, rain will cause wastepacks to deteriorate faster, and polluted tiles also boost deterioriation rate. This may be partially or fully offset by other minor inefficiencies in the system, such as the time it takes to deliver new wastepacks after they decompose. Depending on your setup, you may want to pause hauling of new wastepacks to the tree for a day or two every few years to clear any built-up backlog. 
+
+By placing a polux tree near natural rock wall, it is possible to [[roof]] over the stockpile to reduce HP deterioration. It is also possible to build a room that encloses the polux tree without infringing on its exclusion zone (while being partially unroofed). If you ensure that all wastepack stacks that are under roofed tiles they will not suffer hit point deterioration, and since they are now indoors, each stack will have one pack deteriorate every 16 days. In either case, this system can support the decay of {{#expr: (24/10)/(6/16) round 1}} stacks. 
+
+=== Natural spawns ===
+With enough pollution, it is possible to get free trees to spawn. That being said, if done on the home tile, the pollution will have already gotten large enough that acidic smog is an issue
+
+Alternatively, it is possible to pollute a different tile, ideally within 5-7 tiles of your base, then settle on it once it has high enough pollution. This will cause 3 polux trees to naturally spawn and clean the pollution, allowing [[transport pod]]s to be used without penalty.{{Check Tag|Verify}} Building a second base may cause performance issues, though note that it is not required to actually build anything or have colonists on this tile.
+
+== Gallery ==
+<gallery>
+File:PoluxTreeA.png| Polux tree variant A
+File:PoluxTreeB.png| Polux tree variant B
+File:PoluxTreeC.png| Polux tree variant C
+File:Stump chopped polux a.png|[[Chopped polux stump]] variant A
+File:Stump chopped polux b.png|[[Chopped polux stump]] variant B
+File:Stump smashed polux a.png|[[Smashed polux stump]] variant A
+File:Stump smashed polux b.png|[[Smashed polux stump]] variant B
+</gallery>
+
+== Version history ==
+* [[Biotech DLC]] Release - Added.
+* [[Version/1.4.3555|1.4.3555]] - [[Polux seed]]s introduced, which can be planted on polluted ground.
+
+{{nav|plant|wide}}
+[[Category:Plants]]
+[[Category:Trees]]
+{{Biotech navbox}}

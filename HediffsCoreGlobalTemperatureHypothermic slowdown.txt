@@ -1,0 +1,51 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Global/Temperature}}
+|}
+----
+{| {{STDT}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Hypothermic slowdown" <!-- defName="HypothermicSlowdown" -->
+! Hypothermic slowdown
+----
+* Def Name:<br />HypothermicSlowdown
+* Label:<br />hypothermic slowdown
+| A special biological state used by some creatures to survive extreme cold. Instead of trying to stay warm, the creature's body chemistry adapts to prevent internal freezing despite very low temperature. Bodily functions are slowed and capacities are reduced, but the cold does no permanent damage. Some biologists call it a wakeful form of hibernation.
+| Default Label Color: {{Color|80%|80%|100%}}
+|<!-- Stages -->
+{| {{STDT}}
+! Label !! Parameters
+|-
+! minor
+|<!-- Parameters -->
+* Become Visible: {{Bad|false}}
+|-
+! minor
+|<!-- Parameters -->
+* Min Severity: '''4%'''
+* [[Moving]] Offset: {{--|8%}}
+* [[Consciousness]] Offset: {{--|5%}}
+|-
+! moderate
+|<!-- Parameters -->
+* Min Severity: '''20%'''
+* [[Hunger Rate]] Factor Offset: {{---|10%}}
+* [[Moving]] Offset: {{--|20%}}
+* [[Manipulation]] Offset: {{--|20%}}
+* [[Consciousness]] Offset: {{--|20%}}
+|-
+! serious
+|<!-- Parameters -->
+* Min Severity: '''35%'''
+* [[Hunger Rate]] Factor Offset: {{---|40%}}
+* [[Moving]] Offset: {{--|40%}}
+* [[Manipulation]] Offset: {{--|50%}}
+* [[Consciousness]] Offset: {{--|40%}}
+|-
+! extreme
+|<!-- Parameters -->
+* Min Severity: '''62%'''
+* [[Hunger Rate]] Factor Offset: {{---|95%}}
+* [[Consciousness]] Max: {{Bad|10%}}
+|}<noinclude>
+|}</noinclude>

@@ -1,0 +1,127 @@
+{{Biotech}}
+{{About|the mechanoid from the [[Biotech DLC]]|the [[artificial body part]] from the [[Royalty DLC]]|Field hand}}
+{{infobox main|none|
+| name = Agrihand
+| image = Agrihand east.png
+| description = A small mechanoid designed to sow and harvest crops. While it is better suited to labor than combat, it can fight with built-in cutting blades if necessary.
+| type = Mechanoid
+| movespeed = 3.4
+| flammability = 0
+| marketvalue = 800
+| combatPower = 10
+| armorblunt = 10
+| armorsharp = 20
+| armorheat = 200
+| min comfortable temperature = -100
+| max comfortable temperature = 250
+| toxic resistance = 1
+| toxic environment resistance = 1
+| bandwidth cost = 1
+| bodysize = 0.7
+| healthscale = 1
+| lifespan = 
+| attack1dmg = 8
+| attack1type = Cut
+| attack1cool = 2
+| attack1part = Right blade
+| attack2dmg = 8
+| attack2type = Stab
+| attack2cool = 2
+| attack2part = Right blade
+| page verified for version = 1.4.3525
+<!-- Creation -->
+| research = Basic mechtech
+| production facility 1 = Mech gestator
+| gestation cycles = 1
+| resource 1 = Steel
+| resource 1 amount = 50
+| resource 2 = Basic subcore
+| resource 2 amount = 1
+}}
+A '''agrihand''' is a [[mechanoids|mechanoid]] added by the [[Biotech DLC]].
+
+== Acquisition ==
+{{Acquisition}}
+
+Dead, friendly {{lc:{{PAGENAME}}}}s can also be resurrected at the {{lc:{{P|Production Facility 1}}}} using the "''Resurrect light mechanoid''" bill. This requires the corpse of the friendly {{PAGENAME}}, {{Icon Small|Steel||25}} [[steel]], and 1 [[gestation cycle]] taking {{ticks|1800}} to initiate.
+
+== Summary == 
+{{Mechanoid Summary}}
+
+Dead agrihands may be shredded at the [[machining table]] or [[crafting spot]] for {{Icon Small|Steel||10}} [[steel]]. However, these values are affected by [[Mechanoid Shredding Efficiency|mechanoid shredding efficiency]], as well as missing parts on the agrihand.
+
+=== As an enemy ===  
+As a labor-focused mech, agrihands are never found in mechanoid [[raid]]s, however they can go feral after time spent uncontrolled.
+
+=== As an ally ===
+Mechs under player control require power: agrihands use 10% of their power per day while active.  If set to dormant self-charging, they instead recharge for +1% power / day, without pollution. They recharge in a [[mech recharger]] (constant 200W), for 50% power/day, creating 5 [[wastepack]]s whenever the recharger's waste is filled up.
+
+=== Work ===
+Agrihands will automatically perform tasks under the [[Work#Grow|Grow]] and [[Work#Plant cut|Plant Cut]] [[work]] types; they can't be manually controlled, except when [[draft]]ed for combat. They have an effective [[Plants (skill)|Plants skill]] of 10, resulting in [[Plant Harvest Yield]] of 102%. 
+
+However, they have a base [[Plant Work Speed]] ''set'' to 80%, and a further [[Global Work Speed]] modifier of 50%. This results in a Plant Work Speed stat of 40%, which is {{%|40 / 123 round 2}} as fast as a human of skill 10.
+
+=== Combat ===
+Agrihands are never equipped with any weapons, and instead exclusively use their body part attacks.
+
+Agrihands have a 62% [[melee hit chance]], equivalent to a pawn with a [[Melee]] skill of 4.
+
+== Analysis ==
+Agrihands are a fairly simple mechanoid, increasing the number of crops you can grow and harvest at any one time. With 10 plants skill, they can grow any crop, and as a 24/7 worker, they can allow your colony to grow and harvest a substantial number of additional crops, even if all your human growers are [[injury|injured]] or otherwise [[mood|grumpy]].
+
+Agrihands are useful if pawn time, or pawns with enough skill, are limited. In other words: useful if you need to grow more crops. If grow area is limited, then using a human with >10 skill will maximize the return off the finite space. Ideally, you could use both planters and agrihands when sowing crops, and have the mechs enter dormancy during the harvest. You can set an [[allowed area]] for agrihands if you need a specific area sowed or cut. With a proper [[allowed area]] set, agrihands should never have to get into combat, so they can remain operational no matter how damaged your colonists may be.
+
+As mechanoids are immune to toxicity, agrihands are especially helpful for growing [[toxipotato]]es and other plants in polluted soil - which you may cause by using mechanoids in the first place.
+
+===Yield calculation===
+[[File:Agrihand_theoretical.png|400px|left|thumb|Theoretical yield of an agrihand working 5/6 days.<br>Top Left: [[Rice plant|Rice]] in [[hydroponics]]. Bottom Left: Rice in rich soil.<br>Right: [[Corn plant|Corn]] in rich soil.]]
+Most non-tree plants take a ''base'' of {{ticks|370}} to harvest and resow, which becomes {{ticks|370/.4}} due to their Plants Work Speed stat. This results in the agrihand being able to grow {{#expr:60000/(370/.4) round 1}} crops per day online.
+
+It takes about 1.98 days for rice to grow in hydroponics, counting the plant resting period. Therefore, an agrihand can manage almost {{#expr:(60000*.4/370)*(1.98/4)*(5/6) round 0}} full [[hydroponics]] ''basins'' of [[rice plant|rice]] ({{#expr:(60000*.4/370)*1.98*(5/6) round 0}} plants), enough to power a little more than 1 full [[sun lamp]] setup. The agrihand can recharge as soon as it's done sowing. In rich soil, an agrihand can plant {{#expr:(60000*.4/370)*(3.96)*(5/6) round 0}} rice plants. 
+
+Due to [[blight]], travel time, and general inefficiency, actual yield will be smaller. These calculations also assume that recharge is micromanaged and that mechs work under full [[light]] all the time. But in a realistic scenario, you don't always need this many crops, and can turn off the agrihand to save on pollution.
+
+For reference, an agrihand can grow enough rice to ''practically'' sustain around 10 baseline humans in a temperate [[biome]] when cooked into [[simple meal]]s, even in the Losing is Fun [[difficulty]], and even after accounting for work inefficiencies. With any other crop, the agrihand can sustain much larger fields - a ''theoretical'' yield of {{#expr:(60000*.4/370) * 14.9 * 5/6 round 0}} [[corn plant]]s in rich soil or {{#expr:(60000*.4/370) * 9.66 * 5/6 round 0}} [[psychoid plant]]s in hydroponics, for instance.
+
+=== Compared to planters ===
+An agrihand's harvest yield, both per plant and per day, can be outstripped by skilled human growers. A skill 10 human working only 8 hours a day will grow the same {{#expr:(60000/370)*(1.98/4)*(8/24) round 0}} basins of rice. Humans can become even more efficient if they are equipped with [[field hand]]s,{{RoyaltyIcon}} have the [[Plants specialist]] role{{IdeologyIcon}}, and for drugs, the [[Drug use|Drug Use: Essential]] precept{{IdeologyIcon}}. 
+
+There's nothing stopping you from using both human and mech labor, or using mechs so that a human grower has more time for other tasks. 
+
+=== Emergency combat mechanoid ===
+Agrihands are modestly effective in combat if there are no other options available. 
+
+Their blades often inflict bleeding wounds, unlike the bump attack available to other small labor mechanoids, which can incapacitate organic opponents even if they lose the fight. With a decent health scale they are also at least moderately durable too.
+
+== Health == 
+=== Body parts ===
+{{Animal Health Table|Mech_Agrihand}}
+=== Armor ===
+{| class="wikitable"
+! Armor
+|-
+| {{Apparel Protection Chart
+| set1name= {{P|Name}} (Sharp) | set1armor1={{P|Armor - Sharp}} 
+| set2name= {{P|Name}} (Blunt) | set2armor1={{P|Armor - Blunt}} 
+| set3name= {{P|Name}} (Heat) | set3armor1={{P|Armor - Heat}} 
+| color= grey, blue, red
+}} 
+|}
+{{Pawn Attack Table}}
+
+== Gallery ==
+<gallery>
+Agrihand east.png| Age 0-99 Agrihand facing east
+Agrihand north.png| Age 0-99 Agrihand facing north
+Agrihand south.png| Age 0-99 Agrihand facing south
+</gallery><gallery>
+AgrihandAncient east.png| Age 100+ Agrihand facing east
+AgrihandAncient north.png| Age 100+ Agrihand facing north
+AgrihandAncient south.png| Age 100+ Agrihand facing south
+</gallery>
+
+== Version history ==
+* [[Biotech DLC]] Release - Added.
+
+{{nav|mechanoid|wide}}
+[[Category:Mechanoids]]

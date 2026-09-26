@@ -1,0 +1,43 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Anomaly/Mutants}}
+|}
+----
+{| {{STDT| c_21}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Shambler" <!-- defName="Shambler" -->
+! [[Shambler]]
+----
+* Def Name:<br />Shambler
+* Label:<br />shambler
+| This dead creature has been re-animated by corrupted archites. Shamblers are slow and mindless, and will attack relentlessly. After a few days on their feet, shamblers die from metabolic exhaustion. Captured shamblers can't move and thus won't expire.
+|<!-- Details -->
+* Hediff Class: '''Hediff_Shambler'''
+* Ever Curable By Item: {{Bad|false}}
+* Duplication Allowed: {{Bad|false}}
+* Keep On Body Part Restoration: {{Good|true}}
+* '''Comps'''
+** ''Disappears And Kills''
+*** Comp Class: '''HediffComp_DisappearsAndKills_Shambler'''
+*** Disappears After Ticks: {{Ticks/gametime/days|252000}} ~ {{Ticks/gametime/days|288000}}
+*** Show Remaining Time: {{Good|true}}
+** ''Disappears On Death''
+** ''Attach Points''
+|<!-- Stages -->
+{| {{STDT| c_21}}
+! Label !! Parameters
+|-
+! Shambler
+|<!-- Parameters -->
+* Natural Healing Factor: {{Bad|×0%}}
+* Pain Factor: {{Good|×0%}}
+* [[Melee Cooldown (Pawn)]] Factor: {{Bad|×150%}} (66% as fast)
+* [[Psychic Sensitivity]] Factor: {{Bad|×0%}}
+* [[Minimum Comfortable Temperature]] Offset: {{---|{{Temperature|60||delta}} }}
+* [[Maximum Comfortable Temperature]] Offset: {{+|{{Temperature|30||delta}} }}
+* [[Minimum Containment Strength]] Offset: {{+|25}}
+* [[Toxic Resistance]] Offset: {{+|100%}}
+* [[Talking]] Post Factor: {{Bad|×0%}}
+* [[Consciousness]] Post Factor: {{Bad|×70%}}
+|}<noinclude>
+|}</noinclude>

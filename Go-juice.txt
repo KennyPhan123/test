@@ -1,0 +1,161 @@
+{{Infobox main|drug
+| name = Go-juice
+| image = Gojuice b.png
+| description = A synthetic performance-enhancing drug developed for space marines during the early days of interplanetary warfare. Go-juice blocks pain, increases movement speed, and improves the user's melee and shooting abilities. The military chemists who created it were never able to remove its addictiveness. Some saw this as a downside; others saw it as a benefit.
+<!-- Base Stats -->
+| type = Drug
+| type2 = Hard Drug
+| tech level = Industrial
+| hp = 50
+| deterioration = 2
+| marketvalue = 53
+| mass base = 0.1
+| flammability = 1
+| stack limit = 150
+| path cost = 14
+| rotatable = false
+<!-- Ingestion -->
+| food type = processed, fluid
+| joy offset = 0.4
+| joy kind = Chemical
+| addictiveness = 0.026
+| max num to ingest at once = 1
+| ingestion time = 80
+<!-- Creation -->
+| production facility 1 = Drug lab
+| research = Go-juice production
+| work to make = 600
+| work speed stat = Drug Synthesis Speed 
+| resource 1 = Neutroamine
+| resource 1 amount = 2
+| resource 2 = Yayo
+| resource 2 amount = 1
+| bulk product amount = 4
+<!-- Technical -->
+| defName = GoJuice
+| drug category = Hard
+| is pleasure drug = true
+| preferability = NeverForNutrition
+| tradeTags = Drugs
+| page verified for version = 1.3.3387
+}}
+{{Info|'''Go-juice''' is a potent [[hard drugs|hard]] combat [[drug]] that almost completely blocks [[pain]] and significantly improves a pawn's capabilities, at the risk of addiction and overdose.}}
+
+== Acquisition ==
+{{Acquisition}}
+
+It can also be found on [[raider]]s and [[Trade|purchased]].
+
+== Summary ==
+Go-juice is a potent combat stimulant that has a variety of effects. These can be broken into effects that occur:
+* Instantaneously and one time upon using the drug.
+* While high on the drug.
+* While addicted to the drug.
+* While withdrawing from the drug.
+
+=== Upon injection ===
+A pawn taking go-juice will do so right where they stand without looking for a place to sit first. Go-juice is taken by injection, taking {{Ticks|{{P|Ingestion Time}}}}. It has the following one time effects:
+
+* {{+|{{%|{{P|Joy Offset}}}}}} {{P|Joy Kind}} [[recreation]]
+* If the pawn has the [[chemical interest]] or [[chemical fascination]] trait:
+** {{+|30%}} [[Chemical need]]
+* {{+|40%}} [[Rest]]
+* {{+|15%}} [[Psyfocus]]{{RoyaltyIcon}}
+* {{Bad|{{%|{{#vardefineecho:overdoseChance|0.005}} }} }} Chance for a [[Overdose#Major|major overdose]]
+* {{++|18% to +{{%|{{#vardefineecho:maxOverdoseSeverity|0.35}} }} }} [[Overdose]] severity
+* '''+{{%|{{#vardefineecho:highSeverity|0.5}} }}''' Go-juice high severity ''(see "Go-juice high" below)''
+* {{Bad|{{%|{{P|Addictiveness}} }} }} [[Addiction]] chance
+* If the pawn has an addiction already:
+** {{+|{{%|{{#vardefineecho:needOffset|0.9}}}}}} Go-juice need ''(see "Addiction" below)''
+** {{--|{{%|{{#vardefineecho:addictionSeverityOffset|0.2}} }} }} Addiction progress ''(see "Withdrawal" below)''
+
+=== Go-juice high ===
+{{Quote|text="Go-juice in the bloodstream. It supercharges combat-related abilities, and instantly increases psyfocus when first injected."}}
+
+While each go-juice injection increases the severity of the go-juice high by {{%|{{#var:highSeverity}}}} ''(see "Upon injection" above)'', it decreases by {{%|{{#vardefineecho:highSeverityPerDay|0.75}}}} per day again, meaning that the high of a single dose lasts '''{{Plural|{{#vardefineecho:highDuration|{{#expr: {{#var:highSeverity}}/({{#var:highSeverityPerDay}}/24) round 1}}}}|hour}}'''. The maximum severity of a go-juice high is 100% which is reached with {{#expr: 1/{{#var:highSeverity}} round 1}}&nbsp;go-juice. Regardless of the go-juice high severity, the effects are always the same. Only their duration changes accordingly:
+
+* {{+|5}} [[Mood]] (''"I feel pumped but steady. I am the bullet in flight, ready to cut through you."'')
+* {{Good|×10%}} [[Pain]] (meaning all pain will be divided by ten)
+* {{+|20%}} [[Consciousness]]
+* {{+|35%}} [[Sight]]
+* {{+|50%}} [[Moving]]
+
+=== Tolerance ===
+As of version [[Version/1.2.3005|1.2.3005]], go-juice no longer gives a pawn any tolerance at all when taken, despite the effects of tolerance still existing in-game. This has been confirmed as intended behaviour.<ref>Rejected bug report: [https://ludeon.com/forums/index.php?topic=53403 "&#91;1.2.2753&#93; Wake-up and go-juice do not cause tolerance"]. Unused tolerance effects: ''"A built-up tolerance to go-juice. The more severe this tolerance is, the more go-juice it takes to get the same effect."'' Starting at 45% tolerance the pawn could get moderate [[chemical damage]] in the brain reducing part efficiency by 50%, impairing the pawn in all jobs from combat to daily work. The chemical damage would be applied in a curve with the following points: a) At 45% tolerance on average every 99999 days. b) At 50% tolerance on average every 120 days. c) At 100% tolerance on average every 90 days. All values in between are calculated with linear interpolation. The go-juice tolerance would decrease by 1.5% per day.</ref>
+
+=== Addiction ===
+{{Quote|"A chemical addiction to go-juice. Long-term presence of go-juice has caused neurological adaptations at the cellular level, so the brain can no longer function properly without the drug. Without regular doses of go-juice, withdrawal symptoms will begin. However, extended abstinence will force the brain to adapt back to its normal state, resolving the addiction."|Addiction description}}
+
+Each dose of go-juice carries a {{%|{{P|Addictiveness}}}} chance of addiction. There is therefore no safe dose interval.
+
+The addiction progresses by {{%|{{#vardefineecho:addictionSeverityPerDay|0.045}}}} per day from the initial 50%. Once it reaches 100% the addiction is healed, meaning it takes about {{Plural|0.5/{{#var:addictionSeverityPerDay}} round 1|day}} to overcome the addiction. Consuming go-juice during an addiction will reduce the addiction progress by {{%|{{#var:addictionSeverityOffset}}}} again ''(see "Upon injection" above)''.
+
+Developing an addiction means a pawn has a go-juice [[Needs#Drug addictions|need]]. The need for go-juice falls by {{%|{{#vardefineecho:needFall|0.333}}}} per day, consuming go-juice satisfies the need by {{%|{{#var:needOffset}}}} ''(see "Upon injection" above)'', meaning the pawn will need to consume go-juice at least every {{Plural|{{#var:needOffset}}/{{#var:needFall}} round 1|day}} to prevent withdrawal symptoms.
+
+=== Withdrawal ===
+{{Quote|"Because of a go-juice addiction, this person needs to regularly consume the drug to avoid withdrawal symptoms."|Need description}}
+
+As soon as the go-juice need reaches 0%, the pawn suffers from the following symptoms:
+
+* {{--|22}} [[Mood]] (''"I'm all fuzzy and can't think straight. My limbs feel heavy, I'm tired and hungry, everything hurts. And why won't my eyes focus properly?"'')
+* {{Bad|×300%}} [[Pain]] (meaning all pain will be tripled)
+* {{--|20%}} [[Consciousness]]
+* {{--|50%}} [[Moving]]
+* {{--|20%}} [[Sight]]
+* {{--|20%}} [[Blood pumping]]
+* {{--|10%}} [[Manipulation]]
+* {{++|30%}} [[Sleep Fall Rate]] (meaning the pawn needs to sleep about a 30% sooner)
+* {{++|50%}} [[Hunger|Hunger rate factor]] (meaning the pawn needs to eat about 50% sooner)
+* {{Bad|Mental break}} chances:
+** [[Hard drug binge]]: on average every {{#vardefineecho:bingeMtb|40}} days. This averages to {{Plural|0.5/{{#var:addictionSeverityPerDay}}/{{#var:bingeMtb}} round 1|hard drug binge}} during each withdrawal.
+** [[Psychotic wandering]]: on average every {{#vardefineecho:wanderingMtb|10}} days. This averages to {{Plural|0.5/{{#var:addictionSeverityPerDay}}/{{#var:wanderingMtb}} round 1|wandering}} during each withdrawal.
+
+== Analysis ==
+Go-juice is a stimulant and pain-killer, with a significant impact on combat performance. [[Wake-up]] and [[luciferium]] are the next best drugs for combat, but wake-up largely offers work-related boosts, while luciferium is a permanent addiction (and works with go-juice).
+
+=== Combat ===
+Increases to Sight and Consciousness boosts accuracy, both ranged and melee. Increased Moving helps with all forms of [[kiting]] tactics and makes it easier to retreat. Increased medical tend speed can save a pawn that's bleeding out quickly. Like the painstopper, the large reduction in pain allows a pawn to stand up far longer and win more fights. But they will continue fighting until very close to death - or when physically made unable. 
+
+Finally, go-juice provides slight boosts to mood, recreation, and rest. While weaker in this regard than most other drugs, they can still help prevent [[mental break]]s.
+
+The risk of addiction and overdose is always present, but addiction is better than death. For example, a miner digging out far away from your base will appreciate carrying go-juice, for when a [[raid]] or [[manhunter|manhunter pack]] spawns near them. Withdrawal symptoms are harsh, but its 11.1 day withdrawal (assuming no future doses are taken) can be managed by [[arrest]]ing the addict in question. Go-juice has the second shortest withdrawal, behind [[ambrosia]].
+
+=== Misc work ===
+Besides combat, the increase in Moving can make pawns much faster at hauling and somewhat quicker at other tasks. Usually this is not worth the risk of addiction unless you ''need'' to repair your defenses. But if you have a pawn you don't care about, like an unwanted [[Events#Wanderer joins|wanderer]] or some desperate refugees,{{RoyaltyIcon}} then you can use go-juice to expedite your work.
+
+Go-juice's consciousness boost also improves the odds of successful surgery, but this rarely matters, because the surgery success chance can usually be capped at 98% with a [[sterile tile|sterile room]], [[hospital bed]], and a good doctor.
+
+:'''Tip:''' Unless you need an immediate and significant boost in chemical [[recreation]], [[rest]] or [[psyfocus]]{{RoyaltyIcon}} it is recommended to wait at least {{#expr: (2*{{#var:maxOverdoseSeverity}}-0.5)/(1/24)}}&nbsp;hours between the first and the second dose of go-juice. Otherwise the overdose severity might build up resulting in a [[Overdose#Minor|minor overdose]] (this is unrelated to the {{%|{{#var:overdoseChance}}}} chance for a [[Overdose#Major|major overdose]] that comes with each injection). Be particularly careful when using go-juice in combination with other drugs! The third dose and any dose after that shouldn't be taken earlier than {{#var:highDuration}}&nbsp;hours after the second to last dose. Otherwise some hours of the go-juice high will be wasted.
+
+=== Stats ===
+Assuming a healthy, but otherwise unaugmented pawn, the bonuses from consuming go-juice translates to:
+* A +50% increase to [[Move Speed]], equivalent to an increase of 2.3 {{CS}} on a healthy, unencumbered pawn.
+* A +20% increase in [[General Labor Speed]].
+* A +30% increase in [[Medical Tend Quality]] at [[Medical]] skill 10. At Medical 20, this is a 27% increase, at Medical 5, a 32% increase
+* A {{#expr:1 + 0.2*{{Q|Medical Surgery Success Chance|Manipulation Importance}}}}× multiplier to [[Medical Surgery Success Chance]].
+* An increase in [[Shooting Accuracy]] equivalent to +{{#expr: 0.35*{{Q|Shooting Accuracy|Sight Importance}}}} extra levels of [[Shooting]].
+* An increase in [[Melee Hit Chance]] equivalent to +{{#expr: 0.35*{{Q|Melee Hit Chance|Sight Importance}} + 0.2*{{Q|Melee Hit Chance|Manipulation Importance}}}} extra levels of [[Melee]].
+* An increase in [[Melee Dodge Chance]] equivalent to +{{#expr: 0.35*{{Q|Melee Dodge Chance|Sight Importance}} + 0.5*{{Q|Melee Dodge Chance|Moving Importance}}}} extra levels of Melee.
+
+=== Drug dependency ===
+The [[Go-juice dependency]] gene,{{BiotechIcon}} found in [[hussar]]s, completely removes the chance of normal addiction and overdose. But at 5 days without the drug, the pawn will incur severe penalties. At the least, dependency is less severe than actual addiction or withdrawal.
+
+Each dose of go-juice requires {{Required Resources}} to create. A stack of 50 neutroamine, worth {{Icon Small|silver||{{#expr:50*{{Q|Neutroamine|Market Value Base}}}}}} before [[Trade Price Improvement]] and [[difficulty]], can last a single pawn for 125 days, or just over 2 years. With 0 Social skill in [[difficulty|Losing is Fun]], this price increases to {{Icon Small|silver||{{#expr:1.4*1.2*50*{{Q|Neutroamine|Market Value Base}}}}}}. In practice, this supply will end up being somewhat shorter if you want to use go-juice for combat or work purposes. Meanwhile, psychoid/yayo can be grown inside your colony. A drug-dependent pawn will survive for up to 60 days without the drug, usually more than enough time to form a [[caravan]] or find an [[comms console|orbital trader]].
+
+Overall, go-juice dependency is very affordable; you'll just need [[Research#{{P|Required Research}}|{{P|Required Research}}]] and [[Research#Psychite refining|Psychite refining]] researched, and some form of [[trade]]. In exchange, a dependent pawn can get all the benefit of go-juice at any time, with 0% chance of any health problems whatsoever.
+
+== Gallery ==
+<gallery>
+Gojuice a.png|One Go-juice
+Gojuice b.png|Stack of go-juice
+</gallery>
+
+== Version history ==
+* [[Version/0.15.1279|0.15.1279]] - Added.
+* [[Version/1.1.2647|1.1.2647]] - Rebalanced. Addiction risk and effects reduced, safe dose interval removed. Now instantly gives [[psyfocus]]{{RoyaltyIcon}} when taken by psycasters.
+
+== References ==
+<references />
+
+{{Nav|drugs|wide}}
+[[Category:Drug]] [[Category:Hard Drug]]

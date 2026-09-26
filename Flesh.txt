@@ -1,0 +1,49 @@
+{{Anomaly}}
+{{Infobox main|structure
+| name = Flesh
+| image = Flesh.png
+| description = A dense mat of organic flesh that clings loosely to the ground.
+<!-- Base Stats -->
+| type = Floor
+| beauty = -10
+| beauty outdoors = -5
+| flammability = 0.32
+| path cost = 2
+<!-- Building -->
+| terrain affordance = Heavy
+| placeable = False
+| cleanliness = -3
+| cleaning time factor = 1.5
+| filth multiplier = 1
+| speed = 0.87
+<!-- Technical -->
+| defName = Flesh
+| label = flesh
+<!-- TerrainDef ParentName="FloorBase" -->
+| texturePath = Terrain/Surfaces/Flesh <!-- placeholder -->
+| edgeType = FadeRough
+| renderPrecedence = 340
+| affordances = Light, Diggable
+| fertility = 0
+<!-- TerrainDef Name="FloorBase" Abstract="True" -->
+| layerable = true
+| tags = Floor
+| designationCategory = Floors
+| constructEffect = ConstructDirt
+| pollutionShaderType = TerrainFadeRoughLinearBurn
+| pollutionOverlayTexturePath = Terrain/Surfaces/PollutionFloorSmooth
+| pollutionColor = (1, 1, 1, 0.8)
+| pollutionOverlayScale = (0.75, 0.75)
+}}
+'''Flesh''' is a type of removable naturally occurring [[floor]] that accompanies [[fleshmass]].
+
+== Summary ==
+Flesh can be found generating in the [[Undercave]] of the [[Pit gate]] entity and the [[Distress signal]] quest. It is most often found underneath preexisting fleshmass wall, but can be commonly seen in smaller patches adjacent to the fleshmass. It has a move speed factor of {{P|Move Speed Factor}}, the same as most natural terrain.
+
+== Analysis ==
+It is very ugly and dirty, reducing mood and increasing chances of infection alongside the already great amount of filth produced by fleshmass. As it is flammable, this can be a way to expedite floor removal, although with the temporary nature of most encounters with flesh terrain, the advantages of such are limited.
+
+== Version history ==
+* [[Anomaly]] Release - Added.
+
+[[Category:Floor]]

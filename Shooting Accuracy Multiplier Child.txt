@@ -1,0 +1,69 @@
+{{Biotech}}
+{{Stub|reason=1) Two-way links}}
+{{Verified|1.5.4104}}{{Stat
+| def name = ShootingAccuracyChildFactor
+| label = shooting accuracy multiplier
+| default base value = 1
+| to string style = PercentZero
+| show developmental stage filter = Child
+| always hide = true
+| category = PawnCombat
+| parts = StatPart_Age
+}}
+
+== Explanation ==
+It is applied as a Post Process Factor to [[Shooting Accuracy]].
+
+The following curve applies to humanlikes only and is measured in biological years:
+{| {{STDT}}
+! Age !! Factor
+|-
+! 4
+| {{Bad|×95%}}
+|-
+! 12
+| {{Bad|×98%}}
+|-
+! 13
+| '''×100%'''
+|}
+{{Graph:Chart|width=300|height=150|xAxisTitle=Biological Age|yAxisTitle=Shooting Accuracy Multiplier|type=line|x=4, 12, 13|y=0.95, 0.98, 1|interpolate=monotone|xGrid=|yGrid=}}
+
+== Stat Def Data ==
+{| {{STDT}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Shooting Accuracy Multiplier (Child)" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />ShootingAccuracyChildFactor
+* '''Label:'''<br />shooting accuracy multiplier
+| -
+|
+* Display Order:<br />'''110'''
+* Def Name:<br />'''PawnCombat'''
+* Label:<br />'''Combat'''
+* Display All By Default:<br />{{Bad|false}}
+|
+* '''To String Style:''' PercentZero
+* '''Default Base Value:''' {{%|1}}
+* '''Show Developmental Stage Filter:''' Child
+* '''Always Hide:''' {{Good|true}}
+|
+* '''Parts:'''
+** '''StatPart_Age:'''
+*** Use Biological Years: {{Good|true}}
+*** Humanlike Only: {{Good|true}}
+*** '''Curve:'''
+**** '''Points:'''
+***** (4,0.95) 
+***** (12,0.98)
+***** (13,1)
+{{Graph:Chart|width=300|height=150|xAxisTitle=Age (Biological)|yAxisTitle=Shooting Accuracy Multiplier|type=line|x=4, 12, 13|y=0.95, 0.98, 1|interpolate=monotone|xGrid=|yGrid=}}
+| -
+<!--</StatDef>-->
+|}
+
+== Version history ==
+{{Stub|section=1|reason=General}}
+* [[Biotech (DLC)]] Release - Added.
+
+{{nav|stats|wide}}

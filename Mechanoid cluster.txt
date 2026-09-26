@@ -1,0 +1,162 @@
+{{Royalty}}
+[[File:Mech cluster deploying.gif|thumb|500px|right|A large mech cluster deploying with a [[toxic spewer]].]]
+
+'''Mechanoid clusters''' are a [[major threat]] introduced in the [[Royalty DLC]]. Mechanoid clusters consist of various buildings, including [[condition causer]]s that will hinder your colony, as well as [[mechanoid]]s. They may generate through [[storyteller]] mechanics or [[quest]]s, or deployed willingly through an [[orbital mech cluster targeter]].
+
+== Generation ==
+Mech clusters will attempt to spawn by selecting a tile and seeing if the cluster can fit there. It will repeat this twenty times attempting to spawn a mech cluster. If it succeeds, the mech cluster will be spawned. If the mech cluster does not fit in any of the twenty tiles it attempted to spawn in, it will select any empty tile and spawn a mech cluster. This means for bigger bases, a mech cluster is likely to spawn partly inside the base. For very large mountain bases, if it cannot find any other valid spaces, the mech cluster is likely to land in the mountain. Landing on overhead mountain will destroy the drop pods immediately and cause large chunks of the roof to collapse which can crush items and colonists below.
+
+Mech clusters can only generate with at least 400 [[raid points]].
+
+== Summary ==
+
+=== Activation ===
+Mechanoid clusters will initially arrive dormant, with the mechs and offensive buildings will wake up under specific triggers. The entire cluster will wake up once any mech or building takes any direct damage, or when building within a 2 tile distance to a mechanoid or any non-wall, non-barricade building. Mech clusters may also appear with a [[proximity activator]] or [[count-down activator]], which will wake the cluster up. Damage to steel walls from spreading [[fire]] will '''not''' wake up the cluster. 
+
+[[Condition causer]]s and [[auto-mortar]]s will have an activation timer separate from the cluster itself, and may be active immediately. Damaging the condition causer will not activate the causer itself but will wake the rest of the cluster.
+
+=== Behavior ===
+By default, awake mechanoids will attack enemies within range, but will not stray too far from the cluster, similar to a [[crashed ship part]] or [[infestation]]. 
+
+For non-quest clusters, if any structure (including walls or barricade) falls below 50% hit points, mechanoids will attack as if they were a standard [[raid]]. Quest mech clusters do not have this 50% hit point attack threshold behavior, and will only attack once all mech cluster buildings are destroyed.
+
+Defeating a mechanoid cluster (destroying all mechs and harmful buildings) grants a {{+|4}} ''Defeated mech cluster'' [[mood]] buff to all colonists and colony-owned [[slave]]s{{IdeologyIcon}} on the map. This buff lasts 10 days and stacks up to 5 times.
+
+== Building types ==
+
+=== Miscellaneous buildings ===
+
+{| {{STDT| c_01 text-center}}
+! Building Type !! Image !! Health !! Description !! Effect !! Size !! Must be destroyed to kill cluster
+|-
+! [[Mech capsule]]
+| [[{{Q|Mech capsule|Image}}|64px]] || {{Q|Mech capsule|Max Hit Points Base}} || {{Q|Mech capsule|Description}} || Deploys 410 points of mechanoids when triggered.  || {{Q|Mech capsule|Size}} || No 
+|-
+! [[Mech assembler]]
+| [[{{Q|Mech assembler|Image}}|64px]] || {{Q|Mech assembler|Max Hit Points Base}} || {{Q|Mech assembler|Description}} || Releases 1 mechanoid of a single type periodically. Shuts down after producing 4 mechanoids. || {{Q|Mech assembler|Size}} || Yes 
+|-
+! [[Mech drop beacon]] 
+| [[{{Q|Mech drop beacon|Image}}|64px]] || {{Q|Mech drop beacon|Max Hit Points Base}} || {{Q|Mech drop beacon|Description}} || Calls mechanoid reinforcements in a local area.  || {{Q|Mech drop beacon|Size}} || | No
+|-
+! [[Proximity activator]] 
+| [[{{Q|Proximity activator|Image}}|64px]] || {{Q|Proximity activator|Max Hit Points Base}} || {{Q|Proximity activator|Description}} || Activates any nearby sleeping mechanoids when any human steps within a 12.9 tile radius. || {{Q|Count-down activator|Size}} || No
+|-
+! [[Count-down activator]] 
+| [[{{Q|Count-down activator|Image}}|64px]] || {{Q|Count-down activator|Max Hit Points Base}} || {{Q|Count-down activator|Description}} || Activates any nearby sleeping mechanoids after between {{ticks|600}} and {{ticks|1200000}} (20 days), averaging {{ticks|267060}} (4.45 days). || | {{Q|Count-down activator|Size}} || No
+|-
+! [[Mech low-shield]] 
+| [[{{Q|Mech low-shield|Image}}|64px]] || {{Q|Mech low-shield|Max Hit Points Base}} || {{Q|Mech low-shield|Description}} || Blocks projectiles from ranged weapons from all outside sources except mortars. Can be [[EMP]]ed. Turns off for 1 day every 10 days to charge. Turns off permanently when the cluster is defeated. || {{Q|Mech low-shield|Size}} || No
+|-
+! [[Mech high-shield]]
+| [[{{Q|Mech high-shield|Image}}|64px]] || {{Q|Mech high-shield|Max Hit Points Base}} || {{Q|Mech high-shield|Description}} || Blocks mortar rounds. Can be [[EMP]]ed. Turns off for 1 day every 10 days to charge. Turns off permanently when the cluster is defeated. || {{Q|Mech high-shield|Size}} || No 
+|-
+! [[Mech node]]
+| [[{{Q|Mech node|Image}}|64px]] || {{Q|Mech node|Max Hit Points Base}} || {{Q|Mech node|Description}} || Emits light in a {{Q|Mech node|Light Radius}} tile radius. Can be claimed or deconstructed for resources. || {{Q|Mech node|Size}} || No 
+|-
+! [[Unstable power cell]]
+| [[{{Q|Unstable power cell|Image}}|64px]] || {{Q|Unstable power cell|Max Hit Points Base}} || {{Q|Unstable power cell|Description}} || Provides 400W of power. Explodes when damaged || {{Q|Unstable power cell|Size}} || No
+|-
+|}
+
+=== Condition causers ===
+{{Main|Condition causer}}
+All condition causers must be destroyed for the cluster to be considered killed. 
+{{:Condition causer}}
+
+=== Defenses ===
+
+{| {{STDT| c_01 text-center}}
+! Building Type !! Image !! Health !! Description !! Effect !! Size !! Must be destroyed to kill cluster
+|-
+! [[Auto mortar]]
+| [[{{Q|Auto mortar|Image}}|64px]] || {{Q|Auto mortar|Max Hit Points Base}} || |{{Q|Auto mortar|Description}} || The auto mortar will slowly destroy even the best defended and equipped bases from a distance, making these one of the biggest threats of a mechanoid cluster. Will fire even if all remaining cluster sleep. || {{Q|Auto mortar|Size}} || Yes
+|-
+! [[Auto inferno turret]]
+| [[{{Q|Auto inferno turret|Image}}|64px]] || {{Q|Auto inferno turret|Max Hit Points Base}} || {{Q|Auto inferno turret|Description}} || A defensive turret that shoots incendiary shells from its [[Inferno cannon (Turret)|Inferno cannon variant]]. || {{Q|Auto inferno turret|Size}} || Yes
+|-
+! [[Auto charge turret]]
+| [[{{Q|Auto charge turret|Image}}|64px]] || {{Q|Auto charge turret|Max Hit Points Base}} || {{Q|Auto charge turret|Description}} || Defends Mechanoid clusters with a [[Light charge blaster|fast firing blaster]], making this one of the most dangerous turrets to try to disable. || {{Q|Auto charge turret|Size}} || Yes 
+|-
+! [[Mini-slugger turret]]
+| [[{{Q|Mini-slugger turret|Image}}|64px]] || {{Q|Mini-slugger turret|Max Hit Points Base}} || {{Q|Mini-slugger turret|Description}} || A small common defensive turret used by mechanoid clusters. Fairly harmless but has incredible range.  || {{Q|Mini-slugger turret|Size}} || Yes
+|-
+|}
+
+== Analysis ==
+Tackling a mech cluster by charging in head-on is unwise, as the mechanoids will have the advantage of terrain and turrets while colonists will not. Preparation is recommended, from shelling it with [[mortar]]s to using [[cover]] and [[EMP]] to give colonists as much advantage as possible. Melee is also feasible, with the only melee mechanoid being the [[scyther]]. 
+
+Alternatively, it is possible to ignore the mech cluster and live under it conditions, depending on what the problem causer is, so long as colonists' [[allowed area]]s forbid going near the cluster. For example, a cold [[climate adjuster]] may not be dangerous if the colony already has a [[greenhouse]] and warm clothing. Clusters without a condition causer or with an irrelevant condition causer may be ignored, and potentially beneficial as the mechs will fight any human [[raider]]s that come across it.
+
+=== Effective tools ===
+* [[Blind smoke]] ([[smoke launcher]], [[smokepop pack]]s, the [[Smokepop]] psycast): Smoke prevents turrets from targeting pawns entirely, making it much easier to approach and damage the cluster. If/when the mechanoids are lured out away from the cluster, smoke will make dealing with turrets 100% safe.
+* [[EMP]]: EMP damage stuns all mechs and turrets. If there is no proximity activator, a user of [[EMP grenades]] can be placed in a key location and stun effectively. [[EMP shell]]s can work from a distance.
+* [[Invisibility]]: A pawn that can self-cast invisibility multiple times in a row can go in, destroy any problem causers and automortars, and get out unharmed.
+* Bomb type damage ([[mortar]]s, [[triple rocket launcher]]s, aerodrone [[permit]] strikes, [[frag grenade]]s): Bomb damage deals 4x damage to impassable buildings, and certain explosives like mortars have long enough range to attack safety from a distance.
+* [[Firefoam pop pack]]s: These immediately extinguish fires from [[auto inferno turret]]s and [[centipede burner]]s, which can otherwise be dangerous to pawns.
+
+=== Walls and Cover ===
+If a mechanoid cluster has not yet activated, your colonists can prepare buildings to make it easier to handle. Building a wall between the cluster and your base will prevent turrets from shooting your colonists, and allow your troops more flexibility to maneuver while dealing with mobile units. Be careful to remove the [[Home area]] around the wall so colonists don't decide to go cleaning or firefighting just in front of the wall. (Designating allowed areas for your colonists can also help keep them safe.)
+
+If you intend to use direct fire attacks, you should take care not to wall the cluster away entirely, or you may be unable to disable the turrets. Leave a way for your troops to shoot at the cluster from cover, and provide a protected path to access this site.
+
+If a mech cluster is well beyond your colony's abilities, you may be able to wall it in entirely while you prepare better armament. If the cluster is unable to harm you, such as by way of a condition causer or auto-mortar, you may even opt to leave it alone entirely, until a different group of uninvited guests, such as [[Pirates]] or [[Insectoids]], wanders into the cluster and softens them up for you. Be careful with friendly factions and any incoming [[caravan]]s however.
+
+'''When constructing anything, be careful not to build within 2 cells of the cluster buildings or sleeping mechanoids, as this will activate it, proximity activator or not.'''
+
+=== Luring mechs ===
+Unless the cluster spawned via [[quest]], once any building of a mech cluster is destroyed, the mechanoids will pursue and attack colonists en masse, regardless of distance from the cluster. This will lure the mechs into a [[killbox]] or any number of defensive fortifications, and more importantly, lure mechs away from the cluster's turrets. This makes it significantly easier to deal with the cluster, as the turrets alone can be trivially destroyed with the help of a [[smoke launcher]].
+
+Destroying buildings can be done via [[mortar]] fire or other long-range attacks like [[triple rocket launcher]]s, planting [[IED trap]]s while the mechs are dormant (don't place them within 2 tiles of a building or near a countdown activator) and setting it off, via [[invisibility]], and so on.
+
+If the mechs won't leave the cluster, it is possible to lure the mechs, attack for a bit from long range, then back off until the mechs retreat. Using the [[invisibility]] + [[skip]] psycasts to repeatedly attack mechs, back off, recover neural heat and psyfocus, and attack again is also an effective tactic.
+
+=== Activation ===
+Instead of damaging a building and luring the mechs towards your base, or using mortar fire, it is possible to deal a powerful first strike before the mechs wake up. 
+
+It is possible to get up close if there are no proximity activators. If getting up close, [[EMP grenade]]s, [[frag grenade]]s, and melee pawns in general are effective at disabling mechs and damaging buildings. The [[Berserk]] or [[Berserk pulse]] psycast can be used on a [[centipede]] to act as a durable distraction.
+
+[[Triple rocket launcher]]s can deal great damage if it has a clear line of fire to important buildings and/or mechanoids. [[Doomsday rocket launcher]]s are similar but less effective.
+
+=== Mortars and indirect fire ===
+For mech cluster without a mech high-shield, [[mortar]]s are a great, low risk way of dealing with them, especially as the mechanoids linger in a small, confined area. Prolonged shelling can easily destroy mech clusters and weaken the mobile mechanoids substantially before triggering them to attack your colony (where you can take advantage of your base defenses). The main disadvantage of mortars is that they are expensive
+
+For mech clusters with a mech high-shield, you can either try to destroy the shields first with snipers, or simply break the shield using [[EMP shell]]s. Firing an [[EMP shell]] into the shield will disable the mech high-shield for {{Ticks|1080}} time, allowing other mortars shells to hit the cluster, potentially destroying the shield before it comes online again. The most used strategy for EMP shells is to set all mortars to "hold fire" then "set target" to where you want to hit. Select only the mortar with EMP shell and click "hold fire" again, wait one second and select all the other mortars loaded with high explosive shells (as many as you can) and also click "hold fire" again. This will assure the EMP shell is fired first, disabling the mortar shield, and allowing all the other shells to hit.
+
+Other forms of long-range explosives are similarly effective to mortars. If a colonist has the appropriate [[Titles#Permits|imperial permits]], they can call down either an aerodrone strike or an aerodrone salvo. [[Orbital bombardment targeter]]s can also work to take out a mech cluster. [[Tornado generator]]s are great at taking out a single building, but are too unreliable beyond that.
+
+All mechs and mech buildings (except [[wall]]s and [[barricades]]) are fireproof, so [[incendiary shell]]s are ineffective.
+
+=== Direct Fire Tactics ===
+Long range weapons like the [[sniper rifle]] can be used to take out important buildings slowly, or at least lure the mechs into attacking, from a distance. Smoke from a [[smoke launcher]] or the [[smokepop]] psycast is heavily recommended, as it will prevent long ranged turrets from locking on.
+
+Building cover, having pawns with general weapons like [[assault rifle]]s, and using smoke or otherwise blocking the turrets can also be effective with enough firepower.
+
+Depending on the damage you inflict, and the mechanoids' behavior, you may have to decide between withdrawing to your base or mounting a shootout from your forward positions.
+
+=== Misc tactics ===
+* Roofing over Automortars will now wake up the mech cluster. In previous patches, one could roof over an automortar without waking up the mech cluster.
+
+=== Tactics to avoid ===
+* While you may benefit from [[Defense_tactics#Melee_blocking|melee blocking]] as you face mechanoids, you should not destroy effectors with melee weapons. They are liable to explode, harming the troops who are attacking them. 
+* Using an imperial permit to call a light trooper squad can help you deal with mobile units, but if they are exposed to extensive turret fire they probably won't last very long.
+
+== Gallery ==
+<gallery widths="400px" heights="400px" class="center" mode="nolines">
+File:Small Mech Cluster.png| '''A small mech cluster with a climate adjuster''' <Br> '''High shield (White) and Proximity Activator (Red) radii visible'''
+File:Large Mech Cluster.png| '''A max [[raid point]] mech cluster with a toxic spewer'''
+</gallery>
+
+== Trivia ==
+* All mech cluster buildings, not including the condition causers, not only have a [[Flammability]] of 0%, but also take no damage from attacks with the [[Damage Types|Flame]] damage type. This is in contrast to, for example, a [[stone]] [[wall]] which will not be ignited by [[molotov cocktails]] but will take the 10 flame damage from the initial attack.
+* Mech Clusters do not spawn elite mechanoids normally summoned by a Mechanitor in [[Biotech]].
+
+== Version history ==
+* [[Version/1.1.2575|1.1.2575]]:
+** Implement mech shield generator charge cycle. Shields now go down for a random day every 10 days
+** Condition causers and mortars now sometimes take several days to initiate threatening the colony.
+** Make mortar/bullet shields shut down when the cluster is defeated.
+* [[Version/1.2.2753|1.2.2753]] - Ensure all the mech cluster buildings wake up once it was attacked
+* [[Version/1.4.3523|1.4.3523]] - Fix: Placing 0 work buildings beside/on mechanoids could wake them up, which could trigger them on command.
+
+{{nav|mechanoid|wide}}
+[[Category:Factions]]

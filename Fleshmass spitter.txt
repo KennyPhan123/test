@@ -1,0 +1,84 @@
+{{Anomaly}}
+{{Stub|reason=spawn rates and weapon stats}}
+
+{{Infobox main|structure
+| name = Fleshmass spitter
+| image = Fleshmass spitter B.png
+| description = A defensive fleshmass organ that can spit acid long distances. The acid is a natural byproduct of toxins filtered from the surrounding biomass.
+<!-- Base Stats -->
+| type = Structure
+| beauty = -12
+| hp = 300
+| flammability = 0.7
+| rotatable = false
+<!-- Building -->
+| size = 2 * 2
+| passability = impassable
+| cover = 0.75
+| blockswind = true
+| terrain affordance = Light
+<!-- Ranged Combat-->
+| mode = Burst
+| damage = 10
+| armorPenetration = 15
+| damage type = AcidBurn
+| warmup = 240
+| cooldown = 7,500
+| range = 41.9
+| minrange = 6.9
+| velocity = 41
+| burst = 1
+| missRadius = 3
+| blastRadius = 3.9
+| stoppingPower = 0.5
+<!-- Technical -->
+| defName = FleshmassSpitter
+| label = fleshmass spitter
+<!-- ThingDef ParentName="BuildingNaturalBase" -->
+| thingClass = Building
+| graphicClass = Graphic_Indexed_SquashNStretch
+| texPath = Things/Building/Fleshmass/FleshmassSpitter
+| drawSize = (2.5, 2.5)
+| drawOffset = (0, 0.02, 0)
+| shaderType = BuildingSquashNStretch
+| maxSnS = (.9, .95)
+| offsetSnS = (.5, -.45)
+| drawerType = RealtimeOnly
+| tickerType = Normal
+| altitudeLayer = Building
+| soundSpawned = SpitterSpawn
+| soundImpactDefault = Fleshmass_Damaged
+| isInert = true
+| claimable = false
+| canBuildNonEdificesUnder = false
+| deconstructable = false
+| quickTargetable = true
+| isTargetable = true
+| destroyEffecter = FleshmassDestroyed
+| verbClass = Verb_Shoot
+| forceNormalTimeSpeed = false
+| defaultProjectile = Bullet_Shell_AcidSpit
+| isMortar = true
+| requireLineOfSight = false
+| soundCast = SpitterSpit
+| canTargetLocations = true
+| compClass = CompFleshmassSpitter
+}}
+
+'''Fleshmass spitter''' acts as a medium range mortar that defends the [[Fleshmass heart]].
+
+== Occurrence ==
+One Fleshmass spitter spawns with the initial growth spurt of the fleshmass heart, with an additional one spawning each time a new [[Nerve bundle]] spawns.
+
+== Summary ==
+
+== Analysis ==
+
+== Gallery ==
+<gallery>
+Fleshmass spitter A.png|Fleshmass spitter with mouth open, ready to fire their acid spray
+Fleshmass spitter B.png|Fleshmass spitter with mouth closed
+</gallery>
+
+== Version history ==
+* [[Anomaly DLC]] Release - Added.

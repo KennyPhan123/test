@@ -1,0 +1,37 @@
+{{BackToTutorials}}<br/>
+Defs are packages containing most of the content for the game. They are stored in human-readable XML files, and you can take a look at them right now by browsing the Mods/Core/Defs folder located in the RimWorld install directory. There are many different types of ''Defs'', the most common being [[Modding Tutorials/ThingDef|ThingDef]]. Other examples of Defs are RecipeDef, ResearchProjectDef and TerrainDef.
+
+Think of Defs as the system that turns a generic plant into a [[Potato plant|Potato-]], [[Rice plant|Rice-]] or [[Corn plant]]. The C# contains the plant and its behaviour like growing and getting harvested the Defs determine how fast it grows and what its harvest products are.
+
+=Requirements=
+# You've read [https://rimworldwiki.com/wiki/Modding_Tutorials/XML_file_structure XML file structure].
+# A basic understanding of [https://www.w3schools.com/xml/ XML] is recommended.
+# Some C# knowledge is helpful for a deeper understanding of the behind-the-scenes workings, but not required.
+
+=What you'll learn=
+This tutorial will tell you about the structure of Defs. It will explain the link between C# and Defs, as well as go over some common errors. If you want to learn what every tag for a Def is, read the [[Modding Tutorials/ThingDef|ThingDef]] article.
+
+=Structure=
+As previously established, the root node of all ''defs'' in the game is <Defs>. RimWorld will try to interpret everything between the opening tag of <Defs> and </Defs> as a ''type'' of ''def''. These ''types'' correspond to a C# class which inherits from the ''Def'' class. For example <source lang="xml"><Defs>
+	<ThingDef>
+	</ThingDef>
+</Defs></source><br/> points to the ''ThingDef'' class, which in C# inherits from the ''Def'' class. All XML nodes inside the ''<ThingDef>'' tag are a field in the ''ThingDef'' class. These fields can hold references to simple values like integers or strings. ''defName'' is one such string in the base ''Def'' class, so we'll give our ''ThingDef'' a ''defName'' of ''SomeName''. A field can also contain more complex values like ''IngestibleProperties''. The XML tag (and field name) that corresponds to IngestibleProperties is called ''ingestible''. ''IngestibleProperties'' also has fields of its own, and these would go inside the ''ingestible'' tag, as a ''childnode''. ''IngestibleProperties'' has a field of type ''SoundDef'' with the name of ''ingestSound''. RimWorld resolves these by both ''Type'' and ''defName''. Fleshing out our example with an ''ingestSound'', our example now looks like this: <source lang="xml"><Defs>
+	<ThingDef>
+		<defName>SomeName</defName>
+		<ingestible>
+			<ingestSound>Slurp</ingestSound>
+		</ingestible>
+	</ThingDef>
+</Defs></source><br/>
+
+The rootnode of our example is ''<Defs>''. The first childnode of ''<Defs>'' is ''<ThingDef>''. ''<defName>'' and ''<ingestible>'' are both childnodes of ''<ThingDef>'' and they are siblingnodes of each other. Proper XML formatting will help you a lot in distinguishing the hierarchy of your XML. You can save yourself a lot of hassle if you get a text editor (or plugin) which can auto-format XML for you.
+
+=Common errors=
+{{Main|Modding Tutorials/Troubleshooting}}
+For beginning coders, the most common errors are '''formatting or syntax''' errors. A missing bracket, unclosed tag, empty file - these can all be avoided by using the proper tools. Get a text editor (or plug-in) that highlights or warns for these basic issues. RimWorld will not warn you: at best it will overload you with errors, at worst it will refuse to start.
+
+=Note about (solving) XML errors=
+XML errors '''cascade'''. Behind the scenes, RimWorld combines all Defs inside one massive XML document. If one <tag> is missing its closing </tag>, none of the XML will be readable by the parser and you will be greeted by a wall of red errors. Find the first XML error, and fix that one. Do not go chasing the other errors just yet. Reload the game, then fix the next error (if any).
+
+[[Category: Modding tutorials]]
+[[Category: Modding]]

@@ -1,0 +1,66 @@
+{{Stub|reason=General}}
+{{Image wanted|reason=Illustrative examples of spreading, dissipation, and other mechanics.}}
+'''Gases''' are a class object that behaves in a certain way. There are currently four gasses:
+* [[Blind smoke]]
+* [[Rot stink]]
+* [[Tox gas]] {{BiotechIcon}}
+* [[Deadlife dust]]{{AnomalyIcon}}
+== Mechanics ==
+
+Gasses have a density of 0-100% (which is represented in the engine as 1 byte for a maximum integer value of 255 density). This is calculated for each tile that contains gas, separately for each type of gas. Walls, closed doors, and other blocking structures such as [[Nutrient paste dispenser]]s prevent gas from spawning or diffusing onto their tiles. 
+
+=== Dissipation ===
+
+Dissipation causes gas density to be reduced in each tile overtime.
+
+On each tick, a random 1/64 of all map tiles are ticked for gas dissipation. Smoke and Rot stink dissipate at an average rate of ~1.57% (4) density per 64 ticks, while Tox gas dissipates at an average rate of ~1.18% density (3) per 64 ticks.  60 ticks is 1 second at 1x speed, for reference. 
+
+Gas now dissipates slower in roofed areas.{{Check Tag|How much slower?}}
+
+Gases exposed to [[vacuum]]{{OdysseyIcon}} will dissipate extremely quickly.
+
+=== Diffusion ===
+
+Diffusion causes gas density to spread from tiles of higher density to lower density. Tox gas and Rot stink gases may diffuse, while Smoke does not. The minimum density for Tox gas and Rot stink to diffuse is ~6.66% (17), below which diffusion ceases.
+
+On each tick, a random 1/32 of all map tiles are ticked for gas Diffusion. For each tick of diffusion, the tile being ticked will average its gas density with that of an adjacent tile with a lower density of gas.
+
+Gases can only diffuse to open tiles, without walls, closed doors, or other blocking structures like nutrient paste dispensers.
+
+=== Spawning ===
+
+When gas is spawned, if gas already exists in the tile, any resulting gas density over 100% is pushed out to adjacent tiles, up to 40 tiles away from the source. Multiple sources spawning gas, such as multiple pawns using tox weapons, will fill much more space, much faster, with gas than a single pawn due to this.
+
+==== Explosives ====
+Explosives that spawn gas such as the projectiles of the [[Toxbomb launcher]], [[Tox grenades]], and [[Smoke launcher]] spawn 100% density of gas on each tile within their explosive radius. Any tiles in their explosive radius that does not allow gas such as a wall causes that gas density to not be spawned. Thus for maximum tox gas spawning into a confined space, an open 3x3 space for all 9 tiles of tox gas generation should be used.
+
+==== Packs ====
+Packs that release gas such a deployed [[Tox pack]] or [[Smokepop pack]] have a total density (defined as a number of cells filled to 100% density) they release over their duration at their position, spawning gas every 1/30 ticks (2 times a second at 1x speed).
+
+==== Rot Stink ====
+Rot stink is generated from a rotting corpse on each rare tick (1/250 ticks, or 4.16 seconds at 1x speed), with a density of ~20.4% (52) per unit of of the corpse's body size. Rot stink is generated on the corpse's cell.
+
+=== Vents ===
+
+Tox gas and rot stink pass through vents, while smoke does not.
+
+On each rare tick (1/250 ticks, or 4.16 seconds at 1x speed), the gas density of tox gas and rot stink on each side of a vent is averaged and equalized. For example, if one side has 90% and the other 20%, after a rare tick both sides will have 55%.
+
+Vents that have been closed will not allow gases to pass.
+
+=== Doors ===
+
+A closed door acts the same as a wall, preventing spawning and diffusion of gas onto the tile. Open doors act the same as an open tile for spawning and diffusion. Closing a door with existing gas will cause the gas to remain on the tile, but no longer diffuse to or from other tiles, or be spawned on that tile. Gas on closed door tiles will dissipate over time as normal.
+
+== Testing ==
+
+[[File:Smokelauncher gas physics comparison.mp4|thumb|left|Gas expanding from a single point to fill a room]]
+{{clear}}
+
+== Version history ==
+* [[Version/1.4.3523|1.4.3523]] - Gas system added. Previously smoke was the only gas and it only existed as a temporary object with a set but refreshable duration.
+* [[Version/1.4.3555|1.4.3555]] - Gases can now travel through vents.
+* [[Version/1.5.4062|1.5.4062]] - Gas now dissipates slower in roofed areas.
+* [[Version/1.6.4535|1.6.4535]] - Fix: Gases on gravship never dissipate after landing.
+
+[[Category: Game mechanics]]

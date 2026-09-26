@@ -1,0 +1,83 @@
+{{Version Nav}} 
+
+Hey everyone, it's time for another update!
+
+This update fixes a variety of bugs and includes a number of changes that should make the ideoligions system less restrictive and more flexible.
+
+Key among those is a new way to play with Ideology content active, but without actually running the ideology system. The ideology system is great for players who want to do something different, but it could be overwhelming for someone on their first game or who just wants to relax. This new option allows running the game without the complexity of the ideologion system, but with almost all the Ideology content active, including the biosculpters, ancient complex quests, Gauranlen trees, public executions, and more. (Some buildings like skullspikes and loudspeakers are still buildable despite not doing much without ideoligions active - they make nice visual flair if you want them.)
+
+We've also reworked how a few pieces of Ideology work to make common ideoligions reduce micromanagement and annoying situations, especially when you're hosting guests from NPC-generated ideoligions.
+
+There are also a variety of bug fixes and other improvements - see the changelog below.
+
+This update should be compatible with all saves and mods.
+
+Thanks to everyone who helped test on the official dev Discord! And as always, please don't hesitate to review Ideology on its Steam page!
+
+Cheers,
+Ty
+
+== New feature ==
+* Added a new play option that allows playing with Ideology content active, but without the ideoligions system active. This is appropriate for someone on their first game, or who isn't trying to do something specific with ideoligions. Ideology content includes things like: Ancient complex quests, biosculpter technology, Gauranlen trees, ancient debris, etc.
+
+== UI improvements ==
+* Reworked ideoligion setup UI. Classic, custom and load buttons are now selectable elements that take effect when the player hits "next".
+* The old "classic" mode is now called "classic-like" and is one of the "mild" presets.
+* Meme tooltips now list all prevented precepts instead of just saying how many there are.
+* Randomizing precepts no longer brings up a confirmation dialog if the user has not edited precepts.
+* We now draw a thin faint box around ideoligion preset selectables, precept and meme boxes. Looks better.
+* Ideoligion building missing alerts now specify what building it is a variant of. It also displays where you can find it in the architect menu or which buildings produce it.
+* A "Show all" checkbox on ideo dialog shows all hidden precepts.
+* Updated meat eating precept and thought labels and descriptions to better match gameplay.
+
+== Tuning - General ==
+* Added a 0.75x factor to [[Raid points#Pawn points|pawn points]] for colony [[slaves]] when calculating threat point (wealth points was already adjusted for slaves). This means having slaves won't attract larger threats as much as colonists.
+* Reduced mechanoid CenterDrop raid arrival mode weight at 1000+ points 3.5 -> 1.3. Mechanoids are now more likely to arrive by walking in to the map edge.
+* Reduced mechanoid RandomDrop raid arrival mode weight at 1000+ points 1.9 -> 1.3. Mechanoids are now more likely to arrive by walking in to the map edge.
+
+== Tuning - Ideoligions ==
+* Meme FleshPurity no longer forces the anti-biosculpting precept. This should allow players to use biosculpting to recover limbs for their purists so they don't end up being all amputees after a while.
+* Bigotry precepts don't have associated memes any more, so won't appear unless specifically configured by the player. This reduces annoyances around dealing with bigoted guests and recruits.
+* Remove the carnivore precept requirements from the Rancher meme. Reduce Rancher meme's plant work speed factor from 0.9 to 0.70. Reduce Rancher meme's impact from 3 to 2. This reduces annoyances and fiddliness with carnivore food restrictions, and balances the meme more simply, with an upside to animal raising matched by a downside to crop raising.
+* Remove the 'no recent animal slaughter' negative thought from the rancher meme, along with all associated code and content. This particular thought was too limiting for players and not worth having.
+* Remove most meme associations from vegetarian and carnivore precepts. These shouldn't appear unless player specifically configures them. This should reduce annoyances around food requirements of specific guests or recruits.
+
+== Misc ==
+* Added a debug tool for spawning meals with specific ingredients.
+* Reworked eclipse precept artwork.
+* Updated "name in game" player names.
+* The system now ensures all mods adhere to their forceLoadBefore and forceLoadAfter lists.
+* Only log warning message if quest script is unaffected by points and population. The user is warned with "[not now]" if affected by points or population.
+* Added fail message for generating single quest.
+* Improve some charity quest-related message texts.
+* In classic mode, ensure factions generated after initital world gen use the same classic ideoligion.
+* Raid sample debug outputs now correctly uses lastRaidFaction and resets it afterwards.
+
+== Fixes ==
+* Fix: Rendering bug (all rectangles are white) on intel graphics.
+* Fix: Error generating sampled raid info under faction's min points to generate combat encounter.
+* Fix: NullReferenceException when attempting to trade from shuttle.
+* Fix: "Assign owner" tooltip for animal beds mentions humanlike owners.
+* Fix: Getting raid sample info for non-hostile factions re-selects a hostile faction, giving inaccurate results.
+* Fix: Torture crown is automatically equipped by colonists.
+* Fix: Classic mode ideoligions don't start with some classic precepts.
+* Fix: Blindness from resurrector mech serum is not cured by biosculpter regen cycle.
+* Fix: Resurrector mech serum plays resurrection sound on item pickup, not on application.
+* Fix: Error when generating pawn from factions that do not have allowed cultures, or their allowed cultures do not have styleItemTags.
+* Fix: Faction ideoligions are not reset on going back from colonist selection screen if the player first chooses classic, then another option.
+* Fix: Mods without forceLoadBefore/forceLoadAfter cannot be enabled.
+* Fix: Mods with forceLoadBefore/forceLoadAfter cannot be disabled.
+* Fix exploit: Player is able to claim ruined furniture on non-home maps and draw out an enemy attack on the claimed furniture. Now ruins are only claimable if there is no non-downed hostile pawn on the map.
+* Fix: RitualObligationTrigger_EveryMember doesn't recache active obligations on ideoligion reform.
+* Fix: Non-site psychic emanation and suppression ship parts don't have their gender randomized.
+* Fix: Bugs related to copying an ideology for reform process.
+* Fix: Shelves, chairs and stools don't have style dominance.
+* Fix: Ideoligion info available on ritual begin dialog in classic mode.
+* Fix: Loading classic mode game gives the player non-classic rituals.
+* Fix: Execution requires altar or ideogram in classic mode.
+* Fix: Inverted check when checking if a player can claim factionless buildings.
+* Fix: Jumping resets "Fire at will" toggle.
+* Fix: Exception using some mods. Added LastAnimalSlaughterTick property as obsolete.
+* Fix: NullReferenceException slaughtering animals without Ideology installed.
+* Fix: Research warning doesn't check for minor ideoligions.
+* Fix: Fluid ideoligion with proselytizer gains development points for all conversions, including conversions to other ideoligions.

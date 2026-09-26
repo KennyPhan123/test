@@ -1,0 +1,125 @@
+{{Version Nav}}
+Alpha 17 – On the Road has been released! This version brings roads and rivers to the world, new world quests, new tools for modders, new combat tools, smarter AI, and rebalancings and adjustments across the whole design.
+
+I’m afraid that this build is not compatible with saved games from previous versions, or mods from previous versions. However, you can continue to use the old version until you’re ready to update. If you’re on Steam, to continue using the old version, go to your Steam Library, right-click on RimWorld, click Properties. Open the Betas tab and use the drop-down menu to select the alpha16 version. Restart Steam to force an update.
+
+If you downloaded the game DRM-free, you can update whenever you like by re-downloading from your existing download link. Your link is always the same and always gives the latest version.
+
+In the old builds, balance problems meant that some exploit-y strategies did work and obviated some of the challenges in the game. Since those problems are now fixed, you may find the game a little bit more difficult. It wouldn’t hurt to play at one notch lower difficulty to start with in Alpha 17. You can always increase the difficulty later, even during the game, through the options menu.
+
+==Release Trailer==
+
+<youtube>https://www.youtube.com/watch?v=x8eyPE2yuoE</youtube>
+
+==Changes==
+
+===Roads and rivers===
+* World now generates with roads and rivers
+* There are five road types: path, dirt road, stone road, ancient asphalt road, ancient asphalt highway
+* Some roads generate with things alongside, like concrete barriers or ancient lampposts
+* There are four sizes of river: huge river, large river, river, and creek
+* Rivers generate more in rainy areas, move towards the sea (ignoring tiny lakes) and merge as appropriate
+* Rivers and roads generate on local maps as expected.
+* Stone roads generate using local stone and a new flagstone terrain type.
+* Visitors, caravans, traders, and raiders tend to arrive and leave on the roads.
+* World generation is more chronological now. First continents form, then rivers, then an ancient society is shallowly simulated to generate ancient roads, then modern settlements and roads are generated (alongside ancient roads, often).
+
+===World quests===
+* New “site parts” world site generation system. It allows assembling together a world destination from several ‘parts’. Mixing and matching will allow us to create a huge number of combinations.
+* New world quest incident: Item stash. An allied faction tells you about a stash of randomly-generated reward items, guarded by a random threat. You can send a caravan to defeat the threat and collect the reward.
+* New world quest incident: Bandit camp. An allied faction asks you to defeat a bandit camp, and offers you a reward if you do so.
+* New world quest incident: Caravan request. An allied faction asks you to deliver a particular resource to a particular base in a particular time frame, for a special reward.
+* New ‘long-range mineral scanner’ building slowly scans for precious resource lumps nearby in the world. You need to send a caravan to collect them. Lumps may be defended.
+* New caravan incident: Payment demand. Raiders demand items or slaves from your caravan; if you refuse, they attack.
+
+===Other new stuff===
+* Added [[smokepop belt]]. Emits a cloud of accuracy-reducing smoke when the wearer is shot. Smoke also prevents turret targeting.
+* Characters can now tend their own wounds (with a penalty to effectiveness).
+* Added [[bowler hat]].
+* Corpses now leak black corpse bile while rotting.
+* [[Vent]]s can be opened and closed with a flick action.
+* Add option to render hats only on the main game map (but not on the portraits in the pawn bar).
+* Bills can now be temporarily paused when satisfied, until automatically reactivated at a lower level. This reduces the need for pawns to repeatedly return to the work bench each time the count falls just one below the target count.
+* You can now create your own packaged survival meals (with appropriate research and ingredients).
+* All pawns now have “head butt” attacks they can use if they’re missing all other attacking body parts.
+* Added a “caravan packing spot” so you can tell your caravans where to assemble.
+* When trees burn, they leave behind burned tree stumps.
+* When structures and plants burn, they leave behind ash.
+* [[Carpets]] and [[Wood floor|wooden floor]]s can now burn.
+* New training lessons for explaining shield belts, and how door opening speed is affected by material type.
+* Added ambrosia sprout incident. This sprouts a grove of the pleasurable, nutrition, and addictive ambrosia fruit trees nearby.
+* New ‘[[wimp]]’ trait makes pawn incapacitated from even a relatively small amount of pain.
+* New [[chain shotgun]] weapon
+
+===Modding===
+* Modders can now add “def modifiers” which, instead of replacing a whole def, change specific fields of that def. This allows multiple mods to change the same def without wiping each others’ changes (unless they change the same field, of course).
+* Information on how to use def modifiers is in this forum thread: https://ludeon.com/forums/index.php?topic=32735.0
+* Various enums are now defs so modders can add new ones (TrainableIntelligence , DamageArmorCategory, ImpactSoundType, ReservationLayer, BillRepeatMode, PrisonerInteractionMode, FleshType).
+* GUI tables (like most of the main tabs along the bottom of the screen) are now defined by data, making it easier to add, rearrange, sort, and change columns on the UI.
+
+===Increasing skill relevance===
+* Mining skill reworked: Steeper [[Mining Speed|speed]] penalty for low skill. [[Mining yield]] is now slightly dependent on mining skill.
+* [[Trade Price Improvement|Trade price]] spread made much wider, but social skill also has a much greater effect on it.
+* Added “[[animal gather speed]]” stat which makes some pawns faster at gathering wool or milk.
+* Added “[[Animal Gather Yield|animal product yield]]” stat which makes some pawns more/less likely to waste the product when gathering wool or milk.
+* Removed post-process curve from [[melee hit chance]] so it uses the simple level-by-level tuning. It’ll be much harder to hit things now at low melee skills. Note: Default hit chance is 0.6 for pawns without skills. This equals the chance of a pawn with melee skill 6.
+* Added a [[Melee dodge chance|melee dodge stat]], so better melee-skilled pawns will have more advantage. Pawns don’t melee dodge while aiming or firing ranged weapons.
+* Work tab boxes are easier to identify skill level for visually.
+* Added small crunching sound that plays when you assign a pawn to a skill they’re terrible at.
+
+===AI===
+* AI has more intelligent ranged shot target selection with random elements. Harder to exploit, and looks less dumb, doesn’t shoot at chickens as much.
+* Raider with mega-weapons will now avoid friendly fire
+* Sapper groups will now choose another sapper if the first one is killed, making them much more persistent.
+* Sapper groups will now continue digging even while defending from attack.
+* Animals flee when harmed.
+* Added a new state to caravan lord job, “bloody exit”, which makes the exit individually, as aggressively as possible. This makes it a bit hard to rob caravans.
+* Raiders will no longer compulsively attack doors.
+* Base defense AI is touchier; stealth raids will be much much more difficult (and probably infeasible most of the time).
+* Doctors now tend heavy bleeding injuries and diseases near lethal severity first.
+
+===Misc===
+* Plants now have different graphics when they are harvestable – you can see the berries/cotton/corn on the plant ready to be taken.
+* Buy/sell price spread for trading is much wider (150%/50%).
+* Drugs are now slower to produce, slower to grow, and heavier.
+* Cannibalism is harder on mood.
+* Integrated incidents (ambush, manhunters, etc) better with caravans and temporary maps. Incidents can now target both of these, and the story state (incident cooldowns, etc) is passed back and forth between a caravan and its map to maintain continuity.
+* Plant generation algorithm for map start reworked to generate plants in more interesting patterns, with denser areas and more clear areas interspersed, and groves of trees in sparse biomes.
+* New graphics for some floor types and things (stone floors, stone chunks, etc).
+* Made crop growing cycles significantly longer, especially for long-cycle plants like corn.
+* Shifted all medical potencies so that normal medicine has potency of 1.0. (This increases surgery success chances).
+* Added global sell price factor for apparel (70%) and furniture (70%).
+* Rebalanced drug economy so it’s viable to buy neutroamine, make drugs with it, and sell them.
+* Because it was way OP, chemfuel can no longer be made from haygrass.
+* Reworked surgery success chances. We now feedback room surgery success chance on medical bed. Rebalanced room surgery success chance calculations and fixed a bug where it was 100% when outdoors. Removed surgery success chance exponents.
+* Colonists wearing human leather clothes now get a negative thought (unless they have a bloodlust or cannibal trait, in which case they get a mood bonus).
+* Balanced blood loss recovery time to be much slower (50 real seconds -> 4 game days)
+* Buffed [[mortar]]s so players use them: Cheaper/faster to build, faster shooting, greater accuracy, cheaper shells
+* Armor now takes a constant fraction of incoming damage instead of absorbing all prevented damage. This solves an issue where good quality armor would be destroyed sooner.
+* [[Sun lamp]]s now turn themselves off when plants are resting
+* Equipment rack is now a general [[shelf]] which can hold pretty much anything.
+* Small items like gold and silver are now 10x smaller, not 20x, so it’s more feasible to build things from them.
+* Jade is not small any more.
+* Other bases regenerate their trade stock less often.
+* Changed flammability for fur and leather to 100%, and for meat to 50%.
+* Manhunter pack incident can now use any kind of animal.
+* Rebalanced all trader stock generation.
+* Traders will generate with fewer extreme quality items.
+* Pawns missing heads will have visually missing heads.
+* It’s no longer possible to create a settlement directly adjacent to an existing settlement.
+* Caravans now enter/leave tiles when touching the tile boundary, instead of when in the center of the adjacent tile.
+* Redesigned how capacities are calculated from body part efficiencies with an entirely new collection of algorithms, to stop various nonsensical cases and simplify how health conditions can affect the body.
+* Gear tab now displays item stack masses.
+* Caravans now generate a lot tougher.
+* All caravans now buy art. Art is lighter (e.g. easier to sell) and has a sell price bonus so it’s now a better trade good.
+* Catharsis thought is more powerful but shorter in duration.
+* Redesigned stats so that in almost all cases, high numbers are better.
+* Rebalanced the beauty system to be much more dependent on art; random furniture has less or no beauty effect.
+* Ship part crash incident now scatters rubble and chunks around the crash site.
+* Healroot grows wild now, in some biomes
+* Added caravan route planner. It allows placing several waypoints, and measures the time to travel the route along them.
+* There is now a progress dialog while the planet mesh is generating (so people don’t think the game crashed).
+* Date system reworked. Seasons are now arbitrary “quadrums” which cover 1/4 of the year and are the same on the whole planet.
+* Fixed various memory leaks.
+* Many exploits mitigated or prevented by various design tweaks.
+* Many, many, many other bugfixes, tunings, and redesigns.

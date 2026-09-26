@@ -1,0 +1,148 @@
+{{BackToTutorials}}
+<small><&nbsp;[[Modding Tutorials/Custom Comp Classes]]</small><br/>
+
+{{:Modding_Tutorials/Outdated}} 
+
+Although neither explicitly nor formally linked, Map-, World- and GameComponents share a very similar design (and because of that they also share one tutorial). Similar to [[Modding Tutorials/ThingComp|ThingComp]], you can add any custom code to your Map-, World- or GameComponents for you to call manually. It also has methods called at specific occurrences that you can override.
+
+'''Benefits''':<br/>
+<nowiki>+</nowiki> Are very well supported by RimWorld.<br/>
+<nowiki>+</nowiki> Generally safe to add to existing saves.</br>
+<nowiki>+</nowiki> Work at a very global level.<br/>
+<nowiki>+</nowiki> Can save data.<br/>
+<nowiki>+</nowiki> Certain functionality gets automatically called by RimWorld.<br/>
+<nowiki>+</nowiki> Can be employed to achieve lots of different types of functionality.<br/>
+<nowiki>+</nowiki> Are always accessible.<br/>
+
+'''Downsides''':<br>
+<nowiki>-</nowiki> Removing a mod with these types of components from a save-game results in a (mostly harmless) one-time error.<br/>
+<nowiki>-</nowiki> Does not expose any of its functionality to XML.<br/><br/>
+
+== Requirements ==
+* You need to have [[Modding Tutorials/Setting up a solution|set up your editor and environment]]
+* You need to know [[Modding Tutorials/Writing custom code|how to write custom code]]
+* A [[Modding Tutorials/Decompiling_source_code|decompiler]] helps, because this tutorial isn't going to tell you the exact implementation details of the Map-, World- or GameComponents.
+
+== What you'll learn ==
+How to use Map-, World- or GameComponents, for the price of one.
+
+== Setting up ==
+RimWorld will automatically create an instance of all classes that inherit from Map-, World- or GameComponent.
+
+To implement a Map-, World-, or GameComponent, we need to inherit from the respective class and implement a parametered constructor inheriting from base. See [[Modding Tutorials/GameComponent#Example Code|example]]. This constructor tells your Map-, World-, or GameComponent what Map, World, or Game it belongs to.
+
+Note that you'll need ''using RimWorld.Planet;'' for WorldComponents.
+
+== Example Code ==
+<source lang ="csharp">
+using RimWorld;
+using Verse;
+using RimWorld.Planet;
+
+namespace MyExampleMod
+{
+    public class MyExampleWorldComponent : WorldComponent
+    {
+        public bool myExampleBool = true;
+
+        public MyExampleWorldComponent(World world) : base(world)
+        {
+        }
+    }
+}
+</source>
+And there we have it. That creates an instance of a WorldComponent. We can then put things like a tracker for "How often did we trade with Faction X" in, or [[Modding Tutorials/GameComponent#Overridable methods of Map-, World- or GameComponent|override one or more of the accessible methods.]] Since these types of components are accessible from pretty much anywhere, they lend themselves to a wide variety of uses.
+
+== Accessing your Map-, World- or GameComponent ==
+These all follow the same design that [[Modding Tutorials/ThingComp|ThingComp]] follows; GetComponent<''TYPE''>().
+===MapComponent===
+First off: Know that null is a perfectly valid value for a Map:
+* Players can abandon all their maps and just caravan around.
+* A pawn on a Caravan is in a null map.
+* A pawn inside a ThingHolder (Carried by another pawn, inside a cryptosleep casket or transport pod, inside a Corpse) is in a null map.
+Trying to access your Component from something that is null leads to bad things happening. Null-check.
+
+====From a Thing on a map====
+<source lang ="csharp">
+thing.Map.GetComponent<MyExampleMapComponent>();
+</source>
+Note: If the thing in question is inside a ThingHolder, use thing.MapHeld instead. That iterates through the ThingHolders until it finds a Map (or null) to return.
+
+====From the currently visible map====
+<source lang ="csharp">
+Find.CurrentMap.GetComponent<MyExampleMapComponent>();
+</source>
+Note: Ensure that you want your MapComponent to do stuff on the ''currently visible'' map. thing.Map is often better.
+
+====From who knows where====
+If you want to play it safe, you can add something like the below to your MapComponent class to return it like so:
+<source lang ="csharp">
+        public static MyExampleMapComponent GetMapComponentFor(Map map)
+        {
+            if (map == null)
+            {
+                Log.Error("Called GetMapComponent on a null map");
+                return null;
+            }
+
+            if (map.GetComponent<MyExampleMapComponent>() == null)
+            {
+                map.components.Add(new MyExampleMapComponent(map));
+            }
+            return map.GetComponent<MyExampleMapComponent>();
+        }
+</source>
+The safety this design offers is two-fold: It null checks the Map and gives a useful warning, and it handles the rare case where something went wrong with instantiating the MapComponent. This can happen when your MapComponent caused an exception during instantiation, or when a MapComponent that was loaded before yours threw an exception during itsinstantiation.
+
+===WorldComponent===
+<source lang ="csharp">
+Find.World.GetComponent<MyExampleWorldComponent>();
+</source>
+
+===GameComponent===
+<source lang ="csharp">
+Current.Game.GetComponent<MyExampleGameComponent>();
+</source>
+'''Gotcha:''' The constructor should take a parameter of type ''Game'' (or you'll get errors saying "Constructor not found") 
+
+Note the difference in Current vs Find for Game vs Map- and World Components.
+
+== Overridable methods of Map-, World- or GameComponent ==
+'''NOTE''': This is up to date for version 1.0.2150. For the most up-to-date info, grab a decompiler.</br>
+'''NOTE''': Not every method listed here is available to all three types of Component.</br>
+'''NOTE''': Mentally replace TYPE with the type associated with your Component, be it Map, World or Game.</br>
+
+It does not make sense to override every method listed here. It therefore goes without saying you should only override those methods need.
+
+===TYPEComponentUpdate===
+Runs per frame, even when the game is paused. Best used for things that need updating regardless of [[Time|tickrate]], but it's unwise to put game logic here.
+
+===TYPEComponentTick===
+Runs per Tick.
+
+===TYPEComponentOnGUI===
+Runs per frame, when the TYPE is currently visible. Not available to WorldComponent. Useful for adding GUI stuff.
+
+===ExposeData===
+{{Main|Modding Tutorials/ExposeData}}
+Saves data.
+
+===FinalizeInit===
+Called when RimWorld is done instantiating the TYPE. This runs after your constructor.
+
+FinalizeInit runs after creating a new instance of TYPE and when loading. If you need instance data from your TYPE (like a WeatherManager, LordManager whatever else) this is the place. This is also the place to initialise your TYPEComponent if your constructor is at risk of throwing: There is no try/catch logic in instantiating new components, but there is for FinalizeInit. Throwing an exception in your constructor '''will''' cause issues with generating the Game/World/Map, whereas throwing in FinalizeInit ''may'' cause issues.
+
+===StartedNewGame===
+Unique to GameComponent. Almost, but not quite, entirely unlike FinalizeInit.
+
+===LoadedGame===
+Unique to GameComponent. Left as an exercise to the reader.
+
+===MapGenerated===
+Unique to MapComponent. Left as an exercise to the reader.
+
+===MapRemoved===
+Unique to MapComponent. Left as an exercise to the reader.
+
+[[Category: Modding tutorials]]
+[[Category: Modding]]

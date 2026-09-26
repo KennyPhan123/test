@@ -1,0 +1,56 @@
+{{Stub|reason=1) Two-way links}}
+{{See also|Sharp Damage}}
+{{Verified|1.5.4104}}{{Stat
+| def name = BluntDamageMultiplier
+| label = blunt damage
+| description = A multiplier on damage from blunt-type attacks for weapons made of this [[Stuff|material]].
+| default base value = 1
+| to string style = PercentZero
+| show if undefined = false
+| category = StuffStatFactors
+| display priority in category = 4506
+}}
+
+== Bases ==
+<div><li style="display: inline-table;">
+{| {{STDT| sortable}}
+! Material !! Stuff Categories !! [[Property:Melee Blunt Damage Factor|Blunt<br />Damage<br />Factor]]
+|-
+{{#ask: [[Melee Blunt Damage Factor::+]]
+| ?Stuff Category
+| ?Melee Blunt Damage Factor
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Name
+}}
+|}
+</li><div>
+
+== Stat Def Data ==
+{| {{STDT}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Blunt Damage" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />BluntDamageMultiplier
+* '''Label:'''<br />blunt damage
+| A multiplier on damage from blunt-type attacks for weapons made of this material.
+|
+* Display Order:<br />'''74'''
+* Def Name:<br />'''StuffStatFactors'''
+* Label:<br />'''Multipliers when made of this'''
+* Display All By Default:<br />{{Good|true}}
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0.05}}
+* '''To String Style:''' PercentZero
+* '''Show If Undefined:''' {{Bad|false}}
+| -
+| 4506
+<!--</StatDef>-->
+|}
+
+== Version history ==
+* Between [[Version/0.7.581|0.7.581]] and [[Version/0.9.722|0.9.722]] inclusive - Added.
+
+{{nav|stats|wide}}

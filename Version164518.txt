@@ -1,0 +1,781 @@
+{{Version Nav}}
+[https://docs.google.com/document/d/e/2PACX-1vRCjqVtPQDFGu4POiKTUd_8o3U2Asdhx99SOvcgU66ABdYtk3Cgndd53yJ6BC4tZX530pp_m6lf4Z9P/pub Source].
+
+== New stuff - base game ==
+
+=== Better planning ===
+
+* Plans can be recoloured to help differentiate them.
+* Plans now work like zones: contiguous regions of the same color are joined together, and can be selected as a whole.
+* Plans can be copied and pasted. You can double-click a specific plan, or use the “copy selection” command to draw an area over all of the plans you want to copy.  You can rotate these copied plans with the Q and E keys (rebindable).
+* Plan regions can be renamed to remind you what they’re for.
+* When right-clicking plan or zone gizmos, a dropdown appears where you can hide or show all plans and zones.
+
+=== Designator draw styles ===
+
+* Many designators (like orders, placing walls and floors, painting, etc.) now have a switchable “draw style” that changes how they behave when you click and drag them. These can be cycled through with the Q and E keys (rebindable).
+* The draw styles include:
+** Line: The normal wall drag behavior.
+** Angled line: A line at an angle you control.
+** Filled rectangle: The normal floor drag behavior.
+** Empty rectangle: A rectangular outline.
+** Filled oval: A circular shape within the bounds of the dragged area
+** Empty oval: A circular outline within the bounds of the dragged area
+** Note that designators don’t always have all of the draw styles. For example, wood-chopping in a diagonal line is not useful.
+
+* Squares (and circles) are now easy to make - holding the control key while using certain designators forces them into a square.
+* Added a “remember draw styles” game option. When enabled, the last draw style you used for a particular designator will be remembered. For example, if you were to use the empty oval draw style to build circular walls, the next time you place wall blueprints, the empty oval style will still be selected.
+
+=== Blueprints ===
+* Blueprints can now be placed over similar buildings, letting you easily change material or upgrade a building.
+* This applies to walls, conduits, doors, sandbags, barriers, fences, chairs, and beds. For example, you can place a plasteel wall blueprint over an existing wooden wall, or place a double bed blueprint over a single bed.
+
+=== Caravan camps ===
+* Caravans can set up camp while travelling. This creates a temporary map to play on that can be quickly abandoned. This allows you to pause your caravan’s journey and stabilize in cases of injury, starvation, or sickness.
+* Camps will be attacked if the caravan is not reformed after 4 days.
+
+=== Map generation ===
+* Rivers, mountains, caves, and coasts are now considered “map features” which will show in the tile inspect pane and information window on the world map.
+* Rivers should generally look smoother and curve more nicely. Rivers that cut through rock will have walkable areas on either side and larger rivers will create canyons. Rivers will also do a better job at matching the angle of the river on the world map.
+* Rivers in certain biomes now generate with riverbank terrain, which has high fertility.
+* Rock generation is now more varied and interesting.
+* Coasts have more interesting shapes, and are no longer constrained to the four cardinal directions.
+* Mountain directions are no longer constrained to the four cardinal directions, and will be slightly more varied in shape.
+* Added support for plants that grow in water. Cypress trees now grow in mud and marsh.
+* Insects hives always spawn surrounded by glow pods.
+* Maps generated for quest sites are now all at least 200x200.
+
+=== Flight ===
+* Some birds can fly! This includes chickens, ducks, and geese.
+* Flying increases a creature’s movement speed, ignores terrain move speed penalties, and allows passing over some obstacles like fences. Flying creatures do not trigger traps.
+* Flying animals can enter the map by flying, landing anywhere on the map, instead of arriving at the map edge.
+* Flying animals can also leave the map by flying. This can happen naturally, or if they’re startled (for example, by a gunshot).
+
+=== Search improvements ===
+* The in-game search bar is better at finding things. It now searches for def names, thing labels, and renamed things.
+* The search bar now looks in pawn inventories and containers.
+* The in-game search bar can be used on the world map to find things.
+* Increased the maximum search characters from 15 to 30, so you can type more into the search bar.
+* Added a search bar to save and load menus.
+
+=== Art ===
+* Made improvements to the water shader so it shows the sky’s reflection.
+* Added water ripples when pawns walk across water.
+* Updated art for large desiccated birds.
+* Updated sandbag filth texture
+* Ducks, bears, and devourers now have unique visuals when moving on water.
+
+=== UI ===
+* Added a “Jump to…” gizmo to the world map which shows player colonies, caravans, and quest locations.
+* World objects with active maps now have a green border around them.
+* World objects which are searched now have a yellow border around them.
+* Added separate toggle on world screen for important world objects such as colonies, quest locations, and active maps.
+* Added debug options to show TPS and FPS counters and a memory usage breakdown.
+* Added a “Make default” button for policies.
+* New settlements are now tracked on the history graph.
+* Bills can now be renamed.
+* In the "manage areas" window, you can now change the color of an area by clicking the colored square.
+
+=== Quality of life ===
+* Bridges are now paintable.
+* Added a deconstruct conduits designator.
+* Colonists can now be ordered to dress other pawns, including prisoners.
+* Added a toggle to special trees to prevent them from being cut down by the cut plants/harvest plants designator.
+* Added a toggle to hackables to mark them as auto-hackable. Colonists assigned to research will automatically hack them.
+* Added a gizmo to pod launchers to toggle auto-building transport pods.
+* Added a gizmo to order a pawn to eject fuel from refuelable buildings.
+* Added a cooldown to the message that occurs when an item deteriorates in a storage zone. Now you won't get spammed if you're throwing old clothes in a river.
+
+== Improvements and adjustments - base game ==
+=== Performance===
+We made major performance optimizations targeting mid-to-late game colonies. On an example machine, we saw 20-30% additional TPS in late game colonies. We rewrote many systems to spread out their workload. The pathfinding system is now fully multithreaded and batched, and the lighting system is also multithreaded. Pawns/Things are now ticked less often in certain circumstances (e.g. when off camera). There are also several optimizations to minor systems and fixes to major memory leaks.
+
+We significantly reduced game launch times in version 1.6! For example, on our development machines version 1.5 previously launched in 18.57s with all expansions. Now version 1.6 launches in 4.66s - and that's with an additional expansion!
+
+Note that your startup times and TPS improvements may differ from our tests due to bottlenecks unique to your PC or mods. 
+
+===Scaria changes===
+* Scaria now changes a pawn’s appearance to look red, mangy, and covered in sores.  
+* Animals with scaria are no longer manhunters by default. However, once they become manhunters, they remain manhunters until they die or are cured of scaria.
+* Animals with scaria cannot be tamed, and are more likely to become manhunters when attacked.
+* Wounds from scaria-infected pawns can cause "scaria infections". Scaria infections work like regular infections, but when they reach 100% the pawn gets scaria instead of dying.
+* Humans can now get scaria from “scaria infections”. When afflicted, humans go into a permanent berserk rage that lasts until they die or are cured of their scaria infection.
+
+===Caravan improvements===
+* Items that are waiting to be loaded into a caravan can be cancelled in the caravan tab. Similarly, items that are loaded into a caravan can be removed using the caravan tab. 
+* Caravans that are in the process of forming can now be forced to depart immediately. Colonists will leave the map as soon as possible, without loading any additional items, roping any animals, or picking up any incapacitated pawns. Anything not loaded into the caravan will be left behind. 
+* Caravans now take the shortest path to the map exit, instead of leaving the map in the direction they would be travelling in. 
+
+=== Insect behaviour improvements ===
+
+* Fixed a number of inconsistencies and issues with insect behaviour. Their AI should now generally be less buggy. 🪲
+* Improved several targeting and hostility issues with insects.
+* Improved insect behaviour if they lose their group AI or are spawned without it.
+* Fixed insects losing their group AI after they went to sleep or were downed.
+* Fixed insects losing aggression when the last hive on the map is destroyed.
+* Fixed insects fleeing gunshots.
+
+===UI===
+* Relevant icons now display on float menu entries. This should help you quickly find the right option in a crowded menu.
+* Disabled float menu entries are now more verbose, and there should be less generic disabled messages.
+* Remaining equipment charges (e.g. utility packs) are now shown in tooltips.
+* Added some red text beneath the list of ingredients for a surgery in the tooltip, detailing prosthetics that would be replaced, if the surgery would replace any existing prosthetics.
+* Merged automatic refuel toggle, current fuel display, and configuration of target fuel into one gizmo.
+* Improved move speed stat report for current terrain.
+* Added cooler and vent as related build commands for walls.
+* Removed alert for hunters with non-ranged weapons. Added a message when designating animals to be hunted with either no hunters or no hunters with ranged weapons.
+* Pawn headgear is no longer shown in the “create characters” screen.
+* Various buildings now show “off” on their inspect pane when not working.
+* Add “features” row to world tile inspector (alt key).
+* Planet & terrain tabs are now shown when selecting sites and settlements.
+* Speed controls are now disabled while the game is force paused.
+* Added warnings when trying to settle in several extreme biomes.
+* Added/disabled needs from traits now show in that trait’s tooltip.
+* Animal training checkboxes are now paintable (click and drag)..
+* Shuttle/transport pod “cancel load” gizmo now displays as “unload all” if there is nothing left to load.
+* Made improvements to trainability stat readout.
+* Adjusted ordering of world map toggles.
+* Made minor UI tweaks to ritual dialog.
+* Improved readability of disabled gizmos.
+* Accept hotkey (return) now works in more places.
+* Reward preference checkboxes are now paintable (click and drag).
+* The growth speed information on a plant’s inspect pane is now more condensed.
+
+=== Quality of life ===
+* Joiners from quest rewards now display their highest skill instead of not providing any information.
+* Steam geysers are now highlighted when placing geothermal generators.
+* Sarcophagi are now prioritised higher than graves by default.
+* Items will now be moved out of the way before pawns construct doors.
+* Pawns with hauling disabled will still return books to bookshelves.
+* Medical drugs are now excluded by default from the “burn drugs” bill.
+* You can order colonists to extinguish other burning colonists via a right-click command.
+* Items with no quality are now ignored by quality settings in filters. Previously, these items were treated as normal quality. This created issues if, for example, you wanted to create an apparel policy that only used good or better quality apparel.
+* If all colonists are downed on a temporary map (like a quest location), the map will no longer close. Instead, these maps will be closed if all colony-controlled pawns die.
+
+
+===Room balance changes===
+* Added a small mood buff to mediocre bedrooms, and reduced the mood debuff of awful bedrooms.
+* Some production buildings now have a work speed penalty if they are not in the correct room. E.g. Research bench works best when it's in a laboratory. (This makes it more rewarding to create reasonable-looking bases with purpose-specific rooms instead of cramming everything into a single giant room.)
+* Updated several building work types.
+* Adjusted room type calculations to deprioritize store rooms, and prioritize more important rooms.
+* Capped the contribution from medical beds towards a room becoming a hospital. This prevents a medical bed from turning a barracks into a hospital.
+
+===Weapon and armor balance changes===
+
+====Armor ====
+* Plate armor benefits more from the materials you make it from. 
+* Flak pants and flak jackets sharp protection increased from 40% to 55%. 
+* Flak vests no longer cover shoulders. 
+* Marine, prestige marine, and grenadier armor movement speed changed from -0.4 to -0.25. 
+* Cataphract, prestige cataphract, and phoenix armor movement speed changed from -0.8 to -0.5. 
+
+====Weapons ====
+* Pila: Touch accuracy increased from 50% to 80%, and cooldown reduced from 4 seconds to 2.5 seconds.
+* Revolver: Medium range accuracy increased from 45% to 55%, and long range accuracy increased from 35% to 40%. 
+* LMG: Cooldown reduced from 1.8 seconds to 1.6 seconds, and damage increased from 11 to 12.
+* Sniper rifle: Cooldown reduced from 2.3 to 1.5 seconds, medium range accuracy increased from 86% to 88%, and long range accuracy increased from 88% to 90%. 
+* Minigun: Touch accuracy increased from 15% to 20%, and cooldown reduced from 2.3 seconds to 1.5 seconds.
+* Charge rifle: Damage increased from 15 to 16, and range increased from 26 to 28.
+* Charge lance: Range increased from 30 to 33. Note: Lancer combat power has been increased to 190 to compensate. 
+
+=== Other balance changes ===
+* Surgery success chances benefit more from sterile conditions.
+* Construction failure is more forgiving. A minimum of 1 of each resource is always returned after a botched construction.
+* Subsequent maps after the player’s starting map will now have fewer mineable resources and a lower chance of ancient dangers. This is adjustable via a slider in the storyteller settings.
+* Sieges can now happen after reaching 500 threat points (down from 700).
+* Slightly increased ancient soldier initial resistance.
+* Shaman merchants will now buy animal parts like tusks and horns.
+* Reduced time before pawns defending an enemy settlement decide to launch an assault down from 4.2 days to 10 hours.
+* Workbenches that are outdoors now get an 80% workspeed multiplier (from 90%).
+* Reduced the beauty penalty for natural filth (rock rubble, sand, dirt) if it's outside.
+* Ancient beds now provide slightly less comfort (0.55 down from 0.75).
+* Add missing suppression offset on some helmets / armors.
+* Lynxes now have a trainability of Intermediate.
+* Colonists now read slower in darkness.
+* Horse food consumption increased to 0.86 nutrition per day (up from 0.68).
+
+=== Miscellaneous  ===
+* Pathfinding will be significantly more accurate, especially at larger distances.
+* Face masks have been moved from Biotech to Core.
+* Timbershrooms have been moved from Ideology to Core.
+* Deep drills now produce the same type of stone that they're placed on, when possible.
+* Changed plant generation to ensure that some plants can always spawn on extremely hot maps.
+* Waterproof conduits can now be built on mud.
+* More junk can be deconstructed.
+* Attack option is no longer shown when ordering drafted pawns to move to ancient junk on hostile maps.
+* Scatterables no longer render on top of floors.
+* Ducks can now spawn in cold bog and temperate swamp biomes.
+* Some animals like ducks will now seek out bodies of water. They will also no longer prefer to path over land more than water.
+* Fertilized eggs now turn into unfertilized eggs upon being ruined. Added unfertilized versions of all eggs.
+* The player’s starting spot now chooses a buildable location in the largest contiguous open area.
+* Agarilux no longer die from the cold.
+* Cleaned up the pawn stat panel.
+* The default "paste" food policy now excludes pemmican by default.
+* Reduced the speedup at 3x speed when the player has no active maps.
+* Non-colonist pawns attempting to exit the map can now use map portals if they are on a pocket map. For example, they will exit the pit gate when trying to leave instead of just wandering forever.
+* Colonists are more likely to feed kibble to downed animals. No more feeding lavish meals to sick iguanas!
+
+=== Improvements and adjustments - Royalty ===
+==== Miscellaneous  ====
+* Rebalanced the number of pawns required for pawn lend quests (it should generally be lower now).
+* Shuttles now provide 65% comfort, up from 0%.
+
+=== Improvements and adjustments - Ideology===
+====Improved ancient complex generation====
+* Ancient complexes now have more interesting and realistic layouts. You'll find hallways, living areas, workshops - along with all the same deadly traps!
+
+====Miscellaneous====
+
+* Improved ancient complex generation.
+* The “Small spaces: Don’t care” issue has been renamed to “Indoors: Preferred” to better represent the actual gameplay function, and has also been changed to medium impact.
+* The indoors need no longer requires an overhead mountain to raise the need past 50%.
+* The float menu to add precepts has been reorganised. For example instead of adding “precept/Execution: Required” it is now “precept/Execution/Required”, and is now sorted alphabetically.
+* Pawns will now play drums for recreation.
+* You can now see the name of a colonist's favorite color by hovering over it in their bio.
+
+=== Improvements and adjustments - Biotech=== 
+==== New gene - Webbed phalanges ====
+* Ignores movement speed penalties from water terrain.
+* Decreases manipulation by 5%.
+
+==== New gene - Indoor dweller ====
+* Disables the outdoors need.
+* The dirtmole xenotype has this gene.
+
+==== Miscellaneous====
+
+* Children who are learning a lesson will now display who is teaching that lesson on their inspect pane (to make it easier to figure out who the teacher is if they are not attending the lesson).
+* When deconstructing wastepack atomizers, the nano structuring chip is now returned.
+* Growth tier 8 now provides 3 or 4 passion choices (up from 3).
+* Added scrollbar to selected gene list in xenotype editor.
+* The gene extractor’s "Insert person" float menu is now ordered by colonist/prisoner and then alphabetically.
+* Reduced market value of xenogerms to avoid easy money with high-skilled pawns.
+
+=== Improvements and adjustments - Anomaly ===
+==== Miscellaneous ====
+
+* Incinerator weapons no longer have quality.
+* Scaled up brain damage from chronophagy significantly at old ages, as effects like tough or robust can reduce it.
+* Minor improvements to undercave generation.
+* "Need holding platforms" alert can no longer occur before day 4 to reduce early-game noise. The alert title is also consistent with similar alerts.
+* Added a minimum crafting skill requirement to turret packs.
+* Added lab coat to default worker apparel policy.
+* Reduced the radius of deadlife IED traps.
+
+=== Dev tools===
+* Added dev tool to set the stuff of a thing.
+* Added dev tool to set a tile’s biome.
+* Fixed dev tool options not updating when switching between world and map.
+* Added dev command to generate maps on world tile.
+* Added noise visualisation tools to map and world.
+* Added debug output for trader animal tags.
+* Added dev tools to unlock all apparel.
+* Added prefab creation and spawning tools.
+
+=== Technical=== 
+* Updated from Unity 2019.4.30 -> 2022.3.35
+
+=== Terrain=== 
+* Added new “foundations” terrain layer which sits above natural terrain but below floors. Bridges are now in the foundation layer.
+* Added new “temporary” terrain layer which sits above floors.
+* Biomes can now define several terrain types to be used by the map generator when generating beaches, water, etc.
+* Terrain can now be a light source and heat source.
+
+=== Miscellaneous ===
+
+* Added dynamic setup nodes, state driven node graphics, curve driven animations, and optimizations to the pawn render system.
+* Dynamic node setup allows for easy addition of render nodes on a pawn at runtime with scripts. For example, apparel, hediffs, traits, genes, ect.
+* Graphic states allow for the quick changing of a pawn’s graphics during gameplay, for example, in animations. You can tag a keyframe with a graphic state and the renderer will use that graphic to render by default. You can also specify graphics for each graphic state in the render node per pawn as required.
+* Curve driven animations allow you to define animation data in a way more familiar to animators, rather than setting exact offsets. You can now express changes in offset/angle/scale as curves over time, allowing for much smoother animations.
+* Added support for plants that grow on any terrain regardless of fertility.
+* The float menu has been rewritten to be much more modder friendly and fault-tolerant.
+* Mutants have been rewritten to be more modder friendly.
+* Refactors to map portal/pocket map code to be more modder friendly.
+* Allow mod authors to declare alternative package IDs for mod requirements.
+* Moved world pather into layer to prevent out of range exceptions in modded content. We previously had a global pathfinder, whereas in 1.6 we require you to specify the exact layer you want to pathfind on to prevent simple scripting mistakes.
+* Added support for different fog colors.
+* Plants can now have unique min and max growth temperatures.
+
+=== Performance ===
+* Several game systems now have a variable tick rate (VTR), which means they run less often depending on their state, and the player's view state. With this Things in the game can now easily contain delta based logic, running as slow as 4Hz (compared to the standard 60Hz update rate).
+* Significantly reduced game launch times.
+* Rewrote pathfinder to be entirely multithreaded and batched, using Unity’s burst technology.
+* Rewrote the glow grid to be burst multithreaded.
+* Optimized caravan foraging calculations.
+* Optimized egg-laying pawns.
+* Optimized caching statistics.
+* Optimized many alerts.
+* Optimized multiple ideology precepts and royal title requirements.
+* Optimized the hauling system.
+* Optimized animal pen food calculations.
+* Multiple other smaller optimisations across many systems.
+* Fixed multiple long-standing memory leaks which could result in reduced performance and available system resources, especially on long play sessions or sessions which involve frequent reloading of saves.
+* Very minor optimization to pawn cell sharing logic.
+* Fix: Massive lag spike related to caravans with lots of food.
+* Fix: Major stutter when pawns are trying to exit the map.
+* Optimisations to holding platforms.
+
+=== Modding ===
+* All modding-related changes can be found in the [Public] Modder Primer for 1.6.
+
+=== Art ===
+* Added new visuals for immature trees that are leafless.
+
+===UI===
+* When using the search feature, items that are equipped by a pawn or in a container have a special icon.
+* Items in caravan animals' inventories now show up in map search.
+* On the world map, the fuel range for launchables is now shown in addition to their max range.
+* The deathpall “corpse raised” message now has a 24-hour cooldown so it's less spammy.
+* Show all range indicators when hovering "attack" gizmo for multiple pawns with different weapons.
+
+===Miscellaneous===
+* Added Vietnamese language support.
+* Loosened watermill placement rules to make them easier to place on diagonal rivers.
+* When hovering over an entry in the "add operation" list, show if it would restore a missing body part.
+* Update prison cell thoughts to reflect the changes to awful and mediocre bedroom thoughts.
+
+===Technical/Performance===
+* Added a new XML loader which loads defs roughly 40% faster.
+* The game now targets your monitor's refresh rate instead of 60fps (this may be overridden by driver settings).
+* Some performance optimizations, particularly to maps with lots of pawns or things needing hauling.
+* Increase log message count cap, cap stacking errors at 99.
+* Added filters to the log window to filter by severity.
+* All room types can be bigger. This prevents a big room from having a "none" role.
+* Add error if def type is missing when loading XML.
+* New compute shader texture compression is disabled on lower VRAM graphics cards, can also be disabled manually using  –disable-compute-shaders command line argument.
+* Minor improvements to XML load time from file.
+* Small optimization to RadialCellsAround.
+* Small optimization to hostility checks (avoiding calling IsPsychologicallyInvisible where possible).
+* Changed static resources to only be disposed upon game exit.
+* Pawn.ExitMap is now virtual for modding purposes.
+* Make a couple methods in Building_TurretGun virtual for modding purposes.
+* Improve error message when failing to load a list item due to an invalid class name.
+
+=== Dev Tools ===
+* Added a dev tool to spawn drop pod raids at a location within a radius.
+* Added a dev gizmo to fix break downs.
+
+=== Bugfixes ===
+* Many fixes to quests not supporting nomadic and multiple colonies.
+* Several misc string adjustments and typos fixed.
+* Fixes for Anomaly content while the Monolith is despawned.
+* Fix: Smart raiders now correctly avoid some traps.
+* Fix: Nearsighted accuracy factor being applied incorrectly.
+* Fix: Corpses can spawn in unwalkable areas.
+* Fix: Duplicate mech overlay color.
+* Fix: "SpacedroneSelfDestructsIn" translation key in wrong expansion.
+* Fix: Cached incidents being skipped if the target is the wrong type. E.g. Ambush.
+* Fix: Non-home maps no longer get deleted when all pawns on it enter a pocket map
+* Fix: Things that are supposed to draw offscreen do not.
+* Fix: Floating point serialization bug.
+* Fix: Raid strategies forced into parms aren't used when they're considered "incompatible".
+* Fix: Incorrect average medicine quality on medical bills.
+* Fix: Factionless quick target buildings not quick targetable.
+* Fix: Neurotrainer use label was forced lowercase.
+* Fix: Index out of range error when giving disease to pawn on pocket map.
+* Fix: Animal gets stuck "standing" when trying to be roped.
+* Fix: Child cannot capture entities unless designated first.
+* Fix: Exception when selecting a quest pawn that hadn't landed yet.
+* Fix: Crafting bills can go into negative amounts.
+* Fix: Exception in DrawThoughtGroup for IdeoBuildingDisrespected.
+* Fix: Add disabled float menu text for rescuing pawn with medical care disabled.
+* Fix: "Clean room" job doesn't detect if there's no path available.
+* Fix: Activation float menu option for void monolith appears but does nothing if pawn cannot reach monolith.
+* Fix: Unsuitable food appearing in float menu on pawns with ideo restriction.
+* Fix: Baby icon rendering.
+* Fix: Old reachability bug.
+* Fix: BuildingBase defaults to Item altitudeLayer.
+* Fix: Colonists unable to place certain items on certain terrain.
+* Fix: Child pocket maps aren't considered when checking if map can be removed.
+* Fix: Crash to desktop when testing if a trade request can occur.
+* Fix: Improved spawn selection in maps with structures.
+* Fix: Enumeration error when destroying buildings.
+* Fix: Shelves spawned in ruins no longer have storage enabled.
+* Fix: Error in meditation pulse shader.
+* Fix: Minor correction to pocket map wealth.
+* Fix: Added eyes to metalhorrors.
+* Fix: After childbirth in a shared bed, husband won't sleep in it until reassigned.
+* Fix: Pawns would sit at unclaimed chairs.
+* Fix: Drop pods coming through thick roofs in some situations.
+* Fix: Pawns from other factions walking directly over sleeping mechanoids wakes them up.
+* Fix: Pawns think ritual seating isn't the ideo style.
+* Fix: Animals without a food need are now tameable.
+* Fix: Drop pods not giving message error if destination is out of range.
+* Fix: Various skyfallers landing on unaffordable terrain.
+* Fix: Heaters ticking when minified.
+* Fix: Factions with xenotype occasionally fail to generate pawns.
+* Fix: Reference to mechanitor corpse in letter lost when saving.
+* Fix: Combat command throwing exception when pawn leaves map.
+* Fix: Refugee betrayal causing exception if not on original map.
+* Fix: Creepjoiner letter breaks if unspawned.
+* Fix: Strange Signal quest spawning monolith in fogged area.
+* Fix: Pawns could haul from fogged cells.
+* Fix: Unknown mech gestation job state UI error.
+* Fix: Exception when attempting to extinguish fires which have been destroyed.
+* Fix: Possible to carry bestowers to shuttles when not downed.
+* Fix: Several joy jobs could select fogged cells.
+* Fix: Properly clear stat caches when starting a new scenario (for pawn generation).
+* Fix: Labyrinth layout being flushed incorrectly.
+* Fix: Creepjoiner error if map is destroyed.
+* Fix: Pawns can refuel fogged generators.
+* Fix: Screen breaking in screenshot mode when loading game.
+* Fix: Removed maps not clearing lords, causing errors for recycled pawns.
+* Fix: Animal graphics using wrong shader.
+* Fix: World UI label in incorrect pos at high UI scales.
+* Fix: Biosculpter select gizmo shows wrong rotation and scale.
+* Fix: Distress signal building faction not cleared.
+* Fix: Error cleaning up ritual with dead target.
+* Fix: Ingest error if no spot is available.
+* Fix: Jobgiver error on emptying waste from standard recharger.
+* Fix: Settlements/outposts sometimes having unfogged rooms.
+* Fix: Mountain graphics overlapping on smaller world tiles.
+* Fix: Pawn AI attempting to flee when no exit is possible.
+* Fix: Recreation gain flickering.
+* Fix: UI thing icons not supporting multiple materials, fixed color issue with UI textures.
+* Fix: Add missing Anomaly preview in mod page.
+* Fix: Blueprints disappearing on save load in specific circumstances.
+* Fix: Self-tending NPCs don't reserve themselves.
+* Fix: "Collection was modified" error when springing trap.
+* Fix: World map icons are now sorted correctly.
+* Fix: Significant lag hovering over recreation bar.
+* Fix: AI casting on barricades.
+* Fix: Colors for blueprints incorrect in UI icons.
+* Fix: Pawns now prioritise reading on tables over other surfaces.
+* Fix: Devourers/jumping pawns couldn't land on legal cells.
+* Fix: Health slider in apparel policies now rounds to nearest percentage.
+* Fix: Pawns placing materials in far away blueprints in certain circumstances.
+* Fix: Exception when opening ornate door.
+* Fix: Book thing set maker now respects qualityGenerator.
+* Fix: Self-shutdown mechs are now carryable like other pawns via float menu.
+* Fix: Issues with downed/crawling pawns and lords.
+* Fix: Being roped now ends roaming mental state.
+* Fix: Prevent xenogerms from spawning in cargo pods.
+* Fix: Sleeping mechanoids getting removed from lords.
+* Fix: Exception in pawn health tracker.
+* Fix: Complex shader not clipping in UI.
+* Fix: Refuelables using power when flicked off.
+* Fix: Refueling could use fogged chemfuel.
+* Fix: Loudspeakers showing needs power icon even when flicked off.
+* Fix: Ingest reservation warning.
+* Fix: Emancipating slaves/prisoners on pocket maps.
+* Fix: Pawns no longer unload stocked medicine when returning from caravan/pocket map.
+* Fix: Prioritized work/job queue is now cleared on entering a map portal.
+* Fix: Update rules around deconstructability of mech buildings.
+* Fix: Traders exiting the map immediately if they can’t find a path to the colony.
+* Fix: Openable container graphics being visible under empty graphics.
+* Fix: Exception when trading.
+* Fix: Error when reinstalling wall lamp on wall that was just deconstructed.
+* Fix: Reduce scale of several styled helmets.
+* Fix: Various bugs and inconsistent behavior with invalid scenarios.
+* Fix: Bugged settlements are now removed from the world.
+* Fix: Audio clips not streaming on non-Windows platforms.
+* Fix: Double designate if pressing hotkey and gizmo on same frame.
+* Fix: Hidden cable connectors not drawing in power net mode.
+* Fix: Alpha for non-complex UI icons.
+* Fix: Arresting a colonist no longer cares about that colonist's allowed area.
+* Fix: Error on mine vein designation.
+* Fix: Pollution dump quests will now stack wastepacks as much as possible.
+* Fix: Explosions moving through closed doors.
+* Fix: No feedback when trying to prioritize reserved grave blueprint.
+* Fix: Various indestructible buildings shouldn't be targetable.
+* Fix: Fogged items are no longer counted on resource readout.
+* Fix: Precious lumps now avoid structures.
+* Fix: Light level stat offset applying to move speed stat on non pawns.
+* Fix: Self tend now checks reservations.
+* Fix: Rare case where pawns can meditate in another pawns room.
+* Fix: Exception when pawn with no hunger need is on a shuttle.
+* Fix: Can't force warden to release reserved prisoner via float menu.
+* Fix: Carried pawns can no longer be stripped.
+* Fix: Raiders attacking junk.
+* Fix: Wind turbine blocked cells not being properly cleared when turbine destroyed.
+* Fix: Healing enhancer says it replaces all bionics.
+* Fix: Numerical animal names are now capitalised properly.
+* Fix: Refugee doesn't properly join faction if they're the last refugee.
+* Fix: New game Anomaly threats tooltip now updates as you move the slider.
+* Fix: Error if tantrum target is hauled.
+* Fix: Moonwalking pawns during ritual.
+* Fix: No speaker showing leader role filled in ritual dialog.
+* Fix: Monolith proximity letter no longer fires if player has already activated monolith.
+* Fix: Destroying bases can select wrong strings for message.
+* Fix: Wastepack producers now show the correct count of wastepacks.
+* Fix: Expiring quest alert now shows quest closest to expiry.
+* Fix: Possible for bestower to stand in location where bestowing ceremony can't take place.
+* Fix: Pack animals not unloading some items.
+* Fix: Loading before chronophagy cancels ritual.
+* Fix: Doors now block wind.
+* Fix: Align meal stacking rules with meal colour rules, fix animal product + veg meals being considered green meals.
+* Fix: Error when assigning prisoner bed against their ideo.
+* Fix: Issues with loading apparel abilities.
+* Fix: Despawned ghouls are now shown on colonist bar & schedule tab.
+* Fix: Hauling things inside containers breaking job.
+* Fix: Map portal transferrables not updating when editing to load list.
+* Fix: Incorrect arrest float menu item for wild man.
+* Fix: Feed patient float menu option no longer shows for prisoners if a warden could do it.
+* Fix: "Trapped underground" thought was occurring under thin roof.
+* Fix: Bug where pawns can be left out of drum dance party.
+* Fix: Pawns kicked out of bed after vomiting.
+* Fix: Double reservation on bed.
+* Fix: World edge marker visibility adjustments.
+* Fix: Exception during floordrawing job.
+* Fix: No drawing appears when child does floordrawing on a bridge.
+* Fix: Pawns attempt to CarryToBuilding when they cannot reach building or pawn.
+* Fix: Fingerspike corpses are no longer left on distress signal maps.
+* Fix: Biomutation pulser throws error.
+* Fix: Using psychic slaughter on a large animal voids excess meat.
+* Fix: Error when body part is removed via death acidifier.
+* Fix: Pawns avoid fog if player-controlled and undrafted.
+* Fix: Prison break interval not showing on wild people.
+* Fix: Cocoon spawned insects do not have the correct faction.
+* Fix: Mech nodes claimable while there are turrets nearby.
+* Fix: Hit point percentage is not shown on books in trade window.
+* Fix: Remove transferrables separated by rot progress causing hauling/loading bugs.
+* Fix: Plant growth percentage now rounds down.
+* Fix: Outposts no longer always spawn directly in the centre of the map.
+* Fix: Babies can still get tentacle arms from unnatural healing.
+* Fix: Error when settling map from caravan.
+* Fix: Allies in fog unable to target enemies causing 10 jobs error.
+* Fix: Growing zone plant age text missing "year".
+* Fix: Remove instant load from shuttles.
+* Fix: 10 jobs in 1 tick during cultist psychic ritual.
+* Fix: Entity transfers can interrupt another entity transfer job.
+* Fix: Random mental states on animals caused by hediffs will now always be manhunter.
+* Fix: Prison error when right clicking on meal in deep water.
+* Fix: Shelf item rendering changing when region regenerated.
+* Fix: Nociosphere AI error if target is not hittable.
+* Fix: Snowhare UI icon scale.
+* Fix: Resource pod crashes now avoid water.
+* Fix: Exception when despawned royal dies.
+* Fix: Bug in updating to load list on transporters.
+* Fix: Pawns not drawing if leaning out of a fogged cell.
+* Fix: 10 ticks error when pawn tries to attend ritual at the position they were already standing.
+* Fix: Various exceptions and missing labels with scenario quest parts.
+* Fix: Reduce the cover effectiveness of some Anomaly buildings that were unreasonably high.
+* Fix: Prevent history graph recordings if the player has no home map.
+* Fix: Tainted clothing dyeing loop if the same color is set twice.
+* Fix: Error accessing map floor wealth in weird circumstances.
+* Fix: Pawns could select fogged resources for construction.
+* Fix: Factions with raids disabled will no longer be used for timed detection raids.
+* Fix: Apocriton 10 jobs error due to being able to cast longjump too often.
+* Fix: Unfinished items could not be stored.
+* Fix: Missing weapon information on hediffs in health tab.
+* Fix: Mech allegiance overlay not working without biotech enabled.
+* Fix: Error if pawn lost haul carry capacity during a haul job.
+* Fix: Gray pall not occurring in ambient horror mode.
+* Fix: Cloned royal title memories causing NREs.
+* Fix: Correct plural label for muffalo. (It’s like buffalo.)
+* Fix: Timed raids not showing alert in some scenarios.
+* Fix: Error when deleting last world planner node.
+* Fix: Exception when factionless animal tries to cast ability.
+* Fix: Spectator preview not showing if ideology isn't installed.
+* Fix: Defoliator and Psychic Droner sleeping mechs don't wake when melee attacked.
+* Fix: No hack option with drafted pawns.
+* Fix: Immutable stat caching error on tutorial start.
+* Fix: Thing icons being flipped if they were horizontal.
+* Fix: Pawn mass stat not showing.
+* Fix: Untranslated shuttle string when Royalty disabled.
+* Fix: Shuttles couldn't land on hidden conduits.
+* Fix: Fogged pawns counted as active threats on map.
+* Fix: Collection was modified error in TryIssueJobPackage for BringBabyToSafety.
+* Fix: Various sources of non-deterministic map/world generation.
+* Fix: Symbol resolver using out of bounds rects, added warning when trying to modify out of bounds terrain.
+* Fix: Some jobs could select fogged destinations.
+* Fix: Cube sculptures consumed inspirations.
+* Fix: Various apparel and pawn kinds missing their toxic environment resistance if Biotech is not loaded.
+* Fix: Turkish language worker implementation of WithIndefiniteArticle is incorrect.
+* Fix: Exception when trying to open new colony menu with invalid scenario.
+* Fix: Biome terrainPatchMakers are now prioritised in the order defined in XML.
+* Fix: Small memory leak from Gizmo_GrowthTier.
+* Fix: Pawns unloading food incorrectly when returning from a caravan/transporter.
+* Fix: Exception when dead manhunter is cause of death for faction pawn.
+* Fix: Possible enumeration exception in giving died thoughts.
+* Fix: Pawns trying to pack food into their inventory when they're already over encumbered.
+* Fix: Stage then attack timer is lost on Save-Reload.
+* Fix: Allow holding open of factionless doors.
+* Fix: Can't paint floors under buildings if unaffordable terrain beneath.
+* Fix: Add egg reward weighting.
+* Fix: No incidents occurring on destroyed hostile settlements until claimed.
+* Fix: Stage and assault strategy could throw error.
+* Fix: Turkish language worker implementation of WithIndefiniteArticle is incorrect.
+* Fix: Randy not respecting max threat interval correctly in new colonies.
+* Fix: Stat effect factors on hediffs not appearing in tooltip.
+* Fix: Null pawns could be returned from pawn map queries.
+* Fix: Wick animation not removed when explosive doesn't destroy itself.
+* Fix: Conduits no longer cause monument destruction.
+* Fix: Items sometimes showing up twice in “enter map portal” dialog (e.g. enter pit gate).
+* Fix: Exception that occurs sometimes when leaving pocket map.
+* Fix: Lodgers now show up in leave pocket map dialog.
+* Fix: Caching bugs with regions.
+* Fix: Transferring silver in gift dialog now properly updates mass usage.
+* Fix: Double newlines in a couple of alerts.
+* Fix: Last weather being stuck upon loading.
+* Fix: Accidental access of disabled work type in illegal case in genes.
+* Fix: "Faction has null relation with" spam.
+* Fix: Strange signal quest no longer ends if it hasn't been accepted before moving maps.
+* Fix: Exception in AttackTargetFinder with no EquipmentSource.
+* Fix: “Can't finish loading” message not firing on shuttles after first time.
+* Fix: Shuttle mass not updating when removing items via load dialog.
+* Fix: Anima tree shadow volume.
+* Fix: Improved opportunistic hauling from valid zones.
+* Fix: Sickly world pawns can get diseases and die, and send funeral letters.
+* Fix: Cancelling all mine designations now cancels mine vein designations too.
+* Fix: Add a check right before entering transporters in case something was added to the load list.
+* Fix: Was possible to target world map transporters when launching transport pod.
+* Fix: Prevent animal hospitality quest from running if you have no pawns capable of animal handling.
+* Fix: Waiting royal shuttles now consider pocket maps when checking if their pawns are there.
+* Fix: Ground penetrating scanner no longer works on sea ice biomes.
+* Fix: Ground penetrating scanner no longer finds ore under bridges.
+* Fix: Civilians dying doesn't end shuttle crash quest.
+* Fix: Mech clusters should no longer ever break through mountain roofs.
+* Fix: Open gray box rendering upside down.
+* Fix: Pawns leaving rituals are not properly removed from assignments.
+* Fix: False alert about needing a doctor if a baby is hungry.
+* Fix: Texture loading memory leak.
+* Fix: Relationship letter revealing fogged pawns.
+* Fix: Exception triggering manhunter from turret damage.
+* Fix: Exception when fabricor tries to hack.
+* Fix: Some gizmos grouping when multiple selected.
+* Fix: Implied defs (and some others) don't set up defNameHash.
+* Fix: NRE when generating prisoner willing to join site.
+* Fix: Improve thing set maker logic so the first option doesn't have to reach the min value.
+* Fix: "Constructed TargetInfo with no map" when pawn with no corpse dies to a partially-blocked attack.
+* Fix: Haul to cell doesn't cancel when the destination position becomes forbidden.
+* Fix: Creepjoiners could depart on maps without an exit.
+* Fix: Adjust shadow offset for biotech trees to better match the tree's position.
+* Fix: Debug quests always having 10000 points.
+* Fix: Dye flammability was missing. It now matches tinctoria plant.
+* Fix: Colonists not unloading food that their policy does not allow.
+* Fix: Pawns get stuck merging items in a zone which has a target item outside of allowed area.
+* Fix: "CompUseEffect_SpawnFleshbeastFromTargetPawns requires a CompTargetable".
+* Fix: Hovering over some memes could produce errors.
+* Fix: Possible exception when carried thing is nulled after loading.
+* Fix: Close any opened main tabs when jumping to or from world map.
+* Fix: Errors when pawns are locked in 1x1 rooms in some scenarios.
+* Fix: Squirrels missing eating sound.
+* Fix: "round" capitalization issue.
+* Fix: Several inconsistencies with “Load Transporters” dialog.
+* Fix: If a texture defined in modded content cannot be loaded, the game now ensures it always has a default “missing texture” instead of potentially breaking the game.
+* Fix: Tribalwear and kid clothing were missing from several default clothing assignments.
+* Fix: Eating/Babies feeding don't show as gaining food in needs tab.
+* Fix: Animals with complex cutout shaders not drawing correct rot color, added support for life stage rotting graphics.
+* Fix: Was possible to queue up multiple persona weapons for bonding.
+* Fix: Squirrel missing eating sound.
+* Fix: Doctor not taking newborn baby to mother.
+* Fix: Mutually hostile check not working if instigator or target were destroyed.
+* Fix: Throne alert showing for non-player thrones.
+* Fix: Cannot release prisoners with the same faction as warden in un-exitable maps.
+* Fix: Add cover to buildings that were missing it (genebank, nature shrines).
+* Fix: Ritual shaders and their masking behaviour.
+* Fix: Bonded animal died thought is no longer removed when their corpse is destroyed.
+* Fix: Royal Ascent was still mentioning 'count' rather than 'archon'.
+* Fix: Royalty crashed shuttle quest showing title/bedroom requirements of endgame quest.
+* Genies are no longer disproportionately selected for early game raids.
+* The growth points progress bar on children now renders properly instead of always rendering as if no progress to the next tier had been made.
+* Fixed an issue which caused apocritons to be able to use their long jump ability much more often than intended.
+* Fix: Mechanitor complexes would fail to fire if exostrider quest never completed.
+* Fix: Favorite colors pulling colors from the wrong place.
+* Fix: Anything reading policy bloating savefiles.
+* Fix: Missing unit on max power output stat (4000 -> 4000 W).
+* Fix: Cancelling burnable rituals no longer triggers the outcome.
+* Fix: Several instances where abilities treated entities as animals for targeting.
+* Fix: A number of animals were missing eating / hearing capacities.
+* Fix: Turning off dev mode while dev palette is open causes it to still block input as though it were open.
+* Fix: Same Ideology faction relation offset no longer applies when Ideology is disabled.
+* Fix: Friendly exited map tended goodwill offset never firing.
+* Fix: Deadlife dust not resetting shambler lifespan if Biotech not enabled.
+* Fix: Atmospheric heaters continued working after they ran out of fuel.
+* Fix: Not possible to capture held entity if it stops being downed.
+* Fix: Quest gen could sometimes have an invalid map, causing bugged quests.
+* Fix: Some corpses have their relations hidden when resurrected.
+* Fix: Wastepack infestations will now fallback to a cell near where the wastepacks were destroyed.
+* Fix: Exception when metalhorrors hibernate.
+* Fix: Terrain not displaying on correct layer.
+* Fix: Possible error generating relations for creepjoiners.
+* Fix: ModLister double-initializing and taking 2x as long as it should.
+* Fix: Error when game can’t find a starting pet due to low animal handling skill.
+* Fix: Pawns can’t ever sow plants on maps where the biome temperature wouldn’t let them be sown, even if actual temperature is fine.
+* Fix: Non-QWERTY keyboard camera dolly keys not rebindable.
+* Fix: Mech tab is visible for a few seconds at the start of a new game.
+* Fix: Mechs tab does not reappear instantly when switching to a map with a mechanitor.
+* Fix: Nociosphere pain range radius not being accurate on non-square maps.
+* Fix: Hemogen target not save/loading correctly.
+* Fix: Exception when no terrain scatter alternatives exist.
+* Fix: Error due to unfinished things after minifying crafting bench.
+* Fix: Error with sacrifice/execution rituals due to slaughtered pawn being removed from ritual.
+* Fix: Inverted logic for checking if banishing someone on an inhospitable tile.
+* Fix: Shuttles and transport pods now tick their contents.
+* Fix: Babies no longer prevent "Uniform thoughts" thought.
+* Fix: Opportunistic hauling issues when storing item from bill.
+* Fix: Visiting sick pawns not causing interactions.
+* Fix: Large body special filter not appearing in configs correctly.
+* Fix: Exception in BreadthFirstTraverse due to hauling.
+* Fix: Cleaning translation files for English deletes Keyed files with no replacement..
+* Fix: Incorrect newlines in Building_PlantGrower inspect string.
+* Fix: Error about null map when egg in egg box is ruined.
+* Fix: Lung rot not working without Biotech or Anomaly.
+* Fix: ToxicEnvironmentResistance incorrectly locked behind Biotech DLC.
+* Fix: Missing new lines in quest reward text.
+* Fix: Manhunters not attacking factionless humans.
+* Fix: Small issues with caravan report strings.
+* Fix: HediffGiver_RandomDrugEffect would never fire.
+* Fix: Error with nature running due to allowed areas.
+* Fix: Performance issues when targeting far away tiles on launchables.
+* Fix: Player can no longer reform caravans if one of their colonists is in an aggressive mental state.
+* Fix: Hospitality quest able to target maps with no colonists on them.
+* Fix: Pawns walking through open forbidden doors circumstantially.
+* Fix: 10 jobs 10 ticks error could incorrectly fire in very specific circumstances.
+* Fix: Pawns meleeing sleeping insects unprovoked.
+* Fix: Error trying to capture entities with zero manipulation capacity.
+* Fix: Pawns could try to attack targets from disallowed positions.
+* Fix: Gather for child birth gizmo not showing in some circumstances.
+* Fix: Error with monolith after resettling from Archonexus quest.
+* Fix: Some creepjoiner downsides not firing.
+* Fix: Rituals can be interrupted if pawn becomes undowned.
+* Fix: Farskip map radius showing on caravan.
+* Fix: "Attack begun" letters firing erroneously at some quest sites.
+* Fix: Several things rotatable when they shouldn’t be.
+* Fix: Clean up bugged rituals in ideo on load.
+* Fix: Incorrect log file location in settings on Mac.
+* Fix: Error when attempting to call mech boss group with no mech faction.
+* Fix: Error during sacrifice ritual if sacrificee reference is lost.
+* Fix: ManTurrets job only firing one mortar shell.
+* Fix: Condition causers don't have a faction set.
+* Fix: Wanderer joins event doesn't give information on best skill.
+* Fix: 10 jobs 10 ticks error when suppressing platform surrounded by chunks.
+* Fix: Equipped weapons with a Normal ticker are having their verbs ticked twice.
+* Fix: 10 jobs 10 ticks error attempting to satisfy drug dependency when drug is on fire.
+* Fix: "Destroying assets is not permitted" warning when changing language in editor.
+* Fix: Generalize gizmo descriptions for leaving / cancelling rituals.
+* Fix: Rocketswarm turret cannot be reloaded nor fired if not fully fueled.
+* Fix: Pawn generation error when generating new map after changing language.
+* Fix: Ambush during ancient complex looting does not attack accessible sleeping player pawns.
+* Fix: Royal tribute collector stuck in infinite loop.
+* Fix: 10 jobs 10 ticks error from pawns trying to carry drugs when over mass limit.
+* Fix: Mute ideo leader capable of begin leader speech by using float menu.
+* Fix: Sizing of UI Icons for sculptures.
+* Fix: Research hidden prerequisites don't show if no non-hidden prerequisites exist.
+* Fix: Incoming transporters/gravships will now prevent maps from being removed.
+* Fix: Bill permanently reserved after canceling job authors work.
+* Fix: Multiple active gizmo sliders all move if one is moved.
+* Fix: Prioritize deep drilling with mech gives exception.
+* Fix: Assaulters could try and flee or leave from unexitable maps.
+* Fix: Ancient mech gestator tank missing top altitude bias.
+* Fix: Start bestowing ceremony fails if bestower is self-tending at that time.
+* Fix: Equipping weapon tutorial can't be completed if starting with a baby.
+* Fix: Forced traits in scenarios do not apply their skill bonuses.
+* Fix: Changing a xenotype to highmate in the tutorial breaks the game until you generate a new world.
+* Fix: It's possible to be attacked by a sightstealer in the tutorial before you're allowed to draft pawns.
+* Fix: Update the text for nudity precepts to clarify that clothing can be worn during unsafe temperatures.
+* Fix: Error when hauling mechs to mech charger.
+* Fix: 'Horn' has a space before it when randomizing ideo relic names.
+* Fix: Scheduling an operation to give go-juice to a guest with dependency says it'll make the faction hate you, it doesn't.
+* Fix: Poker cards overlaid on back of head of playing pawn.
+* Fix: Apparel issues with mods that add colonists with different body parts.
+* Fix: Books are lost when a book shelf is uninstalled and destroyed.
+* Fix: Mechanoids need babysitting to deep drill.
+* Fix: Unnatural corpse fails to explode on death.
+* Fix: Add handling for things made from stuff being loaded without stuff.
+* Fix: Weapons with abilities that don't run out of charges (fire EMP) are listed as 0/0 charges.
+* Fix: Confusing message about "no hunter has a valid hunting weapon" when designating hunt with all hunters sick.
+
+== Source ==
+<references/>

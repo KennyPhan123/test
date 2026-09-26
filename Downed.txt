@@ -1,0 +1,60 @@
+[[File:downed_preview.png|right]]'''Downed''' is a condition in which a creature (human, animal, etc) is alive but incapable of [[Moving|movement]]. This is caused by one of the following states, listed in order of severity:
+# Unconsciousness: [[Consciousness]] falls below 30% but remains above 0%.
+# Pain shock: [[Pain]] reaches [[Pain Shock Threshold]].
+# Incapacitated: [[Moving]] capacity is 15% or less. 
+
+"'''Incapacitated'''" and "'''incapable of movement'''" are often used as synonyms for downing. Creatures properly inside a bed are usually called "incapacitated" or "resting" rather than "downed", but they are functionally similar. A pawn that is only incapacitated, but still conscious, can have [[mood]] changes; [[need]]s like [[Recreation]] and [[Beauty]] will only decay when a pawn is conscious.
+
+Downed pawns will drop their [[weapon]]s and other carried items but will not drop equipped apparel and utility items. The vast majority of enemies will stop attacking a downed target. Pawns under [[murderous rage]] and [[Animals#Predation|predator animal]]s looking for food can continue to target them, however. Also, downed pawns are still vulnerable to explosions. Shooters beyond 4 tiles have half the chance of hitting a downed target. Within 3 tiles, they instead gain a massive {{+|750%}} "Execution" bonus to their hit chances.
+
+== Death on down ==
+{{Stub|section=1|reason=1) Full list of triggers for DoD are not known - needs someone to either go through the C# or extensive testing, 2) Some sort of display of chance by population intent similar to [https://rimworldwiki.com/index.php?title=Downed&curid=20920&diff=139742&oldid=134660 what was on the page before] but actually correct. 3) Further explanation of population intent. 4) DoD is avoided by bleeding }} 
+Enemy pawns have a chance to instantly [[death|die]] when downed from certain causes, even when the condition would otherwise not kill them:
+* [[Pain Shock Threshold|Pain Shock]]
+* When damage  directly drops [[Moving]] below 15%
+* [[Heatstroke]] & [[hypothermia]]
+* [[Toxic buildup]]
+* [[Lung rot]]
+
+This chance is dependent on current [[PopulationIntent|population intent]] and the [[AI Storytellers#Enemy death on downed|storyteller settings]], the latter of which can be adjusted at any time. Other causes of downing, such as [[consciousness]] reductions from [[ailments]], do not trigger this death chance, so are preferred if you want to capture somebody.
+
+Certain enemies will always die when downed. These include:
+* Enemy [[mechanoid]]s. However a known bug does exist that rarely prevents this death, and [[friendly mechanoids]] {{BiotechIcon}} are an exception to this rule.
+* [[Revenant]]s ,{{AnomalyIcon}} which will play their death animation.
+* [[Dreadmeld]]s ,{{AnomalyIcon}} which will spawn [[Fleshbeasts]] {{AnomalyIcon}} regardless if they were knocked out through various means.
+
+=== Bypasses ===
+Notably, death on down doesn't occur when [[blood loss]] or the expiration of a hediff is the cause for incapacitation. This can be used to guarantee the capture of valuable enemy pawn by applying the hediff, then damage them to a certain level and wait for the hediff to expire.
+* [[Painblock]] and [[Go juice]] multiplies pain by 10%. The pain shock threshold of most pawns is below 90%, meaning if their pain level is 9% and pain block expires, they will be downed without dying. However, beware that apparel such as the [[war mask]] increase the pain shock threshold of their wearer.
+* Psychic [[Focus]] improves movement by {{Good|x130%}}. The pawn will be downed if the moving capacity of the pawn drops below 20% and the hediff expires.
+* Reaching the extreme severity of [[Vacuum exposure]] will down hostile pawns without killing them. Note that this requires vacuum exposure to reach >85% severity, with guaranteed death occurring at 100% severity. A pawn lacking any form of vacuum protection will accrue 2% severity every second, meaning that in the most extreme scenario a pawn has to be captured within 7 seconds after downing to prevent death. Once a pawn is captured, they are considered to be in a "safe" environment and will lose 10% exposure per second while being carried. This allows a pawn to be transported across large stretches of vacuum without risk provided they are not dropped during transit (Due to recovering 10% exposure per second a dropped pawn will no longer be incapacitated).
+
+[[Tox gas]] exposure applies {{++|25%}} pain and can be used to immediately bring pain level over the threshold. But it also cause {{--|60%}} [[breathing]], which will kill the pawn if their breathing is already below 60%.
+
+== Actions ==
+An incapacitated creature is a valid target for a variety of actions:
+* [[Rescue]]d to the nearest available bed or sleeping spot.
+* Being ranged or melee attacked to [[death]] by a [[drafted]] pawn, which does not give XP.
+* Being carried by any drafted pawn, even if [[incapable]] of hauler [[work]]. They can be dropped in place, carried to a bed or loaded directly into a [[cryptosleep casket]].
+** Colonists that are downed but are not currently being held can be brought into a ready [[Biosculpter pod]].{{IdeologyIcon}} 
+* Being [[Doctoring|tended]] by a drafted pawn on the spot. Tending with [[Medicine (disambiguation)|medicine]] requires the drafted pawn to be holding medicine within their inventory.
+
+Actions specific to incapacitated [[human]]s:
+* [[Prisoner|Imprisonment]] by a drafted pawn.
+* Stripping of [[apparel]], including [[utility]] items.
+
+Actions specific to downed animals:
+* Neck cuts. A [[hunt]]ing colonist will finish off any animal that is set to hunt. 
+** Tame animals cannot be hunted, but [[slaughter]]ing is functionally similar and does not require downing.
+== Crawling ==
+{{stub| reason = details on downed raiders, how long until a pawn starts crawling after being downed.}}
+When downed, a human pawn with [[manipulation]] will begin crawling after some time to the nearest bed or away from hostile threats. If bleeding, a trail of blood will follow them where they crawl. Downed enemy pawns will attempt to crawl to the map's borders and escape.<br>
+If the pawn is being rescued by another pawn, then they will stop crawling.
+
+[[Shambler]]s {{AnomalyIcon}} will continue trying to attack their target in melee range when crawling.
+
+== Version history ==
+* [[Version/1.3.3066|1.3.3066]] - [[Draft]]ed pawns can tend to others in the field, and will use medicine if they are carrying any. They can also be ordered to carry another downed pawn and drop them on command.
+* [[Version/1.5.4062|1.5.4062]] - Downed pawns will now crawl away from danger and towards beds. Death-on-downed chance now applies to several non damage health state changes. (Heatstroke, hypothermia, tox gas, lung rot)
+
+[[Category: Game mechanics]]

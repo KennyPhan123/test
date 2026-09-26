@@ -1,0 +1,343 @@
+{{Rewrite|reason=Add psilocap once mechanics are figured out}}
+{{For|the medical items|Medicine (disambiguation)}}
+{{Imagemargin|[[File:drugs preview.png|right]]|30px}}'''Drugs''' are substances that alter the body and mind. While they can give [[mood]]- and [[stat]]- related boosts, most drugs come with a risk to addiction, overdose, or both.
+
+== Summary ==
+When taken, a drug will have 2 major types of effects:
+* Effects that happen once, on taking the drug - such as [[wake-up]] immediately fulfilling [[Rest]]. Most drugs increase [[Recreation]].
+* Effects that happen as long as the "high" is active - such as [[go-juice]]'s increase to [[Moving]]. Most drugs increase [[mood]] directly. The effect is sustained so long as the "severity" is greater than 0.
+{{TOCright}}
+
+However, drugs come with multiple downsides. A majority of drugs can cause [[addiction]], creating a [[need]] for a drug. An addict without the drug will undergo a harmful [[withdrawal]]. Stronger drugs have stronger withdrawals, and always have a risk of [[overdose]], which can rarely lead to [[death]]. And, there can be [[health|health issues]] that arise, either from being overly tolerant to the drug (from taking it too much), or from being high at all.
+
+Pawns can be ordered to automatically carry or take drugs under a variety of circumstances. For more information on this system, see [[Drug policy]]. 
+
+Drugs currently being carried by a pawn can be taken through the use of a gizmo that appears when the pawn is drafted{{Check Tag|Required?}} and selected.
+
+=== Impulsive drug use ===
+Even if you never order colonists to take a drug, having them in your colony allows access to the drug binge [[mental break]]. [[Social drug binge]]s happen as a major break, and [[hard drug binge]]s are an extreme break. Colonists in a mental break will ignore [[allowed area]]s and forbidden items. 
+
+Drugs are desired for pawns with [[chemical interest]] and [[chemical fascination]], who will be upset ({{--|6}} and {{--|12}} [[mood]], respectively) if their [[Chemical (Need)|Chemical need]] is unmet. They will take drugs for recreation and for [[#addiction|addiction]], regardless of drug [[assign]]ment. However, they will never go on random drug binges and will respect both allowed areas and item forbidding.
+
+Medical drugs ([[penoxycyline]] and [[luciferium]]) will never be taken as part of drug binges or the chemical need traits.
+
+== List of drugs ==
+Drugs can be grouped into 3 major categories:
+
+'''[[Social drugs]]:'''<br/>Drugs that have a ''safe dose interval''. They never cause overdoses, and won't cause addiction or permanent health problems unless taken too often.
+
+'''[[Hard drugs]]:'''<br/>Drugs that always have a chance for addiction and major overdose when a regular human takes the drug. These drugs also increase overdose severity; taking multiple gives a chance of starting a minor overdose.
+
+'''[[Medical drugs]]:'''<br/>Special purpose. They don't increase mood, don't follow the trends of other drugs, and treat some form of ailment. Penoxycyline contributes to overdoses, while luciferium doesn't. These drugs will never be taken for recreation and will never be taken as a drug binge.
+
+{| {{STDT| sortable c_19 text-center width:75%}}
+! Drug !! Type !! Mood !! Rec.{{Ref label|Rec|1}} !! Rest{{Ref label|Rest|2}} !! Severity{{Ref label|Duration|3}} !! Duration{{Ref label|Duration|4}} !! Stat effects
+|-
+! {{Icon Small|Ambrosia|20}} [[Ambrosia]] || Soc. 
+| {{+|5}} || {{+|50%}} || - || 50% || 16h || Acts as [[food]]. (+0.20 [[nutrition]])
+|-
+! {{Icon Small|Beer|20}} [[Beer]] || Soc. 
+| {{+|10}} (Tipsy)<br/>{{+|26}}<br/>(Hammered) || {{+|17%}} || - || 15% || 5h || Dependent on how drunk (how many beers taken).<br/>More beer: {{Good|+}} Mood, {{Bad|-}} [[Consciousness]], {{Bad|-}} [[Moving]], {{Bad|+}} Social fights, {{Down|-}} [[Pain]]<br/>Acts as [[food]] (+0.08 [[nutrition]]).
+|-
+! {{Icon Small|Psychite tea|20}} [[Psychite tea]] || Soc. 
+| {{+|12}} || {{+|40%}} || {{+|10%}} || 75% || 6h || {{Good|x80%}} [[Sleep Fall Rate]], {{Down|x90%}} [[Pain]]
+|-
+! {{Icon Small|Smokeleaf joint|20}} [[Smokeleaf]] || Soc. 
+| {{+|13}} || {{+|80%}} || {{--|10%}} || 50% || 12h || {{--|30%}} [[Consciousness]], {{--|10%}} [[Moving]], {{++|30%}} Hunger, {{Down|-20%}} [[Pain]]
+|-
+|-
+! {{Icon Small|Flake|20}} [[Flake]] || Hard
+| {{+|35}} || {{+|70%}} || {{+|20%}} || 75% || 6h || {{Good|x33%}} [[Sleep Fall Rate]], {{Down|x50%}} [[Pain]]
+|-
+! {{Icon Small|Yayo|20}} [[Yayo]] || Hard 
+| {{+|35}} || {{+|80%}} || {{+|40%}} || 75% || 12h || {{Good|x33%}} [[Sleep Fall Rate]], {{+|15%}} [[Moving]], {{Down|x50%}} [[Pain]]
+|-
+! {{Icon Small|Go-juice|20}} [[Go-juice]] || Hard 
+| {{+|5}} || {{+|40%}} || {{+|40%}} || 50% || 16h || {{+|20%}} [[Consciousness]], {{+|50%}} [[Moving]], {{+|35%}} [[Sight]], {{Down|x10%}} [[Pain]], {{+|15%}} [[Psyfocus]]{{RoyaltyIcon}}
+|-
+! {{Icon Small|Wake-up|20}} [[Wake-up]] || Hard 
+| - || {{+|40%}} || {{+|100%}} || 75% || 12h || {{Good|x80%}} [[Sleep Fall Rate]], {{+|10%}} [[Consciousness]], {{+|10%}} [[Moving]], {{+|20%}} [[Psyfocus|Psyfocus meditation rate]] {{RoyaltyIcon}}<br/>{{+|50%}} [[Global Work Speed]] {{MTB}} 120 days high for [[heart attack]]
+|-
+|-
+! {{Icon Small|Penoxycyline|20}} [[Penoxycyline]] || Med.
+| - || - || - || 100% || 5.5d || Prevents [[Malaria]], [[Plague]], [[Sleeping sickness]].
+|-
+! {{Icon Small|Luciferium|20}} [[Luciferium]] || Med.
+| - || - || - || 90% || 6d || {{+|10%}} [[Consciousness]], {{+|5%}} [[Moving]], {{+|15%}} [[Sight]], {{Down|x80%}} [[Pain]]<br/>{{+|70%}} [[Blood Filtration]], {{+|20%}} [[Digestion]], {{+|15%}} [[Blood Pumping]]<br/>Cures 1 scar or chronic illness every 15 - 30 days
+|}
+
+----
+:{{Note label|Rec|1}} Immediate [[Recreation]] gain from a single dose of the drug. Counts as chemical recreation; reduced by recreation tolerance.
+:{{Note label|Rest|2}} Immediate [[Rest]] need gain from a single dose of the drug. Does not account for [[Sleep Fall Rate]] while high on drug. 
+:{{Note label|Severity|3}} Severity gain per dose is divided by Body Size (but not health scale). Severity drain rate is the same for any creature. Effectively: drugs last for less time on larger creatures. 
+:{{Note label|Duration|4}} Assuming one dose and no tolerance
+
+== Tolerance ==
+Many drugs have some form of '''tolerance''', which increases as you take more of the drug. Tolerance decreases the duration of a drug high, as well as addiction need gain. Tolerance does ''not'' decrease the effects of the high while it lasts. The multiplier on high duration is calculated as follows:
+
+{| class="wikitable"
+| '''Duration Tolerance Multiplier''' = 100 - (Tolerance (%) * 0.75 round 0)
+|-
+| {{Graph:Chart|width=400|height=100|type=line|yAxisMin = 0 |xGrid =| yGrid=| xAxisTitle = Tolerance (%)|yAxisTitle = Duration (%) |x=0,100|y=100,25}}
+|}
+In game, tolerance is displayed using the duration multiplier. 
+
+Higher tolerance also increases chance for addiction: [[Social drugs]] requires a minimum % tolerance before addiction can happen and tolerance itself makes addiction more likely:
+
+{| class="wikitable"
+! Tolerance !! Multiplier !! Graph
+|-
+|  0% || ×100% || rowspan="3" | {{Graph:Chart|width=400|height=100|type=line|xAxisTitle = Tolerance (%)|yAxisTitle = Addiction Chance Multiplier|x=0,50,80,100|y=1,5,15, 15}}
+|-
+| 50% || ×500%
+|-
+| 80% || ×1500%
+|}
+
+Certain tolerances can directly cause chronic health problems. [[Smokeleaf]] tolerance above 36% can cause lung [[carcinoma]] and above 45% [[asthma]], [[beer]] above 45% can cause liver [[cirrhosis]] and [[carcinoma]], and [[psychite]] tolerance ([[Flake]]/[[Psychite tea]]/[[Yayo]]) above 45% can cause [[chemical damage]] to the [[kidney]]. Tolerance to [[ambrosia]] has no special ill effect, while the other drugs have no tolerances.
+
+Tolerance gain per dose scales inversely with [[body size]]. It can be calculated with the following formula:
+
+<code>tolerance gain = tolerance per dose / body size</code>
+
+[[Children]] {{BiotechIcon}} and small [[animal]]s can therefore get addicted much easier than an adult would.
+
+== Addiction ==
+'''Addiction''' is a reality when using extreme drugs. When taking hard drugs, there is always a chance to cause addiction, and taking enough of any non-[[Penoxycyline]] drug can eventually get a pawn addicted. As they take the drug, a pawn's ''tolerance'' increases, which decreases a drug's effect while increasing the chance of addiction. Some drugs require a minimum tolerance (i.e. minimum drugs taken/time) before addiction is possible at all. A pawn's current drug tolerance is not directly displayed in game. A pawn's drug effect multiplier is entirely based on their drug tolerance. In the following table, "Minimum Effect Multiplier for No Addictions" translates the "New Addiction min tolerance" number into the effect multiplier that the player can view in game on a pawn's health tab. Uniquely, getting an addiction to [[psychite]] has an immediate 15% chance of causing [[chemical damage]] to the kidneys.
+
+The following table is a summary of each drug's addiction potential:
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_19 text-center}} style="width: 85%;"
+! Drug !! High duration<br/>(0% tol.) !! Safe dose interval<br/>(adult human) !! Tolerance gain/dose<br/>(adult human) !! Tolerance fall rate !! New addiction min tolerance !! Minimum Effect Multiplier for No Addictions !! New addiction chance !! Safe doses at 0 tolerance 
+|-
+! [[Ambrosia]]
+| 16.7 h || 1.6 Days || 3.2% || 2% / Day   || 15% || 89% ||   1% ||  4
+|-
+! [[Beer]]
+|  4.8 h || 1 Day    || 1.6% || 1.6% / Day || 25% || 82% ||   1% || 15
+|-
+! [[Flake]]
+|  7.2 h || Never    || 4%   || 1.5% / Day || N/A || N/A ||   5% ||  0
+|-
+! [[Go-juice]]
+| 16.7 h || Never    || N/A  || N/A        || N/A || N/A || 2.6% ||  0
+|-
+! [[Psychite tea]]
+|  7.2 h || 2 Days   || 3%   || 1.5% / Day || 10% || 93% ||   2% ||  3
+|-
+! [[Smokeleaf joint]]
+| 12 h   || 2 Days   || 3%   || 1.5% / Day || 15% || 89% ||   2% ||  5
+|-
+! [[Wake-up]]
+| 12 h   || Never    || N/A  || N/A        || N/A || N/A ||   2% ||  0
+|-
+! [[Yayo]]
+| 12 h	 || Never    || 4%   || 1.5% / Day || N/A || N/A ||   1% ||  0
+|}
+</li></div>
+'''Notes:'''
+* These safe dose intervals '''do not apply''' to animals with a [[body size]] other than 1 or humans under 18 including, but not limited to, [[babies]]{{BiotechIcon}} and [[children]].{{BiotechIcon}} These pawns gain more or less tolerance per dose depending on their [[body size]].
+* [[Luciferium]] always causes an addiction when taken. [[Penoxycyline]] never does. 
+* [[Psychite tea]], [[flake]], and [[yayo]] all contribute toward ''psychite'' addiction and tolerance.
+** [[Go-juice]] doesn't, despite costing yayo to create.
+* New Addiction Chance column doesn't take into account Tolerances. For drugs with tolerances, the chance of addiction rises as tolerances rise.
+
+Current safe dose intervals (days) for humans based on age groups. 
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_19 text-center}} <!-- FORMULA: tolerance per dose / body size^2 / tolerance decreases rate OR SIMPLER: safe dose interval for adult human / body size^2 -->
+! Drug !! 0-3 !! 3-8 !! 9-12 !! 13-17 !! 18+
+|-
+! [[Ambrosia]]     
+| {{#expr: 1.6 / 0.2 round 2}} || {{#expr: 1.6 / 0.35 round 2}} || {{#expr: 1.6 / 0.58 round 2}} || {{#expr: 1.6 / 0.8 round 2}} || 1.6
+|-
+! [[Beer]]	      
+| {{#expr: 1   / 0.2 round 2}} || {{#expr: 1   / 0.35 round 2}} || {{#expr: 1   / 0.58 round 2}} || {{#expr: 1   / 0.8 round 2}} || 1
+|-
+! [[Psychite tea]] 
+| {{#expr: 2   / 0.2 round 2}} || {{#expr: 2   / 0.35 round 2}} || {{#expr: 2   / 0.58 round 2}} || {{#expr: 2   / 0.8 round 2}} || 2
+|-
+! [[Smokeleaf joint]]    
+| {{#expr: 2   / 0.2 round 2}} || {{#expr: 2   / 0.35 round 2}} || {{#expr: 2   / 0.58 round 2}} || {{#expr: 2   / 0.8 round 2}} || 2
+|}
+</li></div>
+
+=== Addiction need ===
+When addicted, pawns gain a [[need]] for that specific drug. This is displayed in the Needs window of a pawn. When it hits 0, they receive the effects of [[withdrawal]]. Each drug type has their own separate need. By default, pawns will automatically take drugs to satisfy this need, even if the default "No Drugs" drug policy is selected. You can disable this in the drug policy menu (under the Assign tab).
+
+Taking a non-Luciferium drug increases the addict's drug need by a base of {{+|90%}}, but this is reduced by a pawn's [[tolerance]] to that drug. Need fall rate depends on the drug itself:
+* Beer, smokeleaf, ambrosia, and psychite needs fall by 50% per day.
+* Wake-up and go-juice needs fall by 33.3% per day.
+* Luciferium need falls by 15% per day, so that it must be taken every 6 days.
+
+This is separate from the addiction (%) in the ''Health'' tab, which is the progress towards overcoming an addiction. See [[#Addiction progress|Addiction progress]] for that.
+
+=== Addiction progress ===
+In an addict's Health tab, there will be either Addiction (%) or Withdrawal (%), depending on if the drug need is fulfilled. The percentage is the progress towards overcoming an addiction. Each drug has different stats on addiction gain. In general, progress increases as time passes and decreases as drugs are taken. Progress does not immediately restart after taking a new drug. New addicts will always start at 50%, so immediate action is best if you want to fix an addiction.
+
+[[Luciferium]] is special. The need for luciferium can never be cured, and trying to withdraw can and will eventually result in [[death]].
+
+=== Withdrawal ===
+When trying to overcome an addiction, '''withdrawal''' is inevitable. [[Ambrosia]] has the lightest withdrawal, consisting only of a {{--|10}} [[mood]]let. Every other (non-luciferium) drug withdrawal follows these trends:
+* ''At least'' a {{--|20}} [[mood]]let.
+*Large reduction to [[Consciousness]] and other [[stat]]s.
+*Chance of forced [[mental break]]s, such as [[psychotic wandering]], even if mood is high.
+*Chance of forced [[hard drug binge]]s, even for social drugs.
+As with addiction, each drug has a different form of withdrawal - see their page for details.
+When the withdrawal reaches 100%, the addiction is removed.
+
+== Overdose ==
+{{See also|Overdose}}
+'''Overdose''' is an [[ailment]] that can occur when taking [[hard drugs]] ([[flake]], [[yayo]], [[go-juice]], [[wake-up]]), though [[penoxycyline]] can also add to an overdose.
+*There is a 0.5% to 1.5% chance to immediately gain a Major-level overdose upon taking a hard drug (dependent on the drug).
+*Taking any hard drug always increases ''severity'' from 0.18 to 0.35 per dose.
+*Taking penoxycyline is listed as increasing ''severity'' from 0.08 to 0.14 per dose, but it does not increase ''severity''. This is because only addictive drugs can increase the ''severity'' of drug overdose.
+
+=== Effects ===
+Severity is translated to overdose effects, as follows:
+
+'''Hidden:''' Severity < 0.50
+* No effect, within tolerable levels of hard drug consumption
+* Doesn't show on the health tab of colonists
+
+'''Minor:''' Severity 0.5 — 0.749
+* {{Bad|x50%}} [[Consciousness]]
+* Frequent vomiting - Every 0.3 days (4.8h) on average
+
+'''Major:''' Severity 0.75 — 0.999
+* Consciousness {{Bad|10%}} max (immediate [[downed|down]]).
+* [[Chemical damage]] to the brain on average 2.5 days in this state
+* [[Death]] on average 3 days in this state
+
+'''Fatal:''' Severity 1
+* Overdosing pawn's body is unable to handle extreme drug levels, and succumbs
+
+Severity decreases at a rate of 1 per game day. This means it takes up to 24 hours for a full recovery, or 12 hours if no overdose is visible.
+
+== Interaction with DLC ==
+The [[Ideoligion#Drug use|Drug use: Essential]] precept{{IdeologyIcon}} desires drugs. Their mood shifts from {{+|3}} to {{--|10}} depending on the time since a drug has been taken, but the ideoligion does not force drug use beyond the mood penalty. This precept increases drug plant harvest yield by {{+|50%}}, synthesis speed by {{+|50%}}, and adds {{+|10%}} [[Trade Price Improvement]] when selling drugs.
+
+[[Gene]]s{{BiotechIcon}} can impact drug addiction. For all drug genes, [[alcohol]] and [[smokeleaf]] have the smaller impact to metabolism.
+* [[Genes#Drugs|<Drug>-impervious]] eliminates all addiction and tolerance, in addition to both random and cumulative overdoses , for {{--|3}}[[File:Metabolism.png|20px|Metabolic efficiency|link=Metabolic efficiency]] or {{--|5}}[[File:Metabolism.png|20px|Metabolic efficiency|link=Metabolic efficiency]] metabolic efficiency. 
+* [[Genes#Drugs|<Drug>-resistant]] reduces addiction, tolerance, and random overdose chance by 50%, for {{--|1}}[[File:Metabolism.png|20px|Metabolic efficiency|link=Metabolic efficiency]] or {{--|2}}[[File:Metabolism.png|20px|Metabolic efficiency|link=Metabolic efficiency]] metabolic efficiency. 
+* [[Genes#Drugs|<Drug>-dependency]] requires the drug every 5 days to avoid large penalties, puts in a coma in 30 days, and kills in 60 days. However, it gives immunity to addiction and random overdose. This gene instead adds {{+|3}}[[File:Metabolism.png|20px|Metabolic efficiency|link=Metabolic efficiency]] or {{+|4}}[[File:Metabolism.png|20px|Metabolic efficiency|link=Metabolic efficiency]] metabolic efficiency.
+
+== Trade ==
+Drugs are highly profitable and very lightweight source of money. They are a valid and powerful source of income if you are in a temperate/warm [[biome]], or have a [[sun lamp#Analysis|greenhouse]] to make them in. There is absolutely no penalty towards selling any drug to any [[faction]]. Factions are even [[goodwill|happy]] about gifted drugs. This is true even if a faction's [[ideoligion]]{{IdeologyIcon}} forbids drugs.
+
+Drug synthesis relies on Plants (to grow [[hops]], [[smokeleaf leaves]], and [[psychoid leaves]]), and one of Cooking (smokeleaf, beer, psychite tea) or Intellectual (other drugs). It is considered a ''Crafting'' work, despite it not using the Crafting skill.
+
+=== Comparisons ===
+[[Flake]] is usually the most profitable drug that your colony can produce on its own. Note that growing the [[psychoid plant]] requires a Plants skill of 6, and creating flake requires the [[Research#Psychite refining|Psychite refining]] research.
+
+[[Smokeleaf]] is flake's biggest competitor. Compared to flake, smokeleaf only gives {{Bad|88%}} the silver per unit of planter work ({{+|12.5%}} more drug/plant, but {{--|21.5%}} value/drug). In addition, joints themselves take longer to create - with equal skill, they take {{Bad|+80%}} more work. However, smokeleaf relies on Cooking skill, so can be better when you have a great Cook idle. Also, [[smokeleaf plant]]s give a higher yield per plant growth day, especially in [[hydroponics]]. Therefore, smokeleaf can be superior when work time isn't an issue.
+
+'''Other comparisons:'''
+* Compared to [[yayo]], flake is worth {{%|{{Q|Flake|Market Value Base}}/{{Q|Yayo|Market Value Base}} round 2}} the [[silver]], but requires only {{%|{{Q|Flake|Work To Make}}/{{Q|Yayo|Work To Make}} round 2}} of the [[Work To Make]] and 50% of the ingredient costs. Flake gives 33% more silver per [[Psychoid leaves|psychoid leaf]] for 7% more work. Selling flake + raw leaves remains superior to selling yayo.
+* [[Psychite tea]] costs the same amount of psychoid leaves as flake, but is worth less and takes longer to make.
+* Brewing [[beer]] gives less drug per [[hop plant]] grown than psychoid (thus less drug/planter work), and each beer is worth less than 1 flake.
+* [[Ambrosia]] can only be found in the [[Events#Ambrosia sprout|event]], and it may grow in an inconvenient location. This makes ambrosia inconsistent at best. But ambrosia requires 0 work to synthesize, only harvest work - if it sprouts nearby, then it's easy money.
+
+Other drugs must be bought entirely, or require [[neutroamine]], which cannot be produced by a colony. The colony trade disadvantage normally rules out selling any neutroamine product as profitable, unless you have an amazing trader. Even then, their production is limited by the supply of neutroamine.
+
+== Reasons to use drugs ==
+RimWorld isn't real life. A [[beer|drink]] a day won't really hurt anybody, though alcohol and [[smokeleaf]] do make colonists less productive. [[Psychite tea]] and [[ambrosia]] have purely positive effects when taken every 2 days (adult timing). Tea will even increase productivity by reducing the need for sleep.  As long as you set a good drug schedule, using social drugs can be a safe way to boost mood.
+
+[[Penoxycyline]] is completely safe to use, preventing [[disease]]s like [[malaria]] and [[sleeping sickness]], which are common in tropical/swampy [[biome]]s. 
+
+=== Setting a drug schedule ===
+In the [[Assign]] tab, you can click on Manage Drug Policies to alter when a colonist will take their drugs. The main settings to change are ''For Recreation'', which should be turned off, and ''Scheduled'', to be turned on. 
+
+A drug schedule consists of 3 parts:
+* Frequency: How long between taking each drug. This can be set to an integer day number (or X times per day, if you so want).
+** Note that [[penoxycyline]] lasts for 5.55 days, and you can only set the drug interval to 5 ''or'' 6 days. Either some of its effect will be wasted, or there will be a short time where colonists are vulnerable to disease.
+* Mood: Maximum mood before being able to take the drug.
+* Recreation: Maximum [[Recreation]] before being able to take the drug.
+
+All three requirements must be met in order for the drug to be taken. For example, setting Ambrosia to (2 days, 40% mood) will cause Ambrosia to be taken once every 2 days at most, and only when mood is below the threshold. If setting a mood threshold, it's best to keep it slightly above a mental break threshold, to account for walking time.
+
+Of course, you can direct pawns to take drugs manually, and only manually. You can set colonists to carry drug at all times, and take it whenever needed; this is especially useful for combat drugs like [[go-juice]].
+
+The golden mean of drugs without getting addicted:
+
+* Use Beer "Every day" Only if mood below 32% (alcohol worsen your manipulation and chances to hit a target, it's fine to stablilise mood but illogical to use it before battles)
+* Use Smokeleaf joint "Every 2 days" Only if mood below 30% (it's the last drug you'd want to use, because it significantly reduces your consciousness)
+* Use Ambrosia "Every 2 days" Only if mood below 35% (it's a rare drug for balancing your mood, most people don't even bother it)
+* Use Psychite tea "Every 2 days" Only if mood below 34% (it's a common drug for maintaining your stress, also keep one in your inventory)
+
+-For Chemical interested pawns set the Beer "Every 2 or 3 days", Mood - Any, and keep 1 bottle in inventory.
+
+Most normal pawns got Mental break point at 35% Mood, it's wise to set schedule at this level.
+
+=== Reasons for hard drugs ===
+Hard drugs are never "safe" to use without the use of [[Genes#Drugs|genes]],{{BiotechIcon}} but ''can'' be exceptionally useful even without them. [[Go-juice]], [[wake-up]], and [[yayo]] all help when you ''really'' need them. For example, go-juice can turn a desperate fight into a curb-stomp by your pawns, wake-up can get something done ''immediately'', yayo helps a stray colonist run from a [[manhunter pack]], and both yayo and flake give an instant and huge mood boost, which can prevent mental breaks in dire situations. 
+
+Yayo is better than flake as an actual taken drug (more effects, less addiction/overdose chance, as long as 2 doses of flake), but yayo and flake stack. If you don't care about a colonist at all, you can stack them up with available drugs until you run out, or they die of compound overdose.
+
+For [[Luciferium]], see its [[Luciferium#Analysis|Analysis]] section. It gives many stat boosts, can cure a myriad of injuries and conditions that otherwise require [[healer mech serum]], [[biosculpter pod]]{{IdeologyIcon}}, or the Scarless [[gene]]{{BiotechIcon}}, but causes a permanent and costly need.
+
+=== Risk of storage ===
+The main risk of keeping drugs around at all are drug binges. These can cause addiction, despite your best scheduling and zoning tools. [[Social drug binge]]s happen as a major [[mental break]], and [[hard drug binge]]s happen as an extreme one. However, you can [[arrest]] a binging pawn to stop the binge, at the cost of the {{--|6}} ''Was imprisoned'' [[mood]]let for 12 days. Healthy colonists decent at Social have a 100% [[Arrest Success Chance]], but unskilled pawns can fail arrest, which will cause the more dangerous [[berserk]].
+
+Colonists with the [[chemical interest]] and [[chemical fascination]] traits will ignore their drug policy - they will take any non-medical drug as a form of Recreation. This can be avoided in the following ways:
+*They will respect [[allowed area]]s and forbidden items. You'll have to keep on top of these rules, but these restrictions are effective. In particular, watch out for [[caravan]]s and the ''Drop on Floor'' bill setting. Pawns on a drug binge still ignore these, but chemical interest/fascination no longer force binges, nor do they increase the chance to binge.
+*They will only take the drug if they are ''assigned'' to Recreation or Anything in their [[schedule]]. Setting these pawns entirely to Sleep, Work, and Meditation{{RoyaltyIcon}} will largely prevent unwanted drug taking. Meditation can satisfy the recreation need (though they'll get bored of it). Note that if a pawn has no available work, then they will "idle", and be able to take drugs.
+
+In addition, [[animal]]s can wander and take drugs. Most often, they will consume [[ambrosia]] and [[beer]] (which count as [[food]] items). Colony-owned animals will completely respect zone / [[pen]] rules.
+
+== Fighting addictions ==
+Whenever a prisoner started with an addiction, or a colonist got unlucky drinking [[go-juice]], addictions can and do happen. There are two main strategies to fighting one:
+
+=== Keeping the pawn from drugs ===
+* '''Prison.''' [[Arrest]]ing an addict is the simplest way to prevent addiction, so long as somebody has a good [[Arrest Success Chance]]. As long as the prison cell is clear of drugs, there is no chance of relapse.
+** Watch out for their [[mood]], as withdrawal is difficult to go through. While mental breaks are easier to deal with in prison, [[berserk]] in particular can be harmful to both the addict and others.
+* '''Send them on a [[caravan]].''' Mental breaks inside a caravan are much less impactful, only slowing the caravan down. Don't forget to remove the drug in question.
+**  As long as you are on top of a settlement, ambushes will not happen. Note that sending an addict alone to park on your colony is ''not'' safe if extreme breaks are possible. 
+* '''Send them on a [[Quests#Pawn Lending|Pawn Lending]] [[quest]]'''.{{RoyaltyIcon}} Lending a pawn will advance addiction and tolerance, but prevents all the negatives of addiction. As getting quests at all isn't reliable, this itself isn't reliable. Also note that a single quest is rarely enough to fix a full addiction.
+
+=== Keeping drugs from reach ===
+While [[allowed area]]s and drug policies won't work against binges, the following tactics can keep the drugs from the colonist:
+* '''Sell them.''' You'll gain some money out of it, which is always useful.
+* '''Load them in a [[transport pod]].''' You don't have to launch it, though you can. Once loaded, the drugs will remain so long as the pod is not destroyed.
+* '''Load them inside other colonists.''' Note that colonists can only hold 3 drugs, each - this only works against a small amount of drugs.
+* '''Wall them in.''' Set a [[stockpile zone]], haul the drugs in, and seal them off with [[wall]]s. If there's no path to it, then it's out of mind.
+* '''Destroy them''', with a [[campfire]], [[electric crematorium]], or controlled [[fire]]. Each method will destroy entire stacks at a time. Do this if you don't want the hassle of the other methods, or if you have no other choice.
+During withdrawal, the addict will face a severe mood hit, and be less productive due to the stat increases. If you do decide to just get rid of drugs, watch out for any drugs held by [[raider]]s, and have some way to help the mood. You might want to use another social drug, or if you can afford the medicine cost, [[anesthetic]].
+
+== Recipes ==
+{{Recode|section=1|reason= Convey plant work/dose}}
+{| {{STDT| sortable c_19 text-center}}
+! Drug !! Ingredients !! Work to Make || Minimum Skills !! Market Value !! data-sort-type="number" | Value/Work !! Value/Ingredient
+|-
+! style="text-align:left;" | [[Wake-up]]
+| {{Required Resources|Wake-up|sep=&nbsp;+|simple=1}}         || {{Ticks|{{Q|Wake-up|Work To Make}} }} || {{Q|Wake-up|Skill 1|-}} {{Q|Wake-up|Skill 1 Level}} || {{Q|Wake-up|Market Value Base}} {{Icon Small|Silver}} || {{#expr:{{Q|Wake-up|Market Value Base}}/{{Q|Wake-up|Work To Make}} round 4}} {{Icon Small|Silver}} || {{#expr:{{Q|Wake-up|Market Value Base}}/{{Q|Wake-up|Resource 1 Amount}} round 4}} {{Icon Small|Silver}}
+|-
+! style="text-align:left;" | [[Penoxycyline]]
+| {{Required Resources|Penoxycyline|sep=&nbsp;+|simple=1}}    || {{Ticks|{{Q|Penoxycyline|Work To Make}} }} || {{Q|Penoxycyline|Skill 1|-}} {{Q|Penoxycyline|Skill 1 Level}} || {{Q|Penoxycyline|Market Value Base}} {{Icon Small|Silver}} || {{#expr:{{Q|Penoxycyline|Market Value Base}}/{{Q|Penoxycyline|Work To Make}} round 4}} {{Icon Small|Silver}} || {{#expr:{{Q|Penoxycyline|Market Value Base}}/{{Q|Penoxycyline|Resource 1 Amount}} round 4}} {{Icon Small|Silver}}
+|-
+! style="text-align:left;" | [[Flake]]
+| {{Required Resources|Flake|sep=&nbsp;+|simple=1}}           || {{Ticks|{{Q|Flake|Work To Make}} }} || {{Q|Flake|Skill 1|-}} {{Q|Flake|Skill 1 Level}} || {{Q|Flake|Market Value Base}} {{Icon Small|Silver}} || {{#expr:{{Q|Flake|Market Value Base}}/{{Q|Flake|Work To Make}} round 4}} {{Icon Small|Silver}} || {{#expr:{{Q|Flake|Market Value Base}}/{{Q|Flake|Resource 1 Amount}} round 4}} {{Icon Small|Silver}}
+|-
+! style="text-align:left;" | [[Yayo]]
+| {{Required Resources|Yayo|sep=&nbsp;+|simple=1}}            || {{Ticks|{{Q|Yayo|Work To Make}} }} || {{Q|Yayo|Skill 1|-}} {{Q|Yayo|Skill 1 Level}} || {{Q|Yayo|Market Value Base}} {{Icon Small|Silver}} || {{#expr:{{Q|Yayo|Market Value Base}}/{{Q|Yayo|Work To Make}} round 4}} {{Icon Small|Silver}}|| {{#expr:{{Q|Yayo|Market Value Base}}/{{Q|Yayo|Resource 1 Amount}} round 4}} {{Icon Small|Silver}}
+|-
+! style="text-align:left;" | [[Psychite tea]]
+| {{Required Resources|Psychite tea|sep=&nbsp;+|simple=1}}    || {{Ticks|{{Q|Psychite tea|Work To Make}} }} || {{Q|Psychite tea|Skill 1|-}} {{Q|Psychite tea|Skill 1 Level}} || {{Q|Psychite tea|Market Value Base}} {{Icon Small|Silver}} || {{#expr:{{Q|Psychite tea|Market Value Base}}/{{Q|Psychite tea|Work To Make}} round 4}} {{Icon Small|Silver}}|| {{#expr:{{Q|Psychite tea|Market Value Base}}/{{Q|Psychite tea|Resource 1 Amount}} round 4}} {{Icon Small|Silver}}
+|-
+! style="text-align:left;" | [[Smokeleaf joint]] 
+| {{Required Resources|Smokeleaf joint|sep=&nbsp;+|simple=1}} || {{Ticks|{{Q|Smokeleaf joint|Work To Make}} }} || {{Q|Smokeleaf joint|Skill 1|-}} {{Q|Smokeleaf joint|Skill 1 Level}} || {{Q|Smokeleaf joint|Market Value Base}} {{Icon Small|Silver}} || {{#expr:{{Q|Smokeleaf joint|Market Value Base}}/{{Q|Smokeleaf joint|Work To Make}} round 4}} {{Icon Small|Silver}}|| {{#expr:{{Q|Smokeleaf joint|Market Value Base}}/{{Q|Smokeleaf joint|Resource 1 Amount}} round 4}} {{Icon Small|Silver}}
+|-
+! style="text-align:left;" | [[Go-juice]]
+| {{Required Resources|Go-juice|sep=&nbsp;+|simple=1}}        || {{Ticks|{{Q|Go-juice|Work To Make}} }} || {{Q|Go-juice|Skill 1|-}} {{Q|Go-juice|Skill 1 Level}} || {{Q|Go-juice|Market Value Base}} {{Icon Small|Silver}} || {{#expr:{{Q|Go-juice|Market Value Base}}/{{Q|Go-juice|Work To Make}} round 4}} {{Icon Small|Silver}} || - 
+|-
+! style="text-align:left;" | [[Beer]]
+| {{Required Resources|Beer|sep=&nbsp;+|simple=1}}            || {{Ticks|{{Q|Wort|Work To Make #|-}}/{{Q|Wort|Product Amount}} }}{{ref label|Beer|B}} || {{Q|Beer|Skill 1|-}} {{Q|Beer|Skill 1 Level}} || {{Q|Beer|Market Value Base}} {{Icon Small|Silver}} || {{#expr:{{Q|Beer|Market Value Base}}/({{Q|Wort|Work To Make #}}/{{Q|Wort|Product Amount}}) round 4}} {{Icon Small|Silver}}{{Ref label|Beer|B}} || {{#expr:{{Q|Beer|Market Value Base}}/{{Q|Beer|Resource 1 Amount}} round 4}} {{Icon Small|Silver}}
+|}
+:{{Note|Beer|B}} '''Note:''' This value uses the work to make value of one [[wort]], rather than that of [[beer]] itself. Also note that wort is produced in batches of {{Q|Wort|Product Amount}}.
+
+== Version history ==
+* [[Version/1.2.2719|1.2.2719]] - Direct button to use drugs from inventory: This makes combat drugs more usable.
+* [[Version/1.4.3580|1.4.3580]] - Fix: Consume drug commands not appearing.
+* [[Version/1.5.4062|1.5.4062]] - Drug tolerance gain is now divided by body size and not body size squared - this also had the effect of making the suggested safe dose intervals for children correct. 
+
+{{Nav|drugs|wide}}
+[[Category:Items]]

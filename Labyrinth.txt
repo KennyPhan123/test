@@ -1,0 +1,183 @@
+{{Anomaly}}
+{{Spoiler}}
+{{Stub|reason=Determine method of Labyrinth threat scale, rewards odds, compilation of unique structures, exact means of teleportation, both in and out of the labyrinth including living/dead creatures and inanimate objects.}}
+{{Recode|reason=Meet [[biome]] page standard}}
+The '''labyrinth''' is a large, grayscale maze located within an alternate dimension, accessed by provoking, attacking, or suppressing the [[warped obelisk]].
+
+== Summary == 
+In order to access the labyrinth, the colony must have a warped obelisk crash down in a prior event.
+The labyrinth is not a conventional quest site and does not appear on the world map, meaning you cannot [[caravan]] inside. There are multiple methods of entering the maze:
+* Let the warped obelisk reach 100% Activity. Attacking it will speed up this process. Upon reaching the max value it will teleport colonists in at random.{{Check Tag|Including tamed animals and prisoners|About six of my farm animals and one of my prisoners were also teleported to the labyrinth.}}
+* When a colonist interacts with the obelisk <small>(studying/suppressing)</small> there is a chance they will begin vanishing into thin air, after which that colonist will arrive inside.
+* After 10 Anomaly research points from studying the obelisk, a teleport button will appear to enter the maze willingly. (15-80 day cooldown)
+
+A map for the encounter will be created once the first colonist is sent inside, willingly or not. Attacking the obelisk with multiple colonists can send more than one into the labyrinth. There is no guarantee they will spawn alongside each other, though they will be on the same map. This may speed up exploration and increase safety within at the cost of leaving the home tile undefended.
+
+Just as you cannot normally send a caravan into the maze, the same is also true for exiting. Safely leaving the maze requires locating another 'mirrored' warped obelisk inside one of the many gray rooms. A pawn can interact with it to be teleported back to the original tile.
+
+Once the exit obelisk is activated, all creatures and items within the labyrinth are teleported one by one to the player map, with a delay of {{Ticks|6}} to {{Ticks|60}} between teleportations. Living creatures are sent first, including abducted colony members and any remaining fingerspikes and shamblers. Then it's the turn of all the items scattered inside the labyrinth, which can include corpses, survival meals, weapons dropped by shamblers when they were raised, tainted clothes stripped from corpses, and any bedrolls uninstalled by colonists. Installed bedrolls stay in the labyrinth and any unopened gray boxes content is lost.
+
+Each target in turn is enveloped in a white orb as it starts teleporting, then is placed in a random tile on the home map. This process repeats until there are no remaining valid targets, at which point the original warped obelisk will vanish, preventing reentry. This teleportation includes enemies, even ones which were not necessarily encountered within the maze, which can cause dangerous scenarios where many enemies single out a stranded colonist.
+
+== Design ==
+Upon entering the maze all rooms not currently inhabited by colonists will be hidden. All rooms are surrounded by [[gray wall]]s with [[gray door]]s connecting them. Many of these doors require colonists to force them open. To reveal these areas, a pawn must path to a connecting door, then take {{Ticks|3600}} to open it. Any doors, jammed or not, that are opened are left open permanently.
+
+All walls and doors are completely indestructible. They may still be targeted by weaponry, but cannot be selected and have no visible hit points or info box. Jammed doors cannot be bypassed unless an alternate route into the same room is found or the jam is unblocked.
+
+Most [[floors]] found within the labyrinth are made up of a [[gray surface]] with a slightly slower walk speed of 87%. Additionally, some rooms contain a patch of standard [[soil]] with [[trees]] growing on it. All the trees on a patch belong to the same species, which can only be [[Oak tree|oak]], [[Poplar tree|poplar]], [[Birch tree|birch]] or [[Pine tree|pine]]. Strangely, these trees may or may not have leaves (sometimes both variants spawn on the same map) regardless of the constant temperature.
+
+Soil found here may be used to grow crops, as the labyrinth is unroofed and has a constant, comfortable {{temperature|25}} for growing. As every pawn within the labyrinth is warped out with no return upon activating the exit obelisk, unharvested crops will be lost forever.
+
+Roofed areas may be built at any point within the maze where designated. Use of an incendiary weaponry or [[campfire]] can raise temperatures above the "outside" levels. Due to doors permanently being open, it can be difficult to maintain without building a roof over every explored room.
+
+Every labyrinth will have two guaranteed boxes within the obelisk room containing varied loot. The obelisk itself is surrounded by a small patch of [[void metal]], the only flooring in the maze with 100% walk speed.
+
+=== Layout ===
+The labyrinth consists of 19 unique room layouts, with most being able to have multiple layouts in a room at once. There is a 15% chance for a room to have multiple layouts. There is always 1 obelisk room in a non random location.
+
+<!-- 0.7975 is the sum of all room selection weights, disregarding the obelisk room since it doesn't have one -->
+{| {{STDT| c_01 text-center sortable}}
+! Room Name !! Chance !! Can Be In Mixed Room !! Contents !! Min Width !! Min Height !! Valid Spawn Room
+|-
+! Empty
+| {{#expr:0.15/0.7975 * 100 round 1}}% || false || Nothing || - || - || true
+|-
+! Endless Pit
+| {{#expr:0.1/0.7975 * 100 round 1}}% || false || Endless pit (2 x 2, 2 x 3, 3 x 3) || - || - || true
+|-
+! Obelisk
+| - || false || 9 tile radius room with a [[Warped obelisk]] in the center, 4 tile radius of [[void metal]], and 2x [[Gray box]]es || - || - || false
+|-
+! Floor Etchings
+| {{#expr:0.15/0.7975 * 100 round 1}}% || true || [[Floor etching]] with directions || - || - || true
+|-
+! Dead Body
+| {{#expr:0.05/0.7975 * 100 round 1}}% || true || Pirate, villager, or pirate boss corpse, between 3 - 30 days old, killed by [[fingerspike]] scratches, 0 - 2 [[Packaged survival meal]]s, 1 - 5 blood filth || - || - || true
+|-
+! Corpse Room
+| {{#expr:0.01/0.7975 * 100 round 1}}% || true || 5 - 10 human corpses and 4 - 10 blood filth || - || - || true
+|-
+! Statue Deadlife
+| {{#expr:0.025/0.7975 * 100 round 1}}% || false || Deadlife [[gray statue]] in the center of the room, with 1 - 3 corpses and 2 - 4 blood filth || 7 || 7 || false
+|-
+! Statue Teleporter
+| {{#expr:0.025/0.7975 * 100 round 1}}% || false || Teleporter [[gray statue]] in the center of the room || 7 || 7 || false
+|-
+! Sleeping Fleshbeast
+| {{#expr:0.05/0.7975 * 100 round 1}}% || true || Sleeping fingerspike and a max of 5 blood filth || - || - || false
+|-
+! Abandoned Camp
+| {{#expr:0.02/0.7975 * 100 round 1}}% || true || [[Cloth]] [[bedroll]], 50% = [[Torch lamp]], 50% = 1 Packaged survival meal || - || - || true
+|-
+! Animal Corpses
+| {{#expr:0.01/0.7975 * 100 round 1}}% || true || 1 - 3 animal corpses of any one species, between 3 - 30 days old || - || - || true
+|-
+! Harbinger
+| {{#expr:0.01/0.7975 * 100 round 1}}% || true || Irregular lump of 10 - 14 tiles of [[soil]] with a [[Harbinger tree]] 50 - 90% grown || - || - || true
+|-
+! Trees
+| {{#expr:0.03/0.7975 * 100 round 1}}% || true || Irregular lump of 18 - 24 tiles of soil with 2 - 4 trees of either [[oak tree|oak]], [[poplar tree|poplar]], [[birch tree|birch]], or [[pine tree|pine]], 70 - 100% grown || - || - || true
+|-
+! Animals
+| {{#expr:0.0075/0.7975 * 100 round 1}}% || true || 1 - 3 [[animals]] of any one species between a wildness of 20 - 100% || - || - || true
+|-
+! Gray Box
+| {{#expr:0.05/0.7975 * 100 round 1}}% || true || 1x gray box || - || - || true
+|-
+! Large Gray Box
+| {{#expr:0.025/0.7975 * 100 round 1}}% || false || up to 16x gray boxes, 2 with rare reward, 50% chance for each of the remaining boxes to be empty || - || - || true
+|-
+! Large Empty Gray Box
+| {{#expr:0.025/0.7975 * 100 round 1}}% || false || up to 6x gray boxes, 1 with rare reward, others empty || - || - || true
+|-
+! Floor Ramblings
+| {{#expr:0.05/0.7975 * 100 round 1}}% || true || [[Floor etching]] ramblings || - || - || true
+|-
+! Child Room{{BiotechIcon}}
+| {{#expr:0.01/0.7975 * 100 round 1}}% || false || Villager adult corpse between 20 - 40 biological age and villager child corpse between 2 - 3 biological age, both between 30 - 60 days old, and 3 - 6 blood filth || - || - || true
+|}
+
+=== Structures ===
+All of the following structures may be found within the labyrinth:
+* Endless pit - has no function beyond being a terrain obstacle. The Endless pit blocks movement across it while allowing sightlines and projectiles. Can be 2x2, 2x3, or 3x3 in size.
+* [[Floor etching]] - small runes scratched into the floor of The Labyrinth in various places. A Pawn may spend a few seconds analyzing the rune, which may provide the relative direction of the exit Obelisk.
+* [[Bedroll]] - a room may spawn containing a single [[cloth]] bedroll with or without a [[torch lamp]], helpful for pawns who need comfort and sleep needs met.
+* [[Gray statue]] - One-time effect triggers when a pawn comes nearby.  A few patterns seen:
+** Gray statue in empty room: Teleports your colonist to an apparently random room in the Labyrinth.
+** Gray statue with corpses nearby: Emits a cloud of deadlife dust, turning the corpses into shamblers (with a 6-hour lifetime).
+* [[Gray box]] - containers made from the same indestructible Gray material as the walls and floors of The Labyrinth. Two are guaranteed to spawn within the exit room. A Pawn may open the container which will then drop its contents on the floor nearby.
+
+=== Dangers ===
+Some rooms can be entirely empty, while others might contain enemies. These foes are inactive upon discovery, asleep or dead, and will become active when a colonist is detected.
+
+Enemies that can possibly spawn within the labyrinth:
+* [[Fingerspike]] - Each fingerspike spawns asleep in its own room. It only wakes up when it senses a human within a 4.9 cell radius, who must be in its line of sight, so either in the same room or visible through an open door. Alternatively it will wake up if construction takes place within a 3 cell radius, either in the same room or with the sound travelling through an open door. It also wakes up when attacked and when teleported to the home map by the exit obelisk.
+* [[Shambler]] - Corpses present in the same room as a [[gray statue]] will be animated by the [[deadlife dust]] it releases when it detects a colonist nearby. Each statue has its own detection radius ranging between 3 and 8 cells and only reacts if the colonist is in its line of sight. It will only trigger once before becoming inert.
+
+Other dangers which may be present:
+* Teleport [[gray statue]] - A gray statue standing alone in an empty room teleports the activating colonist to a random place within the labyrinth, but never directly into a room containing a danger. It has the same detection behavior as the deadlife gray statue and likewise only triggers once.
+
+Detection:
+* Unjamming a door doesn't trigger detection by a fingerspike or a gray statue. However opening the door might, depending on whether it places the colonist in their line of sight and within their detection radius. In both cases they only scan the room every {{Ticks|250}}, which might give enough time to retreat out of the line of sight if not ready to face the danger.
+
+=== Diseases ===
+The Labyrinth has a disease {{MTB}} of 80 days and the following possibilities:
+{| {{STDT|c_07 sortable}}
+! Disease !! Commonality
+|-
+| [[Flu]] || 100
+|-
+| [[Plague]] || 80
+|-
+| [[Fibrous mechanites]] || 40
+|-
+| [[Sensory mechanites]] || 40
+|-
+| [[Gut worms]] || 30
+|-
+| [[Muscle parasites]] || 30
+|-
+| [[Flu#Animals|Animal flu]] || 100
+|-
+| [[Plague#Animals|Animal plague]] || 80
+|-
+| [[Organ decay]] || 20
+|}
+
+=== Loot ===
+Optional loot may be found within the many rooms of the maze. Loot includes relics, meals, weapons, organs, serums and more. Items can be found laying on the floor of some rooms, within [[Gray box]]es, and in the inventories of corpses strewn about the entire map. All clothing will be marked as tainted aside from [[utility]] items.
+{{:Gray_box}}
+
+== Analysis ==
+While a daunting challenge at first glance, navigating the labyrinth can be extremely profitable. The amount of high value loot found within can easily be worth the risk of extra exploration if an immediate extraction is not necessary. Note that additional pawns sent to explore the maze may not necessarily start nearby a colonist in need of rescue, and if unlucky may quickly become endangered themselves. Also, the more colonists sent inside to explore and help with combat, the less there are outside in case a major threat hits the colony in everyone's absence.
+
+Care should be taken when choosing to interact with the obelisk, as even when at low activity it is possible for a random teleport. Any pawns assigned to this anomaly should be capable of combat, equipped to handle multiple fingerspikes or shamblers at once, in good health, and ideally have a reasonable level of [[Medical]] skill to self-tend any wounds.
+
+While the maze contains some resources to help with traversal, it can be possible to become stranded without food. A combination of many jammed doors, obstructive enemy spawns, low food drops from corpses, and/or the inability to find the exit room can leave an under-prepared group stranded. A caravan loading method can be used to pick desired supplies before willing entry.
+
+As any items left in the labyrinth are teleported out, the tainted clothing of all corpses stripped within the maze will be randomly distributed across the home tile. This includes within a colony home area, which may require a clean up afterwards.
+
+== Gallery ==
+<gallery>
+Labyrinth full exploration.png|Fully explored map
+Labyrinth full unfog.png|Same map, but completely defogged
+Labyrinth child room.png|Child Room in a labyrinth showing a desiccated newborn
+Labyrinth animals.png|Animals room with a single [[Rhinoceros]]
+Labyrinth harbinger.png|Harbinger room mixed with a dead body room
+Labyrinth abandoned camp.png|Abandoned Camp room which spawned with a torch but no [[Packaged survival meal]]
+Labyrinth obelisk.png|Obelisk exit room
+Labyrinth large gray box.png|Large Gray Box room
+Labyrinth statue teleporter.png|[[Gray statue]] teleporter room. You can tell it's a teleporter because there are no corpses in the room
+Labyrinth trees.png|Trees room mixed with a Sleeping Fleshbeast room
+Labyrinth gray box etching.png|Gray Box room mixed with either a [[Floor etching]]s room or a Floor Ramblings room
+Labyrinth deadlife statue.png|Statue Deadlife room - you can tell it's a Deadlife statue because of the adjacent corpses
+Labyrinth endless pit.png|Endless Pit room
+</gallery>
+
+== History ==
+* [[Anomaly DLC]] Release - Added.
+* [[Version/1.6.4518|1.6.4518]] - Fix: Labyrinth layout being flushed incorrectly.
+* [[Version/1.6.4566|1.6.4566]] - Fix: Labyrinth teleporting targets to non-origin maps if origin Obelisk was destroyed. Fix: Labyrinths returning pawns to a different map than the one they were on.
+
+{{nav|biomes|wide}}
+[[Category:Biomes]]

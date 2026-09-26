@@ -1,0 +1,55 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Global/Needs}}
+|}
+----
+{| {{STDT}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Malnutrition" <!-- defName="Malnutrition" -->
+! Malnutrition
+----
+* Def Name:<br />Malnutrition
+* Label:<br />malnutrition
+| <div style="max-width: 300px;">Abnormally low body fat and weight, typically caused by lack of food. Malnutrition is always very unpleasant, but its initial effects are mild. Without food, though, a malnourished creature will waste away, losing muscle mass and capacities. Malnutrition ends with death. Upon re-feeding malnutrition naturally recovers over time. Malnourished creatures have larger appetites than normal.</div>
+|<!-- Details -->
+* Lethal Severity: '''100%'''
+* Scenario Can Add: {{Good|true}}
+|<!-- Stages -->
+{| {{STDT}}
+! Label !! Parameters
+|-
+! trivial
+|<!-- Parameters -->
+* Social Fight Chance Factor: {{Bad|x150%}}
+* [[Hunger Rate]] Factor Offset: {{++|50%}}
+* [[Consciousness]] Offset: {{--|5%}}
+|-
+! minor
+|<!-- Parameters -->
+* Min Severity: '''20%'''
+* Social Fight Chance Factor: {{Bad|x200%}}
+* [[Hunger Rate]] Factor Offset: {{++|60%}}
+* [[Consciousness]] Offset: {{--|10%}}
+|-
+! moderate
+|<!-- Parameters -->
+* Min Severity: '''40%'''
+* Social Fight Chance Factor: {{Bad|x250%}}
+* [[Hunger Rate]] Factor Offset: {{++|60%}}
+* [[Consciousness]] Offset: {{--|20%}}
+|-
+! severe
+|<!-- Parameters -->
+* Min Severity: '''60%'''
+* Social Fight Chance Factor: {{Bad|x300%}}
+* [[Hunger Rate]] Factor Offset: {{++|60%}}
+* [[Consciousness]] Offset: {{--|30%}}
+|-
+! extreme
+|<!-- Parameters -->
+* Min Severity: '''80%'''
+* Life Threatening: {{Bad|true}}
+* [[Hunger Rate]] Factor Offset: {{++|60%}}
+* [[Consciousness]] Max: {{Bad|10%}}
+|}<noinclude>
+|}</noinclude>

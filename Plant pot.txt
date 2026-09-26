@@ -1,0 +1,88 @@
+{{Infobox main|furniture
+| name = Plant pot
+| image = Plant_pot.png
+| description = Plant decorative flowers here to improve the mood of people nearby.
+| type = Building
+| type2 = Furniture
+| placeable = true
+| passability = pass through only
+| cover = 0.2
+| minifiable = true
+| size = 1 ˣ 1
+| mass base = 2
+| flammability = 1
+| hp = 75
+| sell price multiplier = 0.7
+| terrain affordance = light
+| work to make = 250
+| stuff tags = Metallic, Woody, Stony
+| resource 1 = Stuff
+| resource 1 amount = 20
+| has quality = true
+}}
+A '''plant pot''' allows a [[colonist]] to grow [[decorative plants]] indoors or outdoors, in order to improve [[beauty]]. The plants must be resown regularly by growers and the pot cannot be used to grow crops. 
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+Once constructed, the plant pot can be sown with the following decorative plants by colonist assigned to [[Work#Grow|Growing]]: {{#ask: [[sowTags::~*Decorative*]] [[sowTags::!~*DecorativeTree*]]}}.
+
+The plant inside has a limited lifespan and needs to be replanted regularly by a grower in order to provide the desired beauty, and can be eaten by animals. However, growers will periodically check the plant's health, and replant in the pot if necessary.
+
+The pot has a [[Plants#Fertility|fertility]] of 100%.
+
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_24 text-center}}
+! Plant !! Beauty !! Sow Work !! Lifespan
+|-
+! [[Rose]] 
+| {{Q|Rose|Beauty}} 
+| {{Q|Rose|Sow Work}} ticks
+| {{Q|Rose|Lifespan Days Per Grow Days}} days
+|-
+! [[Daylily]] 
+| {{Q|Daylily|Beauty}} 
+| {{Q|Daylily|Sow Work}} ticks
+| {{Q|Daylily|Lifespan Days Per Grow Days}} days
+|}
+</li></div>
+
+== Analysis ==
+Plant pots can be a cheap and fast way to increase beauty, at the cost of a grower's time. But there may be better alternatives:
+
+* [[Sculpture]]s of at least normal [[quality]] provide more beauty overall and do not require constant replanting. As soon as an art bench and decent artist are available, sculptures are preferred.
+* You can grow decorative plants indoors without needing a plant pot. Simply leave a portion of the floor - or the entire floor - as dirt, then place a [[growing zone]] of the desired flower. Dirt floor costs no resources to create, but is slightly less beautiful, lowers Cleanliness, and may create [[filth]]. Specifically, when a colonist steps from dirt to constructed floor, they may create filth. So if a room doesn't have the floor entirely out of dirt, plant pots may be appealing to avoid the filth creation.
+* [[Jade]], if available, can be used to create beautiful [[fence]]s. Jade fences have a beauty of {{Q|Jade|Beauty Offset}}, with a market value of {{Silver}} 6.3, and do not require constant replanting. Wood plant pots have a beauty of 14 or 18, but have a value of {{Silver}} 25. Thus, jade fences are more [[wealth]]-efficient, and do not take up valuable colonist time. However, jade may not be available in the very early game. Also, jade fences take up more space, which can hamper the Impressiveness of a small room (e.g. bedrooms).
+
+Therefore, plant pots are mostly useful in the early game, in places with constructed floor, and before you have access to a high skill artist. Try to place pots in a central location so your growers don't have to spend so much time walking.
+
+Although daylilies are more beautiful and take less time to sow, unless the plant pot is close to the normal workplace of your growers, roses should be planted because they only need to be tended to every 5 days.
+
+=== Resource Compression ===
+A niche use for the plant pot is resource compression for [[caravan]]ing or using [[transport pod]]s. A constructed plant pot has a base mass of 2 kg but can be deconstructed into 10 units of its component material, or 100 for small volume materials. As these 10 units often weigh more than the 2 kg of the pot, more material can be carried for the same mass by keeping it in pot form and deconstructing it at the end of travel. For example, 10 effective* units of [[steel]] weighing {{#expr: {{Q|Steel|Mass Base}}*10}} kg can be compressed into 2 kg of plant pot, allowing you to carry {{#expr: {{Q|Steel|Mass Base}}*10/2}} times the steel you normally would. 
+
+: (* Resource compression has a drawback in that you will lose 50% of the invested resources - 10 out of the 20 units of material used to construct the plant pot will be lost. However, when the alternative is abandoning the material anyway due to weight restrictions, there is no reason not to do so if time permits.)
+
+{{Building Stats Table}}
+
+== Styles ==
+{{Ideology|No category}}
+[[Ideoligion]]s allow the selection of styles which then change the texture of the certain items and buildings when constructed by the colony. These style variants can be crafted if the colony has the selected style, or can be looted from raiders from factions with the requisite style.
+<gallery>
+Plant pot.png|Base Variant
+Techist plant pot.png|Techist Variant
+</gallery>
+
+== Version history ==
+* [[Version/0.0.245|0.0.245]] or prior - Added.
+* [[Ideology DLC]] Release - Received styles via new [[Ideoligion]] [[style]] system. 
+* [[Version/1.3.3117|1.3.3117]] - Fix: Cannot plant flowers/bonsai trees in plant pots when there is a floor covering beneath the pot.
+* [[Version/1.4.3641|1.4.3641]] - Fix: [[Gauranlen seed|Gauranlen]] and [[polux seed]]s can be planted in and plant pots. 
+
+<gallery>
+PlantPot.png|Sprite some time prior to [[Version/0.12.914]]
+</gallery>
+
+{{Nav|furniture|wide}}
+[[Category:Furniture]]

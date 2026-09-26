@@ -1,0 +1,90 @@
+{{Odyssey}}
+{{Infobox main|building
+| name = Orbital scanner
+| image = OrbitalScanner_north.png
+| description = A sensor unit that passively scans for irregular objects orbiting the planet. It will periodically detect locations in orbit that can be visited with transport pods, shuttles, or gravships.<br>The scanner won't function under a roof. Building multiple orbital scanners does not increase the chance to find new locations.
+<!-- Base Stats -->
+| type = Building
+| type2 = Odyssey (Buildings)
+| beauty = -8
+| hp = 180
+| flammability = 0.3
+| rotatable = true
+| minifiable = False
+| path cost = 50
+<!-- Building -->
+| size = 2 ˣ 2
+| passability = pass through only
+| blockswind = false
+| terrain affordance = Heavy
+| power = 500
+| cover = 0.4
+<!-- Creation -->
+| research = Orbital tech
+| skill 1 = Construction
+| skill 1 level = 8
+| work to make = 10000
+| resource 1 = steel
+| resource 1 amount = 180
+| resource 2 = component
+| resource 2 amount = 6
+| resource 3 = advanced component
+| resource 3 amount = 2
+<!-- Technical -->
+| defName = OrbitalScanner
+<!-- Unsorted -->
+| flickable = true
+| tickerType = Normal
+}}
+'''Orbital scanners''' are [[building]]s added by the [[Odyssey DLC]] that automatically detect sites in [[orbit]] for mining, looting, and other uses.
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+The scanner will have two main phases:
+* '''Scanning:''' While powered, the scanner will passively look for orbital objects. This process has an MTB of 60000 [[ticks]] (1 day).
+* '''Locating:''' When an object has been found, the scanner will begin locating its location. This process will take between 8 to 10 days, during which the scanner must be powered. The countdown will pause should the scanner loses power during this period. Once completed, a [[#Quests|quest]] will be given to the player, and the scanner restarts.
+
+In addition, there is a cooldown of 18 days, which starts after an object is scanned. This cooldown may tick down concurrently with the Locating phase, and will also tick down if the scanner is powered off. This cooldown is not visible in game.
+
+Having multiple scanners provides no benefit over having one scanner. If you do have multiple, the game will randomly select one powered scanner to be the one to have found the object during the Scanning phase, and only that scanner needs to remain powered during the Locating phase.
+
+The scanner can be built on the ground, even in [[orbit]] or on a [[gravship]]. Scanner progress is not reset if the gravship it's on moves tiles.
+
+=== Quests ===
+{{Main|Quests#Odyssey}}
+When a scan is complete, the game will randomly select a random quests among these:
+
+* '''Resource Asteroid''': An asteroid containing mineable resources.
+** This quest has a weight of 1.5 (compared to the weight of 1 for most of the other quests), making it more likely to be chosen than other quests.
+** The random resource can be [[gold]], [[uranium]] or [[plasteel]], with each of them having an equal likelihood of being chosen.
+** The location is similar to asteroids generated on world creation, with some minor differences. Its icon on the [[world map]] contain color veins - based on which resources the asteroid has. Additionally, asteroids found by this method will contains more of such resources compared to pre-generated ones{{Check Tag|Verify|This is based on in-game-text, with its text mentioning 'significant amount of resources.' compared to 'trace amount'.}} . 
+** The asteroid has a chance to spawn with an archean tree as well as a crate with one or more archean seeds and/or{{Check Tag|Confirmation needed}} an in stone enclosed chamber with cryptosleep caskets{{Check Tag|Variant? Occupants?}} in it.
+* '''Orbital Item Stash''': An asteroid with a hollow core containing structures with loot. Usually containing some stone blocks and/or meals, raw food in addition to regular ancient danger loot.
+** The location is similar to the previous one, but without any mineable resources other than [[vacstone]].
+* '''Abandoned Platform''': An ancient orbital platform with no signs of life.
+* '''Orbital Wreck''': Wreckage of abandoned platform with hostile [[salvagers]].
+* '''Mechanoid Platform''': An orbital platform with high [[mechanoid]] activity.
+** This quest has a weight of 0.5 (compared to the weight of 1 for most of the other quests), making it less likely to be chosen than other quests.
+* '''Satellite''': An abandoned platform, usually protected by outside [[uranium slug turret]]s.
+Outside of the orbital scanner, these quests can be obtained by hacking [[ancient uplink]]s.
+
+== Analysis ==
+The orbital scanner is the primary means of finding locations in [[orbit]] around the planet. It should not be an immediate priority to build. The orbital locations it finds typically have a few rare items each, but the quantity of loot is low and those items may be duds. At the very least, your colonists need a way to survive in a vacuum and fight enemies there - [[power armor]] is helpful but not strictly necessary. Still, the scanner is a good way to find rare items like high quality [[unique weapon]]s, [[orbital bombardment targeter]]s, and even [[healer mech serum]]s.
+
+[[Ancient uplink]]s can also be used to find orbital locations. They are single use and can only be found as part of a [[landmark]], but they can be combined with an orbital scanner to find more locations.
+
+== Gallery ==
+<gallery>
+File:OrbitalScanner_east.png|Facing east 
+File:OrbitalScanner_north.png|Facing north 
+File:OrbitalScanner_south.png|Facing south 
+</gallery>
+
+== Version history ==
+* [[Odyssey DLC]] Release - Added
+* [[Version/1.6.4535|1.6.4535]] - Clarified the orbital scanner description. The only change is adding ''"Building multiple orbital scanners does not increase the chance to find new locations."'' to the end of the description. Fix: Orbital scanner north and south sprites swapped.
+
+{{Nav|odyssey|wide}}
+[[Category:Odyssey (Buildings)]]

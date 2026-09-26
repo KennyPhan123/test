@@ -1,0 +1,73 @@
+{{infobox main|building
+| name = Auto mortar
+| image = Automortar.png
+| description = A self-powered, self-loading, automatic mortar. It can hit targets at any distance, over walls, but is quite inaccurate.
+| type = Building
+| type2 = Mechanoid cluster
+| placeable = false
+| path cost = 50
+| passability = pass through only
+| cover = 0.4
+| size = 2 ˣ 2
+| flammability = 0
+| hp = 260
+| beauty = -20
+| destroyyield = {{Icon Small|Steel slag chunk}} 1 + {{Icon Small|Steel}} 60 + {{Icon Small|Plasteel}} 10 + {{Icon Small|Reinforced barrel}} 1
+| damage = 50
+| damage type = Bomb
+| armorPenetration = 10
+| stoppingPower = 0.5
+| range = 500
+| minrange = 29.9
+| missRadius = 10
+| burst = 1
+| warmup = 4
+| velocity = 41
+}}
+An '''auto mortar''' is a hostile [[building]] that appears in [[mech cluster]]s and autonomously launches explosives similar to a manned [[mortar]].
+
+While this is a Core building, it can only naturally spawn with [[Royalty]]{{RoyaltyIcon}} enabled (due to the mech cluster requirement).
+
+== Occurrence ==
+Auto mortars only spawn in mech clusters. Like the [[condition causer]]s, it counts as a cluster's problem causer, of which each can cluster can only have one. It generates four times more often than the other problem causers, but only costs the cluster 220 combat points rather than 750, so the cluster will have more other threats.
+
+They cannot be claimed by the player, and must be destroyed for the cluster to be considered defeated.
+
+== Summary ==
+The auto mortar fires shells equivalent to [[high explosive shell]]s every 120s (7,200 [[ticks]]), which explode as normal to deal 50 [[Damage type#Bomb|Bomb]] damage in a 2.9-tile radius but do not require restocking or reloading. Like normal [[mortar]]s, it has a forced miss radius of 10 tiles, and cannot fire if its bottom-left tile is covered by [[roof]]. Note that unlike normal mortars, its forced miss radius does not increase to 13 if the [[Classic mortars]] storyteller option is enabled. Valid targets are colonists, buildings and, unlike [[siege]] [[mortar]]s, tamed trainable animals. They do not target non-trainable animals. 
+
+Their targeting prioritizes buildings and trainable animals with the same level of priority, while humans get a 4x priority. Basically, if you have a colony of 1 pawn and 4 walls, your pawn would be targeted 50% of the time.
+
+Like all turrets, they are temporarily disabled by sources of [[EMP]], with downtime scaling to the EMP damage dealt. Unlike mechanoids, auto mortars do not adapt to EMP and thus can be continuously restunned.
+
+[[File:Turret medium blast.png|thumb|Explosion blast area (orange cells) of the auto mortar (white cells)]]
+If it is damaged beyond 20% HP (52 HP) it may explode but it is not a certainty. The mortar will spark and emit a hissing sound shortly before exploding {{ticks|240}} later. The explosion deals 50 [[Damage Type#Bomb|Bomb]] damage in a 4.9 tile radius centered around the mortar's bottom left cell. 
+
+They are a source of the [[reinforced barrel]]s needed to construct mortars. Reinforced barrels will not spawn if the [[Classic mortars]] storyteller option is enabled.
+
+Like all mech cluster buildings, they not only have a [[Flammability]] of 0%, but also take no damage from attacks with the [[Damage Types|Flame]] damage type. This is in contrast to, for example, a [[stone]] [[wall]] which will not be ignited by [[molotov cocktails]] but will take the 10 flame damage from the initial attack.
+
+Auto mortars must be destroyed for the mech cluster to be defeated.
+
+Unlike mortars built by the player auto mortars can fire in the orbit layer.
+
+== Analysis ==
+Auto mortars are like a [[siege]] which lasts until the building is completely destroyed. Even a few rounds can blow up your supplies, production facilities, and walls, making it an extremely high priority threat even for mountain bases (by destroying outdoor power sources). Like other condition causers, it can start immediately active or remain dormant for a few days. Waking up a mech cluster will not cause the auto mortar to immediately start firing.
+
+If the mech cluster doesn't have a [[proximity activator]], then you may be able to roof over the auto mortar. You can use the cluster's own walls, or place a wall or column 3 tiles away from any mech or mech building - this is far enough to not trigger the cluster. The action of constructing a roof over any of the mortar's tiles will cause the cluster to immediately wake up, making this a somewhat risky strategy. Unless the wall is destroyed, you'll be safe from the auto mortar. Keep in mind that only the bottom-left corner of the mortar needs to be covered by the roof.
+
+== Strategy ==
+Because of their devastative force if left unattended, strategies revolve around being able to rush them down without putting your colonists through the mech cluster's sight:
+
+# '''Counter Bombardment''': Easily the safest. If your colony has access to mortars and the mech cluster is not protected by a [[Mech high-shield]], you can hope to immediately take out the mortar, plus some damage to other mechanoid structures.
+# '''Sight-Blocking''': Since mech clusters spawn dormant, this gives you the chance to build near the cluster. Get a builder with a [[Weapons#Ranged_weapons|ranged weapon]], or preferably [[frag grenades]], and build a 1x1 room (3 walls, 1 door) out of some cheap materials (wood/steel) at least 3 blocks away from the auto-mortar (due to a sudden case of explosion), ensuring that while opening and closing the door (to break targeting to the pawn), the builder has line of sight with the auto-mortar, while also covering with the wall from possible mechanoid attacks. '''NOTE''': When the auto-mortar reaches <50% health the mobile mechanoid will assault the colony.
+# '''[[Invisibility]]''': A [[psycast]]er with a high [[neural heat limit]] can use the [[invisibility]] psycast to invade the mech cluster, destroy the automortar, and get out without being attacked. If using melee, a [[shield belt]] is recommended so the automortar's explosion won't harm the psycaster.
+
+== Version history ==
+* ? - Added.{{Check Tag|Release?|Verify if present on initial release or added in a later update}}
+* [[Version/1.2.2753|1.2.2753]] - Fix: Auto mortars are always active.
+* ? likely [[Version/1.6.4518|1.6.4518]], possibly prior - Moved from Royalty DLC to Core.
+* ? - Constructing roof over a dormant mortar now awakens the cluster.
+
+{{nav|mechanoid|wide}}
+[[Category:Mechanoids]][[Category:Turret]]

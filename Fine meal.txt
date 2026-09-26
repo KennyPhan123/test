@@ -1,0 +1,101 @@
+{{See also|carnivore fine meal|vegetarian fine meal}}
+{{Infobox main|food
+| name = Fine meal
+| image = Fine meal a.png
+| description = A complex dish assembled with care from a wide selection of ingredients.
+<!-- Base Stats -->
+| type = Food
+| type2 = Meal
+| hp = 50
+| deterioration = 10
+| marketvalue = 20
+| mass base = 0.44
+| flammability = 1
+| stack limit = 10
+| path cost = 14
+<!-- Ingestion -->
+| food type = meal
+| taste = Fine
+| ingested direct thought = AteFineMeal
+| max num to ingest at once = 1
+| days to rot = 4
+| nutrition = 0.9
+<!-- Creation -->
+| work to make = 450
+| work speed stat = Cooking Speed
+| production facility 1 = Fueled stove
+| production facility 2 = Electric stove
+| skill 1 = cooking
+| skill 1 level = 6
+| resource 1 = Nutrition
+| resource 1 type = non-vegan
+| resource 1 amount = 0.25
+| resource 2 = Nutrition
+| resource 2 type = vegan
+| resource 2 amount = 0.25
+| bulk product amount = 4
+<!-- Technical -->
+| defName = MealFine
+| preferability = Fine
+| tradeability = Buyable
+<!-- Unused -->
+| always haulable = true
+| draw gui overlay = true
+| eat effect = EatVegetarian
+| graphic class = Graphic_Single
+| graphic path = Things/Item/Meal/Fine
+| label = fine meal
+| parent name = MealRottable
+| resource readout priority = Last
+| selectable = true
+| social properness matters = true
+| sound eat = Meal_Eat
+| thing class = Meal
+| ticker type = Rare
+| use hit points = true
+}}
+{{Info|A '''fine meal''' is a higher quality [[meal]] that requires both meat and vegetables to create.}}
+
+== Acquisition ==
+Fine meals can be [[Work#Cook|cooked]] at a [[{{P|Production Facility 1}}]] or [[{{P|Production Facility 2}}]]. A fine meal requires 0.25 units of [[nutrition]] from vegan items, 0.25 units of nutrition from meat or animal products – this is equal to 5 units of raw vegetables and 5 units of meat or an equivalent nutritional yield of animal products. They require {{Ticks|{{P|Work To Make}}}} of work to make, and a [[{{P|Skill 1}}]] skill of {{P|Skill 1 Level}}.
+
+== Summary ==
+A fine meal can be eaten by humans or animals for 0.9 [[nutrition]], or 90% of a human's hunger meter. As it takes 0.5 nutrition of [[raw food]] to create, fine meals provide 180% nutrition efficiency, equal to [[simple meal]]s.
+
+Eating a fine meal or its variants gives the {{Thought|desc=I ate a really tasty fine meal. Yum!|label=ate fine meal|value=+5|stack=1|duration=1}}. This replaces the {{Thought|desc=That lavish meal was amazing. It nourished my body and my soul.|label=ate lavish meal|value=+12|stack=1|duration=1}} from [[lavish meal]] if present. If the meal was made out of [[insect meat]], [[human meat]], or [[twisted meat]]{{AnomalyIcon}} their respective moodlets will be applied. If [[Ideology DLC]] {{IdeologyIcon}} is active and the meal was made out of [[raw fungus]], its normal moodlet will also be applied.
+
+== Analysis ==
+If the colony is already producing both meat and vegetables, fine meals are an easy-to-implement mood buff. Fine meals consume the same total nutrition as a simple meal, meaning no food is wasted. Even if the meat : vegetable ratio is unbalanced, you can always cook fine meals until you run out of either ingredient (then switching to simple meals afterwards). This is as simple as queueing fine meals for cooking before any simple meals. The only downside is the minimum skill requirement and the {{++|{{%|1-{{Q|Simple meal|Work To Make}}/{{P|Work To Make}} round 2}}}} slower production rate. 
+
+Animals like [[chicken]]s and [[cow]]s can produce a continuous stream of edible products. Whether meat is easy to obtain is highly variable - hunting [[rat]]s may not be worth it, but a ranching economy could be.
+
+[[Insect meat]] only gives a {{--|3}} moodlet when cooked, which results in a net {{+|2}} mood when used for fine meals. If a colonist's [[ideoligion]]{{IdeologyIcon}} prefers insect meat, then fine meals of insect meat provide a great mood buff. If ideoligion permits cannibalism, then [[human meat]] can be used to the same effect.
+
+=== Comparison to vegetarian fine meals===
+If meat and animal products are unavailable, [[vegetarian fine meal]]s give the same fine meal moodlet at the cost of using +50% more food. In many cases, it is easier and cheaper to grow 50% more crops than to ranch animals; just 1 hour of a grower's time can "upgrade" multiple colonists from simple to vegetarian fine. See vegetarian meal's [[Vegetarian fine meal#Analysis|Analysis section]] for more details.
+
+Note you can make fine meals that are ''ideologically vegetarian'' from the same amount of nutritional value using the regular fine meal recipe by replacing all meat with animal products. This will keep vegetarian pawns happy while avoiding the lower nutritional efficiency of the vegetarian fine meal.
+
+=== As a "drug" ===
+If colonist mood is alright without fine meals, even during the worst [[draft]] conditions (hungry and tired), then fine and lavish meals can be saved for when a colonist is on verge of a [[mental break]]. However this is only worth it for fine meals if: 
+# The colony doesn't have a consistent supply of both nutrition types
+# Pawns are typically eating food with a higher nutritional efficiency that fine/simple meals; and/or
+# The pawns mood is consistently above 95.
+
+== Gallery ==
+<gallery>
+Fine meal a.png|One fine meal
+Fine meal b.png|Partial stack
+Fine meal c.png|Full stack
+</gallery>
+
+== Version history ==
+* [[Version/0.2.363|0.2.363]] - Added
+* Beta 19/1.0 - Traders will no longer accept typical short-life meals, including fine meals.
+<gallery>
+Fine meal old 2.png|Old sprite
+Fine meal old.png|Even older sprite
+</gallery>
+
+{{Nav|Food|wide}}
+[[Category:Food]] [[Category:Processed Food]] [[Category:Meal]]

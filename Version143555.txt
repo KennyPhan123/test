@@ -1,0 +1,245 @@
+{{Version Nav}}
+Hi there!
+
+RimWorld's 1.4 content update is now available! It adds cross-expansion integration with new Ideology precepts that link to Biotech, gene-modding and inheritance improvements, diplomatic reactions to pollution dumping, polux tree seeds, tribalwear for kids, and many other miscellaneous changes.
+
+In a previous announcement, Ty covered the juicy details of this update. That same announcement has been shared below, as well as the changelog with our latest rounds of testing.
+
+Thanks to everyone who helped us test this update. The community goes above and beyond with feedback and reports, and it genuinely helps us get these updates out so quickly. We've also tested the update for savegame and mod compatibility. If you’d like to help test our updates in the future, please join the official RimWorld Development Discord.
+
+If you want to keep playing on the previous version of 1.4, you can use the Steam beta branch "version-1.4.3542". To do this, r-click RimWorld in the Steam library, go to properties, open the betas tab, and select the version from the dropdown.
+
+Join us on Reddit to discuss the update here.
+
+Also, please don't hesitate to review Biotech on Steam!
+
+Enjoy. :)
+- Tia
+
+== Cross-expansion integration ==
+We’ve been following feedback across the community (Reddit, Steam comments, Twitch, YouTube, and our insightful testers on Discord) to try to make sure all the details are covered. It’s a very complex game at this point, so there are quite a few details - having feedback from tens of thousands of people is frankly invaluable from a design perspective.
+
+One theme that’s come up is the desire for integration between expansion packs. Originally, I was a bit hesitant to put this in because I worried it would feel like locking one expansion’s content behind another expansion. However feedback seems to indicate that people want it, and narrative-wise, it would make a ton of sense if the ideoligions from the Ideology expansion had beliefs about xenohumans, sanguophages, children, and so on. So I decided to work on this.
+
+I’ve found over the years that the wrong way to design Ideology precepts is to just think of something that seems fictionally reasonable and implement it blindly. You end up with mechanics that “make sense” but aren’t actually storyful or fun. Instead, we decided to take a “goal experience” approach to the design: We wrote down a list of the specific play paths and role-play stories that players might want to explore, and which would also be fun. Then we created precepts that specifically open up those play paths:
+
+Belief issue - Bloodfeeders: The vampire lord with human worshipers is a classic idea. So are the vampire hunters. This precept changes peoples’ attitudes towards people with the bloodfeeder gene (which in Biotech means only sanguophages, though you can of course create your own bloodfeeder xenotypes).
+
+Those who revere bloodfeeders will want them around, love them, and be fine with being fed upon. Those who revile bloodfeeders will hate having them around, despise them, love killing them, refuse to become them, and hate themselves if they are one. Bring on Dracula’s thralls.
+
+Belief issue - Child labor: We always had the idea of players being able to choose to invest more or less in children - to decide between using them as workers or fighters, or trying to strengthen their development with a rich and free childhood. Now ideoligions can have opinions on how this ought to be done.
+
+Those who encourage child labor will have children who work faster and not like assigning children to recreation. Those who disapprove of child labor will have children who learn faster, but adults won’t be happy if children are assigned to work.
+
+Belief issue - Mechanoid labor: Machine worshippers need to be able to live off the labor of their electrically-powered buddies. When an ideoligion has mechanoid labor enhanced, mechanoids controlled by its mechanitors will work faster, but colonists will work slower (because why should a human have to do a machine’s job?)
+
+Belief issue - Growth vats: Ideology has technology worshippers and technology haters, and they need to be able to interact with growth vats as well as biosculpter pods.
+
+Those who see growth vats as essential will grow quicker in the vats, but be unhappy with (yuck) natural reproduction. Luddites who see growth vats as prohibited refuse to build them and will be unhappy having them around, and especially having kids inside.
+
+Belief issue - Preferred xenotypes: Whether it’s a baseliner purity cult or a fur-only yttakin tribe, some beliefs may place a certain xenotypes over others. An ideoligion can have up to three preferred xenotypes. If there are no preferred xenotypes, there is no effect, just like in older versions. However, if any xenotypes are preferred, believers will be happier with a colony of their preferred xenotypes and have a higher opinion of them, but a lower opinion of others. They’ll also try to refuse becoming a non-preferred xenotype and be quite bothered if they end up as one.
+
+More generally, we linked xenogene implantation to the existing body-modding precepts, so those who love or hate body mods will appropriately love or hate having xenogenes as well (note this doesn’t affect germline genes, so you can still have e.g. a body purist impid ideology).
+
+Those with beliefs about autonomous weapons will extend those beliefs to the use of mechanoids as well.
+
+== Other notable features ==
+Xenotypes breed true: Previously, there were sometimes broken-looking cases where parents with germline genes would have a child that lacked many of them. We removed some metabolism limits for baby gene generation and made the algorithm that generates baby genes from parent genes more flexible. This means that your gene-modded humans will pass down their genes completely and reliably.
+
+Loosening the economy around gene-modding: Previously, making custom xenotypes during game setup worked well, but it was quite hard to actually do genetic modification during the game. Getting your hands on the genes and building all the infrastructure was quite costly and sometimes hard to justify from a game advantage perspective.
+
+We’ve tuned some systems to make gene-modding more viable. Now, quest rewards come with a lot more genepack options and they’re available earlier in the game. We’ve reduced the xenogerm shock from extracting genepacks which will speed up your extraction efforts. We’ve also changed how certain genes apply traits so that you can stack effects together and create more diverse xenotypes. This is an ongoing tuning effort and we’ll be watching and dialing in the numbers to try to make gene-modding useful, moderately costly, and narratively-interesting.
+
+Polux tree seeds: These new special seeds can be acquired in a few special ways. They’re rare to find, but with them you can plant a polux tree at a place of your choosing. Collecting polux trees is a new alternative way to suppress and remove pollution (besides the atomizer) in the late game (after it builds up in the early/midgame).
+
+Pollution dumping diplomatic responses: There are a variety of ways to deal with pollution - freeze it, erase it in the atomizer, let polux trees neutralize it, just make less of it - or export it. We’ve added more depth and sensibility to diplomatic responses from other factions when you dump pollution off-map. Whether you’re dropping pods of pollution straight onto their homes, or dumping them off of a caravan, or launching toxic packs into the ocean, other factions will notice and respond more consistently and interestingly. At the most basic level, this means goodwill impacts. However, there is also a small chance of new faction retaliation in response to you dumping pollution in the world - they might send punitive attacks, or even drop some pollution back onto you. Together with the polux tree seeds, we hope that this will balance the choice between different pollution management methods and make that decision more interesting, while also de-emphasizing micromanagement-heavy strategies. It also adds a bit of narrative flair to have other factions respond directly to your actions.
+
+Player-made xenotypes spawn in the world: Player-made xenotypes will now spawn in the world! Your customized pig/cat/dog hybrid no longer needs to be alone. Basically, in various random spawn situations like crash pod survivors or refugees, there is now a chance that the arriving person will spawn as any xenotype in the world. That includes modded xenotypes, as well as xenotypes created by the player. (Note: Not every player-created xenotype file is considered - only those if the xenotype is referred to in an ideoligion or the player used it for a starting colonist).
+
+And the changelog below lists a pile of other smaller changes and fixes - go read it!
+
+Thanks all,
+Ty
+
+== Changelog ==
+
+=== Changes since unstable ===
+* Players can sell genepacks currently inside gene banks. The bank must be within the beacon's radius for trading with ships.
+* Identical genepacks can stack in the trade dialog.
+* Removed xenotype sets from existing MemeDefs.
+* Added a stat entry for humanlikes which displays their current age rate multiplier.
+* Reduced the frequency of sanguophage-related quests.
+* Chemically-dependent xenotypes can take their desired drug by right-clicking it, even if their ideoligion forbids it.
+* Addiction-resistant genes for psychite, wake-up and go juice have a 50% multiplier on overdose chance.
+* Addiction-resistant genes for alcohol, smokeleaf and psychite provide a 50% reduction in tolerance buildup.
+* Addiction-immune genes for psychite, wake-up and go juice grants immunity to overdoses from the drug.
+* Addiction-immune genes for alcohol, smokeleaf and psychite provides a 100% reduction in tolerance buildup.
+* Softened metabolism costs for smokeleaf and alcohol genes.
+* Added a positive "child not in growth vat" thought to "Growth Vats: Prohibited" precept.
+* Update the description for "child not in growth vat" to make it clearer that it relates to the colonist's child, not just any child.
+* Slightly reduce the impact that player mechanoids have on raid points.
+* Furskin and beardless genes are mutually exclusive.
+* Slightly reduce work needed for terminate pregnancy operation and increase medicine needed to 2.
+* Update non-combatant debug view to not draw timer on pawns which are permanently combatants.
+* Fix: Missing translation keys.
+* Fix: Remove reference to damage over time in acid spray description.
+* Fix: TakeDrug gizmo doesn't use ingestCommandString for translation if available.
+* Fix: Misc conflicting translation keys (AddPrecept, Value, Title).
+* Fix: Pawns gain certainty during deathrest.
+* Fix: Teenagers getting random backstories on save/load.
+* Fix: Right clicking injured pawns can cause usage of un-researched bioregeneration cycle.
+* Fix: Growth points are gained during deathrest when learning need is frozen.
+* Fix: Bloodfeeders sometimes do not ingest all taken hemogen packs, depending on food need level.
+* Fix: Mechlinks give the starting mechs more than once.
+* Fix: Children attempting to draw on the floor of areas with dangerous temperatures.
+* Fix: Ideoligion flooring missing cleaning time factor stat.
+* Fix: Checkbox cutoff on wind turbine's auto-cut settings tab.
+* Fix: Missing capitalization for “xenotype name:” in the editor.
+* Fix: Administer drug doesn't display that teetotalers will be unhappy if there is a chemical dependency gene present.
+* Fix: If a pawn is designated to enter a gene extractor but dies before they get there, the order is not canceled.
+* Fix typo: "colony is feels".
+* Fix: Pollution goodwill loss during Archonexus questline.
+* Fix: Ultraheavy boss mechs are never targetable by lances.
+* Fix: Enslaving a pawn removes unwaveringly loyal.
+* Fix: 'Missing ideo building' debuff after reforming an ideo, even if the building is present.
+* Fix: Points not being set for pollution events.
+* Fix: New joiners can spawn as the children of colonists who grew up in the colony.
+* Fix: Prisoners can refuse to attend their own execution due to temperature in the ritual area.
+* Fix: Pigskin factions can have quest helper snipers show up without weapons.
+* Fix: Capitalization for psychic shock immune.
+* Fix: Impossible relationships appearing with custom xenotypes.
+* Fix: Pigskin factions can have quest helper snipers show up without weapons.
+* Fix: Animals use human child and adult age rate multipliers.
+* Fix: Right clicking injured pawns can cause usage of un-researched bioregeneration cycle.
+* Fix: Growth points are gained during deathrest when learning need is frozen.
+
+=== Big new stuff ===
+Added precepts related to bloodfeeders:
+* Revered: “Bloodfeeders should be worshipped.” Positive mood effects for having bloodfeeders in the colony. Negative thoughts from bloodfeeder deaths. Positive opinion towards bloodfeeders. Not bothered by being fed on.
+* Reviled: “Anyone who drinks blood to survive is a monster.” Negative mood effects for having bloodfeeders in the colony. Positive thoughts from bloodfeeder deaths. Negative opinion towards bloodfeeders. Will not absorb or implant bloodfeeder genes from xenogerms.
+
+Added Ideology precepts related to child labor:
+* Encouraged: “Children build character through work. It’s important for everyone to contribute.” +20% child global work speed. Negative mood offset for adults while a child has recreation assigned.
+* Disapproved: “Childhood is sacred. We should let kids play like kids.” +20% child learn rate factor. Negative mood offset for adults while a child has work assigned.
+
+Added mechanoid labor Ideology precept:
+Enhanced: “Why should we work when we have machines?” +20% mechanoid work speed. -8% colonist work speed.
+
+Added Ideology precepts related to growth vats:
+* Essential: “We have the technology for safer childbirth and faster childhoods.” 30% quicker growth speed in growth vats. Negative mood when naturally pregnant or with a child outside of a growth vat.
+* Prohibited: “Growth vats rob children of their childhood.” Unable to build growth vats. Negative mood when growth vats are in the colony or children are in growth vats.
+
+Added a new category of precept: Preferred xenotypes.
+* Up to 3 can be chosen at any time. This includes player-created xenotypes. When chosen, believers will be happy to be and be around preferred xenotypes. Believers will be unhappy when they or others are of other xenotypes. Believers will not accept becoming a non-preferred xenotype via reimplant ability or xenogerms. Single-xenotype NPC factions have a chance to generate with this belief about themselves.
+
+Other:
+* Xenogenes count as artificial enhancements for body modders/prosthophobes.
+* Autonomous weapons include colony-controlled mechanoids for precepts.
+
+=== Smaller new stuff ===
+* Added child tribalwear.
+* Added an auto load toggle for genepacks. When off, the genepack will not be taken to a gene bank.
+* Added an option for selecting “no trait” on growth letters some of the time if there are more than two trait choices.
+* Added a UI button for absorbing xenogerms of appropriate targets, to help players understand that this option exists.
+* Added social thoughts for giving a lesson to a child and the child receiving a lesson.
+* If a child is unarmed and hasn’t participated in combat at all, raiders will treat them similarly to harmless livestock. This means the raiders will deprioritize them as targets and not hunt them down. It makes unexpected combat more survivable for kids, opens up those “porkchop hiding in the shed” stories and might create some rimworldy strategies.
+* Melee raiders now ignore non-combatants that aren't in LOS when choosing new targets (previously only ranged-attack raiders did).
+* Factionless pawns can spawn with any defined xenotype including those from mods and those which are player-created. Player-created xenotypes must be referred to in an ideoligion, or used as a player starting colonist, to spawn.
+* Added more varieties of yttakin pawn kinds. This means more variety of yttakin raiders and traders.
+* Display recipe ingredient counts on recipe float menu option tooltip.
+* Gases can travel through vents.
+
+=== Miscellaneous ===
+* Reduced the power needed for the wastepack atomizer to 400 W.
+* Reduced the work needed for the extract hemogen operation to 500 (from 1500).
+* Adjusted bandwidth costs for scorcher to 1 and lancer to 3.
+* Increased the health of the mechanitor's remote shielder ability to 75/150/225.
+* For the purposes of precepts, autonomous weapons include colony-controlled mechanoids.
+* Increased the availability of gene packs from various traders.
+* Increased frequency of genepacks in quest rewards.
+* Xenogenes count as artificial enhancements for body modders/prosthophobes.
+* Increase the apocriton's health, armor, and damage
+* Apocriton can now cast resurrect without line of sight. This should make him less cheesable in narrow hallway contexts and a bit more scary overall.
+* Yttakin factions no longer get desired apparel precepts, because they’re uncomfortable in all clothes.
+* Buffed furry tail minimum comfy temperature offset to -10 (from -5).
+* We now allow the kind trait to apply in addition to other violence-related genes.
+* Cribs no longer require any research, so tribal colonies can use them in the early game.
+* We now display market value on colony mechs’ inspect pane.
+* Pawn apparel generation takes into account min and max temperature stats per individual pawn rather than per xenotype. This means that yttakin will be less likely to spawn with parkas (they generally don’t need them) and so will look cooler.
+* When a bloodfeeder feeds on a person, the hemogen they gain is now related to how much blood was left in the target. This solves some logical incoherencies, and an exploit that involved keeping a deathless blood-farm and bloodfeeding on them over and over.
+* Reduced the impact and duration of gene loss shock from the gene extractor.
+* As people grow up, their aging rate now smooth scales from child age rate to adult age rate over several years. This prevents the problem of having a lot of 13-year-olds in the colony after raising children.
+* Renamed "child raiders" storyteller setting to "child enemies" to be more accurate.
+* If child enemies are disabled in the storyteller settings, refugees with children will not betray and attack (because that makes children your enemy). We reduced the chance of children spawning in refugee hospitality quests to mitigate balance impact of this.
+* Allow modifying the “child aging rate” and “babies are healthy” storyteller settings even if children are disabled, in case there are already children in the game.
+* Display recipe ingredient counts on recipe float menu option tooltip.
+* Added a "(disliked food)" parenthetical warning on the right-click menu when telling colonists to feed themselves or a patient a food that the eater would dislike. This helps players predict what will happen.
+* A caregiver feeding a patient will now feed them ideologically-venerated food sources if there are no non-venerated food sources.
+* Improved formatting of the research project content source line in the research UI.
+* When a deathless pawn takes damage that would have been lethal and falls into a deathrest coma instead, as an additional consequence they lose 3-6% of XP in a random skill. This should make non-death less trivial for these characters and preserve the sense of risk and danger. We’ll tuned this ongoing as needed.
+* Super-mechanoids cannot be called when there is already another super-mechanoid on the way.
+* Player is given the choice to set mechs to escort when a mechanitor leaves a map.
+* Hemogen UI gizmo no longer displays when multi-selecting pawns, to reduce clutter.
+* Ability UI buttons can now shrink like psycasts if there are too many, to avoid covering the screen.
+* Update the wording of the stillbirth letter to be a bit clearer about the choice of naming the baby, and allow the player to decide not to name the baby.
+* Fathers now get a negative thought if their child is stillborn.
+* If a baby is stillborn from a surrogate mother, the gene-mother gets a negative thought.
+* Updated the apocriton's description to note that it has a jump launcher.
+* If player sends a pregnant colonist on a “pawn lending” quest in a shuttle, and she gives birth during the quest, the baby will be returned with her instead of being kept by the questgiver.
+* Psychic bond now gives a small amount of psychic sensitivity so that it makes more sense, and as an interesting extra bonus.
+* Psychic bonds can now be created during lovin' instead of just on romance attempts. This means that two people who were in a relationship when the gene was implanted can now form a psychic bond after one gets the psychic bonding gene.
+* Psychic lances can't be used on mech bosses (because they trivialize the fight).
+* Added a thing category for mechanitor body parts (used on stockpile config etc.)
+* Updated textures for all super-mechanoid chips to look more appropriately ultratech than archotech.
+* Added a toggle for the glower color picker to disable the darklight-related UI elements for modders that want to re-use the dialog for other things.
+* Pawns away on a PawnLend quest won't have their lactating condition expire if there are any babies with them that can feed.
+* Show birth letter for babies born from lent colonists in a PawnLend quest.
+* Babies born during a pawn lend quest: If a baby is stillborn they are sent to the colony immediately for burial.
+* Display conditional stat affecters from ideoligions in stats page.
+* Optimization: Improved performance of AnyMechsInPlayerFaction and CompOverseerSubject.
+* Add dev tool to add ideology development points.
+* In the 'Completed scan' message sent when subcore scan is cancelled, changed 'cancel load' to 'cancel scan'.
+* Subcore scanners: Added confirmation dialog when cancelling a scan that can kill the occupant.
+* Added description to "force xenogerm implantation" command.
+* Shuffle inherited genes before adding them. Added a debug tool to spawn a baby given two parents.
+* Bringing babies to a safe temperature jobs can now be interrupted.
+* Kid tribalwear no longer lists skin layer twice.
+* Added an alert which displays deathresting pawns who can be safely woken.
+* Gene extractors will cancel extraction and eject the victim if they are without power for a cumulative 24 hours.
+* Update the lactating hediff's description to mention that it reduces fertility.
+* Lactating no longer prevents pregnancy but just applies a 5% fertility factor to the pawn.
+* Update the fertility stat to read back any hediffs that are modifying fertility.
+* Mood related genes no longer force traits. They apply a separate mood offset.
+* Learning genes offset global learning factor of a pawn instead of forcing traits.
+* Beauty-related genes offset pawn beauty directly instead of forcing traits.
+* Speed-related genes offset pawn speed directly instead of forcing speed traits.
+* Added a toggle to the hemogen gizmo which allows configuration of whether or not a pawn can ingest hemogen packs to desired hemogen level.
+
+=== Fixes ===
+* Fix: Tribal children who grow up in a colony don't get the 'natural' meditation focus type.
+* Fix: Lamps unconnected to a power grid do not properly have reduced power consumption once advanced lights is researched until you reload.
+* Fix: Ripscanning doesn't kill pawns if colonist instant death in difficulty settings is 0%.
+* Fix: Pilgrims coming to venerate a relic cause charity believers to get unhappy regardless of outcome.
+* Fix: Unwaveringly loyal inspect pane text not appearing for slaves.
+* Fix: Kills with body part weapons like knee spike and power claw don't satisfy kill satiety.
+* Fix: Custom xenotypes show up with relationships that make no genetic sense.
+* Fix: Hair color genes have a chance to not be passed on.
+* Fix: NullReferenceException when beginning role change in extreme temperatures.
+* Fix: Xenotype icon selection scrollview not working correctly.
+* Fix: Some broken word replacement in the grammar code run on labelNounPretty.
+* Fix: Gaining growth points with letter pending.
+* Fix: Grand altar draws rotated.
+* Fix: Bloodfeed can be used on pawns in mental states.
+* Fix: Wastepack cocoon infestation storyteller setting appearing in the wrong spot.
+* Fix: Apocriton appears in mech clusters.
+* Fix: Destroyed pawns can cause issues with deathrest building inspect strings.
+* Fix: Genes requiring other genes can be skipped for child genes generation.
+* Fix: Atomizer looks like it's rotated wrong by default.
+* Fix: Pawns ignore allow zones when hauling to transport pods.
+* Fix: HypothermiaRevealed tale displays death by cold even if the subject did not die from hypothermia.
+* Fix: 'No colonists can do this surgery' message appears even when there is a colony paramedic mech.
+* Fix: Farskipping a pawn into a range of an expired proximity sensor will trigger it again.
+* Fix: You can start as a psychically deaf mechanitor.
+* Fix: Second funeral is offered if corpse is destroyed after burial.
+* Don't maintain labor progress bar effecters if the pawn is not on the map anymore.
+* Don't maintain effecters for non-suspended world pawns.

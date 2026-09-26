@@ -1,0 +1,47 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Global/Misc}}
+|}
+----
+{| {{STDT| c_07}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Psychic shock" <!-- defName="PsychicShock", ParentName="DiseaseBase" -->
+! Psychic shock 
+----
+* Def Name:<br />PsychicShock
+* Label:<br />psychic shock
+* Label Noun:<br />a psychic shock
+| A state of psychic chaos in the brain and mind. Caused by psychic attacks or critical level of neural heat, this effect is debilitating until it wears off.
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|90%|100%|35%}}
+* Initial Severity: '''0.1%'''
+* '''Remove On Redress Chance By Days Curve:'''
+<div><li style="display: inline-table;">
+{| {{STDT| c_01}}
+! Days !! Chance
+|-
+! 0
+| 0%
+|-
+! 2
+| 0%
+|-
+! 7
+| 50%
+|-
+! 20
+| 100%
+|}{{Graph:Chart|width=200|height=200|xAxisTitle=Days|yAxisTitle=Remove On Redress Chance|yAxisFormat=%|type=line|x=0, 2, 7, 20|y=0, 0, 0.5, 1|interpolate=monotone|xGrid=|yGrid=}}</li></div>
+* '''Comps'''
+** ''Disappears''
+*** Disappears After Ticks: {{Ticks/gametime/hours|7500}}
+|<!-- Stages -->
+{| {{STDT| c_07}}
+! Label !! Parameters
+|-
+! Psychic shock
+|<!-- Parameters -->
+* [[Consciousness]] Max: {{Bad|10%}}
+|}<noinclude>
+|}</noinclude>

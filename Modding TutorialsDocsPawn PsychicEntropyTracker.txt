@@ -1,0 +1,179 @@
+1.5
+
+also check out [[Modding_Tutorials/Setting_up_a_solution|solutions]]
+
+= API =
+<code><span style="color:#3131ff">public class</span> Pawn_PsychicEntropyTracker : [[Modding_Tutorials/Docs/IExposable|<u>IExposable</u>]]</span></code><br>
+Implementation for a pawn's [[Psycasts|psycast]] values
+
+==== Constructor ====
+public Pawn_PsychicEntropyTracker(Pawn pawn);
+
+== Pawn ==
+{{code/var||get|Pawn|.|Pawn}}<br>
+A reference to the [[pawn]] this Psycast Tracker is attached to.
+
+{{code/var||get|Hediff_Psylink|.|Psylink}}<br>
+A reference to the psylink [[Hediffs|hediff]] of the pawn.
+
+{{code/var||get|bool||IsCurrentlyMeditating}}<br>
+Checks if the pawn is meditating using the [[Modding_Tutorials/Docs/TickManager|Tick Manager]].
+
+{{code/var||get|bool||NeedsPsyfocus}}<br>
+Not to be confused with {{code|CurrentPsyfocus {{=}} 1.0f}}, {{code|NeedsPsyfocus}} is true IFF the pawn is able to acquire psyfocus.
+
+== Psyfocus Gain ==
+{{code/var||get|float||CurrentPsyfocus}}<br>
+Gets the current amount of Psyfocus the pawn has.
+
+
+{{code/var||get|float||TargetPsyfocus}}<br>
+The JobGiver will only consider giving the meditation job to the pawn if {{code|CurrentPsyfocus}} is below this value.
+
+
+{{code/fun||void||SetPsyfocusTarget|float val}}<br>
+Sets {{code|targetPsyfocus}} to {{code|val}}.
+
+
+{{code/fun||void||GainPsyfocus|focus {{=}} null}}<br>
+Gains Psyfocus equivalent to 1 ticks worth of meditation.
+
+
+{{code/fun||void||OffsetPsyfocusDirectly|float offset}}<br>
+Directly modifies {{code|currentPsyfocus}} by {{code|offset}}. Offset can be negative. Clamps to a value {{code|[0.0f, 1.0f]}}.<br>
+
+
+{{code/fun||void||RechargePsyfocus|}}<br>
+Sets {{code|currentPsyfocus}} to {{code|1.0f}}.
+
+{{code/var||get|float||RecoveryRate}}<br>
+Gets the {{code|RecoveryRate}} stat of the pawn. The same as using {{code|GetStatValue()}}.
+
+== Psychic Heat ==
+
+{{code/var||get|float||EntropyValue}}<br>
+Gets the pawns current nerual heat value.
+
+{{code/var||get|float||EntropyRelativeValue}}<br>
+Gets the pawns current nerual heat as a percentage of their max.
+
+{{code/var||get|float||MaxEntropy}}<br>
+Gets the maximum neural heat stat.
+
+{{code/var||get|float||MaxPotentialEntropy}}<br>
+Gets the maximum neural heat before any adjustments. (Needs Expansion and verification)
+
+
+{{code/fun||bool||TryAddEntropy|float value, Thing source {{=}} null, bool scale {{=}} true, bool overLimit {{=}} false}}<br>
+Attempts to add {{code|value}} neural heat. Returns true if neural heat was succefully added.<br>
+Note that {{code|value}} is pre-scaling, before the {{code|PsychicEntropyGain}} stat is applied. Set {{code|scale}} to false to prevent scaling.
+
+
+{{code/fun||void||RemoveAllEntropy|}}<br>
+Sets neural heat to 0.
+
+{{code/var|||bool||WouldOverflowEntropy}}<br>
+Whether or not to prevent neural heat increases that will overflow neural heat.
+
+
+{{code/fun||bool||WouldOverflowEntropy|float value}}<br>
+Returns true if it is invalid to add {{code|value}} neural heat. If {{code|limitEntropyAmount}} is false, all checks are disregarded and this always returns false. Used to check if an ability can be cast with the current neural heat.
+
+{{code/var||get|PsychicEntropySeverity|Modding_Tutorials/Docs/Enums#PsychicEntropySeverity|Severity}}<br>
+Gets the pawns overflow [[Psycasts#Psychic_breakdown|severity]].
+
+
+{{code/fun||float||EntropyToRelativeValue|float val}}<br>
+A helper function to convert a numerical amount of neural heat to a percentage amount. Percentages are in 1.0f scale, and can overflow.
+
+== Psychic Sensitivity ==
+{{code/var||get|float||PsychicSensitivity}}<br>
+Gets the pawns Psychic Sensitivity. It is reccomended to use this over the StatDef if you are purely working with sensitivity as a multiplier, as this value is cached.
+
+{{code/var||get|bool||IsPsychicallySensitive}}<br>
+Returns whether or not the pawn is able to be affected psychically.
+
+== Psyfocus Level ==
+Not to be confused with the Psycast Hediff Level, this refers to the [[Psyfocus#Degradation|degredation band]]. To work with the Psycast Levels, go check out [[Modding_Tutorials/Docs/Hediff_Psylink|Hediff_Psylink]].
+
+
+{{code/fun|get|int||PsyfocusBand|}}<br>
+Gets the current Psyfocus Band. See [[#Psyfocus_Bands|Constants]] for values.
+
+== System ==
+{{code/fun||void||SetInitialPsyfocusLevel|}}<!--TODO:categorization(?)--><br>
+Sets the psyfocus level to an initial amount. For colonists, this value is {{code|0.75f}}. For any other pawn, this is a random value {{code|0.5f - 0.7f}}
+
+
+{{code/fun||void||PsychicEntropyTrackerTick|}}<br>
+The update function. You most likely wont be using or modifying this function.
+
+
+{{code/fun|override|void||ExposeData|}}<br>
+See [[Modding_Tutorials/Docs/IExposable|IExposable]].
+
+==== Static Properties ====
+
+{{code/var|const||float||PercentageAfterGainingPsylink}}<br>
+The amount of psyfocus a pawn gains upon acquiring a psyfocus (needs verification). Set to 0.75f, or 75%. <!--per level or only upon initial acquisition?-->
+
+{{code/var|const||int||PsyfocusUpdateInterval {{=}} 150}}
+
+{{code/var|const||float||PsyfocusCostTolerance {{=}} 0.0005f}}
+
+{{code/var|const||float||PercentageAfterGainingPsylink {{=}} 0.75f}}
+
+{{code/var|static||Dictionary<PsychicEntropySeverity, SoundDef>||EntropyThresholdSounds}}
+
+{{code/var|static|ro|Dictionary<[[Modding_Tutorials/Docs/Enums#PsychicEntropySeverity|<u>PsychicEntropySeverity</u>]], float>||EntropyThresholds}}<br>
+A dictionary containing constants for a pawn's [[Psycasts#Psychic_breakdown|neural heat limits]]
+
+
+{{code/fun|static|void||ResetStaticData|}}<br>
+Resets {{code|EntropyThresholdSounds}}. (Requires Verification)
+
+===== Psyfocus Bands =====
+{{code/var|static|ro|List<float>||PsyfocusBandPercentages {{=}} [0.00f, 0.25f, 0.50f, 1.00f]}}<br>
+The values corresponding to each band. Note that {{code|PsyfocusBand {{=}} 0}} for all psyfocus levels between {{code|[0, 1]}}, {{code|{{=}}1}} between {{code|[1, 2]}} and {{code|{{=}}2}} between {{code|[2, 3]}}.
+
+{{code/var|static|ro|List<float>||FallRatePerPsyfocusBand {{=}} [0.035f, 0.055f, 0.075f]}}
+The amount of psyfocus lost per day, corresponding to each band.
+
+{{code/var|static|ro|List<float>||FallRatePerPsyfocusBand {{=}} [2, 4, 6]}}
+The maximum castable ability level corresponding to each band.
+<!--
+
+};
+
+
+	public static string psyfocusLevelInfoCached = null;
+
+-->
+==== Tooltips ====
+public string PsyfocusTipString(float psyfocusTargetOverride = -1f)<br>
+Returns the tooltip display string, translated and colorized.
+ Psyfocus: XX%
+ ("DesiredPsyfocus".Translate()): XX%
+ ...
+ (needs expansion)
+
+<!--
+return (("Psyfocus".Translate() + ": ").Colorize(ColoredText.TipSectionTitleColor) + currentPsyfocus.ToStringPercent("0.#") + "\n" + "DesiredPsyfocus".Translate() + ": " + ((psyfocusTargetOverride >= 0f) ? psyfocusTargetOverride : targetPsyfocus).ToStringPercent("0.#") + "\n\n" + "DesiredPsyfocusDesc".Translate(pawn.Named("PAWN")) + "\n\n" + "PsyfocusDesc".Translate() + ":\n\n" + psyfocusLevelInfoCached).Resolve();
+ currentPsyfocus.ToStringPercent("0.#") + "\n" + "DesiredPsyfocus".Translate() + ": " + ((psyfocusTargetOverride >= 0f) ? psyfocusTargetOverride : targetPsyfocus).ToStringPercent("0.#") + "\n\n" + "DesiredPsyfocusDesc".Translate(pawn.Named("PAWN")) + "\n\n" + "PsyfocusDesc".Translate() + ":\n\n" + psyfocusLevelInfoCached).Resolve();
+ Psyfocus: XX%
+ DesiredPsyfocus: 
+-->
+
+public bool NeedToShowGizmo();
+
+public Gizmo GetGizmo();
+
+==== Listeners ====
+public void Notify_Meditated()
+
+public void Notify_GainedPsylink()
+
+public void Notify_PawnDied()
+
+[[Category:Modding]]
+[[Category:Modding tutorials]]

@@ -1,0 +1,113 @@
+{{Infobox main|food
+| name = Pemmican
+| image = Pemmican c.png
+| description = A preserved mashed mixture of fat and plant food. Tastes bland, but not offensive. It lasts a very long time without refrigeration. Great for traveling.
+<!-- Base Stats -->
+| type = Food
+| type2 = Meal
+| hp = 60
+| deterioration = 2
+| marketvalue = 1.4
+| mass base = 0.018
+| flammability = 0.6
+| stack limit = 75
+| path cost = 14
+<!-- Ingestion -->
+| food type = meal
+| taste = Simple
+| nutrition = 0.05
+| max num to ingest at once = 20
+| days to rot = 70
+<!-- Creation -->
+| production facility 1 = Campfire
+| production facility 2 = Fueled stove
+| production facility 3 = Electric stove
+| research = Pemmican
+| work to make = 700
+| work speed stat = Cooking Speed
+| resource 1 = Nutrition
+| resource 1 type = meat
+| resource 1 amount = 0.25
+| resource 2 = Nutrition
+| resource 2 type = vegan
+| resource 2 amount = 0.25
+| product amount = 16
+| bulk product amount = 64
+<!-- Technical -->
+| defName = Pemmican
+<!-- Unused -->
+| always haulable = true
+| draw gui overlay = true
+| graphic class = Graphic_Single
+| graphic path = Things/Item/Resource/Pemmican
+| label = pemmican
+| parent name = OrganicProductBase
+| resource readout priority = Last
+| selectable = true
+| thing class = Meal
+| ticker type = Rare
+| eat effect = EatVegetarian
+| sound eat = Meal_Eat
+| use hit points = true
+}}
+'''Pemmican''' is a low-tech long-lasting food, ideal for [[caravan]] trips.
+
+== Acquisition ==
+Pemmican can be [[Work#Cook|cooked]] at a [[{{P|Production Facility 1}}]], [[{{P|Production Facility 2}}]], or [[{{P|Production Facility 3}}]] once the [[Research#{{P|Required Research}}|{{P|Required Research}}]] research project has been completed.  There is no [[Cooking]] skill requirement, though it does use the cooking skill.
+
+Each batch of {{P|Product Amount}} requires a mixture of 0.25 nutrition from meat and 0.25 nutrition from vegetables and {{Ticks|{{P|Work To Make}}}} of work. Alternatively, pemmican can be made in batches of 64 at the cost of 1 nutrition of each type and {{ticks|2800}} of work. [[Campfire]]s have a {{Bad|x50%}} work speed multiplier; it takes twice as long to cook pemmican at a campfire.
+
+It can also be purchased from [[trade]]rs, or occasionally recovered from [[tribal]] [[raider]]s.
+
+== Summary ==
+Unlike most [[meals|cooked meal]]s, each unit of pemmican is worth 0.05 nutrition. 18 units of pemmican are as filling as a single [[simple meal]], [[fine meal]], or [[packaged survival meal]] (which all worth 0.9 nutrition per item).
+
+As you get 16 pemmican for 10 units of [[raw food]], pemmican has a nutrition efficiency of 160%.
+
+=== Benefits of discrete nutrition ===
+Pawns will eat just before they become [[Saturation#Levels of Saturation|hungry]]. With larger meals, this can result in a significant amount of overeating. [[Simple meal]]s and [[fine meal]]s give 0.9 nutrition per meal. Humans can store up to 1.0 nutrition, but will try to eat when they have around 0.25 nutrition left. If left to their own devices, a colonist will waste 0.15 nutrition for every full meal. In contrast, a colonist with pemmican will only bring what they need. They'll eat 0.8 nutrition of pemmican, resulting in a lower waste of food. Smaller [[animal]]s will overeat more. [[Chicken]]s only have capacity for 0.30 nutrition, so making full meals for your coop is a waste. 
+
+It is possible to micromanage your colonists so that they'll only eat when starving, meaning that they will never overeat (even with simple meals). If micromanagement is used, then simple meals will give more nutrition than pemmican. If pawns are left to their own devices, pemmican is more efficient since it prevents overeating.
+
+Despite consisting of individual units, pawns eat a batch of pemmican like a meal, rather than consuming each unit separately. If the eating process is interrupted, all the pemmican remains uneaten and the pawn's hunger remains unchanged. The number of units has no effect on eating speed - it takes the same time to consume one pemmican as it takes to consume 18 pemmican.
+
+== Analysis ==
+Pemmican's main purpose is to preserve food. This is useful for two independent purposes.
+* [[Caravan]]s. Most cooked meals only last for a few days, so pemmican can be used for long trips on the road. Pemmican faces direct competition with [[packaged survival meal]]s, which [[New Arrivals]] can research for the ''exact same cost'' as the pemmican research. An in-depth comparison can be viewed [[#Comparison to PSMs|below]].
+
+* [[New Tribe]]s start with Pemmican researched, but lack the ability to [[cooler|freeze]] food. Pemmican can be used to preserve [[meat]] and other perishables like [[berries]] before they spoil. However, food crops last a while - [[rice]] lasts for 40 days, [[corn]] for 60 days. You can get multiple harvests by the time the first spoils. If reliant entirely on crops, then pemmican is mostly unnecessary.
+
+As pemmican takes a long time to create, it is not recommended for "usual" daily consumption. If food storage isn't an issue, then [[simple meal]]s or [[fine meal]]s should be made instead, as they are quicker to prepare, regardless of overeating or not.
+
+=== Comparison to packaged survival meals ===
+The [[packaged survival meal]] (PSM) serves a very similar purpose to pemmican as a long lasting caravan food. Pemmican is more nutritious than packaged meals (160% vs 150% nutrition efficiency). In addition, pawns won't overeat with pemmican nearly as much, as described in the [[#Benefits of discrete nutrition|summary]] section.
+
+The most apparent advantage of packed survival meals is that they ''never rot''. In contrast, pemmican spoils in {{P|Days To Start Rot Base}} days. However, the actual benefit of this is questionable. Unless you are playing with 100% coverage, even the [[ship to the stars]] quest is unlikely to take more than a RimWorld year. And during the trip, you'll likely be able to [[trade]] for food, using [[silver]], [[gold]], or any other material. Silver never spoils. Finally, you can [[camp]] or temporarily settle to restore your food reserves. The only scenario when this is likely to make a difference are niche situation when you want to stay in the tile for a long time after you have traveled, and producing food there is impossible or there's no pawn there good at Plants.
+
+PSMs have a few other advantages. They are drastically more efficient in storage space - storing {{Good|x240%}} nutrition / tile when compared to pemmican - and more efficient in terms of weight with roughly {{+|8%}} greater nutrition/kg. PSMs also require {{Good|x60%}} the work to make. Finally, packaged meals sell for more than pemmican, and can be sold to outlander factions. If you end up packing too much food but need to buy goods, then PSMs have a small advantage.
+
+If a cook's work is important, if you need to prepare for a trip quickly, or if you are planning a massive trip, then packaged survival meals can be a more practical choice. If you are [[New Arrivals]] looking to research a caravan food, then pemmican is likely the better option - but the differences are small and either option could work fine.
+
+===As animal feed===
+Pemmican and [[kibble]] both have 0.05 nutrition per item, which makes them good [[animal]] feed. They both allow herbivorous animals to eat meat, and increase nutrition per work.
+
+Kibble's main advantage is that it is ''much'' quicker to prepare. It takes {{ticks|400}} for 50 units of kibble, but {{ticks|700}} for ''16'' units of pemmican. However, pemmican is more nutritionally efficient. 10 raw food would create 16 units of pemmican, but only 12.5 units of kibble.  When considering labor for both plant and animal farming, kibble ends up being a better choice for work. However, if it's winter and you are running out of food, then pemmican can end up being an animal-saving option.
+
+== Gallery ==
+<gallery>
+Pemmican a.png|One pemmican meal
+Pemmican b.png|Partial stack
+Pemmican c.png|Full stack
+</gallery>
+
+== Version history ==
+* Beta 19/1.0 - Colonists will now take pemmican to inventory like meals.
+* Sometime before [[Version/1.0.2150|1.0.2150]] - Texture updated.
+
+<gallery>
+Pemmican.png|Old texture
+</gallery>
+
+{{nav|Food|wide}}
+
+[[Category:Food]] [[Category:Processed Food]]

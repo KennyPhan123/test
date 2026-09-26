@@ -1,0 +1,62 @@
+{{Image wanted|reason=Images of damage AoE with damage drop off indicated in a style similar to [[:File:Skip shield radius.jpg]]. }}{{infobox main|security|
+| name = IED antigrain warhead trap
+| image = IED_antigrain_warhead_trap.png
+| description = An antimatter-powered antigrain warhead connected to a trigger which detonates on touch or bullet impact. Since it is hidden in the surrounding terrain, it cannot be placed adjacent to other traps. Animals can sense these when calm.
+| type = Building
+| type2 = Security
+| placeable = true
+| minifiable = true
+| size = 1 ˣ 1
+| mass base = 2
+| flammability = 1
+| hp = 40
+| sell price multiplier = 0.7
+| beauty = -4
+| terrain affordance = light
+| research = IEDs
+| thingCategories = BuildingsSecurity
+| skill 1 = Construction
+| skill 1 level = 3
+| work to make = 1400
+| resource 1 = Antigrain warhead
+| resource 1 amount = 1
+| deconstructable = false
+| destroyyield = nothing
+| page verified for version = 1.3.3159
+}}
+The '''IED antigrain warhead trap''' is [[Security]] building that explodes when stepped on, detonating in a massive explosion powerful enough to instantly kill all enemies in-game except for the [[Thrumbo]], [[Centipede]], and [[shield belt]]-wearing enemies.
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+{{IED Note}}
+
+When triggered, the trap will begin to spark and emit a hissing sound for {{ticks|15}} before exploding, dealing [[Damage types#BombSuper|"Bomb Super"]] damage in a 15 tile radius of itself, dealing 550 damage at the center and {{#expr: 550*0.2}} damage at the extreme edge of the radius and linearly interpolated in between, and setting fires to roughly 22% of the affected tiles. 
+
+Nearby non-drafted pawns, colonists and NPC alike, will attempt to clear the blast radius once the spark starts however the short wick time and large radius make success unlikely.
+
+== Analysis ==
+[[File:Crashed ship part wake on build radius.png|300px|thumb|right|Radius of where buildings will wake mechs is highlighted in red.]]
+
+Regular [[antigrain warhead]]s are already accurate, due to their massive blast radius. Antigrain shells have a radius of 14.9 tiles, and a [[mortar]] has a base miss radius of 9 tiles. A launched warhead can hit the intended tile and every tile within a 5-tile radius, with a force stronger than a [[doomsday rocket launcher]], with 100% certainty. This makes antigrain traps more niche than regular [[IED trap]]s.
+
+Antigrain traps have the advantage of being placed in a precise location. Bulkier mechs like [[centipede]]s are able to survive the edge of an antigrain shell, but not the center. The trap can provide a more precise, and thus, more powerful, blast against these targets.
+
+Great against stationary threats like [[crashed ship parts]] and [[mech cluster]]s{{RoyaltyIcon}} without [[proximity activator]]s. They will let you place down a trap nearby - so long as it isn't too close to a mech/structure. 
+
+Good against [[mechanoid commander]]s,{{BiotechIcon}} such as the [[apocriton]]. Whenever a mech boss is summoned, all of its escorts will follow the boss, rather than rushing ahead like with regular mech raids.
+
+Finally, the antigrain shell must actually be fired from a mortar, forcing players to lead their shots against moving targets. Therefore, the trap can help prevent some human error, ''if you know exactly where raiders will go to''. Note that industrial factions will often have raiders using [[go-juice]], who will run ahead of the group and trigger the trap early.
+
+If the [[AI storytellers#Classic Mortars|Classic Mortars]] storyteller setting is turned on, the mortar miss radius is increased to 12 tiles, reducing the launched shell's effectiveness. This makes the IED a more effective option.
+
+==Version history==
+* [[Version/1.1.0|1.1.0]] - IEDs explode when bullets hit them. This allows the player to purposefully shoot them to set them off.
+* ? - texture updated. Before 1.3.3159 and presumably sometime after 1.0.2096 to correspond with [[antigrain warhead]] texture change.
+
+<gallery>
+IED antigrain warhead trap old.png|Original texture
+</gallery>
+{{nav|security|wide}}
+[[Category:Security]] [[Category:Trap]]

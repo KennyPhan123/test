@@ -1,0 +1,51 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Anomaly/Global/Misc}}
+|}
+----
+{| {{STDT| c_21}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="CrumblingMindUndiagnosedBase" <!-- defName="", Name="CrumblingMindUndiagnosedBase", ParentName="CrumblingMindBase", Abstract="True" -->
+! CrumblingMindUndiagnosedBase
+----
+* Name<br />CrumblingMindUndiagnosedBase
+* ParentName<br />CrumblingMindBase
+* Abstract:<br />True
+----
+* '''''CrumblingMindBase:'''''
+** Label:<br />crumbling mind
+|<!-- Description -->
+<div style="max-width: 500px;">
+* '''''CrumblingMindBase:'''''
+This person is experiencing a rapidly decaying mental state. Within a few days, they will be incapable of most work. With sufficient technology, like a healer mech serum, the condition can still be reversed. However, it will soon become permanent.
+----
+* '''''CrumblingMindUndiagnosedBase:'''''
+This person is showing early signs of a condition which will cause severe mental degradation. They will begin to display symptoms within a matter of days.
+</div>
+|<!-- Details -->
+'''''CrumblingMindBase:'''''
+* Hediff Class: '''HediffWithComps'''
+* Initial Severity: '''0.1%'''
+* Max Severity: '''100%'''
+* Is Bad: {{Bad|true}}
+* Tendable: {{Bad|false}}
+* Duplication Allowed: {{Bad|false}}
+* Default Install Part: '''Brain'''
+'''''CrumblingMindUndiagnosedBase:'''''
+* '''Comps'''
+** ''Remove If Other Hediff''
+*** Hediffs:
+**** '''[[Hediffs#Crumbling_mind|Crumbling mind]]'''
+**** '''[[Hediffs#Crumbled_mind|Crumbled mind]]'''
+** ''Surgery Inspectable''
+*** Surgical Detection Desc:<br /><span>{PAWN_nameDef} is showing early signs of a severe condition which will soon cause severe mental degradation. {SURGEON_nameDef} can't yet tell exactly what is causing this, but {PAWN_nameDef} will become very ill within the next few days.</span>
+|<!-- Stages -->
+'''''CrumblingMindUndiagnosedBase:'''''
+{| {{STDT| c_21}}
+! Label !! Parameters
+|-
+! diagnosed
+|<!-- Parameters -->
+* Become Visible: {{Bad|false}}
+|}<noinclude>
+|}</noinclude>

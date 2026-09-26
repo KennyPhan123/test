@@ -1,0 +1,98 @@
+{{Stub|reason=1) Two-way links}}
+{{Verified|1.5.4104}}{{Stat
+| def name = PackRadius
+| label = Effect radius
+| description = The area affected when this [[Utility|pack]] detonates.
+| min value = 0
+| format string = {0} c
+| to string style = FloatOne
+| show if undefined = false
+| category = Apparel
+| display priority in category = 60
+| parts = StatPart_Quality
+}}
+This stat is measured in cells (c).
+
+== Bases ==
+<div><li style="display: inline-table;">
+{| {{STDT| c_17 sortable}}
+! Utility !! Effect<br />Radius
+|-
+! {{Icon Small|Smokepop pack|24}} [[Smokepop pack]]
+| 4.9 c
+|-
+! {{Icon Small|Firefoam pop pack|24}} [[Firefoam pop pack]]
+| 4.9 c
+|}
+</li></div>
+
+== Factors ==
+{| {{STDT| c_04}}
+! [[Quality]] !! Factor
+|-
+! Awful
+| {{Bad|×84%}}
+|-
+! Poor
+| {{Bad|×92%}}
+|-
+! Normal
+| '''×100%'''
+|-
+! Good
+| {{Good|×108%}}
+|-
+! Excellent
+| {{Good|×116%}}
+|-
+! Masterwork
+| {{Good|×130%}}
+|-
+! Legendary
+| {{Good|×150%}}
+|}
+
+Here is a table of pack items whose [[Pack Radius]] is affected by quality:
+{| {{STDT| c_04}}
+! Utility !! Awful !! Poor !! Normal !! Good !! Excellent !! Masterwork !! Legendary
+|-
+! {{Icon Small|Smokepop pack|24}} [[Smokepop pack]]
+| {{Bad|4.116 c}} || {{Bad|4.508 c}} || '''4.9 c''' || {{Good|5.292 c}} || {{Good|5.684 c}} || {{Good|6.37 c}} || {{Good|7.35 c}}
+|}
+
+== Stat Def Data ==
+{| {{STDT}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Pack Radius" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />PackRadius
+* '''Label:'''<br />Effect radius
+| The area affected when this pack detonates.
+|
+* Display Order:<br />'''30'''
+* Def Name:<br />'''Apparel'''
+* Label:<br />'''Apparel'''
+* Display All By Default:<br />{{Bad|false}}
+|
+* '''Min Value:''' 0
+* '''To String Style:''' FloatOne
+* '''Format String:''' {0} c
+* '''Show If Undefined:''' {{Bad|false}}
+|
+* '''Parts:'''
+** '''StatPart_Quality:'''
+*** Factor Awful: {{Bad|×{{%|0.84}}}}
+*** Factor Poor: {{Bad|×{{%|0.92}}}}
+*** Factor Normal: '''×{{%|1}}'''
+*** Factor Good: {{Good|×{{%|1.08}}}}
+*** Factor Excellent: {{Good|×{{%|1.16}}}}
+*** Factor Masterwork: {{Good|×{{%|1.3}}}}
+*** Factor Legendary: {{Good|×{{%|1.5}}}}
+| 60
+<!--</StatDef>-->
+|}
+
+== Version history ==
+{{Stub|section=1|reason=General}}
+
+{{nav|stats|wide}}

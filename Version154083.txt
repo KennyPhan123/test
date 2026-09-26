@@ -1,0 +1,166 @@
+{{Version Nav}}
+
+Version 1.5.4083 is up now on the unstable branch! (This is a release candidate)<ref>'''Rimworld official development''' Discord builds channel, [https://discord.com/channels/684960023020961812/687923435292065840/1235658413137203201 Update post of May 2nd, 2024].</ref>
+* Hide unrelated entity codex entries in ambient horror mode.
+* Improvements to anomaly settings dialog.
+* Fix: Constructed TargetInfo with null map.
+* Fix: Unable to contain entities on ambient horror mode.
+* Fix: Pack animal graphics not always being invalidated.
+* Fix: Typo in golden cube description.
+* Fix: Pawns popping out of beds if force tended.
+* Fix: Duplicator obelisk activation giving hostiles duplication sickness.
+* Fix: Needs not being updated after resurrection.
+* Fix: Situational music not always respecting volume settings.
+* Fix: Some creepjoiner downsides occurring when enslaved.
+* Fix: Farm animals attacking pawns without lords.
+* Fix: Incorrect path end mode used when tending, causing issues tending from end of bed.
+* Fix: Berserk pulse working on mech bosses.
+* Fix: Lifters not able to empty bioferrite harvesters.
+
+== Official Announcement <ref>Ludeon blog post [https://ludeon.com/blog/2024/05/new-ambient-horror-setting-and-tribal-anomaly-support/ New ambient horror setting and tribal Anomaly support]</ref>==
+
+=== New “ambient horror” mode threads all Anomaly threats directly into the game ===
+{{center|https://ludeon.com/blog/wp-content/uploads/2024/05/steam_cover_secondanomalychanges.png}}
+Hi everyone!
+
+We’re here today with a new feature update to Anomaly. Today’s update adds a new way to play with all Anomaly content threaded into the entire game, instead of being linked strictly to the monolith quest. This resembles more how other expansions all interact together continuously over the course of a long game. No need for Anomaly to take over an entire playthrough!
+
+We’ve also added some new economic pathways to make it more feasible to progress through Anomaly content as a low-tech tribal colony.
+
+Take a look:
+=== Ambient horror mode ===
+
+Now, when you start the game, you can select from three ways to integrate Anomaly into your game:
+
+* '''Standard with monolith:''' The original Anomaly experience. Anomaly threats are linked directly to the monolith.
+* '''Ambient horror:''' In this new mode, the monolith does not appear. Instead, Anomaly threats are threaded into the rest of the game. All Anomaly threats can occur, even the most dangerous ones. Anomaly threats are relatively uncommon compared to normal raids by default, but this can be adjusted before and during the game. This is a good mode if you want to enrich your story without Anomaly becoming the focus. (Note that since there is no monolith in this mode, the monolith endgame won’t occur.)
+* '''Disabled:''' Anomaly threats do not occur, and there’s no monolith. Anomaly tools like security doors, incinerators, hellcat rifles, turret packs, and serums are still in the game.
+
+'''Study efficiency setting:''' We added a “study efficiency” slider to the difficulty settings. Higher settings give more research points each time you study an entity. By default, study efficiency is better at lower difficulties, so even when there are fewer entities to capture, you can still make steady progress. As always, you can customize study efficiency how you like, including changing it during a run.
+Better support for tribal playthroughs
+{{center|https://ludeon.com/blog/wp-content/uploads/2024/05/steam_body_anomalysettings.jpg}}
+
+=== Better support for tribal playthroughs ===
+In previous versions, it was hard to progress through Anomaly content as a tribal. We’ve added new economic pathways to use for players who want to stay low-tech:
+{{center|https://ludeon.com/blog/wp-content/uploads/2024/05/steam_body_bioferritetree.png}}
+
+* '''Bioferrite extraction research project.''' We’ve added a new research project that allows doctors to extract bioferrite directly from captured entities without a ‘bioferrite harvester’. This is less efficient, but doesn’t require electricity.
+* '''Bioferrite can be obtained from harbinger trees.''' Chopping down harbinger trees will give twisted flesh and bioferrite, adding a new way to obtain bioferrite without capturing entities.
+* '''Updated research tree to not require electricity.''' We’ve rearranged parts of the Anomaly research tree to allow researching more projects without electricity.
+* '''Some Anomaly items can be made at crafting spots.''' The following items can now be made at a crafting spot, as well as the bioferrite shaper: Ceremonial hood, nerve spiker, ritual mask, ghoul plating, ghoul barbs.
+
+Note: For existing saves, you will need to unlock bioferrite extraction, even if you’ve previously researched bioferrite harvesting.
+Thanks to all
+
+Big thanks to everyone who has given feedback! We’re always crawling the subreddit and Discords, so whatever you said, there’s a decent chance one of us was lurking and taking notes.
+
+
+=== Thanks to all ===
+
+There’s always fun discussion going on on the RimWorld subreddit. And if you’d like to help us test new builds and give feedback, join us on the Official RimWorld Development Discord.
+
+And as always, if you like, please review Anomaly on Steam! (Expansions don’t get many reviews since there’s no button prompt in the Steam library.)
+
+– Ty
+
+
+=== Changelog ===
+
+* Added new Anomaly settings dialog to the storyteller selection page.
+* Added a new “Ambient horror” Anomaly playstyle mode.
+* Added a new “Disabled” Anomaly playstyle mode.
+* Added a tribal method for bioferrite extraction.
+* Harbinger trees now give bioferrite instead of wood when harvested.
+* Draw “Ineffective” label over psychically deaf targets when targeting with disruptor flares.
+* Blood rage at 100% now forces animals to be awake.
+* Removed entity conditions for horror tension music.
+* Added field in race props to generate unnatural corpse defs.
+* Pit gates, pit burrows, and fleshmass hearts will now destroy and refund adjacent buildings on emergence.
+* Reduced the max targetable body size for devourer’s leap to prevent them from eating things like centipedes.
+* Clarify text in regards to the revenant.
+* Revenant balancing: slightly reduce health, and increase min population requirement, as well as min refire days.
+* Skipping revenant target away will now interrupt the hypnosis.
+* Show the game conditions for death pall, gray pall, and blood rain.
+* Allow death pall and gray pall to overlap with blood rain.
+* Ancient beds are no longer colored to suit their role.
+* Pyromaniacs now consider hellcats to be incendiary.
+
+=== Fixes ===
+
+* Fix : Some names were missing.
+* Fix : Babies spawning with ghoul haircuts.
+* Fix : Incorrect dates on ideoligion rituals.
+* Fix : Ghoul hediffs being removed on resurrection in some cases.
+* Fix : Grouped behavior of atmospheric heater gizmo not working correctly.
+* Fix : Mutant status not being cleared when rising shambler killed.
+* Fix : Gorehulk and devourer lack manipulation-affecting limbs, making them weaker than intended in melee.
+* Fix : Nociosphere not returning to sent from location.
+* Fix : Ritual spectate side not respected.
+* Fix : MessageRevenantHeard translation key is forced lowercase.
+* Fix : Sanguophage reimplant reward not working in some circumstances.
+* Fix : Cultist abduction ritual continues despite missing caster in some circumstances.
+* Fix : Ghoul in caravan causes errors on the assign drug policy UI.
+* Fix : Psychic bond between two pawns who have psychic bonding gene don’t create bond on romance success.
+* Fix : Ghouls getting drug dependency hediffs from implanted xenogerms.
+* Fix : Labyrinth exit not always accessible.
+* Fix : Corpses being debug spawnable.
+* Fix : Revenant hypnosis copying to duplicates.
+* Fix : Pawns try to exit pocket maps via the sides.
+* Fix : Clarify language around “Entity will escape soon” warning.
+* Fix : Nociosphere doesn’t adapt to EMP stuns.
+* Fix : Creepjoiner babies are set to the wrong PawnKindDef.
+* Fix : Downed mechs were not carried out of pit gates when using exit dialog.
+* Fix : Metalhorror defenders spawning on unwalkable cells.
+* Fix : Chaos skip able to send pawns into fogged areas.
+* Fix : Inaccurate goodwill costs on comms console dialog.
+* Fix : Mechlink is kept on corpse raised.
+* Fix : Several mech implants are duplicatable.
+* Fix : Combat music playing when no colonists are present in the undercave.
+* Fix : Dryads getting blood rage from blood rain.
+* Fix : Fleshsacks act like embrasures.
+* Fix : Ghouls count toward ideoligion diversity thoughts.
+* Fix : Unintended prearrival infection pathways.
+* Fix : Monoliths spawned via dev tools not linking to quest.
+* Fix : Raid source sites getting removed upon leaving map without clearing enemies.
+* Fix : Draw fleshbeasts not working in caves.
+* Fix : Ghouls getting heart attacks.
+* Fix : Metalhorror inspection returning an empty letter if already discovered.
+* Fix : Harbinger trees not correctly consuming corpses with no nutrition left.
+* Fix : Harbinger trees able to consume things on shelves.
+* Fix : Turret packs could be thrown onto trees.
+* Fix : Pawns tending others not being interrupted if the target leaves.
+* Fix : Performance issue when selecting lots of animal beds.
+* Fix : Meditation offset lines are drawn between the building and itself when being reinstalled.
+* Fix : Starvation alert not updating for pawns in caravans.
+* Fix : Manhunter_Bloodrain message repeating too frequently and unable to be translated correctly.
+* Fix : Void structures spawning in front of monolith.
+* Fix : Ghouls aren’t tendable.
+* Fix : Mutant skill disabling causing issues with various mods.
+* Fix : If no colonists are spawned on the map, venerated message shows when designating animals to hunt.
+* Fix : Revenant trance wasn’t cleared if revenant was killed after attacking while stunned.
+* Fix : Error when hypnotized pawn is despawned.
+* Fix : Typo in ritual thought.
+* Fix : Sculpture graphic index not maintained if style was manually set in bill.
+* Fix : Error on growth moment dialog.
+* Fix : Backstory has incorrect work disables.
+* Fix : World pawns with duplicate sickness not dying.
+* Fix : Revenant progressedLetters fail to mention firefoam.
+* Fix : Right side of dev bar blocking colonist bar clicks.
+* Fix : Struck ore message look target lost after save load.
+* Fix : Mote attempted to spawn on null map with psychic ritual.
+* Fix : Attack jobs getting cancelled against faction animals.
+* Fix : Psychic ritual invokers being killed not canceling cultist psychic rituals.
+* Fix : “Form Caravan” gizmo missing on certain maps after being settled.
+* Fix : Constructed TargetInfo with null map.
+* Fix : Pack animal graphics not always being invalidated.
+* Fix : Typo in golden cube description.
+* Fix : Pawns popping out of beds if force tended.
+* Fix : Duplicator obelisk activation giving hostiles duplication sickness.
+* Fix : Needs not being updated after resurrection.
+* Fix : Situational music not always respecting volume settings.
+* Fix : Some creepjoiner downsides occurring when enslaved.
+* Fix : Farm animals attacking pawns without lords.
+* Fix : Berserk pulse working on mech bosses.
+* Fix : Lifters not able to empty bioferrite harvesters.
+
+== Sources ==

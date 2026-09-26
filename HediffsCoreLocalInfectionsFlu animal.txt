@@ -1,0 +1,77 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Local/Infections}}
+|}
+----
+{| {{STDT| c_15}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Flu (animal)" id="Animal flu" <!-- defName="Animal_Flu", ParentName="InfectionBase" -->
+! Flu (animal)
+----
+* Def Name:<br />Animal_Flu
+* Label:<br />flu
+* Debug Label Extra:<br />animal
+| An infectious disease caused by the influenza virus. This strain is adapted for infecting non-human species.
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|80%|80%|35%}}
+* Is Infection: {{Bad|true}}
+* Makes [[Thoughts#Sick|Sick]] Thought: {{Bad|true}}
+* Initial Severity: '''0.1%'''
+* Lethal Severity: {{Bad|100%}}
+* Tendable: {{Good|true}}
+* '''Comps'''
+** ''Tend Duration''
+*** Base Tend Duration Hours: '''48'''
+*** Severity Per Day Tended: {{---|11.05%}}
+** ''Immunizable''
+*** Severity Per Day Not Immune: {{++|24.88%}}
+*** Immunity Per Day Sick: {{+|26.14%}}
+*** Severity Per Day Immune: {{---|49.47%}}
+*** Immunity Per Day Not Sick: {{---|6%}}
+* '''Remove On Redress Chance By Days Curve:'''
+<div><li style="display: inline-table;">
+{| {{STDT| c_15}}
+! <abbr title="Days as a World Pawn">Days</abbr> !! <abbr title="Chance to remove on Pawn Generator Redress">Chance</abbr>
+|-
+! 0
+| 0%
+|-
+! 2
+| 0%
+|-
+! 7
+| 50%
+|-
+! 20
+| 100%
+|}</li></div>
+|<!-- Stages -->
+{| {{STDT| c_15}}
+! Label !! Parameters
+|-
+! minor
+|<!-- Parameters -->
+* [[Consciousness]] Offset: {{--|5%}}
+* [[Manipulation]] Offset: {{--|5%}}
+* [[Breathing]] Offset: {{--|10%}}
+|-
+! major
+|<!-- Parameters -->
+* Min Severity: '''66.6%'''
+* Vomit {{MTB}} Days: '''1.5'''
+* [[Consciousness]] Offset: {{--|10%}}
+* [[Manipulation]] Offset: {{--|10%}}
+* [[Breathing]] Offset: {{--|15%}}
+|-
+! extreme
+|<!-- Parameters -->
+* Min Severity: '''83.3%'''
+* Life Threatening: {{Bad|true}}
+* Vomit {{MTB}} Days: '''0.75'''
+* Pain Offset: {{++|5%}}
+* [[Consciousness]] Offset: {{--|15%}}
+* [[Manipulation]] Offset: {{--|20%}}
+* [[Breathing]] Offset: {{--|20%}}
+|}<noinclude>
+|}</noinclude>

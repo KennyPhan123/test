@@ -1,0 +1,73 @@
+{{Version Nav}} 
+
+Here it is, Alpha 4, featuring giant centipede robots and lots of other fun stuff. If you bought the game you should get an email with the update. If not, check out [https://ludeon.com/forums/index.php?topic=1875.0 this forum thread].
+
+I forgot to mention in the video: the map generator has more variation now and tends towards more verdant surroundings, so it’s a bit less of a desert. I redesigned the storytellers to focus on colony wealth more than combat strength in determining what to throw at you (no more avoiding turrets just to seem weak). The storytellers are also much better at handling near-death situations. If you’re almost dead, your wealth will be low and the raids will soften (since you have nothing worth stealing), so you may be able to recover instead of being guaranteed to get steamrolled.
+
+Also, we now have tension music from Alistair Lindsay when a combat situation is in progress.
+
+We also have good support for a wide variety of languages now: German, French, Polish, Chinese, Russian, Slovak, Spanish, Portuguese, Dutch. If you speak any of these languages and are part of a non-English-language game community, let them know that this game will work for them!
+
+== Release Trailer ==
+
+<youtube>https://www.youtube.com/watch?v=wusy3Z8JKkY</youtube>
+
+== Core Release ==
+* Wood economy. Logs, sawing, planks, flooring, tree growing, and more.
+* More stuff to research.
+* [[Crematorium]].
+* [[Electric smelter|Slag refinery]].
+* More map variation.
+* [[Mechanoid|Mechanoids]] raids.
+* Tension music for combat situations.
+* More songs for normal gameplay.
+* Smarter [[AI Storytellers|AI storytellers]] that focus on wealth and let you recover from serious damage.
+* Region system for better performance.
+* Tons of AI and usability improvements to hunting AI, player tutor, alerts, etc.
+
+== Alpha 4B/C/D/E ==
+Alpha 4 has been hotfixed to Alpha4e. If you want to update, you can re-use your existing download link. It never changes and always has the latest version.
+
+If you’re not sure about your version, open Version.txt in the RimWorld folder. The latest is 0.4.462 rev40### (where # can be anything).
+
+* Alpha4b added the source code which is supposed to be included.
+* Alpha4c fixed the storytellers, who had a bug that made them permanently placid instead of ramping up over long games. Now they will ramp up properly and eventually, probably, kill you. But hey, it’s all about the drama!
+* Alpha4d lengthened the ramp-up time for challenge. It also adds a “need sawmill” alert to reduce confusion around the wood planks system.
+* Alpha4e rebalanced the storytellers again in light of this poll.
+
+Sorry for all the hotfixes. Testing storytellers properly is really hard. We’re working on some automated metrics so balancing won’t be such a scattershot process in the future.
+
+Your savegames from all Alpha 4 versions will still work.
+
+==Alpha 4F==
+
+I’ve just uploaded Alpha4f, a balance and design hotfix. Everyone who bought the game will be getting emails about it. Even if you didn’t, any of your old download links will always get you the latest version.
+
+Warning: This version will not work with savegames from any older version (including Alpha4a through Alpha4e).
+
+As always, anyone with download trouble should please read this forum post for info on what to do.
+
+Note that this update does not include Alpha 5 content like artillery mentioned in the changelog. That you’ll have to wait for.
+
+Hope you guys like it! Let’s hope this one is the charm for Alpha 4.
+
+=== Changes ===
+* [[Wood|Wood log]] and wood planks are now merged into one wood resource. This reduces pointless early-game busywork for colonists (sawmill work), and reduces confusion about exactly what kind of wood is needed to build what. I hope to bring back the wood/plank distinction in the future, but it will have to be part of a larger system where many objects can be constructed of different materials while still being the same object type. See this forum discussion.
+* Storytellers balance has been redesigned. They now cue on different signals and will generally track against the player in a more entertaining way.
+* Randy Random is no longer totally broken and unbeatable.
+* [[Pila]] weapon is nerfed from 45 damage to 30 damage per hit.
+* Stone [[wall]] health raised from 400 to 650.
+* Animal insanity waves were broken and never occurred. They are now, again, part of the threat mix the storytellers will use against you.
+
+== Randy Random Bug in Alpha 4 ==
+Just a quick heads up to everyone. Apparently the Randy Random storyteller is broken in Alpha 4. It starts off all right, but over time it doesn’t ramp up challenges, which makes the endgame dull.
+
+If anyone is playing a Randy game, you can change your storyteller to Cassandra, who is working well. Just follow these steps:
+
+# Start the game, go to options, click “open savegame folder”.
+# In a text editor, open the save file you want to modify.
+# Do a search for “Randy”. (You’ll find it between two <defName> tags.)
+# Replace the word “Randy” with “Cassandra”.
+# Save the document, close your text editor, and restart the game. Your Randy game should now run with Cassandra.
+
+Sorry about this everyone. We’ll have him fixed up good for Alpha 5.

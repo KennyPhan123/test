@@ -1,0 +1,68 @@
+{{Biotech}}{{See also|Potatoes}}{{Infobox main|food
+| name = Toxipotatoes
+| image = Toxipotatoes.png
+| description = Raw toxipotatoes. Once harvested, toxipotatoes are very dietarily similar to potatoes. However, when eaten raw, they have a higher chance of causing food poisoning.
+<!-- Base Stats -->
+| type = Food
+| type2 = Raw food
+| hp = 100
+| deterioration = 6
+| marketvalue = 0.75
+| mass base = 0.03
+| flammability = 1
+| stack limit = 75
+| path cost = 14
+| rotatable = false
+<!-- Ingestion -->
+| food type = vegetable
+| taste = Raw
+| ingested direct thought = AteRawFood
+| nutrition = 0.05
+| days to rot = 60
+<!-- Technical -->
+| defName = toxipotatoes
+| preferability = Raw
+<!-- Unused -->
+| always haulable = true
+| draw gui overlay = true
+| graphic class = Graphic_Single
+| graphic path = Things/Item/Resource/PlantFoodRaw/Toxipotato
+| parent name = RawFoodBase
+| resource readout priority = Middle
+| selectable = true
+| social properness matters = true
+| sound drop = Food_Drop
+| sound interact = Food_Drop
+| thing class = ThingWithComps
+| ticker type = Rare
+| eat effect = EatVegetarian
+| sound eat = RawVegetable_Eat
+| use hit points = true
+| page verified for version = 1.4.3704
+}}
+'''Toxipotatoes''' are a vegetable [[raw food]] obtained by harvesting [[toxipotato plant]]s. Toxipotato plants are one of the only plants to grow on polluted soil, but toxipotatoes have an increased chance of [[food poisoning]] when eaten raw. 
+
+== Acquisition == 
+Toxipotatoes are harvested from [[toxipotato plant]]s. Each plant requires {{Q|Toxipotato plant|Real Grow Days}} full days at optimal light and temperature range to reach maturity in normal, 100% fertile soil and yields {{Q|Toxipotato plant|Harvest Yield}} units per plant, before modifiers for [[Difficulty]] and [[Plant Harvest Yield]]. 
+
+== Summary ==
+As a [[raw food]], toxipotatoes can be eaten raw, with a chance of giving [[food poisoning]], however this chance is double that of other raw foods at {{Bad|4%}}. They can also be cooked into a [[meal]] with a food poisoning chance dependent on the skill of the cook and the [[cleanliness]] of the kitchen, with no additional malus when compared to other raw foods. [[Animals]] are immune to food poisoning from raw food but not from meals. When used in food recipes that require specific types of [[nutrition]], such as [[fine meal]]s, toxipotatoes are classified as a vegetable.
+
+As with most raw food, eating toxipotatoes directly results in a {{Thought|desc=I had to eat raw food. We should be cooking that kind of food before eating it. We're not animals.|label=ate raw food|stack=1|value=-7|duration=1}}. This mood penalty is negated if the pawn has the [[ascetic]] trait or the [[robust digestion]] gene.
+
+Toxipotatoes take {{P|Days To Start Rot Base}} days to rot without refrigeration, double that of most other vegetarian foods.
+
+== Analysis ==
+Toxipotato plants ({{Q|Toxipotato plant|Harvest_Yield_Per_Day_(100)}} base yield/day) are strictly inferior in yield to both [[potato plant]]s ({{Q|Potato plant|Harvest_Yield_Per_Day_(100)}} yield/day) and [[rice plant]]s ({{Q|Rice plant|Harvest_Yield_Per_Day_(100)}} yield/day) in regular soil. While {{+|{{%|-1+{{Q|Toxipotato plant|Harvest Yield Per Work}}/{{Q|Rice plant|Harvest Yield Per Work}} round 4}}}} better in yield/work than rice, toxipotatoes take {{Bad|x{{%|{{Q|Toxipotato plant|Real Grow Days}} / {{Q|Rice plant|Real Grow Days}}round 3}}}} the time per plant to grow, so are a less reliable crop. If work ''is'' a concern, then regular potatoes ({{+|{{%|-1+{{Q|Potato plant|Harvest Yield Per Work}}/{{Q|Toxipotato plant|Harvest Yield Per Work}} round 4}}}}) or [[corn plant|corn]] ({{+|{{%|-1+{{Q|Corn plant|Harvest Yield Per Work}}/{{Q|Toxipotato plant|Harvest Yield Per Work}} round 4}}}}) are much better options for yield.
+
+Toxipotatoes can be grown on polluted soil, but their abysmal yield in all aspects means that it would take a heavily polluted map, where little clean soil is nearby, to make it feasible. Even then, you could clear out a field to grow more traditional plants in. Cleaning can take a while, so toxipotatoes can be used in the earlier stages of an extremely polluted colony.
+
+The extra [[food poisoning]] chance is negligible, as raw food should always be cooked anyways.
+
+Toxipotatoes have lower market value ({{Icon Small|Silver||{{P|Market Value Base}}}}) than other raw food like rice, corn, potatoes ({{Icon Small|Silver||{{Q|Corn|Market Value Base}}}}) or meat ({{Icon Small|Silver||{{Q|Meat|Market Value Base}}}}). They also last for 60 days without refrigeration. These factors make toxipotatoes an attractive option when buying raw food from traders.
+
+== Version history ==
+* [[Biotech DLC]] Release - Added.
+
+{{nav|Food|wide}}
+[[Category:Food]] [[Category:Raw Food]] [[Category:Vegetarian]]

@@ -1,0 +1,400 @@
+{{Ideology}}
+{{Stub|section=1|reason=1) Needs mechanical detail beyond just what the stats are and the tables cover. Inc but not limited to: Minimum age or lack thereof 2) Ability details}}
+{{See also|Ideoligion}}
+Roles are positions available to pawns that grant them both special benefits and drawbacks. Every ideoligion has at least two roles: '''Leader''' and '''Moral Guide'''. There can be only 1 leader globally, and 1 Moral Guide per ideoligion.
+
+Additionally, each ideoligion grants up to 2 types of [[specialist]]s; a role that grants large bonuses and abilities related to a specific field in exchange of inability of doing one or more types of work. This limitation only applies to the type of specialization, not the total number of specialists.
+
+== General info ==
+When creating an ideoligion, a randomly generated or player specified name is given to the role. For clarity, the wiki uses the generic names of the roles instead as the generated names will not be consistent across playthroughs. Where there are explicit references to the role name, such as in moodlets, the fact that the non-generic name is used will be noted, such as with "<Role Name>".
+
+Some factors are consistent across all roles.
+* Pawns can only hold one role at a time.
+* All roles lose [[Certainty]] at 50% the normal rate.
+* Roles can have assigned equipment that they will demand when they have the role - Leaders and Moral Guides will get a permanent {{--|4}} "''Want <Role Name> apparel''" mood debuff without it. Due to a bug, none of the specialist roles will have the mood debuff happen. Only New Tribe colonies can select the [[war mask]] and [[tribal headdress]] as apparel options, while only New Arrivals colonies can select the [[slicecap]] and [[beret]].{{RoyaltyIcon}}
+* A simple ritual is required to assign, remove, or change a role.
+
+Removing a role from a pawn causes a {{--|15}} "''Lost <Role Name> role''" moodlet for 10 days.{{Check Tag|Detail Needed|Does this happen when changing roles and if so, in all instances of role chances. Spec to Spec, Spec to leader, spec to Moral guide, etc.}} This does not happen when changing from a moral guide to leader.
+
+== Mandatory Roles ==
+The leader and moral guide roles are mandatory and cannot be removed. You can have 1 leader across all your colonists, even of different ideoligions. You can have 1 moral guide per ideoligion in your colony, so long as the role is activated.
+
+=== Leader ===
+{{Stub|section=1|reason=General, but also "Leader Resentment" thoughts in Thoughts_IdeoRole.xml}}
+[[File:Leader.png|left]]
+A leader who holds the group together and represents your faction in diplomatic interactions.
+
+Will always be restricted to any [[Ideoligion#Supreme gender|Supreme gender]] selected.
+{{Clear}}
+Leader abilities share a cooldown of {{Ticks/gametime|600000}}
+
+Leaders receive a flat +2% to [[Trade Price Improvement]] when they act as [[trade]]rs.
+
+Leaders can select between these apparels as assigned equipment:
+* [[Headwrap]]
+* [[Broadwrap]]
+* [[War mask]]
+* [[Slicecap]]
+* [[Visage mask]]
+* [[Authority cap]]
+* [[Cowboy hat]]
+* [[Tribal headdress]]
+* [[Beret]] {{RoyaltyIcon}}
+
+Leaders have [[expectations]] that are two levels higher than normal. 
+
+{| {{STDT| sortable text-valign:top}}
+! Ability !! Ability Desc || Ability Effect
+|- id="Leader speech"
+! Leader Speech<br/>[[File:LeaderSpeech.png|64px]]
+| A rousing speech intended to improve morale. Colonists will gather, and the leader will speak for a few hours. If all goes well, listeners will feel inspired, and gain respect for the leader. If it goes poorly, the speech will do social damage. || ?
+* The leader must be able to speak to use this ability.
+|- id="Work drive"
+! Work Drive<br/>[[File:WorkDrive.png|64px]]
+| Call on a person to work harder for some time. || ''The sense of being called upon by a leader to work harder.''
+* [[Global Work Speed]] +50% for 3 days on another single colonist or slave.
+* AoE: another target colonist or slave.
+* Duration: {{Ticks/gametime|180,000}}
+** Work drive: Tripled increases the duration to 9 days.
+* The leader can use this ability even if they are unable to speak.
+|- id="Combat command"
+! Combat Command<br/>[[File:CombatCommand.png|64px]]
+| Create an aura that boosts the combat skills of everyone nearby. The effect lasts 24 hours and remains attached to the leader for the duration. || ''Combat abilities are boosted thanks to being near someone who is using the combat command ability.''
+* [[Shooting Accuracy]] +3
+* [[Melee Hit Chance]] +3
+* AoE: 9.9 tile radius aura centered on Caster
+* Duration:
+** Aura: {{Ticks/gametime|60,000}}
+** Effect: While in aura radius{{Ref label|SpecialistCommandEffectOnCaster|1}}
+* The leader can use this ability even if they are unable to speak.
+|- id="Trial"
+! Trial<br/>[[File:Trial.png|64px]]
+| A trial over some heinous accusation. The initiator will accuse someone of terrible wrongdoing and gather people for a trial. Spectators will listen as the accuser and accused argue back and forth, then decide if the accusation is true. If the accused is convicted, you can freely banish, arrest or execute them and nobody will mind. The chance of a conviction depends on the social abilities of the accused and accuser, and the number of spectators.|| If successful, you are allowed to execute, banish, or arrest a person without social consequences.
+* The leader must be able to speak to use this ability.
+|}
+
+=== Moral guide ===
+{{Stub|section=1|reason=More ability details}}
+[[File:MoralGuide.png|left]]
+A moral/spiritual leader who heads rituals and personally counsels believers.
+
+It requires at least 3 colonists with the same ideoligion to activate: [[Slave]]s, [[prisoners]], and quest lodgers do not count. Activation allows the moral guide role to be assigned, but pawns with that ideology receive {{--|5}} "''No <Role Name>''" when the role is unfilled. This requirement persists, even if follower count diminishes, until there's only 1 pawn of that ideoligion left. There is a short grace period when starting the game before the [[mood]]let is applied.
+
+Unlike Leaders, Moral Guides are '''not''' restricted to any Supreme gender selected, the game could randomly add this restriction, but the player could choose the desired option by regenerating the role.
+{{Clear}}
+
+Moral Guides can select between these apparels as assigned equipment:
+* [[Cape]]
+* [[Veil]]
+* [[Hood]]
+* [[Headwrap]]
+* [[Broadwrap]]
+* [[Burka]]
+* [[Tribal headdress]], only for tribal factions
+* [[War mask]], only for tribal factions
+* [[Slicecap]], requires Transhumanist meme
+* [[Visage mask]]
+
+Moral guides have [[expectations]] that are two levels higher than normal. 
+
+Moral guides get a 2x multiplier to the efficacy of their [[Conversion]] attempts.
+
+Moral guide abilities share a cooldown of {{Ticks/gametime|180000}}.
+
+{| {{STDT| sortable text-valign:top}}
+! Ability !! Ability Desc || Ability Effect
+|- id="Convert"
+! Convert<br/>[[File:Convert.png|64px]]
+| Attempt to convert someone to the speaker's ideoligion. This will reduce the target's certainty in their own beliefs. The certainty reduction depends on the speaker's negotiation ability. || 
+Choose a target who does not share the moral guide's ideoligion. The moral guide will walk over to him and preach for a while.
+* The target's [[Certainty]] is reduced by a certain amount, taking into account things like the moral guide's [[Conversion Power]] and the target's [[Global Certainty Loss Factor]] (see [[Conversion]] for details).
+* If the ability would bring the target's Certainty to 0 or below, they are converted to the moral guide's ideoligion.
+|- id="Conversion ritual"
+! Conversion Ritual<br/>[[File:ConversionRitual.png|64px]]
+| Try to persuade someone into joining your ideoligion. If it goes well, target's ideoligion certainty will be reduced or they will convert. If it goes badly, they will gain certainty in their old beliefs. || Perform a [[Rituals|Conversion ritual]] on a target who does not share the moral guide's ideoligion.
+* The Conversion ritual can only be started if the Convert ability is not on cooldown.
+* Depending on the outcome, the target may gain or lose [[Certainty]]. If a loss would bring his certainty to 0 or below, they are converted to the moral guide's ideoligion.
+* The ritual, unlike the Convert ability, is not affected by [[Conversion Power]] or [[Global Certainty Loss Factor]]. Instead, the moral guide's [[Social Impact]] and convertee's [[expectations]], as well as the participant count and room [[impressiveness]],  determine the outcome.
+* Cooldown: The ritual has a reduced quality if repeated within 20 days. In addition, performing the ritual triggers the 3 day cooldown of the Convert ability.
+|- id="Counsel"
+! Counsel<br/>[[File:Counsel.png|64px]]
+| Offer counsel to a person to cancel the effects of a sad memory. The chance of success depends on the speaker's social skills and their relationship with the listener. || Counsel someone of the same ideoligion.
+* The target gains a positive <abbr title="I received counseling about something that's been bothering me.">''Counselled by <name>''</abbr> thought that cancels out their worst negative thought, provided its strength is at least -10. The positive thought lasts for the rest of the negative thought's duration.
+* If the target has no or weaker negative thoughts, they gain the {{Thought|desc=I received counseling from someone. It felt nice to be listened to.|label=Counselled by <name>|value=+8|stack=1|duration=3}}.
+* Failure gives {{Thought|desc=Somehow, that attempt at helping made things even worse.|label=failed consolation by <name>|value=-3|multi=0.75|stack=3|duration=1}}.
+* The counsellor's level in social skill gives the following chances of success:
+** 0: 2%
+** 5: 40%
+** 10: 70%
+** 20: 90%
+* The target's opinion of the counsellor gives the following chances of success:
+** -100: {{GoodBad%|.7|0}}
+** 0: {{GoodBad%|1|0}}
+** +100: {{GoodBad%|1.3|0}}
+* The two chances are multiplied to give the actual chance of success.
+Can only be used on pawns who share the moral guide's ideoligion.
+|- id="Reassure"
+! Reassure<br/>[[File:Reassure.png|64px]]
+| Increase someone's certainty in their own beliefs. The regained certainty is based on the speaker's negotiation ability. || ?
+|- id="Preach health"
+! Preach Health<br/>[[File:PreachHealth.png|64px]]
+| Preach moral strength to a sick or wounded person through the concepts of your ideology. This will improve their rate of wound healing and immunity gain. || ''This person's will to survive was reinforced by a talk with a moral guide of their ideoligion. That moral certainty has improved their healing and immunization gain rates.''
+* [[Immunity Gain Speed]] {{+|25%}}
+* [[Injury Healing Factor]] {{+|25%}}
+* AoE: 1 target, touch range
+* Cast time: 12s
+* Duration: {{Ticks/gametime|60,000}}
+Can only be used on pawns who share the moral guide's ideoligion.
+|}
+
+== Specialists ==
+Specialists are roles that focus on a specific type of task at the expense of most others. Each ideoligion may include at most two different specialist roles, if it has compatible memes. 
+
+To be assigned as a Specialist, a pawn must: 
+* Belong to an ideoligion that includes that role 
+* Have a minimum of 6 in the relevant Skill
+* Be capable of performing work activities relevant to that role
+
+There are two benefits to being a Specialist. One is a passive bonus to all the pawn's work activities within its specialty. The other is a command manually activated by the player, which gives a temporary benefit to either the specialist, to a target, or to all allies nearby. 
+
+The drawback is that a Specialist refuses to do most other kinds of work. 
+
+Unlike the Leader and Moral Guide roles, each Specialist role may be assigned multiple pawns. 
+
+Note that the limit of 2 roles is per ideoligion. If your colony contains multiple ideoligions, each of them can have its own two specialist types. 
+
+
+{| {{STDT| sortable text-valign:top}}
+! Name !! Description !! Required Memes !! Pawn requirements !! Bonuses !! Disabled Work Types !! Ability !! Ability Description !! Ability Effect
+|- id="Animals specialist"
+! Animals Specialist<br/>[[File: SpecialistAnimals.png]]
+| A special ideoligious status focusing on animals to the exclusion of all else. This specialized role gives increased taming and training efficiency. Holders of this role will refuse to perform some non-animals-related tasks.
+|
+* [[Animal personhood]]
+* [[Rancher]]
+|
+* [[Skills#Animals|Animals skill]] ≥ 6
+* Capable of:
+** Animals
+|
+* 2x [[Tame Animal Chance]]
+* 2x [[Train Animal Chance]]
+* 0.2x Animal revenge chance{{Check Tag|Hunt?|Report that this applies to both hunting revenge and tame fail - Confirm and state explictly}}
+* {{+|50%}} [[Fishing speed]] {{OdysseyIcon}} 
+* {{+|50%}} [[Fishing yield]] {{OdysseyIcon}}
+|
+* Crafting
+* Cooking
+* Plantwork
+* Mining
+* Constructing
+! Animal Calm<br/>[[File:AnimalCalm.png|64px]]
+| Use unique methods of connecting with animals to calm a maddened beast. ||
+* Hold animal stunned while casting, calms hostile animals if successful.
+* Casting time: {{Ticks|90}}
+* AoE: Single target? Touch range.
+* Duration: Instantaneous
+|- id="Medical specialist"
+! Medical Specialist<br/>[[File: SpecialistMedical.png]]
+| A special ideoligious status focusing on medicine to the exclusion of all else. This specialized role gives improved surgery and tending efficiency, and the ability to boost the medical abilities of nearby allies. Believers who receive care from one of this role will be happy about it. Holders of this role will refuse to do any kind of violence, and won't perform some non-medical tasks.
+|
+* [[Flesh purity]]
+* [[Ideoligion#Blindsight|Blindsight]]
+|
+* [[Skills#Medical|Medical skill]] ≥ 6
+* Capable of:
+** Caring
+|
+* 1.5x [[Medical Tend Quality]]
+* 1.5x [[Medical Operation Speed]]
+* 1.5x [[Medical Surgery Success Chance]]
+* Mood buff to pawns treated by this specialist
+|
+* Violent
+! Immunity Drive<br/>[[File:ImmunityDrive.png|64px]]
+| Offer moral support that energizes the body, boosting someone's immunity gain for one day. || ''"This person has received moral support of an ideoligious nature. Their mental certainty has energized their body and boosted their immune system."''
+* 2x [[Immunity Gain Speed]]
+|- id="Melee specialist"
+! Melee Specialist<br/>[[File: SpecialistMelee.png]]
+| A special ideoligious status focusing on melee combat to the exclusion of all else. This specialized role gives increased dodge and hit chance in melee combat and the ability to enter a short-term berserk trance. Holders of this role will refuse to do many kinds of non-melee-related work.
+|
+* [[Ideoligion#Raider|Raider]]
+* [[Ideoligion#Supremacist|Supremacist]]
+|
+* [[Skills#Melee|Melee skill]] ≥ 6
+* Capable of:
+** Violent
+|
+* [[Melee Hit Chance]] {{+|7}}
+* [[Melee Dodge Chance]] {{+|7}}
+|
+* Crafting
+* Cooking
+* Plantwork
+* Mining
+* Constructing
+* Hunting
+* Shooting{{Ref label|MeleeSpecialistShooting|2}}
+! Berserk Trance<br/>[[File:BerserkTrance.png|64px]]
+| The caster fills himself with anger over ideological grievances. This strengthens the body past normal limits, but also means losing control and attacking every enemy nearby in an unstoppable rage. The berserk state will last for 3 hours. || ''"Driven by fierce moral certainty and stories of ideoligious grievance, this person has driven him or herself into a rage. Every muscle is at peak performance, but it's hard to shut down the anger."''
+* [[Melee Hit Chance]] +8
+* [[Melee Dodge Chance]] +8
+* 0.1x [[Pain]]
+* Puts user in Berserk Trance mental state (Unknown effects)
+* Casting time: {{Ticks|90}}
+* AoE: Self
+* Duration: {{Ticks/gametime|7500}} or until [[Downed]]
+|- id="Mining specialist"
+! Mining Specialist<br/>[[File: SpecialistMining.png]]
+| A special ideoligious status focusing on mining to the exclusion of all else. This specialized role gives increased mining speed, and the ability to boost the mining speed of nearby allies. Holders of this role will refuse to do some non-mining work.
+|
+* [[Ideoligion#Darkness|Darkness]]
+* [[Ideoligion#Tunneler|Tunneler]]
+|
+* [[Skills#Mining|Mining skill]] ≥ 6
+* Capable of:
+** Mining
+|
+* [[Mining Speed]] +70%
+|
+* Animals
+* Crafting
+* Cooking
+* Plantwork
+* Constructing
+! Mining Command<br/>[[File:MiningCommand.png|64px]]
+| Offer guidance on mining techniques, boosting the mining speed for everyone nearby. The effect remains attached to the caster for 24 hours. || ''"This person's mining speed is boosted thanks to being near someone who is using the mining command ability."'''
+* [[Mining Speed]] +40%
+* AoE: 9.9 tile radius aura centered on Caster
+* Duration:
+** Aura: {{Ticks/gametime|60,000}}
+** Effect: While in aura radius{{Ref label|SpecialistCommandEffectOnCaster|1}}
+|- id="Plants specialist"
+! Plants Specialist<br/>[[File: SpecialistPlants.png]]
+| A special ideoligious status focusing on planting to the exclusion of all else. This specialized role gives increased sowing and harvesting efficiency, and the ability to boost the farming speed of nearby allies. Holders of this role will refuse to perform some non-plants-related work.
+|
+* [[High life]]
+* [[Nature primacy]]
+* [[Tree connection]]
+|
+* [[Skills#Plants|Plants skill]] ≥ 6
+* Capable of:
+** Plantwork
+|
+* [[Plant Work Speed]] +70%
+* [[Plant Harvest Yield]] +30%
+|
+* Animals
+* Crafting
+* Cooking
+* Constructing
+* Mining
+! Farming Command<br/>[[File:FarmingCommand.png|64px]]
+| Offer guidance on farming techniques, boosting the farming abilities for everyone nearby. The effect remains attached to the caster for 24 hours. || ''"This person's farming abilities are boosted thanks to being near someone who is using the farming command ability."'''
+* [[Plant Work Speed]] +40%
+* AoE: 9.9 tile radius aura centered on Caster
+* Duration:
+** Aura: {{Ticks/gametime|60,000}}
+** Effect: While in aura radius{{Ref label|SpecialistCommandEffectOnCaster|1}}
+|- id="Production specialist"
+! Production Specialist<br/>[[File: SpecialistProduction.png]]
+| A special ideoligious status focusing on crafting and construction to the exclusion of all else. This specialized role gives increased crafting and construction efficiency, and the ability to boost the production abilities of nearby allies. Holders of this role will refuse to do some non-production work.
+|
+* [[Human primacy]]
+|
+* [[Skills#Construction|Construction skill]] ≥ 6 OR [[Skills#Crafting|Crafting skill]] ≥ 6
+* Capable of:
+** Construction OR
+** Crafting
+|
+* [[Construction Speed]] +50%
+* [[General Labor Speed]] +50%
+* [[Quality]] +1 level{{Ref label|Quality|3}}
+|
+* Dumb labor
+* Animals
+* Cooking
+* Plantwork
+* Mining
+! Production Command<br/>[[File:ProductionCommand.png|64px]]
+| Offer guidance on construction techniques, boosting construction and crafting abilities for everyone nearby. The effect remains attached to the caster for 24 hours. || ''"This person's construction and crafting speeds are boosted thanks to being near someone who is using the production command ability."''
+* [[Construction Speed]] +40%
+* [[General Labor Speed]] +20%
+* AoE: 9.9 tile radius aura centered on Caster
+* Duration:
+** Aura: {{Ticks/gametime|60,000}}
+** Effect: While in aura radius{{Ref label|SpecialistCommandEffectOnCaster|1}}
+|- id="Research specialist"
+! Research Specialist<br/>[[File: SpecialistResearch.png]]
+| A special ideoligious status focusing on research to the exclusion of all else. This specialized role gives increased research and hacking speed, and the ability to boost research abilities of nearby allies. Holders of this role will refuse to perform some non-research tasks.
+|
+* [[Transhumanist]]
+|
+* [[Skills#Intellectual|Intellectual skill]] ≥ 6
+* Capable of:
+** Intellectual
+|
+* [[Research Speed]] +70%
+* [[Hacking Speed]] +70%
+|
+* Dumb labor
+* Animals
+* Cooking
+* Plantwork
+* Mining
+! Research Command<br/>[[File:ResearchCommand.png|64px]]
+| Provide suggestions and mental support, boosting the research speed of everyone nearby. The effect remains attached to the caster for 24 hours. || ''"This person's research speed is boosted because they are near someone who is using the research command ability."''
+* [[Research Speed]] +30%
+* AoE: 9.9 tile radius aura centered on Caster
+* Duration:
+** Aura: {{Ticks/gametime|60,000}}
+** Effect: While in aura radius{{Ref label|SpecialistCommandEffectOnCaster|1}}
+|- id="Shooting specialist"
+! Shooting Specialist<br/>[[File: SpecialistShooting.png]]
+| A special ideoligious status focusing on ranged combat to the exclusion of all else. This specialized role gives increased accuracy and the ability to boost the shooting abilities of nearby allies. Holders of this role will refuse to do many kinds of non-shooting-related work.
+|
+* [[Ideoligion#Raider|Raider]]
+* [[Supremacist]]
+|
+* [[Skills#Shooting|Shooting skill]] ≥ 6
+* Capable of:
+** Shooting
+** Violent
+|
+* [[Shooting Accuracy]] +7
+* [[Aiming Time]] -50%
+|
+* Crafting
+* Cooking
+* Plantwork
+* Mining
+* Constructing
+* ''Equipping'' Melee Weapons {{Ref label|ShootingSpecialistMelee|4}}
+! Marksman Command<br/>[[File:MarksmanCommand.png|64px]]
+| Call out shots and boost the shooting skills of everyone nearby. The effect remains attached to the caster for 24 hours. Cooldown of 3 days. || ''Someone is using the marksman command ability nearby, boosting this person's shooting abilities.''
+* [[Shooting Accuracy]] +4
+* [[Aiming Time]] -40%
+* AoE: 9.9 tile radius aura centered on Caster
+* Duration:
+** Aura: {{Ticks/gametime|60,000}}
+** Effect: While in aura radius{{Ref label|SpecialistCommandEffectOnCaster|1}}
+|}
+:{{note|SpecialistCommandEffectOnCaster|1}} The caster won't benefit from their own ability, but will benefit from the same ability from a different caster. Pawns benefit from the effects of different, simultaneous commands (i.e., Combat, Farming, Research all at the same time), but commands of the same type do not stack with each other (i.e., 3 Production Commands will only provide the standard Construction Speed +40% and General Labor Speed +20% bonus for nearby pawns).
+:{{note|MeleeSpecialistShooting|2}} Melee Specialists will not equip ranged weapons (inlcuding [[Grenades|throwable grenades]]) and cannot use [[Grenadier armor|frag launchers]] or [[Phoenix armor|flamebolt launchers]] from select armor, but can use [[Locust armor|built-in jump packs]]. 
+:{{note|Quality|3}} This affects the quality of every item the pawn creates, including [[sculptures|Art]], even though the tooltip lists only Crafting and Construction.
+:{{note|ShootingSpecialistMelee|4}} Shooting Specialists will not equip [[Melee weapons|melee weapons]], but can still melee attack with fists or a ranged weapon.
+
+== Version history ==
+* [[Ideology DLC]] Release - Added.
+* [[Version/1.3.3067|1.3.3067]] - Fixed gender supremacy memes having opposite agreeing traits e.g. Female Supremacy inexplicably being agreed with by Misogynist traited pawns. Fix: Essential roles can be removed.
+* [[Version/1.3.3069|1.3.3069]] - Chance of resentment on failed conversion attempt reduced from 36% to 20%. Chance of fight reduced from 4% to 2%.
+* [[Version/1.3.3074|1.3.3074]] - Desired apparel now uses the same faction restrictions as role apparel does. Tribal-Only: War mask, Tribal Headdress. Non-tribal only: Slicecap, Beret. Removed visage mask restriction to non-tribal only. Integrate art for rough living issue and set it to medium importance. Ensure Tunneler meme always has the MiningYield_High precept. Fix 5234: Pawns can build turrets when prohibited by precepts.
+* [[Version/1.3.3080|1.3.3080]] - Fixed Immunity Drive. Was previously targeting wrong stat and inoperative. Add a new ideoligion setup interface which allows playing like classic RimWorld, using presets, or fully customizing. Change harmful aging thought minimum age from 20 to 25. Added temperature precept icon.
+* [[Version/1.3.3101|1.3.3101]] - Fluid ideoligion system added. Reduce production specialist crafting speed buffs from +70% to +50%. Increase impact of 'lost role' thought from {{--|5}} to {{--|15}}. Pawns now recover from [[#Melee specialist|berserk trance]] on being downed. Fix: There are some duplicate ideoligion icons. 
+* [[Version/1.3.3117|1.3.3117]] - Gaining, changing, or removing a role now requires a simple ritual.
+* [[Version/1.3.3326|1.3.3326]] - Fix: Ability gizmos are still available for roles that have been removed via reformation.
+* [[Version/1.4.3523|1.4.3523]] - Fix: Berserker trance makes pawn guilty even though they cannot attack allies. Fix: High Life harvest yield for Drug Use: Essential precept doesn't work.
+* [[Version/1.4.3563|1.4.3563]] - Fix: Animals specialist role mentions boosting animal-related abilities of nearby allies, which is false. "''A special ideoligious status focusing on animals to the exclusion of all else. This specialized role gives increased taming and training efficiency, and the ability to boost the animals-related abilities of nearby allies. Holders of this role will refuse to perform some non-animals-related tasks.''" -> ''"A special ideoligious status focusing on animals to the exclusion of all else. This specialized role gives increased taming and training efficiency. Holders of this role will refuse to perform some non-animals-related tasks."''
+* [[Version/1.6.4528|1.6.4528]] - Animals specialist now increases [[fishing speed]]{{OdysseyIcon}} and [[fishing yield]].{{OdysseyIcon}}
+
+[[Category:Game mechanics]]

@@ -1,0 +1,52 @@
+{{Odyssey}}
+{{Infobox main|building
+| name = Oxygen pump
+| image = Oxygen pump.png
+| type = Building
+| type2 = Odyssey (Buildings)
+| placeable = True
+| description = A small wall-mounted unit that releases oxygen into the surrounding room, allowing enclosed areas to repressurize in space. Essential for long stays in orbit
+| size = 1 ˣ 1
+| minifiable = true
+| passability = standable
+| hp = 80
+| power = -150
+| market value = 200
+| mass base = 8
+| flammability = 0
+| research = Orbital tech
+| work to make = 2000
+| resource 1 = Steel
+| resource 1 amount = 100
+| resource 2 = Component
+| resource 2 amount = 2
+| skill 1 = Construction
+| skill 1 level = 6
+}}
+{{Info|The '''oxygen pump''' is a constructable [[building]] device that can be used to lower the [[vacuum]] in a room, making it safe for habitation. It requires [[power]] to operate.}}
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+Every {{ticks|250}}, a powered oxygen pump lowers the [[vacuum]] percentage of its current [[room]]. The room must be enclosed by [[airtight]] structures and [[roof]]ed. It changes the vacuum percentage at a base rate of {{Down|-1%}} per second per 100 tiles, scaling proportionally to the number of tiles enclosed; for instance, a room with 25 tiles will reduce the vacuum percentage by {{Down|-4%}} per second, while a room with 200 tiles will drop by {{Down|-0.5%}} per second. Multiple oxygen sources may be required to pressurize especially large rooms.
+
+Oxygen pumps in operation are completely binary, having two states of power consumption: high and low.
+* '''High:''' An oxygen pump that is actively pressurizing a room is in the high power state and consumes 150 W. It will stay in this state so long as the room's vacuum percentage is above 0%.
+* '''Low:''' If a room's vacuum percentage is at 0%, an oxygen pump will switch to this state and cease function unless the room becomes depressurized again. Power consumption is reduced to a modest 15 W. Oxygen pumps will also enter this state if placed in a position that can never be pressurized (i.e. built outdoors or in a space that is not airtight).
+
+Note that oxygen pumps do ''not'' change the [[temperature]] of the rooms they are in; even once fully pressurized, a room will still be dangerously cold unless warmed to habitable temperatures through the use of [[heater]]s, [[campfire]]s, and so on.
+
+Oxygen pumps can be uninstalled and freely moved as needed.
+
+{{Wall Mount Note}}
+
+== Analysis ==
+{{Stub|section=1|reason=Expansion - e.g. how many, placement  redundancy, power prioritisation and stsbility, duty cycle hacks etc}}
+Oxygen pumps are the most accessible method of pressurizing rooms. While [[archean tree]]s and [[life support unit]]s both passively reduce vacuum around themselves at no cost, both of them are restricted to specific locations and cannot be moved, meaning that new constructions and especially [[gravship]]s must have oxygen pumps built to keep them breathable unless every pawn aboard is fully [[vacuum resistance|vacuum resistant]].
+
+== Version history ==
+* [[Odyssey DLC]] Release - Added
+
+{{Nav|odyssey|wide}}
+[[Category:Odyssey (Buildings)]]

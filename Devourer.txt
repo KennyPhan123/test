@@ -1,0 +1,214 @@
+{{Anomaly}}
+{{Spoiler}}
+{{Infobox main|entity
+| name = Devourer
+| image = Devourer.png
+| description = A massive monster with a gaping toothed maw and a stubby, snake-like body. The devourer can leap several times its body length to swallow a person whole. Powerful stomach acids rapidly digest the still-living victim. The remains are regurgitated soon after.
+<!-- Base Stats -->
+| type = Entity
+| type2 = Advanced
+| flammability = 0.7
+| hidden while undiscovered = true
+| tradeability = None
+<!-- Containment -->
+| minimum containment strength = 90
+| anomaly knowledge = 2
+| knowledge category = Advanced
+| study interval = 120000
+| bioferrite density = 1
+| min monolith level for study = 1
+| requires holding platform = true
+| base escape interval MTB days = 60
+<!-- Apparel -->
+| armorsharp = 50
+| armorblunt = 30
+| armorheat = 20
+<!-- Pawn Stats -->
+| combatPower = 250
+| movespeed = 3.5
+| healthscale = 7.2
+| bodysize = 4
+| body = Devourer
+| diet = none
+| lifespan = 200
+| trainable = None
+| psychic sensitivity = 2
+| toxic resistance = 0.5
+| min comfortable temperature = -40
+| max comfortable temperature = 60
+| always violent = true
+| can become shambler = true
+| intelligence = ToolUser
+| needs rest = false
+| blood def = Filth_DarkBlood
+| bleed rate factor = 0.5
+| override should have ability tracker = true
+| flesh type = EntityFlesh
+| is immune to infections = true
+| has genders = false
+| disable ignite verb = true
+| hediff giver sets = AnomalyEntity
+| life stage ages = EntityFullyFormed
+| corpse hidden while undiscovered = true
+<!-- Production -->
+| leatheryield = 20
+| leathername = Dread leather
+| meatyield = 70
+| meatname = Twisted meat
+<!-- Melee Combat -->
+<!-- 1. Attack -->
+| attack1label = left fin
+| attack1labelNoLocation = fin
+| attack1dmg = 8
+| attack1type = Blunt
+| attack1part = LeftFin
+| attack1cool = 2
+| attack1alwaysTreatAsWeapon = true
+<!-- 2. Attack -->
+| attack2label = right fin
+| attack2labelNoLocation = fin
+| attack2dmg = 8
+| attack2type = Blunt
+| attack2part = RightFin
+| attack2cool = 2
+| attack2alwaysTreatAsWeapon = true
+<!-- 3. Attack -->
+| attack3label = teeth
+| attack3dmg = 15
+| attack3ap = 0.2
+| attack3type = Blunt
+| attack3part = HeadAttackTool
+| attack3cool = 2.5
+| attack3ensureLinkedBodyPartsGroupAlwaysUsable = true
+<!-- Technical -->
+| defName = Devourer
+| label = devourer
+}}
+'''Devourers''' are an [[entity]] added in the [[Anomaly DLC]].
+
+== Occurrence ==
+Devourers occasionally raid the colony as part of the Devourer attack event (which only requires a level 1 Monolith to generate), and can also be part of the final raids of the anomaly ending. Devourer attacks can also emerge from water.
+
+== Summary ==
+{{Rewrite|section=1|reason=Separate swallowing/digestion summary subsection from combat summary}}
+Similar to mech raids, devourers may spawn from ocean and river tiles even if a raid normally would not be able to spawn due to deep ocean water. This can be a nasty surprise for players who prioritized defenses against normal raids coming in from the map edge. {{Check Tag|verify}}.
+
+=== Combat ===
+[[File:Devourer leap radius.png|thumb|left|White tiles showing full leap radius]]Devourers are rather unconventional combatants, as they prefer not to attack normally. Instead, they will choose a target within 9.9 tiles, leap at it, and instantly swallow it whole upon landing. It is possible to avoid being swallowed by using a [[Jump pack]],{{RoyaltyIcon}} or [[Longjump legs]],{{BiotechIcon}} or similar abilities invulnerability frames during the devourer's leap attack. You cannot outrun the leap once it has started, no matter what the move speed. The devourer will then prioritize a different target upon landing.{{Check Tag|Clarification needed|If it devours the pawn, or if it doesn't? What does prioritize actually mean in this context? unsuccessful swallow attempt atill triggera cooldown?}} A devourer cannot swallow any pawn with a body size greater than 2.5. Once the devourer has swallowed its target, it will not move so long as it is digesting, making it vulnerable to retaliation. The swallowed pawn will be digested over time at a rate related to their body size, receiving acid burns. The rate at which a creature is digested is linearly interpolated between three different points - 10 seconds to digest a pawn with a body size of 0.2, 30 seconds for a pawn with a body size of 1, and 43 seconds for a pawn with a body size of 2.15. The devourer is capable of swallowing and digesting [[mechanoid]]s. 
+
+If a devourer catches [[fire]], is affected by [[vertigo pulse]],{{RoyaltyIcon}} is downed, or is killed, it will immediately regurgitate whatever it has swallowed. The devourer's swallowing attack has a cooldown of 3,600 ticks. (1.44 hours)
+
+Devourers have a [[psychic sensitivity]] of 200% and a bleed rate factor of 50%. They are immune to [[infection]]s.
+
+Devourers are quite destructive, and will smash up player-owned buildings, walls, or doors, if they cannot find any pawns to attack.
+
+=== Yield ===
+The devourer yields 4 [[bioferrite]] and 800W per day. Minimum containment strength of 90 - it requires a [[holding platform]]. They have a base escape {{MTB}} of 60 days.
+
+They can be studied for 2 Advanced dark study every {{ticks/gametime|120000}}
+
+===Study points comparison===
+{{Graph:Chart
+|width=400
+|height=150
+|title=Advanced study points of entities at different containment levels
+|type=line
+|colors = {{{color|purple, gray, black, red, blue}}}
+|xAxisTitle=Containment strength
+|xAxisMin = 50
+|xAxisMax = 150
+|yAxisTitle= Study points
+|yAxisMin=0
+|yAxisMax=4.5
+|xGrid=
+|yGrid=
+|legend=
+|x=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150
+|y1={{Entity Research Points/Data points|Devourer}}
+|y1Title=Devourer
+|y2={{Entity Research Points/Data points|Metalhorror}}
+|y2Title=Metalhorror
+|y3={{Entity Research Points/Data points|Revenant}}
+|y3Title=Revenant
+|y4={{Entity Research Points/Data points|Chimera}}
+|y4Title=Chimera
+|y5={{Entity Research Points/Data points|Noctol}}
+|y5Title=Noctol
+}}
+
+== Analysis ==
+=== Combat ===
+
+When fighting devourers in close range, especially in great numbers, it is practically guaranteed that at least one of your fighters will get swallowed. However, apart from the damage from acid burns, there are no long-term drawbacks to a pawn being swallowed, assuming they are promptly liberated. In fact, full devourers are easier to deal with, as they will not attack or flee while digesting. For these reasons, there are two basic strategies for engaging devourers: Picking them off at range and staying safe, or getting close and taking their punishment.
+
+If you plan on taking the devourers head-on, and there are a large number of devourers attacking, then it would be a good idea to try and split them off while also keeping your fighters close together. This way, fewer fighters end up being swallowed at any given time, and more fighters are available to retaliate against digesting devourers.
+
+If you have a stone door as the gate of your base, you can safely kill off any number of devourers by baiting them in one by one. Put a pawn that can take damage at the door as bait, and other pawns away from it. When a devourer is nearly in range, move the bait inside so that the door closes behind them. Because stone doors are slow, 1-2 devourers will still jump through before it closes. They will be isolated because other devourers will be blocked by the door. After killing them, you can repeat to kill the remaining ones. Remember to make sure the door never get blocked from closing, always move the bait inside before the devourer jump, and occasionally repair the damage to the door.
+
+Devourers are generally slower than humans, who have a base movement speed of 4.6 tiles/second. This makes [[kiting]] viable, but still dangerous. Care must be taken to stay out of the devourer's lunging range, as they can close the distance instantly. If any fighter ends up being swallowed while several devourers are in combat, you will have to choose whether to leave them for dead or abandon the kiting maneuver and rescue them.
+
+If you have a [[mechanitor]]{{BiotechIcon}} in your colony, a valid strategy would be to inundate the devourers by sending in a wave of labor mechanoids and allowing them to be swallowed, then sending in your actual fighters. A [[war queen]]'s{{BiotechIcon}} [[war urchin]]s{{BiotechIcon}} can serve as incredibly cheap fodder to bait the devour attack. [[Scorcher]]s{{BiotechIcon}} can be highly effective in forcing devourers to regurgitate swallowed pawns or mechs. The high rate of fire of scorchers, as well as their low resource and bandwidth cost, make them cost-efficient counters to the devourer's most dangerous attack. Similarly, pawns armed with [[hellcat rifle]]s or [[incinerator]]s can be used on devourers that are actively digesting. [[Tesseron]]s{{BiotechIcon}} can also be effective at lighting devourers on fire, and have considerably longer range than scorchers. Additionally, the devourer is incapable of swallowing the larger mechs. For example, if you use a [[diabolus]]{{BiotechIcon}} or a [[war_queen]]{{BiotechIcon}} to tank, you can force the devourer to stay in melee combat while other mechanoids or colonists shoot at it. Some medium sized mechs, such as the [[pikeman]]{{BiotechIcon}} or [[scyther]]{{BiotechIcon}}, can be swallowed and go through a full digestion cycle without dying, allowing them to be swallowed a second time. If they do go through that cycle and survive, they still take significant damage and are likely to lose a body part.
+
+Similarly, devourers can be countered with attack animals. Spammable animals like dogs are numerous and expendable enough to be used as a distraction, similar to labor mechanoids. Larger animals like elephants work even better; they're too big to be swallowed and are too sturdy for devourers to kill with their feeble melee attacks.
+
+It is also recommended to have at least one colonist behind the main lines with a weapon capable of lighting fires, like an [[incinerator]] or [[molotov cocktails]], to force devourers to regurgitate colonists if any are at risk of being digested before your fighters can down it. [[Plasmasword]]s{{RoyaltyIcon}} are an ideal choice for any melee pawns, and colonists with the [[fire spew]]{{BiotechIcon}} gene will be able to force multiple devourers to regurgitate at once. With [[Royalty]] installed, pawns using [[Vertigo pulse]]{{RoyaltyIcon}} force all affected devourers to release swallowed colonists. [[Invisibility|Invisible]] pawns will not be targeted and are especially effective when armed with fire weaponry. The [[berserk]] [[psycast]]{{RoyaltyIcon}} or a [[psychic insanity lance]] can be incredibly effective to halt a devourer raid, as their low melee damage and high durability allow even a single devourer to hold off many more.
+
+=== Containment ===
+Due to their very high health and body size, devourers are very likely to be [[downed]] via [[pain]], rather than outright dying to a destroyed body part, and are less likely to bleed out before you can tend to them. This may make them significantly easier to capture than other entities. They also have the highest power yield of all entities and provide advanced research.
+
+Their high containment strength requirement means that [[security door]]s and [[holding platform]]s are needed to contain them for long periods of time. Their swallow ability makes them dangerous in case of escape, especially when many {{PAGENAME}}s are in the same room. But their tox gas vulnerability means that an [[IED tox trap]]{{BiotechIcon}} is enough to down a 9x9 room full of devourers. Therefore, devourers are good entities to capture once the IED tox trap is available.
+
+Devourers cannot be permanently downed through the removal of its fins, as the devourer's body itself adds moving capacity. However like most entities they still can be downed by brain damage.
+
+== Health == 
+=== Body parts ===
+{{Animal Health Table|Devourer}}
+
+=== Armor ===
+{| class="wikitable"
+! Armor
+|-
+| {{Apparel Protection Chart
+| set1name= {{P|Name}} (Sharp) | set1armor1={{P|Armor - Sharp}} 
+| set2name= {{P|Name}} (Blunt) | set2armor1={{P|Armor - Blunt}} 
+| set3name= {{P|Name}} (Heat) | set3armor1={{P|Armor - Heat}} 
+| color= grey, blue, red
+}} 
+|}
+{{Pawn Attack Table}}
+
+== Trivia ==
+The Devourer is most likely inspired by Saccopharyngiforms, or more specifically the gulper eel. Just like the devourer, the gulper eel lunges at prey to swallow it whole.
+
+== Gallery ==
+=== Normal ===
+<gallery>
+Devourer east.png|East
+Devourer north.png|North
+Devourer south.png|South
+</gallery>
+=== Digesting ===
+<gallery>
+Devourer Closed east.png|East
+Devourer Closed north.png|North
+Devourer Closed south.png|South
+</gallery>
+=== Swimming ===
+<gallery>
+Swimming Devourer east.png|Swimming east
+Swimming Devourer north.png|Swimming north
+Swimming Devourer south.png|Swimming south
+</gallery>
+=== Dessicated ===
+<gallery>
+Dessicated Devourer east.png|East
+Dessicated Devourer north.png|North
+Dessicated Devourer south.png|South
+</gallery>
+
+== Version history == 
+* [[Anomaly DLC]] Release - Added.
+* [[Version/1.6.4518|1.6.4518]] - Prior to this version, the devourer's consume leap attack could not be used while standing on barricades, sandbags, columns, trees, chunks, or similar objects. As of this version and later, this restriction has been removed. Also now has unique visuals when moving on water.
+
+{{Nav|entity|wide}}
+[[Category: Entities]]

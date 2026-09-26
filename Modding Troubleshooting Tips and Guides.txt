@@ -1,0 +1,271 @@
+<!--Top Nav Box-->
+{| align=center
+| {{Basics_Nav}}
+|}
+----
+
+
+{{TOCright}}
+== Basic Troubleshooting Things You Should Do == 
+
+
+"My game broke/crashed/the UI is gone/froze, what do I do?"
+
+
+'''''You should:'''''
+
+- Verify with Steam (if you use it to run Rimworld).
+
+- Clear your configs (instructions below).
+
+- Check your mod order (instructions also below).
+
+- Remove any mods that are out of date to the base game version. No I do not care if Steam comments say it works fine. Remove it anyway.
+
+- Remove any mods that have been "vibe coded" or rather coded by an automatic generator, LLM, AI slopbot, or other lack of intelligence. These suck and break things constantly, and no modlist that contains these mods will have their errors taken seriously.
+
+- Restart after all this has been done.
+
+- If these do not fix it (and you actually did them), proceed to the section on reporting errors to mod devs.
+
+
+-----------------
+
+
+=== Basic Load Order Rules: ===
+
+-Mods actually care what order they are loaded in when it comes to Rimworld. If you came from something like modded Minecraft this is probably exceptionally weird to you. The order in which mods need to be loaded is entirely dependent on the mods themselves and what they're doing, and gets complex very fast. The in-game mod sorter, like the base game log, *exists*, but is not great.
+Luckily, people have made an auto-sorter program specifically to combat this issue. It's called Rimsort, and is a fork of Rimpy which does the same thing but may not have been updated in a while. This is an external program you have to download and sadly may not work on all OSs.
+If that is the case for you, or you just don't want to download stuff outside the Steam ecosystem, there is an older guide that may at least be somewhat helpful.
+Other guides exist (though I cannot personally vouch for them one way or the other). Your mileage may vary for any or all of these methods.
+
+=+=
+
+RimSort is a useful tool that works outside the game, to make it easier to sort your mods. It also has it's own auto-sort function if you want to see if that will help your issue:
+
+https://github.com/RimSort/RimSort
+
+There are also a few mod managers out there, both as mods and as external programs.
+
+Another option for sorting your mods is to follow this guide here:
+
+https://rwom.fandom.com/wiki/Mod_Order_Guide
+
+=+=
+
+The basic idea behind mod load order is below:
+
+-Mods must be loaded beneath any and all dependencies.
+eg: Most mods depend on Core to function and must load below it.
+
+-Mods should not/cannot be loaded with other incompatible mods.
+
+-How do we know which mods are incompatible? Reading mod descriptions, asking people who know things, and trial/error.
+
+-In the instance of multiple mods that change the same thing, whichever is loaded last will take precedence.
+There are some "ifs" and "buts" in this statement, but it's largely true.
+
+
+=== Local Mods: ===
+
+Windows:  
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods
+
+or
+C:\Program Files (x86)\RimWorld\Mods
+
+Mac OS X:  
+Right-click the RimWorld application and show package contents
+cd Library/Application\ Support/Steam/steamapps/common/RimWorld
+
+Linux:  
+~/.steam/steam/steamapps/common/Rimworld/Mods;
+
+
+=== Config Files: ===
+-Clear your config files. This is done because they are not automatically removed if you remove a mod, or updated if you change versions. This lack of cleanup can cause weird unusual issues if not dealt with.
+
+> RimWorld configuration files and most mod settings are kept in this folder, and removing them will reset all settings to default.
+
+> "Clearing configs" refers to deletion of old/all configs and config files in the aforementioned folder
+
+> Save the "ModsConfig.xml" as this is your mod load order, and if you remove it you will lose your modded load order.
+
+> The Windows location is here, check the wiki for other OSs locations: %appdata%\..\LocalLow\Ludeon Studios\RimWorld by Ludeon Studios\Config
+
+
+=== Steam Default Install Location (Windows): ===
+C:\Program Files (x86)\Steam\steamapps\common
+
+=== Steam Default Mod Install Folder (Windows): ===
+C:\Program Files (x86)\Steam\steamapps\workshop\content\294100
+
+
+=== Verify Game Files with Steam: ===
+
+> Steam Library
+
+> Right Click RimWorld
+
+> Properties
+
+> Local Files
+
+> "Verify integrity of game files". Wait until Steam tells you the files have been checked, and has fixed any issues it encountered.
+
+
+=== Change Game Version with Steam: ===
+
+> Steam Library
+
+> Right Click RimWorld
+
+> Properties
+
+> Betas
+
+> "Select the beta you would like to opt into:"
+
+=== Hugslog Instructions ===
+
+> Go to Game Options
+
+> Turn on Dev mode
+
+> Click the white button at the top of the screen that opens the logging function (they keep changing where this button is in the row, don't @ me). Otherwise press CTRL + F12
+
+> A console log window should have now appeared. If you have Hugslib, there should be a green "Share Logs" button at the bottom of this window. Press it
+
+> Post the resulting link to share your Hugslog
+
+--------------------------
+
+=== So you want to report a mod error to a mod dev... ===
+
+-First, you need to understand that Rimworld's logging *exists*, but is not great. There is a REASON why there are multiple mods that have popped up over the games lifetime that try to make it better. Part of this is that the devs of the base game cannot reasonably have planned for everything mods might do that would need to show up in a log.
+...But also the logs are still kinda bad so-
+
+-Currently, as previously stated, there are a few mods that try to make this better, spread out across various versions of the base game. These include Hugslib, Rocketman and CAI 9000, Achtung, etc. These mods sometimes run messages about what they find and label it with their own name at the start to show what is *finding* the error. This does not mean that the logging mod is *causing* the error, they're adding their name for record keeping purposes.
+-DO NOT RUN MODS THAT ARE FOR A PREVIOUS VERSION OF THE GAME, you will be yeeted into the sun if you do, you have been warned. Do your due diligence and check what version a mod is for.
+
+-Hugslib has been fairly consistent across the versions, and is the default recommendation for getting logs you can read and post elsewhere. There is a separate Hugslib Log Publisher if that's your jam. Both are on Steam.
+
+--------------------------
+
+=== How do you determine if an error needs to be reported to begin with? ===
+
+-There is a checklist of things you need to do before you go to report an error to a mod dev. Do not skip steps on this list, because devs and troubleshooters will likely refuse to help you until you complete them.
+That checklist is at the top of this page.
+If the checklist does not solve the problem, and you actually went through it and did everything on it, proceed to the next section.
+
+--------------------------
+
+=== Now then, we need to figure out if an error needs to be reported to a specific dev. ===
+
+-Sadly, there is no simple way to do this. As previously mentioned, some loggers will add their names into the error report, which has caused headaches for those devs over the years because people see that name, and assume it's that mods fault.
+
+-Stacktraces, which are a list of mods potentially involved in an error and what they were doing, will give you a few more options. However Just because a mod is in a stacktrace it still doesn't mean that the mod is CAUSING the error, it just means something that mod is doing was also affecting the bugged *thing* at the time. Stacktraces are not there to diagnose the problem, they're there to let you see all the code-bumper-cars running around so you can maybe figure out why a ten car pileup just happened. They're a snapshot, basically.
+
+-Devs will occasionally be able to read an error and go "oh, that method I was using to affect the pawn's eating habits is breaking because I forgot a parenthesis on line 432, fixed". This is exceedingly rare, and usually it's more of a hunt for a needle in a straw bale, but logging can at least tell you which part of the bale you should be looking in.
+
+-Rimworld (with Hugslib) logs start with a list of loaded mods, then a list of "methods" that are all the major things mods are doing. If an error mentions one of these methods, that can be but is NOT GUARANTEED to be an indicator of what is causing a problem. Many errors are the result of multiple mods interacting in weird arcane ways the mod devs did not foresee, and the one being named is not necessarily the culprit, though you should probably inform that dev of the error anyway.
+
+-Sometimes something breaks and there is no log for it whatsoever, or the error message is unreadable or decidedly not helpful. This sucks and can happen for a variety of reasons. The best you can do here is basic mod maintenance, which was discussed before, and once that is done (assuming that didn't fix it) you can ask around to see if anyone else has encountered the issue.
+
+--------------------------
+
+=== How do you report an error to a dev, in a manner that won't cause them to yeet you into the sun anyway? ===
+
+-Do the checklist. Gee I wonder why this is constantly posted throughout this guide, it can't possibly be because people skip it thinking that it couldn't possibly solve their problem, until it does when they're forced to by a troubleshooter or mod dev five minutes later. How could that ever be the case.
+
+-Give a DETAILED explanation of your error, what kind of state your game is currently in (just landed, early game, late game, travelling to the location ending, etc.), and provide a Hugslog. You will not be taken seriously if you do not provide a log, and lack of detail will mean you have to sit there for days or weeks while the mod dev finds the time to quiz you about the details. Over Steam comments. Assuming they even pay attention to those comments because Steam comment sections suck.
+Instructions for the Hugslog are above.
+
+-For that matter, check the description of the mod to see if the dev has a discord server or github. They usually do, and with a large notable exception they do in fact take bug reports there. They work far better than Steam comments do, so use them.
+
+--------------------------
+
+
+''
+'''An explanation of how this works code wise;'''
+
+"Keep in mind that not all mod conflicts will be solved by shuffling load order around. Sometimes mods are just incompatible until the mod authors put in effort to fix their mods.
+
+Sometimes mods will just be incompatible.
+
+As with most things, the truth is a bit more fine-grained. It's true that "Core, Mod 1, Mod 2, Mod 3" is the load order, and the last mod "wins", but the actual load order is a bit different.
+
+- XML
+
+- xpath
+
+- C#
+
+The game first loads all XML (defs, mostly) from Core, Mod 1, Mod 2, Mod 3
+
+Then it applies all xpath patches from Mod 1, Mod 2, Mod 3
+
+Then it loads the C# from Mod 1, Mod 2, Mod 3
+
+Core doesn't use xpath or load any C#, so they're not in that list. The C# for RimWorld is already loaded by that point, roughly speaking.
+
+So if Mod 3 overwrites something in XML, but Mod 2 overwrites it in xpath and Mod 1 overwrites it in C#, it's Mod 1 that wins -- even though Mod 3 and Mod 2 come after it in the load order.
+
+There are a few things that matter with load order:
+
+- Does the mod require a different mod? Examples of that are mods that require HugsLib, Proper Shotguns, Turret Extensions, Alien Races, JecsTools, whatever. If you are missing a dependency, you'll notice: You get a nice red error saying something like
+Could not find type named TurretExtensions.CompProperties_Upgradable from node <A lot of XML> and missing a dependency like that will put the entire game in a corrupted and unplayable state.
+
+And then there is another insidious thing some XML mods do: overwrite (abstract) bases. For that, I refer you to https://github.com/RimWorld-CCL-Reborn/AllYourBase. This is something that's still unfortunately very frequently done, and it can cause havoc.
+
+The C# summary slightly diverts from the truth. It even depends on how they instantiate the mod; there are two or three possible hooks and they happen at different times. Most mods that mess about with Defs will all have to do it in the second or third hook.
+
+There's inherit from mod, which happens before Defs are loaded. Generally mods can't screw around with Defs in there.
+
+There's the staticconstructoronstartup annotation which happens after Defs are loaded. This is where mods would screw around with Defs, for the most part.
+
+Finally there's Hugslibs' ondefsloaded, which is exactly like a staticconstructoronstartup, but it runs after the staticconstructoronstartup utility is done.
+
+and fwiw: that's just the Defs side of the equation
+
+I won't even mention the harmony conflicts (which are way harder to detect) or runtime conflicts (which sometimes get logged, but not nearly always)
+
+take the world edit mod: I can't remember which page it was, but basically if you click next somewhere and from there on you get redirected to world edit's version of whatever the next screen would've been.
+
+There's like.. almost zero chance of detecting that programmatically"''
+
+
+--------------------------
+
+''
+
+=== Common things people do that they should be doing differently ===
+
+-Do not run out of date mods. This means mods that are for a different version of the game than you are running. The only exception is Allyourbase at this time.
+
+-If asked to add and use Allyourbase, do NOT turn on Verbose Logging till you are asked to do so.
+
+-Do not run two copies of the same mod. This causes things to break horribly.
+
+-Do not use modpacks. They are almost always partially out of date, almost always partially broken, and you will be told to make your own list if you present them to a troubleshooter.
+Also Samuel Streamer needs to either stop editing around all the dev commands they use, or they need to stop giving people the packs without FIXING them first.
+
+-Do not come into a troubleshooting area with "Can someone help?" and nothing else. Do not even come into such an area with that and a log. Come with a description of your problem, AND a log, so that troubleshooters do not have to spend multiple minutes asking for a description of your problem.
+
+-If a troubleshooter asks you to do something that does not ACTUALLY BREAK LAWS OR PUT YOU IN HARMS WAY, do it. Even if you did it already. You're not being asked as a delaying tactic, or as a power trip; you are being asked to do that thing so that they can help you fix your game.
+
+-If you come from modding Skyrim or Fallout and you are used to the LOOT filter: Guess what, Rimpy exists, it hasn't had enough time to get to where LOOT is (though the devs are working on it). Use it.
+
+-Always provide a Hugslog if possible. Yes, even if it has to come from the main menu. Yes, even if it has to come from a restart before the error occurs. It will STILL be useful. (Hugslogs are acquired by adding the Hugslib mod, and then either pressing Ctrl+F12 while in game, or navigating to the dev mode console window and hitting the green "Share Logs" button.)
+
+-It's (almost always) not Achtung or Rocketman.
+    ~Both of these mods check what other mods are doing to try to make bugs easier to notice and fix. They are probably not the cause of whatever they catch.
+
+=== YOU NEED HARMONY ===
+Harmony is a library critical to the function of many complex mods. If you remove it, any mods that require it will explosively break!
+
+== Further Help ==
+
+Every mod list is different and sometimes general rules aren't enough to solve a particularly unique issue. If you are still having issues after following these guidelines, consider checking out the #troubleshooting channel on the [https://discordapp.com/invite/UTaMDWc RimWorld Discord server] and follow the posted instructions to get direct help from a volunteer troubleshooter!
+
+[[Category:Modding]]

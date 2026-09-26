@@ -1,0 +1,303 @@
+{{Stub|reason=1) Version history 2) Two-way links}}
+{{Verified|1.5.4104}}{{Stat
+| def name = Comfort
+| label = comfort
+| description = How comfortable an object is to sit or lay on.<br/>Using comfortable objects fulfills a character's [[need]] for [[comfort]].
+| default base value = 0
+| min value = -1000
+| max value = 1000
+| to string style = FloatTwo
+| apply factors if negative = false
+| show if undefined = false
+| category = BasicsNonPawn
+| display priority in category = 3000
+| parts = StatPart_Quality
+}}
+
+== Bases ==
+{| {{STDT| c_01 sortable}}
+! [[Furniture]] !! Comfort
+<!-- Buildings_Furniture -->
+<!--
+|-
+! Name="SleepingSpotBase"
+| 0.4
+-->
+|-
+! [[File:Sleeping spot.png|24x24px|Sleeping spot]] [[Sleeping spot]]
+| 0.4
+|-
+! [[File:Double sleeping spot.png|24x24px|Double sleeping spot]] [[Double sleeping spot]]
+| 0.4
+<!--
+|-
+! Name="BasicBedBase" (Name="Bed", Name="DoubleBed")
+| 0.75
+-->
+|-
+! [[File:Bed.png|24x24px|Bed]] [[Bed]]
+| 0.75
+|-
+! [[File:Double bed.png|24x24px|Double bed]] [[Double bed]]
+| 0.75
+|-
+! [[File:Royal bed.png|24x24px|Royal bed]] [[Royal bed]]
+| 0.9
+|-
+! [[File:Hospital bed south.png|24x24px|Hospital bed]] [[Hospital bed]]
+| 0.8
+|-
+! [[File:Bedroll.png|24x24px|Bedroll]] [[Bedroll]]
+| 0.68
+|-
+! [[File:Double bedroll.png|24x24px|Double bedroll]] [[Double bedroll]]
+| 0.68
+|-
+! [[File:Animal sleeping box.png|24x24px|Animal sleeping box]] [[Animal sleeping box]]
+| 0.6
+|-
+! [[File:Animal bed.png|24x24px|Animal bed]] [[Animal bed]]
+| 0.75
+|-
+! [[File:Stool north.png|24x24px|Stool]] [[Stool]]
+| 0.5
+|-
+! [[File:Dining chair south.png|24x24px|Dining chair]] [[Dining chair]]
+| 0.7
+|-
+! [[File:Armchair.png|24x24px|Armchair]] [[Armchair]]
+| 0.8
+|-
+! [[File:Couch south.png|24x24px|Couch]] [[Couch]]
+| 0.85
+|-
+! [[File:Throne south.png|24x24px|Meditation throne]] [[Meditation throne]] {{RoyaltyIcon}}
+| 0.75
+|-
+! [[File:Grandthrone.png|24x24px|Grand meditation throne]] [[Grand meditation throne]] {{RoyaltyIcon}}
+| 0.9
+|-
+! [[File:Ancient bed.png|24x24px|Ancient bed]] [[Ancient bed]] {{IdeologyIcon}}
+| 0.75
+|-
+! [[File:Pew.png|24x24px|Pew]] [[Pew]] {{IdeologyIcon}}
+| 0.6
+|-
+! [[File:Kneel sheet.png|24x24px|Kneel sheet]] [[Kneel sheet]] {{IdeologyIcon}}
+| 0.6
+|-
+! [[File:Kneel pillow.png|24x24px|Kneel pillow]] [[Kneel pillow]] {{IdeologyIcon}}
+| 0.6
+|-
+! [[File:DeathrestCasket south.png|24x24px|Deathrest casket]] [[Deathrest casket]] {{BiotechIcon}}
+| 0.75
+|}
+
+== Offsets ==
+{| {{STDT| c_01}}
+|-
+! Facility !! Offset
+|-
+! [[File:End table.png|24x24px|End table]] [[End table]]<Ref name="Linkable">Linkable to Bed, Double bed, Royal bed, Hospital bed, Bedroll, and Double bedroll</Ref>
+| {{+|0.05}}
+|-
+! [[File:Dresser south.png|24x24px|Dresser]] [[Dresser]]<Ref name="Linkable" />
+| {{+|0.05}}
+|}
+<References />
+
+== Factors ==
+{| {{STDT}}
+! [[Quality]] !! Factor
+|-
+| Awful || {{Bad|×76%}}
+|-
+| Poor || {{Bad|×88%}}
+|-
+| Normal || '''×100%'''
+|-
+| Good || {{Good|×112%}}
+|-
+| Excellent || {{Good|×124%}}
+|-
+| Masterwork || {{Good|×145%}}
+|-
+| Legendary || {{Good|×170%}}
+|}
+
+== Calculating Comfort ==
+The final comfort value is calculated by:
+<code>'''Comfort''' = ('''Base Comfort Value''' + '''Comfort Offset''') × '''Quality Factor'''</code>
+
+Here is a table showing Comfort values depending on quality:
+{| {{STDT| c_01 sortable}}
+! rowspan=2 | [[Furniture]]
+! colspan=7 | Quality
+|-
+! Awful !! Poor !! Normal !! Good !! Excellent !! Masterwork !! Legendary
+<!--
+|-
+! [[File:Sleeping spot.png|24x24px|Sleeping spot]] [[Sleeping spot]]
+| 0.304 || 0.352 || 0.4 || 0.448 || 0.496 || 0.58 || 0.68
+|-
+! [[File:Double sleeping spot.png|24x24px|Double sleeping spot]] [[Double sleeping spot]]
+| 0.304 || 0.352 || 0.4 || 0.448 || 0.496 || 0.58 || 0.68
+-->
+|-
+! [[File:Bed.png|24x24px|Bed]] [[Bed]]
+| 0.57 || 0.66 || 0.75 || 0.84 || 0.93 || 1.0875 || 1.275
+|-
+! [[File:Double bed.png|24x24px|Double bed]] [[Double bed]]
+| 0.57 || 0.66 || 0.75 || 0.84 || 0.93 || 1.0875 || 1.275
+|-
+! [[File:Royal bed.png|24x24px|Royal bed]] [[Royal bed]]
+| 0.684 || 0.792 || 0.9 || 1.008 || 1.116 || 1.305 || 1.53
+|-
+! [[File:Hospital bed south.png|24x24px|Hospital bed]] [[Hospital bed]]
+| 0.608 || 0.704 || 0.8 || 0.896 || 0.992 || 1.16 || 1.36
+|-
+! [[File:Bedroll.png|24x24px|Bedroll]] [[Bedroll]]
+| 0.5168 || 0.5984 || 0.68 || 0.7616 || 0.8432 || 0.986 || 1.156
+|-
+! [[File:Double bedroll.png|24x24px|Double bedroll]] [[Double bedroll]]
+| 0.5168 || 0.5984 || 0.68 || 0.7616 || 0.8432 || 0.986 || 1.156
+|-
+! [[File:Animal sleeping box.png|24x24px|Animal sleeping box]] [[Animal sleeping box]]
+| 0.456 || 0.528 || 0.6 || 0.672 || 0.744 || 0.87 || 1.02
+|-
+! [[File:Animal bed.png|24x24px|Animal bed]] [[Animal bed]]
+| 0.57 || 0.66 || 0.75 || 0.84 || 0.93 || 1.0875 || 1.275
+|-
+! [[File:Stool north.png|24x24px|Stool]] [[Stool]]
+| 0.38 || 0.44 || 0.5 || 0.56 || 62 || 0.725 || 0.85
+|-
+! [[File:Dining chair south.png|24x24px|Dining chair]] [[Dining chair]]
+| 0.532 || 0.616 || 0.7 || 0.784 || 0.868 || 1.015 || 1.19
+|-
+! [[File:Armchair.png|24x24px|Armchair]] [[Armchair]]
+| 0.608 || 0.704 || 0.8 || 0.896 || 0.992 || 1.16 || 1.36
+|-
+! [[File:Couch south.png|24x24px|Couch]] [[Couch]]
+| 0.646 || 0.748 || 0.85 || 0.952 || 1.054 || 1.2325 || 1.445
+|-
+! [[File:Throne south.png|24x24px|Meditation throne]] [[Meditation throne]] {{RoyaltyIcon}}
+| 0.57 || 0.66 || 0.75 || 0.84 || 0.93 || 1.0875 || 1.275
+|-
+! [[File:Grandthrone.png|24x24px|Grand meditation throne]] [[Grand meditation throne]] {{RoyaltyIcon}}
+| 0.684 || 0.792 || 0.9 || 1.008 || 1.116 || 1.305 || 1.53
+<!--
+|-
+! [[File:Ancient bed.png|24x24px|Ancient bed]] [[Ancient bed]] {{IdeologyIcon}}
+| 0.57 || 0.66 || 0.75 || 0.84 || 0.93 || 1.0875 || 1.275
+-->
+|-
+! [[File:Pew.png|24x24px|Pew]] [[Pew]] {{IdeologyIcon}}
+| 0.456 || 0.528 || 0.6 || 0.672 || 0.744 || 0.87 || 1.02
+|-
+! [[File:Kneel sheet.png|24x24px|Kneel sheet]] [[Kneel sheet]] {{IdeologyIcon}}
+| 0.456 || 0.528 || 0.6 || 0.672 || 0.744 || 0.87 || 1.02
+|-
+! [[File:Kneel pillow.png|24x24px|Kneel pillow]] [[Kneel pillow]] {{IdeologyIcon}}
+| 0.456 || 0.528 || 0.6 || 0.672 || 0.744 || 0.87 || 1.02
+|-
+! [[File:DeathrestCasket south.png|24x24px|Deathrest casket]] [[Deathrest casket]] {{BiotechIcon}}
+| 0.57 || 0.66 || 0.75 || 0.84 || 0.93 || 1.0875 || 1.275
+|}
+
+Here is a table showing [[Comfort]] depending on [[Quality]] and connected facilities:
+{| {{STDT| c_01 sortable}}
+! rowspan=2 | [[Furniture]]
+! colspan=7 | Quality
+|-
+! Awful !! Poor !! Normal !! Good !! Excellent !! Masterwork !! Legendary
+|-
+! [[File:Bed.png|24x24px|Bed]] [[Bed]] with no facilities
+| 0.57 || 0.66 || 0.75 || 0.84 || 0.93 || 1.0875 || 1.275
+|-
+! [[File:Bed.png|24x24px|Bed]] [[Bed]] with [[File:End table.png|24x24px|End table]] [[End table]] or [[File:Dresser south.png|24x24px|Dresser]] [[Dresser]]
+| 0.608 || 0.704 || 0.8 || 0.896 || 0.992 || 1.16 || 1.36
+|-
+! [[File:Bed.png|24x24px|Bed]] [[Bed]] with [[File:End table.png|24x24px|End table]] [[End table]] and [[File:Dresser south.png|24x24px|Dresser]] [[Dresser]]
+| 0.646 || 0.748 || 0.85 || 0.952 || 1.054 || 1.2325 || 1.445
+|-
+! [[File:Double bed.png|24x24px|Double bed]] [[Double bed]] with no facilities
+| 0.57 || 0.66 || 0.75 || 0.84 || 0.93 || 1.0875 || 1.275
+|-
+! [[File:Double bed.png|24x24px|Double bed]] [[Double bed]] with [[File:End table.png|24x24px|End table]] [[End table]] or [[File:Dresser south.png|24x24px|Dresser]] [[Dresser]]
+| 0.608 || 0.704 || 0.8 || 0.896 || 0.992 || 1.16 || 1.36
+|-
+! [[File:Double bed.png|24x24px|Double bed]] [[Double bed]] with [[File:End table.png|24x24px|End table]] [[End table]] and [[File:Dresser south.png|24x24px|Dresser]] [[Dresser]]
+| 0.646 || 0.748 || 0.85 || 0.952 || 1.054 || 1.2325 || 1.445
+|-
+! [[File:Royal bed.png|24x24px|Royal bed]] [[Royal bed]] with no facilities
+| 0.684 || 0.792 || 0.9 || 1.008 || 1.116 || 1.305 || 1.53
+|-
+! [[File:Royal bed.png|24x24px|Royal bed]] [[Royal bed]] with [[File:End table.png|24x24px|End table]] [[End table]] or [[File:Dresser south.png|24x24px|Dresser]] [[Dresser]]
+| 0.722 || 0.836 || 0.95 || 1.064 || 1.178 || 1.3775 || 1.615
+|-
+! [[File:Royal bed.png|24x24px|Royal bed]] [[Royal bed]] with [[File:End table.png|24x24px|End table]] [[End table]] and [[File:Dresser south.png|24x24px|Dresser]] [[Dresser]]
+| 0.76 || 0.88 || 1 || 1.12 || 1.24 || 1.45 || 1.7
+|-
+! [[File:Hospital bed south.png|24x24px|Hospital bed]] [[Hospital bed]] with no facilities
+| 0.608 || 0.704 || 0.8 || 0.896 || 0.992 || 1.16 || 1.36
+|-
+! [[File:Hospital bed south.png|24x24px|Hospital bed]] [[Hospital bed]] with [[File:End table.png|24x24px|End table]] [[End table]] or [[File:Dresser south.png|24x24px|Dresser]] [[Dresser]]
+| 0.646 || 0.748 || 0.85 || 0.952 || 1.054 || 1.2325 || 1.445
+|-
+! [[File:Hospital bed south.png|24x24px|Hospital bed]] [[Hospital bed]] with [[File:End table.png|24x24px|End table]] [[End table]] and [[File:Dresser south.png|24x24px|Dresser]] [[Dresser]]
+| 0.684 || 0.792 || 0.9 || 1.008 || 1.116 || 1.305 || 1.53
+|-
+! [[File:Bedroll.png|24x24px|Bedroll]] [[Bedroll]] with no facilities
+| 0.5168 || 0.5984 || 0.68 || 0.7616 || 0.8432 || 0.986 || 1.156
+|-
+! [[File:Bedroll.png|24x24px|Bedroll]] [[Bedroll]] with [[File:End table.png|24x24px|End table]] [[End table]] or [[File:Dresser south.png|24x24px|Dresser]] [[Dresser]]
+| 0.5548 || 0.6424 || 0.73 || 0.8176 || 0.9052 || 1.0585 || 1.241
+|-
+! [[File:Bedroll.png|24x24px|Bedroll]] [[Bedroll]] with [[File:End table.png|24x24px|End table]] [[End table]] and [[File:Dresser south.png|24x24px|Dresser]] [[Dresser]]
+| 0.5928 || 0.6864 || 0.78 || 0.8736 || 0.9672 || 1.131 || 1.326
+|-
+! [[File:Double bedroll.png|24x24px|Double bedroll]] [[Double bedroll]] with no facilities
+| 0.5168 || 0.5984 || 0.68 || 0.7616 || 0.8432 || 0.986 || 1.156
+|-
+! [[File:Double bedroll.png|24x24px|Double bedroll]] [[Double bedroll]] with [[File:End table.png|24x24px|End table]] [[End table]] or [[File:Dresser south.png|24x24px|Dresser]] [[Dresser]]
+| 0.5548 || 0.6424 || 0.73 || 0.8176 || 0.9052 || 1.0585 || 1.241
+|-
+! [[File:Double bedroll.png|24x24px|Double bedroll]] [[Double bedroll]] with [[File:End table.png|24x24px|End table]] [[End table]] and [[File:Dresser south.png|24x24px|Dresser]] [[Dresser]]
+| 0.5928 || 0.6864 || 0.78 || 0.8736 || 0.9672 || 1.131 || 1.326
+|}
+
+== Stat Def Data ==
+{| {{STDT}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Comfort" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />Comfort
+* '''Label:'''<br />comfort
+| How comfortable an object is to sit or lay on.<br /><br />Using comfortable objects fulfills a character's need for comfort.
+|
+* Display Order:<br />'''12'''
+* Def Name:<br />'''BasicsNonPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />{{Bad|false}}
+|
+* '''Show If Undefined:''' {{Bad|false}}
+* '''Default Base Value:''' 0
+* '''Max Value:''' 1000
+* '''Min Value:''' -1000
+* '''To String Style:''' FloatTwo
+* '''Apply Factors If Negative:''' {{Bad|false}}
+|
+* '''Parts:'''
+** '''StatPart_Quality:'''
+*** Factor Awful: {{Bad|×{{%|0.76}}}}
+*** Factor Poor: {{Bad|×{{%|0.88}}}}
+*** Factor Normal: '''×{{%|1}}'''
+*** Factor Good: {{Good|×{{%|1.12}}}}
+*** Factor Excellent: {{Good|×{{%|1.24}}}}
+*** Factor Masterwork: {{Good|×{{%|1.45}}}}
+*** Factor Legendary: {{Good|×{{%|1.7}}}}
+| 3000
+<!--</StatDef>-->
+|}
+
+{{nav|stats|wide}}

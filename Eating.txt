@@ -1,0 +1,49 @@
+{{For|the mechanics surrounding the need to eat|Saturation}}
+{{Capacity
+| default base value = 1
+| min value = 0.1
+| to string style = PercentZero
+| description = A character's ability to eat. 
+}}{{#set:Effective Minimum|0.1}}{{#set:Effective Maximum|{{#expr:{{Q|Consciousness|Effective Maximum}}*1.25}} }}
+Eating is a function of a human's or animal's health, affected by Consciousness, the jaw, tongue, and neck. 
+
+Eating and manipulation are the two determining factors of the [[Eating Speed]] stat.
+
+Eating is not affected by [[Body parts|stomach]] efficiency or [[digestion]]; these factors independently affect the ability to use [[nutrition]] to satisfy [[hunger]]. [[Moving]] can severely restrict a creature's ability to move to nearby nutrition but are also independent from eating. [[Sight]] does not affect eating nor a creature's ability to find available nutrition.
+
+== Affected stats ==
+{{#ask: [[Eating Importance::+]]
+| ?Health Type = Type
+| ?Eating Importance# = Weight
+| ?Eating Limit# = Max
+| ?description
+| format = broadtable
+| limit  = 100
+| mainlabel = Name
+| headers = plain
+| sort = Health Type
+}}
+
+== Factors ==
+
+=== Base Factors ===
+The following factors affect Eating:
+* [[Consciousness]]: [[Consciousness Importance::1|100%]] importance, no allowed defect. [[Consciousness Limit::-|No]] Max
+* Jaw part efficiency. 100% importance, no allowed defect. No Max (effectively 125%). 
+** [[Denture]]: '''80%''' part efficiency resulting in {{--|20%}} eating.
+** [[Bionic jaw]]: '''125%''' part efficiency resulting in {{+|25%}} eating.
+** Tongue part efficiency. 100% importance, no allowed defect. No Max (effectively 100%).
+*** [[Bionic tongue]]: '''100%''' part efficiency, resulting in no changes.
+
+=== Post factors ===
+The following factors affect Eating. They are applied after the Base Factors and offsets (if there was any). 
+* [[Food poisoning]]:
+** Initial: {{Bad|x0.5}}
+** Major: {{Bad|x0.3}}
+** Recovering: {{Bad|x0.5}}
+*** Note that food poisoning also penalizes Consciousness, so the effective penalty is greater than this would suggest.
+
+Since consciousness is effectively maxed out to {{Good|{{%|{{Q|Consciousness|Effective Maximum}} }} }}, ''eating'' effectively ranges from {{Bad|{{%|{{P|Effective Minimum}} }} }} (absolute minimum) to {{Good|{{%|{{P|Effective Maximum}}}}}}, with a [[bionic jaw]] installed on top of maximum [[consciousness]].
+
+{{Nav|stats|wide}}
+{{Verified|1.4.3901}}

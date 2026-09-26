@@ -1,0 +1,155 @@
+{{Ideology}}
+{{Infobox main
+| name = Authority cap
+| image = Authority cap.png
+| description = A hat with a stiff brim and peaked top. It's not particularly protective, but it creates a sense of authority and makes the wearer more effective in suppressing slaves.
+| type = Gear
+| type2 = Clothing
+| tech level = Medieval
+| hp = 80
+| production facility 1 = Hand tailor bench
+| production facility 2 = Electric tailor bench
+| work to make = 1500
+| work speed stat = General Labor Speed 
+| resource 1 = Stuff
+| resource 1 amount = 25
+| stuff tags = Fabric, Leathery
+| insulationheatfactor = 0.1
+| insulationcoldfactor = 0.1
+| armorsharpfactor = 0.2
+| armorbluntfactor = 0.2
+| armorheatfactor = 0.2
+| equipdelay = 0.8
+| lifestage = Child, Adult
+| clothing for nudity = False
+| coverage = Head, Left Ear, Right Ear
+| layer = Headgear
+| mass base = 0.1
+| has quality = true
+| tradeTags = Clothing
+| defaultOutfitTags = Worker, Soldier
+| page verified for version = 1.3.3066
+}}
+'''Authority caps''' are a form of [[clothing]] added by the [[Ideology DLC]]. They enhance the ability of a [[Work#Warden|warden]] to [[Slavery#Warden suppression|suppress]] [[slaves]].
+
+== Acquisition ==
+{{Acquisition}}
+
+As a potential option for [[ideoligion|ideoligious]] headwear, authority caps will spawn on every initial colonist at the start of the game if they are chosen as preferred and will be found on [[raiders]] with similar preferences. 
+
+They can also be purchased from [[trader]]s.
+
+== Summary ==
+Wearing an authority cap adds an additional 10% of the [[Work#Warden|warden]]'s base [[Suppression Power]] to the stat's value. This is '''not''' a flat 10% bonus - a [[Skills#Social|Social]] 20 pawn with a base value of 50% will increase it to 55% after rounding, not 60%. 
+
+Also note that this is not a direct 1.1x multiplier, it affects only the base value before any other bonuses, which may be important for order of operations when calculating the final Suppression Power of the pawn.
+
+{| class = "wikitable" width="180" style="text-align: center;"
+! rowspan="2" | Social Skill Level
+! colspan="3" | Suppression Power
+|-
+! Base
+! <small>+[[Authority cap]]</small>
+|- 
+| 0
+| {{#expr: ({{Q|Suppression Power|Skill Base Factor}} + 0*{{Q|Suppression Power|Skill Bonus Factor}})* 100 round 0}}%
+| {{#expr: ({{Q|Suppression Power|Skill Base Factor}} + 0*{{Q|Suppression Power|Skill Bonus Factor}})*1.1*100 round 0}}% <!--Implemented as multiplier for computational efficiency, but it is actually {{Q|Suppression Power|Skill Base Factor}} + skill*{{Q|Suppression Power|Skill Bonus Factor}}) + (0.1*{{Q|Suppression Power|Skill Base Factor}} + skill*{{Q|Suppression Power|Skill Bonus Factor}}) which may become relevant if other offsets are added at a later date -->
+|-
+| 1
+| {{#expr: ({{Q|Suppression Power|Skill Base Factor}} + 1*{{Q|Suppression Power|Skill Bonus Factor}})* 100 round 0}}%
+| {{#expr: ({{Q|Suppression Power|Skill Base Factor}} + 1*{{Q|Suppression Power|Skill Bonus Factor}})*1.1*100 round 0}}%
+|-
+| 2
+| {{#expr: ({{Q|Suppression Power|Skill Base Factor}} + 2*{{Q|Suppression Power|Skill Bonus Factor}})* 100 round 0}}%
+| {{#expr: ({{Q|Suppression Power|Skill Base Factor}} + 2*{{Q|Suppression Power|Skill Bonus Factor}})*1.1*100 round 0}}%
+|-
+| 3
+| {{#expr: ({{Q|Suppression Power|Skill Base Factor}} + 3*{{Q|Suppression Power|Skill Bonus Factor}})* 100 round 0}}%
+| {{#expr: ({{Q|Suppression Power|Skill Base Factor}} + 3*{{Q|Suppression Power|Skill Bonus Factor}})*1.1*100 round 0}}%
+|-
+| 4
+| {{#expr: ({{Q|Suppression Power|Skill Base Factor}} + 4*{{Q|Suppression Power|Skill Bonus Factor}})* 100 round 0}}%
+| {{#expr: ({{Q|Suppression Power|Skill Base Factor}} + 4*{{Q|Suppression Power|Skill Bonus Factor}})*1.1*100 round 0}}%
+|-
+| 5
+| {{#expr: ({{Q|Suppression Power|Skill Base Factor}} + 5*{{Q|Suppression Power|Skill Bonus Factor}})* 100 round 0}}%
+| {{#expr: ({{Q|Suppression Power|Skill Base Factor}} + 5*{{Q|Suppression Power|Skill Bonus Factor}})*1.1*100 round 0}}%
+|-
+| 6
+| {{#expr: ({{Q|Suppression Power|Skill Base Factor}} + 6*{{Q|Suppression Power|Skill Bonus Factor}})* 100 round 0}}%
+| {{#expr: ({{Q|Suppression Power|Skill Base Factor}} + 6*{{Q|Suppression Power|Skill Bonus Factor}})*1.1*100 round 0}}%
+|-
+| 7
+| {{#expr: ({{Q|Suppression Power|Skill Base Factor}} + 7*{{Q|Suppression Power|Skill Bonus Factor}})* 100 round 0}}%
+| {{#expr: ({{Q|Suppression Power|Skill Base Factor}} + 7*{{Q|Suppression Power|Skill Bonus Factor}})*1.1*100 round 0}}%
+|-
+| 8
+| {{#expr: ({{Q|Suppression Power|Skill Base Factor}} + 8*{{Q|Suppression Power|Skill Bonus Factor}})* 100 round 0}}%
+| {{#expr: ({{Q|Suppression Power|Skill Base Factor}} + 8*{{Q|Suppression Power|Skill Bonus Factor}})*1.1*100 round 0}}%
+|-
+| 9
+| {{#expr: ({{Q|Suppression Power|Skill Base Factor}} + 9*{{Q|Suppression Power|Skill Bonus Factor}})* 100 round 0}}%
+| {{#expr: ({{Q|Suppression Power|Skill Base Factor}} + 9*{{Q|Suppression Power|Skill Bonus Factor}})*1.1*100 round 0}}%
+|-
+| 10
+| {{#expr: ({{Q|Suppression Power|Skill Base Factor}} + 10*{{Q|Suppression Power|Skill Bonus Factor}})* 100 round 0}}%
+| {{#expr: ({{Q|Suppression Power|Skill Base Factor}} + 10*{{Q|Suppression Power|Skill Bonus Factor}})*1.1*100 round 0}}%
+|-
+| 11
+| {{#expr: ({{Q|Suppression Power|Skill Base Factor}} + 11*{{Q|Suppression Power|Skill Bonus Factor}})* 100 round 0}}%
+| {{#expr: ({{Q|Suppression Power|Skill Base Factor}} + 11*{{Q|Suppression Power|Skill Bonus Factor}})*1.1*100 round 0}}%
+|-
+| 12
+| {{#expr: ({{Q|Suppression Power|Skill Base Factor}} + 12*{{Q|Suppression Power|Skill Bonus Factor}})* 100 round 0}}%
+| {{#expr: ({{Q|Suppression Power|Skill Base Factor}} + 12*{{Q|Suppression Power|Skill Bonus Factor}})*1.1*100 round 0}}%
+|-
+| 13
+| {{#expr: ({{Q|Suppression Power|Skill Base Factor}} + 13*{{Q|Suppression Power|Skill Bonus Factor}})* 100 round 0}}%
+| {{#expr: ({{Q|Suppression Power|Skill Base Factor}} + 13*{{Q|Suppression Power|Skill Bonus Factor}})*1.1*100 round 0}}%
+|-
+| 14
+| {{#expr: ({{Q|Suppression Power|Skill Base Factor}} + 14*{{Q|Suppression Power|Skill Bonus Factor}})* 100 round 0}}%
+| {{#expr: ({{Q|Suppression Power|Skill Base Factor}} + 14*{{Q|Suppression Power|Skill Bonus Factor}})*1.1*100 round 0}}%
+|-
+| 15
+| {{#expr: ({{Q|Suppression Power|Skill Base Factor}} + 15*{{Q|Suppression Power|Skill Bonus Factor}})* 100 round 0}}%
+| {{#expr: ({{Q|Suppression Power|Skill Base Factor}} + 15*{{Q|Suppression Power|Skill Bonus Factor}})*1.1*100 round 0}}%
+|-
+| 16
+| {{#expr: ({{Q|Suppression Power|Skill Base Factor}} + 16*{{Q|Suppression Power|Skill Bonus Factor}})* 100 round 0}}%
+| {{#expr: ({{Q|Suppression Power|Skill Base Factor}} + 16*{{Q|Suppression Power|Skill Bonus Factor}})*1.1*100 round 0}}%
+|-
+| 17
+| {{#expr: ({{Q|Suppression Power|Skill Base Factor}} + 17*{{Q|Suppression Power|Skill Bonus Factor}})* 100 round 0}}%
+| {{#expr: ({{Q|Suppression Power|Skill Base Factor}} + 17*{{Q|Suppression Power|Skill Bonus Factor}})*1.1*100 round 0}}%
+|-
+| 18
+| {{#expr: ({{Q|Suppression Power|Skill Base Factor}} + 18*{{Q|Suppression Power|Skill Bonus Factor}})* 100 round 0}}%
+| {{#expr: ({{Q|Suppression Power|Skill Base Factor}} + 18*{{Q|Suppression Power|Skill Bonus Factor}})*1.1*100 round 0}}%
+|-
+| 19
+| {{#expr: ({{Q|Suppression Power|Skill Base Factor}} + 19*{{Q|Suppression Power|Skill Bonus Factor}})* 100 round 0}}%
+| {{#expr: ({{Q|Suppression Power|Skill Base Factor}} + 19*{{Q|Suppression Power|Skill Bonus Factor}})*1.1*100 round 0}}%
+|-
+| 20
+| {{#expr: ({{Q|Suppression Power|Skill Base Factor}} + 20*{{Q|Suppression Power|Skill Bonus Factor}})* 100 round 0}}%
+| {{#expr: ({{Q|Suppression Power|Skill Base Factor}} + 20*{{Q|Suppression Power|Skill Bonus Factor}})*1.1*100 round 0}}%
+|}
+
+== Analysis ==
+The authority cap is lackluster in most regards when compared to other hats. A [[bowler hat]] is cheaper - requiring only 20 textiles instead of 25, has identical protection and cold insulation, 4x the heat insulation, 25% more HP, and offers a [[Social Impact]] bonus. The only advantage the authority cap has its slightly reduced Work to Make, but the resulting market value is still higher for authority caps.
+
+The only possible saving grace for authority cap is its unique ability to improve the suppression power of the wearer. No other item improves this ability. That said, the buff scales with the pawn's existing suppression power. The result is that the cap only provides a meaningful increase to pawns with high skills. And due to how [[Slavery#Warden suppression|suppression]] works, high skill pawns do not need the buff to keep slaves suppressed. Thus, the utility of the authority cap, even within its niche, is small. If they are available and no other headwear is needed, there is no harm in equipping wardens with them, but there is little reason to seek out the authority cap over other options unless it is required by an [[ideoligion]] or for aesthetic reasons.
+
+{{Apparel Stats Table}}
+
+== Gallery ==
+<gallery>
+AuthorityCap east.png|Side profile
+</gallery>
+
+== Version history ==
+* [[Ideology DLC]] Release - Added.
+
+{{Nav|clothing|wide}}
+[[Category:Clothing]]

@@ -1,0 +1,156 @@
+{{Infobox main|metallic
+| name = Steel
+| image = Steel c.png
+| description = An iron-carbon metal alloy used for building a huge variety of structures, weapons, and machines.
+<!-- Base Stats -->
+| type = Material
+| type2 = Metal
+| stuff category = Metallic
+| marketvalue = 1.9
+| beauty = -4
+| mass base = 0.5
+| stack limit = 75
+| path cost = 14
+| rotatable = false
+| terrain affordance = Medium
+<!-- Stat Modifiers -->
+| beauty factor = 1
+| beauty offset = 0
+| work to build factor = 1
+| work to make factor = 1
+| max hit points factor = 1
+| flammability factor = 0.4
+| armor - sharp factor = 0.9
+| armor - blunt factor = 0.45
+| armor - heat factor = 0.6
+| insulation - cold factor = 3
+| insulation - heat factor = 0
+| melee blunt damage factor = 1
+| melee sharp damage factor  = 1
+| melee cooldown factor = 1
+| door opening speed factor = 1
+| rest effectiveness factor = 1
+<!-- Technical -->
+| defName = Steel
+<!-- Unused -->
+| always haulable = true
+| color = (102,102,105)
+| construct effect = ConstructMetal
+| default color = (255,255,255)
+| draw gui overlay = true
+| graphic class = Graphic_Random
+| graphic path = Things/Item/Resource/Metal
+| label = steel
+| parent name = ResourceBase
+| resource readout priority = Middle
+| selectable = true
+| slag def = ChunkSlagSteel
+| sound drop = Metal_Drop
+| sound impact stuff = BulletImpactMetal
+| sound interact = Metal_Drop
+| sound melee hit blunt = MeleeHit_Metal_Blunt
+| sound melee hit sharp = MeleeHit_Metal_Sharp
+| thing class = ThingWithComps
+| use hit points = false
+| volume = 1
+}}
+{{Info|'''Steel''' is a [[materials|raw resource]], crucial throughout the game for different purposes, such as construction of various structures, and production of weapons and armor.}}
+
+== Ore ==
+[[File:Compacted_steel.png|frameless|left|Compacted steel in game]]
+
+'''Compacted steel''' tiles have 1,500 health each, making them one of the faster ores to mine. They can be found in larger-sized clusters, ranging around 30+ tiles in size. Each mined block has a base yield of 40 steel, however this is modified by factors such as the [[Difficulty]] setting and the [[Mining_Yield|mining yield]] of the pawn.
+
+== Usage ==
+Steel can be used as a material for [[stuff]]able items with the [[Metallic]] stuff tag.
+
+Steel can be used in the following recipes:
+{{Ingredient List}}
+
+When targeted by the [[transmute steel]]{{AnomalyIcon}} ability, a stack of steel will be transformed into an equivalent amount of [[twisted meat]],{{AnomalyIcon}} [[bioferrite]],{{AnomalyIcon}} [[gold]], [[plasteel]], or [[uranium]], determined randomly. Steel [[stuff]]ed items instead turn into [[bioferrite]],{{AnomalyIcon}} [[gold]], [[plasteel]], or [[uranium]] stuffed versions of the same item, at the same quality.
+
+== Analysis ==
+Steel is an essential material throughout the game, required for all sorts of electronics and armor, including [[component]]s. It is also the cheapest metal for [[stuff]]able items that require metal specifically (e.g., [[flak helmet]]s, [[mini-turret]]s, and [[hi-tech research bench]]es).
+
+For melee weapons and armor, steel can be considered the default option. It is cost-effective and does the job effectively, albeit worse than [[plasteel]] or [[uranium]].
+
+As a building material, steel is quick to work with while being more durable than [[wood]], making it a good option when a high HP building needs to be finished quickly. However, note that steel in RimWorld is flammable when used as a stuffable ingredient. For [[wall]]s and other permanent installations, [[stone]] (if it can be used for the building) will be a better choice in the long-term. The steel item itself, as well as [[concrete]] and other steel floors, is not flammable.
+
+==Acquisition analysis==
+{{See also|Steel/Calculations}}
+Comparison of all the ways to get steel. For large stretches of the game, steel is a limited resource in high demand. Note that one of the better ways to have enough steel is to not use it carelessly.
+
+''Math comparisons all assume a healthy pawn with no [[artificial body parts]], full [[light]], and Strive to Survive [[difficulty]]. All methods except trade and mining camps are affected by [[Manipulation]], [[Sight]] (if <100%), and [[Global Work Speed]]. Trade, mining camps, and all means of mining compacted steel, are affected by difficulty.''
+
+===Non-renewable===
+Sources of steel that are limited on a per-map basis.
+
+*'''Mining ore'''. The most straightforward way to get steel. As you mine ore, each deposit will be further and further away, increasing travel time until there is none left. Impacted by [[Mining Speed]] and [[Mining Yield]] (Mining skill). At 100% speed (Mining 8), it takes {{ticks|1900/40}} per steel(???), not counting travel time.{{Check Tag|Verify speed|Verify ore mining speed. 1900 ticks/ore @ 100 speed is practically a guess}}
+**'''Strip mining'''. Dig out tunnels in large portions of rock to find ore. Inherently variable, but always worse than just mining exposed ore. Practical in large hills / mountain maps.
+
+*'''Deconstruction'''. Take apart steel [[wall]]s, [[urn]]s, [[ship chunk]]s, or other items found from [[ruin]]s. A very limited source of steel, but very effective early game. Impacted by [[Construction Speed]] and structures available. At 100% Construction Speed (Construction 8), it takes {{ticks|135/2.5}} per steel (when deconstructing walls), not counting travel time.
+**'''[[Ancient danger]]s''' are... dangerous, but contain [[ancient cryptosleep casket]]s and [[steel tile]]s to deconstruct, alongside its other goodies.
+
+===Semi-renewable===
+These sources of steel refresh over time - they never permanently run out, but you can only acquire a limited quantity of steel at once.
+
+*'''[[Trader]]s'''. [[Trader#By inventory|Bulk goods traders]] and [[faction base]]s specifically; visitors carry 200-300 steel, and orbital traders carry 500-800. The advantage is that almost every colony will have ''some'' way of making money. Highly variable based on your means of [[money making guide|making money]], the negotiator's [[Trade Price Improvement]] (Social skill), and [[difficulty]] (the setting [[AI_Storytellers#Trade price disadvantage|Trade price disadvantage]]). 
+**Faction bases require a [[caravan]] to walk there, and you'll need some way to carry all the steel back (usually [[pack animal]]s).
+**You can call in bulk goods traders to come vist with a [[comms console]] if you are an [[ally]] with a faction. Has a 4 day cooldown, and cost 15 [[goodwill]], though you can gift items to get goodwill back. 
+
+*'''[[Electric smelter]]s'''. Smelters can turn [[raider]] weapons into steel, which can net a lot of steel over time. Generally faster than a deep drill, but you only have so many items to smelt at a time. Determined by [[general labor speed]], which no skill affects. Building a smelter requires 170 steel & 2 [[component]]s, which is quite a lot in the early game. Save building one until you can get a return on investment - those chunks aren't going anywhere.
+**[[Steel slag chunk]]s take {{ticks|400/15 round 1}} per steel, not counting travel time. [[Drop pod]] raids often spawn steel chunks near the edge - i.e., a lot of travel time.
+**[[Weapon]]s and [[apparel]] vary based on the item smelted - giving 25% of their original cost for 1600 ticks. It takes {{ticks|1600/7 round 1}} per steel for the ''worst'' items, [[autopistol]]s and [[knife|knives]]. It takes ~{{ticks|1600/15 round 1}} per steel for most guns. Make sure not to smelt your own weapons!
+**Weapons sell for 0.2x market value. But even with this modifier, you can get more steel for selling guns with high% HP and buying from a trader (see [[Electric smelter#Sell or Smelt|Sell or Smelt]]). However, you'll either need to trade to a faction base, or wait for a combat supplier to sell to ''and then'' a bulk goods to buy from. Tainted apparel and biocoded weapons are unsellable, but smeltable.
+
+*'''Shredding [[mechanoid]]s'''. Mechanoids can be shredded at a [[machining table]], or, much less efficiently, smashed at a [[crafting spot]]. Even faster than a smelter, but like the smelter, you'll only have so many mechanoids to shred at one time. The mechanoid type & missing body parts matter.
+** At 10 Crafting skill, shredding lancers takes {{ticks|300/15}} per steel at 0% missing body parts (a practical impossibility).
+** At 10 Crafting skill, shredding a [[war urchin]],{{BiotechIcon}} the smallest possible mech, takes {{ticks|300/2.5 round 1}} per steel at ''50%'' missing body parts.
+
+*'''[[Events/Incidental#Meteorite|Meteorites]]'''. These [[event]]s can sometimes generate steel ore on your map. Exactly the same time as steel ore, because it is made of steel ore. This event cannot be relied upon, but is technically infinite for infinite colony duration.
+
+*'''Steel drop [[permit]]'''.{{RoyaltyIcon}} 250 steel for free every 40 days. No work, other than the work for Acolyte [[honor]] (13 total). Only real cost is the permit slot. Costs 4 honor to skip the cooldown; not generally worth it due to the value of honor. 
+
+*'''Mining camps'''.{{IdeologyIcon}} Mining camps can randomly spawn as a [[quest]] in the [[Ideology DLC]], which may contain steel. The camp will contain pre-mined steel, as well as enemies to defeat. The steel (and amount of enemies) is dependent on the [[raid points]] mechanic - the more things you have, the bigger the camp.
+
+*'''[[Ancient complex]]es'''.{{IdeologyIcon}} These spawn like mining camps, though you can also use a [[ritual]] to generate one. Complexes are usually made out of steel walls and concrete floor, which can be deconstructed. Highly variable. Need time to get to the complex, and a way to bring the steel back.
+
+===Renewable===
+Infinite sources of steel, so long as you have the equipment and pawn time to spare. Enough steel for lategame and endgame colonies.
+*'''[[Deep drill]]s'''. Specifically, drills and [[ground-penetrating scanner]]s. Each scan can give a deposit of up to 12000 steel, and the ground will never run out of deposits. The scanner requires an [[advanced component]] and quite a bit of research. Multiple scanners/drills can run at a time. [[Research Speed]] impacts scanning (Intellectual), [[Deep Drilling Speed]] for the drill (Mining). 
+** At 100% Research Speed (Intellectual 8), it takes {{ticks|180000}} to find ''any'' deposit. Note that ground scanners cannot be tuned to a specific mineral (53% for steel). Average of {{ticks|180000/9000/0.53 round 1}} per steel. In addition, you may want to wait until you find minerals actually close to your base.
+** At 100% Deep Drilling Speed (Mining 8), {{ticks|14000/35}} per steel just for extraction. Heavily dependent on mining skill; recommended to have multiple miners at once.
+
+*'''[[Long-range mineral scanner]]s'''. Long-range scanners will find minerals out in the world, from 55-60 ore tiles (2200 - 2400 steel at 100% [[Mining Yield]]) at a time.  The scanner requires an [[advanced component]] and the same research as deep drill + ground scanner. Each lump may come with a small threat, so bring more than 1 pawn. [[Research Speed]] impacts scanning (Intellectual), and mining ore is the same as any ore (Mining). You will need some way to bring that steel back, whenever it'd be [[pack animal]]s, [[transport pod]]s, or [[farskip]]{{RoyaltyIcon}}.
+** At 100% Research Speed (Intellectual 8), it takes {{ticks|240000}} to scan the steel. At 100% mining yield, this means it takes {{ticks|240000/2200 round 1}} per steel to scan. Unlike ground scanners, long-range scanners can be tuned to a mineral.
+** At 100% Mining (Mining 8), {{ticks|1900/40 round 1}} per steel just to mine the ore.
+** Time to travel is a lot. [[Transport pod]]s have near-instant travel time, but cost 50 steel, 1 [[component]], and variable [[chemfuel]] to launch.
+
+In general, deep drill + ground scanners are better with great miners or many miners, while long-range scanners are better with great scanners but only competent miners. Settling on a nearby tile is possibly better than a long-range scanner, especially without transport pods.
+
+Ground scanners also have the advantage of requiring no micromanagement after a nearby ore deposit is found. This means that it can satiate an endgame colony's needs without nearly as much hassle as the other options.
+
+*'''Settling on another tile.''' Available as soon as you enable multiple colonies (Settings/Gameplay). Incredibly variable. Ideally, you'd want to settle on a large hills or mountain tile almost directly adjacent to your colony. There are two strategies with settlement:
+**Temporary settlement. Mine any exposed ores, raid ancient dangers you see, and then abandon it. Ideal if you have a great single miner who can take lowered [[mood]], and some way to bring the steel back ([[transport pod]]s usually, or [[pack animal]]s). Please note that once a settlement is abandoned, that tile becomes a "ruin" and you can never enter that tile again.
+**Permanent settlement. If you want a permanent 2nd colony, you could always send the steel back. Ideally, you'd want a good planter and constructor alongside your miner; a pawn can fulfill multiple roles at a time. There is a lot of strategy with another colony that is not mentioned here.
+: (This is technically not ''infinite'', but there are thousands of tiles even on a 30% coverage map, more than enough for any reasonable playthrough)
+
+*'''[[Mechanoid commander]] farming.'''{{BiotechIcon}} The [[diabolus]] and [[war queen]] can be summoned, farmed, and shredded for steel and plasteel. Diaboli are free to summon. War queens require {{Required Resources|mechband antenna}} for a [[mechband antenna]], but the resulting steel is always profitable, especially as the antenna creates a couple [[steel slag chunk]]s.
+
+*'''[[Pit gate]] farming. '''{{AnomalyIcon}} Pit gates can be summoned with the use of void rituals. The undercaves of the pit gates tend to have deposits of steel, among other possible ore spawns. 
+
+== Gallery ==
+<gallery>
+Steel a.png|One steel
+Steel b.png|Partial stack
+Steel c.png|Full stack
+</gallery>
+
+== Version history ==
+<gallery>
+Steel old 1.png|First steel texture
+Steel old 2.png|Second steel texture
+</gallery>
+
+{{nav|materials|wide}}
+[[Category:Material]] [[Category:Metal]]

@@ -1,0 +1,123 @@
+<onlyinclude><includeonly>''Main Article: [[Infection]]''</includeonly>
+{{TOCright}}
+{{Quote|Bacterial infection in a wound. Without treatment, the bacteria will multiply, killing local tissue, and eventually causing blood poisoning and death. Through aeons of human warfare, infections have often taken more lives than the wounds themselves.|Description}}
+
+'''Infection''' is a fast-acting [[death|fatal]] [[disease]] that can be contracted from open [[Injuries|wounds]].
+
+== Overview ==
+Infections can occur on most wounds. It is the fastest working illness in [[RimWorld]], taking little more than a day to kill the victim if left [[Doctoring#Treatment|untended]]. [[Animals]] can also contract infections, moving just as fast as human infections, although at a reduced chance.
+
+It is possible to have multiple infections simultaneously across different [[body parts]]. Each infection progresses at its own rate, while immunity against infections progresses at the same rate across the whole body. If the patient can become immune before their worst infection reaches 100%, they have beaten ''all'' their infections.
+
+If untreated, the patient loses this race in '''less than a day and a half''', so any infection needs to be treated immediately and consistently. A pawn with 100% [[Immunity Gain Speed]] will become immune in around 1.5 days.
+
+=== Mechanics ===
+The chance of a pawn getting an infection depends on the wound type and various other factors:
+* [[Bite]], [[burn]]s, and chemical burns have a 30% chance.
+* [[Frostbite]] has a 25% chance.
+* Shredding injuries have a 20% chance.
+* Most other [[bleeding]] wounds have a 15% chance.
+* Neither missing body parts, nor injuries from [[blunt]] traumas such as bruises and cracks, can become infected.
+* Colonists are more likely to get wound infections at higher [[difficulty|difficulties]].
+Treated wounds can still get infected, at a reduced chance. The multiplier is 85% at 0% [[tend quality]], and linearly decreases to 5% at 100% tend quality. Animals have 20% of a colonist's chance to get an infection. Cleaner rooms further reduce the chance of infection. A regular, [[floor]]ed room without any [[filth]] has a 50% multiplier, a clean room with [[sterile tile]]s has a 32% multiplier, while caravans and outdoor spaces have the standard 100%.
+
+When a colonist has an infectable wound, the game will count down randomly from {{ticks|15000}} to {{ticks|45000}}. The game will also keep track of if the wound was tended, and, if so, what percent chance of an infection would arise from the room stats and the tend quality. Once it reaches this timer, it will decide if the wound will be infected, based on that percent chance. Once an infection sets in, it ''immediately'' becomes a life-or-[[death]] race between the infection rates vs. the patient's immunity progression; the first to a value of 1.00 (100%) "wins".
+
+=== Prevention ===
+The [[perfect immunity]] gene{{BiotechIcon}} will prevent the acquisition of this disease but will not cure pre-existing conditions present at the time of implantation. However, creating a [[xenogerm]] with it requires an [[archite capsule]], so modifying every pawn with it is expensive. For pawns without the gene, the chances of infection can be greatly reduced by making sure to tend quickly, in a clean/sterile environment. Any constructed [[floors|floor]] is better than dirt, and [[sterile tile]]s are better than generic floors. You should also have pawns [[Orders#Clean|clean]] the room in question. See [[cleanliness]] for more details.
+
+A triage area can be established near a killbox to tend to pawns quickly without having to trudge halfway across the map carrying the pawn to tend - the utility of this depends on the distance to a hospital and the number of pawns needing treatment. More pawns and larger distance make it more relevant, while a single pawn getting downed in the room next to the hospital would be better off taken to the clean room.
+
+== Progression ==
+Infection and immunity progression begin as soon as the disease is detected; the first to 100% (1.0 severity) "wins", either saving or killing the pawn. The current status of both progressions can be viewed in the sick colonist's Health tab by mouse-hovering over the word "Infection". Unfortunately, the disease progresses faster without good treatment and rest.
+
+Note that the immunity only applies to the current infection, not future infections. Any new infection will cause the process to begin again from scratch.
+
+=== Stages ===
+{| class="wikitable"
+|-
+! Stage !! Severity !! Symptoms
+|-
+| '''Infection (minor)''' || 0% - 32% ||
+* [[Pain]]: {{++|5%}}
+|-
+| '''Infection (major)''' || 33% - 77% ||
+* [[Pain]]: {{++|8%}} 
+|-
+| '''Infection (Extreme)''' || 78% - 86% ||
+* [[Pain]]: {{++|12%}} 
+* [[Consciousness]]: {{--|5%}}
+|-
+| '''Infection (Extreme)''' || 87% - 99% ||
+* [[Consciousness]]: Max 10% (Unconsciousness)
+* [[Pain]]: {{++|85%}} 
+* [[Breathing]]: {{--|5%}}
+|-
+| '''Infection (Extreme)''' || 100% ||
+* [[Death]]
+|}
+
+=== Humans & Animals ===
+* When not immune or treated, severity increases by {{++|0.84}} per day ({{++|0.035}} per hour).
+* Treatment slows progression by a maximum of {{---|0.53}} per day (less with poor treatment).
+** At 100% treatment, the disease will progress by {{++|0.31}} per day.
+* When immune, severity decreases by {{---|0.7}} per day.
+* Immunity increases by {{+|0.6441}} per day when sick.
+
+This means that an infection can kill less than {{#expr:1/0.84 round 2}} days from first symptoms. A pawn with 100% [[Immunity Gain Speed]] will become immune in {{#expr:1/(0.6441) round 2}} days on average - meaning that they will die without treatment slowing severity gain or improving IGS to at least {{#expr: 0.84/0.6441 * 100 round 1}}%. Note that this ignores the effect of InfectionLuck. For a full breakdown on [[Immunity Gain Speed]] and the factors that affect it, see that page.
+
+=== Case studies ===
+* It has been observed in patients with normal beds, a room with "slightly dirty" to "dirty" [[cleanliness]], well nourished, [[Medical]] care with skill ~6-10 and only herbal medicine (Tend quality ~40-50), will recover from their infections, even despite some few hours delay in starting treatment. It sometimes is a near thing, and may result in a longer recovery time from an end infection near/over 90% when they reach immunity, depending on the delay, their feeding schedule and the "luck" of the attending doctor.  Malnutrition (from hunger) definitely slows the immunity process, as listed under [[Immunity Gain Speed]].
+
+* It has also been observed that a prisoner in good health (age < 50, no health issues), well fed, in an excellent-quality [[hospital bed]] with a [[vitals monitor]], and a Tend quality of 99% (high Medical skill using [[glitterworld medicine]]), gained Immunity more than 2:1 over Infection gain (from a 68 Immunity and 83 Infection, +32 v. +15).  That's not a "maximum", but it may be close to a reasonably practical one, just as a benchmark.
+
+All this math also means that it will take a patient almost 3 days, or more, to go through the process of first fighting and then recovering from an infection, besides recovering from whatever wound or ailment caused the infection in the first place.  Yet another reason to provide prompt, sterile treatment for all colonists' wounds to avoid this in the first place.
+
+=== Default warning ===
+Toward the end of a bad infection, once the infection becomes "extreme" (80% or more), you will get a bright red warning among the other notices on the right side of the screen saying:
+
+: "<mark style="background:#FF0000;"><span style="color:white;">'''Medical emergency'''</span></mark> People are at risk for [[death]] because of severe illness..."
+
+This alert appears regardless of whether that colonist is currently beating the infection or not, or will do so - the game doesn't do the math to predict whether the infection or the immunity will reach 100% first, but you should be able to.  The warning is simply there to remind you that now may be the time to take drastic action, just in case you are losing the race.  The notice will disappear when immunity reaches 100% (regardless of the current level of infection), or when the victim dies.
+
+== Treatment ==
+[[#Prevention|Prevention]] is the best treatment - a capable doctor and clean environment for treatment are critical to avoiding this deadly ailment before it happens.  Even after successful treatment of a bad infection there can be a fairly lengthy recovery time, so prevention really ''is'' the best medicine in this case.
+
+If left untreated, infections kill in a little over a day - untreated infections move ''fast!'' For resting colonists with 100% immunity gain speed and immediate treatment, you will need at least 15% average treatment quality to ensure that one doesn't succumb to their infected wound(s).
+
+As with any other disease, make sure that the patient is rested, well-fed, and treated whenever possible. A single infection will take multiple treatments, administered once every 12 hours, per infection.  Infections progress very quickly, and missing or delaying a treatment can be a ''very'' costly mistake. Due to the rate at which infections progress, you'll want at least a competent doctor using [[herbal medicine]] or better in order to ensure that the affected person survives an infection.  
+
+Once you beat the infection, that value then begins to (slowly) drop back to "0", from where ever it was; no further treatment is necessary once this starts. However, better treatment quality results will stop the infection before it progresses to a higher value, saving recovery time for the patient, so the more bonuses you can scrape together* during treatment, the faster the recovery. 
+
+: (* better Medical skill, better medicine, a [[Rooms#Cleanliness|clean room]], a higher quality [[Bed#Surgery_Success_Chance_Factor|bed]], upgrading to a [[hospital bed]], adding a connected [[vitals monitor]], etc. See [[Doctoring#Treatment|Doctoring]] for more details.)
+
+This disease is unique in that it only affects a specific, isolated body part, making infections curable by removing that part. It is not possible to amputate vital organs, though some can be replaced with [[Artificial body parts#Body|artificial versions]]. It's (usually) better to have a colonist missing a part or two than to lose the colonist entirely, and there is no [[mood]] debuff if you remove an infected part. If the infection has progressed to over 97%, there is little to no chance your surgeons can successfully pull off an amputation in time, so plan accordingly. As with any operation, amputations (and organ replacements) can fail, leaving the infected part attached, so if you make the decision to do this, try to operate before 90% or earlier so you have time to try again.
+:* To amputate: Under the patient's Health tab is the Operations tab; "Add a bill" to amputate the infected body part. You may also have to/want to upgrade the patient's default "medicine" used for procedures - that's under their Health/Overview tab. If an arm/leg/kidney is the target, make sure to amputate the ''correct'' (left/right) part - surgeons just do what they're told.
+
+=== Vulnerable ===
+For those with a base immunity gain rate of 39% or less, it will be very difficult to survive infection. This includes people well past their [[Immunity_Gain_Speed#Age|Life Expectancy]], and/or people with severe kidney and liver damage. Even with 100% [[Doctoring#Tend_quality|treatment quality]] for all treatments and rest in a [[hospital bed]] with a [[vitals monitor]] connected, they will die without extra care. To save the colonist, you can do one or more of the following:
+* Amputate the affected limb if possible. This will leave your colonist without a limb but it instantly cures the infection. 
+* Tend with [[glitterworld medicine]]
+* Administer [[healer mech serum]] - instantly treats the disease
+* Use the [[medic cycle]] of a [[Biosculpter pod]],{{IdeologyIcon}} curing the infection completely after the cycle finishes.
+* Administer [[luciferium]]
+* Perform an [[Health#Transplants|organ transplant]] for pawns with damage to their [[liver]] or [[kidney]]s. 
+* Install up to two [[immunoenhancer]]s {{RoyaltyIcon}} for 8% per enhancer installed. Note that these require a kidney to be present for them to be installed into, so a transplant might be required if they are missing. Damaged kidneys are sufficient however.
+* Install [[detoxifier kidney]]s. these improve immunity gain speed by 2.5% each. Prioritize installing detoxifier kidneys on already damaged kidneys. 
+* Use the [[preach health]]{{IdeologyIcon}} ability on the affected person
+* Use the [[medical specialist]]'s{{IdeologyIcon}} immunity drive
+* Place the patient in a [[cryptosleep casket]] until you have one of the above.
+
+== See also ==
+* [[Scaria infection]] - uses the same mechanics as regular infections, but with less symptoms, and causing [[scaria]] instead of death.
+
+== Version history ==
+* [[Version/0.7.581|0.7.581]] - Added.
+* [[Version/1.0.0|1.0.0]] - Reduced various infection chances (around 25%). Animal infection chance factor 0.20 -> 0.10.
+
+At around Beta 18 infections caused a reduction in part efficiency, allowing them to kill much earlier than usual if a critically injured vital body part is infected and the infection causes the efficiency of that body part to drop below zero.
+
+</onlyinclude>
+
+{{Nav|disease|wide}}
+[[Category:Disease]]

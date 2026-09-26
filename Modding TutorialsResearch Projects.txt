@@ -1,0 +1,275 @@
+{{DISPLAYTITLE:Research Projects}}
+
+{{BackToTutorials}}
+
+{{:Modding_Tutorials/Under_Review}}
+
+Research projects are used to gate access to buildings and crafting recipes behind the use of the [[Research]] system.
+
+''Last updated: 2025-10-06 (RimWorld v1.6)''
+
+== <code>ResearchProjectDef</code> ==
+
+Research projects are defined in XML using <code>ResearchProjectDef</code> [[Modding_Tutorials/Defs|Defs]]. As with all Defs, looking at the vanilla examples is a great way to get a feel for how the system is used.
+
+=== Fields ===
+
+The following are valid fields in <code>ResearchProjectDef</code>. All of these fields are optional unless otherwise specified.
+
+<div class="TutorialTableWrapper">
+{| class="TutorialCodeTable"
+! XML Example !! Description
+|-
+| <source lang="xml">
+<baseCost>1000</baseCost>
+</source>
+| class="TutorialCodeTable-description" |
+The base cost to complete this research project. The final cost of this project will be modified by tech level differences between the player's faction and that of the research project. A research project must either have a <code>baseCost</code> or a <code>knowledgeCost</code> (see below).
+|-
+| <source lang="xml">
+<preqrequisites>
+  <li>Electricity</li>
+  <li>Batteries</li>
+</preqrequisites>
+</source>
+| class="TutorialCodeTable-description" |
+All of a project's prerequisites must be completed before research on it can begin. Prerequisites on the same tab will be linked to the project with a line.
+|-
+| <source lang="xml">
+<hiddenPreqrequisites>
+  <li>Machining</li>
+</hiddenPreqrequisites>
+</source>
+| class="TutorialCodeTable-description" |
+Hidden prerequisites work exactly the same as regular prerequisites except that lines will not be drawn between this project and its hidden prerequisites. Using them can be useful in reducing visual clutter.
+|-
+| <source lang="xml">
+<techLevel>Industrial</techLevel>
+</source>
+| class="TutorialCodeTable-description" |
+The tech level of this research project. Valid options are: '''Undefined''', '''Animal''', '''Neolithic''', '''Medieval''', '''Industrial''', '''Spacer''', '''Ultra''', and '''Archotech'''. As tech levels are defined via an enum rather than via Defs, it is effectively impossible to define new ones without major compatibility problems.
+|-
+| <source lang="xml">
+<requiredByThis></requiredByThis>
+</source>
+| class="TutorialCodeTable-description" |
+This field is present on <code>ResearchProjectDef</code> but is not used anywhere in vanilla XML, nor does the field appear to be utilized by any C# code. Its purpose is unknown.
+|-
+| <source lang="xml">
+<researchMods></researchMods>
+</source>
+| class="TutorialCodeTable-description" |
+A code hook for wiring up C# classes that will be notified when this research project is completed. This was used in early alpha versions of RimWorld for research projects such as Gun Turret Cooling which permanently increased the burst shot count of improvised turrets from 3 to 4, but is no longer used.
+|-
+| <source lang="xml">
+<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+</source>
+| class="TutorialCodeTable-description" |
+If specified, this research project can only be researched at this particular research bench. Note that there is no concept of progression with research benches; if you specify the simple research bench as a required research building then it will not be researchable at a hi-tech research bench.
+|-
+| <source lang="xml">
+<requiredResearchFacilities>
+  <li>MultiAnalyzer</li>
+</requiredResearchFacilities>
+</source>
+| class="TutorialCodeTable-description" |
+Specifies one or more research bench attached facilities that are required to work on this research project. Due to the aforementioned lack of research bench progression and the amount of space that research benches take up in a colony, it is generally recommended to gate modded research projects behind facilities rather than custom research benches if a gatekeeper building is desired. Attached facilities can also be made non-buildable and only obtainable from traders or quests to make them more difficult to acquire.
+|-
+| <source lang="xml">
+<tags>
+  <li>ClassicStart</li>
+  <li>TribalStart</li>
+</tags>
+</source>
+| class="TutorialCodeTable-description" |
+Tags are used to specify this research project as a starting project for starting scenarios.
+|-
+| <source lang="xml">
+<tab>MyCustomResearchTab</tab>
+</source>
+| class="TutorialCodeTable-description" |
+If specified, will use the designated tab instead of the vanilla research tab. See Custom Research Tabs below for more details.
+|-
+| <source lang="xml">
+<researchViewX>1</researchViewX>
+<researchViewY>1.4</researchViewY>
+</source>
+| class="TutorialCodeTable-description" |
+Specifies the position within its tab that this research project appears at within the vanilla research window. See Research Tab Layout below for more details.
+|-
+| <source lang="xml">
+<discoveredLetterTitle>About: My Custom Tech</discoveredLetterTitle>
+<discoveredLetterText>You have discovered a unique technology that unlocks phenomenal cosmic powers!</discoveredLetterText>
+</source>
+| class="TutorialCodeTable-description" |
+If used, generates a letter when this research project is completed. The following vanilla research projects use this: Electricity, Fabrication, Starflight Basics, and Standard Gravtech.
+|-
+| <source lang="xml">
+<discoveredLetterDisabledWhen>
+  <bigThreatsDisabled>true</bigThreatsDisabled>
+</discoveredLetterDisabledWhen>
+</source>
+| class="TutorialCodeTable-description" |
+Used to disable the discovered letter when certain game mechanics are disabled due to difficulty settings. Valid options here are: <code>bigThreatsDisabled</code>, <code>trapsDisabled</code>, <code>turretsDisabled</code>, <code>mortarsDisabled</code>, <code>extremeWeatherIncidentsDisabled</code>. This is only used in vanilla for Starflight Basics, which disables the letter warning the player about the raids during reactor startup if big threats (raids) are disabled.
+|-
+| <source lang="xml">
+<techprintCount>2</techprintCount>
+</source>
+| class="TutorialCodeTable-description" |
+([[Royalty]] {{RoyaltyIcon}} Only) Specifies the number of techprints required to unlock this research project. Note that if the Royalty DLC is not loaded, then this project will be freely researchable so long as its other requirements are met.
+|-
+| <source lang="xml">
+<techprintCommonality>1</techprintCommonality>
+</source>
+| class="TutorialCodeTable-description" |
+([[Royalty]] {{RoyaltyIcon}} Only) Specifies the commonality of this project's techprints if applicable. Defaults to 1.0.
+|-
+| <source lang="xml">
+<techprintMarketValue>1000</techprintMarketValue>
+</source>
+| class="TutorialCodeTable-description" |
+([[Royalty]] {{RoyaltyIcon}} Only) Overrides the [[Market Value]] of this research project's techprints if applicable. Defaults to 1000.
+|-
+| <source lang="xml">
+<heldByFactionCategoryTags>
+  <li>Empire</li>
+</heldByFactionCategoryTags>
+</source>
+| class="TutorialCodeTable-description" |
+([[Royalty]] {{RoyaltyIcon}} Only) If specified, then techprints for this research project are only available from factions with the specified tag. Faction category tags are arbitrary strings, with the following used by vanilla factions: Tribal, Outlander, Ancient, Empire,{{RoyaltyIcon}} OutlanderRefugee,{{RoyaltyIcon}} Beggars,{{IdeologyIcon}} Pilgrims,{{IdeologyIcon}} Sanguophages,{{BiotechIcon}} HoraxCult,{{AnomalyIcon}} Salvager,{{OdysseyIcon}} and TradersGuild.{{OdysseyIcon}}
+|-
+| <source lang="xml">
+<hideWhen>
+  <turretsDisabled>true</turretsDisabled>
+</hideWhen>
+</source>
+| class="TutorialCodeTable-description" |
+Hides this research project if certain game mechanics are disabled by difficulty settings. Valid options here are: <code>bigThreatsDisabled</code>, <code>trapsDisabled</code>, <code>turretsDisabled</code>, <code>mortarsDisabled</code>, <code>extremeWeatherIncidentsDisabled</code>.
+|-
+| <source lang="xml">
+<requiresMechanitor>true</requiresMechanitor>
+</source>
+| class="TutorialCodeTable-description" |
+([[Biotech]] {{BiotechIcon}} Only) If set to true, then this research project can only be researched by a [[mechanitor]].
+|-
+| <source lang="xml">
+<requiredAnalyzed>
+  <li>SignalChip</li>
+</requiredAnalyzed>
+</source>
+| class="TutorialCodeTable-description" |
+If specified, then the linked CompAnalyzable items must be analyzed before progress on this research project can be started.
+|-
+| <source lang="xml">
+<recalculatePower>true</recalculatePower>
+</source>
+| class="TutorialCodeTable-description" |
+If specified, forces existing power networks to recalculate their network load upon completion of this research project. Only used in vanilla by Colored Lights, which halves the power cost of vanilla electrical lamps.
+|-
+| <source lang="xml">
+<knowledgeCategory>Basic</knowledgeCategory>
+</source>
+| class="TutorialCodeTable-description" |
+([[Anomaly]] {{AnomalyIcon}} Only) If specified, determines the <code>KnowledgeCategoryDef</code> that this research project belongs in. Vanilla Anomaly has Basic and Advanced.
+|-
+| <source lang="xml">
+<knowledgeCost>30</knowledgeCost>
+</source>
+| class="TutorialCodeTable-description" |
+([[Anomaly]] {{AnomalyIcon}} Only) The knowledge cost to complete this research project. A research project cannot have both a <code>baseCost</code> and a <code>knowledgeCost</code>.
+|-
+| <source lang="xml">
+<teachConcept>Fishing</teachConcept>
+</source>
+| class="TutorialCodeTable-description" |
+If specified, triggers the designated <code>ConceptDef</code> in the Learning Helper upon completion of this research project. The only vanilla research projects that use this are Fishing and Void Provocation.
+|-
+| <source lang="xml">
+<generalRules>
+  <rulesStrings>
+    <li>subject->multi-analysis</li>
+
+    <li>subject_story->automated a research laboratory</li>
+    <li>subject_story->unlocked the trans-spectrum secrets of the universe</li>
+    <li>subject_story->helped identify new stable isotopes</li>
+
+    <li>subject_gerund->constructing multi-analyzers</li>
+  </rulesStrings>
+</generalRules>
+</source>
+| class="TutorialCodeTable-description" |
+If provided, is used to generate descriptive flavor text for [[Schematic|schematics]]. Research projects without generalRules will never have schematics generated for them.
+|-
+| <source lang="xml">
+<requireGravEngineInspected>true</requireGravEngineInspected>
+</source>
+| class="TutorialCodeTable-description" |
+([[Odyssey]] {{OdysseyIcon}} Only) If set to true, then this research project can only be started after a working grav engine has been inspected. Only used by Standard Gravtech in vanilla.
+|-
+| <source lang="xml">
+<customUnlockTexts>
+  <li>Fishing zones</li>
+</customUnlockTexts>
+</source>
+| class="TutorialCodeTable-description" |
+Adds arbitrary text lines to the "unlocks" segment of this research project's description in the research window. Only used by [[Fishing]] in vanilla.
+|-
+|}
+</div>
+
+=== Research Tab Layout ===
+
+Research projects are laid out in the vanilla research UI using a simple coordinate system defined by <code><researchViewX></code> and <code><researchViewY></code>. note that while the X-axis increments by 1, the Y-axis increments by 0.7.
+
+[[File:ResearchView.png|none|border]]
+
+Note that research projects that occupy the same grid location (usually from multiple mods trying to use the same location) will cause the projects to get staggered in the research window. It is generally recommended to use a custom research tab if you have sufficient research projects to justify it.
+
+== Custom Research Tabs ==
+
+Custom research tabs can be used by creating a <code>ResearchTabDef</code>, then specifying this in the <code><tab></code> field of your <code>ResearchProjectDef</code>.
+
+<source lang="xml">
+<ResearchTabDef>
+  <defName>MyCustomResearchTab</defName>
+  <label>My Mod</label>
+  <generalTitle>Custom mod research</generalTitle>
+  <generalDescription>Fancy-pants research unlocked by my super-cool mod.</generalDescription>
+</ResearchTabDef>
+</source>
+
+== Using Custom Research ==
+
+The following vanilla Def types support one or more research projects as a prerequisite:
+
+<div class="TutorialTableWrapper">
+{| class="TutorialCodeTable"
+! XML Object !! Field
+|-
+| RecipeDef || researchPrerequisite (single)
+|-
+| RecipeDef || researchPrerequisites (list)
+|-
+| BuildableDef (includes ThingDef) || researchPrerequisites (list only)
+|-
+| PlantProperties || sowResearchPrerequisites (list only)
+|-
+| RecipeMakerProperties || researchPrerequisite (single)
+|-
+| RecipeMakerProperties || researchPrerequisites (list)
+|-
+| TerrainTemplateDef || researchPrerequisites (list only)
+|-
+| DesignationCategoryDef || researchPrerequisites (list only)
+|-
+| PsychicRitualDef || researchPrerequisites (list only)
+|-
+|}
+</div>
+
+== Checking Research Completion ==
+
+Checking whether a research project has been completed from C# can be done by obtaining the <code>ResearchProjectDef</code> and calling the <code>IsFinished</code> property. If you need to do this often, then it's recommended you use a [[Modding_Tutorials/Linking_XML_and_C|DefOf]] to obtain a static reference to it.
+
+[[Category:Modding]]
+[[Category:Modding tutorials]]

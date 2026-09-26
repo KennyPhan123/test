@@ -1,0 +1,77 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Royalty/Local/Misc}}
+|}
+----
+{| {{STDT| c_11}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Blood rot" <!-- defName="BloodRot", ParentName="DiseaseBase" -->
+! Blood rot
+----
+* Def Name:<br />BloodRot
+* Label:<br />blood rot
+|<!-- Description -->
+A slow-growing bacterial disease. The bacteria have little effect on the victim during their growing phase, but upon reaching saturation levels will induce a toxin storm that leads to immediate death.
+
+The body's immune system will clear blood rot eventually, so the standard treatment is to use normal medicine to suppress it until that happens. Glitterworld doctors can use a massive mechanite dose to clear the infection immediately, but it is expensive.
+----<!-- Description Short -->
+A slow-growing bacterial disease. Upon reaching full saturation, it will kill the affected individual.
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|90%|100%|35%}}
+* Min Severity: '''0.1%'''
+* Initial Severity: '''0.1%'''
+* Lethal Severity: {{Bad|100%}}
+* Makes [[Thoughts#Sick|Sick]] Thought: {{Bad|true}}
+* Tendable: {{Good|true}}
+* '''Comps'''
+** ''Severity Per Day:'' {{++|40%}}
+** ''Tend Duration''
+*** Severity Per Day Tended: {{---|100%}}
+*** Base Tend Duration Hours: '''24'''
+** ''Disappears''
+*** Disappears After Ticks: '''{{Ticks/gametime/days|1800000}} ~ {{Ticks/gametime/days|2400000}}'''
+*** Show Remaining Time: {{Good|true}}
+* '''Remove On Redress Chance By Days Curve:'''
+<div><li style="display: inline-table;">
+{| {{STDT| c_11}}
+! <abbr title="Days as a World Pawn">Days</abbr> !! <abbr title="Chance to remove on Pawn Generator Redress">Chance</abbr>
+|-
+! 0
+| 0%
+|-
+! 2
+| 0%
+|-
+! 7
+| 50%
+|-
+! 20
+| 100%
+|}</li></div>
+|<!-- Stages -->
+{| {{STDT| c_11}}
+! Label !! Parameters
+|-
+! minor
+|<!-- Parameters -->
+* [[Blood Filtration]] Offset: {{--|5%}}
+* [[Blood Pumping]] Offset: {{--|5%}}
+|-
+! major
+|<!-- Parameters -->
+* Min Severity: '''60%'''
+* Vomit {{MTB}} Days: '''1.5'''
+* [[Blood Filtration]] Offset: {{--|10%}}
+* [[Blood Pumping]] Offset: {{--|10%}}
+|-
+! extreme
+|<!-- Parameters -->
+* Min Severity: '''85%'''
+* Life Threatening: {{Bad|true}}
+* Vomit {{MTB}} Days: '''0.75'''
+* Pain Offset: {{+|5%}}
+* [[Blood Filtration]] Offset: {{--|15%}}
+* [[Blood Pumping]] Offset: {{--|15%}}
+|}<noinclude>
+|}</noinclude>

@@ -1,0 +1,56 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Global/Misc}}
+|}
+----
+{| {{STDT| c_07}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Psychic hangover" <!-- defName="PsychicHangover", ParentName="DiseaseBase" -->
+! Psychic hangover 
+----
+* Def Name:<br />PsychicHangover
+* Label:<br />psychic hangover
+* Label Noun:<br />a psychic hangover
+| An after-effect of neural heat. Psychic hangover is bothersome, but not dangerous.
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|90%|100%|35%}}
+* Initial Severity: '''0.1%'''
+* '''Remove On Redress Chance By Days Curve:'''
+<div><li style="display: inline-table;">
+{| {{STDT| c_01}}
+! Days !! Chance
+|-
+! 0
+| 0%
+|-
+! 2
+| 0%
+|-
+! 7
+| 50%
+|-
+! 20
+| 100%
+|}{{Graph:Chart|width=200|height=200|xAxisTitle=Days|yAxisTitle=Remove On Redress Chance|yAxisFormat=%|type=line|x=0, 2, 7, 20|y=0, 0, 0.5, 1|interpolate=monotone|xGrid=|yGrid=}}</li></div>
+* '''Comps'''
+** ''Disappears''
+*** Disappears After Ticks: {{Ticks/gametime/days|60000}}
+** ''Severity Per Day:'' {{++|100%}}
+|<!-- Stages -->
+{| {{STDT| c_07}}
+! Label !! Parameters
+|-
+! forming
+|<!-- Parameters -->
+* Min Severity: '''0%'''
+|-
+! buzzing
+|<!-- Parameters -->
+* Min Severity: '''6.25%'''
+* [[Consciousness]] Post Factor: {{Bad|×80%}}
+* [[Manipulation]] Post Factor: {{Bad|×80%}}
+* Hunger Rate Factor: {{Bad|×150%}}
+* [[Sleep Fall Rate]] Factor: {{Bad|×150%}}
+|}<noinclude>
+|}</noinclude>

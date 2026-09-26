@@ -1,0 +1,83 @@
+{{Version Nav}}
+Hello everyone!
+
+It’s Tia - I’m back with update 1.3.3326 which brings full support for RimWorld on Steam Deck!
+
+Before I get into the update, I wanted to share that our developer who was living in Ukraine is now safe in Germany. He’s staying with one of our former team members and we're doing what we can to help him get set up there. Thank you for all the kind comments and for thinking of our team. 💛
+
+Today’s update makes the Deck controls more intuitive, refines the touchscreen interface, improves the UI and keyboard, and adds an easy way to access the Deck's controller config options.
+
+The Steam Deck requires that we use a new version of the Steamworks API which breaks compatibility with a few mods. To prevent breakages, three weeks ago, we released a public beta to give modders time to update, and we personally reached out to dozens of modders to help prevent mods from breaking. The known incompatibilities should be solved now - thanks to all modders who responded!
+
+[EDIT] It's known that the Multiplayer mod hasn't updated yet and is causing issues. Please disable the mod for now until the modder updates it, or you can play on the previous version of RimWorld by following the instructions below.
+''
+If you don’t want this update for any reason: right-click RimWorld in your Steam library list, click Properties, then select the ‘betas’ tab. Select ‘version-1.3.3287 - Previous 1.3 version’ from the drop-down list. This will keep you on the previous version. Your game should auto-update - if it doesn’t, restart Steam.''
+
+Modders: Your mod can now be marked as compatible with major and minor versions. For example, you can mark a mod as compatible with 1.3.3287, but not 1.3.3326. More info in the #mod-updates channel.
+
+The full changelog is below for you to peruse! Thanks to everyone who helped us test the beta. If you experience any bugs with update 1.3.3326, or want to help us test in the future, please join the Official RimWorld Development Discord.
+
+I’m excited to hear how players are enjoying RimWorld on Steam Deck. Maybe I’ll spot someone playing it on the train!
+
+- Tia
+
+== Ideology Improvements ==
+* Fix: Reforming a fluid ideo lists some precepts as "incompatible" when they actually aren’t.
+* Fix: Ability gizmos are still available for roles that have been removed via reformation.
+* Display incompatible issue and precept names instead of just precept names in reformation confirmation dialog.
+
+== UI Improvements ==
+* Show accept key command hotkey on SteamDeck.
+* Set new, better SteamDeck menu icons.
+* Larger float menu options on SteamDeck.
+* Main buttons position change (change height instead of y).
+* Keyboard on a SteamDeck now shows automatically when a new text field is focused.
+* Show a special window at the top of the screen which shows the typed in text, since SteamDeck keyboard can sometimes block the text field view.
+* Increase text input font size.
+* Don't show tooltips when the SteamDeck keyboard is open.
+* Change quests SteamDeck icon.
+
+== Controls ==
+* Touch screen scrolling improvements on SteamDeck.
+* It's now possible to scroll through lists by dragging your finger on SteamDeck.
+* Make zooming faster on SteamDeck.
+* Holding a special "middle mouse button" button on SteamDeck, now translates left clicks into right clicks. This makes it possible to give goto orders to drafted pawns by using the touch screen.
+* Don't pan the camera if the middle mouse button is held and a colonist is selected on SteamDeck.
+* Allow more zoom on SteamDeck for better touch screen support and easier navigation.
+* Better time controls on SteamDeck, it's now possible to increase/decrease time speed with back buttons.
+* Accept key on a SteamDeck now activates the first command.
+
+== Misc Improvements ==
+* Tutorial now mentions the correct button names on SteamDeck.
+* Added triggered modal ConceptDefs which explain SteamDeck controls.
+* Added controller configuration button to options on SteamDeck.
+* Added an option to disable tiny fonts in options.
+
+== Technical ==
+* Added SteamDeck configuration file.
+* Added SteamInput.
+* Make ScrollWheelZoomRate a static property.
+* Suppress SteamDeck ConceptDef warnings.
+* Added UnityGUIBugsFixer calls to LearningReadout since it uses GUI.BeginScrollView directly.
+* Ensure FixSteamDeckMousePositionNeverUpdating() works even for non-1 scales.
+* Updated steam dlls in root directory.
+* Updated Steamworks so that it's possible to show the correct on-screen keyboard on SteamDeck.
+* Added "Simulate using Steam Deck" debug setting.
+* AllTypes now tries to use all types it could load instead of failing entirely.
+* LearningReadout now uses Widgets.BeginScrollView instead of GUI.BeginScrollView to support SteamDeck fixes
+* Added support for build numbers in LoadFolders.xml
+
+== Fixes ==
+* Fix: Mouse position never updates on Linux builds.
+* Fix: Missing EventUp event in MultiPawnGotoController on SteamDeck
+* Fix camera movement on SteamDeck. "Middle mouse button" camera movement on SteamDeck now works as well. This also allows using touch screen to move the camera.
+* Fix Unity bug with GetMouseButton() returning false.
+* Fix: Changing GUI.matrix also breaks mousePosition, added 1 more UnityGUIBugsFixer callback to fix this
+* Fix: Main buttons have a 1px gap at the bottom and they can't be clicked there
+* Fix: Keyboard instantly hides after appearing
+* Fix: Mouse position never updates on a SteamDeck
+* Fix: Error after pressing quit to OS button
+* Fix: The "absorb clicks area" around gizmos is too large and it makes the left part of every gizmo unusable, even though the gizmo is highlighted.
+* Fix: Q and E hotkeys shown on a SteamDeck.
+* Fix: Null ref error in SelectApproximateBestTravelSupplies when sending caravan
+* Fix: Only a small part of ideo appearances precept box is clickable because an incorrect rect is used

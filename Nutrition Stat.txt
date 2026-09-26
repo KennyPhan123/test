@@ -1,0 +1,214 @@
+{{Merge|reason=Appears to be redundant with that page, and that page has more page history. Leave this as redirect|destination=Nutrition}}
+{{Stub|reason=1) Version history 2) Two-way links}}
+{{See also|Max Nutrition|Saturation|Food}}
+{{Verified|1.5.4104}}{{Stat
+| def name = Nutrition
+| label = nutrition
+| description = How nutritious this food is.
+| default base value = 0
+| min value = 0
+| to string style = FloatTwo
+| show if undefined = false
+| category = BasicsNonPawnImportant
+| display priority in category = 3000
+| parts = StatPart_BodySize, StatPart_NaturalNotMissingBodyPartsCoverage, StatPart_PlantGrowthNutritionFactor, StatPart_IsFlesh, StatPart_IsCorpseFresh
+}}
+
+== Stat Parts ==
+=== Body Size ===
+<code>'''Nutrition''' = '''Nutrition''' × '''Body Size'''</code>
+
+'''Body Size Factor''' is determined by the lifestage of a pawn. This value is 1 by default for most adult / fully formed pawns, or for those with only one applicable lifestage: resulting in no impact to nutrition.
+
+'''Base Body Size''' is determined by the race of a pawn: [[Human]]s have a base body size of 1.
+
+These are the 2 factors for calculating the resulting pawn's body size: 
+
+<code>'''Body Size''' = '''Body Size Factor''' × '''Base Body Size'''</code>
+
+=== Natural Not Missing Body Parts Coverage ===
+<code>'''Nutrition''' = '''Nutrition''' × '''Coverage of Intact Natural Body Parts'''</code>
+
+<code>'''Coverage of Intact Natural Body Parts''' = '''Coverage of Body Parts''' - '''Coverage of Missing Natural Body Parts'''</code>
+
+=== Plant Growth Nutrition Factor ===
+<code>'''Nutrition''' = '''Nutrition''' × '''Nutrition Factor From Growth'''</code>
+
+'''Plant Growth''' is a value ranging from 0~1: by default it is 0.15, or 15%.
+
+'''Nutrition Factor From Growth''' is a multiplier on nutrition gained from plants, based on '''Plant Growth'''.
+
+For sowable plants:
+
+<code>'''Nutrition Factor From Growth''' = '''Plant Growth'''</code>
+
+For non-sowable plants:
+
+<code>'''Nutrition Factor From Growth''' = 0.5 + 0.5 × '''Plant Growth'''</code>
+
+=== Is Flesh ===
+<code>'''Nutrition''' = '''Nutrition''' × '''Is Flesh'''</code>
+
+'''Is Flesh''' is determined by whether or not the flesh type of a pawn's race is organic.
+
+If the flesh type is organic:
+<code>'''Is Flesh''' = 1</code>
+
+If the flesh type is not organic:
+
+<code>'''Is Flesh''' = 0</code>
+
+In other words: organic pawns have nutrition, and non organic pawns do not. Organic flesh types include '''Normal''', '''Insectoid''', '''Entity Flesh''' ,{{AnomalyIcon}} and  '''Fleshbeast''' {{AnomalyIcon}}: i.e. [[Human]]s, all [[Animals]], [[Insectoids]], and [[Fleshbeasts]] ,{{AnomalyIcon}} [[Sightstealer]]s ,{{AnomalyIcon}} [[Noctol]]s ,{{AnomalyIcon}} {{Plural||Fleshmass nucleus|link=true}} ,{{AnomalyIcon}} [[Gorehulk]]s ,{{AnomalyIcon}} [[Devourer]]s ,{{AnomalyIcon}} and [[Chimera]]s {{AnomalyIcon}}. Non organic flesh types include: '''Mechanoid''' and '''Entity Mechanical''' {{AnomalyIcon}}: i.e. all [[Mechanoids]], and [[Nociosphere]]s ,{{AnomalyIcon}} [[Metalhorror]]s ,{{AnomalyIcon}} and [[Revenant]]s {{AnomalyIcon}}.
+
+=== Is Corpse Fresh ===
+<code>'''Nutrition''' = '''Nutrition''' × '''Is Corpse Fresh'''</code>
+'''Is Corpse Fresh''' is determined by the rot stage of a corpse. 
+The three stages are:
+* Fresh
+* Rotting
+* Dessicated
+If the rot stage is fresh:
+
+<code>'''Is Corpse Fresh''' = 1</code>
+
+Otherwise:
+
+<code>'''Is Corpse Fresh''' = 0</code>
+
+If a corpse is not rottable, then it is always considered fresh (e.g. [[Unnatural corpse]]s {{AnomalyIcon}}).
+
+In other words: fresh corpses have nutrition, and rotting or dessicated corpses do not.
+
+== Calculating Nutrition ==
+For Plants:
+<code>'''Nutrition''' = '''Base Nutrition''' × '''Nutrition Factor From Growth'''</code>
+
+For Corpses:
+<code>'''Nutrition''' =  × '''Body Size''' × '''Coverage of Body Parts''' × '''Is Flesh''' × '''Is Corpse Fresh'''</code>
+
+== Bases ==
+<onlyinclude><includeonly>
+|-
+! [[{{{Image}}}|24px|link={{{Name}}}]]
+! style="text-align:left;" | {{DLC Icons|{{{Name}}} }}
+| {{{Nutrition|{{{Body Size}}} }}}
+</includeonly></onlyinclude>
+
+<div><li style="display: inline-table;">
+'''Plants:''' Click to <div class="mw-collapsible">
+<div class="mw-collapsible-content">
+{| {{STDT| sortable c_14 text-center}} 
+! class="unsortable" | !! Plant !! Nutrition
+{{#ask: [[Type::Plant]] [[Nutrition::>0]]
+| ?Image
+| ?Name
+| ?Nutrition
+| format = template
+| template = :Nutrition (Stat)
+| named args = true
+| link = none
+| limit = 100
+| sort = From DLC, Name
+}}
+|}
+</div>
+</div>
+</li>
+<li style="display: inline-table;">
+'''Food and drugs:''' Click to <div class="mw-collapsible">
+<div class="mw-collapsible-content">
+{| {{STDT| sortable c_08 text-center}}
+! class="unsortable" | !! Item !! Nutrition
+{{#ask: [[Category:Food||Drug]] [[Nutrition::>0]]
+| ?Image
+| ?Name
+| ?Nutrition
+| format = template
+| template = :Nutrition (Stat)
+| named args = true
+| link = none
+| limit = 100
+| sort = From DLC, Name
+}}
+|}
+</div>
+</div>
+</li>
+
+<li style="display: inline-table;">
+'''Animals:''' Click to <div class="mw-collapsible">
+<div class="mw-collapsible-content">
+{| {{STDT| sortable c_01 text-center}}
+! class="unsortable" | !! Animal !! Body Size
+{{#ask: [[Type::Animal]] [[Body Size::>0]]
+| ?Image
+| ?Name
+| ?Body Size
+| format = template
+| template = :Nutrition (Stat)
+| named args = true
+| link = none
+| limit = 150
+| sort = From DLC, Name
+}}
+|}
+</div>
+</div>
+</li></div>
+
+== Factors ==
+=== Lifestage ===
+<div><li style="display: inline-table;">
+{| {{STDT| c_01 sortable}}
+! Life Stage !! Body Size Factor !! Food Max Factor !! Max Food
+|-
+| Baby || 0.2 || 0.625 || 0.125 <!-- bodySizeFactor * foodMaxFactor = maxFood = 0.125 -->
+|-
+| Child || 0.35 || 2.286 || 0.8 <!-- bodySizeFactor * foodMaxFactor = maxFood = 0.8 -->
+|-
+| Teenager || 0.8 || 1.25 || 1 <!-- bodySizeFactor * foodMaxFactor = maxFood = 1.0 -->
+|-
+| Larva (Insect) || 0.2 || 2 || 0.4
+|-
+| Immature (Insect) || 0.5 || 1.5 || 0.75
+|-
+| Baby (Animal) || 0.2 || 3 || 0.6
+|-
+| Baby (Tiny Animal) || 0.1 || 6 || 0.6
+|-
+| Juvenile (Animal) || 0.5 || 1.5 || 0.75
+|-
+| Preteen {{BiotechIcon}} || 0.7 || 1.552 || 0.9 <!-- bodySizeFactor * foodMaxFactor = maxFood = 0.9 -->
+|}
+</li></div>
+
+== Stat Def Data ==
+{| {{STDT}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Nutrition" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />Nutrition
+* '''Label:'''<br />nutrition
+| How nutritious this food is.
+|
+* Display Order:<br />'''2'''
+* Def Name:<br />'''BasicsNonPawnImportant'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />{{Bad|false}}
+|
+* '''Default Base Value:''' 0
+* '''Min Value:''' 0
+* '''Show If Undefined:''' {{Bad|false}}
+* '''To String Style:''' FloatTwo
+|
+* '''Parts:'''
+** '''StatPart_BodySize'''
+** '''StatPart_NaturalNotMissingBodyPartsCoverage'''
+** '''StatPart_PlantGrowthNutritionFactor'''
+** '''StatPart_IsFlesh'''
+** '''StatPart_IsCorpseFresh'''
+| 3000
+<!--</StatDef>-->
+|}
+
+{{nav|stats|wide}}

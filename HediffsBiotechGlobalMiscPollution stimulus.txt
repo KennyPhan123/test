@@ -1,0 +1,55 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Biotech/Global/Misc}}
+|}
+----
+{| {{STDT| c_04}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Pollution stimulus" <!-- defName="PollutionStimulus" -->
+! Pollution stimulus
+----
+* Def Name:<br />PollutionStimulus
+* Label:<br />pollution stimulus
+|<!-- Description -->
+<div style="max-width: 500px;">
+This creature has been energized by exposure to pollution.
+
+The pollution-stimulus response was originally engineered to help giant insects in their role as anti-mechanoid bioweapons. However, the gene has since been used to help people function in polluted areas as well.
+----<!-- Description Short -->
+This creature has been energized by exposure to pollution.
+</div>
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|70%|100%|70%}}
+* Is Bad: {{Good|false}}
+* Makes Sick Thought: {{Good|false}}
+* Scenario Can Add: {{Bad|false}}
+* Min Severity: '''0%'''
+* Initial Severity: '''1%'''
+* Max Severity: '''100%'''
+* '''Comps:''' ''Pollution''
+** Polluted Severity: {{+|3.33%}} ({{+|99.9%|n}} / {{Ticks|1800}})
+** Unpolluted Severity: {{--|0.3%}} ({{--|100%|n}} / {{Ticks/gametime/hours|20000}})
+** Interval: '''{{Ticks|60}}'''
+|<!-- Stages -->
+{| {{STDT| c_04}}
+! Label !! Parameters
+|-
+! minor
+|<!-- Parameters -->
+* [[Move Speed]] Factor: {{Good|×110%}}
+* [[Consciousness]] Offset: {{+|5%}}
+|-
+! moderate
+|<!-- Parameters -->
+* Min Severity: '''20%'''
+* [[Move Speed]] Factor: {{Good|×115%}}
+* [[Consciousness]] Offset: {{+|5%}}
+|-
+! maximum
+|<!-- Parameters -->
+* Min Severity: '''50%'''
+* [[Move Speed]] Factor: {{Good|×120%}}
+* [[Consciousness]] Offset: {{+|5%}}
+|}<noinclude>
+|}</noinclude>

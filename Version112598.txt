@@ -1,0 +1,91 @@
+{{Version Nav}}
+This update covers a lot of different ground including a large number of refinements and smaller fixes. It improves both the base game and Royalty expansion content.
+
+The most obvious feature is that you can now choose whether you want to recieve faction goodwill rewards from each faction, the same way you can choose to accept or reject royal favor. I’d like to reach a nice balance between creating varying experiences through randomized quest rewards, while also avoiding offering players rewards they’re not interested in at all. So I’ll be watching to see how this works and considering how to improve reward generation even more.
+
+To update a DRM-free game, just re-download from your personal download link and install a fresh copy. Your download link never changes.
+
+This update should be compatible with savegames and mods. If any further issues come up please let us know on the unstable testing Discord channel.
+
+Big thanks to everyone who helped test this update! Changelist below.
+
+If for any reason you want to continue on the previous version 1.1.2589, you can access it using the Steam beta branch called ‘previous’.
+
+==Improvements==
+* Expand reward selection config to include options for opting out of goodwill rewards.
+* Shuttles now try to find a landing spot near the colony no shuttle landing areas are free, instead of landing in random places.
+* Colonists lent to the empire now return in a drop-off shuttle.
+* Crashed ship parts now only disallow punching through natural roofs.
+* Skip intro wimp quest if the player has a Yeoman or above.
+* Royalty intro quests won’t trigger on extreme biomes because it made no sense.
+* Standardize red text to a more readable color.
+* Reduce the chance of selecting decrees that have recently happened.
+* Hosting quests now pick lodgers Pawnkinds relevant to their original faction, so royals’ court allies will make more sense.
+* Rewrite chemical interest thoughts to not mismatch situations where drugs were consumed, but in insufficient quantities.
+* Make speech attendees prioritize position in front of the throne, if available.
+* Sleeping prisoners show “Not while asleep” for their prison break interval, if asleep.
+* Empire is permanent enemy to every faction except player, to solve issues where your royal aid doesn’t fight your enemies.
+
+==Tuning==
+* Buff [[toughskin gland]], [[armorskin gland]], and [[stoneskin gland]].
+* Rebalance knee spike, [[hand talon]], elbow blade, venom fangs, and venom talon power and price (mostly increased). Increased the toxicity gain per venom attack (also applies to cobra bite).
+* Power claw does more damage, but slows down the user like a field hand/drill arm.
+* Endgame quest raids (royal ascent and escape ship) raids now also always have at least 500 threat points so they can’t be trivialized.
+* Reduce flesh pawn [[flammability]] 100% -> 75%. This makes them extinguish easier, fire grows slower, and [[rain]] puts them out now.
+* Destroying the arrival shuttle now gives a -50 relations penalty.
+* Royalty intro quest now starts on day 8 instead of day 3.
+* Intro quest timer now does not start until the player has at least 3 colonists.
+* Manhunter pack now always consists of at least 2 animals.
+* Manhunters will now leave after 1-2 days like the letter says.
+
+==Technical==
+* Added def info to biocoded string so translators can use the weapon’s gender.
+* Merged StorytellerComp_IntroRoyaltyQuest into StorytellerComp_SingleOnceFixed. Changed allowRoyaltyIntroQuests to isExtremeBiome.
+* Added a fallback for QuestNode_GetRandomPawnKindForFaction
+* Add default values with GetStatValueAbstract when requesting MeleeAverageDPS with ThingDef and stuff.
+* Implemented missing Scribe call on ThreatsGeneratorParams for minThreatPoints.
+* Implemented attach fire debug tool.
+* Made CompDeepDrill.WorkPerPortionCurrentDifficulty obsolete and replaced usages. Moved hardcoded mining yield factor from StatWorker to StatPart_Difficulty_MiningYield.
+* ThreatReward_MechPods_MiscReward: If helpers are generated, the quest ends a day after all mech buildings are destroyed.
+* Cleaned up hospitality quests pawns lists.
+* Improve duplicate quest name warning message, added more naming content to ThreatReward_Raid_MiscReward.
+* Quest names now use GenText.CapitalizeAsTitle instead of ToTitleCaseSmart. This makes customizing capitalization behaviour easier to modify for individual languages.
+
+==Fixes==
+* Fix: Some implants don’t add to pawn market value.
+* Fix: Hyperlink for “Human” displays on OpportunitySite_PrisonerWillingToJoin quest.
+* Fix: 15 day wait period for monument decrees starts before monument has been completed.
+* Fix: Empire pawns generate with implants and the body purist trait together.
+* Fix: Helpers leaving letter arrived even if there were no alive helpers left.
+* Fix: Quest lodgers arriving with carcinoma. This made it pretty darn hard to keep them alive sometimes.
+* Fix: Product hyperlinks from recipe info cards omit several stats if product is stuffed.
+* Fix: GetWidthCached calls TryGetValue for string before stripping tags, as a result caching doesn’t work for tagged strings.
+* Fix: Bill config UI shows ingredient filter for recipes with all fixed ingredients; it was pointless.
+* Fix: Nullref exception when trying to abandon colony with bonded animals left in it.
+* Fix: Trade inspiration removed after accepting on trade window, even if nothing was traded.
+* Fix: Psychic harmonizer thought not removed until out of range after having a harmonizer installed.
+* Fix: Occasional duplicate items in quest rewards.
+* Fix: Some possible cases where the starting items spawned in fogged areas.
+* Fix: Crashed ship parts spawning partially inside of mountains, causing the roof to collapse and destroying them right after spawning.
+* Fix: Friendly raids go starving even if they got food.
+* Fix: “Expert fighter” pawns generating incapable of violence.
+* Fix: Destroying the arriving shuttle displays incorrect Stellarch name.
+* Fix: Shuttles can land through roofs if there is a pad.
+* Fix: Skills bars visuals scaled incorrectly (maxed at level 19).
+* Fix: Can’t return to main research tab if modded research tabs are added.
+* Fix: Unconscious pawns force-dropping their guns after loading savegame.
+* Fix: Hyperlinked info card melee DPS and melee AP readouts don’t seem to change if you select different materials.
+* Fix: Quests incorrectly capitalize words inside curly brackets.
+* Fix: Huge FPS drop when multiple explosions overlap.
+* Fix: “Art Student” backstory typos.
+* Fix: Some cases where the starting items may spawn in fogged areas.
+* Fix: No faction name color on corpse inspect strings.
+* Fix: Food poisoning resetting to initial when poisoned again.
+* Fix: Using skip, some areas are painted as if you can teleport there, but there are walls.
+* Fix: Can’t use skip psycast on top of power conduits.
+* Fix: Cannibals don’t automatically choose to wear human leather apparel.
+* Fix: Roof grid sometimes overlapping fertility grid.
+* Fix: Flickering on overlapping CellBoolDrawers.
+* Fix: World map doesn’t show names composed from non-Latin symbols.
+* Fix: Unresolvable shuttle destruction letter with imperial helpers but no lodgers.
+* Fix: Only return hyperlink if defsToExcludeFromHyperlinks is not empty.

@@ -1,0 +1,100 @@
+{{Version Nav}}
+
+Alpha 8 is out! This time we’ve added a seasonal cycle and temperature simulation, snow, two more biomes (boreal forest and tundra) with all the attached animals, art sculpting, crafted item quality, weapon and apparel crafting, homegrown medicine, wind turbines, and more.
+
+If you own the game, you can get Alpha 8 by re-downloading from the link you used before (it is a permanent link and always has the newest version). You should also get an update email from us. Anyone still having trouble should start at this thread.
+
+Also note that this build will not load old savegames, so keep your old install separate if you want to finish an Alpha 7 colony.
+
+==Release Trailer==
+
+<youtube>https://www.youtube.com/watch?v=JvK0Q17808g</youtube>
+
+==Core Release==
+
+===Temperature and Seasons===
+* A new temperature system tracks temperatures indoors and outdoors.
+* Characters can get hypothermia, frostbite, heatstroke, or burns from being in extreme-temperature areas.
+* Certain clothing can protect against temperature discomfort/harm.
+* Temperature changes daily and on a yearly cycle according to where you are on the planet. There are distinct seasons.
+* There are special heat wave/cold snap events.
+* Added [[heater]] and [[cooler]] buildings.
+* [[Food]] spoils. This can be slowed or prevented with refrigeration.
+* Snow falls and accumulates over winter. It slows down movement.
+* Snow can be cleared manually, and will melt if heated.
+* New apparel: [[Parka]] and [[tuque]].
+* Added new [[biomes]]: boreal forest and tundra
+
+===Art and Crafting===
+* [[Art bench|Sculptor’s table]] added. Colonists can create abstract sculptures.
+* Sculptures and melee weapons have a quality. [[Quality]] is influenced by crafter [[skills|skill]] and affects [[beauty]] and [[damage]].
+* [[Apparel]] crafting now allows crafting any kind of apparel.
+* Can now craft any kind of melee [[weapon]] from appropriate materials.
+* Created ‘unfinished thing’ step to crafting. Crafting can now take several days per item (as in the case of advanced weapons or art).
+* Added art trading.
+
+===New Content===
+* New animals: [[elk]], [[hare]]
+* New plants: pine tree, [[birch tree]], moss, xerigium
+* [[Xerigium]] plants can be farmed and refined into [[herbal medicine]].
+* New power plant: [[wind turbine]].
+* New weapons: [[triple rocket launcher]], [[doomsday rocket launcher]].
+* New items: [[Glitterworld medicine]], [[herbal medicine]].
+* Alphabeaver [[event]] creates [[alphabeaver]]s who will consume trees until stopped.
+* Ancient cryptosleep shrines now generate on the map. Open the [[cryptosleep casket]]s if you dare – the occupants may not be friendly.
+* Economy and [[trader]] stock generation reworked and rebalanced from the ground up.
+* Stats inspector allows inspecting more things in more places, and provides more, clearer info.
+* Several new songs from Alistair Lindsay.
+* You can now release [[prisoners]]. This gains you goodwill from their [[faction]].
+* You can now configure your keyboard hotkeys.
+* Dozens of other fixes and improvements.
+
+==Alpha 8B==
+
+There was a bug in Alpha 8: If a colonist smoothed a terrain that wasn’t rough stone, the game would crash.
+
+I thought this would be impossible, because you cannot designate a non-rough-stone terrain to be smoothed. But if you designate some rough stone for smoothing, then designate a floor to be built over it, and the floor is built, and then the smoother finally comes by, the game will die because the floor has no ‘terrain I should become if I’m smoothed’.
+
+If you think you can just not build floors over smoothing designations, you can just avoid the crash that way. I’ve also uploaded a hotfixed version, Alpha8b, which you can download from your existing download links.
+
+Sorry about this.
+
+==Alpha 8C==
+
+Note: This hotfix created it’s own new bug (colonists can’t use hydroponics). Sorry! I’m uploading a fix now.
+
+I’ve released a hotfix to some further important issues discovered in Alpha 8. You can get the update by downloading from the download link we sent you before (this is your personal permanent link and will never change). There will be no email sent for this non-essential update.
+
+===Changes===
+
+* Mostly fixed some hard performance hitching that occurred when there were a lot of blueprints that lacked resources (usually when laying large amounts of carpet without enough cloth).
+* Surgically removing bionic parts from living people will now yield the removed part for reinstallation or sale.
+* The binding between workers and bills will no longer time out. This should eliminate problems with workers starting the same bill several times and ending up with multiple unfinished versions of the same item.
+* The ‘was imprisoned’ thought now has a greater effect on mood.
+* Fixed growers just standing there when there was a nearby growing job that was not accessible (e.g. a plant pot in a locked room).
+* Plant not growing now text uses the word ‘resting’ to clarify that the problem isn’t a lack of light.
+
+==Alpha 8D & Alpha 8E==
+
+Alpha8c created a major bug where colonists would never plant in hydroponics basins. The fixed build, Alpha8d, is now uploaded.
+
+As always, you can update with your existing download link.
+
+Sorry about that. Hopefully not too many of you downloaded the game in the hours between 8c and 8d.
+
+UPDATE: I just released a nonessential fix to reduce the mood impact of seeing rotting corpses from -14 to -4. You can patch as usual, or just go into RimWorld657/Mods/Core/Defs/ThoughtDefs/Thoughts_Memories.xml, search for ObservedLayingRottingCorpse, and change <baseMoodEffect>-14</baseMoodEffect> to <baseMoodEffect>-4</baseMoodEffect>.
+
+==Dev Fix==
+
+The ‘saw corpse’ thought is stacking far too high because of a bug. In cases where there are lots of corpses, it can reach absurd levels and make it nearly impossible to keep colonists sane.
+
+The fix is only one line in a single file. You can do it yourself:
+
+# Go to the directory (RimWorldDirectory)/Mods/Core/Defs/ThoughtDefs
+# Edit the file Thoughts_Memories.xml
+# Go to the “ObservedLayingCorpse” mood effect (usually line 173 to 189). (Usually it’s easiest to do this by hitting Ctrl+F to search for ObservedLayingCorpse).
+# Change the line “<stackedEffectMultiplier>1</stackedEffectMultiplier>” to “<stackedEffectMultiplier>0.5</stackedEffectMultiplier>”
+
+I’ve also uploaded a fixed version. So, if you wish, you can also just re-download the game from your existing download link.
+
+Saved games won’t be affected either way.

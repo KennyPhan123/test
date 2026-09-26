@@ -1,0 +1,168 @@
+{{Stub|reason=Work in progress}}
+{{BackToTutorials}}
+This page is unfinished, if you stumbled upon this by accident please go back to the main wiki [[Modding_Tutorials|here]].
+==Requirements==
+Transpilers are not for beginners. If you are new to C# or modding, turn back now. If you are still here, then we'll assume you have:
+# General C# knowledge.
+# Ability to decompile and read source code, see [[Modding_Tutorials/Decompiling_source_code|Modding_Tutorials/Decompiling_source_code]]. This tutorial will assume ILSpy as the software of choice.
+# General knowledge of Harmony and reflection. This tutorial will assume annotation based patching. You can find more information on harmony patching [https://harmony.pardeike.net/api/index.html here]
+==Basics ==
+Transpilers work directly on the IL, the bytecode .NET languages compile to. They are instructions the code follows, and each line of code you write translate to several IL operations. For example:
+<source lang="csharp">
+// We are declaring a local variable, assigning a default value and then adding 1
+int num = 0;
+num = num + 1
+</source>
+The C# code above would roughly compile to:
+<source>
+ldc.i4 0 // We are loading the number 0 onto the stack
+stloc 0 // We are storing the current value in the local variable 0
+ldloc 0 // We are loading the local variable 0 and pushing it onto the stack
+ldc.i4 1 // We are loading the number 1 onto the stack
+add // We are loading the previous 2 values together onto the stack
+stloc 
+</source>
+
+===The Stack===
+In the IL above, I've mentioned many time the stack. The stack is a fundamental concept of IL. It follows a few general rules:
+* Each operation will either push and/or pop a certain amount of values from the stack.
+* The stack cannot be unbalanced. You cannot pop an empty stack, and the stack cannot have any values left after the final return.
+* The types must match. You cannot use a Pawn instead of an int. Furthermore, implicit operators must be called explicitly.
+Most of your IL errors will boil down to some kind of stack unbalance. 
+
+==Basic example==
+===Do we even need one?===
+Before transpiling a method, we have to do the most important step, do we even need a transpiler? Transpilers are powerful tools, but in most scenarios a prefix or postfix can change the return value.
+Here are some valid reasons to make a transpiler:
+- The method sets a field or property directly, and you can't patch the getter directly.
+- You want to replace a chunk of the logic but wish to preserve mod compatibility by avoiding a destructive prefix.
+Here are some non-valid reasons to make a transpiler:
+- Change the return value of a method (A postfix can accomplish this)
+- Change the arguments of a method (A prefix can accomplish this)
+- Cancel the execution of a method (A prefix can accomplish this)
+===Transpiler Syntax===
+This section will assume annotation based patching.
+
+A transpiler is written like so:
+<source lang="csharp">
+
+//Original code to patch
+public static class OriginalClass{
+    public static void OriginalMethod(){
+        int num = 5;
+        num += 3;
+        num *= 2;
+        Console.WriteLine(num);
+    }
+}
+
+[HarmonyPatch(typeof(OriginalClass), // Target type
+    nameof(OriginalClass.OriginalMethod))] //Target method, can be written as a plain string if private
+public static class MyPatch{
+    [HarmonyTranspiler]
+    public static IEnumerable<CodeInstruction> Transpiler(
+        IEnumerable<CodeInstruction> instructions, // This contains all of the instructions in order.
+        ILGenerator ilGenerator){ // This can be used to declare new local variables or jump labels.
+        var codes = new List<CodeInstruction>(instructions); // We copy the instruction to a new list for easy handling
+
+        return codes;
+    }
+}
+</source>
+Currently, this isn't very useful. We are returning the input. But lets say that we wanted to change what number is logged. If we go through our checklist:
+* A prefix or postfix won't help here. The method is fully self contained
+* Patching Console.WriteLine is not feasible, the method is too general purpose
+
+So a transpiler is a good choice. Lets write a basic transpiler to change what is logged in the console. The first step is to inspect the IL, which ILSpy can give us if we set the mode to C# with IL:
+<source>
+	.locals init (
+		[0] int32 num
+	)
+
+	// int num = 5;
+	IL_0000: ldc.i4.5
+	IL_0001: stloc.0
+	// num += 3;
+	IL_0002: ldloc.0
+	IL_0003: ldc.i4.3
+	IL_0004: add
+	IL_0005: stloc.0
+	// Log.Warning((num * 2).ToString());
+	IL_0006: ldloc.0
+	IL_0007: ldc.i4.2
+	IL_0008: mul
+	IL_0009: stloc.0
+	// (no C# code)
+	IL_000a: ldloca.s 0 // ldloca is a "ref" value
+	IL_000c: call instance string [mscorlib]System.Int32::ToString()
+	IL_0011: call void ['Assembly-CSharp']Verse.Log::Warning(string)
+	IL_0016: ret
+</source>
+The comments here are very helpful, they roughly translate to what line of C# is responsible for which operation. We can see that when we try to log to the console, we have the int32 onto the stack, it being the number. The plan is to:
+# Find where Console.WriteLine() is called in the list of instruction.
+# Inject our own code right before it to modify num
+# Return our number onto the stack
+<source lang="csharp">
+[HarmonyDebug]
+[HarmonyPatch(typeof(OriginalClass), // Target type
+    nameof(OriginalClass.OriginalMethod))] //Target method, can be written as a plain string if private
+public static class MyPatch{
+    [HarmonyTranspiler]
+    public static IEnumerable<CodeInstruction> Transpiler(
+        IEnumerable<CodeInstruction> instructions){ // This contains all of the instructions in order.
+        List<CodeInstruction> codes = new List<CodeInstruction>(instructions); // We copy the instruction to a new list for easy handling
+        bool wasPatched = false;
+        MethodInfo methodToFind = AccessTools.Method(typeof(Log), nameof(Log.Warning));
+        // We are going to inject our own method
+        MethodInfo methodToCall = AccessTools.Method(typeof(MyPatch), nameof(MyPatch.Helper));
+        for (int i = 0; i < codes.Count; i++){
+            var code = codes[i];
+            if (code.opcode == OpCodes.Call) // We check if the instruction is calling a method{
+                if (code.operand is MethodInfo method && method == methodToFind) // We check if we have the right method{
+                    // Great, we found where we want to patch!
+                    // We are going to want to go behind the ToString() call
+                    i--;
+                    codes.InsertRange(i, new CodeInstruction[]{
+                        new CodeInstruction(OpCodes.Dup), // We are going to DUPlicate the value.
+                        new CodeInstruction(OpCodes.Call, methodToCall),
+                    });
+                    // We correctly patched the method. This isn't required,
+                    // but will allow you to check if your transpiler managed to actually find the instruction to patch
+                    wasPatched = true;
+                    break;
+                }
+            }
+        }
+
+        // Our patch failed to properly patch somehow, we want to be notified by this!
+        if (!wasPatched){
+            throw new Exception($"Failed to patch {nameof(OriginalClass.OriginalMethod)}.");
+        }
+        
+        return codes;
+    }
+    
+    // Our helper is taking a ref parameter, so it can edit number and it will modify the duplicate copy on the stack
+    public static void Helper(ref int number){
+        number += 42;
+    }
+}
+</source>
+This can look quite verbose, but it boils down to:
+# We first declare both the method we want to find, and the method we want to inject using Harmony's AccessTools
+# We iterate to every instruction, looking for :
+## An instruction that calls any method
+## If the instruction calls the method we want
+# If it does, we go back once to behind the ToString()
+# Duplicate the value. Remember, we need to keep the stack balanced, so if our method takes a ref int32 and ToString() needs 1 ref int32, we need 2 of them.
+# Call our method (pops one ref int32)
+# Rest of the method executes as is normal
+
+===Troubleshooting===
+* Make sure your patch is static
+* Make sure you patch has the proper attributes
+* If your patch is failing to patch (with the wasPatched variable), double check your conditions.
+* If your patch is not passing Harmony's checks, double check the stack order. You can also add the attribute [HarmonyDebug] to create a dump of the instructions on your desktop (Make sure to remove it before releasing!!!)
+
+[[Category:Modding]]
+[[Category:Modding tutorials]]

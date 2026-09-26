@@ -1,0 +1,85 @@
+{{Rewrite|reason=[[Version/1.5.4062]] changed how flammability interacts with Flame damage. Needs to be updated on [[Flammability]], [[Damage Types#Flame]]/[[Damage Types#Burn]], and [[Fire]] - note changelog states that it only affects buildings but don't assume. Verify all mechanics with testing.}}
+{{Stat
+| def name = Flammability
+| label = flammability
+| description = How easily an object catches fire and how quickly a fire will grow as it burns.
+| default base value = 0
+| min value = 0
+| max value = 2
+| to string style = PercentZero
+| scenario randomizable = true
+| minified thing inherits = true
+| category = Basics
+| display priority in category = 3000
+}}
+
+Pawns, including both [[human]]s and [[animals]], generally have a base flammability of 70%. [[Mechanoids]] have a base flammability of 0%. The flammability of a pawn's [[apparel]] has no effect on the flammability of the wearer, it is only relevant when the apparel is in item form. [[Phoenix armor]] {{RoyaltyIcon}} has the unique effect of reducing the flammability of its wearer by 68%.
+
+For specifics on the process by which flammability affects the likelihood of being set on fire, see [[Damage Types#Flame|Flame]].
+
+Note that having a flammability of 0% only prevents the item/pawn/etc catching on fire, it does not prevent taking [[Damage Types#Flame|Flame]] damage. For example, while a [[stone]] [[wall]] will not be ignited by [[molotov cocktails]], and won't continue to burn, it will take the 10 flame damage from the initial attack. Similarly, a pawn requires [[Armor - Heat]] to actually mitigate flame damage taken. 
+Some things, such as the buildings found in [[mech cluster]]s ,{{RoyaltyIcon}} have both a flammability of 0% '''and''' are immune to flame damage but these are separate effects.
+
+== Factors ==
+For pawns, the order of operations is as follows:
+{| {{STDT|}}
+| '''Flammability<sub>''Pawn''</sub>''' = (Base Value<sub>''PawnKind''</sub> + Offsets) × Factors
+|}
+
+For example, a pawn wearing [[Phoenix armor]] {{RoyaltyIcon}} with the [[Fire resistant]] {{BiotechIcon}} gene will have a final flammability value of:
+
+{| {{STDT|}}
+| '''Flammability<sub>''Pawn''</sub>''' = (70% - 68%) × 0.1 = '''0.2%'''
+|}
+
+* Offsets
+** [[Phoenix armor]] {{RoyaltyIcon}}: {{---|68%}}
+* Factors
+** [[Fire resistant]] {{BiotechIcon}}: {{Good|x0.1}}
+
+== Materials ==
+An item, structure or building can have different flammability depending on the material chosen to make it. Surprisingly items, structures and buildings ''made out of'' steel, silver and gold  are flammable. However steel, silver and gold ''in item form'' are not.
+
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_01 text-center}}
+! Material !! Stuff category !! Flammability
+|-
+{{#ask: [[Type::Material]] OR [[Type::Textile]]
+| ?Stuff Category
+| ?Flammability Factor
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = Stuff Category, Name}}
+|}
+</li><div>
+
+== Stat Def Data ==
+{| {{STDT}}
+! Name !! Description !! Category !! Parameters !! Complex Parameters !! Display Priority In Category
+|- id="Flammability" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />Flammability
+* '''Label:'''<br />flammability
+| How easily an object catches fire and how quickly a fire will grow as it burns.
+|
+* Display Order: '''10'''
+* Def Name:<br />'''Basics'''
+* Label:<br />'''Basics'''
+* Display All By Default: {{Good|true}}
+|
+* Default Base Value: '''{{%|0}}'''
+* Min Value: '''{{%|0}}'''
+<!-- Normalize to: 1 is wood, 0 is stone, 2 is like dry wispy paper or volatile fuel.-->
+* Max Value: '''{{%|2}}'''
+* To String Style: '''PercentZero'''
+* Scenario Randomizable: {{Good|true}}
+* Minified Thing Inherits: {{Good|true}}
+| -
+| 3000
+<!--</StatDef>-->
+|}
+
+== Version history ==
+* [[Version/1.1.2598|1.1.2598]] - Reduce flesh pawn flammability 100% -> 75%. This makes them extinguish easier, fire grows slower, and rain puts them out now.
+* [[Version/1.3.3101|1.3.3101]] - [[Orders#Uninstall|Minified]] things now inherit their inner thing's flammability.

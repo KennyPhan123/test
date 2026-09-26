@@ -1,0 +1,93 @@
+<onlyinclude><div><li style="display: inline-table;">
+{| {{STDT| c_01 sortable text-center}}
+! Pawn Kind !! Combat Power !! Gear !! Apparel !! Weapons !! Tech !! Inventory !! Additional Info [[{{fullurl:Pirates/Pawns|action=edit}} edit]]
+<!-- 9 columns; 1 bold, 8 normal: -->
+<!-- defName="", label="", ParentName="", Name="PirateBase", Abstract="True"
+|- id="Name"
+! Name
+| [[File:Name.png]] || CP || '''HP:''' <br />'''Avg. Quality:'''
+| '''Budget''': <br />'''Allow Headgear Chance:''' <br />'''Available:''' {{#ask:[[Tags::]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+| '''Budget''': <br />'''Biocoded Chance:''' 10%<br />'''Available:''' <br />{{Gear List|budget=|WeaponTags|}}
+| '''Budget''': <br />% chance to have one of the following: {{Gear List|budget=|TechHediffsTags|}}
+| 2.55 Nutrition
+| '''Age Range:''' Any<br />'''Race:''' Human<br />'''Default Faction Type:''' Pirate<br />'''Backstories:''' Cryptosleep (5% Commonality)<br />'''Chemical Addiction Chance''': 12%<br />'''Initial Will Range''': <br />'''Initial Resistance Range''': 
+-->
+<!-- defName="Drifter", label="drifter", ParentName="PirateBase", Name="DrifterBase", Abstract="" -->
+|- id="Drifter"
+! Drifter<br>[[File:Drifter.png]] 
+| 35 || '''HP:''' 20~60%<br />'''Avg. Quality:''' Poor
+<!-- Apparel -->
+| '''Budget''': 90~280<br /><!--
+-->'''Allow Headgear Chance:''' 20%<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+<!-- Weapons -->
+| '''Budget''': 60~200<br /><!--
+-->'''Biocoded Chance:''' 10%<br /><!--
+-->'''Available:''' <br />{{Gear List|budget=200|WeaponTags|MedievalMeleeBasic|NeolithicMeleeBasic}}
+<!-- Tech -->
+| '''Budget''': 50~50<br /><!--
+-->15% chance to have one of the following: {{Gear List|budget=50|TechHediffsTags|Poor}}
+| 0 Nutrition<br />10% chance for: 1x {{Icon Small|Herbal medicine|24}} [[Herbal medicine]]
+<!-- Additional Info -->
+| '''Age Range:''' Any<br />'''Race:''' Human<br />'''Default Faction Type:''' Pirate<br />'''Backstories:''' Cryptosleep (5% Commonality)<br />'''Chemical Addiction Chance''': 12%<br />'''Initial Will Range''': 0~1<br />'''Initial Resistance Range''': 7~12
+<!-- defName="", label="", ParentName="PirateBase", Name="PirateScavTierBase", Abstract="True"
+|- id="Name"
+! Name
+| [[File:Name.png]] || 50 || '''HP:''' 40~110%<br />'''Avg. Quality:''' Poor
+| '''Budget''': <br />'''Allow Headgear Chance:''' 40%<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic||IndustrialAdvanced]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+| '''Budget''': <br />'''Biocoded Chance:''' 10%<br />'''Available:''' <br />{{Gear List|budget=|WeaponTags|}}
+| '''Budget''': 50~50<br />4% chance to have one of the following: {{Gear List|budget=50|TechHediffsTags|Poor}}
+| 2.55 Nutrition<br />5% chance for: {{Icon Small|Medicine|24}} [[Medicine]]
+| '''Age Range:''' Any<br />'''Race:''' Human<br />'''Default Faction Type:''' Pirate<br />'''Backstories:''' Cryptosleep (5% Commonality)<br />'''Chemical Addiction Chance''': 12%<br />'''Initial Will Range''': 1~3<br />'''Initial Resistance Range''': 
+-->
+<!-- defName="Scavenger", label="scavenger gunner", ParentName="PirateScavTierBase", Name="ScavengerBase", Abstract="" -->
+|- id="Scavenger gunner"
+! Scavenger gunner<br>[[File:Scavenger gunner.png]]
+| 50 || '''HP:''' 40~110%<br />'''Avg. Quality:''' Poor
+<!-- Apparel -->
+| '''Budget''': 300~500<br /><!--
+-->'''Allow Headgear Chance:''' 40%<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic||IndustrialAdvanced]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+<!-- Weapons -->
+| '''Budget''': 200~300<br /><!--
+-->'''Biocoded Chance:''' 10%<br /><!--
+-->'''Available:''' <br />{{Gear List|budget=300|WeaponTags|Gun}}
+<!-- Tech -->
+| '''Budget''': 50~50<br /><!--
+-->4% chance to have one of the following: {{Gear List|budget=50|TechHediffsTags|Poor}}
+| 2.55 Nutrition<br />5% chance for: {{Icon Small|Medicine|24}} [[Medicine]]
+<!-- Additional Info -->
+| '''Age Range:''' Any<br />'''Race:''' Human<br />'''Default Faction Type:''' Pirate<br />'''Backstories:''' Cryptosleep (5% Commonality)<br />'''Chemical Addiction Chance''': 12%<br />'''Initial Will Range''': 1~3<br />'''Initial Resistance Range''': 17~26
+<!-- defName="Thrasher", label="scavenger thrasher", ParentName="PirateScavTierBase", Name="ThrasherBase", Abstract="" -->
+|- id="Scavenger thrasher"
+! Scavenger thrasher<br>[[File:Scavenger thrasher.png]]
+| 50 || '''HP:''' 40~110%<br />'''Avg. Quality:''' Poor
+<!-- Apparel -->
+| '''Budget''': 300~800<br /><!--
+-->'''Allow Headgear Chance:''' 40%<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic||IndustrialAdvanced||Outlander]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+<!-- Weapons -->
+| '''Budget''': 100~160<br /><!--
+-->'''Biocoded Chance:''' 10%<br /><!--
+-->'''Available:''' <br />{{Gear List|budget=160|WeaponTags|NeolithicMeleeBasic|MedievalMeleeBasic|MedievalMeleeDecent}}
+<!-- Tech -->
+| '''Budget''': 50~50<br /><!--
+-->4% chance to have one of the following: {{Gear List|budget=50|TechHediffsTags|Poor}}
+| 2.55 Nutrition<br />5% chance for: {{Icon Small|Medicine|24}} [[Medicine]]
+<!-- Additional Info -->
+| '''Age Range:''' Any<br />'''Race:''' Human<br />'''Default Faction Type:''' Pirate<br />'''Backstories:''' Cryptosleep (5% Commonality)<br />'''canBeSapper:''' true<br />'''Chemical Addiction Chance''': 12%<br />'''Initial Will Range''': 1~3<br />'''Initial Resistance Range''': 14~23
+<!-- defName="Pirate", label="pirate gunner", ParentName="PirateBase", Name="PirateKindBase", Abstract="" -->
+|- id="Pirate gunner"
+! Pirate gunner<br>[[File:Pirate gunner.png]] 
+| 65 || '''HP:''' 70~230%
+<!-- Apparel -->
+| '''Budget''': 400~1000<br /><!--
+-->'''Allow Headgear Chance:''' 70%<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic||IndustrialAdvanced||IndustrialMilitaryBasic||IndustrialMilitaryAdvanced]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+<!-- Weapons -->
+| '''Budget''': 250~345<br /><!--
+-->'''Biocoded Chance:''' 20%<br /><!--
+-->'''Available:''' <br />{{Gear List|budget=345|WeaponTags|Gun}}
+<!-- Tech -->
+| '''Budget''': 50~800<br /><!--
+-->4% chance to have one of the following: {{Gear List|budget=800|TechHediffsTags|Poor|Simple|ImplantEmpireCommon}}
+| 2.55 Nutrition<br />10% chance of: 1x {{Icon Small|Medicine|24}} [[Medicine]]
+<!-- Additional Info -->
+| '''Age Range:''' Up to 65<br />'''Race:''' Human<br />'''Default Faction Type:''' Pirate<br />'''Backstories:''' Cryptosleep (5% Commonality)<br />'''Chemical Addiction Chance''': 12%<br />'''Initial Will Range''': 2~3<br />'''Initial Resistance Range''': 7~12
+|}</li></div></onlyinclude><noinclude>[[Category:Pawnkind tables]]</noinclude>

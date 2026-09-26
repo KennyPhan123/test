@@ -1,0 +1,72 @@
+{{Anomaly}}
+{{Infobox main|building
+| name = Frenzy inducer
+| image = Frenzy inducer.png
+| type = Building
+| type2 = Anomaly (Buildings)
+| marketvalue = 495
+| placeable = true
+| path cost = 
+| passability = 
+| blockswind = 
+| cover = 
+| minifiable = 
+| size = 1 ˣ 1
+| mass base = 50
+| flammability = 0.5
+| hp = 100
+| sell price multiplier = 
+| power = -150
+| terrain affordance = heavy
+| research = Frenzy inducer
+| thingCategories =
+| work to make = 6000
+| resource 1 = Shard
+| resource 1 amount = 1
+| resource 2 = Bioferrite
+| resource 2 amount = 100
+}}
+The '''Frenzy inducer''' is a building added by the [[Anomaly DLC]] that increases the [[move speed]] and [[Global Work Speed]] of pawns at the cost of worse [[mental breaks]].
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+{{Stub|section=1|reason = Decay rate or isntant decline? Specifical rste from c#, other mechanical detail. Does berserk effect occur in very stage, because table says no effect. game time in table}}
+{{Image wanted|section=1|reason=AoE in [[:Category:Images - Graphics|standard style]]}}
+It has a range of 8 tiles in which it gives all human pawns the '''Frenzy field''' hediff, which slowly builds up over time, taking {{ticks/gametime/hours|2500}} to increase by 30%, but taking around 5 times as long to dissipate the effect. 
+
+This area of effect ignores [[LoS]] and works through [[wall]]s and similar obstructions.
+
+Unlike the [[Sleep suppressor]], it will not cause a mood debuff. Instead, all [[mental break]]s will become the [[Mental_break#Berserk|Berserk]] mental state as long as any buildup of '''Frenzy field''' is present. Do note that the [[Dead calm]]{{BiotechIcon}} gene does not take priority over the frenzy inducer, meaning breaks will still be violent even with it present.
+
+{| class=wikitable style="margin: auto; "
+! rowspan = 2|Stage !! rowspan = 2| Buildup !! rowspan = 2| Effects !! colspan=2| Required Time !! colspan=2| Accumulated Time
+|-
+! To advance stage !! To reduce stage !! To advance stage !! To reduce stage
+|-
+! Very Mild
+| 0.1% - 4.9% || <ul><li>No effect</li></ul> || {{ticks|417}} || {{ticks|2083}} || {{ticks|417}} || {{ticks|2083}}
+|-
+! Mild
+| {{0}}5% - 34.9% || <ul><li>[[Move speed]]: {{+|0.10{{CS}}}}</li><li>[[Global work speed]]: {{+|20%}}</li></ul> || {{ticks|2500}} || {{ticks|12500}} || {{ticks|2833}} ||  {{ticks|14165}}
+|-
+! Moderate
+| 35% - 64.9% || <ul><li>[[Move speed]]: {{+|0.20{{CS}}}}</li><li>[[Global work speed]]: {{+|30%}}</li></ul> || {{ticks|2500}} || {{ticks|12500}} || {{ticks|5333}} ||  {{ticks|26665}}
+|-
+! Extreme
+| 65% - 100% || <ul><li>[[Move speed]]: {{+|0.40{{CS}}}}</li><li>[[Global work speed]]: {{+|50%}}</li></ul> || {{ticks|2916}} || {{ticks|14580}} || {{ticks|8333}} ||  {{ticks|41667}}
+|}
+
+== Analysis ==
+The Frenzy inducer can be very useful in creating very efficient pawns, especially if combined with other tools from Anomaly such as the Sleep suppressor and the [[Neurosis pulse]] Psychic ritual, the combination of three effects at their apex makes all pawns: have a {{Good|x0%}} [[Sleep Fall Rate]], a {{Good|x50%}} [[Recreation]] fall rate, and a {{+|50%}} [[Global work speed]] bonus, which is then further increased by a multiplicative bonus of {{Good|x150%}} by the Neurosis pulse, for a base total of {{+|225%}}. However, this comes with the cost of inducing a {{--|6}} and {{--|4}} mood penalty, from the Sleep suppressor and Neurosis pulse ritual respectively, the latter worsening from an increased [[Psychic sensitivity]], as well as increasing the [[Mental break threshold]] by 8%, making it easier for pawns to suffer from mental breaks, causing them to go berserk. This risk can be averted temporarily by using [[Mind-numb serum]] to prevent mental breaks at the cost of only -5% [[Consciousness]], which does not directly affect Global work speed, but will affect [[General labor speed]], as the loss in Consciousness will affect [[Manipulation]].
+
+=== Placement ===
+{{Stub|section=1|reason=Do the math for it being at the work place and compare given has tonspend time to build up (but will get some effect quickly). also consider placement cost/coverage. "Disproving" placing it in a rec/dining room also has merit (shared space seems like a pro but the time in there is short)}}
+The frenzy effect builds through walls, which allows a lot of flexibility in the inducer's placement. Bedrooms and barracks are typically fairly dense and allows pawns with different work locations benefit from the effect. All but the fastest sleepers will reach 100% before they wake, giving them almost 6 in-game hours in the highest tier of the effect, and approximately 16 hours of some effect. If applying frenzy in their sleep, schedule their recreation at the end of the day the effect is wearing off, so the time in the peak of the effect is spent working.
+
+== Version history ==
+* [[Anomaly DLC]] Release - Added
+
+{{Nav|anomaly|wide}}
+[[Category:Anomaly (Buildings)]]

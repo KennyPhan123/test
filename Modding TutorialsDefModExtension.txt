@@ -1,0 +1,105 @@
+{{BackToTutorials}}
+
+A DefModExtension is a way to add fields to Defs. DefModExtensions are a simple way to extend functionality to a Def. A DefModExtension doesn't directly add fields to classes as that's technically impossible to do at runtime. The implementation is that the ''Def'' class has a ''public List<DefModExtension>'' which can easily be extended.
+
+'''Benefits''':<br/>
+<nowiki>+</nowiki> Is really simple and light-weight to use.<br/>
+<nowiki>+</nowiki> Works on any Def.<br/>
+<nowiki>+</nowiki> Exposes its functionality to XML.<br/>
+<nowiki>+</nowiki> Compatible with savefiles, other mods, you name it.</br>
+<nowiki>+</nowiki> Does not come with the compatibility issues and pitfalls of creating a custom Def class.<br/>
+<nowiki>+</nowiki> Does not have the overhead of a [[Modding Tutorials/ThingComp|ThingComp]].<br/>
+<nowiki>+</nowiki> More broadly applicable than a [[Modding Tutorials/ThingComp|ThingComp]] (not every Def is a ThingWithComps!).<br/>
+
+'''Downsides''':<br>
+<nowiki>-</nowiki> Static and global data.<br/>
+<nowiki>-</nowiki> Can't save data.<br/>
+<nowiki>-</nowiki> Only works on Defs.<br/>
+<nowiki>-</nowiki> A DefModExtension does not know what Def it belongs to. (There are ways around this, like setting a Def field in your DefModExtension and populating it in XML/C#)<br/>
+
+=Requirements=
+You know the deal by now.
+* Solution
+* Custom code
+* C#
+* XML
+
+=The Code=
+<source lang="csharp">
+using Verse;
+
+namespace ExampleNameSpace
+{
+    public class ExampleModExtension : DefModExtension
+    {
+        public bool canBeARimQuest = true;
+    }
+}
+</source>
+That's it. DefModExtensions can of course contain any field you wish: a C# Type, a Thingfilter, a list -- but for the sake of a simple example, we'll use a bool.
+
+==Using the DefModExtension==
+You can use the DefModExtension on any Def with that extension. Their usage is much the same way as any other field in a Def. The biggest difference is in the syntax; instead of ''bool value = def.field'', it's ''bool value = def.GetModExtension<ExampleModExtension>().field''
+<source lang=csharp>
+using Verse;
+using RimWorld;
+
+namespace ExampleNameSpace
+{
+    public class OurExampleClass
+    {
+        private static bool IsAcceptableQuest(IncidentDef incidentDef)
+        {
+            if (incidentDef.letterDef == LetterDefOf.NegativeEvent)
+                return false;
+
+            if (incidentDef.HasModExtension<ExampleModExtension>())
+                return incidentDef.GetModExtension<ExampleModExtension>().canBeARimQuest;
+
+            return true;
+        }
+    }
+}
+</source>
+Or if you like your code shorter, you can use null conditionals and null coalescing:
+<source lang = "csharp">
+            return incidentDef.letterDef != LetterDefOf.NegativeEvent
+                && (incidentDef.GetModExtension<ExampleModExtension>()?.canBeARimQuest ?? true); 
+                //will return value of mod extension if not null, otherwise assumed true.
+</source>
+
+==Adding it to your def==
+<source lang = "xml">
+<Defs>
+    <ExampleDef>
+        <defName>Example</defName>
+        <modExtensions>
+            <li Class="ExampleNameSpace.ExampleModExtension">
+                <canBeARimQuest>false</canBeARimQuest>
+            </li>
+        </modExtensions>
+    </ExampleDef>
+</Defs>
+</source>
+
+===Using xpath to add it to a def===
+If you wanted to xpath patch a mod extension onto an existing def, you'd use PatchOperationAddModExtension, which is like PatchOperationAdd but saves having to check if modExtensions has already been added/having to include it in your value field:
+<source lang = "xml">
+<Patch>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/ExampleDef[defName="Example"]</xpath>
+        <value>
+            <li Class="ExampleNameSpace.ExampleModExtension">
+                <canBeARimQuest>false</canBeARimQuest>
+            </li>
+        </value>
+    </Operation>
+</Patch>
+</source>
+
+=See also=
+[https://ludeon.com/forums/index.php?topic=46351.0 Ludeon thread on Mod Extensions]<br>
+[https://github.com/jecrell/RimQuest/commit/54413b821233316c4057db87031aa6e528ab2db6 The pull request on which the code in this article is based on]
+
+[[Category: Modding]]
+[[Category: Modding tutorials]]

@@ -1,0 +1,89 @@
+{{See also|Lavish meal|Carnivore lavish meal}}{{Infobox main|food
+| name = Vegetarian lavish meal
+| image = Vegetarian lavish meal a.png
+| description = A masterpiece of the culinary arts, this meal nourishes the body, mind, and soul.
+<!-- Base Stats -->
+| type = Food
+| type2 = Meal
+| hp = 50
+| deterioration = 10
+| marketvalue = 40
+| mass base = 0.44
+| flammability = 1
+| stack limit = 10
+| path cost = 14
+<!-- Ingestion -->
+| taste = Lavish
+| food type = meal
+| ingested direct thought = AteLavishMeal
+| max num to ingest at once = 1
+| days to rot = 4
+| nutrition = 1
+<!-- Creation -->
+| work to make = 800
+| work speed stat = Cooking Speed
+| production facility 1 = Fueled stove
+| production facility 2 = Electric stove
+| skill 1 = cooking
+| skill 1 level = 8
+| resource 1 = Nutrition
+| resource 1 type = vegetarian
+| resource 1 amount = 1.25
+| bulk product amount = 4
+<!-- Technical -->
+| defName = MealLavish
+| preferability = Lavish
+| tradeability = Buyable
+<!-- Unused -->
+| always haulable = true
+| draw gui overlay = true
+| eat effect = EatVegetarian
+| graphic class = Graphic_Single
+| graphic path = Things/Item/Meal/Lavish
+| label = lavish meal
+| parent name = MealRottable
+| resource readout priority = Last
+| selectable = true
+| social properness matters = true
+| sound eat = Meal_Eat
+| thing class = Meal
+| ticker type = Rare
+| use hit points = true
+}}
+{{Info|A '''vegetarian lavish meal''' is a variant of the [[lavish meal]] created from vegetarian products.}}
+
+==Acquisition==
+Vegetarian lavish meals meals can be [[Work#Cook|cooked]] at a [[{{P|Production Facility 1}}]] or [[{{P|Production Facility 2}}]]. A vegetarian lavish meal requires 1.25 units of nutrition from vegetable ingredients or animal products ([[milk]] or [[egg]]s), {{Ticks|{{P|Work To Make}}}} of work to make, and a Cooking skill of 8.
+
+== Summary ==
+A vegetarian lavish meal can be eaten by humans or animals for 1 [[nutrition]]. As it takes 1.25 nutrition of [[raw food]] to create, vegetarian lavish meals provide 80% nutrition efficiency, so preparing one loses net food (even compared to regular lavish meals).
+
+Eating a lavish meal or its variants gives the {{Thought|desc=That lavish meal was amazing. It nourished my body and my soul.|label=ate lavish meal|value=+12|stack=1|duration=1}}. This replaces the {{Thought|desc=I ate a really tasty fine meal. Yum!|label=ate fine meal|value=+5|stack=1|duration=1}} from [[fine meal]] if present. If [[Ideology DLC]] {{IdeologyIcon}} is active and the meal was made out of [[raw fungus]], its normal moodlet will also be applied.
+
+Lavish meals will also satisfy the food requirements of any [[conceited noble]]{{RoyaltyIcon}}.
+
+== Analysis ==
+Vegetarian lavish meals are useful for giving the lavish meal mood buff when meat is unavailable, or if a pawn's [[ideoligion]]{{IdeologyIcon}} dislikes meat.
+
+Lavish meals can be prepared and reserved for emergencies, such as a [[psychic drone]], in order to avoid [[mental break]]s. Wealthier colonies can use them to encourage [[mental inspiration]], or help mood during the [[ship]] launch.
+
+== Gallery ==
+<gallery>
+Vegetarian lavish meal a.png|One lavish fine meal
+Vegetarian lavish meal b.png|Partial stack
+Vegetarian lavish meal c.png|Full stack
+</gallery>
+
+== Version history ==
+* [[Version/1.3.3066|1.3.3066]] - Added
+* [[Version/1.3.3074|1.3.3074]] - New graphics.
+* [[Version/1.3.3087|1.3.3087]] - Vegetarian meals now allow animal products as ingredients.
+* [[Version/1.3.3387|1.3.3387]] - Changed the nutrients needed for lavish vegetarian meals to 1.25 (previously 2.5)
+
+<gallery>
+Vegetarian lavish meal old 2.png|Old texture from version 1.3.3074
+Vegetarian lavish meal old.png|Texture between version 1.3.3066 and 1.3.3074
+</gallery>
+
+{{nav|Food|wide}}
+[[Category:Food]] [[Category:Processed Food]] [[Category:Meal]]

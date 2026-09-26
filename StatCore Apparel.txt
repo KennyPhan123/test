@@ -1,0 +1,356 @@
+<noinclude>{{Verified|1.5.4104}}
+&larr; <small>[[Stat]]</small>
+{| {{STDT|sortable}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category</noinclude>
+<!-- Core Stats_Apparel -->
+<div id="Core Stats_Apparel"><!--<Defs>-->
+|- id="Armor - Material Effect Multiplier" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />StuffEffectMultiplierArmor
+* '''Label:'''<br />Armor - Material effect multiplier
+| -
+|
+* Display Order:<br />'''30'''
+* Def Name:<br />'''Apparel'''
+* Label:<br />'''Apparel'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|0}}
+* '''Min Value:''' {{%|0}}
+* '''Always Hide:''' {{Good|true}}
+| -
+| 1
+<!--</StatDef>-->
+|- id="Insulation - Cold - Material Effect Multiplier" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />StuffEffectMultiplierInsulation_Cold
+* '''Label:'''<br />Insulation - Cold - Material effect multiplier
+| -
+|
+* Display Order:<br />'''30'''
+* Def Name:<br />'''Apparel'''
+* Label:<br />'''Apparel'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|0}}
+* '''Min Value:''' {{%|0}}
+* '''Always Hide:''' {{Good|true}}
+| -
+| 2
+<!--</StatDef>-->
+|- id="Insulation - Heat - Material Effect Multiplier" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />StuffEffectMultiplierInsulation_Heat
+* '''Label:'''<br />Insulation - Heat - Material effect multiplier
+| -
+|
+* Display Order:<br />'''30'''
+* Def Name:<br />'''Apparel'''
+* Label:<br />'''Apparel'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|0}}
+* '''Min Value:''' {{%|0}}
+* '''Always Hide:''' {{Good|true}}
+| -
+| 3
+<!--</StatDef>-->
+|- id="Armor - Sharp" <!-- ParentName="ArmorRatingBase" --><!--<StatDef>-->
+|
+* '''Def Name:'''<br />ArmorRating_Sharp
+* '''Label:'''<br />Armor - Sharp
+* '''Label For Full Stat List:'''<br />Armor - Sharp (armor stat)
+| The protection given against sharp damage like bullets, knife stabs, explosions, and animal bites.
+Upon taking damage, first this armor rating is reduced by the attack's armor penetration value.
+The remaining armor rating is then compared against a random number from 0 to 100.
+- If the random number is under half the armor rating, the damage deflects harmlessly.
+- If the random number is over half the armor rating, but not higher than the armor rating, the damage is reduced by half and changed to blunt.
+- If the random number is greater than the armor rating, the armor has no effect.
+For example, at 90% armor rating against an attack with 10% armor penetration, there is a 40% chance of deflecting the attack harmlessly, and a 40% chance of mitigating the damage.
+Each layer of armor is applied separately, from the outside in.
+|
+* Display Order:<br />'''30'''
+* Def Name:<br />'''Apparel'''
+* Label:<br />'''Apparel'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* Default Base Value: '''{{%|0}}'''
+* Min Value: '''{{%|0}}'''
+* Hide At Value: '''{{%|0}}'''
+* Max Value: '''{{%|2}}'''
+* To String Style: '''PercentOne'''
+|
+''StatParts'':
+* '''''StatPart_Quality:'''''
+** Factor Awful: '''{{%|0.60}}'''
+** Factor Poor: '''{{%|0.80}}'''
+** Factor Normal: '''{{%|1.00}}'''
+** Factor Good: '''{{%|1.15}}'''
+** Factor Excellent: '''{{%|1.30}}'''
+** Factor Masterwork: '''{{%|1.45}}'''
+** Factor Legendary: '''{{%|1.80}}'''
+* '''Parts:'''
+** '''StatPart_Stuff:'''
+*** Priority: '''100
+*** '''Stuff Power Stat: '''StuffPower_Armor_Sharp
+*** '''Multiplier Stat: '''StuffEffectMultiplierArmor
+| 100
+<!--</StatDef>-->
+|- id="Armor - Blunt" <!-- ParentName="ArmorRatingBase" --><!--<StatDef>-->
+|
+* '''Def Name:'''<br />ArmorRating_Blunt
+* '''Label:'''<br />Armor - Blunt
+* '''Label For Full Stat List:'''<br />Armor - Blunt (armor stat)
+| The protection given against blunt damage like fists, club impacts and rock falls.
+Upon taking damage, first this armor rating is reduced by the attack's armor penetration value.
+The remaining armor rating is then compared against a random number from 0 to 100.
+- If the random number is under half the armor rating, the damage deflects harmlessly.
+- If the random number is over half the armor rating, but not higher than the armor rating, the damage is reduced by half and changed to blunt.
+- If the random number is greater than the armor rating, the armor has no effect.
+For example, at 90% armor rating against an attack with 10% armor penetration, there is a 40% chance of deflecting the attack harmlessly, and a 40% chance of mitigating the damage.
+Each layer of armor is applied separately, from the outside in.
+|
+* Display Order:<br />'''30'''
+* Def Name:<br />'''Apparel'''
+* Label:<br />'''Apparel'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* Default Base Value: '''{{%|0}}'''
+* Min Value: '''{{%|0}}'''
+* Hide At Value: '''{{%|0}}'''
+* Max Value: '''{{%|2}}'''
+* To String Style: '''PercentOne'''
+|
+''StatParts'':
+* '''''StatPart_Quality:'''''
+** Factor Awful: '''{{%|0.60}}'''
+** Factor Poor: '''{{%|0.80}}'''
+** Factor Normal: '''{{%|1.00}}'''
+** Factor Good: '''{{%|1.15}}'''
+** Factor Excellent: '''{{%|1.30}}'''
+** Factor Masterwork: '''{{%|1.45}}'''
+** Factor Legendary: '''{{%|1.80}}'''
+* '''Parts:'''
+** '''StatPart_Stuff:'''
+*** Priority: '''100
+*** '''Stuff Power Stat: '''StuffPower_Armor_Blunt
+*** '''Multiplier Stat: '''StuffEffectMultiplierArmor
+| 99
+<!--</StatDef>-->
+|- id="Armor - Heat" <!-- ParentName="ArmorRatingBase" --><!--<StatDef>-->
+|
+* '''Def Name:'''<br />ArmorRating_Heat
+* '''Label:'''<br />Armor - Heat
+* '''Label For Full Stat List:'''<br />Armor - Heat (armor stat)
+| The protection given against temperature-related damage like burns.
+Upon taking damage, first this armor rating is reduced by the attack's armor penetration value.
+The remaining armor rating is then compared against a random number from 0 to 100.
+- If the random number is under half the armor rating, the damage deflects harmlessly.
+- If the random number is over half the armor rating, but not higher than the armor rating, the damage is reduced by half and changed to blunt.
+- If the random number is greater than the armor rating, the armor has no effect.
+For example, at 90% armor rating against an attack with 10% armor penetration, there is a 40% chance of deflecting the attack harmlessly, and a 40% chance of mitigating the damage.
+Each layer of armor is applied separately, from the outside in.
+|
+* Display Order:<br />'''30'''
+* Def Name:<br />'''Apparel'''
+* Label:<br />'''Apparel'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* Default Base Value: '''{{%|0}}'''
+* Min Value: '''{{%|0}}'''
+* Hide At Value: '''{{%|0}}'''
+* Max Value: '''{{%|2}}'''
+* To String Style: '''PercentOne'''
+|
+''StatParts'':
+* '''''StatPart_Quality:'''''
+** Factor Awful: '''{{%|0.60}}'''
+** Factor Poor: '''{{%|0.80}}'''
+** Factor Normal: '''{{%|1.00}}'''
+** Factor Good: '''{{%|1.15}}'''
+** Factor Excellent: '''{{%|1.30}}'''
+** Factor Masterwork: '''{{%|1.45}}'''
+** Factor Legendary: '''{{%|1.80}}'''
+* '''Parts:'''
+** '''StatPart_Stuff:'''
+*** Priority: '''100
+*** '''Stuff Power Stat: '''StuffPower_Armor_Heat
+*** '''Multiplier Stat: '''StuffEffectMultiplierArmor
+| 98
+<!--</StatDef>-->
+|- id="Insulation - Cold" <!-- ParentName="InsulationBase" --><!--<StatDef>-->
+|
+* '''Def Name:'''<br />Insulation_Cold
+* '''Label:'''<br />Insulation - Cold
+* '''Label For Full Stat List:'''<br />Insulation - Cold (armor stat)
+| How much this apparel improves a wearer's minimum comfortable temperature.<br id="n" /><br id="n" />Greater values allow surviving in colder temperatures.
+|
+* Display Order:<br />'''30'''
+* Def Name:<br />'''Apparel'''
+* Label:<br />'''Apparel'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* Default Base Value: '''{{%|0}}'''
+* Hide At Value: '''{{%|0}}'''
+* Min Value: '''{{%|-9999}}'''
+* Max Value: '''{{%|9999}}'''
+* To String Style: '''TemperatureOffset'''
+* Show On Pawns: '''{{Bad|false}}'''
+* '''Cacheable:''' {{Good|true}}
+|
+''StatParts'':
+* '''''StatPart_Quality:'''''
+** Factor Awful: '''{{%|0.8}}'''
+** Factor Poor: '''{{%|0.9}}'''
+** Factor Normal: '''{{%|1}}'''
+** Factor Good: '''{{%|1.1}}'''
+** Factor Excellent: '''{{%|1.2}}'''
+** Factor Masterwork: '''{{%|1.5}}'''
+** Factor Legendary: '''{{%|1.8}}'''
+** Apply To Negative Values: '''{{Good|true}}'''
+* '''Parts:'''
+** '''StatPart_Stuff:'''
+*** Priority: '''100
+*** '''Stuff Power Stat: '''StuffPower_Insulation_Cold
+*** '''Multiplier Stat: '''StuffEffectMultiplierInsulation_Cold
+| 90
+<!--</StatDef>-->
+|- id="Insulation - Heat" <!-- ParentName="InsulationBase" --><!--<StatDef>-->
+|
+* '''Def Name:'''<br />Insulation_Heat
+* '''Label:'''<br />Insulation - Heat
+* '''Label For Full Stat List:'''<br />Insulation - Heat (armor stat)
+| How much this apparel improves a wearer's maximum comfortable temperature.<br id="n" /><br id="n" />Greater values allow surviving in warmer temperatures.
+|
+* Display Order:<br />'''30'''
+* Def Name:<br />'''Apparel'''
+* Label:<br />'''Apparel'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* Default Base Value: '''{{%|0}}'''
+* Hide At Value: '''{{%|0}}'''
+* Min Value: '''{{%|-9999}}'''
+* Max Value: '''{{%|9999}}'''
+* To String Style: '''TemperatureOffset'''
+* Show On Pawns: '''{{Bad|false}}'''
+|
+''StatParts'':
+* '''''StatPart_Quality:'''''
+** Factor Awful: '''{{%|0.8}}'''
+** Factor Poor: '''{{%|0.9}}'''
+** Factor Normal: '''{{%|1}}'''
+** Factor Good: '''{{%|1.1}}'''
+** Factor Excellent: '''{{%|1.2}}'''
+** Factor Masterwork: '''{{%|1.5}}'''
+** Factor Legendary: '''{{%|1.8}}'''
+** Apply To Negative Values: '''{{Good|true}}'''
+* '''Parts:'''
+** StatPart_Stuff:
+*** Priority: '''100
+*** '''Stuff Power Stat: '''StuffPower_Insulation_Heat
+*** '''Multiplier Stat: '''StuffEffectMultiplierInsulation_Heat
+| 89
+<!--</StatDef>-->
+|- id="Shield Max Energy" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />EnergyShieldEnergyMax
+* '''Label:'''<br />Shield max energy
+| The maximum energy a shield can have at one time.<br id="n" /><br id="n" />More energy absorbs more damage.
+|
+* Display Order:<br />'''30'''
+* Def Name:<br />'''Apparel'''
+* Label:<br />'''Apparel'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Min Value:''' {{%|0}}
+* '''To String Style:''' PercentZero
+* '''Show If Undefined:''' {{Bad|false}}
+|
+* '''Parts:'''
+** '''StatPart_Quality:'''
+*** Factor Awful: '''{{Bad|{{%|0.6}}}}'''
+*** Factor Poor: '''{{Bad|{{%|0.8}}}}'''
+*** Factor Normal: '''{{%|1}}'''
+*** Factor Good: '''{{Good|{{%|1.2}}}}'''
+*** Factor Excellent: '''{{Good|{{%|1.4}}}}'''
+*** Factor Masterwork: '''{{Good|{{%|1.7}}}}'''
+*** Factor Legendary: '''{{Good|{{%|2.1}}}}'''
+| 70
+<!--</StatDef>-->
+|- id="Shield Recharge Rate" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />EnergyShieldRechargeRate
+* '''Label:'''<br />Shield recharge rate
+| The rate at which a shield gains energy as long as it is not broken.
+|
+* Display Order:<br />'''30'''
+* Def Name:<br />'''Apparel'''
+* Label:<br />'''Apparel'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Min Value:''' {{%|0}}
+* '''Default Base Value:''' {{%|0.45}}
+* '''To String Style:''' PercentZero
+* '''Format String:''' {0}/s
+* '''Show If Undefined:''' {{Bad|false}}
+|
+* '''Parts:'''
+** '''StatPart_Quality:'''
+*** Factor Awful: '''{{Bad|{{%|0.9}}}}'''
+*** Factor Poor: '''{{Bad|{{%|0.95}}}}'''
+*** Factor Normal: '''{{%|1}}'''
+*** Factor Good: '''{{Good|{{%|1.05}}}}'''
+*** Factor Excellent: '''{{Good|{{%|1.1}}}}'''
+*** Factor Masterwork: '''{{Good|{{%|1.2}}}}'''
+*** Factor Legendary: '''{{Good|{{%|1.3}}}}'''
+| 69
+<!--</StatDef>-->
+|- id="Effect Radius" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />PackRadius
+* '''Label:'''<br />Effect radius
+| The area affected when this pack detonates.
+|
+* Display Order:<br />'''30'''
+* Def Name:<br />'''Apparel'''
+* Label:<br />'''Apparel'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Min Value:''' {{%|0}}
+* '''To String Style:''' FloatOne
+* '''Format String:''' {0} c
+* '''Show If Undefined:''' {{Bad|false}}
+|
+* '''Parts:'''
+** '''StatPart_Quality:'''
+*** Factor Awful: '''{{Bad|{{%|0.84}}}}'''
+*** Factor Poor: '''{{Bad|{{%|0.92}}}}'''
+*** Factor Normal: '''{{%|1}}'''
+*** Factor Good: '''{{Good|{{%|1.08}}}}'''
+*** Factor Excellent: '''{{Good|{{%|1.16}}}}'''
+*** Factor Masterwork: '''{{Good|{{%|1.3}}}}'''
+*** Factor Legendary: '''{{Good|{{%|1.5}}}}'''
+| 60
+<!--</StatDef>-->
+|- id="Equip Delay" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />EquipDelay
+* '''Label:'''<br />equip delay
+| The time it takes to equip and unequip this item.
+|
+* Display Order:<br />'''30'''
+* Def Name:<br />'''Apparel'''
+* Label:<br />'''Apparel'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0}}
+* '''To String Style:''' FloatMaxOne
+* '''Format String:''' {0} s
+* '''Show On Pawns:''' {{Bad|false}}
+| -
+| 50
+<!--</StatDef>-->
+<!--</Defs>--></div>
+<noinclude>
+|}</noinclude>

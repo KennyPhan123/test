@@ -1,0 +1,77 @@
+{{Infobox main|resource
+| name = High-explosive shell
+| image = Shell highexplosive c.png
+| description = A shell filled with high explosives. Can be fired from mortars or installed as a trap. Explodes when damaged.
+| type = Crafted resources
+| type2 = Mortar shell
+| tech level = Industrial
+| path cost = 14
+| stack limit = 25
+| beauty = 
+| flammability = 1.0
+| marketvalue = 55
+| mass base = 1.25
+| hp = 60
+| deterioration = 1.5
+| damage = 50
+| damage type = Bomb
+| armorPenetration = 10
+| stoppingPower = 0.5
+| velocity = 41
+| blastRadius = 2.9
+| skill 1 = Crafting
+| skill 1 level = 4
+| work to make = 800
+| production facility 1 = Machining table
+| research = Mortars
+| resource 1 = Steel
+| resource 1 amount = 15
+| resource 2 = Chemfuel
+| resource 2 amount = 15
+| defName = Shell_HighExplosive
+| thingCategories = MortarShells
+| tradeTags = MortarShell
+| page verified for version = 1.3.3066
+}}
+The '''high-explosive shell''' is the most common kind of [[mortar shell]], that deals 50 damage in a 3-tile radius upon exploding.
+
+== Acquisition ==
+{{Acquisition}} The steel cost is increased to 25 if the [[Classic mortars]] difficulty option is enabled.
+
+They can also be purchased from [[traders]].
+
+Finally, [[siege]] raids will have high-explosive shells drop podded to them, and if unused by the raid, can be taken by the player.
+
+== Summary ==
+[[File:High-explosive shell radius.png|thumb|250px|left|White, the radius of the shell's AoE when fired or when a single shell cooks off. Gold, radius when an entire stack cooks off.]]
+When fired from a mortar, {{lc:{{P|Name}}}}s deal {{P|Damage Base}} [[Damage types#{{P|Damage Type}}|{{P|Damage Type}}]] damage in a {{P|Blast Radius}} tile radius.
+
+When damaged beyond 70% of its health, it will explode after between {{ticks|30}} and {{ticks|60}}, dealing 50 [[Damage Type#Bomb|Bomb]] damage in a radius around itself. The radius depends on the quantity in the stack, with a single shell covering a 2.9 tile radius, and expanding this radius proportional to the square root of the stack size times 0.4 up to a maximum radius of {{#expr: 2.9+((24*0.4)^0.5) round 2}} tiles at a full stack of 25.
+
+== Usage ==
+High-explosive shells can be used in the following recipes:
+{{Ingredient List|noCollapse=true}}
+
+== Analysis ==
+High-explosive is the standard shell for [[mortar]]s, dealing high damage to any target with a decent blast radius. Mortars in general are quite resource-intensive, so it's best to wait until mid-game until beginning the use of mortars. Given the mortar's inaccuracy, it's best to have a battery of mortars firing at once to deal heavy damage to the enemy.
+
+Mortars are most useful against stationary targets, such as [[siege]]s, [[crashed ship parts]], and [[mech cluster]]s.{{RoyaltyIcon}} They are good at dealing with sieges in particular, as enemy mortars can and will deal large amounts of infrastructural damage to any base not under [[overhead mountain]], enemies are often dense and relatively stationary, enemy mortars and shells are present to provide secondary explosions, and dealing enough damage to a siege will provoke it to cease bombardment and attack directly.
+
+=== Storage ===
+As with all explosive items, these should be stored in separate storage containers. For maximum protection, put each stack of shells in a separate 1x1 stone box to prevent chain reactions. Pawns currently in a tantrum should be stopped at all costs, whether it be by arresting, creating another stockpile zone with a higher priority than the shell zone and prioritizing hauling the shells, or simply by shooting the pawn.
+
+== Gallery ==
+<gallery>
+Shell highexplosive a.png|One high-explosive shell
+Shell highexplosive b.png|Partial stack
+Shell highexplosive c.png|Full stack
+ShellHighExplosive.png|Projectile
+</gallery>
+
+== Version history ==
+* [[Version/0.18.1722|0.18.1722]] - Added to replace mortar type system.
+* 1.1 - Crafting cost was increased (20 --> 25 steel, 10 --> 15 chemfuel).
+* [[Version/1.3.3066|1.3.3066]] - Steel requirement decreased from 25 -> 15 unless Classic Mortar difficulty option enabled.
+
+{{Nav|security|wide}}
+[[Category: Mortar shells]]

@@ -1,0 +1,59 @@
+{{Stub|reason=1) Two-way links}}
+{{See also|Insulation - Heat - Material Effect Multiplier}}
+{{Verified|1.5.4104}}{{Stat
+| def name = StuffEffectMultiplierInsulation_Cold
+| label = Insulation - Cold - Material effect multiplier
+| description = -
+| default base value = 0
+| min value = 0
+| category = Apparel
+| display priority in category = 2
+| always hide = true
+}}
+
+It is the base value for an item of [[apparel]]. This is multiplied by the [[Stuff]]'s [[Property:Insulation - Cold Factor|Insulation - Cold Factor]] to get the final [[Insulation - Cold]] rating.
+
+== Bases ==
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_01}}
+! [[Apparel]] !! Category !! [[Property:Insulation Factor - Cold|Insulation<br />Factor -<br />Cold]]
+|-
+{{#ask:
+[[Insulation Factor - Cold::+]]
+| ?Type2
+| ?Insulation Factor - Cold
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Name
+| limit = 100
+}}
+|}
+</li><div>
+
+== Stat Def Data ==
+{| {{STDT| c_01}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Insulation - Cold - Material Effect Multiplier" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />StuffEffectMultiplierInsulation_Cold
+* '''Label:'''<br />Insulation - Cold - Material effect multiplier
+| -
+|
+* Display Order:<br />'''30'''
+* Def Name:<br />'''Apparel'''
+* Label:<br />'''Apparel'''
+* Display All By Default:<br />{{Bad|false}}
+|
+* '''Default Base Value:''' 0
+* '''Min Value:''' 0
+* '''Always Hide:''' {{Good|true}}
+| -
+| 2
+<!--</StatDef>-->
+|}
+
+== Version history ==
+{{Stub|section=1|reason=General}}
+
+{{nav|stats|wide}}

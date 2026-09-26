@@ -1,0 +1,1589 @@
+{{Odyssey}}
+[[File:LandmarkExpanding.png|thumb|right|World Icon]]
+
+'''Landmarks''' are special named generated tiles on the world map that come with features that modify or add to the map when settled. The features may include natural landforms such as lakes, fjords, and atolls, or artificial structures such as abandoned colonies, ancient garrisons, and city ruins. Some features may also be modifiers rather than placed structures, such as higher fertility, fogginess, or higher levels of pollution. Most features can be found in any biome.
+
+== Landmark-defining features ==
+Every landmark is associated with a specific feature, or in some cases a set of features. Optionally landmarks can have additional features which can also be found on non-landmark tiles. Features of both types can be searched for with the Search tool, but it only shows results for landmark tiles, settlements and quest sites. Landmark-defining features do not occur on non-landmark tiles.
+
+Landmark-defining features can be combined under some conditions. The primary feature determines the name of the landmark and the way it is drawn on the world map. For example a landmark with the cliffs and lake features will be displayed as a cliffs tile with a cliffs-related name. The primary feature also defines the likelihood of specific additional features to occur. Using the same example, there is no chance of an increased fish feature, which is possible with a lake landmark, because cliffs don't have it.
+
+=== Comparison table ===
+<div><li style="display: inline-table;">
+Click to <div class="mw-collapsible">
+<div class="mw-collapsible-content">
+{| {{STDT| sortable c_09 text-valign:top}}
+|-
+! Name
+! Description
+! <abbr title="Flat">Fl</abbr>
+! <abbr title="Small hills">SH</abbr>
+! <abbr title="Large hills">LH</abbr>
+! <abbr title="Mountainous">Mt</abbr>
+! Secondary features
+|-
+! Basin
+[[File:Basin in temperate forest.jpg|64px]]
+| ''A natural depression in a mountain range, in which groundwater feeds a small lake.''
+| {{Cross}}
+| {{Cross}}
+| {{Cross}}
+| {{Check}}
+| rare: [[#Wetland|wetland]]
+|-
+! Cavern
+[[File:Cavern in desert.jpg|64px]]
+| ''A network of caves formed by various geological processes.''
+----
+* Always present on ancient quarry landmarks.
+* Siege type raids never occur on this kind of map.
+| {{Cross}} || {{Cross}} || {{Cross}} || {{Check}}
+| frequent: [[#Bay|bay]]
+rare: [[#Pond|pond]], [[#Lake|lake]], [[#Lake with island|lake with island]], [[#Wetland|wetland]]
+|-
+! Chasm
+[[File:Chasm in desert.jpg|64px]]
+|''Geological movement has caused deep fissures in this mountain.''
+| {{Cross}} || {{Cross}} || {{Cross}} || {{Check}}
+| frequent: [[#Bay|bay]]
+rare: [[#Pond|pond]], [[#Lake|lake]], [[#Lake with island|lake with island]], [[#Wetland|wetland]]
+|-
+! Cliffs
+[[File:Cliffs.png|64px]]
+|''Steep cliffs surround three sides of this area.''
+| {{Cross}} || {{Cross}} || {{Cross}} || {{Check}}
+| rare: [[#Pond|pond]], [[#Lake|lake]], [[#Lake with island|lake with island]], [[#Wetland|wetland]]
+|-
+! Crevasse
+[[File:Crevasse.png|64px]]
+|''A massive rift created by glacial movement.''
+----
+* The only type of caves found in crevasses is ice caves.
+| {{Check}} || {{Cross}} || {{Cross}} || {{Cross}}
+| 
+|-
+! Dunes
+[[File:Dunes.png|64px]]
+|''A barren expanse of sand. This area is extremely inhospitable.''
+----
+* No geysers
+* No soil for farming and no plants. The ground is made of sand and soft sand.
+* Nothing to mine, but there are stone chunks on the ground.
+| {{Check}} || {{Cross}} || {{Cross}} || {{Cross}}
+| 
+|-
+! Hollow
+[[File:Hollow in desert.jpg|64px]]
+|''A small open area surrounded by cliffs.''
+| {{Cross}} || {{Cross}} || {{Cross}} || {{Check}}
+| occasional: [[#Oasis|oasis]]
+rare: [[#Wetland|wetland]], [[#Pond|pond]]
+|-
+! Ice dunes
+[[File:Ice Dunes.png|64px]]
+|''Massive rolling hills made from compacted windswept snow.''
+| {{Check}} || {{Cross}} || {{Cross}} || {{Cross}}
+| 
+|-
+! Lava flow
+[[File:Lava Flow.png|64px]]
+|''The surrounding landscape routinely funnels large amounts of lava into this area, making it extremely inhospitable.''
+| {{Cross}} || {{Check}} || {{Cross}} || {{Cross}}
+| 
+|-
+! Lava lake
+[[File:Lava Lake.png|64px]]
+|''A lake of deep lava terrain surrounded by volcanic rock.''
+| {{Check}} || {{Check}} || {{Check}} || {{Check}}
+| 
+|-
+! Plateau
+[[File:Plateau.png|64px]]
+|''A small rise with sharp cliffs and a flat top.''
+| {{Cross}} || {{Cross}} || {{Cross}} || {{Check}}
+| rare: [[#Wetland|wetland]], [[#Pond|pond]]
+|-
+! Terraforming scar
+[[File:Terraforming Scar.png|64px]]
+|''A misaligned blast from an ancient terraforming device has warped the earth into serpentine spirals. The area has since recovered, though the twisted and deformed hills remain.''
+| {{Cross}} || {{Cross}} || {{Check}} || {{Cross}}
+| rare: [[#Pond|pond]]
+|-
+! Valley
+[[File:Valley in desert.jpg|64px]]
+|''A steep valley carved through a mountain.''
+| {{Cross}} || {{Cross}} || {{Cross}} || {{Check}}
+| rare: [[#Pond|pond]], [[#Lake|lake]], [[#Lake with island|lake with island]], [[#Bay|bay]], [[#Wetland|wetland]]
+|-
+! Archipelago
+[[File:Archipelago.png|64px]]
+|''A network of several small islands dotting the coast.''
+| {{Check}} || {{Check}} || {{Check}} || {{Check}}
+| 
+|-
+! Bay
+[[File:Bay.png|64px]]
+|''A large indentation in the coastline that provides shelter from strong coastal winds.''
+----
+* Always present on harbor landmarks
+| {{Check}} || {{Check}} || {{Check}} || {{Check}}
+| 
+|-
+! Coastal atoll
+[[File:Coastal Atoll.png|64px]]
+|''An island surrounding a large lagoon. There's very little land to build on here.''
+| {{Check}} || {{Check}} || {{Cross}} || {{Cross}}
+| 
+|-
+! Coastal island
+[[File:Coastal island in arid shrubland.jpg|64px]]
+|''A large island near the shore.''
+| {{Check}} || {{Check}} || {{Check}} || {{Check}}
+| 
+|-
+! Fjord
+[[File:Fjord.png|64px]]
+|''A long, narrow sea inlet surrounded by steep terrain.''
+| {{Cross}} || {{Cross}} || {{Cross}} || {{Check}}
+| 
+|-
+! Peninsula
+[[File:Peninsula.png|64px]]
+|''An outcropping of land surrounded by ocean.''
+| {{Check}} || {{Check}} || {{Check}} || {{Check}}
+| 
+|-
+! Iceberg
+[[File:Iceberg.png|64px]]
+|''A floating mass of ice, detached from the larger ice sheet.''
+----
+* Average temperature always below freezing. 
+* No geysers, even when there is coastal land on the map.
+| {{Check}} || {{Check}} || {{Check}} || {{Check}}
+| 
+|-
+! Dry lake
+[[File:Dry Lake.png|64px]]
+|''The remains of a former lake.''
+| {{Check}} || {{Check}} || {{Check}} || {{Check}}
+| 
+|-
+! Hot springs
+[[File:Hot Springs.png|64px]]
+|''A hot water spring, heated by geothermal activity.''
+| {{Cross}} || {{Cross}} || {{Cross}} || {{Check}}
+| occasional: [[#Valley|valley]], [[#Cavern|cavern]], [[#Chasm|chasm]], [[#Terraforming scar|terraforming scar]]
+rare: [[#Wetland|wetland]]
+|-
+! Lake
+[[File:Lake.png|64px]]
+|''A large body of fresh water.''
+| {{Check}} || {{Check}} || {{Check}} || {{Check}}
+| rare: [[#Wetland|wetland]]
+|-
+! Lake with island
+[[File:Lake with island in temperate forest.jpg|64px]]
+|''A large body of fresh water encircles one or more islands.''
+| {{Check}} || {{Check}} || {{Check}} || {{Check}}
+| rare: [[#Wetland|wetland]]
+|-
+! Oasis
+[[File:Oasis in extreme desert.jpg|64px]]
+|''A lush spring featuring abundant plant life and water.''
+| {{Check}} || {{Check}} || {{Check}} || {{Check}}
+| 
+|-
+! Pond
+[[File:Pond.png|64px]]
+|''A small body of fresh water.''
+| {{Check}} || {{Check}} || {{Check}} || {{Check}}
+| rare: [[#Wetland|wetland]]
+|-
+! Toxic lake
+[[File:Toxic Lake.png|64px]]
+|''A body of water that has been poisoned by chemicals leaching out of the ground. The water will cause toxic buildup.''
+| {{Check}} || {{Check}} || {{Check}} || {{Check}}
+| 
+|-
+! Wetland
+[[File:Wetland in tropical rainforest.jpg|64px]]
+|''Large interconnected waterways dominate the area.''
+| {{Check}} || {{Check}} || {{Check}} || {{Check}}
+| 
+|-
+! Ancient chemfuel refinery
+[[File:Ancient chemfuel refinery in tundra.png|64px]]
+|''An abandoned industrial installation containing large quantities of chemfuel. It may also contain dangerous security systems.''
+| {{Check}} || {{Check}} || {{Check}} || {{Check}}
+| rare: [[#Hot springs|hot springs]], [[#Ancient smoke vent|ancient smoke vent]], [[#Ancient toxic vent|ancient toxic vent]], [[#Ancient heat vent|ancient heat vent]]
+|-
+! Ancient garrison
+[[File:Ancient garrison in temperate forest (no fog).jpg|64px]]
+|''A long-abandoned military structure. It may still contain valuable items, as well as active security systems. Use caution while exploring these ruins.''
+| {{Check}} || {{Check}} || {{Check}} || {{Check}}
+| rare: [[#Hot springs|hot springs]], [[#Ancient smoke vent|ancient smoke vent]], [[#Ancient toxic vent|ancient toxic vent]], [[#Ancient heat vent|ancient heat vent]]
+|-
+! Ancient launch site
+[[File:Ancient launch site in boreal forest (no fog).jpg|64px]]
+|''An abandoned collection of launch pads used to deliver supplies to orbital platforms. It contains working transport pods.''
+| {{Check}} || {{Check}} || {{Check}} || {{Check}}
+| rare: [[#Hot springs|hot springs]], [[#Ancient smoke vent|ancient smoke vent]], [[#Ancient toxic vent|ancient toxic vent]], [[#Ancient heat vent|ancient heat vent]]
+|-
+! Ancient warehouse
+[[File:Ancient warehouse in desert (no fog).jpg|64px]]
+|''An abandoned warehouse. It still contains valuables. It may also contain dangerous security systems.''
+| {{Check}} || {{Check}} || {{Check}} || {{Check}}
+| rare: [[#Hot springs|hot springs]], [[#Ancient smoke vent|ancient smoke vent]], [[#Ancient toxic vent|ancient toxic vent]], [[#Ancient heat vent|ancient heat vent]]
+|-
+! Ancient heat vent
+[[File:Ancient heat vent in desert.jpg|64px]]
+|''Ancient ducts will regularly vent heat from an underground megastructure, dramatically raising the temperature of the surrounding area.''
+| {{Check}} || {{Check}} || {{Check}} || {{Check}}
+| 
+|-
+! Ancient smoke vent
+[[File:Ancient smoke vent in boreal forest.jpg|64px]]
+|''This area has a number of massive exhaust vents. An ancient mechanism buried deep beneath the earth will occasionally vent large amounts of smoke, blocking out the sun for days at a time.''
+| {{Check}} || {{Check}} || {{Check}} || {{Check}}
+| 
+|-
+! Ancient toxic vent
+[[File:Ancient toxic vent in desert.jpg|64px]]
+|''Massive toxic vents will regularly spew toxic fallout into the air. The vents connect to an ancient substructure buried deep beneath the earth.''
+| {{Check}} || {{Check}} || {{Check}} || {{Check}}
+| 
+|-
+! Ancient quarry
+[[File:Ancient quarry in tundra.jpg|64px]]
+|''This area was once mined for its natural resources, and the remains of the ancient quarry are still here.''
+----
+* always has the ore-rich additional feature as a landmark, but not as a secondary feature
+| {{Cross}} || {{Cross}} || {{Cross}} || {{Check}}
+| always: [[#Cavern|cavern]]
+rare: [[#Hot springs|hot springs]], [[#Ancient smoke vent|ancient smoke vent]], [[#Ancient toxic vent|ancient toxic vent]], [[#Ancient heat vent|ancient heat vent]]
+|-
+! Harbor
+[[File:Harbor.png|64px]]
+|''An abandoned coastal settlement.''
+| {{Check}} || {{Check}} || {{Check}} || {{Check}}
+| always: [[#Bay|bay]]
+|-
+! Ruins
+[[File:Ruins in grassland (no fog).jpg|64px]]
+|''The remains of an ancient settlement. These ruins may contain a wide variety of possible threats.''
+| {{Check}} || {{Check}} || {{Check}} || {{Check}}
+| rare: [[#Pond|pond]], [[#Lake|lake]], [[#Lake with island|lake with island]], [[#Hot springs|hot springs]], [[#Ancient smoke vent|ancient smoke vent]], [[#Ancient toxic vent|ancient toxic vent]], [[#Ancient heat vent|ancient heat vent]]
+|-
+! Frozen ruins
+[[File:Frozen Ruins.png|64px]]
+|''The ruins of an ancient settlement, now encased in solid ice. These ruins may contain untold dangers.''
+| {{Check}} || {{Check}} || {{Check}} || {{Check}}
+| rare: [[#Pond|pond]], [[#Lake|lake]], [[#Lake with island|lake with island]], [[#Hot springs|hot springs]], [[#Ancient smoke vent|ancient smoke vent]], [[#Ancient toxic vent|ancient toxic vent]], [[#Ancient heat vent|ancient heat vent]]
+|-
+! Abandoned colony
+[[File:Abondoned colony in tropical swamp.png|64px]]
+|''A recently abandoned colony.''
+| {{Check}} || {{Check}} || {{Check}} || {{Check}}
+| occasional: [[#Bay|bay]], [[#Valley|valley]], [[#Cavern|cavern]], [[#Chasm|chasm]]
+rare: [[#Plateau|plateau]], [[#Pond|pond]], [[#Lake|lake]], [[#Lake with island|lake with island]], [[#Hot springs|hot springs]], [[#Ancient smoke vent|ancient smoke vent]], [[#Ancient toxic vent|ancient toxic vent]], [[#Ancient heat vent|ancient heat vent]]
+|-
+! Infested settlement
+[[File:Infested settlement in arid shrubland.png|64px]]
+|''A once-prosperous settlement that was destroyed by an insect infestation. It may still contain valuable resources.''
+----
+* contains dormant insect hives guarded by insects.
+| {{Check}} || {{Check}} || {{Check}} || {{Check}}
+| rare: [[#Hot springs|hot springs]], [[#Ancient smoke vent|ancient smoke vent]], [[#Ancient toxic vent|ancient toxic vent]], [[#Ancient heat vent|ancient heat vent]]
+|}
+</div>
+</div>
+</li></div>
+
+=== Biome compatibility ===
+<div><li style="display: inline-table;">
+Click to <div class="mw-collapsible">
+<div class="mw-collapsible-content">
+{| {{STDT| sortable c_09 }}
+|-
+! Name
+! <abbr title="Temperate Forest">TF</abbr>
+! <abbr title="Temperate Swamp">TS</abbr>
+! <abbr title="Tropical Rainforest">TrR</abbr>
+! <abbr title="Tropical Swamp">TrS</abbr>
+
+! <abbr title="Arid Shrubland">AS</abbr>
+! <abbr title="Desert">D</abbr>
+! <abbr title="Extreme Desert">ED</abbr>
+
+! <abbr title="Boreal Forest">BF</abbr>
+! <abbr title="Cold Bog">CB</abbr>
+! <abbr title="Tundra">T</abbr>
+
+! <abbr title="Ice Sheet">ISh</abbr>
+! <abbr title="Sea Ice">SI</abbr>
+
+! <abbr title="Glacial plain">GP</abbr>
+! <abbr title="Glowforest">Gl</abbr>
+! <abbr title="Grassland">Gr</abbr>
+! <abbr title="Lava field">L</abbr>
+! <abbr title="Scarlands">S</abbr>
+|-
+! Basin
+| {{Check}} || {{Check}}
+| {{Check}} || {{Check}}
+| {{Cross}} || {{Cross}} || {{Cross}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Cross}} || {{Cross}}
+| {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}}
+|-
+! Cavern
+| {{Check}} || {{Check}}
+| {{Check}} || {{Check}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Check}} || {{Cross}}
+| {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}}
+|-
+! Chasm
+| {{Check}} || {{Check}}
+| {{Check}} || {{Check}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Check}} || {{Cross}}
+| {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}}
+|-
+! Cliffs
+| {{Check}} || {{Check}}
+| {{Check}} || {{Check}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Check}} || {{Cross}}
+| {{Cross}} || {{Check}} || {{Check}} || {{Check}} || {{Cross}}
+|-
+! Crevasse
+| {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}}
+| {{Check}} || {{Cross}} || {{Cross}} || {{Cross}} || {{Cross}}
+|-
+! Dunes
+| {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}} || {{Check}}
+| {{Cross}} || {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}} || {{Cross}} || {{Cross}} || {{Cross}}
+|-
+! Hollow
+| {{Check}} || {{Check}}
+| {{Check}} || {{Check}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Check}} || {{Cross}}
+| {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}}
+|-
+! Ice Dunes
+| {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}} || {{Cross}}
+| {{Check}} || {{Check}}
+| {{Cross}} || {{Cross}} || {{Cross}} || {{Cross}} || {{Cross}}
+|-
+! Lava flow
+| {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}} || {{Cross}} || {{Check}} || {{Cross}}
+|-
+! Lava lake
+| {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}} || {{Cross}} || {{Check}} || {{Cross}}
+|-
+! Plateau
+| {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}}
+| {{Check}} || {{Check}} || {{Cross}}
+| {{Cross}} || {{Cross}} || {{Check}}
+| {{Cross}} || {{Cross}}
+| {{Cross}} || {{Check}} || {{Check}} || {{Cross}} || {{Cross}}
+|-
+! Terraforming scar
+| {{Check}} || {{Check}}
+| {{Check}} || {{Check}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Cross}} || {{Cross}}
+| {{Cross}} || {{Check}} || {{Check}} || {{Check}} || {{Check}}
+|-
+! Valley
+| {{Check}} || {{Check}}
+| {{Check}} || {{Check}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Check}} || {{Cross}}
+| {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}}
+|-
+! Archipelago
+| {{Check}} || {{Check}}
+| {{Check}} || {{Check}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Cross}} || {{Cross}}
+| {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}}
+|-
+! Bay
+| {{Check}} || {{Check}}
+| {{Check}} || {{Check}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Cross}} || {{Cross}}
+| {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}}
+|-
+! Coastal atoll
+| {{Check}} || {{Cross}}
+| {{Check}} || {{Cross}}
+| {{Check}} || {{Check}} || {{Cross}}
+| {{Cross}} || {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}} || {{Check}} || {{Cross}} || {{Cross}}
+|-
+! Coastal island
+| {{Check}} || {{Check}}
+| {{Check}} || {{Check}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Cross}} || {{Cross}}
+| {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}}
+|-
+! Fjord
+| {{Check}} || {{Check}}
+| {{Check}} || {{Check}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Cross}} || {{Cross}}
+| {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}}
+|-
+! Peninsula
+| {{Check}} || {{Check}}
+| {{Check}} || {{Check}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Cross}} || {{Cross}}
+| {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}}
+|-
+! Iceberg
+| {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}} || {{Cross}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Check}} || {{Check}}
+| {{Cross}} || {{Cross}} || {{Cross}} || {{Cross}} || {{Cross}}
+|-
+! Dry lake
+| {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Cross}} || {{Cross}} || {{Check}}
+| {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}} || {{Check}} || {{Cross}} || {{Cross}}
+|-
+! Hot springs
+| {{Check}} || {{Cross}}
+| {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}} || {{Cross}}
+| {{Check}} || {{Cross}} || {{Check}}
+| {{Cross}} || {{Cross}}
+| {{Check}} || {{Cross}} || {{Cross}} || {{Check}} || {{Cross}}
+|-
+! Lake
+| {{Check}} || {{Cross}}
+| {{Check}} || {{Cross}}
+| {{Cross}} || {{Cross}} || {{Cross}}
+| {{Check}} || {{Cross}} || {{Check}}
+| {{Cross}} || {{Cross}}
+| {{Check}} || {{Check}} || {{Check}} || {{Cross}} || {{Cross}}
+|-
+! Lake with island
+| {{Check}} || {{Cross}}
+| {{Check}} || {{Cross}}
+| {{Cross}} || {{Cross}} || {{Cross}}
+| {{Check}} || {{Cross}} || {{Check}}
+| {{Cross}} || {{Cross}}
+| {{Check}} || {{Check}} || {{Check}} || {{Cross}} || {{Cross}}
+|-
+! Oasis
+| {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}}
+| {{Cross}} || {{Check}} || {{Check}}
+| {{Cross}} || {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}} || {{Cross}} || {{Cross}} || {{Cross}}
+|-
+! Pond
+| {{Check}} || {{Cross}}
+| {{Check}} || {{Cross}}
+| {{Check}} || {{Cross}} || {{Cross}}
+| {{Check}} || {{Cross}} || {{Check}}
+| {{Cross}} || {{Cross}}
+| {{Check}} || {{Check}} || {{Check}} || {{Cross}} || {{Cross}}
+|-
+! Toxic lake
+| {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}}
+| {{Cross}} || {{Check}} || {{Cross}} || {{Cross}} || {{Check}}
+|-
+! Wetland
+| {{Check}} || {{Check}}
+| {{Check}} || {{Check}}
+| {{Cross}} || {{Cross}} || {{Cross}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Cross}} || {{Cross}}
+| {{Cross}} || {{Check}} || {{Cross}} || {{Cross}} || {{Cross}}
+|-
+! Ancient chemfuel refinery
+| {{Check}} || {{Check}}
+| {{Check}} || {{Check}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Cross}} || {{Cross}}
+| {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}}
+|-
+! Ancient garrison
+| {{Check}} || {{Check}}
+| {{Check}} || {{Check}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Cross}} || {{Cross}}
+| {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}}
+|-
+! Ancient launch site
+| {{Check}} || {{Check}}
+| {{Check}} || {{Check}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Cross}} || {{Cross}}
+| {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}}
+|-
+! Ancient warehouse
+| {{Check}} || {{Check}}
+| {{Check}} || {{Check}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Cross}} || {{Cross}}
+| {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}}
+|-
+! Ancient heat vent
+| {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Cross}} || {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}} || {{Cross}} || {{Cross}} || {{Cross}}
+|-
+! Ancient smoke vent
+| {{Check}} || {{Cross}}
+| {{Check}} || {{Cross}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Check}} || {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}} || {{Check}} || {{Cross}} || {{Check}}
+|-
+! Ancient toxic vent
+| {{Check}} || {{Cross}}
+| {{Check}} || {{Cross}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Check}} || {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}} || {{Check}} || {{Cross}} || {{Check}}
+|-
+! Ancient quarry
+| {{Check}} || {{Check}}
+| {{Check}} || {{Check}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Check}} || {{Cross}}
+| {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}}
+|-
+! Harbor
+| {{Check}} || {{Check}}
+| {{Check}} || {{Check}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Cross}} || {{Cross}}
+| {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Cross}}
+|-
+! Ruins
+| {{Check}} || {{Check}}
+| {{Check}} || {{Check}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Cross}} || {{Cross}}
+| {{Cross}} || {{Check}} || {{Check}} || {{Check}} || {{Check}}
+|-
+! Frozen ruins
+| {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}} || {{Cross}}
+| {{Cross}} || {{Cross}} || {{Cross}}
+| {{Check}} || {{Cross}}
+| {{Check}} || {{Cross}} || {{Cross}} || {{Cross}} || {{Cross}}
+|-
+! Abandoned colony
+| {{Check}} || {{Check}}
+| {{Check}} || {{Check}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Cross}} || {{Cross}}
+| {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Cross}}
+|-
+! Infested settlement
+| {{Check}} || {{Check}}
+| {{Check}} || {{Check}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Check}} || {{Check}} || {{Check}}
+| {{Cross}} || {{Cross}}
+| {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}}
+|}
+</div>
+</div>
+</li></div>
+
+=== Geographic features ===
+==== Basin ====
+[[File:Basin in temperate forest.jpg|thumb|Basin feature]]
+''A natural depression in a mountain range, in which groundwater feeds a small lake.''
+
+Basins are found exclusively on mountainous terrain, in the [[temperate forest]], [[temperate swamp]], [[tropical rainforest]], [[tropical swamp]], [[boreal forest]], [[cold bog]], [[tundra]], [[glacial plain]], [[glowforest]], [[grassland]], [[lava field]] and [[scarlands]] biomes. They are occasionally combined with the wetland or ancient quarry features.
+
+Landmark names: Basin, Alpine Lake
+<div style="clear: both"></div>
+
+==== Cavern ====
+[[File:Cavern in desert.jpg|thumb|Cavern feature in a desert biome]]
+''A network of caves formed by various geological processes.''
+
+Caverns are found exclusively on mountainous terrain. They are occasionally combined with the bay, pond, lake, lake with island or wetland features. They can also appear on a hot springs or an abandoned colony landmark, and are always present on an ancient quarry landmark.
+
+Siege raids will not happen on a cavern tile.
+
+Landmark names: Cavern, Tunnel, Cave Network, Caverns, <person>'s Caves
+<div style="clear: both"></div>
+
+==== Chasm ====
+[[File:Chasm in desert.jpg|thumb|Chasm feature in a desert biome]]
+''Geological movement has caused deep fissures in this mountain.''
+
+Chasms are found exclusively on mountainous terrain. They are occasionally combined with the bay, pond, lake, lake with island or wetland features and can also appear on a hot spring or abandoned colony landmark.
+
+Landmark names: Chasm, Sinkhole, Fracture
+<div style="clear: both"></div>
+
+==== Cliffs ====
+[[File:Cliffs.png|thumb|Cliffs feature]]
+''Steep cliffs surround three sides of this area.''
+
+Cliffs are found exclusively on mountainous terrain, in the [[temperate forest]], [[temperate swamp]], [[tropical rainforest]], [[tropical swamp]], [[arid shrubland]], [[desert]], [[extreme desert]], [[boreal forest]], [[cold bog]], [[tundra]], [[ice sheet]], [[glowforest]], [[grassland]] and [[lava field]] biomes. They are occasionally combined with the pond, lake, lake with island or wetland features.
+
+Landmark names: Cliffs, Rampart, Wall, <person>'s End
+<div style="clear: both"></div>
+
+==== Crevasse ====
+[[File:Crevasse.png|thumb|Crevasse feature]]
+''A massive rift created by glacial movement.''
+
+Crevasses are found exclusively on flat terrain, in the [[glacial plain]] biome. They are not combined with other landmark features. The only type of caves found in crevasses is ice caves.
+
+Landmark names: Crevasse, Break, Fissure
+<div style="clear: both"></div>
+
+==== Dunes ====
+[[File:Dunes.png|thumb|Dunes feature]]
+''A barren expanse of sand. This area is extremely inhospitable.''
+
+Dunes are found exclusively on flat terrain, in the [[extreme desert]] biome. They do not combine with other landmark features. 
+
+Dunes are the extreme version of extreme desert. The ground is made of sand and soft sand, with no soil for farming and no plants. There are no geysers and nothing to mine, although there are stone chunks on the ground.
+
+Landmark names: Dunes, Wastes
+<div style="clear: both"></div>
+
+==== Hollow ====
+[[File:Hollow in desert.jpg|thumb|Hollow feature in a desert biome]]
+''A small open area surrounded by cliffs.''
+
+Hollows are found exclusively on mountainous terrain. They are occasionally combined with the wetland, pond or oasis features.
+
+Landmark names: Hollow, <person>'s Hideout
+<div style="clear: both"></div>
+
+==== Ice dunes ====
+[[File:Ice Dunes.png|thumb|Ice dunes feature]]
+''Massive rolling hills made from compacted windswept snow.''
+
+Ice dunes are found exclusively on flat terrain, in the [[ice sheet]] and [[sea ice]] biomes. They do not combine with other landmark features.
+
+Landmark names: Ice Dunes, Ice Mounds, Frozen Hills
+<div style="clear: both"></div>
+
+==== Lava flow ====
+[[File:Lava Flow.png|thumb|Lava flow feature]]
+''The surrounding landscape routinely funnels large amounts of lava into this area, making it extremely inhospitable.''
+
+Lava flows are found on small hills terrain, in the [[lava field]] biome. They do not combine with other landmark features.
+
+Landmark names: Volcanic Flow, Lava Flow, <person>'s Hellscape, <person>'s Inferno
+<div style="clear: both"></div>
+
+==== Lava lake ====
+[[File:Lava Lake.png|thumb|Lava lake feature]]
+''A lake of deep lava terrain surrounded by volcanic rock.''
+
+Lava lakes are found in the [[lava field]] biome. They do not combine with other landmark features.
+
+Landmark names: Crater, Furnace, Inferno, Lava Pool
+<div style="clear: both"></div>
+
+==== Plateau ====
+[[File:Plateau.png|thumb|Plateau feature]]
+''A small rise with sharp cliffs and a flat top.''
+
+Plateaus are found on mountainous terrain, in the [[arid shrubland]], [[desert]], [[tundra]], [[grassland]] and [[glowforest]] biomes. They occasionally combine with the wetland or pond features and can also appear on an abandoned colony landmark.
+
+Landmark names: Plateau, Mesa, Mountain, Rise, Butte
+<div style="clear: both"></div>
+
+==== Terraforming scar ====
+[[File:Terraforming Scar.png|thumb|Terraforming scar feature]]
+''A misaligned blast from an ancient terraforming device has warped the earth into serpentine spirals. The area has since recovered, though the twisted and deformed hills remain.''
+
+Terraforming scars are found on large hills terrain, in the [[temperate forest]], [[temperate swamp]], [[tropical rainforest]], [[tropical swamp]], [[arid shrubland]], [[desert]], [[extreme desert]], [[boreal forest]], [[cold bog]], [[tundra]], [[glowforest]], [[grassland]], [[lava field]] and [[scarlands]] biomes. They occasionally combine with the pond feature and can appear on a hot spring landmark. In addition, due to the formation, terraforming scars tend to reveal more ore veins than regular mountain generation.
+
+Landmark names: Scar, Rift, Sundering, Wound, Fault, Howl, <person>'s Mistake, <person>'s Folly, <person>'s Delusion, <person>'s Flaw
+<div style="clear: both"></div>
+
+==== Valley ====
+[[File:Valley in desert.jpg|thumb|Valley feature in a desert biome]]
+''A steep valley carved through a mountain.''
+
+Valleys are found on mountainous terrain. They occasionally combine with the pond, lake, lake with island, bay or wetland features and can appear on hot springs or abandoned colony landmarks.
+
+Landmark names: Valley, Gully, Canyon, Vale, Ravine, Gorge, Gulch, Divide
+<div style="clear: both"></div>
+
+=== Coastal features ===
+Coastal features only appear on the shore of oceans, inner seas and lakes. Unlike other coastal tiles, landmarks with these features don't have the coast or lakeshore additional features.
+
+In general coastal features do not combine with other landmark features, with the exception of bays.
+
+==== Archipelago ====
+[[File:Archipelago.png|thumb|Archipelago feature]]
+''A network of several small islands dotting the coast.''
+
+Archipelagos are found in all biomes except sea ice and ice sheet.
+
+Landmark names: Islands, Isles, Archipelago, Reef, Rocks, Islets, Points, Chain, Isle
+<div style="clear: both"></div>
+
+==== Bay ====
+[[File:Bay.png|thumb|Bay feature]]
+''A large indentation in the coastline that provides shelter from strong coastal winds.''
+
+Bays are found in all biomes except sea ice and ice sheet. They are always present on harbor landmarks and can occasionally appear as a secondary landmark feature on valley, cavern, chasm and abandoned colony landmarks.
+
+Landmark names: Bay, Bight, Gulf, Anchorage, Cove
+<div style="clear: both"></div>
+
+==== Coastal atoll ====
+[[File:Coastal Atoll.png|thumb|Coastal atoll feature]]
+''An island surrounding a large lagoon. There's very little land to build on here.''
+
+Coastal atolls are found on flat or small hills terrain in [[temperate forest]], [[tropical rainforest]], [[arid shrubland]], [[desert]] and [[grassland]] biomes.
+
+Landmark names: Atoll, Circle
+<div style="clear: both"></div>
+
+==== Coastal island ====
+[[File:Coastal island in arid shrubland.jpg|thumb|Coastal island feature in an arid shrubland biome]]
+''A large island near the shore.''
+
+Coastal islands are found in all biomes except sea ice and ice sheet.
+
+Landmark names: Island, Isle, Islet
+<div style="clear: both"></div>
+
+==== Fjord ====
+[[File:Fjord.png|thumb|Fjord feature]]
+''A long, narrow sea inlet surrounded by steep terrain.''
+
+Fjords are found on mountainous terrain in all biomes except sea ice and ice sheet.
+
+Landmark names: Fjord, Inlet, Sound
+<div style="clear: both"></div>
+
+==== Peninsula ====
+[[File:Peninsula.png|thumb|Peninsula feature]]
+''An outcropping of land surrounded by ocean.''
+
+Peninsulas are found in all biomes except sea ice and ice sheet.
+
+Landmark names: Peninsula, Point, Cape, Headland, Horn
+<div style="clear: both"></div>
+
+==== Iceberg ====
+[[File:Iceberg.png|thumb|Iceberg feature]]
+''A floating mass of ice, detached from the larger ice sheet.''
+
+Icebergs are found in the [[boreal forest]], [[cold bog]], [[tundra]], [[ice sheet]] and [[sea ice]] biomes.
+
+The average temperature is always below freezing. There are no geysers, even when there is coastal land on the map in addition to the iceberg.
+
+Landmark names: Iceberg, Berg
+<div style="clear: both"></div>
+
+=== Inland water features ===
+==== Dry lake ====
+[[File:Dry Lake.png|thumb|Dry lake feature]]
+''The remains of a former lake.''
+
+Dry lakes can be found in the [[arid shrubland]], [[desert]], [[extreme desert]], [[tundra]] and [[grassland]] biomes. They do not combine with other landmark features.
+
+Landmark names: Dry Lake, Sand Lake, Salt Flat, Barren Lake, Sand Pit
+<div style="clear: both"></div>
+
+==== Hot springs ====
+[[File:Hot Springs.png|thumb|Hot springs feature]]
+''A hot water spring, heated by geothermal activity.''
+
+Hot springs can be found on mountainous terrain in the [[temperate forest]], [[boreal forest]], [[tundra]], [[glacial plain]] and [[lava field]] biomes. They can occasionally be combined with the valley, cavern, chasm or terraforming scar features, more rarely with the wetland feature. They can also rarely appear as a secondary landmark feature on ruins, ancient quarry, abandoned colony and ancient structures landmarks.
+
+Landmark names: Hot Spring, Hot Springs, Spring, Springs, <person>'s Bath
+<div style="clear: both"></div>
+
+==== Lake ====
+[[File:Lake.png|thumb|Lake feature]]
+''A large body of fresh water.''
+
+Lakes can be found in the [[temperate forest]], [[tropical rainforest]], [[boreal forest]], [[tundra]], [[glacial plain]], [[glowforest]] and [[grassland]] biomes. They can rarely be combined with the wetland feature. They can also rarely appear as a secondary landmark feature on valley, cavern, chasm, cliffs, ruins and abandoned colony landmarks.
+
+Landmark names: Lake, Reservoir, Loch
+<div style="clear: both"></div>
+
+==== Lake with island ====
+[[File:Lake with island in temperate forest.jpg|thumb|Lake with island feature in a temperate forest biome]]
+''A large body of fresh water encircles one or more islands.''
+
+Lakes with islands are a variation of the lake feature which spawns in the same conditions.
+
+Landmark names: Lake, Reservoir, Loch
+<div style="clear: both"></div>
+
+==== Oasis ====
+[[File:Oasis in extreme desert.jpg|thumb|Oasis feature in an extreme desert biome]]
+''A lush spring featuring abundant plant life and water.''
+
+Oases can be found in the [[desert]] and [[extreme desert]] biomes. They occasionally appear as a secondary landmark feature on hollow landmarks.
+
+Landmark names: Oasis, Haven, Refuge
+<div style="clear: both"></div>
+
+==== Pond ====
+[[File:Pond.png|thumb|Pond feature]]
+''A small body of fresh water.''
+
+Ponds can be found in the [[temperate forest]], [[tropical rainforest]], [[arid shrubland]], [[boreal forest]], [[tundra]], [[glacial plain]], [[glowforest]] and [[grassland]] biomes. They can rarely be combined with the wetland feature. They can also rarely appear as a secondary landmark feature on valley, cavern, chasm, cliffs, plateau, hollow, terraforming scar, ruins and abandoned colony landmarks.
+
+Landmark names: Pond, Puddle, Pool, Waterhole
+<div style="clear: both"></div>
+
+==== Toxic lake ====
+[[File:Toxic Lake.png|thumb|Toxic lake feature]]
+''A body of water that has been poisoned by chemicals leaching out of the ground. The water will cause toxic buildup.''
+
+Toxic lakes can be found in the [[glowforest]] and [[scarlands]] biomes. They do not combine with other landmark features.
+
+They always have the decreased animal life and increased pollution{{BiotechIcon}} features.
+
+Landmark names: Toxic Lake, Poison Lake, <person>'s Poison, <person>'s Blight, <person>'s Dumping Ground
+<div style="clear: both"></div>
+
+==== Wetland ====
+[[File:Wetland in tropical rainforest.jpg|thumb|Wetland feature in a tropical rainforest biome]]
+''Large interconnected waterways dominate the area.''
+
+Wetlands can be found in the [[temperate forest]], [[temperate swamp]], [[tropical rainforest]], [[tropical swamp]], [[boreal forest]], [[cold bog]], [[tundra]] and [[glowforest]] biomes. They can rarely appear as a secondary landmark feature on valley, cavern, chasm, cliffs, plateau, hollow, basin, hot springs, lake, lake with island and pond landmarks.
+
+Landmark names: Wetlands, Marsh, Quagmire, Bog, Fen
+<div style="clear: both"></div>
+
+=== Man-made structures ===
+==== Ancient chemfuel refinery ====
+[[File:Ancient chemfuel refinery in tundra.png|thumb|Ancient chemfuel refinery feature in a tundra biome]]
+''An abandoned industrial installation containing large quantities of chemfuel. It may also contain dangerous security systems.''
+
+Ancient chemfuel refineries can be found in all biomes except sea ice and ice sheet. They have a low chance of being combined with the hot springs, ancient smoke vent, ancient toxic vent or ancient heat vent features.
+
+Landmark names: Refinery, Plant, Chemplant
+<div style="clear: both"></div>
+
+==== Ancient garrison ====
+[[File:Ancient garrison in temperate forest (no fog).jpg|thumb|Ancient garrison feature in a temperate forest biome]]
+''A long-abandoned military structure. It may still contain valuable items, as well as active security systems. Use caution while exploring these ruins.''
+
+Ancient garrisons can be found in all biomes except sea ice and ice sheet. They have a low chance of being combined with the hot springs, ancient smoke vent, ancient toxic vent or ancient heat vent features.
+
+Landmark names: Garrison, Armory, Station, Base, Fort, Stronghold, Military Base
+<div style="clear: both"></div>
+
+==== Ancient launch site ====
+[[File:Ancient launch site in boreal forest (no fog).jpg|thumb|Ancient launch site feature in a boreal forest biome]]
+''An abandoned collection of launch pads used to deliver supplies to orbital platforms. It contains working transport pods.''
+
+Ancient launch sites can be found in all biomes except sea ice and ice sheet. They have a low chance of being combined with the hot springs, ancient smoke vent, ancient toxic vent or ancient heat vent features.
+
+Landmark names: Launch Site, Launch Pads
+<div style="clear: both"></div>
+
+==== Ancient warehouse ====
+[[File:Ancient warehouse in desert (no fog).jpg|thumb|Ancient warehouse feature in a desert biome]]
+''An abandoned warehouse. It still contains valuables. It may also contain dangerous security systems.''
+
+Ancient warehouses can be found in all biomes except sea ice and ice sheet. They have a low chance of being combined with the hot springs, ancient smoke vent, ancient toxic vent or ancient heat vent features.
+
+Landmark names: Warehouse, Depot, Storehouse
+<div style="clear: both"></div>
+
+==== Ancient heat vent ====
+[[File:Ancient heat vent in desert.jpg|thumb|Ancient heat vent feature in a desert biome]]
+''Ancient ducts will regularly vent heat from an underground megastructure, dramatically raising the temperature of the surrounding area.''
+
+This feature causes [[ancient heat vent]] buildings to spawn on the map.
+
+Ancient heat vents can be found in the [[arid shrubland]], [[desert]] and [[extreme desert]] biomes. They have a low chance to appear as a secondary landmark feature on the ruins, ancient quarry, abandoned colony, ancient chemfuel refinery, ancient garrison, ancient launch site, ancient warehouse and infested settlement landmarks.
+
+Landmark names: Heat Vents, Thermal Vents, Infernal Vents, Hell Holes, Heat Ducts
+<div style="clear: both"></div>
+
+==== Ancient smoke vent ====
+[[File:Ancient smoke vent in boreal forest.jpg|thumb|Ancient smoke vent feature in a boreal forest biome]]
+''This area has a number of massive exhaust vents. An ancient mechanism buried deep beneath the earth will occasionally vent large amounts of smoke, blocking out the sun for days at a time.''
+
+This feature causes [[ancient smoke vent]] buildings to spawn on the map.
+
+Ancient smoke vents can be found in the [[arid shrubland]], [[desert]], [[extreme desert]], [[boreal forest]], [[temperate forest]], [[tropical rainforest]], [[grassland]] and [[scarlands]] biomes.  They have a low chance to appear as a secondary landmark feature on the ruins, ancient quarry, abandoned colony, ancient chemfuel refinery, ancient garrison, ancient launch site, ancient warehouse and infested settlement landmarks.
+
+Landmark names: Exhaust Duct, Vents, Fumaroles, Chimneys, Smokestacks
+<div style="clear: both"></div>
+
+==== Ancient toxic vent ====
+[[File:Ancient toxic vent in desert.jpg|thumb|Ancient toxic vent feature in a desert biome]]
+''Massive toxic vents will regularly spew toxic fallout into the air. The vents connect to an ancient substructure buried deep beneath the earth.''
+
+This feature causes [[ancient toxic vent]] buildings to spawn on the map.
+
+Ancient toxic vents can be found in the [[arid shrubland]], [[desert]], [[extreme desert]], [[boreal forest]], [[temperate forest]], [[tropical rainforest]], [[grassland]] and [[scarlands]] biomes.  They have a low chance to appear as a secondary landmark feature on the ruins, ancient quarry, abandoned colony, ancient chemfuel refinery, ancient garrison, ancient launch site, ancient warehouse and infested settlement landmarks.
+
+With the Biotech DLC, ancient toxic vents landmarks always come with the increased pollution{{BiotechIcon}} feature. This is not the case when they appear as a secondary feature on another landmark.
+
+Landmark names: Tox Vents, Poison Vents, Noxious Vents, Toxic Ducts, Fume Vents
+<div style="clear: both"></div>
+
+==== Ancient quarry ====
+[[File:Ancient quarry in tundra.jpg|thumb|Ancient quarry feature in a tundra biome]]
+''This area was once mined for its natural resources, and the remains of the ancient quarry are still here.''
+
+Ancient quarries are found on mountainous terrain on any biome. 
+
+As a landmark, they are always twinned with the cavern feature, and have a low chance of being combined with the hot springs, ancient smoke vent, ancient toxic vent or ancient heat vent features. They always have the ore-rich additional feature.
+
+Ancient quarries can spawn as a secondary feature on a valley, chasm, or basin landmark. In this case there is no cavern, and the chance to be ore-rich is low and defined by the landmark.
+
+Landmark names: Quarry, Mines, Rock Pits, Excavation Site
+<div style="clear: both"></div>
+
+==== Harbor ====
+[[File:Harbor.png|thumb|Harbor feature]]
+''An abandoned coastal settlement.''
+
+Harbors can be found on all biomes except sea ice, ice sheet and scarlands. They are always twinned with the bay feature and do not combine with other landmark features.
+
+Landmark names: Harbor, Port
+<div style="clear: both"></div>
+
+==== Ruins ====
+[[File:Ruins in grassland (no fog).jpg|thumb|Ruins feature in a grassland biome]]
+''The remains of an ancient settlement. These ruins may contain a wide variety of possible threats.''
+
+Ruins can be found in all biomes except sea ice, ice sheet and glacial plain. They have a low chance of being combined with the pond, lake, lake with island, hot springs, ancient smoke vent, ancient toxic vent or ancient heat vent features.
+
+Landmark names: Ruins, City, Town, Ruined, Dilapidated; occasionally the name is non-specific and hints at a person's story, e.g. 'Tara's Mistake' or 'Lada's Delight'
+<div style="clear: both"></div>
+
+==== Frozen ruins ====
+[[File:Frozen Ruins.png|thumb|Frozen ruins feature]]
+''The ruins of an ancient settlement, now encased in solid ice. These ruins may contain untold dangers.''
+
+Frozen ruins can only be found in the [[ice sheet]] and [[glacial plain]] biomes. They have a low chance of being combined with the pond, lake, lake with island and hot springs features (on glacial plain only, since those features are not available on ice sheet).
+
+Landmark names: Frozen Ruins, Ice City, City, Ruined, Frozen
+<div style="clear: both"></div>
+
+==== Abandoned colony ====
+[[File:Abondoned colony in tropical swamp.png|thumb|Abandoned colony feature in a tropical swamp biome]]
+''A recently abandoned colony.''
+
+Abandoned colonies can be found on all biomes except sea ice, ice sheet and scarlands. They are occasionally combined with the bay, valley, cavern or chasm features, and more rarely with the plateau, pond, lake, lake with island, hot springs, ancient smoke vent, ancient toxic vent or ancient heat vent features.
+
+Landmark names: Village, Camp (tribal); Town, Outpost, Ghost Town, <person>'s Curse (outlander)
+<div style="clear: both"></div>
+
+==== Infested settlement ====
+[[File:Infested settlement in arid shrubland.png|thumb|Infested settlement feature in an arid shrubland biome]]
+''A once-prosperous settlement that was destroyed by an insect infestation. It may still contain valuable resources.''
+
+Infested settlements can be found in all biomes except sea ice and ice sheet. They have a low chance of being combined with the hot springs, ancient smoke vent, ancient toxic vent or ancient heat vent features.
+
+Infested settlements contain dormant insect hives guarded by insects.
+
+Landmark names: Fallen <town>, Infested <town>, <town> Hive; can also be a normal outlander settlement name
+<div style="clear: both"></div>
+
+== Additional features ==
+Those features do not define landmarks but can be present on landmarks in addition to the landmark feature. Some of those features can also exist on normal tiles but they will not be found with the Search tool, only by checking tiles individually.
+
+=== Terrain features ===
+Mountain, caves, coast and river are the only features generated in the base game. They have multiple variants in Odyssey.
+
+==== Mountain {{RimworldIcon}} ====
+[[File:Mountain in temperate forest.jpg|thumb|Mountain feature in temperate forest]]
+''A mountain fills one side of this tile.''
+
+Mountains spawn on mountainous and impassable terrain.
+
+Variants: All mountain variants are landmark-defining features: valley, cavern, chasm, crevasse, plateau, ice dunes, cliffs, hollow, basin, terraforming scar, ancient quarry.
+<div style="clear: both"></div>
+
+==== Caves {{RimworldIcon}} ====
+[[File:Caves in temperate forest large hills.jpg|thumb|Caves feature in temperate forest with large hills]]
+''Small cave networks can be found within the rocks.''
+
+The caves feature only appears on mountainous terrain and large hills, with a 50% chance for mountainous terrain and 25% for large hills. Plateaus have a 40% chance of spawning with caves.
+
+Caves have a chance of spawning with dormant [[hive|hives]] guarded by insects. The amount of caves on the map affects the number of hives: More caves means more hives. Any caves unconnected to the outside are hidden until the player opens a passage, so it's possible to discover dormant hives later in the game.
+
+Hive spawning can be prevented by disabling the generation of natural hives in Custom settings in the Storyteller screen. Alternatively, removing the Insect geneline faction in the Create world screen will dispose of all insect-related content.
+
+Variants: Cave pools, lava caves, ice caves. Those variants don't spawn on non-landmark tiles.
+<div style="clear: both"></div>
+
+==== Coast {{RimworldIcon}} ====
+[[File:Coast in tropical forest.jpg|thumb|Coast in tropical forest]]
+''This tile borders the coast.''
+
+All tiles bordering a sea or an ocean have either the coast feature or one of the coastal landmark features.
+
+Coastal maps have ocean water where coastal animals might occasionally spawn, depending on biome compatibility. No plants grow in the water, unlike in lakeshore maps.
+
+Variant: Lakeshore
+<div style="clear: both"></div>
+
+==== River {{RimworldIcon}} ====
+[[File:Creek in temperate forest large hills.jpg|thumb|River feature: creek winding through large hills]]
+''A stream of fresh water flows through here.''
+
+Rivers are labelled according to size: huge river, large river, river, and creek.
+
+Variants: Headwater, river confluence, river island, delta
+<div style="clear: both"></div>
+
+==== Cave pools ====
+[[File:Cave pools in temperate forest valley.jpg|thumb|Cave pools feature in temperate forest valley]]
+''Small bodies of water can be found within caves in this area.''
+
+This feature creates caves with small deep pools, most of them containing fish.
+
+Cave pools don't spawn on non-landmark tiles. They have a 15% chance to spawn on the following landmarks: valley, chasm, plateau, cliff, hollow, basin.
+<div style="clear: both"></div>
+
+==== Lava caves ====
+[[File:Lava caves in desert valley.jpg|thumb|Lava caves feature in desert valley]]
+''Small lava-filled cave networks can be found here.''
+
+This feature generates caves containing small pools of deep lava.
+
+Lava caves don't spawn on non-landmark tiles. They have a 10% chance to spawn on the following landmarks: valley, plateau.
+<div style="clear: both"></div>
+
+==== Ice caves ====
+[[File:Ice caves.jpg|thumb|Ice caves feature]]
+''Small cave networks can be found within the ice.''
+
+Ice caves don't spawn on non-landmark tiles. They only spawn on crevasse landmarks, with a 50% chance.
+<div style="clear: both"></div>
+
+==== Lakeshore ====
+[[File:Lakeshore in temperate forest.jpg|thumb|Lakeshore in temperate forest]]
+''This tile borders a lake.''
+
+The lakeshore feature is found on all tiles bordering a lake on the world map. In this context a lake is a small body of water of 15 tiles or less, not the lake feature.
+
+Unlike coastal maps where the water is ocean water, lakeshore maps have fresh water, allowing aquatic plants such as [[reeds]] to grow in suitable biomes.
+<div style="clear: both"></div>
+
+==== Headwater ====
+[[File:Headwater in desert.jpg|thumb|Headwater in desert]]
+''A river's origin point.''
+
+The headwater feature only spawns at the start of a river. Not all rivers have a headwater, some have a lake as their source.
+<div style="clear: both"></div>
+
+==== River confluence ====
+[[File:River confluence in arid shrubland.jpg|thumb|River confluence in arid shrubland]]
+''A merging of two rivers.''
+<div style="clear: both"></div>
+
+==== River island ====
+[[File:River island on huge river in temperate forest.jpg|thumb|River island feature]]
+''A river splitting into two and then merging again.''
+
+The river island feature can be found on rivers of all sizes, from huge rivers to creeks.
+
+It has a 5% chance of appearing on a river tile that doesn't already have one of the other river features, i.e. headwater, river confluence, or delta.
+
+Tiles with the river island feature cannot be identified visually on the world map as they have no specific marking and look exactly like standard river tiles.
+<div style="clear: both"></div>
+
+==== Delta ====
+[[File:Delta of huge river in boreal forest.jpg|thumb|Delta feature in boreal forest]]
+''A river splitting into many branches as it enters the ocean.''
+
+Deltas occasionally spawn where rivers meet the sea. Not all rivers end in a delta.
+<div style="clear: both"></div>
+
+=== Biological features ===
+==== Decreased fish ====
+''This area has fewer fish than normal.''
+
+This feature reduces the amount of fish to 35% of its normal quantity. It can occur in all biomes except [[scarlands]].
+
+It has a 1% chance of spawning on lakes, pond, wetland, archipelago, coastal island, peninsula, bay, fjord, coastal atoll, iceberg, basin, and harbor.
+
+It does not spawn on non-landmark tiles.
+
+==== Increased fish ====
+''This area has more fish than normal.''
+
+This feature multiplies the amount of fish by 150%. It spawns on tiles with less than 25% pollution and can occur in all biomes except [[scarlands]], [[desert]] and [[extreme desert]].
+
+It has a 5% chance of spawning on lakes, pond, wetland, archipelago, coastal island, peninsula, bay, fjord, coastal atoll, iceberg, basin, and harbor.
+
+It does not spawn on non-landmark tiles.
+
+==== Decreased animal life ====
+''Animals are less abundant here than normal.''
+
+This feature reduces by half the number of animals spawned on the tile.
+
+It has the following chances of spawning on landmarks:
+* 100% on toxic lake
+* 50% on lava flow, ancient toxic vent, ancient heat vent
+* 15% on dry lake, cavern, chasm, crevasse, ice dunes, lava lake, ruins, frozen ruins, ancient quarry, ancient launch site, ancient garrison, ancient warehouse, ancient chemfuel refinery, infested settlement
+* 5% on ancient smoke vent
+
+It has a 1% chance of spawning on a non-landmark tile.
+
+==== Increased animal life ====
+''Animals are more abundant here.''
+
+This feature multiplies the animal density by 150%.
+
+It spawns on tiles with less than 25% pollution and an appropriate animal density. Biomes outside the allowed range of animal density are:
+* too sparse: [[sea ice]], [[ice sheet]], [[extreme desert]]
+* too crowded: [[temperate swamp]], [[tropical rainforest]], [[tropical swamp]], [[glowforest]]
+
+It has the following chances of spawning on landmarks:
+* 75% on oasis
+* 5% on lakes, pond, wetland, hot springs, archipelago, coastal island, peninsula, bay, fjord, coastal atoll, valley, plateau, cliffs, hollow, basin, terraforming scar, abandoned colony
+
+It has a 2% chance of spawning on a non-landmark tile.
+
+==== Animal Habitat ====
+[[File:Mastodon habitat in grasslands.png|thumb|Mastodon habitat in a grasslands biome]]
+''A natural habitat for ''<animal>''. They appear in greater numbers here.''
+
+This feature has the effect of multiplying by 10 the likelihood that the target animal will be picked for spawning.
+
+The animal is selected from the list of land animals that spawn within the biome, excluding animals with a low chance of spawning. For example, in the temperate forest excluded animals are: yak, bison, rhinoceros, mink, swan and  all predators. In the case of a mixed biome, only the primary biome is taken into account.
+
+This feature spawns on tiles with less than 25% pollution and a sufficient animal density. [[Sea ice]], [[ice sheet]], and [[extreme desert]] are too sparse to have animal habitats.
+
+It has the following chances of spawning on landmarks:
+* 25% on oasis
+* 15% on wetland, hot springs, archipelago, coastal island, bay, valley, plateau, cliffs, basin
+* 5% on lakes, peninsula, fjord, coastal atoll, cavern, chasm, hollow, terraforming scar, abandoned colony
+
+It has a 2% chance of spawning on a non-landmark tile.
+<div style="clear: both"></div>
+
+==== Insect megahive ====
+[[File:Insect megahive in tropical rainforest.png|thumb|Insect megahive feature in a tropical rainforest biome.]]
+''This area hosts a massive subterranean insect hive.''
+
+Insect megahives only appear when the insectoid faction is present and only on mountainous terrain.
+
+This feature spawns an [[insect lair]] entrance and 1-2 dormant hives with a few insects. Note that this is in addition to any hives naturally spawned in caves.
+
+It has the following chances of spawning on landmarks:
+* 2% on valley, cavern, chasm, plateau, cliffs, basin, terraforming scar
+* 1% on toxic lake, hot springs, hollow, lava lake, ancient quarry, abandoned colony, harbor, ancient launch site, ancient garrison, ancient warehouse, ancient chemfuel refinery, infested settlement
+
+It does not spawn on non-landmark tiles.
+<div style="clear: both"></div>
+
+==== Decreased plant life ====
+''Plant life is less abundant here.''
+
+This feature reduces by half the number of plants spawned on the tile.
+
+It only spawns on tiles with sufficient plant density. The following biomes are too sparse: [[tundra]], [[ice sheet]], [[sea ice]], [[arid shrubland]], [[desert]], [[extreme desert]].
+
+It has a 1% chance of spawning on non-landmark tiles and no particular association with any landmark.
+
+==== Increased plant life ====
+''Plant life is more abundant here.''
+
+This feature multiplies the number of plants by 130%.
+
+It only spawns on tiles with less than 25% pollution. It can occur in all biomes except for [[ice sheet]] and [[sea ice]], where plants can't grow, and [[temperate swamp]], [[tropical rainforest]], [[tropical swamp]], [[glowforest]], and [[grassland]], where plants are already abundant.
+
+It has the following chances of spawning on landmarks:
+* 10% on valley
+* 5% on wetland, archipelago, coastal island, peninsula, bay, fjord, coastal atoll, plateau, cliffs, abandoned colony
+* 3% on lakes, pond, hot springs, hollow, basin, terraforming scar
+
+It has a 2% chance of spawning on a non-landmark tile.
+
+==== Grove ====
+[[File:Oak grove in temperate forest.jpg|thumb|Oak tree grove in temperate forest]]
+''This area contains a large number of ''<plant>s''.''
+
+A grove is home to a large number of plants of the same species. Only the following species can form groves: [[birch tree]], [[cecropia tree]], [[maple tree]], [[oak tree]], [[pine tree]], [[poplar tree]], [[willow tree]], [[boomshroom]], [[timbershroom]], [[willowgill]].
+
+This feature only spawns on tiles with less than 25% pollution. It can be found in the [[temperate forest]], [[temperate swamp]], [[cold bog]], [[boreal forest]], [[tropical swamp]], [[tropical rainforest]] and [[glowforest]] biomes.
+
+It has the following chances of spawning on landmarks:
+* 15% on archipelago, peninsula
+* 10% on bay, valley, plateau, harbor, ancient launch site, ancient garrison, ancient warehouse, ancient chemfuel refinery, infested settlement
+* 5% on lakes, pond, wetland, hot springs, coastal island, fjord, coastal atoll, cliffs, hollow, basin, terraforming scar, ruins, abandoned colony
+
+It has a 2% chance of spawning on a non-landmark tile.
+<div style="clear: both"></div>
+
+==== Wild plant ====
+''When warm enough, this area can grow a large number of ''<plant>''.''
+[[File:Wild smokeleaf in temperate forest.png|thumb|Wild smokeleaf feature in a temperate forest biome]]
+
+This feature generates a large number of a crop wild relative. The base crop is chosen among the following: cotton, fibercorn ,{{IdeologyIcon}} psychoid, smokeleaf, strawberry, tinctoria.
+
+This feature only spawns on tiles with less than 25% pollution. It is found in the [[boreal forest]], [[cold bog]], [[temperate forest]], [[temperate swamp]], [[tropical rainforest]], [[tropical swamp]], [[glacial plain]], [[grassland]] and [[lava field]] biomes. 
+<!-- arid shrubland and tundra are in the whitelist but their plant density is outside the required range !-->
+
+It has the following chances of spawning on landmarks:
+* 10% on wetland, archipelago, coastal island, peninsula, bay, fjord, coastal atoll, valley, chasm, plateau, hollow, basin, terraforming scar, ruins, ancient quarry, abandoned colony, harbor, ancient launch site, ancient garrison, ancient warehouse, ancient chemfuel refinery, infested settlement
+* 5% on lakes, pond, hot springs, cliffs
+
+It has a 3% chance to spawn on non-landmark tiles.
+<div style="clear: both"></div>
+
+==== Wild cocoa tree ====
+[[File:Wild cocoa tree in tropical rainforest archipelago.jpg|thumb|Wild cocoa tree feature in tropical rainforest archipelago]]
+''This area can grow a large number of wild cocoa trees.''
+
+This is a variant of the Wild Plant feature that grows wild [[Cocoa tree|cocoa trees]]. It only spawns in the [[tropical rainforest]] and [[tropical swamp]] biomes. 
+
+It has a 3% chance to spawn on the following landmarks: lakes, pond, wetland, hot springs, archipelago, coastal island, peninsula, bay, fjord, coastal atoll, valley, chasm, plateau, cliffs, hollow, basin, terraforming scar, ruins, ancient quarry, abandoned colony, harbor, ancient launch site, ancient garrison, ancient warehouse, ancient chemfuel refinery, infested settlement.
+
+It has a 1% chance to spawn on non-landmark tiles.
+<div style="clear: both"></div>
+
+==== Archean trees ====
+[[File:Archean trees in temperate forest valley.jpg|thumb|Archean trees feature in a temperate forest valley]]
+''This area contains ancient archean trees. These trees host a special microbial community in their roots which converts nearby terrain into rich soil. Their delicate root system makes it impossible to replant them.''
+
+This feature generates 10 to 15 [[Archean tree|archean trees]] on the tile.
+
+It spawns on tiles with less than 25% pollution, on the following biomes: [[arid shrubland]], [[boreal forest]], [[cold bog]], [[glacial plain]], [[grassland]], [[lava field]], [[temperate forest]], [[temperate swamp]], [[tropical rainforest]], [[tropical swamp]], [[tundra]].
+
+It has a 1% chance to spawn on lakes, pond, wetland, hot springs, archipelago, coastal island, peninsula, bay, fjord, coastal atoll, valley, chasm, plateau, cliffs, hollow, basin, terraforming scar, ruins, ancient quarry, abandoned colony, harbor, ancient launch site, ancient garrison, ancient warehouse, ancient chemfuel refinery, infested settlement.
+
+It does not spawn on non-landmark tiles.
+<div style="clear: both"></div>
+
+=== Weather features ===
+==== Foggy ====
+''Fog is common in this area.''
+
+This feature increases the frequency of [[Weather|foggy weather]].
+
+It is found in the following biomes: [[boreal forest]], [[cold bog]], [[temperate forest]], [[temperate swamp]], [[tropical rainforest]], [[tropical swamp]], [[grassland]], [[glowforest]], [[scarlands]].
+
+It has the following chances of spawning on landmarks:
+* 30% on wetland
+* 5% on lakes, pond, toxic lake, hot springs, valley, cavern, chasm, plateau, cliffs, hollow, basin, terraforming scar, ruins, ancient smoke vent, ancient toxic vent, ancient heat vent, ancient quarry, abandoned colony, harbor, ancient launch site, ancient garrison, ancient warehouse, ancient chemfuel refinery, infested settlement
+
+It has a 1% chance of spawning on a non-landmark tile.
+
+==== Sunny ====
+''Clear weather is much more common here.''
+
+This feature increases the frequency of [[Weather|clear weather]].
+
+It is found in all biomes except [[glowforest]].
+
+It has the following chances of spawning on landmarks:
+* 25% on dry lake
+* 15% on iceberg, ice dunes
+* 10% on lava lake, lava flow
+* 5% on oasis, lakes, pond, toxic lake, hot springs, archipelago, coastal island, peninsula, bay, fjord, coastal atoll, valley, crevasse, plateau, cliffs, hollow, basin, terraforming scar, dunes, ruins, frozen ruins, ancient smoke vent, ancient toxic vent, ancient heat vent, abandoned colony, harbor, ancient launch site, ancient garrison, ancient warehouse, ancient chemfuel refinery, infested settlement
+
+It has a 2% chance of spawning on a non-landmark tile.
+
+==== Wet climate ====
+''Precipitation is much more common here.''
+
+This feature increases the frequency of the following [[weather]] types: rain, rainy thunderstorm, gentle snow, hard snow, blizzard, and foggy rain.
+
+It is found in the following biomes: [[boreal forest]], [[cold bog]], [[ice sheet]], [[sea ice]], [[temperate forest]], [[temperate swamp]], [[tropical rainforest]], [[tropical swamp]], [[glowforest]].
+
+It has the following chances of spawning on landmarks:
+* 25% on peninsula, harbor
+* 20% on wetland
+* 15% on archipelago, coastal island, bay, fjord, coastal atoll, iceberg
+* 10% on lakes, pond
+* 5% on toxic lake, hot springs, valley, plateau, cliffs, hollow, basin, terraforming scar, ruins, ancient smoke vent, ancient toxic vent, ancient heat vent, abandoned colony, ancient launch site, ancient garrison, ancient warehouse, ancient chemfuel refinery, infested settlement
+* 0% on dry lake (doesn't spawn)
+
+It has a 1% chance of spawning on a non-landmark tile.
+
+==== Windy ====
+''Winds are much stronger in this area.''
+
+This feature increases the frequency of [[Weather|windy weather]].
+
+It is found in the following biomes: [[arid shrubland]], [[desert]], [[extreme desert]], [[ice sheet]], [[sea ice]], [[tundra]], [[grassland]], [[glacial plain]], [[lava field]], [[scarlands]].
+
+It has the following chances of spawning on landmarks:
+* 25% on peninsula
+* 15% on archipelago, coastal island, fjord, coastal atoll, iceberg
+* 5% on lakes, pond, toxic lake, hot springs, plateau, ice dunes, cliffs, hollow, basin, terraforming scar, lava lake, lava flow, dunes, ruins, frozen ruins, ancient smoke vent, ancient toxic vent, ancient heat vent, abandoned colony, ancient launch site, ancient garrison, ancient warehouse, ancient chemfuel refinery, infested settlement
+
+It has a 1% chance of spawning on a non-landmark tile.
+
+=== Ground features ===
+==== Dry ground ====
+[[File:Dry ground in boreal forest.jpg|thumb|No marshes in boreal forest with the dry ground feature]]
+''The ground in this area is drier than normal. There are no small ponds or bodies of water.''
+
+This feature prevents the generation of bodies of water on the tile.
+
+It only occurs in the [[scarlands]], [[boreal forest]] and [[tundra]] biomes.
+
+It has the following chances of spawning on landmarks:
+* 15% on plateau, cliffs, hollow
+* 5% on cavern, chasm, terraforming scar, ancient smoke vent, ancient toxic vent, ancient heat vent, ancient quarry, abandoned colony, ancient launch site, ancient garrison, ancient warehouse, ancient chemfuel refinery, infested settlement
+<!-- crevasse has a 5% chance of dry ground but can only spawn on glacial plain !-->
+
+It has a 2% chance of spawning on a non-landmark tile.
+<div style="clear: both"></div>
+
+==== Fertile ====
+[[File:Fertile in temperate forest.jpg|thumb|Fertile feature in temperate forest]]
+''This area contains more fertile soil than normal.''
+
+This feature produces more rich soil than usual.
+
+It spawns on tiles with less than 25% pollution, on the following biomes: [[boreal forest]], [[cold bog]], [[glowforest]], [[grassland]], [[temperate forest]], [[temperate swamp]], [[tropical rainforest]], [[tropical swamp]].
+
+It has a 5% chance of spawning on the following landmarks: lakes, pond, wetland, hot springs, archipelago, coastal island, peninsula, bay, fjord, coastal atoll, valley, cavern, chasm, plateau, cliffs, hollow, basin, terraforming scar, lava lake, lava flow, ruins, ancient quarry, abandoned colony, harbor, ancient launch site, ancient garrison, ancient warehouse, ancient chemfuel refinery, infested settlement.
+
+It has a 1% chance of spawning on a non-landmark tile.
+<div style="clear: both"></div>
+
+==== High geothermal activity ====
+[[File:High geothermal activity in lava flow.jpg|thumb|High geothermal activity feature in a lava flow landmark]]
+''Steam geysers are more common in this area.''
+
+This feature doubles the number of geysers on the tile.
+
+It can spawn on all biomes except [[grassland]] and [[glacial plain]].
+
+It has the following chances of spawning on landmarks:
+* 25% on hot springs, lava lake, lava flow
+* 10% on ancient smoke vent, ancient toxic vent, ancient heat vent
+* 3% on cavern, chasm, terraforming scar
+
+It has a 1% chance of spawning on a non-landmark tile.
+<div style="clear: both"></div>
+
+==== Marshy ====
+[[File:Marshy in grassland.jpg|thumb|Marshy feature in grassland]]
+''Patches of marsh break up this area.''
+
+This feature generates marshes and marshy soil.
+
+It only occurs in the [[grassland]], [[temperate forest]] and [[tundra]] biomes.
+
+It has a 5% chance of spawning on the following landmarks: lakes, pond, toxic lake, valley, cavern, chasm, plateau, cliffs, hollow, basin, terraforming scar, lava lake, ruins, ancient smoke vent, ancient toxic vent, ancient heat vent, ancient quarry, abandoned colony, ancient launch site, ancient garrison, ancient warehouse, ancient chemfuel refinery, infested settlement.
+
+It has a 1% chance of spawning on a non-landmark tile.
+<div style="clear: both"></div>
+
+==== Muddy ====
+[[File:Muddy in tundra.jpg|thumb|Muddy feature in tundra]]
+''This area is muddier than normal.''
+
+This feature produces lots of mud patches.
+
+It is found in the following biomes: [[grassland]], [[temperate forest]], [[tundra]], [[cold bog]], [[temperate swamp]], [[tropical swamp]].
+
+It has a 5% chance of spawning on the following landmarks: lakes, pond, toxic lake, wetland, hot springs, archipelago, coastal island, peninsula, bay, fjord, coastal atoll, valley, cavern, chasm, plateau, cliffs, hollow, basin, terraforming scar, lava lake, lava flow, ruins, ancient smoke vent, ancient toxic vent, ancient heat vent, ancient quarry, abandoned colony, harbor, ancient launch site, ancient garrison, ancient warehouse, ancient chemfuel refinery, infested settlement.
+
+It has a 1% chance of spawning on a non-landmark tile.
+<div style="clear: both"></div>
+
+==== Sandy ====
+[[File:Sandy in tundra.jpg|thumb|Sandy feature in tundra]]
+''Large patches of sand are scattered throughout this area.''
+
+This feature generates patches of sand.
+
+It occurs in the following biomes: [[tropical rainforest]], [[temperate forest]], [[tundra]], [[grassland]], [[lava field]], [[glowforest]], [[scarlands]].
+
+It has a 5% chance of spawning on the following landmarks: lakes, pond, toxic lake, wetland, hot springs, archipelago, coastal island, peninsula, bay, fjord, coastal atoll, valley, cavern, chasm, plateau, cliffs, hollow, basin, terraforming scar, lava lake, lava flow, ruins, ancient smoke vent, ancient toxic vent, ancient heat vent, ancient quarry, abandoned colony, harbor, ancient launch site, ancient garrison, ancient warehouse, ancient chemfuel refinery, infested settlement.
+
+It has a 1% chance of spawning on a non-landmark tile.
+<div style="clear: both"></div>
+
+==== Increased pollution{{BiotechIcon}} ====
+''This area is contaminated with toxic pollutants.''
+
+This feature adds 10 to 20% pollution to the tile, up to a maximum of 100%.
+
+It has the following chances of spawning on landmarks:
+* 100% on toxic lake, ancient toxic vent
+* 5% on ruins, frozen ruins, ancient smoke vent, ancient heat vent, ancient quarry, abandoned colony, harbor, ancient launch site, ancient garrison, ancient warehouse, ancient chemfuel refinery, infested settlement
+* 2% on dry lake, valley, cavern, chasm, plateau, cliffs, hollow, basin, terraforming scar, dunes
+* 1% on lakes
+
+It does not spawn on non-landmark tiles.
+
+=== Man-made structures ===
+==== Ancient uplink ====
+[[File:Ancient uplink in grassland (no fog).jpg|thumb|Ancient uplink feature in a grassland biome.]]
+''This area contains an uplink used for communication with a low orbit satellite. Hacking the uplink will reveal a hidden location in orbit.''
+
+This feature causes an [[ancient uplink]] building to spawn on the tile.
+
+It can occur on all biomes.
+
+It has the following chances of spawning on landmarks:
+* 15% on ice dunes, dunes, ruins, frozen ruins, ancient smoke vent, ancient toxic vent, ancient heat vent, ancient quarry, abandoned colony, harbor, ancient launch site, ancient garrison, ancient warehouse, ancient chemfuel refinery, infested settlement
+* 2% on oasis, lakes, pond, dry lake, toxic lake, wetland, hot springs, archipelago, coastal island, peninsula, bay, fjord, coastal atoll, valley, cavern, chasm, crevasse, plateau, cliffs, hollow, basin, terraforming scar, lava lake, lava flow
+
+It does not spawn on non-landmark tiles.
+<div style="clear: both"></div>
+
+==== Junkyard ====
+[[File:Junkyard in extreme desert (ideology).jpg|thumb|Junkyard in extreme desert]]
+:''An old dumping ground for various kinds of junk.''
+
+This feature multiplies by 15 the amount of junk generated on the tile.
+
+It spawns on all biomes but only on flat or small hills terrain.
+
+It has the following chances of spawning on landmarks, but only if [[Ideology]]{{IdeologyIcon}} is enabled:
+* 25% on toxic lake, ruins
+* 20% on ancient smoke vent, ancient toxic vent, ancient heat vent
+* 10% on dry lake, abandoned colony, ancient launch site, ancient garrison, ancient warehouse, ancient chemfuel refinery, infested settlement
+* 5% on terraforming scar, frozen ruins
+
+It has a 1% chance of spawning on a non-landmark tile, even if [[Ideology]]{{IdeologyIcon}} is not present.
+<div style="clear: both"></div>
+
+==== Stockpile ====
+{{Image wanted|section=1|reason=Inside the stockpile}}
+[[File:medine stockpile in arid shrubland.png|thumb|Medicine stockpile feature in an arid shrubland biome]]
+''This area contains an underground stockpile of resources. Be careful, some of the ancient defense systems may still be active.''
+
+The stockpile feature is an underground facility which contains certain materials. It is locked by a hatch that requires to be hacked in order to open. Similar to the [[pit gate]],{{AnomalyIcon}} entering it leads to a new separate map. There are 5 types of stockpile, where the following resources can be found:
+* Chemfuel stockpile: 750-1200 [[chemfuel]]
+* Component stockpile: 25-50 [[component|components]] and 2-3 [[advanced component|advanced components]]
+* Drug stockpile: 25-100 [[flake]], 25-60 [[yayo]], 5-20 [[smokeleaf joint|smokeleaf joints]], 5-15 [[luciferium]], 0-10 [[go-juice]], 0-10 [[wake-up]]
+* Medicine stockpile: 30-60 [[medicine]] and 5-10 [[glitterworld medicine]]
+* Weapons stockpile: 2-3 guns of advanced industrial or spacer tech level and excellent to legendary quality
+
+This feature can be found in all biomes except [[sea ice]].
+
+It has the following chances of spawning on landmarks:
+* 25% on frozen ruins
+* 15% on ice dunes, dunes, ruins, ancient smoke vent, ancient toxic vent, ancient heat vent
+* 5% on oasis, lakes, pond, dry lake, toxic lake, wetland, hot springs, archipelago, coastal island, peninsula, bay, fjord, coastal atoll, valley, cavern, chasm, crevasse, plateau, cliffs, hollow, basin, terraforming scar, lava lake, lava flow, ancient quarry, abandoned colony, harbor, ancient launch site, ancient garrison, ancient warehouse, ancient chemfuel refinery, infested settlement
+
+It does not spawn on non-landmark tiles.
+<div style="clear: both"></div>
+
+=== Ore rich ===
+==== Mineral rich ====
+[[File:Compacted steel rich in cavern.jpg|thumb|Compacted steel rich feature in cavern]]
+''This area has more ''<Mineral>'' deposits than normal.''
+
+A tile with the mineral rich feature contains great quantities of a single [[ore]], which means the feature exists in several versions: [[Compacted plasteel]] rich, [[compacted machinery]] rich, [[compacted steel]] rich, [[gold ore]] rich, [[jade]] rich, [[silver ore]] rich, [[uranium ore]] rich.
+
+The mineral rich feature only spawns on landmark tiles, on any biome except sea ice and ice sheet. The ancient quarry landmark always comes with the mineral rich feature.
+
+It has the following chances of spawning on landmarks:
+* 100% on ancient quarry
+* 20% on terraforming scar
+* 15% on ancient smoke vent, ancient toxic vent, ancient heat vent
+* 10% on cavern
+* 5% on lava lake, lava flow
+* 3% on hot springs, valley, chasm, plateau, cliffs, hollow, basin
+<div style="clear: both"></div>
+
+==== Obsidian deposits ====
+[[File:Obsidian deposits in lava field.jpg|thumb|Three obsidian veins created by the obsidian deposits feature]]
+''This area has deposits of volcanic obsidian, which can be mined for obsidian glass.''
+
+This feature generates veins of mineable [[obsidian (ore)]].
+
+Obsidian deposits only spawn in the lava field biome. They have a 25% chance to spawn on the lava lake and lava flow landmarks. They also have a 5% chance to spawn on non-landmark tiles.
+<div style="clear: both"></div>
+
+=== Special ===
+==== Mixed biome ====
+[[File:Mixed biome boreal forest with desert.jpg|thumb|Mixed biome feature on a boreal forest bordering a desert]]
+''This area is at the boundary of two distinct biomes and has elements of both.''
+
+This feature only spawns on a tile located on the border to another biome. The tile gains the neighboring biome as a secondary biome. Its map is divided into 2 zones, each with the characteristics of one of the biomes, with wildlife from both biomes. If the tile is adjacent to multiple biomes, only one is picked as the secondary biome.
+
+Both biomes must be one of the following biomes: [[arid shrubland]], [[boreal forest]], [[cold bog]], [[desert]], [[extreme desert]], [[glacial plain]], [[grassland]], [[ice sheet]], [[temperate forest]], [[temperate swamp]], [[tropical rainforest]], [[tropical swamp]], [[tundra]]. In other words the feature will not occur along the borders of [[sea ice]], [[scarlands]], [[glowforest]], or [[lava field]].
+
+As far as other features are concerned, only the primary biome is relevant when checking for compatibility.
+
+The mixed biome feature has a 20% chance to spawn on any tile that meets the criteria, with a further 50% chance on the following landmarks: lakes, pond, hot springs, bay, valley, cavern, chasm, plateau, cliffs, hollow, basin, terraforming scar, ruins, ancient smoke vent, ancient toxic vent, ancient heat vent, ancient quarry, abandoned colony, harbor, ancient launch site, ancient garrison, ancient warehouse, ancient chemfuel refinery, infested settlement.
+<div style="clear: both"></div>
+
+== Version history ==
+* [[Odyssey DLC]] Release - Added.
+* [[Version/1.6.4535|1.6.4535]] - Fix: Typo in plant grove description. The description did not previously pluralize the plant type.

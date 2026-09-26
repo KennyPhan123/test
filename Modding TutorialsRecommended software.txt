@@ -1,0 +1,108 @@
+{{DISPLAYTITLE:Recommended Software}}
+
+{{BackToTutorials}}
+
+This is a short list of programs that are useful for making mods. Most of the options listed here are free, but if you have development experience and have a favorite IDE, then by all means use what you're familiar and/or comfortable with!
+
+=XML Editors=
+
+While XML files are simple text files, basic Windows Notepad lacks any kind of syntax highlighting and rich text editors such as WordPad will insert invisible characters that are not recommended for machine-readable data files. The following are basic code editors that are recommended for writing or editing XML files:
+
+{| class="wikitable"
+! Software !! OS !! Description
+|-
+| [https://code.visualstudio.com/ Visual Studio Code] || Linux/Windows/Mac || A cross-platform code editor with emphasis on productivity and extension support. Also has an [https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml excellent XML plugin]. Generally recommended because it doubles as a great way to create a searchable workspace of all vanilla XML for easy browsing of vanilla XML references. Can also be used to compile C# assemblies with additional plugins but is generally inferior to a dedicated IDE at this task.
+|-
+| [http://notepad-plus-plus.org/download/ Notepad++] || Windows || Light-weight editor with extension support. Adding the "XML Tools" plugin is recommended for editing XML files, as it adds additional validation and error-checking. Can also do workspace/folder searching but is significantly slower in that role.
+|-
+| [http://www.sublimetext.com/ Sublime Text] || Linux/Windows/Mac || Natively supports many programming languages and markup languages, and its functionality can be extended by users with plugins - A brief overview of its functionality can be found [http://webdesign.tutsplus.com/tutorials/useful-shortcuts-for-a-faster-workflow-in-sublime-text-3--cms-22185 here] and a full course [http://code.tutsplus.com/courses/perfect-workflow-in-sublime-text-2 here]
+|-
+| [https://microsoft.github.io/XmlNotepad/#install/ XML Notepad] || Windows || XML-oriented editor with a lot of features you will most likely never use in Rimworld modding
+|-
+| [http://www.geany.org/ Geany] || Linux/Windows/Mac || Extremely lightweight text editor with syntax highlighting and some other basic features oriented towards XML and code editing.
+|}<br/>
+
+=IDEs/Editors=
+
+Writing C# code for custom assemblies requires not only code editing capability but also the ability to compile raw code into executable code. This is generally best done in an Integrated Development Environment that has a compiler built-in.
+
+{| class="wikitable"
+! Software !! OS !! Description
+|-
+| [http://www.visualstudio.com/ Visual Studio] || Windows || Microsoft's flagship IDE and strongly recommended if you are running Windows. The [https://www.visualstudio.com/products/visual-studio-community-vs Community Edition] is free for individuals and small teams, and does everything you need to make a RimWorld mod assembly out of the box.
+|-
+| [https://www.jetbrains.com/rider/ Rider] || Windows/Mac/Linux|| Also has a Community Edition that is free for non-commercial use since [https://blog.jetbrains.com/blog/2024/10/24/webstorm-and-rider-are-now-free-for-non-commercial-use/ October 24, 2024]. Excellent cross-platform alternative that may be more comfortable to use if you are familiar with Jetbrains IDEs.
+|-
+| [https://code.visualstudio.com/ Visual Studio Code] || Windows/Mac/Linux || VS Code can technically be used for C# as well, but you will need to do a little more legwork to get it to actually build the assembly as it's not a true IDE. May be desirable if you have a slow PC or otherwise need a much more lightweight IDE.
+|}
+
+Whichever IDE you choose, make sure it's capable of compiling for .NET Framework 4.7.2. If you for whatever reason don't have this framework installed, you can download it [https://dotnet.microsoft.com/download/dotnet-framework/net472 here].
+
+=C# Decompilers=
+Decompilers are used to read the vanilla game code.
+
+''See [[Modding_Tutorials/Decompiling_source_code|Decompiling source code]]''
+
+=Graphics Software=
+
+For making textures, you will need a graphics program. The following are simply popular options, any software that can export transparent PNGs will work for RimWorld though.
+
+==Raster Graphics==
+
+Raster graphics are graphics that are made of pixels. They can lose detail when resized, but may be more comfortable to use for those with traditional art experience.
+
+{| class="wikitable"
+! Software !! OS !! Description
+|-
+| [http://www.photoshop.com/products Adobe Photoshop] || Windows/Mac || RimWorld's original graphics are made in Photoshop and the official Art Source generally contains PSD files. Photoshop is the gold standard for graphics software, but also very expensive. There are a lot of free alternatives.
+|-
+| [http://www.gimp.org/ GIMP] || Linux/Windows/Mac || A free, open-source alternative to Photoshop that's been around since 1998. GIMP has a large user community, with great list of [http://www.gimp.org/tutorials/ tutorials] on the official sites
+|-
+| [https://krita.org/en/ Krita] || Linux/Windows/Mac || A free digital painting software. Better suited than GIMP for freehand painting and should feel like home pretty quick for Photoshop users.
+|-
+| [https://www.getpaint.net/ Paint.net] || Windows || A free photo editing program preferred by some modders. It is Windows-only.
+|}
+
+==Vector Graphics==
+
+Vector graphics are created using mathematical formulae for lines and shading. They may be easier to work with if you do not have an art tablet or prior art experience, and RimWorld's simplistic art style is easily emulated with vector graphics. Note however that as noted above, RimWorld's art source is in Photoshop files and not vectors as many people believe.
+
+{| class="wikitable"
+! Software !! OS !! Description
+|-
+| [https://www.adobe.com/products/illustrator.html Adobe Illustrator] || Windows/Mac || Adobe's primary vector drawing software package. Also the gold standard for vector graphics, but just like Photoshop is expensive. A few free options also exist.
+|-
+| [http://inkscape.org/en/download/ Inkscape] || Linux/Windows/Mac || Free vector graphic program with a steeper learning curve due to the vector based image editing.
+|}
+
+=Audio Software=
+
+Recording your own audio for mods might be too much to ask, but editing audio is always possible. This can be done with the following software or your own alternative:<br/>
+
+{| class="wikitable"
+! Software !! OS !! Description
+|-
+| [http://sourceforge.net/projects/audacity/ Audacity] || Linux/Windows/Mac || Audio editing software with many tutorials online, lots of useful functionality and a relatively readable interface
+|}
+
+=Debugging Tools=
+
+Conventional debuggers for .NET framework can't attach to RimWorld because the game provides its own Unity-specific runtime. However a number of projects exist offering workarounds that allow the game to be debugged:<br/>
+
+{| class="wikitable"
+! Project !! Compatible debuggers !! Description
+|-
+| [https://github.com/pardeike/Rimworld-Doorstop RimWorld Doorstop] || dnSpyEx/Rider/Visual Studio || A module for the Unity Doorstop tool, tailored for RimWorld specifically. Offers several debugger options to choose from.
+|-
+| [https://github.com/Garethp/Rider-RimworldDevelopment RimworldDev for Rider] || Rider || A plugin for Rider which provides various features to support mod development, including debugging.
+|-
+| [https://github.com/pardeike/RimWorld4Debugging RimWorld4Debugging] || Visual Studio || A wizard which guides the user through the process of installing a Visual Studio based debugging environment. Does not rely on Unity Doorstop, instead uses an alternative approach.
+|}
+
+
+=Additional Links=
+
+* [[Modding_Tutorials/Mod_Folder_Structure|Mod Folder Structure]] - How to set up a mod folder.
+* [[Modding_Tutorials/Setting up a solution|Setting up a solution]] - How to set up a C# solution and project for building a RimWorld mod assembly.
+
+[[Category:Modding tutorials]]

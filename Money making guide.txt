@@ -1,0 +1,529 @@
+{{Page Under Construction||help=0}}
+There are lots of ways of "'''making money'''" in RimWorld. Depending on a colony's location, progress, and inhabitants, certain means of production will be more viable than others. Some can give profit in the long-term, but require more set-up or work. And there are (at least!) two ways to measure "best" - making the fastest profit in the least time, or squeezing the most profit out of a limited amount of starting material, even if it takes longer. This guide will give an overview of the different options.
+{{TOCright}}
+In no particular order:
+* [[Crop]]s, including [[cloth]] & [[drug]] production
+* [[Animal]]s, including [[textile]] crafting
+* Construction, art and crafting.
+* [[Prisoner]]s, and their [[human resources]]
+
+'''All values in this guide assume Strive to Survive [[difficulty]], and use [[Market Value]] instead of "actual" value.''' Difficulty impacts the yield of crops and many other activities. Difficulty also impacts the trade price disadvantage. The higher the difficulty, the less your goods sell for, and the more it costs to buy things.
+
+=== Note on trading ===
+There is no "buy low, sell high" in RimWorld. In general, trader prices do not vary, At most, any [[faction base]] offers a +2% [[Trade Price Improvement]], resulting in ''both'' lower buying prices and higher selling prices. But certain traders will only accept certain types of items. While a faction base will buy almost everything in their tech level, a combat supplier may not be interested in your [[human leather]].
+
+There is another factor discouraging buy, then sell. There is a default 0.6x price multiplier for selling anything, and a separate 1.4x price multiplier for buying anything. The [[AI Storytellers#Trade price disadvantage|Trade price disadvantage]] storyteller difficulty setting will make things even worse. Your trading disadvantage can be reduced by increasing Social skill (and other means of raising [[Trade Price Improvement|TPI]]).
+
+== Food crops ==
+{|class="wikitable sortable"
+! Crop
+! Total Work<br/>(per plant){{Ref label|Sow|1}}
+! Raw material<br/>(per plant){{Ref label|GrowYield|2}}
+! Market Value<br/>(per plant)
+! Market Value<br/>(per hour work)
+! Real days<br/>to grow{{Ref label|Fert|3}}
+! Profit/day<br/>plant growth
+|-
+| [[Corn plant]]
+| 370 ticks (Plants)
+| {{Icon Small|corn}} 22 [[corn]]
+| {{Icon Small|silver}} 24.2
+| {{Icon Small|silver}} 163.5
+| 20.86 days
+| {{Icon Small|silver}} 1.16
+|-
+| [[Haygrass]]
+| 370 ticks (Plants)
+| {{Icon Small|hay}} 18 [[hay]]
+| {{Icon Small|silver}} 10.8
+| {{Icon Small|silver}} 73.0
+| 12.92 days
+| {{Icon Small|silver}} 0.83
+|-
+| [[Rice plant]]
+| 370 ticks (Plants)
+| {{Icon Small|rice}} 6 [[rice]]
+| {{Icon Small|silver}} 6.6
+| {{Icon Small|silver}} 44.6
+| 5.54 days
+| {{Icon Small|silver}} 1.19
+|-
+| [[Potato plant]]
+| 370 ticks (Plants)
+| {{Icon Small|potatoes}} 11 [[potatoes]]
+| {{Icon Small|silver}} 12.1
+| {{Icon Small|silver}} 81.77
+| 10.71 days
+| {{Icon Small|silver}} 1.12
+|-
+| [[Nutrifungus]]{{IdeologyIcon}}
+| 370 ticks (Plants)
+| {{Icon Small|raw fungus}} 11 [[raw fungus]]
+| {{Icon Small|silver}} 12.1
+| {{Icon Small|silver}} 81.77
+| 11.07 days
+| {{Icon Small|silver}} 1.09
+|}
+:{{Note label|Sow|1}} Time it takes to sow and then harvest. Directly reduced by [[Plant Work Speed]]. Does not account for travel/hauling time.
+:{{Note label|GrowYield|2}} Assuming 100% [[AI Storytellers#Harvest yield|harvest yield]] (difficulty stat) and 100% [[Plant Harvest Yield]] (pawn stat, impacted by Plants skill).
+:{{Note label|Fert|3}} Time to grow, taking into account day/night cycles, but not sub-optimal [[light]] level. Assuming 100% soil fertility. Rice and Corn are equally affected by soil, but corn cannot be grown in [[hydroponics]]. Nutrifungus, then potatoes, are affected the least by both poor and good soil.
+----
+[[Corn plant|Corn]] is the best crop for both human food/work and cash/work. It is actually more profitable per unit work than any crop in the game, including every drug. However, it cannot be processed any further, meaning it is reliant entirely on the grow cycle. Per unit, it is less valuable than any drug, meaning more time is spent hauling. You might have to carry all that corn - only bulk goods traders and faction bases will buy it. And, in practice, the slow growing cycle can be a large issue. Corn is more difficult to grow in biomes with a winter. It is vulnerable to destruction, whenever by [[fire]] and [[blight]].
+
+[[Haygrass]] gives more nutrition/day than corn, but cannot be eaten by humans unless produced into [[kibble]], which gives a {{--|12}} moodlet. It is also less efficient for work. [[Rice plant|Rice]] is good as a ''stable'' source of food, but is not efficient at all in terms of product / work. Rice, potatoes, and corn all have roughly the same nutrition per day, just that rice is the most stable, and corn saves the most work.
+
+Make sure not to sell food that you need to eat. When cooked into [[simple meal]]s or regular [[fine meal]]s, each colonist will eat an effective 20 raw food per day. For reference, a field of ~25 tiles of rice, or 20 tiles of rich soil rice, is enough to ''practically'' sustain a single colonist in a year-round growing biome indefinitely. Then you can grow and sell endless fields of corn, without starving.
+
+=== Product ===
+Raw food can be turned directly into sellable [[packaged survival meal]]s, [[pemmican]], and [[chemfuel]]. However, both packaged meals and pemmican require a source of [[meat]], meaning they will not be covered in the table below. Both haygrass and corn can be used to feed [[animal]]s, but most animals can graze in the summer (or all year, if the biome supports it).
+
+{|class="wikitable"
+! Product
+! Total Work
+! Cost
+! Market Value
+! Added Value @ Corn<br/>(per hr work)
+! Added Value @ Human<br/>meat (per hr work)
+|-
+| [[Chemfuel]]
+| 2500 ticks (no skill)
+| {{Icon Small|Stuff}} 3.5 nutrition ({{Icon Small|corn}} 70 [[raw food]])
+| {{Icon Small|silver}} 80.5
+| < {{Icon Small|silver}} 0.01
+| {{Icon Small|silver}} 24.5
+|-
+| [[Lavish meal]]
+| 800 ticks (Cooking)
+| {{Icon Small|meat}} 0.5 nutrition human meat + {{Icon Small|corn}} 0.5 nutrition [[corn|plant food]]<br>{{Icon Small|meat}} 1.25 nutrition human meat
+| {{Icon Small|silver}} 40
+| {{Icon Small|silver}} 65.6
+| {{Icon Small|silver}} 62.5
+|}
+----
+Corn-turned chemfuel in a [[biofuel refinery]] is barely profitable when compared to selling raw corn. You can use less desirable food, like [[human meat]] and [[insect meat]], though it is still less profitable than growing rice. Haygrass cannot be used in the refinery unless first turned into [[kibble]]. 
+
+Chemfuel has its advantages: it is lighter and never rots.
+
+== Cash crops ==
+{|class="wikitable sortable"
+! Crop
+! Planter Work<br/>(per plant){{Ref label|SowB|1}}
+! Raw material<br/>(per plant){{Ref label|GrowYieldB|2}}
+! Market Value<br/>(per plant)
+! Market Value<br/>(per hr work)
+! Real days<br/>to grow{{Ref label|FertB|3}}
+! Profit/day<br/>plant growth
+|-
+| [[Cotton plant]]
+| 370 ticks (Plants)
+| {{Icon Small|cloth}} 10 [[cloth]]
+| {{Icon Small|silver}} 15
+| {{Icon Small|silver}} 101.35
+| 14.77 days
+| {{Icon Small|silver}} 1.02
+|-
+| [[Devilstrand (plant)|Devilstrand]]
+| 600 ticks (Plants)
+| {{Icon Small|devilstrand}} 6 [[devilstrand]]
+| {{Icon Small|silver}} 33
+| {{Icon Small|silver}} 137.5
+| 41.54 days
+| {{Icon Small|silver}} 0.794
+|-
+| [[Healroot]]
+| 1200 ticks (Plants)
+| {{Icon Small|herbal medicine}} 1 [[herbal medicine]]
+| {{Icon Small|silver}} 10
+| {{Icon Small|silver}} 20.83
+| 12.92 days
+| {{Icon Small|silver}} 0.773
+|-
+| [[Hops]]
+| 370 ticks (Plants)
+| {{Icon Small|hops}} 8 [[hops]]
+| {{Icon Small|silver}} 10.4
+| {{Icon Small|silver}} 70.27
+| 9.23 days
+| {{Icon Small|silver}} 1.127
+|-
+| [[Smokeleaf plant]]
+| 370 ticks (Plants)
+| {{Icon Small|smokeleaf leaves}} 9 [[smokeleaf leaves|smokeleaf]]
+| {{Icon Small|silver}} 14.4
+| {{Icon Small|silver}} 97.3
+| 12.92 days
+| {{Icon Small|silver}} 1.115
+|-
+| [[Psychoid plant]]
+| 370 ticks (Plants)
+| {{Icon Small|psychoid leaves}} 8 [[psychoid leaves|psychoid]]
+| {{Icon Small|silver}} 15.2
+| {{Icon Small|silver}} 102.7
+| 16.62 days
+| {{Icon Small|silver}} 0.914
+|-
+| [[Cocoa tree]]
+| 4400 ticks (Plants)
+| {{Icon Small|chocolate}} 20 [[chocolate]]
+| {{Icon Small|silver}} 60
+| {{Icon Small|silver}} 34.09
+| 29.54 days
+| {{Icon Small|silver}} 2.031
+|-
+| [[Ambrosia bush]]{{Ref label|Ambrosia|4}}
+| 200 ticks (Plants)
+| {{Icon Small|ambrosia}} 4 [[ambrosia]]
+| {{Icon Small|silver}} 60
+| {{Icon Small|silver}} (750)
+| N/A
+| N/A
+|}
+:{{Note label|SowB|1}} Time it takes to sow and then harvest. Directly reduced by [[Plant Work Speed]]. Does not account for travel/hauling time.
+:{{Note label|GrowYieldB|2}} Assuming 100% [[AI Storytellers#Harvest yield|harvest yield]] (difficulty stat) and 100% [[Plant Harvest Yield]] (pawn stat, impacted by Plants skill).
+:{{Note label|FertB|3}} Time to grow, taking into account day/night cycles, but not sub-optimal [[light]] level. Assuming 100% soil fertility. Psychoid has the least Fert. sensitivity, and hops are less than the other plants.
+:{{Note label|Ambrosia|4}} Ambrosia bushes cannot be planted, only appearing from the [[Event#Ambrosia sprout|event]]. You cannot control where the ambrosia sprouts, meaning that travel time is highly variable. Note that these bushes can be harvested multiple times.
+----
+Psychoid and cloth are the clear winners when selling raw. Psychoid has lowered fertility sensitivity, so it is weaker per day in [[hydroponics]].
+
+Devilstrand gives more $/work, but it grows nearly twice as slow as corn. As corn gives even more $/work, it is the superior option. Ambrosia blows all plants out of the water ''and'' requires no process work afterwards, but is limited to the event.
+
+Cloth and devilstrand can be used as [[textile]]s for both Crafting and Construction items, after which quality will apply. A skilled crafter applying just a little bit of work can provide a huge +25%, +50%, or even +150% multiplier to the resulting product. (Conversely crafters below level 6 and construction below level 8 risks ''reducing'' the overall value or wasting materials during the build.) Production facilities can be placed essentially anywhere, and thus travel time can also be largely eliminated for even greater efficiency.
+
+The rest of the plants are drugs, and can be processed with either Cooking ''or'' Intellectual.
+
+== Drug production ==
+{|class="wikitable sortable"
+|-
+! Drug
+! Synthesis Work<br/>(per plant)
+! Material<br/>(per plant)
+! Market Value<br/>(per plant)
+! Market Value<br/>(per hr work total){{Ref label|Total|1}}
+! class="unsortable"|
+! Added Value<br/>(per plant)
+! Added Value<br/>(per hr work)
+! Profit/day<br/>plant growth
+|-
+| [[Beer]]
+| 320 ticks (Cook){{Ref label|Beer|2}}
+| {{Icon Small|beer}} 1.6 [[beer]]
+| {{Icon Small|silver}} 19.2
+| {{Icon Small|silver}} 69.56
+!
+| {{Icon Small|silver}} 8.8
+| {{Icon Small|silver}} 68.75
+| {{Icon Small|silver}} 2.086{{Ref label|Ferm|3}}
+|-
+| [[Smokeleaf joint]]
+| 1012.5 ticks (Cook)
+| {{Icon Small|smokeleaf joint}} 2.25 [[smokeleaf joint]]
+| {{Icon Small|silver}} 24.75
+| {{Icon Small|silver}} 46.22
+!
+| {{Icon Small|silver}} 10.35
+| {{Icon Small|silver}} 25.56
+| {{Icon Small|silver}} 1.916
+|-
+| [[Psychite tea]]
+| 800 ticks (Cook)
+| {{Icon Small|psychite tea}} 2 [[psychite tea]]
+| {{Icon Small|silver}} 20
+| {{Icon Small|silver}} 42.73
+!
+| {{Icon Small|silver}} 2.4
+| {{Icon Small|silver}} 7.5
+| {{Icon Small|silver}} 1.316
+|-
+| [[Flake]]
+| 500 ticks (Intel.)
+| {{Icon Small|flake}} 2 [[flake]]
+| {{Icon Small|silver}} 28
+| {{Icon Small|silver}} 80.46
+!
+| {{Icon Small|silver}} 12.8
+| {{Icon Small|silver}} 64
+| {{Icon Small|silver}} 1.842
+|-
+| [[Yayo]]
+| 350 ticks (Intel.)
+| {{Icon Small|yayo}} 1 [[yayo]]
+| {{Icon Small|silver}} 21
+| {{Icon Small|silver}} 72.92
+!
+| {{Icon Small|silver}} 5.8
+| {{Icon Small|silver}} 41.43
+| {{Icon Small|silver}} 1.381
+|-
+|}
+:{{Note label|Total|1}} Combined work from both planting and synthesis. Controlled by [[Plant Work Speed]] and either [[Drug Cooking Speed]] (Cook) or [[Drug Synthesis Speed]] (Intel.).
+:{{Note label|Beer|2}} For beer, [[hops]] need to be converted into [[wort]], then put into a [[fermenting barrel]] to make beer. This extra hauling work is not accounted for.
+:{{Note label|Ferm|3}} Beer takes 6 days to ferment from wort in a fermenting barrel. Fermentation can be done concurrently with plant work, so this is ignored.
+----
+* '''Why Drugs?'''
+Despite having a lower value/work ratio than raw plants, drugs have several major advantages.
+
+All calculations assume that a drug is constantly being planted, harvested, and synthesized by 1 pawn, before travel time. These tables are comparing 1000 leaves-turned-flake to selling 2315 raw leaves, not 1000 to 1000 leaves. If your planter is not constantly harvesting and resowing every day until the first batch of drug finishes growing, then you have time to synthesize.
+
+Even if you are able to plant every day, drug synthesis allows you to ''get more value from the same growing space''. Creating drugs allows 2 pawns, perhaps with different skills and passions, to "work" at the same sized field at the same time. If you have a pawn that's bad at plants but great at intellectual, then they are better off creating drugs. Certain [[biome]]s may be limited in grow space. Other biomes can let you grow in the summer, and synthesize in the winter. And even in a tropical rainforest, large fields can be difficult to protect from [[fire]], [[raider]]s, and [[blight]]. With Plants 8 and an 8 hour work day, a planter could theoretically sustain 897 tiles of psychoid.
+
+The other advantage is with logistics. More traders accept drugs than raw plants. Drugs are much lighter than their raw materials, meaning [[caravan]]s and [[transport pod]]s can carry much more at a time. In addition, plant matter will rot when unrefrigerated; drugs don't.
+
+* '''Drug Comparison'''
+Flake is the absolute winner for almost every relevant stat, considering beer's fermentation time. Yayo takes less work per leaf, but selling flake + excess leaves is more valuable than selling yayo. However: if work time is not an issue, but [[hydroponics]] space is, then smokeleaf is the superior choice. If [[Research#Psychite refining|Psychite Refining]] has not been researched, then Beer (requires [[Research#Beer brewing|Beer Brewing]]) and smokeleaf (requires [[Research#Drug production|Drug Production]] to not be half speed) have their merits. 
+
+Psychite tea is clearly the worst available drug for selling. However, colonies may produce it to drink. Psychite tea can be safely drunk by adult colonists every 2 days, giving [[Recreation]] and decreasing the [[Rest]] each colonist needs. As calculated in psychite tea's [[Psychite_tea#Work_analysis|analysis section]], it is virtually always positive in terms of work gained : work required ratio. Excess psychite tea can be sold to traders for a decent profit.
+
+* '''High Life'''{{IdeologyIcon}}
+The [[high life]] meme{{IdeologyIcon}} multiplies yield of drug plants by x1.5, drug creation speed by x1.5, and gives +10% [[Trade Price Improvement]] when selling drugs. Psychoid leaves alone becomes very comparable in Value / Planter Work to corn. 
+
+While psychoid (and other drug crops) are still worse in ''optimal'' value / work time than corn, creating drugs has its advantages, listed in "Why Drugs?". Therefore, high life flake tends to be better in practice than corn, let alone flake without an ideology.
+
+----
+=== Neutroamine drugs ===
+Some drugs require [[neutroamine]], which can only be reliably obtained via trade. This is subject to the various [[Trade Price Improvement]]s, but under the default difficulty settings at 0% TPI, you buy at a x1.4 markup and sell at a x0.6 loss. Neutroamine is a finite resource at any one point in time, so you are often better off using it for the actual drugs
+
+{|class="wikitable sortable"
+! Drug
+! Synthesis Work<br/>
+! Cost ({{Icon Small|silver}} @ 0% TPI){{Ref label|Neutro|1}}
+! Market Value
+! Profit @ 0% TPI<br/>(per drug)
+! Profit @ 0% TPI<br/>(per hr work)
+! class="unsortable"|
+! Profit @ 30% TPI<br/>(per drug){{Ref label|TPI|2}}
+! Profit @ 30% TPI<br/>(per hr work){{Ref label|TPI|2}}
+|-
+| [[Penoxycyline]]
+| 600 ticks (Intel.)
+| {{Icon Small|neutroamine}} 2 ({{Icon Small|silver}} 16.8)
+| {{Icon Small|silver}} 18
+| {{Icon Small|silver}} {{--|6}}
+| N/A
+!
+| {{Icon Small|silver}} 2.28
+| {{Icon Small|silver}} 9.5
+|-
+| [[Medicine]]
+| 900 ticks (Intel.)
+| {{Icon Small|neutroamine}} 1 + {{Icon Small|cloth}} 3 + {{Icon Small|herbal medicine}} 1 <br/>({{Icon Small|silver}} 8.4 bought + 14.5 other)
+| {{Icon Small|silver}} 18
+| Never
+| N/A
+!
+| Never
+| N/A
+|-
+| [[Go-juice]]
+| 600 ticks (Intel.)
+| {{Icon Small|neutroamine}} 2 + {{Icon Small|yayo}} 1<br/>({{Icon Small|silver}} 16.8 bought + 21 other)
+| {{Icon Small|silver}} 53
+| {{Icon Small|silver}} 2.4
+| {{Icon Small|silver}} 10
+!
+| {{Icon Small|silver}} 13.2
+| {{Icon Small|silver}} 55
+|-
+| [[Wake-up]]
+| 900 ticks (Intel.)
+| {{Icon Small|neutroamine}} 2 ({{Icon Small|silver}} 16.8)
+| {{Icon Small|silver}} 35
+| {{Icon Small|silver}} 4.2
+| {{Icon Small|silver}} 11.67
+!
+| {{Icon Small|silver}} 15.54
+| {{Icon Small|silver}} 43.17
+|}
+:{{Note label|Neutro|1}} Assuming neutroamine is bought, at 140% markup. Anything that can be produced in your colony is assumed to be produced at your colony, and is worth regular market value. The trade disadvantage is taken account when calculating profits for not-neutroamine goods (i.e. yayo is 21 * 0.6 for the 0% TPI profit column).
+:{{Note label|TPI|2}} 30% [[Trade Price Improvement|TPI]] is reached at 20 Social skill with no other modifiers, or 8 Social skill with a trading [[inspiration]] (you may need to have multiple inspirations). You sell at x0.78 and buy at x0.98.
+----
+As the trade price disadvantage is increased for [[difficulties]] past Strive to Survive, all neutroamine drugs cease to become (very) profitable.
+
+== Apparel and armchairs ==
+All the uses for [[cloth]] and other [[textile]]s. Both buildings and apparel have a [[quality]] value. The higher the quality, the higher the value. As a reference: you ''average'' normal quality at Crafting / Construction 6. You average good quality at Skill 13. For all effects of quality, including price multi. per quality, and the chance of each quality at a given skill level, see the [[Quality]] page. 
+
+Each product is made out of [[cloth]], for comparison.
+{|class="wikitable"
+! Product
+! Total Work{{Ref label|Craft|1}}
+! Cost
+! Net Value @ Normal
+! Added Value<br/>@ Normal<br/>(per unit material)
+! Added Value<br/>@ Normal<br/>(per hr work)
+! class="unsortable"|
+! Net Value @ Good
+! Added Value<br/>@ Good<br/>(per unit material)
+! Added Value<br/>@ Good<br/>(per hr work)
+|-
+| [[Tribalwear]]
+| 1800 ticks (Craft)
+| {{Icon Small|cloth}} 60 ({{Icon Small|silver}} 90)
+| {{Icon Small|silver}} 97
+| {{Icon Small|silver}} 0.117 ({{+|7.7%}})
+| {{Icon Small|silver}} 9.72
+!
+| {{Icon Small|silver}} 121.25
+| {{Icon Small|silver}} 0.521 ({{+|34.7%}})
+| {{Icon Small|silver}} 43.4
+|-
+| [[Duster]]
+| 10000 ticks (Craft)
+| {{Icon Small|cloth}} 80 ({{Icon Small|silver}} 120)
+| {{Icon Small|silver}} 156
+| {{Icon Small|silver}} 0.335 ({{+|22.3%}})
+| {{Icon Small|silver}} 9
+!
+| {{Icon Small|silver}} 195
+| {{Icon Small|silver}} 0.938 ({{+|62.5%}})
+| {{Icon Small|silver}} 18.75
+|-
+| [[Armchair]]
+| 14000 ticks (Constr.)
+| {{Icon Small|cloth}} 110 ({{Icon Small|silver}} 165)
+| {{Icon Small|silver}} 150.5{{Ref label|Build|2}}
+| {{Icon Small|silver}} {{--|0.13}} ({{--|8.6%}})
+| {{Icon Small|silver}} {{--|2.59}}
+!
+| {{Icon Small|silver}} 188.1{{Ref label|Build|1}}
+| {{Icon Small|silver}} 0.34 ({{+|22.8%}})
+| {{Icon Small|silver}} 4.13
+|-
+| [[Corset]]{{RoyaltyIcon}}<br/>[[Formal vest]]{{RoyaltyIcon}}
+| 12000 ticks (Craft)
+| {{Icon Small|cloth}} 45 ({{Icon Small|silver}} 67.5)
+| {{Icon Small|silver}} 111
+| {{Icon Small|silver}} 0.97 ({{+|64.7%}})
+| {{Icon Small|silver}} 9.06
+!
+| {{Icon Small|silver}} 138.75
+| {{Icon Small|silver}} 1.58 ({{+|105.5%}})
+| {{Icon Small|silver}} 14.84
+|}
+:{{Note label|Craft|1}} Crafting speed is not increased by Crafting skill; skill only impacts [[quality]]. However, [[Construction Speed]] ''is'' impacted by the skill.
+:{{Note label|Build|2}} All constructed buildings are sold at at x0.7 price, in addition to the regular [[Trade Price Improvement|TPI]] and [[difficulty]] penalties. This is reflected in the armchair's value and profit.
+----
+For nearly every crafted / consructed item in RimWorld, market value is calculated ''directly'' with (Ingredient Value) and (Work to Make). This means that '''there's no particularly 'bad' or 'good' apparel item''' for the purposes of craft -> selling. The listed items are just the most optimal for a desired goal; do you want more profit per material, or do you want more profit per work time?
+
+Depending on installed [[DLC]], [[duster]]s {{RimworldIcon}} or [[corset]]s{{RoyaltyIcon}} / [[formal vest]]s{{RoyaltyIcon}} require the most Work : Material, and therefore the most profitable in terms of Value/Material. However, they are poor in terms of $/Work. You should make them if textile supply is limited, or if crafters can spare the work. Alternatively, you can sell any low-quality dusters you've accidentally made to any traders that show up. 
+
+Tribalwear is the polar opposite; best in $/work but worst in value/material. If you have a lot of spare material but need extra money fast, then create those. Quality has a huge impact on profit. The [[empire]]{{RoyaltyIcon}} will not buy tribalwear; [[top hat]]s will become the best for $/work.
+
+Armchairs are in a similar, but worse position to dusters. Only make them if you have the textiles to spare, have an idle constructor, and have a ''much'' better constructor than crafter. With poor quality armchairs, it is more convenient to just deconstruct armchairs than sell them.
+
+* '''Ideology Roles'''{{IdeologyIcon}}
+[[Production specialist]]s{{IdeologyIcon}} have +50% [[general labor speed]] and +1 [[quality]] on all items. Masterwork items, worth x2.5 as much as normal, can become incredibly common. A level 20 specialist making tribalwears creates an average of {{Icon Small|silver}} 283.3 silver/hour. This should be compared to a level 20 [[Plants specialist]] churning out corn at 308% speed and 143% yield, for {{Icon Small|silver}} 720 silver/hour. The amount of space required and amount of corn produced for maximum efficiency will be absurd, but so is the cloth required for max efficiency production specialist.
+
+== Sculptures ==
+The game encourages creating art for sale. Art sells for x1.1 its value, as opposed to x0.7 value for most other constructed buildings (a 57% increase). Wood is the only material that makes sense to build sculptures for profit in terms of value added per unit work. For materials other than wood, the ratio of work cost versus value added is so low that it isn't worth it unless you either 1) have time and material to burn, or 2) are trying for a specific high-quality sculpture and are willing to sell off the failures.
+
+In general, small sculptures have the highest profit/material and lowest profit/work, while large/grand sculptures are the opposite. What this means is that if you have time but are short on material and want to make the most of what you do have, make small sculptures. Conversely, if you have lots of material and want to create value (relatively) quickly, make grand sculptures. Practically speaking, grand sculptures, at a size of 2x2, are not as useful in your colony as large sculptures, so many players make large and sell off their lower-quality discards.
+
+Also, be mindful that traders may not have enough silver or even goods to buy the best large/grand sculptures. Even [[faction base]]s and [[comms console|orbital trader]]s will run out of actual silver.
+
+{|class="wikitable sortable"
+|-
+! Size
+! Work to process
+! Profit @ Normal
+! Profit / Material
+! Profit / Work Hour
+|-
+| [[Small sculpture]]
+| 12600 ticks (Art)
+| {{Icon Small|silver}} 49.5
+| {{Icon Small|silver}} 0.99
+| {{Icon Small|silver}} 9.81
+|-
+| [[Large sculpture]]
+| 21000 ticks (Art)
+| {{Icon Small|silver}} 83.6
+| {{Icon Small|silver}} 0.836
+| {{Icon Small|silver}} 9.94
+|-
+| [[Grand sculpture]]
+| 73500 ticks (Art)
+| {{Icon Small|silver}} 291.5
+| {{Icon Small|silver}} 0.729
+| {{Icon Small|silver}} 9.91
+|}
+
+It is about 1/10th as profitable to make sculptures per unit work as to farm crops.
+
+== Ranching ==
+Most animals will not provide terribly efficient returns for the labor needed to extract their products. However, depending on biome, simply allowing the animals to breed and graze freely can be a strong source of intermittent revenue. Simply leave them alone in a large pen to breed until they exceed the grazing capacity, then call in a trader or bring them to market. Animals have the additional benefit of being able to carry themselves in a caravan!
+
+Note that since this is designed to be a minimal-labor strategy, it may be necessary to exclude your colonists from pens containing harvestable animals. Additionally, this may make it more profitable to immediately sell a sick animal rather then spend labor and resources on helping it recover.
+
+Ranching for profit works best in equatorial biomes (where growing hay is unnecessary), and for colonies that are more constrained by space than labor (most of them, under default map size/soft pawn limit settings). Other areas will find it far less efficient.
+
+Aspiring ranchers may find it useful to consult the [[Animal husbandry#Feeding animals|animals]] page to compare relative requirements to raise each animal type.
+
+Horses are a very strong contender which also fit well with the hands-off approach. They can do triple work as pack animals, mounts, and a source of income.
+
+Conversely, pure carnivores offer very poor returns for ranching. They require other animals as food, which is already inefficient (if you're ranching them) and is even worse if you're hunting them. Still, most carnivores (minus the [[warg]]) can be fed with kibble, which allows partial haygrass diets. Remember also that carnivores eat corpses in the wild, and all those raider corpses [[Human_resources#Unprocessed_corpses|could be put to use in a cooled feeding room]], rather than cremated or buried... Colonists might mind when you butcher human bodies, but if you stuff them in a freezer and let your wargs/dogs/etc munch on them they won't even raise an eyebrow, as long as they don't see the corpses.
+
+== Material production ==
+While not the most lucrative venture, stone blocks can be sourced infinitely on any map that is not located in [[Biomes#Ice_sheet|ice sheet]] and [[Biomes#Sea_ice|sea ice]] [[biome]]s. It is also extremely scalable - a sweatshop of a dozen laborers and miners can constantly produce value that would otherwise take a much larger growing area. You are only functionally limited by the amount of pawns, power (for [[deep drill]]s), and defenses (to survive raiders).
+
+Infinite chunks can be spawned from a deep drill in an area that contains no underground resources. The type of chunk produced will be displayed on the deep drill's tooltip. It can be beneficial to place the drill right next to the stonecutter's table to remove the need for hauling, but this does risk the stonecutter being attacked by the insectoids that the drill can occasionally spawn, in addition to the drill operator. 
+
+Consider optimizing your stone selection for your export aim. Most maps contain two stone types, at most three. [[Slate block]]s offer the highest value:weight ratio, although this advantage goes away if you further process them into sculptures. Sandstone has the highest market value per unit of work so is the best stone type for crafting items for sale in bulk (all stone blocks are worth 0.9 silver per block.) Note: Blocks can only be traded to bulk goods traders or most faction bases. Given the incredibly poor value:weight ratio of even slate, you will largely be limited to exporting to whatever bulk goods traders happen to visit. Sculptures can be sold to ''anyone'' and offer a 10% premium on their sale price, as such they are appropriate for most colony circumstances.
+
+Marble may be worth extra consideration, as it provides a large bonus to beauty. Marble walls, marble sculptures, even marble slab beds will be more beautiful than their other stone counterparts. Beautiful surroundings increases [[mood]], so it can keep your colony from descending into chaos... or even inspire an artist or two to create legendary works. Marble furniture can be placed around the colony and easily uninstalled later when it comes time to export them.
+
+Ultimately, chunk->block value production is simply a function of how much work your pawns apply. With the Ideology DLC installed, [[slaves]]{{IdeologyIcon}} are ideal as stone cutters as the task doesn't depend on any of the pawn's skills. The -15% work speed from slaves is offset by a lack of need for recreation. Adding a [[circadian half-cycler]]{{RoyaltyIcon}} further increases efficiency by removing the need for sleep at the cost of -15% consciousness.
+
+== Transmute steel ==
+{{Anomaly|section=1}}
+
+The [[transmute steel]] ability can only be found on [[creepjoiner]]s, and there is no guarantee that they will appear with transmute steel. Furthermore they may come with a downside that makes them too difficult to keep. But if a colonist with transmute steel can be obtained, this ability is one of the best ways to create money in the game. It only takes {{Ticks|120}} for the ability to activate with a {{Ticks|50000}} cooldown.
+
+When used on a [[stuff]]able item, such as a [[sculpture]] or building, transmute steel will turn the item into [[bioferrite]], [[uranium]], [[plasteel]], or [[gold]]. Gold is the most important item, as gold is a [[small volume material]] and thus requires 10x the material. For example, a steel [[large sculpture]] requires {{Icon Small|Steel}} 100 while a gold large sculpture requires {{Icon Small|Gold}} 1000, so if a steel sculpture is converted into gold, there will be a massive boost in value. Even if it is converted into uranium or plasteel, a decent profit can be made.
+
+A normal [[quality]] [[steel]] [[large sculpture]] is worth {{Icon Small|Silver}} {{Market Value Calculator|Large sculpture|Steel|Normal}}. When using transmute steel there are four possible outcomes, worth the following amounts:
+* Bioferrite: {{Icon Small|Silver}} {{Market Value Calculator|Large sculpture|Bioferrite|Normal}}
+* Uranium: {{Icon Small|Silver}} {{Market Value Calculator|Large sculpture|Uranium|Normal}}
+* Plasteel: {{Icon Small|Silver}} {{Market Value Calculator|Large sculpture|Plasteel|Normal}}
+* Gold: {{Icon Small|Silver}} {{Market Value Calculator|Large sculpture|Gold|Normal}}
+
+The expected profit per use is {{Icon Small|Silver}} {{#expr: ({{Market Value Calculator|Large sculpture|Bioferrite|Normal}} + {{Market Value Calculator|Large sculpture|Uranium|Normal}} + {{Market Value Calculator|Large sculpture|Plasteel|Normal}} + {{Market Value Calculator|Large sculpture|Gold|Normal}})/4 - {{Market Value Calculator|Large sculpture|Steel|Normal}}}} compared to just having the steel sculpture. Since traders will not have 10000 silver lying around, it will be necessary to buy goods (even if just to sell later on) or make [[small sculpture]]s instead. Sculptures are generally the best item to convert due to the {{Good|x1.1}} [[Sell Price Multiplier]] from artwork, but if there is no artist then other stuffable items can be used as well.
+
+== The most money ==
+By now, it should be established that [[corn]] is easily the most profitable per unit work. With all the DLCs, how far can it go?
+*At level 20 Plants, you reach 113% Harvest Yield and 238% Plants Harvest Speed.
+* [[Very neurotic]] + [[Industrious]] give 175% Global Work Speed
+* [[Trauma savant]] adds +50% [[Manipulation]]
+* 2 [[field hand]]s{{RoyaltyIcon}} offset Plants Harvest Speed by +160% each
+* [[Plants specialist]]{{IdeologyIcon}} gives +70% speed and +30% yield.
+* [[Elongated fingers]]{{BiotechIcon}} boosts manipulation by x110% (for 165% manipulation)
+* [[Never sleep]]{{BiotechIcon}} removes sleep without any work-related penalty
+With a total of 150% yield and 3367% speed, you would reach a theoretical optimum of {{Icon Small|silver}} 8257 silver per hour. You would be planting 227.5 tiles per hour, or 5,460 tiles (a 73x73 area) per 24 hour day. If the entire map was regular soil and you didn't have to worry about travel time/light/food/recreation, this results in planting 113,895 tiles by the time the first corn finishes growing. This is a 337 x 337 area, much larger than a regular map. Due to travel speed, the actual result will be much smaller.
+
+With the release of [[Biotech]]{{BiotechIcon}}, there are even more avenues to squeeze wealth out of your growing. Genes like [[psychic bonding]]{{BiotechIcon}} or [[pollution stimulus]]{{BiotechIcon}} offer direct manipulation and move speed buffs. Even better, your single grower could also be a [[mechanitor]]{{BiotechIcon}} who controls dozens of [[agrihand]]s{{BiotechIcon}}. Once they've been set up, they'll work forever unless anything harms them. (NB: A plants specialist cannot gestate or repair mechs, but you can set them up ''before'' becoming a plants specialist!)
+
+This is before temporary modifiers like [[wake-up]], [[work frenzy]], and [[Work drive]]{{IdeologyIcon}}.
+
+== How to calculate ==
+How to derive these numbers by yourself, in case you want to double-check this guide, or calculate values for other items.
+
+Note: 1 RimWorld hour = 2,500 [[ticks]].
+
+=== Plants ===
+* Planter Work = (Work to Sow) + (Work to Harvest)
+* Market Value per plant = (Material Value) * (Material Yield)
+* Market Value per hour work = (Market Value per plant) * [ (2500 ticks) / (Planter Work) ]
+* Profit per day = (Market Value per plant) / (Real Days to Grow)
+
+=== All produced items ===
+* Synthesis Work or Crafter Work = (Work to Make)
+* Total Work = (Work Ingredients) + (Work to Make)
+* Market Value per work total = (Market Value) / (Total Work)
+* Net Value = (Market Value) * ([[Sell Price Multiplier]])
+
+'''Added Value & Profit'''
+* Added Value = (Market Value) - (Ingredient Value * Ingredients required)
+* Added Value per hour work = (Added Value) * [ (2500 ticks) / (Synthesis Work) ]
+* Profit at 0% [[Trade Price Improvement|TPI]] = 0.6 * (Market Value - Material Value Produced) - 1.4 * (Material Value Bought)
+(At 0% TPI, items sell at 60% and are bought at 140%. See TPI page for all the buy/sell multipliers)
+
+{{Nav|guides|wide}}
+[[Category:Guides]]

@@ -1,0 +1,180 @@
+{{Biotech}}
+{{About|the mechanoid added by the [[Biotech DLC]]|the ideoligious meme added by the [[Ideology DLC]]|Tunneler (meme)}}
+{{Infobox main|none
+| name = Tunneler
+| image = TunnelerAncient east.png
+| description = A heavy mechanoid built for mining in treacherous locations. While intended for excavation, the tunneler's gigantic power claws and ultra-thick armor makes it a dangerous force in combat.
+| type = Mechanoid
+| movespeed = 1.9
+| flammability = 0
+| marketvalue = 1200
+| combatPower = 250
+| armorblunt = 40
+| armorsharp = 80
+| armorheat = 200
+| min comfortable temperature = -100
+| max comfortable temperature = 250
+| psychic sensitivity = 0.5
+| toxic resistance = 1
+| toxic environment resistance = 1
+| bandwidth cost = 3
+| bodysize = 3.5
+| healthscale = 1.5
+| hungerrate = <!-- May not be applicable, or may need custom implementation, if unsure, tag page with {{Stub}} and any known details -->
+| lifespan = 
+| attack1dmg = 22
+| attack1type = Scratch
+| attack1cool = 2.9
+| attack1part = left power claw
+| attack2dmg = 22
+| attack2type = Scratch
+| attack2cool = 2.9
+| attack2part = right power claw
+| page verified for version = 1.4.3525
+<!-- Creation -->
+| research = Standard mechtech
+| production facility 1 = Large mech gestator
+| gestation cycles = 4
+| resource 1 = Steel
+| resource 1 amount = 150
+| resource 2 = Plasteel
+| resource 2 amount = 75
+| resource 3 = Component
+| resource 3 amount = 4
+| resource 4 = Standard subcore
+| resource 4 amount = 1
+}}
+A '''tunneler''' is a [[mechanoids|mechanoid]] added by the [[Biotech DLC]].
+
+== Acquisition ==
+{{Acquisition}}
+
+Dead, friendly tunnelers can also be resurrected at the {{lc:{{P|Production Facility 1}}}} using the "''Resurrect heavy mechanoid''" bill. This requires the corpse of the friendly tunneler, {{Icon Small|Steel||100}} [[steel]], and 1 [[gestation cycle]] taking {{ticks|1800}} to initiate.
+
+== Summary ==
+{{Mechanoid Summary}}
+
+Dead tunnelers may be shredded at the [[machining table]] or [[crafting spot]] for {{Icon Small|Steel||20}} [[steel]] and {{Icon Small|Plasteel||10}} [[plasteel]]. However, these values are affected by [[Mechanoid Shredding Efficiency|mechanoid shredding efficiency]], as well as missing parts on the tunneler.
+
+Tunnelers do not seem to spawn in regular mech [[raid]]s, [[crashed ship parts]], or [[mech cluster]]s{{RoyaltyIcon}}.{{Check Tag|Verify|Not thoroughly checked}} However, they appear as part of certain [[war queen]] and [[apocriton]] summon groups.
+
+=== Combat ===
+In combat, tunnelers use sharp melee attacks. They have an innate [[smokepop pack]] ability, but this has a cooldown of 15 days.
+
+Tunnelers have the highest armor values of any mechanoid in the game, with {{+|5%}} more Sharp and Blunt armor than the [[war queen]]. However, with a health scale of 1.52, it doesn't have the hit point pool of the larger mechs. They have an innate shield, which is equivalent to a [[shield belt]], just with 250 HP. This is higher than even a legendary [[quality]] shield belt.
+
+Tunnelers use regular staggering mechanics, as with any other enemy. A tunneler can theoretically be staggered by a weapon with at least 3.5 [[stopping power]], however no weapon in the game has enough stopping power to do so.
+
+=== Armor ===
+{| class="wikitable"
+|-
+! Armor
+|-
+| {{Apparel Protection Chart|set1name= {{P|Name}} {Sharp) | set1armor1={{P|Armor - Sharp}} | set2name= {{P|Name}} {Blunt) | set2armor1={{P|Armor - Blunt}}  }}
+|}
+
+=== As an ally ===
+Once made, they recharge in a [[large mech recharger]] (50% power/day), creating 15 [[wastepack]]s whenever the recharger's waste is filled up. 
+
+=== Work ===
+Tunnelers will do tasks associated with the Mining tab, though are unable to use [[deep drill]]s. They cannot be manually controlled, except when drafted for combat. They have an effective Mining skill of 10, but with a [[Global Work Speed]] of 150%. 
+
+For reference, every other labor mechanoid has a Global Work Speed of 50%. As [[control sublink]]s and the [[Mechanoid labor]] precept{{IdeologyIcon}} both act as additive offsets to work speed, the tunneler receives a relatively smaller boost. For example, a [[cleansweeper]] could go from 50% to 70% work speed - a {{Good|x140%}} increase. A tunneler would go from 150% to 170%, which is only a {{Good|x113.3%}} increase.
+
+== Analysis ==
+Tunnelers are useful for mass mining operations, whether it is expanding out your mountain base or mining mineral lumps found using a [[long-range mineral scanner]]. Mechanoids are not subject to illness or mental breaks, and only recharge for 2 days out of every 12. 
+
+=== Work Speed ===
+The following table summarizes the work speed effects of operating within the influence of a [[mech booster]] and having [[control sublink (standard)|control sublink]]s installed by the Mechanitor.
+All values are for 50%+ lighting conditions.
+{| class="wikitable" style="text-align: center;"
+! rowspan=2|Control<br/>Sublinks !! rowspan=2|Work<br/>Speed !! rowspan=2|Mech<br/>Boosted !! colspan=2|Actual mining speed<br/>(damage/ticks)
+|-
+! Non-boosted !! Boosted
+|-
+! 0
+| 150% || 225% || 1 || 1.5
+|-
+! 1 <!-- The formula is 80(base damage per mining action) / 120 (Ticks per action at 100%) times Work speed. -->
+| 156%  || 231% || {{#expr: 80/120 * 1.56}} || {{#expr: 80/120 * 2.31}}
+|-
+! 2 
+| 162%  || 237% || 1.08 || 1.58
+|-
+! 3 
+| 168%  || 243% || 1.12 || 1.62
+|-
+! 4 
+| 174% || 249% || 1.16 || 1.66
+|-
+! 5
+| 180% || 255% || 1.20 || 1.70
+|-
+! 6 
+| 186% || 261% || 1.24 || 1.74
+|}
+A colonist's mining speed is based on their [[Mining Speed]] stat, and can be directly correlated to a tunnelers' Work Speed. Some useful points of comparison:
+* Mining 12 is roughly equivalent (99%) to a base tunneler.
+* Mining 18 is roughly equivalent (97%) to a tunneler with a Mech Booster (but no Sublink bonus).
+* Mining {{0}}5 plus a [[Drill arm]] is also equivalent speed wise to a tunneler with a Mech Booster.
+* Mining 20 is roughly equivalent (97%) to a tunneler with a Mech Booster and 2 Sublink bonuses.
+* Mining 17 with 125% manipulation match a tunneler with a Mech Booster and all 6 Sublink bonuses.
+* The maximum Tunneler Work speed of 281% (Mech Booster plus 6 Sublinks and the [[Mechanoid labor|Mechanoid labor precept]]{{IdeologyIcon}}) is matched by a pawn with mining 19 and 125% manipulation, or a mining 16 and 150% manipulation.
+
+=== Mining Yield ===
+Tunnelers appear to have no special modifiers to [[Mining Yield]], meaning that they function identically to a Skill 10 Colonist for this purpose. Higher skilled colonists will extract more material, but the increase isn't very large until very high skill levels. For comparison, a healthy, level 20 human miner has the maximum possible mining yield of 113% compared to the 102% of the tunneler. For maximum resources, leave ores for higher skill colonists, if present, to mine. However, it may be more useful to get a place dug out ''now'' than to get a little more ore.
+
+Conversely, a lower mining yield will slightly lower the amount of [[stone chunk]]s that have to be hauled out of a mountain base. The difference is too small to notice, either way.
+
+=== As an ally in combat ===
+Tunnelers are incredibly slow, with middling {{DPS}} and a decent durability. They have 152% the health of a human, armor slightly worse than normal [[recon armor]], and an innate shield better than a ''legendary'' [[shield belt]]. While they won't deal as much damage compared to a dedicated melee pawn, nor able to run or lock down enemies like a scyther, tunnelers can act as great [[melee block]]ers and draw enemy fire. This lets other combatants focus on dealing damage.
+
+==== Comparison to scythers ====
+Tunnelers face competition from [[scyther]]s, a melee-focused mech also unlocked from [[Research#{{Q|Scyther|Required Research}}|{{Q|Scyther|Required Research}}]]. 
+
+Tunnelers don't have a scyther's speed, consume +1 [[bandwidth]], and cost a bit more to make. They also have inferior DPS - the tunneler has a {{Hover title|I.e. DPS after accounting for the melee verb system but without considering the target's attributes|true DPS}} of 7.59 (4.7 after [[Melee Hit Chance]]), {{%|7.59/10}} of the scyther. The tunneller has slightly higher {{AP}} which does not change the overall comparison much. However, tunnellers are significantly more durable, with significantly more armor, slightly higher health, and the aforementioned shield. 
+
+If durability is completely irrelevant, such as when using [[Skip]] psycast{{RoyaltyIcon}} mobbing tactics, then scythers are superior due to their lower bandwidth cost. If durability is relevant, such as for melee block tactics, then you may want a tunneler. In addition, a tunneler used for mining might as well be used for combat whenever possible.
+
+==== Comparison to centipedes ====
+As durable mechs, tunnelers also face competition from [[centipede]]s. Centipedes have {{%|{{Q|Centipede|Health Scale}}/{{P|Health Scale}} round 2}} the health scale and thus {{HP}} of the tunneler. In return, it has slightly worse armor (Sharp: {{Q|Centipede|Armor - Sharp}}% Blunt: {{Q|Centipede|Armor - Blunt}}%) and no shield belt. In addition, centipedes cost 1 more bandwidth and are unlocked at [[Research#{{Q|Centipede gunner|Required Research}}|{{Q|Centipede gunner|Required Research}}]]. All centipedes have identical durability to each other.
+
+Centipedes deal 86% of the {{Hover title|I.e. DPS after accounting for the melee verb system but without considering the target's attributes|base true melee DPS}}, however their melee attack deals ''Blunt'' damage. Against enemies with high sharp armor, centipedes can actually do more damage. For example, a centipede headbutt has enough {{AP}} to ignore another centipede's armor, but the tunneler would have its damage reduced by 70%. After considering the mechanics of the [[Damage types#Scratch|Scratch]] damage type, the tunneler is slightly better against unarmored targets and slightly worse against armored.
+
+So for the sole purpose of tanking enemies, the centipede is almost always better even when considering the tunneler's shield. The centipede's ranged weaponry makes them more flexible in combat. But centipedes are more expensive. When a centipede is tied up in melee, unable to fire while being fired at, it won't be much better than a tunneler.
+
+== Health == 
+=== Body parts ===
+{{Animal Health Table|Mech_Tunneler}}
+=== Armor ===
+{| class="wikitable"
+! Armor
+|-
+| {{Apparel Protection Chart
+| set1name= {{P|Name}} (Sharp) | set1armor1={{P|Armor - Sharp}} 
+| set2name= {{P|Name}} (Blunt) | set2armor1={{P|Armor - Blunt}} 
+| set3name= {{P|Name}} (Heat) | set3armor1={{P|Armor - Heat}} 
+| color= grey, blue, red
+}} 
+|}
+{{Pawn Attack Table}}
+
+== Gallery ==
+<gallery>
+Tunneler east.png| Age 0-99 Tunneler facing east
+Tunneler north.png| Age 0-99 Tunneler facing north
+Tunneler south.png| Age 0-99 Tunneler facing south
+</gallery><gallery>
+TunnelerAncient east.png| Age 100+ Tunneler facing east
+TunnelerAncient north.png| Age 100+ Tunneler facing north
+TunnelerAncient south.png| Age 100+ Tunneler facing south
+</gallery>
+
+== Version history ==
+* [[Biotech DLC]] Release - Added
+* Somewhere between Release and 1.4.3641 - Power claw attack changed from [[Damage Types#Blunt|Blunt]] to [[Damage Types#Scratch|Scratch]].
+* [[Version/1.4.3531|1.4.3531]] - Increased armor values from 40/20/200 to 80/40/200
+* [[Version/1.4.3682|1.4.3682]] - Removed special stagger mechanic from tunneler mechs. Previously, tunnelers would be staggered for {{ticks|120}} on any ranged attack, no matter how strong it was. Staggering is now based on weapon stopping power as with all other pawns.
+
+{{nav|mechanoid|wide}}
+[[Category:Mechanoids]]

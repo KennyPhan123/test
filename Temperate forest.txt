@@ -1,0 +1,171 @@
+{{Infobox biome
+| name = Temperate forest
+| image = TemperateForest.png
+| description = Forests of deciduous trees interspersed with fertile clearings. Many species of animals move around among the trees and on the plains.
+| type = Biome
+| texture = TemperateForestTexture.png
+| canbuildbase = Yes
+| allowFarmingCamps = Yes
+| animal density = 3.7
+| plant density = 0.65
+| movement difficulty = 1
+| min average temperature = 0
+| max average temperature = 25
+| min temperature = -10
+| min rainfall = 600
+| forageability = 1
+| wild plant regrow days = 20
+| disease mtb days = 50 
+<!-- weather -->
+| clear = 18
+| fog = 1
+| rain = 2
+| dry thunderstorm = 1
+| rainy thunderstorm = 1
+| foggy rain = 1
+| hard snow = 4
+| soft snow = 4
+| gray pall = 1
+| overcast = 2
+<!-- fish -->
+| max fish population = 540
+| freshwater_common_salmon = Yes
+| freshwater_common_bass = Yes
+| freshwater_uncommon_catfish = Yes
+| saltwater_common_salmon = Yes
+| saltwater_common_bluefish = Yes
+| saltwater_uncommon_marlin = Yes
+| saltwater_uncommon_flounder = Yes
+}}
+'''Temperate forest''' is a temperate [[biome]] in RimWorld.
+<!-- return 15f + (tile.temperature - 7f) + (tile.rainfall - 600f) / 180f -->
+== Summary ==
+One of the most forgiving biomes in the game, temperate forests are distinguished by their copious amounts of fertile soil, lack of extreme heat or cold, excellent access to trees to chop for wood, and large wildlife populations. Temperate forests tend to have very few areas of low [[Property:Terrain Affordance|terrain affordance]].
+
+In the lists below the number in brackets represents the relative commonality.
+
+=== Flora ===
+<div class="ul-column-width-200">
+{{#ask: [[Type::Plant]] [[Lives In Temperate Forest::>>0]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Temperate Forest
+}}
+</div>{{#set:Flora Commonality Sum | {{#expr: {{#ask: [[Type::Plant]] [[Lives In Temperate Forest::>>0]] | ?Lives In Temperate Forest = | mainlabel=- | sep=+ }} }} }}{{#set:Grazing Score|{{Grazing Score}} }}
+
+
+=== Fauna ===
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Temperate Forest::>>0]] [[Coastal Animal::false]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Temperate Forest
+}}
+</div>{{#set:Fauna Commonality Sum | {{#expr: {{#ask: [[Type::Animal]] [[Lives In Temperate Forest::>>0]] [[Coastal Animal::false]] | ?Lives In Temperate Forest = | mainlabel=- | sep=+ }} }} }}
+
+Additionally, these animals can spawn in coastal maps:
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Temperate Forest::>0]] [[Coastal Animal::true]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Temperate Forest
+}}
+</div>
+
+If the map is [[polluted]],{{BiotechIcon}} then the game may choose to spawn in wild animals from this list instead:
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Temperate Forest (Polluted)::>0]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Temperate Forest (Polluted)
+}}
+</div>
+
+=== Diseases ===
+Temperate forest has a disease {{MTB}} of 50 days. The following diseases can occur in a temperate forest:
+{| {{STDT|c_07 sortable}}
+! Disease
+! Commonality{{#set:Disease commonality sum|{{#expr:100+100+100+50+30+30+50+100+100+10}} }}
+|-
+| [[Flu]] || 100{{#set:Flu commonality|100}}
+|-
+| [[Plague]] || 100{{#set:Plague commonality|100}}
+|-
+| [[Malaria]] || 100{{#set:Malaria commonality|100}}
+|-
+| [[Gut worms]] || 50{{#set:Gut worms commonality|50}}
+|-
+| [[Fibrous mechanites]] || 30{{#set:Fibrous mechanites commonality|30}}
+|-
+| [[Sensory mechanites]] || 30{{#set:Sensory mechanites commonality|30}}
+|-
+| [[Muscle parasites]] || 50{{#set:Muscle parasites commonality|50}}
+|-
+| [[Flu#Animals|Animal flu]] || 100{{#set:Animal flu commonality|100}}
+|-
+| [[Plague#Animals|Animal plague]] || 100{{#set:Animal plague commonality|100}}
+|-
+| [[Organ decay]] || 10{{#set:Organ decay commonality|10}}
+|}
+
+=== Fish ===
+{{Odyssey|section=1|No category}}
+The table below contains the list of all of the fish that can be caught - as well as where they can be caught.
+{| {{STDT|c_23 sortable}}
+! Fish
+! Water body
+! Rarity
+|-
+| [[Salmon]] || Any || Common
+|-
+| [[Bass]] || Freshwater || Common
+|-
+| [[Catfish]] || Freshwater || Uncommon
+|-
+| [[Bluefish]] || Saltwater || Common
+|-
+| [[Marlin]] || Saltwater || Uncommon
+|-
+| [[Flounder]] || Saltwater || Uncommon
+|}
+
+== Analysis ==
+Temperate forest is one of the most hospitable biomes. It is dense in flora and fauna and often has a year-round growing season, without the [[disease]] frequency of a [[tropical rainforest]] or swamp. Therefore, it is recommended to new players, players wanting a casual experience, and/or players who want the challenge to come from [[raid]]s or other sources rather than from the biome.
+
+* '''Growing and Food: Easy''' - Growing seasons are year-round or long. Many animals are present. Soil is common.
+
+* '''Disease: Easy''' - Temperate forest has a relatively low disease rate for a biome with year-round growing. [[Wild healroot]] grows naturally, too, unlike the otherwise similar [[arid shrubland]].
+
+* '''Temperature: Easy''' - Temperatures should be comfortable save for [[heat wave]]s and [[cold snap]]s, as well as winters in temperate forests without a year-round growing season. See the [[heat wave]] and [[cold snap]] sections for how to deal with these events.
+
+* '''Fires: Moderate''' - There are plenty of trees and plants, meaning fires can spread. Firebreaks can be built around the colony to mitigate fire damage.
+
+* '''Predators: Moderate''' - [[Grizzly bear]]s can show up, but will be rarely hungry enough to attack colonists unless they are already near.
+
+Overall difficulty is easy - it has the least overall challenges of all the biomes.
+
+== Gallery ==
+<gallery>
+TemperateForest.png|A temperate forest
+TemperateForestPolluted.png|A [[polluted]] temperate forest {{BiotechIcon}}
+TemperateForestTexture.png|Temperate forest's texture on the world map
+</gallery>
+
+== Version history ==
+* [[Version/0.6.532|0.6.532]] - Added
+
+{{nav|biomes|wide}}
+[[Category:Biomes]]
+[[Category:Temperate Biomes]]

@@ -1,0 +1,16 @@
+'''Liquors''' are a [[food types|food type]]. They can be eaten by: {{#ask:[[Enabled Food Types::liquors]]|format=ul}}
+
+The liquors are:
+{| {{STDT| sortable c_10 text-center}}
+!Name!!data-sort-type=number|Nutrition!!Taste!!Food type
+{{#ask:[[food Type::liquor]]
+  | named args=yes
+  | ?Name=Name
+  | limit = 500
+  | format = template
+  | template=:Food types
+  | sort = From DLC, Nutrition, Name
+  | order = asc, desc
+}}
+|}
+[[Category:Food type]]

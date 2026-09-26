@@ -1,0 +1,70 @@
+{{Biotech}}
+{{Stub|reason= General. Also ensure parity with [[Large mech recharger]]}}
+{{See also|Large mech recharger}}
+{{Infobox main|building
+| name = Mech recharger
+| image = BasicRecharger south.png
+| description = Lightweight mechanoids can recharge here. During recharge, this recharger produces toxic wastepacks and stores them internally. Haulers must remove the wastepacks from time to time.
+| type = Building
+| type2 = Biotech (Buildings)
+| placeable = 
+| path cost = 
+| passability = pass through only
+| blockswind = 
+| cover = 
+| minifiable = False
+| size = 3 * 1
+| flammability = 0.5
+| hp = 150
+| beauty = 
+| mass base = 25
+| power = -200
+| terrain affordance = 
+| research = Basic mechtech
+| work to make = 8000
+| resource 1 = Steel
+| resource 1 amount = 125
+| resource 2 = Component
+| resource 2 amount = 1
+| thingCategories = 
+}}
+'''Mech rechargers''' are [[buildings]] added by the [[Biotech DLC]] that allow the recharging of light [[mechanoids]]. 
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+Mech rechargers constantly require 200 W of direct, electrical [[power]], even when not actively recharging a mech. They are placed on the ground and can't be minified, or uninstalled.
+
+Mech rechargers can recharge light [[mechanoid]]s. This includes:
+* [[Militor]]
+* [[Lifter]]
+* [[Constructoid]]
+* [[Fabricor]]
+* [[Agrihand]]
+* [[Cleansweeper]]
+* [[Paramedic]]
+
+A recharger gives the mechanoid 50% of their ''power need'' per day. This accumulates the recharger's waste meter. When a recharger is full of waste, a hauler can pick up 5 [[toxic wastepack]]s from the recharger. The exact amount of waste technically depends on the mechanoid, but all light mechanoids excrete 5 wastepacks. The existence of waste does not stop the recharger.
+
+Suitable mechs will seek a recharger once reaching a configurable amount of charge, and a [[mechanitor|control group]] of mechs can be commanded to recharge (or avoid recharging) at will.
+
+== Analysis ==
+As active mechs use 10% of their power per day, and this structure recharges at a rate of 50% per day, theoretically a single mech recharger can support ''five'' always-active mechs. In practice this number will always be lower due to non-optimal utilization, but you can comfortably have several times fewer mech rechargers than mechs. 
+
+For colonies that utilize mostly combat mechs, which often spend most of their time dormant and self charging, this ratio can be even better. Dormant mechs recharge at a rate of 1% per day, meaning that combat mechs can be left without using a recharger at all except when heavily damaged and repaired.
+
+Repaired mechs can then use the recharger on an as needed basis. The final ratio of rechargers to mechs will depend on your raid frequency and the frequency with which your mechs get damaged, but is almost always significantly less than always active mechs.
+
+== Trivia ==
+* If the charger is destroyed while charging the mech, the mech will go berserk.
+
+== Version history ==
+* [[Biotech DLC]] Release - Added.
+* [[Version/1.4.3528|1.4.3528]] - Fix: Mech charger exceeding 100% full of waste if partially emptied.
+* [[Version/1.4.3563|1.4.3563]] - Fix: Infinite loop of hauling mech to charger outside the mech's allowed area.
+* [[Version/1.5.4062|1.5.4062]] - Fix: Mech rechargers don't count as artificial.
+
+{{Nav|biotech|wide}}
+{{Nav|mechanoid|wide}}
+[[Category:Biotech (Buildings)]]

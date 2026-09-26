@@ -1,0 +1,160 @@
+{{Infobox main
+| name = Shield belt
+| image = ShieldBelt.png
+| description = A projectile-repulsion device. It will attempt to stop incoming projectiles or shrapnel, but does nothing against melee attacks or heat. It prevents the wearer from firing out, and shuts down instantly if hit by EMP.
+| type = Gear
+| type2 = Utility
+| tech level = Spacer
+| hp = 100
+| marketvalue = 390
+| mass base = 3
+| production facility 1 = Machining table
+| research = Shields
+| work to make = 14000
+| work speed stat = General Labor Speed
+| resource 1 = Steel
+| resource 1 amount = 50
+| resource 2 = Plasteel
+| resource 2 amount = 20
+| resource 3 = Component
+| resource 3 amount = 2
+| skill 1 = Crafting
+| skill 1 level = 6
+| lifestage = Child, Adult
+| clothing for nudity = False
+| equipdelay = 2
+| coverage = Waist
+| layer = Belt
+| has quality = true
+| defName = Apparel_ShieldBelt
+| thingCategories = ApparelUtility
+| thingSetMakerTags = RewardStandardQualitySuper
+| tags = BeltDefense
+| tradeTags = Armor
+}}
+The '''shield belt''' is a defensive [[utility]] item that generates a bubble of energy to absorb projectiles. It blocks projectile attacks both from the outside and from within, meaning colonists will not fire ranged weapons with an equipped shield belt, and instead are limited to melee weapons only.
+
+== Acquisition ==
+{{Acquisition}}
+
+Alternatively, they can be received as a [[quest]] reward, purchased from [[traders]], or found on [[raider]]s. [[Flesh sack]]s{{AnomalyIcon}} also have a small ~1.95% chance of dropping a shield belt after being destroyed.
+
+== Summary ==
+[[File:Shield belt widget.png|thumb|left|Shield strength widget]]
+Shield belts are worn at the waist, and use their own charge to stop damage from incoming ranged attacks and explosions (except [[flame]] explosions, [[beam repeater]]s,{{OdysseyIcon}}, and the ignition{{Check Tag|Verify direct damage}} from [[beam graser]]s{{BiotechIcon}} which all penetrate). The amount of charge is dependent on the belt's [[quality]], with the default being 110 points. This charge is depleted at a rate of 3.3 charge per 1 point of damage from attacks. If an attack would be sufficient to completely deplete the shield's charge, then the rest of its damage is negated, and the shield will temporarily shutdown. The shield does not prevent pawns from being set on fire, explosions from detonating, or from being staggered by weapons with sufficient [[stopping power]]. 
+
+Active shield belts constantly recharge at a rate dependent on their quality. However, once a shield's charge is completely depleted, the shield will be disabled temporarily before beginning to recharge. Any [[EMP]] damage will also immediately deplete an active shield belt's charge. In either case, it takes {{Ticks|3200}} for a disabled shield belt to begin charging again. They will recharge starting from 20 hit points, meaning they can be easily overloaded once again.
+
+Wearing a shield belt prevents the user from firing, but not equipping, most ranged weapons (including thrown weapons, such as [[grenades]] or [[pila]], but excluding the [[beam graser]]{{BiotechIcon}} and [[incinerator]],{{AnomalyIcon}} which function normally). They can still use them as blunt melee weapons. The ranged weapons integrated into the [[grenadier armor]]{{RoyaltyIcon}} and [[phoenix armor]]{{RoyaltyIcon}} are also disabled, though a [[sanguophages|sanguophage's]]{{BiotechIcon}} piercing spine and [[hellcat rifle]]{{AnomalyIcon}} burner is not. Note that shield belt wearers will not fire even if a shield belt is deactivated by damage or EMP.
+
+Enemies can also wear shield belts and use them. For example, even upon being resurrected as a [[shambler]],{{AnomalyIcon}} pawns with a shield belt equipped will still use it as normal.
+
+Active shield belts will completely protect pawns from the damage caused by a [[Hunter drone]]{{OdysseyIcon}} explosion. Any shield belt below good quality will immediately be depleted from the explosion damage however.
+
+{{Utility Note}}
+
+=== Quality table ===
+The following table lists how much protection a shield belt provides at each [[quality]] level.
+<div><li style="display: inline-table;">
+{{#vardefine:basecharge|1.1}}{{#vardefine:baseregen|0.13}}
+{| {{STDT| c_12 text-center}}
+! Quality
+! Awful
+! Poor
+! Normal
+! Good
+! Excellent
+! Masterwork
+! Legendary
+|- 
+! Maximum charge
+| {{#expr:{{#var:basecharge}}*0.6*100 round 1}}
+| {{#expr:{{#var:basecharge}}*0.8*100 round 1}}
+| {{#expr:{{#var:basecharge}}*1.0*100 round 1}}
+| {{#expr:{{#var:basecharge}}*1.2*100 round 1}}
+| {{#expr:{{#var:basecharge}}*1.4*100 round 1}}
+| {{#expr:{{#var:basecharge}}*1.7*100 round 1}}
+| {{#expr:{{#var:basecharge}}*2.1*100 round 1}}
+|- newline
+! Damage capacity
+| {{#expr:{{#var:basecharge}}*0.6*(100/3.3) round 1}}
+| {{#expr:{{#var:basecharge}}*0.8*(100/3.3) round 1}}
+| {{#expr:{{#var:basecharge}}*1.0*(100/3.3) round 1}}
+| {{#expr:{{#var:basecharge}}*1.2*(100/3.3) round 1}}
+| {{#expr:{{#var:basecharge}}*1.4*(100/3.3) round 1}}
+| {{#expr:{{#var:basecharge}}*1.7*(100/3.3) round 1}}
+| {{#expr:{{#var:basecharge}}*2.1*(100/3.3) round 1}}
+|- newline
+! Recharge rate (energy per second)
+| {{#expr:{{#var:baseregen}}*0.9*100 round 1}}
+| {{#expr:{{#var:baseregen}}*0.95*100 round 1}}
+| {{#expr:{{#var:baseregen}}*1.00*100 round 1}}
+| {{#expr:{{#var:baseregen}}*1.05*100 round 1}}
+| {{#expr:{{#var:baseregen}}*1.10*100 round 1}}
+| {{#expr:{{#var:baseregen}}*1.2*100 round 1}}
+| {{#expr:{{#var:baseregen}}*1.3*100 round 1}}
+|- newline
+! Market Value
+| {{#expr: {{Market Value|{{P|Market Value Base}}*0.5}} }} {{Icon Small|silver}}
+| {{#expr: {{Market Value|{{P|Market Value Base}}*0.75}} }} {{Icon Small|silver}}
+| {{#expr: {{Market Value|{{P|Market Value Base}}}} }} {{Icon Small|silver}}
+| {{#ifexpr: {{Market Value|{{P|Market Value Base}}*1.25}}>{{P|Market Value Base}}+500 |{{#expr:{{P|Market Value Base}}+500 }}| {{Market Value|{{P|Market Value Base}}*1.25}}}} {{Icon Small|silver}}
+| {{#ifexpr: {{Market Value|{{P|Market Value Base}}*1.50}}>{{P|Market Value Base}}+1000|{{#expr:{{P|Market Value Base}}+1000}}| {{Market Value|{{P|Market Value Base}}*1.50}}}} {{Icon Small|silver}}
+| {{#ifexpr: {{Market Value|{{P|Market Value Base}}*2.50}}>{{P|Market Value Base}}+2000|{{#expr:{{P|Market Value Base}}+2000}}| {{Market Value|{{P|Market Value Base}}*2.50}}}} {{Icon Small|silver}}
+| {{#ifexpr: {{Market Value|{{P|Market Value Base}}*5.00}}>{{P|Market Value Base}}+3000|{{#expr:{{P|Market Value Base}}+3000}}| {{Market Value|{{P|Market Value Base}}*5.00}}}} {{Icon Small|silver}}
+|}
+</li><div>
+
+=== Visuals ===
+The shield takes the form of a white bubble around them, which will shrink and diminish as the charge reduces and will vanish if the shield is downed. It shows up when the colonist is drafted, or under ranged attack.
+<gallery widths="210px" heights="210px" class="center" mode="nolines">
+File:Shielded colonists example.png|Shielded colonists (left) and unshielded ones (right).
+File:Depleted shield.png|Full shield (left) compared to nearly depleted shield (right).</gallery>
+
+== Analysis ==
+[[File:Shield belt bait.png|left|thumb|A pawn wearing shield belt attracts fire from a pikeman while other pawns shoot]]
+
+A shield belt is a valuable piece of equipment for melee fighters and noncombatants. Shield belts provide a constant, regenerating source of HP, and notably prevent lucky headshots from killing pawns so long as the shield remains up. They can protect against friendly fire as well as enemy fire. Caution should be used, as charging head-on into a large raid will end up breaking the belt. It is especially useful when attacking turrets in melee, or facing [[hunter drone]]s,{{OdysseyIcon}} as an active shield belt will block explosions caused by them.
+
+It is worth noting that shield belts are not limited to "pure" melee pawns.  Pawns intended for luring strategies should wear a shield belt. Pacifists and nonfighting [[children]]{{BiotechIcon}} should wear a shield belt, as they can't use ranged weapons or most utility items anyways, and the shield can help protect the pawn in case of a [[mental break]], but they are typically the least important pawns to shield. [[Incinerator]]s{{AnomalyIcon}} are an effective weapon that allows shield belt use. In addition, shield belts can make it easier to rescue pawns, although this should not be the only reason to wear a shield belt. 
+
+Dedicated [[psycast]]ers{{RoyaltyIcon}} can wear a shield belt to safely engage combat, especially if wearing low protection psycaster gear.
+
+===Strategies===
+It is ideal for shield belts to not break. If you have multiple colonists with shield belts, one way to do this is to "rotate" them, sending pawns away once the shield belt is about to break or has broken. A way to jump or skip ([[#Comparisons|see below]]) is recommended for this strategy as shield belts do not prevent staggering.
+
+Shield belt pawns can be used as cover, protecting other pawns from bullets. One way to do this is to have 2 rows of cover, putting the melee pawns in the first row, and ranged pawns in the second.
+
+To avoid EMPing your own pawns, you can use EMP on a group of mechs, have melee pawns approach once the mechs are stunned, and have the EMP thrower target a different area.
+
+===Comparisons===
+Shields belts offer a substantial and unique buff to melee fighters. Depending on the ratio of melee : ranged colonists, it can be entirely viable to have every melee fighter wear a shield belt, and have ranged colonists wear [[psychic shock lance]]s, [[firefoam pop pack]]s, [[low-shield pack]]s,{{RoyaltyIcon}} and so on. If the colony is mostly or entirely melee, it can be wise to have at least one colonist wear a shock lance, one colonist wear a low-shield pack, etc., since these items can be useful to have on ''someone'' in certain situations. If there are a healthy supply of ranged attackers, they can be the ones wearing those utility items.
+
+Still, certain items warrant comparison due to also being particularly useful to melee fighters. Shield belts are relatively better without any DLC, as the utility options available in Core are limited and most good items are rare and nonrechargable.
+
+[[Smokepop belt]]s can be used to reduce ranged accuracy, helping melee fighters and making repositioning/rescuing easier. However, blind smoke also reduces the accuracy of your own colonists, so shield belts are typically more practical if you rely on ranged attackers. In addition, since it creates smoke around the wearer, it is less appropriate for charing in against enemies.
+
+[[Firefoam pop pack]]s can immediately douse a pawn on [[fire]], preventing them from running around wildly. Since melee colonists may be distant from the ranged group, having melee fighters wear firefoam packs themselves can be a lifesaver. Still, shield belts are irreplacable when charging in, and in a [[melee block]]ing scenario it is easy to just have another colonist wear a pop pack.
+
+[[Jump pack]]s{{RoyaltyIcon}} enable melee fighters to enter and exit the fray, allowing them to take out high priority ranged targets, and do other important movement tasks. However, it is possible to jump while wearing a shield belt by using [[locust armor]]{{RoyaltyIcon}} or the [[longjump legs]] gene,{{BiotechIcon}} while the [[skip]] psycast{{RoyaltyIcon}} can be used for a similar effect. If one of those can be acquired, the jump pack is relatively redundant. The locust armor + shield belt combination should be compared to a heavy armor + jump pack combo; the locust armor is likely better against ranged attacks (due to shield belt's immunity to vital shots) but is worse against melee attacks.
+
+== Trivia ==
+* Shield belts bear some similarity to shields in the ''Dune'' franchise, mainly in that they do not allow any high-speed object to enter ''or'' exit the shield, rendering guns useless to shield belt users, as well as nullifying explosions.
+
+== Version history ==
+* [[Version/0.9.722|0.9.722]] - Added as the '''Personal shield'''.
+* Alpha 17 - Renamed from '''Personal shield''' to '''Shield belt'''. Now has a crafting recipe and also gained a slight retexture.
+* Beta 19 - its crafting cost and market value is greatly reduced.
+* [[Version/1.2.2900|1.2.2900]] or earlier - Shields used to block attacks from [[Spike trap]]s as if they were ranged attacks, however this is no longer the case.
+* [[Version/1.3.3066|1.3.3066]] - Wearing a shield belt now prevents firing the integrated launcher in the [[grenadier armor]] {{RoyaltyIcon}} and [[phoenix armor]] {{RoyaltyIcon}}. Previously they could be fired but could only target only adjacent squares (including diagonals).
+* Unknown version after [[Version/1.3.3101]] - Shield belts are now defined as having Spacer [[tech level]]. Previously, they were defined as having an medieval [[tech level]] despite requiring an industrial research project and obviously being a high tech piece of equipment. 
+* [[Version/1.4.3523|1.4.3523]] - Fix: Explosive projectiles disappear when impacting a shield. They now detonate when impacting.
+* [[Version/1.4.3531|1.4.3531]] - [[Children]]{{BiotechIcon}} can now wear shield belts.
+* [[Version/1.4.3682|1.4.3682]] - Fix: Error when shield belt on ground is hit by EMP explosion.
+
+<gallery>
+PersonalShield.png|Original Personal Shield sprite
+</gallery>
+
+{{Nav|utility|wide}}
+[[Category:Utility]]

@@ -1,0 +1,45 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Local/Misc}}
+|}
+----
+{| {{STDT| c_11}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Cirrhosis" <!-- defName="Cirrhosis", ParentName="DiseaseBase" -->
+! Cirrhosis
+----
+* Def Name:<br />Cirrhosis
+* Label:<br />cirrhosis
+| A degenerative liver disease caused by excessive alcohol consumption.
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|90%|100%|35%}}
+* Initial Severity: '''0.1%'''
+* '''Remove On Redress Chance By Days Curve:'''
+<div><li style="display: inline-table;">
+{| {{STDT| c_11}}
+! <abbr title="Days as a World Pawn">Days</abbr> !! <abbr title="Chance to remove on Pawn Generator Redress">Chance</abbr>
+|-
+! 0
+| 0%
+|-
+! 2
+| 0%
+|-
+! 7
+| 50%
+|-
+! 20
+| 100%
+|}</li></div>
+|<!-- Stages -->
+{| {{STDT| c_11}}
+! Label !! Parameters
+|-
+! Cirrhosis
+|<!-- Parameters -->
+* Part Efficiency Offset: {{--|60%}}
+* Pain Offset: {{++|15%}}
+* [[Moving]] Offset: {{--|10%}}
+|}<noinclude>
+|}</noinclude>

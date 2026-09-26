@@ -1,0 +1,62 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Drugs/Go-juice}}
+|}
+----
+{| {{STDT| c_24}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Go-juice addiction" <!-- defName="GoJuiceAddiction", ParentName="AddictionBase" -->
+! Go-juice addiction
+----
+* Def Name:<br />GoJuiceAddiction
+* Label:<br />go-juice addiction
+| A chemical addiction to go-juice. Long-term presence of go-juice has caused neurological adaptations at the cellular level, so the brain can no longer function properly without the drug.
+<br />Without regular doses of go-juice, withdrawal symptoms will begin. However, extended abstinence will force the brain to adapt back to its normal state, resolving the addiction.
+|<!-- Details -->
+* Hediff Class: '''Hediff_Addiction'''
+* Causes Need: '''Chemical_GoJuice'''
+* Default Label Color: {{Color|100%|0%|50%}}
+* Initial Severity: '''50%'''
+* Max Severity: '''100%'''
+* Scenario Can Add: {{Good|true}}
+* '''Remove On Redress Chance By Days Curve:'''
+<div><li style="display: inline-table;">
+{| {{STDT| c_24}}
+! Days !! Chance
+|-
+! 0
+| 0%
+|-
+! 10
+| 0%
+|-
+! 60
+| 25%
+|}{{Graph:Chart|width=200|height=200|xAxisTitle=Days|yAxisTitle=Remove On Redress Chance|type=line|x=0, 10, 60|y=0, 0, 0.25|interpolate=monotone|xGrid=|yGrid=}}</li></div>
+* '''Comps'''
+** '''Severity Per Day:''' {{---|4.5%}}
+*** Show Days To Recover: {{Good|true}}
+|<!-- Stages -->
+{| {{STDT| c_24}}
+! Label !! Parameters
+|-
+! (Empty)
+| -<!-- Parameters -->
+|-
+! Withdrawal
+|<!-- Parameters -->
+* Pain Factor: {{Bad|×300%}}
+* Hunger Rate Factor Offset: {{++|50%}}
+* [[Sleep Fall Rate]] Offset: {{++|30%}}
+* [[Consciousness]] Offset: {{--|20%}}
+* [[Moving]] Offset: {{--|50%}}
+* [[Sight]] Offset: {{--|20%}}
+* [[Blood Pumping]] Offset: {{--|20%}}
+* [[Manipulation]] Offset: {{--|10%}}
+* '''Mental State Givers:'''
+** Mental State: '''[[Hard drug binge]]'''
+*** {{MTB}} Days: '''40'''
+** Mental State: '''[[Mental break#Psychotic wandering (Daze)|Psychotic wandering (Daze)]]'''
+*** {{MTB}} Days: '''10'''
+|}<noinclude>
+|}</noinclude>

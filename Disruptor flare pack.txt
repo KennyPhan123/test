@@ -1,0 +1,82 @@
+{{Anomaly}}
+{{Spoiler}}
+{{Infobox main|utility
+| name = Disruptor flare pack
+| image = Disruptor flare pack.png 
+| description = A utility pack that shoots disruptor flares. On impact, the flare burns a capsule of bioferrite, which creates a bright flash and a local psychic disruption. This stuns psychically sensitive creatures, revealing those that are invisible, and reducing their consciousness and movement speed for a short while. Afterwards, the flare continues to burn, lighting up a wide area for some time.
+| type = Gear
+| type2 = Utility
+| tech level = 
+| hp = 100
+| flammability base = 0.4
+| production facility 1 = Bioferrite shaper
+| research = Disruptor flares
+| work to make = 7200
+| work speed stat = General Labor Speed
+| resource 1 = Bioferrite
+| resource 1 amount = 30
+| resource 2 = Component
+| resource 2 amount = 1
+| skill 1 = Crafting
+| skill 1 level = 4
+| marketvalue  = 80
+| mass base = 3
+| lifestage = Adult
+| clothing for nudity = False
+| coverage = Waist
+| equipdelay = 2
+| range = 22.9
+| accuracy = -
+| warmup = 60
+| cooldown = 
+| burst = 1
+| mode = Single-Shot
+| velocity = 40
+| blastRadius = 7.9
+| defName= Apparel_DisruptorFlarePack
+| has quality = False
+| thingCategories = ApparelUtility
+| tradeTags = ExoticMisc
+| defaultOutfitTags = ????
+}}
+The '''disruptor flare pack''' is a [[utility]] item added by the [[Anomaly DLC]] which allows the launching of disruptor flares.
+
+== Acquisition ==
+{{Acquisition}}
+
+Disruptor flare packs can also drop from destroyed [[flesh sack]]s,{{AnomalyIcon}} with a ~ 1.17% chance of appearing.
+
+== Summary == 
+{{Image wanted|section=1|reason=Range image in standard style}}
+[[File:Disruptor_flare_gizmo.png|thumb|left|Disruptor flare pack gizmo for deploying flares]]
+
+A disruptor flare pack is worn in the Utility slot. Once the wearer is [[draft]]ed, it can be manually activated by the player to launch a flare to target any tile within the range and within [[line of sight]] after a warm-up time of {{Ticks|{{P|Aiming Time Base}}}}. The warmup time before firing the launcher is affected by the [[Aiming Time]] stat of the wearer.
+
+Disruptor flares inflict both a stun and the "Disruptor Flash" hediff on pawns within the {{P|Blast Radius}} tiles of where they land ''when they land''. The hediff applies {{Bad|x90%}} [[Consciousness]] and {{Bad|x80%}} [[Moving]] for 30 seconds, while the stun lasts for {{Ticks|120}}. The magnitude of the Disruptor Flash hediff and the duration of the stun are both directly scaled by [[Psychic Sensitivity]] of the affected pawn i.e. a pawn with 200% Psychic Sensitivity would be stunned for {{Ticks|240}} and would have a [[Consciousness]] multiplier of {{Bad|{{#expr:100 - 10*2}}%}} and a [[Moving]] multiplier of {{Bad|{{#expr:100 - 80*2}}%}}. Pawns cannot be stunned again by flares while they have the Disruptor Flash hediff.
+
+The Disruptor Flash hediff also reveals invisible pawns, such as the [[sightstealer]] and [[revenant]] or colonists under the effects of the [[invisibility]] psycast{{RoyaltyIcon}} or [[revenant vertebrae]] invisibility. Pawns cannot become invisible while they have the flare hediff but can within the radius of a preexisting flare. '''Note: The Hediff itself is what prevents invisibility, not the flare's light radius, and the hediff is only inflicted when the flare lands.'''
+
+The flare also emits [[light]] in a 5-tile radius, sufficient to make a {{#expr: {{Lit Radius|5|{{#expr:255+117+108}}}} round 2}} radius considered "Lit". The flare on the ground lasts for {{Ticks|14400}} before disappearing. 
+
+Up to six flares can be launched before the launcher must be reloaded at a cost of {{Icon Small|Bioferrite||5}} [[bioferrite]] per flare. The process takes {{Ticks|60}}. The flares can be reloaded individually or all at once.{{Check Tag|Verify}} The pawn will never automatically use the flare pack - instead it must be manually activated by the player. NPC's cannot use flare packs as the use pack feature on targetable packs has not been implemented for AI pawns.
+
+{{Utility Note}}
+
+[[File:Disruptor_flare_radius.png|thumb|left|Disruptor flare pack light radius]]
+
+== Analysis ==
+Disruptor flare packs are primarily used for hunting, revealing, and destroying invisible entities, namely the Revenant. Flares will briefly stun entities, giving your colonists an opportunity to attack them and interrupting whatever action the entity was performing.
+
+Despite the relatively low cost of disruptor flares, costing only 5 [[Bioferrite]] per flare, they are not the most cost-effective way to locate a Revenant. If unlocked, [[EMP grenades]] and/or [[Molotov cocktails]] are a more cost-effective solution for locating a Revenant, especially the former due to the long duration of the stun. Using EMP grenades, a colony can usually track and kill a Revenant in one or two stuns. That said, flares have a higher radius for tracking the Revenant compared to the small explosion area of the EMP grenades, so if time is of the essence, it may be faster to spend the Bioferrite. Flares are also unlocked for research from the moment you encounter your first Revenant, making them a decent solution if the other options haven't been unlocked yet.
+
+[[Firefoam pop pack]]s can also be used to reveal entities; if an entity is within the range of the firefoam pack when it is triggered, it will be covered by firefoam and become visible. However, due to the fact that the cost per use is relatively high compared to other options, this is not a great primary solution. Additionally, the Revenant in particular will not be stunned or take any significant amount of damage from this method, so it will likely need to be tracked down again.
+
+Disruptor flare packs can also be utilized to make temporary illuminated areas during the [[Unnatural darkness]] Anomaly event. This can be used to make safe paths towards [[Noctolith]]s without building a line of torches or lamps towards them, saving a lot of time, and potentially resources, as each torch at minimum costs 20 [[Wood]]. Depending on the availability of Wood in the player's base biome, and their progression through Anomaly, the price of only 5 Bioferrite per flare makes this potentially a more cost-effective option.
+
+Flares also have a general combat use - colonists equipped with backpacks can stun large groups of human or mechanoid raiders, either to buy valuable time or line them with a monstrous volley of molotovs or frag grenades.
+
+== Version history ==
+* [[Anomaly DLC]] Release - Added.
+
+{{nav|utility|wide}}
+[[Category:Utility]]

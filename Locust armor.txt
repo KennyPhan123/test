@@ -1,0 +1,127 @@
+{{Royalty}}
+{{Infobox main
+| name = Locust armor
+| image = LocustArmor.png
+| description = A variant of recon armor with an integrated burst rocket for short-ranged flight. Locust armor is slightly less protective than standard recon armor. Each jump consumes a burst of fuel, so the armor must be reloaded after several uses.<br/>Unlike most ultratech military units, locusts train primarily with melee weapons. They usually avoid static shootouts, preferring to jump straight into enemy fortifications and fight hand-to-hand. They do poorly in static defense or confined quarters, but excel in mixed cover or shipcracking operations.
+| type = Gear
+| type2 = Armor
+| tech level = Spacer
+| hp = 280
+| production facility 1 = Fabrication bench
+| work to make = 45000
+| work speed stat = General Labor Speed
+| resource 1 = Plasteel
+| resource 1 amount = 120
+| resource 2 = Uranium
+| resource 2 amount = 10
+| resource 3 = Advanced component
+| resource 3 amount = 3
+| resource 4 = Component 
+| resource 4 amount = 3
+| resource 5 = Chemfuel
+| resource 5 amount = 100
+| research = Jump packs, Recon armor
+| skill 1 = Crafting
+| skill 1 level = 6
+| marketvalue = 2230
+| armorblunt = 35
+| armorsharp = 87
+| armorheat = 41
+| insulationcold = 64
+| insulationheat = 9
+| mass base = 9
+| equipdelay = 11
+| slave suppression offset = -0.30
+| vacuum resistance offset = 0.30
+| lifestage = Adult
+| clothing for nudity = True
+| coverage = Torso, Neck, Left Shoulder, Left Arm, Right Shoulder, Right Arm, Left Leg, Right Leg
+| layer = Middle, Outer
+| has quality = true
+| defName = Apparel_ArmorLocust
+| thingCategories = ApparelArmor
+| tradeTags = HiTechArmor
+| defaultOutfitTags = Soldier
+| thingSetMakerTags = RewardStandardHighFreq
+| fuel filter = Chemfuel
+| fuel capacity = {{#expr:5*20}}
+| fuel consumption rate = 20
+}}
+'''Locust armor''' is a set of [[armor]] added by [[Royalty DLC]] that allows its user to make rapid rocket powered jumps to a tile within range and in line of sight while also protecting from attacks. It is a variant of [[recon armor]] and forms a full set with the [[recon helmet]] 
+
+== Acquisition == 
+{{Acquisition}}
+
+Alternatively, the armor can be received as a [[quest]] reward or purchased from [[traders]].{{Check Tag|Which?}}
+
+== Summary ==
+While less protective than [[recon armor]], locust armor contains an integrated burst rocket that, similar to the [[jump pack]], allows the user to make up to 5 jumps before needing to be refueled. Refueling costs {{Icon Small|chemfuel||20}} chemfuel per charge and is performed by select the armor's wearer and right-clicking a pile of chemfuel. The user can jump anywhere within [[jump range]] and [[line of sight]], so they can jump over [[stone chunk]]s but not [[wall]]s. There is a short {{Ticks|30}} warm-up before jumping. A pawn cannot be injured mid-jump, even by explosions right under them, but can still get hit during a short warm-up before jumping.
+
+Pawns will never automatically use the rocket - instead it must be manually activated by the player by use of the "Jump" gizmo, similar to using [[utility]] items. This gizmo will only appear when the pawn is [[draft]]ed. NPCs will never use the jump capability at all. 
+
+Downed allies can be carried during a jump. 
+
+Unlike the jump pack it does not occupy the [[utility]] slot, and so can be worn with all other utility items such as the [[shield belt]].
+
+It is currently unknown if lower quality packs are actually faster than other methods of increase movement rates, such as [[archotech leg]]s, however the i-frames offered by jumping offer an advantage to offset any speed delays.
+
+The distance the user can jump is dependent on the quality of the armor. Note that it has the same range as a [[jump pack]] of the same quality.
+<div><li style="display: inline-table;">
+{{#vardefine:baserange|23.9}}
+{| {{STDT| c_12 text-center}}
+! Quality
+! Awful
+! Poor
+! Normal
+! Good
+! Excellent
+! Masterwork
+! Legendary
+|- 
+! [[Jump range]]
+| {{#expr:{{#var:baserange}}*0.75 round 1}}
+| {{#expr:{{#var:baserange}}*0.9 round 1}}
+| {{#expr:{{#var:baserange}}*1.0 round 1}}
+| {{#expr:{{#var:baserange}}*1.06 round 1}}
+| {{#expr:{{#var:baserange}}*1.13 round 1}}
+| {{#expr:{{#var:baserange}}*1.19 round 1}}
+| {{#expr:{{#var:baserange}}*1.25 round 1}}
+|}
+</li></div>
+
+{{Apparel Suppression Note|-0.30}}
+
+Locust armor increases the [[vacuum resistance]]{{OdysseyIcon}} of its wearer by {{+|{{%|{{P|Vacuum Resistance Offset}}}}}}. [[Quality]] does not affect this resistance.
+
+== Analysis ==
+The locust armor is slightly less protective than base recon armor ({{--|5%}} base Sharp & Blunt protection), which makes it noticeably worse against any sort of [[flak vest]] and [[duster]] combination. In exchange, jumping can be a potent combat tool.
+
+Jumps can help pawns disengage from combat, rescue fellow colonists, engage in melee with opponents, allow kiting, and dodge explosives. However, the [[jump pack]] allows pawns to have the exact same jump mechanic while allowing you to wear any set of armor. A jump pack + recon armor is slightly cheaper ({{Icon Small|plasteel}} 10 [[plasteel]]) while fulfilling the same purpose.
+
+Using jump packs has one key issue - they occupy the [[utility]] slot. This is most important for melee fighters, who often want to wear a [[shield belt]]. Shield belts regenerate fairly quickly and prevent ''all'' ranged damage to a pawn until the shield is depleted. Therefore, using locust armor + shield belt can be more protective than flak vest + duster + jump pack.
+
+Locust armor can allow use of a [[bandwidth pack]]{{BiotechIcon}} while retaining the ability to jump. It also has a niche synergy with deployable items like the [[firefoam pop pack]] and [[tox pack]]{{BiotechIcon}}. For long-range items like the [[psychic shock lance|psychic]] [[psychic insanity lance|lances]] or [[tornado generator]], you can usually just wear them with another colonist.
+
+{{Apparel Stats Table}}
+
+== Gallery ==
+<gallery>
+Gizmo jump pack full.png|The gizmo for ordering a pawn to jump, shared with the [[Jump pack|jump pack]]. Includes remaining fuel supply.
+Gizmo jump pack depleted.png|The jump gizmo, shared with the [[Jump pack|jump pack]]. Disabled due to insufficient fuel.
+Locust armor takeoff.png|A pawn that has just taken off, leaving a fiery trail.
+</gallery>
+
+
+== Version history ==
+* [[Version/1.2.2719|1.2.2719]] - Added.
+* [[Version/1.2.2753|1.2.2753]] - Icons of spacer armor now display as off-white instead of dark gray. Now require enough chemfuel to provide their initial fuel and one more component.
+* [[Version/1.3.3287|1.3.3287]] - Fix: Jumping resets "Fire at will" toggle.
+* [[Version/1.6.4518|1.6.4518]] - Cold insulation improved from {{Temperature|32||delta}} -> {{Temperature|64||delta}}. Slave suppression offset of −30% added.
+
+== See also ==
+* [[Jump pack]] - A utility item that offers a similar capability.
+* [[Recon armor]] - the base model. Slightly more protective but without the jump pack.
+* [[Prestige recon armor]] - a variant of recon armor that both pleases nobles and improves psychic ability.
+
+{{Nav|clothing|wide}}
+[[Category:Armor]]

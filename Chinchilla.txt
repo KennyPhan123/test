@@ -1,0 +1,132 @@
+{{infobox main|animal
+| page verified for version = 1.3.3101
+| name = Chinchilla
+| image = Chinchilla.png
+| description = A small, nimble rodent. Its fur is softer than just about anything in the universe, making it very valuable as a trade good.
+| type = Animal
+| movespeed = 5
+| min comfortable temperature = -15
+| max comfortable temperature = 55
+| toxic resistance = 0.5
+| toxic environment resistance = 0
+| flammability = 0.7
+| marketvalue = 150
+| combatPower = 33
+| bodysize = 0.35
+| healthscale = 0.4
+| hungerrate = 0.125
+| diet = herbivorous
+| leathername = chinchilla fur
+| wildness = 0.6
+| petness = 0.2
+| manhuntertame = 0
+| manhunter = 0
+| roamMtb = 2
+| trainable = none
+| gestation = 5.661
+| offspring = 1-3
+| avg offspring = 1.75
+| mateMtb = 8
+| lifespan = 9
+| juvenileage = 0.1
+| maturityage = 0.2222
+| tradeTags = AnimalUncommon
+| attack1dmg = 3.6
+| attack1type = Scratch
+| attack1cool = 1.5
+| attack1part = front left paw
+| attack2dmg = 3.6
+| attack2type = Scratch
+| attack2cool = 1.5
+| attack2part = front right paw
+| attack3dmg = 5.8
+| attack3type = Bite
+| attack3cool = 2
+| attack3part = teeth
+| attack3chancefactor = 0.7
+| attack4dmg = 2
+| attack4type = Blunt
+| attack4cool = 2
+| attack4part = head
+| attack4chancefactor = 0.2
+| isCoastal = false
+| livesin_tropicalrainforest = 0.5
+| livesin_tropicalswamp = 0.5
+| livesin_glowforest = 0.1
+}}
+{{info|'''Chinchillas''' are small rodents with very soft and valuable fur. If slain, they can be butchered for chinchilla meat and [[chinchilla fur]].}}
+
+== Acquisition ==
+Chinchillas can be found in {{Habitats|{{PAGENAME}}|or}} they can either be tamed by a [[Work #Handle|handler]] or self-tame in a random event. 
+
+Chinchillas can be bought and sold in other [[Trade#Faction base|faction bases]] and from [[Trade#Exotic goods trader 2|exotic goods traders]]. Chinchillas purchased from traders will be already tamed.
+
+{{Starting Pet Note}}
+
+== Summary ==
+{{Pen Animal Note|Chinchillas}}
+
+== Analysis ==
+Chinchillas are most notable for their [[chinchilla fur|fur]]. While they are small and rare animals, chinchillas breed rapidly, and can produce a surprising amount of meat and leather. Should you get a breeding pair, they can make profitable pen animals.
+
+Chinchilla's main competitor are [[guinea pig]]s, which produce a similarly valuable hide. Guinea pigs aren't pen animals, so they require constant taming upkeep. However, guinea pigs can nuzzle colonists and can be used as fodder in combat.
+
+== Slaughtering ==
+When slaughtered, a chinchilla yields {{#vardefineecho:baby_meat|{{Meat Leather Curve|{{#expr:{{P|Body Size}}*0.2*140}}}}}} meat and {{Meat Leather Curve|{{#expr:{{P|Body Size}}*0.2*40}}}} leather as a baby; {{Meat Leather Curve|{{#expr:{{P|Body Size}}*0.5*140}}}} meat and {{Meat Leather Curve|{{#expr:{{P|Body Size}}*0.5*40}}}} as a juvenile; or {{Meat Leather Curve|{{#expr:{{P|Body Size}}*140}}}} meat and {{Meat Leather Curve|{{#expr:{{P|Body Size}}*40}}}} leather as an adult. 1 meat is worth 0.05 nutrition. 
+
+Adult chinchillas consume {{P|Real Hunger Rate}} nutrition per day, and a female chinchilla creates an average {{#expr: {{P|Offspring Per Birth}} / {{P|Gestation Period Days}} round 3}} offspring per day.
+
+=== Meat ===
+* When offspring are slaughtered as babies, a female chinchilla produces {{#expr:{{Meat Production|{{PAGENAME}}|baby}} round 2}} nutrition of meat per day, for {{%|{{Meat Production|{{PAGENAME}}|baby}}/{{P|Real Hunger Rate}} round 3}} nutrition efficiency.
+* When offspring are slaughtered as adults, offspring consume {{#expr:{{Nutrition Consumption|{{PAGENAME}}|adult}} - {{P|Real Hunger Rate}} round 2}} more nutrition for an average of {{#expr:{{Meat Production|{{PAGENAME}}|adult}} - {{Meat Production|{{PAGENAME}}|baby}} round 2}} more nutrition per day. This results in {{#expr:{{Meat Production|{{PAGENAME}}|adult}} round 2}} nutrition of meat per day, for {{%| {{Meat Production|{{PAGENAME}}|adult}}/{{Nutrition Consumption|{{PAGENAME}}|adult}} round 3}} nutrition efficiency.
+
+When considering a 1:1 ratio of males:females, nutrition falls to {{%|{{Meat Production|{{PAGENAME}}|baby|1|1}}/{{Nutrition Consumption|{{PAGENAME}}|baby|1|1}} round 3}} (baby) or {{%|{{Meat Production|{{PAGENAME}}|adult|1|1}}/{{Nutrition Consumption|{{PAGENAME}}|adult|1|1}} round 3}} (adult). But when considering a 1:3 ratio of males:females, nutrition rises back to {{%|{{Meat Production|{{PAGENAME}}|baby|3|1}}/{{Nutrition Consumption|{{PAGENAME}}|baby|3|1}} round 3}} (baby) or  {{%|{{Meat Production|{{PAGENAME}}|adult|3|1}}/{{Nutrition Consumption|{{PAGENAME}}|adult|3|1}} round 3}} (adult).
+
+=== Leather ===
+Female chinchillas produce:
+* Baby slaughter: {{Icon Small|Chinchilla fur}} {{#expr:{{Leather Production|{{PAGENAME}}|baby}} round 2}} fur per day, or {{Icon Small|Chinchilla fur}} {{#expr:{{Leather Production|{{PAGENAME}}|baby}}/{{P|Real Hunger Rate}} round 3}} fur per 1 unit nutrition.
+* Adult slaughter: {{Icon Small|Chinchilla fur}} {{#expr:{{Leather Production|{{PAGENAME}}|adult}} round 2}} fur per day, or {{Icon Small|Chinchilla fur}} {{#expr:{{Leather Production|{{PAGENAME}}|adult}}/{{Nutrition Consumption|{{PAGENAME}}|adult}} round 3}} fur per 1 unit nutrition.
+When considering a 1:1 ratio of males:females, fur lowers to {{Icon Small|Chinchilla fur}} {{#expr:{{Leather Production|{{PAGENAME}}|baby|1|1}}/{{Nutrition Consumption|{{PAGENAME}}|baby|1|1}} round 3}} per 1 unit nutrition (baby), or {{Icon Small|Chinchilla fur}} {{#expr:{{Leather Production|{{PAGENAME}}|adult|1|1}}/{{Nutrition Consumption|{{PAGENAME}}|adult|1|1}} round 3}} per 1 unit nutrition (adult). Like with meat, a higher ratio of females increases efficiency.
+
+Interestingly, the choice of whether to slaughter chinchillas as babies or adults varies as the proportion of females to males changes, with adult slaughter becoming more optimal as the proportion of males increases. This can be thought of as being due to the nutrition consumption of the males overpowering the benefit of not having to feed the offspring. Baby slaughter becomes preferable as the ratio of females:males rises above 2.4:1 for meat optimisation, or 2:1 for leather optimisation.<!--found with size=0.35, hunger=0.124*1.6, gestation=5.66, avg_offspring=1.75, juvenile_age=0.1, maturity_age=0.2222--->
+
+=== Trade ===
+[[Chinchilla fur]] is highly valuable, beautiful, and cold resistant. Of these uses, beauty is unlikely to make a meaningful impact. Chinchilla fur isn't great for protection, other than cold insulation. As chinchillas are found in tropical biomes, cold insulation is unlikely to be relevant. Thus, the main ''value'' of their fur, is money.
+
+With a 1:1 ratio of males:females, chinchillas produce {{Icon Small|Chinchilla fur}} {{#expr:{{Leather Production|{{PAGENAME}}|adult|1|1}}/{{Nutrition Consumption|{{PAGENAME}}|adult|1|1}} round 3}} fur per 1 unit nutrition. 1 unit of nutrition is equal to {{Icon Small|hay}} 20 [[hay]], which can be grown in {{#expr: (20 / {{#show:Haygrass|?Harvest Yield Per Day (100)}}) round 1}} tiles of [[haygrass]] crop. The same tiles of [[psychoid plant]] could create {{Icon Small|Psychoid leaves}} {{#expr: (20 / {{#show:Haygrass|?Harvest Yield Per Day (100)}}) * {{#show:Psychoid plant|?Harvest Yield Per Day (100)}} round 1}} psychoid leaves per day. 
+
+Psychoid leaves are worth {{Icon Small|silver}} {{#expr: (20 / {{#show:Haygrass|?Harvest Yield Per Day (100)}}) * ({{#show:Psychoid plant|?Harvest Yield Per Day (100)}} / 4) * {{Q|Flake|Market Value Base}} round 1}} [[silver]] when turned into [[flake]]. With 1:1 female/male slaughter, the chinchilla fur would be worth {{Icon Small|silver}} {{#expr:{{Leather Production|{{PAGENAME}}|adult|1|1}}/{{Nutrition Consumption|{{PAGENAME}}|adult|1|1}} * {{Q|Chinchilla fur|Market Value Base}} round 1}} [[silver]] ''unprocessed''. 
+
+Efficiency can increase for a number of reasons:
+* When you have more females than males, chinchillas are more efficient per unit nutrition. You can support 5:1 ratio of females:males easily.
+* Chinchillas can graze, which saves the work of having to sow crops in the first place.
+* Fur can be turned into [[duster]]s or [[formal vest]]s{{RoyaltyIcon}} for even more value.
+
+Note that chinchilla fur is then penalized by the butcher's [[Butchery Efficiency]] (dependent on Cooking skill) and the [[AI storytellers#Butchering yield|butchering penalty]] from [[difficulty]].
+
+== Training ==
+{{TrainingTable}}
+
+== Health ==
+{{Animal Health Table|QuadrupedAnimalWithPawsAndTail}}
+{{Pawn Attack Table}}
+
+== Gallery ==
+<gallery>
+Chinchilla east.png|Facing east
+Chinchilla north.png|Facing north
+Chinchilla south.png|Facing south
+</gallery>
+<gallery>
+Dessicated chinchilla east.png|Dessicated facing east
+Dessicated Chinchilla north.png|Dessicated facing north
+Dessicated Chinchilla south.png|Dessicated facing south
+</gallery>
+
+== Version history ==
+* [[Version/0.12.906|0.12.906]] - Added
+* Beta 19/ 1.0 - nuzzle interval 72 -> 48 hours
+
+{{nav|animal}}
+[[Category:Animals]]
+[[Category:Wild animal]]

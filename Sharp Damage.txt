@@ -1,0 +1,56 @@
+{{Stub|reason=1) Two-way links 2) worked example}}
+{{See also|Blunt Damage}}
+{{Verified|1.5.4104}}{{Stat
+| def name = SharpDamageMultiplier
+| label = sharp damage
+| description = A multiplier on damage from sharp-type attacks for weapons made of this [[stuff|material]].
+| default base value = 1
+| to string style = PercentZero
+| show if undefined = false
+| category = StuffStatFactors
+| display priority in category = 4505
+}}
+
+== Bases ==
+<div><li style="display: inline-table;">
+{| {{STDT| sortable }}
+! Material !! Stuff Categories !! [[Property:Melee Sharp Damage Factor|Sharp<br />Damage<br />Factor]]
+|-
+{{#ask: [[Melee Sharp Damage Factor::+]]
+| ?Stuff Category
+| ?Melee Sharp Damage Factor
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Name
+}}
+|}
+</li><div>
+
+== Stat Def Data ==
+{| {{STDT}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Sharp Damage" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />SharpDamageMultiplier
+* '''Label:'''<br />sharp damage
+| A multiplier on damage from sharp-type attacks for weapons made of this material.
+|
+* Display Order:<br />'''74'''
+* Def Name:<br />'''StuffStatFactors'''
+* Label:<br />'''Multipliers when made of this'''
+* Display All By Default:<br />{{Good|true}}
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0.05}}
+* '''To String Style:''' PercentZero
+* '''Show If Undefined:''' {{Bad|false}}
+| -
+| 4505
+<!--</StatDef>-->
+|}
+
+== Version history ==
+* Between [[Version/0.7.581|0.7.581]] and [[Version/0.9.722|0.9.722]] inclusive - Added.
+
+{{nav|stats|wide}}

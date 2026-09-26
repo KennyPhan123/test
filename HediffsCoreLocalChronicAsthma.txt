@@ -1,0 +1,66 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Local/Chronic}}
+|}
+----
+{| {{STDT| c_11}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Asthma" <!-- defName="Asthma", ParentName="ChronicDiseaseBase" -->
+! Asthma
+----
+* Def Name:<br />Asthma
+* Label:<br />asthma
+| A long-term inflammatory disease of the airways in the lungs. It requires regular tending to prevent symptoms.
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|90%|100%|35%}}
+* Chronic: {{Good|true}}
+* Allow Mothball If Low Priority World Pawn: {{Good|true}}
+* Initial Severity: '''0.1%'''
+* Min Severity: '''0.1%'''
+* Max Severity: '''50%'''
+* Tendable: {{Good|true}}
+* Cure All At Once If Cured By Item: {{Good|true}}
+* '''Remove On Redress Chance By Days Curve:'''
+<div><li style="display: inline-table;">
+{| {{STDT| c_11}}
+! Days !! Chance
+|-
+! 0
+| 0%
+|-
+! 2
+| 0%
+|-
+! 7
+| 50%
+|-
+! 20
+| 100%
+|}{{Graph:Chart|width=200|height=200|xAxisTitle=Days|yAxisTitle=Remove On Redress Chance|yAxisFormat=%|type=line|x=0, 2, 7, 20|y=0, 0, 0.5, 1|xGrid=|yGrid=}}</li></div>
+* '''Comps'''
+** ''Immunizable''
+*** Severity Per Day Not Immune: {{++|25%}}
+** ''Tend Duration''
+*** Base Tend Duration Hours: '''168''' (7 Days)
+*** Tend All At Once: {{Good|true}}
+*** Severity Per Day Tended: {{---|80%}}
+|<!-- Stages -->
+{| {{STDT| c_11}}
+! Label !! Parameters
+|-
+! minor
+|<!-- Parameters -->
+* Part Efficiency Offset: {{--|10%}}
+|-
+! major
+|<!-- Parameters -->
+* Min Severity: '''30%'''
+* Part Efficiency Offset: {{--|30%}}
+|-
+! major
+|<!-- Parameters -->
+* Min Severity: '''45%'''
+* Part Efficiency Offset: {{--|50%}}
+|}<noinclude>
+|}</noinclude>

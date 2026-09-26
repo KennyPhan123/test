@@ -1,0 +1,171 @@
+{{Anomaly}}
+{{Spoiler}}
+{{Image wanted|reason=Gizmos}}
+{{Infobox main|entity
+| name = Corrupted obelisk
+| image = Corrupted obelisk.png
+| description = A large metallic pillar that emanates a putrid psychic energy. The pillar hums ominously and appears to be increasing in activity. It's not clear what will happen when it reaches its full capacity.<br />You can send colonists to suppress the obelisk to prevent it from activating. You can also mark the obelisk for study to try to learn its purpose and perhaps make use of it.<br />You can attack the obelisk to destroy it, but doing so may unleash unnatural and dangerous phenomena.
+<!-- Base Stats -->
+| type = Entity
+| type2 = Advanced
+| hp = 3000
+| flammability = 0
+<!-- Meditation -->
+| meditation psyfocus bonus = 0.24
+| focus type = Void
+<!-- Activity -->
+| starting range = 0.2~0.4
+| change per day base = 0.2
+| change per damage = 0.001
+| warning = 0.9
+| activity worker class = ObeliskActivityWorker
+| activity research factor curve = (0, 0.5), (0.5, 1), (0.99, 2)
+<!-- Containment - Studiable -->
+| anomaly knowledge = 2
+| knowledge category = Advanced
+| study interval = 120000
+| min monolith level for study = 1
+| study enabled by default = false
+| show toggle gizmo = true
+| can be activity deactivated = true
+<!-- Building -->
+| size = 3 × 3
+| passability = impassable
+| paintable = false
+| deconstructable = false
+| claimable = false
+| destroyyield = {{Icon Small|Shard|24|1}}
+| cover = 1
+<!-- Technical -->
+| defName = WarpedObelisk_Duplicator
+| label = corrupted obelisk
+}}
+
+The '''corrupted obelisk''' is one of three [[obelisk]]s that can appear in the [[Anomaly DLC]]. It is able to clone your colonists.
+
+== Occurrence ==
+{{Stub|section=1|reason=Detail as to when they can spawn as a major threat, what that means etc. Ensure parity between this page and all three [[obelisk]] page - consider templatization if necessary}}
+An obelisk can {{Check Tag|Spawn Chance}} spawn in the map as a [[major threat]] event sometime after day 50 when the [[void monolith]] is 1 or greater. An obelisk has a chance to spawn 120 days after the last of any type.
+
+== Summary == 
+{{Stub|section=1|reason=Missing detail and numbers}}
+
+=== Obelisk mechanics ===
+Like the other [[obelisk]]s, the corrupted obelisk has an activity level, which can be suppressed as wardening work. Reaching 100% activation will cause a special, dangerous event and cause the obelisk to be destroyed afterwards. At full HP, an obelisk gains +20% activity per day, but damaging it will raise activity, and once it falls below 80% HP, the daily rate will rapidly increase.
+
+Obelisks can be studied for advanced anomaly research, with the rate of study increasing with activity level.
+
+=== Duplicates ===
+[[File:Trigger corrupted obelisk command.png|thumb|64px|left|The gizmo for activating manual duplication]]
+When suppressing or studying the corrupted obelisk, there is a chance of a duplicate of the interacting pawn appearing, occurring on average every 24 hours of interaction.
+
+Alternatively, after gaining 10 anomaly research, duplication can be manually triggered by a colonist with a 30 day cooldown. This can even include temporary [[guest]]s, but the pawn must be conscious and able to reach the obelisk on their own.
+:''"You've learned more about the obelisk. The device has the power to duplicate intelligent creatures. In theory, it can produce duplicates without limit. The obelisk appears damaged and unstable, so its energy level rises unless suppressed. If it were to fully activate, it would go into a duplication loop, chaotically pumping out a large number of flawed human duplicates. {PAWN_nameDef} thinks that it may be possible to safely shut down the obelisk but this will need significantly more study. You can now intentionally provoke a response from the corrupted obelisk."''
+
+[[Creepjoiner]]s cannot be duplicated and will generate a duplication failure message from the obelisk. This will happen even if they are converted into [[Ghoul]]s.
+
+Note that [[ghoul]]s cannot be commanded to use the obelisk via the obelisk's gizmo, but can be ordered to do so by selecting the ghoul, and using the right click menu to command them to trigger the obelisk. It is unknown which aspect of this inconsistency is considered a bug, if either is.
+
+==== Duplicate downsides ====
+When a duplicate is formed, there are four possible downsides, selected randomly:
+* '''Hostile duplicate:''' The duplicate is hostile and will immediately attack. They can be [[downed]] and recruited as normal.
+* Cloned colonist with '''multiple [[organ decay]]:''' Several of the duplicate's vital organs have organ decay, which causes increasing pain and reduced efficiency and will eventually kill the pawn. For further detail and treatment options, see [[Organ decay]]. 
+* Cloned colonist with '''[[duplicate sickness]]:''' While both are alive, both the original and the duplicate suffer from lowered [[consciousness]], which gradually worsens over the course of a few days, with the final stage being {{Bad|Max 10%}} consciousness, rendering them both comatose but alive. For further detail and treatment options, see [[Duplicate sickness]]. 
+* Cloned colonist with '''[[crumbling mind]]:''' The duplicate's [[consciousness]] will gradually decrease. After 2-3 days the condition becomes permanent and nominally incurable, and they will be [[incapable]] of certain work types. Colonists that reach the final stage will be unable to do Skilled Labor, Dumb Labor, Caring or Intellectual Jobs. For further detail and treatment options, see [[Crumbling mind]].
+
+Note that organ decay, duplicate sickness, and crumbling mind are initially hidden, but can be revealed via surgical inspection.
+
+==== What is duplicated ====
+The duplicated colonist will have identical mood thoughts, [[ideoligion]],{{IdeologyIcon}} [[xenotype]],{{BiotechIcon}} injuries, known [[psycasts]]{{RoyaltyIcon}} and [[psylink]]{{RoyaltyIcon}} level, [[void touched]] status, [[death refusal]] (although max. 1 charge), [[bliss lobotomy]], and any ongoing illnesses or drug effects (including [[pregnancy]]{{BiotechIcon}} and [[luciferium]] addiction). 
+
+The duplicate will have no equipment and no artificial body parts except for psylinks and fleshmass organs (such as those granted by a [[twisted obelisk]]). Any artificial body parts will be replaced with the healthy, natural form, including all subparts that may be removed by the artificial part (e.g. a [[prosthetic arm]] will be replaced with an organic arm, including the hand and fingers). 
+
+Notably, no social opinions are copied to the duplicate, including spouses, imperial [[title]]s,{{RoyaltyIcon}} or even familial relations.{{Check Tag|Confirmation needed|A duplicate was observed with a "Got some lovin'" social opinion carrying over associated with the original pawn's lover|Editor Note 4/6/2026, by Starcalled: I would be more than happy to provide image confirmation, however I am unable to upload images.}} There is also no special relationship between the original and duplicate. Unique connections, such as to a [[gauranlen tree]],{{IdeologyIcon}} are not duplicated. If the original colonist married and took the last name of another pawn prior to being duplicated, the duplicate will also share that last name (despite not being married).
+
+Additionally, duplicated colonists do not have the original's [[metalhorror]] infection pathways, and they can never gain the pre-arrival infection pathway through resurrection, either.
+
+=== Full activation ===
+If the activity level of the corrupted obelisk reaches 100% it will explode, dropping a [[shard]] and causing hostile duplicates to spawn all around your colonists. Duplicate spawn randomly in proximity to any colonist. This process will not duplicate children unless child raiders are enabled in storyteller settings, in which case a minimum age of 10 still applies.
+
+The amount of duplicates that spawn is based on raid points. The obelisk has a budget equal to 0.6 times the colony's total raid points. The cost of each duplicate is calculated as follows from the colony's total raid points (without the 0.6 multiplier).
+
+{| class="wikitable"
+|-
+!Graph || Raid points || Cost of each duplicate
+|-
+| rowspan="5" | {{Graph:Chart|width=400|height=100|xAxisTitle=Raid points (100's) |yAxisTitle=Unit cost|type=line|x= 0, 5, 10, 50, 100 |y1=50, 50, 100, 200, 200}} || style="text-align:right" | 35 || style="text-align:right" | 50
+|-
+| style="text-align:right" | 500 || style="text-align:right" | 50
+|-
+| style="text-align:right" | 1,000 || style="text-align:right" | 100
+|-
+| style="text-align:right" | 5,000 || style="text-align:right" | 200
+|-
+| style="text-align:right" | 10,000 || style="text-align:right" | 200
+|}  
+
+{| class="wikitable"
+|-
+!Raid points || Total duplicates
+|-
+| style="text-align:right" | 35 || style="text-align:right" | 1
+|-
+| style="text-align:right" | 167 || style="text-align:right" | 3
+|-
+| style="text-align:right" | 500 || style="text-align:right" | 6
+|-
+| style="text-align:right" | 1000 || style="text-align:right" | 6
+|-
+| style="text-align:right" | 2000 || style="text-align:right" | 10
+|-
+| style="text-align:right" | 5000 || style="text-align:right" | 15
+|-
+| style="text-align:right" | 9667 || style="text-align:right" | 30
+|}
+
+=== Destruction ===
+After obtaining 30 anomaly research, the obelisk can be safely deactivated at the cost of 2 [[shard]]s. A deactivated obelisk will not need to be suppressed, but can no longer duplicate pawns.
+:''"{PAWN_nameDef} has completed {PAWN_possessive} investigation of the corrupted obelisk. {PAWN_pronoun} has discovered a method for safely deactivating the obelisk using shards of archotechnology. You can no longer study the obelisk after deactivating it."'' 
+
+In addition, dealing enough damage instantly, e.g., with a [[diabolus]]' cannon, will allow destruction of the obelisk without triggering the full activation. [[#Brute-force destruction|See below for more detail]].
+
+== Analysis ==
+A colony's pawns can be some of the most powerful assets, and one that rewards large amounts of investment. The ability to multiply these assets makes the corrupted obelisk the most desirable of the three obelisks for most colonies. 
+
+The side effects must be accounted for pawns that are to retained, but all of them can be cured. See the relevant pages for further details.
+
+=== Duplication candidates ===
+Generally speaking, how powerful the obelisk is will depend on the pawns you can feed into it and what they are used for.
+
+* [[Ghoul]]s: The corrupted obelisk is ideal for duplicating ghouls or candidates for converting into ghouls. Ghouls strongly benefit from particular [[trait]] combinations, [[genes]],{{BiotechIcon}} and a high base melee skill which can be difficult to source en masse. Note that [[artificial body parts]] won't be duplicated, but these are often simpler to source. Hostile duplicates can be captured and turned into allied ghouls without bothering with the standard recruitment process. 
+* [[Psycast]]ers:{{RoyaltyIcon}} Psycasters are some of the most powerful pawns in the game and psylink is replicated. Accruing psylink is often slow, even for new tribes, and as with ghouls, valuable traits such as [[psychically hypersensitive]] and [[trigger happy]] are rare in combination but make for significantly better psycasters. 
+* [[Void touched]]: While this does require completing the DLC and choosing the appropriate [[Void Awakening (ending)#Embrace the Void|ending]], a void touched pawn is very powerful by themselves and their ability stacks with both ghouls and psycasters.
+
+[[Death refusal]] and [[philophagy]] can make a suitable duplicate candidate even better. Philophagy in particular allows a pawn to be decent (or better) at all skills, even if they don't have a passion, although it is expensive in terms of [[shard]]s and requires [[prisoner]]s good at skills.
+
+=== Side effect mitigation ===
+[[Death refusal]] can be copied by the duplicate and will mitigate three of the four downsides. Duplicate sickness can be immediately cured by killing either pawn and reviving. Crumbling mind can be cured by destroying the colonist's brain (before or after death). This can be done via extracting the corpse's [[skull]],{{IdeologyIcon}} using a [[subcore ripscanner]],{{BiotechIcon}} [[luciferium]] withdrawal, or more riskily by eating the corpse until the head is gone. It is usually better to cure organ decay via transplants than death refusal, but destroyed organs will be replaced when reviving.
+
+Similarly, [[unnatural healing]] can cure duplicate sickness, crumbling mind, and decaying organs.
+
+In case of a hostile duplicate, a [[Psychic shock lance|psychic]] or [[shard shock lance]] can be used to avoid accidentally killing them. Alternatively, you can make the duplicator wear a [[war mask]] and damage them beyond what their pain shock threshold was before wearing it. As the duplicate has no mask, they would be immediately downed.
+
+=== Obelisk activation capturing ===
+If you attack the obelisk, its activity level will rise. When it reaches full, it will duplicate up to 30 of your colonists depending on raid points, all of them being hostile to you. However, this can be abused to mass clone a single target pawn by following the method below:
+* Build a prison capable of holding up to 30 prisoners.
+* [[Anesthetic|Anesthetize]] your target pawn via the operation tab.
+* Send all other pawns (except ghouls and prisoners) on a [[caravan]] resting right outside your colony. The caravan can wait on the colony's tile so long as they don't actually enter.
+* Have a ghoul attack the obelisk, or wait for it to reach 100% to trigger the duplication.
+* Since the only valid target duplication on the map is anesthetized, all clones will be unconscious upon creation.
+* Have your caravan enter the tile and capture all the unconscious duplicates.
+
+=== Obelisks in general ===
+{{Obelisk Analysis|pawn_count=4}}
+
+{{Obelisk Destruction|pawn_count=4}}
+
+== Version history == 
+* [[Anomaly DLC]] Release - Added.
+
+{{Nav|entity|wide}}
+[[Category: Entities]]

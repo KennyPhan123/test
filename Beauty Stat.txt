@@ -1,0 +1,121 @@
+{{Stub|reason=1) Two-way links 2) Version history}}
+{{Verified|1.5.4104}}{{Stat
+| def name = Beauty
+| label = beauty
+| description = How enjoyable an object is to look at.<br/>Beautiful objects fulfill characters' [[need]] for [[beauty]].
+| default base value = 0
+| min value = -1000
+| hide at value = 0
+| round value = true
+| round to five over = 100
+| to string style = Integer
+| apply factors if negative = false
+| category = BasicsNonPawn
+| display priority in category = 3000
+| parts = StatPart_Quality, StatPart_ContentsBeauty
+}}
+
+== Bases ==
+<div><li style="display: inline-table;">
+Click to <div class="mw-collapsible mw-collapsed">
+<div class="mw-collapsible-content">
+{| {{STDT| sortable c_01}}
+! Thing !! Beauty Base
+|-
+{{#ask: [[Beauty Base::+]]
+| ?Beauty Base
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Name
+| limit = 1000
+}}
+|}
+</div>
+</div>
+</li></div>
+
+== Factors ==
+{| {{STDT}}
+! [[Quality]] !! Factor
+|-
+! Awful
+| {{Bad|×-10%}}
+|-
+! Poor
+| {{Bad|×50%}}
+|-
+! Normal
+| '''×100%'''
+|-
+! Good
+| {{Good|×200%}}
+|-
+! Excellent
+| {{Good|×300%}}
+|-
+! Masterwork
+| {{Good|×500%}}
+|-
+! Legendary
+| {{Good|×800%}}
+|}
+
+Here is a table of all objects with beauty multiplied by quality:
+<div><li style="display: inline-table;">
+Click to <div class="mw-collapsible">
+<div class="mw-collapsible-content">
+{| {{STDT| sortable c_01}}
+! Thing !! Beauty<br />Base
+|-
+{{#ask: [[Has Quality::true]]
+[[Beauty Base::+]]
+| ?Beauty Base
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Name
+| limit = 1000
+}}
+|}
+</div>
+</div>
+</li></div>
+
+== Stat Def Data ==
+{| {{STDT}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Beauty" <!-- Name="Beauty" --><!--<StatDef>-->
+|
+* '''Def Name:'''<br />Beauty
+* '''Label:'''<br />beauty
+| How enjoyable an object is to look at.<br/><br/>Beautiful objects fulfill characters' need for beauty.
+|
+* Display Order:<br />'''12'''
+* Def Name:<br />'''BasicsNonPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />{{Bad|false}}
+|
+* '''Default Base Value:''' 0
+* '''Min Value:''' -1000
+* '''Hide At Value:''' 0
+* '''Round Value:''' {{Good|true}}
+* '''To String Style:''' Integer
+* '''Round To Five Over:''' 100
+* '''Apply Factors If Negative:''' {{Bad|false}}
+|
+* '''Parts:'''
+** '''StatPart_Quality:'''
+*** Factor Awful: {{Bad|×{{%|-0.1}}}}
+*** Factor Poor: {{Bad|×{{%|0.5}}}}
+*** Factor Normal: '''×{{%|1}}'''
+*** Factor Good: {{Good|×{{%|2}}}}
+*** Factor Excellent: {{Good|×{{%|3}}}}
+*** Factor Masterwork: {{Good|×{{%|5}}}}
+*** Factor Legendary: {{Good|×{{%|8}}}}
+** '''StatPart_ContentsBeauty'''
+| 3000
+<!--</StatDef>-->
+|}
+
+{{nav|stats|wide}}

@@ -1,0 +1,353 @@
+{{TOCright}}
+{{Merge|destination=Food|reason=Redundancy}}
+The '''food production''' chain in RimWorld results in edible [[food]] to keep your colony sustained. There are multiple ways to obtain raw ingredients for refined food, and refined food itself.
+
+== Farming ==
+The most common way to produce food in RimWorld is to farm it. Vegetarian ingredients are obtained by growing crops, and meat ingredients are obtained by rearing livestock.
+
+=== Crops ===
+RimWorld has five main crop types: [[corn plant|corn]], [[haygrass]], [[potato plant|potatoes]], [[rice plant|rice]], and [[strawberry plant|strawberries]]. Each plant in turn has their own unique set of advantages and disadvantages, making them all distinguishable from one another.
+
+If everything goes perfectly, a {{#expr: ceil ({{Q|Human|Real Hunger Rate}}/({{Q|Rice plant|Harvest Yield Per Day (100)}}*{{Q|Rice|Nutrition}}*({{Q|Simple meal|Nutrition}}/{{Q|Simple meal|Resource 1 Amount}})))}} tiles of rice on normal soil with a year-round growing season and turned into [[simple meal]]s should produce just enough food for a single pawn, assuming 100% [[AI_Storytellers#Harvest_yield|Storyteller harvest yield]] (which varies by difficulty) and pawn [[plant harvest yield]] (which varies by skill). But if you gain more colonists or animals to feed, or if farming is hindered by misfortune or enemy action, planning ahead and planting extra can ensure your colony has enough food to eat.
+
+Each crop will be roughly summarized here, but each crops' own pages will go into more detail on that particular crop:
+
+----
+
+==== Corn ====
+[[File:Corn plant a.png]]
+
+'''Advantages:'''
+* More health points than any other crop (150 vs 85)
+* Less labor-intensive, particularly for growers
+* Yields ''a lot'' of [[corn]] per harvest
+* Corn has a long shelf life
+* Grows well in rich soil
+
+'''Disadvantages:'''
+* Long time between harvests makes crop loss harsher and further restricts when it can be planted and still grow to maturity on maps with cold winters.
+* Can't be sown in [[hydroponics basin]]s
+* Grows poorly in gravel
+
+'''Usage:'''
+* Supplement food supply alongside other more stable food sources.
+* Grow when short on growers or lack enough freezer capacity.
+
+----
+
+==== Haygrass ====
+[[File:Haygrass.png]]
+
+'''Advantages:'''
+* [[Hay]] stacks up to 200, compared to 75 for other raw foods.
+* Exceptionally good nutrition output.
+* Long shelf life.
+
+'''Disadvantages:'''
+* Can't be sown in hydroponics basins
+* Hay is only indirectly edible by humans by making it into [[kibble]]. Even then, they won't like it.
+
+'''Usage:'''
+* Supplement food for grazing animals when pastures are depleted.
+* Make kibble along with unwanted meats like insect or human meats.
+
+----
+
+==== Potatoes ====
+[[File:Potato plant.png]]
+
+'''Advantages:'''
+* Grows well in gravel
+
+'''Disadvantages:'''
+* [[Potatoes]] have a slightly shorter shelf life
+* Barely benefits from rich soil and hydroponics
+
+'''Usage:'''
+* Grow in areas lacking fertile soil such as deserts.
+
+----
+
+==== Rice ====
+[[File:Rice plant.png]]
+
+'''Advantages:'''
+* Grows quickly, so food supply is consistent
+* Grows well in rich soil and hydroponics
+
+'''Disadvantages:'''
+* Grows poorly in gravel
+* Yields little [[rice]] per harvest
+* Very labor-intensive
+
+'''Usage:'''
+* Start off your food production by growing this first.
+* Grow in hydroponics basins for rapid production.
+
+----
+
+====Strawberries====
+[[File:Strawberry plant.png]]
+
+'''Advantages:'''
+* [[Berries]] don't give any negative thoughts when eaten raw
+* Longer shelf life compared to cooked meals
+
+'''Disadvantages:'''
+* Inferior nutrition output compared to other crops
+* Shorter shelf life compare to other raw crops
+
+'''Usage:'''
+* Provide food for caravans taking medium-length trips.
+* Grow when short on cooks.
+
+=== Security ===
+Walls can protect your crops from hungry wildlife or arsonist raiders. They also prevent the spread of blight between fields, minimizing your losses from this event. 
+
+Fire can also be a problem, particularly in heavily wooded biomes such as boreal forests or tropical swamps. A roof 4 tiles or wider all around your crop fields can prevent the spread of fire, even if it is supported by stone pillars rather than a completely built wall. More well established colonies could also add firefoam poppers.
+
+=== Greenhouses ===
+Most biomes have soil you can use to plant crops, even if they are too cold to have a growing season. Placing a sun lamp on dirt and enclosing it with walls and a roof can help you produce a reliable food supply. This also offers more crop varieties than hydroponics and is less vulnerable to power outages.
+
+Even in a biome with permanent summer, setting up a greenhouse in advance can ensure you are prepared in case of a long toxic fallout that prevents you from growing vegetables in the open air.
+
+If you have both winter and summer, removing the roof of your greenhouse during the growing season can conserve power. Be sure to turn your sunlamps off before doing so.
+
+== Animal products ==
+
+Though plant-based foods can sustain your colonists, you will usually need animal products if you're going to make better meals for your colonists.
+
+There are three kinds of food products that can be yielded from animals: milk, meat and eggs. 
+
+----
+
+=== Meat ===
+{{main|Meat}}
+[[File:Meat big a.png]]
+
+Meat is butchered from any freshly killed [[Animals|animal]]. The amount of meat obtained depends on the animal, and the [[Butchery Efficiency]] of the cook. In general, better cooks can make more out of each dead animal.
+
+----
+
+=== Milk ===
+{{main|Milk}}
+[[File:Milk.png]]
+
+Milk can be obtained from female tamed animals of the following species: {{#ask: [[Milk Amount::+]] [[Category:Animals]]}}. It requires handlers to milk them. Cows produce 18 milk every day. Other animals produce 12 milk once every 2 days.
+Milk also has the benefit of not giving a mood penalty when eaten raw. When used in recipes it can be substituted for an amount of meat of equivalent nutrition in meals that require meat, and used in place of any nutrition in vegetarian meals.
+
+=== Eggs ===
+{{main|Eggs}}
+[[File:Egg small b.png]]
+
+Egg can be obtained from female tamed animals of the following species: {{#ask: [[Egg Laying Interval::+]] [[Category:Animals]]}}. However, they are produced most efficiently by chickens
+
+[[Simple meal|Simple]], [[Fine meal|fine]], and [[lavish meal]]s can all use eggs as an ingredient. When used in recipes it can be substituted for an amount of meat of equivalent nutrition in meals that require meat, and used in place of any nutrition in vegetarian meals.
+
+=== Livestock rearing ===
+
+Rearing livestock is a good choice for constantly providing these animal products for use. Milk and eggs in particular can only be obtained by milking livestock, outside of trading.
+
+There are two factors you will want to consider for livestock (solely for food production): nutrition efficiency and production rate.
+
+==== Nutrition efficiency ====
+
+This refers to how effectively the animal converts nutrition consumed to nutrition produced (either by milking or butchering). The grass on the map contains plenty of nutrition which in inaccessible to colonists, and requires you convert them to meat or milk before being consumable by colonists.
+
+==== Production rate ====
+
+This is pretty straightforward. It is affected by the reproduction and growth rate of meat-producing animals.
+
+== Other methods ==
+
+=== Foraging ===
+
+Early-game, you're not going to be able to set up a farm straight away; foraging is your best bet for keeping your colony sustained at this point. Forage for berries and agave, and hunt wild animals.
+
+You can also scavenge kills from predators, if they left anything behind, but be careful not to end up as prey yourself.
+
+==== [[Biomes]] ====
+
+Different biomes have different foods available to forage.
+
+*Temperate forests are good in terms of food; you will have a good number of animals to hunt and berries to forage.
+*Boreal forests have troves of [[Raspberry bush|raspberries]] waiting to be harvested and a decent number of animals during summer. Things get tougher during winter when plants freeze over, making them inedible. However, berries that ripened during the summer can still be harvested for a short time after the plants have turned brown and wilted. Hunting will sustain you at first, but in the coldest weeks of winter, the animals leave as well.
+*Arid shrublands have large numbers of [[agave]] plants growing, providing lots of food, though agave can't be eaten raw like berries. Large animals yield lots of meat, though many are tough or aggressive. 
+*Swampy biomes all have berries and lush tree and plant coverage. This is great for foraging.
+*There's little to eat in a desert and even less in an extreme desert. Foraging is not a good choice there.
+*Tundra has very few trees and even fewer berries. Migrating herds of animals may pass by, but you will need to shoot them quickly to collect any food.
+*Ice sheets do not have plants. Hunting is the only choice, and there's little to hunt: snowhares and polar bears spawn naturally, several large animals during migration events. 
+*There's nothing to see on sea ice except several rare snowhares.
+
+=== Hunting ===
+
+Between growing enough food to be self-sufficient and taming enough animals to set up a sustainable meat/milk farm, you will most likely have to resort to hunting for meats and leather.
+
+Only colonists equipped with a ranged weapon will hunt. If the hunter has a bolt-action rifle or similar long-range weapon, hunting them from the weapon's maximum distance minimizes the animal's chance of seeking revenge when harmed. Colonists assigned to hunt will do this automatically. Each animal's revenge chance is listed on its Info screen. The more shots the hunter has to take to down the animal, the more possibilities that it will seek revenge. 
+
+The best options to hunt are the 0% revenge chance animals such as deer, gazelle, alpaca and dromedary. If a more aggressive animal has an injury or health condition which weakens its movement, it may be an acceptable risk for a less skilled hunter. An animal that is a member of a herd might turn manhunter by itself, or its entire herd may seek revenge along with it. So before designating an animal to hunt, it's worth asking, "would I rather have my best shooter get chased by a single murderous grizzly, or 17 vengeful caribou?"
+
+If a hunter has high skill and a good quality weapon, they may be able to down even a tough animals in just a few shots. A hunter will automatically carry the corpse of their prey back to the best available stockpile, even if the colonist is incapable of hauling. 
+
+Any animal that is designated to be hunted will be un-forbidden if it dies. Otherwise, animal corpses are forbidden by default.
+
+It is a bad idea to send your colonists to hunt with an incendiary weapon.
+
+=== Trade ===
+
+Trading gives lots of food instantly without much work from your colonists, but is more expensive marketwise than growing your own food.
+
+For colonies growing lots of food crops, trade can help obtain animal products such as meat in bulk for cooking quality meals in exchange for crop produce which is often in excess.
+
+== Processing food ==
+
+Eating raw food isn't really favorable to your colonists, usually netting them a -7 mood penalty. Besides, cooking food makes it easier to digest, allowing colonists and animals to obtain more nutrition from them.
+Raw food can be made into several varieties of cooked meals or processed foods.
+
+
+There are a few common considerations when picking the meal(s) to produce:
+* '''Work Efficiency''' - How much work each full unit of 1 nutrition takes; relevant if cooking labor is limited.
+* '''Nutrient Efficiency''' - How much output nutrients can be obtained from input raw nutrients; relevant if food sources are limited.
+* '''Typical Effective Nutrient Efficiency''' - How much typical saturation is obtained from input raw nutrients for a regularly fed adult human pawns. Adult human pawns eat below 0.3 saturation and cannot go above 1.0. Not applicable if the colony is starving.
+* '''Spoil Time''' - How long food lasts if not frozen. Especially relevant for low tech situations that lack refrigeration, hot climates, and caravans.
+* '''Storage Efficiency''' - How much nutrition fits into one stack, useful if [[Temperature#Freezer|freezer]] space is limited. However non- and slow-spoiling food does not need freezer space to begin with.
+* '''Weight Efficiency''' - Nutrition per kilogram of food, which is relevant for caravans.
+* '''Mood Effects''' - Food can provide [[Mood|mood]] effects, either positive or negative, to humanoid pawns, depending on the food.
+
+{| class="wikitable sortable"
+|-
+! Meal Name
+! data-sort-type="number" | Work Efficiency (Work/Nutrition)
+! data-sort-type="number" | Nutrient output (Nutrition out)
+! data-sort-type="number" | Raw Nutrients (Nutrition in)
+! data-sort-type="number" | Nutrient Efficiency (Nutrition out/Nutrition in)
+! data-sort-type="number" | Typical Effective Nutrient Efficiency ( 0.7 Saturation out/Nutrition in)
+! data-sort-type="number" | Units/Full Stack
+! data-sort-type="number" | Storage Efficiency (Nutrition/Tile)
+! data-sort-type="number" | Weight/Unit
+! data-sort-type="number" | Weight Efficiency (Nutrition/Kg)
+! Others
+|-
+| Simple Meal || 5.56 || 0.9 || 0.5 || 180% || 140% || 10 || 9 || 0.44 || 2.045 || 
+* Trivial Production
+* Can be made at a Campfire
+* Short spoil time (4 days)
+* High work efficiency
+|-
+| Fine Meal || 8.89 || 0.9 || 0.5 || 180% || 140% || 10 || 9 || 0.44 || 2.045 ||
+* Upgrade of Simple Meal, providing a moderate mood bonus (+5 mood).
+* Needs 2 kinds of resources (0.25 nutrition Vegetarian, 0.25 Meat).
+* Moderately worse than a Simple Meal on work efficiency, but has identical nutrition, weight, and storage efficiency.
+|-
+| Fine Meal (Vegan/Meat) || 8.89 || 0.9 || 0.75 || 120% || 93% || 10 || 9 || 0.44 || 2.045 ||
+* Same mood bonus as a regular Fine Meal (+5 mood), and adheres to Ideology-based dietary restrictions.
+* Needs 50% more nutrition input than a regular Fine Meal, making it substantially less efficient from a nutrition perspective.  Still provides a gain in nutrition over the input, however.
+|-
+| Lavish Meal || 14 || 1 || 1 || 100% || 70% || 10 || 10 || 0.44 || 2.27 ||
+* Slightly better Storage/Weight Efficiency at worse Nutrient and Work Efficiency.
+* Provides a +12 mood bonus, a substantial increase over a Fine Meal.
+* Provides a neutral return on nutrient input, requiring 1 nutrition (0.5 meat and 0.5 vegetables) and outputting the same.
+|-
+| Lavish Meal (Vegan/Meat) || 14 || 1 || 2.5 || 40% || 28% || 10 || 10 || 0.44 || 2.27 ||
+* Same mood bonus as a regular Lavish Meal (+12 mood), and adheres to Ideology-based dietary restrictions.
+* Requires 2.5x as much nutrition input as a regular Lavish Meal, making it ''incredibly'' inefficient on nutrition.  The same nutrition used for a single Vegetarian or Carnivore Lavish Meal could make ''5'' Simple Meals.
+|-
+| Pemmican || 15 || 0.8 (0.05 x 16) || 0.5 || 160% || 160% || 75 || 3.75 || 0.02 || 2.5 ||
+* Yields 16 Units per cooking action.
+* Can be made at a Campfire.
+* Very long spoil time even without refrigeration (70 days), making freezing largely unnecessary, and also making it a good caravan food.
+* Needs 2 kinds of resources (Meat and Vegetarian), like Fine and Lavish meals, but provides no mood bonus.
+* Has no vegetarian or carnivore option.
+* Abysmal storage efficiency, and worse work efficiency than even Lavish Meals, but good weight efficiency
+* Best typical effective nutrition efficiency before nutrient paste since no excess nutrition is wasted.
+|-
+| Packaged Survival Meal || 8.89 || 0.9 || 0.6 || 150% || 117% || 10 || 9 || 0.30 || 3 ||
+* Does not spoil at all.
+* Best weight efficiency at slightly worse nutrient and work efficiency
+* Needs 2 kinds of Resources (one Vegetarian), pawn skilled at Cooking, and Stove but have simple taste (no Mood boost)
+|-
+| Nutrient Paste || 0 || 0.9 || 0.3 || 300% || 233% || 10 || 9 || 0.44 || 2.04 ||
+* Counts as an awful Meal, applying a -4 Mood debuff.
+* Cannot cause [[food poisoning]].
+* No cooking work required.
+* Extremely high nutrient efficiency.
+* Produced on demand from a [[nutrient paste dispenser]], making it unsuitable for animal feed and vulnerable to energy outages and "Zzztt..." events.
+* Extremely short spoil time (18 hours), and thus not suitable for caravans at all.  Can only be viably stored if frozen, though it is not intended to be stored at all and instead created on demand.
+|-
+| Kibble || 2 || 2.5 (0.05 x 50) || 2 || 125% || 125% || 75 || 3.75 || 0.02 || 2.5 ||
+* Does not spoil
+* Yields 50 Units per cooking action (per unit value in Brackets)
+* Needs 2 Ingredients (any 2 different)
+* Edible by most animals and humans, but humans receive a -12 mood penalty.
+|-
+|}
+
+== Food usage guide ==
+
+=== Colony meals ===
+
+* '''Simple meals''' are usually the first stop. They can be made from everything humans can eat raw. They do, however, spoil almost as quickly as raw ingredients. Setting your work bill to make 3-4 meals per day per colonist should help avoid both spoilage and hunger.
+* Consider an upgrade to '''Fine meals''' as soon as possible, if the worktime (+60% over Simple Meals) is available. It offers a small mood bonus, and requires meat, milk or eggs in addition to vegetables.
+* '''Lavish Meals''' should only be undertaken after careful consideration. While they offer a substantial mood bonus and are very satisfying, they have a very poor nutrient and work efficiency. They are a good investment for an established colony with "High expectations" in order to keep colonists' moods stable. If food sources get scarce, downgrade to Fine Meals or Simple Meals.
+* If no refrigeration is possible, '''Pemmican''' can be used. It is less efficient to produce than most meal types. However, pawns will only consume it when they are hungry and will eat exactly as much as they need, which minimizes waste. It is an excellent choice for caravans due to its long shelf life, and is slightly more efficient to make than packaged survival meals.
+* If space, food sources, cooking time or even cooking skill are at a premium, '''Nutrient Paste''' can be used. However, the negative mood effect can offset its convenience. The Nutrient Paste Dispenser also requires electricity, so at least some reserves of other food should be prepared in case of power outage.
+* In a biome with winter, stockpiling food to last until the next growing season must be done every year until the colony has enough dirt-floor greenhouses or hydroponics to feed its entire population. A proper winter at sub-zero temperatures can make food storage much easier, however. A vent in the wall of a food storage area can keep food freezing without needing to use any electricity.
+* After the first year, it is always a good idea to have a forbidden stockpile of packaged survival meals. In case of long-lasting toxic fallout or a disaster that destroys the colony's main refrigerator, greenhouses etc, this backup food will keep colonists fed while they rebuild.
+* Note that due to [[Saturation#Rounding_Error_and_Eating_Thresholds|overeating rounding error]], the above efficiency values are not precise.  Pawns will try to eat as soon as they hit 25% saturation, so any meal that provides more nutrition than that will typically waste at least some of that nutrition (up to around 15-25% of the total meal's nutrition).  Pemmican, due to its smaller nutrition per unit, is much less affected by this, and thus has a higher effective efficiency than other meals, despite having a lower baseline efficiency.
+
+=== Fodder (Herbivore) ===
+
+* '''Grazing''' is the option picked by most Herbivores by default. They will simply eat wild plants within the allowed area. As long as it is not off-season or there is a truly large amount of animals, most maps can sustain Herbivores with ease. Automatically done in caravans if possible.
+** Animals can also eat raw plants from your crop fields. This however is extremely ineffective as the plants themselves yield a whole lot less than harvesting them.
+* '''Kibble''' allows Herbivores to eat nutrient sources not normally part of their diet. In particular, excess meat (especially Human/Insect meat) and animal products can be turned into animal feed. The only real advantage towards meals is that it last forever, can be made with Hay and has a stellar work efficiency.
+* '''Simple Meals''' and '''Pemmican''' may sound odd, but are a viable option if it is nutrition - rather than worktime - efficiency you are after. They do give the same option to mask the use of Flesh. They also do not need management of pops actually working the butchers table.
+* '''Hay''' has same nutrition per Unit as Kibble and most Vegetables but is more than twice as Weight and Storage efficient and it grows rapidly. Use it to supplement herbivore food when the map is not supplying enough grass to feed everyone, during winter or on caravans.
+
+=== Fodder (Carnivore) ===
+
+* Most carnivores by nature can eat '''raw corpse'''s. While doing so provides Nutrition, it removes bodyparts and thus meat yield from Butchering.
+** This is a good way to get rid of corpses without butchering, especially human corpses left behind after raids- butchering these leaves a mood debuff.
+* '''Raw meat''' is another natural Option. Butchering may not yield a higher effective Nutrition than eating the corpses, especially when done by inept cooks.
+* Simple meals and pemmican are an option as they are with herbivores.
+* '''Kibble''' is slightly more interesting for carnivores. It allows the use of vegetables - including the very effective Hay - for feeding them.
+** Note that [[Warg]]s, unlike any other animal, do not consume [[kibble]]. They can only consume raw meat and raw corpses.
+
+== Caravan Food ==
+
+When sending out a [[Caravan]], spoil time and weight are of the utmost importance. Easily spoiled foodstuffs (most meals, raw meat) is utterly unsuitable for anything but short distances. Be warned that time until rotting is affected by ambient temperatures during the travel.
+
+* Weight efficiency is almost completely uniform, with all produced food offering about the same 2.0-2.5 Nutrition/kg and raw food being equally uniform
+* '''Raw vegetables''' have a surprisingly long shelf life so they should not be underestimated if the mood penalty for Raw Food can be taken
+* '''Pemmican''' is a natural Solution for Caravans. It offers very good spoil time at acceptable weight and Nutrient efficiency. It's biggest downside is the poor work efficiency.
+* '''Packaged survival meals''' last indefinitely, have the best weight efficiency of all meals, and function like Simple Meals (no mood buff or debuff), but have inferior work efficiency (equal to Fine Meals), and inferior nutrition efficiency.  They also require specific research to create.
+* '''Grazing''' once again, Herbivores can Graze. However this option is dependent on the Tile and Season so it can change during Travel.
+* If no Grazing is possible, '''Hay''' has a better weight efficiency than Kibble for Herbivores, if you can gather enough of it.
+* '''Kibble''' is useful for feeding carnivores and even Herbivores during really long stretches of non-grazing world tiles. Do note that [[warg]]s cannot consume kibble.
+* '''Chocolate''' or '''insect jelly''' can fulfill the recreation needs of pawns on a caravan and help prevent mental breaks. However, neither has enough nutrition on its own to replace meals.
+
+Caravans will automatically forage for food on the road, with the yield depending on if they are moving or not, the type of world tile they are on (for example, forage yield is higher in a Temperate Forest than a Desert or Ice Sheet), and the plants skill of the people in the caravan. Tribal pawns also forage faster. The foraged food type depends on the biome. [[Berries]] are foraged in temperate and jungle biomes and [[agave]] in drier ones.
+
+== Storage ==
+''See also [[Cooler]] and [[Temperature#Cooler]]''
+
+Food can be stored in a walk-in freezer. Colonists will automatically harvest mature crops and bring the produce to the appropriate storage. Set the priority of the stockpile in the freezer higher so colonists will haul food to the freezer instead of anywhere else.
+
+Keep in mind that some foods are less, or not, temperature sensitive. Corn, [[pemmican]], and to a lesser extent, Eggs can be kept at room temperatures much longer than most foods, and [[packaged survival meal]]s and [[kibble]] need not be refrigerated at all.
+
+In a way animals themselves can be a meat storage, both alive and dead: The meat they yield when butchered does not spoil while they are alive. This allows them to carry nutrition over into lean times, if no refrigerator is available, particularly on caravans or low-tech desert scenarios. While dead, any animal that yields more than 225 meat is more compact unbutchered than butchered since all corpses only occupy one tile and a [[shelf]] can hold up to three stacks of meat. This saves room in freezers and storage rooms. The following animals are more dense unbutchered: {{#ask: [[Category:Animals]] [[Meat Yield::>>225]]}}.
+
+Animals with a [[body size]] of 0.75 and below can be stored in shelfs themselves. It is therefore more space efficient to store animals with a body size of 0.75 or less but a meat yield of more than 75 as corpses. These include: {{#ask: [[Category:Animals]] [[Meat Yield::>>75]] [[Body Size::<0.75]]}}.
+
+Note that the [[meat amount]] is affected by multiple factors besides body size.
+
+== To-Do List ==
+
+* Detail some of the best options for livestock to rear
+* Consider biomes for food foraging
+* Risks of hunting
+* Advantages and disadvantages of each means of production
+* Insect farming and cannibalism
+
+{{Nav|guides|wide}}
+[[Category:Game mechanics]]
+[[Category:Food|#Food production]]

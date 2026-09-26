@@ -1,0 +1,51 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Biotech/Global/Misc}}
+|}
+----
+{| {{STDT| c_18}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Lactating" <!-- defName="Lactating" -->
+! Lactating
+----
+* Def Name:<br />Lactating
+* Label:<br />lactating
+|<!-- Description -->
+<div style="max-width: 500px;">
+The condition of being able to breastfeed a baby. The breasts are actively producing and storing milk. The lactating state begins when a mother gives birth, and continues indefinitely as long as she breastfeeds a baby at least once every 10 days.
+
+People who are lactating will have a harder time becoming pregnant.
+</div>
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Initial Severity: '''100%'''
+* Ever Curable By Item: {{Bad|false}}
+* '''Comps'''
+** ''Severity Per Day:'' {{--|10%}}
+** ''Message On Removal''
+*** Message On Non Zero Severity: {{Bad|false}}
+*** Message:<br />{0} is no longer lactating due to not breastfeeding for 10 days.
+*** Message Type: '''SilentInput'''
+*** Only Message For Colonists Or Prisoners: {{Good|true}}
+** ''Lactating''
+*** Ticks To Full Charge: '''{{Ticks/gametime/hours|15000}}''' (6 hrs: 2 to feed a baby and 4 to recover.)
+*** Initial Charge: '''0.125'''
+*** full Charge Amount: '''0.125'''
+*** Label In Brackets:<br />milk fullness {CHARGEFACTOR_percentage}
+*** Min Charge To Activate: '''0.031''' <!-- some hysteresis so when breastfeeding starts we're sure it can continue for a while. -->
+** ''Remove If Other Hediff''
+*** Hediffs: '''[[Hediffs#Malnutrition|Malnutrition]]'''
+*** Stages: '''2~'''
+*** {{MTB}} Hours: '''4'''
+*** Message:<br />{0} is no longer lactating due to malnutrition.
+*** Message Type: '''SilentInput'''
+*** Only Message For Colonists Or Prisoners: {{Good|true}}
+|<!-- Stages -->
+{| {{STDT| c_18}}
+! Label !! Parameters
+|-
+! Lactating
+|<!-- Parameters -->
+* [[Fertility]] Factor: {{Bad|×5%}} <!-- <fertilityFactor>, not a direct stat modifier -->
+|}<noinclude>
+|}</noinclude>

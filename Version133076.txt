@@ -1,0 +1,59 @@
+{{Version Nav}}
+
+Hey everyone, here's the next RimWorld update for the weekend! Thanks for the ongoing feedback.
+
+It should be compatible with all saves and mods.
+
+== Improvements ==
+
+* Added temperature tough issue and precept. This makes some believers mind extreme temperatures less.
+* Added Alert for likely slave rebellion.
+* Mining yield now caps at 125%.
+* Clarified in description that the medical specialist won't do violence.
+* Clarified spacedrone self-destruct delay info in quest description.
+* Gauranlen tree pruning is dictated by a new stat, affected slightly by plants skill. Tree connection pawns have a 25% boost to pruning speed.
+* Increase berrymaker dryad production from 32 to 40 berries per batch. Increase medicinemaker dryad production from 3 to 4 herbal meds per batch.
+* Archonexus quest now warns players beforehand that research will reset
+* Tuned down apostate memory thoughts and adjusted labels.
+* Rebalance tree connector thoughts.
+
+== Technical ==
+
+* Inspect pane now automatically resizes when tabs are added or removed.
+* Changed JobGiver_DeliverPawnToBed to check for reservation before issuing job.
+* Changed GenColor.InstinguishableFrom difference threshold to 0.005 and removed optional parameter.Removed the custom value from call sites.
+* Error mitigation for districts not having their map index decremented correctly until problem is found.
+* Added difference threshold parameter to method signator on GenColor.IndistinguishableFrom and replaced uses of GenColor.ApproximatelyEqual with calls to IndistinguishableFrom with custom threshold.
+
+== Fixes ==
+
+* Fix: Dryads are affected by disease incidents.
+* Fix: Gauranlen pod seed yield is affected by difficulty.
+* Fix: ArgumentOutOfRange exception on Precept_Role.
+* Fix: Ancient junk remains can wipe important quest structures.
+* Fix: Apostasy from any ideo triggers knowsmemorythoughts in ideos with apostasy.
+* Fix: A case where bad mods can easily make a savefile unloadable (Building_TurretGun).
+* Fix: Check order in ThoughtWorker_Precept_TreeDensity.
+* Fix: In desert areas, Gaumaker dryads never form a gaumaker pod.
+* Fix: Gauranlen seeds can be assigned to plant under a roof.
+* Fix: Fungus darktorch description says it is refueled with wood. It is actually refueled with raw fungus.
+* Fix: TreeDensityReduced thought stages are incorrectly calculated.
+* Fix: IdeoRelic issue no longer has an iconPath assigned in XML.
+* Fix: Prisoners lost during farskip.
+* Fix: Ideoligion UI overlap.
+* Fix: Drum circle is ignored by pawns if only Ideology is installed.
+* Fix: Doctors administring drugs to a pawn that has just died of an OD throws exception.
+* Fix: 'Scarification' is not translated.
+* Fix: Weird ancient barrel shadow.
+* Fix: Some ancient junk is rotatable but should not be.
+* Fix: Portrait cache not dirtied on changing style item in styling station dialog.
+* Fix: Default parameter added to GenColor.IndistinguishableFrom() instead of overload, causing mod errors.
+* Fix: Tree connection meme doesn't require Gauranlen connection: Strong.
+* Fix: Animals being lead by ropes can be stopped to have their wool/chemfuel/milk gathered.
+* Fix: Gauranlen moss can spawn over anima grass and Gauranlen pods.
+* Fix: High life meme ideos generate with a warning about conflicting apparel.
+* Fix: Cancelling a biosculpter cycle before a pawn has started it will still consume nutrition.
+* Fix: Ideo is left in broken state if player escapes without having selected any memes.
+
+== Source ==
+* https://steamcommunity.com/games/294100/announcements/detail/2996567911645516891

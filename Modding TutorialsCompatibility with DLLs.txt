@@ -1,0 +1,54 @@
+{{BackToTutorials}}
+
+==Requirements==
+* A mod. Yours, preferably.
+* Another mod. Does not have to be yours. May or may not have to be loaded.
+* Harmony.
+* Hello World.
+* The willingness to create compatibility between the two mods.
+
+==Welcome to the Cargo Cult==
+Assumptions: 
+# You will do manual patching. I do not know of a way to do this with annotation patching.
+# You have a class named ''HarmonyPatches'' where a static method called ''PatchOnSomeMethodFromSomeOtherMod_PostFix'' lives. You can of course change this.
+# The name of the mod you want to patch is ''OtherMod''. Darn that ''OtherMod'' for messing with your mod! Note that this is the exact name as ''OtherMod'' has in its About.xml file.
+
+This snippet was handed down to me from erdelf, who got it from Zhentar, who got it from.. well the exact chain of custody has been lost to the mists of time but you get the idea.
+<source lang = "csharp">
+try
+{
+    ((Action)(() =>
+    {
+        if (LoadedModManager.RunningModsListForReading.Any(x=> x.Name == "OtherMod"))
+        {
+            harmony.Patch(AccessTools.Method(typeof(FullNameSpaceOfSomeOtherMod.SomeClass), nameof(FullNameSpaceOfSomeOtherMod.SomeClass.SomeOtherMethod)),
+                postfix: new HarmonyMethod(typeof(HarmonyPatches), nameof(PatchOnSomeMethodFromSomeOtherMod_PostFix)));
+        }
+    }))();
+}
+catch (TypeLoadException ex) { }
+</source>
+
+===Disbanding the Cargo Cult===
+Okay so the thing that makes Cargo Cult programming bad is that people copy stuff without knowing what it does. So here's what it does, why this terrible looking snippet is ''sometimes'' required, and why it works the way it works.
+
+If you know some C#: You're looking at an anonymous delegate cast to an invoked Action inside a try/catch block designed to discard a TypeLoadException. Obviously.
+
+The real question is '''why?''' which this article will try its best to answer. Consider this:
+
+The constraints
+# The player may or may not have SomeOtherMod activated.
+# The player might not even be subscribed to SomeOtherMod.
+# We cannot add 'using FullNameSpaceOfSomeOtherMod', as that would create a direct dependency to a potentially non-existing mod (non-existing as far as RimWorld cares anyway).
+# Compilers are magic and can look in the future, beyond simple if-statements.
+# Compilers love to optimise and in-line.
+# The JIT compiler may behave differently per configuration.
+# No-Inline is merely a suggestion the compiler may or may not heed.
+
+So what you end up with is a bunch of hoops to jump through to avoid all that, in the form of an anonymous delegate cast to an invoked Action that still requires a try/catch block designed to discard a TypeLoadException.
+
+===Gotchas===
+Oh, you thought this was over? If you added ''OtherMod.dll'' as a reference and compiled against it, you compiled against the specific AssemblyVersion of that dll. If they update, your patch will break again. Tell them to bump the ''FileVersion'' instead (also known as ''AssemblyFileVersion''). Better yet, don't touch it at all. AssemblyVersion is for [https://support.microsoft.com/en-au/help/556041 API breaking changes].
+
+
+[[Category:Modding tutorials]]

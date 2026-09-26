@@ -1,0 +1,692 @@
+{{Stub|reason=Needs lead in with basic description, summary of mechanics, difference from and relationship to [[Capacities]] etc}} 
+
+A '''stat''', short for statistic, is a numerical value that provides information about the properties and behavior of a pawn or item. Basic examples of pawn stats include age, [[move speed]] and '''Melee DPS,''' or [[hit points]] or '''Work to Build''' for items/buildings.
+
+Some stats are static, such as pawn race or item flammability. Other stats change in response to a pawn's environment, [[Capacities]], or [[Skills]], e.g. Work Speed decreases in low light, and
+[[Plant Harvest Yield]] increases with the Plant skill. 
+
+A pawn or item's stats can be viewed in a pop-up window by clicking the View Information icon in the upper right corner of the inspect pane (right beneath the Health tab button for humans.)
+
+Certain stats like [[Sleep Fall Rate]] are hidden from the stat view until they are actively being modified away from default values.
+
+== Order of operations ==
+=== Get Value ===
+# If ''Minified Thing'' inherits stats and has ''Minified Thing''
+## If ''Minified Thing'' has ''Inner Thing'': Get Value
+# '''Value Unfinalized''' = ''Get Value Unfinalized''
+# '''Value Finalized''' = ''Finalize Value''
+# Get Value is complete
+
+=== Unfinalized Value ===
+Sourced from the GetValueUnfinalized method from StatWork.cs, here is the approximate order of operations for applying stat modifiers.
+# '''num''' = ''Stat Base Value''
+# For ''Pawn'':
+## If Pawn has ''Skills'':
+### If Pawn has ''[[Property:Skill Need Offsets|Skill Need Offsets]]'': Add each ''Skill Need Offset'' to '''num'''
+## Else: Add ''No Skill Offset'' to '''num'''
+## If Pawn has ''[[Property:Capacity Offsets|Capacity Offsets]]'': Add each ''Capacity Offset'' to '''num'''
+## If Pawn has ''Story'':
+### If ''Trait'' isn't suppressed: Add each ''Trait'' to '''num'''
+## For every ''Hediff'': Add each ''Hediff Offset'' based on ''Hediff Severity'' to '''num'''
+## If Pawn has {{IdeologyIcon}} ''Ideoligion'': Add each ''Precept Offset'' to '''num'''
+### If ''Precept Conditional Affecter'' applies: Add each ''Precept Conditional Affecter Offset'' to '''num'''
+### If Pawn has ''Ideoligion Role'': Add each ''Ideoligion Role Effect Offset'' to '''num'''
+## If Pawn has {{BiotechIcon}} ''Genes'': Add each ''Gene Offset'' to '''num'''
+### If ''Gene Conditional Affecter'' applies: Add each ''Gene Conditional Affecter Offset'' to '''num'''
+## Add each ''Age Related Offset'' to '''num'''
+## If Pawn has ''Apparel'': Add each ''Gear Offset'' from ''Worn Apparel'' to '''num'''
+## If Pawn has ''Equipment'' (i.e. a weapon): Add ''Gear Offset'' from ''Primary Equipment'' to '''num'''
+## If Pawn has ''Story'': 
+## If ''Trait'' isn't suppressed: multiply '''num''' by each ''Trait Stat Multiplier''
+## For every ''Hediff'': Multiply '''num''' by each ''Hediff Factor'' based on ''Hediff Severity''
+## If Pawn has {{IdeologyIcon}} ''Ideoligion'': Multiply '''num''' by each ''Precept Factor''
+### If ''Precept Conditional Affecter'' applies: Multiply '''num''' by each ''Precept Conditional Affecter Factor''
+### If Pawn has ''Ideoligion Role'': Multiply '''num''' by each ''Ideoligion Role Effect Factor''
+## If Pawn has {{BiotechIcon}} ''Genes'': Multiply '''num''' by each ''Gene Factor''
+### If ''Gene Conditional Affecter'' applies: Multiply '''num''' by each ''Gene Conditional Affecter Factor''
+## Multiply '''num''' by each ''Age Related Factor''
+# For ''Stuff''
+## If num > 0 or [[Property:Apply Factors If Negative|Apply Factors If Negative]] = true: Multiply '''num''' by ''Stuff Stat Factor''
+## If has ''Quality'': Multiply '''num''' by ''Stuff Quality Factor''
+## Add ''Stuff Stat Offset'' to '''num'''
+## If has ''Quality'': Add ''Stuff Quality Offset'' to '''num'''
+# For ''Abilities''
+## If has ''Ability Stat Factors'': Multiply '''num''' by each ''Ability Stat Factor''
+## If Pawn has {{IdeologyIcon}} ''Ideoligion'': For each ''Precept'':
+### If ''Precept'' has ''Precept Factor'': Multiply '''num''' by ''Precept Factor''
+### If ''Precept'' has ''Ability Factor'': Multiply '''num''' by each ''Ability Modifier''
+# For ''Things''
+## If ''Thing'' has ''Comps'':
+### For each ''Comp'': Add ''Comp Offset'' to '''num'''
+### For each ''Comp'': Multiply '''num''' by ''Comp Factor''
+## For each ''Stat Factor'': Multiply '''num''' by ''Stat Factor''
+## If Pawn has ''Skills'':
+### If has ''[[Property:Skill Need Factors|Skill Need Factors]]'': For each ''Skill Need Factor'': Multiply '''num''' by ''Skill Need Factor''
+## Else: Multiply '''num''' by ''No Skill Factor''
+## If has ''[[Property:Capacity Factors|Capacity Factors]]'': For each ''Capacity Factor'':
+### <code>num = num + ( ( (num * ''Capacity Factor'') - num) * (''Pawn Capacity Factor Weight'' clamped from 0 to 1) )</code>
+## If Pawn is ''[[Inspired]]'':
+### Add ''Inspiration Offset'' to '''num'''
+### Multiply '''num''' by ''Inspiration Factor''
+# '''num''' is now unfinalized value
+
+=== Finalized Value ===
+# ''Stat Request'' '''req''', '''val''' = '''num''' (from Get Unfinalized Value), '''Apply Post Process''' is a Boolean value
+## If has ''Stat [[Property:Parts|Parts]]'': For each ''Part'': ''Transform Value'' ('''req''', '''val''')
+## If '''Apply Post Process''' = true and has [[Property:Post Process Curve|Post Process Curve]]:
+### '''val''' = ''Evaluate'' '''val'''
+## If '''Apply Post Process''' = true, ''[[Property:Post Process Stat Factors|Post Process Stat Factors]]'' aren't null or empty, and '''req''' ''Has Thing'':
+### For each ''Post Process Stat Factor'': Multiply '''val''' by ''Post Process Stat Factor''
+## If has ''[[Scenario]]'': Multiply '''val''' by ''Scenario Stat Factor''
+## If ''Absolute Value'' of '''val''' > ''[[Property:Round To Five Over|Round To Five Over]]'':
+### '''val''' = (''Round'' ('''val''' / 5) ) * 5
+## If ''[[Property:Round Value|Round Value]]'' = true:
+### '''val''' = ''Round To Integer'' '''val'''
+## If '''Apply Post Process''' = true:
+### '''val''' = Clamp '''val''' from ''[[Property:Stat Minimum|Min Value]]'' to ''[[Property:Stat Maximum|Max Value]]''
+# Finalize Value is complete
+
+=== Should Show For ===
+WIP
+
+=== Is Disabled For ===
+WIP
+
+== List of Stats By Category ==
+=== Important ===
+<div><li style="display: inline-table;">
+{| {{STDT| c_ sortable}}
+! Stat !! Def Name !! Label !! Description
+|-
+{{#ask: [[Category:Stats - Important]]
+| ?Def Name
+| ?Label
+| ?Description
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Display Priority In Category
+}}
+|}
+</li></div>
+
+=== Pawn Important ===
+<div><li style="display: inline-table;">
+{| {{STDT| c_ sortable}}
+! Stat !! Def Name !! Label !! Description
+|-
+{{#ask: [[Category:Stats - Pawn Important]]
+| ?Def Name
+| ?Label
+| ?Description
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Display Priority In Category
+}}
+|}
+</li></div>
+
+=== Non Pawn Important ===
+<div><li style="display: inline-table;">
+{| {{STDT| c_ sortable}}
+! Stat !! Def Name !! Label !! Description
+|-
+{{#ask: [[Category:Stats - Non Pawn Important]]
+| ?Def Name
+| ?Label
+| ?Description
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Display Priority In Category
+}}
+|}
+</li></div>
+
+=== Basics ===
+<div><li style="display: inline-table;">
+{| {{STDT| c_ sortable}}
+! Stat !! Def Name !! Label !! Description
+|-
+{{#ask: [[Category:Stats - Basics]]
+| ?Def Name
+| ?Label
+| ?Description
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Display Priority In Category
+}}
+|}
+</li></div>
+
+=== Pawn ===
+<div><li style="display: inline-table;">
+{| {{STDT| c_ sortable}}
+! Stat !! Def Name !! Label !! Description
+|-
+{{#ask: [[Category:Stats - Pawn]]
+| ?Def Name
+| ?Label
+| ?Description
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Display Priority In Category
+}}
+|}
+</li></div>
+
+=== Non Pawn ===
+<div><li style="display: inline-table;">
+{| {{STDT| c_ sortable}}
+! Stat !! Def Name !! Label !! Description
+|-
+{{#ask: [[Category:Stats - Non Pawn]]
+| ?Def Name
+| ?Label
+| ?Description
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Display Priority In Category
+}}
+|}
+</li></div>
+
+=== Animal Productivity ===
+<div><li style="display: inline-table;">
+{| {{STDT| c_25 sortable}}
+! Stat !! Def Name !! Label !! Description
+|-
+{{#ask: [[Category:Stats - Animal Productivity]]
+| ?Def Name
+| ?Label
+| ?Description
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Display Priority In Category
+}}
+|}
+</li></div>
+
+=== Terrain ===
+<div><li style="display: inline-table;">
+{| {{STDT| c_02 sortable}}
+! Stat !! Def Name !! Label !! Description
+|-
+{{#ask: [[Category:Stats - Terrain]]
+| ?Def Name
+| ?Label
+| ?Description
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Display Priority In Category
+}}
+|}
+</li></div>
+
+=== Meditation ===
+<div><li style="display: inline-table;">
+{| {{STDT| c_07 sortable}}
+! Stat !! Def Name !! Label !! Description
+|-
+{{#ask: [[Category:Stats - Meditation]]
+| ?Def Name
+| ?Label
+| ?Description
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Display Priority In Category
+}}
+|}
+</li></div>
+
+=== Mechanoid ===
+<div><li style="display: inline-table;">
+{| {{STDT| c_22 sortable}}
+! Stat !! Def Name !! Label !! Description
+|-
+{{#ask: [[Category:Stats - Mechanoid]]
+| ?Def Name
+| ?Label
+| ?Description
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Display Priority In Category
+}}
+|}
+</li></div>
+
+=== Apparel ===
+<div><li style="display: inline-table;">
+{| {{STDT| c_01 sortable}}
+! Stat !! Def Name !! Label !! Description
+|-
+{{#ask: [[Category:Stats - Apparel]]
+| ?Def Name
+| ?Label
+| ?Description
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Display Priority In Category
+}}
+|}
+</li></div>
+
+=== Implant ===
+<div><li style="display: inline-table;">
+{| {{STDT| c_01 sortable}}
+! Stat !! Def Name !! Label !! Description
+|-
+{{#ask: [[Category:Stats - Implant]]
+| ?Def Name
+| ?Label
+| ?Description
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Display Priority In Category
+}}
+|}
+</li></div>
+
+=== Drug ===
+<div><li style="display: inline-table;">
+{| {{STDT| c_24 sortable}}
+! Stat !! Def Name !! Label !! Description
+|-
+{{#ask: [[Category:Stats - Drug]]
+| ?Def Name
+| ?Label
+| ?Description
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Display Priority In Category
+}}
+|}
+</li></div>
+
+=== Weapon ===
+<div><li style="display: inline-table;">
+{| {{STDT| c_06 sortable}}
+! Stat !! Def Name !! Label !! Description
+|-
+{{#ask: [[Category:Stats - Weapon]]
+| ?Def Name
+| ?Label
+| ?Description
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Display Priority In Category
+}}
+|}
+</li></div>
+
+=== Weapon (Ranged) ===
+<div><li style="display: inline-table;">
+{| {{STDT| c_06 sortable}}
+! Stat !! Def Name !! Label !! Description
+|-
+{{#ask: [[Category:Stats - Weapon (Ranged)]]
+| ?Def Name
+| ?Label
+| ?Description
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Display Priority In Category
+}}
+|}
+</li></div>
+
+=== Weapon (Melee) ===
+<div><li style="display: inline-table;">
+{| {{STDT| c_06 sortable}}
+! Stat !! Def Name !! Label !! Description
+|-
+{{#ask: [[Category:Stats - Weapon (Melee)]]
+| ?Def Name
+| ?Label
+| ?Description
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Display Priority In Category
+}}
+|}
+</li></div>
+
+=== Building ===
+<div><li style="display: inline-table;">
+{| {{STDT| c_25 sortable}}
+! Stat !! Def Name !! Label !! Description
+|-
+{{#ask: [[Category:Stats - Building]]
+| ?Def Name
+| ?Label
+| ?Description
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Display Priority In Category
+}}
+|}
+</li></div>
+
+=== Ability ===
+<div><li style="display: inline-table;">
+{| {{STDT| c_19 sortable}}
+! Stat !! Def Name !! Label !! Description
+|-
+{{#ask: [[Category:Stats - Ability]]
+| ?Def Name
+| ?Label
+| ?Description
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Display Priority In Category
+}}
+|}
+</li></div>
+
+=== Equipped Stat Offsets ===
+<div><li style="display: inline-table;">
+{| {{STDT| c_03 sortable}}
+! Stat !! Def Name !! Label !! Description
+|-
+{{#ask: [[Category:Stats - Equipped Stat Offsets]]
+| ?Def Name
+| ?Label
+| ?Description
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Display Priority In Category
+}}
+|}
+</li></div>
+
+=== Stuff Stat Factors ===
+<div><li style="display: inline-table;">
+{| {{STDT| c_03 sortable}}
+! Stat !! Def Name !! Label !! Description
+|-
+{{#ask: [[Category:Stats - Stuff Stat Factors]]
+| ?Def Name
+| ?Label
+| ?Description
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Display Priority In Category
+}}
+|}
+</li></div>
+
+=== Stuff Stat Offsets ===
+<div><li style="display: inline-table;">
+{| {{STDT| c_03 sortable}}
+! Stat !! Def Name !! Label !! Description
+|-
+{{#ask: [[Category:Stats - Stuff Stat Offsets]]
+| ?Def Name
+| ?Label
+| ?Description
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Display Priority In Category
+}}
+|}
+</li></div>
+
+=== Stuff Of Equipment Stat Factors ===
+<div><li style="display: inline-table;">
+{| {{STDT| c_03 sortable}}
+! Stat !! Def Name !! Label !! Description
+|-
+{{#ask: [[Category:Stats - Stuff Of Equipment Stat Factors]]
+| ?Def Name
+| ?Label
+| ?Description
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Display Priority In Category
+}}
+|}
+</li></div>
+
+=== Surgical ===
+<div><li style="display: inline-table;">
+{| {{STDT| c_01 sortable}}
+! Stat !! Def Name !! Label !! Description
+|-
+{{#ask: [[Category:Stats - Surgical]]
+| ?Def Name
+| ?Label
+| ?Description
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Display Priority In Category
+}}
+|}
+</li></div>
+
+=== Capacity Effects ===
+<div><li style="display: inline-table;">
+{| {{STDT| c_01 sortable}}
+! Stat !! Def Name !! Label !! Description
+|-
+{{#ask: [[Category:Stats - Capacity Effects]]
+| ?Def Name
+| ?Label
+| ?Description
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Display Priority In Category
+}}
+|}
+</li></div>
+
+=== Mechanitor ===
+<div><li style="display: inline-table;">
+{| {{STDT| c_18 sortable}}
+! Stat !! Def Name !! Label !! Description
+|-
+{{#ask: [[Category:Stats - Mechanitor]]
+| ?Def Name
+| ?Label
+| ?Description
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Display Priority In Category
+}}
+|}
+</li></div>
+
+=== Drug Addiction ===
+<div><li style="display: inline-table;">
+{| {{STDT| c_24 sortable}}
+! Stat !! Def Name !! Label !! Description
+|-
+{{#ask: [[Category:Stats - Drug Addiction]]
+| ?Def Name
+| ?Label
+| ?Description
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Display Priority In Category
+}}
+|}
+</li></div>
+
+=== Pawn Combat ===
+<div><li style="display: inline-table;">
+{| {{STDT| c_10 sortable}}
+! Stat !! Def Name !! Label !! Description
+|-
+{{#ask: [[Category:Stats - Pawn Combat]]
+| ?Def Name
+| ?Label
+| ?Description
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Display Priority In Category
+}}
+|}
+</li></div>
+
+=== Pawn Social ===
+<div><li style="display: inline-table;">
+{| {{STDT| c_01 sortable}}
+! Stat !! Def Name !! Label !! Description
+|-
+{{#ask: [[Category:Stats - Pawn Social]]
+| ?Def Name
+| ?Label
+| ?Description
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Display Priority In Category
+}}
+|}
+</li></div>
+
+=== Pawn Misc ===
+<div><li style="display: inline-table;">
+{| {{STDT| c_20 sortable}}
+! Stat !! Def Name !! Label !! Description
+|-
+{{#ask: [[Category:Stats - Pawn Misc]]
+| ?Def Name
+| ?Label
+| ?Description
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Display Priority In Category
+}}
+|}
+</li></div>
+
+=== Pawn Work ===
+<div><li style="display: inline-table;">
+{| {{STDT| c_25 sortable}}
+! Stat !! Def Name !! Label !! Description
+|-
+{{#ask: [[Category:Stats - Pawn Work]]
+| ?Def Name
+| ?Label
+| ?Description
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Display Priority In Category
+}}
+|}
+</li></div>
+
+=== Genetics ===
+<div><li style="display: inline-table;">
+{| {{STDT| c_17 sortable}}
+! Stat !! Def Name !! Label !! Description
+|-
+{{#ask: [[Category:Stats - Genetics]]
+| ?Def Name
+| ?Label
+| ?Description
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Display Priority In Category
+}}
+|}
+</li></div>
+
+=== Psychic Ritual ===
+<div><li style="display: inline-table;">
+{| {{STDT| c_10 sortable}}
+! Stat !! Def Name !! Label !! Description
+|-
+{{#ask: [[Category:Stats - Psychic Ritual]]
+| ?Def Name
+| ?Label
+| ?Description
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Display Priority In Category
+}}
+|}
+</li></div>
+
+=== Containment ===
+<div><li style="display: inline-table;">
+{| {{STDT| c_10 sortable}}
+! Stat !! Def Name !! Label !! Description
+|-
+{{#ask: [[Category:Stats - Containment]]
+| ?Def Name
+| ?Label
+| ?Description
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Display Priority In Category
+}}
+|}
+</li></div>
+
+=== Serum ===
+<div><li style="display: inline-table;">
+{| {{STDT| c_10 sortable}}
+! Stat !! Def Name !! Label !! Description
+|-
+{{#ask: [[Category:Stats - Serum]]
+| ?Def Name
+| ?Label
+| ?Description
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Display Priority In Category
+}}
+|}
+</li></div>
+
+=== Content Source ===
+<div><li style="display: inline-table;">
+{| {{STDT| c_ sortable}}
+! Stat !! Def Name !! Label !! Description
+|-
+{{#ask: [[Category:Stats - Content Source]]
+| ?Def Name
+| ?Label
+| ?Description
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Display Priority In Category
+}}
+|}
+</li></div>
+
+{{Nav|stats|wide}}
+[[Category:Game mechanics]]

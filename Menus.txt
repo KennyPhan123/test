@@ -1,0 +1,244 @@
+<!--Top Nav Box-->
+{| align=center
+| {{Menus_Nav}}
+|}
+----
+<!-- End Nav -->
+{{TOCright}}
+'''Menus''' are text-based, selectable options and/or commands that provide the action which includes opening specific GUIs and enabling or disabling certain features. Menus can also take the form of options being represented by images and icons. The following menus are found along the bottom edge of the screen.
+The first eight menus are bound to hotkeys F1 through F8. (See: [[Controls]])
+
+== Architect ==
+{{Main|Architect}}
+The Architect menu is used to designate construction blueprints, give [[orders]] to colonists, and create new [[Zone/Area|zones / areas]]. 
+[[File:ArchitectMenu.png|frameless|none]]
+
+== Work ==
+[[File:Work priorities.jpg|400px|thumb|right|Example of work priorities and the different work types.]]
+{{Main|Work}}
+From the Work menu you can set the types of work you want your colonists to perform and in what order. However, some colonists cannot perform all tasks, and this will be displayed on the menu as well. For example, a [[Backstories#Medieval lord|medieval lord]] can only access [[research]] and [[firefighting]] whilst a [[Backstories#Colony settler|settler]] can access all [[skills]]. 
+
+For a full breakdown of work types, the work menu, and the options available, see the [[Work]] page.
+
+== Schedule ==
+[[File:Restrict menu.png|600px|thumb|right|Example of the schedule menu showing schedule and allowed areas (without royalty)]]
+The Schedule screen allows the player to schedule an activity for each colonist, for each hour of a 24-hour day.  Pawns will continue their current task until finished. Only then will a colonist check their schedule and work tabs for other possible assignments. Task lengths vary.
+
+==== Anything ====
+
+The pawn will attempt to [[work]] per their priorities unless their [[needs|need]] to [[Recreation|recreate]] falls below 35%, their need to [[Saturation|eat]] falls below 30%, their need to [[rest]] falls below 30%, or their [[psyfocus]]{{RoyaltyIcon}} falls below the player-assigned threshold. When those thresholds are met, they will instead attempt to fulfill those needs. For this setting, if a pawn is already asleep when this schedule begins, they will not wake up and instead continue to sleep until fully rested. 
+
+Pawns will continue their current work task until finished, so that the need percentages may fall below the threshold, but when looking for the next task the schedule thresholds will be in effect. The current work task can be manually ended by [[Draft|drafting]] and undrafting the pawn. 
+
+==== Work ====
+
+The pawn will attempt to [[work]] per their priorities unless their need to [[Saturation|eat]] falls below 30% and without regard for sleep or recreation. If a pawn is already asleep when this scheduled activity begins, they will wake up to work. Note that when a pawn's rest need reaches zero, they will eventually fall asleep in their current location (e.g., the ground), regardless of their schedule, and wake up at 20% rest need. The pawn will never recreate.
+
+==== Recreation ====
+
+The pawn will attempt to [[work]] per their priorities unless their [[needs|need]] to [[Recreation|recreate]] falls below 95%, their need to [[Saturation|eat]] falls below 30%, their need to [[rest]] falls below 30%, or their [[psyfocus]]{{RoyaltyIcon}} falls below the player-assigned threshold. When those thresholds are met, they will instead attempt to fulfill those needs. If a pawn is already asleep when this schedule begins, they will not wake up and instead continue to sleep until rested.
+
+==== Sleep ====
+
+The pawn will attempt to [[work]] per their priorities, unless their need to [[Saturation|eat]] falls below 30% or their need to [[rest]] falls below 75%. When those thresholds are met,{{Check Tag|Priority?|If both thresholds are met, will they eat or sleep first?}} they will instead attempt to fulfill those needs. A pawn scheduled to sleep will never do [[psyfocus]]{{RoyaltyIcon}}. However they will [[Recreation|recreate]] if no jobs are left.
+
+There are 3 primary ways for a pawn to wake up:
+* [[Rest]] reaches 100%
+* [[Saturation|Food need]] falls below 12.5% while an allowed food is in reach
+* The schedule is change to Work or Meditate. Notably, a schedule change to Anything or Recreate not wake up a pawn. 
+
+Also pawn can wake up from many external factors{{Check Tag|List all}} such as getting [[draft]]ed, their bed being deconstructed, guns being fired nearby,{{Check Tag|Detail needed}} etc.
+
+==== Meditate ====
+
+{{Royalty|section=1}}
+The pawn will attempt to [[meditate]], preferring to meditate at their assigned [[meditation spot]] {{RoyaltyIcon}} or assigning an unassigned spot to themselves. They will meditate until their [[needs|need]] to [[Saturation|eat]] falls below 30% or their need to [[rest]] falls below 15%. When those thresholds are met, they will instead attempt to fulfill those needs. Meditation counts as Solitary type recreation and their recreation need will fill to 100% if able.  If a pawn is already asleep when this scheduled activity begins, they will wake up to meditate. Note that if a pawn's rest need reaches zero, they will fall asleep regardless of their schedule. All pawns can meditate, not just [[psycast]]ers {{RoyaltyIcon}}, and psycaster pawns will not stop a scheduled meditation even when they have met or exceeded their target [[psyfocus]] {{RoyaltyIcon}} level, i.e. meditation will continue to fill the level up its maximum of 100%, even if the target is set lower.
+
+Meditation will be scheduled at any recreation need below 100%. Pawns will sporadically perform other tasks if they continuously meditate at 100% recreation need, indicating that this is behavior similar to other schedules, but with a threshold of 100%, and that the work check can sometimes be met. Meditation is a work task with a duration and like the other schedules, pawns will continue their current work task until finished, so that the need percentages may fall below the threshold, but when looking for the next task the schedule thresholds will be in effect.
+
+{| class=wikitable style="text-align: center;
+|-
+! !! colspan=7 | high priority <====================> low priority
+|-
+! Schedule !!Eat !!Sleep !!Meditate !!Recreate !!Work !!Recreate<ref>This is the last check, if it fails a pawn will go "Idle" until something change. Idle pawns slowly wander within safe temperature.</ref>
+|-
+! [[File:Schedule Work.png]] || rowspan=5 | < 30% || -<ref>Unless collapse from exhaustion</ref> || rowspan=2 | - || - || rowspan=5 | see<br>[[work]]<br>tab || rowspan=2 | -
+|-
+! [[File:Schedule Recreation.png]] || rowspan=2 | < 30% || < 95%
+|-|
+! [[File:Schedule Anything.png]] || Food > 0%<br>low [[psyfocus]]<ref>If (current psyfocus %) < (target psyfocus %)</ref> || < 35% || rowspan=3 | < 95%
+|-
+! [[File:Schedule Sleep.png]] || < 75% || - || rowspan=2 | -
+|-
+! [[File:Schedule Meditate.png]] || < 15% || Food > 0%<ref>Unlike "Anything", 100% psyfocus do NOT stop meditation</ref>
+|}
+{{Reflist}}
+
+Early game, colonists may be set to permanent work until basic infrastructure and accommodations are constructed, but permanent work has a high chance of mental breaks. 
+
+The ideal schedule for a pawn varies by the [[trait]]s of the pawn. For example, optimists remain cheery despite less recreation time, and pawns with a [[circadian assistant]]{{RoyaltyIcon}} or an efficient [[bed]] do not need as much sleep.
+
+Psycasters{{RoyaltyIcon}} can have hours of recreation in the morning be replaced with mandatory meditation, as meditation counts as recreation. Recreation can be staggered in larger colonies to minimize the chance of all tables being occupied. Night owls should be sleeping from 10 am to 6 pm inclusive to prevent the "night owl at day" debuff and maximize the "night owl at night" buff.
+
+=== Allowed area ===
+
+Each colonist is assigned to an [[Zone/Area#Allowed area|allowed area]]. By default each colonist is set to 'unrestricted' allowing them to do activities anywhere on the map. Clicking the allowed area box on a colonist's row assigns that colonist to that area. The 'Manage allowed areas' button opens a window where allowed areas may be created, deleted, inverted, or renamed. Up to eight allowed areas may be created, not including the home zone.
+
+In [[Toxic fallout|toxic fallout events]], players can restrict the allowed area of colonists to rooms with a [[roof]] overhead to prevent [[toxic buildup]]. 
+* Consider scheduling sleep during the [[day]] (11h-18h) for colonists with [[Night owl]] trait.
+* Use [[temporary allowed area|temporary allowed area(s)]].
+
+== Assign ==
+{{Main|Assign }}
+
+[[File:Mainmenu_assign.png|600px|thumb|right|Assign tab displaying most of its features.]]
+
+The Assign screen allows to set policies to control your pawn's use of colony resources. It includes the default responses to hostiles, allowed medical care, medicine to carry, and general policies regarding apparel, food, drug consumption, and reading.
+
+== Animals ==
+{{Main|Animals}}
+[[File:Animals menu.png|600px|thumb|right|Example of the animals menu with a few pets shown]]
+The Animals window lists all the colony animals. Clicking an animal name will center the map to that animal.
+* A button lists the animal's master, if it has one. Click the button to assign a new master. Colonists bonded an animal will want to be the master of their bonded animal. They will suffer a mood debuff when the animal's master is not them, but receive a mood buff when they are the handler.
+* [[Zone/Area#Allowed area|Allowed areas]] are also listed here including Unrestricted, [[Home area]], and animal areas. Each animal stays in its assigned area unless its master is drafted. The zone option is not available for farm animals, only displaying which pen an animal is in.
+* The <tt>[Manage areas...]</tt> button at the top of the window opens another window to edit allowed areas.
+* The <tt>[Manage auto-slaughter...]</tt> button at the top of the window opens another window to adjust the thresholds at which your colonists will automatically slaughter excess animals.
+{{clear}}
+
+== Wildlife ==
+The wildlife window lists all non-tamed animals on the map.  Mousing over an animal will point an arrow towards it, and clicking will jump the camera to it.  The screen shows the animal's gender and age, as well as species information about revenge chance and if it is a predator.  There are also buttons to start hunting or taming each animal, which can be clicked and dragged to select multiple at once.
+
+Predator animals will hunt and eat vulnerable animals and colonists.  Checking this menu often and killing any predators that arrive is a good way to keep the map safe. This menu is also useful for scavenging any downed animals nearby, yielding risk-free [[meat]] and [[leather]].
+
+== Research ==
+[[File:Research menu.png|600px|thumb|right|Example screenshot of the research menu with a few projects completed]]
+{{Main|Research}}
+The Research window is used to select the next technology to research. The Research icon on the menu bar is also a progress bar of the current research project.
+Green boxes are completed research, black boxes are unfinished research, and gray boxes are unavailable research. If the [[Royalty DLC]] is installed, [[techprint]] requiring research will show a x/x box under the name of the research to show the number of techprints applied/needed.
+{{clear}}
+
+== Quests ==
+{{Main|Quests}}
+The quests menu has different tabs that can show available, active, and historical quests.  Available quests can be accepted here, with most quests having a time limit before expiry.  There is also the option to change reward preferences, which allows [[Faction#Faction Relationships|goodwill]] or [[Titles|honour]] to be blocked as a quest reward from each faction.
+
+== World ==
+The World interface provides information about the planet that the player has settled on.  By default, the map is centered on the site of your colony, but can be moved via the standard camera keys. Individual colonies and caravans can be selected by clicking on their icons on the map. If the player selects an area, they can receive information through the planet and terrain tab.
+
+=== Tabs ===
+* Planet tab - provides both the name of the planet as well as the seed used in world generation.
+* Terrain tab - provides information on the biome type, travel times for caravans passing through that area during the various seasons, the stone types (rock chunks), elevation, rainfall, average temperatures, growing times, and time zone.
+
+=== Caravans ===
+{{Main|Caravan}} Caravans can be deployed from existing colonies by clicking on the colony and clicking the "form caravan" button at the bottom left. Caravans can be used to settle in different areas, trading, and attacking hostile outposts.
+
+
+== Ideology ==
+{{Ideology|No category}}
+{{Stub|section=1|reason=A little more detail about the menu but the most of them can be on the main page}}
+{{Main|Ideoligion}}
+
+Using this tab, you can view your ideology and the ideologies of other factions. Here you can find options for saving and loading ideologies.
+
+== History ==
+=== Graph ===
+On the History screen, the graph tab shows a historical graph. There are three different graphs: 
+* Wealth: This graph has lines depicting total wealth, item wealth, and building wealth. 
+* Population: This graph shows the free population and prisoner population. 
+* Colonist mood: This graph only displays the average mood of all of the colonists. 
+
+At the top of the three graphs is a series of colored circles that describe every random event that has occurred. Blue or white circles are positive or neutral events, yellow circles are negative events, and red circles are attacks. The event circles are chronologically in sync with the graph, so that each event happened at the time specified on the graph. The graphs can be filtered to include only results from the last 300, 100, and 30 days.
+
+=== Messages ===
+
+On the History screen, the messages tab shows the last 200 messages and letters you've received, even after you close them. You can pin messages to keep them around longer.
+
+==== Letters ====
+
+{{stub|section=1|reason=Mechanical details}}
+
+Examples:
+
+* [[Events#Ambrosia_sprout|Ambrosia sprout]] ([[Ambrosia bush]])
+* [[Ancient shrine|Ancient danger]]
+* [[Animal#Aggression|Animal's revenge]]
+* [[Animal self-tamed]]
+* [[Blight]]: domesticated plant
+* [[Psychotic wandering|Daze]]: [[colonist]]
+* [[Death]]: colonist
+* [[Disease]]: [[Infection]]
+* [[Meteorite]]: material
+* Everyone is dead or gone. This story is over. Perhaps someone else will a use for the ruins of this place.
+* Gift from ...
+* Colonist kidnapped
+* [[Mad animal]]
+* [[Man in black]]
+* [[Manhunter]]: domesticated animal
+* [[Hide in room]]: colonist
+* [[Inspired taming]]: colonist
+* [[Party]]
+* [[Events#People arrived|People arrived]]
+* [[Raid]]
+* New [[recruit]]: colonist
+* [[Rare thrumbos]] ([[Thrumbo]])
+* [[Quest]] active: ...
+* Quest expired: ...
+* [[Solar flare]]
+* [[Summer]]
+* [[Tantrum]]: colonist
+
+==== Messages ====
+
+{{stub|section=1|reason=Mechanical detail}}
+
+Examples:
+* An animal named ... had a mental break (e.g. [[Manhunter]]) because of of [[master]]'s death
+* [[Taming|Tamed animal]] has started to roam away! He(she) will leave this map unless animal [[handle]]r ropes her back to a pen
+* [[Bill]] complete ([[Campfire]])
+* [[Colonist]]s [[Construct Success Chance|failed]] while [[Construct|constructing]] a simple wooden bench. Some resources have been wasted
+* Colonist is fully healed
+* Colonist is no longer inspired
+* Colonist is no longer having a [[Tantrum]]
+* Colonist has gotten [[food poisoning]] from: [[Simple meal]]. Cause: Dirty cooking area.
+* Colonist successfully [[tame]]d an animal. It is now called animal 1
+* Critical alert: Colonist needs [[rescue]]
+* Critical alert: [[Fire]]
+* Critical alert: Major break risk
+* [[Fall]] has begun
+* [[Food]] has [[Deterioration|deteriorated]] in storage
+* [[Rice plant]] died because of cold
+* [[Goodwill|Relation]]s with ... have changed from 0 to 1 ([[Trade]]d)
+* [[Spring]] has begun
+* The [[Trade#By_physical_presence|trade caravan]] from ... is leaving
+
+=== Statistics ===
+On the History screen, the Statistics tab contains information about the colony, including the current [[AI Storytellers|Storyteller]] and difficulty scale, total colony wealth, the number of major threats and enemy raids, the total amount of damage taken and colonists killed, and the number of colonists launched into space.
+
+== Factions ==
+[[File:ExampleFactions.png|600px|thumb|right|An example of the different factions with leaders in 1.1]]
+{{Main|Factions}}
+
+There are many different kinds of factions in the game besides your own.  The factions menu shows you the name, leader, and faction type for each faction, as well as their relationship with your colony and other factions.
+{{clear}}
+
+== Menu ==
+The Menu is accessed by hitting the ESC key or by hitting the corresponding tab at the bottom right of the page.
+
+The functions are as follows:
+* Save - Saves the current game manually
+* Load game - Loads a previously saved game
+* Review scenario - Displays the conditions of your current playthrough (Does not record the seed used to generate your world map)
+* Options - Provides graphics and sound settings for the game
+* Quit to main menu - Returns the user to the title page
+* Quit to OS - Quits the application
+
+In a save with [[Permadeath]] enabled, the functions are as follows:
+* Review scenario - Displays the conditions of your current playthrough
+* Options - Provides graphics and sound settings for the game
+* Save and quit to menu - Saves the current game manually, then returns the user to the title page
+* Save and quit to OS - Saves the current game manually, then quits the application
+
+== Version history ==
+* Beta 19/1.0 - New main tab: Wildlife. Allows easy counting, finding, and designating of wild animals. 
+* [[Version/1.3.3066|1.3.3066]] - Wildlife tab refinements
+
+[[Category:RimWorld game]]

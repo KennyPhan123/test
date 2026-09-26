@@ -1,0 +1,166 @@
+<!--Top Nav Box-->
+{| align=center
+| {{Menus_Nav}}
+|}
+----
+<!-- End Nav -->
+{{TOCright}}
+The Assign screen allows to set policies to control your pawn's use of colony resources. It has the following sections:
+[[File:Mainmenu_assign.png|600px|thumb|left|Assign tab displaying most of its features.]] 
+{{Clear}}
+== Ideoligion ==
+{{Ideology|section=1}}
+Only present if the [[Ideology DLC]] is active and the "Ideology system inactive" option was not chosen, this column indicates the pawn's [[Ideoligion]] with each ideoligion's icon, and allows the pawn list to be sorted by it. Pressing the icon will open up the ideoligion menu with the details of the selected ideoligion.
+
+== Xenotype==
+{{Biotech|section=1}}
+Only present if the [[Biotech DLC]] is active, this column indicates the pawn's [[xenotype]] with each xenotype's icon, and allows the pawn list to be sorted by it.
+
+== Hostility response ==
+{{stub|section=1|reason=Mechanical details. How close to enemies to flee/attack, will they ignore even when engaged in melee, what about if blocking them in etc.}}
+Sets each colonist's behavior when enemies are nearby. This setting is also available on the colonist's inspect pane. Melee colonist in attack mode attack enemies within a radius of 8 cells inclusive pawns. Ranged colonists in attack mode attack enemies within a radius that is approximately 70% of the weapons maximum range up to a max of about 20 cells. Pawns incapable of violence will not have "Attack" as an option.
+{| style="margin-left: 19px;"
+|- style="height: 23px;"
+| [[File:Flee hostility response.png|16px]]  || style="vertical-align: bottom; padding-left: .5em;" | Flee (default)
+|- style="height: 23px;"
+|[[File:Attack hostility response.png|16px]] || style="vertical-align: bottom; padding-left: .5em;" | Attack
+|- style="height: 23px;"
+|[[File:Ignore hostility response.png|16px]] || style="vertical-align: bottom; padding-left: .5em;" | Ignore
+|}
+{{clear}}
+
+== Medical care ==
+[[File:Medicine defaults.png|200px|right|Default Medical settings.]] 
+{{See also|Doctoring#Treatment options{{!}}Doctoring}}
+Sets the best medicine types a [[Work#Doctor|Doctor]] will use when treating, or performing [[surgery]] on, a pawn. The highest tier allowed will always be used, even for minor injuries and treatments. If the requested tier cannot be retrieved by the doctor for any reason, the next tier down will be tried, and so on. The default setting can be adjusted at the "Defaults" button next to the medical quality level on a pawn's health tab.
+
+'''Note:''' Most [[operation]]s require medicine - if a pawn is set to no medicine, or none is available, the operations in question will not be performed.
+
+{| style="margin-left: 19px;"
+|- style="height: 23px;"
+| [[File:No medical care.png|16px|link=Medical]]        || style="vertical-align: bottom; padding-left: .5em;" | No medical care
+|- style="height: 23px;"
+| [[File:Doctor_care_but_no_medicine.png|16px|link=Medical]]        || style="vertical-align: bottom; padding-left: .5em;" | [[Doctoring|Doctor care]], but no medicine
+|- style="height: 23px;"
+|[[File:Herbal medicine.png|16px|link=Herbal medicine]]             || style="vertical-align: bottom; padding-left: .5em;" | [[Herbal medicine]] or worse
+|- style="height: 23px;"
+|[[File:Medicine industrial a.png|16px|link=Medicine]]              || style="vertical-align: bottom; padding-left: .5em;" | Industrial-tech [[Medicine]] or worse
+|- style="height: 23px;"
+|[[File:Glitterworld_medicine.png|16px|link=Glitterworld medicine]] || style="vertical-align: bottom; padding-left: .5em;" | [[Glitterworld medicine|Best quality medicine]]
+|- style="height: 23px;"
+| || style="vertical-align: bottom; padding-left: .5em;" | Change Defaults
+|}
+{{clear}}
+
+== Apparel policies ==
+{{Stub|section=1|reason=won't remove vacsuits in vacuum. details and what specific restrictions exist}}
+[[File:Apparel Policies.png|thumb|300px|left|Apparel policies table.]] 
+{{See also|Apparel}}
+Allows the player to manage [[apparel]] profiles. Colonists will automatically don the best apparel possible per their assigned outfit and according to the weather. They will automatically switch out damaged apparel for better apparel, or poor-quality apparel for high-quality apparel.
+
+If the player forces a colonist to wear a piece of apparel, the colonist will never remove it until the manual assignment is cleared, the apparel runs out of HP, or the colonist is forced to wear different apparel on the same body part. In the Gear tab on the pawn inspect pane, manually assigned apparel is listed as 'forced'. Forced apparel can be cleared using the 'Clear forced' button on the Assign window, allowing colonists to remove them at will.
+
+There are several default outfits as follows:
+:* '''Anything:''' Allows literally any apparel, included [[tainted]] apparel. 
+:* '''Nudist:''' Allows only untainted headgear and [[utility]] items. A [[nudist]] does not consider those items to be clothing and will still get the appropriate +20 mood buff.
+:* '''Worker:''' Excludes any type of armor but allows most everything else.
+:* '''Soldier:''' Includes armor and clothing suited for cold weather.
+The player may modify these outfits or create their own.
+{{clear}}
+
+== Food policies == 
+[[File:Food Policies.png|thumb|300px|right|Food policies]] 
+{{Stub|section=1|reason=Describe the options and how exactly does food preference work, both generally and for traits such as ascetic and cannibal? Ideoligions too? Will pawns drop a simple meal for a newly cooked lavish meal? [[Version/1.3.3200|1.3.3200]] says "Food restrictions are automatically applied to pawns from ideoligions that require a specific food type" - how does this work specifically}}
+Food policies allow the player to edit and set food policies for different colonists. The default food restriction policy, named Lavish, allows pawns to consume meals of all qualities, pemmican, chocolate, or raw food (if accessible) and forbids human meat and insect meat.
+
+Hungry Pawns attempt to eat the food that grants them the most mood that they are allowed to eat. If multiple foods grant the same mood the colonist will eat the closest. If the colonist has a meal in their inventory and is starving (below 12.5% food saturation), or if their desired meal is more than approximately 90 cells away, they will eat the meal from their inventory regardless of the inventory meal's quality. After eating, a colonist attempts to refill their food inventory slot with the meal that grants them the most mood allowed by their food restriction.
+
+There are several default food restrictions as follows:
+:* '''Lavish:''' All food types allowed, except [[hemogen pack]]s.{{BiotechIcon}} 
+:* '''Fine:''' All food types except [[lavish meal]]s, [[carnivore lavish meal]]s, [[vegetarian lavish meal]]s, and hemogen packs{{BiotechIcon}} allowed.
+:* '''Simple:''' All food types except [[packaged survival meal]]s, fine meals, [[carnivore fine meal]]s, vegetarian fine meals, lavish meals, carnivore lavish meals, vegetarian lavish meals, and hemogen packs{{BiotechIcon}} allowed.
+:* '''Paste:''' Hemogen packs{{BiotechIcon}} and all meals disallowed except [[nutrient paste meal]]s. All other food types allowed. 
+:* '''Raw:''' [[Chocolate]], [[insect jelly]], [[pemmican]], hemogen packs,{{BiotechIcon}} and all meals disallowed. All other food types allowed, including other animal products.
+:* '''Nothing:''' All food types disallowed.
+:* '''Vegetarian:''' Corpses, raw meat, carnivore fine meals, carnivore lavish meals, pemmican, [[kibble]], and hemogen packs{{BiotechIcon}} as well as meals with appetizing meat, human meat, or insect meat disallowed. All other food types allowed. 
+:* '''Carnivore:''' [[Human meat]], human [[corpse]]s, all raw vegetables, plants, plant matter, vegetarian fine meals, vegetarian meals, [[hay]], [[baby food]],{{BiotechIcon}} hemogen packs{{BiotechIcon}} are disallowed as well as otherwise vegetarian meals and meals with human or insect meat . All other food types allowed. 
+:* '''Cannibal:''' Non-human [[corpse]]s, [[ambrosia]], all raw food except for human meat, plants, plant matter, vegetarian fine meals, vegetarian meals, [[hay]], [[baby food]],{{BiotechIcon}} hemogen packs{{BiotechIcon}} are disallowed as well as otherwise vegetarian meals and meals with appetising or insect meat. All other food types allowed. 
+:* '''Insect meat:''' [[Human meat]], non-[[insectoid]] [[corpse]]s, all raw vegetables, all raw meat except for insect meat, plants, plant matter, vegetarian fine meals, vegetarian meals, [[hay]], [[baby food]],{{BiotechIcon}} hemogen packs{{BiotechIcon}} are disallowed as well as otherwise vegetarian meals and meals with appetising or human meat. All other food types allowed. 
+
+The player may modify these restriction presets or create their own.
+
+Colonists in a [[Mental break]] ignore food policies (if their particular type of mental break allows them to eat at all), instead behaving as if their policy allows all food types. [[Prisoners]] also ignore food policies {{Check Tag|Verify|Casual observations indicate that food policies might still affect prisoner behaviour in some way.}} - their assigned policy instead determines what food types will be delivered/fed to them by wardens. Wardens ignore food policies when delivering food to prisoners who are in a mental break, however this is most likely a bug.
+
+== Drug policies == 
+[[File:Drug Policies.png|300px|left|Drug policies tab.]] 
+{{stub|section=1|reason=Insufficient detail on the options and how they're implemented mechanically}}
+Allows the player to edit and set [[Drugs|drug]] policies that can be applied to each colonist. 
+
+Note: Pawns on a [[Mental break|drug binge]] may ignore these restrictions and take drugs at will. Pawns on a [[mental break|food binge]] may take drugs for recreation regardless of player settings. Pawns with [[chemical fascination]] or [[chemical interest]] traits are treated as always having "Take drugs for recreation" and "Take drugs for addiction" enabled regardless of setting. If a colonist has drug-related trait it is conveniently noted on the drug policy.
+
+Pawns can also be told to keep a certain number of doses for each individual drug type. NOTE: Sometimes colonists do not put appropriate drugs in their inventory and the reason why is currently unknown.
+
+The "For Addiction", "For Recreation" and "Scheduled" check boxes have "OR" functionality. The "Scheduled" options of "Frequency", "Only if mood below" and "Only if recreation below" sliders have "AND" functionality. The "Scheduled" "Frequency" option uses the time since last ingestion and not the time of "last scheduled ingestion".
+
+A drug set to "For Recreation" can be taken anytime the colonist does Recreation. A drug held in inventory will aways be preferred when taken "For Recreation."
+
+There are several default drug policies as follows:
+:* '''No drugs:''' No drugs to be kept in inventory. All drugs for addictions. No drugs for recreation. No drugs scheduled. 
+:* '''Social drugs:''' No drugs to be kept in inventory. All drugs except for [[beer]] and [[smokeleaf joint]]s for addictions. Beer and smokeleaf joints available for recreation. No drugs scheduled. Despite also being [[social drugs]], [[ambrosia]] and [[psychite tea]] are excluded from this policy.
+:* '''One drink per day:''' No drugs to be kept in inventory. All drugs except for [[beer]] and [[smokeleaf joint]]s for addictions. Beer and smokeleaf joints available for recreation. Beer scheduled for use once per day, at any recreation or mood level.
+:* '''Unrestricted:''' No drugs to be kept in inventory. All drugs for addictions. All drugs for recreation. No drugs scheduled. 
+
+The player may modify these policies or create their own.
+
+== Reading policies ==
+[[File:Reading policies window.png|300px|right|Reading policies tab with the Anomaly DLC enabled]] 
+{{Stub|section=1|reason=No mechanical detail.}}
+
+There are several default book restrictions as follows:
+:* '''Anything:''' Allows the pawn to read any type of book, regardless of associated [[skill]], [[research]] or [[mental break]] risk. 
+:* '''Textbooks:''' Allows the pawn to read only [[textbook]]s, but places no limitations on selection beyond the type.  
+:* '''Schematics:''' Allows the pawn to read only [[schematic]]s, but places no limitations on selection beyond the type.  
+:* '''Novels:''' Allows the pawn to read only [[novel]]s, but places no limitations on selection beyond the type.   
+:* '''Tomes:'''{{AnomalyIcon}} Allows the pawn to read only [[tome]]s,{{AnomalyIcon}} but places no limitations on selection beyond the type.
+:* '''None:''' Does not allow the pawn to read any book type.
+
+<gallery>
+Reading Policies.png|The interface without the [[Anomaly DLC]]. Note the absence of tomes and the mental break chance slider.
+</gallery>
+{{clear}}
+
+== Carry medicine == 
+Players can tell pawns to carry a certain amount of any type of medicine in their inventory, from 0-3. This allows drafted doctors to quickly stabilize a pawn on the battlefield using medicine.
+
+{| style="margin-left: 19px;"
+|- style="height: 23px;"
+|[[File:Herbal medicine.png|16px|link=Herbal medicine]]             || style="vertical-align: bottom; padding-left: .5em;" | [[Herbal medicine]]
+|- style="height: 23px;"
+|[[File:Medicine industrial a.png|16px|link=Medicine]]              || style="vertical-align: bottom; padding-left: .5em;" | [[Medicine]]
+|- style="height: 23px;"
+|[[File:Glitterworld_medicine.png|16px|link=Glitterworld medicine]] || style="vertical-align: bottom; padding-left: .5em;" | [[Glitterworld medicine]]
+|}
+
+== Version history ==
+* [[Version/0.10.785|0.10.785]] - Outfit system added. Timetable system added.
+* [[Version/0.13.1135|0.13.1135]] - Threat response mode added - Decide how colonists should auto-respond to threats: flee, attack, or ignore.
+* Beta 19/1.0 - Added medical care column to the Assign tab.
+* [[Version/1.2.2719|1.2.2719]] - Fix: Non-royal colonists will not wear royal apparel even if outfit requires it.
+* [[Version/1.3.3200|1.3.3200]] - Food restrictions are automatically applied to pawns from ideoligions that require a specific food type. Added food restrictions for meat or veg only meals, insect meat, and cannibal food.
+* [[Version/1.3.3287|1.3.3287]] - Fix: [[torture crown]]{{IdeologyIcon}} is automatically allowed by colonists' clothing restrictions.
+* [[Version/1.4.3523|1.4.3523]] - Fix: Drug take to inventory in policy can exceed def-defined limit.
+* Sometime after [[Version/1.4.3580|1.4.3580]] - Outfits renamed to apparel policies and food restriction renamed to food policies.
+* ? - Reading policies added.
+* ? - Threat response renamed to Hostility response.
+* ? - Threat/Hostility response icons updated.
+* [[Version/1.6.4518|1.6.4518]] - The default "paste" food policy now excludes pemmican by default. Fix: Health slider in apparel policies now rounds to nearest percentage.
+* [[Version/1.6.4566|1.6.4566]] - Pawns won't automatically remove their vacuum-resistant apparel if they’re in a dangerous vacuum.
+* [[Version/1.6.4850|1.6.4850]] - Fix: Pawns would attempt to remove their vacsuit in space if their policy didn't allow for it.
+
+<gallery>
+ReactUndraftedFlee.png |Flee threat response icon from at the latest December 2016 to at the latest October 2024.
+ReactUndraftedAttack.png|Attack threat response icon from at the latest December 2016 to at the latest October 2024.
+ReactUndraftedIgnore.png|Ignore threat response icon from at the latest December 2016 to at the latest October 2024.
+</gallery>
+
+[[Category: RimWorld game]]

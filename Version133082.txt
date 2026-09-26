@@ -1,0 +1,40 @@
+{{Version Nav|unstable=1}}
+
+1.3.3082 is up!
+
+* Fix: Caravan auto-supply ignores negative thoughts from food when calculating the score.
+* Reset biosculpter timers after archonexus resettlement
+* Reset prevent various events from happening too early after new archonexus settlement
+* Add a warning if most of your food does not suit one of your caravaneers diet.
+* Choosing ideo preset no longer continously calls SortStyleCategories but only once outside the loop.
+* Don't list dryads on bed assign dialog.
+* Fix: Enabling disabled core mod after enabling a dlc orders the core mod to be loaded before the DLC.
+* Fix: When enabling mods, they are just added to the list, not taking forceLoadXXX into account
+* Give starting survival meals some veggie ingredients for non-carnivore colonies instead of having no ingredients at all.
+* Fix: Cannot build floor coverings before having save/loaded at least once.
+* Quest lodgers and pawns of non-player ideos are no longer upset if their ideo building is not present.
+* Fix: Stacks of Gauranlen seeds can only designate a single planting cell.
+* Fix: Killing a slave in a slave rebellion causes 'Witnessed ally's death' thought
+* Fix: Potential mod breaking issue in Graphic (GetCopy method arguments).
+* Added sustainer sound while extracting tree. Added a sound when tree finishes extracting. Changed tree replanting designation sound. Added sound while replanting tree.
+* Removed allowed area assignment UI for dryads since they ignore it anyway.
+* Dryads now rest near their connected tree, not in beds or sleeping spots.
+* Moved IsRelic() check to extension method in ReliquaryUtility.
+* Pawns no longer smelt relics, to avoid accidental mishaps.
+* Updated player-created names. Updated two player-created names per request.
+* Fix: NRE when hovering over pawn with no ideoligion with conversion ability.
+* We now reset incident grace periods when starting a new archonexus settlement to make for a smoother start.
+* Upon new archonexus settlement, player now retains research up to classic start.
+* Fix: Techprints retained on archonexus resettlement.
+* Fix: Bloody dominators description typo
+
+Replanting fixes:
+* Fix: Trees to be replanted can be rotated.
+* Fix: Can replant non-trees (bonsai, fibercorn and others tree lovers don't care about).
+* Fix: Trees can be replanted indoors below a roof.
+* Fix: Replanting trees over grass does not remove the grass.
+* Fix: Extract tree designation graphic is too large.
+* Fix: MinifiedTree does not set discarded state after being discarded.
+* Minor improvements to tree replanting code.
+* Fix: Minified tree defs are generated for trees which cannot be extracted.
+* Fix: There is an 'anima tree' in the list of stockpile items

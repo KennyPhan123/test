@@ -1,0 +1,109 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Biotech/Global/Misc}}
+|}
+----
+{| {{STDT| c_11}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Infant illness" <!-- defName="InfantIllness", ParentName="DiseaseBase" -->
+! Infant illness
+----
+* Def Name:<br />InfantIllness
+* Label:<br />infant illness
+|<!-- Description -->
+Effects of various birth complications. If the baby can survive for 10 days, they will be strong enough to recover on their own.
+
+The illness will wax and wane in strength over time, requiring different levels of tending and medicine to recover.
+----<!-- Description Short -->
+Effects of various birth complications
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|90%|100%|35%}}
+* Tendable: {{Good|true}}
+* Makes [[Thoughts#Sick|Sick]] Thought: {{Bad|true}}
+* Initial Severity: '''40%'''
+* Lethal Severity: {{Bad|100%}}
+* '''Comps'''
+** ''Randomize Severity Phases''
+*** Ticks To Randomize: '''{{Ticks/gametime/days|60000}} ~ {{Ticks/gametime/days|180000}}'''
+*** Notify Message:<br />{PAWN_labelShort}'s infant illness went from {1} to {2}.
+*** '''Phases:'''
+<div><li style="display: inline-table;">
+{| {{STDT| c_11}}
+! Label Prefix !! Description Extra !! Severity Per Day
+|-
+! grave
+| that are life threatening without exceptional medical care and glitterworld medicine. || {{++|50%}}
+|-
+! bad
+| that are life threatening without good medical care and standard medicine. || {{++|30%}}
+|-
+! common
+| that can be life threatening without basic medicine and tending. || {{++|10%}}
+|-
+! mild
+| which make the baby slightly ill but, at this rate, they will recover on their own. || {{---|25%}}
+|}</li></div>
+** ''Tend Duration''
+*** Base Tend Duration Hours: '''18'''
+*** Tend Overlap Hours: '''6'''
+*** Severity Per Day Tended: {{---|35%}}
+** ''Immunizable'' <!-- to provide some inevitability -->
+*** Immunity Per Day Sick: {{+|10%}}
+*** Severity Per Day Immune: {{---|70%}}
+*** Immunity Per Day Not Sick: {{---|70%}}
+*** Hidden: {{Bad|true}}
+* '''Remove On Redress Chance By Days Curve:'''
+<div><li style="display: inline-table;">
+{| {{STDT| c_11}}
+! <abbr title="Days as a World Pawn">Days</abbr> !! <abbr title="Chance to remove on Pawn Generator Redress">Chance</abbr>
+|-
+! 0
+| 0%
+|-
+! 2
+| 0%
+|-
+! 7
+| 50%
+|-
+! 20
+| 100%
+|}</li></div>
+|<!-- Stages -->
+{| {{STDT| c_11}}
+! Label !! Parameters
+|-
+! minor
+|<!-- Parameters -->
+* Pain Offset: {{+|5%}}
+* Vomit {{MTB}} Days: '''2.5'''
+* [[Sleep Fall Rate]] Offset: {{++|100%}}
+|-
+! major
+|<!-- Parameters -->
+* Min Severity: '''33%'''
+* Pain Offset: {{+|8%}}
+* Vomit {{MTB}} Days: '''1'''
+* [[Sleep Fall Rate]] Offset: {{++|100%}}
+|-
+! extreme
+|<!-- Parameters -->
+* Min Severity: '''78%'''
+* Life Threatening: {{Bad|true}}
+* Pain Offset: {{+|12%}}
+* Vomit {{MTB}} Days: '''0.75'''
+* [[Sleep Fall Rate]] Offset: {{++|100%}}
+* [[Consciousness]] Offset: {{--|5%}}
+|-
+! extreme
+|<!-- Parameters -->
+* Min Severity: '''87%'''
+* Life Threatening: {{Bad|true}}
+* Pain Offset: {{+|85%}}
+* Vomit {{MTB}} Days: '''0.5'''
+* [[Sleep Fall Rate]] Offset: {{++|100%}}
+* [[Consciousness]] Max: {{Bad|10%}}
+* [[Breathing]] Offset: {{--|5%}}
+|}<noinclude>
+|}</noinclude>

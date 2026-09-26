@@ -1,0 +1,63 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Anomaly/Global/Misc}}
+|}
+----
+{| {{STDT| c_21}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Duplicate sickness" <!-- defName="DuplicateSickness" -->
+! Duplicate sickness
+----
+* Def Name:<br />DuplicateSickness
+* Label:<br />duplicate sickness
+|<!-- Description -->
+<div style="max-width: 500px;">
+Psychic interference between this person and their duplicate is causing slow mental deterioration. As long as multiple copies of this person are alive, the condition will keep getting worse. However, the condition will not be lethal.
+</div>
+|<!-- Details -->
+* Hediff Class: '''Hediff_DuplicateSickness'''
+* Initial Severity: '''0.1%'''
+* Max Severity: '''100%'''
+* Always Show Severity: {{Good|true}}
+* Duplication Allowed: {{Bad|false}}
+* '''Comps'''
+** ''Severity Per Day:'' {{++|10%}}
+** ''Message Above Severity''
+*** Severity: '''20%'''
+*** Message Type: '''Neutral event'''
+*** Message:<br /><span>{0_nameDef} is now suffering from duplicate sickness.</span>
+** ''Surgery Inspectable''
+*** Surgical Detection Desc:<br /><span>{PAWN_nameDef} is suffering from duplicate sickness. Psychic interference between this person and their duplicate is causing slow mental deterioration. As long as multiple copies of this person are alive, the condition will keep getting worse.</span>
+** ''Disappears On Death''
+|<!-- Stages -->
+{| {{STDT| c_21}}
+! Label !! Parameters
+|-
+! initial
+|<!-- Parameters -->
+* Become Visible: {{Bad|false}}
+|-
+! initial
+|<!-- Parameters -->
+* Min Severity: '''20%'''
+* [[Consciousness]] Offset: {{--|5%}}
+* [[Mental Break Threshold]] Offset: {{++|4%}}
+|-
+! moderate
+|<!-- Parameters -->
+* Min Severity: '''50%'''
+* [[Consciousness]] Offset: {{--|10%}}
+* [[Mental Break Threshold]] Offset: {{++|8%}}
+|-
+! extreme
+|<!-- Parameters -->
+* Min Severity: '''80%'''
+* [[Consciousness]] Offset: {{--|15%}}
+* [[Mental Break Threshold]] Offset: {{++|14%}}
+|-
+! debilitating
+|<!-- Parameters -->
+* Min Severity: '''95%'''
+* [[Consciousness]] Max: {{Bad|10%}}
+|}<noinclude>
+|}</noinclude>

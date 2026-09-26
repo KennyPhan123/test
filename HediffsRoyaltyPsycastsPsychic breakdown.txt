@@ -1,0 +1,63 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Royalty/Psycasts}}
+|}
+----
+{| {{STDT| c_07}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Psychic breakdown" <!-- defName="PsychicBreakdown", ParentName="DiseaseBase" -->
+! Psychic breakdown
+----
+* Def Name:<br />PsychicBreakdown
+* Label:<br />psychic breakdown
+| Deep psychic destabilization of the mind. Psychic breakdown last for days, causing mental disturbances of various kinds. It resolves itself with time.
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|90%|100%|35%}}
+* Is Bad: {{Bad|true}}
+* Initial Severity: '''0%'''
+* Max Severity: '''1500%'''
+* Remove On Redress Chance By Days Curve:
+<div><li style="display: inline-table;">
+{| {{STDT| c_07}}
+! Days !! Chance
+|-
+! 0
+| 0%
+|-
+! 2
+| 0%
+|-
+! 7
+| 50%
+|-
+! 20
+| 100%
+|}{{Graph:Chart|width=200|height=200|xAxisTitle=Days|yAxisTitle=Remove On Redress Chance|type=line|x=0, 2, 7, 20|y=0, 0, 0.5, 1|interpolate=monotone|xGrid=|yGrid=}}</li></div>
+* '''Comps'''
+** ''Severity Per Day:'' {{---|100%}}
+*** Show Days To Recover: {{Good|true}}
+** ''Disappears On Death''
+|<!-- Stages -->
+{| {{STDT| c_07}}
+! Label !! Parameters
+|-
+! minor
+|<!-- Parameters -->
+* [[Consciousness]] Offset: {{--|25%}}
+* Mental Break {{MTB}} Days: '''5'''
+* Allowed Mental Break Intensities: '''Minor'''
+|-
+! major
+|<!-- Parameters -->
+* Min Severity: '''500%'''
+* [[Consciousness]] Offset: {{--|50%}}
+* Mental Break {{MTB}} Days: '''5'''
+* Allowed Mental Break Intensities: '''Minor, Major'''
+|-
+! total
+|<!-- Parameters -->
+* Min Severity: '''1000%'''
+* [[Consciousness]] Max: {{Bad|10%}}
+|}<noinclude>
+|}</noinclude>

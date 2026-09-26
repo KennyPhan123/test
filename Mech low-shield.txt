@@ -1,0 +1,66 @@
+{{Royalty}}
+{{Image wanted|reason=Radius and safe tiles. See [[:File:Low shield pack radius.jpg]] and [[:File:Skip shield radius.jpg]]}}
+{{Infobox main|building
+| name = Mech low-shield
+| image = ShieldGeneratorBullet.png
+| description = A shielding device which projects a momentum repulsor field. Shots can go out, but not in. This one is tuned to low angles, so it will block ground-level projectiles like bullets. The unit can be temporarily disabled by EMP attacks, either by shocking the projector unit itself, or using EMP munitions on the shield.
+| type = Building
+| type2 = Mechanoid cluster
+| placeable = false
+| path cost = 50
+| passability = pass through only
+| blockswind = true
+| cover = 1
+| size = 1 ˣ 1
+| flammability = 0
+| hp = 200
+| beauty = -20
+| deconstruct yield = {{Icon Small|Plasteel}} 7 + {{Icon Small|Shield core}} 1
+| destroyyield = {{Icon Small|Plasteel}} 7
+| page verified for version = 1.3.3117
+}}
+'''Mech low-shields''' are [[Mechanoid cluster]] buildings added by the [[Royalty DLC]]. It blocks incoming projectiles in a 20-tile radius around them. Upon being hit by an [[EMP]], it is disabled for {{Ticks|1080}}. Every 10 days, it goes down to charge for 1 day.
+== Acquisition ==
+Mech low-shields can arrive as a component of mechanoid clusters. Mech low-shields cannot be acquired for player use, and shutdown when the cluster is defeated. 
+
+== Summary ==
+{{Stub|section=1|reason=Compare [[low-shield pack]] for adequate detail. Radius graphics similar to the low shield pack page would be nice.}}
+Mech low-shields can arrive as parts of a mechanoid cluster. Upon landing, they will begin projecting a shield, with a radius of 20 cells, that stops all incoming ground-level fire from passing into the bubble, and detonating explosive projectiles at the point of impact with the shield radius. In contrast to the otherwise similar [[Skipshield]] psycast, which prevents all incoming and outgoing projectiles, the low-shield does not prevent pawns inside from firing out. Also note that this only applies to ground-level fire, i.e. fire from ranged [[weapons]] carried by all types of [[pawn]] and [[turrets]], including grenades that cross the boundary of the shield. Fire from [[mortar]]s, [[orbital bombardment targeter|orbital bombardment]], or [[Permits|aerodrone strikes or salvos]] will not be blocked by the shield, nor will explosions crossing the boundary including those from intercepted projectiles. The mech low-shield will also not intercept fire from mechanoids or mechanoid turrets, even if they are on the outside of the shield radius. 
+
+Low-shields will continuously project their shield without material or power requirements from the cluster. Every 10 days, the shield projector will be disabled for a 24 hour charge cycle. The projector will automatically re-enable itself after the charge cycle is complete. Once the cluster is defeated, they will be permanently disabled.
+
+Projectiles from [[EMP grenades]] and [[EMP launcher|launchers]] from outside hitting or [[EMP]] damage from any source done to the building itself, will disable the shield. Note that {{Hover title|Version/1.6.4630|as of the time of writing}}, projectiles [[unique weapons]] with the [[EMP rounds]]{{OdysseyIcon}} trait do not disable the shield when striking it. It is currently unknown whether this is intended or considered a bug. It is also currently unknown if striking the building disables the shield.{{Check Tag|Verify}}
+
+Projectiles that the shield type does not stop, such as [[EMP shell]]s, will not have any effect when crossing the shield, nor does an EMP's area of effect overlapping with the projected shield - a projectile must be intercepted or the EMP damage must be dealt to the structure itself. The shield will be disabled for {{ticks|1080}} when hit by an EMP from any source.{{Check Tag|Scale with EMP damage?|E.g. EMP launcher of dif qualities hitting the emitter}} EMPing a mech low-shield will not wake up a dormant mech cluster.{{Check Tag|Verify|Verify core idea, and then also check that getting a mech hit with the EMP radius doens't trigger wake now that it detonates on the edge - if the first is true but the second triggers wake, note specifically}}<!--However, disabling a low-shield with an [[EMP shell]] requires hitting the low-shield emitter with the explosion of the mortar shell. Since EMP shells have a large area of effect, it is very likely that other buildings or mechanoids would be affected by the EMP, which would awaken the cluster.-->
+
+Low-shields will continuously project their shield without material or power requirements from the cluster. Every 10 days, the shield projector will be disabled for a 24 hour charge cycle. The projector will automatically re-enable itself after the charge cycle is complete. Once the cluster is defeated, they will be permanently disabled.
+
+When deconstructed, they are a valuable source of [[shield core]]s needed to create [[low-shield pack]]s.
+
+They not only have a [[Flammability]] of 0%, but also take no damage from attacks with the [[Damage Types|Flame]] damage type.
+
+== Analysis ==
+{{Stub|section=1|reason=General stub - current is just a couple of very  rough suggestions. also specific attention to how to adapt to and use the explosions on the edge - soemtiems you change positions and sometiems it means you use a large AOE to still hit the target.}}
+=== Countering ===
+Low shields can be countered fairly easily by throwing [[EMP grenades]] or firing an [[EMP launcher]] at the shield border. Each time the shield intercepts an EMP grenade or projectile, it will be disabled for {{ticks|1080}}. Disabling the shield will allow pawns to engage targets inside the shield's radius without the shield intercepting their projectiles.
+
+Low shields can also be countered by ordering pawns to enter the radius of the shield. Projectiles fired from inside the shield boundary will not be intercepted. Once inside the shield boundary, the emitter itself is also vulnerable to EMP explosions. EMP grenades thrown inside the shield boundary will explode normally, and if the explosion hits the emitter, the shield will be disabled.
+
+=== Exploiting ===
+
+Doesn't work against the mechanoid hive faction, of which it is a part. Can be exploited to work as a defensive shield by keeping any key component of its associated mech cluster alive.
+
+Additionally, with gravships, it is possible to obtain a claimable, ''active'' mech low-shield by causing a mech cluster to land on gravship substructure and destroying the landing map (the tile of landing appears significant, multiple jumps does not appear to work) while carrying the mech low-shield with the gravship to a new map without any structures that must be normally defeated for mech low-shield deactivation.
+
+== Version history ==
+* [[Version/1.1.2575|1.1.2575]] - Implement mech shield generator charge cycle. Shields now go down for a random day every 10 days. Now shuts down when the cluster is defeated.
+* [[Version/1.2.2753|1.2.2753]] - Renamed from '''bullet shield''' to '''mech low-shield'''.
+* [[Version/1.4.3523|1.4.3523]] - Fix: Explosive projectiles disappear when impacting a shield. They now detonate when impacting.
+
+== See also == 
+* [[Skipshield]] - A 6th level psycast with that stops all incoming and outgoing ground-level ranged attacks in a smaller radius and short duration
+* [[Low-shield pack]] - a [[utility]] item that stops all incoming ground-level ranged attacks in a smaller radius and short duration 
+* [[Mech high-shield]] - a [[mechanoid cluster]] building that produces a similar effect in size and duration, but tuned to mortar rounds, [[orbital bombardment targeter|orbital bombardments]], and [[Permits|aerodrone strikes]] only.
+
+{{nav|mechanoid|wide}}
+[[Category:Mechanoid Cluster]]

@@ -1,0 +1,86 @@
+{{Royalty}}
+{{Infobox main
+| name = Low-shield pack
+| image = BroadshieldPack.png
+| description = A single-use man-portable low-shield projector. Deployed on the ground, it generates a circular shield that allows bullets out but not in. The unit is designed to last only a short time before burning out.<br/>Many ultratech combat squads owe their lives to a shield pack deployed at just the right time.
+| type = Gear
+| type2 = Utility
+| tech level = Industrial
+| hp = 100
+| marketvalue  = 430
+| flammability = 0.4
+| mass base = 3
+| production facility 1 = Machining table
+| research = Shields
+| work to make = 14000
+| work speed stat = General Labor Speed
+| resource 1 = Shield core
+| resource 1 amount = 1
+| resource 2 = Component
+| resource 2 amount = 1
+| skill 1 = Crafting
+| skill 1 level = 4
+| lifestage = Adult
+| clothing for nudity = False
+| coverage = Waist
+| layer = Belt
+| equipdelay = 2
+| defName = Apparel_PackBroadshield
+| thingCategories = ApparelUtility
+| thingSetMakerTags = RewardStandardMidFreq, RewardStandardQualitySuper
+| tags = BeltDefensePop
+| tradeTags = ExoticMisc, Armor
+| page verified for version = 1.2.2900
+}}
+The '''low-shield pack''' is a single-use accessory added by [[Royalty DLC]]. It allows the user to deploy a circular shield that stops incoming projectiles but does not affect outgoing projectiles, or prevent pawns from moving through it.
+
+== Acquisition ==
+{{Acquisition}} Shield cores are only available from [[mechanoid cluster]]s and trading.
+
+Alternatively, this item can be received as a quest reward, bought, or found on [[Raiders]].
+
+== Summary ==
+[[File:Low shield pack radius.jpg|thumb|left|175px|Radius of the shield with unshielded area denoted in red, partially shielded areas in gold (see Note right).<br> Note that despite the shield visually extends into the red tiles, it does not protect them.]]
+
+The low-shield pack is a single-use item that deploys a temporary structure called a '''burnout low-shield'''. This, in turn, projects a shield with a radius of 4.9 tiles for a duration of {{Ticks|1800}}, after which it burns out and is destroyed. There is no delay between the use of the item and the deployment of the shield, it will even project the shield if used while paused. The burnout low-shield has 250 {{HP}}, and can be manually targeted and destroyed.
+
+During that time, the shield stops all incoming ground-level fire from passing into the bubble, and detonating explosive projectiles at the point of impact with the shield radius. In contrast to the otherwise similar [[Skipshield]] psycast, which prevents all incoming and outgoing projectiles, the low shield does not prevent pawns inside from firing out. Also note that this only applies to ground-level fire, i.e. fire from ranged [[weapons]] carried by all types of [[pawn]] and [[turrets]], including grenades that cross the boundary of the shield. Fire from [[mortar]]s, [[orbital bombardment targeter|orbital bombardment]], or [[Titles#Permits|aerodrone strikes or salvos]] will not be blocked by the shield, nor will explosions crossing the boundary including those from intercepted projectiles.
+
+'''Note:''' Pawns on the tiles shown in [[gold tile|gold]] in the image to the left are shielded from attacks directly targeted at them, however, due to a bug, they can still be hit by attacks aimed at other nearby pawns that miss. 
+
+A pawn does not need to be inside the shield to benefit from the effect, assuming the enemy is not inside the shield and that the shield is between them and their attacker the incoming rounds will be stopped. However, it does not prevent pawns from moving inside the shield and attacking. Projectiles from [[EMP grenades]] and [[EMP launcher|launchers]] from outside hitting the shield or [[EMP]] damage from any source done to the burnout low-shield object itself, will disable the shield for {{Ticks|600}}, during which time the burnout timer will still count down. Note that {{Hover title|Version/1.6.4630|as of the time of writing}}, projectiles [[unique weapons]] with the [[EMP rounds]]{{OdysseyIcon}} trait do not disable the shield when striking it. It is currently unknown whether this is intended or considered a bug. It is also currently unknown if striking the burnout low-shield object disables the shield.{{Check Tag|Verify}} Furthermore, unlike [[Mechanoid]]s, the shield projector will not adapt to the EMP effect. Its therefore possible to continuously disable the shield until the projector burns out. Note that an EMP area of effect overlapping with the projected shield will not disable it - a projectile must hit the shield or the EMP damage must be dealt to the structure itself.
+
+NPCs equipped with the shield pack will deploy them when an enemy-fired projectile travels past them. Friendly ranged fire will not trigger the pack. Note also that NPCs will occasionally end up walking outside of the effect of the shield.
+
+{{Utility Note}}
+
+== Analysis ==
+{{Stub|section=1|reason=Short, but also specific attention to how to adapt to and use the explosions on the edge - soemtimes you change positions and sometimes it means you use a large AOE to still hit the target.}}
+The low-shield pack is incredibly powerful in the right circumstances, as it allows pawns to fire without needing to fear non-explosive projectiles. Pawns equipped with shield packs can stand toe-to-toe against entire [[centipede]] raids on open ground. Their use can be also be integrated with other tactics, such as chokepoints with melee blockers to prevent being overrun with melee, while the shield protects colonists from ranged attacks.
+
+In addition to acquiring them from [[mechanoid cluster]]s and traders, packs can be obtained from raiders. The ideal way to get them without deploying is to use melee pawns and either not used ranged or micromanage your ranged pawns to ensure that they don't target anyone near or behind the pawn with the shield pack. [[Bionic leg|Bionic]] or [[archotech leg]]s and/or a [[jump pack]], [[locust armor]], or [[longjump legs]] paired with a strong melee weapon are recommended if the pawn is to be rushed, however use of the [[Skip]] psycast allows the wearer to be teleported into the middle of as many as 8 melee pawns and quickly downed.
+
+=== Enemy shield packs ===
+The enemy AI is not particularly smart about using low-shields or conscious about their radius. In many cases, when a shield pack is deployed, it is easy to just retreat and let the enemy advance outside the shield radius. This is particularly viable when out in the open, but is still possible in a [[killbox]]. When in close quarters, another option is to advance inside the shield pack. 
+
+Explosive AOEs can hit enemies behind a low-shield pack, so [[frag grenades]], [[grenadier armor]], the [[hellsphere cannon]] of a [[diabolus]],{{BiotechIcon}} and other explosions can be tactically useful. [[EMP grenade]]s can fully disable the shield, although EMP weapons won't be useful against most other human raiders.
+
+Similarly, [[psycast]]s can affect those behind a shield - [[vertigo pulse]] and [[berserk pulse]] can easily disable any enemy within the shield's radius, psycasts like [[beckon]], [[skip]], and [[mass chaos skip]] can move pawns outside of the shield's radius, and [[wallraise]] can prevent pawns inside the shield from firing out.
+
+== Gallery ==
+<gallery>
+BroadshieldProjector.png|The deployed shield projector
+</gallery>
+
+== Version history ==
+* [[Version/1.2.2719|1.2.2719]] - Added.
+* [[Version/1.2.2753|1.2.2753]] - Renamed from '''Broadshield pack''' to '''Low-shield pack'''. Broadshield Projector renamed to burnout low-shield. Gave the broadshield pack a smaller drawsize, so that its icon/map-icon is more congruent with its appearance on a pawn. AI will now only deploy an NPC's Broadshield pack if the offending attacker is hostile to prevents friendly-fire causing activation.
+* [[Version/1.4.3523|1.4.3523]] - Fix: Explosive projectiles disappear when impacting a shield. They now detonate when impacting.
+
+== See Also == 
+* [[Skipshield]] - A 6th level psycast with that stops all incoming ''and'' outgoing ranged attacks in a similar radius but with a shorter duration.
+* [[Mech low-shield]] - a [[mechanoid cluster]] building that produces the same effect but larger.
+* [[Mech high-shield]] - a [[mechanoid cluster]] building that produces a similar effect but larger and tuned to mortar rounds, [[orbital bombardment targeter|orbital bombardments]], and [[Titles#Permits|aerodrone strikes]] only.
+
+{{Nav|utility|wide}}
+[[Category:Utility]]

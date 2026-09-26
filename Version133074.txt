@@ -1,0 +1,74 @@
+{{Version Nav}}
+
+Some help for vegetarians, carnivores, slavers, and dryad-lovers
+Hey everyone, we're here with another update. Tons of great feedback has been coming in and we're working to translate that into high-value improvements as fast as possible.
+
+It should be compatible with everything.
+
+Thanks to those who helped test it on the Official Dev Discord. Come join us!
+
+Improvements:
+
+* Desired apparel now uses the same faction restrictions as role apparel does. Tribal-Only: War mask, Tribal Headdress. Non-tribal only: Slicecap, Beret. Removed visage mask restriction to non-tribal only.
+* Slaves no longer slight or insult non-slaves
+* Slaves never start social fights with non-slaves if insulted.
+* Allowed saving all ideos and allowed saving ideos in-game.
+* Allow non-ideo members to participate in leader speech.
+* Melee-ing a slave now increases suppression.
+* Rebellion chance per slave now relates inversely to the number of slaves on the map, so overall rebellion chance shouldn't climb so aggressively with higher slave counts.
+* Adjust slave rebellion base MTB 50 days back to 45 days.
+* Change animal products and processed food to not generate negative thoughts related to meat-eating precepts. Vegetarians and carnivores alike can now eat these without being bothered.
+* Beggars can now be given items when they are traveling to their wait destination.
+* Prevent thrumbos from eating Gauranlen trees in addition to anima trees.
+* Ideo UI Role apparel requirements float menu now lists the incompatibility reason.
+* Added confirmation dialogs in ideo config UI when precepts will change.
+* Dryads of not the correct caste will return to the tree first when connection strength drops enough to be unable to support the current number of dryads.
+* Integrate art for rough living issue and set it to medium importance.
+* Gauranlen pod sprouts now happen much earlier for tree connector ideoligions.
+* We are now more selective about which weapons increase rebellion chance (exclude wood, emp, smoke...)
+* Allow black color to be selected for apparel coloring.
+* Integrated new mod source and warning graphics for the mod menu.
+* Integrated new meal graphics.
+* Improvements to ideoligion save/load UI.
+* Ensure Tunneler meme always has the MiningYield_High precept.
+
+Technical:
+
+* Optimized QuestNode_Root_WorkSite.
+* Removed _NewTemp suffix from PreceptWorker methods and made optional parameter non-optional.
+* Renamed def Nutrifungus to Plant_Nutrifungus per standard.
+* Changed ThoughtWorker_Precept_IdeoDiversity to not iterate over spawned pawns list twice.
+* Removed unused 'Notify_MemberSpawned' methods.
+* hairColor -> hairOnly.
+* Mark PlaceBlueprintForBuild as [Obsolete].
+* Improvements to pawn blindness checks.
+
+Fixes:
+
+* Fix: ProblemCauser quest can fire with mech cluster even if mechanoids disabled.
+* Fix: Incorrect requireOne usage for PainIsVirtue.
+* Fix: Some bad requireOne usages.
+* Fix: Diversity of thought calculates the percentage of pawns with another ideo by dividing against all spawned pawns of the faction including animals, slaves and prisoners.
+* Fix 5218: Some ancient doodads are rotated when they shouldn't be.
+* Fix: Lovers/Spouses sharing a bed in barracks get "sleeping alone" thought.
+* Fix: Initial player ideo can be set multiple times on different ideos if the user revisits the configure ideo page before starting a game.
+* Fix: Pawns under 18 can use age reversal.
+* Fix: Starting leader speech from a ritual focus bypasses some checks, like being able to speak.
+* Fix: Funerals are expected to be held for slaves if they have same ideo as colonists.
+* Fix: Farskip with Relic gives debuff from losing the relic.
+* Fix: Hermetic crate missing opening completed sound. Applied the same sound as security crate.
+* Fix: Slaves and prisoners will not be carried to slave medical beds after a duel ended in which they got wounded.
+* Fix: Ancient complex world objects remain on world map after archonexus cycles making it potentially hard to generate a new site as a ritual reward.
+* Fix 5232: Wimpy Noble quest generated with generic tags rather than text.
+* Fix: Apparel color buff is gone after save / load.
+* Fix: NullRefException when abandoning royal title.
+* Fix 5234: Pawns can build turrets when prohibited by precepts.
+* Fix 5225: Undefined 'spritElement' text element.
+* Fix: Ideo creation warning about incompatibility between apparel requirement and desired apparel even if both apparel are the same.
+* Fix: Collapsed rocks have 'attack to destroy' inspect pane and disabled deconstruct message.
+* Fix 5216: Minor text overlap issue in ideo config UI.
+* Fix: Bestower pawns can engage in social fighting, breaking the ceremony.
+* Fix: Misc small copy errors.
+
+== Source ==
+* [https://steamcommunity.com/games/294100/announcements/detail/2996567911638217535 Update 1.3.3074 brings various fixes and improvements]

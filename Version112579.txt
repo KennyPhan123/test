@@ -1,0 +1,89 @@
+{{Version Nav}} 
+
+Here's another polishing update for RimWorld!
+
+The most notable change is in how titles interact with work types. Now, only certain characters will actually not do worktypes disallowed by their titles. Royals from the Empire, as well as colonists with the greedy or jealous traits will refuse to do any formally-prohibited work type, while others will take the titles less seriously and continue to work as normal, ignore formal restrictions on food, and not issue decrees.
+
+We're still looking at different ways of adjusting the royal system to allow for nobles to be powerful without destroying challenges or constraining storytelling.
+
+This update should be compatible with all savegames and mods.
+
+Thanks to everyone who gave feedback on the unstable version in the unstable test Discord server
+
+== Improvements ==
+* Added conceited titles system. Titles can be conceited or not. NPC titles are usually conceited, player-earned titles usually not. Non-conceited titles don't incur work restrictions or some other restrictions. Increased reigning time to balance this.
+* Many more implants are now removable.
+* Single-use targeters, artifacts, and antigrain shells are now high frequency quest rewards.
+* Reduce faction goodwill rewards at higher reward values.
+* Psyfocus gear has much better cold insulation.
+* Royal favor reward per prisoner reverted from 4 to 3. Royal favor reward for gold 0.02 -> 0.015.
+* Royal vest no longer covers arms, shoulders and neck. Ruffle tie shirt now also covers arms and neck.
+* Hunting decrees no longer target any animal with a faction.
+* Added "Select monument marker" command to monument-related buildings and blueprints.
+* Monument markers now allow placing only matching blueprints.
+* Pawns now have their apparel unlocked when they are recruited.
+* Added an alert to tell players when a monument marker is missing blueprints.
+* Stellarch title is now replaced with Consul when recruited. Replaced royal pawn resistance factor with an offset.
+* Reworked how monument quests choose monument sizes to better avoid choosing unreasonable sizes.
+* Renouncing title, dying or being kidnapped now ends ongoing decrees.
+* Silver and gold tiles are now merged on the architect menu.
+* Add a note about being conceited/non-conceited to the Title gained letter. Move back compatibility measures to BackCompatibilityConverter_Universal.
+* Added 'Show Materials' button to info card if def is buildable and has stuff.
+* Hyperlinks to things with any default stuff open the info card with the default stuff, instead of null stuff.
+* Can no longer request imperial traders with pawns who do not have the required title.
+* Adjust bulk cooking recipes work time to be in line with single meal cooking work times.
+* Deep mineral scanner now takes into account terrain affordance required to place a deep drill.
+* Disable relations gain from recent quest helpers.
+* Optimize mod screen to better handle large mod lists.
+* Buildings which are exactly what we need no longer prevent placing a monument marker. So it's possible to continue building a previously canceled monument.
+* Workaround for a bug which places a door and a wall in the same cell (most likely caused by mods) and makes the monument impossible to finish.
+* When generating monuments, we now explicitly remove colliding walls, just to be sure.
+* Forced weather in quests will no longer be dry thunderstorm because it's too difficult.
+* Change wild man to be tameable in prison, instead of being recruited. Don't allow hunting imprisoned wild men. Remove "Ate without a table" thought for them.
+* Added missing translation keys for goodwill change reason military aid and trade caravan.
+* Wild man now shows wildness in info card, tweaked wild man to be equally hard to tame as gazelles.
+* Added gender constant to RulesForPawn to make translating quests easier.
+* Quests generally try to avoid generating duplicate names now.
+* Psychic hangover now reapplies on psycast use, opposed to when entropy reaches zero.
+* Cleaned up alignment and coloring of many pieces of character art.
+* Added OTHERPAWN symbol to Thought to make translating some thought descriptions possible.
+* Various internal technical improvements.
+
+== Bugfixes ==
+* Fix: Too few traders, and some other incidents not appearing correctly.
+* Fix: Deep drill infestation happening on peaceful difficulty.
+* Fix: Game not ending if last pawn is kidnapped immediately (it sometimes ended due to other events happening that cause the game ender to check again, but sometimes it just didnt ever end).
+* Fix: Royals appearing with no amplifier, but having abilities. Reworked debug spawning to select an appropriate title. Added a debug check for abilities/amplifiers.
+* Fix: Prisoner listed twice in prison break letter.
+* Fix: Slow learner and too smart traits can appear together.
+* Fix: Quest raids act weird if you become neutral during the quest.
+* Fix: Harvest decree miscounts harvested plants if they are placed in an existing pile.
+* Fix: Raiders attack sleeping mechanoids
+* Fix: Danger music not playing during raid.
+* Fix: Hospitality quest fails to generate a description if Empire is hostile and a royal pawn is still spawned on the map
+* Fix: Royal can try to initiate speech when downed. Also fix starting a speech when there's noone to attend.
+* Fix: SlateRefs not properly translated.
+* Fix: Rounded numbers make nonsense comparisons in room requirements alert, like 120/120 impressiveness being insufficient.
+* Fix: ModContentPack using incorrect packageId when there are both steam and non-steam versions of the same mode.
+* Fix: Renounce title float menu and confirmation dialog text using incorrect title label.
+* Fix: Mod languages don't count towards AnyContentLoaded check.
+* Fix: Patch operations iterate on the same collection they remove elements from.
+* Fix: psycasters can use psytrainers for ablities they already have
+* Fix: Mech Cluster Buildings deconstruct instantly.
+* Fix: "No acceptable food" alert doesn't count chocolate as acceptable.
+* Fix: AvailableForGoodwillReward only returns true if a pawn has ever been a helper.
+* Fix: Shoot tooltip lists manhunter chance for humans who cannot go manhunter.
+* Fix: Renounce title confirmation dialog saying 'He lost these permissions...' instead of 'He will lose these permissions...'
+* Fix: Item stash quest not showing hyperlinks to reward items.
+* Fix: Duplicate errors in debug log on startup.
+* Fix: Goodwill impact when applying non-aggressive pyscasts like Skip to quest lodgers.
+* Fix: Some logs using lower-case mod packageIds.
+* Fix: Text rendering issues with UI scaling.
+* Fix: Mod reordering not working if scrolled down.
+* Fix: Active quest not completed after objectives met (mech clusters).
+* Fix: Titled pawns don't rest if they can't reach their throne to reign.
+* Fix: Solar panel showing in the unlocks for electricity.
+* Fix: Exception when dead pawn receives new rank from royal favor quest reward.
+* Fix: Horseshoe pins and hoopstone rings showing watching spots not when selected.
+* Fix: Setting pawns title above Count results in exception.
+* Fix: Various typos.

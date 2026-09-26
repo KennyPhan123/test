@@ -1,0 +1,71 @@
+< [[Modding_Tutorials | Modding Tutorials]]
+
+----
+
+If you have a high-level understanding of what your mod will do, this page will give you a basic understanding of how to approach it. Further pages will explain how to actually go about this, but here we get you started. Don't get frustrated if not all of this makes sense to you yet.
+
+
+==Modding Difficulty==
+
+So how hard is it to mod RimWorld? Overall, RimWorld is a modder-friendly platform actively supported by the game's creators.
+
+* '''Easy''' - Edit XML to apply existing functionality in new ways to make new things (like a gun, or animal). If you can read English, you can make a gun mod.
+
+* '''Easy (if you're an artist)''' - Create new RimWorld art and sound assets and add them to XML to use them.
+
+* '''Moderate (if you can code, or want to learn)''' - Create a C# class to make a new simple behavior. These C# classes can be incorporated via XML.
+
+* '''Harder''': GUI programming 
+
+* '''Hard''': Complex inter-object behaviors
+
+* '''Hard''': Create new AI behaviors
+
+
+==So you want to...==
+
+===... Add a new Thing to RimWorld===
+
+RimWorld uses XML to define the Things in RimWorld, in ThingDef XML entries. So, if you are going to create a new Thing, look in the Core XML files of RimWorld and duplicate a ThingDef entry for a similar item. Then, make the modifications to that entry to achieve your item. Remember, defName needs to be different for all entries.
+
+;Add a new Thing to RimWorld
+: Your Mod will have a new ThingDef entry in XML.
+
+;Add a new Thing to RimWorld, like an existing one
+: Read the Core XML and use one of the abstract XML definitions as a Parent. You'll inherit it's properties.
+
+;Add a new building or plant
+: As above, but make sure the category tag is set so your building tag gets used.
+
+
+===...Create new functionality===
+
+The XML files are used to apply and adapt existing functionality in the code base in new ways, but for modders, many times this is not enough. If you need new functionality, you create that with C# code and apply it to your new Things with XML entries.
+
+;Create new functionality
+: If your required functionality doesn't exist, create a C# class to do it.
+
+;Create a Thing with new functionality
+: Create a new C# object "MyNamespace.MyNewClass" that inherits from Thing and a ThingDef XML entry that uses it with &lt;thingClass&gt; pointing to MyNamespace.MyNewClass.
+
+;Create a Thing with new XML specifiable properties
+: Create a new C# class with these new XML properties, that [[Modding Tutorials/Def classes|inherits]] from ThingDef. In your XML ThingDef entry, have 'Class="MyNamespace.YourThingDef".'
+:: Or: Create a custom Comp inheriting from [[Modding Tutorials/ThingComp|ThingComp]] and CompProperties and add it to an existing ThingWithComps. In its XML entry, follow the Class="MyNameSpace.MyCompProperties" structure mentioned previously.
+
+===...Alter RimWorld code===
+Sometimes, you need to change what existing code does. This can be done in both XML and C# code.
+
+;Alter a Core Thing's XML Entry
+{{Main|Modding Tutorials/Modifying defs}}
+: There are many ways to [[Modding Tutorials/Modifying defs|modify Defs]] but as of A17, there exists something called DefPatches to alter the XML of RimWorld, often with no effect upon other Mods. So, you could change the power consumption of a lamp or make Devilstrand plantable in new locations. See [[Modding_Tutorials/PatchOperations|PatchOperations]].
+
+;Alter a C# method
+: Harmony is the current best approach for enhancing existing RimWorld code by inserting code pre/post to an existing method being called. See [[Modding_Tutorials/Harmony|Harmony]].
+
+==The true essence of modding==
+Look, you think anyone of us knows all 200+ valid tags for a ThingDef like the back of their hand, and what every tag means? Or even half of the 3000+ classes in RimWorld, and what they do? Hell no. We all regularly (almost religiously) copy-paste things or re-invent the wheel. There's nothing wrong with that; you don't have to know RimWorld inside out to mod it.<!-- but knowing how it works sure helps when solving problems--> Learning how to mod is more about making the connection of "hey, RimWorld/SomeMod does this like X, can I do Y?" and searching/finding how it does it.
+
+And if you do want to know how RimWorld works inside out? Start modding, and you'll find out soon enough.
+
+
+[[Category:Modding tutorials]]

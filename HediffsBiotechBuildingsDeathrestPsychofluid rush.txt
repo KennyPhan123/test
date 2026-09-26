@@ -1,0 +1,34 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Biotech/Buildings/Deathrest}}
+|}
+----
+{| {{STDT| c_18}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Psychofluid rush" <!-- defName="PsychofluidRush", ParentName="DeathrestHediffBase" -->
+! Psychofluid rush
+----
+* Def Name:<br />PsychofluidRush
+* Label:<br />psychofluid rush
+| Psychic sensitivity is enhanced because this person used a psychofluid pump while deathresting. This effect lasts until the next deathrest.
+----
+* Description Hyperlinks:<br />{{Icon Small|Psychofluid pump}} '''[[Psychofluid pump|View: Psychofluid pump]]'''
+|<!-- Details -->
+* Hediff Class: '''Hediff_DeathrestEffect'''
+* Remove On Deathrest Start: {{Good|true}}
+* Is Bad: {{Good|false}}
+* Initial Severity: '''1'''
+* Default Label Color: {{Color|169|224|155|255}}
+* Extra Tooltip: '''Lasts until the next deathrest.'''
+|<!-- Stages -->
+{| {{STDT| c_18}}
+! Label !! Parameters
+|-
+! Psychofluid rush
+|<!-- Parameters -->
+* Multiply Stat Changes By Severity: {{Good|true}}
+* [[Psychic Sensitivity]] Offset: {{+|25%}}
+* [[Meditation Psyfocus Gain]] Offset: {{+|5% / day}}
+* [[Neural Heat Recovery Rate]] Offset: {{+|0.05/s}}
+|}<noinclude>
+|}</noinclude>

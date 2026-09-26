@@ -1,0 +1,108 @@
+{{Stub|reason=1) Corresponding Property 2) Two-way links}}
+{{Verified|1.5.4104}}{{Stat
+| def name = ShootingAccuracyTurret
+| label = shooting accuracy
+| label for full stat list = shooting accuracy (turrets)
+| description = Base chance to not miss per cell of shot distance.<br/>Chance to hit is also affected by many other factors. A hit chance explanation for any shot can be seen by selecting a shooter and mousing over a target.
+| default base value = 0.96
+| effective maximum = 1
+| to string style = PercentOne
+| to string style unfinalized = FloatOne
+| show if undefined = false
+| category = BasicsNonPawn
+| display priority in category = 4000
+| worker class = StatWorker_ShootingAccuracy
+}}
+
+== Bases ==
+<div><li style="display: inline-table;">
+{| {{STDT| c_10 sortable}}
+! Turret !! Shooting Accuracy (Turrets) Base
+<!-- Buildings_Security_Turrets -->
+|-
+! {{Icon Small|Mini-turret|24}} [[Mini-turret]]
+| 96%
+|-
+! {{Icon Small|Autocannon turret|24}} [[Autocannon turret]]
+| 96% <!-- like level 8 human shooter -->
+|-
+! {{Icon Small|Uranium slug turret|24}} [[Uranium slug turret]]
+| 98% <!-- like level 14 human shooter -->
+|-
+! {{Icon Small|Foam turret|24}} [[Foam turret]]
+| 100%
+|-
+! {{Icon Small|Rocketswarm launcher|24}} [[Rocketswarm launcher]]
+| 96%
+<!-- Royalty Buildings_Mech_Turrets -->
+|-
+! {{Icon Small|Mini-slugger turret|24}} [[Mini-slugger turret]] {{RoyaltyIcon}}
+| 96%
+|-
+! {{Icon Small|Auto charge turret|24}} [[Auto charge turret]] {{RoyaltyIcon}}
+| 96%
+|-
+! {{Icon Small|Auto inferno turret|24}} [[Auto inferno turret]] {{RoyaltyIcon}}
+| 96%
+|-
+! {{Icon Small|Auto mortar|24}} [[Auto mortar]] {{RoyaltyIcon}}
+| 90%
+<!-- Anomaly Buildings_Misc -->
+|-
+! {{Icon Small|Tactical turret|24}} [[Tactical turret]] {{AnomalyIcon}}
+| 96%
+|}
+</li><div>
+
+Although not the same as [[Shooting Accuracy (Turrets)]], here are the effective accuracies of turrets at various ranges:
+<div><li style="display: inline-table;">
+{| {{STDT| c_10 sortable}}
+! Turret !! Long !! Medium !! Short !! Touch
+|-
+{{#ask:
+[[Type2::Security||Mechanoid cluster||Utility]]
+[[Accuracy (Long) Base::+]]
+[[Accuracy (Medium) Base::+]]
+[[Accuracy (Short) Base::+]]
+[[Accuracy (Touch) Base::+]]
+| ?Accuracy (Long) Base
+| ?Accuracy (Medium) Base
+| ?Accuracy (Short) Base
+| ?Accuracy (Touch) Base
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Name
+}}
+|}
+</li><div>
+
+== Stat Def Data ==
+{| {{STDT| c_10}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Shooting Accuracy (Turrets)" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />ShootingAccuracyTurret
+* '''Label:'''<br />shooting accuracy
+* '''Label For Full Stat List:'''<br />shooting accuracy (turrets)
+| Base chance to not miss per cell of shot distance.<br/><br/>Chance to hit is also affected by many other factors. A hit chance explanation for any shot can be seen by selecting a shooter and mousing over a target.
+|
+* Display Order:<br />'''12'''
+* Def Name:<br />'''BasicsNonPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />{{Bad|false}}
+|
+* '''Worker Class:''' StatWorker_ShootingAccuracy
+* '''Default Base Value:''' {{%|0.96}}
+* '''To String Style:''' PercentOne
+* '''To String Style Unfinalized:''' FloatOne
+* '''Show If Undefined:''' {{Bad|false}}
+| -
+| 4000
+<!--</StatDef>-->
+|}
+
+== Version history ==
+{{Stub|section=1|reason=General}}
+
+{{nav|stats|wide}}

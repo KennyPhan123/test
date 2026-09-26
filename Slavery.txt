@@ -1,0 +1,313 @@
+{{Ideology}}
+{{For|selling prisoners, which is also considered "slavery" |Prisoners}}
+{{For|the related ideoligious precept|Slavery (precept)}}
+'''Slavery''' in base game RimWorld is limited to selling [[prisoner]]s for profit, at the cost of a [[mood]] hit for anyone not a [[psychopath]]. Purchasing a slave, meanwhile, will immediately free them from slavery and join them into the colony, with a mood buff. The [[Ideology DLC]] significantly expands on the concept, allowing prisoners to be enslaved and forced to work and perform tasks.
+
+== Acquiring slaves ==
+Slaves can be created by reducing the will of a [[prisoner]] to zero, or by attempting to enslave a prisoner while benefiting from a recruitment [[Inspired recruitment|inspiration]]. A prisoner's starting will is usually much lower than their resistance (which would recruit them as a colonist).
+
+== Summary ==
+Slaves are controllable pawns, much like a colonist. They have many functional differences but act just the same. Slaves are prone to [[#Slave rebellion|slave rebellions]].
+
+Slaves contribute 75% of the [[raid points]] of an equivalent colonist. 
+
+=== Work ===
+A slave will have 85% [[Global Work Speed]] - they have no motivation to work as hard. To compensate, they have no need for [[Recreation]], and will have increased mood through expectations.
+
+Slaves are unable to do the Warden, Hunt, Art, or Research tasks. They are additionally unable to:
+* Tasks that require a minimum [[Intellectual]] skill greater than 0 such as crafting [[Medicine]] as slaves are considered to have 0 skill regardless of their actual skill level prior to enslavement. Despite [[Drug Synthesis Speed]] scaling with Intellectual they are still capable of doing tasks that use this stat for scaling, albeit slowly.
+* Request caravans, military aid, or persona core location via [[comms console]]
+* Call royal [[permit]]s{{RoyaltyIcon}}
+* Be an ideoligious [[role]]
+However, slavery overrides other work exceptions related to background or traits. For example, if a colonist would be unable to do Dumb Labor, enslaving will force them to allow Dumb Labor. A [[bliss lobotomy]]{{AnomalyIcon}} will still prevent skilled labor.
+
+Unlike [[prisoner]]s, male slaves can fertilize [[embryo]]s.{{BiotechIcon}}
+
+=== Expectations ===
+{{See also|Expectations}}
+Slaves do not have the default [[expectations]] of colonists. Instead they have unique expectations with a generally higher mood boost. Slave expectations replace colonist expectations based on what the pawn's expectations would be if they were a colonist based on colony wealth and noble status.
+
+{| class="wikitable"
+|- <!-- C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Data\Ideology\Defs\Misc\ExpectationDefs\Expectation.xml -->
+! Expectation !! Mood Effect !! Replaces Colonist Expectation
+|-
+| Destitute slave expectations || {{+|46}} || Extremely low expectations
+|-
+| Poor slave expectations || {{+|40}} || Very low expectations
+|-
+| Meager slave expectations || {{+|34}} || Low expectations
+|-
+| Slave expectations || {{+|28}} || All other Expectations
+|}
+
+=== Relationships ===
+* Slaves never insult or social fight with non-slave pawns. They are half as likely to social fight with each other.
+* Slaves can form relationships with colonists.
+* Slaves cannot share a [[double bed]] with non slave colonists, even if they are married.
+* Slaves can share [[bed]]rooms with colonists, however the colonists will receive {{--|3}} mood for doing so (unless they are in a relationship).
+
+Other colonists will see slavery as either an abhorrent or honorable act, depending on the [[Slavery  (precept)|Slavery precept]].
+
+== Slave rebellion ==
+Slaves will occasionally rebel, staging something similar to a prison break. Slaves will turn hostile and uncontrollable, and will try to find weapons to attack nearby colonists. The rebellion interval is based on mood, suppression, proximity of weapons, escape route, and the presence of colonists on the map, with a base interval of 45 days. The time displayed is based on time awake - that is, if a slave sleeps 8 hours of every 24, the actual mean time between rebellions will be 50% longer. A displayed {{MTB}} of 2 years will actually be a {{MTB}} of 3 years.
+
+Slave rebellions come in several different types: Grand, Local, and Single. A grand escape involves every valid slave on the map rebelling, while a local escape chooses a given slave as a locus with any valid slaves within 35 tiles also rebelling. A single rebellion is, as the name implies, a rebellion by a single slave.
+
+Only non-downed, non-mental breaking, awake, slaves can join a rebellion. Thus, by assigning slaves different shifts, the maximum number of slaves rebelling can be limited. 
+
+Certain weapons such as [[wood]], [[EMP grenades]]/[[EMP launcher|launchers]], and [[Smoke launcher]]s will not increase rebellion chance, despite being weapons. Rebellious slaves will take ranged weapons even if equipped with [[shield belt]]s, dropping the belts in the process.
+
+While in [[orbit]]{{OdysseyIcon}} or an [[underground]] map, slaves cannot rebel at all as it is impossible to leave by map edge.
+
+{| class="wikitable"
+| '''Mean Time Between Rebellions''' = 45/(Moving Factor * Suppression Factor * Slave Count Factor * Mood Factor * Room Edge Factor * Weapon Factor * Unattended Factor)
+|}
+Where:
+* Moving Factor = A curve dependent on the current [[Moving]] capacity of the slave, defined by 3 points and linearly interpolated between them. 0.01x at 0% (though note that a pawn that cannot move is not valid for a rebellion anyway), 0.5x at 50% and 1x at 100%. This very closely approximates a straight scalar based on the Moving capacity, but is slightly different. Also note that this is Moving capacity, not [[move speed]], so slowing a pawn down with [[peg leg]]s will make rebellions less frequent, but slowing them down with a [[flak vest]] will not. 
+* Suppression Factor = A curve dependent on the current suppression value of the slave, defined by 4 points and linearly interpolated between them. 5x at 0%, 1.5x at 33.3%, 1x at 50%, 0.25x at 100%.
+* Slave Count Factor = A curve dependent on the number of slaves loaded on a map, defined by 5 points and linearly interpolated between them. 1x at 1 slave, 0.75x at 2 slaves, 0.5x at 5 slaves, 0.3x at 10 slaves. 0.2x at 20 slaves. Note that despite making each slave individually less likely to rebel, having more slaves rolling for rebellions actually increases the chance. Also note that these slaves don't need to be valid slaves for a rebellion, they must simply be alive and on the map.
+* Mood Factor = A curve dependent on the [[mood]] of the slave, defined by three points and linearly interpolated between them. 1.5x at 0% mood, 1x at 50% mood, 0.8x at 100% mood. 
+* Room Edge Factor = 1.7 when in a room that touches the map edge including being completely outdoors. 1 otherwise.
+* Weapon Factor = 4 when within 7 tile range of a usable weapon, or if indoors (in a room not considered outdoors) in the same room as a usable weapon. 1 otherwise. [[Body part weapons]] do not count for the purposes of this check.
+* Unattended Factor = 20 when on a map without a colonist that is not downed, dead or a slave. 1 otherwise.
+
+== Wardening ==
+Like [[prisoner]]s, slaves can be interacted with by colonists with the Warden task.
+
+* '''Suppress''' - Intimidate the slave, causing their suppression to rise up, which lowers the chance of rebellion.
+* '''Imprison''' - Arrest the slave, turning them back into a [[prisoner]]. You will need to reduce their will again to enslave them again.
+* '''Emancipate''' - Free the slave. If the slave belonged to another faction, you will gain [[goodwill]] with that faction.
+* '''Execute''' - Kill the slave.
+
+== Suppression ==
+{{Stub|section=1|reason=Children have different fall rates? }}
+Suppression is one of the stats used to calculate the slave rebellion interval. The higher the suppression, the longer the expected interval in between rebellions. The suppression of a slave can be increased by interacting with them, melee attacking them with a colonist or executing other slaves or prisoners. Over time, the suppression level lowers depending on its current level by up to 20% per day. It will continue to tick down when the pawn is asleep.
+
+{| class="wikitable"
+|-
+! Suppression !! Suppression loss<br/>(per day)
+|-
+| 30% - 100% || {{--|20%}}
+|-
+| >15% - <30% || {{--|10%}}
+|-
+| 0% - 15%   || {{--|5%}}
+|}
+
+The amount of suppression lost can be increased or decreased if the slave is wearing the following things:
+{| class="wikitable sortable"
+|-
+! Item !! Suppression loss offset<br/>(per day)
+|- 
+| [[Slave collar]] || {{+|15%}}
+|-
+| [[Slave body strap]] || {{+|15%}}
+|-
+| [[Cowboy hat]] || {{--|5%}}
+|-
+| [[Bowler hat]] || {{--|5%}}
+|-
+| [[Tribal headdress]] || {{--|10%}}
+|-
+| [[Veil]] || {{--|10%}}
+|-
+| [[Marine helmet]] || {{--|10%}}
+|-
+| [[Duster]] || {{--|5%}}
+|-
+| [[Marine armor]] || {{--|30%}}
+|-
+| [[Prestige marine helmet]] {{RoyaltyIcon}} || {{--|10%}}
+|-
+| [[Prestige marine armor]] {{RoyaltyIcon}} || {{--|30%}}
+|-
+| [[Grenadier armor]] {{RoyaltyIcon}} || {{--|30%}}
+|-
+| [[Eltex shirt]] {{RoyaltyIcon}} || {{--|20%}}
+|-
+| [[Eltex vest]] {{RoyaltyIcon}} || {{--|20%}}
+|-
+| [[Eltex robe]] {{RoyaltyIcon}} || {{--|20%}}
+|-
+| [[Formal shirt]] {{RoyaltyIcon}} || {{--|10%}}
+|-
+| [[Corset]] {{RoyaltyIcon}} || {{--|10%}}
+|-
+| [[Formal vest]] {{RoyaltyIcon}} || {{--|10%}}
+|-
+| [[Prestige robe]] {{RoyaltyIcon}} || {{--|20%}}
+|-
+| [[Ladies hat]] {{RoyaltyIcon}} || {{--|5%}}
+|-
+| [[Top hat]] {{RoyaltyIcon}} || {{--|5%}}
+|-
+| [[Coronet]] {{RoyaltyIcon}} || {{--|20%}}
+|-
+| [[Crown]] {{RoyaltyIcon}} || {{--|30%}}
+|-
+| [[Stellic crown]] {{RoyaltyIcon}} || {{--|30%}}
+|-
+| [[Beret]] {{RoyaltyIcon}} || {{--|5%}}
+|-
+| [[Mechlord suit]]{{BiotechIcon}} || {{--|30%}}
+|}
+
+A suppression loss of less than 0% per day will not increase the suppression. Since the default loss is at a maximum of 20% per day, a slave collar combined with body straps is enough to keep up the suppression of a slave unless they are wearing apparel that increases suppression loss above 10%. Since a negative loss has no effect, increasing Terror while slaves wear slave collars and body straps is useless unless you also wish to outfit the slave with suppression-decreasing apparel, such as dusters in hot [[biomes]] or marine armor for combat slaves.
+
+=== Warden suppression ===
+Each time a warden suppresses a slave, it increments their suppression by a value dependent on the [[Suppression Power]] of the warden and the current suppression of the slave.  
+Namely:
+
+{| class="wikitable"
+|-
+| '''Suppression Change = Suppression Power * Suppression Curve Factor'''
+|}
+
+{| class="wikitable"
+|-
+! CurrentSuppressionFactorCurve
+|-
+| {{Graph:Chart|width=200|height=200|xAxisTitle=Current Suppression (%))|yAxisTitle=Suppression Multiplier|type=line|x=0, 50, 100 |y1= 2, 1, 0.5}}
+|}
+
+For example, a colonist with [[Skills#Social|Social]] skill of 10 has a Suppression Power of 28%. A slave with a current Suppression value of 0 has a suppression curve factor of 2x. Thus, that colonist suppressing that slave would result in the slave's suppression increasing by 56%. This also means that a skill 20 pawn will always fully supress a slave.
+
+Each suppression attempt takes {{ticks|180}} of work.
+
+[[Authority cap]]s improve the suppression power of the wearer. See that page for details.
+
+=== Melee suppression ===
+{{Stub|section=1|reason=Exact equation depends on CurrentSuppressionFactorCurve - needs to be worked out and added}}
+Any colonist can suppress a pawn by performing melee attacks against them. Each attack increases suppression at a rate dependent on the current suppression and the damage dealt, with more damage suppressing more
+
+=== Terror === 
+{{Stub|section=1|reason= A number of check tags, and even with them, theres mechanical detail missing. Terror mechanics are poorly documented and [[terror]], [[terror sculpture]], [[gibbet cage]], and [[skullspike]] all need detail.}}
+{{Quote|''Terror is a way to keep slaves suppressed. It rises when the slave spends time near terrifying things like terror sculptures. A slave can only be affected by three terror sources at a time. While terror is high, suppression falls slower.''|Terror description}}
+
+Terror is stat of slaves that ranges from 0% to 100% and is raised by being in proximity to terror creating furniture. While slaves are affected by terror, the rate at which they lose suppression is reduced, depending on their current terror. 
+
+The relationship between terror and reduction in suppression loss is as follows:
+{| class="wikitable"
+|-
+! colspan=2 | Suppression Loss Rate Offset by Terror Percentage
+|-
+| {{Graph:Chart|width=200|height=200|xAxisTitle=Terror (%)|yAxisTitle=Suppression Loss Rate Offset (%) |type=line|x=0, 25, 50, 100|y1=0, 15, 25, 45}}
+| The offset to suppression loss rate is linearly interpolated between the following points:
+* {{+|15%}} at 25% terror
+* {{+|25%}} at 50% terror
+* {{+|45%}} at 100% terror
+|}
+For example, a pawn with a current suppression level of 80% would lose, by default, {{--|20%}} suppression per day. If they had 30% terror, this would result in an offset of {{+|18%}} to their suppression loss rate, resulting in a final loss rate of {{--|2%}}
+
+Note that pawns that are asleep do not experience terror but still have their suppression tick down. Also note the terror does not have "memory" or any gradual decline after leaving the radius of the sources - after a short period{{Check Tag|How long?|Reports of ~15 seconds?}} when the next check for terror sources is performed, the terror will instantly drop. 
+
+Terror sources stack additively, up to three structures with highest terror. Sources of terror are as follows:
+{| {{STDT|sortable text-center}}
+|-
+! colspan="2" | Source !! Strength !! Radius
+|-
+! {{Icon Small|Skullspike|24}}
+! [[Skullspike]]
+| {{+|25%}} 
+| 5 Tiles
+|-
+! {{Icon Small|Gibbet cage|24}}
+! [[Gibbet cage]]
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'''0%'''/{{+|25%}}<br><small>Empty</small>/<small>Filled</small>
+| 5 Tiles
+|-
+! {{Icon Small|Terror sculpture|24}}
+! [[Terror sculpture]]
+| {{+|3%}}/{{+|6%}}/{{+|10%}}/{{+|15%}}/{{+|20%}}/{{+|30%}}/{{+|40%}}
+| 5 Tiles
+|}
+
+=== Age ===
+
+Underage slaves lose less suppression compared to adult ones.
+
+The relationship between age and reduction in suppression loss is as follows:
+{| class="wikitable"
+|-
+! colspan=2 | Suppression Loss Rate Offset by Terror Percentage
+|-
+| {{Graph:Chart|width=200|height=200|xAxisTitle=Age (years)|yAxisTitle=Suppression Loss Rate Offset (%) |type=line|x=3, 13, 16|y1=0.5, 0.3, 0}}
+| The offset to suppression loss rate is linearly interpolated between the following points:
+* {{+|50%}} at 3 years old
+* {{+|30%}} at 13 years old
+* '''0%''' at 16 years old
+|}
+For example, a pawn with a current suppression level of 80% would lose, by default, {{--|20%}} suppression per day. If they were 15 years old, this would result in an offset of {{+|10%}} to their suppression loss rate, resulting in a final loss rate of {{--|10%}}
+
+== Analysis ==
+Keep slaves in collars and straps. Barring that, build terrorizing furniture in the areas they spend the most time ''awake'' in, such as workshops and kitchens. Terror fixtures are of little use inside a slave's own room.
+
+Keep your weapons inside a room that slaves will rarely, if ever, approach; confining your slaves to a restrictive allowed [[Zone/Area#Allowed area|area]] helps, of course.
+
+Minimize or eliminate the time slaves have access to the map edge. Consider walling off the area that slaves live in, if your entire colony isn't walled off already (doors count as barriers for purposes of map edge access for slaves). If that isn't feasible, keep slaves near the center of your colony as much as possible, and build walls and doors blocking off the ends of alleyways (this also helps slow down raiders that get past your outer defenses or land inside your base outright). Again, confining slaves to an allowed area is critical.
+
+Consider keeping your slaves happy. This is much easier than it might seem, since slaves have a huge baseline mood boost compared to a typical colonist, and will never get upset about lack of recreation. Slaves also get mood bonuses from performing work they're [[Passion|passionate]] about; paradoxically, these bonuses can last longer because the slave need not take recreation breaks. Having them drink [[psychite tea]] every other day will not only boost their mood further but also slightly increase their productivity (though unfortunately the big increase to recreation is wasted). Because slaves return to their rooms by default when in need of medical care, consider making their floors [[steel tile]] for an admittedly expensive increase to both cleanliness and room beauty. Also consider sticking "hand-me-down" beautifying [[sculptures]] in their rooms instead of just selling the old art. On the other hand, [[ascetic]] slaves allow you to have a happy slave with the crummiest room possible. [[Masochist]] slaves will love having a mindscrew implant (though it will lower their sale price), and the pain will lower consciousness, reducing their movement potential and further discouraging rebellion. Or just punch them once in a while. They also like wearing the collar and straps that all slaves should wear anyway. Not only do happy slaves rebel a bit less often, joyful slaves can benefit from [[inspirations]] as other colonists do, making them even more useful as your property.
+
+If you have the [[Royalty]] DLC, consider giving slaves brain implants that cause [[brain shock]] so rebellions can be safely suppressed with no loss of life, even with armed and armored slaves, by using [[EMP]] weapons. Implants such as the [[circadian half-cycler]]{{RoyaltyIcon}} and the [[circadian assistant]]{{RoyaltyIcon}} also increase the total productivity of the slave, and the half-cycler reduces movement capacity by reducing consciousness; the downside is that these implants increase time awake, lowering the {{MTB}} for rebellions.
+
+If you have the [[Anomaly]] DLC, the Bliss Lobotomy procedure can be learned and performed to massively reduce the frequency of an individual slave's rebellion interval at the cost of no longer being able to perform skilled labor and reducing their learning speed. This makes it a very compelling option for slave whose primary role is Hauling, Cleaning, Animal Handling, and/or Doctoring. Lobotomized slaves are so compliant that even when armed their rebellion interval more closely matches that of a normal, unarmed slave. While not entirely without risk, this makes enslaved combatants a viable option especially if they are only armed when there is an active threat. It is important to note that while a lobotomized slave may almost never rebel themselves, other non-lobotomized slaves may start a group rebellion and cause lobotomized slaves to join regardless.
+
+=== Genes ===
+{{Biotech|section=1}}
+Genetically modifying slaves is overall essential for improving how efficient they are at work and countering their faults.
+
+{| class="wikitable"
+|+ 
+Countering Rebellions
+|-
+! Gene !! Total Metabolic Efficiency !! Commentary
+|-
+| [[Extra pain]] || {{+|2}} || Forces the wimp trait, increasing pain shock threshold, thus making rebellions easier to deal with and reducing the chance of killing the slave. Mental breaks, should they occur, can be dealt with in the same way.
+|-
+| [[Weak melee damage]]<br>[[Nearsighted]] || {{+|1}}<br>{{+|2}} ||Should be added over [[violence disabled]]. This because pawns incapable of violence will still participate in rebellions, and that gene overrides the two actually impactful genes for combat.
+|-
+| [[Genes#Aptitude|Awful shooting/melee<br>Poor shooting/melee]] || {{+|2}}<br>{{+|1}} || Lowers the skills that they will use for combat during rebellions, in addition to being essentially free metabolic efficiency.
+|-
+| [[Very happy]] || {{--|2}} || Indirectly makes rebellions less frequent by improving their mood.
+|-
+| [[Superfast wound healing]]<br>[[Fast wound healing]] || {{--|3}}<br>{{--|2}} || Allows slaves to recover faster after being beaten during rebellions or mental breaks. Damaging slaves in melee also raises their suppression far quicker then a warden doing it.
+|-
+| [[Genes#Temperature|Heat/Cold super-tolerant<br>Heat/Cold tolerant]]<br>[[Furskin]]<br>[[Furry tail]] || {{--|2}}<br>{{--|1}}<br>{{--|1}}<br>{{--|1}} || Should be added if in hot or cold biomes, as slave body straps occupy the outer layer and thus cannot be worn with dusters or parkas.
+|}
+{| class="wikitable"
+|+ 
+Improving and countering their faults
+|-
+! Gene !! Total Metabolic Efficiency !! Commentary
+|-
+| [[Genes#Beauty|Very unattractive<br>Unattractive]] || {{+|2}}<br>{{+|1}} || While slaves cannot be ordered to romance other colonists, they will still do it on their own terms. These genes reduce the chance of undesirable relationships from forming, which can make colonists upset if the slave dies. In addition, these provide (relatively) free metabolic efficiency.
+|-
+| [[Genes#Aptitude|Awful intellect/artistic<br>Poor intellect/artistic]] || {{+|2}}<br>{{+|1}} || Slaves cannot research or make art, and effectively have 0 Intellecutial for drug making, so these genes are free metabolic efficiency.
+|-
+| [[Genes#Sleep|No sleep<br>Low sleep]] || {{--|6}}<br>{{--|4}} || Can be installed to increase how long slaves are awake for, especially as they have no recreation need, although it will make rebellions larger due to more slaves being awake at the same time.
+|-
+| [[Smooth tail]]<br>[[Elongated fingers]] || {{--|1}}<br>{{--|1}} || Improves manipulation and thus work speed.
+|-
+| [[Genes#Aptitude|Great aptitude<br>Good aptitude]] || {{--|3}}<br>{{--|1}} || These traits allow slaves to be good at their give task. Crafting can be installed to allow the slave to craft components far quicker, while Mining can allow them to work faster at drills or clear areas for building. These can turn what is otherwise a garbage pawn into one good at certain tasks far quicker.
+|}
+
+=== Titles ===
+{{Royalty|section=1}}
+{{Main|Titles}}
+Slaves can be given honor and ascend the ranks of royalty just as every other pawn can. They function much the same as other nobles, requiring specific clothes, certain standards of bedroom and throne room, etc. with two major exceptions. First is they cannot use permits. Second is that slavery overrides the work type restrictions from conceited nobility.
+
+== Version history ==
+* Between 1.2.2723 and [[Version/1.3.3087|1.3.3087]] - Slave sold penalty reduced from -5 to -3.
+* [[Version/1.3.3072|1.3.3072]] - Tune slave rebellion chances a bit lower, and reduce the effects of some factors. Slave weapon noticing distance reduced from 10 to 6.9. Couples made of a slave/colonist pair no longer want to sleep together despite not being able to share a bed.
+* [[Version/1.3.3074|1.3.3074]] - Slaves no longer slight or insult non-slaves, Slaves never start social fights with non-slaves if insulted, Meleeing a slave now increases suppression, Rebellion chance per slave now relates inversely to the number of slaves on the map, so overall rebellion chance shouldn't climb so aggressively with higher slave counts, Adjust slave rebellion base {{MTB}} 50 days back to 45 days. Ideoligion funerals are no longer expected for slaves. Slaves no longer count for Diversity of Thought. More selective in which weapons increase rebellion chance - now excludes Wood, EMP, Smoke etc.
+* [[Version/1.3.3076|1.3.3076]] - Added Alert for likely slave rebellion.
+* [[Version/1.3.3087|1.3.3080]] - Rebelling slaves now drop shield belt if they have a ranged weapon
+* [[Version/1.3.3087|1.3.3087]] - Lower slave social fight chance by 50%.  Killing a slave in a slave rebellion no longer causes 'Witnessed ally's death' thought.
+* [[Version/1.3.3117|1.3.3117]] - Fix: Wardens stop suppressing slaves if suppression > 50%. Fix: Selling prisoners doesn't trigger negative thoughts on selling to slavers.
+* [[Version/1.3.3200|1.3.3200]] - Slaves are now worth 75% of colonists in terms of map wealth and population.
+* [[Version/1.4.3541|1.4.3541]] - Fix: Emancipated slaves that are drafted stay drafted.
+* [[Version/1.4.3555|1.4.3555]] - Fix: Enslaving a pawn removes unwaveringly loyal.
+* [[Version/1.4.3682|1.4.3682]] - Fix: Slaves freed on exiting map.
+* [[Version/1.6.4850|1.6.4850]] - Fix: Slave terror incorrectly only checked the region that the slave was in.
+
+[[Category:Game mechanics]]

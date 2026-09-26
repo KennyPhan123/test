@@ -1,0 +1,61 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Royalty/Buildings/Condition Causers}}
+|}
+----
+{| {{STDT| c_07}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Psychic suppression" <!-- defName="PsychicSuppression", ParentName="DiseaseBase" -->
+! Psychic suppression
+----
+* Def Name:<br />PsychicSuppression
+* Label:<br />psychic suppression
+| The effect of a psychic suppression field. Coordination and reasoning are muddled.
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|90%|100%|35%}}
+* Initial Severity: '''0.1%'''
+* Is Bad: {{Bad|true}}
+* Ever Curable By Item: {{Bad|false}}
+<!-- Need to figure out how this applies to hediffs that can't be tended
+* Remove On Redress Chance By Days Curve:
+<div><li style="display: inline-table;">
+{| {{STDT| c_07}}
+! Days !! Chance
+|-
+! 0
+| 0%
+|-
+! 2
+| 0%
+|-
+! 7
+| 50%
+|-
+! 20
+| 100%
+|}{{Graph:Chart|width=200|height=200|xAxisTitle=Days|yAxisTitle=Remove On Redress Chance|type=line|x=0, 2, 7, 20|y=0, 0, 0.5, 1|interpolate=monotone|xGrid=|yGrid=}}</li></div>
+-->
+* '''Comps:''' ''Hediff Comp Properties''
+** Comp Class: '''HediffComp_PsychicSuppression'''
+|<!-- Stages -->
+{| {{STDT| c_07}}
+! Label !! Parameters
+|-
+! Psychic suppression
+|<!-- Parameters -->
+* '''[[Consciousness]]'''
+** Set Max Curve Evaluate Stat: '''[[Psychic Sensitivity]]'''
+** Set Max Curve Override:
+<div><li style="display: inline-table;">
+{| {{STDT| c_07}}
+! Psychic<br />Sensitivity !! Consciousness
+|-
+! 0%
+| 100%
+|-
+! 100%
+| 50%
+|}{{Graph:Chart|width=200|height=200|xAxisTitle=Psychic Sensitivity|xAxisFormat=%|xAxisAngle=+45|yAxisTitle=Consciousness|yAxisFormat=%|type=line|x=0, 1|y=1, 0.5|interpolate=monotone|xGrid=|yGrid=}}</li></div>
+|}<noinclude>
+|}</noinclude>

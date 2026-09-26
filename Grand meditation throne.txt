@@ -1,0 +1,105 @@
+{{Royalty}}
+{{Project|Psyfocus}}
+{{See also|altphrase=For other types of seats, see|Chairs}}
+{{Infobox main|furniture
+| name = Grand meditation throne
+| image = Grandthrone.png
+| description = A massive, ornate chair, designed for a dignity-focused psycaster to sit and meditate. Reigning on a throne is a form of meditation that builds up psyfocus. For dignity psycasters, more impressive meditation thrones and thronerooms increase the rate of psyfocus gain.
+| type = Building
+| type2 = Furniture
+| placeable = true
+| path cost = 30
+| cover = 0.4
+| minifiable = true
+| size = 3 ˣ 2
+| mass base = 100
+| flammability = 1
+| hp = 350
+| sell price multiplier = 0.7
+| beauty = 30
+| comfort = 0.9
+| terrain affordance = light
+| research = Complex furniture
+| skill 1 = Construction
+| skill 1 level = 6
+| work to make = 40000
+| stuff tags = Metallic, Stony
+| resource 1 = Stuff
+| resource 1 amount = 300
+| resource 2 = Gold
+| resource 2 amount = 75
+| has quality = true
+| room role = Throne room
+}}
+A '''grand meditation throne''' is a type of [[furniture]] which a designated noble colonist can sit on to meditate for recreation and to regain [[psyfocus]]
+
+== Acquisition ==
+{{Acquisition}}
+
+It can also be found for sale at [[traders]] and as a [[quest]] reward.
+
+== Summary ==
+A grand meditation throne will create a throne room. It can be used as by nobles as a [[meditation focus]]; in order for the throne to be used for meditation, you must assign a noble to it. Specifically, grand meditation thrones are required to meet the requirements of a [[Titles#Baron|Baron]] or higher.
+
+In addition to meditation, grand meditation thrones can be sat on for recreation such as reading [[books]] and watching [[television]]. It can be used as seating at [[table]]s (including [[chess table]] and [[poker table]]) so long as the front-centre tile of the throne is facing the table. Note however that when a pawn is searching for a table to eat at, the search radius is calculated from the back-centre tile of the throne, which is behind the tile that the pawn will sit on. It can be used in front of [[production]] benches if the front-centre tile of the throne is aligned with the sitting position for the workbench.
+
+=== Psyfocus ===
+The grand meditation throne is a Dignified [[meditation focus]], with a base strength of +15% psyfocus / day. If it is in a [[throne room]] that meets the pawns [[Throne#Throne rooms|requirements]], its focus strength is improved by 8%. It otherwise has the exact same meditation effectiveness as the regular [[meditation throne]], so it is more important to use the throne that meets the title's requirements. 
+
+Additionally, both thrones' effectiveness are affected by room [[impressiveness]]. A grand meditation throne has a maximum of +33% psyfocus / day in an Unbelievably impressive room that meets throne requirements.
+
+<div><li style="display: inline-table;">
+{{#vardefine:basesensitivitybonus|0.15}}
+{| {{STDT| c_07 text-center}}
+! Impressiveness Value
+! 0
+! 30
+! 60
+! 100
+! 170+
+|- 
+! Description at Value
+| Awful
+| Mediocre
+| Slightly Impressive
+| Very Impressive
+| Unbelievably Impressive 
+|- 
+!Strength Offset
+| -5%
+| +0%
+| +4%
+| +8%
+| +10%
+|}
+
+{| class="wikitable"
+! Graph
+|-
+| {{Graph:Chart| width = 400 | height = 100 | type = line | xAxisTitle = Room Impressiveness | yAxisTitle = Strength Offset (%) | x = 0, 30, 60, 100, 170, 200 | y = -5, 0, 4, 8, 10, 10 | xAxisMin = 0 | xAxisMax = 200 | yAxisMin = -5 | yAxisMax = 12 | xGrid = | yGrid = }}
+|}
+</li></div>
+'''N.B.''' The room impressiveness descriptors only relate to descriptors the room will have at that specific value. The descriptors themselves do not control the value. A room with 50 room impressiveness will be listed "Slightly Impressive" but will not make the cut off for the 4% increase.
+
+=== Comfort ===
+[[Comfort]] is a measure of how high a pawn can refill their comfort meter while using the piece of furniture. A pawn sitting in a grand meditation throne with a higher comfort value can achieve a higher level. It does not affect the rate at which comfort increases only the maximum level. Comfort levels over 100% have no additional effect.
+Comfort varies by [[quality]] but not material. Grand meditation thrones of the same quality level will all have the same comfort, regardless of what they're constructed from.
+{{Comfort Quality Table}}
+
+Comfort is gained while meditating on the throne, or sitting to watch television.
+
+== Analysis ==
+Grand meditation thrones are expensive and time consuming to build. They are only necessary if you want a Baron or higher. Otherwise, a regular [[meditation throne]] will give the exact same psyfocus gain to anyone of the [[Titles#Praetor|Praetor]] rank or below. The grand throne gives more comfort, but this is not usually worth the material cost or the large increase in [[wealth]]. Plus, an excellent regular throne gives the maximum {{+|10}} comfortable moodlet during meditation.
+
+Multiple people can share a throne room, but each noble requires a separate throne. If you are planning to [[Endings#Royal Ascent|host the High Stellarch]], then prepare another grand throne for them.
+
+{{Building Stats Table}}
+
+== Version history ==
+* ? - Renamed from '''Grand throne''' to '''Grand meditation throne''', and use was changed to psycaster meditation. 
+* ? - Beauty increased from 6 to 30.
+* [[Version/1.2.2719|1.2.2719]] - Fix: Pawns not gaining comfort from throne while meditating.
+* [[Version/1.6.4566|1.6.4566]] - Fix: Error if cached throne becomes despawned.
+
+{{Nav|furniture|wide}}
+[[Category:Furniture]] [[Category:Chair]]

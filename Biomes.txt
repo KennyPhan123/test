@@ -1,0 +1,869 @@
+<!--Top Nav Box-->
+{| align=center
+| {{GameCreation_Nav}}
+|}
+----
+<!-- End of Nav -->
+{{Rewrite|reason=Verification needed. At least a couple of the growing periods for the biomes are wrong, though their exact ranges are unknown.}}
+'''Biomes''' are types of area on a planet, characterized by their terrain properties, [[Weather|climate]], [[Plants|flora]] and [[Animals|fauna]], [[disease]]s and special challenges. Each world tile has one particular biome. There are twelve playable biomes types in RimWorld, which can be divided into three categories: Warm, Hot and Cold. Oceans and lakes appear as world tiles but are not playable biomes. The [[Odyssey DLC]] introduces five new playable biomes, each with a unique gimmick or challenge.
+
+[[File:World overview.png|400px|thumb|right|World Map]]
+
+== Wet biomes ==
+These biomes are rich in flora and fauna, and also have a slightly elevated rate of disease. They generally have year-round growing periods, or longer growing periods at the very least. Traveling speed is fast in normal forests and average in dense forests but slow in marshes and during cold seasons if they have one.
+
+=== Temperate forest ===
+{{Main|Temperate forest}}
+[[File:TemperateForest.png|400px|thumb|right|''{{Q|Temperate forest|Description}}'']]
+
+'''Stats:'''
+* Growing Season: From all year to 20/60 days.
+* Average Temperature: {{Temperature|25}} to {{Temperature|0}}.
+* Temperature Variation: From {{Temperature|35}} in summer to {{Temperature|-25}} in winter.
+* Roads and Rivers: {{Q|Temperate forest|Roads and Rivers}}.
+* Movement Difficulty: 1, but sometimes 3 due to winter.
+* Forageability: {{%|{{Q|Temperate forest|Forageability}} }}. 
+* Grazable: Only during growing season.
+* Disease {{MTB}}: {{Q|Temperate forest|Disease MTB Days}} days.
+
+'''Flora:'''
+{{#ask: [[Type::Plant]] [[Lives In Temperate Forest::>0.000000001]]
+ | format = template
+ | template = DLC Icons
+ | link = none
+ | sep = ,&nbsp;
+ | sort = From DLC, Name
+ | default = None.
+}}
+
+'''Fauna:'''
+{{#ask: [[Type::Animal]] [[Lives In Temperate Forest::>0.000000001]]
+ | format = template
+ | template = DLC Icons
+ | link = none
+ | sep = ,&nbsp;
+ | sort = From DLC, Name
+ | default = None.
+}}
+{{Clear}}
+
+=== Temperate swamp ===
+{{Main|Temperate swamp}}
+[[File:TemperateSwamp.png|400px|thumb|right|''{{Q|Temperate swamp|Description}}'']]
+
+A more wet version of the temperate forest. Like in all swamps, diseases are more common. The marshy soil will probably require [[bridge]]s before constructing buildings and the terrain is really slow to travel, but this biome also has more fertile soil.
+
+'''Stats:'''
+* Growing Season: From all year to 20/60 days.
+* Average Temperature: {{Temperature|25}} to {{Temperature|0}}.
+* Temperature Variation: From {{Temperature|35}} in summer to {{Temperature|-25}} in winter.
+* Roads and Rivers: Yes.
+* Movement Difficulty: 4, but sometimes 6 due to winter.
+* Forageability: 75%. 
+* Grazable: Only during growing season.
+* Disease frequency: 1.5 per year.
+
+'''Flora:'''
+{{#ask: [[Type::Plant]] [[Lives In Temperate Swamp::>0.000000001]]
+ | format = template
+ | template = DLC Icons
+ | link = none
+ | sep = ,&nbsp;
+ | sort = From DLC, Name
+ | default = None.
+}}
+
+'''Fauna:'''
+{{#ask: [[Type::Animal]] [[Lives In Temperate Swamp::>0.000000001]]
+ | format = template
+ | template = DLC Icons
+ | link = none
+ | sep = ,&nbsp;
+ | sort = From DLC, Name
+ | default = None.
+}}
+{{Clear}}
+
+=== Tropical rainforest ===
+{{Main|Tropical rainforest}}
+[[File:TropicalRainforest.png|400px|thumb|right|''{{Q|Tropical rainforest|Description}}'']]
+
+Tropical Rainforests are famous for having many diseases, including [[Disease#Sleeping Sickness|Sleeping Sickness]]: a slow-progressing, long-lasting disease that is exclusive to the tropics.  Many trees make it difficult to clear land and rapid plant growth makes it difficult to keep it clear.
+
+'''Stats:'''
+* Growing Season: From all year to 40/60 days.
+* Average Temperature: {{Temperature|30}} to {{Temperature|15}}.
+* Temperature Variation: From {{Temperature|35}} in summer to {{Temperature|0}} in winter.
+* Roads and Rivers: Yes.
+* Movement Difficulty: 2, rarely 4 due to winter.
+* Forageability: 100%. 
+* Grazable: Most of the time, during growing season.
+* Disease frequency: 1.7 per year.
+
+'''Flora:'''
+{{#ask: [[Type::Plant]] [[Lives In Tropical Rainforest::>0.000000001]]
+ | format = template
+ | template = DLC Icons
+ | link = none
+ | sep = ,&nbsp;
+ | sort = From DLC, Name
+ | default = None.
+}}
+
+'''Fauna:'''
+{{#ask: [[Type::Animal]] [[Lives In Tropical Rainforest::>0.000000001]]
+ | format = template
+ | template = DLC Icons
+ | link = none
+ | sep = ,&nbsp;
+ | sort = From DLC, Name
+ | default = None.
+}}
+{{Clear}}
+
+=== Tropical swamp ===
+{{Main|Tropical swamp}}
+[[File:TropicalSwamp.png|400px|thumb|right|''{{Q|Tropical swamp|Description}}'']]
+
+A more wet version of the Tropical Rainforest. Like in all swamps diseases are more common. The marshy soil will probably require [[bridge]]s before constructing buildings and the terrain is really slow to travel, but this biome also has more fertile soil. Diseases are even more constant here than in Tropical Rainforests, so making a proper hospital and having good doctors is a priority.
+
+'''Stats:'''
+* Growing Season: From all year to 40/60 days.
+* Average Temperature: {{Temperature|30}} to {{Temperature|15}}.
+* Temperature Variation: From {{Temperature|35}} in summer to {{Temperature|0}} in winter.
+* Roads and Rivers: Yes.
+* Movement Difficulty: 4, rarely 6 due to winter.
+* Forageability: 75%. 
+* Grazable: Most of the time, during growing season.
+* Disease frequency: 2.0 per year.
+
+'''Flora:'''
+{{#ask: [[Type::Plant]] [[Lives In Tropical Swamp::>0.000000001]]
+ | format = template
+ | template = DLC Icons
+ | link = none
+ | sep = ,&nbsp;
+ | sort = From DLC, Name
+ | default = None.
+}}
+
+'''Fauna:'''
+{{#ask: [[Type::Animal]] [[Lives In Tropical Swamp::>0.000000001]]
+ | format = template
+ | template = DLC Icons
+ | link = none
+ | sep = ,&nbsp;
+ | sort = From DLC, Name
+ | default = None.
+}}
+{{Clear}}
+
+== Dry biomes ==
+These biomes become progressively dry as they become more arid. Moderate amount of flora and fauna, which drops off as you pick a more extreme biome. Mostly year-round growing periods. Traveling in those biomes is usually fast and rarely slowed by cold seasons.
+
+=== Arid shrubland ===
+{{Main|Arid shrubland}}
+[[File:AridShrubland.png|400px|thumb|right|''{{Q|Arid shrubland|Description}}'']]
+
+'''Stats:'''
+* Growing Season: From all year to 40/60 days.
+* Average Temperature: {{Temperature|30}} to {{Temperature|15}}.
+* Temperature Variation: From {{Temperature|35}} in summer to {{Temperature|0}} in winter.
+* Roads and Rivers: Yes.
+* Movement Difficulty: 1, rarely 3 due to winter.
+* Forageability: 50%. 
+* Grazable: Most of the time, during growing season.
+* Disease frequency: 0.9 per year.
+
+'''Flora:'''
+{{#ask: [[Type::Plant]] [[Lives In Arid Shrubland::>0.000000001]]
+ | format = template
+ | template = DLC Icons
+ | link = none
+ | sep = ,&nbsp;
+ | sort = From DLC, Name
+ | default = None.
+}}
+
+'''Fauna:'''
+{{#ask: [[Type::Animal]] [[Lives In Arid Shrubland::>0.000000001]]
+ | format = template
+ | template = DLC Icons
+ | link = none
+ | sep = ,&nbsp;
+ | sort = From DLC, Name
+ | default = None.
+}}
+{{Clear}}
+
+=== Desert ===
+{{Main|Desert}}
+[[File:Desert.png|400px|thumb|right|''{{Q|Desert|Description}}'']]
+
+With so few animals to hunt, growing crops is a priority on one of the few arable patches.  The hot temperatures can cause problems for colonists and tamed animals.  This biome has patches of soft sand which prevent building, but can be removed with [[moisture pump]]s.
+
+'''Stats:'''
+* Growing Season: From all year to 10/60 days.
+* Average Temperature: {{Temperature|30}} to {{Temperature|0}}.
+* Temperature Variation: From {{Temperature|35}} in summer to {{Temperature|-25}} in winter.
+* Roads and Rivers: Yes.
+* Movement Difficulty: 1, but sometimes 3 due to winter.
+* Forageability: 25%. 
+* Grazable: Only during growing season.
+* Disease frequency: 0.7 per year.
+
+'''Flora:'''
+{{#ask: [[Type::Plant]] [[Lives In Desert::>0.000000001]]
+ | format = template
+ | template = DLC Icons
+ | link = none
+ | sep = ,&nbsp;
+ | sort = From DLC, Name
+ | default = None.
+}}
+
+'''Fauna:'''
+{{#ask: [[Type::Animal]] [[Lives In Desert::>0.000000001]]
+ | format = template
+ | template = DLC Icons
+ | link = none
+ | sep = ,&nbsp;
+ | sort = From DLC, Name
+ | default = None.
+}}
+{{Clear}}
+
+=== Extreme desert ===
+{{Main|Extreme desert}}
+[[File:ExtremeDesert.png|400px|thumb|right|''{{Q|Extreme desert|Description}}'']]
+
+The hot temperatures can cause problems for colonists and tamed animals. Its warm enough for growing plants outdoors, but it has to be done in stony patches around hills and mountains. Even though [[potatoes]] grow better in stony soil, you need to plant [[rice]] first so you will not starve while waiting for [[potatoes]]. [[Berries|Strawberries]] are also a good idea since there is no wood for cooking. Later [[Hydroponics basin|hydroponics]] can be used instead of ground. This biome has patches of soft sand which prevent building, but can be removed with [[moisture pump]]s. Animal migrations may occur, about once every other year.
+
+'''Stats:'''
+* Growing Season: From all year to 30/60 days.
+* Average Temperature: {{Temperature|30}} to {{Temperature|10}}.
+* Temperature Variation: From {{Temperature|35}} in summer to {{Temperature|-5}} in winter.
+* Roads and Rivers: Yes.
+* Movement Difficulty: 1, rarely 3 due to winter.
+* Forageability: 0%. 
+* Grazable: Never.
+* Disease frequency: 0.7 per year.
+
+'''Flora:'''
+{{#ask: [[Type::Plant]] [[Lives In Extreme Desert::>0.000000001]]
+ | format = template
+ | template = DLC Icons
+ | link = none
+ | sep = ,&nbsp;
+ | sort = From DLC, Name
+ | default = None.
+}}
+
+'''Fauna:'''
+{{#ask: [[Type::Animal]] [[Lives In Extreme Desert::>0.000000001]]
+ | format = template
+ | template = DLC Icons
+ | link = none
+ | sep = ,&nbsp;
+ | sort = From DLC, Name
+ | default = None.
+}}
+{{Clear}}
+
+== Cold biomes ==
+These biomes become progressively colder and hostile as they become more intense. Flora and fauna becomes more scarce as you pick a more extreme biome. Mostly seasonal growing periods but may go down to no growing period in more extreme biomes. Traveling in those biomes is usually slow due to marsh and cold seasons which can be very long.
+
+=== Boreal forest ===
+{{Main|Boreal forest}}
+[[File:BorealForest.png|400px|thumb|right|''{{Q|Boreal forest|Description}}'']]
+
+'''Stats:'''
+* Growing Season: 30/60 days to 10/60 days.
+* Average Temperature: {{Temperature|10}} to {{Temperature|-10}}.
+* Temperature Variation: From {{Temperature|25}} in summer to {{Temperature|-35}} in winter.
+* Roads and Rivers: Yes.
+* Movement Difficulty: 1, but often 3 due to winter.
+* Forageability: 75%. 
+* Grazable: Only during growing season.
+* Disease frequency: 1.0 per year.
+
+'''Flora:'''
+{{#ask: [[Type::Plant]] [[Lives In Boreal Forest::>0.000000001]]
+ | format = template
+ | template = DLC Icons
+ | link = none
+ | sep = ,&nbsp;
+ | sort = From DLC, Name
+ | default = None.
+}}
+
+'''Fauna:'''
+{{#ask: [[Type::Animal]] [[Lives In Boreal Forest::>0.000000001]]
+ | format = template
+ | template = DLC Icons
+ | link = none
+ | sep = ,&nbsp;
+ | sort = From DLC, Name
+ | default = None.
+}}
+{{Clear}}
+
+=== Cold bog ===
+{{Main|Cold bog}}
+[[File:Cold Bog.png|400px|thumb|right|''{{Q|Cold bog|Description}}'']]
+
+A more wet version of the Boreal Forest. Like in all swamps, diseases are more common. The marshy soil will probably require [[bridge]]s before constructing buildings and the terrain is really slow to travel, but this biome also has more fertile soil.
+
+'''Stats:'''
+* Growing Season: 30/60 days to 10/60 days.
+* Average Temperature: {{Temperature|10}} to {{Temperature|-10}}.
+* Temperature Variation: From {{Temperature|25}} in summer to {{Temperature|-35}} in winter.
+* Roads and Rivers: Yes.
+* Movement Difficulty: 4, but often 6 due to winter.
+* Forageability: 50%. 
+* Grazable: Only during growing season.
+* Disease frequency: 1.3 per year.
+
+'''Flora:'''
+{{#ask: [[Type::Plant]] [[Lives In Cold Bog::>0.000000001]]
+ | format = template
+ | template = DLC Icons
+ | link = none
+ | sep = ,&nbsp;
+ | sort = From DLC, Name
+ | default = None.
+}}
+
+'''Fauna:'''
+{{#ask: [[Type::Animal]] [[Lives In Cold Bog::>0.000000001]]
+ | format = template
+ | template = DLC Icons
+ | link = none
+ | sep = ,&nbsp;
+ | sort = From DLC, Name
+ | default = None.
+}}
+{{Clear}}
+
+=== Tundra ===
+{{Main|Tundra}}
+[[File:Tundra.png|400px|thumb|right|''{{Q|Tundra|Description}}'']]
+
+Animal migrations may occur once or twice per year. Growing periods are generally very short or non-existent.
+
+'''Stats:'''
+* Growing Season: 20/60 days to never.
+* Average Temperature: {{Temperature|0}} to {{Temperature|-20}}.
+* Temperature Variation: From {{Temperature|25}} in summer to {{Temperature|-50}} in winter.
+* Roads and Rivers: Yes.
+* Movement Difficulty: 1, but most of the time 3 due to winter.
+* Forageability: 50%. 
+* Grazable: Only during growing season.
+* Disease frequency: 0.8 per year.
+
+'''Flora:'''
+{{#ask: [[Type::Plant]] [[Lives In Tundra::>0.000000001]]
+ | format = template
+ | template = DLC Icons
+ | link = none
+ | sep = ,&nbsp;
+ | sort = From DLC, Name
+ | default = None.
+}}
+
+'''Fauna:'''
+{{#ask: [[Type::Animal]] [[Lives In Tundra::>0.000000001]]
+ | format = template
+ | template = DLC Icons
+ | link = none
+ | sep = ,&nbsp;
+ | sort = From DLC, Name
+ | default = None.
+}}
+{{Clear}}
+
+=== Ice sheet ===
+{{Main|Ice sheet}}
+[[File:IceSheet.png|400px|thumb|right|''{{Q|Ice sheet|Description}}'']]
+
+The only land possible to farm is stony patches around hills and mountains, but they need to be [[heater|heated]] indoors and also have [[sun lamp]]s. You will need to hunt, trade and cannibalize until you get a [[heater]] and a [[sun lamp]]. Later, [[moisture pump]]s can create larger growable areas and [[Hydroponics basin|hydroponics]] can be used instead of ground. Geothermal vents can be used for free heating. With so few animals here, any predators that roam in will become hungry soon and target your colonists and animals.
+
+'''Stats:'''
+* Growing Season: Never.
+* Average Temperature: {{Temperature|-20}} to {{Temperature|-40}}.
+* Temperature Variation: From {{Temperature|10}} in summer to {{Temperature|-70}} in winter.
+* Roads and Rivers: No.
+* Movement Difficulty: 1.5, but most of the time 3.5 due to winter.
+* Forageability: 0%. 
+* Grazable: Never.
+* Disease frequency: 0.7 per year.
+
+'''Flora:'''
+{{#ask: [[Type::Plant]] [[Lives In Ice Sheet::>0.000000001]]
+ | format = template
+ | template = DLC Icons
+ | link = none
+ | sep = ,&nbsp;
+ | sort = From DLC, Name
+ | default = None.
+}}
+
+'''Fauna:'''
+{{#ask: [[Type::Animal]] [[Lives In Ice Sheet::>0.000000001]]
+ | format = template
+ | template = DLC Icons
+ | link = none
+ | sep = ,&nbsp;
+ | sort = From DLC, Name
+ | default = None.
+}}
+{{Clear}}
+
+=== Sea ice ===
+{{Main|Sea ice}}
+[[File:SeaIce.png|400px|thumb|right|''{{Q|Sea ice|Description}}'']]
+
+Sea ice maps do not have geothermal vents or [[ruins]] (except at [[Landmarks#Ice_dunes|ice dunes]]{{OdysseyIcon}} landmarks and in [[Quests#Ancient_Complex|ancient complex]]{{IdeologyIcon}} sites). [[Deep drill]]s cannot be used. [[Moisture pump]]s will only generate more ice, which means it is impossible to grow anything on the ground. You will need to do hunting, [[fishing]],{{OdysseyIcon}} [[trading]] and cannibalism until you get a [[heater]], a [[sun lamp]] and a [[hydroponics basin]]. It is worth mentioning that Sea Ice was designed to not allow colony building, only to allow traveling in the area, even though it is possible.
+
+'''Stats:'''
+* Growing Season: Never.
+* Average Temperature: {{Temperature|-20}} to {{Temperature|-30}}.
+* Temperature Variation: From {{Temperature|10}} in summer to {{Temperature|-60}} in winter.
+* Roads and Rivers: No.
+* Movement Difficulty: 1.5, but most of the time 3.5 due to winter.
+* Forageability: 0%. 
+* Grazable: Never.
+* Disease frequency: 0.7 per year.
+
+'''Flora:'''
+{{#ask: [[Type::Plant]] [[Lives In Sea Ice::>0.000000001]]
+ | format = template
+ | template = DLC Icons
+ | link = none
+ | sep = ,&nbsp;
+ | sort = From DLC, Name
+ | default = None.
+}}
+
+'''Fauna:'''
+{{#ask: [[Type::Animal]] [[Lives In Sea Ice::>0.000000001]]
+ | format = template
+ | template = DLC Icons
+ | link = none
+ | sep = ,&nbsp;
+ | sort = From DLC, Name
+ | default = None.
+}}
+{{Clear}}
+
+== Odyssey biomes ==
+{{Odyssey|section=1}}
+These are biomes added with the Odyssey DLC enabled. These biomes usually include gimmicks and challenges that are unique from conventional natural climates.
+
+=== Glowforest ===
+{{Main|Glowforest}}
+[[File:Glowforest.jpg|400px|thumb|right|''{{Q|Glowforest|Description}}'']]
+
+'''Stats:'''
+* Growing Season: From all year to 20/60 days. (Darkened skies)
+* Average Temperature: 25 °C (77 °F) to 0 °C (32 °F).
+* Temperature Variation: From 35 °C (95 °F) in summer to -25 °C (-13 °F) in winter.
+* Roads and Rivers: Yes
+* Movement Difficulty: 2.
+* Forageability: 100%.
+* Grazable: Most of the time, during growing season.
+* Disease frequency: 1.2 per year.
+
+'''Flora:'''
+{{#ask: [[Type::Plant]] [[Lives In Glowforest::>0.000000001]]
+ | format = template
+ | template = DLC Icons
+ | link = none
+ | sep = ,&nbsp;
+ | sort = From DLC, Name
+ | default = None.
+}}
+
+'''Fauna:'''
+{{#ask: [[Type::Animal]] [[Lives In Glowforest::>0.000000001]]
+ | format = template
+ | template = DLC Icons
+ | link = none
+ | sep = ,&nbsp;
+ | sort = From DLC, Name
+ | default = None.
+}}
+{{Clear}}
+
+=== Scarlands ===
+{{Main|Scarlands}}
+[[File:Scarlands.jpg|400px|thumb|right|''{{Q|Scarlands|Description}}'']]
+
+'''Stats:'''
+* Growing Season: 
+* Average Temperature:
+* Temperature Variation:
+* Roads and Rivers: Yes.
+* Movement Difficulty: 1.
+* Forageability: 25%.
+* Grazable:
+* Disease frequency: 1.2 per year.
+
+'''Flora:'''
+{{#ask: [[Type::Plant]] [[Lives In Scarlands::>0.000000001]]
+ | format = template
+ | template = DLC Icons
+ | link = none
+ | sep = ,&nbsp;
+ | sort = From DLC, Name
+ | default = None.
+}}
+
+'''Fauna:'''
+{{#ask: [[Type::Animal]] [[Lives In Scarlands::>0.000000001]]
+ | format = template
+ | template = DLC Icons
+ | link = none
+ | sep = ,&nbsp;
+ | sort = From DLC, Name
+ | default = None.
+}}
+{{Clear}}
+
+=== Grassland ===
+{{Main|Grassland}}
+[[File:Grassland.jpg|400px|thumb|right|''{{Q|Grassland|Description}}'']]
+
+'''Stats:'''
+* Growing Season: 
+* Average Temperature:
+* Temperature Variation:
+* Roads and Rivers: Yes.
+* Movement Difficulty: 1.
+* Forageability: 100%.
+* Grazable:Yes
+* Disease frequency: 1.2 per year.
+
+'''Flora:'''
+{{#ask: [[Type::Plant]] [[Lives In Grassland::>0.000000001]]
+ | format = template
+ | template = DLC Icons
+ | link = none
+ | sep = ,&nbsp;
+ | sort = From DLC, Name
+ | default = None.
+}}
+
+'''Fauna:'''
+{{#ask: [[Type::Animal]] [[Lives In Grassland::>0.000000001]]
+ | format = template
+ | template = DLC Icons
+ | link = none
+ | sep = ,&nbsp;
+ | sort = From DLC, Name
+ | default = None.
+}}
+{{Clear}}
+
+=== Glacial plain ===
+{{Main|Glacial plain}}
+[[File:GlacialPlains.jpg|400px|thumb|right|''{{Q|Glacial plain|Description}}'']]
+
+There are no [[geyser]]s in glacial plain maps. Frozen ruins are hidden in the glaciers on all maps, with much bigger ruins when a [[frozen ruins]] landmark is present.
+
+'''Stats:'''
+* Growing Season: 
+* Average Temperature:
+* Temperature Variation:
+* Roads and Rivers: Yes.
+* Movement Difficulty: 1.5.
+* Forageability: 0%.
+* Grazable:
+* Disease frequency: 0.7 per year.
+
+'''Flora:'''
+{{#ask: [[Type::Plant]] [[Lives In Glacial Plain::>0.000000001]]
+ | format = template
+ | template = DLC Icons
+ | link = none
+ | sep = ,&nbsp;
+ | sort = From DLC, Name
+ | default = None.
+}}
+
+'''Fauna:'''
+{{#ask: [[Type::Animal]] [[Lives In Glacial Plain::>0.000000001]]
+ | format = template
+ | template = DLC Icons
+ | link = none
+ | sep = ,&nbsp;
+ | sort = From DLC, Name
+ | default = None.
+}}
+{{Clear}}
+
+=== Lava field ===
+{{Main|Lava field}}
+[[File:Lava Fields.jpg|400px|thumb|right|''{{Q|Lava field|Description}}'']]
+
+'''Stats:'''
+* Growing Season: 
+* Average Temperature:
+* Temperature Variation:
+* Roads and Rivers: Yes.
+* Movement Difficulty: 1.5.
+* Forageability: 50%.
+* Grazable:
+* Disease frequency: 0.9 per year.
+
+'''Flora:'''
+{{#ask: [[Type::Plant]] [[Lives In Lava Field::>0.000000001]]
+ | format = template
+ | template = DLC Icons
+ | link = none
+ | sep = ,&nbsp;
+ | sort = From DLC, Name
+ | default = None.
+}}
+
+'''Fauna:'''
+{{#ask: [[Type::Animal]] [[Lives In Lava Field::>0.000000001]]
+ | format = template
+ | template = DLC Icons
+ | link = none
+ | sep = ,&nbsp;
+ | sort = From DLC, Name
+ | default = None.
+}}
+{{Clear}}
+
+== Analysis ==
+There are multiple factors that contribute to the difficulty of biomes:
+
+=== Growing crops ===
+{{Stub|section=true|reason=Characterize all biomes}}
+The ability to grow crops is probaly the most '''critical''' factor, as long as the colony can't rely on [[hydroponics basin]]s or [[fungal gravel]] {{IdeologyIcon}}. Biomes like [[extreme desert]], [[ice sheet]] and [[sea ice]] have little to no farmable land.
+
+=== Temperature ===
+Temperature is one of the most '''important''' factors. An average temperature of about {{Temperature|21}} is ideal, since this is the middle between the minimum and maximum comfortable temperature of humans. Besides that warmer biomes are preferable, since they more likely allow for a year-round growing season.
+* ''Easy:'' [[Arid shrubland]],  [[Tropical rainforest]], [[Tropical swamp]] (Average temperature of {{Temperature|21}} and year-round growing season possible.)
+* ''Easy to moderate:'' [[Desert]], [[Extreme desert]], [[Temperate forest]], [[Temperate swamp]] (Average temperature of at least {{Temperature|15}}.)
+* ''Moderate:'' [[Boreal forest]], [[Cold bog]] (Average temperature above {{Temperature|0}} possible.)
+* ''Moderate to difficult:'' [[Tundra]] (Average temperature always below {{Temperature|0}}.)
+* ''Difficult:'' [[Ice sheet]], [[Sea ice]] (Average temperature always below {{Temperature|-20}}.)
+* ''Unknown:'' [[Glacial plain]],{{OdysseyIcon}} [[Glowforest]],{{OdysseyIcon}} [[Grassland]],{{OdysseyIcon}} [[Lava field]],{{OdysseyIcon}} [[Scarlands]] {{OdysseyIcon}}
+
+=== Fauna ===
+{{Stub|section=true|reason=Characterize all biomes}}
+* '''Hunting: important''' – Especially in the early game or when the supply of food relies on hunting the number and type of occurring animals might be important.
+* '''Predators: circumstantial''' – Predators are especially a problem in biomes with already little other wildlife and available food, notably [[ice sheet]] and [[sea ice]]. In all other biomes they pose only a negligible threat.
+
+=== Weather and wildfire ===
+[[Weather]] is a '''circumstantial''' factor. While clear weather is the most preferable, dry thunderstorms can pose a serious threat by creating wildfires, especially when building out of wood or in biomes with dense vegetation. Torrential rain {{OdysseyIcon}} can cause flooding; tox rain {{OdysseyIcon}} can cause [[toxic buildup]].
+* ''Easy:'' [[Arid shrubland]], [[Desert]], [[Extreme desert]], [[Temperate forest]], [[Tundra]], [[Lava field]] {{OdysseyIcon}}
+* ''Easy to moderate:'' [[Ice sheet]], [[Glacial plain]] {{OdysseyIcon}} (Less clear weather or hightened risk from dry thunderstorms.)
+* ''Moderate:'' [[Boreal forest]], [[Cold bog]], [[Tropical rainforest]], [[Tropical swamp]], [[Temperate swamp]], [[Glowforest]],{{OdysseyIcon}} [[Scarlands]] {{OdysseyIcon}} (Chance for torrential rain {{OdysseyIcon}} or tox rain. {{OdysseyIcon}})
+* ''Moderate to difficult:'' [[Sea ice]] (Hightened risk from dry thunderstorms and less clear weather.)
+* ''Difficult:'' [[Grassland]] {{OdysseyIcon}} (Very high risk from dry thunderstorms.)
+
+=== Diseases ===
+[[Disease]]s are on of the more '''circumstantial''' factors for biome difficulty. In some biomes they appear up to three times as often as in other biomes. Also the selection and chance of individual diseases varies.
+* '''Disease {{MTB}}:'''
+** ''Easy:'' [[Desert]], [[Extreme desert]], [[Ice sheet]], [[Sea ice]], [[Glacial plain]],{{OdysseyIcon}} [[Lava field]] {{OdysseyIcon}}(90 days)
+** ''Easy to moderate:'' [[Tundra]] (80 days)
+** ''Moderate:'' [[Arid shrubland]], [[Boreal forest]], [[Temperate forest]], [[Glowforest]] {{OdysseyIcon}}, [[Grassland]],{{OdysseyIcon}} [[Scarlands]] {{OdysseyIcon}} (50-65 days)
+** ''Moderate to difficult:'' [[Temperate swamp]], [[Cold bog]] (40-45 days)
+** ''Difficult:'' [[Tropical rainforest]], [[Tropical swamp]] (30-35 days)
+* '''Disease selection:'''
+** ''Easy:'' [[Cold bog]], [[Tundra]] (Higher chances for [[fibrous mechanites|fibrous]] and [[sensory mechanites]] and therefore less often more serious diseases.)
+** ''Easy to moderate:'' [[Arid shrubland]], [[Boreal forest]], [[Desert]], [[Extreme desert]], [[Glacial plain]],{{OdysseyIcon}} [[Lava field]] {{OdysseyIcon}}
+** ''Moderate:'' [[Ice sheet]], [[Sea ice]] (No gut worms and muscle parasites and therefore more often serious diseases.)
+** ''Moderate to difficult:'' [[Temperate forest]], [[Temperate swamp]], [[Grassland]],{{OdysseyIcon}} [[Scarlands]] {{OdysseyIcon}} (Chance for [[malaria]].)
+** ''Difficult:'' [[Tropical rainforest]], [[Tropical swamp]], [[Glowforest]] {{OdysseyIcon}} (Chance for [[malaria]] and [[sleeping sickness]].)<!-- 
+* Combined
+** ''Easy:'' [[Tundra]], [[Desert]], [[Extreme desert]], [[Glacial plain]],{{OdysseyIcon}} [[Lava field]] {{OdysseyIcon}}
+** ''Easy to moderate:'' [[Arid shrubland]], [[Boreal forest]], [[Ice sheet]], [[Sea ice]]
+** ''Moderate:'' [[Cold bog]]
+** ''Moderate to difficult:'' [[Temperate forest]], [[Temperate swamp]], [[Glowforest]],{{OdysseyIcon}} [[Grassland]],{{OdysseyIcon}} [[Scarlands]] {{OdysseyIcon}}
+** ''Difficult:'' [[Tropical rainforest]], [[Tropical swamp]]-->
+
+=== Fauna ===
+For the relative amount of plants in each of the following categories see the table below.
+* '''Wood: important''' – There are plenty of buildings that require wood. Especially in the early game the colony is highly dependent on the wood chopped from wild trees. In some biomes this can be a serious problem.
+** ''Easy:'' [[Temperate swamp]], [[Tropical swamp]] <!-- 6-10 -->
+** ''Easy to moderate:'' [[Boreal forest]], [[Cold bog]], [[Temperate forest]], [[Tropical rainforest]] <!-- 0.8-2 -->
+** ''Moderate:'' [[Glowforest]],{{OdysseyIcon}} [[Lava field]],{{OdysseyIcon}} [[Scarlands]] {{OdysseyIcon}} <!-- 0.09-0.2 -->
+** ''Moderate to difficult:'' [[Arid shrubland]], [[Desert]], [[Temperate forest]], [[Tundra]], [[Grassland]] {{OdysseyIcon}} <!-- 0.03-0.07 -->
+** ''Impossible:'' [[Extreme desert]], [[Ice sheet]], [[Sea ice]], [[Glacial plain]] {{OdysseyIcon}} <!-- (close to) none -->
+* '''Grazing: important''' – The amount of [[pen animals]] a colony can support by only letting them graze depends mainly on the amount and frequency wild plants are growing. Apart from trees which are inedible for most animals and a few quite rare plants, all wild plants provide the same nutrition. <!-- See table below for the score -->
+** ''Easy:'' [[Tropical rainforest]], [[Tropical swamp]], [[Glowforest]],{{OdysseyIcon}} [[Grassland]] {{OdysseyIcon}}
+** ''Easy to moderate:'' [[Cold bog]], [[Temperate forest]], [[Temperate swamp]]
+** ''Moderate:'' [[Lava field]],{{OdysseyIcon}} [[Scarlands]] {{OdysseyIcon}}
+** ''Moderate to difficult:'' [[Arid shrubland]], [[Boreal forest]], [[Tundra]]
+** ''Impossible:'' [[Desert]], [[Extreme desert]], [[Ice sheet]], [[Sea ice]], [[Glacial plain]] {{OdysseyIcon}}
+* '''Food: circumstantial''' – Forraging [[agave]], [[berry bush]]es, [[glowstool]] and [[agarilux]] can help stretch a food shortage.<!-- See table below for the score -->
+** ''Easy:'' [[Temperate swamp]], [[Tropical rainforest]], [[Glowforest]] {{OdysseyIcon}} <!-- 0,26-0.3 -->
+** ''Easy to moderate:'' [[Arid shrubland]], [[Tropical swamp]], <!-- 0.16-0.23 -->
+** ''Moderate:'' [[Boreal forest]], [[Temperate forest]], [[Grassland]],{{OdysseyIcon}} [[Lava field]] {{OdysseyIcon}} <!-- 0.06-0.13 -->
+** ''Moderate to difficult:'' [[Desert]], [[Tundra]], [[Scarlands]] {{OdysseyIcon}} <!-- 0.01-0.05 -->
+** ''Impossible:'' [[Extreme desert]], [[Ice sheet]], [[Sea ice]], [[Glacial plain]] {{OdysseyIcon}} <!-- (close to) none -->
+* '''Herbal medicine: circumstantial''' – Relying on [[wild healroot]] plants for [[herbal medicine]] production is not advisable, although it might be possible in some biomes:
+** ''Easy:'' [[Temperate swamp]] <!--  -->
+** ''Moderate:'' [[Cold bog]], [[Temperate forest]], [[Grassland]] {{OdysseyIcon}}<!--  -->
+** ''Moderate to difficult:'' [[Boreal forest]], [[Tundra]]<!--  -->
+** ''Impossible:'' All other biomes.<!--  -->
+
+=== Overview ===
+{{Image wanted|reason=Requesting updated versions of biomes intensity, possibly with correct temperature ranges instead of cold/warm/hot|section=true}}
+The following is a simple summary of the biomes by difficulty, overall cold biomes are more challenging than their hot counterparts.
+
+[[File:Rimworld_biomes_difficulty_graph.png|1250px|Biome Intensity Diagram]]
+<!--
+Overall the biomes can be categorized in roughly the following difficulty lewels. Note that this is only a guideline and heavily depends on difficulty settings, scenario, playstile and the parameters of the specific map:
+
+* '''Easy:'''
+* '''Easy to moderate:'''
+* '''Moderate:'''
+* '''Moderate to difficult:'''
+* '''Difficult:'''
+[[Arid shrubland]], [[Boreal forest]], [[Cold bog]], [[Desert]], [[Extreme desert]], [[Ice sheet]], [[Sea ice]], [[Tropical rainforest]], [[Tropical swamp]], [[Temperate forest]], [[Temperate swamp]], [[Tundra]], [[Glacial plain]],{{OdysseyIcon}} [[Glowforest]],{{OdysseyIcon}} [[Grassland]],{{OdysseyIcon}} [[Lava field]],{{OdysseyIcon}} [[Scarlands]] {{OdysseyIcon}} 
+-->
+
+== Comparison table ==
+<!-- Variables
+-->{{#vardefine:AgaveYield|{{Q|Agave|Harvest Yield}} }}<!--
+-->{{#vardefine:BerryYield|{{Q|Berry bush|Harvest Yield}} }}<!--
+-->{{#vardefine:GlowYield|{{Q|Glowstool|Harvest Yield}} }}<!--
+-->{{#vardefine:AgariYield|{{Q|Agarilux|Harvest Yield}} }}<!--
+-->{{#vardefine:HealrootYield|{{Q|Wild healroot|Harvest Yield}} }}<!--
+-->{{#vardefine:AnimaYield|{{Q|Anima tree|Harvest Yield}} }}<!--
+-->{{#vardefine:ArcheanYield|{{Q|Archean tree|Harvest Yield}} }}<!--
+-->{{#vardefine:BambooYield|{{Q|Bamboo tree|Harvest Yield}} }}<!--
+-->{{#vardefine:BirchYield|{{Q|Birch tree|Harvest Yield}} }}<!--
+-->{{#vardefine:BonsaiYield|{{Q|Bonsai tree|Harvest Yield}} }}<!--
+-->{{#vardefine:BurnedYield|{{Q|Burned stump|Harvest Yield}} }}<!--
+-->{{#vardefine:CecropiaYield|{{Q|Cecropia tree|Harvest Yield}} }}<!--
+-->{{#vardefine:ChoppedYield|{{Q|Chopped stump|Harvest Yield}} }}<!--
+-->{{#vardefine:CypressYield|{{Q|Cypress tree|Harvest Yield}} }}<!--
+-->{{#vardefine:DragoYield|{{Q|Drago tree|Harvest Yield}} }}<!--
+-->{{#vardefine:FibercornYield|{{Q|Fibercorn|Harvest Yield}} }}<!--
+-->{{#vardefine:GauranlenYield|{{Q|Gauranlen tree|Harvest Yield}} }}<!--
+-->{{#vardefine:GraypineYield|{{Q|Gray pine tree|Harvest Yield}} }}<!--
+-->{{#vardefine:MapleYield|{{Q|Maple tree|Harvest Yield}} }}<!--
+-->{{#vardefine:OakYield|{{Q|Oak tree|Harvest Yield}} }}<!--
+-->{{#vardefine:PalmYield|{{Q|Palm tree|Harvest Yield}} }}<!--
+-->{{#vardefine:PebbleYield|{{Q|Pebble cactus|Harvest Yield}} }}<!--
+-->{{#vardefine:PineYield|{{Q|Pine tree|Harvest Yield}} }}<!--
+-->{{#vardefine:PoluxYield|{{Q|Polux tree|Harvest Yield}} }}<!--
+-->{{#vardefine:PoplarYield|{{Q|Poplar tree|Harvest Yield}} }}<!--
+-->{{#vardefine:RatpalmYield|{{Q|Rat palm tree|Harvest Yield}} }}<!--
+-->{{#vardefine:SaguaroYield|{{Q|Saguaro cactus|Harvest Yield}} }}<!--
+-->{{#vardefine:SmashedYield|{{Q|Smashed stump|Harvest Yield}} }}<!--
+-->{{#vardefine:SnagrootYield|{{Q|Snagroot tree|Harvest Yield}} }}<!--
+-->{{#vardefine:TeakYield|{{Q|Teak tree|Harvest Yield}} }}<!--
+-->{{#vardefine:TimbershroomYield|{{Q|Timbershroom|Harvest Yield}} }}<!--
+-->{{#vardefine:WillowYield|{{Q|Willow tree|Harvest Yield}} }}<!--
+-->{{#vardefine:WitchwoodYield|{{Q|Witchwood tree|Harvest Yield}} }}<!--
+--><includeonly><onlyinclude>
+|-{{#vardefine:NaMe|{{#switch:{{{?Name}}}|Arid shrubland = Arid Shrubland|Boreal forest = Boreal Forest|Cold bog = Cold Bog|Glacial plain = Glacial Plain|Lava field = Lava Field|Temperate forest = Temperate Forest|Temperate swamp = Temperate Swamp|Tropical rainforest = Tropical Rainforest|Tropical swamp = Tropical Swamp|#default={{{?Name}}}}}}}
+! {{DLC Icons|{{{?Name}}} }}
+| {{{?Animal Density}}}
+| {{{?Plant Density}}}
+| {{{?Max Fish Population}}}
+| {{#if:{{{?Wild Plant Regrow Days}}}|{{{?Wild Plant Regrow Days}}}| - }}
+| {{#if:{{{?Wild Plant Regrow Days}}}|{{#switch:{{{?Wild Plant Regrow Days}}}|0|?=–|#default={{#expr:(
+{{Q|Agave|Lives In {{#var:NaMe}}|0}}*{{#var:AgaveYield}} + 
+{{Q|Berry bush|Lives In {{#var:NaMe}}|0}}*{{#var:BerryYield}} + 
+{{Q|Glowstool|Lives In {{#var:NaMe}}|0}}*{{#var:GlowYield}} + 
+{{Q|Agarilux|Lives In {{#var:NaMe}}|0}}*{{#var:AgariYield}}
+) / {{{?Flora Commonality Sum}}} * {{{?Plant Density}}} / {{{?Wild Plant Regrow Days}}} * 100 round 2}} }}| - }}
+| {{#if:{{{?Wild Plant Regrow Days}}}|{{#switch:{{{?Wild Plant Regrow Days}}}|0|?=–|#default={{#if:{{Q|Wild healroot|Lives In {{#var:NaMe}}}}|{{#expr:({{Q|Wild healroot|Lives In {{#var:NaMe}}|0}}*{{#var:HealrootYield}}) / {{{?Flora Commonality Sum}}} * {{{?Plant Density}}} / {{{?Wild Plant Regrow Days}}} * 1000 round 2}}|–}} }}| - }}
+| {{#if:{{{?Wild Plant Regrow Days}}}|{{#switch:{{{?Wild Plant Regrow Days}}}|0|?=–|#default={{#expr:(
+{{Q|Anima tree|Lives In {{#var:NaMe}}|0}}*{{#var:AnimaYield}} + 
+{{Q|Archean tree|Lives In {{#var:NaMe}}|0}}*{{#var:ArcheanYield}} + 
+{{Q|Bamboo tree|Lives In {{#var:NaMe}}|0}}*{{#var:BambooYield}} + 
+{{Q|Birch tree|Lives In {{#var:NaMe}}|0}}*{{#var:BirchYield}} + 
+{{Q|Bonsai tree|Lives In {{#var:NaMe}}|0}}*{{#var:BonsaiYield}} + 
+{{Q|Burned stump|Lives In {{#var:NaMe}}|0}}*{{#var:BurnedYield}} + 
+{{Q|Cecropia tree|Lives In {{#var:NaMe}}|0}}*{{#var:CecropiaYield}} + 
+{{Q|Chopped stump|Lives In {{#var:NaMe}}|0}}*{{#var:ChoppedYield}} + 
+{{Q|Cypress tree|Lives In {{#var:NaMe}}|0}}*{{#var:CypressYield}} + 
+{{Q|Drago tree|Lives In {{#var:NaMe}}|0}}*{{#var:DragoYield}} + 
+{{Q|Fibercorn|Lives In {{#var:NaMe}}|0}}*{{#var:FibercornYield}} + 
+{{Q|Gauranlen tree|Lives In {{#var:NaMe}}|0}}*{{#var:GauranlenYield}} + 
+{{Q|Gray pine tree|Lives In {{#var:NaMe}}|0}}*{{#var:GraypineYield}} + 
+{{Q|Maple tree|Lives In {{#var:NaMe}}|0}}*{{#var:MapleYield}} + 
+{{Q|Oak tree|Lives In {{#var:NaMe}}|0}}*{{#var:OakYield}} + 
+{{Q|Palm tree|Lives In {{#var:NaMe}}|0}}*{{#var:PalmYield}} + 
+{{Q|Pebble cactus|Lives In {{#var:NaMe}}|0}}*{{#var:PebbleYield}} + 
+{{Q|Pine tree|Lives In {{#var:NaMe}}|0}}*{{#var:PineYield}} + 
+{{Q|Polux tree|Lives In {{#var:NaMe}}|0}}*{{#var:PoluxYield}} + 
+{{Q|Poplar tree|Lives In {{#var:NaMe}}|0}}*{{#var:PoplarYield}} + 
+{{Q|Rat palm tree|Lives In {{#var:NaMe}}|0}}*{{#var:RatpalmYield}} + 
+{{Q|Saguaro cactus|Lives In {{#var:NaMe}}|0}}*{{#var:SaguaroYield}} + 
+{{Q|Smashed stump|Lives In {{#var:NaMe}}|0}}*{{#var:SmashedYield}} + 
+{{Q|Snagroot tree|Lives In {{#var:NaMe}}|0}}*{{#var:SnagrootYield}} + 
+{{Q|Teak tree|Lives In {{#var:NaMe}}|0}}*{{#var:TeakYield}} + 
+{{Q|Timbershroom|Lives In {{#var:NaMe}}|0}}*{{#var:TimbershroomYield}} + 
+{{Q|Willow tree|Lives In {{#var:NaMe}}|0}}*{{#var:WillowYield}} + 
+{{Q|Witchwood tree|Lives In {{#var:NaMe}}|0}}*{{#var:WitchwoodYield}}
+) / {{{?Flora Commonality Sum}}} * {{{?Plant Density}}} / {{{?Wild Plant Regrow Days}}} * 10 round 2}} }}| - }}
+| {{#if:{{{?Grazing Score}}}|{{{?Grazing Score}}}| - }}
+| {{{?Forageability}}}
+| {{{?Disease MTB Days}}}
+| {{{?Movement Difficulty}}}
+| {{Temperature|{{{?Min Temperature}}}|{{{?Max Temperature}}} }}
+| {{{?Min rainfall}}}
+| {{{?Max rainfall}}}
+| {{{?Min swampiness}}}
+| {{{?Max swampiness}}}
+</onlyinclude></includeonly>
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_21 text-center}}
+! Biome !! Animal<br/>density !! Plant<br/>density !! Max Fish Population {{OdysseyIcon}} !! Wild plant<br/>regrow (days)
+! Food foraging score<ref>How much raw food can be harvested from wild plants ''relative'' to other biomes. Accounts for plant density, wild plant regrow days and the relative commonality of harvestable plants and their base harvest yield.</ref>
+! Medicine foraging score<ref>How much herbal medicine can be harvested from wild plants ''relative'' to other biomes. Accounts for plant density, wild plant regrow days and the relative commonality of wild healroot plants.</ref>
+! Wood foraging score<ref>How much wood can be harvested from wild plants ''relative'' to other biomes. Accounts for plant density, wild plant regrow days and the relative commonality of harvestable plants and their base harvest yield.</ref>
+! Grazing score<ref>How much nutrition can be grazed from wild plants ''relative'' to other biomes. Accounts for each plant's nutrition and commonality in the biome, and the plant density and wild plant regrow days of the biome. Does not count the nutrition of trees.</ref>
+! [[Forage]]-<br/>ability<ref>How much food a caravan can forage when traveling over a tile of that biome.</ref> !! Disease<br/>{{MTB}} (days) !! Movement<br/>difficulty !! data-sort-type="number" | [[Temperature]]<br/>range !! Min.<br/>[[rain]]fall !! Max.<br/>rainfall !! Min.<br/>swampiness !! Max.<br/>swampiness
+|-
+{{#ask: [[Type::Biome]] [[Name::!Lake]] [[Name::!Ocean]]
+ | ?Name = ?Name
+ | ?Animal Density = ?Animal Density
+ | ?Plant Density = ?Plant Density
+ | ?Max Fish Population = ?Max Fish Population
+ | ?Wild Plant Regrow Days = ?Wild Plant Regrow Days
+ | ?Flora Commonality Sum = ?Flora Commonality Sum
+ | ?Forageability = ?Forageability
+ | ?Disease MTB Days = ?Disease MTB Days
+ | ?Movement Difficulty = ?Movement Difficulty
+ | ?Min Temperature = ?Min Temperature
+ | ?Max Temperature = ?Max Temperature
+ | ?Min rainfall = ?Min rainfall
+ | ?Max rainfall = ?Max rainfall
+ | ?Min swampiness = ?Min swampiness
+ | ?Max swampiness = ?Max swampiness
+ | ?Grazing Score = ?Grazing Score
+ | format = template
+ | template = :Biomes
+ | named args = true
+ | link = none
+ | sort = From DLC, Name
+ | default = <td></td>
+}}
+|}
+</li></div>
+<references/>
+
+== Version history ==
+* [[Version/0.6.532|0.6.532]] - Added
+* [[Version/0.7.581|0.7.581]] - Tropical rainforest added.
+* [[Version/0.8.657|0.8.657]] - Boreal forest and tundra added
+* [[Version/0.11.877|0.11.877]] - Ice sheet now playable.
+* [[Version/0.13.1135|0.13.1135]] - Extreme Desert biome added.
+* [[Version/0.16.1393|0.16.1393]] - Sea Ice biome added.
+* [[Version/0.18.1722|0.18.1722]] - Added Swamp biomes: Tropical swamp, Temperate swamp, Cold bog.
+* [[Odyssey DLC]] release - Added Biomes: Glacial plain, Glowforest, Grassland, Lava field, Scarlands. 
+
+{{nav|biomes|wide}}
+[[Category:Environment]][[Category:Biomes]]

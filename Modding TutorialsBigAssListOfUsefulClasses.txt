@@ -1,0 +1,66 @@
+{{BackToTutorials}}
+{{Humour}}
+
+RimWorld has a few thousand classes and a few hundred thousand lines of code. If you want full documentation of every line of code, you're outta luck. Nobody comments their code that thoroughly, the wonderful people over at Ludeon studios are no exception. See your Source folder for evidence. If you're really that desperate for extensive soul-draining documentation, I'm available for hire starting at 200 bucks per hour. In lieu of that, have a dump of classes I know are useful.
+
+=Requirements=
+* A decompiler, because there's no way in hell I'm going to document all the classes here.
+
+=Gen=
+* All classes starting with ''Gen''. GenDate, GenLocalDate, GenDraw, GenAdj, whatever. They contain useful (extension) methods for Time, coordinations, you name it. GenText probably could've sorted this list alphabetically amirite. (HAha, no. Use LINQ instead.)
+
+=Utility=
+* All classes ending with ''Utility''. FoodUtility, RestUtility, PawnUtility, MassUtility, Area*, Roof*, Snow* -- you get the idea.
+
+=Maker=
+* All classes ending in ''Maker''. Get yer hediffs, things, lords, zones, sites and filth here!
+
+=Tuning=
+* All classes ending in ''Tuning''. Not actually useful in finding where stuff is used because these constants all get converted into raw values at compile time, but still useful as a reference.
+
+=Find=
+''Find'' is like game manager. If you're looking for a singleton or reference to some manager, you'll likely find it here. Letterstack, Archive, StoryWatcher, ResearchManager, World, FactionManager, all the good stuff.
+
+=PawnsFinder=
+I'm sure you can figure this one out.
+
+=Map=
+Yeah. Map is useful. Who would've suspected. It contains useful references to things like ListerBuildings, ListerThings, LordManagers, ZoneManager -- it's your entry way to a bunch of other useful things.
+
+=Pawn=
+No joke. And you wouldn't believe all the instances that Pawn exposes! Pawns have health, needs, inventory, jobs, story, equipment and just way too much to mention.
+
+=Thing=
+Yes, good for you.
+
+=DefDatabase=
+Wanna look up a Def? The DefDatabase will hook you up. 
+  EXAMPLEDEF myDef = DefDatabase<EXAMPLEDEF>.GetNamed("exampleDefName");
+That's where all those examples went!
+
+=CellFinder=
+Found it.
+
+=Command=
+Like Gizmos.
+
+=Listing_Standard=
+For settings.
+
+=Gizmo=
+Handy doodads that can do things.
+
+=BoolUnknown=
+It's a bird! It's a plane! It's a bool? Hahaha. This is just a nullable bool. C# has 'em natively too, you know.
+
+=LoadedModManager=
+Find all loaded mods.
+
+=Pair<T1, T2>=
+Wishes it was a tuple for .NET 3.5.
+
+=Rand=
+The bane of Multiplayer. Use this to decide which pawn dies next.
+
+
+[[Category:Modding tutorials]]

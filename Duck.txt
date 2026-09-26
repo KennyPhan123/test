@@ -1,0 +1,130 @@
+{{Image wanted|reason=Flying animation}}
+{{Infobox main|animal
+| page verified for version = 1.3.3101
+| name = Duck
+| image = DuckMale east.png
+| description = A very common type of farm bird, also appearing in the wild, the duck is raised for its delicious meat. It grows quick but lays eggs quite rarely.
+| type = Animal
+| movespeed = 2.1
+| baseleatheramount = 0
+| min comfortable temperature = -10
+| max comfortable temperature = 40
+| toxic resistance = 0.5
+| toxic environment resistance = 0
+| flammability = 0.7
+| marketvalue = 60
+| filth rate = 4
+| eggsmin = 1
+| eggsmax = 1
+| eggs_avg = 1
+| eggtime = 1
+| fertilized egg name = Duck egg (fert.)
+| unfertilized egg name = Duck egg (unfert.)
+| combatPower = 30
+| bodysize = 0.3
+| healthscale = 0.35
+| hungerrate = 0.175
+| diet = herbivorous
+| wildness = 0
+| manhuntertame = 0
+| manhunter = 0
+| roamMtb = 7
+| trainable = none
+| mateMtb = 8
+| babyscale = 0.1
+| lifespan = 6
+| juvenileage = 0.12
+| maturityage = 0.2
+| tradeTags = AnimalFarm, AnimalCommon
+| baby name = duckling
+| attack1dmg = 3
+| attack1type = Scratch
+| attack1cool = 1.5
+| attack1part = feet
+| attack2dmg = 4
+| attack2type = Bite
+| attack2cool = 2
+| attack2part = beak
+| attack3dmg = 2
+| attack3type = Blunt
+| attack3cool = 1.5
+| attack3part = head
+| attack3chancefactor = 0.2
+| isCoastal = false
+| livesin_temperateswamp = 1
+| livesin_coldbog = 1
+}}
+'''Ducks''' (or '''ducklings''' for young ducks) are small, domesticated waterfowl. Like [[chicken]]s, ducks mature quickly and lay eggs often, making them both good meal birds and sources of [[Duck egg (unfert.)|eggs]]. Males of the species can be distinguished by their green heads and two-tone body while females have a solid colour head and body with darker wings.
+
+== Acquisition ==
+Ducks can be found in {{Habitats}}. They can either be tamed by a [[Work #Handle|handler]] or self-tame in a random event. 
+
+Ducks can be bought and sold in other [[Trade#Faction base|faction bases]] and from [[Trade#Exotic goods trader 2|exotic goods traders]] and [[Trade#Bulk goods trader 2|bulk goods traders]]. Ducks purchased from traders will already be tamed.
+
+== Summary == 
+{{Pen Animal Note|Ducks}}
+
+A female duck produces {{P|Eggs Per Clutch Average}} [[egg]] every {{P|Egg Laying Interval}} day. Ducks can lay both [[Chicken egg (unfert.)|unfertilized]] and [[Chicken egg (fert.)|fertilized]] eggs, depending on if it has mated with a male.
+
+== Analysis ==
+Ducks are the second best animal for egg production, and one of the best overall animals for meat production. Ducks reproduce rapidly.
+
+Ducks are nearly identical to [[chicken]]s, providing the same yields in both meat and eggs. However, ducks consume 20% more nutrition, meaning that chickens are the better livestock. If chickens are not available but ducks are, then ducks can be a suitable replacement. 
+
+=== Eggs ===
+An adult duck consumes {{P|Real Hunger Rate}} nutrition per day, and produces {{#vardefineecho:egg_nutr_per_day|{{#expr:{{P|Eggs Per Clutch Average}}/{{P|Egg Laying Interval}}*{{Q|Chicken egg (unfert.)|Nutrition}}}}}} nutrition of eggs each day. This results in a nutrition efficiency of {{%|{{#var:egg_nutr_per_day}}/({{P|Base Hunger Rate}}*1.6) round 3}} when unfertilized eggs are eaten. [[Overeating]], and the existence of males, will lower nutrition efficiency in practice.
+
+Note that slaughtering ducklings gives more nutrition than eating unhatched eggs (0.6 from meat rather than {{Q|Duck egg (fert.)|Nutrition}} from 1 egg). However, a handler has to actually slaughter each duck, and a butcher's yields are multiplied by [[Butchery Efficiency]]. So if you don't have a skilled cook, eggs may be better for nutrition. Also, eggs are vegetarian.
+
+=== Meat ===
+When slaughtered, a duck yields {{#vardefineecho:baby_meat|{{Meat Leather Curve|{{#expr:{{P|Body Size}}*0.1*140}}}}}} meat as a duckling; {{Meat Leather Curve|{{#expr:{{P|Body Size}}*0.5*140}}}} as a juvenile; or {{Meat Leather Curve|{{#expr:{{P|Body Size}}*140}}}} as an adult. No leather is yielded.
+
+When ducklings are slaughtered, an always-fertilized female duck produces {{#expr:{{Meat Production|{{PAGENAME}}|Baby}} round 2}} nutrition per day, resulting in a nutrition efficiency of {{%|{{Meat Production|{{PAGENAME}}|Baby}}/({{P|Base Hunger Rate}}*1.6) round 3}} when not considering males, or {{%|{{Meat Production|{{PAGENAME}}|Baby|{{#vardefineecho:femaleratio|{{#expr: 2/3*24*{{P|Egg Laying Interval}}/{{P|Mate Mtb Hours}} round 2}}}}}}/{{Nutrition Consumption|{{PAGENAME}}|Baby|{{#var:femaleratio}}|1}} round 3}} when accounting for the {{#var:femaleratio}}:1 female:male ratio needed to achieve a good [[Animals#Mating|fertilization rate]].
+
+As a duck grows into adulthood, it will consume {{#expr:{{Consumption Upto Adulthood}} round 2}} nutrition in total, and will yield {{#expr:0.05*({{P|Meat Yield}} - {{#var:baby_meat}})}} more nutrition when slaughtered than it would as a baby. Therefore, it is better to slaughter ducks as soon as they hatch from an egg.
+
+When slaughtered as ducklings, ducks are better than almost all animals in terms of theoretical meat : food consumption ratio, below [[chicken]]s and [[tortoise]]s. This efficiency is lower than it seems, as ducks are prone to [[overeating]]. Due to the amount of slaughtering required with ducks, players may prefer to ranch [[horse]]s or [[ibex]] instead.
+
+=== Feeding ===
+A duck consumes {{#Expr: 1.6 * {{P|Base Hunger Rate}}}} nutrition per day, or roughly {{#Expr: ceil(1.6 * {{P|Base Hunger Rate}}/{{Q|Hay|Nutrition}})}} [[hay]].
+
+The following is a list of how many tiles of [[haygrass]] it takes to sustain a mature duck. 
+* '''Gravel:''' {{#Expr: ceil(1.6 * {{P|Base Hunger Rate}}/{{Q|Hay|Nutrition}})/({{Q|Haygrass|Harvest Yield}}/({{Q|Haygrass|Real Grow Days}} / (((0.7-1)*{{Q|Haygrass|Fertility Sensitivity}}) + 1))) round 2}}
+* '''Soil:''' {{#Expr: ceil(1.6 * {{P|Base Hunger Rate}}/{{Q|Hay|Nutrition}})/({{Q|Haygrass|Harvest Yield}}/({{Q|Haygrass|Real Grow Days}} / (((1.0-1)*{{Q|Haygrass|Fertility Sensitivity}}) + 1))) round 2}}
+* '''Rich Soil:''' {{#Expr: ceil(1.6 * {{P|Base Hunger Rate}}/{{Q|Hay|Nutrition}})/({{Q|Haygrass|Harvest Yield}}/({{Q|Haygrass|Real Grow Days}} / (((1.4-1)*{{Q|Haygrass|Fertility Sensitivity}}) + 1))) round 2}}
+
+== Training ==
+{{TrainingTable}}
+
+== Health ==
+{{Animal Health Table|Bird}}
+{{Pawn Attack Table}}
+
+== Gallery ==
+<gallery>
+DuckMale east.png|Male duck facing east
+DuckMale north.png|Male duck facing north
+DuckMale south.png|Male duck facing south
+</gallery>
+<gallery>
+DuckFemale east.png|Female duck facing east
+DuckFemale north.png|Female duck facing north
+DuckFemale south.png|Female duck facing south
+</gallery><!-- Shares desicated chicken texture for decay-->
+<gallery>
+Dessicated chicken east.png|Dessicated facing east
+Dessicated Chicken north.png|Dessicated facing north
+Dessicated Chicken south.png|Dessicated facing south
+</gallery>
+
+== Trivia ==
+* The RimWorld duck appears to be based on the [[Wikipedia:Mallard|Mallard]].
+
+== Version history ==
+* [[Version/1.1.0|1.1.0]] - Added as part of the integration of the Vanilla Animals Expanded - Livestock mod into the base game.
+* [[Version/1.3.3066|1.3.3066]] - Adjusted to be more similar to chicken as a part of a large livestock rebalance
+* [[Version/1.6.4518|1.6.4518]] - Ducks can now spawn in cold bog and temperate swamp biomes. Previously, they were only available in events or from trade.
+
+{{nav|animal}}
+[[Category:Animals]]
+[[Category:Farm animal]]

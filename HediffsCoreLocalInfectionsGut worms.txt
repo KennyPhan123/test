@@ -1,0 +1,51 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Local/Infections}}
+|}
+----
+{| {{STDT| c_15}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Gut worms" <!-- defName="GutWorms", ParentName="InfectionBase" -->
+! Gut worms
+----
+* Def Name:<br />GutWorms
+* Label:<br />gut worms
+| Parasitic worms in the gut. They cause vomiting. They also consume the victim's food, which increases hunger.
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|80%|80%|35%}}
+* Initial Severity: '''0.1%'''
+* Is Infection: {{Bad|true}}
+* Makes [[Thoughts#Sick|Sick]] Thought: {{Bad|true}}
+* Tendable: {{Good|true}}
+* '''Comps:''' ''Tend Duration''
+** Base Tend Duration Hours: '''48'''
+** Disappears At Total Tend Quality: '''300%'''
+* '''Remove On Redress Chance By Days Curve:'''
+<div><li style="display: inline-table;">
+{| {{STDT| c_15}}
+! <abbr title="Days as a World Pawn">Days</abbr> !! <abbr title="Chance to remove on Pawn Generator Redress">Chance</abbr>
+|-
+! 0
+| 0%
+|-
+! 2
+| 0%
+|-
+! 7
+| 50%
+|-
+! 20
+| 100%
+|}</li></div>
+|<!-- Stages -->
+{| {{STDT| c_15}}
+! Label !! Parameters
+|-
+! Gut worms
+|<!-- Parameters -->
+* Pain Offset: {{++|20%}}
+* Hunger Rate Factor Offset: {{++|100%}}
+* Vomit {{MTB}} Days: '''1'''
+|}<noinclude>
+|}</noinclude>

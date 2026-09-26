@@ -1,0 +1,67 @@
+{{Infobox main|resource
+| name = Firefoam shell
+| image = Shell firefoam c.png
+| description = A pressurized shell filled with fire-retardant foam. Can be fired from mortars or installed as a trap. Explodes when damaged.
+| type = Crafted resources
+| type2 = Mortar shell
+| tech level = Industrial
+| path cost = 14
+| stack limit = 25
+| beauty = 
+| flammability = 1.0
+| marketvalue = 55
+| mass base = 1.25
+| hp = 60
+| damage type = Extinguish
+| damage = 0
+| deterioration = 1.5
+| velocity = 41
+| blastRadius =  5
+| skill 1 = Crafting
+| skill 1 level = 4
+| work to make = 800
+| production facility 1 = Machining table
+| research = Firefoam
+| resource 1 = Steel
+| resource 1 amount = 25
+| defName = Shell_Firefoam
+| thingCategories = MortarShells
+| tradeTags = MortarShell
+| page verified for version = 1.3.3066
+}}
+The '''firefoam shell''' is a type of [[mortar shell]] that upon exploding, spreads [[firefoam]], extinguishing all fires and preventing new ones in a radius around the detonation.
+
+== Acquisition ==
+{{Acquisition}} The steel cost is increased to 35 if the [[Classic mortars]] difficulty option is enabled.
+
+It can also be purchased from [[traders]].
+
+== Summary ==
+[[File:Firefoam shell radius.png|250px|thumb|left|From smallest to largest, the radius of the shell's AoE when fired, when a single shell cooks off, and when an entire stack cooks off.]]
+When fired from a mortar, {{lc:{{P|Name}}}}s spreads [[firefoam]] in a {{P|Blast Radius}} tile radius, extinguishing all fires and preventing new ones.
+
+When damaged beyond 70% of its health, it will explode after between {{ticks|30}} and {{ticks|60}}, spread firefoam in a radius around itself. The radius depends on the quantity in the stack, with a single shell covering a 9.9 tile radius, and expanding this radius proportional to the square root of the stack size times 0.4 up to a maximum radius of {{#expr: 9.9+((24*0.4)^0.5) round 2}} tiles at a full stack of 25.
+
+== Usage ==
+Firefoam shells can be used in the following recipes:
+{{Ingredient List|noCollapse=true}}
+
+== Analysis ==
+Actually firing a firefoam shell from a mortar is very niche. The tiny, 5-tile radius isn't enough to cover large-scale fires, but mortars lack the precision to drop on small fires accurately. Due to the mortar's blind spot, it cannot extinguish fires inside your colony. For fires outside of your colony, the game will automatically start [[rain]] whenever fires get too big - unless a [[weather controller]]{{RoyaltyIcon}} is forcing fog. Generally, [[foam turret]]s or [[firefoam pop pack]]s are better as mobile fire extinguishers. Even [[Pyromaniac]]s can operate either.
+
+Firefoam shells are most useful to create [[IED firefoam trap]]s. IEDs must be directly lit on fire or triggered by a colonist, but are cheaper to create than a [[firefoam popper]], while having a much larger radius than the [[firefoam pop pack]]. In theory, destroying a firefoam shell creates the same firefoam as the IED trap for half the cost. However, the shell must be damaged to set off; while guns cannot damage the shell, gunshots ''can'' trigger an IED.
+
+== Gallery ==
+<gallery>
+Shell firefoam a.png|One firefoam shell
+Shell firefoam b.png|Partial stack
+Shell firefoam c.png|Full stack
+ShellFirefoam.png|Projectile
+</gallery>
+
+== Version history ==
+* [[Version/0.18.1722|0.18.1722]] - Added.
+* [[Version/1.3.3066|1.3.3066]] - Steel requirement decreased from 35 -> 25 unless Classic Mortar difficulty option enabled.
+
+{{Nav|security|wide}}
+[[Category: Mortar shells]]

@@ -1,0 +1,156 @@
+<!--Top Nav Box-->
+{| align=center
+| {{Mods_Nav}}
+|}
+<hr>
+
+This is the hub page for tutorials, guides, and reference materials for creating mods for RimWorld. If you are looking for instructions on how to use RimWorld, please check out the general [[Modding]] hub.
+
+As RimWorld does not have a formal modding API, nearly all of the information here has been gathered and maintained by the modding community.
+
+'''NEW: [[Modding_Tutorials/RimWorld_1.6_Mod_Updates|RimWorld 1.6 Mod Updates]]''' - A work-in-progress list of changes datamined by the modding community in the current unstable version of RimWorld 1.6. '''THERE MAY BE ODYSSEY DLC SPOILERS, YOU HAVE BEEN WARNED.'''
+
+-----
+
+==About RimWorld==
+RimWorld is a multi-platform game written on Unity 2022.3.35. However, the Unity Editor is not used for creating mods unless you are creating new shaders or building optional asset bundles.
+
+* [[Modding_Tutorials/Recommended_software|Recommended Software]] - Editors and other useful software for mod development
+* [[Modding_Tutorials/Mod_Folder_Structure|Mod Folder Structure]] - Explore the basic folder structure of a mod
+** [[Modding_Tutorials/About.xml|About.xml]] - About.xml identifies and describes your mod to RimWorld so that it can be loaded properly
+
+===Game Systems Guides===
+
+* [[Modding_Tutorials/Defs|Defs]] - XML Definitions are used to define and configure content in a way that does not require compiling code
+** [[Modding_Tutorials/MayRequire|MayRequire]] - MayRequire and MayRequireAnyOf are used to conditionally load Defs and list entries based on whether a DLC or other mod is loaded
+* [[Modding_Tutorials/Localization|Localization]] - Define text strings used for translations and word lists used in name and text generation
+* [[Modding_Tutorials/PatchOperations|PatchOperations]] - PatchOperations are used to modify XML Defs without overwriting them completely
+* [[Modding_Tutorials/Sounds|Sounds]] - (Needs Rewriting) Adding sound files for mods
+* [[Modding_Tutorials/Textures|Textures]] - How to create and add textures to mods
+* [[Modding Tutorials/Plant Rendering|Plant Rendering]] - An explanation of how plant textures are rendered
+* [[Modding_Tutorials/Research_Projects|Research Projects]] - How to create and use research projects.
+
+===XML Tutorials===
+
+The following are step-by-step tutorials for creating basic content mods.
+
+Basic Tutorials:
+* [[Modding_Tutorials/Basic_Melee_Weapon|Basic Melee Weapon]] - How to create a basic melee weapon with a texture mask
+* [[Modding_Tutorials/Basic_Ranged_Weapon|Basic Ranged Weapon]] - How to create a basic ranged weapon with custom sound effects
+* [[Modding_Tutorials/Basic_Plant|Basic Plant]] - How to create a custom plant with both a cultivated and wild variant
+* Custom Animal (Upcoming)
+* Simple Building (Upcoming)
+* Custom Workbench (Upcoming)
+* [[Modding_Tutorials/Custom Drug|Custom Drug]] - How to create a new drug.
+
+Advanced Tutorials:
+* Custom Faction (Upcoming)
+* Custom Culture (Upcoming)
+* Custom Trader Type (Upcoming)
+
+===C# Guides===
+
+C# is used to create and define custom game behaviors 
+
+* [[Modding_Tutorials/Decompiling source code|Decompiling Source Code]] - How to set up and use a decompiler to read vanilla game code
+* [[Modding_Tutorials/Setting up a solution|Setting up a Solution]] - How to set up a solution for compiling a custom mod assembly
+* [[Modding_Tutorials/Application_Startup|Application Startup]] - Describes the application startup process and the order in which game data is loaded
+* [[Modding_Tutorials/Pawn_Generation_Process|Pawn Generation Process]] - Describes the steps and relevant code for pawn generation
+* Custom Consumable (Upcoming)
+* Custom Overlays (Upcoming)
+* [[Modding_Tutorials/Code_FloatMenuOptionProvider|FloatMenuOptionProvider]] - How to use <code>FloatMenuOptionProvider</code> to add right click context menu options to arbitrary targets.
+* [[Modding_Tutorials/Code_MendingJob|Example Mending Job]] - How to use a <code>FloatMenuOptionProvider</code> in conjunction with a <code>JobDef</code> and <code>JobDriver</code> in order to create a simple mending function for weapons and apparel.
+
+===Updates and Migrations===
+
+* [[Modding_Tutorials/RimWorld_1.5_Mod_Updates|RimWorld 1.5 Mod Updates]] - (WARNING: Anomaly Spoilers) Community notes for updating mods from 1.4 to 1.5.
+* [[Modding_Tutorials/RimWorld_1.6_Mod_Updates|RimWorld 1.6 Mod Updates]] - (WARNING: Odyssey Spoilers) Community notes for updating mods from 1.5 to 1.6.
+
+===Testing and Troubleshooting===
+
+* [[Modding Tutorials/Testing mods|Testing Mods]] - Tips and tricks for testing mod content
+
+===Performance and Optimization===
+
+* [[Modding_Tutorials/Asset_Bundles|Asset Bundles]] - How to create Unity asset bundles for assets and shaders.
+
+===Slightly Outdated===
+
+* [[Modding_Tutorials/Plague_Gun|Plague Gun]] - This tutorial was created for RimWorld 1.0 but updated for 1.4. While the exact content is obsolete as you can now accomplish the same result with purely vanilla XML, it is still useful as a crash course for end-to-end mod creation and is here until newer tutorials can replace it.
+
+===Uploading to Steam Workshop===
+* You can upload your mod to Steam Workshop by enabling Development Mode from your game Options and then using the Upload option under the Advanced button in the vanilla mod manager.
+* Note that in order to upload to Steam Workshop, you must own the game on Steam Workshop. Owning RimWorld on GOG or Epic will not work.
+* Your Preview.png should be a 640x360 or 1280x720 PNG and '''must''' be under 1MB. If it is too large, then your upload will be rejected with <code>Error : Limit Exceeded</code>
+* If you get a <code>OnItemSubmitted Fail</code> error, make sure you close any programs that are targeting items in your mods folder. This can also mean that Steam Workshop is having some technical issues at the moment. If it keeps occurring, then the only thing to do is to wait a few hours for it to clear up.
+* Steam mod descriptions don't use markdown, they use a variant of BBCode. Please check out the [https://steamcommunity.com/comment/Guide/formattinghelp Steam text formatting guide].
+
+-----
+
+'''Note:''' All of the above tutorials have been cleaned up and reviewed by the #mod-development team on the [https://discord.gg/rimworld RimWorld Discord] in cooperation with RimWorld Wiki staff editors. Please let us know before creating, adding, or making any major edits to the vetted tutorials and guides section!
+
+==Outdated / Under Review==
+
+The following tutorials are either out of date or in need of a rewrite. The information in them might be useful but may not be up to standard; please be aware of any potential inaccuracies until they can be addressed.
+
+* [[Modding Tutorials/First Steps|First Steps and Some Links]]
+* [[Modding Tutorials/Essence| Essence of Modding]]
+* [[Modding Troubleshooting Tips and Guides]]
+* [[Modding Tutorials/Sounds|Adding and Testing Sounds]]
+* [[Modding Tutorials/Assets|Decompiling Texture/Sound Assets]]
+* [[Modding Tutorials/Compatibility|Compatibility]]
+* [[Modding_Tutorials/Distribution|Distribution]]
+* [[Modding_Tutorials/Modifying defs|Modifying Defs]]
+* [[Modding_Tutorials/Troubleshooting|Troubleshooting mods]]
+* [[Modding Tutorials/Rituals]]
+
+===XML tutorials===
+
+* [[Modding Tutorials/XML file structure|XML File Structure]]
+* [[Modding Tutorials/XML Defs|Introduction to XML Defs]]
+** [[Modding Tutorials/Compatibility with defs|XML Def Compatibility]]
+** [[Modding Tutorials/ThingDef|ThingDef explained]]
+** [[Modding Tutorials/Weapons Guns|Weapons_Guns.xml explained]]. Slightly dated.
+* [[Modding Tutorials/Xenotype template]] originally by Ryflamer
+
+===C# tutorials===
+* [[Modding_Tutorials/Hello World|Hello World]]
+* [[Modding_Tutorials/Writing custom code|Writing Custom Code]]
+* [[Modding Tutorials/Linking XML and C#|Linking XML and C#]]
+* [[Modding_Tutorials/Harmony|Alter Code at Runtime with Harmony]] - this is a best practice for modifying game code, replacing C# code injection to reduce Mod Conflicts
+* [[Modding_Tutorials/Modifying classes|Adding fields and methods to classes]]
+* [[Modding Tutorials/ModSettings|Mod settings]] - Add settings to your mod
+* [[Modding Tutorials/DefModExtension|Def mod extensions]] - Add (custom) fields to Defs
+* [[Modding Tutorials/Custom Comp Classes|Custom Comp Classes]] - A quick overview of what types of Comps there are, and what they're suited for.
+* [[Modding_Tutorials/ThingComp|ThingComp]] - Learn all there is to know about ThingComps.
+* [[Modding Tutorials/GameComponent|Components]] - GameComponents, WorldComponents, and MapComponents
+* [[Modding_Tutorials/Def classes|Introduction to Def Classes]]
+* [[Modding_Tutorials/Compatibility_with_DLLs|Using Harmony to optionally patch other mods for the sake of compatibility]]
+* [[Modding Tutorials/TweakValue|TweakValues]] - Change values on the fly (handy for quick iteration!)
+* [[Modding Tutorials/ExposeData|ExposeData]] - Save stuff
+* [[Modding Tutorials/BigAssListOfUsefulClasses|The big ass list of useful classes]] - A non-exhaustive list of classes you'll use most
+* [[Modding Tutorials/GrammarResolver|Grammar Resolver]] - PAWN_objective, PAWN_possessive? Find out what it all means here.
+* [https://github.com/Mehni/ExampleJob/wiki ExampleJob] - Mehni's top to bottom breakdown of Jobs.
+* [[Modding_Tutorials/ConfigErrors|Config Errors]] - Provide configuration issues to the user on startup.
+* [[Modding Tutorials/DebugActions|Debug Actions]] - Call methods from the debug menu
+* [https://www.arp242.net/rimworld-mod-linux.html Getting started with RimWorld modding on Linux]
+
+===Art Tutorials===
+* [https://spdskatr.github.io/RWModdingResources/artstyle Artstyle] - Officially unofficial guide to RimWorld's Artstyle
+* Ekksu's animal texture guides: [https://imgur.com/a/how-to-make-rimworld-sprites-its-basically-x-with-y-edition-wS3Pt 1] [https://imgur.com/a/how-to-make-rimworld-sprites-theres-nothing-that-looks-like-this-animal-edition-xdDzg 2]
+* [https://steamcommunity.com/sharedfiles/filedetails/?id=1114369188 ChickenPlucker's guide to creating apparel]
+* [https://github.com/seraphile/rimshare/wiki/Colouring-in-Images Seraphile's guide to masks]
+
+===Under Construction===
+
+These are currently unfinished and need to be cleaned up or removed
+
+* [[Modding Tutorials/Quests]]
+* [[Modding Tutorials/Troubleshooting/Finding Exceptions]]
+
+==External Links==
+* [https://github.com/roxxploxx/RimWorldModGuide/wiki Roxxploxx's set of modding tutorials]
+* [https://spdskatr.github.io/RWModdingResources/ RimWorld Modding Resources - A hub for guides, modders, practical tips]
+
+[[Category:Modding]]
+[[Category:Modding tutorials]]

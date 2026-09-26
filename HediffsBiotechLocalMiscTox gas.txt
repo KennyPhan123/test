@@ -1,0 +1,60 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Biotech/Local/Misc}}
+|}
+----
+{| {{STDT| c_18}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Tox gas" <!-- defName="ToxGasExposure" -->
+! Tox gas
+----
+* Def Name:<br />ToxGasExposure
+* Label:<br />tox gas
+| <div style="max-width: 300px;">Aftereffects of exposure to tox gas, a poisonous chemical gas. It burns the lungs and eyes, causing a temporary shortness of breath and reduction in sight. Continued exposure to tox gas results in toxic buildup and eventually death.</div>
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Initial Severity: '''1'''
+* Max Severity: '''3'''
+* Can Apply {{DOD}} Chance For Capacity Changes: {{Bad|true}}
+* '''Comps:''' ''Severity From Gas Density Direct''
+** Gas Type: '''[[Tox gas]]'''
+** Density Stages: '''20%''', '''50%''', '''100%'''
+<div><li style="display: inline-table;">
+{| {{STDT| c_18}}
+! Gas<br />Density !! Tox Gas<br />Severity
+|-
+! 20%
+| 1
+|-
+! 50%
+| 2
+|-
+! 100%
+| 3
+|}</li>
+|<!-- Stages -->
+{| {{STDT| c_18}}
+! Label !! Parameters
+|-
+! mild
+|<!-- Parameters -->
+* Min Severity: '''1'''
+* Pain Offset: {{++|10%}}
+* [[Sight]] Offset: {{--|10%}}
+* [[Breathing]] Offset: {{--|15%}}
+|-
+! moderate
+|<!-- Parameters -->
+* Min Severity: '''2'''
+* Pain Offset: {{++|15%}}
+* [[Sight]] Offset: {{--|25%}}
+* [[Breathing]] Offset: {{--|30%}}
+|-
+! severe
+|<!-- Parameters -->
+* Min Severity: '''3'''
+* Pain Offset: {{++|25%}}
+* [[Sight]] Offset: {{--|40%}}
+* [[Breathing]] Offset: {{--|60%}}
+|}<noinclude>
+|}</noinclude>

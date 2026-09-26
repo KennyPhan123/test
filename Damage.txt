@@ -1,0 +1,37 @@
+<onlyinclude><includeonly>:''Main article: [[Damage]]''</includeonly>
+Damage is made up of 3 major components:
+
+*Armor Categories, which define what [[apparel]] protects against it.
+*[[Damage Types]], which defines what damage does what [[injury]].
+*[[Health Difficulties]], which defines that the consequences are of an injury.</onlyinclude>
+Your colonists are likely going to get [[Health#Injury|injured]] at some point in RimWorld (or suffer a horrific [[death]]).
+
+== Armor penetration ==
+Attacks have an "armor penetration", often abbreviated as {{AP}}, value associated with them. The armor penetration reduces the effective armor of the target. For further information about this system, see [[#Armor categories|Armor categories]] below. The armor penetration of the attack always reduces the target's armor value of the armor category that corresponds to the damage type of the attack. It does not apply to damage over time from attacks, such as being lit on [[fire]].
+
+The armor penetration of an attack depends on a number of factors. If it is calculated, then it is equal to 1.5x the base damage (i.e. before any reductions from armor). [[Damage types]] can also have armor penetration multipliers. For example, [[flame]] damage attacks have an AP multiplier of 0, meaning they do not have any AP. [[Quality#Weapons|Quality]] also imposes a multiplier on AP. For melee attacks where the AP is calculated, the [[melee damage factor]] of the also modifies the AP as a result. 
+
+AP can also be set manually in the game code, which overrides all other calculations and multipliers except quality but including from damage type and melee damage factor. There is no in-game indication when this occurs, but it can generally be identified by the AP not following the 1.5x rule.
+
+== Armor categories ==
+{{Main|Apparel#Protection}}
+Apparel protects against different types of damage to different extents. There are three categories of armor that each apparel can have: Sharp, Blunt, and Heat. Cross-reference these with the [[Damage Types|damage types]] table to see what's category protects what.
+
+How much protection armor gives is determined by its '''armor rating'''. In-game this protection is calculated as follows:
+#The armor rating is reduced by the armor penetration value, dependent on the weapon. This gives the "effective armor rating"
+#The effective armor rating is then compared against a random number from 0 to 100:
+#*If the random number is under half the effective armor rating, the damage deflects harmlessly.
+#*If the random number is over half the effective armor rating, but not higher than the armor rating, the damage is halved.
+#*If the random number is greater than the effective armor rating, the armor has no effect.
+#If any damage remains, then the same process is applied to the next item on a lower layer using the new damage (if halved) or full damage (if the armor had no effect) and retaining the full AP of the attack. Damage halving is applied multiplicatively - so if the two layers both half the damage, the pawn receives one quarter of the damage.
+
+If Sharp damage is mitigated at any point, it is converted to Blunt damage ''after'' all calculations for all layers of apparel are complete.
+
+==Damage Types==
+{{:Damage Types}}
+
+==Health Difficulties==
+{{:Health Difficulties}}
+
+===DPS===
+Main Article: [[DPS|DPS]]

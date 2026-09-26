@@ -1,0 +1,139 @@
+{{Infobox main|animal
+| page verified for version = A14C
+| name = Grizzly bear
+| image = Bear east.png
+| description = A huge omnivorous mammal adapted for cold climates. Bears' thick blubber and fur keeps them warm in winter.<br/>While their usual diet consists of fish, berries, honey, and scavenged meat, the grizzly is capable of using its massive strength and deadly claws to kill live prey. They are startlingly quick for such lumbering creatures.
+| type = Animal
+| movespeed = 4.6
+| min comfortable temperature = -40
+| max comfortable temperature = 40
+| toxic resistance = 0.5
+| toxic environment resistance = 0
+| flammability = 0.7
+| marketvalue = 700
+| filth rate = 4
+| predator = true
+| combatPower = 200
+| bodysize = 2.15
+| healthscale = 2.5
+| hungerrate = 0.35
+| diet = omnivorous, ovivorous
+| can fish for food = true
+| leathername = bearskin
+| wildness = 0.8
+| manhuntertame = 0.3
+| manhunter = 0.5
+| trainable = advanced
+| specialtrainables = attack target
+| mateMtb = 12
+| meatname = bear meat
+| gestation = 10
+| offspring = 1
+| lifespan = 22
+| juvenileage = 0.2
+| maturityage = 0.5
+| tradeTags = AnimalUncommon, AnimalFighter
+| attack1dmg = 17
+| attack1type = Scratch
+| attack1cool = 2
+| attack1part = front left paw
+| attack1stun = 14
+| attack2dmg = 17
+| attack2type = Scratch
+| attack2cool = 2
+| attack2part = front right paw
+| attack2stun = 14
+| attack3dmg = 23.6
+| attack3type = Bite
+| attack3cool = 2.6
+| attack3part = teeth
+| attack3chancefactor = 0.5
+| attack3stun = 14
+| attack4dmg = 11
+| attack4type = Blunt
+| attack4cool = 2
+| attack4part = head
+| attack4chancefactor = 0.2
+| isCoastal = false
+| livesin_temperateforest = 0.07
+| livesin_temperateswamp = 0.07
+| livesin_borealforest = 0.07
+| livesin_tundra = 0.07
+| livesin_coldbog = 0.07
+| livesin_glacialplain = 0.07
+| livesin_grassland = 0.07
+}}
+'''Grizzly bears''' are huge solitary omnivores found in {{Habitats}}. 
+
+Although infamously bad-tempered, as wide-ranging creatures that will eat anything, grizzlies rarely are hungry enough to attack your colonists or their livestock without provocation. If they do, they present a problem even to industrial era-equipped colonies thanks to their wall of health and savage amounts of damage. If successfully hunted though, they provide large amounts of meat and valuable [[bearskin]]. 
+
+They are identical to a [[polar bear]], except for their appearance, habitat, comfortable temperature range, and wildness.
+
+== Acquisition ==
+{{PAGENAME}}s can be found in {{Habitats}}. They can either be tamed by a [[Work #Handle|handler]] or self-tame in a random event. 
+
+{{PAGENAME}}s can be bought and sold in other [[Trade#Faction base|faction bases]] and from [[Trade#Exotic goods trader 2|exotic goods traders]]. {{PAGENAME}}s purchased from traders will be already tamed.
+
+== Analysis ==
+If they can be successfully obtained despite their {{#expr:{{P|Turn Manhunter Chance When Taming}}*100}}% [[manhunter]] chance on failed taming attempts, bears make good haulers and melee blockers.
+
+=== Comparison to other haulers ===
+{| class="wikitable sortable"
+! Animal !! Carrying Capacity !! Move Speed !! Hunger Rate !! <abbr title="How often the animal forgets a stage of training in days">Training Decay</abbr>
+|-
+| '''Bear''' || {{Q|Grizzly bear|Carrying Capacity}} || {{Q|Grizzly bear|Move Speed Base}} || {{Q|Grizzly bear|Real Hunger Rate}} || {{#expr:12 - 6*{{Q|Grizzly bear|Wildness}} round 1}}
+|-
+| [[Timber wolf|Wolf]] || {{Q|Timber wolf|Carrying Capacity}} || {{Q|Timber wolf|Move Speed Base}} || {{Q|Timber wolf|Real Hunger Rate}} || {{#expr:12 - 6*{{Q|Timber wolf|Wildness}} round 1}}
+|-
+| [[Cougar]]/[[panther]] || {{Q|Cougar|Carrying Capacity}} || {{Q|Cougar|Move Speed Base}} || {{Q|Cougar|Real Hunger Rate}} || {{#expr:12 - 6*{{Q|Cougar|Wildness}} round 1}}
+|-
+| [[Husky]] || {{Q|Husky|Carrying Capacity}} || {{Q|Husky|Move Speed Base}} || {{Q|Husky|Real Hunger Rate}} || {{#expr:12 - 6*{{Q|Husky|Wildness}} round 1}}
+|-
+| [[Labrador retriever]] || {{Q|Labrador retriever|Carrying Capacity}} || {{Q|Labrador retriever|Move Speed Base}} || {{Q|Labrador retriever|Real Hunger Rate}} || {{#expr:12 - 6*{{Q|Labrador retriever|Wildness}} round 1}}
+|}
+
+=== Comparison to other bulky attackers ===
+{| class="wikitable sortable"
+! Animal !! Health Scale !! DPS !! Move Speed !! Hunger Rate !! <abbr title="How often the animal forgets a stage of training in days">Training Decay</abbr>
+|-
+| [[Thrumbo]] || {{Q|Thrumbo|Health Scale}} || {{Q|Thrumbo|Mob Average DPS}} || {{Q|Thrumbo|Move Speed Base}} || {{Q|Thrumbo|Real Hunger Rate}} || {{#expr:12 - 6*{{Q|Thrumbo|Wildness}} round 1}}
+|-
+| [[Megasloth]] || {{Q|Megasloth|Health Scale}} || {{Q|Megasloth|Mob Average DPS}} || {{Q|Megasloth|Move Speed Base}} || {{Q|Megasloth|Real Hunger Rate}} || {{#expr:12 - 6*{{Q|Megasloth|Wildness}} round 1}}
+|-
+| [[Elephant]] || {{Q|Elephant|Health Scale}} || {{Q|Elephant|Mob Average DPS}} || {{Q|Elephant|Move Speed Base}} || {{Q|Elephant|Real Hunger Rate}} || {{#expr:12 - 6*{{Q|Elephant|Wildness}} round 1}}
+|-
+| [[Rhinoceros]] || {{Q|Rhinoceros|Health Scale}} || {{Q|Rhinoceros|Mob Average DPS}} || {{Q|Rhinoceros|Move Speed Base}} || {{Q|Rhinoceros|Real Hunger Rate}} || {{#expr:12 - 6*{{Q|Rhinoceros|Wildness}} round 1}}
+|-
+| '''Bear''' || {{Q|Grizzly bear|Health Scale}} || {{Q|Grizzly bear|Mob Average DPS}} || {{Q|Grizzly bear|Move Speed Base}} || {{Q|Grizzly bear|Real Hunger Rate}} || {{#expr:12 - 6*{{Q|Grizzly bear|Wildness}} round 1}}
+|}
+
+=== Attacks ===
+Grizzly bears have two attacks: scratch (paw) and bite (teeth).  Both attacks apply a stun for 7 seconds on their first strike when hunting.
+
+== Training ==
+{{TrainingTable}}
+
+{{OdysseyIcon}} In addition, a {{PAGENAME}} can be trained to perform 'Attack Target': “Command the animal to attack a specific target that its master can see.” (Prerequisite needed: Attack)
+
+== Health ==
+{{Animal Health Table|QuadrupedAnimalWithPaws}}
+{{Pawn Attack Table}}
+
+== Gallery ==
+<gallery>
+Bear east.png|Facing east
+Bear north.png|Facing north
+Bear south.png|Facing south
+</gallery>
+<gallery>
+Dessicated bear east.png|Dessicated facing east
+Dessicated Bear north.png|Dessicated facing north
+Dessicated Bear south.png|Dessicated facing south
+</gallery>
+== Trivia ==
+* While in real life [[polar bear]]s are significantly larger than grizzly bears, in RimWorld they are identical save for their habitat and cold resistance. 
+
+{{Nav|animal|wide}}
+
+[[Category:Animals]]
+[[Category:Wild animal]]

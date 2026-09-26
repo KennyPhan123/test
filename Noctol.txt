@@ -1,0 +1,174 @@
+{{Anomaly}}
+{{Spoiler}}
+{{Infobox main|entity
+| name = Noctol
+| image = Noctol.png
+| description = A large, chittering creature covered with an oily black carapace and armed with claws formed from bioferrite. While it is deadly in the dark, exposure to light irritates its eyes and flesh, slowing it down considerably.
+<!-- Base Stats -->
+| type = Entity
+| type2 = Advanced
+| flammability = 0.7
+| hide inspect = true
+| hidden while undiscovered = true
+| tradeability = None
+<!-- Containment -->
+| minimum containment strength = 60
+| anomaly knowledge = 1
+| knowledge category = Advanced
+| study interval = 120000
+| bioferrite density = 3
+| min monolith level for study = 1
+| requires holding platform = true
+| base escape interval MTB days = 50
+<!-- Apparel -->
+| armorsharp = 28
+| armorblunt = 18
+<!-- Pawn Stats -->
+| combatPower = 80
+| movespeed = 8
+| healthscale = 1.5
+| bodysize = 1
+| body = Noctol
+| diet = none
+| lifespan = 25
+| trainable = None
+| psychic sensitivity = 1
+| toxic resistance = 0.5
+| toxic environment resistance = 1
+| min comfortable temperature = -40
+| max comfortable temperature = 60
+| can become shambler = true
+| intelligence = ToolUser
+| needs rest = false
+| blood def = Filth_DarkBlood
+| bleed rate factor = 0.5
+| flesh type = EntityFlesh
+| is immune to infections = true
+| has genders = false
+| disable ignite verb = true
+| corpse hidden while undiscovered = true
+| hediff giver sets = AnomalyEntity
+| life stage ages = EntityFullyFormed
+<!-- Production -->
+| leatheryield = 20
+| leathername = Dread leather
+| meatyield = 70
+| meatname = Twisted meat
+<!-- Melee Combat -->
+<!-- 1. Attack -->
+| attack1label = left claw
+| attack1labelNoLocation = claw
+| attack1dmg = 12.3
+| attack1type = Scratch
+| attack1part = FrontLeftClaw
+| attack1cool = 1.25
+<!-- 2. Attack -->
+| attack2label = right claw
+| attack2labelNoLocation = claw
+| attack2dmg = 12.3
+| attack2type = Scratch
+| attack2part = FrontRightClaw
+| attack2cool = 1.25
+<!-- 3. Attack -->
+| attack3dmg = 15
+| attack3type = Bite
+| attack3part = Teeth
+| attack3cool = 2
+| attack3chancefactor = 0.7
+<!-- 4. Attack -->
+| attack4label = head
+| attack4dmg = 9
+| attack4type = Blunt
+| attack4part = HeadAttackTool
+| attack4cool = 2
+| attack4chancefactor = 0.2
+| attack4ensureLinkedBodyPartsGroupAlwaysUsable = true
+<!-- Technical -->
+| defName = Noctol
+| label = noctol
+}}
+The '''noctol''' is an advanced [[entity]] added by the [[Anomaly DLC]] that appears during the [[unnatural darkness]] event.
+
+== Occurrence == 
+Noctols attack during the [[unnatural darkness]] event until all [[noctolith]]s are destroyed or the darkness disappears on its own. Also, damaging a noctolith triggers an attack wave of noctols once per noctolith.
+
+They will also appear during the [[Endings#The Void|monolith endgame]].
+
+== Summary ==
+{{Stub|section=1|reason= explain glowing eyes, and use [[:File:Unnatural darkness noctol attack eyes.png]] to demonstrate }}
+
+When exposed to >30% light, Noctols will gain the ''light exposure'' hediff, slowing them down and infliciting [[pain]]. The severity of this debuff increases rapidly (+40% per second) if it is in light, reaching its maximum effect at 80% severity. It will recede quickly once at or below 30% light.
+
+{| {{STDT| c_21}}
+! Label !! Severity !! Effects
+|-
+! Moderate
+| 10%
+|
+* [[Melee Cooldown (Pawn)]] Offset: {{++|125%}}
+* [[Move Speed]] Factor: {{Bad|×90%}}
+* {{++|5%}} Pain
+|-
+! Serious
+| 40%
+|
+* [[Melee Cooldown (Pawn)]] Offset: {{++|150%}}
+* [[Move Speed]] Factor: {{Bad|×80%}}
+* {{++|10%}} Pain
+|-
+! Extreme
+| 80%
+|
+* [[Melee Cooldown (Pawn)]] Offset: {{++|200%}}
+* [[Move Speed]] Factor: {{Bad|×50%}}
+* {{++|15%}} Pain
+|}
+
+Due to how quickly severity is gained, noctols will primarily be at extreme light exposure. The exact amount of light is not relevant - whether a notctol is at 50% or 100% light does not impact light exposure in any way.
+
+=== Containment ===
+A noctol yields 3 [[bioferrite]] per day and 200W of power when hooked up to an [[electroharvester]].
+
+== Analysis ==
+In darkness, noctols fight almost as well as [[scyther]]s and move much faster, but bright (50%) light inflicts a debuff that makes them barely more dangerous than unarmed humans. Their extraordinary move speed drops to below an ordinary pawn, their attacks still hit hard but are extremely slow, and their above-average health scale is balanced out by the +15% pain from light. With good light management they are one of the less threatening entities you can face.
+
+Noctols spawn en-masse in dark areas around a noctolith when it is attacked. Make sure you place lighting down prior to attacking them. [[Flood light]]s are ideal for areas in and around your own base, but any lighting will suffice. If facing them outside, such as around the [[noctolith]]s themselves, [[disruptor flare]]s and [[solar pinhole]]s{{RoyaltyIcon}} are portable and easy to deploy. In less advanced colonies, bringing [[wood]] to build [[torch lamp]]s can also work.
+
+Noctols are a good source of [[Research#Anomaly|advanced anomaly research points]] since they're easier to contain and much less dangerous than [[chimera]]s or [[devourer]]s so long as they're kept in well-lit areas. Additionally they act as a sidegrade for the purpose of resource harvesting, yielding almost twice as much bioferrite but also requiring twice as much containment strength.
+
+== Health == 
+=== Body parts ===
+{{Animal Health Table|Noctol}}
+
+=== Armor ===
+{| class="wikitable"
+! Armor
+|-
+| {{Apparel Protection Chart
+| set1name= {{P|Name}} (Sharp) | set1armor1={{P|Armor - Sharp}} 
+| set2name= {{P|Name}} (Blunt) | set2armor1={{P|Armor - Blunt}} 
+| set3name= {{P|Name}} (Heat) | set3armor1={{P|Armor - Heat}} 
+| color= grey, blue, red
+}} 
+|}
+{{Pawn Attack Table}}
+
+== Gallery ==
+<gallery>
+Noctol.png|Facing east
+Noctol north.png|Facing north
+Noctol south.png|Facing south
+</gallery>
+<gallery>
+Dessicated Noctol east.png|Dessicated facing east
+Dessicated Noctol north.png|Dessicated facing north
+Dessicated Noctol south.png|Dessicated facing south
+</gallery>
+== Trivia ==
+* The Noctol's name likely comes from the Latin word "[[wikipedia:Noctis|Noctis]]", meaning night.
+
+== Version history == 
+* [[Anomaly DLC]] Release - Added.
+
+{{Nav|entity|wide}}
+[[Category: Entities]]

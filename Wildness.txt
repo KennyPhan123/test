@@ -1,0 +1,24 @@
+'''Wildness''' is a [[stat]] of [[animals]]. It is used to determine the [[Minimum Handling Skill]] stat, and combines with the [[Tame Animal Chance]] and [[Train Animal Chance]] stats to determine the final tame/train chance. 
+
+Additionally, animals need over 10.1% wildness in order to be able to lose the tamed status. [[Pen animal]]s are excluded, and will never become wild again (may still wander off map if left outside a pen).
+
+Finally, the degradation interval of [[Animal training|training]]/[[Taming|tamed status]] varies between {{ticks/gametime|720000}} and {{ticks/gametime|360000}}, inversely related to the '''wildness''' stat. [[Dryads]] and pen animals are exceptions, and will never lose training nor tame status due to decay.
+<!-- The actual formula is 60000 * (12 - 6 * wildness), on the function DegradationPeriodTicks. This value is then used on TrainingTrackerTickRare, meaning there may be some variation in the real times. Also, I don't quite follow the rest of that function, so I can't give the actual time to lose a given training/revert to wild -->
+
+Wildness can be lowered by 25% with a [[sentience catalyst]]{{OdysseyIcon}}.
+
+Do note that some events are also related with this stat. For instance, the [[Events#Animals join|Farm Animals Wander In]] incident can only spawn animals with at most 35% wildness.
+{| {{STDT| sortable c_08 text-center}}
+! Animal !! Wildness !! Minimum Handling Skill
+|-
+{{#ask: [[Wildness::+]]
+ | ?Wildness
+ | ?Minimum Handling Skill
+ | format = template
+ | template = Ask Table Formatter
+ | link = none
+ | limit = 200
+ | sort = From DLC, Name
+}}
+|}
+[[Category:Stats - Pawn]]

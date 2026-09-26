@@ -1,0 +1,92 @@
+{{Anomaly}}
+{{Rewrite|reason=Format standard inc. skill tables as theyre more accessible}}
+{{See also|Containment}}
+{{Verified|1.5.4104}}{{Stat
+| def name = ActivitySuppressionRate
+| label = activity suppression speed
+| description = The speed at which this person can suppress unnatural [[entities]]. A higher speed means they take less time to suppress each entity.
+| default base value = 0.065
+| show on default value = false
+| min value = 0
+| effective maximum = {{#expr: ( {{P|Default Base Value}} + 0.135 + 0.135 ) * {{Q|Psychic Sensitivity|Effective Maximum}}}}
+| format string = {0} per hour
+| to string style = PercentOne
+| show on animals = false
+| show on mechanoids = false
+| show developmental stage filter = Adult
+| category = PawnWork
+| display priority in category = 209
+| skill need offsets = (base bonus, skill: Intellectual, base value: -0.015, bonus per level: 0.0075, required: false), (base bonus, skill: Social, base value: -0.015, bonus per level: 0.0075, required: false)
+| stat factors = Psychic Sensitivity
+}}
+
+== Offsets ==
+=== Skill Needs ===
+* [[Intellectual]][[Skill::Intellectual| ]]: [[Skill Base Offset::-0.015|-1.5%]] plus [[Skill Bonus Offset::0.0075|0.75%]] per skill level.
+{{Graph:Chart|width=300|height=150|xAxisTitle=Intellectual Skill Level|yAxisTitle=Activity Suppression Speed Offset|yAxisFormat=%|type=rect|x=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20|y=-0.015, -0.0075, 0, 0.0075, 0.015, 0.0225, 0.03, 0.0375, 0.045, 0.0525, 0.06, 0.0675, 0.075, 0.0825, 0.09, 0.0975, 0.105, 0.1125, 0.12, 0.1275, 0.135|xGrid=|yGrid=}}
+
+* [[Skills#Social|Social]][[Skill::Social| ]]: [[Skill Base Offset::-0.015|-1.5%]] plus [[Skill Bonus Offset::0.0075|0.75%]] per skill level.
+{{Graph:Chart|width=300|height=150|xAxisTitle=Social Skill Level|yAxisTitle=Activity Suppression Speed Offset|yAxisFormat=%|type=rect|x=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20|y=-0.015, -0.0075, 0, 0.0075, 0.015, 0.0225, 0.03, 0.0375, 0.045, 0.0525, 0.06, 0.0675, 0.075, 0.0825, 0.09, 0.0975, 0.105, 0.1125, 0.12, 0.1275, 0.135|xGrid=|yGrid=}}
+
+== Factors ==
+=== Stats ===
+* [[Psychic Sensitivity]]
+
+== Calculating Activity Suppression Speed ==
+{{Stub|section=1|reason=Determine effect of Intellectual or Social skills being disabled for a pawn}}
+The base value of 6.5% is first offset by the Intellectual and Social Skill Needs, and then multiplied by the pawn's Psychic Sensitivity:
+ Activity Suppression Speed = ( 0.065 + ( -0.015 + ( Intellectual Skill Level × 0.0075 ) ) + ( -0.015 + ( Social Skill Level × 0.0075 ) ) ) × Psychic Sensitivity
+The maximum possible value for this would be calculated as:
+ Activity Suppression Speed = ( 0.065 + ( -0.015 + ( 20 × 0.0075 ) ) + ( -0.015 + ( 20 × 0.0075 ) ) ) × {{Q|Psychic Sensitivity|Effective Maximum}}
+ Activity Suppression Speed = ( 0.065 + ( -0.015 + 0.15 ) + ( -0.015 + 0.15 ) ) × {{Q|Psychic Sensitivity|Effective Maximum}}
+ Activity Suppression Speed = ( 0.065 + 0.135 + 0.135 ) × {{Q|Psychic Sensitivity|Effective Maximum}}
+ Activity Suppression Speed = 0.335 × {{Q|Psychic Sensitivity|Effective Maximum}}
+ Activity Suppression Speed = {{P|Effective Maximum}}
+For an effective maximum of {{Format Number|{{P|Effective Maximum}}|{{P|To String Style}} }} per hour.
+
+== Stat Def Data ==
+{| {{STDT| c_10}}
+! Name !! Description !! Category !! Parameters !! Complex Parameters !! Display Priority In Category
+|- id="Activity Suppression Speed" <!--<StatDef>-->
+|<!-- Name -->
+* '''Def Name:'''<br />ActivitySuppressionRate
+* '''Label:'''<br />activity suppression speed
+| The speed at which this person can suppress unnatural entities. A higher speed means they take less time to suppress each entity.
+|<!-- Category -->
+* Display Order: '''140'''
+* Def Name:<br />'''PawnWork'''
+* Label:<br />'''Work'''
+* Display All By Default: {{Bad|false}}
+|<!-- Parameters -->
+* Default Base Value: '''{{%|0.065}}'''
+* Show On Default Value: {{Bad|false}}
+* To String Style: '''PercentOne'''
+* Format String:<br />"{0} per hour"
+* Min Value: '''{{%|0}}'''
+* Show On Animals: {{Bad|false}}
+* Show On Mechanoids: {{Bad|false}}
+* Show Developmental Stage Filter: '''Adult'''
+|<!-- Complex Parameters -->
+* Skill Need Offsets:
+** '''SkillNeed_BaseBonus:'''
+*** Skill: '''[[Skills#Intellectual|Intellectual]]'''
+*** Base Value: '''{{%|-0.015}}'''
+*** Bonus Per Level: {{+|{{%|0.0075}} }}
+*** Required: {{Good|false}}
+{{Graph:Chart|width=300|height=150|xAxisTitle=Intellectual Skill Level|yAxisTitle=Activity Suppression Speed Offset|yAxisFormat=%|type=rect|x=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20|y=-0.015, -0.0075, 0, 0.0075, 0.015, 0.0225, 0.03, 0.0375, 0.045, 0.0525, 0.06, 0.0675, 0.075, 0.0825, 0.09, 0.0975, 0.105, 0.1125, 0.12, 0.1275, 0.135|xGrid=|yGrid=}}
+** '''SkillNeed_BaseBonus:'''
+*** Skill: '''[[Skills#Social|Social]]'''
+*** Base Value: '''{{%|-0.015}}'''
+*** Bonus Per Level: {{+|{{%|0.0075}} }}
+*** Required: {{Good|false}}
+{{Graph:Chart|width=300|height=150|xAxisTitle=Social Skill Level|yAxisTitle=Activity Suppression Speed Offset|yAxisFormat=%|type=rect|x=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20|y=-0.015, -0.0075, 0, 0.0075, 0.015, 0.0225, 0.03, 0.0375, 0.045, 0.0525, 0.06, 0.0675, 0.075, 0.0825, 0.09, 0.0975, 0.105, 0.1125, 0.12, 0.1275, 0.135|xGrid=|yGrid=}}
+* Stat Factors:
+** '''[[Psychic Sensitivity]]'''
+| 209
+<!--</StatDef>-->
+|}
+
+== Version history ==
+* [[Anomaly (DLC)]] Release - Added.
+
+{{nav|stats|wide}}

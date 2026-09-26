@@ -1,0 +1,80 @@
+{{Infobox main|structure
+| name = Door
+| image = Door.png
+| description = Divides rooms. Simple doors must be manually opened, which slows people down. The amount of slowdown depends on what the door is made of.
+| type = Building
+| type2 = Structure
+| placeable = true
+| cover = 1
+| minifiable = false
+| size = 1 ˣ 1
+| rotatable = false
+| flammability = 1
+| hp = 160
+| terrain affordance = depends on materials
+| work to make = 850
+| stuff tags = Metallic, Woody, Stony
+| resource 1 = Stuff
+| resource 1 amount = 25
+| destroyyield = nothing
+}}
+{{Info|'''Doors''' provide entry points through walls for colonists while still keeping out enemies and wild animals.}}
+
+== Acquisition ==
+{{Acquisition}}
+
+Note that in addition to the normal architect menu, doors can be selected for construction via a gizmo that appears when walls are selected.{{Check Tag|Designation over existing walls?}}
+
+== Summary ==
+{{Stub|section=1|reason=Base door open speed, animals}}
+
+[[File:Door_gizmos.png|thumb|left|Door gizmos]]
+Doors mostly act like [[wall]]s. Doors are valid structures for supporting [[roof]]s and creating [[room]]s. Opening a door will allow access and make [[temperature|heat]] transfer faster. Note that the room is still considered enclosed for [[temperature]] mechanics. So, unlike a hole in the wall, an open door will not equalize temperature instantly with the outdoors. [[Floor]] under a door does not count towards a rooms' stats, but [[filth]] on that tile does count. Doors do not block the interaction spots of buildings.
+
+Opening a door take a small amount of time, dependent on the material. Doors can be opened by colonists, [[slave]]s,{{IdeologyIcon}} [[friendly mechanoids]],{{BiotechIcon}} [[revenant]]s{{AnomalyIcon}} and [[prisoner]]s during [[prison break]]s. {{Check Tag|Friendly NPCs?|E.g. caravans}} Doors cannot be opened by [[raider]]s, [[manhunter]] animals, or prisoners that are not participating in a prison break. 
+
+Doors can be held open by selecting the door and toggling the gizmo marked as such. The door will not open or close automatically. Instead, a held open door will simply not close after the next friendly pawn opens it, and a held open door toggled off will close after the next pawn walks through it. 
+
+Doors can also be [[Orders#Forbid|forbidden]], again by selecting the door. Colonists and other colony-controlled pawns will not pass through it, even if open. However, colonists under a [[mental break]] will ignore restrictions, as do visitors, traders, and enemies.
+
+=== Enemy behavior ===
+In general, humanoid and mechanoid raiders treat a closed door like a wall. Most raiders will only try and break one if there are no other paths to their target. Sappers and breachers can break doors intentionally. Doors have less {{HP}} than walls, so tend to be prioritized. Retreating enemies will often break down doors in their path out, even if they have higher HP than the surrounding walls. The exact mechanics behind this are unknown. Manhunter animals will only try and break doors if they see something go inside it. Prisoners who have gone [[berserk]] will try and break out, while those in a prison break "have broken the locks" and can just open them.
+
+[[Revenant]]s{{AnomalyIcon}} can always open doors, revealing their location, as the door can still be seen opening and closing.
+
+Unclaimed doors, like those in [[ruin]]s, can be opened by any non-animal until they are claimed. Doors owned by an enemy must be claimed (which requires defeating said enemy) in order for colonists to open them.
+
+== Analysis ==
+[[File:Tiny biosculpter room.png|thumb|left|Biosculpter "mini-room" showing the interaction point overlapping the door.]]
+
+=== Material choice ===
+[[Wood]] is plentiful in most [[biome]]s, easy to construct, and quick to open, so a newer colony will typically make all of their doors out of it. However, it is both [[fire|flammable]] and not especially durable, so are prone to destruction. Later on, wood is still useful for internal structures, where their health doesn't really matter.
+
+[[Steel]] doors are moderately expensive. They are still vulnerable to fire, but have more health and open reasonably quickly. Once you can afford them, they are a decent upgrade to wood. [[Uranium]] and then [[plasteel]] have even more health, but are expensive materials, so should be reserved for [[prison]]s and active combat zones.
+
+Stone doors open very slowly. However, they are cheap, durable and have 0% flammability. Use stone doors in places where colonists won't travel a lot or where high durability is needed, such as a burning room, [[battery]] compartment, a [[geothermal generator]] room, or a [[Containment Strength|Containment Cell]].{{AnomalyIcon}} [[Granite blocks]] is the hardiest stone material, and no slower than any other stone.
+
+Once [[autodoor]]s have been researched, ''and'' you have the power and [[component]] supplies to reliably operate them, standard doors can be replaced with alternative materials and not slow down traffic at all, or at least slow it far less.
+
+In order to prevent air leakage, doors need to be made out of [[metal]] to be [[airtight]].{{OdysseyIcon}}
+
+=== Temperature regulation ===
+When creating temperature controlled spaces, such as [[cooler|freezers]], two doors can be used to create an 'airlock' to improve insulation and reduce [[temperature]] equalization, similar to double thick walls. The two doors should be placed  in the path of travel, not side by side, and ideally a single tile space is placed between the doors. If they are placed directly adjacent to each other both doors will be open at the same time as a pawn walks through them, allowing more heat to get out, though it will still perform better than a single door on average. 
+
+On the other hand, open doors can increase temperature equalization, either with another room or the outdoors. Equalization through open doors is less potent than [[vent]]s.{{Check Tag|Verify|Verify and provide actual numbers}}
+
+=== Mini-rooms ===
+Because doors do not block the interaction spots of buildings, it's possible to build "mini-rooms" that are only large enough for the building itself, with the door at the interaction spot. Mini-rooms are best used for buildings that don't damage pawn mood when used in cramped quarters, such as [[cryptosleep casket]]s and [[biosculpter pod]]s,{{IdeologyIcon}} or buildings that see only very brief use, such as a [[comms console]] outside of [[Biotech]] since [[Children]]{{BiotechIcon}} will frequently use it to fill their learning need.
+
+These rooms are especially useful for biosculpter pods: mini-rooms only require 6 tiles of [[sterile tile]] per pod for maximum cleanliness. Note that while the door's tile does not need to be sterile tile itself, it does need to be kept free of dirt for the best bonus to apply. The door can be held open to maximize speed of access for nutritional loading or emergency medic cycles while still maintaining the cleanliness bonus
+
+{{Building Stats Table}}
+
+== Version history ==
+* [[Version/0.3.410|0.3.410]] - Added.
+* [[Version/0.7.581|0.7.581]] - Now lockable.
+* [[Version/1.3.3066|1.3.3066]] -  Doors not owned by the player can be forbidden.
+* [[Version/1.3.3117|1.3.3117]] - Added a "build door" gizmo that displays when a wall or wall blueprint is selected.
+
+{{Nav|structure|wide}}
+[[Category:Structure]] [[Category:Door]]

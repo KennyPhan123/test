@@ -1,0 +1,57 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Drugs/Go-juice}}
+|}
+----
+{| {{STDT| c_24}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Go-juice tolerance" <!-- defName="GoJuiceTolerance", ParentName="DrugToleranceBase" -->
+! Go-juice tolerance
+----
+* Def Name:<br />GoJuiceTolerance
+* Label:<br />go-juice tolerance
+| A built-up tolerance to go-juice. The more severe this tolerance is, the more go-juice it takes to get the same effect.
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|100%|0%|50%}}
+* Max Severity: '''100%'''
+* Scenario Can Add: {{Good|true}}
+* Is Bad: {{Good|false}}
+* '''Comps'''
+** '''Severity Per Day:''' {{---|1.5%}}
+** '''Drug Effect Factor'''
+*** Chemical: '''GoJuice'''
+** '''Hediff Givers:''' ''Random Drug Effect''
+*** Hediff: '''[[Hediffs#Moderate chemical damage|Moderate chemical damage]]'''
+*** Parts To Affect: '''Brain'''
+*** Severity To {{MTB}} Days Curve:
+<div><li style="display: inline-table;">
+{| {{STDT| c_24}}
+! Severity !! {{MTB}} Days
+|-
+! 45%
+| 99999
+|-
+! 50%
+| 120
+|-
+! 100%
+| 90
+|}{{Graph:Chart|width=300|height=200|xAxisTitle=Severity|yAxisTitle=MTB Days|type=line|x=0.45, 0.5, 1|y=99999, 120, 90|yAxisMax=200|interpolate=monotone|xGrid=|yGrid=}}</li></div>
+|<!-- Stages -->
+{| {{STDT| c_24}}
+! Label !! Parameters
+|-
+! Small
+|<!-- Parameters -->
+* Min Severity: '''0%'''
+|-
+! Large
+|<!-- Parameters -->
+* Min Severity: '''50%'''
+|-
+! Massive
+|<!-- Parameters -->
+* Min Severity: '''80%'''
+|}<noinclude>
+|}</noinclude>

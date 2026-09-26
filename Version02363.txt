@@ -1,0 +1,92 @@
+{{Version Nav|date=2014-02-26}}
+
+Alpha 2 is out! This time we’ve added tons of modding support, butchery and cooking (including cannibalism with attendant psychological effects), an ambience sound suite from Alistair, and a pile of other goodies including various oft-requested features.
+
+The changelog has a full accounting of changes (read between builds 334 and 363).
+
+==Release Trailer==
+
+<youtube>https://www.youtube.com/watch?v=Rhw3j_pYWnI</youtube>
+
+==Core Release==
+
+===Changes===
+
+* Started some heavy refactoring of how different items fill different slots in a square.
+* Added an options menu button to open your saves folder (nobody can find the damn thing).
+* Added an options menu button to reset the adaptive tutor.
+* Mac version now places Mods folder inside the app package to make the install cleaner.
+* Cleanup and optimization: TargetPacks and DamageInfo are now structs for better GC performance. Made system to save TargetPacks when they refer to Things. Various other.
+* Restructured how map section meshes are rebuilt to eliminate the in-between step that allocated large amounts of data. Now things print directly onto the mesh’s working data, which is a major optimization. Code is cleaner now too.
+* Ridiculously huge performance improvements across the board due to simple rewriting of old perf-blind code. For example, we no longer draw the whole map every frame(!) - and tons of others.
+* [[Trader]] kinds (farm vessel, slave trader) etc are now in XML and moddable.
+* For modding, I cleaned up the load sequence so it loads every definition in the game and all mods before resolving all references between them.
+* For modding, decoupled many references that found ThingDefinitions via their entitytypes, so we can have lots of definitions that share entitytypes. Now they use the ThingDefinitions directly.
+* Some small optimizations.
+* Stockpiling AI: when on hauling runs, colonists now pick up extra resources from nearby piles even if they can’t carry all of them.
+* Cooks taking food to hoppers now more perf-efficient and cooks will no longer fill hoppers that are already nearly full.
+* Mods can now load content cross-references and images. Content handling is much cleaner overall. In progress. Created '''[[Royal bed (mod)|Royal Bed]]''' test mod.
+* Guns and equipment, plants, and apparel are all now loaded from XML. Added '''[[rose|rose decorative plant]]'''.
+* Letters now have varying urgencies. More urgent gets a hotter color. The most urgent ones also bounce occasionally to get your attention.
+* Readjusted probabilities of solid and shuffled pawn bios appearing.
+* Combined pawn RaceDefinitions into general ThingDefinitions. All pawn definitions now generate meat definitions.
+* AI: The old code for having AIs watch for job failure conditions is creaking under the strain. I’ve cut it and started a new, more modularized failure condition watcher infrastructure. Now, when the JobDriver defines the high-level behaviors, the action and failure conditions won’t have to be coupled together. You’ll be able to configure and stack together failure conditions appropriate to the job being done. This allows reuse of behavior code in different contexts (e.g. Hauling a resource to a stockpile, hauling a resource to a building site, hauling a resource to a table for reaction site have different fail conditions but can use the same hauling core code).
+* Started integrating Al’s ambient sounds.
+* Finished basic new AI failure condition framework.
+* Thoughts are now moddable definitions.
+* [[Human resources|Cannibalism]] causes bad [[mood|thoughts]], differently depending on whether it’s eaten raw or cooked into a meal. Colonists avoid eating it. Different meats look different.
+* Integrated first-pass weather and ambient sounds.
+* Reactions are now called recipes.
+* Created a data-driven default settings system for storage buildings. Hoppers default to not accepting human meat.
+* Cleaned up and pumped up map save/load to be able to handle all sorts of funky cross-references. This was originally so I could save a colonist’s job with a true reference to the specific work order they were in the process of carrying out.
+* Blasting charges cut (until they can be balanced properly).
+* Skill needs are now data-driven so you can define specific relationships between skills and different recipes’ efficiency and work time.
+* Recipe ingredients are now configurable and work using categories. You can tell your colonists what to butcher, and whether or not it should include people.
+* Balance: Colonists self-extinguish 2.5x more often.
+* Advanced meal types require advanced cooking skills.
+* Converted a bunch of old AI code into the new consistent toil format.
+* Converted all building definitions from hardcoded into XML.
+* Started modularizing EffectMakers and making them data-driven.
+* Finished decent refactoring of effects system so it can be data-driven. Different meals/recipes can make different effects while being eaten/worked on.
+* Finished refactoring out the Interactive interface; all AI actions are now specified in AI code, not in the things they interact with.
+* Factored out a lot of EntityDefinitions. These are now used as mini-categories, not individual entity identifiers, so modders can add more entities easily.
+* Migrated pawn kind definitions (sniper, drifter, refugee, etc) into XML.
+* Migrated research project definitions into XML.
+* Migrated all remaining Thing data into XML.
+* Rewrote how thing component data is handled (it’s no longer defined per enum on a centralized list) and migrated it all into XML.
+* Rewrote XML inheritance to inherit data about subelements and permit inheritance chaining (e.g. pawn->animal->squirrel).
+* Set up apparels to spawn according to who they are, data-driven.
+* Some late-night optimization, especially to the reachability checker, which, although not an expensive algorithm, can be called thousands of times in a frame, and so needs to be fast as hell.
+* [[Skills]] now decay over time when at very high levels.
+* Created the passion system, which affects learning rate according to characters’ natural inclination towards different subjects. As in real life, anyone can learn anything that they’re willing to do, but you learn a lot faster if you’re naturally interested in the subject.
+* Game save/load of lists, dictionaries, and hashsets now runs the same code whether saving simple values, deep-saveable objects, in-map cross-references, or references to game data definitions.
+* Mods can now override core game data as well as add to it.
+* Storytellers are now defined in XML.
+* Made [[Mini-turret|turret]] look and sound weak to match its functionality.
+* Work type definitions and work giver definitions are now in XML, so you can mod in new work types to correspond to new economy chains.
+* Started working on getting code loading with mods.
+* Finished up stone economy with stone walls.
+* Reworked debug lister menu to handle large numbers of options. Also added a type-in filter.
+* Filled out storyteller moddability.
+
+===New Content===
+
+* Plant growing zones added, along with AI to find and interact with them. Redesigned work AI to handle work on locations as well as things.
+* Created a no-roof region similar to the home region. The game won’t generate roofs in these regions. In addition, player-constructed roofs are removed when no-roof regions are added.
+* Added mod browser. Restructured mod data to be configurable. You can now install mods and run them in parallel. Created mod metadata screen (author, description, etc). See Attached Image [http://puu.sh/6GuGD.jpg Here].
+* AI: Started the reaction/butchery/cooking system. Working on a generalized reactions framework that characters will follow to transmute one set of items into another.
+* Started creating the “bill” interface so you can tell your colonists what to create at a recipe station. e.g. What meals to cook, what to butcher, etc.
+* Created '''[[Electric stove|cook stove]]''' and three [[meal]] types to cook. Advanced meal types require multiple ingredients but have better psychological and nutritive effects.
+* Added varied food types from plants: [[potatoes]], [[agave]], and [[berries]].
+* Added release-mode console GUI so modders can properly debug their content without going insane.
+* Added max ingredient search radius for bills.
+* Added qualitative descriptions to skill levels.
+* Added gather spots so you can make idle colonists gather around certain tables.
+* Added stone economy: '''[[stonecutter's table|stonecutter’s table]]''', crafting worktype, stone cutting workgiver, '''[[resources|stone blocks]]''' thing, '''[[stone tile|stone tiles]]''' floor, '''[[stone wall|low stone wall]]''', high stone wall.
+* Added blasting charges back in as a mod.
+* Added '''simple door'''. Cheaper, but cannot be powered.
+
+===Bug Fixes===
+
+* Extensive refactoring and bugfixing.
+* Tons of bugfixes.

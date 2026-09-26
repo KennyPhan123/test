@@ -1,0 +1,94 @@
+{{Infobox main|stony
+| name = Granite blocks
+| image = Granite blocks C.png
+| description = Blocks of solid granite. Granite is a very hard stone.
+<!-- Base Stats -->
+| type = Material
+| type2 = Stone
+| stuff category = Stony
+| marketvalue = 0.9
+| beauty = -12
+| mass base = 1.25
+| stack limit = 75
+| path cost = 14
+| rotatable = false
+| terrain affordance = Heavy
+<!-- Stat Modifiers -->
+| beauty factor = 1
+| beauty offset = 0
+| work to make factor = 1.3
+| work to build factor = 6	
+| work to build offset = 140
+| max hit points factor = 1.7
+| flammability factor = 0
+| melee blunt damage factor = 1.0
+| melee sharp damage factor = 0.65
+| melee cooldown factor = 1.3
+| door opening speed factor = 0.45
+| rest effectiveness factor = 0.9
+<!-- Creation -->
+| production facility 1 = Stonecutter's table
+| work to make = 1600
+| resource 1 = Stone chunk
+| resource 1 amount = 1
+| product amount = 20
+<!-- Technical -->
+| defName = BlocksGranite
+| stuff adjective = granite
+<!-- Unused -->
+| always haulable = true
+| appearance = Bricks
+| color = (105,95,97)
+| default color = (105,95,97)
+| draw gui overlay = true
+| graphic class = Graphic_Single
+| graphic path = Things/Item/Resource/StoneBlocks
+| label = granite blocks
+| parent name = StoneBlocksBase
+| resource readout priority = Middle
+| selectable = true
+| sound drop = Stone_Drop
+| sound impact stuff = BulletImpactGround
+| sound interact = Stone_Drop
+| thing class = ThingWithComps
+| sound melee hit blunt = MeleeHit_Stone
+| sound melee hit sharp = MeleeHit_Stone
+| use hit points = false
+| volume = 1
+}}
+'''Granite blocks''' are a [[stony]] [[material]] and are the strongest of the five types of [[stone blocks]].
+
+== Acquisition ==
+Granite blocks are cut from [[granite chunk]]s at a [[{{P|Production Facility 1}}]]. It takes {{Ticks|{{P|Work To Make}}}} of work to cut a single chunk into {{P|Product Amount}} blocks.
+
+== Usage ==
+Granite blocks can be used as a material for [[stuff]]able items with the [[Stony]] stuff tag.
+
+Granite blocks can be used in the following recipes:
+{{Ingredient List}}
+
+== Analysis ==
+=== Comparison to other materials ===
+Granite blocks don't have any unique recipes and are only used in stuffable items and buildings. As such, they must be considered in comparison to the other stone types, which share all the same recipes.
+
+As the most durable building stone, granite blocks have almost 10% more hit points than their nearest competitor, [[limestone blocks|limestone]], and more than 21% more than the third strongest [[sandstone blocks|sandstone]], making it the preferred building material for areas that are expected to take damage. Note that granite, limestone, and sandstone all take the same amount of hits from common [[breacher]] weapons ([[breach axe]], [[frag grenade]]s, [[thump cannon]]). For areas where breachers are the main concern, such as a perimeter wall, sandstone may be preferred for its faster build time and marginally lower [[wealth]]. Otherwise, granite makes for a decent "default" choice especially where building HP is a concern.
+
+If available, both [[uranium]] and [[plasteel]] significantly outperform granite, with 47% and 65% more HP respectively. However, both materials are both more expensive and rarer to encounter than the relatively common granite. Thus, they should only be used as needed and are typically relegated to constructions that will be a particular focus for damage, such as planned defensive positions or the walls at the receiving end of a killbox.
+
+=== Stone generally ===
+{{Stone blocks analysis}}
+{{Stonecutting maximization}}
+
+== Gallery ==
+<gallery>
+Granite blocks A.png|Stack of 1 granite blocks
+Granite blocks B.png|Stack of multiple granite blocks
+Granite blocks C.png|Full stack of granite blocks
+</gallery>
+
+== Version history == 
+* [[Version/0.7.581|0.7.581]] - Added, previously there was only generic "stone".
+* Beta 19/1.0 - Slowed constructing buildings with all stone types by 20%
+
+{{Nav|materials|wide}}
+[[Category:Material]] [[Category:Stone]] [[Category:Stone Blocks]]

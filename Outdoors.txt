@@ -1,0 +1,93 @@
+{{Verified|1.3.3387}}<!--
+-->'''Outdoors''' is the [[need]] for every pawn without the [[Undergrounder]] trait or the [[indoor dweller]] gene{{BiotechIcon}} to be outside.  Even when landed on a frontier world, most pawns feel the need for the great outdoors. Keeping them inside for too long will eventually affect their [[mood]] negatively.
+
+This isn't much of a concern for certain professions.  Farmers, animal handlers and hunters will go outside quite regularly.  It's more of a concern for pawns whose jobs keep them inside: cooks, builders, tailors, crafters, artists, researchers, etc.
+
+For the equivalent but inverse need for Undergrounder pawns, see [[Indoors]].
+
+== Need thresholds ==
+Characters' outdoors level is grouped into six thresholds: ''None'', Stuck Indoors, Trapped Indoors, Cabin Fever, Trapped Underground and Entombed Underground. Each threshold provides a different [[thought]] and thus [[mood]] penalty to a character.
+
+The outdoors levels are as follows:
+{| class="wikitable"
+|-
+! Label
+! Outdoors
+! Mood Debuff
+|-
+! ''None''
+| > 80%
+| ''None''
+|-
+! Stuck indoors
+| >60% and ≤80%
+| {{--|1}}
+|-
+! Trapped indoors
+| >40% and ≤60%
+| {{--|3}}
+|-
+! Cabin fever
+| >20% and ≤40%
+| {{--|5}}
+|-
+! Trapped underground
+| >0.05% and ≤20%
+| {{--|7}}
+|-
+! Entombed underground
+| ≤0.05%
+| {{--|9}}
+|}
+
+Outdoors caps at 0% and 100%.
+
+== Need changes ==
+The outdoors status level ticks up or down depending on two factors - the [[roof]] above the pawn, and whether they are considered indoors by room mechanics.
+
+Reductions in status level are reduced to 20% of their values while a pawn is in a bed, such as when awaiting an operation, and all changes are frozen while a pawn is sleeping.
+
+The outdoors need can only drop below 20% when under overhead mountain, however, if the outdoors need is already below 20% and the value would otherwise decrease, it will not increase. It will simply stay where it is. 
+
+The changes in each circumstance are displayed below. The value changes every {{ticks|150}}.
+{| class="wikitable"
+|-
+! rowspan='2' | !! colspan='2' | No Roof !! colspan='2' | Constructed Roof; or <br>Rock roof (Thin) !! colspan='2' | Overhead mountain
+|-
+! Per 150 ticks !! Per In-Game Hour !! Per 150 ticks !! Per In-Game Hour !! Per 150 ticks !! Per In-Game Hour
+|-
+! Indoors
+| {{+|{{#expr: 5 * 0.0025 * 100}}%}}     || {{+|{{#expr: 5 * 0.0025 * 100 * 2500/150 round 2}}%}}  
+| {{--|{{#expr: 0.32 * 0.0025 * 100}}%}} || {{--|{{#expr: 0.32 * 0.0025 * 100 * 2500/150 round 2}}%}}
+| {{--|{{#expr: 0.45 * 0.0025 * 100}}%}} || {{--|{{#expr: 0.45 * 0.0025 * 100 * 2500/150 round 2}}%}}
+|-
+! Indoors and in Bed
+| {{+|{{#expr: 5 * 0.0025 * 100}}%}}          || {{+|{{#expr: 5 * 0.0025 * 100 * 2500/150 round 2}}%}}  
+| {{--|{{#expr: 0.32 * 0.2* 0.0025 * 100}}%}} || {{--|{{#expr: 0.32 * 0.2* 0.0025 * 100 * 2500/150 round 2}}%}}  
+| {{--|{{#expr: 0.45 * 0.2* 0.0025 * 100}}%}} || {{--|{{#expr: 0.45 * 0.2* 0.0025 * 100 * 2500/150 round 2}}%}} 
+|-
+! Outdoors
+| {{+|{{#expr: 8 * 0.0025 * 100}}%}}    || {{+|{{#expr: 8 * 0.0025 * 100 * 2500/150 round 2}}%}}  
+| {{+|{{#expr: 1 * 0.0025 * 100}}%}}    || {{+|{{#expr: 1 * 0.0025 * 100 * 2500/150 round 2}}%}}
+| {{--|{{#expr: 0.4 * 0.0025 * 100}}%}} || {{--|{{#expr: 0.4 * 0.0025 * 100 * 2500/150 round 2}}%}}
+|-
+! Outdoors and in Bed
+| {{+|{{#expr: 8 * 0.0025 * 100}}%}}         || {{+|{{#expr: 8 * 0.0025 * 100 * 2500/150 round 2}}%}}  
+| {{+|{{#expr: 1 * 0.0025 * 100}}%}}         || {{+|{{#expr: 1 * 0.0025 * 100 * 2500/150 round 2}}%}}  
+| {{--|{{#expr: 0.4 * 0.2* 0.0025 * 100}}%}} || {{--|{{#expr: 0.4 * 0.2* 0.0025 * 100 * 2500/150 round 2}}%}} 
+|}
+
+== Analysis ==
+{{Stub|section=1|reason=Stategies, automation, judgement of risk etc. formatting}}
+* Most pawns that aren't [[zones|zoned]] out will satisfy this need on their own by going on a walk during [[Recreation]].
+* Spacing out your colony buildings from each other can help satisfy this need simply by forcing pawns to walk outdoors between them.
+* Build early recreation buildings outside, before you have the ability to create an Impressive rec room.
+* Manually Draft them and move them outside for awhile.
+* Pawns not under roofs will gain Outdoors faster than under roofs.
+* While events will not affect Outdoors, pawns under a thick roof will lose Outdoors ~30% faster, and pawns in bed will lose/gain Outdoors at 20%.
+
+== See also ==
+* [[Deterioration]]
+
+{{nav|status levels|wide}}
+[[Category:Status Level]]

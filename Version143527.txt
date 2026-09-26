@@ -1,0 +1,31 @@
+{{Version Nav}}
+''Released October 25, 2022''
+
+Version 1.4.3527 is up now on the unstable (and stable) branch!
+* Update tutorial end message to point players to the correct place for changing storyteller settings.
+* Flamebow now triggers "pyromaniac has incendiary weapon" thought.
+* Growth moment flavor text doesn't appear when a pawn becomes a child.
+* Ensure severityPerDay doesn't become 0 between save/load cycles.
+* Tox gas research requires machining instead of electricity.
+* Reduced mechanitor ship combat points by half.
+* Remove the option to close the birth letter if the player has not yet named the baby and it's the last tick available to do so.
+* Babies born outside the player faction are given a real name instead of just "Baby". Players may still change the name if they adopt the NPC baby within a day of their birth.
+* Add a new icon texture for the circle which shows the current color on the copy/paste/change color widget icons.
+* Fix: Using reimplant ability doesn't give recipient correct xenotype icon for custom xenotypes.
+* Fix: Embryo implant float menu options missing pawn icon.
+* Fix: AbilityOnCooldown key missing Resolve() call.
+* Fix: If a downed enemy is teleported using farskip they will be drafted upon entering the destination map despite being downed.
+* Fix: Never sleep xenohumans still rest when caravanning alone.
+* Fix: Scenario text cut off if tiny text is disabled.
+* Fix: Genetic metabolism doesn't actually effect hunger rate.
+* Fix: Double slab bed is not next to single slab bed in the architect menu.
+* Fix: Abandoning colony pawns text doesn't mention mechs.
+* Fix: Control Sublink (high) can take up the lower 3 sublink levels preventing use of the normal sublinks.
+* Fix: Can train shooting and melee on colony mechanoids.
+* Fix: Abandoning a colony with mechs in it and making new a base will cause a mech control group error and show mechs are still active.
+* Fix: Non-grouped control groups have their label pluralized.
+* Fix: Hostile pawns try to path to destroyed structures.
+* Fix: match diabolus fire burst range to its range overlay.
+* Fix: Incorrectly named folder "ManGeneration".
+* Fix: Pawns trying to use styling station over and over.
+* Fix regression: Food consumption absurd during lactation.

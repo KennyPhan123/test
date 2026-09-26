@@ -1,0 +1,131 @@
+{{Infobox main|production
+| name = Hydroponics basin
+| image = HydroponicsTable.png
+| description = An artificial nutrient bath for growing plants. The nutrients pumps must work continuously; the plants will die if power is cut.
+| type = Building
+| type2 = Production
+| placeable = true
+| path cost = 30
+| blockswind = false
+| passability = pass through only
+| cover = 0.3
+| minifiable = false
+| size = 1 × 4
+| flammability = 0.5
+| hp = 180
+| cleanliness = -3
+| power = -70
+| terrain affordance = medium
+| research = Hydroponics
+| skill 1 = Construction
+| skill 1 level = 4
+| work to make = 2800
+| resource 1 = Steel
+| resource 1 amount = 100
+| resource 2 = Component
+| resource 2 amount = 1
+}}
+A '''hydroponics basin''' is a [[production]] building that provides a highly fertile area for growing [[crop]]s fast and in areas that otherwise would not support them.
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+A powered hydroponics basin acts as a terrain with {{%|{{#vardefineecho:fertility|2.8}} }} soil [[Plants#Fertility|fertility]], twice that of rich soil. The exact speed boost depends on the [[Property:Fertility Sensitivity|Fertility Sensitivity]] of the plant in question. For example, [[rice plant|rice]] gets the full 280% effect, while [[potato plant|potatoes]] won't benefit nearly as much.
+
+Hydroponics basins are placed on the ground, and work both indoors and outdoors. In order to function, they require 70 watts of [[power]], day and night. This is ''absolutely critical'', as when unpowered, its plants will wither very quickly. They can't be uninstalled, only deconstructed for half their value as usual. They do not [[short circuit]] in the [[rain]].
+
+{{Cleanliness Note}}
+
+Hydroponics only provides soil fertility, so all other plant growth conditions must be met. This isn't a problem in the growing season while outdoors, but in order to regulate [[temperature]], you must grow indoors, under a mostly complete roof, and use buildings like a [[heater]]. The [[sun lamp]] is required to provide light in the absence of sunlight (due to the roof). Note that [[standing lamp]]s aren't suitable for crop growth: plants require at least 51% light, while standing lamps provide a maximum of 50% lighting and do not "stack".
+
+Colonists will automatically plant only 1 type of plant per basin. By default, this is [[rice plant|rice]]. The following plants can be grown in hydroponics basins:
+
+{{#ask: [[SowTags::Hydroponic]]
+ | format = ul
+ | class = ul-column-width-150
+ | link = none
+ | template = DLC Icons
+ | sort = From DLC, Name
+}}
+
+Crops grown in hydroponics basins are not slowed during a [[drought]].{{OdysseyIcon}}
+
+=== Pollution ===
+Hydroponics basins placed on [[Pollution|polluted ground]]{{BiotechIcon}} provide no protection to plants from the pollution, meaning that crops except for [[psychoid plant]]s and [[toxipotato plant]]s{{BiotechIcon}} will rapidly die. The 280% fertility of Hydroponics Basins is unchanged- this only benefits growing psychoid as toxipotatoes have a fertility sensitivity of 0% and grow no faster in hydroponics than they do in the ground.
+
+== Analysis ==
+Hydroponics are most useful in colonies with limited growing space. This mainly includes colonies inside a mountain or in an extreme [[biome]] like a [[Biomes#Desert|desert]] or [[ice sheet]]. They are also useful for [[gravship]]s{{OdysseyIcon}}, as there is no way to grow crops other than hydroponics.
+
+If there is plenty of fertile soil, hydroponics can still be useful to save on space but are not critical to build. In terms of yield, 1 tile of hydroponics is equivalent to 2.8 tiles of regular soil. Since soil is free, it is usually cheaper to plant in soil rather than build hydroponics, even after considering the costs of [[sun lamp]]s and [[heater]]s. See [[#Indoors]] for more analysis. If the cost of hydroponics does not matter, they are superior as hydroponics take up less space and thus reduce the amonut of time spent traveling.
+
+Not all crops may grow in hydroponics. Besides [[trees]] and [[decorative plants]], the following plants can't be grown in a hydroponics basin:
+
+<ul><includeonly><onlyinclude>{{#if: {{#pos:{{{?SowTags}}}|Hydroponic}} ||<li>{{DLC Icons|{{{?Plant}}} }}</li>}}</onlyinclude></includeonly>
+{{#ask: [[SowTags::+]] [[Type2::!Tree]] [[Type2::!Decorative]]
+ | link = none
+ | named args = true
+ | ?SowTags = ?SowTags
+ | ?Name = ?Plant
+ | format = template
+ | template = :Hydroponics basin
+ | sort = From DLC, Name
+}}
+</ul>
+
+Power is absolutely critical to use, as plants will quickly die without it. It is recommended to have [[batteries]] and/or alternative power sources in the case of [[breakdown]]s and [[short circuit|conduit explosions]]. A long [[solar flare]] will kill all hydroponic crops, though colonists can harvest crops to prevent a total loss.
+
+=== Indoors ===
+[[File:SunlampHydroponics.png|350px|thumb|right|24 hydroponics basins inside a sun lamp.]]
+[[File:Hydroponics sunlamp comp.png|400px|thumb|right|Full hydroponics setup vs 3 sun lamps, including power & resources.<br/>Resource cost includes generators and batteries shown<br/>(but not heaters / coolers or power conduits).]]
+
+When making a "greenhouse", you must consider other plant needs. [[Sun lamp]]s are required to grow crops in a [[roof]]ed room. You need a mostly roofed room in order to control the [[temperature]] for [[heater]]s and possibly [[cooler]]s. Sun lamps, consuming 2900 W of power for 13 hours, are very power demanding. You also need to power the hydroponics themselves. A sun lamp and 24 hydroponics set up would cost 4580W at day and 1680W at night. Given that sun lamps are on only 13.2 hours a day, this equates to an average of 1595w for a sunlamp and 3275w for a sun lamp + 24 basins.
+
+For indoor farming, hydroponics should be compared to placing extra sun lamps and building generators. Hydroponics can be used to grow crops with a sun lamp, but a lamp can also be used to grow indoors without hydroponics. You can fit up to 24 basins per sun lamp, for a total of 280% growth for 1 sun lamp. Alternatively, you could place 2 more sun lamps, for a total of 300% growth (relative to 1 sun lamp).
+
+* 24 hydroponics basins would cost {{Required Resources|Hydroponics basin|24}} and {{#expr:{{Q|Hydroponics basin|Power Consumption}}*-24}} W. 
+* 2 extra sun lamps would cost {{Required Resources|Sun lamp|2}} for the lamps, and {{Required Resources|Solar generator|4}} for 4 [[solar generator]]s used to power the lamp. Outside of the planet's poles, these generators are enough to power 2 sun lamps with a [[battery]] or two.
+
+As 3 sun lamps are ''much'' less expensive than 1 sun lamp with a full hydroponics set up, placing sun lamps will be the preferred option for many stages of the game. Even considering the cost of extra batteries and heaters, this is still cheaper.
+
+In the late game, when [[steel]] and [[component]]s are trivial to obtain, then hydroponics have a few key advantages over sun lamps. They take up less space, meaning they are easier to defend. As they take up less space, colonists will need to walk less, which increases efficiency. Because hydroponics isn't dirt, it can save on cleaning time. Finally, hydroponics are more stable - if a [[blight]] takes out the greenhouse, then only 1.98 days of growth is lost. Even when considering [[solar flare]]s, rice in hydroponics grows so fast that it remains a consistent source of food.
+
+'''Notes'''
+* The DLC-exclusive plants [[fibercorn]] {{IdeologyIcon}} and [[nutrifungus]] {{IdeologyIcon}} do not require a sun lamp to grow indoors, but their extremely low Fertility Sensitivity means that building hydroponics basins provides a minimal benefit.
+* It is possible to leave up to 25% of a room unroofed, which lets sunlight through, without needing a sun lamp, whilst allowing temperature control. However, this is inefficient for temperature.
+* Hydroponics are the only way to grow crops inside a [[gravship]].{{OdysseyIcon}}
+
+=== Outdoors ===
+Hydroponics are not limited to indoor farming. As mentioned previously, it is usually better to grow in more soil than it is to build hydroponics. But if soil is limited, and temperature permits - namely in a desert - then hydroponics can be viable as a farming tool. 
+
+Note that hydroponics basins can be destroyed by [[raider]]s. You may want to build a hydroponics room, and just leave it unroofed. You could roof it in later in case of an event like [[toxic fallout]] or [[cold snap]].
+
+=== Plant choice ===
+[[Cotton plant]]s, [[healroot]], [[smokeleaf plant]]s, and [[tinctoria]] have their own unique products, making them all excellent choices for hydroponics basins. The same is true for [[hop plant]]s, [[psychoid plant]]s, and [[fibercorn]],{{IdeologyIcon}} but their reduced [[Property:Fertility Sensitivity|fertility sensitivity]] (70% to 10%) means that hydroponics will have a reduced advantage compared to growing on regular soil.
+
+When it comes to growing food, consider the following:
+
+:'''[[Rice plant]]s''' will provide the best crop yields. Lit with a sunlamp in optimal temperatures, a hydroponics basin will yield {{#expr: 4 * {{Q|Rice plant|Harvest Yield}} }} {{Icon Small|rice}} [[rice]] every {{#expr: {{Q|Rice plant|Real Grow Days}} / (((2.8 - 1) * {{Q|Rice plant|Fertility Sensitivity}}) + 1) round 2}}&nbsp;days, or {{#expr: 4 * {{Q|Rice plant|Harvest Yield Per Day (280)}} }} food per day (assuming a 100% mutiplier from [[difficulty]]). The exact amount may vary due to sowing and harvesting times, as well as external factors like power outages and solar flares. In spite of this, rice remains the crop with the greatest yield potential.
+
+:'''[[Strawberry plant]]s''' provide the second highest crop yields, producing {{#expr: 4 * {{Q|Strawberry plant|Harvest Yield}} }} {{Icon Small|berries}} [[berries]] every {{#expr: {{Q|Strawberry plant|Real Grow Days}} / (((2.8 - 1) * {{Q|Strawberry plant|Fertility Sensitivity}}) + 1) round 2}}&nbsp;days (assuming a 100% mutiplier from [[difficulty]]) under a sunlamp and optimal temperatures. This works out to about {{#expr: 4 * {{Q|Strawberry plant|Harvest Yield Per Day (280)}} }} food per hydroponics basin per day. This is {{%|{{Q|Strawberry plant|Harvest Yield Per Day (280)}} / {{Q|Rice plant|Harvest Yield Per Day (280)}}|2}} of what a crop of hydroponic rice would yield in the same time-frame. However, berries have the advantage of being suitable for consumption immediately, without the need for cooking.
+
+:'''[[Potato plant]]s''' are the least tile-efficient crop to grow in Core. Their fertility sensitivity of {{Q|Potato plant|Fertility Sensitivity}} prevents them from gaining the full benefit from hydroponics. A hydroponics basin will yield {{#expr: 4 * {{Q|Potato plant|Harvest Yield}} }} {{Icon Small|potatoes}} [[potatoes]] every {{#expr: {{Q|Potato plant|Real Grow Days}} / (((2.8 - 1) * {{Q|Potato plant|Fertility Sensitivity}}) + 1) round 2}}&nbsp;days, or {{#expr: 4 * {{Q|Potato plant|Harvest Yield Per Day (280)}} }} food per day (assuming a 100% mutiplier from [[difficulty]]). That is only {{%|{{Q|Potato plant|Harvest Yield Per Day (280)}} / {{Q|Rice plant|Harvest Yield Per Day (280)}}|2}} of what a crop of hydroponic rice would yield the same time-frame, they are technically the most ''work''-efficient crop in hydroponics, however. If you happen to be starved on grower time, then potatoes have a small niche – but a colony using hydroponics is unlikely to be starved on grower time.
+
+:'''[[Nutrifungus]]'''{{IdeologyIcon}} is even less tile efficient than potatoes, but might be a viable option if the colony's [[ideoligion]]{{IdeologyIcon}} prefers eating [[raw fungus]]. A hydroponics basin will yield {{#expr: 4 * {{Q|Nutrifungus|Harvest Yield}} }} {{Icon Small|raw fungus}} [[raw fungus]] every {{#expr: {{Q|Nutrifungus|Real Grow Days}} / (((2.8 - 1) * {{Q|Nutrifungus|Fertility Sensitivity}}) + 1) round 2}}&nbsp;days, or {{#expr: 4 * {{Q|Nutrifungus|Harvest Yield Per Day (280)}} }} food per day (assuming a 100% multiplier from [[difficulty]]). That is only {{%|{{Q|Nutrifungus|Harvest Yield Per Day (280)}} / {{Q|Rice plant|Harvest Yield Per Day (280)}}|2}} of what a crop of hydroponic rice would yield the same time-frame, but with a potential mood buff.
+
+== See also ==
+* [[Growing zone]]
+
+== Version history ==
+* [[Version/0.0.245|0.0.245]] - Balanced down hydroponics growth rate.
+* [[Version/0.3.410|0.3.410]] - Fertility increase and requires power or the plants die. You can also now set what to grow on them.
+* Beta 19 - now requires components to build, and the default crop was changed to rice (from potatoes). It also received a remodel.
+* [[Version/1.4.3523|1.4.3523]] - Fix exploit: Growing multiple plants in single spot in hydroponics basin.
+* [[Version/1.4.3641|1.4.3641]] - Fix: [[Gauranlen seed|Gauranlen]] and [[polux seed]]s can be planted on hydroponics basins.
+
+<gallery>
+OldHydroponics.png|The Old Hydroponics Texture
+</gallery>
+
+{{Nav|production|wide}}
+[[Category:Production]] [[Category:Food Production]] [[Category:Drug Production]]

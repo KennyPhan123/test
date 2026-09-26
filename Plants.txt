@@ -1,0 +1,320 @@
+<!--Top Nav Box-->
+{| align=center
+! {{MainSection_Nav}}
+|}
+{| align=center
+| {{Plants_Nav}}
+|}
+----
+<!-- End Nav -->
+{{Rewrite|reason=Cleanup and clarity}}
+{{for|the skill of the same name|Skills#Plants{{!}}Skills}}
+{{TOCright}}
+'''Plants''' are passive, flammable objects available in numerous species of different appearance, growth rate, lifespan, '''fertility''' requirements, and biome. Plants are generally passable, minifiable, provide no cover, and are not susceptible to Sharp or Blunt damage (except trees, cacti, and bushes.) All plants can be destroyed by [[Fire]], [[Work#Plant_cut|cutting]], a [[Defoliator ship]], or being consumed by an animal.
+Plants may spontaneously grow in available tiles or can be cultivated by colonists in [[growing zone]]s or [[hydroponics basin]]s. With adequate time and environmental conditions, plants will age into a '''mature''' lifestage when they can be '''harvested''' by colonists assigned to [[Work#Grow|Grow]] work.
+
+Plants are essential to producing [[food]], [[textile]]s, feed for [[animals]], [[dye]], [[wood]], [[chemfuel]], [[drug]]s, and [[medicine]]. 
+
+[[File:Plantation growing zone.png|500px]]
+
+
+== Growth rate factors ==
+
+===Fertility===
+{{For|[[human]] fertility|Reproduction#Fertility{{!}}Reproduction}}
+Fertility is a measure of a location's efficacy for growing plants. Most plants have a Fertility requirement of at least 50% (except trees at a measly 30% Fertility). Plant growth speed is also positively correlated to soil Fertility. However, fertility does ''not'' affect the harvested yield from a plant, just the time to mature to that yield. Different [[terrain]]s or growing apparatuses have different fertilities.
+
+Most plants have a [[Property:Fertility_Sensitivity|fertility sensitivity]], known internally as fertilityFactorGrowthRate, which is used to determine how "picky" a plant is about terrain fertility. A plant with a [[Property:Fertility_Sensitivity|fertility sensitivity]] of 0% will not care if it is planted on fertile soil or sand; it will grow at the same rate on any possible terrain tile. In contrast, a plant with a [[Property:Fertility_Sensitivity|fertility sensitivity]] of 100% will not grow so well if it is planted on anything less fertile than standard soil.
+
+'''Note''': Beyond 100% Fertility, high Fertility Sensitivity becomes a bonus rather than a penalty. For such cases highly sensitive plants are preferable.
+
+<big>{{math|''(GRF(F)) Growth Rate Factor(Fertility) {{=}} (Fertility &divide; 100% &minus; 1) &times; fertilityFactorGrowthRate + 1}}</big>
+
+==== Fertility table ====
+{{See also|Terrain}}
+The table below lists the fertility of different terrains and other valid places to grow crops. Note that not all of the below support all plants - for example, trees cannot be grown in hydroponics basins, even though the basin's fertility is above their fertility requirement.
+{| {{STDT| sortable c_25 text-center}}
+! Type !! Fertility
+|-
+! [[Hydroponics basin]]
+| 280%
+|-
+! Lichen-covered soil
+| 100%
+|-
+! Marshy soil
+| 100%
+|-
+! [[Plant pot]]
+| 100%
+|-
+! Rich soil
+| 140%
+|-
+! Sand
+| 10%
+|-
+! Soil 
+| 100%
+|-
+! Stony soil
+| 70%
+|-
+! [[Bonsai pot]] {{IdeologyIcon}}
+| 100%
+|-
+! [[Fungal gravel]] {{IdeologyIcon}}
+| 70%
+|}
+
+=== Temperature ===
+For normal growth rate, most plants require a [[temperature]] between {{Temperature|6}} and {{Temperature|42}}. <!--Plant growth rate drops by 10.0% for each degree Celsius below {{Temperature|6}}, and by 6.25% for each degree above {{Temperature|42}}.--> The plant's info window will show ''&apos;Non-ideal temperature. Temperature growth multiplier: #%&apos;''. Plants will not grow, and colonists will refuse to sow crops, when the temperature falls outside the plant's growth range. In most cases this is {{Temperature|0}} to {{Temperature|58}}, although heat-resistant plants such as cacti have a range of {{Temperature|0}} to {{Temperature|75}}. The plant's info window will show ''&apos;Non-ideal temperature. Not growing.&apos;''
+
+If the temperature drops below {{Temperature|-10}}, plants start to either die or lose their leaves, depending on their type. 
+* Most crops die, together with cultivated flowers and cocoa trees. [[Healroot]], [[nutrifungus]]{{IdeologyIcon}} and [[fibercorn]]{{IdeologyIcon}} are the only cold-resistant crops.
+* Most wild plants merely become leafless. Mature plants such as [[berry bush]]es can still be harvested even if it's not obvious at first glance. [[Glowstool]]s, [[bryolux]], and [[psilocap]]{{OdysseyIcon}} are fragile and die from the cold.
+
+Each plant has its own temperature threshold, set at a random temperature between {{Temperature|-18}} and {{Temperature|-10}}, which is why not all crops die at the same time. As long as the temperature stays above {{Temperature|-19}}, some crops might survive. Beyond that, they won't.
+
+Leafless plants are inedible by animals. The leafless effect is obvious on deciduous trees, because they are shown without leaves, and on bushes and grass, because they look brown and shrivelled. But it actually applies to all plants, including those that look unchanged, such as pine trees, wild healroot or wild flowers. It takes 24 hours for leafless plants to regrow leaves after the temperature rises back above the plant's leafless threshold. Note that, despite being unedible during that time, they start growing again as soon as the temperature is above {{Temperature|0}}. 
+
+An additional reason why animals might starve in cold weather is that deep snow can cover low lying plants and prevent animals from eating them, even if the temperature is not low enough to make them leafless.
+
+The actual values of temperature and temperature growth multiplier are unseen real numbers, the game only shows rounded values. Thus, it is possible, for example, to see a 3% multiplier at 58°C (the actual temperature may be 57.52°C).
+{{GraphChart|width=400|height=100|xAxisTitle=Temperature (°C)|yAxisTitle=Growth Factor|type=line|x=0, 6, 42, 58 |y1=0, 1, 1, 0|yType=number}}
+<big>{{math|''(GRF(T)) Growth Rate Factor(Temperature) {{=}} Temperature &divide; 6°C {{X|&nbsp;|15}}; Temperature < 6°C}}<br>
+{{math|''(GRF(T)) Growth Rate Factor(Temperature) {{=}} 1 {{X|&nbsp;|44}} ; 6°C ≤ Temperature ≤ 42°C}}<br>
+{{math|''(GRF(T)) Growth Rate Factor(Temperature) {{=}} (58°C &minus; Temperature) &divide; 16°C ; Temperature > 42°C}}</big>
+
+===Light===
+Most plants typically require at least 51% [[Environment#Light|light]] to grow.
+
+Decorative Plants typically require at least 30% [[Environment#Light|light]] to grow.
+
+All mushrooms, such as nutrifungus, need 0% [[Environment#Light|light]] to grow. Any light from non-mushroom sources will cause the nutrifungus to die.
+
+When a plant lacks adequate light its info window indicates this with the text <tt>'Needs light level: ##%'</tt>. Over that minimum a plant's growth rate will increase until it reaches its optimal light level (100% standard).
+: Example: Rose (Needs light level: 30% Optimal light 100%). In soil or Plant pot (Fertility 100%) under Standing lamp Light (50%) growing Speed 29%) 
+
+Most artificial light sources only provide 50% light. Only decorative plants, [[tinctoria]], and [[Fibercorn|fibercorn]] can grow under such poor light conditions. The [[sun lamp]] provides 100% light in its radius, and is thus usually required for any indoor growing.
+
+: <big>{{math|''(GRF(L)) Growth Rate Factor(Light) {{=}}<br>&#8199;&#8199;&#8199; (Light &minus; growMinGlow) &divide; (growOptimalGlow &minus; growMinGlow)}}</big>
+
+In [[Modding|mods]], this minimum light value can be modified by changing a plant's <growMinGlow> value. A plant's optimal light level can be modified by changing its <growOptimalGlow> value.
+
+==Rest==
+[[File:Plants-Growing_Time.png|right|thumb|Overview of the hourly plant activity.]]
+All plants rest from hour 19 through hour 5. More accurately, plants rest for 11h of the day, leaving 13h of the day for growing.
+
+During the plant resting time period, plants will not grow no matter the light level.
+
+A new constant, Growing Ticks/Day, can be found by multiplying Ticks/Day by 13/24 (approx. 54.167%) :
+
+<big>{{math|''Growing Ticks/Day {{=}} (60,000 Ticks/Day &times; 13/24) {{=}} 32,500 Ticks}}</big><br>
+{{clear}}
+
+==Actual growth time==
+The Growth Time displayed in-game can tend to confuse a player into thinking a plant will be fully grown in X number of days.<br>
+Due to the various Growth Rate Factors (Fertility, Temperature, Light) and every plant's need to rest, the growDays or "Growing Time" listed in-game is not an accurate/intuitive representation of how long a plant actually takes to grow.<br>
+
+<big>{{math|''Actual Growth Time {{=}} (60,000 Ticks/Day &times; growDays) &divide; (Growing Ticks/Day &times; GRF(Fert) &times; GRF(Temp) &times; GRF(Light))}}</big><br>
+
+Therefore, Real Growth days is approximately 1.8462 times bigger than in-game value of "Growing Time".<br>
+For example: If to sow a Potato plant (5.8:growDays), on Soil (1:Fert), experiencing optimal temperature and light 100% of the time (1:Temp, 1:Light), it will take approximately 10.7 actual in-game days to grow.<br>
+It is important to remember this when setting up your growing zones.
+
+==Lifespan==
+If they are not harvested or eaten, plants will eventually die. The [[Menus#Messages 2|message]] will be named ''<plant> died from rotting''. The counting of their lifetime starts when the plant is sown/spawned. Since plants only grow during certain hours, and growth rate varies greatly under different circumstances, it is possible for a plant to die before it reaches full maturity or even while still on the initial progress. A plant will also die from rotting if it is completely deprived of light - for example, if a roof is built over it.
+
+The lifespan of a plant is calculated by  multiplying the plant's ''growDays'' by its ''lifespanFraction''.
+Most vanilla plants have a default ''lifespanFraction'' of 5, but some go as high as 8. Trees have this property as well, but due to their long growth time (''growDays''), their lifespan is longer than is generally relevant.<br>
+
+== Types of plants ==
+There are no clear categories of plants provided by the game. For the purpose of easier comparison, plants can be split in the following categories. Note that many plants fall in more than one category.
+* '''[[Wild plants]]''' are plants that can't be planted by the player.
+* '''[[Decorative plants]]''' are plants that can be planted by the player and which main purpose is to add [[Beauty]] to a room or area.
+* '''[[Trees]]''' are plants that yield wood or have "tree" in their name.
+* '''[[Domesticated plants]]''' are plants that can be planted by the player and yield something else than wood.
+* '''Food plants''' are plants that yield food.
+* '''Resource plants''' are plants that yield something else than food and wood.
+
+=== Domesticated plants ===
+{{#ask: [[Category:Domesticated plants]]
+| ?Grow Days
+| ?Real Grow Days
+| ?Harvest Yield
+| ?Harvest Yield Per Day (70) # = Yield Per Day (Gravel)
+| ?Harvest Yield Per Day (100) # = Yield Per Day (Normal)
+| ?Harvest Yield Per Day (140) # = Yield Per Day (Fertile)
+| ?Harvest Yield Per Day (280) # = Yield Per Day (Hydroponic)
+| ?Fertility Sensitivity
+| ?Beauty
+}}
+{{math|''Real Grow Days'' {{=}} Grow Days &divide; 0.5417}}
+{{math|''Nutrition per Day'' {{=}} Harvest Yield &times; Nutrition (0.05) &divide; Real Grow Days}}
+
+=== Decorative plants ===
+{{Main|Decorative plants}}
+{{#ask: [[Category:Decorative plants]]
+| ?Beauty
+| ?Grow Days
+| ?Real Grow Days
+| ?Lifespan
+| ?Fertility Sensitivity
+| ?Sow Work
+}}
+
+=== Wild plants ===
+{{#ask: [[Category:Wild plants]]
+| ?Grow Days
+| ?Real Grow Days
+| ?Beauty
+| ?Harvest Yield
+| ?Harvest Product
+| ?Fertility Sensitivity
+}}
+
+=== Trees ===
+{{Main|Trees}}
+{{#ask: [[Category:Trees]]
+| ?Beauty
+| ?Grow Days
+| ?Real Grow Days
+| ?Harvest Yield
+| ?Harvest Yield Per Day (70) # = Yield Per Day (Gravel)
+| ?Harvest Yield Per Day (100) # = Yield Per Day (Normal)
+| ?Harvest Yield Per Day (140) # = Yield Per Day (Fertile)
+| ?Fertility Sensitivity
+}}
+{{math|''Yield per Day' {{=}} Yield  &times; (1 &minus; Plant Resting<ref>This is the fraction of the day when plants don't grow, 0.45 is used in above calculation.   [[#Actual growth time|Actual growth time]] for more information</ref>)&times;[(Fertility of Soil<ref>Normal soil (1.00) is used in above equation.</ref> &times; Fertility Factor) + 1 &minus; Fertility Factor) &divide; Growth Time]}}
+<references/>
+
+== Yield ==
+The yield of plants with products depends on four factors: 
+# The base yield of the plant
+# The maturity of the plant. Plants that are harvested at the first possible moment (at growth 65%) will only grant half of the total normal yield; this scales linearly towards full harvest as the growth percentage increases. This gives a slight penalty to early harvests.
+# The health of the plant. Damaged plants will lose up to half of their yield. A plant at 50% health will lose 25% of the yield.
+# The [[Plant Harvest Yield]] of the harvesting pawn which acts as a scalar on the resulting number.
+# The [[AI Storytellers#Economy|Harvest Yield]] storyteller variable - note that [[Difficulty]] settings change variable even if a custom difficulty is not selected.
+
+As plant harvest yield increases with [[Skills#Plants|Plants skill]], pawns with the highest skills should ideally be used to harvest plants, while any pawn can be used to sow them.
+
+== Plants per pawn ==
+{{Move|section=true|destination=Food|reason=Alternative destination: [[Food production]]. Avoid redundancy. Those pages are way more specific while this page covers all plants not just food plants}}
+The number of food-bearing plants required per pawn depends on a number of factors, including:
+
+* Hunger rate of the pawn
+* Soil type, including the use of [[hydroponics]] 
+* [[Meal]] type's nutrient efficiency 
+* Whether [[meat]] is available
+* Light times including the effect of latitude, sun lamps, and sun blocking [[events]] and [[condition causer]]s such as [[Eclipse]]s
+* [[Plant Harvest Yield]] of the harvesting pawn
+* Whether pawns are allowed to eat before they are hungry enough to reap the full benefit from the nutrition offered by the meal.
+* Whether the pawn has a large enough [[Saturation]] bar to reap the full benefit from the nutrition offered by the meal.
+
+{| class="wikitable"
+| Plants per Pawn = Hunger rate<ref>This is {{#vardefineecho:hungerRate|{{#expr: 1.6 * {{Q|Human|Base Hunger Rate}} }} }} for [[Human]]s</ref>  &divide; (Yield per Day<ref>Depends on soil type, see [[#Fertility|Fertility]] for details.</ref>  &times; Nutrition of each harvested item<ref>This is 0.05 for all crop products at the time of writing. See the page of the relevant raw food for details.</ref> &times; Nutrient efficiency of the meal<ref>This varies from as low as [[Vegetarian lavish meal|40%]] to as high as [[Nutrient paste meal|300%]]. See [[Meals]] for details. </ref> &times; Plant Harvest Yield<ref>This varies from 0% to 150%. See [[Plant Harvest Yield]] for details.</ref>)
+|}
+<references/>
+
+=== Quick reference ===
+The table below assumes humans with a [[Hunger Rate Factor]] of 100% are fed in a manner that the maximum [[overeating]] occurs and the plants are harvested with a [[Plant Harvest Yield]] of 100%.
+
+{{Plants Per Pawn Table|{{#var:hungerRate}} }}
+
+To calculate the number of plants per pawn for non-vegan meals in addition to the other ingredients needed, calculate the following:
+* For [[packaged survival meal]]s, multiply the numbers for [[simple meal]] by 3/5.
+* For [[fine meal]]s, divide the numbers for [[vegetarian fine meal]] by 3.
+* For [[lavish meal]]s, divide the numbers for [[vegetarian lavish meal]] by 2.5.
+
+To calculate the number of plants per pawn for the Blood and dust and Losing is fun [[AI_Storytellers#Difficulties|difficulties]], calculate the following:
+* For Blood and dust, divide the numbers by 0.95.
+* For Losing is fun, divide the numbers by 0.80.
+
+==Plant growth approaches==
+The player has a number of options to get plants grown for food and raw material. Each of them has their up- and downsides and a proper mix of them is necessary to be resistant to disruptions, including seasons.
+
+===Fields===
+You just define a growing zone, select the crop and let nature and your pawns set to growing do the rest.
+
+'''Upsides:'''
+* No cost, excluding the work time to clear trees, sow crops, and harvesting.
+* Available at the start, regardless of technology level
+
+'''Downsides:'''
+* Outdoor growing is dependent on the local seasonal weather and even impossible in the coldest biomes
+* Highly vulnerable to irregular temperature variations such as [[Events#Cold snap|cold snaps]] and [[Events#Heat Wave|heat waves]] that could stop growth or even kill plants
+* Outdoor growing is vulnerable to events like [[Events#Toxic fallout|toxic fallout]] and [[Events#Volcanic winter|volcanic winter]]
+* Without walls, raiders can easily set your crops ablaze and wild animals can eat your crops. Tamed animals can be excluded via zones however
+
+=== Greenhouse ===
+The Greenhouse is a walled and roofed growing zone, with a sun lamp providing light and heaters or coolers maintaining climate
+
+'''Upsides:'''
+* Walling off your crops keeps out raiders and wild animals
+* Low costs for the walls and sun lamp alone
+* Full resistance to temperature variations once [[heater]]s or [[cooler]]s are built
+* Slightly increased growth, due to the persistent 100% lighting level from the sun lamp during the day
+* Energy shortages will only kill existing plants if the temperature gets too extreme
+* Immune to events like toxic fallout and volcanic winter
+
+'''Downsides:'''
+* Trees cannot be planted in greenhouses
+* Needs tiles that can support building walls to support the roof, which is difficult in swamp biomes
+* High energy costs for maintaining sun lamps
+* Requires electricity research to unlock
+
+==== Open roof greenhouses ====
+Only indoor rooms can control temperature, however any room is considered indoors so long as less than 1/4 of the tiles are unroofed, up to a limit of 300 unroofed tiles. Though unroofed sections increase the rate of temperature equalization significantly, this allows the creation of greenhouses that can be used to grow trees, which cannot usually be grown under [[roof]]s, or even without sun lamps.  
+
+These are constructed like most greenhouses, but with the [[remove roof area]] order used to remove 1 tile fewer than 1/4 of the roof. If for growing trees, these removed areas should be spaced 1 tile away from each other gap both horizontally and vertically, as trees cannot be sown next to each other. For growing traditional crops without a sun lamp, this should all be concentrated in one area to limit time spent traveling from place to place while sowing and harvesting.
+
+Due to the costs of controlling the temperature, using this strategy to avoid the cost of sun lamps may or may not break even depending on the biome and the heating or cooling required.  In cold biomes, combination with a [[steam geyser]] can significantly reduce heating costs, making this strategy much more viable regardless of the intent. If using [[campfire]]s to heat the greenhouse, they should be placed in the roofed areas to prevent additional fuel usage during inclement [[weather]]. 
+
+'''Upsides:'''
+* Does not require sun lamps or even electricity
+* Can support trees, including [[cocoa tree]]s.
+** When used for trees, no larger than is necessary as trees can't be planted adjacent to each other anyway.
+** Forces trees to be sown perfectly spaced without having to micromanage it, improving yields/area
+* Easy to convert to and from more traditional greenhouses
+
+'''Downsides:'''
+* Needs significantly more heating/cooling
+* 4x larger for the same volume of non-tree greenhouse space
+* Slow and/or difficult to adapt to changing weather conditions.
+* Net wood-negative when using campfires to grow trees.
+
+==== Nutrifungus greenhouses ====
+{{Ideology|section=1}}
+Completely roofed and dark growroom for year-round growing. Can be heated by any source but a [[darktorch]] hallway allows for closed-loop production.
+
+'''Upsides:'''
+* Does not require sun lamps or even electricity
+* Easier to keep heated than open roof greenhouses
+* Net fungus positive even if heated with fungal torches
+
+'''Downsides:'''
+* Only produces fungus, which some pawns dislike.
+* Torch hallway requires more labor and space than electric heaters
+
+===Hydroponics basin===
+[[Hydroponics basin|Hydroponics]] allows plants to grow without soil by using nutrients dissolved in a water bath. In-game, it requires research to unlock and the construction of one or more Hydroponics basins. These basins will override any growing zone they are placed on top of.
+
+'''Upsides:'''
+* Basins provide fertility of 280%, the highest rating in the game
+* Plants with high fertility sensitivity grow especially well
+* Can be combined with [[#Greenhouse|greenhouses]] for growing in environments too cold or hot for outdoor plant growth, including mountains
+* Requires less space for the same amount of crop growth - this makes it easier to defend and faster to travel to.
+
+'''Downsides:'''
+* Building a sun lamp and 24 basins (the maximum amount of basins that can fit within a sun lamp's radius of light) requires a huge resource and power commitment, requiring 4580 watts, 1720 steel, and 24 components.
+* If the basin loses power or breaks down, the plants within will begin taking rotting damage which will kill most plants within 8 hours unless power is restored or the basin is repaired.  If the power stays off for an extended amount of time or the basin cannot be repaired, then harvesting the plants as soon as possible is recommended.
+* A power outage including [[Events#Solar flare|solar flares]] can wipe all of your hydroponic crops, requiring extensive replanting and usually disrupting food production.
+* There are fewer options for growing crops within hydroponics basins.
+
+== Version history ==
+* [[Version/0.10.785|0.10.785]] - Rebalanced and reformatted plant ecology tunings to lengthen crop cycles and slow wild plant spread. Reworked plant growth in relation to light levels so plants can still grow slowly in dim light (e.g. tundra summers).
+* Beta 19/1.0 - All non-tree sowable crops yield 20% less when harvested and take 10% longer to sow.
+{{nav|plant|wide}}
+
+[[Category:RimWorld game]] [[Category:Food type]]

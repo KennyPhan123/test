@@ -1,0 +1,573 @@
+{{BackToTutorials}}
+{{Credit|[[User:Alistaire|Alistaire]]}}<br/>
+
+In this tutorial we will take a look at a specific item and break down its components, link this knowledge with other items and ultimately learn how to create your own items.<br/><br/>
+
+=Requirements=
+
+* [[Modding Tutorials/XML file structure|XML File Structure]] for knowledge on XML file structures and basic inheritance;
+* (Optional) [[Modding Tutorials/Mod folder structure|Mod Folder Structure]] in case you want to set up a weapons mod;
+* (Optional) An XML code editor ([[Modding Tutorials/Recommended software#XML Code Editors|recommended software]]) in case you want to set up a weapons mod.<br/><br/>
+
+=What you'll learn=
+
+You'll learn what most tags inside Weapons_Guns.xml do.<br/><br/>
+
+=BaseGun and BaseBullet parent=
+{{main|Modding Tutorials/XML file structure#Inheritance}}
+
+To further understand the BaseGun and BaseBullet parents, we will now do the following:<br/>
+
+* Firstly we'll break down the simple parts of their code;
+* Next up we're breaking down the more complicated part;
+* Lastly I'll post the source code for both of them - they shouldn't be or have to be edited.<br/><br/>
+
+===Breakdown===
+
+Now that we know about inheritance, we can take another look at the BaseGun Parent. All the code inside this parent is inherited by BaseHumanGun, which is in turn inherited by almost all weapons in ''Weapons_Guns.xml''.<br/>
+Let's break down the rest of the code in BaseGun.<br/>
+
+The following tags are relatively straightforward:<br/>
+<source lang="xml"><ThingDef Name="BaseGun" Abstract="True">
+	<category>Item</category>
+	<altitudeLayer>Item</altitudeLayer>
+	<useHitPoints>True</useHitPoints>
+	<selectable>True</selectable>
+	<alwaysHaulable>True</alwaysHaulable>
+	<techLevel>Midworld</techLevel>
+	<thingCategories>
+		<li>WeaponsRanged</li>
+	</thingCategories>
+	<smeltProducts>
+		<Steel>20</Steel>
+	</smeltProducts>
+	<statBases>
+		<MaxHitPoints>100</MaxHitPoints>
+		<Flammability>1.0</Flammability>
+		<DeteriorationRate>1</DeteriorationRate>
+		<SellPriceFactor>0.5</SellPriceFactor>
+	</statBases>
+	<graphicData>
+		<onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+	</graphicData>
+</ThingDef>
+
+<ThingDef Name="BaseHumanGun" ParentName="BaseGun" Abstract="True">
+	<weaponTags>
+		<li>Gun</li>
+	</weaponTags>
+</ThingDef>
+
+<ThingDef Name="BaseBullet" Abstract="True">
+	<category>Projectile</category>
+	<altitudeLayer>Projectile</altitudeLayer>
+	<useHitPoints>False</useHitPoints>
+	<label>bullet</label>
+	<neverMultiSelect>True</neverMultiSelect>
+	<graphicData>
+		<shaderType>Transparent</shaderType>
+	</graphicData>
+</ThingDef></source>
+
+{| class="wikitable"
+!colspan="3"|<thingDef>
+|-
+! Tag !! Values !! Explanation
+|-
+| &lt;category&gt; || Item<br/>Projectile || The game uses the contents of this tag to load the rest of this '''<thingDef>''' in a specific way.<br/>All accepted values can be found in [[:Category:Defs]].
+|-
+| &lt;altitudeLayer&gt; || Item<br/>Projectile || The layer this thing is rendered on. Usually the same value as ''category''.<br/>All accepted values can be found in [[:Category:Defs]].
+|-
+| &lt;useHitPoints&gt; || ''boolean'' || Whether this thing has hitpoints and can be damaged. Bullets aren't damaged, weapons can deteriorate and use hitpoints for that.
+|-
+| &lt;selectable&gt; || ''boolean'' || Whether this thing can be selected by clicking on it. Bullets can't be selected, so this value defaults to False.
+|-
+| &lt;alwaysHaulable&gt; || ''boolean'' || Whether this thing can be hauled by anyone. Bullets can't be hauled, so this value defaults to False.
+|-
+| &lt;neverMultiSelect&gt; || ''boolean'' || Whether clicking twice on this thing '''won't''' select all similar things on screen. Defaults to False, making multiselecting a default behaviour.
+|-
+| &lt;techLevel&gt; || Midworld<br/>... || What tech level the weapon represents. Different tech levels make it possible for different enemies to spawn with this weapon.
+|-
+| &lt;thingCategories&gt; || ''thingCatories'' || Any arbitrary category this weapon represents.<br/>Some pawns can only spawn with weapons in the WeaponsRanged and WeaponsMelee categories.
+|-
+| &lt;smeltProducts&gt; || &lt;''resource defName''&gt; || This tag has another tag as contents, in this case '''<Steel>'''.<br/>This sub-tag's name is that of a resource's defName (see [[:Category:Defs]]).<br/>The contents of the sub-tag are integers above zero, and represent the amount of some resource gained when this weapon is thrown in an [[Electric smelter]].
+|-
+!colspan="3"|<statBases>
+|-
+| &lt;MaxHitPoints&gt; || ''integer'' || The hitpoints maximum this weapon has. Weapons deteriorate over time, slowly dropping from this value to 0 at which point it's destroyed.
+|-
+| &lt;Flammability&gt; || ''decimal'' || A number denoting how hard it is for fire to jump over to this weapon and how much effect this fire will have on its hitpoints.<br/>A thing with a Flammability of 0.0 won't start burning at all, while one with a Flammability of 1.0 will start burning very quickly.
+|-
+| &lt;DeteriorationRate&gt; || ''decimal'' || A number denoting how much this weapon deteriorates with every unit of deterioration time.<br/>Things with 0.0 DeteriorationRate won't take any damage over time, ones with a value of 2.0 will deteriorate twice as fast as usual.<br/>A DeteriorationRate of 0.0 won't prevent the weapon from taking fire- or explosion damage.
+|-
+| &lt;SellPriceFactor&gt; || ''decimal'' || A factor denoting how much traders will pay you less for this weapon than they would sell it for (when negotiating at maximal social skill).<br/>The default value of this factor on weaponry is 0.5.
+|-
+!colspan="3"|<graphicData>
+|-
+| &lt;onGroundRandomRotateAngle&gt; || ''degrees'' || How many degrees this thing will randomly be rotated at when placed on the ground. This is usually 35 degrees for guns.
+|-
+| &lt;shaderType&gt; || ... || How the thing is shaded in-game. The meaning and effect of each shader is slightly different, so;<br/>All accepted values can be found in [[:Category:Defs]].
+|}<br/>
+
+And the last part is somewhat more complicated:<br/>
+<source lang="xml"><ThingDef Name="BaseGun" Abstract="True">
+	<thingClass>ThingWithComps</thingClass>
+	<equipmentType>Primary</equipmentType>
+	<pathCost>10</pathCost>
+	<drawGUIOverlay>true</drawGUIOverlay>
+	<tickerType>Never</tickerType>
+	<inspectorTabs>
+		<li>ITab_Art</li>
+	</inspectorTabs>
+	<comps>
+		<li>
+			<compClass>CompForbiddable</compClass>
+		</li>
+		<li>
+			<compClass>CompEquippable</compClass>
+		</li>
+		<li>
+			<compClass>CompQuality</compClass>
+		</li>
+		<li>
+			<compClass>CompArt</compClass>
+			<nameMaker>NamerGun</nameMaker>
+			<descriptionMaker>ArtWeaponGun</descriptionMaker>
+			<minQualityForArtistic>Excellent</minQualityForArtistic>
+		</li>
+	</comps>
+</ThingDef>
+
+<ThingDef Name="BaseBullet" Abstract="True">
+	<thingClass>Bullet</thingClass>
+	<tickerType>Normal</tickerType>
+</ThingDef></source>
+
+{| class="wikitable"
+!colspan="3"|<thingDef>
+|-
+! Tag !! Values !! Explanation
+|-
+| &lt;thingClass&gt; || ThingWithComps<br/>Bullet<br/>... || What C# class to call when doing anything with this thing. Unless you know what you're doing, it's suggested to use the same thingClass similar things use.
+|-
+| &lt;equipmentType&gt; || Primary<br/>Secondary || Any pawn can have a primary and secondary weapon. Guns and melee weapons are usually primary, while grenades are usually secondary.
+|-
+| &lt;pathCost&gt; || ''int'' || Subtracted from a [[Floors|floor]]'s movement speed when this thing lies on it.<br/>High values make it harder for pawns to walk past this thing, lower values make it easier.
+|-
+| &lt;drawGUIOverlay&gt; || ''boolean'' || Whether GUI will show up when you select this thing.
+|-
+| &lt;tickerType&gt; || Never<br/>Normal<br/>... || Whether this thing has a C# Tick() function; whether something happens to the thing every in-game [[Tick]].
+|-
+| &lt;inspectorTabs&gt; || ''ITab list'' || A list of ITabs that will show up in the inspector when you select this item. These ITabs are for example the "Bills" buttons (ITab_Bills) and the art description (ITab_Art).
+|-
+!colspan="3"| ''<comps>'' &lt;li&gt; ''</comps>''
+|-
+| &lt;compClass&gt; || ... || A C# class describing what should happen when the thing is interacted with in a specific way. This class might need additional tags to work.
+|-
+| &lt;nameMaker&gt; || ... || The defName of a RulePackDef which describes how this thing will be named under specific conditions, which in turn are described in a C# class provided in <compClass>.
+|-
+| &lt;descriptionMaker&gt; || ... || Similar to the nameMaker, but for generating a description.
+|-
+| &lt;minQualityForArtistic&gt; || ... || At what [[Quality]] this thing earns an artistic title and description. This behaviour is unique to the CompArt <compClass>, and it won't work with other classes.
+|}
+
+===Source===
+
+It's not recommended to edit these parents. A recent copy of them can be taken from ''../Mods/Core/Defs/ThingDefs/Weapons_Guns.xml'', and the RimWorld834Win (Version 0.11.834) version is shown below:<br/>
+<source lang="xml"><ThingDef Name="BaseGun" Abstract="True">
+	<category>Item</category>
+	<thingClass>ThingWithComps</thingClass>
+	<equipmentType>Primary</equipmentType>
+	<pathCost>10</pathCost>
+	<useHitPoints>True</useHitPoints>
+	<selectable>True</selectable>
+	<graphicData>
+		<onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+	</graphicData>
+	<drawGUIOverlay>true</drawGUIOverlay>
+	<statBases>
+		<MaxHitPoints>100</MaxHitPoints>
+		<Flammability>1.0</Flammability>
+		<DeteriorationRate>1</DeteriorationRate>
+		<SellPriceFactor>0.5</SellPriceFactor>
+	</statBases>
+	<altitudeLayer>Item</altitudeLayer>
+	<alwaysHaulable>True</alwaysHaulable>
+	<tickerType>Never</tickerType>
+	<techLevel>Midworld</techLevel>
+	<thingCategories>
+		<li>WeaponsRanged</li>
+	</thingCategories>
+	<inspectorTabs>
+		<li>ITab_Art</li>
+	</inspectorTabs>
+	<comps>
+		<li>
+			<compClass>CompForbiddable</compClass>
+		</li>
+		<li>
+			<compClass>CompEquippable</compClass>
+		</li>
+		<li>
+			<compClass>CompQuality</compClass>
+		</li>
+		<li>
+			<compClass>CompArt</compClass>
+			<nameMaker>NamerGun</nameMaker>
+			<descriptionMaker>ArtWeaponGun</descriptionMaker>
+			<minQualityForArtistic>Excellent</minQualityForArtistic>
+		</li>
+	</comps>
+	<smeltProducts>
+		<Steel>20</Steel>
+	</smeltProducts>
+</ThingDef>
+
+<ThingDef Name="BaseHumanGun" ParentName="BaseGun" Abstract="True">
+	<weaponTags>
+		<li>Gun</li>
+	</weaponTags>
+</ThingDef>
+
+<ThingDef Name="BaseBullet" Abstract="True">
+	<category>Projectile</category>
+	<tickerType>Normal</tickerType>
+	<altitudeLayer>Projectile</altitudeLayer>
+	<thingClass>Bullet</thingClass>
+	<label>bullet</label>
+	<useHitPoints>False</useHitPoints>
+	<neverMultiSelect>True</neverMultiSelect>
+	<graphicData>
+		<shaderType>Transparent</shaderType>
+	</graphicData>
+</ThingDef></source><br/>
+
+=Gun definitions=
+
+Guns inherit from ''BaseHumanGun'' or sometimes from ''BaseGun''. Each gun requires a bunch of tags and additionally accepts some other tags.<br/><br/>
+
+===Breakdown===
+
+Each gun requires the following tags:<br/><br/>
+
+<source lang="xml"><ThingDef ParentName="BaseHumanGun">
+	<defName>Gun_Pistol</defName>
+	<label>pistol</label>
+	<description>Ancient pattern automatic pistol. Weak and short range, but quick.</description>
+	<graphicData>
+		<texPath>Things/Item/Equipment/WeaponRanged/Pistol</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+	</graphicData>
+	<soundInteract>InteractPistol</soundInteract>
+	<statBases>
+		<MarketValue>200</MarketValue>
+		<AccuracyTouch>0.91</AccuracyTouch>
+		<AccuracyShort>0.71</AccuracyShort>
+		<AccuracyMedium>0.50</AccuracyMedium>
+		<AccuracyLong>0.32</AccuracyLong>
+		<RangedWeapon_Cooldown>0.66</RangedWeapon_Cooldown>
+	</statBases>
+	<verbs>
+		<li>
+			<verbClass>Verb_Shoot</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<projectileDef>Bullet_Pistol</projectileDef>
+			<warmupTicks>54</warmupTicks>
+			<range>24</range>
+			<soundCast>ShotPistol</soundCast>
+			<soundCastTail>GunTail_Light</soundCastTail>
+			<muzzleFlashScale>9</muzzleFlashScale>
+		</li>
+	</verbs>
+</ThingDef></source>
+
+{| class="wikitable"
+!colspan="3"|<thingDef>
+|-
+! Tag !! Values !! Explanation
+|-
+| &lt;defName&gt; || ''string'' || The defName, in-script name, of this item that can be referred to by C# or other XML files.<br/>For guns this usually starts with ''Gun_'', and for bullets it usually starts with ''Bullet_''.
+|-
+| &lt;label&gt; || ''string'' || The in-game (as opposed to in-script ''defName'') name for this item in lowercase. The game automatically makes the first character uppercase.
+|-
+| &lt;description&gt; || ''string'' || The description for this item, shown when the item's information tab is opened. You can use escape characters in this string, like \n for a newline.
+|-
+| &lt;soundInteract&gt; || defName<br/>''(from soundDef)'' || What sound is played whenever someone takes or drops the item.
+|-
+!colspan="3"|<graphicData>
+|-
+| &lt;texPath&gt; || ''path'' || The path relative to ''../Textures/'' in which this thing's texture is stored.
+|-
+| &lt;graphicClass&gt; || C# class || The class that is called when generating an image for this thing. Guns in the base game always use Graphic_Single, but there's different values like Graphic_Random etc.
+|-
+!colspan="3"|<statBases>
+|-
+| &lt;MarketValue&gt; || ''integer'' || The "market value" of this thing.<br/>Please note that ''sellPriceFactor'' halves this value when selling the thing, and that the [[Skills#Social|Social]] skill influences the actual value.<br/>This value is modified by the weapon's [[quality]].
+|-
+| &lt;Accuracy...&gt; || ''float'' || The 0.0-1.0 chance this gun hits its target at a certain range. The [[Weapons#Ranged_Weapons|Weapons]] page has an explanation for the effects of different accuracy tags.<br/>This value is modified by the weapon's [[quality]].
+|-
+| &lt;RangedWeapon_Cooldown&gt; || ''seconds'' || The amount of seconds the pawn will stand around doing nothing after firing a burst of this weapon.<br/>This value is modified by the weapon's [[quality]].
+|-
+!colspan="3"|<verbs> &lt;li&gt; </verbs>
+|-
+| &lt;verbClass&gt; || C# class || The class that is called whenever this weapon is shot. Vanilla Rimworld only uses Verb_Shoot, while mods might call their own custom verbClass.
+|-
+| &lt;hasStandardCommand&gt; || ''boolean'' || 
+|-
+| &lt;projectileDef&gt; || defName || The defName of the bullet this gun fires.
+|-
+| &lt;warmupTicks&gt; || ''ticks'' || The amount of [[Tick|game ticks]] it takes to aim this gun.<br/>This aiming time is visualized with a shrinking grey circle in-game - large values increase the circle's starting circumference.
+|-
+| &lt;range&gt; || ''tiles'' || How far the weapon can '''aim'''.<br/>This value is modified by the weapon's [[quality]].
+|-
+| &lt;soundCast&gt; || defName<br/>''(from soundDef)'' || What sound is played whenever the weapon spawns a bullet (can be read as fires).
+|-
+| &lt;soundCastTail&gt; || defName<br/>''(from soundDef)'' || What sound is played after the weapon is fired. This value is not necessarily required, but vanilla Rimworld uses it a lot.
+|-
+| &lt;muzzleFlashScale&gt; || ''int'' || The size of the muzzle flash effect which is displayed when the weapon fires.
+|}<br/>
+
+===Bullets===
+
+Bullets hold information regarding damage, bullet speed and whether the bullet will explode, burst into flames, etc.<br/>
+Each bullet requires the following tags:<br/><br/>
+
+<source lang="xml"><ThingDef ParentName="BaseBullet">
+	<defName>Bullet_Pistol</defName>
+	<label>pistol bullet</label>
+	<graphicData>
+		<texPath>Things/Projectile/Bullet_Small</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+	</graphicData>
+	<projectile>
+		<flyOverhead>false</flyOverhead>
+		<damageDef>Bullet</damageDef>
+		<DamageAmountBase>9</DamageAmountBase>
+		<Speed>55</Speed>
+	</projectile>
+</ThingDef></source>
+
+{| class="wikitable"
+!colspan="3"|<thingDef>
+|-
+! Tag !! Values !! Explanation
+|-
+| &lt;defName&gt; || ''string'' || The defName, in-script name, of this item that can be referred to by C# or other XML files.<br/>For guns this usually starts with ''Gun_'', and for bullets it usually starts with ''Bullet_''.
+|-
+| &lt;label&gt; || ''string'' || The in-game (as opposed to in-script ''defName'') name for this item in lowercase. The game automatically makes the first character uppercase.
+|-
+!colspan="3"|<graphicData>
+|-
+| &lt;texPath&gt; || ''path'' || The path relative to ''../Textures/'' in which this thing's texture is stored.
+|-
+| &lt;graphicClass&gt; || C# class || The class that is called when generating an image for this thing. Guns in the base game always use Graphic_Single, but there's different values like Graphic_Random etc.
+|-
+!colspan="3"|<projectile>
+|-
+| &lt;flyOverhead&gt; || ''boolean'' || Whether a missing bullet can fly over walls. Seriously.
+|-
+| &lt;damageDef&gt; || defName<br/>''from damageDef'' || The defName of the [[Damage Types|damage type]] this bullet causes.
+|-
+| &lt;damageAmountBase&gt; || ''int'' || The amount of base damage the bullet can cause. Hitting a specific object might do a different amount of damage based on the value of ''damageDef''.
+|-
+| &lt;speed&gt; || ''int'' || A value denoting some unit of speed at which the bullet travels. It's best to reference existing weapons when choosing a speed for your bullet.
+|}<br/>
+
+===Source===
+
+<source lang="xml"><ThingDef ParentName="BaseBullet">
+	<defName>Bullet_Pistol</defName>
+	<label>pistol bullet</label>
+	<graphicData>
+		<texPath>Things/Projectile/Bullet_Small</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+	</graphicData>
+	<projectile>
+		<flyOverhead>false</flyOverhead>
+		<damageDef>Bullet</damageDef>
+		<DamageAmountBase>9</DamageAmountBase>
+		<Speed>55</Speed>
+	</projectile>
+</ThingDef>
+
+<ThingDef ParentName="BaseHumanGun">
+	<defName>Gun_Pistol</defName>
+	<label>pistol</label>
+	<description>Ancient pattern automatic pistol. Weak and short range, but quick.</description>
+	<graphicData>
+		<texPath>Things/Item/Equipment/WeaponRanged/Pistol</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+	</graphicData>
+	<soundInteract>InteractPistol</soundInteract>
+	<statBases>
+		<MarketValue>200</MarketValue>
+		<AccuracyTouch>0.91</AccuracyTouch>
+		<AccuracyShort>0.71</AccuracyShort>
+		<AccuracyMedium>0.50</AccuracyMedium>
+		<AccuracyLong>0.32</AccuracyLong>
+		<RangedWeapon_Cooldown>0.66</RangedWeapon_Cooldown>
+	</statBases>
+	<verbs>
+		<li>
+			<verbClass>Verb_Shoot</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<projectileDef>Bullet_Pistol</projectileDef>
+			<warmupTicks>54</warmupTicks>
+			<range>24</range>
+			<soundCast>ShotPistol</soundCast>
+			<soundCastTail>GunTail_Light</soundCastTail>
+			<muzzleFlashScale>9</muzzleFlashScale>
+		</li>
+	</verbs>
+</ThingDef></source>
+
+=Special cases=
+
+There's a few cases where guns don't entirely follow the previously described structure.<br/><br/>
+
+===Burstfire===
+
+Some guns, including the [[Assault rifle]] use the following code to add burstfire:<br/>
+
+<source lang="xml"><ThingDef ParentName="BaseHumanGun">
+	<verbs>
+		<li>
+			<burstShotCount>3</burstShotCount>
+			<ticksBetweenBurstShots>7</ticksBetweenBurstShots>
+		</li>
+	</verbs>
+</ThingDef></source><br/>
+
+The weapon will fire ''burstShotCount'' times with a ''ticksBetweenBurstShots'' tick delay between each shot.<br/><br/>
+
+===Sniper rifles===
+
+The [[Sniper rifle]] is only used by specific [[Raider]]s, and won't be used by the rest. This is because of the following code:<br/>
+
+<source lang="xml"><ThingDef ParentName="BaseHumanGun">
+	<weaponTags>
+		<li>SniperRifle</li>
+	</weaponTags>
+</ThingDef></source><br/>
+
+Adding a weaponTag to both your weapon and a custom pawn makes it so the pawn will spawn in with that weapon.
+
+===Bomb projectiles===
+
+<source lang="xml"><ThingDef ParentName="BaseBullet">
+	<thingClass>Projectile_Explosive</thingClass>
+	<projectile>
+		<damageDef>Bomb</damageDef>
+		<explosionRadius>7.8</explosionRadius>
+	</projectile>
+</ThingDef></source><br/>
+
+Things with a Bomb damageDef need an explosionRadius and will explode upon impact.<br/><br/>
+
+===Flame bullets===
+
+The Incendiary Launcher's bullet uses <damageDef>Flame</damageDef>:<br/>
+
+<source lang="xml"><ThingDef ParentName="BaseBullet">
+	<projectile>
+		<damageDef>Flame</damageDef>
+		<explosionRadius>1.1</explosionRadius>
+		<postExplosionSpawnThingDef>Puddle_Fuel</postExplosionSpawnThingDef>
+		<explosionSpawnChance>0.7</explosionSpawnChance>
+	</projectile>
+</ThingDef></source><br/>
+
+This bullet will explode into flames in a radius of 1.1 tiles, and it will spawn a Puddle_Fuel 70% of all impacts.<br/><br/>
+
+===Bigger muzzleflash===
+
+Some weapons have a bigger muzzleflash:<br/>
+
+<source lang="xml"><ThingDef ParentName="BaseHumanGun">
+	<verbs>
+		<li>
+			<muzzleFlashScale>14</muzzleFlashScale>
+		</li>
+	</verbs>
+</ThingDef></source><br/>
+
+Most weapons have a scale of 9, while some of the bigger weapons have a scale of 14.<br/><br/>
+
+===Spacer technology===
+
+Guns like the [[Charge rifle]] only spawn on pawns with Spacer technology:<br/>
+
+<source lang="xml"><ThingDef ParentName="BaseHumanGun">
+	<techLevel>Spacer</techLevel>
+</ThingDef></source><br/>
+
+===Turret gun===
+
+Turrets use a gun from Weapons_Guns.xml which uses the following code:<br/>
+
+<source lang="xml"><ThingDef ParentName="BaseHumanGun">
+	<menuHidden>true</menuHidden>
+	<canBeSpawningInventory>false</canBeSpawningInventory>
+	<tradeability>None</tradeability>
+	<weaponTags>
+		<li>TurretGun</li>
+	</weaponTags>
+</ThingDef></source><br/>
+
+This gun can't be seen in the colony inventory screen, can't be spawned in with a newly spawned pawn, isn't tradable (so it won't show up on traders) and its weaponTag is TurretGun to prevent it from being spawned in by accident.<br/><br/>
+
+===Heavy weapons===
+
+Heavy weapons have additional weaponTags and equippedStatOffsets:<br/>
+
+<source lang="xml"><ThingDef ParentName="BaseHumanGun">
+	<weaponTags>
+		<li>MechanoidGunHeavy</li>
+		<li>GunHeavy</li>
+	</weaponTags>
+	<equippedStatOffsets>
+		<MoveSpeed>-0.25</MoveSpeed>
+	</equippedStatOffsets>
+</ThingDef></source><br/>
+
+[[Mechanoid#Centipede|Centipedes]] will spawn with MechanoidGunHeavy weaponry. Heavy raiders will spawn with GunHeavy. The equippedStatOffsets of MoveSpeed of -0.25 slows its wearer down by 0.25 c/s<br/><br/>
+
+===Doomsday rocket===
+
+<source lang="xml"><ThingDef ParentName="BaseBullet">
+	<shaderType>TransparentPostLight</shaderType>
+	<thingClass>Projectile_DoomsdayRocket</thingClass>
+</ThingDef></source><br/>
+
+The Doomsday rocket uses a different shaderType which isn't affected by light levels to simulate it giving off light itself. It also has a different thingClass.<br/>
+
+<source lang="xml"><ThingDef ParentName="BaseGun">
+	<tradeTags>
+		<li>Exotic</li>
+	</tradeTags>
+	<verbs>
+		<li>
+			<verbClass>Verb_ShootOneUse</verbClass>
+			<onlyManualCast>true</onlyManualCast>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+			</targetParams>
+		</li>
+	</verbs>
+</ThingDef></source><br/>
+
+The gun is only traded by Exotic traders due to its tradeTags, is a single use (Verb_ShootOneUse) weapon which can only be shot by the player itself. It can target floor tiles, not only wall tiles.<br/><br/>
+
+===Miss radius===
+
+<source lang="xml"><ThingDef ParentName="BaseGun">
+	<verbs>
+		<li>
+			<forcedMissRadius>2.0</forcedMissRadius>
+		</li>
+	</verbs>
+</ThingDef></source><br/>
+
+Even after applying the accuracy checks, this gun is still going to miss its target by 2.0 tiles.<br/><br/>
+
+[[Category:Modding tutorials]]

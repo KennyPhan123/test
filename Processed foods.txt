@@ -1,0 +1,16 @@
+'''Processed''' is a [[food types|type of food]]. They can be eaten by: {{#ask:[[Enabled Food Types::Processed]]|format=ul}}
+
+The processed foods are:
+{| {{STDT| sortable c_10 text-center}}
+!Name!!data-sort-type=number|Nutrition!!Taste!!Food type
+{{#ask:[[food Type::processed]]
+  | named args=yes
+  | ?Name=Name
+  | limit = 500
+  | format = template
+  | template=:Food types
+  | sort = From DLC, Nutrition, Name
+  | order = asc, desc
+}}
+|}
+[[Category:Food type]]

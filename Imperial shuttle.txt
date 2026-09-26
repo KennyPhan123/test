@@ -1,0 +1,64 @@
+{{Stub|reason=Missing analysis, incomplete version history, can this ever show up outside of Royalty? If no longer royalty, royalty content needs to be tagged with RoyaltyIcon}}
+
+{{About|the functional vehicle|the non-functional variant|crashed shuttle}}
+{{About|the empire vehicle|the player-constructable vehicle|passenger shuttle}}
+
+{{infobox main|misc|
+| name = Imperial shuttle
+| image = Shuttle.png|96px
+| description = A spacer-tech uranium-powered shuttle designed for transit between surface and orbit, or between moons of a planetary system. To prevent unsanctioned use, the shuttle is locked to the pilot's bio-signature.
+<!-- Base Stats -->
+| type = Buildings
+| type2 = Misc
+| beauty = 
+| hp = 1000
+| flammability = 1
+| rotatable = yes
+| path cost = 50
+| mass base = 125
+| comfort = 0.65
+<!-- Building -->
+| size = 5 * 3
+| passability = impassable
+| cover = 0.5
+| blockswind = true
+| terrain affordance = Light
+| placeable = True
+| claimable = False
+| destroyyield = {{icon Small|Uranium}} 50 + {{icon Small|Plasteel}} 50 + {{icon Small|component}} 4 + {{icon Small|Steel slag chunk}} 4 + {{icon Small|Shuttle engine}} 1 {{OdysseyIcon}}
+}}
+'''Imperial shuttles''' are transport vehicles that can carry pawns and items. When landed on the ground, they are treated mechanically as a type of [[building]].
+
+== Occurrence ==
+Imperial shuttles are used to transport pawns for [[Royalty (DLC)]] quests from [[Lore#Tech levels|Industrial]]-tech level or higher factions. Despite the name, they are used in non-Empire quests as well. They are also called by the [[Titles#Call transport shuttle|Call Transport Shuttle]] permit.
+
+Empire [[faction base]]s will also always have an imperial shuttle sitting on a floored landing zone defined by four [[ship landing beacon]]s — the shuttle will fly away if a player pawn is at least 30 tiles next to it, but the shuttle can be destroyed if action is taken fast enough. {{Check Tag|How fast?}}
+
+If the player colony has a functional landing pad, imperial shuttles will attempt to land there if possible.
+
+== Summary ==
+An imperial shuttle called by permit will transport [[colonists]], items, and [[animals]] on a one-way trip to a valid tile within 70 world tiles. The shuttle can hold a total of 2,000 kg when loaded on a colony map, but as of 1.2.2900, it ignores this weight limit when called for a caravan on the world map.{{Check Tag|Quest behavior?|How does the weight limit work when used in quests? Both when collecting NPCs and when shuttling player pawns to offsite combats}}
+
+Damaging or destroying a shuttle does not create a [[crashed shuttle]] in its place. {{Check Tag|Detail|Does the shuttle attempt to flee when it's damaged? How much goodwill is lost?}} Imperial shuttles will only yield a {{icon Small|Shuttle engine}} [[shuttle engine]] when destroyed if the [[Odyssey DLC]] is active.
+
+== Analysis ==
+As imperial shuttles fly to their destination tile directly, they are far faster than a caravan and can transport more mass at once than a transport pod. Imperial shuttles have a higher carrying capacity of 2,000 kg than a player-built [[passenger shuttle]], {{OdysseyIcon}} which can only hold up to 500 kg. However, since an imperial shuttle called by permit is only valid for one trip, a single imperial shuttle cannot do a round trip unlike a caravan or passenger shuttle. It is possible to use two permits for a round trip, or to travel to the destination some other way and travel back with the imperial shuttle.
+
+== Version history ==
+* [[Version/1.1.2563|1.1.2563]] - Now avoids landing on crops.
+* [[Version/1.2.2719|1.2.2719]] - Fix: Shuttles sometimes land on natural roofs.
+* Possibly 1.3.3066 - Plasteel yield increased from 35 to 50.
+* [[Version/1.3.3066|1.3.3066]] - Shuttles leave 50 uranium instead of 100 steel when killed. Refactored shuttles into generic Transport ships. These ships follow a series of jobs which can be controlled by quest logic, UI, and Lords. Transport ships are tracked while flying, loading, unloading, etc.
+* [[Version/1.3.3067|1.3.3067]] - Shuttles can now overlap zones.
+* [[Version/1.4.3523|1.4.3523]] - Fix: Shuttle stays forever if all passengers cannot get on board.
+* [[Version/1.4.3529|1.4.3529]] - Fix: Some mechs cannot load into a shuttle.
+* ? - Moved from [[Royalty DLC]] to Core. 
+* ? - Description and named changed.
+* ? - Mass capacity changed to 2000.
+* ? - Shuttle engine added to destroy yield.
+* [[Version/1.6.4518|1.6.4518]] - Shuttles now provide 65% comfort, up from 0%.
+* [[Version/1.6.4850|1.6.4850]] - 
+** Fix: Babies born during shuttle flight were deleted.
+** Fix: Possible for rescue shuttles to land on the crashed shuttle, destroying it.
+
+[[Category: Miscellaneous]]

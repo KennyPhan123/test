@@ -1,0 +1,160 @@
+{{Biotech}}
+{{Infobox main|building
+| name = Hemogen amplifier
+| image = HemogenAmplifier south.png
+| description = This device leaves a deathrester in a hemogen-amplified state so they gain more hemogen from any hemogen source. Using a gland probe and blood analyzer, it links with a deathresting person, stimulating hemogen glands into a more active state. It must be connected to a deathrest casket to function. This building needs to consume hemogen to function.
+| type = Building
+| type2 = Biotech (Buildings)
+| placeable = true
+| path cost = 42
+| passability = pass through only
+| blockswind = false
+| cover = 0.4
+| minifiable = true
+| size = 1 ˣ 2
+| flammability = 0.4
+| hp = 200
+| beauty = 0
+| power = -100
+| terrain affordance = Light
+| research = Deathrest
+| skill 1 = Construction
+| skill 1 level = 4
+| work to make = 5000 
+| resource 1 = Steel
+| resource 1 amount = 200 
+| resource 2 = Component
+| resource 2 amount = 4
+| resource 3 = Hemogen pack
+| resource 3 amount = 5
+| thingCategories = 
+| fuel filter = Hemogen pack
+| fuel capacity = 5
+| fuel consumption rate = 0.5 <!-- Empty in one year -->
+| initial fuel percent = 1 <!-- 100% -->
+| auto refuel percent = 0.05 <!-- 5% -->
+| room role = Deathrest chamber
+}}
+The '''hemogen amplifier''' is a [[deathrest building]] added by the [[Biotech DLC]] that allows [[Hemogenic]] [[deathrest]]ers to receive more [[hemogen]] from all sources.
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+{{Stub|section=1|reason = 1) What happens if turned off/runs out of fuel/destroyed/etc part way through deathrest? 2) When does the buff end? When they start deathresting again, by choice or forced into it by low need? 3) mention lavk of build limit}}
+{{Deathrest Building Note}}
+
+Assuming deathrest is completed without interruption, each hemogen amplifier applies one stack of the [[Hediffs#Hemogen amplified|Hemogen amplified]] hediff increasing [[Hemogen Gain Multiplier]] by {{+|25%}}, in turn increasing the [[Hemogen]] gained from any source by {{+|25%}}. The bonus will be lost if the [[Genes#Deathrest|deathrest gene]] is removed from the pawn.
+
+== Analysis ==
+Hemogen amplifiers increase the hemogen a pawn gains. However, using an amplifier means ''not'' using a [[glucosoid pump]] or [[deathrest accelerator]], at least until a pawn has enough building capacity. Since deathrest building capacity is limited for most stages of the game, you should use the latter buildings first, as they are generally more helpful.
+
+As an alternative measure, you can increase hemogen gain by obtaining more colonists or [[prisoner]]s. Having more prisoners means having more hemogen available. Each prisoner provides {{#expr: 20 <!--Hemogen from 1 feed-->/(45/33)<!--Days to recover from blood loss from 1 feed--> round 1}} Hemogen per day (or a [[hemogen pack]] every {{#expr: 20/20 * (45/33) round 2}} days), and only really comes at the cost of [[food]]. In turn, using prisoners will save on the steel and components required to build the amplifier. This also lets you use other deathrest buildings, whose benefits you cannot replicate as easily.
+
+Amplifiers do have a niche: they are one of [[hemopump|two]] deathrest buildings that can be used without a maximum. Once you are using the maximum amount of glucosoid pumps, deathrest accelerators, and/or [[psychofluid pump]]s, you might as well build hemogen amplifiers. They reduce the amount of prisoners you need to sustain hemogenic pawns.
+
+Another small benefit is reducing the time required to refuel a hemogenic pawn, making in-combat hemogen consumption much more practical.
+
+It should be noted that even without any deathrest accelerators, other deathrest buildings or ability use in combat, the hemogen amplifier does provide a net hemogen benefit to pawns with the Hemogen drain gene (as Sanguophages do by default). While it is easier to simply produce more Hemogen the hemogen amplifier can improve the situation if rationing is needed for a pawn.
+
+=== Calculations ===
+Each hemogen amplifier increases the hemogen you gain from all sources. So the more hemogen you use between [[deathrest]]s, the more effective a hemogen amplifier will be. But the amplifier itself consumes hemogen during deathrest. In some cases, you can lose more hemogen than you gain. Specifically, it uses 0.5 hemogen packs per day deathresting, so it consumes this much hemogen per deathrest:
+
+{| {{STDT| sortable c_17 text-center}}
+! Deathrest facilities !! Deathrest<br/>time !! Packs consumed
+|-
+! style=text-align:left | [[Deathrest casket]]
+| {{#expr: 4/1.1 round 2}} days
+| {{Icon Small|Hemogen pack||{{#expr: 0.5*4/1.1 round 2}}}}
+|-
+! style=text-align:left | &nbsp;↳<small>+1x [[Deathrest accelerator]]</small>
+| {{#expr: 4/(1*1.1*1.2) round 2}} days
+| {{Icon Small|Hemogen pack||{{#expr: 0.5*4/(1*1.1*1.2) round 2}}}}
+|-
+! style=text-align:left | &nbsp;↳<small>+2x [[Deathrest accelerator]]</small>
+| {{#expr: 4/(1*1.1*1.2*1.2) round 2}} days
+| {{Icon Small|Hemogen pack||{{#expr: 0.5*4/(1*1.1*1.2*1.2) round 2}}}}
+|}
+
+A pawn must deathrest every 30 days. Therefore, you can calculate how much hemogen is required to satiate a pawn for 30 days:
+
+{| {{STDT| sortable c_17 text-center}}
+! Hemogen Packs Consumed !! [[Hemogenic]] !! [[Hemogen drain]]
+|-
+! style=text-align:left | ''Base''
+| {{Icon Small|Hemogen pack||{{#expr: 30*2/20}}}}
+| {{Icon Small|Hemogen pack||{{#expr: 30*10/20}}}}
+|-
+! style=text-align:left | &nbsp;↳<small>+1x [[Hemogen amplifier]]</small>
+| {{Icon Small|Hemogen pack||{{#expr: 30*2/(1.25*20)}}}}
+| {{Icon Small|Hemogen pack||{{#expr: 30*10/(1.25*20)}}}}
+|-
+! style=text-align:left | &nbsp;↳<small>Savings (1 amplifier)</small>
+| {{Icon Small|Hemogen pack||{{#expr: 30*2/20 - 30*2/(1.25*20) }}}}
+| {{Icon Small|Hemogen pack||{{#expr: 30*10/20 - 30*10/(1.25*20)}}}}
+|}
+
+Assuming an optimal 30 day period between deathrests with two [[Deathrest accelerator|deathrest accelerators]], here is how much hemogen is needed based on how many hemogen amplifiers are used, including restocking the amplifier:
+{| {{STDT| sortable c_17 text-center}}
+! Hemogen pack gain !! Hemogen amplifiers !! Hemogen packs needed (30 days)
+|-
+! style=text-align:center| 20
+| {{Icon Small|Hemogen amplifier||0}}
+| {{Icon Small|Hemogen pack||{{#expr: ((30*8/20)+(2.5*.5*0)) round 2}}}}
+|-
+! style=text-align:center| 25
+| {{Icon Small|Hemogen amplifier||1}}
+| {{Icon Small|Hemogen pack||{{#expr: ((30*8/25)+(2.5*.5*1)) round 2}}}}
+|-
+! style=text-align:center| 30
+| {{Icon Small|Hemogen amplifier||2}}
+| {{Icon Small|Hemogen pack||{{#expr: ((30*8/30)+(2.5*.5*2)) round 2}}}}
+|-
+! style=text-align:center| 35
+| {{Icon Small|Hemogen amplifier||3}}
+| {{Icon Small|Hemogen pack||{{#expr: ((30*8/35)+(2.5*.5*3)) round 2}}}}
+|-
+! style=text-align:center| 40
+| {{Icon Small|Hemogen amplifier||4}}
+| {{Icon Small|Hemogen pack||{{#expr: ((30*8/40)+(2.5*.5*4)) round 2}}}}
+|-
+! style=text-align:center| 45
+| {{Icon Small|Hemogen amplifier||5}}
+| {{Icon Small|Hemogen pack||{{#expr: ((30*8/45)+(2.5*.5*5)) round 2}}}}
+|-
+! style=text-align:center| 50
+| {{Icon Small|Hemogen amplifier||6}}
+| {{Icon Small|Hemogen pack||{{#expr: ((30*8/50)+(2.5*.5*6))}}}}
+|}
+'''Note:''' Values are given in hemogen packs for ease of comparison, but this building works equally for all sources of Hemogen.
+
+Thus, if a pawn only has the [[hemogenic]] trait alone, and does not use any abilities, then using the hemogen amplifier is a net loss. However, using a hemogenic ability costs Hemogen. The more abilities you use, the more hemogen you need to consume, so the more the hemogen amplifier benefits. So a pawn with only hemogenic can benefit from the amplifier if they spend at least {{#expr: ((0.5*4/1.1) - ((30*2/20) - 30*2/(1.25*20)))*20 round 1}} hemogen on abilities in the 30 days between deathrests. This is equivalent to 5 uses of Longjump legs, or 1.22 uses of Coagulate.
+
+If a pawn has [[hemogen drain]] in addition to hemogenic, 27 or more hemogen amplifiers becomes a net loss of hemogen packs without the use of any abilities. This is because the hemogen amplifier provide 5 hemogen (25% of 20) per consumption and costs 10 hemogen (0.5 of a hemogen pack) per deathrest, and therefore needs to consume at least twice per deathrest to break even. At 26 hemogen amplifiers, one consumption would yield 150 hemogen (20+(26*5)), which is 15 days of passive drain. Of course, using hemogenic abilities still increases the value of the amplifier. Note that [[sanguophages]] have hemogen drain by default.
+
+For comparison, in the same 30 day timeframe, each prisoner provides {{#expr: 30 / (45/33) round 2}} hemogen packs.
+
+== Gallery ==
+'''Images'''
+<gallery>
+HemogenAmplifier south.png|Facing South
+HemogenAmplifier east.png|Facing East
+HemogenAmplifier north.png|Facing North
+HemogenAmplifier west.png|Facing West
+</gallery>
+'''Audio'''
+<gallery>
+HemogenAmplifier Working Start.wav|Working Start
+HemogenAmplifier Working Loop.wav|Working Loop
+HemogenAmplifier Working Stop 01a.wav|Working Stop a
+HemogenAmplifier Working Stop 01b.wav|Working Stop b
+</gallery>
+
+== Version history ==
+* [[Biotech DLC]] Release - Added.
+* [[Version/1.4.3529|1.4.3529]] - Fix: Deathrest buildings use hemogen when not in use.
+* [[Version/1.4.3534|1.4.3534]] - Fix: Deathrest bonuses are not removed if deathrest gene is removed.
+* [[Version/1.4.3563|1.4.3563]] - Fix: Hemogen wasted when refueling deathrest buildings.
+
+{{Nav|biotech|wide}}
+[[Category:Biotech (Buildings)]]

@@ -1,0 +1,115 @@
+{{Infobox main|food
+| name = Nutrient paste meal
+| image = Nutrient paste meal a.png
+| description = A synthetic mixture of protein, carbohydrates, and vitamins, amino acids and minerals. Everything the body needs, and absolutely disgusting.
+<!-- Base Stats -->
+| type = Food
+| type2 = Meal
+| hp = 50
+| deterioration = 10
+| marketvalue = 10
+| mass base = 0.44
+| flammability = 1
+| stack limit = 10
+| path cost = 14
+<!-- Ingestion -->
+| food type = meal
+| taste = Awful
+| ingested direct thought = AteNutrientPasteMeal
+| max num to ingest at once = 1
+| days to rot = 0.75
+| nutrition = 0.9
+<!-- Creation -->
+| work to make = 0
+| production facility 1 = Nutrient paste dispenser
+| resource 1 = Nutrition
+| resource 1 type = any
+| resource 1 amount = 0.3
+<!-- Technical -->
+| defName = MealNutrientPaste
+| preferability = Awful
+| tradeability = Buyable
+<!-- Unused -->
+| always haulable = true
+| draw gui overlay = true
+| eat effect = EatVegetarian
+| graphic class = Graphic_Single
+| graphic path = Things/Item/Meal/NutrientPaste
+| label = nutrient paste meal
+| parent name = MealRottable
+| resource readout priority = Last
+| selectable = true
+| social properness matters = true
+| sound eat = Meal_Eat
+| thing class = Meal
+| ticker type = Rare
+| use hit points = true
+}}
+{{Info|A '''nutrient paste meal''' is produced from a [[nutrient paste dispenser]], using raw food ingredients.}}
+
+== Acquisition ==
+Unlike other meals, nutrient paste meals are not produced via a [[bill]]. Instead, [[Human]] pawns seeking a meal can approach a [[power]]ed [[nutrient paste dispenser]], stand in the interaction spot, and instantly create a nutrient paste meal, consuming 0.3 [[nutrition]] of any [[food]] inside the [[hopper]]s linked to the dispenser. For a detailed description of how the dispenser consumes the required nutrition, see the [[Nutrient paste dispenser#Summary|nutrient paste dispenser]] page. 
+
+The meal is created in the hands of the pawn using the dispenser. Once the meal is produced, the pawn will act the same as if they had retrieved any cooked meal from storage with [[Saturation|Hungry]] pawns taking the meal to be consumed, while [[Work#Warden|Wardens]] and [[Work#Doctor|Doctors]] will take the meal to their charges. Note that [[animal]]s cannot use the nutrient paste dispenser, but [[prisoner]]s can use dispensers with interaction spots in their prison. 
+
+These meals can't normally be stockpiled. Should the pawn dispensing the meal be interrupted between dispensing and eating the meal, they will drop it. This is done by limiting a pawn's area restriction to just a nutrient paste dispenser, or by simply drafting them. This behavior can be exploited to stockpile meals, but their short shelf life of 0.75 days means they should be immediately frozen. See [[Nutrient paste dispenser#Manually producing meals|below]] for a more in-depth analysis of this strategy.
+
+==Summary==
+A nutrient paste meal can be eaten for 0.9 [[nutrition]]. As paste takes 0.3 nutrition to make, it has a nutrition efficiency of 300%. Nutrient paste cannot cause [[food poisoning]].
+
+When consumed, nutrient paste gives a {{Thought|desc=I had to eat a disgusting, tasteless meal. I know it keeps you alive, but nobody wants to swallow that glop.|label=Ate nutrient paste meal|value=-4|stack=1|duration=1}}. This mood penalty is not applied to [[Ascetic]] pawns and those with the [[Eating nutrient paste|Eating Nutrient Paste: Don't Mind]]{{IdeologyIcon}} ideoligious precept. If the meal was made out of [[insect meat]], [[human meat]], or [[twisted meat]]{{AnomalyIcon}} their respective moodlets will be applied. If [[Ideology DLC]] is active and the meal was made out of [[raw fungus]], its normal moodlet will also be applied.
+
+== Analysis ==
+Nutrient paste is the most efficient way to prepare a meal, noticeably better than [[simple meal|simple]] and [[fine meal]]s (180% efficiency). This makes nutrient paste useful in a famine, even if you don't plan to use it indefinitely. In addition, no cooking is necessary. This avoids [[food poisoning]] entirely and can save a lot of time off a cook's hands. Nutrient paste is a poor choice for [[caravan]]s, given how quickly nutrient paste spoils and the tedious micro required to make stacks of them. Using only nutrient paste meals can also be a useful tool for containing the spread of [[metalhorror]]{{AnomalyIcon}} infections, as nutrient paste meals are not prepared by a cook.
+ 
+However, nutrient paste meals give a -4 [[mood]] debuff, which ends up being -9 net mood compared to [[fine meal]]s. It is advised to not give nutrient paste to pawns with a [[trait]] that gives a negative modifier to mental break threshold, because they can push a pawn over the edge. Because pawns prefer normal meals over nutrient paste, you can set restrictions to prevent normal pawns from consuming all of the good meals, leaving them to the volatile ones.
+
+Nutrient paste is also the most efficient [[animal]] food, who don't care about [[mood]], assuming it can eat the full 0.9 nutrition without [[overeating]]. But using it as such requires a pawn to manually produce nutrient paste meals, since animals can't use the dispenser.
+
+The mood penalty is negated if the colonist eating it has a precept "Eating Nutrient paste" as "Don't mind" for their [[Ideoligion]],{{IdeologyIcon}} making it a powerful choice for day-to-day work flow.
+
+== Gallery ==
+<gallery>
+Nutrient paste meal a.png|One nutrient paste meal
+Nutrient paste meal b.png|Partial stack
+Nutrient paste meal c.png|Full stack
+</gallery>
+<gallery>
+Carnivore nutrient paste meal a.png|One carnivore nutrient paste meal
+Carnivore nutrient paste meal b.png|Partial stack
+Carnivore nutrient paste meal c.png|Full stack
+</gallery>
+<gallery>
+Vegetarian nutrient paste meal a.png|One vegetarian nutrient paste meal
+Vegetarian nutrient paste meal b.png|Partial stack
+Vegetarian nutrient paste meal c.png|Full stack
+</gallery>
+
+== HEALTH ADVISORY WARNING ==
+{{Humour}}
+
+Food is deeply tied to the [[Mood|mental well-being of your colonists]] and there are few things for your pawns to look forward to in life on [[Lore#Rimworld|the rim]] besides throwing horseshoes or [[Death|sleep]].
+
+Long term effects of replacing their [[Simple meal|meals]] with bland, textureless options can cause:
+
+• [[Mental break|Mood disturbances]]
+
+• [[Mental break#Insulting spree|Irritability]] and disinterest in food
+
+• [[Mental break#Hide in room|Social withdrawal]] (since eating is social for many people)
+
+• In severe, long-term cases: [[Mental break#Psychotic wandering|depersonalization]], [[Mental_break#Catatonic_breakdown|anhedonia]], and in rare cases, [[Mental_break#Berserk|psychotic symptoms in vulnerable individuals.]]
+
+
+== Version history ==
+* [[Version/0.3.410|0.3.410]] - Pawns now try to eat nice meals when they have the choice over nutrient meals.
+* Beta 19/1.0 - Traders will no longer accept typical short-life meals, including nutrient paste meals.
+* [[Version/1.3.3087|1.3.3087]] - Fix: Nutrient paste does not produce ate meat or ate non meat thoughts.
+* [[Version/1.4.3523|1.4.3523]] - [[Ascetic]]s no longer get a negative mood debuff when eating nutrient paste meals.
+<gallery>
+Nutrient paste meal old.png|Texture before introduction of carnivore and vegetarian variant
+Nutrient Paste Meal Old.png|Texture as of some version before 1.0.2096 
+</gallery>
+
+{{nav|Food|wide}}
+[[Category:Food]] [[Category:Processed Food]] [[Category:Meal]]

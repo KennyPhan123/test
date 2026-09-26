@@ -1,0 +1,138 @@
+{{Version Nav}}
+
+{{Quote|Colonies with multiple ideoligions have specific benefits}}
+
+Hey everyone! RimWorld update 1.3.3117 is now out. This one comes with a long list of new stuff and improvements. Full changelist is below.
+
+'''Multi-ideo viability'''
+One key thing I wanted to do with this update was make it more rewarding to have a colony with diverse beliefs. While it should certainly be possible to run your colony as an ideological monoculture, I always wanted it to be possible to claim the benefits of multiple belief systems at the cost of needing to take a wider diversity of needs into account. This would also make recruiting easier, since it wouldn't be necessary to convert everyone during the recruiting process.
+
+We made several changes to achieve this goal.
+
+Now, colonists can participate in rituals of other ideoligions, strengthen those rituals by their presence, and gain mood and other benefits from them. Bigoted colonists will get a negative thought from participating in other beliefs, but the benefit from the ritual can outweigh their inner conflict. Since rituals can have quite specific effects, it can be very useful to have a wide toolbox of rituals available.
+
+Previously, colonists would be very unhappy if their beliefs were violated by others, and would hate everyone who acted against their beliefs. Now they don't mind as much if something they disagree with is happening elsewhere in the colony, and don't so intensely hate anyone who does something they wouldn't. They will still care as before about their own actions.
+
+Previously, in order to celebrate a ritual, it needed to be obligated by having three believers in the colony. This is no longer the case * just one believer is now enough to initiate a ritual, while obligations to do the ritual still start at three believers.
+
+I'll continue to monitor how this plays out and make adjustments as needed to maximize the number of viable play paths you can choose from.
+
+'''Compatibility:'''
+This update should be compatible with all savegames and mods.
+
+As always, don't hesitate to review Ideology on its Steam page!
+
+== Multi-ideo colony viability ==
+
+* Pawns of any ideo can now spectate any ritual, even if it's not of their own ideo.
+* Rebalanced social ideo thought opinion offsets to make multi-ideo colonies much more viable.
+* Allow celebrating rituals for an ideo even if there's not enough members to create an obligation.
+* Members of ideoligions that dislike diversity get a negative thought from participating in rituals from other ideoligions.
+* Ritual setup dialog now says what ideoligion the ritual comes from.
+
+== New stuff ==
+
+* Gaining, changing, or removing a role now requires a simple ritual.
+* Some things, like rock chunks, are now considered beautiful when outdoors but ugly when indoors. This solves a problem where a person standing in a nice forest will think their surroundings are ugly.
+* While starting a game with fluid ideoligions, you can now customize and load NPC faction ideoligions.
+* Skullspikes now display whose skull is contained inside on their inspect pane.
+* Added a precept related to Darkness meme that gives believers a positive thought during an eclipse.
+* You can now randomize fluid ideos before applying changes.
+* You can now randomize normal memes during fluid ideo reforming.
+* Added a "build door" gizmo that displays when a wall or wall blueprint is selected.
+
+== Improvements ==
+
+* Blind pawns' stats are now unaffected by light and darkness.
+* Biosculpter bioregeneration cycle now requires 2 glitterworld medicine.
+* Adjust the role tooltip area on the pawn's social tab.
+* Integrated artwork for bioregeneration cycle gizmo.
+* Empire will now properly respond to player giving the bestower serious heatstroke or hypothermia or allowing it to happen.
+* Some situational ideo thoughts now apply to quest lodgers. Previously, they were totally disabled.
+* Mutilation ritual expectation alert now only shows the pawns who actually want to be scarified or blinded.
+* Increased chance for ancient security crates to spawn in ancient complexes.
+* Removed min points limit on security crate spawning in ancient complexes.
+* Psytrainer description now shows the description of associated psycasts.
+* We now warn player if important plants like anima trees are marked for cutting or in grow zone.
+* Improved UI feedback in trade window when pawn refuses to sell another pawn into slavery due to the ideo.
+* Having a missing tongue now gives a negative mood thought because it's frustrating when you can't speak because your tongue was cut out.
+* We now warn the player if they are trying to put a pawn in a regeneration or medic cycle that would not heal any conditions.
+* Conditions that will be or can be healed by a biosculpter cycle are listed in a confirmation dialog on ordering a pawn to enter or load another into the biosculpter.
+* Extreme blood loss reduces consciousness by 40% and sets the capacity's max to 10%.
+* Improve feedback when we cannot assign a pawn to ritual role by clicking their portrait in the ritual setup dialog.
+* Change to randomized memes for fluid ideo based on feedback.
+* Korean language worker updates.
+
+== Technical ==
+
+* Updated to Unity 2019.4.30f1. This should prevent a rare issue where the game would freeze during startup.
+* Graphic_RandomRotated now supports random inner graphic correctly.
+* Add a temporary workaround for stuck old bestowing ceremony lord. Apply workaround for stuck old bestowing ceremony lord to AnyLordJobPreventsNewRituals too.
+* Improve ideo null checks for role change buttons.
+* We now cache def short hashes in database. This solves potential performance issue with deep drills.
+* Small improvements to SetIdeoRole debug tool.
+* Improved pawn portrait error reporting code.
+* Changes to fluid ideo meme randomization.
+
+== Fixes ==
+
+* Fix: Cancelling a caravan, then selling those animals, causes them to stay roped to the caravan gathering spot until they sleep.
+* Fix: Gauranlen tree miscalculates dryad count on creating seed pod.
+* Fix: Text of funeral ritual states bonus awards are available after randomizing name.
+* Fix: Totemic sculpture is pixelated.
+* Fix: Selling prisoners doesn't trigger negative thoughts on selling to slavers.
+* Fix: Research command ability icon is pixelated on non-uniform ui scales.
+* Fix: When caravan entering the map and already roped animals are force roped by another pawn, the first pawn potentially gets stuck waiting indefinitely.
+* Fix: Sunlamp does not trigger blinding light for Darkness pawns.
+* Fix: Wild people can be enslaved while arrested.
+* Fix: Several issues with ancient junk.
+* Fix: Wrong capitalization.
+* Fix: Typo soldiarity -> solidarity
+* Fix: Missing word in backstory.
+* Fix: Wind turbine, neural supercharger and skullspike have no path costs.
+* Fix: Extra memes from mods can be hidden in 'choose meme' UI.
+* Fix: Leader speech generates "could not reserve" errors.
+* Fix: New draft carry system leads to pawns being accidentally 'kidnapped' by guests when they leave.
+* Fix: Starting a role change from social tab causes an NRE in JobGiver_AcceptRole.
+* Fix: Exception in pawn portrait rendering.
+* Fix: Started 10 jobs in 10 ticks when slaves try to visit sick pawn. Slaves can no longer visit sick pawns.
+* Fix: Archonexus quest line cannot be continued if map part holder faction defeated.
+* Fix: Typo "Bslinded someone".
+* Fix: Removed hard-coded points value being passed into complex debug tool.
+* Fix: Mechanoids can spawn in Ancient Ruins when they are disabled in map generation, and behave oddly.
+* Fix: Can save/load ideo when you shouldn't be able to.
+* Fix: Regression * Colonists no longer automatically take yayo and a few other drugs.
+* Fix: Typo in TKey LetterCashing -> LetterChasing.
+* Fix: Some ThreatReward_Raid_Joiner texts remain untranslated when using Core only.
+* Fix: When a faction is defeated the faction goodwill number and relation label overlap.
+* Fix: Pawns ignore food restrictions and bring nutrient paste to prisoner.
+* Fix: Exceptions ticking pawns due to null room requirements.
+* Fix: You can assign a role changer of non-player ideo on the ritual config screen.
+* Fix: Potential nullref related to role change ritual interface.
+* Fix: Bestower sometimes arrives malnourished.
+* Fix: Gaumaker pods can destroy the tree they are spawned from.
+* Fix: Ideology message key displaying without the expansion.
+* Fix: Ritual timings are 1 day off.
+* Fix: Trader caravans have their animals leave the map on arrival when attempting to path through doors.
+* Fix: Missing possessive symbols in text.
+* Fix: ShouldConisderNode -> ShouldConsiderNode
+* Fix: Gaumaker pods can destroy the tree they are spawned from.
+* Fix: Ideology message key displaying without the expansion.
+* Fix: In ideo display and edit UIs, elements overlap sometimes if dev edit mode is on.
+* Fix: Initial starting ideo incorrectly shows if player selects ideo and clicks back in game start flow.
+* Fix: Possible to load a fluid ideo with more memes than is allowed.
+* Fix: Disease incident can target colonists in biosculpter.
+* Fix: Cannot plant flowers/bonsai trees in plant pots when there is a floor covering beneath the pot.
+* Fix: 'No recent raid' thoughts for raiding precepts can occur immediately after reform or archonexus restart.
+* Fix: Hediffs can be listed more than once as capacity impactors on the health tab.
+* Fix: Body part capacity impactors can be listed more than once.
+* Fix: Multiple issues with role assign dialog.
+* Fix: Generating a mission based quest with debug and not setting the population slate value will generate a quest with 50 population.
+* Fix: Wardens stop suppressing slaves if suppression > 50%.
+* Fix: Beggar quest can grant fail and complete bonus simultaneously if the original timer expires after beggars have been given items.
+* Fix: Beggar quest causes exceptions with Royalty not installed.
+* Fix: "ResolveCaseInsensitiveFilePath: System.IO.DirectoryNotFoundException: Could not find a part of the path"
+* Fix: Skip abilities don't update cover grid.
+
+== Source ==
+* [https://steamcommunity.com/games/294100/announcements/detail/2978557317970374204 Update 1.3.3117 makes multi-ideoligion colonies more viable]

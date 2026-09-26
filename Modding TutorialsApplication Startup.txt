@@ -1,0 +1,259 @@
+{{DISPLAYTITLE:Application Startup}}
+{{BackToTutorials}}
+
+This guide explains the application startup sequence of RimWorld. 
+
+== WARNING ==
+
+This guide is intended to be used to reference the order in which data is loaded in order to diagnose issues with mod code running too early or too late. '''You should not Harmony patch any of these referenced methods in order to do custom loading,''' there are many above-board methods for ensuring data and setup is done at the correct time, so those should be used instead. If you have any questions regarding application load issues, please make use of online resources such as the '''#mod-development''' channel on [https://discord.gg/rimworld the RimWorld Discord].
+
+== Application Load ==
+
+The root method that begins the application load process is <code>Verse.PlayDataLoader.LoadAllPlayData(bool)</code>, which is called by <code>Verse.Root.Start()</code>.
+
+<div class="TutorialTableWrapper">
+{| class="TutorialCodeTable"
+! # !! Description || Code Location
+|-
+| class="TutorialCodeTable-description" | '''1'''
+| class="TutorialCodeTable-description" | '''Load mod config data''' (the list of active mod)
+| <source lang="xml">
+Verse.ModsConfig constructor
+</source>
+|-
+| class="TutorialCodeTable-description" | '''2'''
+| class="TutorialCodeTable-description" | '''Build mod list from mod folders'''
+| <source lang="xml">
+Verse.ModLister.RebuildModList();
+</source>
+|-
+| class="TutorialCodeTable-description" | '''3'''
+| class="TutorialCodeTable-description" | '''Initialize mods'''
+| <source lang="xml">
+Verse.LoadedModManager.InitializeMods()
+</source>
+|-
+| class="TutorialCodeTable-description" | '''4'''
+| class="TutorialCodeTable-description" | '''Load mod assemblies''' (also create Mod subclass instances) (also queues up loading for audio, graphics, strings, and asset bundles, which doesn't execute until steps 30-33)
+| <source lang="xml">
+Verse.LoadedModManager.LoadModContent()
+Verse.LoadedModManager.CreateModClasses()
+</source>
+|-
+| class="TutorialCodeTable-description" | '''5'''
+| class="TutorialCodeTable-description" | '''Load and parse Def XML files'''
+| <source lang="xml">
+Verse.LoadedModManager.LoadModXML()
+</source>
+|-
+| class="TutorialCodeTable-description" | '''6'''
+| class="TutorialCodeTable-description" | '''Combine all the Def files into a single XML document'''
+| <source lang="xml">
+Verse.LoadedModManager.CombineIntoUnifiedXML()
+</source>
+|-
+| class="TutorialCodeTable-description" | '''7'''
+| class="TutorialCodeTable-description" | '''Load translation keys from Defs (very rarely used)'''
+| <source lang="xml">
+Verse.TKeySystem.Parse()
+</source>
+|-
+| class="TutorialCodeTable-description" | '''8'''
+| class="TutorialCodeTable-description" | '''Load and error check patches'''
+| <source lang="xml">
+Verse.LoadedModManager.ErrorCheckPatches()
+</source>
+|-
+| class="TutorialCodeTable-description" | '''9'''
+| class="TutorialCodeTable-description" | '''Apply XML [[Modding_Tutorials/PatchOperations|PatchOperations]]'''
+| <source lang="xml">
+Verse.LoadedModManager.ApplyPatches()
+</source>
+|-
+| class="TutorialCodeTable-description" | '''10'''
+| class="TutorialCodeTable-description" | '''Register Def inheritance (Name and ParentName)'''
+| <source lang="xml">
+Verse.XmlInheritance.TryRegister()
+</source>
+|-
+| class="TutorialCodeTable-description" | '''11'''
+| class="TutorialCodeTable-description" | '''Apply Def inheritance'''
+| <source lang="xml">
+Verse.LoadedModManager.ParseAndProcessXML()
+</source>
+|-
+| class="TutorialCodeTable-description" | '''12'''
+| class="TutorialCodeTable-description" | '''Load Defs from XML into Def classes. References to other Defs are registered and not resolved until step 20'''
+| <source lang="xml">
+Verse.LoadedModManager.ParseAndProcessXML()
+</source>
+|-
+| class="TutorialCodeTable-description" | '''13'''
+| class="TutorialCodeTable-description" | '''Warn if any patches failed'''
+| <source lang="xml">
+Verse.LoadedModManager.ClearCachedPatches()
+</source>
+|-
+| class="TutorialCodeTable-description" | '''14'''
+| class="TutorialCodeTable-description" | '''Load Language metadata'''
+| <source lang="xml">
+Verse.LanguageDatabase.InitAllMetadata()
+</source>
+|-
+| class="TutorialCodeTable-description" | '''15'''
+| class="TutorialCodeTable-description" | '''Store Defs into <code>DefDatabase</code>'''
+| <source lang="xml">
+Verse.GenGeneric.InvokeStaticMethodOnGenericType() -> AddAllInMods
+</source>
+|-
+| class="TutorialCodeTable-description" | '''16'''
+| class="TutorialCodeTable-description" | '''Store Defs into <code>DefOf</code> classes'''
+| <source lang="xml">
+RimWorld.DefOfHelper.RebindAllDefOfs(true)
+</source>
+|-
+| class="TutorialCodeTable-description" | '''17'''
+| class="TutorialCodeTable-description" | '''Build translation key mappings'''
+| <source lang="xml">
+Verse.TKeySystem.BuildMappings()
+</source>
+|-
+| class="TutorialCodeTable-description" | '''18'''
+| class="TutorialCodeTable-description" | '''Inject DefInjected translations''' (first round)
+| <source lang="xml">
+Verse.LanguageDatabase.activeLanguage.InjectIntoData_BeforeImpliedDefs()
+</source>
+|-
+| class="TutorialCodeTable-description" | '''19'''
+| class="TutorialCodeTable-description" | '''Generate implied defs''' (Blueprints, Meat, Frames, Techprints, Corpses, Stone terrain, Recipes from recipeMakers, Neurotrainers)
+| <source lang="xml">
+Verse.DefGenerator.GenerateImpliedDefs_PreResolve();
+</source>
+|-
+| class="TutorialCodeTable-description" | '''20'''
+| class="TutorialCodeTable-description" | '''Resolve cross references''' (goes through cross-reference registrations and replace them with direct references to their actual Defs
+| <source lang="xml">
+Verse.DirectXmlCrossRefLoader.ResolveAllWantedCrossReferences()
+</source>
+|-
+| class="TutorialCodeTable-description" | '''21'''
+| class="TutorialCodeTable-description" | '''Store Defs into <code>DefOf</code> fields''' (again, will error if Def is not found this time)
+| <source lang="xml">
+RimWorld.DefOfHelper.RebindAllDefOfs(false)
+</source>
+|-
+| class="TutorialCodeTable-description" | '''22'''
+| class="TutorialCodeTable-description" | '''Reload player knowledge database''' (Learning Helper entries)
+| <source lang="xml">
+RimWorld.PlayerKnowledgeDatabase.ReloadAndRebind()
+RimWorld.LessonAutoActivator.Reset();
+</source>
+|-
+| class="TutorialCodeTable-description" | '''23'''
+| class="TutorialCodeTable-description" | '''Reset all static data'''
+| <source lang="xml">
+Verse.LoadedModManager.DoPlayLoad()
+</source>
+|-
+| class="TutorialCodeTable-description" | '''24'''
+| class="TutorialCodeTable-description" | '''Resolve references''' (calls ResolveReferences on all Defs), specifically in order: ThingCategoryDefs, RecipeDefs, all other defs, ThingDefs
+| <source lang="xml">
+Verse.DefDatabase<ThingCategoryDef>.ResolveAllReferences(true, true)
+Verse.DefDatabase<RecipeDef>.ResolveAllReferences(true, true)
+Verse.GenGeneric.InvokeStaticMethodOnGenericType() -> ResolveAllReferences
+Verse.DefDatabase<ThingDef>.ResolveAllReferences()
+</source>
+|-
+| class="TutorialCodeTable-description" | '''25'''
+| class="TutorialCodeTable-description" | '''Generate implied defs''' (Key bindings)
+| <source lang="xml">
+RimWorld.DefGenerator.GenerateImpliedDefs_PostResolve()
+</source>
+|-
+| class="TutorialCodeTable-description" | '''26'''
+| class="TutorialCodeTable-description" | '''Reset more static data, and make sure smoothing is set up properly'''
+| <source lang="xml">
+Verse.LoadedModManager.DoPlayLoad()
+</source>
+|-
+| class="TutorialCodeTable-description" | '''27'''
+| class="TutorialCodeTable-description" | '''If in Dev mode, log all config errors'''
+| <source lang="xml">
+Verse.GenGeneric.InvokeStaticMethodOnGenericType() -> ErrorCheckAllDefs
+</source>
+|-
+| class="TutorialCodeTable-description" | '''28'''
+| class="TutorialCodeTable-description" | '''Load KeyBindings'''
+| <source lang="xml">
+Verse.KeyPrefs.Init()
+</source>
+|-
+| class="TutorialCodeTable-description" | '''29'''
+| class="TutorialCodeTable-description" | '''Assign short hashes'''
+| <source lang="xml">
+Verse.ShortHashGiver.GiveAllShortHashes()
+</source>
+|-
+| class="TutorialCodeTable-description" | '''30'''
+| class="TutorialCodeTable-description" | '''Load audio files from mods'''
+| <source lang="xml">
+Verse.LoadedModManager.LoadModContent() -> Verse.ModContentPack.ReloadContent() -> VerseModContentPack.ReloadContentInt()
+</source>
+|-
+| class="TutorialCodeTable-description" | '''31'''
+| class="TutorialCodeTable-description" | '''Load textures from mods'''
+| <source lang="xml">
+Verse.LoadedModManager.LoadModContent() -> Verse.ModContentPack.ReloadContent() -> VerseModContentPack.ReloadContentInt()
+</source>
+|-
+| class="TutorialCodeTable-description" | '''32'''
+| class="TutorialCodeTable-description" | '''Load strings from mods'''
+| <source lang="xml">
+Verse.LoadedModManager.LoadModContent() -> Verse.ModContentPack.ReloadContent() -> VerseModContentPack.ReloadContentInt()
+</source>
+|-
+| class="TutorialCodeTable-description" | '''33'''
+| class="TutorialCodeTable-description" | '''Load asset bundles from mods'''
+| <source lang="xml">
+Verse.LoadedModManager.LoadModContent() -> Verse.ModContentPack.ReloadContent() -> VerseModContentPack.ReloadContentInt()
+</source>
+|-
+| class="TutorialCodeTable-description" | '''34'''
+| class="TutorialCodeTable-description" | '''Load PawnBios''' (backer pawns and name-in-game lists)
+| <source lang="xml">
+RimWorld.SolidBioDatabase.LoadAllBios()
+</source>
+|-
+| class="TutorialCodeTable-description" | '''35'''
+| class="TutorialCodeTable-description" | '''Inject DefInjected translations, including in backstories, and error if there's a translation for a Def that isn't present'''
+| <source lang="xml">
+Verse.LanguageDatabase.activeLanguage.InjectIntoData_AfterImpliedDefs()
+</source>
+|-
+| class="TutorialCodeTable-description" | '''36'''
+| class="TutorialCodeTable-description" | '''Call all <code>StaticConstructorOnStartup</code> classes'''
+| <source lang="xml">
+Verse.StaticConstructorOnStartupUtility.CallAll()
+</source>
+|-
+| class="TutorialCodeTable-description" | '''37'''
+| class="TutorialCodeTable-description" | '''Bake static atlases''' (building damage and minified overlays such as the crate and bag textures)
+| <source lang="xml">
+Verse.GlobalTextureAtlasManager.BakeStaticAtlases()
+</source>
+|-
+| class="TutorialCodeTable-description" | '''38'''
+| class="TutorialCodeTable-description" | '''Force garbage collection'''
+| <source lang="xml">
+RimWorld.IO.AbstractFilesystem.ClearAllCache()
+System.GC.Collect(int.MaxValue, GCCollectionMode.Forced)
+</source>
+|-
+|}
+</div>
+
+== Sources ==
+
+The data in this guide was compiled using and cross-referenced with the [https://discord.com/channels/214523379766525963/215496692047413249/959362775933673472 writeup on Discord] by [https://steamcommunity.com/id/legodude17/myworkshopfiles/ legodude17].
+
+[[Category:Modding tutorials]]

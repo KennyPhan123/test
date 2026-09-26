@@ -1,0 +1,16 @@
+{{Version Nav}}
+Some rare, game-breaking bugs were reported. Some are crashes; others critically break AI behavior. So I fixed them.
+
+Savegames should continue to work from before. Some savegames that were broken before will now load.
+
+Mods should also mostly be compatible, but there may be issues in some cases given the complexities of how the code links up.
+
+The build number is now 1249.
+
+Non-Steam players won’t get an update email since this isn’t a content update. They can download the new version from their existing download link.
+
+== Changes ==
+* Fix: Hard crash when bed-sharing pawns have zero chance to do [[lovin']], passing a PositiveInfinity mean-time-between to the random event checker, causing it to enter an infinite loop.
+* Fix: AI stuck when warden chooses to feed a [[prisoner]] by taking food from an empty [[Nutrient paste dispenser|food dispenser]].
+* Fix: AI stuck and performance chugging from colony [[animals]] starving while being restricted to not touching [[walls]], and locked inside.
+* Mitigate: Sometimes, NPCs in [[Party|parties]], marriages all freeze and just stand there.

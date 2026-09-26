@@ -1,0 +1,85 @@
+{{Infobox main|food
+| name = Kibble
+| image = Kibble.png
+| description = Kibble animal feed made from mixed meat and plant sources.
+<!-- Base Stats -->
+| type = Food
+| type2 = Meal
+| hp = 60
+| deterioration = 6
+| marketvalue = 1.1
+| mass base = 0.015
+| flammability = 1
+| stack limit = 75
+| path cost = 14
+<!-- Ingestion -->
+| food type = kibble
+| taste = Raw
+| max num to ingest at once = 20
+| nutrition = 0.05
+<!-- Technical -->
+| defName = Kibble
+| preferability = RawBad
+<!-- Creation -->
+| production facility 1 = butcher spot
+| production facility 2 = butcher table
+| product amount = 50
+| work to make = 450
+| work speed stat = Cooking Speed
+| resource 1 = Nutrition
+| resource 1 type = non-vegan
+| resource 1 amount = 1
+| resource 2 = Nutrition
+| resource 2 type = vegan/hay
+| resource 2 amount = 1
+<!-- Unused -->
+| always haulable = true
+| draw gui overlay = true
+| graphic path = Things/Item/Resource/Kibble
+| label = kibble
+| parent name = OrganicProductBase
+| resource readout priority = Last
+| selectable = true
+| thing class = Meal
+| ticker type = Rare
+| eat effect = EatVegetarian
+| sound eat = RawVegetable_Eat
+| use hit points = true
+}}
+{{Info|'''Kibble''' is a type of [[food]] intended for use as [[animal]] feed.}}
+
+== Acquisition ==
+Kibble can be [[Work#Cook|cooked]] at a [[{{P|Production Facility 1}}]] or [[{{P|Production Facility 2}}]]. A batch of kibble requires 1 unit of [[nutrition]] from vegetarian items, and 1 unit of [[nutrition]] from meat or animal products. For example, 20 [[rice]] and 20 [[insect meat]] are sufficient. A completed bill requires {{ticks|450}} and produces 50 kibble at a butcher table, but only 35 at a butcher spot.
+
+== Summary ==
+Kibble is consumed for {{P|Nutrition}} [[nutrition]] per item. Kibble has 125% nutrition efficiency when produced at a butcher table, producing 2.5 nutrition per 2 nutrition from raw food. This drops to 87.5% efficiency when produced at a butcher spot, producing only 1.75 nutrition per 2 nutrition from raw food.
+
+Unlike most other foods, it does not rot. While it will still [[deterioration|deteriorate]] if left outside and/or unroofed, it will not spoil even if left unrefrigerated.
+
+Humans ''can'' eat kibble, but they'll get {{Thought|value=-12|stack=1|label=ate kibble|desc=I had to eat animal kibble. It's like I don't get to be human any more.|duration=1}}. This is the only way for humans to eat [[hay]]. The moodlets of its ingredients are also applied, notably from [[insect meat]] and [[human meat]] and depending on [[precept]]s {{IdeologyIcon}}.
+
+== Analysis ==
+Both kibble and [[meal]]s allow non-[[warg]] carnivores to eat some vegetables, and herbivores to eat meat, while being more efficient than raw food. While kibble isn't as nutrition efficient as meals ([[simple meal]]s, 180% efficient; [[pemmican]], 160% efficient), kibble has its unique advantages:
+
+====Nutrition====
+{{Recode|section=1|reason = automate a nutrition/work calculation with hard numbers: total work and split into Cook work and planter work; and nutrition/day/tile}}
+* Kibble allows use of [[hay]] - [[haygrass]] is the plant with the highest yield per day per tile, but cannot be turned into meals. Note that [[corn]] has a higher yield per grower work. In regular soil, hay turned into kibble is slightly worse for nutrition/day/tile than rice turned into simple meals, and slightly better than rice turned into pemmican. Rice surpasses hay for nutrition per day in rich soil, but hay will always be better than rice for nutrition per work.
+* Animals will eat an entire meal, even if they would [[overeating|overeat]]. Kibble and pemmican satiate 0.05 nutrition/item, which greatly reduces overeating. For example, a [[chicken]] can only store 0.3 nutrition in their stomach; they would consume 5-6 kibble when hungry, but a full meal every time. The smaller an animal is, the larger the effect of overeating (minimal effect at size >= 1).
+* Kibble requires substantially less work time than other recipes.
+
+Overall, kibble is ''nutritionally'' useful if you have spare [[hay]], and better than simple meals for the purposes of small animals. It is much better than pemmican in terms of colonist work. Even considering the extra food pemmican gives, it is more efficient to grow more crops than it is to cook pemmican unless there is a great cook but poor planters.
+
+Kibble also allows use of [[human meat]], [[insect meat]], and [[twisted meat]]{{AnomalyIcon}} without the micromanagement required for separating meals. (Though you could, for example, only set pemmican to be created with human meat, and forbid colonists in the Assign tab from eating any pemmican). There are other uses for kibble - see below.
+
+==== Logistics ====
+* Kibble can be used for animal training, unlike [[meal]]s.
+* Kibble never spoils, so you don't have to worry about it going bad from non-[[cooler|refrigeration]].
+* Kibble can be made at a butcher's table, rather than requiring a fueled/powered kitchen.
+* Since there is no chance for food poisoning, producing kibble is a safe way to train a no/low skill cook.
+
+==Version history==
+* [[Version/0.13.1135|0.13.1135]] - Added.
+
+{{nav|Food|wide}}
+
+[[Category:Food]] [[Category:Food type]]

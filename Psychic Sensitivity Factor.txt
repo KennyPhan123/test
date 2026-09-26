@@ -1,0 +1,77 @@
+{{Verified|1.5.4104}}{{Stat
+| def name = PsychicSensitivityFactor
+| label = psychic sensitivity factor
+| description = A factor applied to the user's psychic sensitivity.
+| default base value = 1
+| hide at value = 1
+| to string style = PercentZero
+| show if undefined = false
+| show on pawns = false
+| show on animals = false
+| category = Basics
+| display priority in category = 3500
+}}
+{{See also|Psychic Sensitivity}}
+
+== Bases ==
+<div><li style="display: inline-table;">
+{| {{STDT| c_07 sortable}}
+! Thing !! Psychic Sensitivity Factor
+|-
+{{#ask: [[Psychic Sensitivity Factor::+]]
+| ?Psychic Sensitivity Factor
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Name
+}}
+|}
+</li></div>
+
+== Factors ==
+* [[Stuff]] Stats (Factors when made of this)
+** [[Bioferrite]]{{AnomalyIcon}} Stat [[Quality]] Factors:
+{| {{STDT| c_03}}
+! Quality !! Factor
+|-
+| Awful || {{Good|×106%}}
+|-
+| Poor || {{Good|×108%}}
+|-
+| Normal || {{Good|×110%}}
+|-
+| Good || {{Good|×113%}}
+|-
+| Excellent || {{Good|×115%}}
+|-
+| Masterwork || {{Good|×117%}}
+|-
+| Legendary || {{Good|×120%}}
+|}
+
+== Stat Def Data ==
+{| {{STDT| c_07}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Psychic Sensitivity Factor" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />PsychicSensitivityFactor
+* '''Label:'''<br />psychic sensitivity factor
+| A factor applied to the user's psychic sensitivity.
+|
+* Display Order:<br />'''10'''
+* Def Name:<br />'''Basics'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Good|true}}'''
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Hide At Value:''' {{%|1}}
+* '''To String Style:''' PercentZero
+* '''Show On Animals:''' {{Bad|false}}
+* '''Show If Undefined:''' {{Bad|false}}
+* '''Show On Pawns:''' {{Bad|false}}
+| -
+| 3500
+<!--</StatDef>-->
+|}
+
+{{nav|stats|wide}}

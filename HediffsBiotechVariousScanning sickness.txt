@@ -1,0 +1,49 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Biotech/Various}}
+|}
+----
+{| {{STDT| c_11}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Scanning sickness" <!-- defName="ScanningSickness", ParentName="DiseaseBase" -->
+! Scanning sickness
+----
+* Def Name:<br />ScanningSickness
+* Label:<br />Scanning sickness
+|<!-- Description -->
+<div style="max-width: 400px;">This person was scanned by a softscanner to produce a mechanoid subcore. The high-energy scanning device has caused disturbances in their brain chemistry which will take time to resolve themselves. There won't be any long-term damage.</div>
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|90%|100%|35%}}
+* Initial Severity: '''400%'''
+* '''Comps:''' ''Severity Per Day:'' {{---|100%}}
+** [[Mechanitor]] Factor: {{Good|×200%}}
+* '''Remove On Redress Chance By Days Curve:'''
+<div><li style="display: inline-table;">
+{| {{STDT| c_11}}
+! <abbr title="Days as a World Pawn">Days</abbr> !! <abbr title="Chance to remove on Pawn Generator Redress">Chance</abbr>
+|-
+! 0
+| 0%
+|-
+! 2
+| 0%
+|-
+! 7
+| 50%
+|-
+! 20
+| 100%
+|}</li></div>
+|<!-- Stages -->
+{| {{STDT| c_11}}
+! Label !! Parameters
+|-
+! Scanning sickness
+|<!-- Parameters -->
+* Vomit {{MTB}} Days: '''1.5'''
+* [[Consciousness]] Post Factor: {{Bad|×75%}}
+* [[Moving]] Post Factor: {{Bad|×75%}}
+* [[Manipulation]] Post Factor: {{Bad|×75%}}
+|}<noinclude>
+|}</noinclude>

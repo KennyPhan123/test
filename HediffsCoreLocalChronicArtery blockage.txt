@@ -1,0 +1,93 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Local/Chronic}}
+|}
+----
+{| {{STDT| c_11}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Artery blockage" <!-- defName="HeartArteryBlockage", ParentName="ChronicDiseaseBase" -->
+! Artery blockage
+----
+* Def Name:<br />HeartArteryBlockage
+* Label:<br />artery blockage
+* Label Noun:<br />an artery blockage
+| A blockage in one of the critical arteries in the heart. Heart artery blockages randomly induce heart attacks.
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|90%|100%|35%}}
+* Initial Severity: '''0.1%'''
+* Chronic: {{Good|true}}
+* Allow Mothball If Low Priority World Pawn: {{Good|true}}
+* Lethal Severity: {{Bad|100%}}
+* '''Remove On Redress Chance By Days Curve:'''
+<div><li style="display: inline-table;">
+{| {{STDT| c_11}}
+! Days !! Chance
+|-
+! 0
+| 0%
+|-
+! 2
+| 0%
+|-
+! 7
+| 50%
+|-
+! 20
+| 100%
+|}{{Graph:Chart|width=200|height=200|xAxisTitle=Days|yAxisTitle=Remove On Redress Chance|yAxisFormat=%|type=line|x=0, 2, 7, 20|y=0, 0, 0.5, 1|xGrid=|yGrid=}}</li></div>
+* '''Comps:''' ''Immunizable''
+** Severity Per Day Not Immune: {{++|0.07%}}<ref>Range: '''{{++|0.035%}} ~ {{++|0.21%}}'''</ref><ref>Average: {{++|0.1225%}} (≈815 Days to 100%)</ref>
+** Severity Per Day Not Immune Random Factor: '''{{Good|×50%}} ~ {{Bad|×300%}}'''<ref>Average Factor: {{Bad|×175%}}</ref>
+<references />
+|<!-- Stages -->
+{| {{STDT| c_11}}
+! Label !! Parameters
+|-
+! minor
+|<!-- Parameters -->
+* Part Efficiency Offset: {{--|5%}}
+* '''Hediff Givers:''' ''Random''<ref name="identical stage properties" />
+** {{MTB}} Days: '''300'''
+|-
+! minor
+|<!-- Parameters -->
+* Min Severity: '''20%'''
+* Part Efficiency Offset: {{--|10%}}
+* '''Hediff Givers:''' ''Random''<ref name="identical stage properties" />
+** {{MTB}} Days: '''200'''
+|-
+! major
+|<!-- Parameters -->
+* Min Severity: '''40%'''
+* Part Efficiency Offset: {{--|15%}}
+* '''Hediff Givers:''' ''Random''<ref name="identical stage properties" />
+** {{MTB}} Days: '''100'''
+|-
+! major
+|<!-- Parameters -->
+* Min Severity: '''60%'''
+* Part Efficiency Offset: {{--|35%}}
+* '''Hediff Givers:''' ''Random''<ref name="identical stage properties" />
+** {{MTB}} Days: '''60'''
+|-
+! extreme
+|<!-- Parameters -->
+* Min Severity: '''90%'''
+* Life Threatening: {{Bad|true}}
+* Part Efficiency Offset: {{--|60%}}
+* '''Hediff Givers:''' ''Random''<ref name="identical stage properties" />
+** {{MTB}} Days: '''30'''
+|}
+<references>
+<ref name="identical stage properties">The following Random Hediff Giver properties are identical for all stages:
+* '''Hediff Givers:''' ''Random''
+** Hediff: '''[[Hediffs#Heart attack|Heart attack]]'''
+** Parts To Affect: '''[[Heart]]'''
+** Allow On Lodgers: {{Good|false}}
+** Allow On Quest Reward Pawns: {{Good|false}}
+** Allow On Quest Reserved Pawns: {{Good|false}}
+** Allow On Beggars: {{Good|false}}
+</ref>
+</references><noinclude>
+|}</noinclude>

@@ -1,0 +1,47 @@
+{{Royalty}}
+{{Infobox main|psycast
+| name = Chaos skip
+| image = ChaosSkip.png
+| type = Psycast
+| description = Teleport the target to a random position near where it started. Objects above a certain size cannot be teleported.
+| psylink level = 3
+| casting time = 15
+| ability range = 24.9
+| psyfocus cost = 0.02
+| neural heat gain = 18
+| effect radius =
+| duration =
+| duration multiplier = 
+| goodwill impact = -15
+| caster must be capable of violence = false
+}}
+'''Chaos skip''' is a level {{P|Psylink Level}} [[psycast]] that teleports its target to a random place in its area of effect. 
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+On casting, Chaos skip will skip the target to a random valid destination tile within range. Valid targets for Chaos skip are any [[pawn]]s with a [[body size]] of 3.5 or less, or any haulable item, within 25 tiles of the caster, respecting line of sight, and valid destination tiles are any standable tiles within a range of 7 to 25 tiles from the target pawn's position, disregarding of line of sight. For a list of pawns of body size ≤3.5, see {{#ask: [[Body Size::≤3.5]] | ?Body Size | ?Type | sort = Type, Type2, Name | limit = 0 | searchlabel = here}}.
+
+Upon arriving at their destination, the pawn will be briefly stunned for {{Ticks|90}}, preventing them from moving or taking action for the duration. If no valid destination tile exists, the target will not be skipped, with the displayed reason "No valid destination found for Chaos skip", though the psyfocus cost and neural heat gain will still be incurred. Note that despite having a body size of 1, [[Apocriton]]s{{BiotechIcon}} cannot be targeted by Chaos skip, by reason of "Psychic Resistance".
+
+Additionally, note that Chaos skip is considered a harmful ability, and will incur a [[goodwill]] penalty of {{Bad|-15}} when cast on pawns from a neutral or allied [[faction]]. However, Chaos skip will not apply a goodwill penalty if used on temporary colonists, such as quest lodgers or an imperial laborer gang.
+
+[[Psychic sensitivity]] has no impact on being skipped, [[psychically deaf]] raiders and [[hunter drone]]s{{OdysseyIcon}} are just as vulnerable to being skipped around as any other valid pawn.
+
+== Analysis ==
+[[File:chaos skip radius.PNG|thumb|right|175px|Area of effect of Chaos skip. Yellow tile marks the target location, white tiles are valid destination tiles, and red tiles are invalid destinations. Note that the maximum skip radius is identical to the cast range for Chaos skip.]]
+Chaos skip is a highly useful psycast that, while often overshadowed by its rather superior alternative in [[Skip]], is nonetheless a valuable tool for any player to have at their disposal. However, the inherent randomness to its effect can make its outcome vary somewhat, or backfire completely with poor luck.
+
+Chaos skip's effect of near-instantaneously displacing a target within a considerable range give it a multitude of obvious use cases. From removing melee attackers that have reached your vulnerable ranged pawns, to removing ranged pawns from cover to more easily pick them off, to teleporting downed pawns out of the line of fire, or teleporting pawns away from a live grenade, the list goes on. However, due to the random destination of skipped targets, Chaos skip can make a bad situation worse if used carelessly, such as teleporting enemy pawns directly into your ranks, or placing your own pawns out of cover and vulnerable to enemy fire. As such, it is up to the player's discretion to determine whether or not Chaos skip is worth casting at any given point in time. However, Chaos skip is almost always worth casting on enemy pawns if they're in deep cover or tying up your ranged attackers - it is likely that any other destination would be preferable to their current location. On the flip side, casting Chaos skip on your own pawns is generally a dubious proposition, as one is often better served by simply skipping the enemies attacking them away from them, rather than rolling the dice for a favorable destination for one's own pawns. Note that despite the random destination, the minimum teleport distance of Chaos skip renders it consistent when skipping melee enemies away from your own pawns, as they're forced to a destination at least 7 tiles away from their previous location, and thus your pawns.
+
+Additionally, despite its general inferiority to Skip, Chaos skip's ability to teleport targets through walls give it an niche when fighting in close quarters environments, such as a close range [[killbox]], an [[ancient complex]],{{IdeologyIcon}} or the walls of one's own base. While Skip's line of sight restriction for destinations would heavily restrict the distance a target can be skipped in such circumstances, Chaos skip is unaffected, allowing one to displace enemies freely, breaking up a group of enemies into more manageable chunks to pick off piecemeal.
+
+Lastly, while the brief stun it inflicts is hardly useful on the surface, it is still capable of interrupting enemies - a few notable examples being a [[centipede]] preparing to unleash a hail of bullets, or a [[revenant]]{{AnomalyIcon}} hypnotizing its prey. Against a typical pawn, however, it will do very little to impede them beyond the initial displacement effect of Chaos skip.
+
+== Version history ==
+* [[Royalty DLC]] Release - Added.
+* [[Version/1.4.3523|1.4.3523]] - Now has a maximum [[body size]] of 3.5.
+
+{{Nav|psycasts|wide}}
+[[Category: Psycasts]]

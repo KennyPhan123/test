@@ -1,0 +1,60 @@
+{{Stub|reason=super-page with mechanics, comparison, etc. similar to sleep furniture.}}
+
+'''Chairs''' are a type of building that human pawns can sit on. Chairs provide [[Comfort]].
+
+== List of chairs ==
+* [[Stool]]
+* [[Dining chair]]
+* [[Armchair]]
+* [[Couch]]
+* [[Meditation throne]]{{RoyaltyIcon}}
+* [[Grand meditation throne]]{{RoyaltyIcon}}
+* [[Pew]]{{IdeologyIcon}}
+* [[Kneel sheet]]{{IdeologyIcon}}
+* [[Kneel pillow]]{{IdeologyIcon}}
+
+== Mechanics ==
+Some recreation buildings require adjacent seating to be usable. These buildings are [[chess table]], [[poker table]], and all [[television]]s. Additionally, pawns will find seating before reading a [[books|book]]. Some, but not all, workstations allow the pawn to sit on them and gain comfort while working.
+
+Chairs can be rotated, but their facing does not matter as colonists can use workstations and recreation buildings even if the chair they are sitting on faces the wrong direction. This can be used to have the same chair be useable for multiple buildings.
+
+== Comparison table ==
+<onlyinclude><includeonly>
+|-
+! {{DLC Icons| {{{?Name}}} }}
+| {{#if: {{{?R1}}}|{{Required Resources|{{{?Name}}}|simple=1}}|—}}
+| {{{?Comfort}}}
+| {{{?Size}}}
+| {{#switch: {{{?Name}}}|Couch = 2|Kneel sheet = 4|Pew = 3|#default = 1}}
+| {{#ifeq: {{{?Quality}}} | true | {{Check}} | {{Cross}} }}
+</includeonly></onlyinclude>
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_08 text-center}}
+! Furniture
+! Resources to make
+! Comfort
+! Size
+! Seats
+! Has quality{{Ref label|Quality|A}}
+|-
+{{#ask: [[Category:Chair]]
+ | ?Name = ?Name
+ | ?Resource 1 = ?R1
+ | ?Stuff Tags = ?Stuff
+ | ?Comfort Base = ?Comfort
+ | ?Size = ?Size
+ | ?Has Quality = ?Quality
+ | named args = yes
+ | format = template
+ | template = :Chairs
+ | link = none
+ | sort = From DLC, Name
+}}
+|}
+</li></div>
+{{Note|Quality|A}} For the effects of qualities, see [[quality]] or the individual pages.
+
+== Analysis ==
+Since comfort increases at the same rate so long as the furniture comfort is below the pawn's comfort need, there is no benefit to chair comfort above 100%. Consider different chair types at expected qualities and see if you can reduce flammability, opportunity cost, and/or wealth and/or increase beauty while still retaining optimum comfort.
+
+[[Category:Furniture|#Chairs]]

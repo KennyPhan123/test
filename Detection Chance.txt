@@ -1,0 +1,53 @@
+{{Obsolete|reason=Still defined in code at time of writing, but no longer used in game. Previously used for illegal psycasting detection}}
+{{Verified|1.5.4104}}{{Stat
+| def name = Ability_DetectChancePerEntropy
+| label = detection chance
+| description = The likelihood of this psychic power being detected when it is used.<br/>Some [[factions]] try to enforce laws which restrict some powers to those holding specific titles. When you use a power, there is a chance that the psychic signature will be detected at a distance, which leads to diplomatic consequences.
+| default base value = 0
+| min value = 0
+| hide at value = 0
+| to string style = PercentZero
+| show if undefined = false
+| category = Obsolete <!--Ability-->
+| display priority in category = 996
+| stat factors = Neural Heat Gain
+| show if mods loaded = Royalty
+}}
+
+This stat is multiplied by [[Neural Heat Gain]].
+
+There are no current instances of this stat being used in the game.
+
+== Stat Def Data ==
+{| {{STDT| c_07}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Detection Chance" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />Ability_DetectChancePerEntropy
+* '''Label:'''<br />detection chance
+| The likelihood of this psychic power being detected when it is used.<br/><br/>Some factions try to enforce laws which restrict some powers to those holding specific titles. When you use a power, there is a chance that the psychic signature will be detected at a distance, which leads to diplomatic consequences.
+|
+* Display Order:<br />'''60'''
+* Def Name:<br />'''Ability'''
+* Label:<br />'''Ability'''
+* Display All By Default:<br />{{Bad|false}}
+|
+* '''Default Base Value:''' {{%|0}}
+* '''Min Value:''' {{%|0}}
+* '''Show If Undefined:''' {{Bad|false}}
+* '''Hide At Value:''' {{%|0}}
+* '''To String Style:''' PercentZero
+|
+* Stat Factors:
+** '''[[Neural Heat Gain]]'''
+* Show If Mods Loaded:
+** '''[[Royalty]] {{RoyaltyIcon}}'''
+| 996
+<!--</StatDef>-->
+|}
+
+== Version history ==
+{{Stub|section=1|reason=General}}
+* [[Royalty (DLC)]] Release - Added.
+
+{{nav|stats|wide}}

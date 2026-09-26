@@ -1,0 +1,88 @@
+{{Anomaly}}
+{{Infobox main|building
+| name = Atmospheric heater
+| image = AtmosphericHeater b.png
+| description = A thermal projection device powered by scavenged shards of dark archotechnology. The device burns bioferrite to agitate gas molecules in the atmosphere, raising the local outdoor temperature. The building itself also produces huge amounts of waste heat.
+<!-- Base Stats -->
+| type = Building
+| type2 = Anomaly (Buildings)
+| beauty = -40
+| hp = 300
+| flammability = 0.5
+| rotatable = false
+| path cost = 50
+<!-- Building -->
+| size = 3 x 3
+| passability = pass through only
+| terrain affordance = Heavy
+| power = -1500
+| glowradius = 5
+| glowcolor = (230,100,100,0)
+| heatpersecond = 120 <!-- Same as active steam geyser -->
+<!-- Creation -->
+| research = Atmospheric heater
+| skill 1 = construction
+| skill 1 level = 6
+| work to make = 12000
+| resource 1 = Shard
+| resource 1 amount = 2
+| resource 2 = Bioferrite
+| resource 2 amount = 150
+| resource 3 = Steel
+| resource 3 amount = 150
+| resource 4 = Component
+| resource 4 amount = 8
+<!-- Technical -->
+| defName AtmosphericHeater
+| label = atmospheric heater
+| tickerType = Normal
+| drawerType = MapMeshAndRealTime
+| designationCategory = Anomaly
+| castEdgeShadows = true
+| uiOrder = 400
+| expandHomeArea = false
+| buildingTags = Anomaly
+| externalTicking = true
+| showAllowAutoRefuelToggle = true
+<!-- Unsorted -->
+| flickable = true
+| claimable = false
+| lowPowerConsumptionFactor = 0.05
+<!-- Fuel -->
+| fuel consumption rate = 8
+| fuel capacity = 80.0
+| fuel filter = Bioferrite
+}}
+The '''atmospheric heater''' is a building added in the [[Anomaly DLC]] that can be used to raise the outdoor [[temperature]] of the entire map.
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+The atmospheric heater functions similarly to a normal [[heater]]. Once built, it can be selected to set a target temperature (shared by all atmospheric heaters on the same map), and will activate when the outdoor temperature falls below the setting. Each active atmospheric heater can raise the temperature of its world tile by {{Temperature|10||delta}}, completely unaffected by other factors like the colony's biome or its location in the world. This increase in temperature will stack with other atmospheric heaters. The temperature changes at a rate of {{Temperature|1||delta}} every {{ticks|1000}} (unaffected by the amount of atmospheric heaters on the map), both while the temperature is raising (the heaters are active) and lowering (some or all heaters are inactive or destroyed).
+
+Also like the heater and [[cooler]], it has both a High power and Low power consumption. When the outdoor temperature is naturally above the target temperature, it will be at Low power and only consume 75W (5%). During High power, it will consume 1500W of power, as well as {{Icon Small|Bioferrite||8}} [[Bioferrite]] per day. It has a fuel capacity of 80 bioferrite, allowing it to run constantly for 10 days before needing to be refueled. It can be toggled to automatically refuel, and flicked on and off to toggle power. The building does not need to be outdoors to function, and will generate a large amount of heat when indoors, outputting {{P|Heat Per Second}} units of heat per second, the same as an active [[Steam geyser]].
+
+== Analysis ==
+{{Stub|section =1|reason =Practicality of making the map a hotbox as a defensive measure <!--I don't think it is practical, as it'll likely just end up with mechs only, but it should be addressed with consideration of to using 1) getting the map hot but not so hot to kill and then using a hotbox for the remainder and 2) what apparel to use e.g. phoenix armor -->}} 
+As outdoor temperature is most important for [[farming]], the value of building an Atmospheric Heater is best compared to a farming setup using [[sun lamp]]s.
+
+A single sun lamp illuminates 100 tiles for an average of 2069W⋅Days, assuming one is using a [[battery]] to store excess power at night to use during the day. However, while the actual power required for an Atmospheric Heaters is 1500W, it also consumes bioferrite that could have been used to produce power using a [[bioferrite generator]], which produces 4000W at the cost of {{Icon Small|Bioferrite||6}} [[bioferrite]] per day. Thus, the real power consumption for a single Atmospheric Heater running on High is actually roughly 6833W⋅Days, or 3.3 sunlamps. This cost is compounded further in regions where a single heater isn't enough to keep the temperature above freezing during the coldest periods, such as [[tundra]]. Additionally, it does not function in the vacuum of space on asteroids {{OdysseyIcon}} or orbital platforms. {{OdysseyIcon}}
+
+On the other hand, crops no longer have to be grown indoors, which allows for farming [[trees]], and makes it easier to grow large fields of crops that cannot be grown with [[hydroponics]], most notably [[devilstrand]]. Also, in more temperate climates, a single Atmospheric Heater can potentially be enough to allow for farming during the entire winter, and protect crops from a [[Cold snap]]. Since the atmospheric Heater only consumes bioferrite when at High Power, the actual loss in potential power from bioferrite generators will be much lower for a atmospheric Heater that only has to run for one or two quadrums a year.
+
+For colder climates, especially those with permanent winter, the additional heat can melt snow to greatly improve map wide walk speed, and lengthen seasonal or even create year long growing periods.
+
+Cold climates can also necessitate cold weather gear such as [[tuque]]s and [[parka]]s, at the expense of protection. While not often the primary reason for employing an atmospheric heater, allowing the use of better armor is a significant buff to a colony's combat effectiveness that should be considered in colder biomes.
+
+== Gallery ==
+<gallery>
+AtmosphericHeater a.png|Atmospheric heater idle/inactive
+AtmosphericHeater b.png|Atmosperic heater active
+</gallery>
+
+== Version history ==
+* [[Anomaly DLC]] Release - Added
+
+{{Nav|anomaly|wide}}
+[[Category:Anomaly (Buildings)]]

@@ -1,0 +1,502 @@
+{{Stub|reason=1) double check details of each building (inheritance etc.)}}
+{{Verified|1.5.4104}}{{Stat
+| def name = MeditationFocusStrength
+| label = meditation psyfocus bonus
+| description = The amount of extra [[psyfocus]] someone gains by focusing on this object during [[meditation]], in addition to their own base rate of [[Meditation Psyfocus Gain|meditation psyfocus gain]].<br/>For some objects, this number can change depending on the surroundings and the person doing the meditating.
+| default base value = 0
+| show zero base value = true
+| min value = 0.0
+| format string = {0} / day
+| format string unfinalized = {0} / day
+| to string style = PercentZero
+| show if undefined = false
+| category = Meditation
+| display priority in category = 4010
+| worker class = StatWorker_PossibleCompOffsets
+| show if mods loaded any = Royalty
+}}
+
+== Buildings ==
+{| {{STDT| sortable}}
+! Building !! Base !! Focus Types !! Details
+|-
+! [[Holding spot]]{{AnomalyIcon}}
+| '''0%''' || Void
+| Offset when occupied: {{+|16%}}
+|-
+! [[Holding platform]]{{AnomalyIcon}}
+| '''0%''' || Void
+| Offset when occupied: {{+|16%}}
+|-
+! [[Twisted obelisk]]{{AnomalyIcon}}
+| {{+|24%}} || Void || -
+|-
+! [[Corrupted obelisk]]{{AnomalyIcon}}
+| {{+|24%}} || Void || -
+|-
+! [[Warped obelisk]]{{AnomalyIcon}}
+| {{+|24%}} || Void || -
+|-
+! [[Psychic ritual spot]]{{AnomalyIcon}}
+| {{+|8%}} || Void
+|
+* Offset when nearby: [[Shard beacon]]{{AnomalyIcon}}
+** Offset Per Building: {{+|2%}}
+** Radius: '''9.9''' (tiles)
+** Max Buildings: '''4'''
+* Offset when nearby: [[Void sculpture]]{{AnomalyIcon}}
+** Offset Per Building: {{+|2%}}
+** Radius: '''9.9''' (tiles)
+** Max Buildings: '''6'''
+|-
+! [[Void sculpture]]{{AnomalyIcon}}
+| '''0%''' || Artistic
+|
+* Quality Curve Points:
+{| {{STDT}}
+! Quality !! Offsets
+|-
+| Awful || {{+|12%}}
+|-
+| Poor || {{+|16%}}
+|-
+| Normal || {{+|20%}}
+|-
+| Good || {{+|22%}}
+|-
+| Excellent || {{+|24%}}
+|-
+| Masterwork || {{+|26%}}
+|-
+| Legendary || {{+|28%}}
+|}
+* Buildings With Quality:
+** Buildings:
+*** [[Small sculpture]]
+*** [[Large sculpture]]
+*** [[Grand sculpture]]
+** Radius: '''9.9''' (tiles)
+** Max Buildings: '''8'''
+** Focus Per Quality Points:
+{| {{STDT}}
+! Quality !! Offsets
+|-
+| Awful || '''0%'''
+|-
+| Poor || '''0%'''
+|-
+| Normal || {{+|1%}}
+|-
+| Good || {{+|1%}}
+|-
+| Excellent || {{+|1%}}
+|-
+| Masterwork || {{+|2%}}
+|-
+| Legendary || {{+|2%}}
+|}
+|-
+! [[Void monolith]]{{AnomalyIcon}}
+| {{+|30%}} || Void || -
+|-
+! [[Harbinger tree]]{{AnomalyIcon}}
+| {{+|14%}} || Void || -
+|-
+! [[Blood torch]]{{BiotechIcon}}
+| '''0%''' || Flame
+|
+* Offset when lit: {{+|10%}}
+* Lit Buildings Offset:
+** Buildings:
+*** [[Campfire]]
+*** [[Torch lamp]]
+*** [[Brazier]]{{RoyaltyIcon}}
+*** [[Darklight brazier]]{{RoyaltyIcon}}{{IdeologyIcon}}
+*** [[Darktorch]]{{IdeologyIcon}}
+*** [[Fungus darktorch]]{{IdeologyIcon}}
+** Offset Per Building: {{+|1%}}
+** Radius: '''9.9''' (tiles)
+** Max Buildings: '''8'''
+** Draw Ring Radius: {{Bad|false}}
+|-
+! [[Sculptures]]
+| '''0%''' || Artistic
+|
+* Quality Curve Points:
+{| {{STDT}}
+! Quality !! Offsets
+|-
+| Awful || {{+|12%}}
+|-
+| Poor || {{+|16%}}
+|-
+| Normal || {{+|20%}}
+|-
+| Good || {{+|22%}}
+|-
+| Excellent || {{+|24%}}
+|-
+| Masterwork || {{+|26%}}
+|-
+| Legendary || {{+|28%}}
+|}
+* Buildings With Quality:
+** Buildings:
+*** [[Small sculpture]]
+*** [[Large sculpture]]
+*** [[Grand sculpture]]
+** Radius: '''9.9''' (tiles)
+** Max Buildings: '''8'''
+** Focus Per Quality Points:
+{| {{STDT}}
+! Quality !! Offsets
+|-
+| Awful || '''0%'''
+|-
+| Poor || '''0%'''
+|-
+| Normal || {{+|1%}}
+|-
+| Good || {{+|1%}}
+|-
+| Excellent || {{+|1%}}
+|-
+| Masterwork || {{+|2%}}
+|-
+| Legendary || {{+|2%}}
+|}
+|-
+! [[Torch lamp]]
+| '''0%''' || Flame
+|
+* Offset when lit: {{+|10%}}
+* Lit Buildings Offset:
+** Buildings:
+*** [[Campfire]]
+*** [[Torch lamp]]
+*** [[Wall torch lamp]]
+*** [[Brazier]]{{RoyaltyIcon}}
+*** [[Darklight brazier]]{{RoyaltyIcon}}{{IdeologyIcon}}
+*** [[Darktorch]]{{IdeologyIcon}}
+*** [[Fungus darktorch]]{{IdeologyIcon}}
+** Offset Per Building: {{+|1%}}
+** Radius: '''9.9''' (tiles)
+** Max Buildings: '''8'''
+** Draw Ring Radius: {{Bad|false}}
+|-
+! [[Wall torch lamp]]
+| '''0%''' || Flame
+|
+* Lit Offset:
+** Offset when lit: {{+|10%}}
+* Lit Buildings Offset:
+** Buildings:
+*** [[Campfire]]
+*** [[Torch lamp]]
+*** [[Wall torch lamp]]
+*** [[Brazier]]{{RoyaltyIcon}}
+*** [[Darklight brazier]]{{RoyaltyIcon}}{{IdeologyIcon}}
+*** [[Darktorch]]{{IdeologyIcon}}
+*** [[Fungus darktorch]]{{IdeologyIcon}}
+** Offset Per Building: {{+|1%}}
+** Radius: '''9.9''' (tiles)
+** Max Buildings: '''8'''
+** Draw Ring Radius: {{Bad|false}}
+|-
+! [[Grave]]
+| {{+|6%}} || Morbid
+|
+* Grave Full
+** Offset: {{+|10%}}
+* Grave Corpse Relationship
+** Offset: {{+|10%}}
+* Nearby Graves
+** Graves:
+*** [[Grave]]
+*** [[Sarcophagus]]
+** Offset Per Building: {{+|1%}}
+** Radius: '''9.9''' (tiles)
+** Max Buildings: '''4'''
+** Focus Per Full Grave: {{+|1%}}
+|-
+! [[Sarcophagus]]
+| {{+|10%}} || Morbid
+|
+* Grave Full
+** Offset: {{+|10%}}
+* Grave Corpse Relationship
+** Offset: {{+|10%}}
+* Nearby Graves
+** Graves:
+*** [[Grave]]
+*** [[Sarcophagus]]
+** Offset Per Building: {{+|1%}}
+** Radius: '''9.9''' (tiles)
+** Max Buildings: '''4'''
+** Focus Per Full Grave: {{+|1%}}
+|-
+! [[Large stele]]
+| {{+|15%}} || Artistic || -
+|-
+! [[Grand stele]]
+| {{+|18%}} || Artistic || -
+|-
+! [[Wall]]
+| {{+|22%}} || Minimal || -
+|-
+! [[Campfire]]
+| '''0%''' || Flame
+|
+* Offset when lit: {{+|12%}}
+* Lit Buildings Offset:
+** Buildings:
+*** [[Campfire]]
+*** [[Torch lamp]]
+*** [[Brazier]]{{RoyaltyIcon}}
+*** [[Darklight brazier]]{{RoyaltyIcon}}{{IdeologyIcon}}
+*** [[Darktorch]]{{IdeologyIcon}}
+*** [[Fungus darktorch]]{{IdeologyIcon}}
+** Offset Per Building: {{+|2%}}
+** Radius: '''9.9''' (tiles)
+** Max Buildings: '''8'''
+|-
+! [[Darktorch]]{{IdeologyIcon}}
+| '''0%''' || Flame
+|
+* Offset when lit: {{+|10%}}
+* Lit Buildings Offset:
+** Buildings:
+*** [[Campfire]]
+*** [[Torch lamp]]
+*** [[Brazier]]{{RoyaltyIcon}}
+*** [[Darklight brazier]]{{RoyaltyIcon}}{{IdeologyIcon}}
+*** [[Darktorch]]{{IdeologyIcon}}
+*** [[Fungus darktorch]]{{IdeologyIcon}}
+** Offset Per Building: {{+|1%}}
+** Radius: '''9.9''' (tiles)
+** Max Buildings: '''8'''
+** Draw Ring Radius: {{Bad|false}}
+|-
+! [[Fungus darktorch]]{{IdeologyIcon}}
+| '''0%''' || Flame
+|
+* Offset when lit: {{+|10%}}
+* Lit Buildings Offset:
+** Buildings:
+*** [[Campfire]]
+*** [[Torch lamp]]
+*** [[Brazier]]{{RoyaltyIcon}}
+*** [[Darklight brazier]]{{RoyaltyIcon}}{{IdeologyIcon}}
+*** [[Darktorch]]{{IdeologyIcon}}
+*** [[Fungus darktorch]]{{IdeologyIcon}}
+** Offset Per Building: {{+|1%}}
+** Radius: '''9.9''' (tiles)
+** Max Buildings: '''8'''
+** Draw Ring Radius: {{Bad|false}}
+|-
+! [[Brazier]]{{RoyaltyIcon}}
+| '''0%''' || Flame
+|
+* Offset when lit: {{+|15%}}
+* Lit Buildings Offset:
+** Buildings:
+*** [[Campfire]]
+*** [[Torch lamp]]
+*** [[Brazier]]{{RoyaltyIcon}}
+*** [[Darklight brazier]]{{RoyaltyIcon}}{{IdeologyIcon}}
+*** [[Darktorch]]{{IdeologyIcon}}
+*** [[Fungus darktorch]]{{IdeologyIcon}}
+** Offset Per Building: {{+|2%}}
+** Radius: '''9.9''' (tiles)
+** Max Buildings: '''8'''
+** Draw Ring Radius: {{Bad|false}}
+|-
+! [[Darklight brazier]]{{RoyaltyIcon}}{{IdeologyIcon}}
+| '''0%''' || Flame
+|
+* Offset when lit: {{+|15%}}
+* Lit Buildings Offset:
+** Buildings:
+*** [[Campfire]]
+*** [[Torch lamp]]
+*** [[Brazier]]{{RoyaltyIcon}}
+*** [[Darklight brazier]]{{RoyaltyIcon}}{{IdeologyIcon}}
+*** [[Darktorch]]{{IdeologyIcon}}
+*** [[Fungus darktorch]]{{IdeologyIcon}}
+** Offset Per Building: {{+|2%}}
+** Radius: '''9.9''' (tiles)
+** Max Buildings: '''8'''
+** Draw Ring Radius: {{Bad|false}}
+|-
+! [[Meditation throne]]{{RoyaltyIcon}}
+| {{+|15%}} || Dignified
+|
+* Throne Satisfies Requirements Offset: {{+|8%}}
+* Room Impressiveness Curve Points:
+{| {{STDT}}
+! Room<br />Impressiveness !! Offset
+|-
+| 0 || {{--|5%}}
+|-
+| 30 || '''0%'''
+|-
+| 60 || {{+|4%}}
+|-
+| 100 || {{+|8%}}
+|-
+| 170 || {{+|10%}}
+|}
+{{Graph:Chart|width=300|height=150|xAxisTitle=Room Impressiveness|yAxisTitle=Meditation Psyfocus Bonus Offset|type=line|x=0, 30, 60, 100, 170|y=-0.05, 0, 0.04, 0.08, 0.1|xGrid=|yGrid=}}
+|-
+! [[Grand meditation throne]]{{RoyaltyIcon}}
+| {{+|15%}} || Dignified
+|
+* Throne Satisfies Requirements Offset: {{+|8%}}
+* Room Impressiveness Curve Points:
+{| {{STDT}}
+! Room<br />Impressiveness !! Offset
+|-
+| 0 || {{--|5%}}
+|-
+| 30 || '''0%'''
+|-
+| 60 || {{+|4%}}
+|-
+| 100 || {{+|8%}}
+|-
+| 170 || {{+|10%}}
+|}
+{{Graph:Chart|width=300|height=150|xAxisTitle=Room Impressiveness|yAxisTitle=Meditation Psyfocus Bonus Offset|type=line|x=0, 30, 60, 100, 170|y=-0.05, 0, 0.04, 0.08, 0.1|xGrid=|yGrid=}}
+|-
+! [[Small nature shrine]]{{RoyaltyIcon}}
+| {{+|22%}} || Natural
+|
+* Artificial Buildings
+** Radius: 27.9 (tiles)
+** Curve Points:
+{| {{STDT}}
+! Artificial<br />Buildings !! Offset
+|-
+| 0 || '''0%'''
+|-
+| 5 || {{--|6%}}
+|-
+| 10 || {{--|12%}}
+|-
+| 50 || {{--|22%}}
+|}
+{{Graph:Chart|width=300|height=150|xAxisTitle=Artifical Buildings|yAxisTitle=Meditation Psyfocus Bonus Offset|type=line|x=0, 5, 10, 50|y=0, -0.06, -0.12, -0.22|xGrid=|yGrid=}}
+* Building Offsets
+** Buildings: [[Animus stone]]
+** Offset: {{+|2%}}
+** Radius: '''9.9''' (tiles)
+** Max Buildings: '''4'''
+|-
+! [[Large nature shrine]]{{RoyaltyIcon}}
+| {{+|30%}} || Natural
+|
+* Artificial Buildings
+** Radius: 27.9 (tiles)
+** Curve Points:
+{| {{STDT}}
+! Artificial<br />Buildings !! Offset
+|-
+| 0 || '''0%'''
+|-
+| 5 || {{--|6%}}
+|-
+| 10 || {{--|13%}}
+|-
+| 50 || {{--|30%}}
+|}
+{{Graph:Chart|width=300|height=150|xAxisTitle=Artifical Buildings|yAxisTitle=Meditation Psyfocus Bonus Offset|type=line|x=0, 5, 10, 50|y=0, -0.06, -0.13, -0.30|xGrid=|yGrid=}}
+* Building Offsets
+** Buildings: [[Animus stone]]
+** Offset: {{+|2%}}
+** Radius: '''9.9''' (tiles)
+** Max Buildings: '''4'''
+|-
+! [[Animus stone]]{{RoyaltyIcon}}
+| {{+|34%}} || Natural
+|
+* Artificial Buildings
+** Radius: 27.9 (tiles)
+** Curve Points:
+{| {{STDT}}
+! Artificial<br />Buildings !! Offset
+|-
+| 0 || '''0%'''
+|-
+| 5 || {{--|8%}}
+|-
+| 10 || {{--|16%}}
+|-
+| 50 || {{--|34%}}
+|}
+{{Graph:Chart|width=300|height=150|xAxisTitle=Artifical Buildings|yAxisTitle=Meditation Psyfocus Bonus Offset|type=line|x=0, 5, 10, 50|y=0, -0.08, -0.16, -0.34|xGrid=|yGrid=}}
+* Building Offsets
+** Buildings: [[Animus stone]]
+** Offset: {{+|2%}}
+** Radius: '''9.9''' (tiles)
+** Max Buildings: '''4'''
+|-
+! [[Anima tree]]{{RoyaltyIcon}}
+| {{+|28%}} || Natural
+|
+* Artificial Buildings
+** Radius: 27.9 (tiles)
+** Curve Points:
+{| {{STDT}}
+! Artificial<br />Buildings !! Offset
+|-
+| 0 || '''0%'''
+|-
+| 5 || {{--|15%}}
+|-
+| 10 || {{--|30%}}
+|-
+| 50 || {{--|50%}}
+|}
+{{Graph:Chart|width=300|height=150|xAxisTitle=Artifical Buildings|yAxisTitle=Meditation Psyfocus Bonus Offset|type=line|x=0, 5, 10, 50|y=0, -0.15, -0.3, -0.5|xGrid=|yGrid=}}
+* Building Offsets
+** Buildings:
+*** [[Animus stone]]: {{+|2%}}
+*** [[Small nature shrine]]: {{+|1%}}
+*** [[Large nature shrine]]: {{+|1%}}
+** Radius: '''9.9''' (tiles)
+** Max Buildings: '''4'''
+|}
+
+== Stat Def Data ==
+{| {{STDT}}
+! Name !! Description !! Category !! Parameters !! Complex Parameters !! Display Priority In Category
+|- id="Meditation Psyfocus Bonus" <!-- ParentName="MeditationFocusBase" --><!--<StatDef>-->
+|
+* '''Def Name:'''<br />MeditationFocusStrength
+* '''Label:'''<br />meditation psyfocus bonus
+| The amount of extra psyfocus someone gains by focusing on this object during meditation, in addition to their own base rate of meditation psyfocus gain.<br/><br/>For some objects, this number can change depending on the surroundings and the person doing the meditating.
+|
+* Display Order: '''13'''
+* Def Name:<br />'''Meditation'''
+* Label:<br />'''Meditation'''
+* Display All By Default: {{Good|true}}
+|
+* Format String:<br />"{0} / day"
+* Format String Unfinalized:<br />"{0} / day"
+* To String Style: '''PercentZero'''
+* Worker Class: '''StatWorker_PossibleCompOffsets'''
+* Default Base Value: '''{{%|0}}'''
+* Min Value: '''{{%|0.0}}'''
+* Show If Undefined: {{Bad|false}}
+* Show Zero Base Value: {{Good|true}}
+|
+* Show If Mods Loaded Any:
+** '''[[Royalty]] {{RoyaltyIcon}}'''
+| 4010
+<!--</StatDef>-->
+|}
+
+== Version history ==
+{{Stub|nocat=1|section=1|reason=General Version history}}
+
+{{nav|stats|wide}}

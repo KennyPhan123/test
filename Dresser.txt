@@ -1,0 +1,105 @@
+{{Infobox main|furniture
+| name = Dresser
+| image = Dresser south.png
+| description = A dresser. Gives a small comfort bonus to all nearby beds. Placing more than one dresser near the same bed has no effect.
+| type = Building
+| type2 = Furniture
+| placeable = true
+| path cost = 42
+| passability = pass through only
+| cover = 0.4
+| minifiable = true
+| size = 2 ˣ 1
+| mass base = 15
+| flammability = 1
+| hp = 120
+| sell price multiplier = 0.7
+| beauty = 5
+| terrain affordance = light
+| research = Complex furniture
+| work to make = 2000
+| stuff tags = Metallic, Woody, Stony
+| resource 1 = Stuff
+| resource 1 amount = 50
+| has quality = true
+}}
+'''Dressers''' are a type of [[furniture]] which enhances the [[comfort]] of most types of [[sleep furniture]].
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+[[File:Dresser_radius.png|thumb|left|250px|A dresser's facility radius. Beds whose cells all lie within the grey area receive the comfort bonus. Red cells are edge tiles where coverage depends on the bed's orientation.]]
+
+Dressers increase the [[comfort]] value of any of the following within 6 tiles:
+
+{{#ask:[[Facility::Dresser]] [[Name::!Slab bed]] [[Name::!Slab double bed]] |format=ul |class=ul-column-width-200}}
+
+The dresser can support multiple beds so long as they are within that radius. It does not matter which way the dresser is facing.   Dressers have no effect on [[sleeping spot]]s, [[double sleeping spot]]s, or [[slab bed]]{{IdeologyIcon}} / [[slab double bed]]s{{IdeologyIcon}} despite the slab beds being shown "connecting" to it.
+
+The dresser increases the comfort of the bed by a flat 0.05 base. However, as the comfort bonuses apply to the bed ''before'' the bed's [[quality]] multiplier is applied, so the total bonus the dresser applies scales with the '''bed's''' quality. It does not change with the dresser's quality.
+<div><li style="display: inline-table;">
+{{#vardefine:dresserbasecomfort| 0.05}}
+{{#vardefine:endtablebasecomfort| 0.05}}
+{| {{STDT| c_15 text-center}}
+! Bed [[Quality]]
+! data-sort-type="number" | Awful
+! data-sort-type="number" | Poor
+! data-sort-type="number" | Normal
+! data-sort-type="number" | Good
+! data-sort-type="number" | Excellent
+! data-sort-type="number" | Masterwork
+! data-sort-type="number" | Legendary
+|-
+! [[Comfort]] Bonus
+| +{{#expr:{{#var:dresserbasecomfort}}*0.76 round 2}}
+| +{{#expr:{{#var:dresserbasecomfort}}*0.88 round 2}}
+| +{{#expr:{{#var:dresserbasecomfort}}*1.00 round 2}} 
+| +{{#expr:{{#var:dresserbasecomfort}}*1.12 round 2}}
+| +{{#expr:{{#var:dresserbasecomfort}}*1.24 round 2}}
+| +{{#expr:{{#var:dresserbasecomfort}}*1.45 round 2}}
+| +{{#expr:{{#var:dresserbasecomfort}}*1.70 round 2}}
+|-
+! [[Comfort]] Bonus (with end table)
+| +{{#expr:({{#var:dresserbasecomfort}}+{{#var:endtablebasecomfort}})*0.76 round 2}}
+| +{{#expr:({{#var:dresserbasecomfort}}+{{#var:endtablebasecomfort}})*0.88 round 2}}
+| +{{#expr:({{#var:dresserbasecomfort}}+{{#var:endtablebasecomfort}})*1.00 round 2}} 
+| +{{#expr:({{#var:dresserbasecomfort}}+{{#var:endtablebasecomfort}})*1.12 round 2}}
+| +{{#expr:({{#var:dresserbasecomfort}}+{{#var:endtablebasecomfort}})*1.24 round 2}}
+| +{{#expr:({{#var:dresserbasecomfort}}+{{#var:endtablebasecomfort}})*1.45 round 2}}
+| +{{#expr:({{#var:dresserbasecomfort}}+{{#var:endtablebasecomfort}})*1.70 round 2}}
+|}
+</li></div>
+Note that the comfort stat of furniture only increases the maximum level of the Comfort need that can be obtained by using it. It does not increase the rate of comfort gain. Therefore, a comfort stat past 1.0 is functionally pointless.
+
+Dressers stack with [[end table]]s, but multiple dressers do not provide an additional effect. Sleep furniture that sleeps two pawns still only require one dresser.
+
+[[Noble]]s {{RoyaltyIcon}} of Knight/Dame rank or above require a dresser in their room to be avoid a [[mood]] penalty, unless they have the [[Ascetic]] trait.
+
+== Analysis == 
+[[File:Bed_endtables_2.png|thumb|225px|left|Space efficient placement of beds and furniture.]]
+
+A dresser and [[end table]] combination only costs 80 [[wood]], [[steel]], or [[stone]], and can provide a lasting bonus to colonist mood through the Comfortable [[mood]]lets. Both are worthwhile to build in the early game, and can be kept for the entirety of a colony's lifespan. They are especially valuable in barracks, where they can affect multiple beds and the comfort can partially offset the mood penalty for not having individual bedrooms. End tables are cheaper for the same buff - if you can only build one, build the end table.
+
+=== Time spent comfortable ===
+Assuming the comfort of the bed without the dresser is 95% or below, and that the pawn reaches the comfort cap while sleeping, the dresser adds {{Ticks/gametime| 2500 * 5/4}} of the highest band of the "Comfortable" mood buff when attached to normal quality sleep furniture, as well as potentially increasing the power of the buff itself. 
+
+For example, a [[royal bed]] of normal [[quality]] has a comfort rating of 90%. Assuming the pawn does not gain comfort from any other source, the pawn will have the {{+|8}} [[Mood#Situation Needs|mood]] for {{Ticks/gametime| 2500 * 9/4}}, followed by {{+|6}} for {{Ticks/gametime| 2500 * 9/4}}, then {{+|4}} for {{Ticks/gametime| 2500 * 9/4}}. 
+
+A dresser increases the bed's comfort rating to 95% and, under the same assumptions, instead starts with an additional {{+|10}} for {{Ticks/gametime| 2500 * 5/4}} before then also progressing through the same tiers of mood buff. Adding an [[end table]] as well would increase the time with a {{+|10}} mood buff to {{Ticks/gametime| 2500 * 10/4}} hours. For comparisons sake, a [[beer]] also provides a {{+|10}} mood buff and lasts {{Ticks/gametime| 2500 * 4.8}} but is consumable and also decreases [[manipulation]]. 
+
+Legendary bedrolls, masterwork beds, or good royal bed have a natural comfort above 1.0; installing an end table/dresser would not have any further impact to comfort. A masterwork bedroll has a comfort of 0.99, improving this to 1.0 would only result in an additional {{Ticks/gametime|625}} of comfort bonus. Due to the [[rest effectiveness]] bonus offered by high quality sleep furniture, it is usually worth procuring them even if a dresser and/or end table already provide the maximum comfort.
+
+Having comfortable seating options also reduces the impact of the dresser, as it allows for pawns to refill their comfort bar while eating, recreating, and for some pawns, working. A pawn that can sit on a good quality [[armchair]] while working maintains the {{+|10}} bonus for their entire workday. For other pawns, such as Growers or Animal Handlers, the extra time at the high moods buffs can remain advantageous, even if seating allows the mid-tier mood buffs to be maintained all day. The specifics value proposition for these pawns will depend heavily on a number of factors that cannot be realistically covered here. 
+
+{{Building Stats Table}}
+
+== Gallery ==
+<gallery>
+Dresser south.png|Facing south
+Dresser north.png|Facing north
+Dresser east.png|Facing east
+</gallery>
+
+{{Nav|furniture|wide}}
+[[Category:Furniture]]

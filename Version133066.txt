@@ -1,0 +1,254 @@
+{{Version Nav}}
+
+Free 1.3 update
+Players can now update to RimWorld version 1.3 for free. This version was previously tested in a beta branch for 2 weeks. Find the full change log [https://docs.google.com/document/u/1/d/e/2PACX-1vRsxUoc5eA1dqi0nrMKxCuN8nt0So7_qvwwkkiyug6SLyjgJFNEu0XGBmQ7aCb9xgdnfy0t5CSkbPyL/pub here].
+
+On savegame compatibility:
+1.3 will load 1.2 saves no problem.
+You can load a non-Ideology game with Ideology loaded.
+You can run either expansion, neither, or both - all configurations will work.
+
+On mod updating: There's no need to break compatibility with 1.2 while adding support for 1.3! It's quite easy to make a mod support multiple versions of the game, just by putting the old version's files in one folder and the new version's files in another.
+
+If you want to be more efficient and share identical files between versions, you can do that too. You can even define your own custom folder structure for full control.
+
+This document explains the details on how to do it: [https://docs.google.com/document/d/e/2PACX-1vSOOrF961tiBuNBIr8YpUvCWYScU-Wer3h3zaoMrw_jc8CCjMjlMzNCAfZZHTI2ibJ7iUZ9_CK45IhP/pub Multi-version mods in RimWorld]
+
+== New stuff: Base game ==
+=== Pens and animals ===
+* Pen system: Create pens for your farm animals to keep them organized and safe.
+** Pen marker: Build a pen by placing a pen marker in an enclosed room or fenced off area. Once placed, you can assign a certain set of animals to the pen and handlers will bring the correct animals over. Pen markers have an “auto cut” option which will periodically designate inedible plants in the pen to be cut.
+** Build fences to enclose pens and prevent your animals from escaping. Animals that are assigned to pens cannot pass through fences or barricades.
+** Handlers will use ropes to lead animals from one location to another, or out of a pen.
+** Some animals will now roam if they are not contained within a pen.
+** Animals that are assigned to a pen are non-aggressive to raiders and vice-versa.
+** Added animal flap. It is a door that allows animals to pass through while insulating the temperature.
+* Added egg box. Tame egg-laying creatures will lay inside the box and the eggs can be used for food. Haulers will automatically empty the box when it is full.
+* Added new floor type: Straw matting. Filth is produced 95% less on this floor which makes it useful for barns with messy animals. Since animal filth has been reworked, animals should be kept in barns to prevent unnecessary filth in colonist buildings.
+* Added auto slaughter system. The player can select species of animals to keep and the rest will be automatically slaughtered.
+* Added animal sterilization. Colony animals can be sterilized to prevent them from breeding.
+* Tame animals can now be released to the wild.
+* Breach raids
+* Added new raid type: Breaching. Breaching raids will attempt to  reach your colony by breaking through walls with unique weapons.
+* Added new mechanoid type: Termite. The termite is a medium-sized mechanoid that specializes in burrowing, digging, and breaking through defensive structures. Defenders must decide between eliminating the termite before it digs through their defenses, or waiting for it to emerge.
+* New weapon: Breach axe. A combined blade and tool-head attached to a sturdy haft. While slightly less effective than other weapons against human enemies, it excels at tearing down walls, doors, and other structures thanks to its integrated tool-head.
+=== Miscellaneous ===
+* Added facial hair for pawns. The style of hair is based on the pawn’s background.
+* Added visual wound and prosthetic overlays on pawns.
+* When multiple pawns are drafted and selected, the player can space them out by dragging the right mouse button.
+* Added new meal types: Vegetarian and Carnivore fine/lavish meals. These are made exclusively of vegetable/meat ingredients
+* Added a search box for many dialogs and tabs.
+* Added VFX for:
+** Research bench.
+** Gun/mortar recoil.
+** Digging graves.
+** Chopping trees.
+** Sowing plants.
+** Harvesting plants.
+== Improvements and adjustments: Base game ==
+=== Goodwill ===
+* All goodwill changes are now multiplied by 1.25x when moving towards natural goodwill.
+* Goodwill with factions gradually shifts towards the faction’s natural goodwill.
+* Goodwill with factions is influenced by recent events. These goodwill factors will decay over time.
+* Guest status with a faction is reset upon gifting a pawn to that faction.
+=== Animals and plants ===
+* Raiders no longer actively attack passive colony animals.
+* Animals tab life stage tooltip now also shows the animal's exact age.
+* Wild plants spawned during gameplay start at 15% growth instead of 5%.
+* Plants newly sown by players start at 0.01% growth.
+* PlantHarvestYield stat above 100% gives a bonus to yield.
+* Improved "Non-ideal temperature" plant inspect string and prevented it from saying "Not growing" if it is in fact growing very slowly.
+* Animals are unwilling to eat plants under 10% growth.
+* Herbivores rebalance:
+** Hunger rate reduced by 50%.
+** Adult age is reduced by 33%.
+** Gestation days reduced by 33%. (This does not include unfertilized egg layers.)
+** Reduced toxic fallout buildup by 50%.
+** Grass nutrition reduced from 0.7 to 0.5.
+* Animal filth rate is no longer a virtual stat calculated from body size and petness. Animal filth rate is now a stat defined on animals and humanlikes: FilthMultiplier.
+* Added an alert which tells the player high filth-producing animals are indoors without straw matting floor type.
+* Indoor rooms with non-water flooring can have animal filth or trash spread on them.
+* Rain washes away more filth types.
+* Increased meat yields by 30%.
+* Damaged corpses give 33% less meat and leather amounts.
+* Animals can be assigned to animal beds. These beds can be designated as medical.
+* Change [[boomalope]] trainability to None.
+* Releasing a bonded animal has a negative effect on mood, similar to slaughtering.
+* Added a new category to pawn stats: Animal productivity. This category contains information pertaining to animal goods.
+* Traders that sell animals try to generate with at least one pair of core farming animals.
+
+=== Combat, weapons, gear ===
+* Added a challenge mode option for reinforced barrels. These barrels are essential for building and maintaining mortars, but the mortars are more accurate and shells are cheaper to make. Reinforced barrels can be acquired from sieges as quest rewards and purchased from traders.
+** You can keep the old 1.2 mortars with the challenge mode option “classic mortars”, so players can choose either style as they wish.
+** Every 20 shots, mortars must have their barrel changed.
+** Mortars forced miss chance changed from 13 to 10. This is reversed with classic mortars storyteller option.
+** Reduced steel cost of all mortar ammo by 10. This is reversed with classic mortars storyteller option.
+* Grenade throws are rendered in an arc.
+* Grenade users are more aware of grenades they’ve thrown and do not run forward into them.
+* War veil renamed to veil.
+* Disabled shooting gizmos when a shield belt is equipped.
+* When a pawn is drafted while eating from inventory they will return the food to their inventory.
+* Pawns can take medicine into their inventory.
+* Drafted pawns can tend to others in the field. They will use medicine if they are carrying any.
+* Reduced building killed leavings from 50% to 25%. Reduce deconstruct leavings from 75% to 50%. This doesn't affect various special buildings like mech cluster condition causers.
+
+=== Pawns ===
+* Drafted pawns can be ordered to repair buildings. This is separate from the "prioritize" order.
+* On the health tab, hovering over a specific hediff (or group of similar hediffs) provides two tooltips. One for the body part and one for the hediff.
+* Hediff tooltips of grouped hediffs are now separated from each other.
+* Hediff stages can now override hediff labels.
+* Hediff tooltips of grouped hediffs are now separated from each other.
+* Pawn growth is proportional to body resource growth speed. For example, underfed pawns grow more slowly.
+* Rooms are no longer considered barracks if all of the pawns living in the room are in the same “love cluster”, meaning they share a spouse or lover with another pawn in the bedroom.
+* Pawn passion generation now applies a random (gaussian) offset to how many passions are generated. The number of passion types for every pawn is totally randomized, and then these passions are applied to the pawn’s existing highest skills. Older pawns no longer have far more passions than young pawns.
+* Changed the "Want to sleep with x" thought to "Sleeping alone". Sharing a bed with any lover or spouse will prevent this thought.
+* Adjusted “Kind” trait description.
+* Pawns now try a lot harder to avoid wearing tattered apparel.
+* On a pawn’s gear tab, equipped utility items (shock lance, jump pack, etc.) are listed under “other equipment”.
+* Assigning pawns to beds updates the room role, if possible.
+* Drafted pawns can be ordered to carry another downed pawn. The pawn can be dropped on command.
+* Guests with "AllWork" disabled will no longer opportunistically haul.
+* Recruit difficulty and resistance refactor. Removed concept of “resistance chance” for recruitment attempts. Added initial resistance range to pawnKindDef.
+* Pawns with the “Cannibal’ trait no longer dislike killing prisoners or harvesting their organs. They also get a mood buff from wearing human leather apparel, and an opinion boost from other cannibals while wearing human leather apparel.
+* Non-cannibals dislike those that wear human leather apparel.
+* When a colonist with Bloodlust harvests an organ, they receive a “Bloodlust organ harvest +4” mood boost lasting 4 days.
+* Pawns in an aggro mental state no longer just start panic fleeing when their group is dying off in combat.
+* Undergrounders have a new Need_Indoors, which is increased by spending time indoors, especially inside mountains.
+* Smoothed out addiction chances based on the pawn’s tolerance.
+* Prisoner escape chance is multiplied by the number of exits the prisoner has.
+* Escaping prisoners will attack enemies with weapons they pick up, including orbital bombardment targeters, orbital power beam targeters, and tornado generators.
+* 
+=== Caravans ===
+* Optimized caravan automatic food selection.
+* Caravan speed: Caravan speed solely depends on carried mass, ridden animals, and terrain movement difficulty. Pawn speed no longer impacts caravan speed. Some animals (horses, donkeys, dromedaries) can be ridden by caravan members which boosts caravan speed. Downed pawns do not slow caravans down, but you still need at least one non-downed non-slave to operate the caravan.
+
+=== Miscellaneous ===
+* Refactored incident selection. The system first selects whether or not to increase colony population, then finds an incident matching the selection.
+* Quests on the historical tab now have a tint to indicate if they were completed, expired, or failed.
+* Room fog reveal occurs when a door is approximately 50% open, rather than when a door is approached.
+* Improved feedback on the work table. The tooltip explains why a pawn is unwilling to do a specific type of work.
+* Added text to describe the resulting links when placing linkable buildings (such as beds, dressers, end-tables).
+* Buildings that are not standable and do not have a surface type have items and pawns moved off their blueprints before construction.
+* Doors not owned by the player can be forbidden.
+* Change sandbags and barricades fill percents from 57% to 55%.
+* Build designators no longer default to def-defined default if there is none of that type of resource on the map.
+* Prevented important ingredient dilution when stacking/merging meals. Stacking is prohibited between meals with and without human meat.
+* Saving is temporarily disabled while selecting a world tile at the beginning of the game.
+* Edited the color of error log messages to improve readability.
+* Mod incompatibility warnings are now colorblind friendly.
+* Modders can appear on the credits screen.
+* Mods can now define lists of authors instead of just specifying a comma-separated list of names.
+* Update LanguageWorker_Russian.Pluralize to match the behavior requested by translators.
+* Added debug setting: Never force normal speed.
+* Optimized map mesh generation and drawing.
+* Redrew persona core art.
+* Added a Thing category for wool.
+* maintenanceCostFactor has a minimum of 1%.
+* Wildlife tab refinements.
+* Balanced distant fight points adjustment and pawn combat points.
+* JoyUtility.JoyKinds strings are now always line lists.
+
+== Improvements and adjustments: Royalty ==
+* High-shields also stop orbital strikes and aerodrone strikes, the same way they stop mortars.
+* The bestowing ceremony is now a gathering that everyone can attend.
+* Throne speeches have been re-tooled into rituals.
+* Neuroquake rebalance:
+** Neuroquake lists its duration explicitly in the casting warning message.
+** Unconsciousness from casting does not scale with psychic sensitivity.
+** Unconsciousness from casting lasts 5 days instead of 3.
+** The negative moodlet to friendly bystanders applies whether they are conscious or not and is increased from -10 to -12.
+** Casting warmup changed to 12 seconds.
+** Neuroquake only drives pawns berserk within a radius of 60, instead of the entire map.
+* Updated imperial grenadier to use plain marine armor instead of grenadier armor.
+* NPC shuttle pads now always use concrete or paved tiles as flooring.
+* Shuttles leave uranium instead of steel when killed.
+* Pawns lent to another faction have their wounds tended more competently.
+* Refactored shuttles into generic Transport ships. These ships follow a series of jobs which can be controlled by quest logic, UI, and Lords. Transport ships are tracked while flying, loading, unloading, etc.
+* Adjusted royal apparel colors. Empire pawns spawn with apparel materials that scale to their social rank.
+* Anima tree inspect pane no longer lists duplicates affecting building labels.
+
+==Technical==
+* Save games in the load menu are populated asynchronously.
+* Most motes have been changed from a Thing to use its own threaded system for increased performance. These are called “Flecks”.
+
+==Bugfixes==
+
+* Fix: Mods can’t use “.tar” translations to do def injections on custom def types from other mods.
+* Fix: Smoke doesn’t persist on the map on save load.
+* Fix: Error “Key binding conflict: Dev_ChangeSelectedDebugAction and MainTab_Architect are both bound to Tab”.
+* Fix: Wimpy noble quest sometimes spawns with 2 manhunting animals.
+* Fix: IncidentParms does not save pawnCount.
+* Fix: SharesElementWith accessing wrong second index
+* Fix: Betraying temporary colonists doesn’t display a timer.
+* Fix: Food binging pawns try to eat recreational drugs.
+* Fix: Caravan auto-food selector chooses psychoid leaves as plant matter for animals.
+* Fix: Trade Caravans will approach the colony Anima tree and shrines as a gathering point for trade, rather than the colony itself if they enter the colony map closer to anima tree.
+* Fix: DamageWorker.ExplosionCellsToHit incorrectly adds cells to adjWallCells
+* Fix: Monument quests aren’t failed after the map is removed.
+* Fix: If an animal hauls a corpse to a sarcophagus, it becomes the author of the inscribed artwork.
+* Fix: “Build copy” shrine commands sometimes appear white.
+* Fix: Alignment issues on some body artwork.
+* Fix: Calling a shuttle is blocked when an item blocks its interaction spot.
+* Fix: Glow pods cause screen shake when they expire.
+* Fix: Setting prisoners’ food restriction to "Nothing" will make colonists feed them ambrosia and beer.
+* Fix: Using the “change material” button on weapon info cards does not update stat readout.
+* Fix: Projectiles not visible on the first cell of flight.
+* Fix: Meals can stack with incompatible ingredients.
+* Fix: In peaceful mode, ancient dangers can be generated with hostile mechs.
+* Fix: In peaceful mode, refugee quests can have the refugees betray and attack you.
+* Fix: Brawler guards can still arrive with ranged weapons.
+* Fix: Incorrect relations gain info in prisoner tab during mental break.
+* Fix:  If a pawn has no weapon, the hotkey for a melee attack is H. When the pawn is given a melee weapon, the hotkey changes to B.
+* Fix: During food binges, sometimes pawns will use recreational drugs.
+* Fix: Forbidden items loaded onto the shuttle are automatically unforbidden on unload.
+* Fix: Incorrect neuroquake cast time.
+* Fix: Animals can try to cheer a patient up unsuccessfully, causing an error.
+* Fix: Psychoid leaves, ambrosia, smokeleaf leaves and raw hops can be selected as food for caravans.
+* Fix: Stun psycast does not interrupt minigun salvo.
+* Fix: Reform caravan dialog uses incorrect translation key.
+* Fix: Double period in quest text.
+* Fix: Typos in backstories.
+* Fix:  Requested aid would not join in fights (or it would take a long time for them to join) if there were no awake hostiles when the aid spawned.
+* Fix: Pawn tooltip obscures ability's mouse attachment info for some abilities.
+* Fix: Animals that are assigned to follow during field work wait until the end of their current job to do so.
+* Fix: Hospitality refugee quest can fail if the player attempts to arrest a refugee in an aggro mental state.
+* Fix: Trade caravans will approach the colony anima tree and shrines as a gathering point for trade, rather than the colony proper if they enter the colony map closer to an anima tree.
+* Fix: Anima trees can display negative meditation values.
+* Fix: Bestowing quest doesn’t give the correct information if the pawn doesn’t have an assigned throne.
+* Fix: Translation of (psylink) “level” cannot be capitalized.
+* Fix: Word of Joy counts as a hostile act.
+* Fix: Pawn having a mental break on entering a hostile map is drafted.
+* Fix: Offset doesn’t work for attached motes.
+* Fix: DrawLine() overdraw.
+* Fix: The alphabeaver event will still happen even if the outdoor temperature is below their minimum comfortable temperature.
+* Fix: Firefoam IED radius is larger than drawn.
+* Fix: Inheritance attribute overrides other attributes like Class.
+* Fix: Ambush letter doesn’t have all ambush pawns as look targets.
+* Fix: Graphic_Random not rendering shadows.
+* Fix: Some monument buildings have enclosed floored areas.
+* Fix: LanguageWorker_English “a unique” to “an unique”.
+* Fix: Changing temperature display mode (C to F) doesn’t update temperature readout immediately.
+* Fix: Misc uncapitalized letters after colons.
+* Fix: Non-hauler asked to deliver resources gives the wrong message.
+* Fix: Lent pawns tended to horribly by the host faction.
+* Fix: Anima trees can display negative meditation values.
+* Fix: Haul icon remains when stockpile is expanded to include items.
+* Fix: Dictionary null key for label pawnGroups.
+* Fix: Too much honor for Yeoman ceremony : ceremony failed - impossible to gain the yeoman psylevel.
+* Fix: Bestower can social fight and die while waiting for ceremony. Don't make the bestower faction hostile if he was guilty.
+* Fix: Error “Transition !canMoveToSameState and target is source: DefendBase”
+* Fix: Pawn having a mental break on caravan is drafted upon entering a map.
+* Fix: XML Inheritance attributes overrides other attributes like Class.
+* Fix: Scribe can't load a list of generic elements of type coming from a different assembly.
+* Fix: Bed resting hunter causes “lacks ranged weapon” alert.
+* Fix: Meditation z-fighting with other meditation vfx.
+* Fix: Television viewing area throws NRE if selected near map edge.
+* Fix: Bleed rate total does not accurately represent bleed rates on pawns with health scales other than 1.
+* Fix: No feedback on anima tree right click if pawn cannot use natural focus or already is max level.
+* Fix: RimWorld.Designator_Dropdown.GetDesignatorCost(Verse.Designator des) is not null-safe.
+* Fix: Rescue shuttle lands on crashed shuttle and wipes it.
+* Fix: Removing a zone with "Shrink zone" designator while the zone is selected leaves the zone's UI open.
+* Fix: Typo in tool cabinet description.
+* Fix: After disabling a work type, pawns can pick up the same job right after.
+* Fix: Unclaimed beds say 'for colonist use'.
+* Many more fixes!

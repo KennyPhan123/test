@@ -1,0 +1,94 @@
+{{Infobox main|stony
+| name = Slate blocks
+| image = Slate blocks C.png
+| description = Blocks of solid slate. A dull-looking rock that chips easily.
+<!-- Base Stats -->
+| type = Material
+| type2 = Stone
+| stuff category = Stony
+| marketvalue = 0.9
+| beauty = -12
+| mass base = 0.9
+| stack limit = 75
+| path cost = 14
+| rotatable = false
+| terrain affordance = Heavy
+<!-- Stat Modifiers -->
+| beauty factor = 1.1
+| beauty offset = 0
+| work to make factor = 1.3
+| work to build factor = 6
+| work to build offset = 140
+| max hit points factor = 1.3
+| flammability factor = 0
+| melee blunt damage factor = 1.0
+| melee sharp damage factor = 0.6
+| melee cooldown factor = 1.3
+| door opening speed factor = 0.45
+| rest effectiveness factor = 0.9
+<!-- Creation -->
+| production facility 1 = Stonecutter's table
+| work to make = 1600
+| resource 1 = Stone chunk
+| resource 1 amount = 1
+| product amount = 20
+<!-- Technical -->
+| defName = BlocksSlate
+| stuff adjective = slate
+<!-- Unused -->
+| always haulable = true
+| appearance = Bricks
+| color = (70,70,70)
+| default color = (70,70,70)
+| draw gui overlay = true
+| graphic class = Graphic_Single
+| graphic path = Things/Item/Resource/StoneBlocks
+| label = slate blocks
+| parent name = StoneBlocksBase
+| resource readout priority = Middle
+| selectable = true
+| sound drop = Stone_Drop
+| sound impact stuff = BulletImpactGround
+| sound interact = Stone_Drop
+| sound melee hit blunt = MeleeHit_Stone
+| sound melee hit sharp = MeleeHit_Stone
+| thing class = ThingWithComps
+| use hit points = false
+| volume = 1
+}}
+'''Slate blocks''' are a [[stony]] [[material]] and are the lightest weight of five types of [[stone blocks]].
+
+== Acquisition ==
+Slate blocks are cut from [[slate chunk]]s at a [[{{P|Production Facility 1}}]]. It takes {{Ticks|{{P|Work To Make}}}} of work to cut a single chunk into {{P|Product Amount}} blocks.
+
+== Usage ==
+Slate blocks can be used as a material for [[stuff]]able items with the [[Stony]] stuff tag.
+
+Slate blocks can be used in the following recipes:
+{{Ingredient List}}
+
+== Analysis ==
+=== Comparison to other materials ===
+Slate blocks don't have any unique recipes and are only used in stuffable items and buildings. As such, they must be considered in comparison to the other stone types, which share all the same recipes.
+
+With the second lowest {{HP}} factor and stats that are otherwise baseline for other the other stone types, slate blocks are an objectively inferior choice for all use-cases when compared to other stone types. However, the differences are slight enough that aesthetics or availability can easily make up the difference. Their one standout quality is their low weight, which makes slate a better choice for transporting stone blocks or chunks via caravan or transport pod when quantity is the primary concern. Slate is {{Good|{{%|{{P|Mass Base}}/{{Q|sandstone blocks|Mass Base}} round 2}}}} the weight of [[sandstone blocks|sandstone]], {{Good|{{%|{{P|Mass Base}}/{{Q|limestone blocks|Mass Base}} round 2}}}} the weight of [[limestone blocks|limestone]], and {{Good|{{%|{{P|Mass Base}}/{{Q|marble blocks|Mass Base}} round 2}}}} the weight of [[marble blocks|marble]], and {{Good|{{%|{{P|Mass Base}}/{{Q|granite blocks|Mass Base}} round 2}}}} the weight of [[granite blocks|granite]]. The practical utility of this is minimal however, as rarely will it be relevant to caravan large amounts of stone blocks.
+
+Slate is slightly more [[beauty|beautiful]] than other stone types and is fifth for most beautiful material for [[sculpture]]s after [[gold]], [[jade]], [[silver]] and marble and tied with sandstone. Generally speaking, one of these materials should be used instead, however if they are unavailable, slate is a high-work but non-flammable option with decent beauty.
+
+=== Stone generally ===
+{{Stone blocks analysis}}
+{{Stonecutting maximization}}
+
+== Gallery ==
+<gallery>
+Slate blocks A.png|Stack of 1 slate blocks
+Slate blocks B.png|Stack of multiple slate blocks
+Slate blocks C.png|Full stack of slate blocks
+</gallery>
+
+== Version history ==
+* [[Version/0.7.581|0.7.581]] - Added, previously there was only generic "stone".
+* Beta 19/1.0 - Slowed constructing buildings with all stone types by 20%
+
+{{Nav|materials|wide}}
+[[Category:Material]] [[Category:Stone]] [[Category:Stone Blocks]]

@@ -1,0 +1,960 @@
+<!--Top Nav Box-->
+{| align=center
+| {{Character_Properties_Nav}}
+|}
+<hr>
+<!-- End Nav -->
+[[File:traits_preview.png|right]]'''Traits''' personalize and add flavor to your colonists by granting a wide variety of special bonuses or conditions to their day to day activities, and so encourage more complex player-conceived stories based on those individual characters.  Traits provide physical or psychological abilities or limitations, likes/dislikes, behavior tendencies, personality quirks, and so on.  Some are beneficial, some are harmful to the colonist or your colony as a whole.  Some are constant, some only rarely triggered.  Some can be more or less easily negated or manipulated to your advantage by catering to them (or denying them), others are more problematic or outright dangerous.
+
+== Mechanics ==
+Only humans have traits. Most humans have 1-3 traits, with the possibility of an "extra" sexuality trait. Adults cannot gain new traits, and there is no way to remove traits.
+
+[[Children]]{{BiotechIcon}} usually only have a number of traits no higher than the number of [[growth moment]]s they have reached, and babies have none. Children can attain a new trait every time they reach a new growth moment (birthdays 7, 10, and 13).
+
+=== Trait acquisition ===
+
+When a human is generated, it acquires traits according to this process:
+
+* First, the pawn gains any traits that its "pawn kind" requires. ''For example, the titular mechanitor{{BiotechIcon}} of [[Scenario_system#Default_Scenarios|The Mechanitor]] start scenario always has the [[Recluse]] trait.''
+* Second, if the pawn is being generated for a quest, it gains any traits required by the quest. ''For example, the imperiled noble from the [[Quests#Noble_Wimp|Noble Wimp]]{{RoyaltyIcon}} quest always has the [[Wimp]] trait.''
+* Traits from the pawn's [[backstories]] are then acquired, unless they would conflict with the pawn's "pawn kind". ''For example, a pawn with a backstory composed of the [[Backstories/Tribal_Child|Cave Child]] childhood and the [[Backstories/Tribal_Adult|Scout]] adulthood would have the [[Undergrounder]] and [[Jogger]] traits. However, a hypothetical backstory that grants the Brawler trait will not grant it if the pawn is a "tribal archer", as that pawn kind specifically prohibits the Brawler trait.''
+* A trait count limit is chosen, based on the pawn's age. [[Babies]]{{BiotechIcon}} and [[children]] under seven years of age have a limit of 0 traits; children with 7-9 birthdays, 1 trait; children with 10-12 birthdays, 1-2 traits; and anyone older, 1-3 traits, with no bias towards any particular number. If the pawn's current number of traits is lower than the trait limit, each 'missing' trait is filled in by a random trait, weighed based on each trait's commonality. The randomly gained traits cannot be any of the following:
+** Any sexuality trait ([[Asexual]], [[Bisexual]], or [[Gay]])
+** [[Wimp]], but only if the pawn is from a [[faction]] hostile to the player's faction
+** Any that the pawn already has
+** Any that conflict with a trait the pawn already has
+** Any prohibited by the pawn's "pawn kind" or backstories
+** Any that would disable a work type required by the pawn's "pawn kind"
+** Any that requires a work type disabled for the pawn
+** Any that would cause the pawn's minor [[mental break threshold]] to rise above 50%
+* If the pawn is at least 13 years old, their sexuality is then determined. If the pawn has any romantic or ex-romantic relationship with someone of the same gender, they acquire the Gay trait. Otherwise, they may be Asexual, Bisexual, Gay, or straight (which is not a trait, merely an absence of the three sexuality traits). The random choice is weighted by each sexuality trait's commonality, or in the case of 'straight/no sexuality trait', weighted by the sum commonality of every non-sexuality trait that the pawn does not currently have. Note that since the [[Biotech DLC]] adds two traits with non-zero commonalities, sexuality traits are marginally rarer if Biotech is enabled.
+* Afterward, the pawn's [[xenotype]]{{BiotechIcon}} (if any) is determined. If [[Traits#Trait-affecting_genes|certain genes]] are present, this can affect the pawn's trait set, either adding or suppressing traits.
+* If the [[Scenario_system#Voluntary_parts|starting scenario forces any traits]], the pawn gains any such traits. The "Forced trait" scenario part can be configured to apply to all pawns in the game, only the player's starting pawns, or only non-player pawns; it can also be configured to have a chance to trigger per pawn between 0-100%.
+* Finally, if the pawn is a [[creepjoiner]],{{AnomalyIcon}} it gains any traits granted by its benefit and/or downside.
+
+=== Starting possessions ===
+{{Move|section=1|destination = Pawn selection|reason=While some of this info can likely be kept in this page, most of it should move to [[Game_Creation|Pawn selection]] once that page has been created}}
+Certain traits may influence the initial possessions of your colonists in the Pawn selection menu (either for [[Game_Creation|creating a new game]] or [[Endings#Colony_End|selecting new colonists after a game over]]). Unless you have chosen the [[Scenario_system#Default_Scenarios|Naked Brutality]] start scenario or used the Scenario Editor to add the "no possessions" scenario part, each such colonist may have up to two possessions in their inventory. A stack of items counts as 1 possession. Possessions for each colonist are generated in the following order, ending prematurely if the colonist has two possessions:
+
+* [[Ghoul]]s{{AnomalyIcon}} never have possessions.
+* [[Babies]]{{BiotechIcon}} have between 30-40 units of baby food.
+* If the colonist is addicted to a drug, they have enough of the drug to satiate the addiction for roughly 25-35 days.
+* If the colonist has a [[Genes#Drugs|genetic drug dependency]],{{BiotechIcon}} they have enough of the drug to satiate the dependency for roughly 25-35 days.
+* If the colonist has [[hemogenic]] gene,{{BiotechIcon}} they have 8-12 [[hemogen pack]]s.
+* If the colonist has an adulthood backstory that can grant possessions, there is a 25% chance for them to have those possessions. Note that, should a backstory be capable of granting multiple possessions, this process will still stop once the colonist has two possessions, and the backstory's possessions are always granted in the order they are defined in the backstory.
+* '''Traits are accounted for only after all the above steps have been performed'''. There is a 25% chance for a colonist to receive possessions based on their [[Traits#Trait-affecting_genes|non-suppressed traits]]. As with backstories, it is possible for this step to stop midway through once the colonist has two possessions; possessions are always granted in the order the traits present themselves, and per-trait they are granted in the order they are defined in the trait. ''For example, a pawn with the Psychopath trait has a 25% chance to gain a skull and a heart, but a pawn who already has a prior stack of [[flake]] due to a flake addiction would have a 25% chance to only gain a skull.''
+* If the colonist still has less than two possessions, there is a 6% chance for them to have a random possession. The list of possible possessions is lengthy, but does not include every possible item in the game.
+
+=== Trait-affecting genes ===
+{{Biotech|section=1}}
+Certain genes can modify a pawn's traits, either by forcing a trait to be added or suppressing a trait. Forced traits function as normal, though they are visible in the pawn's Bio tab in pale blue text. Suppressed traits do not have any effects, but are still visible in the pawn's Bio tab in dark grey text.
+
+If a forced trait would ordinarily conflict with non-genetically forced trait(s) the pawn already has, the latter is/are suppressed. If it would ordinarily conflict with genetic trait(s) the pawn already has, the latter is/are removed. If a trait-granting gene is removed, the trait will also be removed (unless the pawn already has the trait independent of genes); this un-suppresses any traits it had suppressed which are not suppressed by another gene or trait, and restores any genetically-forced traits that were removed by that gene and which do not conflict with any other trait the pawn has (including suppressed traits). This almost always leads to intuitive results, with one exception: if a pawn has the psychically hyper/sensitive trait, also has the psychically dull/deaf gene in their germline (e.g. due to being a [[Yttakin]]), and then has the other psychic sensitivity trait gene in their xenogenes... removal of the xenogene will remove the trait it forces, but it will also not result in the restoration of the other gene's trait and will not un-suppress the psychically hyper/sensitive trait.
+
+<div><li style="display: inline-table;">
+Click to <div class="mw-collapsible">
+<div class="mw-collapsible-content">
+{| {{STDT| sortable c_17 text-valign:top}}
+! Name
+! style="width: 500px;" | Tooltip
+! Effect on traits
+
+|- 
+! [[Pyrophobia]]<br>[[File:Gene_FireTerror.png|64px]]
+| ''Carriers of this gene have an intense fear of fire. When fires are close, there is a chance they will have a mental breakdown at any moment.
+| {{Bad|Suppresses}} the [[Pyromaniac]] trait
+
+|-
+! [[Kind instinct]]<br>[[File:Gene_KindInstinct.png|64px]]
+| ''Carriers of this gene are high in trait agreeableness and are very conscientious. They rarely insult others or starts fights, and will sometimes offer kind words to brighten the moods of those around them. They also never judge people by their appearance.
+| {{Up|Forces}} the [[Kind]] trait
+
+|-
+! [[Inbred]]<br>[[File:Gene_Inbred.png|64px]]
+| ''This genetic condition affects a person's fertility, immunity, and mental capacity.
+| {{Up|Forces}} the [[Slow learner]] trait
+
+|-
+! [[Psychically deaf]]<br>[[File:Gene_PsychicallyDeaf.png|64px]]
+| ''Carriers of this gene are deaf to all psychic energy and influence outside their own minds. They cannot be affected by psychic influence, nor can they ever wield psychic power. 
+| {{Up|Forces}} the [[Psychically deaf]] trait
+
+|-
+! [[Psychically dull]]<br>[[File:Gene_PsychicallyDull.png|64px]]
+| ''Carriers of this gene are less psychically-sensitive than others. 
+| {{Up|Forces}} the [[Psychically dull]] trait
+
+|-
+! [[Delicate]]<br>[[File:Gene_Delicate.png|64px]]
+| ''Carriers of this gene take greater injuries than others from the same damage. They have thin, brittle bones and less binding molecules in joints and flesh.
+| {{Up|Forces}} the [[Delicate]] trait
+
+|-
+! [[Extra pain]]<br>[[File:Gene_ExtraPain.png|64px]]
+| ''Carriers of this gene feel more pain than others given the same injuries. Neuron activity in the brain's nociception center is amplified, so pain feels extra-intense and fiery. This can be protective, but overall it's considered a negative and makes it hard to push through difficult situations.
+| {{Up|Forces}} the [[Wimp]] trait
+
+|}
+</div>
+</div>
+</li></div>
+
+== General traits ==
+These traits are generalized into groups, organized roughly by topic but there are no such groupings laid out formally in the game. There are no relations or prohibitions between traits grouped together here unless noted (e.g. a colonist cannot be both "ascetic", wanting a minimal bedroom, ''and'' "jealous" of those with better bedrooms).
+
+=== Lifestyle ===
+One likes what one likes...
+
+{| {{STDT| sortable c_08 }}
+! style="width: 80px;" | Name
+! Description
+! style="width: 500px;" | Effect
+! style="width: 80px;" | Conflicting Traits
+! style="width: 80px;" | Commonality
+! style="width: 80px;" | [[Traits#Starting_possessions|Possessions]]
+|- id="Night owl"
+! Night owl
+| NAME likes to work at night. S/He gets a mood bonus if awake at night and mood loss if awake during the day. S/He doesn't get a mood penalty for being in the dark.
+| {{Good|+}} ''':''' Negates the {{Thought|desc=I've been in the dark for a while. I don't like it.|label=Darkness|value=-5|stack=1}} penalty from being in the dark<br><!--
+-->{{Thought|desc=I feel much better at night.|label=Night owl at night|value=+16|stack=1}} if awake during night (23:00 - 06:00)<br><!--
+-->{{Thought|desc=I don't like working during the day.|label=Night owl in daytime|value=-10|stack=1}} if awake during day (11:00 - 18:00)<br>
+| -
+| 1.3
+| 5-10 [[wake-up]]
+|- id="Undergrounder"
+! Undergrounder
+| NAME has no need to experience the outdoors or light. S/He will never feel cooped up or get cabin fever, no matter how long s/he stays inside, and is not bothered by darkness.
+| {{Good|+}} ''':''' Negates the {{Thought|desc=I've been in the dark for a while. I don't like it.|label=Darkness|value=-5|stack=1}} penalty from being in the dark<br><!--
+-->{{Good|+}} ''':''' No [[Outdoors]] or Space [[need]]<br><!--
+-->{{Bad|−}} ''':''' Added [[Indoors (need)|Indoors]] need<br><!--
+-->{{Thought|desc=I like working or simply being indoors.|label=Undergrounder indoors|value=+3|stack=1}} when indoors / {{Thought|desc=I love working or simply being in the underground.|label=Underground|value=+4|stack=1}} when underground<br><!--
+-->{{Thought|desc=I don't like being outside. I want to get back to the underground.|label=Undergrounder outdoors|value=-3|stack=1}} when outdoors<br><!--
+-->{{Good|+}} ''':''' Gains the [[Psyfocus#Meditation|Morbid]] meditation focus type. {{RoyaltyIcon}}
+| -
+| 0.2
+| 30-60 [[raw fungus]]
+|- id="Nudist"
+! Nudist
+| NAME enjoys the feeling of freedom that comes from being nude. They can handle clothing, but will be happier without it.
+| {{Thought|desc=I'm nude and loving it! I feel so free and unconstrained and in touch with my surroundings!|label=Happily nude|value=+20|stack=1}} when naked<br><!--
+-->{{Thought|desc=I'm a nudist but I have to wear these clothes. It's not unbearable - but I still feel constrained and uncomfortable.|label=Constraining clothes|value=-3|stack=1}} mood penalty for wearing any apparel, except headgear, [[utility]] items, and certain nudist-friendly items like [[sash]]es{{BiotechIcon}} and [[heavy bandolier]]s.{{BiotechIcon}}
+{{Good|+}} ''':''' No {{--|10}} [[opinion]] loss of someone who has any uncovered body parts {{IdeologyIcon}}
+| -
+| 0.7
+| -
+|- id="Masochist"
+! Masochist
+| For NAME, there's something exciting about getting hurt. S/He doesn't know why, S/He's just wired differently.
+| {{Thought|desc=Ow... heh heh heh... I could get used to this!/Ughhh... it hurts, but I love it! Keep it coming!/Ouch... I think something's broken... but what an exquisite feeling!/Ahhh... am I in heaven?|label=masochist in pain|value=+5|value2=+10|value3=+15|value4=+20}} for being in a minor/serious/intense/mind-shattering [[pain]], replacing default {{--|5}}/{{--|10}}/{{--|15}}/{{--|20}} and {{+|3}}{{+|5}}{{+|7}}{{+|9}} from [[Pain (precept)|Pain:Idealized]].{{IdeologyIcon}}<br><!--
+-->{{Thought|desc=The straps press in and calm my soul.|label=Masochist body strapped|value=+3|stack=1}} while wearing a [[slave body strap]]{{IdeologyIcon}}<br><!--
+-->{{Thought|desc=Such restrictive discomfort... delightful.|label=Masochist collared|value=+2|stack=1}} while wearing a [[slave collar]]{{IdeologyIcon}}<br><!--
+-->'''+/- :''' Negates all mood effects for both [[Skullspike (precept)|Skullspike: Desired and Disapproved]]{{IdeologyIcon}}<br><!--
+-->{{Good|+}} ''':''' Negates the {{Thought|desc=I was violated by a bloodfeeder like some kind of livestock.|label=Fed on by OTHER|value=-5|stack=1}} penalty and {{--|20}} [[opinion]] malus from being fed on by a [[Bloodfeeder]]{{BiotechIcon}}<br><!--
+-->{{Good|+}} ''':''' Gains the [[Psyfocus#Meditation|Morbid]] meditation focus type. {{RoyaltyIcon}}
+| [[#Wimp|Wimp]]
+| 0.5
+| -
+|- id="Transhumanist" id="Body modder"
+! Body modder
+| NAME feels limited in POSSESSIVE feeble human body. NAME often dreams of being enhanced by artificial body parts.
+| {{Thought|desc=This artificial enhancement is cool. I want more./Two artificial enhancements are better than one. I wish I had more./Three artificial enhancements, and my weak human flesh is receding. But I still want more machine power./Four artificial enhancements and I am becoming more than human. But there's still some flesh that needs replacing./Five artificial enhancements! How could an enhanced being like me ever feel sad?/I asked for this.|label=body modder pleased|value=+4|value2=+7|value3=+9|value4=+11|value5=+12|value6=+13}} for having [[artificial body parts]] and [[xenogenes]].{{BiotechIcon}} Each artificial body part grants 1 stage, and having any xenogenes also grants 1 stage.<br><!--
+-->{{Thought|desc=Flesh is so limiting. I wish I had some kind of artificial body part.|label=Body modder frustrated|value=-4|stack=1}} if lacking any artificial body parts or xenogenes{{BiotechIcon}}<br><!--
+-->{{+|8}} opinion of other pawns per artificial body part they have, capped at {{+|40}}. Any number of xenogenes{{BiotechIcon}} counts as one artificial body part.
+| [[#Body purist|Body purist]]
+| 0.9
+| -
+|- id="Body purist"
+! Body purist
+| NAME believes the human body is limited for a reason. To her/him, artificial body parts are unethical and disgusting.
+| {{Thought|desc=I hate having this unnatural enhancement. I feel filthy!/Two artificial enhancements are sullying my natural, pure body. It makes me sick to think of it./Three artificial enhancements violate my body's pure flesh. I shudder when I think of it... and these objects shudder with me./I have four artificial enhancements; it's like I'm becoming a robot. What a horrifying sensation./Five artificial enhancements... Is there anything left of me? Or am I just a robot that thinks it's human?/I asked for the exact opposite of this!|label=body purist squeamish|value=-10|value2=-15|value3=-20|value4=-25|value5=-30|value6=-35}} for having [[artificial body parts]] and [[xenogenes]].{{BiotechIcon}} Each artificial body part grants 1 stage, and having any xenogenes also grants 1 stage.<br><!--
+-->{{--|8}} opinion of other pawns per artificial body part they have, capped at {{--|40}}. Any number of xenogenes{{BiotechIcon}} counts as one artificial body part.<br><!--
+-->{{Thought|desc=I'm a body purist; I would never take luciferium by choice. But I was forced! I feel unclean.|label=Forced to take luciferium|value=-20|stack=1|duration=6}} when administered [[luciferium]] and {{--|30}} opinion of the doctor who did the operation for 120 days. Despite the description of this thought, body purists can administer luciferium to themselves and do not lose mood for doing so.
+| [[#Body modder|Body modder]]
+| 0.7
+| -
+|- id="Gourmand"
+! Gourmand
+| NAME's life revolves around food. S/He gets hungry quickly, and if s/he is in a bad mood, s/he will often satisfy her/his-self by eating.
+| {{+|4}} [[Cooking]] skill<br><!--
+-->'''+/- :''' So long as there is >10 human-edible nutrition worth of food in storage, the only possible minor mental break is food binge<br><!--
+-->{{++|50%}} hunger rate<br><!--
+-->{{Bad|−}} ''':''' Food binges randomly occur with an MTB of 50 days
+| [[#Ascetic|Ascetic]]
+| 1
+| 1-3 [[fine meal]]s
+|}
+
+=== Living space ===
+How a colonist perceives the walls that they call "home"...
+
+{| {{STDT| sortable c_08 }}
+! style="width: 80px;" | Name
+! Description
+! style="width: 500px;" | Effect
+! style="width: 80px;" | Conflicting Traits
+! style="width: 80px;" | Commonality
+! style="width: 80px;" | [[Traits#Starting_possessions|Possessions]]
+|- id="Ascetic"
+! Ascetic
+| NAME has forsaken physical comforts and enjoyments in favor of a simple, pure lifestyle. S/He will become unhappy if s/he has a bedroom that's too impressive. S/He also dislikes fancy food and prefers to eat raw. S/He never judges others by their appearance.
+| {{Good|+}} ''':''' Negates the {{Thought|desc=I had to eat a meal off the ground. Can't we get a table around here?|label=Ate without table|value=-3|stack=1}} penalty<br><!--
+-->{{Thought|desc=My bedroom is just how I want it to be. Very humble and simple./My bedroom is just how I want it to be. Very humble and simple./My bedroom is very humble and simple. I like it.|label=Ascetic has awful-mediocre bedroom|value=+5|value2=+4|value3=+3|stack=1}} for having an [[Impressiveness|Awful/Dull/Mediocre]] bedroom<br><!--
+-->{{Thought|desc=I don't like having an impressive bedroom.|label=Ascetic has impressive bedroom|value=-5|stack=1}} for having a [[Impressiveness|Somewhat Impressive]] or better bedroom<br><!--
+--> '''+/- :''' Mood not affected by quality of [[meal]], including [[raw food]], [[nutrient paste meal]]s, [[baby food]]{{BiotechIcon}}, and any form of [[twisted meat]]{{AnomalyIcon}}<br><!--
+-->'''+/- :''' Pawn beauty of others does not change pawn's social opinion on that pawn<br><!--
+-->'''+/- :''' Mood unaffected by quality of crib (as a baby){{BiotechIcon}}<br><!--
+-->'''+/- :''' Mood unaffected by gaining a royal title; losing a title; or, if currently titled, whether or not apparel, bedroom, and/or throneroom is appropriate to the title {{RoyaltyIcon}}<br><!--
+-->{{Good|+}} ''':''' Gains the [[Psyfocus#Minimal|Minimal]] meditation focus type{{RoyaltyIcon}}<br><!--
+-->{{Bad|-}} ''':''' Loses the [[Psyfocus#Artistic|Artistic]] meditation focus type, if they had it{{RoyaltyIcon}}<br><!--
+-->{{Down|x50%}} [[Global Certainty Loss Factor]] {{IdeologyIcon}}
+| [[#Greedy|Greedy]]<br><!--
+-->[[#Gourmand|Gourmand]]<br><!--
+-->[[#Jealous|Jealous]]
+| 0.7
+| -
+
+|- id="Greedy"
+! style="width: 100px;" | Greedy
+| NAME needs a really impressive bedroom. S/He gets a mood loss if they don't get what they want.
+| {{Thought|desc=I'm greedy. I want a really impressive bedroom.|label=Greedy for impressive bedroom|value=-8|stack=1}} for not having a bedroom<br><!--
+-->{{Thought|desc=I'm greedy. My room is pathetic! I want a really impressive bedroom./I'm greedy. My room isn't nearly good enough. I want a really impressive bedroom./I'm greedy. My room isn't good enough. I want a really impressive bedroom./I'm greedy. My room isn't quite good enough. I want a really impressive bedroom.|label=Greedy for impressive bedroom|value=-8|value2=-8|value3=-6|value4=-4|stack=1}} for having an [[Impressiveness|Awful/Dull/Mediocre/Decent]] bedroom<br><!--
+-->{{Bad|-}} ''':''' [[Titles#Conceited_pawns|Conceited]] {{RoyaltyIcon}}
+| [[#Ascetic|Ascetic]]<br><!--
+-->[[#Jealous|Jealous]]
+| 1
+| 10-20 [[gold]]
+
+|- id="Jealous"
+! Jealous
+| For NAME, it's degrading to have a [[Impressiveness|less impressive]] bedroom than someone else. NAME gets a mood loss if any colonist has a more impressive bedroom.
+| {{Thought|desc=I need to have the best one!|label=Jealous of OTHER's bedroom|value=-8|stack=1}} for not having the most [[Impressiveness|impressive]] bedroom.<br><!--
+-->{{Good|+}} ''':''' Gains the [[Psyfocus#Meditation|Morbid]] meditation focus type. {{RoyaltyIcon}}<br><!--
+-->{{Bad|-}} ''':''' [[Titles#Conceited_pawns|Conceited]] {{RoyaltyIcon}}
+| [[#Ascetic|Ascetic]]<br><!--
+-->[[#Greedy|Greedy]]
+| 1
+| -
+
+|- id="Pyromaniac"
+! Pyromaniac
+| NAME loves fire. S/He will never extinguish fires, and will occasionally go on random fire starting sprees. S/He will be happy around flames, and happier when wielding an incendiary weapon.
+| {{Thought|desc=It makes me think of flame and fire. I can't wait to use it.|label=Pyromaniac has incendiary weapon|value=+2|stack=1}} while wielding a weapon from the following list: [[incendiary launcher]], [[molotov cocktails]], [[plasmasword]],{{RoyaltyIcon}} [[persona plasmasword]],{{RoyaltyIcon}}[[flamebow]],{{BiotechIcon}} [[hellcat rifle]],{{AnomalyIcon}} [[incinerator]],{{AnomalyIcon}} or [[unique weapons]]{{OdysseyIcon}} with certain traits.<br><!--
+--> {{Thought|desc=The searing heat will make my foes beautiful!|label=Used flame weapon|value=+8|stack=1|duration=0.33}} mood bonus for using a flame weapon either directly on a visible, non-downed enemy of the player faction who is not in a fogged region of the map, or attacking with it when such a pawn is in range of the attack anyways. This includes any weapon from the list above except for the {{AnomalyIcon}}hellcat rifle.<br><!--
+-->{{Thought|desc=The sinuous flame dances, warm like love, bright like freedom, all-consuming.|label=beautiful fire|value=+2|stack=4}}: grants 1 stack per [[fire]] or lit building capable of having a 'fire overlay' ([[torch lamp]], [[campfire]], [[blood torch]],{{BiotechIcon}} [[darktorch]],{{IdeologyIcon}} [[fungus darktorch]],{{IdeologyIcon}} [[effigy]],{{IdeologyIcon}} [[pyre]],{{IdeologyIcon}} [[sacrificial flag]],{{IdeologyIcon}} [[brazier]],{{RoyaltyIcon}} or [[darklight brazier]]{{IdeologyIcon}}{{RoyaltyIcon}}) within 8 cells, within the same room, and not in a 'fogged' region of the map invisible to the player. Fire not from a lit building, and not on a pawn, grants 2 stacks of this mood bonus; each cell occupied by a lit pyre counts as 1 fire, granting up to 4 stacks in total.<br><!--
+--><!-- 
+-->{{Bad|Incapable of firefighting}}<br><!--
+-->Only possible [[Extreme break|extreme mental break]] is [[fire starting spree]]<br><!--
+-->{{Bad|−}} ''':''' Fire starting sprees randomly occur with an MTB of 50 days<br><!--
+-->{{Down|-20%}} [[Market Value]]<br><!--
+-->{{Good|+}} ''':''' Gains the [[Psyfocus#Meditation|Flame]] meditation focus type. {{RoyaltyIcon}}
+| -
+| 0.8
+| [[Molotov cocktails]]<br><!--
+-->10-20 [[chemfuel]]
+|}
+
+=== Social views ===
+In a brutal world, what otherwise might be socially unacceptable or even unthinkable can be a positive survival trait for both you and your fellow colonists... See [[Human resources]] for comparative analysis. 
+
+{| {{STDT| sortable c_08 }}
+! style="width: 80px;" | Name
+! Description
+! style="width: 500px;" | Effect
+! style="width: 80px;" | Conflicting Traits
+! style="width: 80px;" | Commonality
+! style="width: 80px;" | [[Traits#Starting_possessions|Possessions]]
+|- id="Bloodlust"
+! Bloodlust
+| NAME gets a rush from hurting people, and never minds the sight of blood or death.
+| {{Good|+}} ''':''' Negates all mood penalties for: Observing fresh corpses, Observing rotting corpses, Human butchering, Organ harvesting, Executions, Colonist/innocent prisoner deaths, Wearing tainted clothes; {{IdeologyIcon}}Blinding ceremonies from [[Blindness (precept)|Blindness: Horrible]], or Scarification ceremonies from [[Scarification|Scarification:Horrible]]<br><!--
+-->{{Good|+}} ''':''' No opinion loss of someone who Harvests an organ, Executes a prisoner, or {{BiotechIcon}}Kills a child<br><!--
+-->{{Thought|desc=I enjoy wearing the suffering of others./This will scare them. All will know my power./The faces on my clothes aren't smiling, but they make *me* happy./The flesh! The flesh signals my triumph!|label=Human leather APPAREL_NAME|value=+2|value2=+4|value3=+6|value4=+8|stack=1}} for wearing 1/2/3/4+ apparel items made out of human skin.<br><!--
+-->{{Thought|desc=Extracting the flesh from their bodies is so bloody and satisfying.|label=Bloodlust organ harvested|value=+4|stack=1|duration=4}} on harvesting an organ.<br><!--
+-->{{Thought|desc=I saw someone die! That was intense!|label=Witnessed death with bloodlust|value=+8|multi=0.75|stack=5|duration=4}} on witnessing a human death. Witnessing means being awake, sighted, and either in the same caravan as the deceased or having line of sight within 12 cells of the deceased.<br><!--
+-->{{Thought|desc=I killed someone! What a rush!|label=Killed someone|value=+12|multi=0.75|stack=5|duration=4}} on killing a human.<br><!--
+-->{{Bad|−}} ''':''' Four times as likely to start a social fight<br><!--
+-->{{Good|+}} ''':''' Unaffected by ideoligious prohibitions that would ordinarily prevent a pawn from executing prisoners {{IdeologyIcon}}<br><!--
+-->{{Good|+}} ''':''' Gains the [[Psyfocus#Meditation|Morbid]] meditation focus type. {{RoyaltyIcon}}
+| ''Requires pawn to be [[Incapable|capable of Violence]]''
+| 0.8
+| [[Axe]]{{RoyaltyIcon}}<br><!--
+-->[[Longsword]]
+|- id="Cannibal"
+! Cannibal
+| NAME was taught that eating human meat is wrong and horrible. But one time, long ago, S/He tried it... and S/He liked it.
+| {{Good|+}} ''':''' No mood penalty for: Observing fresh corpses, Human butchering, Guest or guilty prisoner deaths, Cannibalism; {{BiotechIcon}}Ingesting hemogen packs; or {{IdeologyIcon}}Eating meat from [[Meat eating|Abhorrent, Horrible, or Disapproved]]<br><!--
+-->{{Thought|desc=I enjoy wearing the suffering of others./This will scare them. All will know my power./The faces on my clothes aren't smiling, but they make *me* happy./The flesh! The flesh signals my triumph!|label=Human leather APPAREL_NAME|value=+2|value2=+4|value3=+6|value4=+8|stack=1}} for wearing 1/2/3/4+ apparel items made out of human skin.<br><!--
+-->{{Thought|desc=I ate a meal made from the meat of another human. So pleasurable. If only I had some fava beans and a nice chianti.|label=Cooked cannibalism|value=+15|stack=1|duration=1}} on eating a meal made with human flesh<br><!--
+-->{{Thought|desc=I ate the meat of another human, raw, like an animal. It was so... succulent.|label=Raw cannibalism|value=+20|stack=1|duration=1}} on eating raw [[human meat]] (including human corpses, although this may still trigger the {{Thought|desc=I had to eat the flesh of a dead creature without even butchering or cooking it.|label=Ate corpse|value=-12|stack=1|duration=1}} penalty)<br><!--
+-->{{Good|+}} ''':''' No opinion loss of someone who Eats meat ([[Meat eating|Abhorrent, Horrible, or Disapproved]]) {{IdeologyIcon}}<br><!--
+-->{{Good|+}} ''':''' Gains the [[Psyfocus#Meditation|Morbid]] meditation focus type. {{RoyaltyIcon}}
+| -
+| 0.6
+| 30-60 [[human meat]]
+|- id="Psychopath"
+! Psychopath
+| NAME has no empathy. The suffering of others doesn't bother them at all. They don't mind if others are butchered, left unburied, imprisoned, or sold to slavery - unless it affects them. NAME also feels no mood boost from socializing.
+| {{Good|+}} ''':''' No mood penalty for: Observing fresh corpses, Human butchering, Organ harvesting, Executions, Unburied colonists, Prisoners sold into slavery, Relative/colonist/friend/innocent prisoner deaths, Not being a bonded animal's master, Loss/death/release of bonded pets, Wearing [[human leather]] or [[dread leather]]{{AnomalyIcon}}; [[Child]]{{BiotechIcon}} killing, Being in a colony with sad youngsters, Having a sad/enslaved/sick/growth vat-interred child, Not having had enough play (as a baby); {{IdeologyIcon}}Blinding ceremonies from [[Blindness (precept)|Blindness: Horrible]], Scarification ceremonies from [[Scarification|Scarification: Horrible]], or Killing innocent animals from [[Killing innocent animals|Killing innocent animals: Abhorrent, Horrible, or Disapproved]]{{AnomalyIcon}}Participating in [[Philophagy]] and [[Chronophagy]] rituals{{Check Tag|-ve only?|Wb the positive mood from the rituals with exalted?}}<br><!--
+-->{{Good|+}} ''':''' No opinion loss of someone who {{BiotechIcon}}Kills a child or {{IdeologyIcon}}Kills an innocent animal ([[Killing innocent animals|Killing innocent animals:Abhorrent, Horrible, or Disapproved]])<br><!--
+-->{{Bad|−}} ''':''' No mood bonuses from: Being nuzzled, Being a bonded animal's master; {{BiotechIcon}}Being in a colony with happy youngsters, Having happy children, Having happy parents (as a child), or Having had lots of play (as a baby)<br><!--
+-->{{Bad|−}} ''':''' No opinion gain from Chitchat, Deep talk (still loses opinion from hostile interactions); {{BiotechIcon}}Teaching a child, or Taking a lesson (as a child)<br><!--
+-->'''+/- :''' Prevents bonding with animals<br><!--
+-->{{Good|+}} ''':''' Unaffected by ideoligious prohibitions that would ordinarily prevent a pawn from executing prisoners or attacking innocent animals {{IdeologyIcon}}<br><!--
+-->{{Good|+}} ''':''' Gains the [[Psyfocus#Morbid|Morbid]] meditation focus type, replacing the Artistic meditation focus type if they had it {{RoyaltyIcon}}<br><!--
+-->{{Down|x50%}} [[Global Certainty Loss Factor]] {{IdeologyIcon}}
+| [[#Kind|Kind]]
+| 1
+| 1 [[skull]]<br><!--
+-->1 [[heart]]
+|}
+<references />
+
+=== Combat ===
+When it's us or them...
+
+{| {{STDT| sortable c_08 }}
+! style="width: 80px;" | Name
+! Description
+! style="width: 500px;" | Effect
+! style="width: 80px;" | Conflicting Traits
+! style="width: 80px;" | Commonality
+! style="width: 80px;" | [[Traits#Starting_possessions|Possessions]]
+|- id="Nimble"
+! Nimble
+| NAME has remarkable kinesthetic intelligence. S/He seems to dance around danger with preternatural grace.
+| {{+|15}} [[Melee Dodge Chance]]<br><!--
+-->{{Good|x10%}} [[Trap Spring Chance]]
+| -
+| 1
+| -
+
+|- id="Brawler"
+! Brawler
+| NAME likes to fight up close and personal. S/He's accuracy is greatly increased in melee combat, but s/he'll be very unhappy if asked to carry a ranged weapon.
+| {{+|4}} [[Melee]] skill<br><!--
+-->{{--|10}} [[Shooting]] skill<br><!--
+-->{{+|4}} [[Melee Hit Chance]]<br><!--
+-->{{Thought|desc=I hate shooting from a distance. I want to get up close and personal!|label=Brawler has ranged weapon|value=-10|stack=1}} while wielding a ranged weapon<br><!--
+-->{{Bad|−}} ''':''' Disallows [[shooting]] [[passion]]s<br><!--
+-->'''+/- :''' Disallows [[Shoot frenzy]] inspiration
+| [[#Trigger-happy|Trigger-happy]]<br><!--
+-->[[#Careful shooter|Careful Shooter]]
+<br><!--
+-->[[#Wimp|Wimp]]
+| 1
+| 1 [[knife]]
+
+|- id="Tough"
+! Tough
+| NAME has thick skin, dense flesh, and durable bones. S/He takes much less damage than other people from the same blows. S/He is extremely hard to kill.
+| {{Good|x50%}} [[Incoming Damage Multiplier]]
+* Stacks multiplicatively with other Incoming Damage Multiplier factors. See that page for further details.
+| [[#Delicate|Delicate]]
+| 1.1
+| -
+
+|- id="Wimp"
+! Wimp<ref>With the exception of [[Genies]] (who have a gene which forces the Wimp trait), hostiles cannot spawn with the Wimp trait.</ref>
+| NAME is weak and cowardly. Even a little pain will immobilize her/him.
+| {{--|50%}} [[Pain Shock Threshold]]<br><!--
+-->{{Down|-15%}} [[Market Value]]<br><!--
+-->{{Up|x200%}} [[Global Certainty Loss Factor]] {{IdeologyIcon}}<br><!--
+-->{{Bad|−}} ''':''' Negates [[Pain]] mood buffs from [[Pain (precept)|Pain: Idealized]] ,{{IdeologyIcon}} reverting mood from pain to the default values.
+
+| [[#Brawler|Brawler]]<br><!--
+-->[[#Masochist|Masochist]]
+| 1
+| -
+
+|- id="Delicate"
+! Delicate {{BiotechIcon}}
+| NAME has fragile skin and bones. She/He takes more damage than other people from the same blows.
+| {{Bad|x115%}} [[Incoming Damage Multiplier]]
+* Stacks multiplicatively with other Incoming Damage Multiplier factors. See that page for further details. Note that the [[Delicate (gene)|Delicate]] gene that can add this trait is incompatible with the [[Robust]] gene.{{BiotechIcon}} 
+| [[#Tough|Tough]]
+| 1
+| -
+|}
+<references />
+* See also [[Trigger-happy]] and [[Careful shooter]], below.
+
+=== Skills ===
+When your colonists are ''not'' fighting for their lives...
+
+{| {{STDT| sortable c_08 }}
+! style="width: 80px;" | Name
+! Description
+! style="width: 500px;" | Effect
+! style="width: 80px;" | Conflicting Traits
+! style="width: 80px;" | Commonality
+! style="width: 80px;" | [[Traits#Starting_possessions|Possessions]]
+|- id="Too smart"
+! Too smart
+| NAME is too smart for her/his own good. S/He learns everything much faster than everyone, but can be quite eccentric.
+| {{+|75%}} [[Global Learning Factor]]<br><!--
+-->{{++|12%}} [[Mental Break Threshold]]<br><!--
+-->{{Down|x50%}} [[Global Certainty Loss Factor]] {{IdeologyIcon}}
+| [[#Nerves|Nerves spectrum traits]]<br><!--
+-->''Requires pawn to be capable of [[Skills|Intellectual]]''
+| 1
+| 1 [[schematic]]
+|- id="Fast learner"
+! Fast learner
+| NAME has a knack for learning. S/He picks things up much faster than others.
+| {{+|75%}} [[Global Learning Factor]]
+| [[#Slow learner|Slow Learner]]
+| 1
+| 1 [[textbook]]
+|- id="Slow learner"
+! Slow learner
+| NAME is slow on the uptake. S/He picks things up much slower than others.
+| {{--|75%}} [[Global Learning Factor]]<br><!--
+-->{{Down|x50%}} [[Global Certainty Loss Factor]] {{IdeologyIcon}}
+| [[#Fast learner|Fast Learner]]
+| 1
+| -
+|- id="Quick sleeper"
+! Quick sleeper
+| NAME doesn't need as much sleep as the average person. Whether s/he's sleeping on a bed or on the ground, s/he will be fully rested in about two thirds the usual time.
+| {{+|50%}} [[Rest Rate Multiplier]]
+| -
+| 1.1
+| -
+|- id="Great memory"
+! Great memory
+| NAME has a fantastic memory for detail. S/He will lose unused skills at half the rate of other people.
+| {{Good|x50%}} Skill loss rate
+| -
+| 1.1
+| -
+|- id="Tortured artist"
+! Tortured artist
+| NAME feels alienated and misunderstood by other human beings. S/He will get a constant mood debuff, but gain a chance (50%) to get a creativity inspiration after a mental break.
+| {{Good|50%}} chance of receiving the [[mental inspiration]] "[[Inspired creativity]]" after a mood-caused [[mental break]] other than [[Catatonic breakdown|Catatonia]] or [[Run wild]] ends.<br><!--
+-->{{Thought|desc=Natural penalty from 'tortured artist' trait.|label=Tortured artist|value=-8|stack=1}} (permanent)<br><!--
+-->{{Good|+}} ''':''' Gains the [[Psyfocus#Meditation|Morbid]] meditation focus type.{{RoyaltyIcon}}
+
+NOTE: Inspirations from this trait cannot be triggered by mental breaks caused by any reason other than mood, e.g. [[psychic insanity lance]]s, [[psycasts]],{{RoyaltyIcon}} [[genes]],{{BiotechIcon}} [[void terror]],{{AnomalyIcon}} or even randomly-induced mental breaks from other traits. [[Golden_cube#Cube_sculptures|Cube sculpting]]{{AnomalyIcon}} and [[tome]]s{{AnomalyIcon}} are the sole exceptions to this rule. Ending the [[mental break]] early by [[Prisoner#Capturing_prisoners|arresting]] the colonist {{Hover title|dotted=yes|Tested 15 times in a row, in version 1.6.4871|will not grant}} [[Inspired creativity]].
+| -
+| 0.6
+| 10-20 [[dye]]
+|}
+
+=== Relationships ===
+"Hey, baby. Come around often?"
+"Crashed here. Can't leave."
+"...My bad."
+{| {{STDT| sortable c_08 }}
+! style="width: 100px;" | Name
+! Description
+! style="width: 500px;" | Effect
+! style="width: 100px;" | Conflicting Traits
+! style="width: 100px;" | Commonality
+|- id="Kind"
+! Kind
+| NAME is an exceptionally agreeable and giving person. S/He never insults others and will sometimes offer kind words to brighten the moods of those around her/him. S/He also never judges people by their appearance.
+| {{Good|+}} ''':''' Can use a unique 'Kind Words' social interaction, inflicting {{Thought|desc=I've been bestowed with kind words! What a nice person!|label=Kind words|value=+5|multi=0.9|stack=10|duration=2}} and gaining {{+|15}} opinion from the recipient for 20 days. The opinion boost can stack up to 10 times from the same Kind pawn with 0.9x stacked effect multiplier (for a potential opinion bonus of up to +97.7), and up to 300 stacks can be present overall. When choosing what social interaction to perform, Kind Words has a weighting of 0.01 (as opposed e.g. to chitchat's weighting of 1.00).<br><!--
+-->{{Good|+}} ''':''' Will not Slight or Insult others<br><!--
+-->{{Good|+}} ''':''' Opinion of other pawns not changed by [[Beauty (pawn)|beauty]], Annoying voice, Creepy breathing or [[disfigurement]]<br><!--
+-->{{Up|x200%}} [[Global Certainty Loss Factor]] {{IdeologyIcon}}
+| [[#Abrasive|Abrasive]]<br><!--
+-->[[#Psychopath|Psychopath]]
+| 2
+|- id="Abrasive"
+! Abrasive
+| NAME always says exactly what's on their mind, especially if it's bugging him/her. That tends to rub people the wrong way.
+| {{Bad|−}} ''':''' 2.3x as likely to Slight or Insult others<br><!--
+-->{{Down|-15%}} [[Market Value]]<br><!--
+-->{{Down|x50%}} [[Global Certainty Loss Factor]] {{IdeologyIcon}}<br><!--
+-->{{Bad|-}} ''':''' [[Titles#Conceited_pawns|Conceited]] {{RoyaltyIcon}}
+| [[#Kind|Kind]]<br><!--
+-->''Requires pawn to be capable of [[Skills#Social|Social]]'' 
+| 1
+|- id="Annoying voice"
+! Annoying voice
+| NAME's voice has a particularly grating, nasal quality to it, and tends to talk in barked, garbled phrases. This predisposes others to dislike them.
+| {{--|25}} [[opinion]] from non-Kind, non-[[hearing|deaf]] pawns<br><!--
+-->{{Down|-20%}} [[Market Value]]
+| -
+| 0.5
+|- id="Creepy breathing"
+! Creepy breathing
+| NAME breathes heavily all the time, and sweats constantly. People find it creepy.
+| {{--|25}} [[opinion]] from non-Kind, non-[[hearing|deaf]] pawns<br><!--
+-->{{Down|-10%}} [[Market Value]]
+| -
+| 0.5
+|- id="Misandrist"
+! Misandrist
+| NAME really dislikes and distrusts men.
+| {{--|25}} [[opinion]] of men
+| 
+| 0.3 for men<br><!--
+-->1.7 for women
+|- id="Misogynist"
+! Misogynist
+| NAME really dislikes and distrusts women.
+| {{--|25}} [[opinion]] of women
+| 
+| 1.7 for men<br><!--
+-->0.3 for women
+|- id="Asexual"
+! Asexual
+| NAME has no sexual attraction to anyone at all.
+| '''+/- :''' Will not have romantic relationships with people.
+| [[#Gay|Gay]]<br><!--
+-->[[#Bisexual|Bisexual]]
+| 0.2
+|- id="Gay"
+! Gay
+| NAME is romantically attracted to people of their own gender.
+| '''+/- :''' Will only have romantic relationships with people of the same gender.
+| [[#Asexual|Asexual]]<br><!--
+-->[[#Bisexual|Bisexual]]
+| 0.3
+|- id="Bisexual"
+! Bisexual
+| NAME is romantically attracted to both men and women.
+| '''+/- :''' Will have romantic relationships with people from either gender.
+| [[#Asexual|Asexual]]<br><!--
+-->[[#Gay|Gay]]
+| 0.2
+|- id="Recluse"
+! Recluse {{BiotechIcon}}
+| The fewer people in NAME's faction, the happier she/he is. Being alone is best of all.
+| {{Good|+}} ''':''' Negates the {{Thought|desc=We just denied someone's request to join us. I hope they make it.|label=Denied joining|value=-3|multi=0.75|stack=5|duration=6}} penalty from rejecting a pawn that wants to join the colony<br><!--
+-->'''+/- :''' Mood based on the number of human pawns (including children, guests, and prisoners) in the colony. Humans on other maps, in caravans or inside a [[Cryptosleep casket]]/[[Transport pod]]/[[Biosculpter pod]] {{IdeologyIcon}}/[[Growth vat]] {{BiotechIcon}}/[[Gene extractor]] {{BiotechIcon}}/[[Subcore softscanner]] {{BiotechIcon}}/[[Subcore ripscanner]] {{BiotechIcon}} do not count. [[Ghoul]]s {{AnomalyIcon}} do not count.<br><!--
+-->Starting colonists in the [[Scenario_system#Default_Scenarios|The Mechanitor]] start scenario will always have this trait.
+
+{| class="wikitable" 
+|-
+! Human Count !! Mood  !! Human Count !! Mood
+|-
+| 1 || {{Good|+12}} || 11 || {{--|2}}
+|-
+| 2 || {{Good|+8}} || 12 || {{--|3}}
+|-
+| 3 || {{Good|+6}} || 13 || {{--|4}}
+|-
+| 4 || {{Good|+4}} || 15 || {{--|6}}
+|-
+| 5-10 || 0 || 16+ || {{--|8}}
+|}
+| -
+| 0.5
+|}
+
+* The Gay/Bisexual/Asexual sexuality traits are unique in that they are the only ones that can generate after the 3 trait limit, resulting in rare pawns with 4 traits. 
+* See also the [[#Beauty|Beauty]] category of traits, below.
+
+== Spectrum traits ==
+Theses are groups of related traits, that are inter-related and grouped by degree, creating a "spectrum" of good/bad/better/worse in that specific sphere of behaviour. A colonist can only have one trait from any single related spectrum for these traits, defining whether they are notably outside the norm for, for example, movement speed, or drug interest, or their physical (un)attractiveness.
+
+=== Drug desire ===
+These traits affect a colonist's likelihood to consume drugs.
+
+Note that despite the common misconception, chemical fascination and interest pawns no longer randomly go on [[mental break|drug binges]] independent of [[mood]]. <!-- Dated but important to clarify that it was previously true so reliable evidence in the past doesn't show it as wrong, just since outdated. -->
+{| {{STDT| sortable c_08 }}
+! Name
+! Description
+! Effect
+|- id="Chemical fascination"
+! Chemical fascination
+| NAME is utterly fascinated with chemical sources of enjoyment. Consuming recreational drugs will create a good mood, while abstaining will lead to increasing frustration over time and possibly drug binges. S/He will ignore directives to not use recreational drugs, and will consume more than a normal person.
+| Has [[Chemical need]]: causes {{Thought|desc=I'm fascinated by drugs. I want to experience them more./I'm fascinated by drugs. I want to experience them a lot harder./I'm fascinated by drugs. I want them! More intensity!|label=Chemical hunger|value=-4|value2=-8|value3=-12|stack=1}} the longer it has gone unsatisfied, and up to {{Thought|desc=I'm fascinated by drugs, and I love satisfying my desires./I'm fascinated by drugs, and I am fully satisfied with my drug consumption.|label=Chemical satisfaction|value=+3|value2=+6|stack=1}} when satisfied
+For [[Beer]], [[Smokeleaf joint]]s, and [[Ambrosia]] only: functions as if "Take for Recreation" and "Take for Addiction" are checked on the [[Drug policy|Drug Policies]] tab regardless of the players choices. They will otherwise follow the Drug Policy regarding drugs carried and scheduled.
+
+NOTE: The colonist will still respect allowed areas and will not use forbidden stacks of any drug regardless of chemical need
+
+Unaffected by ideoligious prohibitions that would ordinarily prevent a pawn from taking or administering drugs {{IdeologyIcon}}
+
+{{--|30}} [[opinion]] of any pawns with teetotaler
+
+|- id="Chemical interest"
+! Chemical interest
+| NAME has an unusual interest in chemical sources of enjoyment. Consuming recreational drugs will create a good mood, while abstaining will lead to increasing frustration over time and possible drug binges. S/He will ignore directives to not use recreational drugs, and will consume more than a normal person.
+| Has [[Chemical need]]: causes {{Thought|desc=I'm interested in drugs. I want to try more./I'm interested in drugs. I want to experience a lot more./I'm interested in drugs. I want to consume drugs really badly.|label=Chemical hunger|value=-2|value2=-4|value3=-6|stack=1}} the longer it has gone unsatisfied, and up to {{Thought|desc=I'm interested in drugs. I enjoyed satisfying my desire./I'm interested in drugs. I am really satisfied with all the drugs I've gotten recently.|label=Chemical satisfaction|value=+1|value2=+3|stack=1}} when satisfied
+For [[Beer]], [[Smokeleaf joint]]s, and [[Ambrosia]] only: functions as if "Take for Recreation" and "Take for Addiction" are checked on the [[Drug policy|Drug Policies]] tab regardless of the players choices. They will otherwise follow the Drug Policy regarding drugs carried and scheduled.
+
+NOTE: The colonist will still respect allowed areas and will not use forbidden stacks of any drug regardless of chemical need
+
+{{IdeologyIcon}} Unaffected by ideoligious prohibitions that would ordinarily prevent a pawn from taking or administering drugs
+
+{{--|20}} [[opinion]] of any pawns with teetotaler
+
+|- id="Teetotaler"
+! Teetotaler
+| NAME abhors the idea of gaining pleasure from chemicals. S/He strictly avoids alcohol and recreational drugs.
+| Will not go on drug binges<br><!--
+-->Cannot be directed to take non-medical drugs unless they have a [[Genes#Alcohol dependency|genetic dependency]]{{BiotechIcon}}<br><!--
+-->{{Thought|desc=I'm a teetotaler; I would never take drugs by choice. But I was forced! I feel unclean.|label=Forced to take drugs|value=-20|stack=1|duration=6}} when administered a drug, and {{--|30}} opinion of the doctor who did the operation for 60 days.<br>
+
+{{--|25}} [[opinion]] of any pawns with any addiction
+
+{{--|20}} [[opinion]] of any pawns with chemical interest
+
+{{--|30}} [[opinion]] of any pawns with chemical fascination
+|}
+
+=== Industriousness ===
+These traits affect the colonist's [[Global Work Speed]].
+
+{| {{STDT| sortable c_08 }}
+! Name
+! Description
+! Effect
+|- id="Industrious"
+! Industrious
+| NAME has an easy time staying on-task and focused, and gets things done much faster than the average person.
+| [[Global Work Speed]] {{+|35%}}
+{{--|5}} [[opinion]] of any pawns without the same trait or hard worker
+
+{{--|20}} [[opinion]] of any pawns with lazy
+
+{{--|30}} [[opinion]] of any pawns with slothful
+|- id="Hard worker"
+! Hard worker
+| NAME is a natural hard worker and will finish tasks faster than most.
+| [[Global Work Speed]] {{+|20%}}
+{{--|5}} [[opinion]] of any pawns without the same trait or industrious
+
+{{--|20}} [[opinion]] of any pawns with lazy
+
+{{--|30}} [[opinion]] of any pawns with slothful
+|- id="Lazy"
+! Lazy
+| NAME is a little bit lazy.
+| [[Global Work Speed]] {{--|20%}}
+|- id="Slothful"
+! Slothful
+|NAME loves idleness and hates anything productive. S/He moves slowly and rarely stays focused on a task.
+| [[Global Work Speed]] {{--|35%}}
+|}
+
+=== Speed traits ===
+These traits affect a colonist's walk speed.
+
+{| {{STDT| sortable c_08 }}
+! Name
+! Description
+! Effect
+|- id="Jogger"
+! Jogger
+| NAME always moves with a sense of urgency - so much so that others often fail to keep up.
+| [[Move speed]] {{+|0.4}} {{CS}}
+|- id="Fast walker"
+! Fast walker
+| NAME likes to be where s/he's going. S/He walks quicker than most people.
+| [[Move speed]] {{+|0.2}} {{CS}}
+|- id="Slowpoke"
+! Slowpoke
+| NAME is always falling behind the group whenever s/he goes anywhere.
+| [[Move speed]] {{--|0.2}} {{CS}}
+Disallows [[Go frenzy|Go Frenzy Inspiration]]
+|-
+|}
+
+=== Base mood ===
+These traits affect the colonist's natural, constant mood.
+
+{| {{STDT| sortable c_08 }}
+! Name
+! Description
+! Effect
+|- id="Sanguine"
+! Sanguine
+| NAME is just naturally upbeat about HER/HIS situation, pretty much all the time, no matter what it is.
+| {{Thought|desc=Natural bonus from 'sanguine' trait.|label=Sanguine|value=+12|stack=1}} (permanent)
+|- id="Optimist"
+! Optimist
+| NAME is naturally optimistic about life. It's hard to get HER/HIM down.
+| {{Thought|desc=Natural bonus from 'optimist' trait.|label=Optimist|value=+6|stack=1}} (permanent)
+|- id="Pessimist"
+! Pessimist
+| NAME tends to look on the bad side of life.
+| {{Thought|desc=Natural penalty from 'optimist' trait.|label=Pessimist|value=-6|stack=1}} (permanent)
+|- id="Depressive"
+! Depressive
+| NAME is perennially unhappy. S/He has trouble sustaining a good mood even when everything is fine.
+| {{Thought|desc=Natural penalty from 'optimist' trait.|label=Depressive|value=-12|stack=1}} (permanent)
+|}
+
+=== Nerves ===
+These traits affect the colonist's mental break threshold. Mutually exclusive with [[Too smart]].
+
+{| {{STDT| sortable c_08 }}
+! Name
+! Description
+! Effect
+|- id="Iron-willed"
+! Iron-willed
+| NAME's will is an iron shield. S/He keeps going through thick and thin, when others broke down long before.
+| [[Mental Break Threshold]] {{---|18%}}
+[[Global Certainty Loss Factor]]{{IdeologyIcon}} {{Down|x25%}}
+|- id="Steadfast"
+! Steadfast
+| NAME is mentally tough and won't break down under stresses that would crack most people.
+| [[Mental Break Threshold]] {{---|9%}}
+[[Global Certainty Loss Factor]]{{IdeologyIcon}} {{Down|x50%}}
+|- id="Nervous"
+! Nervous
+| NAME tends to crack under pressure.
+| [[Mental Break Threshold]] {{++|8%}}
+[[Global Certainty Loss Factor]]{{IdeologyIcon}} {{Up|x200%}}
+|- id="Volatile"
+! Volatile
+| NAME is on a hair-trigger all the time. S/He is the first to break in any tough situation.
+| [[Mental Break Threshold]] {{++|15%}}
+[[Global Certainty Loss Factor]]{{IdeologyIcon}} {{Up|x300%}}
+|}
+
+=== Neurotic ===
+These traits affect the colonist's [[Mental Break Threshold|mental break threshold]] and their [[Global Work Speed|global work speed]].
+
+{| {{STDT| sortable c_08 }}
+! Name
+! Description
+! Effect
+|- id="Neurotic"
+! Neurotic
+| NAME likes to have things squared away. S/He will work harder than most to attain this state of affairs, but HER/HIS nerves can get the better of HER/HIM.
+| [[Global Work Speed]] {{+|20%}}
+[[Mental Break Threshold]] {{++|8%}}
+|- id="Very neurotic"
+! Very neurotic
+| NAME feels constantly nervous about everything that has to get done. S/He will work extremely hard to attain this state of affairs, but HER/HIS nerves can easily get the better of HER/HIM.
+| [[Global Work Speed]] {{+|40%}}
+[[Mental Break Threshold]] {{++|14%}}
+|}
+
+=== Shooting accuracy ===
+These traits affect the colonist's [[Shooting Accuracy|accuracy]] in ranged combat, as well as [[Aiming Time|aiming time]]. Mutually exclusive with brawler.
+
+{| {{STDT| sortable c_08 }}
+! Name
+! Description
+! Effect
+! [[Traits#Starting_possessions|Possessions]]
+|- id="Careful shooter"
+! Careful shooter
+| NAME takes more time to aim when shooting. S/He shoots less often than others, but with more accuracy.
+| [[Aiming Time]] {{++|25%}}
+[[Shooting Accuracy]] {{+|5}}
+| 1 [[bolt-action rifle]]
+|- id="Trigger-happy"
+! Trigger-happy
+| Pew! Pew! Pew! NAME just likes pulling the trigger. S/He shoots faster than others, but less accurately.
+| [[Aiming Time]] {{---|50%}}
+[[Shooting Accuracy]] {{--|5}}
+| 1 [[autopistol]]
+|}
+
+=== Beauty ===
+{{Main|Beauty (Pawn)}}
+These traits influence a colonist's appearance and how it affects other colonists' opinions of them - as well as sexual attractiveness.
+
+Each point of beauty corresponds to +20 opinion from other colonists, e.g. a colonist with 2 beauty will have +40 opinion, while another with -1 beauty will have -20.
+
+{| {{STDT| sortable c_08 }}
+! Name
+! Description
+! style="width:100px" | Effect
+|- id="Beautiful"
+! Beautiful
+| NAME is exceptionally beautiful, with an exotic-yet-familiar facial structure and an arresting gaze. People are attracted to her/him before s/he even opens her/his mouth.
+| {{+|2}} Pawn Beauty
+|- id="Pretty"
+! Pretty
+| NAME has a pretty face, which predisposes people to like her/him.
+| {{+|1}} Pawn Beauty
+|- id="Ugly"
+! Ugly
+| NAME is somewhat ugly. This subtly repels others during social interactions.
+| {{--|1}} Pawn Beauty
+|- id="Staggeringly ugly"
+! Staggeringly ugly
+| NAME is staggeringly ugly. Her/His face looks like a cross between a drawing by an untalented child, a malformed fetus in a jar of formaldehyde, and a piece of modern art. Others must exert conscious effort to look at her/him while conversing.
+| {{--|2}} Pawn Beauty
+|-
+|}
+
+=== Psychic sensitivity ===
+These traits influence how much a colonist is affected by psychic phenomena.
+
+{| {{STDT| sortable c_08 }}
+! Name
+! Description
+! Effect
+! [[Traits#Starting_possessions|Possessions]]
+|- id="Psychically hypersensitive"
+! Psychically hypersensitive
+| NAME's mind is like a psychic tuning fork. S/He is extremely sensitive to psychic phenomena.
+| {{Up|+80%}} [[Psychic Sensitivity]]
+| 1 [[psychic foil helmet]]
+|- id="Psychically sensitive"
+! Psychically sensitive
+| NAME's mind is unusually sensitive to psychic phenomena.
+| {{Up|+40%}} [[Psychic Sensitivity]]
+| 1 [[psychic foil helmet]]
+|- id="Psychically dull"
+! Psychically dull
+| NAME's mind is psychically out of tune with others. S/He isn't as affected by psychic phenomena.
+| {{Down|-50%}} [[Psychic Sensitivity]]
+| -
+|- id="Psychically deaf"
+! Psychically deaf
+| NAME's mind works on a psychic frequency different from everyone else. S/He just isn't affected by psychic phenomena.
+| {{Down|-100%}} [[Psychic Sensitivity]]
+| -
+|-
+|}
+
+=== Immunity ===
+These traits influence how often colonists are infected by a disease.
+
+{| {{STDT| sortable c_08 }}
+! Name
+! Description
+! Effect
+! [[Traits#Starting_possessions|Possessions]]
+|- id="Super-immune"
+! Super-immune
+| NAME has a naturally powerful immune system. S/He will gain immunity much faster than a normal person would, and can survive illnesses that would kill others.
+| [[Immunity Gain Speed]] {{+|30%}}
+| -
+|- id="Sickly"
+! Sickly
+| NAME has an awful immune system. S/He gets sick more often than usual, frequently with illnesses that nobody in the colony has been afflicted by.
+| [[Medical|Medical skill]] {{+|4}}<br><!--
+-->{{Bad|Randomly catches diseases independently from rest of the colony}}, with an MTB of 30 days. The caught disease is one that can be randomly acquired in the current biome, using the same weighting system as normal random disease incidents.
+| 2-5 [[medicine]]<br><!--
+-->5-10 [[penoxycyline]]
+|-
+|}
+
+== Creepjoiner traits ==
+{{Anomaly|section=1}}
+These traits are never randomly assigned to pawns. They are normally found on [[creepjoiner]]s, and therefore have powerful positive or negative effects to balance out the other strengths and weaknesses creepjoiners have.
+
+=== Positive traits ===
+These traits are considered benefits, to compensate whatever mysterious downside haunts the creepjoiner.
+
+{| {{STDT| sortable c_08 }}
+! Name
+! Description
+! Effect
+|- id="Perfect memory"
+! Perfect memory
+| NAME has outstanding memory, both in terms of retaining information but also muscle memory. His/Her skills will never decay.
+| Skills cannot decay<br><!--
+-->Always and only spawns on creepjoiners with the "Perfect Human" benefit, which also comes with the Industrious trait and a starting level of 14-18 for each skill.
+|- id="Occultist"
+! Occultist
+| NAME has deep knowledge of the twisted patterns of dark psychic energy. S/He can study unnatural entities faster than others. S/He will also periodically teach this inhuman knowledge to others when s/he gets the chance.
+| [[Study Efficiency]] {{+|100%}}<br><!--
+-->[[Entity Study Rate]] {{+|50%}}<br><!--
+-->Can perform an "occult teaching" random social interactions, giving +1 dark research. This has a cooldown of 1 day; when off cooldown, it will always be the next random social interaction chosen.
+|- id="Joyous"
+! Joyous
+| NAME has the ability to make everyone feel better and inspire them to be the best version of themselves.
+| {{+|20}} opinion from other pawns<br><!--
+-->While not imprisoned or enslaved, {{+|3}} mood to all other non-prisoner colonists on the same map who are not currently in a mental break. The effect does not stack even if there are multiple Joyous pawns present. Pawns not of the player's faction cannot receive the mood buff. A Joyous pawn will not grant its mood bonus to anyone it is currently hostile to.<br><!--
+-->Always and only spawns on creepjoiners with the "Joybringer" benefit, which precludes the "Disturbing" downside.
+|- id="Body mastery"
+! Body mastery
+| NAME doesn't have basic needs like eating, sleeping, or comfort. His/Her body is driven by some unknown mechanism, which has turned his/her eyes completely white.
+| [[Saturation|Food]], [[Sleep]], and [[Comfort]] needs disabled.
+* If all pawns in a [[caravan]] have either this trait, a [[circadian half-cycler]],{{RoyaltyIcon}} or the [[never sleep]] gene,{{BiotechIcon}} and they travel without animals, they don't need to [[Caravan#Caravan schedule|stop at night]].
+Note: Because a pawn's mood is partially averaged by their needs, having less needs can render them more prone to mood swings. <br><!--
+-->Eyes are white
+|-
+|}
+
+=== Negative traits ===
+These traits are downsides, meant to counterblance the creepjoiner's powerful benefits. Note that, unlike most other creepjoiner drawbacks, these traits are never hidden; as such, you be assured there are no other nasty surprises waiting for you.
+
+{| {{STDT| sortable c_08 }}
+! Name
+! Description
+! Effect
+|- id="Disturbing"
+! Disturbing
+| NAME is a peculiar person who seems fixated on horrendous ideas. Talking to him/her is often upsetting.
+| {{Bad|-}} ''':''' Only ever selects the "strange chat" type when doing random social interactions, giving {{Thought|desc=OTHER is talking nonsense. Is s/he insane?|label=OTHER rambling|value=-2|multi=0.75|stack=20|duration=1}} to any non-[[hearing|deaf]], non-[[inhumanized]] pawns in 9.9 cells radius. Unlike most other interaction types, strange chats can be performed without an explicit recipient. Non-[[inhumanized]] recipients gain {{Bad|-3}} opinion of the initiator for 1 day. [[Talking]] capacity of 0% prevents rambling.<br><!--
+-->{{Good|+}} ''':''' Gains the [[Psyfocus#Meditation|Morbid]] meditation focus type.{{RoyaltyIcon}}<br><!--
+-->Always and only spawns on creepjoiners with the "Disturbing" downside, which is precluded by the "Joybringer" benefit.
+|- id="Void fascination"
+! Void fascination
+| NAME is strangely intrigued by unnatural entities and is easily enthralled by them.
+| {{Good|+}} ''':''' Negates all mood penalties for: Imprisoned with entity, Monster by my bed<br><!--
+-->{{Thought|desc=Such a magnificent creature. So much mystery. So much power.|label=Captured entity|value=+6|stack=1}} while there is at least one captured entity in the colony<br><!--
+-->Only possible [[Extreme break|extreme mental break]] is [[Mental_break#Entity_liberator|entity liberator]]<br><!--
+-->{{Bad|−}} ''':''' Entity liberation breaks randomly occur with an MTB of 60 days<br><!--
+-->{{Good|+}} ''':''' Gains the [[Psyfocus#Meditation|Void]] meditation focus type, replacing the Artistic meditation focus type if they had it {{RoyaltyIcon}}
+|-
+|}
+
+== Obsolete traits ==
+These are no longer found as-is in the current game version, though many of them have been renamed or reworked into one of the traits found above.
+{| {{STDT| sortable c_03 }}
+! style="width: 100px;" | Name
+! Description
+! style="width: 500px;" | Effect
+! style="width: 100px;" | Conflicting Traits
+! style="width: 100px;" | Fate
+|- id="Prosthophile"
+! Prosthophile
+| NAME feels limited in their feeble human body. NAME often dreams of going bionic.
+| {{+|14}} mood bonus for having a bionic body part<br><!--
+-->{{--|4}} mood penalty for not having a bionic body part
+| Body purist
+| Replaced by [[#Transhumanist|Transhumanist]]
+|- id="Prosthophobe"
+! Prosthophobe
+| NAME believes the human body is limited for a reason. To them, bionic body parts are unethical.
+| {{--|10}} mood penalty for having a bionic body part
+| body modder
+| Replaced by [[#Body purist|Body purist]]
+|- id="Green thumb"
+! Green thumb
+| NAME has a passion for gardening. They get a mood bonus for every plant they sow.
+| {{+|1}} mood bonus from sowing a plant. Stackable up to 20 times.
+| -
+| Removed in Beta 19
+|- id="Tunneler"
+! Tunneler
+| NAME has no need for space. S/He will never feel cooped up or get cabin fever, no matter how long s/he stays indoors.
+| {{Good|+}} ''':''' No Outdoors need
+| -
+| Replaced by [[#Undergrounder|Undergrounder]]
+|- id="Transhumanist" 
+! Transhumanist
+| NAME feels limited in their feeble human body. NAME often dreams of going bionic.
+| {{+|4}} to {{+|13}} [[mood]] bonus for having [[artificial body parts]]<br><!--
+-->{{--|4}} mood penalty for not having an artificial body part<br><!--
+-->{{+|8}} to {{+|40}} opinion of other colonists for each part installed on them
+| [[#Body purist|Body purist]]
+| Replaced by [[#Body modder|Body modder]]
+|}
+
+== Version history ==
+* [[Version/0.0.245|0.0.245]] - Traits hidden as they did nothing.  
+* [[Version/0.7.581|0.7.581]] - Brawler, prosthophile, and more added.
+* [[Version/0.9.722|0.9.722]] - Teetotaller and Chemical Fascination traits added
+* [[Version/0.12.906|0.12.906]] - Greedy, Jealous, Ascetic, Night Owl traits added.
+* [[Version/0.17.1546|0.17.1546]] - Wimp trait added.
+* [[Version/0.19.2009|0.19.2009]] - Undergrounder, Great memory, Tough, Gourmand, Sickly, Quick sleeper traits added
+* [[Version/1.1.0|1.1.0]] - Asexual trait added
+* [[Version/1.2.2719|1.2.2719]] - Fix: Psylink counts as an artificial part for a [[#Transhumanist|transhumanist]].
+* [[Version/1.3.3066|1.3.3066]] - Transhumanist trait renamed to Body Modder. Kind description changed "''NAME is a nice person. They have a tendency to brighten everyone else's day and never insult others.''" -> ''"NAME is an exceptionally agreeable and giving person. S/He never insults others and will sometimes offer kind words to brighten the moods of those around her/him. {PAWN_pronoun} also never judges people by their appearance."''. Undergrounders have a new Need_Indoors, which is increased by spending time indoors, especially inside mountains.
+* [[Version/1.4.3523|1.4.3523]] - Pyromaniacs are happier around fires and get a stacking (up to 4x) mood buff for nearby fires. This includes torches and campfires. “Wimp” trait’s pain shock threshold has been increased from 50% to 60%. [[Ascetic]]s no longer get a negative mood debuff when eating nutrient paste meals. [[Plasmasword]]s and [[persona plasmasword]]s now provide the mood bonus to [[pyromaniac]]s like other incendiary weapons.
+* After [[Version/1.4.3542|1.4.3542]] but pre [[Version/1.5.4062|1.5.4062]] - Chemical Fascination and Interest now only randomly take beer, ambrosia and smokeleaf joints, instead of any drug 
+* [[Version/1.4.3555|1.4.3555]] - [[Xenogenes]] count as artificial enhancements for [[body modder]]s and [[body purist]]s. Fix: Administer drug doesn't display that teetotalers will be unhappy if there is a chemical dependency gene present.
+* [[Version/1.4.3557|1.4.3557]] - Fix typo: "yielding" -> "wielding" in pyromaniac trait description.
+* 1.5 or prior - Pyromaniac thought mood effect reduced from {{+|5}} to {{+|2}} and description changed from ''"It makes me think of flame and fire. I'm so happy"'' to ''"It makes me think of flame and fire. I can't wait to use it."'' New thought added for using a flame weapon.
+* [[Version/1.5.4062|1.5.4062]] - Rebalance brawler trait to offset skill more than mood - mood penalty for using ranged weapon decreased from {{--|20}} to {{--|10}}, shooting accuracy penalty increased from {{--|4}} to {{--|10}}. Added “pyro used fire weapon” thought {{+|8}} mood. Ascetics ignore "Ate without table" thought. Fix: NRE related to pyromaniacs wielding fire weapons.
+* [[Version/1.6.4566|1.6.4566]] - Fix: [[Smoke launcher]], [[EMP launcher]], and [[toxbomb launcher]] were incorrectly marked as incendiary weapons for the purpose of [[pyromaniac]]s.
+* [[Odyssey DLC]] Release- Added [[unique weapon]] traits that count as incendiary weapons for [[pyromaniac]]s.
+* [[Version/1.6.4850|1.6.4850]] - Fix: Possible enumeration error with joyous thought.
+
+[[Category:Characters]]

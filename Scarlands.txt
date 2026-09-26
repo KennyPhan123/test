@@ -1,0 +1,145 @@
+{{Odyssey}}
+{{Infobox biome
+| name = Scarlands
+| image = ScarlandsWide.png
+| type = Biome
+| texture = ScarlandsTexture.png
+| canbuildbase = Yes
+| allowFarmingCamps = Yes
+| animal density = 1.0
+| plant density = 0.4
+| movement difficulty = 1
+| min temperature = -10
+| min rainfall = 600
+| forageability = 1
+| wild plant regrow days = 20
+| disease mtb days = 50
+| max fish population = 0
+| description = Ruins of an ancient city which was destroyed by weapons of mass destruction. Water here is toxic and scaria runs rampant among the animals. Mechanoids lurk among the shattered buildings, waiting to awaken and kill again.
+<!-- weather -->
+| clear = 12
+| fog = 1
+| rain = 2
+| dry thunderstorm = 1
+| rainy thunderstorm = 1
+| foggy rain = 2
+| hard snow = 2
+| soft snow = 2
+| gray pall = 1
+| tox rain = 1
+| overcast = 6
+}}
+'''Scarlands''' is a temperate [[biome]] in RimWorld added by the [[Odyssey DLC]].
+<!-- return BiomeWorker_TemperateForest.Score(tile) + 20f.
+It also requires a noise factor of 0.9, which severely limits how much this biomes is actually selected. That's a psudo-random number generated per cell, the math of which I will not explain.-->
+== Summary ==
+{{Stub|section=1|reason=Pollution integration with Biotech? Address evem if no existent. Also link to toxic water}}
+Scarlands [[biomes]] have multiple unique traits compared to other biomes. All water bodies in Scarlands are toxic, and [[tox rain]] can occur, which will cause [[toxic buildup]] to exposed pawns. Though they share properties such as temperature, growing season, and rainfall with other temperate biomes, scarlands have a significantly lower amount of wild [[plants]] and [[animals]], the latter of which have a 50% chance to spawn with [[scaria]]. Additionally, soil is scarce and [[rich soil]] does not spawn{{Check Tag|Verify}}, which when combined with the lack of food sources makes this biome a challenge to settle in.
+
+Players entering Scarlands will be greeted by a large complex of ancient ruins. Most buildings are empty, though some contain treasures, traps, or dormant [[mechanoid]]s.
+
+In the lists below the number in brackets represents the relative commonality.
+
+=== Flora ===
+<div class="ul-column-width-200">
+{{#ask: [[Type::Plant]] [[Lives In Scarlands::>>0]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Scarlands
+}}
+</div>{{#set:Flora Commonality Sum | {{#expr: {{#ask: [[Type::Plant]] [[Lives In Scarlands::>>0]] | ?Lives In Scarlands = | mainlabel=- | sep=+ }} }} }}{{#set:Grazing Score|{{Grazing Score}} }}
+
+=== Fauna ===
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Scarlands::>>0]] [[Coastal Animal::false]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Scarlands
+}}
+</div>{{#set:Fauna Commonality Sum | {{#expr: {{#ask: [[Type::Animal]] [[Lives In Scarlands::>>0]] [[Coastal Animal::false]] | ?Lives In Scarlands = | mainlabel=- | sep=+ }} }} }}
+
+Additionally, these animals can spawn in coastal maps:
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Scarlands::>0]] [[Coastal Animal::true]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Scarlands
+}}
+</div>
+
+If the map is [[polluted]],{{BiotechIcon}} then the game may choose to spawn in wild animals from this list instead:
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Scarlands (Polluted)::>0]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Scarlands (Polluted)
+}}
+</div>
+
+=== Diseases ===
+Scarlands has a disease {{MTB}} of 50 days. The following diseases can occur in a scarlands:
+{| {{STDT|c_07 sortable}}
+! Disease
+! Commonality{{#set:Disease commonality sum|{{#expr:100+100+100+50+30+30+50+100+100+10}} }}
+|-
+| [[Flu]] || 100{{#set:Flu commonality|100}}
+|-
+| [[Plague]] || 100{{#set:Plague commonality|100}}
+|-
+| [[Malaria]] || 100{{#set:Malaria commonality|100}}
+|-
+| [[Gut worms]] || 50{{#set:Gut worms commonality|50}}
+|-
+| [[Fibrous mechanites]] || 30{{#set:Fibrous mechanites commonality|30}}
+|-
+| [[Sensory mechanites]] || 30{{#set:Sensory mechanites commonality|30}}
+|-
+| [[Muscle parasites]] || 50{{#set:Muscle parasites commonality|50}}
+|-
+| [[Flu#Animals|Animal flu]] || 100{{#set:Animal flu commonality|100}}
+|-
+| [[Plague#Animals|Animal plague]] || 100{{#set:Animal plague commonality|100}}
+|-
+| [[Organ decay]] || 10{{#set:Organ decay commonality|10}}
+|}
+
+=== Fish ===
+Water bodies spawned inside of scarlands do not contain fish.
+
+== Analysis ==
+{{Stub|section=1|reason=More detail, strategies, and general cleanup needed}}
+The Scarlands present a unique risk/reward dilemma. 
+
+The risk is the hostile enviorment. Much of the arable soil is replaced with tile, there are no naturally grown trees or edible plants, and the few animals that exist are often infected with [[scaria]]. Additionally, while the buildings can provide shelter and resources, they also can contain deadly [[mechanoids]] and [[hunter trap]]s that can easily kill or cripple unprepared colonists. If the [[Biotech DLC]] is active, [[pollution]] will be present in the Scarlands. This pollution causes acidic smog every ~200 days, inflicts the [[toxic buildup]] debuff on unmasked colonists, slows plant growth, and taints the water.
+ 
+The reward is what you can scavenge. The buildings can be used for free shelter to settle into from day one, and contain valuables like [[component]]s, [[steel]], and [[chemfuel]] scattered throughout. The Scarlands also offer an interesting shift from typical gameplay. Instead of building a base from scratch, the base becomes a "fixer-upper" project, which can be novel and rewarding for some players.
+
+In terms of strategy, a player’s biggest concern in the early game is food. Due to the low-fertility soil, [[potatoes]] (or [[toxipotatoes]], depending on the level of [[pollution]]) are a player’s best crop, as they grow independently from soil fertility. Players will have to rely on trade, raiding, or cannibalism while waiting for crops to grow. Maddened animals will hunt pawns often, so have good quality weapons, armor, and well-placed traps as soon as possible. Furthermore, ranged weapons are recommended over melee for the distance between pawns and [[scaria]]-infected animals in combat.
+
+Overall, the Scarlands offer unique challenges and rewards compared to other biomes; however, survival can prove overwhelming for new or learning players.
+
+== Gallery ==
+<gallery>
+ScarlandsWide.png|A scarlands
+ScarlandsPolluted.png|A [[polluted]] scarlands {{BiotechIcon}}
+Scarlands.jpg|A fully generated scarlands
+ScarlandsTexture.png|Scarlands's texture on the world map
+</gallery>
+== Version history ==
+* [[Odyssey DLC]] Release - Added. 
+
+{{nav|biomes|wide}}
+[[Category:Biomes]]
+[[Category:Temperate Biomes]]

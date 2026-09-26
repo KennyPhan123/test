@@ -1,0 +1,74 @@
+{{Infobox main|resource
+| name = EMP shell
+| image = Shell emp c.png
+| description = A shell filled with batteries and antennas, for generating an electromagnetic pulse when detonated. Electromagnetic pulses temporarily disable electrical devices and mechanoids. Can be fired from mortars or installed as a trap. Explodes when damaged.
+| type = Crafted resources
+| type2 = Mortar shell
+| tech level = Industrial
+| path cost = 14
+| stack limit = 25
+| beauty = 
+| flammability = 1.0
+| marketvalue = 55
+| mass base = 1.25
+| hp = 60
+| deterioration = 1.5
+| damage = 50
+| damage type = EMP
+| velocity = 41
+| blastRadius =  8.9
+| skill 1 = Crafting
+| skill 1 level = 4
+| work to make = 800
+| production facility 1 = Machining table
+| research = Microelectronics
+| resource 1 = Steel
+| resource 1 amount = 15
+| resource 2 = Component
+| resource 2 amount = 2
+| defName = Shell_EMP
+| thingCategories = MortarShells
+| tradeTags = MortarShell
+| page verified for version = 1.3.3066
+}}
+The '''EMP shell''' is a type of [[mortar shell]] that upon exploding, releases an [[EMP]] burst.
+
+== Acquisition ==
+{{Acquisition}} The steel cost is increased to 25 if the [[Classic mortars]] difficulty option is enabled.
+
+They can also be purchased from [[traders]].
+
+== Summary ==
+[[File:EMP shell radius.jpg|250px|thumb|left|From smallest to largest, the radius of the shell's AoE when fired, when a single shell cooks off, and when an entire stack cooks off.]]
+When fired from a mortar, EMP shells deal {{P|Damage Base}} [[Damage types#{{P|Damage Type}}|{{P|Damage Type}}]] damage in a {{P|Blast Radius}} tile radius, stunning [[mechanoid]]s, [[turret]]s, [[generator]]s and other mortars for 25 seconds, and instantly but temporarily downing [[shield belt]]s, [[low-shield pack]]s,{{RoyaltyIcon}} [[mech low-shield]]s,{{RoyaltyIcon}} and [[mech high-shield]]s.{{RoyaltyIcon}}
+
+After being stunned, mechanoids become 'Adapted' and gain immunity against further stuns for {{Ticks|2200}}. Immunity is applied on stun, and will not be extended by stunning an adapted or already stunned mechanoid.
+
+When damaged beyond 70% of its health, it will explode after between {{Ticks|30}} and {{Ticks|60}}, dealing 50 [[Damage Type#EMP|EMP]] damage in a radius around itself. The radius depends on the quantity in the stack, with a single shell covering a 11.9 tile radius, and expanding this radius proportional to the square root of the stack size times 0.4 up to a maximum radius of {{#expr: 11.9+((24*0.4)^0.5) round 2}} tiles at a full stack of 25.
+
+== Usage ==
+EMP shells can be used in the following recipes:
+{{Ingredient List|noCollapse=true}}
+
+== Analysis ==
+It is a niche weapon that is extremely good at whatever it does- downing shields and stunning mechanoids. Its blast radius is much larger than regular [[high-explosive shell]]s, so only a few shells are required per barrage. Because of this, it finds good value even though it deals no physical damage whatsoever. Given that, as well as its combat effectiveness, it is a very cost-efficient choice - despite requiring components to make.
+
+EMP shells are required to down [[mech high-shield]]s{{RoyaltyIcon}} from a distance, so that other mortars can fire. The shield stun isn't enough for the same mortar to fire an EMP shell, then fire a mortar shell. Therefore, 2 (or more) separate mortars must be used together, with the EMP shell firing slightly before the others.
+
+The radius from an exploding EMP shell is significantly larger than that of a fired EMP shell. Depending on the purpose, placing a single shell and causing it to explode may be more efficient than firing it from a mortar.
+
+== Gallery ==
+<gallery>
+Shell emp a.png|One EMP shell
+Shell emp b.png|Partial stack
+Shell emp c.png|Full stack
+ShellEMP.png|Projectile
+</gallery>
+
+== Version history ==
+* [[Version/0.18.1722|0.18.1722]] - Added to replace mortar type system.
+* 1.1 - crafting cost was increased (20 --> 25 steel, 1 --> 2 components).
+* [[Version/1.3.3066|1.3.3066]] - Steel requirement decreased from 25 -> 15 unless Classic Mortar difficulty option enabled.
+
+{{Nav|security|wide}}
+[[Category: Mortar shells]]

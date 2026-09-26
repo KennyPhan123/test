@@ -1,0 +1,91 @@
+{{Odyssey}}
+{{Stub|reason=Infobox stats: passability, pathcost, blocks wind, and if applicsble  light stats - if no light, mention on page because it looks glowy }}
+{{infobox main|plant
+| name = Archean tree
+| image = ArcheanTree.png
+| description = A tree bioengineered to terraform deadworlds and early-stage rimworlds. The tree hosts a special microbial community in its roots which enriches nearby terrain into rich soil. The trees are hardy enough to survive in the vacuum of space and produce a small amount of oxygen.<br>Archean trees are sterile, preventing them from becoming an invasive species after terraforming has been completed. They can only be grown from seeds produced on glitterworld planets. The tree's delicate root system prevents it from being replanted.
+<!-- Base Stats -->
+| type = Plant
+| type2 = Tree
+| hp = 250
+| beauty = 6
+| beauty outdoors = 6
+| cover = 0.25
+| grow days = 30
+| flammability = 1
+| lifespanDaysPerGrowDays = 0
+| nutrition = 1.15
+| minifiable = false
+| product = wood
+| yield = 30
+| harvest work = 1000
+| min fertility = 0
+| fertility sensitivity = 0
+| sow work = 400
+| min grow light = 0
+| pollution = any
+<!-- Technical -->
+| tags = 
+<!-- Wiki -->
+| page verified for version = 1.6.4633
+}} 
+The '''archean tree''' is a [[tree]] added by the [[Odyssey DLC]] that converts nearby [[terrain]] into [[rich soil]], and generates oxygen in a [[vacuum]].  
+
+== Growing ==
+Archean trees cannot be grown in [[growing zone]]s like traditional trees, and instead require [[archean seed]]s to be planted. These seeds can be found in containers nearby to live archean trees found on asteroids, as well as in ruins on the planet surface or while fishing.
+
+Archean trees heal slowly over time, restoring 30 {{HP}} per day.
+
+Archean trees may naturally generate on asteroids, as well as in tiles with the [[Landmarks#Archean trees|Archean tree landmark]].
+
+Note that archean tree can't be replanted.
+
+== Summary ==
+Archean seed can be planted on any natural floor and can have roof built on top. Since it does not require light to grow or survive it can be planted in [[glowforest]]s or under a [[sun blocker]].{{RoyaltyIcon}} They allow for the conversion of solid rock floor to fertile soil, but cannot convert ice and cannot be planted on ice.
+
+Every {{ticks/gametime/hours|1250}}, the tree will convert a nearby tile to fertile soil. The tree will convert the area of a 13x13 box with 6 tiles missing from each corner to form a circular area. Each tree can convert up to 145 tiles (144 if you don't chop down the tree itself). It takes a single tree just over 3 days to finish converting its entire area to fertile soil.
+
+Tiles converted by the tree are permanently changed and will remain if the tree is chopped or dies in some other manner.
+
+Every {{ticks|250}}, an archean tree lowers the [[vacuum]] percentage of its current [[room]]. The room must be enclosed by [[airtight]] structures and [[roof]]ed. It changes the vacuum percentage at a base rate of {{Down|-0.5%}} per second per 100 tiles, scaling proportionally to the number of tiles enclosed; for instance, a room with 25 tiles will reduce the vacuum percentage by {{Down|-2%}} per second, while a room with 200 tiles will drop by {{Down|-0.25%}} per second. Multiple oxygen sources may be required to pressurize especially large rooms.
+
+<gallery>
+ArcheanTreeVsSunlamp.png|Archean Trees cover a larger area than a sunlamp.
+</gallery>
+
+== Analysis == 
+Archean trees are a way to place fertile soil nearly anywhere on the map, even in a mountain, in [[orbit]], or on an [[extreme desert]]. Their seeds are often not worth selling: they have unique advantages, and colonies who can find them reliably should not have problems generating money. It still has use for colonies with natural soil, due to their ability to place rich soil flexibly. 
+
+===Comparison to hydroponics===
+Archean trees can be used to create a [[greenhouse]] almost anywhere on the map, which can be done by placing a [[sun lamp]] and [[heater]]s once the area has been converted. Compared to [[hydroponics]]:
+*Archean trees are cheaper than a full hydroponics setup (costing {{Required Resources|Hydroponics basin|24}} and {{#expr:{{Q|Hydroponics basin|Power Consumption}}*-24}} W of power), so trees can save resources and help with [[wealth management]]. However, archean seeds are rare before colonists can safely explore space, while hydroponics can be researched as soon as Electricity is unlocked.
+*If in [[orbit]], archean trees will remove vacuum.
+*Hydroponics can ''not'' grow [[devilstrand]], while any type of soil can.
+*Hydroponics can be placed on a [[gravship]] while archean trees can't.
+*Hydroponics have double the fertility, so they are more space-efficient and are thus easier to defend.
+
+Overall, archean trees are a cheap and [[wealth]]-efficient way to create a greenhouse in an area without soil (e.g., mountain, [[extreme desert]]), provided that the seeds can be obtained in a timely manner. Hydroponics can be established earlier and more reliably, and are the only means of growing on a gravship. If there is plenty of soil around then neither archean trees or hydroponics are strictly necessary. Lategame colonies that don't care about resources or wealth will prefer hydroponics (outside of devilstrand farming) for its space efficiency.
+
+== Trivia ==
+The Archean was the geological period of earth's history where the earliest known life existed, the events of the approximately 1500 million year period including the unknown origin(s) of life, the proliferation of chemotrophic organisms across the previously barren oceans, evolution and spread of cyanobacteria, theorized emergence of the first continents, and eventually oxygen-based photosynthesis.
+
+Despite having a growing time and light growth requirement, all planted archean trees start simultaneously at full size and harvest yield while remaining at 0% growth permanently. This is reflected in their background as designed terraforming life, induced to reproduce only in unknown glitterworld conditions.
+
+== Gallery ==
+<gallery>
+File:ArcheanTree.png|Fully converted
+File:ArcheanTree_Leafless.png|Incomplete
+File:StumpSmashedArcheanTree.png|Smashed stump
+File:StumpChoppedArcheanTree.png|Chopped stump
+</gallery>
+
+== Version history ==
+* [[Odyssey DLC]] Release - Added.
+* [[Version/1.6.4528|1.6.4528]] - Fix: Archaen{{sic}} tree was able to be planted on floors.
+* [[Version/1.6.4543|1.6.4543]] - Archean trees no longer terraform ice.
+* [[Version/1.6.4566|1.6.4566]] - Archean trees now self-heal like other special trees. Fix: Adjust archean tree shadow.
+* [[Version/1.6.4850|1.6.4850]] - Fix: Archean tree missing snowy overlay.
+
+{{Nav|plant|wide}}
+[[Category:Plants]]
+[[Category:Trees]]

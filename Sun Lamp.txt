@@ -1,0 +1,93 @@
+{{See also|Standing lamp}}
+{{Infobox main|furniture
+| name = Sun lamp
+| image = LampSun.png
+| description = An industrial lamp which lights an area brightly enough to grow crops, but consumes a huge amount of power. Automatically turns itself off at night.
+| type = Building
+| type2 = Furniture
+| placeable = true
+| path cost = 14
+| passability = pass through only
+| blockswind = true
+| cover = 0.2
+| minifiable = true
+| size = 1 ˣ 1
+| mass base = 4.5
+| flammability = 1
+| hp = 50
+| sell price multiplier = 0.7
+| power = -2900
+| glowradius = 14
+| glowcolor = (370, 370, 370)
+| heatpersecond = 3
+| terrain affordance = light
+| research = Electricity
+| thingCategories = BuildingsFurniture
+| work to make = 330
+| resource 1 = Steel
+| resource 1 amount = 40
+| destroyyield = nothing
+}}
+'''Sun lamps''' provide artificial light in the absence of sunlight, such as an indoor [[growing zone]].
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+[[File:Sun lamp illumination area.png|300px|thumb|left|The inner gray area (5 tiles out) is 100% illumination, able to grow all crops; the white (6-10 tiles) is 50% illumination, required for best [[Surgery Success Chance Factor|surgery success chance]]; the yellow (11th tile) represents 30% or better, adequate for all general labor, avoiding [[mood]] penalties, and for growing [[Decorative Plants|decorative plants]] indoors in [[plant pot]]s.]]
+A sun lamp consumes {{#expr:-{{P|Power Consumption #}}}} W of [[power]] from 06:00 to 19:12, the period where plants can grow. While online, it provides 100% [[light]] within a 5.5-tile radius. This provides 100 tiles with sufficient light to grow.
+
+This allows [[crop]]s like [[rice plant]]s to grow in a [[roof]]ed room. As the natural sun doesn't always provide 100% light at day, a sun lamp causes plants to grow somewhat faster. They also provide at least 30% light in an {{p|Light Radius}} tile radius, which is enough to prevent penalties for being in darkness.
+
+Due to RimWorld's [[temperature]] mechanics, an enclosed room with a mostly complete [[roof]] is required to actually heat or cool an area.  Lamps themselves give a marginal amount of heat, 3 heat per second. 
+
+Currently there is a bug that lets uninstalled sun lamps produce heat during the normal hours they would be on (06:00 to 19:12). This can lead to a dangerously hot room if a lot of them are left in the room. 
+
+[[Rain]] or [[snow]] on a powered sun lamp will cause [[short circuit]]s and [[fire]]s. A roof will prevent this.
+
+== Analysis ==
+[[File:Optimal_sunlamps.png|225px|left|thumb|An efficient pattern to fit multiple sun lamps together. There are 10 empty tiles per sun lamp, half as many as in a simple grid pattern.]]
+A sun lamp's main purpose is to create growing zones indoors, often called greenhouses. This allows plants to grow in the winter, when used with a [[heater]]. In extremely hot [[biome]]s, you might need coolers to grow during the summer. Even in a "year-round" growing season, unpredictable events such as [[Events#Toxic_fallout|toxic fallout]] and [[Events#Volcanic_winter|volcanic winter]]s can disrupt plant growth. Double-width walls provide more insulation against temperature changes, and potentially save on heater/cooler costs.
+
+[[Events#Solar flare|Solar flares]] will cut the power, so prepare a [[shelf]] with emergency wood to build [[campfire]]s to keep the room temperature above {{Temperature|-10}} (below which most plants will rapidly die).
+
+As they cannot be grown under roofs, trees such as pine, birch, saguaro or cocoa trees may not be grown in a completely closed greenhouse.  They may only be grown in a greenhouse with roofs removed in a grid pattern. As this roof design will let in sufficient natural sunlight in most biomes, there is generally no need to place a sun lamp inside tree greenhouses. Be aware that this style of greenhouse leaks a lot of temperature-controlled air.
+<div style="clear:left></div>
+
+=== Power ===
+If you have [[Biofuel refinery|biofuel refineries]] available, you can use food produced by hydroponics to fuel [[Chemfuel powered generator|chemfuel generators]] to help power the greenhouse array. This is so efficient that it violates thermodynamics, and leaves you with spare food for your colonists as well.
+
+As sun lamps turn off at night, they consume an average of {{#expr: -(0.8-0.25)*{{P|Power Consumption #}}}} W⋅Days. [[Batteries]] can be used to average out power usage. However, batteries only take in energy at a 50% rate, effectively meaning double the power is required at night, for a required power generation of {{#expr: -floor(2*(0.8-0.25)/(1+0.8-0.25)*{{P|Power Consumption #}})+10}} W⋅Days assuming 100% consistent power generation and a single battery with a passive loss of -5W⋅Days per day. As this only requires {{#expr: -((0.8-0.25)*{{P|Power Consumption #}})*(1-0.8+0.25)*0.5/(1-0.5*(1-0.8+0.25)) round 1}} W⋅Days of storage and a battery holds 600 W⋅Days, fewer batteries and infinitesimally less generation is needed when multiple sun lamps are supported. 
+
+Otherwise, 2 [[solar generator]]s are more than enough to power a single sun lamp in equatorial regions, not counting any hydroponics basins.
+
+=== Hydroponics ===
+[[File:SunlampHydroponics.png|200px|thumb|left|96% hydroponics, tightly nested together.]]
+
+You can grow crops indoors with or without [[hydroponics basin]]s. It is more cost effective to grow on soil, assuming you have soil available.
+
+* The 24 hydroponics basins would cost {{Required Resources|Hydroponics basin|24}} for a total of 2.8 sun lamp's worth of growth. This does not count the extra 1680 W of power required for those basins.
+* You could instead make and power 2 more sun lamps. 4 [[solar generator]]s are enough to power those lamps, and would only cost {{Required Resources|Solar generator|4}}. Even when considering [[batteries]], [[heater]]s, and the {{Icon Small|steel}} 80 for sun lamps themselves, making ''more'' sun lamps is more efficient than building hydroponics for 1.
+
+If your only goal is to grow crops during the winter, then placing multiple sun lamps without hydroponics is more resource efficient than using hydroponics. However, the lamps would end up taking up more space. Therefore, hydroponics are best used when growing space is limited, like inside a mountain or in an [[biomes#Ice sheet|ice sheet]]. 
+
+In the late game, hydroponics have a few advantages. Due to their reduced space, it takes less travel time, which makes work more efficient and defense easier. They take up less power per tile, too. When you have access to [[deep drill]]s and [[fabrication bench|fabrication]], you can easily afford the steel and component cost.
+{{Clear}}
+
+== Version history ==
+* [[Version/0.17.1546|0.17.1546]] - Now turn themselves off when plants are resting. 
+* [[Version/1.2.2753|1.2.2753]] - Fix: [[Gloomlight]] would prevent a sun lamp from producing "brightly lit" cells within the radius of the Gloomlight. Due to: the glowColor of the Gloomlight not having an explicit alpha of zero. It now correctly ignores the alpha from the xml.
+* [[Version/1.3.3117|1.3.3117]] - Fix: Sunlamp does not trigger blinding light for [[Darkness (meme)|Darkness]]{{IdeologyIcon}} pawns.
+* [[Version/1.5.4062|1.5.4062]] - Fix: Sunlamps do not have perfect area of effect leading to rotting crops. This had the effect of creating an unreported change to sun lamp lit radius, increasing it, without increasing the displayed radius when constructing the lamp. 
+* [[Version/1.5.4104|1.5.4104]] - Fix: Sunlamp light radius inaccurate. This reverts the above change.
+
+<gallery>
+Sun lamp grow radius.png|Between 1.5.4062 and 1.5.4194 Radius of light sufficient to grow. Displayed radius shown in [[sterile tile]], tiles where plants can be grown outside of the radius shown in [[gold tile]]
+New sun lamp optimal with no wasted hydro spots.png|Between 1.5.4062 and 1.5.4194 Maximum hydroponics basins without having basin slots unlit.<br>(25 basins, 100 growing tiles, 0 unlit basin slots, 20 lit tiles unused)
+new sun lamp optimal with wasted hydro spots.png|Between 1.5.4062 and 1.5.4194 Minimum number of hydroponics basin slots left unlit without leaving lit area unused.<br>(32 basins, 120 growing tiles, 8 unlit basin slots, 0 lit tiles unused)
+</gallery>
+
+{{Nav|furniture|wide}}
+
+[[Category:Furniture]] [[Category:Lamp]]
+[[Category:Food Production]]

@@ -1,0 +1,132 @@
+{{Odyssey}}
+{{Stub|reason=General, also specifically stack limit.}}
+{{About|the drug|the plant from which it is harvested|Psilocap (plant)}}
+{{Infobox main|drug
+| name = Psilocap
+| image = Psilocap b.png
+| description = The fruiting body of a hallucinogenic fungus. When eaten it produces vivid sensory experiences and lifts mood. There is a small chance to immediately induce a catatonic state, or creatively inspire the user. Psilocaps are not addictive, but can cause overdoses if eaten in large quantities.<br>Some cultures use psilocaps for religious ceremonies, while many others have outlawed the mushrooms entirely.
+<!-- Base Stats -->
+| type = Drug
+| type2 = Social drug
+| tech level = Neolithic
+| marketvalue = 10
+| stack limit = 
+| mass base = 0.1
+| beauty = -4
+| hp = 50
+| deterioration = 4
+| flammability = 1
+| rotatable = false
+| path cost = 14
+<!-- Ingestion -->
+| food type = vegetable
+| nutrition = 0.1
+| days to rot = 30
+| joy offset = 0.7
+| joy kind = Chemical
+| addictiveness = 0
+| max num to ingest at once = 1
+| ingestion time = 80
+<!-- Technical -->
+| defName = Drug_Psilocap
+| drug category = Social
+| preferability = Desperate
+}}
+'''Psilocap''' is a [[social drug]] added by the [[Odyssey DLC]] that after consumption can either cause [[Inspired creativity|creative inspiration]] or [[catatonic breakdown]]. 
+
+== Acquisition ==
+Can be harvested by cutting wild psilocap plants. These plants appear in Glowforest biome and in underground insect nests.
+
+== Summary ==
+Psilocap is a moderately potent mood enhancing social drug. Its effects can be broken into effects that occur:
+* Instantaneously and one time upon using the drug.
+* While high on the drug.
+* While having a built-up tolerance to the drug.
+
+=== Upon ingestion ===
+{{Stub|section=1|reason= LetterInspirationBeginPsilocap, mentalbreakreason_psilocap}}
+A pawn eating a psilocap will look for a place to sit in a four tile radius first, but will also eat it while standing if it doesn't find one. Eating a psilocap takes {{Ticks|{{P|Ingestion Time}} }}. It has the following one time effects:
+
+* {{+|{{%|{{P|Joy Offset}} }} }} {{P|Joy Kind}} [[recreation]]
+* {{+|{{P|Nutrition}} }} [[Nutrition]]
+* If the pawn has the [[chemical interest]] or [[chemical fascination]] trait:
+** {{+|20%}} [[Chemical need]]
+* '''+{{%|{{#vardefineecho:highSeverity|0.6}} * 0.25}} to +{{%|{{#var:highSeverity}} }}''' Psilocap high severity, depending on tolerance ''(see "Psilocap high" below)''
+* {{++|{{%|{{#vardefineecho:toleranceSeverityOffset|0.04}} }} }} [[Drugs#Tolerance|Tolerance]] severity, divided by body size ''(see "Tolerance" below)''
+* A {{Bad|1%}} chance of a [[Mental_break#Catatonic_breakdown|catatonic breakdown]]
+* A {{Good|2%}} chance of a random [[Mental_inspiration|inspiration]].{{Check Tag|Which?|Desc says "creative", verify what types of inspiration it can cause}}
+
+=== Psilocap high ===
+{{Stub|section=1|reason=Inspiration/catatonia mechanics are not currently implemented, but have been added to the unstable. To be added once moved to stable <!--Current mechancis per unstable: Side effects are ONLY rolled immediately at time of ingestion. 4% chance of catatonia, 6% chance of inspiration. There's a psilocap-specific letter for each outcome-->}}
+{{Recode|section=1|reason=Times until and from}}
+{{Quote|"Chemicals from psilocap spores, possibly inhaled from the air, are causing this person to experience subtle hallucinations that distort their perception of reality."|Psilocap high description}}
+
+Each psilocap increases the psilocap high severity by the following formula:
+
+<code>Increase in severity = {{#var:highSeverity}} * (100 - (tolerance * 75 round 0))</code>
+
+Therefore with 0% tolerance the severity increases by {{%|{{#var:highSeverity}} }}, with 100% tolerance by {{%|{{#var:highSeverity}}*0.25}}. It decreases by {{%|{{#vardefineecho:highSeverityPerDay|1.92}} }} per day again, meaning that the high of a single dose lasts between {{#vardefineecho:highDurationMin|{{#expr: {{#var:highSeverity}}*0.25/({{#var:highSeverityPerDay}}/24)}} }} and {{Plural|{{#vardefineecho:highDurationMax|{{#expr: {{#var:highSeverity}}/({{#var:highSeverityPerDay}}/24)}} }}|hour}}. The maximum severity of an psilocap high is 100% which is reached with {{#expr: 1/{{#var:highSeverity}}  round 2}} to {{#expr:1/{{#var:highSeverity}}/0.25 round 2}}&nbsp;psilocaps. The psilocap high severity not only sets the length of the high but also affects the symptoms. 
+
+{| class="wikitable"
+|-
+! Level !! Severity range !! Mood !! Effects
+|-
+! Minor
+| 0% - 24% 
+| {{Thought|desc=My emotions feel stronger and warmer.|label=psilocap hallucinations|value=+5|stack=1}} 
+| 
+* {{Bad|x90%}} [[Consciousness]]
+|-
+! Moderate
+| 25% - 84%
+| {{Thought|desc=All my senses seem to blend together. Everything is connected...|label=psilocap hallucinations|value=+14|stack=1}} 
+| 
+* {{Bad|x70%}} [[Consciousness]]
+* {{Bad|-20%}} [[Global Work Speed]]
+|-
+! Extreme
+| 85% - 100%
+| {{Thought|desc=My mind is open. I feel everything. I am the universe.|label=psilocap hallucinations|value=+24|stack=1}} 
+| 
+* {{Bad|35% Max}} [[Consciousness]]
+* {{Bad|-50%}} [[Global Work Speed]]
+|}
+
+Without any tolerance, a dose of psilocap will last for {{Plural|{{#vardefineecho:highDurationMax|{{#expr: {{#var:highSeverity}}/({{#var:highSeverityPerDay}}/24)}} }}|hour}}.
+
+=== Tolerance ===
+{{Main|Tolerance}}
+{{Quote|"An acquired tolerance to psilocap. The more severe this tolerance is, the more psilocap it takes to get the same effect."|Tolerance description}}
+Each psilocap consumed increases the tolerance of the pawn by the following formula:
+
+<code>Increase in tolerance = {{%|{{#var:toleranceSeverityOffset}} }} / body size</code>
+
+Thus smaller or not fully grown pawns gain more tolerance per drug use then bigger or fully grown ones. An adult [[human]] has a body size of {{Q|Human|Body Size}}. Tolerance decreases at a rate of {{%|{{#vardefineecho:toleranceSeverityPerDay|0.02}} }} per day.
+
+See the ''"Psilocap high"'' section for how tolerance affects psilocap high severity. Otherwise tolerance against psilocap has no ongoing effects.
+
+=== Addiction ===
+Psilocap is not addictive, and will never cause addiction even at 100% tolerance.
+
+== Analysis ==
+Its appearance in [[hive queen]]'s cave is a subtle hint of its purpose. As suggested in the description, getting high all day on psilocap is a healthy way to farm for inspiration instead of [[yayo]] or [[beer]]. With a variety of legendary animals like [[alpha thrumbo]] and [[hive queen]] to tame, stock of psilocap will help a lot to get the taming inspiration needed.
+
+Psilocaps provide a powerful but risky option for managing moods and pawns with chemical interests/fascinations. All psilocap use comes with a consciousness penalty which reduces all pawn capabilities, and the 1% chance of a catatonic breakdown on use means that setting drug policies that allow pawns to take psilocaps on their own initiative might be a bad idea.
+
+=== Trade ===
+?
+
+== Gallery ==
+<gallery>
+Psilocap a.png|One psilocap
+Psilocap b.png|Stack of psilocap
+</gallery>
+
+== Version history ==
+* [[Odyssey DLC]] Release - Added.
+* [[Version/1.6.4528|1.6.4528]] - When consumed, psilocaps now correctly have a small chance to inspire colonists or induce a catatonic state, matching their in-game description. Previously, no such mechanic existed.
+* [[Version/1.6.4535|1.6.4535]] - Reduced psilocap catatonic breakdown chance from 4% to 1% and psilocap creative inspiration chance from 6% to 2%.
+* [[Version/1.6.4850|1.6.4850]] - Fix: Incorrect psilocap graphics. Previously the graphic was selected at random, instead of being based on the amount in the stack.
+
+{{Nav|drugs|wide}}
+[[Category:Drug]] [[Category:Social Drug]]

@@ -1,0 +1,113 @@
+{{infobox main|security
+| name = Barricade
+| image = Barricade.png
+| imagesize = 192px
+| description = A waist-high barrier for use as cover from incoming shots. Barricades are ugly, but provide better cover than other low objects. Barricades will block certain kinds of animals the same way that fences do.
+| type = Building
+| type2 = Security
+| placeable = true
+| path cost = 42
+| passability = pass through only
+| cover = 0.55
+| minifiable = false
+| size = 1 ˣ 1
+| flammability = 1
+| hp = 300
+| beauty = -3
+| terrain affordance = depends on materials
+| work to make = 320
+| stuff tags = Metallic, Woody, Stony
+| resource 1 = Stuff
+| resource 1 amount = 5
+}}
+'''Barricades''' can be placed to provide pawns [[cover]], sheltering them from gunfire.
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+{{See also|Sandbags}}
+Barricades provide {{%|{{P|Cover Effectiveness}}}} [[cover]] effectiveness, meaning that bullets aimed at targets behind barricades have a {{%|{{P|Cover Effectiveness}}}} chance to hit the barricades, leaving only a {{%|1-{{P|Cover Effectiveness}}}} chance to hit anything behind them. Cover won't shelter pawns from melee attacks, thrown projectiles, or explosions. Both colonists and [[raider|enemies]] benefit from cover, as do [[turrets]]. They provide identical cover to [[sandbag]]s. 
+
+Barricades are placed on the ground. They slow down pawns walking over them, and do not allow a pawn to "stop" to fire or take cover if they are standing on one.
+They take damage from bullets and explosions.
+
+Barricades are largely interchangeable with [[sandbag]]s, as they both have identical [[cover]], base {{HP}}, and similar material costs. However, sandbags are made of [[textile]]s and are always nonflammable, while barricades are made of [[metal]], [[wood]], and [[stone]] materials and their flammability depends on the material chosen. Sandbags also require much less work to make, but barricades are somewhat more [[beauty|beautiful]]. Unlike sandbags, barricades will also enclose a [[pen]], similar to the [[fence]].
+
+== Analysis ==
+Barricades and sandbags are, in most respects, identical. The material affects the building's health, but not its defensive properties. Barricades are easier to build in the early game, where access to [[textile]]s in bulk quantities is difficult. As they are slightly more beautiful, but require more work to make, they are marginally better at permanent defenses, while sandbags are better when attacking. Just remember that [[raiders]] will use cover to the same effect, so deconstruct unneeded buildings when you can.
+
+Either building can be combined with [[wall]]s for more cover. Walls provide superior cover, but a full wall will block line of fire. Having a wall with a 1-2 tile gap of barricades will give more cover than simply using barricades, while still allowing pawns to fire through.
+
+Barricades can also be used to slow down raiders, as the process of initially vaulting over a barricade slows down pawns. [[Fence]]s are cheaper for this purposes, but barricades do have more HP.
+
+Note that sandbags and barricades can no longer be used to prevent enemies from standing in a specific position; as of 1.6, enemies can now stop and fire while standing on any object. They can still be somewhat effective in causing enemies to path around a position of cover, but if the enemy does path to that cell with the barricade, sandbag or any other object, they can always fire.
+
+== Material table ==
+As barricades and [[sandbags]] are largely interchangeable except for their aesthetics and material properties, both are included in the following table for convenience. 
+
+Note that cover effectiveness is {{%|{{P|Cover Effectiveness}}}} regardless of material or structure choice.
+
+<div><li style="display: inline-table;">
+{| {{STDT|sortable c_01 text-right}}
+! Type
+! Material
+! data-sort-type="number" | Beauty
+! data-sort-type="number" | Work to Build
+! data-sort-type="number" | HP
+! data-sort-type="number" | Flamma&shy;bility
+! Terrain Affordance
+! data-sort-type="number" | Market Value<!--
+-->{{#vardefine:multipleBuildings|true}}<!--
+-->{{#vardefine:beautyFactor|1}}<!--
+-->{{#vardefine:useTerrainAffordance|1}}<!--
+Barricade
+-->{{#vardefine:name         | Barricade}}<!--
+-->{{#vardefine:beauty       | {{formatnum:{{Q|{{#var:name}}|Beauty Base|0}}|R}} }}<!--
+-->{{#vardefine:flammability | {{formatnum:{{Q|{{#var:name}}|Flammability Base}}|R}} }}<!--
+-->{{#vardefine:HP           | {{formatnum:{{Q|{{#var:name}}|Max Hit Points Base}}|R}} }}<!--
+-->{{#vardefine:stufftags    | {{lc:{{Q|{{#var:name}}|Stuff Tags}} }} }}<!--
+-->{{#vardefine:stuffAmount  | {{Q|{{#var:name}}|Resource 1 Amount}} }}<!--
+-->{{#vardefine:value        | {{formatnum:{{Q|{{#var:name}}|Market Value Base}}|R}} }}<!--
+-->{{#vardefine:work         | {{formatnum:{{Q|{{#var:name}}|Work To Make}}|R}} }}<!--
+-->{{#ask: {{#ifeq: | {{#pos:{{#var:stufftags}}|leathery}} || [[Stuff Category::Leathery]] OR}}
+           {{#ifeq: | {{#pos:{{#var:stufftags}}|fabric}}   || [[Stuff Category::Fabric]]   OR}}
+           {{#ifeq: | {{#pos:{{#var:stufftags}}|woody}}    || [[Stuff Category::Woody]]    OR}}
+           {{#ifeq: | {{#pos:{{#var:stufftags}}|stony}}    || [[Stuff Category::Stony]]    OR}}
+           {{#ifeq: | {{#pos:{{#var:stufftags}}|metallic}} || [[Stuff Category::Metallic]] OR}} [[Stuff Category::PLACEHOLDER]]
+    | format = template
+    | template = Building Stats Table Row
+    | link = none
+}}<!--
+Sandbags
+-->{{#vardefine:name         | Sandbags}}<!--
+-->{{#vardefine:beauty       | {{formatnum:{{Q|{{#var:name}}|Beauty Base|0}}|R}} }}<!--
+-->{{#vardefine:flammability | {{formatnum:{{Q|{{#var:name}}|Flammability Base}}|R}} }}<!--
+-->{{#vardefine:HP           | {{formatnum:{{Q|{{#var:name}}|Max Hit Points Base}}|R}} }}<!--
+-->{{#vardefine:stufftags    | {{lc:{{Q|{{#var:name}}|Stuff Tags}} }} }}<!--
+-->{{#vardefine:stuffAmount  | {{Q|{{#var:name}}|Resource 1 Amount}} }}<!--
+-->{{#vardefine:value        | {{formatnum:{{Q|{{#var:name}}|Market Value Base}}|R}} }}<!--
+-->{{#vardefine:work         | {{formatnum:{{Q|{{#var:name}}|Work To Make}}|R}} }}<!--
+-->{{#ask: {{#ifeq: | {{#pos:{{#var:stufftags}}|leathery}} || [[Stuff Category::Leathery]] OR}}
+           {{#ifeq: | {{#pos:{{#var:stufftags}}|fabric}}   || [[Stuff Category::Fabric]]   OR}}
+           {{#ifeq: | {{#pos:{{#var:stufftags}}|woody}}    || [[Stuff Category::Woody]]    OR}}
+           {{#ifeq: | {{#pos:{{#var:stufftags}}|stony}}    || [[Stuff Category::Stony]]    OR}}
+           {{#ifeq: | {{#pos:{{#var:stufftags}}|metallic}} || [[Stuff Category::Metallic]] OR}} [[Stuff Category::PLACEHOLDER]]
+    | format = template
+    | template = Building Stats Table Row
+    | link = none
+}}
+|}
+</li><div>
+
+== Version history ==
+* [[Version/1.1.0|1.1.0]] - Added.
+* [[Version/1.3.3066|1.3.3066]] - Fill percent (i.e. cover) reduced from 57% to 55%.
+
+== See also ==
+* [[Sandbags]]
+* [[Defense tactics]]
+* [[Defense structures#Sandbags|Defense structures]]
+
+{{nav|security|wide}}
+[[Category:Security]]

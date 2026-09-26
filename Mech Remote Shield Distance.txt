@@ -1,0 +1,69 @@
+{{Biotech}}
+{{See also|Mech Remote Shield Energy}}
+{{Verified|1.5.4104}}{{Stat
+| def name = MechRemoteShieldDistance
+| label = mech remote shield distance
+| description = The maximum range at which a [[mechanitor]] can place a [[Remote shielder|shield]] on a [[mechanoid]].
+| default base value = 0
+| min value = 0
+| effective maximum = 19.9
+| show if undefined = false
+| show on animals = false
+| show on humanlikes = true
+| show on mechanoids = false
+| category = Mechanitor
+| display priority in category = 2000
+| worker class = StatWorker_Mechanitor
+}}
+
+== Offsets ==
+* [[Hediffs]]
+** [[Hediffs#Remote shielder|Remote shielder]]<ref>See {{Icon Small|Remote shielder|24}} [[Remote shielder]] (Item)</ref>:
+<div><li style="display: inline-table;">
+{| {{STDT| c_18}}
+! Level !! Offset
+|-
+! 1
+| {{+|7.9}}
+|-
+! 2
+| {{+|13.9}}
+|-
+! 3
+| {{+|19.9}}
+|}</li></div>
+<references />
+
+== Explanation ==
+This stat is only shown on mechanitors (i.e. they have an installed [[mechlink]]). Furthermore, it is only affected by the [[Remote shielder]]. The value is 0 by default and the final value is simply equal to the offset from the current level (installed count) of the ''Remote shielder''. It represents the maximum distance in cells or tiles that a pawn can use the remote shield ability on any mechanoid.
+
+== Stat Def Data ==
+{| {{STDT| c_18}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Mech Remote Shield Distance" <!-- ParentName="MechanitorStatBase" --><!--<StatDef>-->
+|
+* '''Def Name:'''<br />MechRemoteShieldDistance
+* '''Label:'''<br />mech remote shield distance
+| The maximum range at which a mechanitor can place a shield on a mechanoid.
+|
+* Display Order:<br />'''105'''
+* Def Name:<br />'''Mechanitor'''
+* Label:<br />'''Mechanitor'''
+* Display All By Default:<br />{{Good|true}}
+|
+* Worker Class: '''StatWorker_Mechanitor'''
+* Default Base Value: '''0'''
+* Min Value: '''0'''
+* Show On Animals: {{Bad|false}}
+* Show On Humanlikes: {{Good|true}}
+* Show On Mechanoids: {{Bad|false}}
+* '''Show If Undefined:''' {{Bad|false}}
+| -
+| 2000
+<!--</StatDef>-->
+|}
+
+== Version history ==
+* [[Biotech (DLC)]] Release - Added.
+
+{{nav|stats|wide}}

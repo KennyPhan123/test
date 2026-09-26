@@ -1,0 +1,124 @@
+<noinclude>{{stub|reason=Needs detailed numbers on stat penalties. Psycasting. anomaly sources e.g. flesh body parts etc. neural heat buff}}{{About|the stat|the ideoligious precept of the same name|Pain (precept){{!}}Ideoligion}}
+{{Capacity
+| default base value = 1
+| to string style = PercentZero
+| description = How much pain a person feels.
+}}</noinclude>
+<includeonly>:''Main Article: [[Pain]]''</includeonly>
+Most biological creatures including [[colonist]]s, [[raider]]s, and [[animals]] feel pain caused by [[Injury|injuries]].  A pawn's pain level ranges from 0% to 100% and is displayed on their Health tab's Overview. Pain levels are None, Little, Moderate, Severe, and Extreme.{{Check Tag|Detail Needed|What percentage ranges do those names correlate to?}} Even a little pain causes unhappy [[Thoughts list|thoughts]]. Once pain passes 10%, it'll start to have an effect on [[consciousness]]. If a pawn's pain level meets or exceeds their [[Pain Shock Threshold]] they'll go into [[Injury#Shock|shock]], unable to move. Pawns with the [[Wimp]] trait will be incapacitated with only minor pain of 30%.
+
+Most pain is temporary, but [[Injury#Scarring|scars]] and certain [[disease]]s can cause long-term pain.  A [[painstopper]] implant or the [[painblock]] psycast {{RoyaltyIcon}} will get rid of all a colonist's pain and negate any pain-related mood penalties. Note that colonists with the [[Masochist]] trait or an ideoligion with the [[Pain (precept)|Pain: Idealized]] precept{{IdeologyIcon}} get a mood ''bonus'' from pain instead of a penalty, so it's usually better to leave them alone.
+
+Injuries to the [[Artificial body parts|artificial parts]] do not cause any pain, so colonists with a lot of bionics will generally incur less pain during combat.
+
+=== Formula ===
+Pain for a given pawn is the sum of the pain from each individual injury, with two extra steps at the end:
+* <code>pain = pain / healthFactor</code> for pawns with a healthFactor other than 1.0 (like [[grizzly bear]]s and other large animals).  Humans have a healthFactor of 1.0, so this doesn't impact humans
+* <code>pain = pain * painFactor</code> from health conditions which alter pain.  This includes pain-reducing drugs like [[flake]] and [[yayo]] as well as anesthetic used during operations
+
+Pain from an individual injury is the product of the severity of the injury (the number of HP missing for things like cuts and burns) and the pain per severity for the injury type.  For example:
+*30 burn damage causes 30 damage &times; 0.01875 pain per severity = 56.25% pain
+*30 cut damage causes 30 damage &times; 0.0125 pain per severity =  37.5% pain
+
+For the complete table of pain vs damage, see [[Health Difficulties]]
+
+An exceptional kind of injury is scarification. They take the form of 0.5 HP scars, but give either 11% or 4% pain, for a pain factor of 0.08 or 0.22.
+
+=== Thresholds ===
+Pain creates moodlets of different values at 4 stages depending on pain severity.
+
+{| {{STDT|sortable c_10 text-center}}
+! Level !! Required Pain % !! Mood Penalty<br>(Default) !! Mood Buff<br>([[Masochist]]) !! Mood Buff<br>([[Pain (precept)|Pain:Idealized]]{{IdeologyIcon}}) 
+|-
+! Minor
+|  1% || {{--|5}} || {{+|5}} || {{+|3}}
+|-
+! Serious
+| 15% || {{--|10}} || {{+|10}} || {{+|5}}
+|-
+! Intense
+| 40% || {{--|15}} || {{+|15}} || {{+|7}} 
+|-
+! Mind-shattering
+| 80% || {{--|20}} || {{+|20}} || {{+|9}}
+|-
+|}
+
+A standard pawn will go down upon reaching mind-shattering pain.<br>
+Pain inflicts a [[consciousness]] penalty that scales with the pain percentage after exceeding 10%. It conforms to the following equation:
+<code>IF Pain[%] <= 10% THEN -0% ELSE -{(Pain-0.1)/2.25}[%]</code> For example, 15% pain is 0.15 - 0.1 = 0.05 / 2.25 = 0.02 or 2% consciousness loss.
+
+{| class="wikitable"
+! Graph
+|-
+| {{Graph:Chart|width=400|height=100|type=line| xAxisTitle = Pain (%) | yAxisTitle = Consciousness Penalty (%)|x=0,10, 100|y=0, 0, -40|xAxisMin = 0 |  xAxisMax = 100|  yAxisMin = -40 | yAxisMax = 0 |xGrid = |yGrid = }}
+|}
+
+===  Factors ===
+{{Stub|section=1|reason=Many other hediffs cause pain or change pain factors. Also injury mechanics. Also how is PainFactor applied? Is it exactly the same as a post factor for other capacities? Math section on final calculation is needed.}}
+==== Base factors ====
+Factors cause the game code to MULTIPLY pain X a number. Small numbers reduce pain a lot. Large numbers below 100% reduce pain a little.
+
+* [[Painstopper]]: '''×0%'''
+* [[Painless]] persona trait {{RoyaltyIcon}}: '''×0%'''
+* [[Go-juice]]: 
+** High: '''×10%'''
+** Withdrawal: '''×300%'''
+* [[Painblock]] psycast: {{RoyaltyIcon}} '''×10%'''
+* [[Yayo]]: 
+** High: '''×50%'''
+* [[Luciferium]]: 
+** High: '''×80%'''
+* [[Psychite tea]]: 
+** High: '''×90%'''
+* [[Beer]]: (See also [[#Offsets|Offsets]])
+** Warm: '''×90%'''
+** Tipsy: '''×80%'''
+** Drunk: '''×50%'''
+** Hammered: '''×30%'''
+** Blackout: '''×10%'''
+* [[Psychic bonding|Psychic bond]]{{BiotechIcon}}:
+** Psychic bond: '''×50%'''
+* [[Reduced pain]]{{BiotechIcon}}: '''×50%'''
+
+==== Offsets ====
+Offsets cause the game code to ADD OR SUBTRACT a number from the pawn's pain. Small numbers are less effective at reducing pain than large numbers. However, if the pawn only has a small amount of pain, an equally small offset will be totally effective at removing all pain. Positive numbers add pain. Negative numbers reduce pain.
+
+* [[Mindscrew]]: {{++|20%}}
+* [[Sensory mechanites]]:
+** Mild pain: {{++|20%}}
+** Intense pain: {{++|60%}}
+* [[Blood rot]]:
+** Extreme: {{++|5%}}
+* [[Fibrous mechanites]]:
+** Mild pain: {{++|20%}}
+** Intense pain: {{++|60%}}
+* [[Muscle parasites]]: {{++|20%}}
+* [[Gut worms]]: {{++|20%}}
+* [[Malaria]]:
+** Major: {{++|30%}}
+** Extreme: {{++|30%}}
+* [[Luciferium]]: 
+** Withdrawal: {{++|40%}}
+* [[Beer]]: (See also [[#Factors|Factors]])
+** Blackout: {{++|5%}}
+* [[Smokeleaf joint|Stoned on smokeleaf]]: {{---|20%}}
+* [[Torture crown]]:{{IdeologyIcon}} {{++|5%}}
+* [[Tox gas]]:{{BiotechIcon}}
+** Mild: {{++|10%}}
+** Moderate: {{++|15%}}
+** Severe: {{++|25%}}
+* [[Hemogen]] craving:{{BiotechIcon}}
+** Minor: {{++|5%}}
+** Moderate: {{++|10%}}
+** Major: {{++|15%}}
+* [[Inhumanized|Inhumanization]]:{{AnomalyIcon}} {{---|50%}}
+
+<noinclude>
+
+== Version history ==
+* [[Version/0.6.532|0.6.532]] -  Added. Pain level is tracked. A character in too much pain will become incapacitated.
+* [[Version/0.10.785|0.10.785]] - Pain now creates unhappiness.
+
+{{nav|stats|wide}}
+</noinclude>

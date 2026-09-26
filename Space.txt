@@ -1,0 +1,91 @@
+{{About|a pawn's need and the related room stat|the biome and location above the planet|Orbit}}
+'''Space''' is the name for two separate elements of the game which are easily confused and not directly related.  So, depending on context, "Space" can mean ''either'':
+*  a [[colonist]]'s [[Needs|need]] for Space
+* the [[environment]]al concept of the amount of space in a particular room, one of the [[room stats]]
+
+The first deals with whether a colonist feels their environment is/not open enough, whether they feel that "the walls are closing in" where they spend their time. The second deals with the usable size of a particular room, as one of four stats that together determine the overall [[impressiveness]] of that room. 
+
+== Need for Space ==
+{{Stub|section=1|reason=General mechanics - are space values instantenous, do they tick up and down gradually, at what rates, ideoligion effects [[Indoors (precept)]], [[undergrounder]] etc.}}
+[[File:Clearance.png|thumb|right|A pawn standing in the middle would only need 99 of the 193 surrounding spaces to be accessible to get 100% Space satisfaction]]
+Space is one of the needs that pawns have. The Space need is satisfied according to the number of tiles the pawn can walk to within a radius of 7 (193 tiles total). The need is 100% satisfied if there are 99 or more such tiles, and 0% satisfied if there are 3 or fewer.
+
+Spaces with objects that pawns can walk through, like furniture, benches and trees, still apply towards this stat. Objects that cannot be walked through and act essentially as walls, like the [[nutrient paste dispenser]], do not count towards this stat.
+
+The Space need is always 100% satisfied when [[Outdoors|outdoors]], regardless of the amount of accessible space near a player. A pawn in a doorway counts tiles on both sides of the door towards Space satisfaction, even if one or both sides of the door are outdoors.
+
+=== Mood buffs/debuffs ===
+
+There are three [[Thoughts]] associated with pawn satisfaction with its space.
+
+:: {| class="wikitable"
+|-
+! Pawn thought
+! Effect
+on mood
+! # of accessible tiles
+(% Space need met)
+
+|-
+| "Confined interior"
+| &#8199;&#8199;-10
+| 1 - 3 tiles (0%)
+|-
+| "Cramped interior"
+| &#8199;&#8199;&#8199;-5
+| 4 - 10 tiles (1% - 29%)
+|-
+|&#8199;&#8199;&#8199;''(neutral)''
+| &#8199;&#8199;&#8199;-
+| 11 - 40 tiles (30%-69%)
+|-
+| "Spacious interior"
+| &#8199;&#8199;&#8199;+5
+| 41 or more tiles (70% - 100%)
+|}
+
+== Space in a room ==
+{{Rewrite|section=1|reason=Use game specific terms - [[Property:Passability]] etc.}}
+A room's "Space" is a value that weighs the different tiles in the room for how easy they are to walk through. Tiles where you can stand (empty tiles, chairs, party spots, ...) are weighted higher than places you can only pass through (lamps, benches, trees, ...).
+
+The equation is: '''''(1.4 x tiles where you can stand) + (0.5 x tiles you can walk through)''''' rounded to the nearest integer.  What this means is that an empty room's ''effective'' space starts significantly bigger than the number of tiles, but then is shrunk by .9 (i.e. 1.4 - .5) for most* tiles that are occupied by items.
+
+: (* significantly, chairs do not reduce this space;  most items do, including beds, work benches, lights, art, etc.)
+
+This number is a factor in the room's overall [[Beauty]] rating, and the overall [[Impressiveness]] -- the higher, the better. 
+
+There are seven Environment designations for how much Space there is in a room:
+:: {| class="wikitable"
+|-
+! Space value
+! Designation
+|-
+| 0-12
+| "cramped"
+|-
+| 13-28
+| "rather tight"
+|-
+| 29-54
+| "average-sized"
+|-
+| 55-69
+| "somewhat spacious"
+|-
+| 70-129
+| "quite spacious"
+|-
+| 130-349
+| "very spacious"
+|-
+| 350 (max value)
+| "extremely spacious"
+|}
+
+* See [[Rooms#Space|Rooms/Space]] for more information.
+
+==Confusion==
+[[File:Space_vs._Space.jpg|200px|thumb|right|A pawn in a 9 x 11 room packed wall-to-wall with tables, showing the two-game concepts of "Space" are separate]]
+The game concepts of "Need for Space" and "Space in a room" are easily confused. It's possible for a pawn to have the "Cramped interior" Thought while standing in the wrong part of an "extremely spacious" room (like the end of an 8x1 hallway). Likewise, a pawn can think "Spacious interior" and get 100% Space satisfaction from standing in a merely "average-sized" room.
+
+[[Category:Game mechanics]]

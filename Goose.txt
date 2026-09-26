@@ -1,0 +1,110 @@
+{{Image wanted|reason=Flying animation}}
+{{infobox main|animal
+| name = Goose
+| image = Goose east.png
+| description = A domesticated bird kept by humans as poultry for it's eggs and meat. Lays eggs very often, however they take a long time to hatch.
+| type = Animal
+| movespeed = 2.3
+| baseleatheramount = 36
+| min comfortable temperature = -10
+| max comfortable temperature = 40
+| toxic resistance = 0.5
+| toxic environment resistance = 0
+| flammability = 0.7
+| marketvalue = 90
+| filth rate = 6
+| eggsmin = 1
+| eggsmax = 1
+| eggs_avg = 1
+| eggtime = 2
+| fertilized egg name = Goose egg (fert.)
+| unfertilized egg name = Goose egg (unfert.)
+| combatPower = 35
+| bodysize = 0.6
+| healthscale = 0.4
+| hungerrate = 0.28
+| diet = herbivorous
+| leathername = birdskin
+| wildness = 0.6
+| manhuntertame = 0
+| manhunter = 0
+| roamMtb = 7
+| trainable = none
+| meatname = bird meat
+| mateMtb = 8
+| babyscale = 0.1
+| lifespan = 8
+| juvenileage = 0.12
+| maturityage = 0.2
+| tradeTags = AnimalFarm, AnimalCommon
+| attack1dmg = 3
+| attack1type = Scratch
+| attack1cool = 1.5
+| attack1part = feet
+| attack2dmg = 5.6
+| attack2type = Bite
+| attack2cool = 2
+| attack2part = beak
+| attack3dmg = 2
+| attack3type = Blunt
+| attack3cool = 1.5
+| attack3part = head
+| attack3chancefactor = 0.2
+| isCoastal = false
+}}
+A '''Goose''' is a domesticated, medium-sized waterfowl, known for its large eggs and belligerent nature. Like all farm animals geese cannot be found in the wild, and must be purchased from traders. 
+
+== Acquisition ==
+Geese do not spawn as wild animals. Instead they must be [[Trade|purchased]] from a [[Trade#Exotic goods trader 2|exotic goods trader]], [[Trade#Bulk goods trader 2|bulk goods trader]] or [[faction base]]. Geese can also join the colony in an [[Events#Animals join|Animals join]] events
+
+== Summary == 
+{{Pen Animal Note|Geese}}
+
+A female goose produces {{P|Eggs Per Clutch Average}} eggs every {{P|Egg Laying Interval}} days. Geese can lay both [[Goose egg (unfert.)|unfertilized]] and [[Goose egg (fert.)|fertilized]] eggs, depending on if it has mated with a male goose.
+
+== Analysis ==
+
+=== Eggs ===
+An adult goose consumes {{P|Real Hunger Rate}} nutrition per day, and produces {{#vardefineecho:egg_nutr_per_day|{{#expr:{{P|Eggs Per Clutch Average}}/{{P|Egg Laying Interval}}*{{Q|Goose egg (unfert.)|Nutrition}}}}}} nutrition of eggs each day, resulting in a nutrition efficiency of {{%|{{#var:egg_nutr_per_day}}/({{P|Base Hunger Rate}}*1.6) round 3}} when unfertilized eggs are eaten.
+
+When eating eggs raw, geese are inferior to [[chicken]]s. Chickens produce 2 half-size chicken eggs for 1 goose egg. As 2 hens consume less food than 1 goose, chickens are a better egg-layer. When eggs are allowed to hatch and are slaughtered as babies, chickens become even better for meat.
+
+The fact that goose eggs each have 0.5 nutrition has some niche benefits. A full stack of 75 goose eggs is worth 37.5 nutrition, compared to 18.75 for chicken eggs and 3.75 for most other raw foodstuffs, making it useful for small freezers and cramped kitchens. [[Pigskins]]{{BiotechIcon}} who look for food at about 25% [[saturation]] will choose to eat 1 chicken egg or 1 goose egg, so a goose egg will fully satisfy a pigskin (granting 90% saturation) where a chicken egg (45% saturation) will not.
+
+Note that geese produce [[birdskin]] if slaughtered as goslings, but chickens don't produce any leather.
+
+=== Meat ===
+When slaughtered, a goose yields {{#vardefineecho:baby_meat|{{Meat Leather Curve|{{#expr:{{P|Body Size}}*0.1*140}}}}}} bird meat as a gosling; {{Meat Leather Curve|{{#expr:{{P|Body Size}}*0.5*140}}}} as a juvenile; or {{Meat Leather Curve|{{#expr:{{P|Body Size}}*140}}}} as an adult. 
+
+By slaughtering the geese rather than eating the unhatched [[Goose egg (fert.)|fertilized egg]], more nutrition is gained ({{#expr:{{#var:baby_meat}}*0.05 round 2}} rather than {{Q|Goose egg (fert.)|Nutrition}}). When new-born goslings are slaughtered, an always-fertilized female goose produces {{#expr:{{Meat Production|{{PAGENAME}}|Baby}} round 2}} nutrition per day, resulting in a nutrition efficiency of {{%|{{Meat Production|{{PAGENAME}}|Baby}}/({{P|Base Hunger Rate}}*1.6) round 3}} for the female goose alone. A {{#vardefineecho:femaleratio|{{#expr: 2/3*24*{{P|Egg Laying Interval}}/{{P|Mate Mtb Hours}}}}}}:1 female:male ratio reaches an optimal [[Animals#Mating|fertilization rate]]. With this ratio of geese, you reach a nutrition efficiency of {{%|{{Meat Production|{{PAGENAME}}|Baby|{{#var:femaleratio}}|1 round 2}}/{{Nutrition Consumption|{{PAGENAME}}|Baby|{{#var:femaleratio}}|1}} round 3}}.
+
+A goose takes {{#expr:{{P|Juvenile Age}}*60 round 1}} days to become a juvenile, and a total of {{#expr:{{P|Maturity Age}}*60 round 1}} days to reach adulthood. As a gosling grows into adulthood it will consume {{#expr:{{Consumption Upto Adulthood}} round 2}} nutrition in total, and will yield {{#expr:0.05*({{P|Meat Yield}} - {{#var:baby_meat}})}} more nutrition when slaughtered than it would as a baby. When slaughtered as adults, geese have a true nutrition efficiency of {{%|{{Meat Production|{{PAGENAME}}|Adult|{{#var:femaleratio}}|1 round 2}}/{{Nutrition Consumption|{{PAGENAME}}|Adult|{{#var:femaleratio}}|1}} round 3}} (with a 4:1 female:male ratio).
+
+=== Leather ===
+In addition to meat, a goose yields {{#vardefineecho:baby_leather|{{Meat Leather Curve|{{#expr:{{P|Body Size}}*0.1*36}}}}}} leather as a gosling; {{Meat Leather Curve|{{#expr:{{P|Body Size}}*0.5*36}}}} as a juvenile; or {{Meat Leather Curve|{{#expr:{{P|Body Size}}*36}}}} as an adult.
+
+[[Birdskin]] isn't a particularly great leather, but it can be sold for some cash if you happen to be using geese in your colony.
+
+== Training ==
+{{TrainingTable}}
+
+== Health ==
+{{Animal Health Table|Bird}}
+{{Pawn Attack Table}}
+
+== Gallery ==
+<gallery>
+Goose east.png|Facing east
+Goose north.png|Facing north
+Goose south.png|Facing south
+</gallery>
+<gallery>
+Dessicated goose east.png|Dessicated facing east
+Dessicated Goose north.png|Dessicated facing north
+Dessicated Goose south.png|Dessicated facing south
+</gallery>
+== Version history ==
+* [[Version/1.1.0|1.1.0]] - Added as part of the integration of the Vanilla Animals Expanded - Livestock mod into the basegame.
+{{nav|animal}}
+[[Category:Animals]]
+[[Category:Farm animal]]

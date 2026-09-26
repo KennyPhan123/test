@@ -1,0 +1,50 @@
+{{Infobox main|building
+| name = Infinite chemreactor
+| image = Infinite chemreactor.png
+| description = Slowly generates chemfuel by a complex series of chemical reactions, using atoms extracted from the air.
+| type = Building
+| type2 = Special
+| placeable = True
+| minifiable = True
+| terrain affordance = Medium
+| passability = impassable
+| size = 2 ˣ 2
+| hp = 200
+| beauty = -10
+| mass base = 35
+| cover = 1
+| marketvalue = 1500
+| flammability = 1
+| deconstruct yield = {{Icon Small|steel||100}} + {{Icon Small|advanced component||3}}
+| destroyyield = nothing
+| power = -300
+| tradeTags = ExoticBuilding
+| tradeability = Sellable
+}}
+The '''infinite chemreactor''' is a [[quest]] reward building that produces [[chemfuel]] as long as it is powered.
+
+== Acquisition == 
+Infinite chemreactors cannot be constructed nor bought from [[trader]]s. Instead they can only be acquired as a reward for performing [[quests]]. Note that quest rewards are selected with a weighted random generator, so there is no way to guarantee access to a chemreactor in a given play-through.
+
+== Summary ==
+An infinite chemreactor generates {{Icon Small|Chemfuel||75}} [[chemfuel]] every {{Ticks/gametime|600000}} as long as it is powered by {{#expr:-{{P|Power Consumption}}}}W. This requires no input or work from any pawns. When it is done producing chemfuel, it will drop a stack of 75 onto an empty adjacent tile. Progress is retained if the reactor is unpowered. Progress to the next batch of chemfuel is displayed in the info panel when the reactor is selected.
+
+When destroyed the chemreactor explodes, dealing 10 [[Damage Type#Flame|Flame]] damage to everything in 8 tile radius. While the explosion itself doesn't create [[fire]]s, things damaged by the explosion may ignite.
+
+== Analysis ==
+It is a slow way of obtaining chemfuel, especially in the mid-game stage where you're most likely to get this item. It generates {{Icon Small|chemfuel||7.5}} chemfuel a day, compared to {{Icon Small|chemfuel||35}} for every batch made at a [[refinery]] or {{Icon Small|chemfuel||{{Q|Boomalope|Daily Milk Average}}}} per day extracted from a [[boomalope]]. 
+
+It generates more chemfuel per day than a single [[chemfuel powered generator]] consumes. The infinite chemreactor consumes {{#expr:-{{P|Power Consumption}}}}W, while a single chemfuel powered generator produces {{Q|Chemfuel powered generator|Power Consumption}}W, resulting in a generated power surplus of {{#expr:{{Q|Chemfuel powered generator|Power Consumption #}}+{{P|Power Consumption #}}}}W and a chemfuel surplus of 3 per day. This makes the infinite chemreactor a slow but sustainable tool for passively generating both free energy and chemfuel, if you can get your hands on one. 
+
+3 infinite chemreactors can generate enough fuel to power 5 [[chemfuel powered generator]]s ({{Icon Small|chemfuel||22.5}} per day), for a generated power surplus of 4,100W.
+
+== Trivia ==
+Given the description of how it works, the infinite chemfuel reactor may possibly be [https://en.wikipedia.org/wiki/In_situ_resource_utilization a late-midworld technology] rather than glitterworld or even transcendent in origin like the other quest items.
+
+== Version history ==
+* [[Version/0.18.1722|0.18.1722]] - added. 
+
+{{Nav|special|wide}}
+{{Nav|questitems|wide}}
+[[Category:Special]]
+[[Category:Resource Production]]

@@ -1,0 +1,133 @@
+{{infobox main|animal|
+| page verified for version = 1.3.3101
+| name = Cow
+| image = Cow.png
+| description = A large domesticated ungulate, cows have been bred for millennia to produce huge amounts of milk, meat, and leather. They are exceptionally gentle creatures and will never seek revenge, no matter how many times they are harmed. Most of them are so adapted to farm life that they cannot survive in the wild.
+| type = Animal
+| movespeed = 3.2
+| min comfortable temperature = -10
+| max comfortable temperature = 40
+| toxic resistance = 0.5
+| toxic environment resistance = 0
+| flammability = 0.7
+| marketvalue = 300
+| filth rate = 16
+| milktime = 1
+| milk = 14
+| herdanimal = true
+| combatPower = 75
+| bodysize = 2.4
+| healthscale = 1.5
+| hungerrate = 0.535
+| diet = herbivorous
+| leathername = plainleather
+| wildness = 0
+| manhuntertame = 0
+| manhunter = 0
+| roamMtb = 2
+| trainable = none
+| mateMtb = 12
+| meatname = beef
+| gestation = 6.66
+| offspring = 1
+| lifespan = 22
+| juvenileage = 0.2
+| maturityage = 0.3333
+| baby name = calf
+| male name = bull
+| tradeTags = AnimalFarm, AnimalCommon
+| attack1dmg = 8.8
+| attack1type = Bite
+| attack1cool = 2.6
+| attack1part = teeth
+| attack1chancefactor = 0.7
+| attack2dmg = 7
+| attack2type = Blunt
+| attack2cool = 2
+| attack2part = head
+| attack2chancefactor = 0.2
+| attack3dmg = 8
+| attack3type = Blunt
+| attack3cool = 2
+| attack3part = front left leg
+| attack4dmg = 8
+| attack4type = Poke
+| attack4cool = 2
+| attack4part = front left leg
+| attack5dmg = 8
+| attack5type = Blunt
+| attack5cool = 2
+| attack5part = front right leg
+| attack6dmg = 8
+| attack6type = Poke
+| attack6cool = 2
+| attack6part = front right leg
+| isCoastal = false
+}}
+{{Info|The '''cow''' is a large herbivorous [[animal]] best known for its [[milk]] and tasty meat. Males of the species are referred to as '''Bulls''' and can be distinguished by their horns and lack of udders, while females are referred to as '''Cows''' and have the opposite features. Babies of either gender are referred to as '''Calves''' and have the features of adults of their gender.}}
+
+== Acquisition ==
+Cows do not spawn as wild animals. Instead they must be [[Trade|purchased]] from a trader or [[faction base]], or join the colony in an [[Events#Animals join|Animals join]] events.
+
+== Summary ==
+{{Pen Animal Note|Cows}}
+
+A female cow can be milked for up to {{P|Milk Amount}} units of milk {{#ifeq:{{P|Milking Interval Days}}|1|per day|every {{P|Milking Interval Days}} days}}, depending on your pawn's [[Animal Gather Yield]]. Milking an animal takes {{Ticks|400}} of work, regardless of the amount of milk produced, and only modified by the [[Animal Gather Speed]] of the handler.
+
+==Analysis==
+Cows are reasonably efficient animals that produce milk, which can be used as a meat substitute for [[fine meal]]s and [[lavish meal]]s.  
+
+===Nutrition===
+When slaughtered, a cow yields {{Meat Leather Curve|{{#expr:{{P|Body Size}}*0.2*140}}}} meat and {{Meat Leather Curve|{{#expr:{{P|Body Size}}*0.2*40}}}} leather as a calf; {{Meat Leather Curve|{{#expr:{{P|Body Size}}*0.5*140}}}} meat and {{Meat Leather Curve|{{#expr:{{P|Body Size}}*0.5*40}}}} as a juvenile; or {{Meat Leather Curve|{{#expr:{{P|Body Size}}*140}}}} meat and {{Meat Leather Curve|{{#expr:{{P|Body Size}}*40}}}} leather as an adult. 
+
+*'''Milking'''
+Female cows produce {{Icon Small|milk}} {{P|Daily Milk Average}} per day, or {{#vardefineecho:milk_nutr_per_day|{{#expr:{{P|Daily Milk Average}}*0.05}}}} [[nutrition]] in milk per day. A cow consumes {{P|Real Hunger Rate}} nutrition per day. This results in a nutrition efficiency of {{%|{{#var:milk_nutr_per_day}}/{{P|Real Hunger Rate}} round 3}} from milk alone ({{Icon Small|milk}} {{#expr: {{P|Daily Milk Average}}/{{P|Real Hunger Rate}} round 2}} per day per 1 nutrition consumed).
+
+Cows produce {{#expr: (({{P|Daily Milk Average}}/{{Q|Yak|Daily Milk Average}})-1)*100 round 0}}% more milk than the next best producer, the [[yak]]. However, yaks are also pack animals. 
+
+*'''Slaughtering + Milking'''
+Slaughtered as calves, and including the production of milk, the nutrition efficiency of a population of cows varies from {{%|({{Meat Production|{{PAGENAME}}|baby|1|1}} + {{#var:milk_nutr_per_day}})/{{Nutrition Consumption|{{PAGENAME}}|baby|1|1}} round 3}} to {{%|({{Meat Production|{{PAGENAME}}|baby|1|0}} + {{#var:milk_nutr_per_day}})/{{Nutrition Consumption|{{PAGENAME}}|baby|1|0}} round 3}} depending on how many more female cows there are than bulls. 
+
+If the calves are allows to grow to adulthood before they are slaughtered, this changes to {{%|({{Meat Production|{{PAGENAME}}|baby|1|1}} + {{#var:milk_nutr_per_day}})/{{Nutrition Consumption|{{PAGENAME}}|adult|1|1}} round 3}}-{{%|({{Meat Production|{{PAGENAME}}|adult|1|0}} + {{#var:milk_nutr_per_day}})/{{Nutrition Consumption|{{PAGENAME}}|adult|1|0}} round 3}}.
+
+Cows are reasonably nutritionally efficient, but they are slightly less so than [[Horse]]s and [[Ibex]]s. The increased work required to milk the cows every day further places them behind such competition. As a result, the cow shines best in colonies with the [[Animal personhood]] meme,{{IdeologyIcon}} that want to create fine or lavish meals without slaughtering animals. Even in this regard, cows are inferior to [[chicken]]s in every respect other than lag-friendliness.
+
+=== Nutrition in a closed system ===
+Cows can eat [[simple meal]]s and [[nutrient paste meal]]s, even out of their own milk. By converting milk into simple meals, cows create {{#expr:{{P|Daily Milk Average}}*0.05*1.8}} nutrition per day, assuming you have a sufficiently skilled Animals handler. This results in a nutrition efficiency of {{%| ({{P|Daily Milk Average}} *0.05 * 1.8) /{{P|Real Hunger Rate}} round 2}}; a female cow can sustain itself on its own milk so long as a cook can constantly produce it meals.
+
+Using nutrient paste, an efficiency of {{%|({{P|Daily Milk Average}} *0.05 * 3) /{{P|Real Hunger Rate}} round 2}} is reached, enough to feed a cow and bull. However, nutrient paste must be [[Nutrient paste dispenser#Manually producing meals|dispensed manually]].
+
+==Training==
+{{TrainingTable}}
+
+== Health ==
+{{Animal Health Table|QuadrupedAnimalWithHooves}}
+{{Pawn Attack Table}}
+
+== Version history ==
+* [[Version/0.12.906|0.12.906]] - Added
+
+== Gallery ==
+<gallery>
+Bull east.png|Bull facing east
+Bull north.png|Bull facing north
+Bull south.png|Bull facing south
+</gallery>
+<gallery>
+Cow east.png|Cow facing east
+Cow north.png|Cow facing north
+Cow south.png|Cow facing south
+</gallery>
+<gallery>
+Dessicated bull east.png|Dessicated bull facing east
+Dessicated Bull north.png|Dessicated bull facing north
+Dessicated Bull south.png|Dessicated bull facing south
+</gallery>
+<gallery>
+Dessicated cow east.png|Dessicated cow facing east
+Dessicated Cow north.png|Dessicated cow facing north
+Dessicated Cow south.png|Dessicated cow facing south
+</gallery>
+{{nav|animal}}
+[[Category:Animals]]
+[[Category:Farm animal]]

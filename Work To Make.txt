@@ -1,0 +1,75 @@
+{{See also|Work To Build}}
+{{Verified|1.5.4104}}{{Stat
+| def name = WorkToMake
+| label = work to make
+| description = The base amount of work it takes to make an item, once all [[materials]] are gathered.
+| default base value = 1
+| min value = 0
+| round to five over = 300
+| scenario randomizable = true
+| show if undefined = false
+| category = BasicsNonPawn
+| display priority in category = 3100
+}}
+
+== Explanation ==
+[[Work To Make]] is used for items, defining the amount of work in [[Ticks]] required to craft an item. It is the functionally equivalent counterpart to the stat used for [[Buildings]]: [[Work To Build]]. Note that the wiki merges these two stats into the [[Property:Work To Make|Work To Make]] Property, although they can be easily separated by the [[Property:Type|Type]] and [[Property:Type2|Type2]] Properties.
+
+This value is defined in the game files in [[Time|ticks]], but is displayed in-game as the rounded conversion into seconds. Note that this rounding is cosmetic only, the true work time is precise to the tick value.
+
+One second in-game, at normal game speed, corresponds to 60 ticks. Thus, conversion is a simple matter of dividing by 60 for conversion from ticks to seconds, and multiplying by 60 for conversion from seconds to ticks. For example, a [[charge lance]] has a Work To Make stat defined as {{Q|Charge lance|Work To Make}} ticks in the game xml files, and will therefore display in-game in the bills selection, which uses in-game seconds as the unit, as {{#expr: {{Q|Charge lance|Work To Make #}}/60 round 0}} work.
+
+For reference, an in-game day is 1000 seconds long at normal game speed, corresponding to 60,000 ticks. Thus at 100% work speed, exactly 1,000 units of work will be performed during one in-game day of uninterrupted work.  Assuming a regular "work shift" of about 12-16 in-game hours, one can expect about 500-650 units of work to be performed, per day, by a pawn on a regular schedule working at 100% speed.
+
+Lastly, note that pawn stats, such as [[General Labor Speed]] or [[Cooking Speed]], divide this base value to find the actual amount of time to make an object. For example, if a pawn has 200% of the relevant speed, then it will take half the time to make the item than is reported by its [[Work To Make]] stat.
+
+== Bases ==
+<div><li style="display: inline-table;">
+Click to <div class="mw-collapsible mw-collapsed">
+<div class="mw-collapsible-content">
+{| {{STDT| c_03 sortable}}
+! Item !! [[Property:Work To Make|Work To Make]]
+|-
+{{#ask: [[Work To Make::+]]
+[[Type::!Building]]
+| ?Work To Make
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Name
+| limit = 1000
+}}
+|}
+</div>
+</div>
+</li></div>
+
+== Stat Def Data ==
+{| {{STDT| c_03}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Work To Make" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />WorkToMake
+* '''Label:'''<br />work to make
+| The base amount of work it takes to make an item, once all materials are gathered.
+|
+* Display Order:<br />'''12'''
+* Def Name:<br />'''BasicsNonPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />{{Bad|false}}
+|
+* '''Default Base Value:''' 1
+* '''Min Value:''' 0
+* '''To String Style:''' WorkAmount
+* '''Round To Five Over:''' 300
+* '''Show If Undefined:''' {{Bad|false}}
+* '''Scenario Randomizable:''' {{Good|true}}
+| -
+| 3100
+<!--</StatDef>-->
+|}
+
+== Version history ==
+{{Stub|section=1|reason=General Version history}}
+
+{{nav|stats|wide}}

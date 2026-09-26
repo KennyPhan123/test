@@ -1,0 +1,98 @@
+{{infobox main|animal
+| name = Goat
+| image = GoatMale east.png
+| description = Naturally curious about the world, goats are among the friendliest domesticated creature bred by mankind.
+| type = Animal
+| movespeed = 3.9
+| min comfortable temperature = -20
+| max comfortable temperature = 40
+| toxic resistance = 0.5
+| toxic environment resistance = 0
+| flammability = 0.7
+| marketvalue = 200
+| filth rate = 8
+| milktime = 3
+| milk = 12
+| combatPower = 45
+| bodysize = 0.75
+| healthscale = 0.7
+| hungerrate = 0.225
+| diet = herbivorous
+| leathername = plainleather
+| wildness = 0
+| manhuntertame = 0
+| manhunter = 0
+| roamMtb = 7
+| trainable = none
+| mateMtb = 12
+| gestation = 5.61
+| offspring = 1
+| lifespan = 12
+| juvenileage = 0.1
+| maturityage = 0.266
+| tradeTags = AnimalFarm, AnimalCommon
+| baby name = baby goat
+| female name = goat doe
+| attack1dmg = 7.3
+| attack1type = Bite
+| attack1cool = 2
+| attack1part = teeth
+| attack1chancefactor = 0.7
+| attack2dmg = 6
+| attack2type = Blunt
+| attack2cool = 2
+| attack2part = head
+| attack2chancefactor = 0.2
+| isCoastal = false
+}}
+'''Goats''', called '''Goat does''' if female and '''baby goats''' as babies, are tameable [[milk]]-producing [[herbivore]]s with a medium movement speed. Adult males of the species can be distinguished by their dark accents and horns, while females and babies of either gender lack horns and have a more consistent coat color. Despite the visual differences, adults of both genders have the same stats and attacks. 
+
+== Acquisition ==
+Goats do not spawn as wild animals. Instead they must be purchased from a trader or faction base, or join the colony in an Animals join events. 
+
+== Summary ==
+{{Pen Animal Note|Goats}}
+
+A female goat can be milked for up to {{Icon Small|milk}} {{P|Milk Amount}} units of milk {{#ifeq:{{P|Milking Interval Days}}|1|per day|every {{P|Milking Interval Days}} days}}, depending on your pawn's [[Animal Gather Yield]]. Milking an animal takes {{Ticks|400}} of work, regardless of the amount of milk produced, and only modified by the [[Animal Gather Speed]] of the handler.
+
+== Analysis ==
+=== Milking ===
+Goats provide the lowest per-animal milk of all milk-producing animals, though they also have the lowest hunger rate.
+
+Female goats produce {{Icon Small|milk}} {{P|Daily Milk Average}} per day, or {{#vardefineecho:milk_nutr_per_day|{{#expr:{{P|Daily Milk Average}}*0.05}}}} [[nutrition]] in milk per day. A goat consumes {{P|Real Hunger Rate}} nutrition per day. This results in a nutrition efficiency of {{%|{{#var:milk_nutr_per_day}}/{{P|Real Hunger Rate}} round 3}} from milk alone (or {{Icon Small|milk}} {{#expr: {{P|Daily Milk Average}}/{{P|Real Hunger Rate}} round 2}} per day per 1 nutrition consumed). Goats are superior to [[dromedaries]] but worse than other milk animals.
+
+== Training ==
+{{TrainingTable}}
+
+== Health ==
+{{Animal Health Table|QuadrupedAnimalWithHooves}}
+{{Pawn Attack Table}}
+
+==Version history==
+* [[Version/1.1.0|1.1.0]] - Added as part of the integration of the Vanilla Animals Expanded - Livestock mod into the basegame.
+* [[Version/1.1.2559|1.1.2559]] - Decrease minimum comfortable temperature 
+
+== Gallery ==
+<gallery>
+GoatMale east.png|Goat (male) facing east
+GoatMale north.png|Goat (male) facing north
+GoatMale south.png|Goat (male) facing south
+</gallery>
+<gallery>
+GoatFemale east.png|Goat doe facing east
+GoatFemale north.png|Goat doe facing north
+GoatFemale south.png|Goat doe facing south
+</gallery>
+<gallery>
+Dessicated GoatMale east.png|Dessicated male facing east
+Dessicated GoatMale north.png|Dessicated male facing north
+Dessicated GoatMale south.png|Dessicated male facing south
+</gallery>
+<gallery>
+Dessicated GoatFemale east.png|Dessicated doe facing east
+Dessicated GoatFemale north.png|Dessicated doe facing north
+Dessicated GoatFemale south.png|Dessicated doe facing south
+</gallery>
+{{nav|animal|wide}}
+[[Category:Animals]]
+[[Category:Farm animal]]

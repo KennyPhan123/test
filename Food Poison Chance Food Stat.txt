@@ -1,0 +1,172 @@
+{{Stub|reason=1) Integrate with relevant pages 2) Two-way links 3) Version history}}
+{{See also|Food Poison Chance{{!}}Food Poison Chance (Pawn Stat)|Ailments#Food poisoning{{!}}Food poisoning (Ailments page)|Hediffs#Food poisoning{{!}}Food poisoning (Hediff)}}
+{{Verified|1.5.4104}}{{Stat
+| def name = FoodPoisonChanceFixedHuman
+| label = food poison chance
+| label for full stat list = food poison chance (food stat)
+| description = The chance this [[food]] will cause [[food poisoning]].
+| default base value = 0
+| min value = 0
+| hide at value = 0
+| to string style = PercentZero
+| category = BasicsNonPawn
+| display priority in category = 4000
+| parts = StatPart_MaxChanceIfRotting
+}}
+
+== Bases ==
+<!-- Eggs have a stated 20%? which I assume is an error. Corpses are not included also
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_08 text-center}}
+! Food Item !! Food<br/ >Poison<br />Chance<br/ >Base
+|-
+{{#ask: [[Food Poison Chance Base::+]]
+| ?Food Poison Chance Base
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Name
+}}
+|}
+</li><div>
+-->
+<!-- Manual Data for Reference -->
+{| {{STDT| c_08 sortable}}
+! Food<br />Item !! Food<br />Poison<br />Chance
+<!-- Items_Food -->
+|-
+! {{Icon Small|Kibble|24}} [[Kibble]]
+| 2%
+<!-- Items_Resource_AnimalProduct -->
+|-
+! {{Icon Small|Milk|24}} [[Milk]]
+| 2%
+|-
+! {{Icon Small|Insect jelly|24}} [[Insect jelly]]
+| 2%
+<!--
+|-
+! Name="EggBase" (Name="EggUnfertBase", Name="EggFertBase")
+| 2%
+-->
+|-
+! {{Icon Small|Chicken egg (unfert.)|24}} [[Chicken egg (unfert.)]]
+| 2%
+|-
+! {{Icon Small|Chicken egg (fert.)|24}} [[Chicken egg (fert.)]]
+| 2%
+|-
+! {{Icon Small|Cobra egg (fert.)|24}} [[Cobra egg (fert.)]]
+| 2%
+|-
+! {{Icon Small|Iguana egg (fert.)|24}} [[Iguana egg (fert.)]]
+| 2%
+|-
+! {{Icon Small|Tortoise egg (fert.)|24}} [[Tortoise egg (fert.)]]
+| 2%
+|-
+! {{Icon Small|Cassowary egg (fert.)|24}} [[Cassowary egg (fert.)]]
+| 2%
+|-
+! {{Icon Small|Emu egg (fert.)|24}} [[Emu egg (fert.)]]
+| 2%
+|-
+! {{Icon Small|Ostrich egg (fert.)|24}} [[Ostrich egg (fert.)]]
+| 2%
+|-
+! {{Icon Small|Turkey egg (fert.)|24}} [[Turkey egg (fert.)]]
+| 2%
+|-
+! {{Icon Small|Duck egg (unfert.)|24}} [[Duck egg (unfert.)]]
+| 2%
+|-
+! {{Icon Small|Duck egg (fert.)|24}} [[Duck egg (fert.)]]
+| 2%
+|-
+! {{Icon Small|Goose egg (unfert.)|24}} [[Goose egg (unfert.)]]
+| 2%
+|-
+! {{Icon Small|Goose egg (fert.)|24}} [[Goose egg (fert.)]]
+| 2%
+<!-- Items_Resource_RawPlant -->
+<!--
+|-
+! Name="PlantFoodRawBase"
+| 2%
+-->
+|-
+! {{Icon Small|Potatoes|24}} [[Potatoes]]
+| 2%
+|-
+! {{Icon Small|Raw fungus|24}} [[Raw fungus]]
+| 2%
+|-
+! {{Icon Small|Rice|24}} [[Rice]]
+| 2%
+|-
+! {{Icon Small|Agave fruit|24}} [[Agave fruit]]
+| 2%
+|-
+! {{Icon Small|Corn|24}} [[Corn]]
+| 2%
+|-
+! {{Icon Small|Berries|24}} [[Berries]]
+| 2%
+<!-- ThingDefGenerator_Meat -->
+|-
+! {{Icon Small|Human meat|24}} [[Human meat]]
+| 2%
+|-
+! {{Icon Small|Insect meat|24}} [[Insect meat]]
+| 2%
+|-
+! [[File:Meat big c.png|24x24px|Meat (big animals)]] / [[File:Meat small c.png|24x24px|Meat (small animals)]]<ref>When [[Property:Body Size|Body Size]] < 0.7</ref> [[Meat]]
+| 2%
+<!-- ThingDefGenerator_Corpses -->
+|-
+! Corpses
+| 5%
+<!-- Biotech Items_Resource_RawPlant -->
+|-
+! {{Icon Small|Toxipotatoes|24}} [[Toxipotatoes]] {{BiotechIcon}}
+| 4%
+<!-- Anomaly Items_Various -->
+|-
+! {{Icon Small|Twisted meat|24}} [[Twisted meat]] {{AnomalyIcon}}
+| 2%
+|}
+<references />
+
+== Explanation ==
+Food Poison Chance (Food Stat) acts as the direct chance to receive [[Hediffs#Food poisoning|food poisoning]] when eating raw food or corpses. It acts as a base value when these ingredients are cooked into [[meals]], using the [[Food Poison Chance|Food Poison Chance (Pawn Work)]] and [[Cleanliness|room cleanliness]] stats as factors.
+
+Rotten food (i.e. corpses, since rotten food items disappear once rotten) have a 100% chance of causing food poisoning, although rotten corpses have no nutrition<ref>[[Nutrition_(Stat)#Is Corpse Fresh|Is Corpse Fresh]] Stat Part from [[Nutrition (Stat)]]</ref> and their ingestibility is very limited if not impossible{{Check Tag|Fact check needed}}.
+<references />
+
+== Stat Def Data ==
+{| {{STDT}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Food Poison Chance" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />FoodPoisonChanceFixedHuman
+* '''Label:'''<br />food poison chance
+* '''Label For Full Stat List:'''<br />food poison chance (food stat)
+| The chance this food will cause food poisoning.
+|
+* Display Order:<br />'''12'''
+* Def Name:<br />'''BasicsNonPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />{{Bad|false}}
+|
+* '''Default Base Value:''' {{%|0}}
+* '''Min Value:''' {{%|0}}
+* '''Hide At Value:''' {{%|0}}
+* '''To String Style:''' PercentZero
+|
+* '''Parts:'''
+** '''StatPart_MaxChanceIfRotting'''
+| 4000
+<!--</StatDef>-->
+|}
+
+{{nav|stats|wide}}

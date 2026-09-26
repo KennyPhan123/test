@@ -1,0 +1,104 @@
+{{See also|Fine meal|Carnivore fine meal}}
+{{Infobox main|food
+| name = Vegetarian fine meal
+| image = Vegetarian fine meal a.png
+| description = A complex dish assembled with care from vegetarian ingredients.
+<!-- Base Stats -->
+| type = Food
+| type2 = Meal
+| hp = 50
+| deterioration = 10
+| marketvalue = 20
+| mass base = 0.44
+| flammability = 1
+| stack limit = 10
+| path cost = 14
+<!-- Ingestion -->
+| taste = Fine
+| food type = meal
+| ingested direct thought = AteFineMeal
+| max num to ingest at once = 1
+| days to rot = 4
+| nutrition = 0.9
+<!-- Creation -->
+| work to make = 450
+| work speed stat = Cooking Speed
+| production facility 1 = Fueled stove
+| production facility 2 = Electric stove
+| skill 1 = Cooking
+| skill 1 level = 6
+| resource 1 = Nutrition
+| resource 1 type = vegetarian
+| resource 1 amount = 0.75
+| bulk product amount = 4
+<!-- Technical -->
+| defName = MealFine
+| preferability = Fine
+| tradeability = Buyable
+<!-- Unused -->
+| always haulable = true
+| draw gui overlay = true
+| eat effect = EatVegetarian
+| graphic class = Graphic_Single
+| graphic path = Things/Item/Meal/Fine
+| label = fine meal
+| parent name = MealRottable
+| resource readout priority = Last
+| selectable = true
+| social properness matters = true
+| sound eat = Meal_Eat
+| thing class = Meal
+| ticker type = Rare
+| use hit points = true
+}}
+{{Info|A '''vegetarian fine meal''' is a variant of the [[fine meal]] created from vegetarian ingredients.}}
+
+== Acquisition ==
+Vegetarian fine meals can be [[Work#Cook|cooked]] at a [[{{P|Production Facility 1}}]] or [[{{P|Production Facility 2}}]]. Each meal requires 0.75 units of [[nutrition]] from vegetable or animal products ([[milk]] or [[egg]]s), {{Ticks|{{P|Work To Make}}}} of work to make, and a [[{{P|Skill 1}}]] skill of {{P|Skill 1 Level}}.
+
+Functionally identical [[fine meal]]s can be [[Work#Cook|cooked]] at a [[{{Q|Fine meal|Production Facility 1}}]] or [[{{Q|Fine meal|Production Facility 2}}]]. A (vegetarian) fine meal requires 0.25 units of [[nutrition]] from vegan items, 0.25 units of animal products -- this is equal to 5 units of raw vegetables and 5 units of [[milk]] or an equivalent nutritional yield of animal products. They require {{Ticks|{{Q|Fine meal|Work To Make}}}} of work to make, and a [[{{Q|Fine meal|Skill 1}}]] skill of {{Q|Fine meal|Skill 1 Level}}.
+
+== Summary ==
+A fine meal can be eaten by humans or animals for 0.9 [[nutrition]]. As it takes 0.75 nutrition of [[raw food]] to create, vegetarian fine meals provide 120% nutrition efficiency, which is less than regular fine meals.
+
+Eating a fine meal or its variants gives the {{Thought|desc=I ate a really tasty fine meal. Yum!|label=ate fine meal|value=+5|stack=1|duration=1}}. This replaces the {{Thought|desc=That lavish meal was amazing. It nourished my body and my soul.|label=ate lavish meal|value=+12|stack=1|duration=1}} from [[lavish meal]] if present. If [[Ideology DLC]] {{IdeologyIcon}} is active and the meal was made out of [[raw fungus]], its normal moodlet will also be applied.
+
+== Analysis ==
+Vegetarian fine meals are useful for the [[fine meal]] mood boost if [[meat]] is unavailable, too much effort to obtain, or if it is forbidden by [[ideoligion]]{{IdeologyIcon}}. 
+
+Vegetarian fine meals are reasonable for daily use, even if they are less nutrition efficient than simple or fine meals. In fact, going out of your way to obtain meat can take ''more'' time than just making vegetarian meals. A vegetarian fine meal only requires +{{%|(.75 / .5) - 1}} more food, which may take less time than the time required to hunt/tame animals.
+
+=== Meal Work Comparison ===
+To establish how much extra work a vegetarian fine meal would take, we would need an estimate of how much is required to feed a pawn with (vegetarian) [[simple meal]]s. In [[difficulty|Losing is Fun]], 25 tiles in regular soil is a rough over-estimate of what would feed a baseline pawn with year-round growing, assuming a competent planter and simple meals.
+
+[[File:Growing vegetarian fine.png|thumb|right|350px|Extra planting work required to grow veg. fine meals.<br>Left: Food to feed 1 colonist with simple meals.<br>Right: ''Extra'' food from simple meals to make vegetarian meals.]]
+If you were planting 25 tiles of crop to feed per colonist beforehand, you'd need to plant 38 crops to feed colonists using vegetarian fine meals. With an extra 13 crops of food, it would take a healthy Plants 8 grower an average of {{Ticks/gametime/hours| 13 * 370}} more work for every harvest. [[Rice plant]]s take ~ 5.54 days to grow in regular soil when considering day/night cycles. 
+
+* With rice, you'll need an extra {{Ticks|{{#expr: 13 * 370 / 5.54 round 1}}}} of Plants work, per day per colonist.
+* With [[corn plant|corn]] in regular soil, it'd take only an extra {{Ticks|{{#expr: 13 * 370 / 20.86 round 1}}}} of Plants work for the same thing.
+* By spending a single game-hour of work, you could upgrade {{#expr: 2500 / (13 * 370 / 5.54) round 1}} colonists from simple to vegetarian fine using ''rice'', and {{#expr: 2500 / (13 * 370 / 20.86) round 1}} colonists with corn.
+
+Remember that these values are for a grower with Plants 8. If you have anyone better than Plants 8, or if you are playing on a lower difficulty than Losing is Fun, then you'll need even less work.
+
+This analysis makes multiple key assumptions. First, it neglects the "spike" in work caused by each harvest. Second, it assumes a temperate, year-round ground biome with 0 negative events harming your crop production. Finally, it does not include the extra, pre-skill {{Ticks|{{#expr: {{P|Work To Make}} - {{Q|Simple meal|Work To Make}} }}}} of work required to actually cook a fine meal (of any type). After taking these assumptions in mind, you can compare it to the effort of gathering meat. 
+
+Overall, vegetarian fine meals are very affordable in terms of work. Growing more food is a simple task, especially in temperate and warm [[biome]]s. If a [[cold snap]] or [[toxic fallout]] ruins your food supply, you could always switch back to simple meals, giving you a nice food buffer. (Assuming you don't cook all your food right away.)
+
+== Gallery ==
+<gallery>
+Vegetarian fine meal a.png|One vegetarian fine meal
+Vegetarian fine meal b.png|Partial stack
+Vegetarian fine meal c.png|Full stack
+</gallery>
+
+== Version history ==
+* [[Version/1.3.3066|1.3.3066]] - Added
+* [[Version/1.3.3074|1.3.3074]] - New graphics.
+* [[Version/1.3.3087|1.3.3087]] - Vegetarian meals now allow animal products as ingredients.
+
+<gallery>
+Vegetarian fine meal old.png|Texture between version 1.3.3066 and 1.3.3074
+</gallery>
+
+{{Nav|Food|wide}}
+[[Category:Food]] [[Category:Processed Food]] [[Category:Meal]]

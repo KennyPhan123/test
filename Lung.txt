@@ -1,0 +1,72 @@
+{{infobox main|
+| name = Lung
+| image = Health item natural.png|Lung
+| type = Medical Items
+| type2 = Body Parts
+| description = A biological human lung. A pair of these form the core of the human respiratory system.
+| mass base = 1
+| hp = 50
+| flammability = 1.0
+| marketvalue  = 1000
+| thingCategories = BodyPartsNatural
+| body part = Lung
+}}
+'''Lungs''' are harvestable [[human]] organs that allow a pawn to [[Breathing|breathe]].
+
+== Acquisition ==
+{{see also|Human resources#Organ harvesting{{!}}Human resources}}
+The lung item can be harvested from live [[human]]s through [[surgery]].  By default, each human has two lungs. A lung must be perfectly healthy in order to obtain the item. This bill requires 1 of any type of medicine to perform. [[Doctoring#Success_chance|Success chance]] is dependent on a number of factors, including bed [[quality]], [[Room stats|room cleanliness]], and doctor skill - specifically the doctor's [[Medical Surgery Success Chance]]. Lungs can be directly harvested, but installing a [[detoxifier lung]] {{BiotechIcon}} will also net an organic lung. Removing both lungs will kill the pawn.
+
+Removing a healthy lung from a guest or prisoner will decrease faction [[goodwill]] by 80 points, down to the cap of -100. Removing any organ from anyone depresses the "donor" with -30 [[mood]] penalty for 7 days and 7 hours. Other colony members can gain potentially tremendous [[mood]] penalties, which all stack:
+: {{--|5}} for "Someone's organ harvested" (any organ); {{--|6}} if colonist was harvested
+: {{--|6}} for "Someone organ-murdered" (if fatal)
+: {{--|5}} for "Witnessed ally's death" (if fatal and on colonist)
+: {{--|4}} for "Observed Corpse" (if fatal)
+Pawns with the [[Bloodlust]] or [[Psychopath]] traits, or those with an [[Ideoligion]] with [[Organ use|Organ Use: Acceptable]]{{IdeologyIcon}} are not affected by the harvesting of other people. Other Ideologion precepts may change moodlets for harvest and organ use.
+
+Lungs can also be acquired through [[trading]] with faction settlements or Exotic Goods traders.
+
+== Summary ==
+A pawn requires 1 lung to live. Each lung contributes towards 50% of a pawn's [[Breathing]], so losing a lung results in 50% Breathing. Breathing itself affects [[Consciousness]], [[Moving]], and the [[Rest Rate Multiplier]]. A completely removed lung would result in {{--|10%}} Consciousness, {{--|15%}} to sleep efficiency, and {{--|20%}} Moving; Consciousness also reduces a variety of other stats. See the [[Consciousness]] page for details.
+
+The tissue of the lungs can be affected by [[asthma]], commonly related to age, [[Smokeleaf|smoking]], or exposure to harmful substances. 
+
+=== Installation ===
+Installing the part requires {{ticks|2500}} of work, 2x medicine of [[Herbal medicine|herbal]] quality or better, and a [[Skills#Medical|Medical skill]] of 5.
+
+Removing the part requires {{ticks|2000}} of work, 1x medicine of [[Herbal medicine|herbal]] quality or better, and has no [[Skills#Medical|Medical skill]] requirements.
+
+If the operation fails, the part has a chance{{Check Tag|What Chance?}} to be destroyed.
+
+== Analysis ==
+Lungs contribute a substantial amount to a pawn's effectiveness. If one is destroyed, you should aim to replace it as quickly as possible. This can be achieved with either another lung (harvested or traded), a [[Detoxifier lung]],{{BiotechIcon}} or a [[Fleshmass lung]].{{AnomalyIcon}}
+
+Asthma and permanent injury are less pressing concerns, but are often worth the penalty for organ harvesting. Harvest a lung from a prisoner, or alternatively a guest or worthless colonist (before abandoning them). Non-natural replacements are immune to Asthma and permanent injury, so may also be considered.
+
+{{Breathing Part Efficiency Table}}
+
+A lung is worth {{Icon Small|silver||{{Q|Lung|Market Value Base}}}}, as opposed to a [[kidney]]'s {{Icon Small|silver||{{Q|Kidney|Market Value Base}}}}. Lungs also reduce pawn capacity much more than a [[kidney]]. A lost kidney reduces Consciousness by 5% and [[Immunity Gain Speed]] by 25%. 
+
+While worth less than a [[heart]] or [[liver]], a pawn can live with 1 lung and 1 kidney harvested. If the mood penalties don't concern you (or don't exist due to [[Ideoligion]]{{IdeologyIcon}}), you can harvest 1 lung, 1 kidney, and 1 heart/liver before you kill a pawn. If you harvest a lung and kidney, you can then donate the prisoner to a [[royal tribute collector]]{{RoyaltyIcon}} for the same amount of [[honor]] as a healthy pawn. Alternatively, if the pawn has the [[Deathless]]{{BiotechIcon}} gene, you can harvest both lungs, both kidney, heart, and liver at the cost of leaving said pawn permanently bedridden.
+
+=== Compared to detoxifier lung ===
+{{Biotech|section=1}}
+{{For|a more fulsome analysis|Detoxifier lung}}
+[[Detoxifier lung]]s are lung replacements that are crafted at a [[{{Q|Detoxifier lung|Production Facility 1}}]] after the [[{{Q|Detoxifier lung|Required Research}}]] research project has been completed. Each detoxifier lung requires {{Required Resources|detoxifier lung}}. Installing a detoxifier lung replaces that respective lung; if the lung is in perfect condition, it is also harvested without penalty.
+
+Detoxifier lungs have a part efficiency of {{Good|110%}}, and grant {{+|60%}} [[toxic environment resistance]] per installed detoxifier lung up to {{+|100%}}. It's also immune to [[Asthma]].
+
+=== Compared to fleshmass lung ===
+{{Anomaly|section=1}}
+{{For|a more fulsome analysis|Fleshmass lung}}
+[[Fleshmass lung]]s are lung replacements introduced by [[Anomaly]] and can not be crafted. It has no associated item and cost no resources.
+
+Fleshmass lungs have a part efficiency of '''100%''', grant {{+|30%}} [[toxic environment resistance]] per installed fleshmass lung, and generate {{bad|+6%}} pain. It's also immune to [[Lung rot]] and [[Asthma]].
+
+==Version history==
+
+* [[Version/0.7.581|0.7.581]] - Item form added, and now harvestable.
+* ? (Possibly 1.4) - Market value increased from {{Icon Small|silver||400}} [[silver]] to {{Icon Small|silver||1000}} [[silver]]. 
+
+{{nav|body parts|wide}}
+[[Category:Medical Item]] [[Category:Body Part]] [[Category:Organ]]

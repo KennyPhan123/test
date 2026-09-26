@@ -1,0 +1,48 @@
+{{main|Animals}}
+{{Recode|reason=Selectable columns to make manageable table sizes? may run into template size limits.}}
+<onlyinclude>
+Wild [[animals]] can spawn in specific [[biomes]], whereas almost any animal may be purchased from [[trade]]rs. The following animals: [[Alpaca]], [[Bison]], [[Donkey]], [[Dromedary]], [[Elephant]], [[Horse]], [[Muffalo]], [[Yak]], can carry items in [[Caravan]]s (See [[Pack animal]]).
+
+Animals which produce [[milk]], [[eggs]] and [[wool]] when tamed are listed on the pages for those resources.
+
+This table is only intended as an overview of the most important stats - for more, see [[List of animals/Additional]].
+
+{| {{STDT| sortable c_08 text-center}}
+! rowspan="2" colspan="2" | Animal
+! rowspan="2" | MHS<ref>[[Minimum Handling Skill]] required to train/tame this animal.</ref>
+! colspan="5" | [[Trainability]]
+! rowspan="2" | Diet
+! rowspan="2" | [[Pen animal|Pens]]
+! rowspan="2" data-sort-type=number | Hunger Rate<ref>Nutrition lost per day.</ref>
+! rowspan="2" data-sort-type=number | Offspring Per Year
+! colspan="2" | Yields
+! rowspan="2" data-sort-type=number | Average DPS
+! rowspan="2" | Move Speed
+! rowspan="2" data-sort-type=number | Health Scale
+! colspan="2" | [[Manhunter]]
+! rowspan="2" | <abbr title="Assuming they sleep on the ground and mate as soon as possible.">M&nbsp;/&nbsp;F</abbr> <ref>Ratio of Males to Females</ref>
+! colspan="2" data-sort-type=number | Nutrition Efficiency<ref name="noMilking">Nutrition of meat and milk out for each nutrition in, when babies/adults are slaughtered, for an ideal ratio of males:females, and assuming constant pregnancy and immediate milking. For a list that doesn't include milking see [[Animal husbandry#Butchering|Animal husbandry]].</ref>
+|- style="background-color:#52a76f; border-style: none;"
+! style="border-style: none;"| [[File:Obedience.png|link=Animal husbandry#Guard]]
+! [[File:Release.png|link=Animal husbandry#Attack]] 
+! [[File:Rescue.png|link=Animal husbandry#Rescue]]
+! [[File:Haul_animal.png|link=Animal husbandry#Haul]]
+! [[File:Forage.png|link=Animal husbandry#Forage]]{{OdysseyIcon}}
+! data-sort-type=number | Meat <!--Yield--->
+! data-sort-type=number | Leather <!--Yield--->
+! <abbr title="Chance of revenge when harmed">Hunt</abbr>
+! <abbr title="Chance of revenge on a failed tame attempt">Tame</abbr>
+! data-sort-type=number | <abbr title="Nutrition of meat and milk out for each nutrition in, when babies are slaughtered, for an ideal ratio of males:females, and assuming constant pregnancy and immediate milking>Baby Slaughter</abbr>
+! data-sort-type=number | <abbr title="Nutrition of meat and milk out for each nutrition in, when adults are slaughtered, for an ideal ratio of males:females, and assuming constant pregnancy and immediate milking>Adult Slaughter</abbr>
+|-
+{{#ask:[[Category:Animals]] [[Name::!Human]] [[Type::Animal]]
+| named args=yes
+| ?Name=?Name
+| limit = 500
+| format = template
+| sort = From DLC, Name
+| template=Animals/Row}}
+|}
+</onlyinclude><references/>
+
+[[Category:Animals|#List of animals]]

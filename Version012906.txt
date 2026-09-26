@@ -1,0 +1,157 @@
+{{Version Nav}}
+
+Animal taming is here! You can now tame animals, milk them, eat them, and train them into whirling furry/scaly death machines! We’ve also added codified room roles and statistics (like room wealth and room impressiveness), new traits, animals, threats, items, bonuses, bugfixes, and bugs. A full change list is at the end of this post.
+
+'''How to upgrade:''' If you own the game, you can get the new version by re-downloading from the link you used before (it is a permanent link and always has the newest version). You should also get an update email from us. Anyone still having trouble should start at the support page which includes an automatic link sender tool and our support email. There may be a delay of some hours before your download count resets or your email arrives.
+
+===Compatibility===
+
+Also note that this build will not load old savegames or old worlds, so please don’t try to load these in the new version. They’ll probably just crash the game.
+
+==Release Trailer==
+
+<youtube>https://www.youtube.com/watch?v=KkmR_FNp1ng</youtube>
+
+==Changes==
+
+===Animals===
+====Animal taming====
+* Colonists with the Animal Handler work type will now interact with [[animals]].
+* Animal handling success rates are governed by the new [[Skills|Animals skill]].
+* Handlers can tame animals. They approach designated wild animals with [[food]] and attempt to tame them to make them part of the colony.
+* Handlers can train animals as designated in tame animals’ Training tab. Animal training looks like taming, requires food, and trains one “trainable skill” at a time. Not all animals can learn anything; they need sufficient trainable intelligence.
+* Trainable skills:
+** Obedience: has master, follows master while master is drafted and defends him.
+** Release: master can release animal during combat to attack distant enemies, and call animal back.
+** Rescue: animal will rescue wounded colonists and take them to bed. Animal must be smart and large enough to do this.
+** Haul: animal will intermittently haul items like a colonist would. Animal must be smart enough to do this, and will haul an amount related to its body size.
+* Added Animals main tab, which lists all colony animals and provides interfaces to set their master and area restriction.
+* Each animal has a ‘wildness’ indicating how difficult it is to tame.
+* Animals have a minimum handling skill. Player is warned if they designate taming an animal that no handler can actually tame.
+* Tame animals can be assigned animal areas in which they will try to remain.
+* Tame animals can be bought and sold. Bulk [[traders]] carry normal animals, while exotic goods traders can buy and sell any weird animal, pre-tamed.
+* Tame animals can be designated for slaughter and animal handlers will slaughter them.
+
+====New animal behaviors and mechanics====
+* Some animals ([[alpaca]], [[muffalo]], [[camel]]) can be shorn for [[wool]] that can be crafted into [[apparel]].
+* Some animals ([[muffalo]], [[cow]], [[camel]]) can be [[milk]]ed.
+* Some animals ([[chicken]], [[cobra]], [[iguana]], [[tortoise]], etc) can now lay [[eggs]]. Fertilized eggs will hatch. All eggs can be eaten or cooked.
+* [[Animals]] can be pregnant and give birth. Animals are made pregnant when a male approaches and mates with a female. Birth is accompanied by amniotic fluid spray.
+* You can now build [[animal bed]]s and [[Animal sleeping box|animal boxes]] and place [[animal sleeping spot]]s.
+* Animals all sleep.
+* Animals can have different graphics per gender.
+* Animals have “life stages” related to their ages. Baby animals are tiny and weak, juveniles somewhat larger, and adults are full size.
+* Colony [[Scenario system|starts]] with a random pet.
+* Animals can nuzzle colonists, improving their [[mood]].
+* Animals can be named when tamed or when nuzzling. Names are drawn from a large bank of animal names.
+* All organisms including animals have life expectancies and will develop chronic conditions like [[Frail|frailty]] or [[Cataract|cataracts]] in old age.
+* New incident: [[Events#(Animals) join|Farm Animals Wander In]] (some tame farm animals wander to and join the colony)
+* New incident: [[Events#(Animal) self-tamed|Self Tame]] (random wild animal on map becomes tame).
+* Doctors will treat animals’ wounds if the animal is in a colony bed.
+* Some animals may attack on a failed taming attempt.
+* Animals produce animal [[filth]], proportional to body size, inversely proportional to petness.
+* Tons of new animal graphics and sounds for new animals.
+
+====New animals====
+* [[Boomalope]] (large fragile animal that explodes and sets fires on death)
+* [[Thrumbo]] (giant peaceful powerful creature with amazing [[thrumbofur|fur]] and [[Thrumbo horn|horn]])
+* [[Chinchilla]] (very valuable [[Chinchilla fur|fur]])
+* [[Capybara]]
+* [[Cow]]
+* [[Pig]]
+* [[Chicken]]
+* [[Yorkshire terrier]]
+* [[Labrador retriever]]
+* [[Husky]]
+* [[Elephant]]
+
+===Room roles and stats===
+* Rooms now have ‘roles’ and stats based on what is inside them. These are automatically-defined values that, in turn, passively affect thoughts and events in the room.
+* Room roles and stats can be inspected with a new inspection tool (bottom right of screen).
+====[[Room roles]]====
+* Bedroom
+* Barracks
+* Prison bedroom
+* Prison barracks
+* Dining room
+* Hospital
+* Laboratory
+* Kitchen
+* Rec room
+* Tomb
+
+====[[Room stats|Room Stats]]====
+* Impressiveness (most important stat; an aggregate of other stats, mostly for pride psychology)
+* Wealth
+* Space
+* Beauty
+* Cleanliness (has a direct effect on medical outcomes)
+===== Room Stat Effects =====
+* [[Immunity Gain Speed]]
+* [[Medical Tend Quality|Medical treatment quality]]
+* Room stats create many variants on [[thoughts]] like:
+** Ate in impressive dining room
+** Own impressive bedroom
+** Own bed in impressive barracks
+** Did joy activity in impressive rec room
+===== Traits Related To Room Stats =====
+* [[Greedy]]: Unhappy without a very impressive room.
+* [[Jealous]]: Unhappy if anyone has a room noticeably better than him.
+* [[Ascetic]]: Unhappy unless he has a very crappy room.
+
+===Facilities===
+* Added ‘facilities’ – passive buildings that give bonuses to nearby buildings:
+* [[Vitals monitor]] (improves healing in adjacent medical bed)
+* [[Tool cabinet]] (improves production at nearby work table)
+* [[Multi-analyzer]] (speeds research at nearby research bench)
+
+===Ancient artifacts===
+* Ancient [[artifact]]s with psychic powers can be bought, sold, and found in [[Ancient shrine|ancient crypts]].
+* Psychic powers work at any range through obstacles.
+* Artifacts are one-use.
+====Artifacts====
+* [[Psychic insanity lance]] – drives a single target insane
+* [[Psychic shock lance]] – drops a single target asleep
+* [[Psychic animal pulser]] – drives animals berserk map-wide
+* [[Psychic soothe pulser]] – gives a temporary mood boost to everyone on the map
+
+===Graves and sarcophagi===
+* [[Grave]]s are no longer just glorified storage slots; colonists must actually ‘bury’ corpses.
+* Can now build [[sarcophagus|sarcophagi]] out of solid materials. High-quality sarcophagi are art items.
+* Colonists will visit graves of dead colonists for a [[joy]] activity.
+
+===Misc new incidents===
+* New incident: [[Poison ship]]. A variation on the psychic drone ship that kills plants in an expanding circle.
+* New [[Events#Flashstorm|Flashstorm]]. A localized, intense [[lightning]] storm in one area of the map. Causes big fires.
+
+===Interface rework===
+* Main tabs like Work, Outfits, World, Factions, etc are now tabs permanently displayed along the bottom of the screen instead of being buried in an Overview window.
+* Some tabs, like Work, will not take more space than they need to given the number of entries (colonists) to display.
+
+===Misc===
+* Added [[heart attack]]s. People or animals approaching or past their life expectancy will have a chance of heart attack, which will progress and resolve in a random way. Heart attack is emergency-treatable to improve outcomes.
+* Added [[hay]] (animal food only, for getting through winter). Added [[haygrass]] (long growing, high yield of hay).
+* Added way to enable/deny medicine in different qualities to any colonist, prisoner, or tame animal, from a the health tab.
+* All [[furniture]] is now ‘minifiable’ like televisions and telescopes. This means beds, chairs, etc can be moved without being rebuilt, bought, and sold.
+* New [[trait]]: Night owl. Happy when awake at night, sad if awake around midday.
+* New [[Mood|thought]]: Crowded – In a space with too many people.
+* New installable implant: [[Painstopper]]. Prevents all [[pain]], but reduces [[consciousness]] permanently.
+* New installable implant: [[Joywire]]. Large permanent [[Mood|happiness]] boost, but reduces [[consciousness]] permanently.
+* [[Furniture]] can now be art engraved.
+* New floors: [[gold tile]], [[sterile tile]], [[cream carpet]], [[dark carpet|dark gray carpet]].
+* Game start now has a “select random landing site” button if you don’t want to choose.
+* Improvements to trade interface: better layout, expands vertically to use all screen space, increment/decrement buttons and launch/drop all buttons added.
+* Added ‘open’ designator for opening [[cryptosleep casket]]s, [[grave]]s, [[Sarcophagus|sarcophagi]], and other containers.
+* [[Events#Manhunter_Pack|Manhunter pack]] incident can use [[animals]] besides [[warg]]s.
+* Commands are shown if there is at least 1 selected object with this command, instead of requiring all selected things be able to accept the command.
+* [[Mental_break#Psychotic wandering (Daze|Dazed broken]] pawns will now randomly strip off clothes and drop things.
+* New graphics for [[squirrel]] and [[warg]].
+* New graphics for [[research bench]] and other buildings.
+* [[Plant Harvest Yield|Unskilled or injured growers]] can fail at harvesting, destroying the harvest for one plant
+* A bunch of new music from Alistair Lindsay.
+* [[Carrying Capacity|Carrying capacity]] is now a stat that can change for body size and [[manipulation]] capacity.
+* [[Raid#Siege|Siegers]] will never be sent with only melee weapons (too exploitable).
+* [[Sappers]] now avoid mining through high-health ores and barriers.
+* Rebalanced crop yields and harvesting challenges so crops require a bit more space.
+* Game will auto-reset mods config on startup crash to try to recover.
+* Tons and tons of bugfixes and other adjustments, refactorings, balancings and tunings.

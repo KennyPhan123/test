@@ -1,0 +1,36 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Anomaly/Global/Misc}}
+|}
+----
+{| {{STDT| c_21}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Metalblood" <!-- defName="Metalblood" -->
+! [[Metalblood]]
+----
+* Def Name:<br />Metalblood
+* Label:<br />metalblood
+|<!-- Description -->
+<div style="max-width: 500px;">
+This creature has the metalblood compound in their bloodstream. This substance can rapidly harden the flesh when it anticipates a blow, making the user more resistant to damage. However, the bioferrite-based chemistry of this serum also makes the user particularly vulnerable to fire.
+</div>
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Skin Shader: '''Metalblood'''
+* Is Bad: {{Bad|false}}
+* '''Comps'''
+** ''Disappears Disableable''
+*** Disappears After Ticks: '''{{Ticks/gametime/days|300000}}'''
+*** Show Remaining Time: {{Good|true}}
+** ''Disappears On Death''
+|<!-- Stages -->
+{| {{STDT| c_21}}
+! Label !! Parameters
+|-
+! Metalblood
+|<!-- Parameters -->
+* [[Incoming Damage Multiplier]] Factor: {{Good|×50%}}
+* [[Damage Types#Flame|Flame Damage]] Factor: {{Bad|×400%}}
+* [[Damage Types#Burn|Burn Damage]] Factor: {{Bad|×400%}}
+|}<noinclude>
+|}</noinclude>

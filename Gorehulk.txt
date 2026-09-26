@@ -1,0 +1,179 @@
+{{Anomaly}}
+{{Spoiler}}
+{{Stub|reason=General. also fleshbeast sets precedent for ranged clmbat in infobox and it seems useful}}
+{{Infobox main|entity
+| name = Gorehulk
+| image = Gorehulk.png
+| description = A monstrous creature that resembles a massive, painfully swollen human with randomly reconfigured body parts. Near its top is a stretched face that watches its victim with dead eyes.<br />Hundreds of sharp keratin spines protrude from the gorehulk's skin. It can launch these spines to spear its victims at a distance. However, its awkward fleshy body is less effective at causing harm up close.<br />It's hard to know whether this is a human that was horribly distorted by the influence of the void or a poor imitation of humanity created from scratch by some evil intelligence.
+<!-- Base Stats -->
+| type = Entity
+| type2 = Basic
+| flammability = 0.7
+| hidden while undiscovered = true
+| tradeability = None
+<!-- Containment -->
+| minimum containment strength = 60
+| anomaly knowledge = 2
+| knowledge category = Basic
+| study interval = 120000
+| bioferrite density = 1.5
+| min monolith level for study = 1
+| requires holding platform = true
+| base escape interval MTB days = 60
+<!-- Pawn Stats -->
+| combatPower = 75
+| movespeed = 3.25
+| healthscale = 1.25
+| bodysize = 2
+| body = Gorehulk
+| diet = none
+| lifespan = 25
+| trainable = None
+| psychic sensitivity = 2
+| min comfortable temperature = -40
+| max comfortable temperature = 60
+| always violent = true
+| can become shambler = true
+| intelligence = ToolUser
+| needs rest = false
+| blood def = Filth_DarkBlood
+| bleed rate factor = 0.5
+| flesh type = EntityFlesh
+| is immune to infections = true
+| has genders = false
+| disable ignite verb = true
+| corpse hidden while undiscovered = true
+| hediff giver sets = AnomalyEntity
+<!-- Production -->
+| leatheryield = 20
+| leathername = Human leather
+| meatyield = 70
+| meatname = Twisted meat
+<!-- Melee Combat -->
+<!-- 1. Attack -->
+| attack1label = left flesh club
+| attack1labelNoLocation = flesh club
+| attack1dmg = 3
+| attack1type = Blunt
+| attack1part = LeftFleshClub
+| attack1cool = 1.5
+| attack1alwaysTreatAsWeapon = true
+<!-- 2. Attack -->
+| attack2label = right flesh club
+| attack2labelNoLocation = flesh club
+| attack2dmg = 3
+| attack2type = Blunt
+| attack2part = RightFleshClub
+| attack2cool = 1.5
+| attack2alwaysTreatAsWeapon = true
+<!-- 3. Attack -->
+| attack3label = head
+| attack3dmg = 3
+| attack3type = Blunt
+| attack3part = HeadAttackTool
+| attack3ensureLinkedBodyPartsGroupAlwaysUsable = true
+| attack3cool = 2
+| attack3chancefactor = 0.1 
+<!-- Technical -->
+| defName = Gorehulk
+| label = gorehulk
+}}
+'''Gorehulks''' are a type of [[entity]] added by the [[Anomaly DLC]].
+
+== Occurrence ==
+Gorehulks usually spawn in raids composed solely of other gorehulks. Rarely, [[shambler]] gorehulks may also spawn as part of a horde of other shamblers.
+
+== Summary ==
+Gorehulks are very easy to bring down as they have no armor, no resistance to pain or tox gas, and a measly melee DPS of 1.24. They have the spine launch ability that deals 12 stab damage (15% AP), with range 17.9 and 2.17s cooldown.
+
+Gorehulks have relatively unique combat AI, and will actively try to kite their enemies, using spine launch to attack from afar and moving away when they get close.{{Check Tag|Detail needed|Tiles radii and other mechanical details}}
+
+=== Yield ===
+Gorehulks yield 3 [[bioferrite]] and 400W per day.
+
+== Analysis ==
+Gorehulks are slow and their spine attack has a short range, so they are vulnerable to [[kiting]] tactics. In addition, they are weak in melee, so when fighting small groups or when in a confined space, melee pawns can be effective. It is not recommended to charge melee fighters against a large group of gorehulks in the open, due to their own kiting behavior.
+
+While not in sight they will walk towards your colonists. Therefore, a good way to deal with them is to fight in chokepoints around corners to not let them range attack you and get them one by one. They also don't pursue your pawns when retreating behind doors. This means you can take small breaks during fighting to tend wounds and capture downed gorehulks.
+
+=== Containment ===
+Despite what their disproportionately high minimum containment strength might imply, gorehulks are the easiest entity to capture. and one of the safest to contain. While they will escape more often than comparable entities, their weak and blunt melee damage means they are not dangerous when escaping in small groups. Their great bulk combined with no particular resistance to pain makes them easy to capture. With a little investment into proper facilities they can be a great source of [[bioferrite]]. [[Sightstealer]]s, on the other hand, yield 1.6, almost half of a gorehulk, and are arguably more dangerous when escaping.
+
+Since captured gorehulks are not subject to the [[death on downed]] chance, they can be reliably downed before they die. This and the fact that they have 2 legs means that gorehulks can be repeatedly released, beaten, recaptured, and healed until their legs are destroyed. Legless gorehulks can not escape at all.
+
+The tricky part of this is to know when to stop punching and let them rest to avoid death; gorehulks will die when:
+* The HP of one of their vital body part reaches 0. This is the easy part to check, memorize the attack damage of your pawn and let them rest when the HP of any vital body part drop below this value. The average attack damage can be viewed in the Melee DPS breakdown of the pawn
+* They have received more than a certain amount of damage in total. This can be monitored using the faint health bar behind the "Pain Shock" status when they are down. To be safe, you can let them rest once this bar reaches roughly 1/10 it's original length.
+
+===Study points comparison===
+{{Graph:Chart
+|width=400
+|height=150
+|title=Basic study points of entities at different containment levels
+|titleXAlign=center
+|type=line
+|colors = {{{color|pink, orange, green, darkred, blue}}}
+|xAxisTitle=Containment strength
+|xAxisMin = 0
+|xAxisMax = 100
+|yAxisTitle= Study points
+|yAxisMin=0
+|yAxisMax=3
+|xGrid=
+|yGrid=
+|legend=
+|x=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100
+|y1={{Entity Research Points/Data points|Gorehulk}}
+|y1Title=Gorehulk
+|y2={{Entity Research Points/Data points|Trispike}}
+|y2Title=Trispike
+|y3={{Entity Research Points/Data points|Toughspike}}
+|y3Title=Toughspike
+|y4={{Entity Research Points/Data points|Bulbfreak}}
+|y4Title=Bulbfreak
+|y5={{Entity Research Points/Data points|Sightstealer}}
+|y5Title=Sightstealer
+}}
+
+== Health ==
+{{Animal Health Table|Gorehulk}}
+{{Pawn Attack Table}}
+
+== Gallery ==
+<gallery>
+Gorehulk A east.png|Variant A facing east
+Gorehulk A north.png|Variant A facing north
+Gorehulk A south.png|Variant A facing south
+
+Gorehulk B east.png|Variant B facing east
+Gorehulk B north.png|Variant B facing north
+Gorehulk B south.png|Variant B facing south
+</gallery>
+<gallery>
+Gorehulk C east.png|Variant C facing east
+Gorehulk C north.png|Variant C facing north
+Gorehulk C south.png|Variant C facing south
+
+Gorehulk D east.png|Variant D facing east
+Gorehulk D north.png|Variant D facing north
+Gorehulk D south.png|Variant D facing south
+</gallery>
+<gallery>
+Gorehulk E east.png|Variant E facing east
+Gorehulk E north.png|Variant E facing north
+Gorehulk E south.png|Variant E facing south
+
+Gorehulk F east.png|Variant F facing east
+Gorehulk F north.png|Variant F facing north
+Gorehulk F south.png|Variant F facing south
+</gallery>
+<gallery>
+Dessicated Gorehulk east.png|Desiccated facing east
+Dessicated Gorehulk north.png|Desiccated facing north
+Dessicated Gorehulk south.png|Desiccated facing south
+</gallery>
+== Version history == 
+* [[Anomaly DLC]] Release - Added.
+
+{{Nav|entity|wide}}
+[[Category: Entities]]

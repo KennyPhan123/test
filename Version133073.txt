@@ -1,0 +1,35 @@
+{{Version Nav|unstable=1}}
+
+Build 1.3.3073 is up on unstable for testing!
+
+* Fix: ProblemCauser quest can fire with mech cluster even if mechanoids disabled.
+* Desired apparel now uses the same faction restrictions as role apparel does. Tribal-Only: War mask, Tribal Headdress. Non-tribal only: Slicecap, Beret. Removed visage mask restriction to non-tribal only.
+* Fix: Incorrect requireOne usage for PainIsVirtue.
+* Fix: Some bad requireOne usages.
+* Optimized QuestNode_Root_WorkSite.
+* Slaves no longer slight non-slaves
+* Fix: Diversity of thought calculates the percentage of pawns with another ideo by dividing against all spawned pawns of the faction including animals, slaves and prisoners.
+* Allowed saving all ideos and allowed saving ideos in-game.
+* Allow non-ideo members to participate in leader speech.
+* Change processed food to not generate negative thoughts related to meat-eating precepts.
+* Beggars can now be given items when they are traveling to their wait destination.
+* Prevent thrimbos from eating Gauranlen trees in addition to anima trees.
+* Resolved some missing PlaceholderImage textures.
+* Fix: Lovers/Spouses sharing a bed in barracks get "sleeping alone" thought.
+* Build script fails gracefully if a build produces no output.
+* Fix: Initial player ideo can be set multiple times on different ideos if the user revisits the configure ideo page before starting a game.
+* Ideo UI Role apparel requirements float menu now lists the incompatibility reason.
+* Change animal products to not generate negative thoughts related to meat-eating precepts.
+* Added confirmation dialogs in ideo config UI when precepts will change.
+* Fix: Pawns under 18 can no longer use age reversal + warnings if bioscuplter tuned to young pawn set to age reversal
+* Ensure Tunneler meme always has the MiningYield_High precept.
+* Slaves never start social fights with non-slaves if insulted.
+* Renamed def Nutrifungus to Plant_Nutrifungus per standard.
+* Fix: Starting leader speech from a ritual focus bypasses some checks, like being able to speak.
+* Slaves no longer insult non-slaves.
+* Changed ThoughtWorker_Precept_IdeoDiversity to not iterate over spawned pawns list twice.
+* Fix: Remove duplicate code from merge.
+* Fix: Funerals are expected to be held for slaves if they have same ideo as colonists.
+* Fix: Farskip with Relic gives debuff from losing the relic.
+* Fix: Misc small copy errors
+* Dryads of not the correct caste will return to the tree first when connection strength drops enough to be unable to support the current number of dryads.

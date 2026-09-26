@@ -1,0 +1,72 @@
+'''Pack animals''' refer to [[animals]] that you can bring along on a [[caravan]] to carry extra weight. The current pack animals in the game are [[Alpaca]]s, [[Bison]], [[Donkey]]s, [[Dromedary|Dromedaries]], [[Elephant]]s, [[Horse]]s, [[Muffalo]], [[Yak]]s, and [[Mastodon]]s.{{OdysseyIcon}} Below you will see a table that will help you decide what will be the most appropriate pack animal for you.
+
+== Analysis ==
+Horses offer the fastest riding speed of animals that carry loads, tie for 2nd best weight capacity (at {{Q|Horse|Pack Capacity}} kg), and only have a {{Q|Horse|Real Hunger Rate}} hunger rate. This arguably makes them the best pack animal, and always useful to have more of until you reach maximum riding speed (1 horse / colonist). However, horses are not found in all [[biome]]s, and other animals have other benefits. [[Elephant]]s can be used as combat animals, [[muffalo]] can be used for their [[muffalo wool|wool]], etc.
+
+You need to take into account the distance you're going, whether you plan to stay (or might) and for how long, and the return trip's length, and bring food accordingly for your colonists and animals. However, take note of the following:
+* All of the pack animals currently in the game are herbivorous. As a result, provided the season and terrain allow, they can sustain themselves through grazing while in a caravan. They will not be able to graze outside of the growing season however. Be careful about bringing many animals or large animals, such as Elephants, during this time.
+* Colonists will [[foraging|forage]] for [[berries]]/[[agave fruit]]/etc proportional to their [[Foraged Food Amount]] stat, with Tribal pawns receiving a 170% bonus. This food can supplement both the pawn and the pack animals food needs.
+* Depending on the scenario, the traveling colonists can set up a temporary base and produce food (and other items), the same as at your home location. Time permitting, they can even construct buildings and workbenches, etc. This is only recommended for long-term stay.
+
+The more weight you add to the caravan, the slower it'll move. A caravan at maximum weight capacity moves at half the speed of an unladen one. Adding carrying capacity thus makes a caravan move faster.
+
+=== Mechanoids ===
+[[Mechanitor|Friendly mechanoids]]{{BiotechIcon}} can also add to a caravan's carrying capacity. While on a caravan in the world map, they do not use any sort of power. Only when they enter into an event map, like an ambush, will they use power normally. If the [[mechanitor]] and their mechs are separated, then no mech commands can be issued, but mechs can still carry things as usual.
+
+Treat mechs like extra carrying capacity, rather than an animal you have to feed and manage. If a mech isn't doing any work, you might as well bring it into the caravan. And if you ''need'' the extra carrying capacity to hold some supplies, then you may want to load a mech on there. Combat mechs can be used to protect their traveling mechanitor
+
+The most efficient mech for capacity per [[bandwidth]] is the [[tunneler]]. Tunnelers are also the most efficient mech for capacity per material resource, even when ignoring bandwidth, but assuming [[plasteel]] and [[component]]s are readily available. However, every mech has a use beyond a caravan, and caravan efficiency should rarely be a determining factor in mech choice. <!-- Tunnelers are 200 steel / 8 component / 75 plasteel for 122.5kg. Lifters + light mechs are 100 steel / 4 component for 24.5kg, 5x less capacity. This results in 296 steel + 75 plasteel v 740 steel (for 5 light mechs) if Fabrication is available. Scorchers are 130 steel / 32 plasteel / 8 component for 35kg -->
+
+== Comparison table ==
+Note that [[thrumbo]]s and [[alpha thrumbo]]s{{OdysseyIcon}} will refuse to carry packs, making them not ''technically'' "pack animals", but they can be ridden, providing a speed factor of {{Q|Thrumbo|Riding Speed}} or {{Q|Alpha thrumbo|Riding Speed}} to their rider in a caravan on the world map, respectively. They are included for comparison's sake.
+
+{| {{STDT| sortable c_08 text-center}}
+|-
+! style="vertical-align: top;" colspan="2" |'''Animal''' 
+! style="vertical-align: top;"| Type 
+! style="vertical-align: top;" data-sort-type="number"| Carry Capacity 
+! style="vertical-align: top;" data-sort-type="number"| Health Scale 
+! style="vertical-align: top;" data-sort-type="number"| Hunger Rate 
+! style="vertical-align: top;" data-sort-type="number"| Carry Capacity <br>/Hunger rate 
+! style="vertical-align: top;" data-sort-type="number"| Carry Capacity <br>/Bandwidth 
+! style="vertical-align: top;" data-sort-type="number"| Mass{{ref label|Mass|1}}<br>(kg)
+! style="vertical-align: top;" data-sort-type="number"| Wildness 
+! style="vertical-align: top;" data-sort-type="number"| Riding<br>Speed 
+! style="vertical-align: top;" data-sort-type="number"| Move<br>Speed
+|-
+{{#ask: [[Category:Pack Animal]] OR [[Name::Thrumbo]] OR [[Name::Alpha thrumbo]]
+ | named args=yes
+ | ? # - = ?Pagename
+ | ?Name = ?Name
+ | ?Type = ?Type
+ | ?Pack Capacity = ?Pack Capacity
+ | ?Health Scale = ?Health Scale
+ | ?Base Hunger Rate = ?Base Hunger Rate
+ | ?Mass - Adult = ?Mass - Adult
+ | ?Wildness = ?Wildness
+ | ?Riding Speed = ?Riding Speed
+ | ?Move Speed Base = ?Move Speed Base
+ | format=template
+ | template= Animal Caravan Row
+ | sort = type, name
+}}{{#ask: [[Pack Capacity::+]] [[Resource 1::+]]
+ | named args=yes
+ | ? # - = ?Pagename
+ | ?Name = ?Name
+ | ?Type = ?Type
+ | ?Pack Capacity = ?Pack Capacity
+ | ?Health Scale = ?Health Scale
+ | ?Base Hunger Rate = ?Base Hunger Rate
+ | ?Mass - Adult = ?Mass - Adult
+ | ?Wildness = ?Wildness
+ | ?Riding Speed = ?Riding Speed
+ | ?Move Speed Base = ?Move Speed Base
+ | ?Bandwidth Cost = ?Bandwidth Cost
+ | format=template
+ | template= Animal Caravan Row
+ | sort = type, name
+}}
+|}
+:{{note|Mass|1}} While no one is going to carry a pack animal on their back, [[transport pod]]s, [[passenger shuttle]]s{{OdysseyIcon}} and [[imperial shuttle]]s {{RoyaltyIcon}} do have weight limits of 150 kg, 500 kg, and 2,000 kg respectively. Thus animal mass must be taken into account when planning caravans that involve them for one or more leg of the journey. Also note that all pack animals & mechanoids have the same carry weight/mass ratio of 0.58.
+
+[[Category:Animals|#Pack animal]]

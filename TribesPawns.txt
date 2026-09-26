@@ -1,0 +1,195 @@
+<onlyinclude><div><li style="display: inline-table;">
+{| {{STDT| c_01 sortable text-center}}
+! Pawn Kind !! Combat Power !! Gear !! Apparel !! Weapons !! Tech !! Inventory !! Additional Info [[{{fullurl:Tribes/Pawns|action=edit}} edit]]
+<!-- 9 columns; 1 bold, 8 normal: -->
+<!-- defName="", label="", ParentName="", Name="TribalBase", Abstract="True"
+| '''Budget''': <br />'''Available:''' {{#ask:[[Tags::Neolithic]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+| 51x {{Icon Small|Pemmican|24}}
+| '''Age Range:''' Up to 60<br />'''Race:''' Human<br />'''Default Faction Type:''' Civil Tribe<br />'''Chemical Addiction Chance''': 5%<br />'''Initial Will Range''': <br />'''Initial Resistance Range''': 
+-->
+<!-- defName="Tribal_Child", label="villager", ParentName="TribalBase", Name="TribalChildBase" -->
+|- id="Tribal child"
+! Villager<br>[[File:Tribal child.png]] 
+| 30 || '''HP:''' 50~180%<br />'''Avg. Quality:''' Poor
+<!-- Apparel -->
+| '''Budget''': 180~350<br /><!--
+-->'''Available:''' {{#ask:[[Tags::Neolithic]][[Lifestage::~*Child*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+<!-- Weapons -->
+| '''Budget''': 0<br />
+<!-- Tech -->
+| '''Budget''': 50~50<br /><!--
+-->3% chance to have one of the following: {{Gear List|budget=50|TechHediffsTags|Poor}}
+| 51x {{Icon Small|Pemmican|24}}
+<!-- Additional Info -->
+| '''Pawn Group Development Stage:''' Child<br />'''Race:''' Human<br />'''Default Faction Type:''' Civil Tribe<br />'''Chemical Addiction Chance''': 5%<br />'''Initial Will Range''': 1~3<br />'''Initial Resistance Range''': 17~27
+<!-- Poverty tier - penitent -->
+<!-- defName="Tribal_Penitent", label="penitent", ParentName="TribalBase", Name="TribalPenitentBase" -->
+|- id="Tribal penitent"
+! Penitent<br>[[File:Tribal penitent.png]] 
+| 40 || '''HP:''' 20~110%<br />'''Avg. Quality:''' Poor
+<!-- Apparel -->
+| '''Budget''': 50~100<br /><!--
+-->'''Available:''' {{#ask:[[Tags::Neolithic]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+<!-- Weapons -->
+| '''Budget''': 90~150<br /><!--
+-->'''Available:''' <br />{{Gear List|budget=150|WeaponTags|NeolithicMeleeBasic}}
+<!-- Tech -->
+| '''Budget''': 50~50<br /><!--
+-->15% chance to have one of the following: {{Gear List|budget=50|TechHediffsTags|Poor}}
+| 0 Nutrition
+<!-- Additional Info -->
+| '''Age Range:''' Up to 60<br />'''Race:''' Human<br />'''Default Faction Type:''' Civil Tribe<br />'''Chemical Addiction Chance''': 10%<br />'''Initial Will Range''': 0~1<br />'''Initial Resistance Range''': 10~17
+<!-- Low tier - archer -->
+<!-- defName="Tribal_Archer", label="archer", ParentName="TribalBase", Name="TribalArcherBase" -->
+|- id="Tribal archer"
+! Archer<br>[[File:Tribal archer.png]] 
+| 45 || '''HP:''' 50~180%<br />'''Avg. Quality:''' Poor
+<!-- Apparel -->
+| '''Budget''': 180~350<br /><!--
+-->'''Available:''' {{#ask:[[Tags::Neolithic]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+<!-- Weapons -->
+| '''Budget''': 80~80<br /><!--
+-->'''Available:''' <br />{{Gear List|budget=80|WeaponTags|NeolithicRangedBasic}}
+<!-- Tech -->
+| '''Budget''': 50~50<br /><!--
+-->3% chance to have one of the following: {{Gear List|budget=50|TechHediffsTags|Poor}}
+| 51x {{Icon Small|Pemmican|24}}
+<!-- Additional Info -->
+| '''Age Range:''' Up to 60<br />'''Race:''' Human<br />'''Default Faction Type:''' Civil Tribe<br />'''Disallowed Traits:''' [[Brawler]]<br />'''Required Work Tags:''' Violent<br />'''Chemical Addiction Chance''': 5%<br />'''Initial Will Range''': 1~3<br />'''Initial Resistance Range''': 17~27
+<!-- Mid tier - warrior, breacher, hunter, trader -->
+<!-- defName="Tribal_Warrior", label="warrior", ParentName="TribalBase", Name="TribalWarriorBase" -->
+|- id="Tribal warrior"
+! Warrior<br>[[File:Tribal warrior.png]] 
+| 50 || '''HP:''' 50~180%<br />'''Avg. Quality:''' Poor
+<!-- Apparel -->
+| '''Budget''': 200~300<br /><!--
+-->'''Required:''' {{Icon Small|Veil|24}} [[Veil]]<br /><!--
+-->'''Available:''' {{#ask:[[Tags::Neolithic]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+<!-- Weapons -->
+| '''Budget''': 150~150<br /><!--
+-->'''Available:''' <br />{{Gear List|budget=150|WeaponTags|NeolithicMeleeDecent}}
+<!-- Tech -->
+| -
+| 51x {{Icon Small|Pemmican|24}}
+<!-- Additional Info -->
+| '''Age Range:''' Up to 60<br />'''Race:''' Human<br />'''Default Faction Type:''' Civil Tribe<br />'''canBeSapper''' <br />'''Required Work Tags:''' Violent<br />'''Chemical Addiction Chance''': 5%<br />'''Initial Will Range''': 1~3<br />'''Initial Resistance Range''': 5~9
+<!-- defName="Tribal_Breacher", label="breacher", ParentName="TribalBase", Name="", Abstract="" -->
+|- id="Tribal breacher"
+! Breacher<br>[[File:Tribal breacher.png|Tribal breacher]] 
+| 55 || '''HP:''' 50~180%<br />'''Avg. Quality:''' Poor
+| '''Budget''' 200~300<br />'''Required:''' {{Icon Small|Veil|24}} [[Veil]]<br />'''Available:''' {{#ask:[[Tags::Neolithic]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+| '''Budget:''' 150~150<br />'''Available:''' {{Gear List|budget=150|WeaponTags|NeolithicMeleeDestructive}}
+| -
+| 51x {{Icon Small|Pemmican|24}}
+| '''Age Range:''' Up to 60<br />'''Race:''' Human<br />'''Default Faction Type:''' Civil Tribe<br />'''Chemical Addiction Chance''': 5%<br />'''Initial Will Range''': 1~3<br />'''Initial Resistance Range''': 12~19<br />'''Can Be Sapper:''' true<br />'''Is Good Breacher:''' true
+<!-- defName="Tribal_Hunter", label="hunter", ParentName="TribalBase", Name="Tribal_Hunter" -->
+|- id="Tribal hunter"
+! Hunter<br>[[File:Tribal hunter.png]] 
+| 60 || '''HP:''' 50~180%
+<!-- Apparel -->
+| '''Budget''': 200~300<br /><!--
+-->'''Required:''' {{Icon Small|Veil|24}} [[Veil]]<br /><!--
+-->'''Available:''' {{#ask:[[Tags::Neolithic]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+<!-- Weapons -->
+| '''Budget''': 100~100<br /><!--
+-->'''Available:''' <br />{{Gear List|budget=100|WeaponTags|NeolithicRangedDecent}}
+<!-- Tech -->
+| -
+| 51x {{Icon Small|Pemmican|24}}
+<!-- Additional Info -->
+| '''Age Range:''' Up to 60<br />'''Race:''' Human<br />'''Default Faction Type:''' Civil Tribe<br />'''Backstories:''' Tribal (Childhood) and Tribal Hunter (Adulthood)<br />'''Disallowed Traits:''' [[Brawler]]<br />'''Required Work Types:''' Violent<br />'''Chemical Addiction Chance''': 5%<br />'''Initial Will Range''': 2~4<br />'''Initial Resistance Range''': 10~16
+<!-- defName="Tribal_Trader", label="trader", ParentName="Tribal_Hunter", Name="" -->
+|- id="Tribal trader"
+! Trader<br>[[File:Tribal trader.png]] 
+| 60 || '''HP:''' 50~180%
+<!-- Apparel -->
+| '''Budget''': 200~300<br /><!--
+-->'''Required:''' {{Icon Small|Tribal headdress|24}} [[Tribal headdress]]<br /><!--
+-->'''Available:''' {{#ask:[[Tags::Neolithic]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+<!-- Weapons -->
+| '''Budget''': 100~100<br /><!--
+-->'''Available:''' <br />{{Gear List|budget=100|WeaponTags|NeolithicRangedDecent}}
+<!-- Tech -->
+| -
+| 51x {{Icon Small|Pemmican|24}}
+<!-- Additional Info -->
+| '''Age Range:''' Up to 60<br />'''Race:''' Human<br />'''Default Faction Type:''' Civil Tribe<br />'''Backstories:''' Tribal (Childhood) and Tribal Hunter (Adulthood)<br />'''Disallowed Traits:''' [[Brawler]]<br />'''Required Work Types:''' Violent<br />'''Trader''' <br />'''Chemical Addiction Chance''': 5%<br />'''Initial Will Range''': 2~4<br />'''Initial Resistance Range''': 9~15
+<!-- High tier - berserker, heavy archer, chief melee, chief ranged -->
+<!-- defName="Tribal_Berserker", label="berserker", ParentName="TribalBase", Name="" -->
+|- id="Tribal berserker"
+! Berserker<br>[[File:Tribal berserker.png]] 
+| 65 || -
+<!-- Apparel -->
+| '''Budget''': 200~550<br /><!--
+-->'''Required:''' {{Icon Small|War mask|24}} [[War mask]]<br /><!--
+-->'''Available:''' {{#ask:[[Tags::Neolithic]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+<!-- Weapons -->
+| '''Budget''': 300~300<br /><!--
+-->'''Available:''' <br />{{Gear List|budget=300|WeaponTags|NeolithicMeleeAdvanced}}
+<!-- Tech -->
+| -
+| 51x {{Icon Small|Pemmican|24}}
+<!-- Additional Info -->
+| '''Age Range:''' Up to 60<br />'''Race:''' Human<br />'''Default Faction Type:''' Civil Tribe<br />'''canBeSapper''' <br />'''Required Work Tags:''' Violent<br />'''Chemical Addiction Chance''': 5%<br />'''Initial Will Range''': 2~4<br />'''Initial Resistance Range''': 13~20
+<!-- defName="Tribal_HeavyArcher", label="heavy archer", ParentName="TribalBase", Name="" -->
+|- id="Tribal heavy archer"
+! Heavy archer<br>[[File:Tribal heavy archer.png]]
+| 75 || -
+<!-- Apparel -->
+| '''Budget''': 200~550<br /><!--
+-->'''Required:''' {{Icon Small|War mask|24}} [[War mask]]<br /><!--
+-->'''Available:''' {{#ask:[[Tags::Neolithic]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+<!-- Weapons -->
+| '''Budget''': 250~250<br /><!--
+-->'''Available:''' <br />{{Gear List|budget=250|WeaponTags|NeolithicRangedHeavy}}
+<!-- Tech -->
+| -
+| 51x {{Icon Small|Pemmican|24}}
+<!-- Additional Info -->
+| '''Age Range:''' Up to 60<br />'''Race:''' Human<br />'''Default Faction Type:''' Civil Tribe<br />'''Disallowed Traits:''' [[Brawler]]<br />'''Required Work Tags:''' Violent<br />'''Chemical Addiction Chance''': 5%<br />'''Initial Will Range''': 2~4<br />'''Initial Resistance Range''': 14~22
+<!-- defName="Tribal_ChiefMelee", label="", ParentName="TribalBase", Name="TribalChiefBase"
+|- id="Name"
+! Name
+| [[File:Name.png]] || 85 || '''Avg. Quality:''' Normal
+| '''Budget''': 450~750<br />'''Required:''' {{Icon Small|Tribal headdress|24}} [[Tribal headdress]], {{Icon Small|Plate armor|24}} [[Plate armor]]<br />'''Available:''' {{#ask:[[Tags::Neolithic]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+| '''Budget''': 500~1000<br />'''Available:''' <br />{{Gear List|budget=1000|WeaponTags|}}
+| -
+| 51x {{Icon Small|Pemmican|24}}
+| '''Age Range:''' 30~999<br />'''Race:''' Human<br />'''Default Faction Type:''' Civil Tribe<br />'''Faction Leader''' <br />'''canBeSapper''' <br />'''Required Work Tags:''' Violent<br />'''Chemical Addiction Chance''': 5%<br />'''Initial Will Range''': 3~5<br />'''Initial Resistance Range''': 19~30
+-->
+<!-- defName="Tribal_ChiefMelee", label="berserker chief", ParentName="TribalChiefBase", Name="" -->
+|- id="Tribal berserker chief"
+! Berserker chief<br>[[File:Tribal berserker chief.png]] 
+| 85 || '''Avg. Quality:''' Normal
+<!-- Apparel -->
+| '''Budget''': 450~750<br /><!--
+-->'''Required:''' {{Icon Small|Tribal headdress|24}} [[Tribal headdress]], {{Icon Small|Plate armor|24}} [[Plate armor]]<br /><!--
+-->'''Available:''' {{#ask:[[Tags::Neolithic]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+<!-- Weapons -->
+| '''Budget''': 500~1000<br /><!--
+-->'''Available:''' <br />{{Gear List|budget=1000|WeaponTags|NeolithicMeleeAdvanced|MedievalMeleeAdvanced}}
+<!-- Tech -->
+| -
+| 51x {{Icon Small|Pemmican|24}}
+<!-- Additional Info -->
+| '''Age Range:''' 30~999<br />'''Race:''' Human<br />'''Default Faction Type:''' Civil Tribe<br />'''Faction Leader''' <br />'''canBeSapper''' <br />'''Required Work Tags:''' Violent<br />'''Chemical Addiction Chance''': 5%<br />'''Initial Will Range''': 3~5<br />'''Initial Resistance Range''': 38~58
+<!-- defName="Tribal_ChiefRanged", label="archer chief", ParentName="TribalChiefBase", Name="" -->
+|- id="Tribal archer chief"
+! Archer chief 
+<br>[[File:Tribal archer chief.png]] 
+| 85 || '''Avg. Quality:''' Normal
+<!-- Apparel -->
+| '''Budget''': 450~750<br /><!--
+-->'''Required:''' {{Icon Small|Tribal headdress|24}} [[Tribal headdress]], {{Icon Small|Plate armor|24}} [[Plate armor]]<br /><!--
+-->'''Available:''' {{#ask:[[Tags::Neolithic]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+<!-- Weapons -->
+| '''Budget''': 500~1000<br /><!--
+-->'''Available:''' <br />{{Gear List|budget=1000|WeaponTags|NeolithicRangedChief}}
+<!-- Tech -->
+| -
+| 51x {{Icon Small|Pemmican|24}}
+<!-- Additional Info -->
+| '''Age Range:''' 30~999<br />'''Race:''' Human<br />'''Default Faction Type:''' Civil Tribe<br />'''Faction Leader''' <br />'''canBeSapper''' <br />'''Required Work Tags:''' Violent<br />'''Disallowed Traits:''' [[Brawler]]<br />'''Chemical Addiction Chance''': 5%<br />'''Initial Will Range''': 3~5<br />'''Initial Resistance Range''': 16~26
+|}</li></div></onlyinclude>
+
+<noinclude>[[Category:Pawnkind tables]]</noinclude>

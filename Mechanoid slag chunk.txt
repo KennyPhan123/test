@@ -1,0 +1,127 @@
+{{Stub|reason=General}}
+{{See also|Chunk}}
+
+{{Infobox main|
+| name = Mechanoid slag chunk
+| image = Mechanoid slag chunk A.png
+| description = The remains of a smashed mechanoid. While useless in its current form, it can be smelted to recover steel.
+<!-- Base Stats -->
+| type = Chunk
+| stack limit = 1
+| mass base = 8
+| beauty = -8
+| hp = 300
+| flammability = 0
+| path cost = 42
+<!-- Building -->
+| passability = pass through only
+| cover = 0.50
+| cleanliness = -2
+| destroyyield = {{Icon Small|steel||15}}
+<!-- Technical -->
+| defName = ChunkMechanoidSlag
+| label = mechanoid slag chunk
+<!-- ThingDef Name="ChunkBase" Abstract="True" -->
+| category = Item
+| thingClass = Thing
+| altitudeLayer = Item
+| selectable = true
+| pathCostIgnoreRepeat = true
+| drawerType = MapMeshOnly
+| randomizeRotationOnSpawn = true
+| designateHaulable = true
+| tradeability = None
+<!-- ThingDef Name="ChunkSlagSteel" ParentName="ChunkBase" -->
+| soundDrop = ChunkSlag_Drop
+| thingCategories = Chunks
+| smeltable = true
+| smeltProducts = Steel = 15
+<!-- ThingDef ParentName="ChunkSlagSteel" -->
+| texPath = Things/Building/Ruins/AncientMechDetritus
+| graphicClass = Graphic_Random
+| saveCompressible = false
+}}
+
+'''Mechanoid slag chunk''' is a smeltable chunk occasionally dropped by [[Mechanoids]] upon death. They provide [[cover]] and can be smelted at an [[Electric smelter]] for {{icon Small|steel||15}} [[steel]].
+
+== Summary ==
+Mechanoid slag chunks initially spawn on a world map, scattered around the same as the other chunk types. They also have a chance of dropping upon the death of a mechanoid, at the second nearest unoccupied tile to the point of death, where the corpse takes priority in dropping first{{Check Tag|Verify}}. The chances of a slag chunk drop are loosely related to the class of mechanoid, with light mechs dropping none, medium combat mechs having a 10% chance, heavy combat mechs having a 50% chance, and ultraheavy mechs having a 75% chance, with some exceptions.
+
+The different variants are only graphically distinct and otherwise identical, aside from different mechs dropping chunks that reflect the mechanoid's appearance.
+<!-- Variant letter to <texOverrideIndex>
+A = 0, B = 1, C = 2, D = 3, E = 4, F = 5, G = 6, H = 7, I = 8, J = 9,
+K = 10, L = 11, M = 12, N = 13, O = 14, P = 15, Q = 16, R = 17, S = 18, T = 19
+lancer: 0.1; 11, 12
+scyther: 0.1; 18, 15
+pikeman: 0.1; 11, 16, 1
+centipede: 0.5; 10, 19, 14
+termite
+tunneler: 0.5; 0, 3, 1
+scorcher: 0.1; 11, 16, 1
+tesseron: 0.1; 11, 1
+legionary: 0.1; 16, 11, 1
+centurion: 0.75; 0, 8, 3
+diabolus: 0.75; 3, 17, 1
+warqueen: 0.75; 13, 3, 0
+apocriton: 0.1; 15, 8, 13
+-->
+
+{| class="table"
+! Mechanoid || Slag Chunk Drop Chances
+|-
+| [[Lancer]] || 10% [[File:Mechanoid slag chunk L.png]] or [[File:Mechanoid slag chunk M.png]]
+|-
+| [[Scyther]] || 10% [[File:Mechanoid slag chunk S.png]] or [[File:Mechanoid slag chunk P.png]]
+|-
+| [[Pikeman]] || 10% [[File:Mechanoid slag chunk L.png]] or [[File:Mechanoid slag chunk Q.png]] or [[File:Mechanoid slag chunk B.png]]
+|-
+| [[Centipede]] || 50% [[File:Mechanoid slag chunk K.png]] or [[File:Mechanoid slag chunk T.png]] or [[File:Mechanoid slag chunk O.png]]
+|-
+| [[Tunneler]]{{BiotechIcon}} || 50% [[File:Mechanoid slag chunk A.png]] or [[File:Mechanoid slag chunk D.png]] or [[File:Mechanoid slag chunk B.png]]
+|-
+| [[Scorcher]]{{BiotechIcon}} || 10% [[File:Mechanoid slag chunk L.png]] or [[File:Mechanoid slag chunk Q.png]] or [[File:Mechanoid slag chunk B.png]]
+|-
+| [[Tesseron]]{{BiotechIcon}} || 10% [[File:Mechanoid slag chunk L.png]] or [[File:Mechanoid slag chunk B.png]]
+|-
+| [[Legionary]]{{BiotechIcon}} || 10% [[File:Mechanoid slag chunk Q.png]] or [[File:Mechanoid slag chunk L.png]] or [[File:Mechanoid slag chunk B.png]]
+|-
+| [[Centurion]]{{BiotechIcon}} || 75% [[File:Mechanoid slag chunk A.png]] or [[File:Mechanoid slag chunk I.png]] or [[File:Mechanoid slag chunk D.png]]
+|-
+| [[Diabolus]]{{BiotechIcon}} || 75% [[File:Mechanoid slag chunk D.png]] or [[File:Mechanoid slag chunk R.png]] or [[File:Mechanoid slag chunk B.png]]
+|-
+| [[War queen]]{{BiotechIcon}} || 75% [[File:Mechanoid slag chunk N.png]] or [[File:Mechanoid slag chunk D.png]] or [[File:Mechanoid slag chunk A.png]]
+|-
+| [[Apocriton]]{{BiotechIcon}} || 75% [[File:Mechanoid slag chunk P.png]] or [[File:Mechanoid slag chunk I.png]] or [[File:Mechanoid slag chunk N.png]]
+|}
+
+== Analysis ==
+While being smeltable into steel and useful as impromptu cover during mech battles, they can be quite detrimental and disruptive in enclosed spaces: namely kill boxes and melee chokepoints. Upon the death of a mechanoid, a dropped chunk will likely occupy one of the tiles that one of your pawns are on, pushing them off and only allowing them to occupy that tile when pathing across, typically to target an enemy on the other side. These mandate immediate prioritized hauling in order to limit the effect they have on your combat formation.
+
+== Gallery ==
+<gallery>
+Mechanoid slag chunk A.png|Variant A
+Mechanoid slag chunk B.png|Variant B
+Mechanoid slag chunk C.png|Variant C
+Mechanoid slag chunk D.png|Variant D
+Mechanoid slag chunk E.png|Variant E
+Mechanoid slag chunk F.png|Variant F
+Mechanoid slag chunk G.png|Variant G
+Mechanoid slag chunk H.png|Variant H
+Mechanoid slag chunk I.png|Variant I
+Mechanoid slag chunk J.png|Variant J
+Mechanoid slag chunk K.png|Variant K
+Mechanoid slag chunk L.png|Variant L
+Mechanoid slag chunk M.png|Variant M
+Mechanoid slag chunk N.png|Variant N
+Mechanoid slag chunk O.png|Variant O
+Mechanoid slag chunk P.png|Variant P
+Mechanoid slag chunk Q.png|Variant Q
+Mechanoid slag chunk R.png|Variant R
+Mechanoid slag chunk S.png|Variant S
+Mechanoid slag chunk T.png|Variant T
+</gallery>
+
+== Version history ==
+* [[Version/1.5.4062|1.5.4062]] - Added. Certain large mechanoids have a chance to drop a “mechanoid slag chunk” when they’re broken down - these act like steel slag chunks and can be smelted for steel. (These are also replacing ancient mech detritus in Ideology.)
+
+[[Category:Chunks]]

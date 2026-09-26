@@ -1,0 +1,138 @@
+{{Infobox main|security
+| name = Mortar
+| image = Turret_mortar.png
+| description = A manned mortar that launches all kinds of shells. While it can inflict devastating damage, the mortar's inherent inaccuracy makes it more useful for attacking large fortifications than groups of enemies in the field.
+| type = Building
+| type2 = Security
+| placeable = true
+| path cost = 50
+| passability = pass through only
+| cover = 0.4
+| minifiable = true
+| size = 2 ˣ 2
+| mass base = 30
+| flammability = 0.7
+| hp = 180
+| sell price multiplier = 0.7
+| beauty = -20
+| terrain affordance = heavy
+| research = mortars
+| thingCategories = BuildingsSecurity
+| skill 1 = Construction
+| skill 1 level = 5
+| work to make = 2000
+| stuff tags = Metallic
+| resource 1 = Stuff
+| resource 1 amount = 50
+| resource 2 = Reinforced barrel
+| resource 2 amount = 1
+| resource 3 = Component
+| resource 3 amount = 6
+| range = 500
+| minrange = 29.9
+| cooldown = 1680
+| warmup = 240
+| velocity = 41
+| mode = Single-Shot
+| burst = 1
+| missRadius = 9
+| fuel filter = Reinforced barrel
+| fuel capacity = 1<!--technically 20 in the xml but one reinforced barrel equals 20 charges.-->
+| fuel consumption rate = {{#expr: 1/20 round 2}}
+}}
+The '''Mortar''' is a ''manned'' [[Security]] building similar to a [[turret]]. It can launch [[mortar shell]]s at any target on the same map so long as it is outside of its minimum range of 30 tiles, either automatically targeted by the manning colonist, or manually targeted by the player. The effects of the mortar depend on the shell loaded. 
+
+== Acquisition ==
+{{Acquisition}} If the [[Classic mortars]] storyteller option is enabled, the removal of [[reinforced barrel]]s changes this recipe instead to: {{Icon Small|Stuff||75}} [[stuff]] ([[Metals]]), {{Icon Small|steel||150}} [[steel]], and {{Icon Small|component||6}} [[component]]s. 
+
+Alternatively, they can be [[claim]]ed and taken from [[Raids#Siege|Sieges]] once all the [[raiders]] have been killed.
+
+The mortar shells required to use the mortar must also be acquired separately. See their respective pages for details.
+
+== Summary ==
+[[File:Gizmo mortar.png|thumb|left|200px|Mortar command gizmos]]Mortars launch [[mortar shell]]s. The manning pawn will load and fire shells at targets within a {{P|Range}}-tile firing radius, but outside of the {{P|Minimum Range}}-tile blind zone. Mortars can't fire if under any [[roof]], but the mortar shells themselves are only stopped by [[overhead mountain]]. Mortar shells can be fired over [[wall]]s. Mortars can fire 20 shots before needing to be re-armed by a {{Icon Small|reinforced barrel}} [[reinforced barrel]].
+
+Pawns can be selected to man the mortar. They will automatically aim at enemies in range, but the player can force-target a location or pawn. Firing can be toggled with the "'''Hold Fire'''" gizmo. Note that pawns will continuously fire the mortar until ordered to leave or otherwise stop.  A mortar has a {{Ticks|{{P|Aiming Time Base #}}}} warmup time and a {{Ticks|{{P|Ranged Cooldown Base #}}}} cooldown. The cooldown does not tick down until a pawn actually mans the turret, not counting the time to grab the shell.
+
+Mortars can never be used in [[orbit]]{{OdysseyIcon}} showing the message "Cannot function in orbit"
+
+Mortars have a natural Forced Miss Radius of 9 tiles, i.e., the shell will land somewhere within 9 tiles of the designated tile. This is multiplied by the shooter's [[Mortar Miss Radius Multiplier]], which can be lowered by increasing [[Shooting]] skill, [[Manipulation]], and having 100% [[Sight]].
+
+The effect on target depends on the type of [[mortar shell]] loaded into it. These shells can be manually extracted from the mortar. Mortars can be set to only accept specific types of shells at will. A summary of available shells is provided in the table below, but see the relevant shell pages for full details.
+
+=== Classic Mortars ===
+The [[Classic mortars]] storyteller option removes the need for [[reinforced barrel]]s entirely. However, the base Miss Radius is increased to 13 tiles, and the cost of both mortars and their shells are increased. A pawn's Mortar Miss Radius Multiplier still applies when Classic Mortars is enabled.
+
+Note that the miss radius of a pawn with 20 Shooting with classic mortars enabled is almost the same as the miss radius of a pawn with 0 Shooting with classic mortars disabled.
+
+=== Shells ===
+{{#ask: [[Category: Mortar shells]]
+| mainlabel= [[Mortar shell]]
+| ?Damage Base
+| ?Damage Type
+| ?Blast Radius
+| ?Market Value Base
+}}
+
+=== Mortar building ===
+When hit by an [[EMP]] from any source, mortars are prevented from firing and the reload countdown is paused for the duration of the stun. Mortars do not 'adapt' to EMP. If an EMP attack does more EMP damage to a mortar than its remaining HP, the mortar will explode. For most sources of EMP damage, this is below 50 HP.
+
+If it is damaged below one third of its hitpoints, or {{#expr: {{P|Max Hit Points Base #}}/3}} HP, it has a chance{{Check Tag|What chance?}} to explode. The mortar will spark and emit a hissing sound shortly before exploding {{Ticks|240}} later. The explosion deals 50 [[Damage Type#Bomb|Bomb]] damage in a 4.9 tile radius centered around the tile covered by the mortar closest to the interaction spot - that is, the explosion is not centered on the true center of the 2x2 mortar. Bomb damage is multiplied {{Up|x8}} against [[wall]]s, {{Up|x4}} against other impassable structures and plants, and {{Up|x2}} against passable buildings.
+
+Mortars are ''not'' affected by [[solar flare]]s or [[EMI dynamo]]s.{{RoyaltyIcon}}
+
+== Analysis ==
+{{Stub|section=1|reason=Needs actual tactics (ex. how far do you need to lead a shot to hit a moving enemy)}}
+{{For|additional guidance|Defense structures#Mortars{{!}}Defense structures|Weapon Guide#Mortars{{!}}Weapon Guide}}
+
+Mortars are one of the best counters against [[siege]]s, who will shell you with mortars themselves. Siegers will start assaulting the colony (abandoning their mortars) once they've taken enough casualties; a few mortar shots are enough to start the assault. If you're lucky, the mortar will hit their mortar shells, creating a chain reaction. Since an uninterrupted siege is devastating to a colony outside of [[overhead mountain]], mortars are usually worthwhile to build. [[Sniper rifle]]s are an alternative, though picking off the enemy becomes dangerous if they also have snipers. Conversely, sieges are also one of the best ways to get reinforced barrels, and, if allowed to build them, mortars themselves.
+
+They are also useful against other stationary targets, such as [[crashed ship parts]] or [[mech cluster]]s.{{RoyaltyIcon}} For the former, mechs will start assaulting the colony if you destroy the ship part. For mech clusters, note that a [[mech high-shield]]{{RoyaltyIcon}} will block mortar shots; [[EMP shell]]s can disable the shield, but not long enough to fire with the same mortar again. Using 1 EMP-firing mortar, then firing other mortars after a short delay, can allow you to bypass a high shield. 
+
+Due to their long delay and overall inaccuracy, mortars aren't recommended against mobile targets, except perhaps if you're using an [[antigrain warhead]].
+
+Generally, you'll want pawns with the best Shooting to operate a mortar, as they are the most accurate. [[Manipulation]] and [[Sight]] are also factors. See [[Mortar Miss Radius Multiplier]] for more details.
+
+=== Mortar pits ===
+[[File:Mortar Pit.png|thumb|A full featured, if not necessarily optimal, mortar pit]]
+[[File:Mortar explosion radius.png|thumb|left|200px|Explosion damage radius of a mortar building explosion]]Mortar pits are constructions used to facilitate rapid loading and firing of mortars, store ammunition protect them and their ammunition from counter-battery fire and raiders, and/or protect the surroundings from any detonations of the same. At its simplest, a mortar pit might simply be mortar and a [[shelf]] for the shells to keep them close at hand and prevent deterioration. Additional features can be added as wanted or needed. 
+
+As mortars cannot be constructed under a mountain, they are inherently at risk from counter-battery fire from enemy [[siege]] mortars and mechanoid [[automortar]]s.{{RoyaltyIcon}} Mortars and their shells are prone to exploding themselves. Any one explosion can be stopped by a single layer of [[wall]], meaning that separating explosive items with walls is usually sufficient. But if two or more explosions occur non-simultaneously, the first explosion may destroy the wall and while the latter explosions damage items beyond it.
+
+Unlike every other known instance, pawns that are loading mortars will '''not''' draw shells on a [[shelf]] from an adjacent tile, instead they will walk on top of the shelf to retrieve one. It is unknown if this is a bug or intended behaviour. Thus, the [[Shelf#Analysis|shelf trick]] does not cut down on walking times for mortar crew and in fact increases it, as the shelf has a path cost of {{Q|Shelf|Path Cost}}. Shelves retain their utility in keeping items stored outdoors from deteriorating.
+
+=== Materials ===
+Material choice impacts a mortar's work time, health, and beauty. Of these, beauty is increased more by a [[sculpture]] of even awful quality. Health rarely matters if a mortar is placed inside a colony; the chance of an opposing mortar shell hitting is quite low. Work time isn't an issue for colonies that are stable enough to build mortars, as the building is reusable.
+
+As [[steel]] is the cheapest available material, it is usually the best choice to use. Steel mortars can survive 1 high-explosive impact, and the mortar can be repaired if it is actually hit. Plasteel is technically the best material, but typically isn't necessary. If you have a steady supply of [[bioferrite]],{{AnomalyIcon}} it may make a better choice as it has double the HP of steel at the cost of higher flammability (steel is also flammable, though).
+
+{{Building Stats Table}}
+
+== Image gallery ==
+<gallery widths="300px" heights="300px" class="center" mode="nolines">
+File:Mortar placement.png|'''Plan grid: Mortar sits between 4 tiles'''
+File: Man steel mortar.png|'''Manning a mortar'''
+File: Mortar set forced target.png|'''Setting a forced target'''
+</gallery>
+[[File:Mortar all gizmos.png|frame|center|All of the mortar's gizmos, including barrel durability, building controls, and shell "stockpile" controls.]]
+
+== Version history ==
+* [[Version/0.5.492|0.5.492]] - Added as the Incendiary Mortar and Explosive Mortar
+* [[Version/0.6.532|0.6.532]] - EMP mortar added.
+* [[Version/0.9.722|0.9.722]] - Now requires shells to fire.
+* [[Version/0.17.1546|0.17.1546]] - Buffed so players use them: Cheaper/faster to build, faster shooting, greater accuracy, cheaper shells.
+* Beta 18 - the three types of mortars ([[Incendiary shell|Incendiary]], [[EMP shell|EMP]] and [[High-explosive shell|explosive]]) were replaced with a single type, which fires different types of shells that achieve the same effect. In addition, two new shells are added, the [[firefoam shell]] and the [[antigrain warhead]].
+* [[Version/1.1.2618|1.1.2618]] - Cost was increased from 100 steel, 50 materials and 4 components.
+* [[Version/1.3.3066|1.3.3066]] - Mortars now require uncraftable [[reinforced barrel]]s to build and rearm after every 20 shots. Forced miss radius lowered from 13 to 10. All craftable [[mortar shell]]s have had their crafting recipes lowered by 10 [[steel]]. Recipe changed from 75 stuff, 150 steel and 6 components to 50 stuff, 1 reinforced barrel, and 6 components. All changes are reversible in the "Classic Mortars" storyteller option. 
+* [[Version/1.3.3067|1.3.3067]] - Mortars don't drop their barrels when deconstructed if under 50% "fuel" i.e. after 10 shots have been fired with that barrel.
+* [[Version/1.3.3200|1.3.3200]] - Forced miss radius reduced from 10 to 9. Mortar accuracy now varies by its crewman's [[Mortar Miss Radius Multiplier]]. Previously nothing but the Classic Mortars option affected mortar accuracy. Uninstalling and reinstalling a mortar no longer resets its cooldown. Fix: Mortar draws interaction spot when selected.
+* [[Version/1.4.3534|1.4.3534]] - Fix: Yttakin settlements can have mortars manned by animals.
+* [[Version/1.5.4062|1.5.4062]] - Fix: Colony mechs ignore mortar shell settings. Fix: Can't force target mortar without shell.
+
+<gallery>
+TurretMortarEMP.png|Sprite of the EMP mortar before merge
+TurretMortarIncendiary.png|Sprite of the Incendiary mortar before merge
+</gallery>
+
+{{Nav|security|wide}}
+[[Category:Security]] [[Category:Turret]]

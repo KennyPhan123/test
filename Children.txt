@@ -1,0 +1,512 @@
+{{Biotech}}
+{{About|children of age 3 and up|humans ages 0 to 3|Babies|pregnancy|Reproduction}} 
+'''Children''' are added by the [[Biotech (DLC)| Biotech DLC]]. They are smaller, slower, and less capable of work when compared to adult pawns, but gain skills as they age.
+{{TOCright}}
+
+== Acquisition ==
+{{See also|Reproduction}}
+* Having a [[baby]] age up to 3 or beyond.
+* Purchasing them from [[Trade#Slaver|slavers]].
+* Most [[quest]]s and [[event]]s where an adult colonist would join.
+
+Note that [[raid]]s will not have children unless enabled in the [[AI Storytellers#Child enemies|storyteller settings]].
+
+== Summary ==
+Children are human pawns from 3 to 13 years old. Younger pawns are [[babies]]. Older pawns, between 13 and 18, are teenagers - considered adults for most purposes.
+
+Children have important growth moments at ages 7, 10, and 13. These give the pawn access to new work types, as well as the choice of [[trait]]s and passions. Giving a child access to Learning increases the possible choices. See [[#Development]] for more details.
+
+=== Age ===
+Age is measured both biologically and chronologically. Biological age represents how far a pawn has grown physically and mentally. Chronological age represents how long a pawn has existed since their birth; their "true" age, so to say. Since chronological age has no direct gameplay effects, all listed ages are in biological years unless stated otherwise.
+
+By default, children biologically age at 400% speed. Upon reaching 11, their aging will linearly slow from the [[AI Storytellers#Child aging rate|child aging rate]] until they reach 20, where they'll age at the [[AI Storytellers#Adult aging rate|adult aging rate]], or 100% by default. Their aging can be altered by changing the [[AI Storytellers#Biotech|storyteller settings]].  
+
+At the default aging rates, it takes about 3.30 years (~198 days) for a child to grow from birth to age 13, and about 5.38 years (~323 days) to go from birth to age 18. In total, a child takes about 6.91 years (415 days) to go from birth to age 20, of which 2.75 years (165 days) is from birth to age 11. 
+
+[[Growth vat]]s can be used to very quickly age pawns up to age 18, after which they will get forcefully ejected. A pawn in a [[growth vat]] will age at a constant 20x speed, unaffected by any other aging factors except for the [[Growth Vat Occupant Speed]] stat,{{IdeologyIcon}} as long as it has access to [[power]] and [[nutrition]]. However, if used to speed up the "Child" stage (ages 3-13), then the vat will impact the child's [[#Development|Development]]. Conversely, the [[ageless]] [[gene]] will linearly slow aging from 13 until stopping entirely at 18.5. Growth vats ignore the ageless gene.
+
+For more explanation of aging rate, see [[#Aging]].
+
+=== Capabilities ===
+Children as young as 3 can wield [[weapon]]s and are valid for any [[Reproduction|non-reproductive]] [[surgery]], including [[organ harvesting]]. However, children are limited to child-sized clothing like the [[kid pants]] and [[kid parka]], and can only do certain types of work. They receive penalties to [[Global Work Speed]], [[Move Speed]], and more, scaling with age. Due to their body size, they have less health, can store less [[nutrition]], and receive stronger effects from [[drug]]s. Instead of Recreation, children have [[#Learning|Learning]], which gives them more options for each growth moment.
+
+Teenagers wear adult clothing, have access to all work, and lose their Learning need. However, they can only reproduce once they reach 16. And, teens retain a small penalty to work speed and body size until they reach 18, where they become full adults and all penalties are removed.
+
+See [[#Stats|Stats]] for a full breakdown of stat penalties.
+
+=== Noncombatants ===
+Luckily, children (until 13) do not always have to participate in combat. Children who are unarmed and have not been [[draft]]ed in 24 hours are very low priority targets for enemies.{{Check Tag|Verify mechanic|Exact mechanic unknown?}} Adult colonists will virtually always be targeted over a noncombatant. If children aren't in the line of sight of enemy fighters, they won't be hunted down during an attack.
+
+However, children are still ''able'' to be targeted. This is in contrast to [[pen animal]]s, who enemies will never attack intentionally. If a raider has no other targets available, a "noncombatant" child will be attacked. Hungry predators have no regard for this mechanic, and will target your children if they are nearby. In any case, a child in the way of a firefight can be hit by stray shots and [[friendly fire]].
+
+=== Mood ===
+Children receive a [[mood]]let for simply being young: at age 3, {{+|16}} '''Childlike joy''', at age 6, {{+|12}} '''Childlike wonder''', age 8, {{+|8}} '''Childlike enthusiasm''', and at age 10, {{+|4}} '''Childlike confidence''', finally lost at age 13. Children are happy when their parents are happy ({{+|6}} for each parent), and parents are happy when their children are (also {{+|6}} for each child). Other than that, most regular moodlets apply to them. 
+
+Adult colonists receive a {{+|2}} ''Happy youngsters'' for each child colonist with 60 mood or higher, stacking up to +6. They will receive a -2 mood for each child colonist with 35 mood or less, stacking up to -6. Most receive a {{--|6}} moodlet for killing an innocent child.
+
+== Development ==
+=== Learning ===
+Children have a '''Learning''' [[need]], which replaces Recreation. They satisfy the need by satisfying one of their [[#Learning desires|learning desires]], which they usually have 2. The need gives mood buffs or debuffs, [[Recreation#Recreation_thresholds|analogous to Recreation]] at the same level, and, most importantly, it increases their [[#Growth score|growth score]].
+
+When a child decides what to do in accordance with their [[schedule]], they may choose learning. The following conditions should be met for the child to actually start learning:
+* The current schedule hour is set to anything but "Work". Notably, for the "Sleep" schedule assignment, learning has a higher priority than sleeping (unlike adults, who go to sleep if the Sleep need is below {{Bad|75%}}, children prefer learning to sleeping, if possible (see other limitations)).
+* Learning need is below {{Bad|90%}}.
+* A learning desire can be satisfied (see descriptions of individual desires for possible limitations). If both desires can be satisfied, one is randomly selected.
+* Food need is {{Good|≥34%}} and Sleep need is {{Good|≥38%}}.
+
+The mood level doesn't matter.
+
+Once learning begins, it will continue until either Learning need reaches {{Good|99.9%}} (visible as {{Good|100%}} due to rounding), or it is interrupted (by the child needing to eat or sleep, or being drafted, or the Learning type becoming invalid—e.g., for work watching, if all adults have stopped doing any watchable work types). After an interruption, if their Learning is below 90%, they may resume learning, but if it's above 90%, they won't—instead doing work or idling, until it drops below 90% again.
+
+Learning is '''not''' interrupted if the child loses desire for the currently performed learning type.
+
+The speed with which children fulfill their Learning need is affected by the [[Learning Rate Factor]] stat.
+
+=== Learning desires ===
+At any one point, a child has 1 or 2 of the learning desires, listed below. They are shown as pictograms above the Learning need bar. When a baby reaches age of 3 and becomes a child, they get the first desire which is randomly selected. Then, they repeatedly gain a random new desire in random time intervals ranging from {{ticks/gametime|20000}} to {{ticks/gametime|40000}}, averaging to 2 desires daily. The desires form a queue with a maximum length of 2 (the new desire is added to the end of list, and if the number of items exceeds 2, the first item is removed).
+
+When a new desire is selected, it never repeats an active one (including the one that is to be removed from the queue). Also, ''Radio talking'' isn't chosen before [[Microelectronics]] is researched; this is the only safeguard against choosing a desire which is currently impossible to satisfy. Desires which are not ruled out by these restrictions have equal probability of being chosen, except ''Lesson taking'', which has {{Good|x2.5|normal}} higher weight (probability) than the others. It is perfectly possible to get a learning desire which is impossible to satisfy. Each of them has a number of blocking conditions, and the mentioned Microelectronics research thing is the only condition that is consciously avoided.
+
+==== Floor drawing ====
+Children draw pictures on the floor in various places. This does not require any additional supplies and can occur on anywhere within or near home area. The drawings can be cleaned up the same way as any other dirt. Unlike other types of filth, however, it does not have any effect on [[beauty]].
+
+==== Lesson taking ====
+Requires an awake adult that is capable of teaching (a teacher). The child (student) will sit at a [[school desk]]. The teacher can be prioritized to teach the child on a currently usable skill (e.g., when age 4 this can be Shooting, Melee, or Social), increasing the child's respective skill level. The speed at which the child learns can be increased by up to 60% by adding up to 3 [[Blackboard]]s near the school desks at which the lesson takes place. It also trains the teacher's Social skill.
+
+Teaching lessons improves the child's opinion of the teacher, for {{+|8}} ''Taught me a skill''. The teacher will additionally raise their opinion of the child: {{+|4}} ''Listened to my lesson''.
+
+A colonist can be a teacher if they:
+* Are an adult
+* Are awake
+* Have Food need {{Good|≥34%}} and Sleep need {{Good|≥38%}}
+* Are capable of childcare and has it enabled in the Work menu
+* Can [[Talking|talk]]
+* Belong to the player's faction (neither [[guest]] nor quest lodger)
+* Can reach the child avoiding deadly dangers{{Check Tag|Clarify|What dangers exactly?}}
+* Are not [[drafted]]
+* Are neither in a [[mental break]] nor [[Mental break#Special|mental state]]
+* Are not [[downed]]
+* Are not burning
+* Don't have a lord{{Check Tag|Clarify|This condition is checked in the game's code, but it is unclear how a colonist may have a lord.}}
+
+==== Nature running ====
+Children run around outside, similar to the adult "Going for a walk" activity. Care must be taken as nearby predator hunt or potential raid can occur near them, as they tend to run outside the safe zone near the edge. Children can ignore [[allowed area]]s while "running", but will quickly go back.
+
+Experimentation seems to indicate that{{Check Tag|verification needed}}:
+* It needs to be a number of tiles away from anything player-owned (floors don't count), 43 tiles of space is enough but less is possible using a very specific pattern (see image)
+* These tiles need to be as empty as possible, ideally when building under overhead mountain a collapsed rocks or unmined tile 6 spaces away from any other is sufficient (it's unclear how much wiggle room is there)
+* There's no need for this tile to be outdoors, however dev placed natural tiles such as collapsed rocks are counted as artificial somehow
+
+The dimensions of the image are 36x36, 41x36 (vertical) and 48x36 (horizontal). 41x48 and possibly 48x41 should work as well with minimal wasted space.
+
+==== Radio talking ====
+The desire doesn't appear before [[Microelectronics]] is researched, which is required for building the [[comms console]]. A console is used by the child for chatting with people over the radio. The child will stop radio talking if the console is used for other purposes, such as trading with a trade ship or contacting another faction.
+
+The child uses the nearest comms console, which is:
+* Powered
+* Allowed
+* Reachable, avoiding deadly dangers{{Check Tag|Clarify|What dangers exactly?}}
+* Not reserved by another pawn
+
+If no such console is found, the desire cannot be satisfied.
+
+==== Reading ====
+{{stub|section=1|reason=Lack of mechanics - also propagate to [[books]] and the pages for the types of books.
+Reports that:
+* The normal effects of books still apply to children reading books - they gain skills from textbooks and provide research from schematics
+* That because you can force children to read, unlike other learning types, so when their learning is lagging you can force them to read to catch up.}}
+Children can read [[books]] to fulfill their learning need. If you notice a child is behind in learning progress, wait until reading appears as one of their learning needs. As reading can be forced manually, you can keep the child’s learning at 100% (with smaller dips for eating and sleeping) by forcing reading even when learning is above the 90% threshold.
+
+The normal effects of a book still apply to children, allowing them to increase their skills they have access to while reading, allowing their skills to be even more developed.
+
+==== Sky dreaming ====
+Children lay on the ground and watch the sky, much like adults that are cloud watching.
+
+Bad [[weather]] does '''not''' prevent sky dreaming.
+
+Experimentation results suggest that for a spot to be viable for sky dreaming it must have no artificial tiles or objects in the ground within 36 tiles (floors are fine so concrete can be used to get them away from danger faster). This distance seems to be direct (as the crow flies) rather than via squares (manhattan distance) so it might be difficult to adjust perfectly outside trial and error for a "skydreaming shelter" for children.{{Check Tag|Verification needed}}
+
+==== Work watching ====
+Children that are work watching will follow an adult, who does standard work, and slowly gain the corresponding skill (e.g. Plants when watching plant work). Children will only watch work types that use a skill they can use themselves (e.g. children under 7 will only watch Social work, such as childcare and wardening; they ''do'' watch wardening even though they can't perform it until age 10). Children gain skill even when watching the unskilled parts of skilled work (e.g. they gain Crafting skill when watching stonecutting and Medical skill when watching a doctor feed patients).
+
+=== Growth score ===
+Each day, children will raise their growth score (shown at the bottom of the screen when a child is selected) proportionate to their Learning need. Growth points are not gained when the Learning need is frozen, such as in a [[growth vat]] or [[cryptosleep casket]].
+
+The growth score can pass through 8 tiers of learning, and each will grant more rewards during a child's growth moment. Tiers give you more flexibility in choosing a child's next trait and gives more passions. Once a growth moment has passed, the child's growth tiers will reset to 0, and you'll need to keep them learning to gain more rewards. A child with constantly fully-satisfied Learning need would achieve a hypothetical maximum of 180 growth points, but 162 is the highest value displayed.
+
+Growth point gain is directly proportional to the time spent between growth moments, so that average Learning for each growth tier remains constant. Under the default settings, children from 3-7 gain up to 3 growth points per day, and children from 7-10 and 10-13 gain 4 growth points per day. Changing the child aging rate in storyteller settings adjusts the growth point gain accordingly. Changes to [[Global Learning Factor]], such as [[Fast learner]], have no impact on growth points or the Learning need.
+
+The [[Child labor|Child Labor: Disapproved]] precept{{IdeologyIcon}} increases Learning gain by 20%.  It doesn't directly improve growth point gain, but makes it easier to keep the Learning need high.
+
+Note that the displayed growth points are always rounded down to avoid confusion regarding thresholds.
+
+{| class=wikitable
+|+ Growth Tiers and Rewards
+|-
+| Tier || Points || Traits || Passion || Min Av Learning
+|-
+| 0 || 0 || 1 from 1 options || - || -
+|-
+| 1 || 30 || 1 from 2 options || - || 17%
+|-
+| 2 || 55 || 1 from 3 options || - || 31%
+|-
+| 3 || 80 || 1 from 4 options || - || 44%
+|-
+| 4 || 100 || 1 from 4 options || 1 from 1 options || 56%
+|-
+| 5 || 120 || 1 from 4 options || 1 from 2 options || 67%
+|-
+| 6 || 135 || 1 from 4 options || 1 from 3 options || 75%
+|-
+| 7 || 150 || 1 from 4 options || 2 from 4 options || 83%
+|-
+| 8 || 162 || 1 from 6 options || 3-4 (50-50 chances) from 6 options || 90%
+|}
+
+A perfectly educated child, who is always ready to begin a learning task when Learning drops to 90%, and never gets interrupted, will have Learning oscillate between 90% and 100%, averaging 95%. This gives a margin for error with respect to the maximum growth tier goal of "average Learning ≥ 90%".
+
+The table below shows linear values required for a child to hit 162 by the next Growth Point. As the first Growth Period (3 to 7) is longer but grants fewer points per day.
+
+{| class="wikitable"
+|-
+!colspan="3"| Age 3-7 !! colspan="3"| Age 7-10 !! colspan="3"| Age 10-13
+|-
+! Years !! Days !! Average Points !! Years !! Days !! Average Points !! Years !! Days !! Average Points
+|-
+| 3 || 0 || 0 || 7 || 0 || 0 || 10 || 0 || 0
+|-
+| 3 || 15 || 10 || 7 || 15 || 14 || 10 || 15 || 14
+|-
+| 3 || 30 || 20 || 7 || 30 || 27 || 10 || 30 || 27
+|-
+| 3 || 45 || 30 || 7 || 45 || 41 || 10 || 45 || 41
+|-
+| 4 || 0 || 41 || 8 || 0 || 54 || 11 || 0 || 54
+|-
+| 4 || 15 || 51 || 8 || 15 || 68 || 11 || 15 || 68
+|-
+| 4 || 30 || 61 || 8 || 30 || 81 || 11 || 30 || 81
+|-
+| 4 || 45 || 71 || 8 || 45 || 95 || 11 || 45 || 95
+|-
+| 5 || 0 || 81 || 9 || 0 || 108 || 12 || 0 || 108
+|-
+| 5 || 15 || 91 || 9 || 15 || 122 || 12 || 15 || 122
+|-
+| 5 || 30 || 101 || 9 || 30 || 135 || 12 || 30 || 135
+|-
+| 5 || 45 || 111 || 9 || 45 || 149 || 12 || 45 || 149
+|-
+| 6 || 0 || 122 || 10 || 0 || 162 || 13 || 0 || 162
+|-
+| 6 || 15 || 132 || colspan="3" |
+| colspan="3" |
+|-
+| 6 || 30 || 142 || colspan="3" |
+| colspan="3" |
+|-
+| 6 || 45 || 152 || colspan="3" |
+| colspan="3" |
+|-
+| 7 || 0 || 162 || colspan="3" |
+| colspan="3" |
+|}
+
+== Growth moments ==
+{{Stub|section=1|reason=Can a child ever have a backstory or trait that disables a work type?}}
+[[Babies]] become children at 3, and children experience growth moments at 7, 10, and 13, allowing them to gain traits and passions. When a child hits the biological age for a growth moment, a notification will pop up that informs the player what work types the child is now capable of doing and the player to pick additional traits and passions. The number of skills and traits available to choose from increases according to the Growth tier reached by that growth moment (see above table).
+
+What skills are chosen is completely random; working one type of work over another or what learning types are used to fill the Learning bar have no effect. A child can even gain a passion in a skill in which they have awful [[Genes#Aptitudes|aptitude]], so it's not possible to exclude undesired skills via genetic modification.
+
+Two restrictions technically apply to the skill pool from which passion gain options are picked:
+* skills disabled by backstories are removed from the pool, unless the child is enslaved at the time of the growth moment
+* skills disabled by already-possessed traits are likewise removed, unless that trait is suppressed by a gene at the time of the growth moment
+
+Only one passion can be added to a skill at a time, but passions are additive - selecting the same skill in two growth moments will result in a double passion.
+
+Passions chosen for skills the child cannot yet use will be hidden and not appear on the bio tab, but ARE properly applied, and will become visible once the child reaches an age that allows them to use that skill. For example, if you choose to give a child a passion for Shooting, Construction, and Intellectual on their 7th birthday, the Shooting passion will be immediately visible (as children of ages 3 and up can shoot), whereas the Construction passion will not appear until the child's 10th birthday, and the intellectual passion won't until their 13th, as those are the ages at which those skills become available to children.
+
+Only one trait can be selected per Growth moment. Traits that are mutually exclusive with previously selected traits or Genes will not appear on future Growth moments. When at least three traits are available to be chosen from, there's a 35% chance that one of the available options will be "no trait". This option can be selected if no trait is preferable to the traits offered.
+
+You may choose their traits/passions within 48 hours of the birthday, and view their bio/health from the selection screen. During a growth moment, your child may randomly receive a new nickname, such as John Doe gaining the nickname '''Johnny''' (becoming John 'Johnny' Doe). Like other colonists, you can always change their nickname from their bio.
+
+{| class=wikitable style="text-align:center"
+|+ Capable work types
+! Age || Firefight || Patient || Doctor || Bed Rest || Childcare || Basic || Warden || Handle || Cook || Hunt || Construct || Grow || Mine || Plant Cut || Smith || Tailor || Art || Craft || Haul || Clean || Research
+|-
+! 3
+| {{Cross}} || {{Check}} || {{Cross}} || {{Check}} || {{Check}} || {{Check}} || {{Cross}} || {{Cross}} || {{Cross}} || {{Cross}} || {{Cross}} || {{Cross}} || {{Cross}} || {{Cross}} || {{Cross}} || {{Cross}} || {{Cross}} || {{Cross}} || {{Check}} || {{Check}} || {{Cross}}
+|-
+! 7
+| {{Check}} || {{Check}} || {{Cross}} || {{Check}} || {{Check}} || {{Check}} || {{Cross}} || {{Check}} || {{Check}} || {{Check}} || {{Cross}} || {{Check}} || {{Check}} || {{Check}} || {{Cross}} || {{Check}} || {{Cross}} || {{Check}} || {{Check}} || {{Check}} || {{Cross}}
+|-
+! 10
+| {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Cross}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Cross}}
+|-
+! 13
+| {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}}
+|}
+
+{| class=wikitable style="text-align:center"
+|+ Learnable skills
+! Age || Shooting || Melee || Construction || Mining || Cooking || Plants || Animals || Crafting || Artistic || Medical || Social || Intellectual
+|-
+! 3
+| {{Check}} || {{Check}} || {{Cross}} || {{Cross}} || {{Cross}} || {{Cross}} || {{Cross}} || {{Cross}} || {{Cross}} || {{Cross}} || {{Check}} || {{Cross}}
+|-
+! 7
+| {{Check}} || {{Check}} || {{Cross}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Cross}} || {{Cross}} || {{Check}} || {{Cross}}
+|-
+! 10
+| {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Cross}}
+|-
+! 13
+| {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}} || {{Check}}
+|}
+
+==== Age 3 ====
+At 3, your [[Babies|baby]] transitions to childhood and additionally undergoes a growth moment. Now that your pawn is a child, they can walk and talk, wear clothes, and do basic activities. Their Play need is also replaced with a new Learning need. Because babies haven't learned anything yet, this "growth moment" does not come with traits or passions.
+
+On their birthday, you will receive up to 2 notifications. The first is "Growth moment for <Pawn>", which may include a new nickname for your child that you'll have 48 hours to change. Both of these decisions can be postponed until their deadlines. 
+
+ '' Baby '''<BABY NAME>''' has grown up and become a child! (S)He is now old enough to do the following work: <LIMITED WORK> Children do various type of work. As they get older, they become able to do more work types. They also do various child-specific recreational activities. Children need to wear specific child-size apparel. ''
+
+With [[Ideology]],{{IdeologyIcon}} you'll get a second notification, "<Pawn> became a child". The child  will now follow one of the [[Ideoligion|ideoligions]] your colonists currently believe in, randomly determined from weightings based on who interacted with the child and how. For further details, see the [[#Ideoligion|Ideoligion]] section.
+
+In addition, you'll have 12 hours to decide whenever to make the child a colonist or a [[slave]],{{IdeologyIcon}} depending on their birth mother, they will be a colonist or slave by default, for prisoner births they will be a colonist due to having been adopted.
+
+ '' '''<BABY NAME>''' has decided to become a follower of the ideoligion '''<MAJOR COLONY IDEOLIGION>'''. By tradition '''<BABY NAME>''', born to '''<MOTHER NAME>''' of '''<COLONY>''' (and) '''<FATHER NAME>''' of '''<COLONY>''' / unknown parents, is a colonist/tribesman/slave, but exceptions can be made... Should '''<BABY NAME>''' remain a colonist/tribesman/slave? ''
+
+Children and their caretakers maintain any [[opinion]] modifiers that [[Reproduction#Social|arose]] during infancy, but these wear off over time. They immediately become aware of any pawns on the map that they hadn't met while babies, and gain the normal opinion modifiers for every pawn, like those based on [[Beauty (Pawn)|beauty]], [[traits]], and [[ideoligion]].
+
+3-year-olds gain the Childhood background '''Child''': ''The story of [their] childhood is still being written.'' They also gain the ability to learn the shooting, melee, and social skills, although they start with 0 experience in them. If you started as a [[New Tribe]], then children will gain the ''Natural'' [[meditation focus]].{{RoyaltyIcon}}
+
+==== Age 7 & 10 ====
+Ages 7 and 10 are ordinary growth moments. Your child will gain a selection of passions and traits, with available choices corresponding to the [[#Development|Learning]] need. They will remain a child after either age threshold, but will gain access to more work types in the process.
+
+==== Age 13 ====
+When a child turns 13, you will receive the notification: "Child" became an adult. They are not full adults yet, but are now considered adults (or teenagers) throughout the game, and have access to all work types. 
+
+They wear adult clothing, dropping their too-small child's clothes if wearing any. Their Learning need is immediately replaced by Recreation, removing any mood effects from learning. In addition, they finally lose their {{+|4}} ''Childlike confidence''' [[mood]]let. [[Genes#Drugs|Drug dependency genes]] take effect at this age, as if they last took the drug on their birthday. They also have a chance to gain a [[Traits#Asexual|sexuality trait]], separate from the growth moment trait choice (if they receive none, they will be considered heterosexual). Some kids get special changes upon turning 13. 
+
+Children will receive the childhood [[background]] of Tribal Child or Colony Child, dependent on if you started as a [[New Tribe]] or as [[New Arrivals]]. Alternatively, they will receive Vatgrown Child if they spent enough time in a [[growth vat]] - this removes the Natural [[meditation|meditation focus]], if it was present. Their adult backstory will be set to Tribe Member or Colonist, respectively.
+
+== Stats ==
+Children and teens have various penalties to speed and effectiveness. Specifically, they have a multiplier to the following stats: [[Move Speed]], [[Aiming Time]] & [[Melee Hit Chance]] (thus, {{DPS}}), [[Arrest Success Chance]], [[Global Work Speed]], [[Market Value]], and [[Body Size]]. Each trait is affected differently by age:  Global Work Speed rises steadily until adulthood, whereas Move Speed changes in jolts by life stage.
+
+Children also have penalties to melee damage and [[Shooting Accuracy]],the stat factor [[Shooting Accuracy Multiplier (Child)|ShootingAccuracyChildFactor]] limits the maximum ShootingAccuracy of child. the meleeDamageFactor(not the stat factor of [[Melee Damage Factor|MeleeDamageFactor]]) defined in LifeStage limits the Melee Damage for Children and teens,The rates are as follows: children(3–8):0.7, preteens(9–12):0.725, teens(13–17):0.75, adult(18-): 1 . the Melee Damage will be multiplied by the meleeDamageFactor.
+
+Note. The melee hit chance multiplier is applied not to the hit chance itself, but to the bonuses and penalties imposed on it. That is, a 3-year-old child will have ~ 50% +-5% chance of hitting both having the maximum skill level + Go-juice, and having severe traumas that reduce work and vision to 0%.
+
+{| class="wikitable"
+|-
+! [[Aiming Time]] Multiplier by Age
+|-
+| {{Graph:Chart
+|width=400
+|height=100
+|type=line
+|x=3, 4, 12, 13, 18
+|y=180, 180, 110, 100, 100
+|xAxisTitle = Pawn age (years)
+|yAxisTitle = Aim Time Multiplier (%)
+}}
+|}
+
+{| class="wikitable"
+|-
+! [[Melee Hit Chance]] Multiplier by Age
+|-
+| {{Graph:Chart
+|width=400
+|height=100
+|type=line
+|x=3, 4, 12, 13, 18
+|y=5, 5, 80, 100, 100
+|xAxisTitle = Pawn age (years)
+|yAxisTitle = Hit Chance Multiplier (%)
+}}
+|}
+
+{| class="wikitable"
+|-
+! [[Arrest Success Chance]] Multiplier by Age
+|-
+| {{Graph:Chart
+|width=400
+|height=100
+|type=line
+|x=3, 3, 13, 18
+|y=5, 5, 80, 100
+|xAxisTitle = Pawn age (years)
+|yAxisTitle = Arrest Chance Multiplier (%)
+}}
+|}
+
+{| class="wikitable"
+|-
+! [[Global Work Speed]] Multiplier by Age
+|-
+| {{Graph:Chart
+|width=400
+|height=100
+|type=line
+|x=3, 4, 12, 18
+|y=20, 20, 80, 100
+|xAxisTitle = Pawn age (years)
+|yAxisTitle = Work Speed Multiplier (%)
+}}
+|}
+The [[precept]]{{IdeologyIcon}} ''Child Labor: Encouraged'' increases Global Work Speed by {{+|20%}} until 13.
+
+==== Move speed ====
+{| class=wikitable
+!'''Age'''
+| 0-2 || 3-9 || 9-13 || 13-18 || >18
+|-
+!  '''Speed Factor''' 
+| x0.2<ref>As defined in the game defs, however in practice not applicable due to babies being unable to move.</ref> || x0.75 || x0.85 || x0.95 || x1
+|-
+! '''Move Speed'''<ref>Assuming no other effect that alters move speed</ref>
+| ''N/A'' || {{#expr:{{Q|Human|Move Speed Base}} * 0.75}} {{CS}} || {{#expr:{{Q|Human|Move Speed Base}} * 0.85}} {{CS}} || {{#expr:{{Q|Human|Move Speed Base}} * 0.95}} {{CS}} || {{Q|Human|Move Speed Base}} {{CS}}
+|}
+<references/>
+
+==== Market value ====
+{| class=wikitable
+| '''Age''' || 0-2 || 3-9 || 9-13 || >13
+|-
+| '''Value Factor''' || x0.5 || x0.9 || x0.95 || x1
+|}
+
+==== Body size ====
+{{Recode|section=1|reason= Graphs/Tables of values correlated to body size}}
+Certain traits are indirectly affected due to a child's smaller body size. These include health, [[drug]] effectiveness, [[Carrying Capacity]], [[Meat Amount]] / [[Leather Amount]], and [[nutrition]] capacity. Stats that ''don't'' differ for teenagers include food consumption, Maximum/Minimum comfortable temperatures, and Filth rate.  Note that teenagers also have a 1.25 multiplier on maximum nutrition, which offsets the 0.8 multiplier from their reduced body size, resulting in the same nutrition capacity as an adult.
+
+{| class=wikitable
+| '''Age''' || 0-2 || 3-8 || 9-13 || 13-18 || >18
+|-
+| '''Size Factor''' || x0.2 || x0.35 || x0.58 || x0.8 || x1
+|}
+
+=== Aging ===
+Aging starts to linearly slow from biological age 11 to 20. Assuming that the adult aging rate is 100%, the deviation in biological age and chronological age is displayed in the below chart.
+
+{| class="wikitable"
+|-
+! Child age over time
+|-
+|{{Graph:Chart
+|width = 300
+|height = 300
+|xAxisTitle = Biological age (years)
+|yAxisTitle = Chronological age (years)
+|legend = Child age rate
+|type = line
+|x =  0, 3   ,11,   12,   13,   14,   15,   16,   17,   18,   19,    20,    22
+|y1 = 0, 3   ,11,   12,   13,   14,   15,   16,   17,   18,   19,    20,    22
+|y2 = 0, 1.5   ,5.50, 6.01, 6.55, 7.14, 7.76, 8.42, 9.14, 9.93, 10.78, 11.73, 13.73
+|y3 = 0, 1   ,3.66, 4.01, 4.38, 4.79, 5.24, 5.74, 6.30, 6.95, 7.70,  8.60,  10.60
+|y4 = 0, 0.75,2.75, 3.01, 3.29, 3.61, 3.96, 4.36, 4.82, 5.37, 6.03,  6.89,  8.89
+|y5 = 0, 0.60,2.20, 2.40, 2.64, 2.89, 3.18, 3.52, 3.91, 4.38, 4.98,  5.80,  7.80
+|y6 = 0, 0.50,1.83, 2.00, 2.20, 2.41, 2.66, 2.95, 3.29, 3.70, 4.25,  5.03,  7.03
+|y7 = 0, 0.15,0.55, 0.60, 0.65, 0.70, 0.75, 0.80, 0.85, 0.90
+|y8 = 0, 0.15,0.43, 0.46, 0.50, 0.54, 0.57, 0.61, 0.65, 0.68
+|y1Title = 100% (Real-time)
+|y2Title = 200%
+|y3Title = 300%
+|y4Title = 400% (Default)
+|y5Title = 500%
+|y6Title = 600%
+|y7Title = 2000% (Growth vat)
+|y8Title = 2600% (Vat w/ precept)
+|xGrid =
+|yGrid =
+|interpolate=monotone
+|colors=#c8c8c8,#b4b4b4,#8c8c8c,#646464,#3c3c3c,#141414,#00aacc,#00ddff
+}}
+|}
+
+Increasing the growth rate lowers a pawn's chronological age at any given biological age. For example, at 200% aging, it takes ~10 years to reach age 18, and at 400% aging, it takes ~5.4 years (assuming 100% adult aging speed).
+
+A pawn with the [[ageless]] [[gene]] will linearly age slower after 13, before coming to a complete halt at 18.5.  With this gene and the default rates, a pawn will take 429 days (7.15 years) between ages 13 and ''17'', then a further 362 days (~6 years) to reach age 18. A growth vat can be used to decrease this time, if so desired.
+
+The fastest a pawn can age is in a growth vat from birth with the [[Growth vats (precept)|Growth vats: Essential]] precept,{{IdeologyIcon}} where they reach adulthood in only ~40.5 days, after which they will age according to the set aging rate. Note that these values won't be accurate if a pawn has the ageless gene, spends time both in and out of growth vats, or the aging rates are altered in the storyteller settings mid-gameplay.
+
+== Wearable clothing ==
+Being much smaller than adults, children can only wear a limited selection of clothing, mostly consisting of headwear:
+
+<div class="ul-column-width-200">
+{{#ask: [[Lifestage::~Child*]]
+| format = template
+| template = Icon List
+| link = none
+| sort = From DLC
+}}
+</div>
+
+== Ideoligion ==
+{{Ideology|section=1}}
+{{Stub|section=1|reason=Worked example}}
+Babies have no [[ideoligion]] of their own, however when a baby becomes a child at age 3, an ideoligion is assigned to the child based on a weighted random selection. 
+
+These weights are assigned to the ideoligions of the pawns that interact with the baby. For the purposes of this calculation, this is specifically:
+* {{+|0.5}} for any social interaction.
+* {{+|1.0}} for carrying the baby for one hour.
+* {{+|1.0}} for breastfeeding the baby for one hour.
+* {{+|1.0}} for feeding the baby [[baby food]] for one hour.
+These interactions are remembered forever until the baby transitions into a child.
+
+As with all weighted selections, the more that pawns from a given ideoligion interact with the baby, the more likely the baby is to choose that ideoligion, however ultimately there is always a chance selects any ideoligion to which it was exposed.
+
+== Analysis ==
+When raised naturally and with lots of Learning time, children can very easily become powerful colonists. With the ability to choose from up to 6 [[traits]] per growth moment, the likelihood for at least one "great" trait, like [[Jogger]], [[Industrious]], or [[Quick sleeper]], per growth moment is significant. A child is very likely to have multiple ''good'' traits by the time they become a teen. Passion choice is also excellent - burning passions in any desired field are quite common. Needless to say, it'd be very rare for a randomly generated adult to match a colony raised child. 
+
+Child rearing mainly comes at a cost of time, with slightly more than 2.5 years spent in the child stage on default Child Aging Rate settings. Children do not actually require much adult supervision to grow and learn. Set an [[allowed area]] so that they won't wander too far from your base, and children will develop to become a fairly powerful colonist. However, to reach the highest growth level of 8, you need to ensure that their average learning need is at least 90% (even while sleeping). As children will not start learning unless their learning need is already below 90%, this requires more careful management, especially for children under the age of 7.
+
+To fulfill their learning, you may need to:
+* Build a [[comms console]], a [[school desk]] with 3 [[blackboard]]s, allow the child outside, and get at least 1 [[book]] to cover all possible Learning types. In practice, you can skip out on 1-2 types, and still reach growth level 8, just hope that the types you skip don't come up together at the same time.
+* Constantly monitor your child's learning need and their desired activities. Sometimes they will not start learning even though their need has dropped below 90%, you'll need to diagnose the problem before it cause them to miss the growth target. If you notice a child is behind in learning progress, wait until reading appears as one of their learning needs. As reading can be forced manually, you can keep the child’s learning at 100% (with smaller dips for eating and sleeping) by forcing reading even when learning is above the 90% threshold.
+* When the child is sleeping and their learning need drop below 90%, wake them up so that they can bring it up to 100% before sleeping again.
+* Try not to interrupt the child before their learning need reach 100%, because they won't start learning again for a while.
+* Work watching: children age 3-7 can only do work watching on social tasks, so consider ordering an adult to attempt to recruit a prisoner when a child need to work-watch.
+* Lesson taking: children will not start learning unless there is an awake adult who is capable of teaching. Wake you teacher up when the child needs to take lessons.
+* Skydreaming: sometimes you need to draft the child and move them outside for them to start this activity
+
+Older children that join your colony will be comparatively worse off.
+
+===Baby stage===
+As opposed to the proper child stage, the [[baby]] stage, which lasts for 45 days (3/4ths of a year), requires a notably higher amount of colonist labor. Feeding babies takes a surprisingly long time, especially if breastfed.  The base duration of feeding a baby from empty is {{ticks/gametime/hours|5000}}, and babies need to be fed roughly twice a day.  Between this and caring for her own needs, a mother tasked with caring for her baby can spend over half her waking hours, every day, for those 45 days. On the plus side, feeding and playing with babies can be done by children as young as age 3.
+
+[[Growth vat]]s can be used to skip the baby stage, at the cost of nutrition and a slight mood penalty to parents. Babies don't learn, so this comes at no cost to a child's development.
+
+=== Vats ===
+{{Main|Growth vat}}
+[[Growth vat]]s can turn children into working machines. It still takes a long time to grow a person - 9 days for the embryo to be born in vat, another 39 days to reach age 13, and then a further 15 days to reach 18 (if desired), for a total of 63 days from embryo to 18 (~ 52.6 days with a pro-vat [[ideoligion]]{{IdeologyIcon}}). In the meantime, the vat consumes a lot of food. Growing an embryo requires a total of 54 [[nutrition]] - 60 simple meals, or 4 colonists of food for 9 days -  while a pregnant mother would consume an extra 30% nutrition for 18 days. Growing the child thereafter requires 2 colonist's of nutrition per day. Unlike with most colonists, you can use undesirable foods like [[human meat]] and [[kibble]] with no penalty.
+
+Vatgrown pawns have 0 passions, barely any skills, and 3 random traits. Despite this, extra bodies can always be useful for tasks like Hauling and Cleaning, or fighting in general. While any [[Events#Wanderer joins|wanderer]] or captured [[raider]] is likely to be better, all three [[storyteller]]s have a population intent. As you have more people, it becomes harder to recruit more colonists. Children ignore this mechanic entirely. Therefore, growing children becomes more viable for larger colonies.
+
+[[Gene]] modding can make vatgrown children much more powerful. For example, the [[Great shooting]] gene provides 8 Shooting skill, added on top of the pawn's "true" skill level, and a passion. If planted immediately after birth, the extra passion will nearly triple the Shooting skill bonuses from the vat. This can provide late-game colonies with a functionally infinite supply of soldiers, ignoring the game's natural population curve, and limited only by food production (and possibly lag). 
+
+Note that using vats to speed up the baby stage (0-3) and teen stage (13-18) does not penalize the pawn in any way. Babies don't learn or work, and speeding up this phase comes mostly at the cost of [[mood]]. Speeding up a teen to adulthood removes their work speed and body size penalties, though they could've done work in the meantime. However, teens in growth vats do not apply a mood penalty to their parents, as they are not "kids" anymore. Also note that unlike with [[cryptosleep]], colonists in vats have absolutely no penalty applied to them when they exit the vat. If you need them for an emergency (such as a dangerous incoming raid), they can be removed from the vat at a moment's notice.
+
+== Version history ==
+* [[Biotech DLC]] Release - Introduced. In Core RimWorld, the minimum human age is 14, where they are treated as adults.
+* [[Version/1.4.3524|1.4.3524]] - Children no longer get adult body types from genes.
+* [[Version/1.4.3525|1.4.3525]] - Fix: Temporary work restrictions affect growth moment passion choices.
+* [[Version/1.4.3527|1.4.3527]] - Growth moment flavor text doesn't appear when a pawn becomes a child.
+* [[Version/1.4.3528|1.4.3528]] - "My child is happy" and related thoughts now can trigger if a pawn is being carried.
+* [[Version/1.4.3529|1.4.3529]] - Fix: Growth tier gizmo displays incorrect percent value on bar.
+* [[Version/1.4.3530|1.4.3530]] - Fix: Children gain growth points in cryptosleep.
+* [[Version/1.4.3531|1.4.3531]] - Children can now do Basic work at age 3. Allow children to wear shield belts
+* [[Version/1.4.3555|1.4.3555]] - Children now deprioritized if not holding a weapon and not drafted. Teen (11-20) aging rate now smooth scales from child age rate to adult age rate. Added [[precept]]s{{IdeologyIcon}} relating to child labor. Fixed "Tribal Child" not giving Natural meditation focus. Added an option for selecting “no trait” on growth letters some of the time if there are more than two trait choices.
+* [[Version/1.4.3558|1.4.3558]] - Tribal babies becoming children get [[psyfocus|natural meditation focus]]{{RoyaltyIcon}} at 3.
+* [[Version/1.4.3563|1.4.3563]] - Round growth points down on UI for clarity. Children now recalculate their life stage immediately when they become an adult instead of waiting for their next growth tick. Fix: Children generated at [[New Tribe|tribal game start]] don't have [[Psyfocus|natural meditation focus]].{{RoyaltyIcon}}
+* [[Version/1.4.3580|1.4.3580]] - Fix: Radiotalking doesn't adhere to child's allowed area.
+* [[Version/1.4.3613|1.4.3613]] - Fix: Child prisoners attempt to wear adult clothing, causing it to disappear.
+* [[Version/1.4.3641|1.4.3641]] - Fix: If a child goes through a growth moment expecting passion increase choices, but there are no available passions, the UI will lock. Fix: Errors when trying to bring a baby to a mom inside a container to breastfeed. 
+* [[Version/1.5.4062|1.5.4062]] - Fix: Exception getting growth points for dead pawn.
+
+{{Biotech navbox}}
+[[Category:Animals|#Children]]

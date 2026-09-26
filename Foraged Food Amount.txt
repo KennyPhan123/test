@@ -1,0 +1,43 @@
+{{Stub|reason=Effect of biome bonus - what are the nutrition multipliers from each biome?}}{{Verified|1.2.2900}}{{Stat
+| default base value = 0
+| to string style = FloatMaxTwo
+| description = The amount of nutrition this person will automatically [[foraging|forage]] per day while traveling by [[caravan]].
+| category = BasicsPawn
+}}
+
+==Summary==
+Foraged Food Amount is a colonist stat that determines the amount of nutrition that a pawn generate while on the world map. This stat is affected by 7 factors; the biome, growing season, the colonist's manipulation, sight, plants skill, whether the caravan is moving and whether the colony is a tribe vs outlander.
+
+==Factors==
+
+* [[Skills#Plants|Plants]][[Skill::Plants| ]]: [[Skill Base Factor::0.0|0]] plus [[Skill Bonus Factor::0.09|0.09]] nutrition per skill level.
+* [[Manipulation]]: [[Manipulation Importance::0.5|50%]] importance, [[Manipulation Limit::1|100%]] max.
+* [[Sight]]: [[Sight Importance::0.9|90%]] importance, [[Sight Limit::-|No]] max.
+* Pawns belonging to a [[New Tribe]] faction forage {{Good|x170%}} as much nutrition as other pawns.
+* Below is the foraged food amount multipliers for each biome.
+** Grassland = 1x
+** Glowforest = 1x
+** Temporate Forest = 1x
+** Tropical Rainforest = 1x
+** Boreal Forest = 0.75x
+** Temperate Swamp = 0.75x
+** Tropical Swamp = 0.75x
+** Arid Shrubland = 0.5x
+** Lava Field = 0.5x
+** Tundra = 0.5x
+** Cold Bog = 0.5x
+** Scarlands = 0.25x
+** Desert = 0.25x
+** Glacial Plains = 0x
+** Extreme Desert = 0x
+** Ice Sheet = 0x
+** Sea Ice = 0x
+
+{{Stat Factors Table|Foraged Food Amount|Sight}}
+
+==Trivia==
+* The amount of pollution on a tile has no effect on foraged food amount
+* A pawn in a tribal-start-colony forages more food than it consumes while stationary on a tile of a 100% forageable biome during growing season from Plants 8 at 100% Manipulation & Sight.
+* Slaves in a tribal colony can be safely added to a foraging caravan without fearing rebellion, as long as they forage more food than they consume.
+
+{{nav|stats|wide}}

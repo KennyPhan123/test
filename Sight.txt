@@ -1,0 +1,100 @@
+{{Capacity
+| default base value = 1
+| to string style = PercentZero
+| description = How well a character can see.
+}} Sight affects most colonist stats, with varying impact, though its importance will depend on the pawn's role in the colony. Sight contribution is capped at or near 100% for many stats, but some combat, medical, and cooking stats can go significantly higher.
+
+{{Hover title|Version/1.3.3242|At the time of writing}}, the maximum possible Sight capacity in the core game is 250% with a healthy pawn high on [[go-juice]] and [[luciferium]] with two [[archotech eye]]s installed, while also being infected with [[sensory mechanites]]. With the [[Royalty DLC]] installed, it is possible to reach a Sight capacity of up to a maximum of 325% with the addition of the  [[Focus]] psycast.{{RoyaltyIcon}}
+
+== Effects ==
+{{Stub|section=1|reason=There are definitely more of these that aren't listed - some to be tested inc. eclipses with the relevant precept, etc}}
+Sight has a number of unique interactions with other mechanics, beyond the traditional effects on [[stats]]. 
+
+All pawns whose Sight's base efficiency is less than 50% gain [[psychic sensitivity]] according to the formula <code>0.5-Sight base efficiency</code>, for a maximum of {{Up|+50%}} psychic sensitivity when fully blind. '''Offsets''' and '''Post factors''' are completely ignored for this. Do note that previous to 1.5, this bonus was based on Sight efficiency instead.
+
+Pawns with 0% Sight:
+* Are not subject to the factor from low [[light]] levels on [[move speed]] or on [[global work speed]]. 
+* Will not receive the "Observed corpse" or "Witnessed ally's death" moodlets.{{Check Tag|Other similar moodlets?|Wb the other witnessed death (inc outsider, family) and wb bloodlust?}}
+* Do not experience the mood buff from [[aurora]]s, nor from [[eclipse]]s with the [[Eclipse (precept)|eclipse]]{{IdeologyIcon}} precept.
+* Do not gain nor lose any [[opinion]] for any other pawn based on their [[Beauty (Pawn)|beauty]] stat.
+* Do not lose any [[opinion]] for [[disfigured]] pawns.
+* Have the need for [[Beauty#Beauty_need_level|beautiful environments]] locked at 50%, becoming a total non-factor to their [[mood]].
+* Cannot [[recreation|recreate]] at a [[telescope]], [[poker table]], [[billiards table]], [[hoopstone ring]], [[books]] or any type of [[television]]. They also cannot skygaze or view art for recreational purposes.
+* Gain {{Up|+30%}} [[psychic sensitivity]] if they also have the [[Blind psysense]]{{IdeologyIcon}} precept and both their eyes removed. This stacks with the aforementioned {{Up|+50%}} for 0% sight bonus.
+
+== Affected stats ==
+{{#ask: [[Sight Importance::+]]
+| ?Health Type = Type
+| ?Sight Importance# = Weight
+| ?Sight Limit# = Max
+| ?description
+| format = broadtable
+| limit  = 100
+| mainlabel = Name
+| headers = plain
+| sort = Health Type, 
+}}
+
+== Formula ==
+The formula for sight is:<br/>
+<big><code>'''Sight''' = (Base efficiency + Offsets) × Post factors</code></big>
+
+Base efficiency is the result of combining both eyes efficiencies, with a 75% weight to the strongest eye. There are many way of writing it, but for this section the following will be used:<br/>
+<big><code>'''Base efficiency''' = (right eye + left eye)/4 + max(right eye, left eye)/2</code></big>
+
+Offsets are additive with each other.
+
+
+All factors that affect Sight will be listed below.
+
+=== Base efficiency ===
+* Eye efficiency.  100% importance, no allowed defect, no max.
+** The game assigns 75% weight to the stronger eye and 25% weight to the weaker, so entirely losing a single eye reduces sight by 25% rather than 50%.
+** [[Blindness]]: 0% part efficiency
+** [[Cataract]]: 50% part efficiency. Results in {{--|12.5%}} sight for the first eye affected, {{--|37.5%}} for the second eye.
+** [[Bionic eye]]:  125% part efficiency.  Results in {{+|18.75%}} sight for the first one installed, {{+|6.25%}} for the second one.
+** [[Archotech eye]]:  150% part efficiency.  Results in {{+|37.5%}} sight for the first one installed, {{+|12.5%}} for the second one.
+
+::{{Sight Part Efficiency Table}}
+
+=== Offsets ===
+The following offsets affect Sight.
+* [[Sensory mechanites]]: {{+|50%}}
+* [[Go-juice]]: {{+|35%}}
+* [[Luciferium]]: {{+|15%}}
+* [[Tox gas]]:{{BiotechIcon}}
+** Mild: {{--|10%}}
+** Moderate: {{--|25%}}
+** Severe: {{--|40%}}
+
+=== Post factors ===
+* [[Blindfold]]{{IdeologyIcon}}: Sets maximum to 20%
+* [[Focus]] psycast {{RoyaltyIcon}}: '''x130%'''
+
+== Example == 
+If we were to calculate the highest possible value in unmodded Rimworld, we would have:
+*Base efficiency: 
+** Right eye: '''150%''' ([[archotech eye]])
+** Left eye: '''150%''' ([[archotech eye]])
+*Offsets (total {{+|100%}}):
+** [[Luciferium]]: {{+|15%}}
+** [[Go-juice| Go-juice High]]: {{+|35%}}
+** [[Sensory mechanites]]: {{+|50%}}
+*Post factors:
+** [[Focus]] psycast{{RoyaltyIcon}}: '''x130%'''
+
+
+From this, Base efficiency would be:
+
+<code>'''Base efficiency''' = (1.5 + 1.5)/4 + max(1.5, 1.5)/2 = 3.0/4 + 1.5/2 = 0.75 + 0.75 = 1.5 = '''150%''' </code>
+
+Replacing values, the maximum Sight capacity is:
+
+<code>
+'''Sight''' = (1.5 + 1.0) * 1.3 = 3.25<br/>
+<big>'''Sight''' = 325%</big>
+</code>
+
+
+<noinclude>[[Category:Capacity]]</noinclude>
+{{nav|stats|wide}}

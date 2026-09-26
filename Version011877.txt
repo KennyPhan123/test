@@ -1,0 +1,117 @@
+{{Version Nav}}
+It’s here! This update includes clever new AI strategies including sappers who blast and dig around your defences and raiders who burn crops. I’ve also added a number of incidents, including several long-term atmospheric conditions like volcanic winter and toxic fallout. There is also an array of new traps for players to use, dozens of other new features and hundreds of fixes and small improvements. A full change list is at the end of this post. If you wish, you can also read my day-to-day work log here.
+
+If you own the game, you can get the new version by re-downloading from the link you used before (it is a permanent link and always has the newest version). You should also get an update email from us. Anyone still having trouble should start at this thread. There may be a delay of some hours before your download count resets or your email arrives.
+
+=== Compatibility ===
+Also note that this build will not load old savegames or old worlds, so please don’t try to load these in the new version. They’ll probably just crash the game.
+
+== Release Trailer ==
+
+<youtube>https://www.youtube.com/watch?v=LR9wqSyfSwQ</youtube>
+
+== Versions ==
+=== Core Release ===
+==== Changes ====
+===== AI =====
+* Added new [[raid]] type: sappers.
+* Sappers attempt to dig or blast their way around your hardest defensive point. The circumvent ‘killbox’-like strategies.
+* Enemies now flee things that are about to explode
+* Enemies remember trap positions that their faction has encountered before, and avoid them.
+* [[Raiders]] opportunistically ignite crops on fire.
+* Pawns can now do ‘job override’ checks to see if a new job should start before ending their current job. These are now used liberally to have pawns respond faster and more intelligently to changing conditions (especially in combat).
+* Pawns check for job override when taking damage. It will no longer be possible to bug out the centipede enemy and kill him at close range while he tries to take a firing position.
+* Enemies no longer take unpowered player turrets as primary targets.
+* Pawns choose sky-gaze, wander, eating and other positions by traversing the region graphic instead of by random coordinate scattering, which solves problems with them taking long paths around long walls.
+
+===== Traps =====
+* Added [[deadfall trap]]: A simple rearmable trap that falls on enemies and damages them.
+* Added [[IED trap]]: An artillery shell connected to a trigger that detonates after a short delay.
+* Added [[IED incendiary trap|incendiary IED trap]]: Like IED, but sets fires.
+
+===== New incidents =====
+* New incident: [[Toxic fallout]]. A toxic cloud that lasts for days or weeks. It kills plants, rots food, and slowly poisons people outside. [[Toxic buildup]] in characters leads to vomiting, dementia, and eventually death.
+* New incident: [[Events#Volcanic_winter|Volcanic winter]]. Lasts weeks or months and significantly reduces [[temperature]]s and light levels, leading to poorer harvests.
+* New incident: [[Events#Manhunter_Pack|Manhunter pack]]. A pack of deadly [[warg]]s arrives and stalks the local area for a while before moving on. Fight them or hide inside from them.
+* New incident: [[Events#Refugee Chased at (Settlement)|Chased refugee]]. A refugee radios and offers to join the colony if you’ll fight the raiders on his tail.
+* New incident: [[Events#Psychic_soothe|Psychic sooth]]. The opposite of a psychic drone.
+
+=====Allowed areas=====
+* Assign colonists to [[Zones|allowed areas]].
+* Every item and location outside the allowed area is considered forbidden.
+
+=====Storyteller changes=====
+* [[AI Storytellers|Storytellers]] will never entirely disallow events because of population.
+* Randy’s event chances are affected by population (somewhat).
+* Re-tuned storyteller population intent based on new output tables for smoother population gain with higher maximum and better recovery at small populations
+
+=====Ice sheet=====
+* Ice sheet [[biome]] is now playable (though perhaps not survivable).
+
+=====Misc=====
+* Added strip designator to reduce stripping micromanagement.
+* You can toggle allowing sowing in a growing zone.
+* Doors can be held open.
+* Door locking is now door forbidding (it’s clearer).
+* Added copy/paste functionality for storage zone/building settings.
+* World data now saves into map file to prevent game state confusion with multiple saves on one world.
+* Added new [[joy]] activity: build [[snowman]].
+* You can now remove [[floors]] to reveal the terrain underneath.
+* You can now perform [[surgery]] on [[guest]]s. Violating surgery will anger their faction.
+* Guests are smarter and no longer walk out of the colony bleeding.
+* Added new hairs donated by Shinzy.
+* Slave [[trader]] changed to pirate merchant, can still show up to buy slaves even when your population is high (though they may not carry any).
+* Hundreds more bugfixes, tuning changes, optimizations, and other small improvements.
+
+=== Alpha 11b ===
+I’ve just released RimWorld Alpha11b! This is a fix-and-adjust build without crazy new features. You can still load saves from Alpha 11 (though they will report some errors on loading and have a few minor issues around load time, they should play fine in the long term).
+
+If you own the game, you can get the new version by re-downloading from the link you used before (it is a permanent link and always has the newest version). Anyone still having trouble should start at the support page. A new email will not be sent for this update.
+
+==== Compatibility ====
+Mods might become incompatible. I’ve tried to keep the API the same as it was before, but a few places have necessarily changed. Also, since the DLL was recompiled, the ABI might not be identical. This means the functions and variable names are the same, but the compiler might have changed the way the bits and bytes are passed around, causing code compiled against the old DLL to not work properly when it tries to talk to the new DLL. This means:
+
+* Simple mods (especially those which are purely XML data, images, and sounds without any code) should still work without any changes.
+* Mods with code might work without changes, but there’s a good chance they’ll need to be recompiled against the new DLL.
+* A few mods will actually need to have code changed if they touch parts of the API that I changed.
+
+==== Changes ====
+* Colonists will now try to avoid pathing outside their allowed area.
+* Open doors equalize temperature faster.
+* Much, much smarter sapper escort AI.
+* Sapper now avoid mining high-health ore while finding tunnelling paths.
+* Reorganized and clean up options menu and graphics settings.
+* Mods config page shows load order of mods.
+* [[Toxic fallout]] kills plants much more slowly.
+* Enemies (especially wargs) now ignore unpowered unmanned [[turrets]] and [[mortar]]s.
+* We no longer allow buying back prisoners you just sold as a way to insta-recruit anyone.
+* Can no longer sell rotten items.
+* Treatment result is now indicated with a text mote, not a global message.
+* Adjusted a bunch of sound volumes.
+* Fixed pirate merchants only bringing slaves when population is high. This should be reversed.
+* Reworked how slave prices are calculated so they take injuries, capacities, and skills into account better.
+* Colonists now harvest planted trees on their own.
+* Optimizations to grower work scan algorithms.
+* Cleanup on main menu background image.
+* [[Electric smelter|Smelt]] slag recipe can use do until you have X.
+* [[Raider#Siege|Siegers]] can never use melee weapons (too exploitable).
+* New sound: warg voices.
+* New sound: treatment.
+* New sound: medicine used successfully.
+* Player-created backstories and translations have been updated.
+* About 150-200 bugfixes – some big, some small.
+
+=== Alpha 11c/d ===
+
+Alpha11c is a very small hotfix to Alpha11b that fixes a few serious bugs. All save games and mods should still be compatible.
+
+'''Update:''' Now to Alpha11d. This is the same as Alpha11c, but the save game location will be correct on Macs. (I originally built Alpha11c against a slightly old version of Unity from before they changed the save game path).
+
+There will not be a new email sent. You can download using your previous link from your last email. Your personal download link is permanent and always has the latest version. If you need help getting your link, please go to ludeon.com/support.
+
+==== Changes ====
+* Mitigated a game-killing bug caused by corrupted pawns. The corrupted pawn will now be destroyed instead of causing broken saves and game crashes. I’m still tracing the root cause of this so I can make the game not generate corrupted pawns in the first place.
+* Fixed a stuck-pawn bug caused by wardens trying to recruit downed prisoners and immediately ending their job, over and over.
+* Fixed [[prisoner]] config resetting at inappropriate times.
+* Fixed floor smoothing speed being determined by mining skill (it’s now construction).
+* Fixed repeated [[EMP]] damage canceling stuns in progress.

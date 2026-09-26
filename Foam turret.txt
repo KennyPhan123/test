@@ -1,0 +1,88 @@
+{{infobox main|security|
+| name = Foam turret
+| image = Foam turret menu icon.png
+| description = An activatable turret for extinguishing fires. The turret stands idle until someone approaches and activates it, after which it will automatically spray large amounts of firefoam on any flames in sight.
+| type = Building
+| type2 = Security
+| placeable = true
+| path cost = 50
+| passability = pass through only
+| cover = 0.4
+| minifiable = true
+| size = 1 ˣ 1
+| mass base = 8
+| flammability = 0.7
+| hp = 100
+| beauty = -20
+| power = -80
+| terrain affordance = light
+| research = Foam turret
+| thingCategories = 
+| skill 1 = Construction
+| skill 1 level = 5
+| work to make = 1800
+| stuff tags = Metallic
+| resource 1 = Stuff
+| resource 1 amount = 30
+| resource 2 = Steel
+| resource 2 amount = 70
+| resource 3 = Component
+| resource 3 amount = 3
+| resource 4 = Chemfuel
+| resource 4 amount = 140
+| damage = 0
+| armorPenetration = 0
+| range = 19.9
+| accuracyTouch = 100
+| accuracyShort = 100
+| accuracyMedium = 100
+| accuracyLong = 100
+| mode = Burst
+| burst = 41
+| burstTicks = 2
+| cooldown = 3600
+| velocity = 27
+| stoppingPower = 0
+| DPS = DPS
+| page verified for version = 1.4.3525
+| fuel filter = Chemfuel
+| fuel capacity = 72
+| fuel consumption rate = {{#expr: 72/10 round 2}}
+}}
+'''Foam turrets''' are [[security]] [[turret]]s that fire firefoam at nearby [[fire]]s when activated by a pawn.
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+{{Image wanted|section=1|reason=1) Range and aoe inbthe standard style 2) Potentially combined with o #1 but .webm of s turret being activated, ideally with an over abundances of targets both near and far (so not a ring like the rotational efficiency one below) - consider just filling the entire potential radius with fire.}}
+The foam turret is used to rapidly extinguish [[fire]]s within its range. Foam turrets must be manually activated, by either selecting a pawn, right-clicking the turret, and selecting "Activate," or by using the turret's "Order Activation" gizmo, which allows selection of a pawn to come and activate the turret. Activation does not require the pawn to have any [[work]] type enabled and can be done by pawns who are otherwise [[incapable]] of [[firefighting]], such as [[pyromaniac]]s. [[Drafted]] pawns will perform the task and remain drafted, even when selected via the gizmo.
+
+When activated, it will consume one of its charges and briefly spray [[fire]]s within line of sight and range with [[firefoam]] for {{Ticks|82}}, covering the ground in firefoam [[filth]]. After activation, it will enter a {{Ticks|3600}} cooldown before it can be activated again. This cooldown is paused if the turret becomes unpowered, and will resume when power is restored. It cannot be activated unless there is fire present within range and [[line of sight]]. It has a maximum range of 20 tiles.
+
+Pawns on fire are considered fire by the foam turret, and can be activated to extinguish them. However, there are no guarantees the turret will extinguish the pawn. Pawns hit by the foam attack will be covered in foam, extinguishing them, however it is possible for an ignited pawn to evade a foam turret's attack while it runs around. 
+
+The foam turret has 10 charges, all filled on construction. [[Chemfuel]] must be fed to it in order to refill expended charges. The turret can be rearmed at charge value below 10 and at any time, including when the turret is repressurizing. Rearming requires {{Icon Small|Chemfuel||7.2}} [[chemfuel]] per charge, rounded up with any excess wasted. That is, rearming one charge would required {{Icon Small|Chemfuel||8}} [[chemfuel]] but two charges would require {{Icon Small|Chemfuel||15}} [[chemfuel]]. {{Icon Small|Chemfuel||72}} [[chemfuel]] is required to fill the turret from empty to full. The turret is rearmed by [[Work#Haul|haulers]] or [[lifter]]s.{{BiotechIcon}}
+
+Unlike other [[turret]]s, they will not explode if damaged below 20% health. While they do 'explode' when destroyed, it is instant, damageless, and will cover pawns within a 4-tile radius in foam. This explosion does not produce firefoam [[filth]], but it will extinguish [[fire]]s.
+
+In addition, [[raider]]s do not consider foam turrets priority targets, and will ignore them in favor of attacking other [[turret]]s or pawns. However, they will target them, similar to other pieces of [[furniture]], if there are no active threats nearby.
+
+== Analysis ==
+Foam turrets are best used for cheap, targeted firefighting. They have a range of 20 tiles, significantly larger than their firefighting brother, the [[firefoam popper]], which only has a range of 10 tiles. Additionally, firefoam turrets only consume [[chemfuel]] on use, whereas firefoam poppers require steel and [[component]]s to build or rebuild, making them much more resource intensive in situations where either components are in short supply, or where fires are common.
+
+[[File:Foam turret rotational effectiveness.png|thumb|left|A demonstration of how much rotational coverage a foam turret offers in a single activation]]
+
+However, there are a few trade offs. The turret requires 80 W of power to use, limiting its use to home firefighting or strict defensive combat. Additionally, their time spent dousing fires per activation is rather low. Combined with a slow turret rotation speed, a foam turret may only realistically douse a quarter of it's circumference in foam (see image right). Compared to a popper, which will douse every tile within range and [[line of sight]] with foam. A foam turret cannot be relied upon if fires are particularity massive or encompass a large portion of the turret's circumference. Additionally, foam turrets have a cooldown of one in-game hour ({{Ticks|3600}}), meaning that more than one turret may be required if fires are common, spread out, or during combat where a lot of fire is produced (such as when fighting [[impids]]{{BiotechIcon}}).
+
+Foam turrets extinguish fire on walls (firefoam poppers don't). This is useful to protect flammable walls from inside.
+
+Foam turrets can be useful in [[killbox]]es, either to protect your colonists or to quickly clear a killbox of [[fire]] after a fight, where the limited space of the killbox makes up for the limitations in spray coverage. Additionally, the large range of the foam turret allows for easy protection behind colonists or in a more protective position while still being effective.
+
+== Version history ==
+* [[Version/1.4.3523|1.4.3523]] - Added.
+* [[Version/1.5.4062|1.5.4062]] - Foam turret activation cooldown is paused while repressurizing and unpowered.
+* [[Version/1.6.4630|1.6.4630]] - Fix: Some explosive buildings explode twice when the wick ends.
+
+{{nav|security|wide}}
+[[Category:Security]] [[Category:Turret]]

@@ -1,0 +1,57 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Drugs/Luciferium}}
+|}
+----
+{| {{STDT| c_24}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Luciferium need" <!-- defName="LuciferiumAddiction", ParentName="AddictionBase" -->
+! Luciferium need
+----
+* Def Name:<br />LuciferiumAddiction
+* Label:<br />luciferium need
+|<!-- Description -->
+Luciferium mechanites in the body. Luciferium mechanites decohere over time; only regular doses of fresh luciferium can prevent this process.
+
+Without luciferium, the mechanite decoherence will reach a critical state, causing the victim to go insane and die.
+|<!-- Details -->
+* Hediff Class: '''Hediff_Addiction'''
+* Causes Need: '''Chemical_Luciferium'''
+* Ever Curable By Item: {{Bad|false}}
+* Default Label Color: {{Color|100%|0%|50%}}
+* Initial Severity: '''50%'''
+* Max Severity: '''100%'''
+* Scenario Can Add: {{Good|true}}
+* '''Remove On Redress Chance By Days Curve:'''
+<div><li style="display: inline-table;">
+{| {{STDT| c_24}}
+! Days !! Chance
+|-
+! 0
+| 0%
+|-
+! 10
+| 0%
+|-
+! 60
+| 25%
+|}</li></div>
+|<!-- Stages -->
+{| {{STDT| c_24}}
+! Label !! Parameters
+|-
+! -
+| -<!-- Parameters -->
+|-
+! unmet
+|<!-- Parameters -->
+* Pain Offset: {{++|40%}}
+* Life Threatening: {{Bad|true}}
+* Death {{MTB}} Days: {{Bad|10}}
+* {{MTB}} Death Destroys Brain: {{Bad|true}}
+* [[Consciousness]] Max: {{Bad|80%}}
+* '''Mental State Givers:'''
+** Mental State: '''[[Mental break#Berserk|Berserk]]'''
+** {{MTB}} Days: '''0.4'''
+|}<noinclude>
+|}</noinclude>

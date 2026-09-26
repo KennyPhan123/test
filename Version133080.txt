@@ -1,0 +1,62 @@
+{{Version Nav}}
+''Released August 4, 2021''
+
+Hey everyone! Today's update adds a new ideoligion setup screen with a variety of preset patterns for ideoligion generation. The idea is to avoid overwhelming the player with details if they just want to play.
+
+We also added the ability to play the game with an ideology matching classic RimWorld. This is a good idea for the player's first few games as they get used to the game systems.
+
+This update also significantly improves video memory usage, especially in heavily-modded games.
+
+It is compatible with all saves and mods.
+
+Thanks to everyone on the official dev Discord who helped us test this update! Anyone else who wants to help test is very welcome to come join.
+
+== Change list ==
+
+=== Improvements ===
+
+* Add a new ideoligion setup interface which allows playing like classic RimWorld, using presets, or fully customizing.
+* Improvements to texture atlas video memory usage.
+* Change harmful aging thought minimum age from 20 to 25
+* Added temperature precept icon.
+* Rebelling slaves now drop shield belt if they have a ranged weapon
+* Increase fade on oil smear art.
+* Add more constraints to Empire faction ideo generation. They are no longer proselytizers. This makes it less annoying to host them. (This will only apply to new games.)
+* Increased plant harvest yield stats' max values.
+* Don't list "Cannot remove: Required" float menu option for precepts that have a default. All available options are already listed.
+* Ideoligion text color now have a min brightness, for better visibility.
+
+=== Technical ===
+* Simplify the CompareTooltipsByPriority call.
+* Optimize shield belt apparel code in pickup opportunistic weapon
+* Ensure consistent order for ideo preset tooltips. Use StableSort for tooltips in general.
+* Make quest dialog close actions serializable.
+* Adjust slave rebellion likely alert copy to make things a bit more friendly to translators.
+
+=== Fixes ===
+
+* Fix: Pawns without eyes cannot wear blindfolds
+* Fix: Immunity Drive doesn't work.
+* Fix: NullReferenceException for wearing color thought if apparel does not have colorable (like apparel from mods)
+* Fix: Pawns who prefer indoors do outdoor joy activities
+* Fix: Very high video memory usage on startup with heavily modded games.
+* Fix: Dryads can bond with pawns other than the connected one.
+* Fix: Dye doesn't deteriorate.
+* Fix: Reverse tooltip order after a recent commit.
+* Fix: Deserter quest doesn't count as raiding.
+* Fix: Biosculpters fail to eject their contents when uninstalled.
+* Fix: Rusted car only appears in north orientation.
+* Fix: Bestowing ceremony lands in shuttle without the bestower exiting, making all the escort pawns just leave the map.
+* Fix: Generated ideo building def gets overriden to a random one during initialization.
+* Fix: Exception when all slaves die while rebellion likely alert active (not hard crash).
+* Fix: Slave count rebellion factor shown incorrectly to users in tooltips.
+* Fix: Trying to convert humanlike pawn with no ideo (generated with PawnGenerationRequest(forceNoIdeo: true)) causes errors.
+* Fix: Dryad and Gaumaker pods can spawn over graves.
+* Fix: Drafted slaves which rebel dont opportunistically pick up weapons.
+* Fix: Archonexus guitar sound clips play before you close the new archonexus colony start dialog, instead of after like the game start dialog.
+* Fix: Trailing newline, null on abandon with no active maps for slave rebellion likely alert.
+* Fix: Using obsolete methods.
+* Fix: Typo in shooting specialist role description
+
+== Source ==
+* [https://steamcommunity.com/games/294100/announcements/detail/2996568183493634265 Update 1.3.3080 adds classic and preset ideoligion setup]

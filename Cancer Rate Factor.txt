@@ -1,0 +1,43 @@
+{{Biotech}}
+{{Verified|1.5.4104}}{{Stat
+| min value = 0.01
+| default base value = 1
+| to string style = PercentZero
+| description = A multiplier on how likely this person is to develop [[cancer]] in any given time frame.
+| category = BasicsPawn
+}}
+
+== Factors ==
+* [[Genes]]
+** [[Mild cell instability]]: {{Bad|×300%}}
+** [[Major cell instability]]: {{Bad|×500%}}
+
+== Stat Def Data ==
+{| {{STDT}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Cancer Rate Factor" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />CancerRate
+* '''Label:'''<br />cancer rate factor
+| A multiplier on how likely this person is to develop cancer in any given time frame.
+|
+* Display Order:<br />'''11'''
+* Def Name:<br />'''BasicsPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''To String Style:''' PercentZero
+* '''Default Base Value:''' {{%|1}}
+* '''Hide At Value:''' {{%|1}}
+* '''Min Value:''' {{%|0.01}}
+* '''Show On Animals:''' {{Bad|false}}
+* '''Show On Mechanoids:''' {{Bad|false}}
+| -
+| 2100
+<!--</StatDef>-->
+|}
+
+== Version history ==
+* [[Biotech (DLC)]] Release - Added.
+
+{{nav|stats|wide}}

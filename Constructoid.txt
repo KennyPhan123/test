@@ -1,0 +1,107 @@
+{{Biotech}}
+{{infobox main|none|
+| name = Constructoid
+| image = Constructoid east.png
+| description = A small mechanoid designed to perform construction tasks. It can perform blunt melee attacks if necessary.
+| type = Mechanoid
+| movespeed = 3.4
+| flammability = 0
+| marketvalue = 800
+| armorblunt = 10
+| armorsharp = 20
+| armorheat = 200
+| min comfortable temperature = -100
+| max comfortable temperature = 250
+| toxic resistance = 1
+| toxic environment resistance = 1
+| bandwidth cost = 1
+| bodysize = 0.7
+| healthscale = 1
+| lifespan = 2500
+| attack1dmg = 10
+| attack1type = Blunt
+| attack1cool = 2.9
+| attack1part = Torso
+| page verified for version = 1.4.3525
+| weaponTags = 
+<!-- Creation -->
+| research = Basic mechtech
+| production facility 1 = Mech gestator
+| gestation cycles = 1
+| resource 1 = Steel
+| resource 1 amount = 50
+| resource 2 = Basic subcore
+| resource 2 amount = 1
+}}
+A '''constructoid''' is a [[mechanoid]] added by the [[Biotech DLC]] that is capable of constructing and repairing buildings.
+
+== Acquisition ==
+{{Acquisition}}
+
+Additionally, upon a mechanitor installing a new mechlink for the first time, an [[event]] will trigger that causes a friendly [[Lifter]] or [[Constructoid]] to drop onto the colony, which will automatically link with the new mechanitor.
+
+Dead, friendly {{lc:{{PAGENAME}}}}s can also be resurrected at the {{lc:{{P|Production Facility 1}}}} using the "''Resurrect light mechanoid''" bill. This requires the corpse of the friendly {{PAGENAME}}, {{Icon Small|Steel||25}} [[steel]], and 1 [[gestation cycle]] taking {{ticks|1800}} to initiate.
+
+== Summary == 
+{{Mechanoid Summary}}
+
+Dead constructoids may be shredded at the [[machining table]] or [[crafting spot]] for {{Icon Small|Steel||10}} [[steel]]. However, these values are affected by [[Mechanoid Shredding Efficiency|mechanoid shredding efficiency]], as well as missing parts on the constructoid.
+
+=== As an enemy ===  
+As a labor-focused mech, constructoids are never found in mechanoid [[raid]]s, however they can go feral after time spent uncontrolled.
+
+=== As an ally ===
+Mechs under player control require power: constructoids use 10% of their power per day while active.  If set to dormant self-charging, they instead recharge for +1% power / day, without pollution. They recharge in a [[mech recharger]] (constant 200W), for 50% power/day, creating 5 [[wastepack]]s whenever the recharger's waste is filled up.
+
+=== Work ===
+Constructoids will do tasks associated with the Construction tab; they can't be manually controlled, except when drafted. They have an effective Construction skill of 10. However, they have a base [[Construction Speed]] ''set'' to 50%, and a further [[Global Work Speed]] modifier of 50%. This results in a Construction Speed stat of 25%, which is {{%|25/117.5 round 2}} as fast as a human of the same skill.
+
+Constructoids will also move items and cut plants to start working on a blueprint, however they have an effective [[Skill#Plants|plants]] skill of 0 and move at {{P|Move Speed Base}} {{CS}}, {{%|1-({{P|Move Speed Base}}/{{Q|Human|Move Speed Base}}) round 2}} slower than a human.
+
+=== Combat ===
+Constructoids are never equipped with any weapons, and instead exclusively use their body part attacks.
+
+Constructoids have a 62% [[melee hit chance]], equivalent to a pawn with a [[Melee]] skill of 4.
+
+== Analysis ==
+Due to the construction speed of 25%, constructoids are inferior to a pawn skilled in [[construction]]. However, they have the advantages of being a mech, without the need for food, recreation, or rest, and being able to be built en-masse.
+
+With a skill of 10, they can build almost any skill-locked building, and a healthy constructoid's [[Construct Success Chance]] will be at 100% (so can't botch a building). Constructoids are useful for building a lot of things without [[quality]], such as [[wall]]s and [[floor]]s. Even if you have colonists better at Construction, the mech will help save work time. Urgent buildings, and buildings with quality (like [[armchair]]s), should still be left for skilled humans. In order to control where they build, you can set a [[zone]] for them.
+
+If a building has a quality level, but requires a substantial amount of work to build, you can save time by having a constructoid work on it while your skilled builders do other things (such as sleep or build other furniture). When the building is near completion, simply manually order the builder to work on the furniture, or forbid it until a builder is available. As a building's quality is determined only by the skill level of the last builder to work on it, this can save a substantial amount of time, especially when working on buildings that may take over a day to build (such as a stone [[grand meditation throne]]{{RoyaltyIcon}}) by allowing work to continue uninterrupted. It is also worth noting they aren't restricted by ideologies {{IdeologyIcon}} as long as one pawn has the precept required for the structure allowing them to construct things such as [[Fungal gravel]].
+
+Once you've built your entire base, you can put constructoids to work by producing constant [[spike trap]]s. As time isn't an issue, you can have these traps made out of stone. You can also use mech labor to build other labor-intensive structures, such as [[fine stone tile]]s{{RoyaltyIcon}}. Ideally, you should turn your colonist's construction priority down, so that you can keep constructoids in work. Alternatively, you can disassemble the constructoid - you'll get the [[basic subcore]] and some steel back.
+
+== Health == 
+=== Body parts ===
+{{Animal Health Table|Mech_Light}}
+=== Armor ===
+{| class="wikitable"
+! Armor
+|-
+| {{Apparel Protection Chart
+| set1name= {{P|Name}} (Sharp) | set1armor1={{P|Armor - Sharp}} 
+| set2name= {{P|Name}} (Blunt) | set2armor1={{P|Armor - Blunt}} 
+| set3name= {{P|Name}} (Heat) | set3armor1={{P|Armor - Heat}} 
+| color= grey, blue, red
+}} 
+|}
+{{Pawn Attack Table}}
+
+== Gallery ==
+<gallery>
+Constructoid east.png| Age 0-99 Constructoid facing east
+Constructoid north.png| Age 0-99 Constructoid facing north
+Constructoid south.png| Age 0-99 Constructoid facing south
+</gallery><gallery>
+ConstructoidAncient east.png| Age 100+ Constructoid facing east
+ConstructoidAncient north.png| Age 100+ Constructoid facing north
+ConstructoidAncient south.png| Age 100+ Constructoid facing south
+</gallery>
+
+== Version history ==
+* [[Biotech DLC]] Release - Added.
+* [[Version/1.4.3555|1.4.3555]] - No longer wields a [[Slugthrower]]. Previous description: "''A small mechanoid designed to perform construction tasks. It is equipped with a small slug gun for light defense. It can also perform blunt melee attacks if necessary.''"
+* [[Version/1.4.3901]] or prior - Melee attack damage reduced from 15 to 10.
+{{nav|mechanoid|wide}}
+[[Category:Mechanoids]]

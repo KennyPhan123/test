@@ -1,0 +1,674 @@
+<!--Top Nav Box-->
+{| align=center
+| {{Gameplay_Nav}}
+|}
+----
+<!-- End of Nav -->
+
+{{Stub|reason= Missing new Odyssey terrain and weather mechanics}}
+{{TOCright}}
+
+The map '''environment''' are all aspects of the map that often can not be directly influenced by the player, such as terrain, weather conditions and lighting.
+
+== Beauty ==
+{{Main|Beauty}}
+Terrain, flooring, objects, and plants attribute to a tile's beauty, which in turn can affect a colonist's mood.
+The contents of a tile have a cumulative effect on its beauty; i.e. a granite chunk (beauty of -10) on a carpeted floor (beauty of +2) gives the tile a net beauty of -8.
+Certain unsightly objects, i.e. vomit, have one value when under a roof and a lower value when unroofed. This simulates the general disgust of seeing eyesores indoors versus encountering them outside.
+
+== Space ==
+Environment space (as opposed to the [[Space|Need for Space]]) is the count of how much space there is to freely move around in a room. This is all the floor tiles that are either empty or have objects that can be passed through at full speed, such as chairs, building materials, and the various "spots". All objects that either slow down or prevent movement through are not counted towards Environment Space. The "Space" number shown in the Environment display is this count x 1.4. This number is a measure of the entire room, and does not change depending on where a pawn is standing.
+
+== Flora ==
+{{Main|Plants}}
+Certain plants and trees have beauty, and may also provide [[cover]] to colonists.
+
+== Light ==
+{{Stub|section=1|reason=1) Relationship between light % and plant growth speed e.g. Tinctoria grows so slow in normal soil under torch light that it rots before it grows enough to harvest 2) Effects of [[Dark vision]] and [[Lighting (precept)|Lighting: Darkness preferred]] and bring blind on mentioned stat and mood penalties}}
+{{For|the furniture item|standing lamp}}
+
+Light can be generated artificially or naturally. Artificial light is produced by appliances in a limited range. Natural light is generated throughout the map on unroofed tiles. Roofed tiles will be dark unless lit artificially.
+
+Occasionally an [[Events#Eclipse|eclipse]] befalls the planet. Natural daytime light is no longer generated until it ends.
+
+Light's importance lies in the following effects:
+* Plant growth - Most plants have light requirements to grow.
+:*  0% only: {{DLC Icons|Nutrifungus}}
+:*  0%+: {{#Ask: [[Min Grow Light::0]] [[Name::!Nutrifungus]]| format = template | template = DLC Icons | link = none | sort = From DLC, Name | sep = ,&nbsp;}}
+:* 30%+: {{#Ask: [[Min Grow Light::0.3]]| format = template | template = DLC Icons | link = none | sort = From DLC, Name | sep = ,&nbsp;}}
+:* 51%+: ''All other plants''
+* Power - Solar generators only produce power when naturally lit.
+* Colonists want 30% light or better. This affects:
+:* Colonists' mood - Colonists in sustained darkness will have the [[Thoughts list#In darkness|'In darkness']] thought. Sleeping colonists will not have this thought. Therefore, lighting is not needed in areas only used for sleeping.
+:* Colonists' movement speed - Colonists in darkness will have a reduced [[move speed]], scaling to 80% at a light level of 0%. Due to this, combat at night or under unlit roofed areas can lead to a disadvantage against non-human opponents, such as insects, manhunter animals, or mechanoids. Pawns that are [[Sight|Blind]], have the [[Lighting (precept)|Lighting: Darklight preferred]] precept,{{IdeologyIcon}} or have the [[Dark vision]] gene{{BiotechIcon}} are unaffected by this factor.
+:* Colonists' global work speed - Similarly to their movement speed, colonists will have a work speed penalty when working in darkness, scaling to 80% at a light level of 0%. Pawns that are [[Sight|Blind]], have the [[Lighting (precept)|Lighting: Darklight preferred]] precept,{{IdeologyIcon}} or have the [[Dark vision]] gene{{BiotechIcon}} are unaffected by this factor.
+* [[Surgery success chance factor]] is optimized at 50% light or better.
+
+There are three light levels: ''Dark'' (0-29%), ''Lit'' (30-89%), and ''Brightly lit'' (90-100%). Each tile on the map has one of these light levels. The light level of a tile is listed in the tile's information area located above the Architect menu (when the menu is minimized). The light level is immediately followed by the brightness given in a percentage (%).
+
+{| class="wikitable" style = "text-align:center; border-width=10;" width="260"
+| colspan = 4 | '''Light levels according to Light (%)'''
+|-
+| style = "text-align:left;" | Light (%) 
+| style="background-color:#B8C0B8" | 0-29 
+| style="background-color:#FFFFF0" | 30-89 
+| style="background-color:#FFFFD8" | 90-100
+|-
+| style = "text-align:left;" | Light level 
+| style="background-color:#B8C0B8" | Dark 
+| style="background-color:#FFFFF0" | Lit 
+| style="background-color:#FFFFD8" | Brightly lit 
+|}
+
+=== Darklight ===
+{{Ideology|section=1}}
+{{Stub|section=1|reason=General also two way links. if specific color, something like this may be useful to display
+<abbr title="RGB: (78,226,229)"><span><div class="mw-no-invert" style="width:16px;height:16px;background-color:rgb(78,226,229);display:inline-block;border:1px solid black;outline:1px solid white;vertical-align:middle;"></div></span></abbr>}}
+
+Darklight is a specific range of light colors (any color which meets the following RGB criteria: R is the least intense of the three component colors, R is lower-intensity than half the highest intensity of the three colors, and the second-highest color's intensity divided by the highest color's intensity is at least 0.85). Areas lit with darklight are considered dark for the purposes of [[precept]]s: it pleases [[ideoligion]]s with the [[Lighting (precept)|Lighting: Darklights Preferred]] precept, giving those with the precept a {{Thought| desc=This dim light is perfect. I feel focused and energized.| label=darklight| value=+4| stack=1}}, and is counted as dark if placed indoors for the [[combat in darkness]] precept. It is considered regular light in every other way, including for the purposes of work speed and [[unnatural darkness]].{{AnomalyIcon}}
+
+* [[Darktorch]]
+* [[Fungus darktorch]]
+* [[Standing lamp]], [[wall lamp]], and [[flood light]] (if enabled)
+* [[Darklight brazier]]{{RoyaltyIcon}}
+
+Standing lamps, wall lamps, and flood lights can be set to enable darklight, and do not require the [[Research#Advanced lights|Advanced lights]] research to do so.
+
+=== Artificial light sources ===
+Light in roofed areas is provided by the following appliances:
+
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_11 text-center}}
+! Name !! <abbr title="The furthest away a tile can be before it falls below 30% light">Light Radius</abbr>
+|-
+{{#ask: [[Light Radius::+]]
+  | format = template
+  | template = Ask Table Formatter
+  | ?Light Radius
+  | sort = From DLC, Name
+  | link = none
+}}
+|}
+</li><div>
+
+=== Daylight timing and latitude ===
+Daylight, or natural light, is the light generated on unroofed tiles throughout the map. The timing and strength of daylight is affected by latitude, time of year, and time of day, due to the planet's apparent axial tilt.
+
+This effect is more pronounced at extreme northern and southern latitudes, which can result in light levels not reaching 0% at night or 100% at daytime.
+
+Near the central latitude, light level change throughout the day as follows:
+{| class = "wikitable" width="180"
+! Start time
+! Light level
+|- style="background-color:#FFFFF0"
+| 4h || Lit
+|- style="background-color:#FFFFD8"
+| 7h || Brightly lit
+|- style="background-color:#FFFFF0"
+| 17h || Lit
+|- style="background-color:#B8C0B8"
+| 20h || Dark
+|}
+
+==== Day Length Table ====
+Note that the below values represent the number of hours that the light level is above 30%, meaning there is no guarantee that it will reach 100%.
+{| class="wikitable"
+|- 
+! Latitude !! Aprimay 1 !! Aprimay 6 !! Aprimay 11 !! Jugust 1 !! Jugust 6 !! Jugust 11 !! Septober 1 !! Septober 6 !! Septober 11 !! Decembary 1 !! Decembary 6 !! Decembary 11
+|- 
+| '''90° N''' || 0 || 0 || 0 || 24 || 24 || 24 || 24 || 24 || 24 || 0 || 0 || 0
+|-
+| '''75° N''' || 0 || 0 || 0 || 10.7 || 24 || 24 || 24 || 24 || 24 || 0 || 0 || 0 
+|-
+| '''60° N''' || 11.2 || 11.7 || 12.8 || 14.1 || 15.5 || 16.5 || 16.8 || 16.2 || 15.0 || 13.6 || 12.3 || 11.4
+|-
+| '''45° N''' || 12.6 || 12.9 || 13.5 || 14.3 || 15.1 || 15.6 || 15.8 || 15.5 || 14.8 || 13.9 || 13.2 || 12.7
+|-
+| '''30° N''' || 13.5 || 13.7 || 14.0 || 14.5 || 14.9 || 15.3 || 15.4 || 15.2 || 14.8 || 14.3 || 13.9 || 13.6
+|-
+| '''15° N''' || 14.3 || 14.4 || 14.5 || 14.8 || 15.0 || 15.2 || 15.2 || 15.1 || 14.9 || 14.7 || 14.5 || 14.4
+|-
+| '''0°''' || 15.2 || 15.2 || 15.2 || 15.2 || 15.2 || 15.2 || 15.2 || 15.2 || 15.2 || 15.2 || 15.2 || 15.2
+|-
+| '''15° S''' || 15.2 || 15.1 || 14.9 || 14.7 || 14.5 || 14.4 || 14.3 || 14.4 || 14.5 || 14.8 || 15.0 || 15.2
+|-
+| '''30° S''' || 15.4 || 15.2 || 14.8 || 14.3 || 13.9 || 13.6 || 13.5 || 13.7 || 14.0 || 14.5 || 14.9 || 15.3
+|-
+| '''45° S''' || 15.8 || 15.5 || 14.8 || 13.9 || 13.2 || 12.7 || 12.6 || 12.9 || 13.5 || 14.3 || 15.1 || 15.6
+|-
+| '''60° S''' || 16.8 || 16.2 || 15.0 || 13.6 || 12.3 || 11.4 || 11.2 || 11.7 || 12.8 || 14.1 || 15.5 || 16.5
+|-
+| '''75° S''' || 24 || 24 || 18.7 || 15.0 || 12.2 || 10.4 || 9.9 || 11.0 || 13.2 || 16.4 || 20.6 || 24
+|-
+| '''90° S''' || 24 || 24 || 24 || 24 || 24 || 0 || 0 || 0 || 24 || 24 || 24 || 24
+|}
+
+==== Plant growth time table ====
+{| class="wikitable"
+|- 
+! Latitude !! Aprimay 1 !! Aprimay 6 !! Aprimay 11 !! Jugust 1 !! Jugust 6 !! Jugust 11 !! Septober 1 !! Septober 6 !! Septober 11 !! Decembary 1 !! Decembary 6 !! Decembary 11
+|- 
+| '''90° N''' || 0 || 0 || 0 || 0 || 24 || 24 || 24 || 24 || 24 || 0 || 0 || 0
+|-
+| '''75° N''' || 0 || 0 || 0 || 5.8 || 24 || 24 || 24 || 24 || 18.6 || 0 || 0 || 0 
+|-
+| '''60° N''' || 8.9 || 9.4 || 10.5 || 11.9 || 13.2 || 14.0 || 14.3 || 13.8 || 12.7 || 11.3 || 10.0 || 9.1
+|-
+| '''45° N''' || 11.0 || 11.3 || 11.9 || 12.7 || 13.4 || 13.9 || 14.1 || 13.8 || 13.1 || 12.4 || 11.6 || 11.1
+|-
+| '''30° N''' || 12.2 || 12.4 || 12.7 || 13.2 || 13.6 || 13.9 || 14.0 || 13.8 || 13.4 || 13.0 || 12.6 || 12.3
+|-
+| '''15° N''' || 13.2 || 13.2 || 13.4 || 13.6 || 13.8 || 14.0 || 14.0 || 13.9 || 13.7 || 13.5 || 13.3 || 13.2
+|-
+| '''0°''' || 14.1 || 14.1 || 14.1 || 14.1 || 14.1 || 14.1 || 14.1 || 14.1 || 14.1 || 14.1 || 14.1 || 14.1
+|-
+| '''15° S''' || 14.0 || 13.9 || 13.7 || 13.5 || 13.3 || 13.2 || 13.2 || 13.2 || 13.4 || 13.6 || 13.8 || 14.0
+|-
+| '''30° S''' || 14.0 || 13.8 || 13.4 || 13.0 || 12.6 || 12.3 || 12.2 || 12.4 || 12.7 || 13.2 || 13.6 || 13.9
+|-
+| '''45° S''' || 14.1 || 13.8 || 13.1 || 12.4 || 11.6 || 11.1 || 11.0 || 11.3 || 11.9 || 12.7 || 13.4 || 13.9
+|-
+| '''60° S''' || 14.3 || 13.8 || 12.7 || 11.3 || 10.0 || 9.1 || 8.9 || 9.4 || 10.5 || 11.9 || 13.2 || 14.0
+|-
+| '''75° S''' || 17.3 || 16.0 || 13.6 || 10.6 || 7.6 || 5.1 || 4.3 || 6.0 || 8.8 || 11.8 || 14.6 || 16.7
+|-
+| '''90° S''' || 24 || 24 || 24 || 0 || 0 || 0 || 0 || 0 || 0 || 0 || 24 || 24
+|}
+
+==== Daylight math details ====
+
+The sun's brightness in clear weather is <code>sin(SolarAltitude + BonusAngle)/0.7</code> clamped between 0 and 1, with 1 being 100% brightness.
+
+[https://en.wikipedia.org/wiki/Solar_zenith_angle Solar altitude] is the angle between the sun's rays and the horizon, and is given by the formula:
+ SolarAltitude = arcsin(sin(ɸ)sin(δ) + cos(ɸ)cos(δ)cos(h))
+where
+
+* <code>ɸ</code> is the local latitude: 0° at the equator, 90° at the north pole, -90° at the south pole.
+* <code>δ</code> is the declination of the Sun: <code>δ = arctan(-SeasonAmplitude × cos(360° × (Day - 1)/60))</code>
+** <code>Day</code> is the [[Time#In-game_time|day of the year]] as a number between 1 and 60.
+* <code>h</code> is the hour angle: <code>h = 360° × (Hour - 12)/24</code>
+** <code>Hour</code> is the local [[Time#Time_of_day|time of day]] in hours.
+
+<code>SeasonAmplitude</code> is a factor that controls seasonal variation in day length, and depends on latitude as follows:
+{| class="wikitable"
+! Latitude in degrees !! <code>SeasonAmplitude</code> !! Dependence of <code>SeasonAmplitude</code> on latitude
+|-
+| ɸ <= 70 || 0.2
+| rowspan="3" | {{Graph:Chart|width=400|height=200|xAxisTitle=Latitude|yAxisTitle=SeasonAmplitude|xAxisMin=-90|xAxisMax=90|yAxisMin=0|type=line|x=-90,70,75,90|y=0.2,0.2,1.5,1.5}}
+|-
+| 70 <= ɸ <= 75 || 0.26ɸ - 18
+|-
+| ɸ >= 75 || 1.5
+|}
+
+<!--[[File:Sun_position_rotation.png|thumb|BonusAngle as a function of latitude, both in degrees.]]-->
+Finally, <code>BonusAngle</code> increases the amount of sunlight near the equator, and reduces it near the poles:
+{| class="wikitable"
+! Latitude in degrees !! <code>BonusAngle</code> in degrees !! Dependence of <code>BonusAngle</code> on latitude
+|-
+| ɸ <= -60 || 19
+| rowspan="5" | {{Graph:Chart|width=400|height=200|xAxisTitle=Latitude|yAxisTitle=BonusAngle|xAxisMin=-90|xAxisMax=90|type=line|x=-90,-60,0,60,70,75,90|y=19,19,36,19,19,0.95,0.95}}
+|-
+| -60 <= ɸ <= 60 || 36 - 17<nowiki>|ɸ|</nowiki>/60
+|-
+| 60 <= ɸ <= 70 || 19
+|-
+| 70 <= ɸ <= 75 || 271.7 - 3.61ɸ
+|-
+| ɸ >= 75 || 0.95
+|}
+
+Note that extreme northern latitudes (ɸ > 70°) are treated differently from extreme southern latitudes (ɸ < -70°). The north pole experiences permanent day during the summer and permanent night during the winter, while the south pole experiences permanent twilight, with 72% brightness in the summer and 19% brightness in the winter. This is likely a bug.
+
+You can use [https://docs.google.com/spreadsheets/d/1dI8CoR9OMk679Gyvr8lXrKUNtfNdCQPp/edit?usp=sharing&ouid=114344865191558455918&rtpof=true&sd=true this google doc] to see how many hours of daylight a given tile will have on any day of the year.
+
+<!-- this is where I would paste a TeX-formatted math formula, if this wiki had the mathjax extension! -->
+
+<!-- Based on <code>Assembly-CSharp/RimWorld/GenCelestial</code> -->
+<!-- https://www.desmos.com/calculator/zhnk6yd7nv this can be played with -->
+
+== Openness ==
+{{stub|section=1|reason=Large enough enclosed spaces seem to blur these boundaries}} 
+Openness refers to the often critical aspect of structures being open to the outside. It affects many things such as temperature, item deterioration, light, exposure to weather, and certain events.
+
+Every tile on the map falls into one of three categories:
+* Outdoors - not enclosed by any structure, even if there is a roof. 
+* Indoors - completely enclosed structure, completely roofed.
+* Unroofed - completely enclosed structure, but with one or more unroofed tiles.
+
+Sufficiently large unroofed rooms, approximately 300 tiles, are considered outdoors.{{Check Tag|Detail Needed}}
+
+== Temperature ==
+{{Main|Temperature}}
+Environmental temperature is affected outdoors mainly by the map's biome and by the current season. Temperature affects a plant's ability to grow. Temperature affects a human's comfort, and health in extreme temperatures.
+
+== Terrain ==
+Terrain consists of the map's walking surface, terrain features, and mountain areas. Terrain affects things including walking speed, where plants can grow, and may prohibit construction.
+
+'''Natural surface terrain''' includes soil, rich soil, marshy soil, marsh, mud, sand, lichen-covered dirt, gravel, rough stone (granite, marble, etc.), rough-hewn stone, shallow water, and deep water.
+
+'''Terrain features''' include steam geysers and mountains. The steam from a geyser produces heat and an enclosed area around it will heat up unless unroofed. A mountain cannot be destroyed, even if all of its stone and ore has been mined out. What remains are terrain tiles listed as 'overhead mountain'.
+
+=== Naturally generated surfaces ===
+{{stub|section=1|reason=Anomaly terrains - Flesh and Gray surface, odyssey terrains}}
+{{Split|section=1|reason=Individual pages for each terrain. Then make and distribute nav template}}
+{{Recode|section=1|reason=Automate table once all pages created}}
+{{For|the artificial flooring|Floors#Comparison table{{!}}Floors}}
+While most terrain properties are self-explanatory, some require special attention.
+* '''Path cost''' determines how difficult is to travers a given terrain. 
+* '''Move Speed Modifier''' is the net effect of said cost, and is obtained with the formula <code>13/(13 + Path cost)</code> rounded.
+* '''Terrain Support''' determines what kind of structures can be build on a given terrain. If a given structure has a '''Terrain Affordance''' not listed for a given terrain, then said terrain is not a valid construction site. The types used are:
+**'''Light''': Supports light structure.<br/>
+**'''Medium''': Supports medium structures.<br/>
+**'''Heavy''': Supports heavy structures.<br/>
+**'''ShallowWater''': Can be built on with things that are waterproof.<br/>
+**'''MovingFluid''' (moving water): Contains power usable for hydroelectrics.<br/>
+**'''Bridgeable''': [[Bridge]] can be built over this terrain.<br/>
+**'''GrowSoil''' (growable): Things can grow here. Unsure if is does anything or if merely indicative.<br/>
+**'''Diggable''': Able to build [[grave]]s.<br/>
+**'''SmoothableStone''' (smoothable): Can be ground and smoothed into smooth stone.<br/>
+*'''Filth Mask''' determines what kind of [[filth]] can be applied on this terrain. Most natural floors only accept '''Unnatural''' filth, if any at all, but there are exceptions. 
+*'''Tag''' use is unclear. It may be used on map generation.
+
+As of [[Version/1.5.4104]], all terrains with Heavy '''Terrain Support''' also support both Medium and Light. To help the readability of this table, only the '''Heavy''' tag will be used in those cases.
+
+{| {{STDT| sortable c_25 text-center mw-collapsible}}
+! Type !! Move Speed <br/>Modifier !! [[Plants#Fertility|Fertility]] !! Terrain<br/>Support !! [[Bridge]]able !! [[Grave|Diggable]] !! Terrain<br/>Type !! Beauty<br>Indoors/<br/>Outdoors !! [[Cleanliness]] !! Filth<br/>mask{{ref label|Fmask|1}} !! Dries<br/> To{{ref label|DriesTo|2}} !! Tags !! [[Path cost|Path<br/>cost]] !! [[Filth#Generation|Generates<br/>Filth]] !! Allows<br/>Special<br/>Attack{{ref label|ASA|3}} !! Others
+|- id="Broken asphalt"
+! [[Broken asphalt]]
+| 100% || 0% || Heavy || {{Cross}} || {{Cross}} || - || -1 || -2 || {{Check}} || - || Road || 0 || {{Cross}} || {{Cross}} || 0{{Icon Small|silver}}. Removable
+|- id="Packed dirt"
+! [[Packed dirt]]
+| 93% || 0% || Heavy || {{Cross}} || {{Check}} || Soil || -1 || -1 || {{Check}} || - || Road || 1 || [[Filth#Dirt|Dirt]] || {{Cross}} ||
+
+|- id="Chest-deep moving water"
+! [[Chest-deep moving water]]
+| 24% || 0% || - || {{Check}} || {{Cross}} || - || 0 || 0 || {{Cross}} || - || Water{{ref label|water|4|1}} || 42 || {{Cross}} || [[Hediffs#Water|Water]] || Extinguishes Fire<br/>Traversing generates thought [[Mood#Soaking wet|Soaking wet]] 
+|- id="Deep ocean water"
+! [[Deep ocean water]]
+| 0% || 0% || - || {{Cross}} || {{Cross}} || - || 0 || 0 || {{Cross}} || - || Water{{ref label|water|4|2}}<br/> ocean || 300{{ref label|Impassable|5|1}} || {{Cross}} || [[Hediffs#Water|Water]] || Impassable<br/>Extinguishes Fire
+|- id="Deep water"
+! [[Deep water]]
+| 0% || 0% || - || {{Cross}} || {{Cross}} || - || 0 || 0 || {{Cross}} || - || Water{{ref label|water|4|3}} || 300{{ref label|Impassable|5|2}} || {{Cross}} || [[Hediffs#Water|Water]] || Impassable<br/>Extinguishes Fire 
+
+|- id="Shallow ocean water"
+! [[Shallow ocean water]]
+| 30% || 0% || ShallowWater || {{Check}} || {{Cross}} || - || 0 || 0 || {{Cross}} || [[#Gravel|Stony soil]] || Water{{ref label|water|4|4}}<br/> ocean || 30 || {{Cross}} || [[Hediffs#Water|Water]] || Extinguishes Fire<br/>Traversing generates thought [[Mood#Soaking wet|Soaking wet]] 
+|- id="Shallow moving water"
+! [[Shallow moving water]]
+| 30% || 0% || ShallowWater<br/> MovingFluid || {{Check}} || {{Cross}} || - || 0 || 0 || {{Cross}} || - || Water{{ref label|water|4|5}}<br/> River || 30 || {{Cross}} || [[Hediffs#Water|Water]] || Extinguishes Fire<br/>Traversing generates thought [[Mood#Soaking wet|Soaking wet]]
+|- id="Shallow water"
+! [[Shallow water]]
+| 30% || 0% || ShallowWater || {{Check}} || {{Cross}} || - || 0 || 0 || {{Cross}} || [[#Gravel|Stony soil]] || Water{{ref label|water|4|6}} || 30 || {{Cross}} || [[Hediffs#Water|Water]] || Extinguishes Fire<br/>Traversing generates thought [[Mood#Soaking wet|Soaking wet]]
+|- id="Marsh"
+! [[Marsh]]
+| 30% || 0% || ShallowWater || {{Check}} || {{Cross}} || - || -3/0 || -2 || {{Cross}} || [[#Soil|Soil]] || - || 30 || [[Filth#Dirt|Dirt]] || [[Hediffs#Mud|Mud]] || Extinguishes Fire<br/>Traversing generates thought [[Mood#Soaking wet|Soaking wet]] 
+
+|- id="Soil"
+! [[Soil]]
+| 87% || 100% || Heavy<br/> GrowSoil || {{Cross}} || {{Check}} || Soil || -3/0 || -1 || {{Check}} || - || Soil || 2 || [[Filth#Dirt|Dirt]] || [[Hediffs#Dirt|Dirt]] ||
+|- id="Lichen-covered soil"
+! [[Lichen-covered soil]]
+| 81% || 100% || Heavy<br/> GrowSoil || {{Cross}} || {{Check}} || Soil || -3/0 || -1 || {{Check}} || - || Soil || 3 || [[Filth#Dirt|Dirt]] || [[Hediffs#Dirt|Dirt]] ||
+|- id="Marshy soil"
+! [[Marshy soil]]
+| 48% || 100% || Light<br/> GrowSoil || {{Check}} || {{Check}} || Soil || -3/0 || -2 || {{Check}} || [[#Soil|Soil]] || Soil || 14 || [[Filth#Dirt|Dirt]] || [[Hediffs#Dirt|Dirt]] ||
+|- id="Rich soil"
+! [[Rich soil]]
+| 87% || 140% || Heavy<br/> GrowSoil || {{Check}} || {{Check}} || Soil || -3/0 || -1 || {{Check}} || [[#Soil|Soil]] || Soil || 2 || [[Filth#Dirt|Dirt]] || [[Hediffs#Dirt|Dirt]] ||
+
+|- id="Stony soil"
+! [[Stony soil]]
+| 87% || 70% || Heavy<br/> GrowSoil || {{Check}} || {{Check}} || - || -3/0 || -1 || {{Check}} || - || Soil || 2 || [[Filth#Dirt|Dirt]] || [[Hediffs#Gravel|Gravel]] ||
+
+|- id="Sand"
+! [[Sand]]
+| 76% || 10% || Heavy || {{Cross}} || {{Check}} || Sand || -3/0 || -1 || {{Check}} || - || Sand || 4 || [[Filth#Sand|Sand]] || [[Hediffs#Sand|Sand]] ||
+|- id="Soft sand"
+! [[Soft sand]]
+| 48% || 0% || Light || {{Cross}} || {{Check}} || Sand || -3/0 || -1 || {{Check}} || [[#Sand|Sand]] || Sand || 14 || [[Filth#Sand|Sand]] || [[Hediffs#Sand|Sand]] ||
+
+|- id="Mud"
+! [[Mud]]
+| 48% || 0% || - || {{Check}} || {{Cross}} || Soil || -3/0 || -2 || {{Check}} || [[#Soil|Soil]] || - || 14 || [[Filth#Dirt|Dirt]] ||  [[Hediffs#Mud|Mud]] ||
+|- id="Ice"
+! [[Ice]]
+| 48% || 0% || Heavy || {{Cross}} || {{Check}} || - || -3/0 || 0 || {{Check}} || - || - || 14 || [[Filth#Dirt|Dirt]] || {{Cross}} || -
+
+|- id="Polluted"
+! [[Pollution|Polluted terrain]]{{BiotechIcon}}
+| - || 0-50%{{ref label|Polluted_F|6}} || - || - || - || - || -1 || - || - || - || - || - || - || - || Overlay: Applies stats over existing terrain (additive)<br/>Overlay: Changes graphics of affected terrain.<br/>Can be removed.<br/>Allows growth of [[Toxipotato plant|Toxipotato]], [[Gray pine tree|Gray pine]], [[Pebble cactus]], [[Rat palm tree|Rat palm]]<br/>Prevents growth of most other plants.<br/>Colonist receive [[toxic buildup]] from waking here.
+|- id="Rough stone"
+! [[Rough stone]]
+| {{%|{{Q|Rough stone|Move Speed Factor}} }} || 0% || Heavy || {{Cross}} || {{Cross}}  || Stone || -1 || 0 || {{Check}}{{ref label|RStone|7}} || - || - || 2 || {{Cross}} || {{Cross}} || [[#Smooth stone|Smooothable]]<br/>Hardcoded{{ref label|Hardcode|8}}
+|- id="Rough-hewn stone"
+! [[Rough-hewn stone]]
+| {{%|{{Q|Rough-hewn stone|Move Speed Factor}} }}|| 0% || Heavy || {{Cross}} || {{Cross}} || Stone || -1 || 0 || All || - || - || 1 || {{Cross}} || {{Cross}} || [[#Smooth stone|Smooothable]]<br/>Hardcoded{{ref label|Hardcode|8}}
+|- id="Smooth stone"
+! [[Smooth stone]]
+| {{%|{{Q|Smooth stone|Move Speed Factor}} }}|| 0% || Heavy || {{Cross}} || {{Cross}} || Stone || 2 || 0 || All  || - || - || 0 || {{Cross}} || {{Cross}} || 5{{Icon Small|silver}}.<br/>Natural, non-generated floor/terrain hybrid.<br/>Paintable<br/>Hardcoded{{ref label|Hardcode|8}}
+<!--|- id="Fungal Gravel"
+! [[Fungal gravel]]{{IdeologyIcon}}
+| 87% || 70% || Floor base || {{Cross}} || {{Cross}} || - || -1 || -1 || All? || - || - || 2 || || {{Cross}} || WorkToBuild 1000.<br/>Requires [[overhead mountain]]<br/>Only generated for colonies with the [[Tunneler (meme)|Tunneler]] meme.-->
+|- id="Gray Surface"
+! [[Gray surface]]{{AnomalyIcon}}
+| 87% || 0% || Heavy || {{Cross}} || {{Cross}} || - || 0 || 0 || {{Check}}?  || - || Floor || 2 || {{Cross}} || {{Cross}} || Only present on the Labyrinth. 
+|- id="Flesh Floor"
+! [[Flesh]]{{AnomalyIcon}}
+| 87% || 0% || Heavy || {{Cross}} || {{Check}} || - || -10/-5 || -3 || {{Check}}? || - || Floor || 2 || ? || {{Cross}} || Behaves like a natural Floor.<br/>Cleaning time Mult 150%<br/>Removable.<br/>Inflammable 32%
+|}
+:{{note label|Fmask|1}}The kind of Filth accepted by this terrain. {{Check}} denotes terrains that accept '''Unnatural''' filth, {{Cross}} those that accept none. Special cases are denoted as such.
+:{{note label|DriesTo|2}}As Stony soil doesn't exist in [[Sea ice]] nor [[Ice sheet]], it dries to Ice instead.
+:{{note label|ASA|3}}All of these attacks have a cooldown of 1.5 seconds, require the '''KickMaterialInEyes''' capacity, and apply a Hediff of the same name.
+:4{{note label|water||1}}{{note label|water||2}}{{note label|water||3}}{{note label|water||4}}{{note label|water||5}}{{note label|water||6}} All water tiles triple the deterioration rate. Additionally, these have a perceived path cost of 180 if undrafted and of 18 when [[draft]]ed
+:5{{note label|Impossible||1}}{{note label|Impossible||2}}Redundant due to being Impassable. It would result in a 4.2% '''Move Speed Modifier''' otherwise.
+:{{note label|Polluted_F|6}}The fertility is capped at 50%, but will not affect the value of the original terrain if it was equal or lower than that.
+:{{note label|RStone|7}}Plus any defined on NaturalTerrainBase. In vanilla, this in just '''Unnatural''' filth.
+:{{note label|Hardcode|8}}Not on the xml files but rather defined programmatically for all stone types.
+
+=== Steam geyser ===
+{{stub|section=1|reason=Specific numbers on heat needed}}
+[[File:Steam geyser.png|frameless|64px]] Steam geysers are terrain features that allow the placement of a [[geothermal generator]] on them and also output a significant amount of [[temperature|heat]] when sealed in a roofed room. 
+
+The steam geyser sprays after a random delay between {{Ticks|500}} and {{Ticks|2000}}. It will then spray for between {{Ticks|200}} and {{Ticks|500}}. While spraying, it will output 40 heat every {{ticks|20}}. Thus, it averages {{#expr: (60*40*((500+200)/2)/20)/((2000+500/2) + (200+500)/2) round 2}} heat per second, with no maximum temperature. 
+
+Besides their use in power generation, they can also be used to heat bases and greenhouses without the need for electricity or fuel by sealing them in. Like any means of [[temperature]] regulation, geysers require an enclosed and [[roof|roofed]] [[room]] to actually cause a change in heat. If you don't want heat, keep the geothermal room without a roof.
+
+== Weather ==
+{{stub|section=1|reason=Rain details should be split from the rain weather type (because its not the only weather type that includes raining) and details discussed including short circuiting, increasing fuel consumption of torch, campfire and brazier variants, which weather types include rain, whether snow counts as rain for all mechanics etc, similarly Snow and its unique effects including [[Snow]] being merged into here.  [[Odyssey DLC]] weathers need notes as they have additional effects, e.g. torrential rain causing flooding. All sources kf forced weather (Check: Death pall Gray pall, blood rain, and sandstorm}}
+
+Weather events occur from time to time depending on the biome and time of year, with the current weather listed at the right edge of the screen. When a weather event ends the weather returns to Clear. Each weather event has a general effect on wind speed. 
+
+Wind speed continually varies between 0% to 150% but it is not displayed onscreen. Wind speed is a direct multiplier of a [[wind turbine]]'s nominal power output of {{Q|Wind turbine|Power Consumption #}}W. At 50% wind speed a wind turbine produces {{#expr:0.5*{{Q|Wind turbine|Power Consumption #}}}}W up to a maximum of {{#expr:1.5*{{Q|Wind turbine|Power Consumption #}}}}W at 150%. Note that the "max power output" listed in the infobox claims that {{Q|Wind turbine|Power Consumption #}}W is the maximum under "ideal conditions" - this is incorrect. 
+
+The [[Weather controller]]s {{RoyaltyIcon}} can force a single type of weather to constantly appear, and will only allow natural changes in weather once it is destroyed. 
+[[Fire#Rain event|Large fires]] can also influence the weather cycle, and can encourage rainy weather to arrive faster than it would otherwise for the duration of the fire.
+
+=== Firewatcher ===
+{{Stub|section=1|reason=Conflicting information from merge. [[Fire]] version alleges:
+
+This happens once the map's "Fire Danger" rises above 90 points, which is calculated as 0.5 points for every fire on the map, plus 1 point for each size a fire has increased. At this point, the duration of any current non-forced weather will be shortened by 75%, and the chances for the next weather to be any weather with more than 10% [[weather|rainfall]] will be increased by 1500% }}
+
+Colloquially referred to as a "rain event" or the "firewatcher" after the name of the process in the game code, sufficiently large [[fire]]s on a map increase the chance for rain to occur. The resultant rain will gradually extinguish [[roof|unroofed]] fires, and may eventually control large wildfires.
+
+The '''firewatcher''' process checks every {{ticks|426}} for fires on the map. If there are any, it sets the variable '''firedanger''' to 0.5 + the size of the fire (usually 0.1) for every fire on the map. A large fire is declared once '''firedanger''' reaches 90, resulting on the progress towards any weather with a rain rate above 0.1 (any weather with rain, in practice) increasing 15 times faster than normal. This effect will remain in place for as long as '''firedanger''' remains above 90.
+
+It's important to note that rainfall is not guaranteed, only drastically encouraged by speeding up the weather cycle and increasing bias towards rainy weathers. It is possible for rainfall to not occur even during the most extreme fires.
+
+Forced weather, such as from [[weather controller]]s{{RoyaltyIcon}} or certain weather events such as [[drought]]s{{OdysseyIcon}} or [[Environment#Weather|Flashstorms]] will disable rain entirely, preventing it from appearing during accelerated weather. [[Unnatural darkness]]{{AnomalyIcon}} also forces the weather to clear.
+
+=== Weather types ===
+{| class = "wikitable sortable"
+! Label
+! Time of year
+! Temperature range <ref>Can continue even if the temperature exits the appropriate range, once started.</ref>
+! <abbr title="Accuracy modifier">AM</abbr><ref>See section [[Weapons#Accuracy|accuracy]] on ''weapons'' for details.</ref>
+! <abbr title="Movement speed modifier">MSM</abbr>
+! Wind speed
+! <abbr title="Wind speed modifier">WSM</abbr>
+! <abbr title="Estinguishes fire?">EF</abbr><ref>This only applies to fires that aren't under a roof, for obvious reasons.</ref>
+! <abbr title="Snowing rate">SR</abbr>
+! Notes
+|-
+| Clear
+| Any
+| Any
+| 100%
+| 100%
+| None to Moderate
+| 100%
+| {{Cross}}
+| None
+| 
+|-
+| Fog
+| Any
+| Any
+| 50%
+| 100%
+| None to Calm
+| 50%
+| {{Cross}}
+| None
+| Suppresses firewatcher if forced {{RoyaltyIcon}}
+|-
+| Rain
+| Any
+| {{Temperature|0|100}}
+| 80%
+| 90%
+| Calm to Moderate
+| 80%
+| {{Check}}
+| None
+| Rain intensity can vary. Rain will put out any outdoor fires on the map. Rain can cause electronic objects to [[short circuit]].
+|-
+| Dry Thunderstorm
+| Any
+| Any
+| 100%
+| 100%
+| Moderate to Extreme
+| 150%
+| {{Cross}}
+| None
+| [[Lightning]] strikes from thunderstorms can ignite flammable objects, including flora.
+|-
+| Rainy Thunderstorm
+| Any
+| Any
+| 80%
+| 80%
+| Moderate to Extreme
+| 150%
+| {{Check}}
+| None
+| Lightning strikes combined with rain, massively mitigating the fire hazards from the falling bolts. 
+|-
+| Foggy rain
+| Any
+| Any
+| 50%
+| 90%
+| None to Calm
+| 150%
+| {{Check}}
+| None
+|
+|-
+| Hard snow
+| Mainly Winter
+| {{Temperature|-270|-0.5}}
+| 80%
+| 80%
+| None to Moderate
+| 150%
+| {{Check}}
+| 120%
+| Weather event that can distribute [[Snow]] onto the terrain. Snow can cause electronic objects to short circuit.
+|-
+| Soft snow
+| Mainly Winter
+| {{Temperature|-270|-0.5}}
+| 80%
+| 100%
+| None to Moderate
+| 150%
+| {{Check}}
+| 80%
+| Weather event that can distribute [[Snow]] onto the terrain. Snow can cause electronic objects to short circuit.
+|-
+| [[Events#Flashstorm|Flashstorm]]
+| Any
+| Any
+| 100%
+| 100%
+| None to moderate
+| 100%
+| {{Cross}}
+| None
+| An extreme version of the dry thunderstorm, and an event of its own (rather than normal weather changes). [[Lightning]] strike many times in a row in a small area, igniting anything flammable and causing giant wildfires which can spread to your base easily. It also disables rain for a short time.
+|-
+| [[Blood rain]]{{AnomalyIcon}}
+| Any || Any || 50% || 90% || None to Moderate || 100% || {{Check}} || None
+| Requires activation of the [[Void monolith|Monolith]]{{AnomalyIcon}} to happen, in addition to either the [[Blood rain]] incident or [[Blood rain (ritual)|ritual]].
+The '''blood rage''' hediff and subsequent [[berserk]]/[[manhunter]] mental breaks are part of the event itself, rather than the weather. See that page for more details.
+|-
+| [[Gray pall]]{{AnomalyIcon}}
+| Any || Any || 80% || 100% || None to Calm || 50% || {{Cross}} || None
+| Requires activation of the [[Void monolith|Monolith]]{{AnomalyIcon}} to happen. 
+Colonists inside during gray pall will receive {{Thought| desc=It feels like the world is sick and dying.| label=Gray pall| value=-3| stack=1}} while pawns outside will receive {{Thought| desc=It feels like the world is sick and dying. The putrid air makes me want to vomit.| label=Gray pall exposure| value=-6| stack=1}}.
+|-
+| [[Death pall]]{{AnomalyIcon}}
+| Any || Any || 80% || 100% || None to Calm || 50% || {{Cross}} || None
+| Requires activation of the [[Void monolith|Monolith]]{{AnomalyIcon}} to happen, and the [[Death pall]] event/entity.
+Mechanically identical to the '''Gray pall''' weather. Corpses will raise as [[shambler]]s due to the associated event. See the [[Death pall]] page for more details.
+|-
+| Windy{{OdysseyIcon}}
+| Any
+| Any
+| 100%
+| 90%
+| 150-300%
+| 150%
+| {{Cross}}
+| None
+| 
+|-
+| Tox rain{{OdysseyIcon}}
+| Any
+| {{Temperature|0|100}}
+| 80%
+| 90%
+| None to Extreme
+| 150%
+| {{Check}}
+| None
+| Creates Toxic Buildup on pawns exposed to rain, and -8 thought "Toxic Water". Does not kill plants like Toxic Fallout.
+|-
+| Sandstorm{{OdysseyIcon}}
+| Any
+| {{Temperature|10|100}}
+| 80%
+| 80%
+| Moderate to Extreme
+| 150%
+| {{Cross}}
+| None
+| [[Shuttle]]s can not launch during a sandstorm.
+|-
+| Blind fog{{OdysseyIcon}}
+| Any
+| Any
+| 50%
+| 100%
+| None to Calm
+| 50%
+| {{Cross}}
+| None
+| Reduces maximum range of ALL weapons to 23, everywhere on the map, except for [[Unique weapons]] with the Aim Assistance trait. Also applies to many line-of-sight abilities like [[jump pack]]s and skip [[psycast]]s{{RoyaltyIcon}}. Shuttles can not launch during blind fog.
+|-
+| Overcast{{OdysseyIcon}}
+| Any
+| Any
+| 100%
+| 100%
+| None to Moderate
+| 100%
+| {{Cross}}
+| None
+| 
+|-
+| Blizzard{{OdysseyIcon}}
+| Any
+| {{Temperature|-270|-0.5}}
+| 70%
+| 70%
+| Moderate to Extreme
+| 150%
+| {{Check}}
+| 150%
+| Shuttles can not launch during blizzard. 
+|-
+| Torrential rain{{OdysseyIcon}}
+| Any
+| {{Temperature|0|100}}
+| 75%
+| 80%
+| None to Extreme
+| 150%
+| {{Check}}
+| None
+| Weather event that causes flooding in already wet areas ie. rivers, marches, etc. flooding can be contained by placing walls or bridges along wet areas.
+|}
+<references/>
+
+=== Commonality ===
+The following table shows the relative commonality of all weather types that are not triggered by events for each biome.
+<includeonly><onlyinclude>{{#vardefine: weatherSum | {{#expr: {{#if: {{{?Clear weather}}} | {{{?Clear weather}}} | 0 }} + {{#if: {{{?Fog weather}}} | {{{?Fog weather}}} | 0 }} + {{#if: {{{?Rain weather}}} | {{{?Rain weather}}} | 0 }} + {{#if: {{{?Foggy rain weather}}} | {{{?Foggy rain weather}}} | 0 }} + {{#if: {{{?Rainy thunderstorm weather}}} | {{{?Rainy thunderstorm weather}}} | 0 }} + {{#if: {{{?Dry thunderstorm weather}}} | {{{?Dry thunderstorm weather}}} | 0 }} + {{#if: {{{?Soft snow weather}}} | {{{?Soft snow weather}}} | 0 }} + {{#if: {{{?Hard snow weather}}} | {{{?Hard snow weather}}} | 0 }} + {{#if: {{{?Gray pall weather}}} | {{{?Gray pall weather}}} | 0 }} + {{#if: {{{?Windy weather}}} | {{{?Windy weather}}} | 0 }} + {{#if: {{{?Tox rain weather}}} | {{{?Tox rain weather}}} | 0 }} + {{#if: {{{?Sandstorm weather}}} | {{{?Sandstorm weather}}} | 0 }} + {{#if: {{{?Blind fog weather}}} | {{{?Blind fog weather}}} | 0 }} + {{#if: {{{?Overcast weather}}} | {{{?Overcast weather}}} | 0 }} + {{#if: {{{?Blizzard weather}}} | {{{?Blizzard weather}}} | 0 }} + {{#if: {{{?Torrential rain weather}}} | {{{?Torrential rain weather}}} | 0 }} }} }}
+|-
+! {{DLC Icons|{{{?Name}}} }}
+| {{#if: {{{?Clear weather}}} | {{#expr: {{{?Clear weather}}}/{{#var: weatherSum}} * 100 round 2}} % | – }}
+| {{#if: {{{?Fog weather}}} | {{#expr: {{{?Fog weather}}}/{{#var: weatherSum}} * 100 round 2}} % | – }}
+| {{#if: {{{?Rain weather}}} | {{#expr: {{{?Rain weather}}}/{{#var: weatherSum}} * 100 round 2}} % | – }}
+| {{#if: {{{?Foggy rain weather}}} | {{#expr: {{{?Foggy rain weather}}}/{{#var: weatherSum}} * 100 round 2}} % | – }}
+| {{#if: {{{?Rainy thunderstorm weather}}} | {{#expr: {{{?Rainy thunderstorm weather}}}/{{#var: weatherSum}} * 100 round 2}} % | – }}
+| {{#if: {{{?Dry thunderstorm weather}}} | {{#expr: {{{?Dry thunderstorm weather}}}/{{#var: weatherSum}} * 100 round 2}} % | – }}
+| {{#if: {{{?Soft snow weather}}} | {{#expr: {{{?Soft snow weather}}}/{{#var: weatherSum}} * 100 round 2}} % | – }}
+| {{#if: {{{?Hard snow weather}}} | {{#expr: {{{?Hard snow weather}}}/{{#var: weatherSum}} * 100 round 2}} % | – }}
+| {{#if: {{{?Gray pall weather}}} | {{#expr: {{{?Gray pall weather}}}/{{#var: weatherSum}} * 100 round 2}} % | – }}
+| {{#if: {{{?Windy weather}}} | {{#expr: {{{?Windy weather}}}/{{#var: weatherSum}} * 100 round 2}} % | – }}
+| {{#if: {{{?Tox rain weather}}} | {{#expr: {{{?Tox rain weather}}}/{{#var: weatherSum}} * 100 round 2}} % | – }}
+| {{#if: {{{?Sandstorm weather}}} | {{#expr: {{{?Sandstorm weather}}}/{{#var: weatherSum}} * 100 round 2}} % | – }}
+| {{#if: {{{?Blind fog weather}}} | {{#expr: {{{?Blind fog weather}}}/{{#var: weatherSum}} * 100 round 2}} % | – }}
+| {{#if: {{{?Overcast weather}}} | {{#expr: {{{?Overcast weather}}}/{{#var: weatherSum}} * 100 round 2}} % | – }}
+| {{#if: {{{?Blizzard weather}}} | {{#expr: {{{?Blizzard weather}}}/{{#var: weatherSum}} * 100 round 2}} % | – }}
+| {{#if: {{{?Torrential rain weather}}} | {{#expr: {{{?Torrential rain weather}}}/{{#var: weatherSum}} * 100 round 2}} % | – }}
+</onlyinclude></includeonly>
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_21 text-center}}
+! Biome !! Clear !! Fog !! Rain !! Foggy rain !! Rainy thunder&shy;storm !! Dry thunder&shy;storm !! Soft snow !! Hard snow !! Gray pall {{AnomalyIcon}} !! Windy {{OdysseyIcon}} !! Tox rain {{OdysseyIcon}} !! Sand&shy;storm {{OdysseyIcon}} !! Blind fog {{OdysseyIcon}} !! Overcast {{OdysseyIcon}} !! Blizzard {{OdysseyIcon}} !! Torrential rain {{OdysseyIcon}}
+|-
+{{#ask: [[Type::Biome]] [[Name::!Lake]] [[Name::!Ocean]]
+ | ?Name = ?Name
+ | ?Clear weather = ?Clear weather
+ | ?Fog weather = ?Fog weather
+ | ?Rain weather = ?Rain weather
+ | ?Foggy rain weather = ?Foggy rain weather
+ | ?Rainy thunderstorm weather = ?Rainy thunderstorm weather
+ | ?Dry thunderstorm weather = ?Dry thunderstorm weather
+ | ?Soft snow weather = ?Soft snow weather
+ | ?Hard snow weather = ?Hard snow weather
+ | ?Gray pall weather = ?Gray pall weather
+ | ?Windy weather = ?Windy weather
+ | ?Tox rain weather = ?Tox rain weather
+ | ?Sandstorm weather = ?Sandstorm weather
+ | ?Blind fog weather = ?Blind fog weather
+ | ?Overcast weather = ?Overcast weather
+ | ?Blizzard weather = ?Blizzard weather
+ | ?Torrential rain weather = ?Torrential rain weather
+ | format = template
+ | template = :Environment
+ | named args = true
+ | link = none
+ | sort = From DLC, Name
+ | default = <td></td>
+}}
+|}
+</li></div>
+
+== Lightning ==
+[[File:Dry Thunderstorm.png|400px|thumb|right|Lightning in a [[Environment#Weather|Dry thunderstorm]] ]]
+'''Lightning''' is created either naturally through thunder and flashstorms, or artificially with the [[Flashstorm (psycast)|flashstorm]] psycast{{RoyaltyIcon}}. These do 10 [[Damage types#Flame|Flame]] damage in a 3x3 area (1.9 block radius) and start [[fire]]s to objects in the area of effect that are not under a roof. Dry thunderstorms can be especially dangerous, starting fires around the map without rain to put them out. The flashstorm psycast should be used with caution, preferably in areas without vegetation or during rain. Lightning can also be spawned in with a debug command in [[development mode]].
+
+Lightning is bright enough to momentarily power [[solar generator]]s and grow [[plants]].
+
+== Version history ==
+* [[Version/0.0.245|0.0.245]] - Weather (rain/fog) now affects chances of hitting a target
+* [[Version/0.3.410|0.3.410]] - Rain now slowly washes away [[Filth|blood]]. Added rich dirt patches.
+* Beta 19/ 1.0 - Changed deep moving water to chest-deep moving water: walkable but slower than shallow water. Shallow water movement cost 12 -> 22. Sand fertility 6% -> 10%.
+* [[Version/1.1.0|1.1.0]] - Fix: Wind turbines register no wind during windy storm.
+* [[Version/1.4.3523|1.4.3523]] - Fix: Geysers have a deconstruct gizmo in god mode which causes and error when clicked.
+* [[Version/1.6.4528|1.6.4528]] - Fix: Rain sometimes appears pixelated.
+
+[[Category:RimWorld game]]

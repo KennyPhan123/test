@@ -1,0 +1,110 @@
+{{Infobox main
+ | image              = Dessicated male south.png
+ | name               = Corpse
+ | description        = Dessicated corpse of a pawn.
+<!-- Base Stats -->
+ | type               = Corpse
+ | path cost          = 14
+ | beauty             = -50
+ | deterioration      = 1
+ | preferability      = DesperateOnly
+ | food type          = corpse
+ | days to rot        = 2.5
+ | meatyield          = 0
+ | leatheryield       = 0
+<!-- Ingestion -->
+ | nutrition          = 5.2
+ | food poison chance = 0.05
+<!-- Technical -->
+ | defName            = Corpse_
+ | label              = {0} corpse
+ | selectable         = true
+ | tradeability       = None
+}}
+A '''corpse''' is the [[dead]] body of a [[pawn]].
+
+== Acquisition ==
+Corpses are created when something [[death|dies]]. [[Nociosphere]]s,{{AnomalyIcon}} [[Metalhorror]]s,{{AnomalyIcon}} [[Revenant]]s,{{AnomalyIcon}} [[Fleshmass nucleus|Fleshmass nuclei]],{{AnomalyIcon}} and most [[fleshbeasts]] {{AnomalyIcon}} ([[Fingerspike]], [[Trispike]], [[Bulbfreak]] and [[Dreadmeld]]) are the only pawns who do not have corpses. 
+
+They reflect what they had in life; missing limbs will affect a corpse's yield.
+
+Certain means of death will not result in the creation of a corpse, may destroy the corpse, or deal so much damage that there is nothing left to see.
+
+== Summary ==
+Corpses provide negative [[beauty]] while on the ground, worse than most items. Traits and other effects that prevent negative mood penalties from seeing bodies do not prevent the beauty impact. 
+
+All corpses will [[deteriorate]] when left outside. In addition, all corpses have a Missing Body Parts value, separate from the deterioration mechanic.
+
+=== Organic corpses ===
+{{Image wanted|section=1|reason=AoE of mood penalty in standard style}}
+The corpses of organic life (e.g. non-[[mechanoid]]s and non-[[drones]]{{OdysseyIcon}}) can be used for food. When eaten directly, corpses will gain Missing Body Parts until there is nothing left, at which point the corpse will disappear entirely. Animals don't mind, but colonists will receive the {{--|12}} ''[[Mood#Ate corpse|Ate corpse]]'' [[mood]]let and have a flat 5% of [[food poisoning]] when directly eating corpses. Eating [[human]] corpses will also impose the {{--|20}} ''[[Mood#Raw cannibalism|Raw cannibalism]]'' on non cannibal pawns, or a mood buff of varying intensity for pawns with the [[Cannibal (trait)|Cannibal]] trait or a pro-Cannibalism ideoligion.{{IdeologyIcon}} Corpses can instead be butchered, which is a more efficient way of gaining food.
+
+Colonists with [[Sight]] above 0% who move within 5 tiles of a human corpse will receive negative ''[[Mood#Misc|Observed corpse]]'' thoughts,{{Check Tag|ThoughtTemplate}} which are worse if the corpse is rotten.{{Check Tag|ThoughtTemplate}} Colonists with the [[Cannibal (trait)|Cannibal]] or [[Psychopath]] trait don't mind fresh corpses. Those with [[Bloodlust]] are completely unaffected, as well as those following an [[Ideoligion]]{{IdeologyIcon}} with the [[Corpses (precept)|Corpses: Don't Care]] precept.
+
+Corpses will continue to wear the [[apparel]] and [[utility]] items they were wearing before death, and generated corpses can generate with such items. The apparel will display on the corpse. Most apparel become [[tainted]] when worn while the pawn dies. Utility items do not get tainted. Apparel can be stripped off of corpses, but they cannot be re-equiped with gear.
+
+With [[deadlife dust]], {{AnomalyIcon}} exposed organic corpses will be automatically revived as [[shambler]]s. Shamblers will have a lifespan of 6 hours after their last exposure.
+
+=== Rotten corpses ===
+Organic corpses will rot after 2.5 [[Time|days]] if left above freezing [[temperature]], {{temperature|0}}. Refrigeration at temperatures between {{Temperature|1|9}} slows rot time as it does with food. For a full description of the relationship between temperature and rot time, see [[Temperature#Temperature thresholds|Temperature]].
+
+Animals with [[scaria]] have a chance to rot immediately on death dependent on the [[AI Storytellers#Scaria rot chance|Scaria rot chance]] AI Storyteller settings, and pawns with [[toxic buildup]] will have a chance to rot immediately equal to the severity of buildup. 
+
+Rotten corpses have the same texture as normal corpses, but with a red tint.
+
+Rotten corpses cannot be eaten or butchered. Rotten organic corpses will produce [[corpse bile]], which is [[cleanliness|dirty]] and [[beauty|ugly]] to look. In addition, a rotting corpse emits [[rot gas]] clouds. The rate at which rot gas is produced is determined by [[Body Size]] of the dead creature, and is slightly higher for [[human]]s. A corpse stops producing rot gas if frozen. Standing in rot gas for too long can inflict [[lung rot]].
+
+A rotting corpse will desiccate after 2.5 [[Time|days]], which is affected by freezing [[temperature]] and refrigeration. The corpse will become a skeleton, stop producing corpse bile or rot stink, and is no longer a valid target for a [[resurrector mech serum]].
+
+A rotting corpse will 2 take points of damage each day, and a desiccated one has 70% chance to take 1 point of damage each day, independently from any other source of [[deterioration]]. The rate at which this happens can be slowed down when the corpse is refrigerated, and it will stop taking damage if it's frozen or stored in a any building that prevents deterioration (like a [[shelf]]).
+
+Being rotten has no impact on deadlife dust shamblers.{{AnomalyIcon}}
+
+=== Butchering & shredding ===
+Organic corpses without rot can be butchered at a [[butcher spot]] or the superior [[butcher table]] for [[meat]] and [[leather]], which can be processed further.  Mechanoid corpses can instead be smashed at a [[crafting spot]] or shredded at a [[machining table]] to produces [[steel]] and [[plasteel]]. 
+
+How much yield is determined on a variety of factors including: 
+* The base [[Meat Amount]] and [[Leather Amount]] of the pawn, which also varies with maturity. For mechanoids, yield is dependent on their type.
+* The [[butchery efficiency]] of the cook butchering, or [[Mechanoid Shredding Efficiency]] of the shredder
+* A 66% multiplier for "damaged" organic corpses  i.e. any pawn not cleanly executed either through slaughtering tamed animals or injury-less downing followed by execution. Pawns executed via regular warden execution work, ritual or euthanized through surgery are not affected. The Cut hediff these methods apply ''(A cut made during exectution)'' is excluded from marking the pawn as damaged. Death through [[psychic rituals]]{{AnomalyIcon}} does not apply this penalty either.
+* A percentage multiplier for lost body parts.
+* A 70% multiplier if using a butcher spot or crafting spot instead of a table.
+
+Butchering organic corpses requires {{ticks|450}} of work, modified by the [[butchery speed]] of the cook and up to two nearby [[tool cabinet]]s. Shredding mechanoids requires {{ticks|300}} of work from a table, or {{ticks|450}} from a crafting spot. 
+
+When butchering [[human]] corpses, most butchers will get a {{--|6}} [[Mood#I butchered humanlike|I butchered humanlike]] moodlet,{{Check Tag|ThoughtTemplate}} and all colonists in the map get a {{--|6}} [[Mood#We butchered humanlike|We butchered humanlike]] moodlet.{{Check Tag|ThoughtTemplate}} Colonists with the [[Cannibal]], [[Psychopath]], or [[Bloodlust]] traits are immune, as does an [[Ideoligion]]{{IdeologyIcon}} that finds Cannibalism acceptable. For the latter penalty, it doesn't matter how many corpses you've butchered, it will remain at -6. There is no further penalty for working with [[human resources]] until actually eaten or worn.
+
+== Disposal ==
+The following methods can dispose of corpses:
+
+=== Butchering & feeding ===
+Butchering is the most useful use of non-rotten animal and mechanoid corpses, giving you usable materials. See [[#Butchering & Shredding]] above for details.
+
+But as butchering human corpses incurs a mood penalty, you may want to feed corpses directly to your carnivorous and omnivorous [[animals]]. This takes no work beyond hauling, though is less nutritious than butchering. Corpses and their meat will rot over time, so it is recommended to use a [[cooler]] if you want to preserve their food.
+
+=== Manual destruction ===
+[[Molotov cocktail]]s or [[incendiary launcher]]s will create [[fire]]. Place a pile of corpses in a fireproof room (such as using stone for walls and floors) and light it on fire. The process requires a pawn to be drafted, move to the place in question, and fire a single shot. Make extra sure that the room is fireproof, as a large fire can destroy many buildings. This is often the best, least time-consuming way to dispose of human and rotten corpses. 
+
+Alternatively, you can use [[frag grenade]]s, which can destroy most items. As multiple grenades are needed per corpse, and as the explosion is rather small, they use more time. However, you don't have to mess with fire. Grenades can also destroy walls, so give a little space when throwing them.
+
+Mechanoid corpses are immune to fire (but not frag grenades), but don't rot and can always be shredded into useful ingredients.
+
+=== Burying ===
+Corpses can be buried in a [[grave]] or [[sarcophagus]], where the corpse is [[hauling|hauled]] to its location. Graves are much better for general disposal, costing no resources and {{ticks|800}} of work to make. Sarcophagi are more beautiful, so are useful if placed inside. 
+
+They can be useful for preserving corpse in a freezer, preventing both rot and overzealous cooks from destroying them. This helps if you're waiting for a [[resurrector mech serum]] to revive the corpse in question. Up to 5 buried coprses can be used for [[psyfocus|psychic meditation]] {{RoyaltyIcon}} of the Morbid type. They will also improve the Funeral [[ritual]]{{IdeologyIcon}}. Finally, either building acts as solitary [[recreation]]. However, this type of recreation is available even without burying, and colonists may visit graves that are far away.
+
+Having a buried human allows the [[corpse obsession]] [[mental break]] to occur. Everybody who sees the corpse will receive the normal Saw (Rotten) Corpse penalty, but this is one of the least immediately harmful of the major breaks.
+
+The main problem with burying is space - large raids can quickly consume a lot of time and area. And as you need to go further away, the longer it takes to bury. It is recommended to swap to another form of corpse disposal, once available, for your enemies.
+
+=== Cremation ===
+Corpses can be burnt in an [[electric crematorium]]. Each cremation requires {{ticks|180}} of work, and the crematorium itself requires 250 W of power to function. 
+
+If a way to start [[fire]] manually is available, then it is typically more efficient. Cremation is automatically done by haulers, so is largely for convenience's sake, or if fire isn't available. Cremation is also marginally better for dealing with rotten corpses, as rotten corpses do not accumulate in a single area.
+
+== Version history ==
+* [[Version/1.1.0|1.1.0]] - Fix: Corpses wouldn’t create [[corpse bile]].
+* [[Version/1.3.3101|1.3.3101]] - Fix: Skeletons don't draw apparel.
+
+[[Category: Game mechanics]] [[Category:Food type]]

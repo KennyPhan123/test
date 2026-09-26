@@ -1,0 +1,173 @@
+{{Biotech}}
+{{Stub|reason=1) Two-way links 2) Corresponding Property 3) Do StatDefs inherit attributes? (i.e. MayRequireAnyOf="Ludeon.RimWorld.Biotech,Ludeon.RimWorld.Anomaly" from MechStatBase)}}
+{{Verified|1.5.4104}}{{See also|Mech Repair Speed}}{{Stat
+| min value = 0
+| default base value = 0.333
+| to string style = Integer
+| description = The amount of [[energy]] that this [[mechanoid]] loses for every 100 damage repaired.
+| category = Mechanoid
+}}
+
+== Bases ==
+{| {{STDT| sortable}}
+! [[Mechanoid]] !! Repair Energy Cost
+<!-- Races_Mechanoid -->
+<!--
+|-
+! Name="BaseMechanoid" (Name="BaseMechanoidWalker", Name="LancerMechanoidWalker", Name="HeavyMechanoid")
+| 0.33
+-->
+<!--
+|-
+! Name="MechCentipede"
+| 0.2
+-->
+|-
+! [[File:Centipede east.png|24x24px|Centipede blaster]] [[Centipede blaster]]
+| 0.2
+|-
+! [[File:CentipedeGunner east.png|24x24px|Centipede gunner]] [[Centipede gunner]]
+| 0.2
+|-
+! [[File:CentipedeBurner east.png|24x24px|Centipede burner]] [[Centipede burner]]
+| 0.2
+|-
+! [[File:MechanoidLancer.png|24x24px|Lancer]] [[Lancer]] <!-- Name="LancerMechanoidWalker" -->
+| 0.33
+|-
+! [[File:Scyther east.png|24x24px|Scyther]] [[Scyther]]
+| 0.33
+|-
+! [[File:MechanoidPikeman.png|24x24px|Pikeman]] [[Pikeman]]
+| 0.33
+|-
+! [[File:Termite.png|24x24px|Termite]] [[Termite]]
+| 0.33<ref name="NoGestation">This mech cannot be gestated by a mechanitor, so this is irrelevant</ref>
+<!-- Biotech Races_Mechanoids_Light -->
+<!--
+|-
+! Name="LightMechanoid"
+| 0.66
+-->
+|-
+! [[File:Militor east.png|24x24px|Militor]] [[Militor]] {{BiotechIcon}}
+| 0.66
+|-
+! [[File:Lifter east.png|24x24px|Lifter]] [[Lifter]] {{BiotechIcon}}
+| 0.66
+|-
+! [[File:Constructoid east.png|24x24px|Constructoid]] [[Constructoid]] {{BiotechIcon}}
+| 0.66
+|-
+! [[File:Fabricor east.png|24x24px|Fabricor]] [[Fabricor]] {{BiotechIcon}}
+| 0.66
+|-
+! [[File:Agrihand east.png|24x24px|Agrihand]] [[Agrihand]] {{BiotechIcon}}
+| 0.66
+|-
+! [[File:Cleansweeper east.png|24x24px|Cleansweeper]] [[Cleansweeper]] {{BiotechIcon}}
+| 0.66
+|-
+! [[File:War urchin east.png|24x24px|War urchin]] [[War urchin]] {{BiotechIcon}}
+| 0.66<ref name="NoRepair">This mech cannot be repaired by an overseer, so this is irrelevant</ref>
+|-
+! [[File:Paramedic east.png|24x24px|Paramedic]] [[Paramedic]] {{BiotechIcon}}
+| 0.66
+<!-- Biotech Races_Mechanoids_Medium -->
+|-
+! [[File:Legionary east.png|24x24px|Legionary]] [[Legionary]] {{BiotechIcon}}
+| 0.33
+|-
+! [[File:Tesseron east.png|24x24px|Tesseron]] [[Tesseron]] {{BiotechIcon}}
+| 0.33
+|-
+! [[File:Scorcher east.png|24x24px|Scorcher]] [[Scorcher]] {{BiotechIcon}}
+| 0.33
+<!-- Biotech Races_Mechanoids_Heavy -->
+<!--
+|-
+| Name="HeavyMechanoid"
+| 0.2
+-->
+|-
+! [[File:Tunneler Mechanoid east.png|24x24px|Tunneler]] [[Tunneler]] {{BiotechIcon}}
+| 0.2
+<!-- Biotech Races_Mechanoids_SuperHeavy -->
+<!--
+|-
+! Name="SuperHeavyMechanoid"
+| 0.15
+-->
+|-
+! [[File:ApocritonAncient east.png|24x24px|Apocriton]] [[Apocriton]] {{BiotechIcon}}
+| 0.33<ref name="NoGestation" />
+|-
+! [[File:Centurion east.png|24x24px|Centurion]] [[Centurion]] {{BiotechIcon}} <!-- Name="MechCenturion" -->
+| 0.15
+|-
+! [[File:Warqueen east.png|24x24px|War queen]] [[War queen]] {{BiotechIcon}} <!-- Name="MechWarqueen" -->
+| 0.15
+|-
+! [[File:Diabolus east.png|24x24px|Diabolus]] [[Diabolus]] {{BiotechIcon}} <!-- Name="MechDiabolus" -->
+| 0.15
+|}
+<references />
+
+== String Format ==
+[[Repair Energy Cost]] is written out ingame as:
+
+<code>'''Base Value''' × 100</code>
+
+Which is then styled as an integer.
+
+=== Worked Examples ===
+# '''0.333''' (Default Base Value):
+## 0.333 × 100 = ''33.3''
+## ''33.3'' to integer = '''33'''
+# '''0.33''' (BaseMechanoid):
+## 0.33 × 100 = ''33''
+## ''33'' to integer = '''33'''
+# '''0.2''' (MechCentipede and HeavyMechanoid):
+## 0.2 × 100 = ''20''
+## ''20'' to integer = '''20'''
+# '''0.66''' (LightMechanoid):
+## 0.66 × 100 = ''66''
+## ''66'' to integer = '''66'''
+# '''0.15''' (SuperHeavyMechanoid):
+## 0.15 × 100 = ''150''
+## ''150'' to integer = '''150'''
+
+== Health ==
+{{Stub|section=1|reason=Mechanoid Health Scales and body / body part hp: how does 100 damage repaired translate to various body parts of different mechs?}}
+
+== Stat Def Data ==
+{| {{STDT}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Repair Energy Cost" <!-- ParentName="MechStatBase" --><!--<StatDef>-->
+|
+* '''Def Name:'''<br />MechEnergyLossPerHP
+* '''Label:'''<br />repair energy cost
+| The amount of energy that this mechanoid loses for every 100 damage repaired.
+|
+* Display Order:<br />'''13'''
+* Def Name:<br />'''Mechanoid'''
+* Label:<br />'''Mechanoid'''
+* Display All By Default:<br />{{Good|true}}
+|
+* Show On Animals: {{Bad|false}}
+* Show On Humanlikes: {{Bad|false}}
+* Show On Mechanoids: {{Good|true}}
+* '''Worker Class:''' StatWorker_MechEnergyLossPerHP
+* '''Default Base Value:''' 0.333
+* '''Min Value:''' 0
+* '''To String Style:''' Integer
+* '''Show If Undefined:''' {{Bad|false}}
+| -
+| 2020
+<!--</StatDef>-->
+|}
+
+== Version history ==
+* [[Biotech (DLC)]] Release - Added.
+
+{{nav|stats|wide}}

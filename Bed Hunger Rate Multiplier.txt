@@ -1,0 +1,31 @@
+{{Stub|reason=1) Version history 2) Two-way links}}
+{{Verified|1.5.4104}}{{Stat
+| min value = 0
+| default base value = 1
+| to string style = PercentZero
+}} It is a hidden stat only used by facilities to control hunger rate of sleeping pawns.
+
+== Offsets ==
+* {{IdeologyIcon}}[[Sleep accelerator]]: {{++|20%}}
+This value is added to the base 100% value for beds, for a {{Bad|×120%}} multiplier on hunger rate after additional factors.
+
+== Stat Def Data ==
+{| {{STDT}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Bed Hunger Rate Multiplier" <!--<StatDef>--> <!-- Hidden stat only used by facilities to control hunger rate of sleeping pawns -->
+|
+* '''Def Name:'''<br />BedHungerRateFactor
+* '''Label:'''<br />bed hunger rate multiplier
+| -
+| -
+|
+* '''Always Hide:''' {{Good|true}}
+* '''Min Value:''' {{%|0}}
+* '''To String Style:''' PercentZero
+* '''Default Base Value:''' {{%|1.0}}
+| -
+| -
+<!--</StatDef>-->
+|}
+
+{{nav|stats|wide}}

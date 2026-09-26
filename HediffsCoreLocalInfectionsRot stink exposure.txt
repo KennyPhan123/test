@@ -1,0 +1,65 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Local/Infections}}
+|}
+----
+{| {{STDT| c_16}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Rot stink exposure" <!-- defName="LungRotExposure" -->
+! Rot stink exposure
+----
+* Def Name:<br />LungRotExposure
+* Label:<br />rot stink exposure
+| Long-term exposure to rot stink gas. Rot stink exposure has no direct health effects. However, serious rot stink exposure has a chance to result in a painful bacterial infection known as lung rot. When not exposed to rot stink gas, rot stink exposure will slowly decrease.
+|<!-- Details -->
+* Hediff Class: '''Hediff_RotStinkExposure'''
+* Default Label Color: {{Color|214|90|24}}
+* Min Severity: '''0%'''
+* Initial Severity: '''0.1%'''
+* Max Severity: '''100%'''
+* Can Apply {{DOD}} Chance For Capacity Changes: {{Bad|true}}
+* '''Comps'''
+** ''Severity From Gas''
+*** Gas Type: '''[[Rot stink]]'''
+*** Severity Gas Density Factor: '''4%'''
+*** Interval Ticks: {{Ticks|60}}
+*** Severity Not Exposed: {{---|0.02%}} ({{---|20%}} per day)
+*** Exposure Stat Factor: '''[[Toxic Environment Resistance]]'''
+** ''Give Hediff Lung Rot''
+*** hediff Def: '''[[Hediffs#Lung rot|Lung rot]]'''
+*** {{MTB}} Check Duration: {{Ticks|600}}
+*** Min Severity: '''50%'''
+*** '''{{MTB}} Over Rot Gas Exposure Curve:'''
+<div><li style="display: inline-table;">
+{| {{STDT| c_16}}
+! Severity !! {{MTB}}<br />(hours)
+|-
+! 50%
+| 8
+|-
+! 100%
+| 0.5
+|}{{Graph:Chart|width=200|height=200|xAxisTitle=Severity|xAxisFormat=%|xAxisAngle=+45|yAxisTitle=MTB (Hours)|type=line|x=0.5, 1|y=8, 0.5|xGrid=|yGrid=}}</li></div>
+** ''Surgery Inspectable''
+*** Surgical Detection Desc:<br />{PAWN_nameDef} is beginning to suffer from exposure to rot stink gas. Keep {PAWN_objective} away from rotting corpses and other sources of rot stink.
+|<!-- Stages -->
+{| {{STDT| c_16}}
+! Label !! Parameters
+|-
+! -
+|<!-- Parameters -->
+* Become Visible: {{Bad|false}}
+|-
+! minor
+|<!-- Parameters --> 
+* Min Severity: '''15%'''
+|-
+! major
+|<!-- Parameters -->
+* Min Severity: '''35%'''
+|-
+! serious
+|<!-- Parameters -->
+* Min Severity: '''50%'''
+|}<noinclude>
+|}</noinclude>

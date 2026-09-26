@@ -1,0 +1,94 @@
+{{Infobox main|food
+| name = Chocolate
+| image = Chocolate c.png
+| description = A delicious preparation of cocoa seeds ground together with sugar and vanilla. Very pleasurable to eat, but not very nutritious.
+<!-- Base Stats -->
+| type = Food
+| type2 = Meal
+| hp = 60
+| deterioration = 8
+| marketvalue = 3
+| mass base = 0.075
+| flammability base = 1
+| stack limit = 75
+| path cost = 14
+| rotatable = false
+<!-- Ingestion -->
+| food type = processed
+| taste = Fine
+| joy offset = 0.1
+| joy kind = Gluttonous
+| nutrition = 0.1
+| max num to ingest at once = 4
+<!-- Technical -->
+| defName = Chocolate
+| preferability = Desperate
+<!-- Unused -->
+| always haulable = true
+| draw gui overlay = true
+| graphic class = Graphic_Single
+| graphic path = Things/Item/Resource/Chocolate
+| is pleasure drug = true
+| label = chocolate
+| parent name = ResourceBase
+| resource readout priority = Middle
+| selectable = true
+| social properness matters = true
+| sound drop = Standard_Drop
+| sound eat = Meal_Eat
+| sound interact = Standard_Drop
+| thing class = ThingWithComps
+| use hit points = true
+}}{{Info|'''Chocolate''' is a [[food]] item which provides a small amount of nutrition, filling a colonist's hunger meter by 10% per unit consumed. Unlike most other foods, it also grants a bonus to [[Recreation]] of 10% per unit. Contrary to the description, the chocolate requires no further processing and is directly harvested from the [[cocoa tree]].}}
+
+== Acquisition ==
+Chocolate can be acquired by planting [[cocoa tree]]s after [[Research#Cocoa|Cocoa]] is researched. The trees have a base [[Harvest Yield]] of 20 chocolate per harvest every 16 days, modified by the [[Plant Harvest Yield]] of the grower. Harvesting consumes the trees and they must be resown every harvest. Unlike in reality, no further processing is needed to create chocolate.
+
+Chocolate can also be purchased from [[trade#Orbital Bulk Goods Trader|bulk goods traders]], or occasionally arrive in [[cargo pods]].
+
+== Summary ==
+When eaten, chocolate provides 10% [[recreation]] of the Gluttonous type. It is worth 0.1 [[nutrition]] per unit, as opposed to 0.05 nutrition from most types of [[raw food]]. It cannot give [[food poisoning]].
+
+Unlike most other foods, it does not spoil. While it will still [[deterioration|deteriorate]] if left outside and/or unroofed, it will not spoil even if left unrefrigerated.
+
+Colonists will eat no more than 4 units of chocolate at a time. Manually directing troubled colonists to eat it when necessary is advised.
+
+== Analysis ==
+Both chocolate and [[insect jelly]] can be used as a source of recreation in [[caravan]]s. In a caravan, recreation is otherwise limited to some social activity when stopped and [[drug]] use. It could also be used in emergencies, where colonists need to do work but are recreation-starved. 
+
+Insect jelly and chocolate are the only nonperishable foods that high-ranking [[Titles#Conceited_vs_Non_Conceited|conceited nobles]] {{RoyaltyIcon}} are willing to eat. They can act as a sort of "lavish survival meal". ([[Beer]] is technically nonperishable, but you can only drink so much before blacking out or getting addicted).
+
+Despite the above, chocolate can not, by itself, be used to fulfil recreation on caravans. This is due to how its coded: chocolate is a food with a '''preferability''' of Desperate only, the same level of preference that raw plant matter and fertilized eggs. In practice, this means chocolate won't be consumed by a caravan unless there is no other food available. Additionally, pawns will not ingest more than 4 at a time nor carry more than 10 units at a time. This has been true since some version {{Check Tag|Between A16 and 1.0|I can't find the exact version. It's not on the changelog but rather in a response to a bug report. The issue addressed had something to do with caravans eating all the chocolate first, then other food. Shortly afterwards, bug reports about chocolate not being eaten in caravans emerged.}}.
+
+=== Compared to insect jelly ===
+As a food item, [[insect jelly]] only provides 8% Gluttonous recreation and 0.05 nutrition per unit, both less than chocolate. It also has a 2% chance of [[food poisoning]], unavoidable without the [[strong stomach]] gene{{BiotechIcon}}. When no other factors are in play, then chocolate is a superior item. But insect jelly is lighter, with 1/3 the weight per unit. Overall, jelly has 66.7% the weight per nutrition and {{%|4/15 round 3}} weight per recreation %. The lighter weight may be useful in longer caravan trips, though with sufficient [[pack animal]]s you may have enough carrying capacity for chocolate. Insect jelly is also more valuable - in the event that you need to sell things to a faction base, then jelly is superior.
+
+However, the biggest difference between chocolate and jelly is means of acquisition. Chocolate requires both [[Tree sowing]] and [[Research#Cocoa|Cocoa]] to be researched. But once researched, it can be grown at will, so long as growing conditions are met. Meanwhile, insect jelly requires an [[infestation]]. This first requires that an [[overhead mountain]] tile is available, and then you'll have to fight and/or farm the infestation in the first place. But larger infestations can result in massive quantities of jelly.
+
+Ultimately, which option is preferable will depend on the circumstances of each individual colony, as well as player preference. A colony in a mountain will accumulate lots of insect jelly, but find it harder to grow cocoa trees. A colony in a flat map is unlikely to face an infestation, but can grow chocolate.
+
+Do note that {{Hover title|Intended, weirdly enough. Insect jelly has the canAutoSelectAsFoodForCaravan set to never.|insect jelly will never be consumed while on caravan}}.
+
+=== Trade ===
+Chocolate tends to be a poor cash crop. This is largely due to the [[cocoa tree]]'s massive {{Ticks|4400}} work to sow and harvest. In the time to sow 1 cocoa tree, you could've harvested and replanted 11 [[cotton plant]]s. Those 11 cotton plants would be worth {{Icon Small|silver}} 15 ''each''. Cocoa trees give {{Icon Small|silver}} 60 of chocolate per harvest, while 11 cotton plants would give {{Icon Small|silver}} 165. And because each tree requires a 3x3 space to grow, they are terrible for space efficiency, too.
+
+*'''Potential niche'''
+Cocoa trees have the highest $ / Plant Growth Day of any ''raw'' plant product, at {{Icon Small|silver}} 2.03 / growing day. However, [[hop plant]]s converted into [[beer]] offers a superior {{Icon Small|silver}} 2.08 / growing day. Due to the cocoa tree's lowered Fertility Sensitivity, growing hops is even faster in rich soil. Trees would technically be better in poor soil, but if you are forced to grow in poor soil, then growing space is most likely a concern - making this scenario moot. While it takes work to convert hops into wort, if work was actually a concern, then you should grow any other crop instead. Plus, beer is superior for Value / Work unless you both have an amazing planter AND terrible cooks. Therefore, hops are a strictly superior crop at this niche.
+
+Plus, each individual cocoa harvest grows slowly - at {{Q|Cocoa tree|Real Grow Days}} days to grow, it is slower than [[corn plant|corn]]. If you need cash ''now'', then cocoa is not a consideration. This makes the previous discussion almost meaningless as cocoa is terrible at anything you would need quick money for.
+
+== Gallery ==
+<gallery>
+Chocolate a.png|One chocolate
+Chocolate b.png|Partial stack
+Chocolate c.png|Full stack
+</gallery>
+
+== Version history ==
+* Beta 19/1.0 - Chocolate can now be produced by colonists. Previously it was exclusively a trade good.
+<gallery>
+Chocolate old.png|Old sprite
+</gallery>
+
+{{Nav|Food|wide}}
+[[Category:Food]] [[Category:Processed Food]]

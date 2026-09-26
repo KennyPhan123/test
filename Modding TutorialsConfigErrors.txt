@@ -1,0 +1,124 @@
+=== Preamble ===
+Who this is for:
+Modders that implement their own XML-loading classes, like new Def.
+
+ConfigErrors are the red errors you are presented when the game launches and detects erroreous XML data, like a required field not being set or a value of a field being out of its range.
+
+Chances are, you have seen plenty of these errors in the past, some may consider them an annoyance, but if done right, they inform both the modder and the user of potentially critical issues in the XML data provided.
+
+=== Subclassing Def ===
+The most applicable example of ConfigErrors is subclassing ''Def''.
+
+<source lang="csharp">
+public class MyOwnDef : Def
+{
+    float someValue = 4f;  // only allow values bettwen 0-10
+}
+</source>
+
+Let's say we have our new Def here and it has a special value that is only allowed to be in the range of 0 - 10, with the default value being 4.
+
+Anyone can easily add a new ''MyOwnDef'' to your mod or modify an existing one with a patch operation. You could put documentation out there in the hopes that someone reads it and properly only assigns values between 0-10 to your ''someValue'', or that they stumble over your tiny comment.
+
+Or you can provide ConfigErrors that yell at anyone trying to use a value that you don't explicitly allow for your own Def.
+
+<source lang="csharp">
+public class MyOwnDef : Def
+{
+    float someValue = 4f;
+    const float minSomeValue = 0f;
+    const float maxSomeValue = 10f;
+
+    public override IEnumerable<string> ConfigErrors()
+    {
+        foreach(string error in base.ConfigErrors())
+        {
+            yield return error;
+        }
+        if(someValue < minSomeValue || someValue > maxSomeValue)
+        {
+            yield return $"{nameof(someValue)} is {someValue} , which is out of the valid range of {minSomeValue}- {maxSomeValue}!";
+        }
+    }
+}
+</source>
+
+To break it down, ''Def'' already implements a virtual ConfigErrors(), which we can override in our ''MyOwnDef''. Because this is a virtual IEnumerable, it makes sense to call the base.ConfigErrors(), which will run the basic ''Def'' validation (like setting a ''defName'') - and then yield our own desired config errors.
+
+I personally dislike numbers anywhere in code, so I define constant values and compare to those, you could just compare directly to your desired limits.
+
+=== Your own classes ===
+In case you have lists of special types or other types that don't implemement ConfigErrors(), nothing stops you from just making a ConfigErrors() anyways, you just can't override a base method.
+<source lang="csharp">
+public class MyOwnDef : Def
+{
+    List<MyOwnSpecialType> specialStuffList;
+
+    public override IEnumerable<string> ConfigErrors()
+    {
+        foreach(string error in base.ConfigErrors())
+        {
+            yield return error;
+        }
+        if(specialStuffList == null)
+        {
+            yield return $"Required list {nameof(specialStuffList)} is empty";
+        }
+        else
+        {
+            foreach(MyOwnSpecialType specialStuff in specialStuffList)
+            {
+                foreach(string error in specialStuff.ConfigErrors())
+                {
+                    yield return error;
+                }
+            }
+        }
+    }
+}
+
+public class MyOwnSpecialType
+{
+    float someValue;
+    const float minSomeValue = 0;
+    const float maxSomeValue = 10;
+
+    public IEnumerable<string> ConfigErrors()
+    {
+        if(someValue < minSomeValue || someValue > maxSomeValue)
+        {
+            yield return $"{nameof(someValue)} is {someValue} , which is out of the valid range of {minSomeValue}- {maxSomeValue}!";
+        }
+    }
+}
+</source>
+
+=== When all else fails ===
+If you have a custom type that has no real "ties" to an already called ConfigErrors() method, that you could just hook your own config errors into, you may have to call your own config validation similarly to how base games does it.
+
+Simply iterating all instances of your type, wherever it may be and using Log.Error() directly after startup will emulate ConfigErrors() behaviour and still provide the user with important information in case their data is erroreous.
+
+===Notes===
+In case you are a newcomer, here are some things you may want to research via Google:
+
+
+ MyOwnDef : Def
+Subclassing an existing Type, in this case making a subclass of ''Def'' named ''MyOwnDef''
+
+
+ public override
+Overriding a base member, in this case a public Method
+
+
+ yield return 
+Returns a single item in a collection, only works on methods with the method signature IEnumerable<T>
+
+
+ $"{nameof(someValue)} is {someValue} , which is out of the valid range of {minSomeValue}- {maxSomeValue}!";
+The string here uses String Interpolation, which is a quick and easy way of embedding variables into a logging string
+
+
+ nameof(someValue)
+An easy way of getting the name of a variable, you could obviously just type out "someValue", but by using nameof and a reference to the variable, should you ever change its name, the config error will automatically change the logged out name as well.
+
+[[Category:Modding tutorials]]

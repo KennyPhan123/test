@@ -1,0 +1,159 @@
+{{BackToTutorials}}
+
+[[Modding Tutorials/Writing custom code|Writing custom code]] is all well and good if you can't force RimWorld to use it! Here are three ways of linking your Code to the XML and vice versa.
+
+=Using your C# from XML=
+==A classy design pattern==
+RimWorld leans heavily on Object Oriented Programming and will often expose the specific class of a Def to the XML. They're often called a workerClass, thingClass, but obviously can be named anything. Keep a look out for these, they're sometimes subtle.
+
+===Examples===
+<source lang ="xml">
+<BiomeDef>
+  <defName>BorealForest</defName>
+  <workerClass>BiomeWorker_BorealForest</workerClass>
+</BiomeDef>
+</source>
+
+<source lang ="xml">
+<inspectorTabs>
+  <li>ITab_Art</li><!-- That's a class! -->
+</inspectorTabs>
+</source>
+
+==A "Classy" pattern==
+It is possible to overwrite the default class associated with a Def (or field in a def) by specifying the Class by attribute. The most common usage of this you've undoubtedly seen before is in Components: <source lang = "xml">
+<comps>
+  <li Class="CompProperties_Forbiddable"/>
+</comps>
+</source>
+
+This class override is more widely applicable than just [[Modding Tutorials/Custom Comp Classes|comps]]. It's possible to overwrite or specify almost any type you wish. Keep [[Modding Tutorials/Compatibility|Compatibility]] in mind when doing this: in the end each object can only be one [[Modding Tutorials/Def classes|Class]].
+
+===Example===
+'''Editor's Note''': using extension classes for Defs is no longer recommended. To add fields to defs, use [[Modding Tutorials/DefModExtension|DefModExtensions]] instead.
+
+<source lang ="xml">
+<!-- Generate faction base -->
+<GenStepDef Class = "MyNameSpace.MyCustomGenStepDefClass"> <!-- Overwrite the GenStepDef Class -->
+  <defName>Settlement</defName>
+  <order>400</order>
+  <genStep Class="GenStep_Settlement"> <!-- you can overwrite almost any type you wish. -->
+    <count>1</count>
+    <nearMapCenter>true</nearMapCenter>
+  </genStep>
+  <modExtensions>
+    <li Class="MyNameSpace.MyCustomModExtension"> <!-- Aah, the classic li Class. -->
+       <isACustomGenStepDefClassAndAModExtensionOverkill>false</isACustomGenStepDefClassAndAModExtensionOverkill>
+    </li>
+  </modExtensions>
+</GenStepDef>
+</source>
+
+==You define yourself==
+Another possibility is to supply your own type in the XML. The most well-known example of this is [https://github.com/RimWorld-CCL-Reborn/AlienRaces/wiki/Let%27s-Start Alienraces]. The [https://github.com/RimWorld-CCL-Reborn/AlienRaces/blob/master/Source/AlienRace/AlienRace/ThingDef_AlienRace.cs ThingDef_AlienRace] inherits from regular [[Modding Tutorials/ThingDef|ThingDef]], and adds the alienRace tag to it. The alienRace tag then holds more information, a sample of which is shown below.
+
+One benefit of this over the annotation method above (the "Classy" pattern) is that the added control and restriction of scope is increased compatibility with over mods. It's theoretically also easier to further subclass the AlienRace def by annotation.
+
+===Example===
+<source lang = "xml">
+<AlienRace.ThingDef_AlienRace ParentName="BasePawn">
+  <defName>ExampleAlien</defName>
+  <label>Alien for example</label>
+  <description>This alien is really special.. because it is used as an example</description>
+  <!-- regular ThingDef tags go here. -->
+  <alienRace>
+      <!-- specific alien stuff goes inside the alienRace tag. -->
+      <generalSettings>
+
+      </generalSettings>
+      <raceRestriction>
+
+      </raceRestriction>
+  </alienRace>
+</AlienRace.ThingDef_AlienRace>
+</source>
+
+==Serialising custom classes==
+It may sometimes be required to read/write your own datatype to XML. While we all love long strings with comma separated values, there are many cases where this is not a good idea. For that, RimWorld offers a ''LoadDataFromXmlCustom'' method. When RimWorld comes across your type during load, and the class defining that type contains the ''LoadDataFromXmlCustom'', RimWorld will use that method to parse the XML. This is done through the magic of reflection.
+
+Note that this method fails on types that can't have a constructor. In practice, this means you can't serialise [https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/structs structs].
+
+<source lang = "csharp">
+//example taken from https://github.com/LocoNeko/RoadsOfTheRim/blob/master/Source/DefModExtension_RotR_RoadDef.cs
+public class RotR_cost
+{
+    public string name;
+    public int count;
+
+    public void LoadDataFromXmlCustom(XmlNode xmlRoot)
+    {
+        if (xmlRoot.ChildNodes.Count != 1)
+        {
+            Log.Error("Misconfigured RotR_cost: " + xmlRoot.OuterXml, false);
+            return;
+        }
+        name = xmlRoot.Name;
+        count = (int)ParseHelper.FromString(xmlRoot.FirstChild.Value, typeof(int));
+    }
+}
+</source>
+
+==Common issues==
+You need to specify your exact Namespace.Class. There are no two ways around it. You also need to supply RimWorld with the assembly containing the type and namespace specified.
+
+=Using your XML from C#=
+There are times you'll need to use a Def or other value defined in XML.
+
+==DefOf==
+Any class with the [DefOf] annotation will automatically have its fields filled with their corresponding Def. You can then access it in other code like you'd access any DefOf, like ThingDefOf. The below example would be used as ''SomeDef def = MyDefOf.JustOneExampleDefName;''.
+
+'''Advantages''':
+* It's run-time fast.
+* It's easy.
+* It moves errors to startup, rather than at runtime. Early warnings save considerable testing and debugging!
+** If there's an error in your code (like a typo in the defName, or a missing Def), it will detect that as soon as the game starts, rather than when it's trying to use it.
+
+'''Disadvantages''':
+* Referencing Defs directly in code means XML changes may not be reflected properly.
+** For example, if you have behavior linked directly to a specific def, making other defs with the same behavior would require modifying the C# code.
+* DefOfs don't get their fields filled until after the game is done loading Defs.
+** This means using a DefOf before it is properly initialised gets you ''null'' - which the DefOf class is supposed to prevent.
+* Has a negative influence on startup times. <ref>It uses reflection to find and fill the fields. This probably isn't the quickest, but the extent of it hasn't been measured.</ref>
+
+<source lang = "csharp">
+[DefOf]
+public static class MyDefOf
+{
+    public static SomeDef JustOneExampleDefName;
+    public static SomeDef AnotherExampleDefName;
+    public static SomeDef YetMoreExampleDefName;
+
+    static MyDefOf()
+    {
+        DefOfHelper.EnsureInitializedInCtor(typeof(MyDefOf));
+    }
+}
+</source>
+The fields have to be static and public.
+
+===That weird constructor===
+It's there for your own good. If you're trying to use a Def before RimWorld had a chance to fill the field with a proper reference, it will return null. You don't want that. This constructor warns against that.
+
+==DefDatabase==
+If you only need to use a certain Def occasionally, you can look it up in the DefDatabase directly.
+<source lang = "csharp">SomeDef def = DefDatabase<SomeDef>.GetNamed("JustOneExampleDefName");</source>
+
+'''Advantages''':
+* Is allowed to return null (silent failure is an option).
+* Does not require an entire class.
+* Is open to string based shenanigans.
+
+'''Disadvantages''':
+* Is allowed to return null. If you're not prepared for it to return null, Bad Things Happen.
+* Slower than a DefOf. (Altho if you put the def in a static variable, this is somewhat negated)
+* Prone to typos.
+
+=See also=
+[[Modding Tutorials/Hello World|Hello World]] - For when your code shouldn't be linked to XML, but does need to be bootstrapped.
+
+[[Category: Modding tutorials]]

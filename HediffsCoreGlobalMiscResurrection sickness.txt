@@ -1,0 +1,48 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Global/Misc}}
+|}
+----
+{| {{STDT| c_11}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Resurrection sickness" <!-- defName="ResurrectionSickness", ParentName="DiseaseBase" -->
+! Resurrection sickness
+----
+* Def Name:<br />ResurrectionSickness
+* Label:<br />resurrection sickness
+| After-effects of resurrection. Artificially-restarted body processes take time to rebalance themselves.
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|90%|100%|35%}}
+* Initial Severity: '''0.1%'''
+* '''Remove On Redress Chance By Days Curve:'''
+<div><li style="display: inline-table;">
+{| {{STDT| c_01}}
+! Days !! Chance
+|-
+! 0
+| 0%
+|-
+! 2
+| 0%
+|-
+! 7
+| 50%
+|-
+! 20
+| 100%
+|}{{Graph:Chart|width=200|height=200|xAxisTitle=Days|yAxisTitle=Remove On Redress Chance|yAxisFormat=%|type=line|x=0, 2, 7, 20|y=0, 0, 0.5, 1|interpolate=monotone|xGrid=|yGrid=}}</li></div>
+* '''Comps:''' ''Disappears''
+** Disappears After Ticks: {{Ticks/gametime/days|90000}} ~ {{Ticks/gametime/days|150000}}
+** Show Remaining Time: {{Good|true}}
+|<!-- Stages -->
+{| {{STDT| c_11}}
+! Label !! Parameters
+|-
+! Resurrection sickness
+|<!-- Parameters -->
+* Vomit {{MTB}} Days: '''0.5'''
+* [[Moving]] Post Factor: {{Bad|×10%}}
+* [[Manipulation]] Post Factor: {{Bad|×10%}}
+|}<noinclude>
+|}</noinclude>

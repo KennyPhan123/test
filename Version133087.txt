@@ -1,0 +1,115 @@
+{{Version Nav}}
+''Released August 7, 2021''
+
+Hey everyone! I've just released version 1.3.3087 of RimWorld with a variety of improvements for the base game and both expansions. Full changelog is below.
+
+The main visible feature in this update is tree replanting. You can extract a tree and move it around as an item. You can then replant it where you like. It'll die after 7 days if not replanted. Anyone can do this, but it should be especially useful for colonies who believe it's immoral to kill trees since now they can move trees out of the way of building sites.
+
+This update should be compatible with all savegames and mods.
+
+Thanks to everyone who helped us test it on the official development Discord server, and to everyone who has submitted bugs and constructive feedback. We're happy to have all this great information to use while improving the game.
+
+== Change list ==
+
+=== New stuff ===
+
+* Added tree replanting. You can extract a tree and move it around as an item. You can then replant it where you like. It'll die after 7 days if not replanted. Anyone can use this, but it should be especially useful for colonies who believe it's immoral to kill trees since now they can move trees out of the way of building sites.
+* Added a command for dryads that tells them to return to a healing pod. They will stay inside for three days, and emerge with their wounds healed.
+* Player can now do drafted tending (with and without medicine) on downed hostile or neutral pawns.
+* There is now a warning while setting up a caravan if most of your food does not suit one of your caravaneers diet.
+
+=== Improvements ===
+
+* Classic ideo preset can now generate relics.
+* Quest lodgers and pawns of non-player ideos are no longer upset if their ideo building is not present.
+* Persona weapons are no longer included in "allow biocoded" thing filters.
+* Upon new archonexus settlement, player now retains research up to classic start.
+* We now reset incident grace periods when starting a new archonexus settlement to make for a smoother start.
+* Colonists now get initial optimism thought after resettling in archonexus quest line
+* Ensure clicking on social tab ideoligion opens ideoligion tab to correct ideoligion
+* We no longer randomize classic ideo styles. Just use whatever is in the culture.
+* Dryads now rest near their connected tree, not in beds or sleeping spots.
+* Clicking on ideoligion certainty in social card now opens ideoligion tab
+* Vegetarian meals now allow animal products as ingredients.
+* Renounce title confirmation dialog explains that the pawn will lose all faction permits and permit points. Mention that psylinks and psycasts will stay with the pawn.
+* Give starting survival meals some veggie ingredients for non-carnivore colonies instead of having no ingredients at all.
+* Removed allowed area assignment UI for dryads since they ignore it anyway.
+* Reword ideo preset categories' descriptions.
+* Lower slave social fight chance by 50%.
+* We now reset biosculpter timers after archonexus resettlement.
+* We now reset prevent various events from happening too early after new archonexus settlement.
+* Ancient tank trap and ancient macro-engine block are now non-deconstructible to match similar ancient junk.
+* Pawns no longer smelt relics, to avoid accidental mishaps.
+* Removed redundant message regarding manhunter chance on tame for insects. Warn player than insects will be hostile during taming attempts.
+* Improvements to unsuitable caravan food warning based on feedback.
+* Add a "drag to reorder" label on colonist creation screen for clarity.
+* Remove second tick noise when reordering pawns on colonist creation screen.
+* Updated player-created names.
+* Colorize the Tree Connection ritual icon to match the Gauranlen color.
+
+=== Technical ===
+
+* PawnRenderer weapon drawing now supports Graphic_Random.
+* Removed redundant RulePackDef for tree connection ritual.
+* Choosing ideo preset no longer continously calls SortStyleCategories but only once outside the loop.
+* We now filter out null AutoSlaughterConfigs after loading a game.
+* Fixes to GenerateGoodIngredients.
+* Moved IsRelic() check to extension method in ReliquaryUtility.
+* Limit awaking on clamor to ancient complex insects and mechs.
+* Reset additional storyteller parameters after new archonexus settlement.
+* Adjust the optimality score modifier from food that gives negative thoughts.
+* Add a null check to prevent old bestowing ceremony quests that existed pre-fix from causing issues.
+
+=== Fixes ===
+
+* Fix: Classic ideo preset can have tattoos for tribal player.
+* Fix: Ideology loads before royalty when resetting mods config.
+* Fix: Ideology about.xml file is missing <loadAfter> to be loaded after core mod.
+* Fix: MinifiedThing looks for atlas textures in wrong atlas group.
+* Fix: Minified trees left behind on caravans do not count as died.
+* Fix: Bills wont load if ideo apparel is from unloaded mod
+* Fix: Error when forming caravan with a minified tree in inventory (Unknown TransferAsOne pair)
+* Fix: Music doesnt play for about 2 minutes after loading a game
+* Fix: Caravan auto-supply ignores negative thoughts from food when calculating the score.
+* Fix: Dryads listed on bed assign dialog.
+* Fix: Enabling disabled core mod after enabling a dlc orders the core mod to be loaded before the DLC.
+* Fix: When enabling mods, they are just added to the list, not taking forceLoadXXX into account
+* Fix: Cannot build floor coverings before having save/loaded at least once.
+* Fix: Stacks of Gauranlen seeds can only designate a single planting cell.
+* Fix: Killing a slave in a slave rebellion causes 'Witnessed ally's death' thought
+* Fix: Potential mod breaking issue in Graphic (GetCopy method arguments).
+* Fix: NullReferenceException when hovering over pawn with no ideoligion with conversion ability.
+* Fix: Techprints retained on archonexus resettlement.
+* Fix: Bloody dominators description typo
+* Fix: Pruning hours per day readout doesn't take into account nearby player buildings.
+* Fix: Outdated anima tree description.
+* Fix: Ancient complex insects that heard a clamor are not fully awoken.
+* Fix: IncidentWorker_RaidEnemy can potentially use a friendly faction if it was generated when they were still enemies.
+* Fix: Hunters finishing off their prey counts as slaughtering an animal.
+* Fix: Raids assaulting a thing (like a spacedrone) are broken without Royalty.
+* Fix: You can bypass ability cooldown by using queue cast after casting it the first time.
+* Fix: Scenarios from Steam workshop break scenario ui when run in non-Steam mode.
+* Fix: Colonist bar group calculations can cause errors in rare circumstances.
+* Fix: Gauranlen spawn cycle not correct after new archonexus settlement
+* Fix: Imprisoning and releasing slave immediately can cause some slaves to immediately join the player faction.
+* Fix: Savage Tribe shows what it will buy.
+* Fix: Item style overrides information is not shown on ideo preset screen.
+* Fix: Slaves opportunistically haul during rebellion while grouping up.
+* Fix: Nutrient paste does not produce ate meat or ate non meat thoughts.
+* Fix: Pawn ritual arrival tag is not set if they started on the exact position they needed to be.
+* Fix: Animal products are considered when generating ate meat or ate non-meat history events and thoughts.
+* Fix: Blood from animal sacrifice automatically cleans itself before ritual even completes.
+* Fix: Players can load a caravan and bring disallowed items to new archonexus settlement.
+* Fix: Relic destroyed notification sent when player starts new archonexus settlement if they can't bring it.
+* Fix: Positive goodwill reward given when labourers miss shuttle and fixed scribe error trying to deep save a def.
+* Fix: Mentally broken pawn appears as participant for anima linking ritual.
+* Fix: Tribal members do not become hostile when arrested in terminal hack quest.
+* Fix: Insect jelly is treated as a drug, causing exception to be thrown.
+* Fix: Passive cave insects block bestowing ceremony.
+* Fix: Using numCase causes errors in date colorization. Also, add support for colorizing all cases of numCase dates.
+* Fix: Possible map junk wiping archonexus structure.
+* Fix: Badly formatted relic name in relic hunt quest description.
+* Fix: Some ancient junk is spawning overlapping chunks.
+
+== Source ==
+* [https://steamcommunity.com/games/294100/announcements/detail/2990939117312133997 Update 1.3.3087 adds tree replanting]

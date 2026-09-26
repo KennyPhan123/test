@@ -1,0 +1,62 @@
+{| align=center
+| {{AI_Storytellers_Nav}}
+|}
+{{Infobox main|ai
+| name = Cassandra Classic
+| image = Cassandra.png
+| description = Cassandra creates story events on a steadily-increasing curve of challenge and tension.
+| type = AI Storytellers
+}}
+
+'''Cassandra Classic''' is the default storyteller. In the beginning, Cassandra will always send a single [[Events#Mad animal|mad animal]], followed by a single [[raider]]. The single raider will appear on Day 5 hour 15 unless a different minor event appears at that exact time. In that case, the single raider will appear the following day. Challenges remain consistent, ramping up in difficulty as you progress, but with breaks every 1-2 raids.
+
+== Analysis ==
+Many players find Cassandra to be more difficult than Randy, since her raids are consistent and more frequent on average. While Randy often creates long periods without raids, Cassandra is forced to send major threats on a semi-regular basis. At the same time, players can take advantage of her hardcoded breaks, while with Randy, raids can happen at any time and there is no guaranteed safety period. In addition, Randy ''could'' send multiple 1.5x size raids back-to-back, potentially creating situations that are harder than what Cassandra can possibly dish out.
+
+Overall, Randy is definitely more difficult when thinking about the worst possible situations, e.g., sending raids just after the colony has recovered from a devastating incident, but Cassandra ensures that major threats will come.
+
+== Code specifics == 
+{{Stub|section=1|reason=Add table of, say, the first 10 or 20 phases with dates to serve as reference and worked example for on/of phases}} 
+Major Threats
+
+Cassandra's cycle begins on day 11. Cassandra begins in her 4.6 day "On" phase. During the "On" phase, there is a 50-50 chance either 1 or 2 major threats will be sent. There will be at least 1.9 days between major threats. Cassandra alternates between 4.6 day "On" phases and 6 day "Off" phases. The dates of these phases are always the same. Cassandra always begins the first "On" phase on day 11 and the first "Off" phase begins on day 15.6. Rimworld days begin at hour 6. Day 15.6 is on day 15 hour 20. 
+
+Cassandra averages about 8.5 major threats sent per Rimworld year.
+
+These On and Off cycles are the same after saving and reloading the game, on multiple map tiles, and when changing storytellers.
+
+{| class="wikitable"
+|-
+!On Cycle Start || On Cycle End
+|-
+| style="text-align:right" | 11 || style="text-align:right" | 15.6
+|-
+| style="text-align:right" | 21.6 || style="text-align:right" | 26.2
+|-
+| style="text-align:right" | 32.2 || style="text-align:right" | 36.8
+|-
+| style="text-align:right" | 42.8 || style="text-align:right" | 47.4
+|-
+| style="text-align:right" | 53.4 || style="text-align:right" | 58
+|-
+| style="text-align:right" | Previous +10.6 || style="text-align:right" | Previous +10.6
+|}
+
+ <minDaysPassed>11.0</minDaysPassed>
+ <onDays>4.6</onDays>
+ <offDays>6.0</offDays>
+ <minSpacingDays>1.9</minSpacingDays>
+ <numIncidentsRange>1~2</numIncidentsRange>
+
+Misc. Events
+
+ <mtbDays>4.8</mtbDays>
+
+== Trivia ==
+Cassandra's artwork was drawn by Ricardo Tomé.<ref>[https://www.artstation.com/artwork/kGWV2 Ricardo Tomé's Artstation post]</ref>
+
+== References ==
+{{Reflist}}
+
+{{nav|ai}}
+[[Category:AI]]

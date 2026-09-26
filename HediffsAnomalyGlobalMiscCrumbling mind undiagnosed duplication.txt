@@ -1,0 +1,54 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Anomaly/Global/Misc}}
+|}
+----
+{| {{STDT| c_21}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Crumbling mind undiagnosed duplication" <!-- defName="CrumblingMindUndiagnosedDuplication", ParentName="CrumblingMindUndiagnosedBase" -->
+! Crumbling mind (undiagnosed duplication)
+----
+* Def Name:<br />CrumblingMindUndiagnosedDuplication
+* Label:<br />crumbling mind<!-- CrumblingMindBase -->
+|<!-- Description -->
+<div style="max-width: 500px;"><!-- CrumblingMindUndiagnosedBase -->
+This person is showing early signs of a condition which will cause severe mental degradation. They will begin to display symptoms within a matter of days.
+</div>
+|<!-- Details -->
+<!-- CrumblingMindBase -->
+* Hediff Class: '''HediffWithComps'''
+* Initial Severity: '''0.1%'''
+* Max Severity: '''100%'''
+* Is Bad: {{Bad|true}}
+* Tendable: {{Bad|false}}
+* Duplication Allowed: {{Bad|false}}
+* Default Install Part: '''Brain'''
+<!-- CrumblingMindUndiagnosedBase -->
+* '''Comps'''
+** ''Remove If Other Hediff''
+*** Hediffs:
+**** '''[[Hediffs#Crumbling_mind|Crumbling mind]]'''
+**** '''[[Hediffs#Crumbled_mind|Crumbled mind]]'''
+** ''Surgery Inspectable''
+*** Surgical Detection Desc:<br /><span>{PAWN_nameDef} is showing early signs of a severe condition which will soon cause severe mental degradation. {SURGEON_nameDef} can't yet tell exactly what is causing this, but {PAWN_nameDef} will become very ill within the next few days.</span>
+<!-- CrumblingMindUndiagnosedDuplication -->
+** ''Severity Per Day''
+*** Severity Per Day Range: '''{{++|50%}} ~ {{++|200%}}'''
+*** Show Hours To Recover: {{Good|true}}
+** ''Replace Hediff''
+*** Hediffs: Hediff: '''[[Hediffs#Crumbling_mind|Crumbling mind]]'''
+*** Letter Label:<br /><span>Crumbling mind: {PAWN_nameDef}</span>
+*** Letter Desc:
+<span>{PAWN_nameDef} has begun experiencing pounding headaches. {PAWN_pronoun} can't seem to think straight and is quickly losing {PAWN_possessive} cognitive function. Something has gone wrong in the duplication process.
+
+With sufficient technology, like a healer mech serum, the condition can still be reversed. However, if not treated, it will soon become permanent.</span>
+|<!-- Stages -->
+<!-- CrumblingMindUndiagnosedBase -->
+{| {{STDT| c_21}}
+! Label !! Parameters
+|-
+! diagnosed
+|<!-- Parameters -->
+* Become Visible: {{Bad|false}}
+|}<noinclude>
+|}</noinclude>

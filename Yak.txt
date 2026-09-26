@@ -1,0 +1,143 @@
+{{Infobox main|animal
+| name = Yak
+| image = Yak female east.png
+| description = Yaks are robust cattle with a bulky frame, short but thick legs, and rounded cloven hooves that are splayed to help them walk in snow.
+| type = Animal
+| movespeed = 3.2
+| min comfortable temperature = -45
+| max comfortable temperature = 40
+| toxic resistance = 0.5
+| toxic environment resistance = 0
+| flammability = 0.7
+| marketvalue = 320
+| filth rate = 16
+| milktime = 1
+| milk = 11
+| herdanimal = true
+| combatPower = 75
+| bodysize = 2.1
+| healthscale = 1.5
+| hungerrate = 0.535
+| diet = herbivorous
+| leathername = plainleather
+| wildness = 0.2
+| petness = 0.3
+| manhuntertame = 0
+| manhunter = 0
+| roamMtb = 2
+| trainable = none
+| packanimal = true
+| meatname = yak beef
+| gestation = 6.66
+| offspring = 1
+| mateMtb = 12
+| lifespan = 22
+| juvenileage = 0.2
+| maturityage = 0.3333
+| tradeTags = AnimalFarm, AnimalCommon
+| baby name = yak calf
+| attack1dmg = 8.8
+| attack1type = Bite
+| attack1cool = 2.6
+| attack1part = teeth
+| attack1chancefactor = 0.7
+| attack2dmg = 9
+| attack2type = Blunt
+| attack2cool = 2
+| attack2part = head
+| attack2chancefactor = 0.2
+| attack3dmg = 8
+| attack3type = Blunt
+| attack3cool = 2
+| attack3part = front left leg
+| attack4dmg = 8
+| attack4type = Poke
+| attack4cool = 2
+| attack4part = front left leg
+| attack5dmg = 8
+| attack5type = Blunt
+| attack5cool = 2
+| attack5part = front right leg
+| attack6dmg = 8
+| attack6type = Poke
+| attack6cool = 2
+| attack6part = front right leg
+| isCoastal = false
+| livesin_temperateforest = 0.06
+| livesin_temperateswamp = 0.04
+| livesin_borealforest = 0.12
+| livesin_coldbog = 0.2
+| livesin_grassland = 0.06
+}}
+'''Yaks''', called '''yak calves''' as babies, are tameable [[herbivore]]s with a medium movement speed. Yaks are one of the easiest [[pack animal]]s to tame. Males of the species can be distinguished by their horns and lack of udders, while females have the opposite. Despite the visual differences, adults of both genders have the same stats and attacks. 
+
+== Acquisition ==
+Yaks can be found in {{Habitats}}. They can either be tamed by a [[Work#Handle|handler]] or self-tame in a random event. 
+
+Yaks can be bought and sold in other [[Trade#Faction base|faction bases]], [[Trade#Bulk goods trader 2|bulk goods traders]] or [[Trade#Exotic goods trader 2|exotic goods traders]]. Yaks purchased from [[traders]] will be already tamed.
+
+{{Starting Pet Note}}
+
+== Summary ==
+{{Pen Animal Note|Yaks}}
+
+A female yak can be milked for up to {{Icon Small|milk}} {{P|Milk Amount}} units of milk {{#ifeq:{{P|Milking Interval Days}}|1|per day|every {{P|Milking Interval Days}} days}}, depending on your pawn's [[Animal Gather Yield]]. Milking an animal takes {{Ticks|400}} of work, regardless of the amount of milk produced, and only modified by the [[Animal Gather Speed]] of the handler.
+
+Yaks are also [[pack animal]]s, and will carry up to 73.5kg of weight in a [[caravan]].
+
+== Analysis ==
+=== Milking ===
+Female yaks produce {{Icon Small|milk}} {{P|Daily Milk Average}} per day, or {{#vardefineecho:milk_nutr_per_day|{{#expr:{{P|Daily Milk Average}}*0.05}}}} [[nutrition]] in milk per day. A yak consumes {{P|Real Hunger Rate}} nutrition per day. This results in a nutrition efficiency of {{%|{{#var:milk_nutr_per_day}}/{{P|Real Hunger Rate}} round 3}} from milk alone (or {{Icon Small|milk}} {{#expr: {{P|Daily Milk Average}}/{{P|Real Hunger Rate}} round 2}} per day per 1 nutrition consumed). Yaks are better for milk than [[dromedaries]] or [[caribou]].
+
+=== Meat ===
+When slaughtered, a yak yields {{Meat Leather Curve|{{#expr:{{P|Body Size}}*0.2*140}}}} meat and {{Meat Leather Curve|{{#expr:{{P|Body Size}}*0.2*40}}}} leather as a calf; {{Meat Leather Curve|{{#expr:{{P|Body Size}}*0.5*140}}}} meat and {{Meat Leather Curve|{{#expr:{{P|Body Size}}*0.5*40}}}} as a juvenile; or {{Meat Leather Curve|{{#expr:{{P|Body Size}}*140}}}} meat and {{Meat Leather Curve|{{#expr:{{P|Body Size}}*40}}}} leather as an adult. 
+
+When slaughtering yaks as babies, and including the production of milk, the nutrition efficiency of a population of yaks varies from {{%|({{Meat Production|{{PAGENAME}}|baby|1|1}} + {{#var:milk_nutr_per_day}})/{{Nutrition Consumption|{{PAGENAME}}|baby|1|1}} round 3}} to {{%|({{Meat Production|{{PAGENAME}}|baby|1|0}} + {{#var:milk_nutr_per_day}})/{{Nutrition Consumption|{{PAGENAME}}|baby|1|0}} round 3}} depending on how many more female yaks compared to males.
+
+If the yaks are allowed to grow to adulthood before they are slaughtered, this changes to {{%|({{Meat Production|{{PAGENAME}}|baby|1|1}} + {{#var:milk_nutr_per_day}})/{{Nutrition Consumption|{{PAGENAME}}|adult|1|1}} round 3}} - {{%|({{Meat Production|{{PAGENAME}}|adult|1|0}} + {{#var:milk_nutr_per_day}})/{{Nutrition Consumption|{{PAGENAME}}|adult|1|0}} round 3}}.
+
+=== Comparisons ===
+[[Cow]]s produce more milk and more meat than yaks. However, yaks are [[pack animal]]s, and fare much better against the cold. Yaks can also be found in the wild, while cows must be bought.
+
+[[Dromedaries]] are a more direct competitor to yaks. They are both pack animals that produce milk, but yaks produce {{#expr: (({{P|Daily Milk Average}}/{{Q|Dromedary|Daily Milk Average}})-1)*100 round 0}}% more milk on average, while dromedaries allow riders to speed up caravans. They are otherwise very similar - carrying the same load and eating the same amount. Dromedaries can be found in warmer biomes while yaks can be found in colder biomes.
+
+== Training ==
+{{TrainingTable}}
+
+== Health ==
+{{Animal Health Table|QuadrupedAnimalWithHooves}}
+{{Pawn Attack Table}}
+
+== Version history ==
+* [[Version/1.1.0|1.1.0]] - Added as part of the integration of the Vanilla Animals Expanded - Livestock mod into the basegame.
+* [[Version/1.1.2559|1.1.2559]] - Decrease minimum comfortable temperature 
+
+== Gallery ==
+<gallery>
+Yak female east.png|Female yak facing east
+Yak female north.png|Female yak facing north
+Yak female south.png|Female yak facing south
+</gallery>
+<gallery>
+Yak male east.png|Male yak facing east
+Yak male north.png|Male yak facing north
+Yak male south.png|Male yak facing south
+</gallery>
+<gallery>
+Dessicated yak female east.png|Dessicated female facing east
+Dessicated YakFemale north.png|Dessicated female facing north
+Dessicated YakFemale south.png|Dessicated female facing south
+</gallery>
+<gallery>
+Dessicated yak male east.png|Dessicated male facing east
+Dessicated YakMale north.png|Dessicated male facing north
+Dessicated YakMale south.png|Dessicated male facing south
+</gallery>
+<gallery><!-- The packing bags for the yak have the same texture as for the bison. -->
+Bison pack east.png|Packing bags facing east
+Bison pack north.png|Packing bags facing north
+</gallery>
+{{Nav|animal|wide}}
+[[Category:Animals]]
+[[Category:Pack Animal]]
+[[Category:Farm animal]]

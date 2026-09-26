@@ -1,0 +1,52 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Local/Infections}}
+|}
+----
+{| {{STDT| c_15}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Muscle parasites" <!-- defName="MuscleParasites", ParentName="InfectionBase" -->
+! Muscle parasites
+----
+* Def Name:<br />MuscleParasites
+* Label:<br />muscle parasites
+| Parasitic creatures in the muscles. These cause weakness and a lack of coordination.
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|80%|80%|35%}}
+* Initial Severity: '''0.1%'''
+* Is Infection: {{Bad|true}}
+* Makes [[Thoughts#Sick|Sick]] Thought: {{Bad|true}}
+* Tendable: {{Good|true}}
+* '''Comps:''' ''Tend Duration''
+** Base Tend Duration Hours: '''48'''
+** Disappears At Total Tend Quality: '''300%'''
+* '''Remove On Redress Chance By Days Curve:'''
+<div><li style="display: inline-table;">
+{| {{STDT| c_15}}
+! <abbr title="Days as a World Pawn">Days</abbr> !! <abbr title="Chance to remove on Pawn Generator Redress">Chance</abbr>
+|-
+! 0
+| 0%
+|-
+! 2
+| 0%
+|-
+! 7
+| 50%
+|-
+! 20
+| 100%
+|}</li></div>
+|<!-- Stages -->
+{| {{STDT| c_15}}
+! Label !! Parameters
+|-
+! Muscle parasites
+|<!-- Parameters -->
+* Pain Offset: {{++|20%}}
+* [[Sleep Fall Rate]] Offset: {{++|100%}}
+* [[Manipulation]] Offset: {{--|30%}}
+* [[Moving]] Offset: {{--|30%}}
+|}<noinclude>
+|}</noinclude>

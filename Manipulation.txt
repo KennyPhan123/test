@@ -1,0 +1,136 @@
+{{Capacity
+| default base value = 1
+| to string style = PercentZero
+| description = How well a character can physically interact with objects. Directly affected by [[consciousness]] and arms/hands/fingers effectiveness.
+}}
+
+== Effects ==
+{{Stub|section=1|reason=There are definitely more of these that aren't listed}}
+Manipulation has a number of unique interactions with other mechanics, beyond the traditional effects on [[stats]]. 
+
+Pawns with 0% Manipulation:
+* Cannot hold [[weapons]]. If a pawn is reduced to 0% manipulation while holding a weapon, the weapon will be dropped on the ground.
+* Cannot [[strip]] the [[apparel]] from corpses and downed pawns.
+* Cannot use a [[nutrient paste dispenser]].
+* Cannot do [[research]] work.
+* Cannot play the [[harp]],{{RoyaltyIcon}} [[harpsichord]],{{RoyaltyIcon}} or [[piano]].{{RoyaltyIcon}}
+* Cannot prune their [[gauranlen tree]]. {{IdeologyIcon}}
+
+== Affected stats ==
+Manipulation affects most colonist stats at 100% weight.
+
+{{#ask: [[Manipulation Importance::+]]
+| ?Health Type = Type
+| ?Manipulation Importance# = Weight
+| ?Manipulation Limit# = Max
+| ?description
+| format = broadtable
+| limit  = 100
+| mainlabel = Name
+| headers = plain
+| sort = Health Type, 
+}}
+
+== Factors ==
+=== Base factors ===
+Manipulation is mainly affected by the following factors:
+* [[Consciousness]]: [[Consciousness Importance::1|100%]] importance, no allowed defect. [[Consciousness Limit::-|No]] Max.
+* Arm part efficiency. 100% importance, no allowed defect. No Max.
+** Whole arm: 50% importance for each arm, no allowed defect. No Max.
+*** [[Prosthetic arm]]: 50% part efficiency resulting in {{--|25%}} arm part efficiency.
+*** [[Bionic arm]]: 125% part efficiency resulting in {{+|12.5%}} arm part efficiency.
+*** [[Archotech arm]]: 150% part efficiency resulting in {{+|25%}} arm part efficiency.
+** Shoulder part efficiency: 50% importance for each Shoulder, no allowed defect. No Max.
+** Clavicle part efficiency: 50% importance for each Clavicle, no allowed defect. No Max.
+** Humerus part efficiency: 50% importance for each Humerus, no allowed defect. No Max.
+** Radius part efficiency: 50% importance for each Radius, no allowed defect. No Max.
+** Hand part efficiency: 50% importance for each hand, no allowed defect. No Max.
+*** [[Wooden hand]]: 60% part efficiency resulting in {{--|20%}} arm part efficiency.
+** Finger part efficiency: 8% importance for each finger. No allowed defect. No Max.
+{{Manipulation Part Efficiency Table}}
+
+=== Offsets ===
+The following offsets are added or subtracted after the ''Base factors''.
+* Alcohol ([[Beer]]) high warm: {{--|2%}}
+* [[Go-juice]] withdrawal: {{--|10%}}
+* Psychite ([[Flake]]/[[Yayo]]/[[Psychite tea]]) withdrawal: {{--|20%}}
+* [[Wake-up]] withdrawal: {{--|25%}}
+* [[Anesthetic]]
+** Wearing off: {{--|10%}}
+** Woozy: {{--|20%}}
+* [[Hypothermia]]
+** Shivering: {{--|8%}}
+** Minor: {{--|20%}}
+** Serious: {{--|50%}}
+* [[Hypothermic slowdown]]
+** Moderate: {{--|20%}}
+** Serious: {{--|50%}}
+* [[Bad back]]: {{--|10%}}
+* [[Frail]]: {{--|30%}}
+* [[Muscle parasites]]: {{--|30%}}
+* [[Fibrous mechanites]]: {{+|50%}}
+* [[Sensory mechanites]]: {{+|30%}}
+* [[Flu]]
+** Minor: {{--|5%}}
+** Major: {{--|10%}}
+** Extreme: {{--|20%}}
+* [[Plague]]
+** Minor: {{--|5%}}
+** Major: {{--|20%}}
+** Extreme: {{--|30%}}
+* [[Malaria]]
+** Major: {{--|8%}}
+** Extreme: {{--|10%}}
+* [[Sleeping sickness]]
+** Minor (initial): {{--|2%}}
+** Minor (advanced): {{--|4%}}
+** Major: {{--|6%}}
+** Extreme: {{--|20%}}
+* [[Trauma savant]]: {{+|50%}}
+* [[Smooth tail]] gene:{{BiotechIcon}} {{+|5%}}
+
+=== Multipliers ===
+The following factors are applied after the ''Offsets''.
+* Alcohol ([[Beer]]) withdrawal: {{Bad|x50%}}
+* Psychite ([[Flake]]/[[Yayo]]/[[Psychite tea]]) hangover buzzing: {{Bad|x80%}}
+* [[Cryptosleep sickness]]: {{Bad|x90%}}
+* [[Food poisoning]]
+** Initial: {{Bad|x90%}}
+** Major: {{Bad|x80%}}
+** Recovering: {{Bad|x90%}}
+* [[Resurrection sickness]]: {{Bad|x10%}}
+* [[Trotter hands]] gene:{{BiotechIcon}} {{Bad|x85%}}
+* [[Elongated fingers]] gene:{{BiotechIcon}} {{Good|x110%}}
+* [[Elephant#In Odyssey DLC|War trumpet]]{{OdysseyIcon}}: {{Bad|x85%}}
+* [[Thrumbo#Summary|Thrumbo roar]]{{OdysseyIcon}}: {{Bad|x80%}}
+
+== Formula ==
+ '''Manipulation''' = (Base factors + Offsets) × Multipliers
+
+Arm efficiency must again be calculated by inserting the efficiency of all the related body parts. Note that the efficiency of all fingers must be added up first (normally 10). If any type of body part is not affected, that part of the formula can be omitted.
+ '''Arm efficiency''' = (Left arm × 0.5 + Right arm × 0.5) × (Left shoulder × 0.5 + Right shoulder × 0.5) × (Left clavicle × 0.5 + Right clavicle × 0.5) × (Left humerus × 0.5 + Right humerus × 0.5) × (Left radius × 0.5 + Right radius × 0.5) × (Left hand × 0.5 + Right hand × 0.5) × (Fingers × 0.08 + 0.2)
+
+For example the maximum possible value would be achievable with the following values:
+* [[Consciousness]]: '''170%''' from being high on [[go-juice]], [[luciferium]] and [[wake-up]], having used a [[neural supercharger]],{{IdeologyIcon}} with any level of [[pollution stimulus]] {{BiotechIcon}} and a [[Psychic bonding|psychic bond]] {{BiotechIcon}} with a pawn on the same map.
+* Arm efficiency:
+** Left arm: '''150%''' ([[archotech arm]])
+** Right arm: '''150%''' ([[archotech arm]])
+* Offsets (total {{+|135%}}):
+** [[Fibrous mechanites]]: {{+|50%}}
+** [[Sensory mechanites]]: {{+|30%}}
+** [[Trauma savant]]: {{+|50%}}
+** [[Smooth tail]]{{BiotechIcon}}: {{+|5%}}
+** 
+* Post factors: '''x110%'''
+** [[Elongated fingers]]{{BiotechIcon}}: '''x110%'''
+
+First of all we can calculate the arm efficiency:
+ '''Arm efficiency''' = Left arm × 0.5 + Right arm × 0.5 = 1.5 × 0.5 + 1.5 × 0.5 = '''150%'''
+
+We can therefore calculate the Manipulation:
+ '''Manipulation''' = ((170% × 150%) + 135%) × 110%  = '''{{Good|429%}}'''{{#set:Effective Maximum|4.29}}
+
+The minimum possible ''manipulation'' is of course {{Bad|[[Effective Minimum::0]]%}}.
+
+{{Nav|stats|wide}}
+<noinclude>[[Category:Capacity]]</noinclude>

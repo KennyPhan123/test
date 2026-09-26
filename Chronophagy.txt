@@ -1,0 +1,97 @@
+{{Anomaly}}
+{{Infobox main|psycast
+| name = Chronophagy 
+| image = Chronophagy.png
+| type = Psychic ritual
+| description = Induce a distant archotech to transfer entropy from one person to another. This causes the target to age rapidly while the invoker becomes younger, potentially healing scarring or age-related illnesses. The target will suffer brain damage, causing them to fall into a coma for several days.
+| research = Chronophagy 
+| ritual duration = 10000
+| ritual cooldown = 300000
+| resource 1 = Bioferrite
+| resource 1 amount = 20
+}}
+'''Chronophagy''' is a [[psychic ritual]] that de-ages and removes some age related [[ailments]] of the invoker while aging the target.
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+{{Stub|section=1|reason=Needs participant kinds and numbers, age reversal interaction}}
+
+=== Effects ===
+Chronophagy reduces the age of the invoker by some number of years, while the target is biologically aged by the same number. The number of years transferred is dependent on the quality of the ritual, starting at 1 year transferred baseline, and every 4% ritual quality corresponding to an additional year transferred. See the graph below for easy reference. The ritual cannot reduce the invoker's age below 13; if the invoker is would be reduced below that age, it is capped at 13, but the target is aged the "full" amount as if the cap did not exist.
+
+If the invoker has an ailment that can be acquired through aging, and is rejuvenated to an age that is below the minimum age of the ailment, then that ailment will be cured. This occurs regardless of how the ailment was acquired. Note that the minimum age is '''not''' the first birthday that an ailment can occur. For example, [[Alzheimer's]] has a minimum age of 33.6 years. The first possible chance to receive Alzheimer's is the 34th birthday, but the invoker must be de-aged to 33 or below to remove Alzheimers.
+
+The target is treated as if they had just experienced a natural birthday, with the associated check for potentially gaining an age-related ailment depending on the target's new age. See the pages of the relevant ailments for the chance to receive them each year. Brain damage is inflicted in the form of a psychic burn. The amount of damage based on their age before the ritual, and is affected by the [[Incoming Damage Multiplier]] of the pawn.
+
+Regardless of the ritual quality or the number of years de-aged, the invoker will have one random [[scar]] removed, and will have a 50% chance to have a second scar removed.
+
+Chronophagy cannot heal [[crumbling mind]].
+
+=== List of curable ailments ===
+{| class="wikitable"
+|-
+! Ailment !! Age to cure !! Age to first gain
+|-
+| [[Artery blockage]] || 19 || 20
+|-
+| [[Carcinoma]] || 22 || 23
+|-
+| [[Alzheimer's]] || 33 || 34
+|-
+| [[Bad back]] || 39 || 41
+|-
+| [[Cataract]]s<br>[[Hearing loss]] || 47 || 49
+|-
+| [[Frail]] || 49 || 51
+|-
+| [[Dementia]] || 67 || 69
+|}
+
+=== Years aged and damage dealt ===
+{| class="wikitable"
+! Years Transferred by Quality 
+! Base Brain Damage by Pre-Ritual Age
+|-
+| {{Graph:Chart|width=400|height=150|type=area|xAxisTitle=Quality (%) |yAxisTitle=Years transferred|x=0,100|y=1,26|xGrid = |yGrid = }} 
+| {{Graph:Chart|width=400|height=150|type=line|xAxisTitle=Pre-Ritual Age|yAxisTitle=Base brain damage|x=0,70,90,100,140,200|y=1,1,5,8,10,200|yAxisMin=0|xGrid = |yGrid =}}
+|}
+
+=== Ritual ===
+Applies a stacking mood debuff for participants:
+* 1 ritual: {{Thought|desc=It feels wrong to have participated in that ritual.|label=Chronophagy guilt|value=-3|stack=1|duration=6}}
+* 2 rituals: {{Thought|desc=That ritual was a crime against its victim. I shouldn't have been there.|label=Chronophagy guilt|value=-6|stack=1|duration=6}}
+* 3+ rituals: {{Thought|desc=That ritual was nothing short of torture. It's evil!|label=Chronophagy guilt|value=-10|stack=1|duration=6}}
+Disabled by: [[Psychopath]] traits, being [[Inhumanized]], as well as [[Psychic rituals (precept)|Psychic rituals: Exalted]] precept.{{IdeologyIcon}}
+
+== Analysis ==
+=== Scars and ailments ===
+Chronophagy is one of the few ways to cure scars, [[Alzheimer's]], [[frail]], and [[dementia]]. These can also be cured by [[luciferium]], [[healer mech serum]], the [[bioregeneration cycle]],{{IdeologyIcon}} the [[Scarless]] [[gene]],{{BiotechIcon}} and [[unnatural healing]]. Compared to these options:
+* Chronophagy comes with no lasting downsides, unlike [[luciferium]] or [[sanguophage]]{{BiotechIcon}} implantation.
+* Chronophagy is cheap and guaranteed to be accessible with enough [[void provocation]]s, unlike [[healer mech serum]], [[Scarless]] [[genepack]]s,{{BiotechIcon}} and pawns with [[unnatural healing]].
+* Chronophagy takes less time than a [[bioregeneration cycle]].{{IdeologyIcon}}
+
+Overall, chronophagy is arguably the most effective way to cure scars, as it is cheap and readily available once researched. For ailments, chronophagy relies the ritual quality being higher enough for the pawn to fall below the age threshold, or multiple rituals being used, as well as having a [[psychic sensitivity]] above 0%.
+
+=== Age ===
+Reducing a colonist's age has benefits of its own. The older a pawn is, the higher their chance to develop [[Ailments#Chronic|chronic ailments]], and the lower their [[Fertility]]{{BiotechIcon}} and [[Immunity Gain Speed]]. Pawns closer in age have an easier time forming [[romance]]s, and pawns between 18 and 25 and with partners similar in age to themselves are most likely to engage in [[lovin']]. The [[transhumanist]] meme{{IdeologyIcon}} includes a need for age reversal after pawns reach age 25.
+
+Conversely, there are downsides to allowing pawns to become younger than 18. Pawns from 13-17 have numerous [[Children#Stats|statistics]] lower than a fully grown pawn, including reduced HP, a [[Global Work Speed]] of .83, a move speed of 0.95x, and a higher risk of [[overdose]] and [[Drugs#Addiction|addiction]] from reduced body size. Pawns under 16 cannot have [[children]]{{BiotechIcon}} of their own.
+
+In most cases, it is not ''necessary'' to use chronophagy until a scar/ailment forms, are old to the point that [[Immunity Gain Speed]] is affected, or if the pawn follows a [[Transhumanist]] ideoligion.{{IdeologyIcon}} Still, keeping most of the colony young has a small benefit, so chronophagy purely for age reasons should be done once the costs of acquiring [[prisoner]]s and [[bioferrite]] are minimal. In general, keeping pawns under the age of 41 protects them from the majority of chronic ailments, although keeping them under 34 also protects from Alzheimer's.
+
+=== Age sustaining ===
+For most colonies, Chronophagy will transfer at minimum 4 years of age if the invoker has no psychic sensitivity adjustments and a psychic ritual spot with no void sculptures or shard beacons. At 100% ritual quality, Chronophagy will transfer 25 years of age.
+
+Chronophagy has a 5 day cooldown, allowing for 12 uses per in-game year, assuming that the colony can also provide a sufficient number of prisoners and produce the required {{Icon Small|bioferrite||20}} [[bioferrite]] per ritual. If bioferrite is in surplus, then [[skip abduction]]s can to provide easy access to prisoners. Not all prisoners will survive numerous Chronophagy rituals especially if they are still suffering from Dark Psychic Shock from skip abduction or already at an old age, but younger prisoners can easily be the target of 2 or more Chronophagy rituals before expiring. Most colonies should find it trivial to keep their members between the ages of 18 and 40, or between 18 and 25 if Transhumanist. A 30 member transhumanist colony can reasonably hit the 7 year range for their pawns by carefully timing rituals so that only 4-5 colonists will require a chronophagy in any given year.
+{{Clear}}
+
+== Version history ==
+* [[Anomaly DLC]] Release - Added.
+* ? - Description changed from ''{{Hover title|Induce a distant archotech to transfer entropy from one to another. This will cause the invoker's age to decrease by several years, and for the target to age an equal amount. Target will also suffer Psychic Shock.|"[...] from one to another. This will cause the invoker's age to decrease by several years, and for the target to age an equal amount. Target will also suffer Psychic Shock."}}'' changed to ''{{Hover title|Induce a distant archotech to transfer entropy from one person to another. This causes the target to age rapidly while the invoker becomes younger, potentially healing scarring or age-related illnesses. The target will suffer brain damage, causing them to fall into a coma for several days.|"[...] from one person to another. This causes the target to age rapidly while the invoker becomes younger, potentially healing scarring or age-related illnesses. The target will suffer brain damage, causing them to fall into a coma for several days."}}''. {{Check Tag|Verify old version existed}}
+* [[Version/1.6.4518|1.6.4518]] - Scaled up brain damage from chronophagy significantly at old ages, as effects like tough or robust can reduce it. Fix: Loading before chronophagy cancels ritual.
+* [[Version/1.6.4535|1.6.4535]] - Fix: Issues with age reversal demand time not being set correctly from chronophagy, and reset on save/load.
+
+{{Nav|psychic rituals|wide}}
+[[Category: Psychic rituals]]

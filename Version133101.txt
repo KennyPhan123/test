@@ -1,0 +1,159 @@
+{{Version Nav}}
+
+Hello RimWorld players! I've just released RimWorld version 1.3.3100. This one comes with a long list of new stuff and improvements for the base game and both expansions. Full changelog is below.
+
+Fluid ideoligions: The big feature in this update is fluid ideoligions.
+
+You can start the game in a new mode where you define a simple, minimal ideoligion to begin with. Then, during play, you'll earn development points by completing rituals and taking actions that satisfy your beliefs.
+
+With enough development points, you can reform your ideoligion to alter memes, styles, precepts, and everything else. You'll be able to build up the complexity and intensity of your belief system as the game progresses.
+
+The original system with stable ideoligions also remains available, if you want to play a specific belief system from the start.
+
+Compatibility: This update should be compatible with all savegames and mods.
+
+Thanks: Thanks to everyone who helped us test this update on the official development Discord server, and to modders (Oskar and pals) who updated their mods to keep compatibility!
+
+Changelog below.
+
+== New stuff ==
+* Add new fluid ideo system. This allows you to start the game with a "fluid" ideoligion that has only one meme. Over time, you gain development points on that ideoligion by completing rituals and other ideoligion-related actions. With *nough development points, you can reform the ideoligion to alter memes or precepts, change styles, change structure, and more.
+* Add darklight braziers.
+* Predators no longer hunt animals on the other side of fences. Predators can still randomly wander into animal pens.
+* Add an alert to thell the player when a predator has wandered into a pen in use.
+* The game now shows the source of each piece of content on its stats card, so you know which expansion/mod something came from. It also shows which expansion/mod each research project came from.
+* Players can now choose a few items to bring to new archonexus settlement. This is especially helpful for things you really need like luciferium.
+* Add grace period where expectation levels are not increased for pawns with certain ideology roles after starting new archonexus settlement.
+* Add tongue body part. Tongue is removable via surgery, if you'd prefer someone not speak. The tongue won't be damaged in combat.
+* Add bionic tongue that replaces tongue.
+* Add allow slave corpse toggle to various storage areas and buildings so you can separate slave corpses from colonist corpses.
+* Added new ancient junk - additional mech parts for more visual variation, more ancient cars, wheels, etc.
+* Added copy/paste gizmos for biosculpter nutrition settings.
+* Added toggleable texture compression and atlas texture compression in the options menu.
+
+== Improvements ==
+
+* Update royal title room requirement grace period to include the first 10 days after a new archonexus settlement.
+* Draw lines when placing blueprints displaying what would affect Gauranlen trees' connection strength. Display the artificial buildings connection strength loss radius when the tree is selected.
+* We now remove ship to stars tile from map after new archonexus settlement, confirm the player is okay with this.
+* On ritual config window, draw a highlight over pawns that can be assigned to a role you're currently hovering over.
+* Extractable trees are no longer auto-minifiable in caravan forming dialog.
+* We now hide quests that are ended by starting a new archonexus settlement
+* Re-enabled random social interactions for bestowing ceremony and fixed it breaking down when pawns start social fighting.
+* Starting with an ideoligion that dislikes animal bonding now causes all starting animals to be unbonded.
+* Tweaked the archonexus "choose items to take to new colony" dialog formatting.
+* The mood bonus for relics in the same room as ritual can be now increased by installing up to 3 relics. Adjusted mood impacts.
+* Ideoligion buildings are now only demanded for the player's faction ideoligion and secondary ideoligions that have 3 colonist members or more.
+* Destroying rocks with weapons now triggers a bad thought for ideoligions where mining is disapproved.
+* Change ritual quality check graphics to look less like togglable ones for better UI clarity.
+* Don't show anima linking command on every nature focus capable pawn anymore, to reduce UI spam. You can still start it via float command or from anima tree directly.
+* Pawns now recover from berserk trance on being downed.
+* Dryad healing pods now heal all negative hediffs including missing body parts. When return to healing pod is toggled on, dryads will return to healing pods if they have any missing parts.
+* Skulls now keep track of the name of the pawn they originated from.
+* Update descriptions of individualist and collectivist memes.
+* Wind turbine, skullspike and neural supercharger can now be walked through like most other buildings.
+* Biosculpters now list what will be cured and what can possibly be cured in the tooltip for the healing cycle if the biosculpter is tuned to a pawn.
+* We now avoid using sun blocker as a threat if any colonist or prisoner has an ideo with darkness/tunneler, since it's kind of meaningless to them.
+* Add note about work to deconstruct to 'work to build' stat description.
+* Adjust some thought descriptions so that they still make sense for blind people.
+* Timbershrooms can now grow wild in caves.
+* Minified things now inherit their inner thing's flammability.
+* Removed culture restrictions when choosing ideoligion
+* More informative float menu options for not being able to enter a biosculpter.
+* Split biosculpter healing cycle into two distinct cycles: Medic and bioregeneration. Added a new research project requiring multianalyzer and biosculpting that enables bioregeneration cycle. Medic cycle treats short-term wounds, while bioregeneration can heal permanent scars, age-related conditions, and some smaller missing limbs.
+* Changed extract tree hotkey to be the same as uninstalling.
+* Smoothed out tree cutting anger thought from the tree connection meme by adding more steps in between the stages.
+
+==Tuning==
+
+* Dryad spawn days reduced from 8 to 6.
+* Increase impact of 'lost role' thought from -5 to -15.
+* Reduce production specialist crafting speed buff from +70% to +50%.
+* Reduce intensity of 'ate meat' opinion maluses for vegetarians.
+* Reduce biosculpter age reversal cycle duration from 10 to 8 days.
+* Reduce nutrition requirements of healing and age reversal biosculpter cycles from 10 to 5.
+* Woodmaker dryad output every 2 days increased from 25 wood to 32 wood.
+* Reduced dryad transform delay from 6 days to 5 days.
+* Adjust mood impact of relic-in-ritual-room thought.
+* Barkskin dryad blunt armor increased from 30% to 40%, sharp armor increased from 60% to 70%.
+* Gauranlen seeds now have a market value of $70 instead of $0.
+
+==Technical==
+
+* Change IsPsychicallySensitive from >= to >.
+* Turn psychic sensitivity checks into a property.
+* Merged two translation keys regarding building precept alerts into one.
+* Reworked chemical satisfaction in CompGiveHediffSeverity to be based on satisfaction per second.
+* Add unused legacy AllThingsGlowing room requirement back in for back compat
+* Refactor: Separate method for loading multiple comma separated MayRequire mods
+* Use IsFormingCaravan extension method instead of explicitly looking at pawn's lord job.
+* Performance improvements to animal slaughter dialog, debug tables and debug option screens.
+* Removed unnecessary MayRequire attributes.
+* Add missing gender constants for deity, foeLeader and founder.
+* Ideo.Notity_GuestStatusChanged -> Notify_MemberGuestStatusChanged
+* Implemented ideo thoughts debug output.
+* Moved ThingWithSources to a comp.
+* Change to ritual obligation trigger CopyTo based on feedback.
+* Ensure CompHasSources does not start with a null list.
+* Remove unused translation keys.
+* Improved some translation keys.
+* Added some new player-created names. Adjusted one name per request.
+
+==Fixes==
+
+* Fix: Doctors tending to patients in bed use the medicine in their inventory even if it is worse than available medicine.
+* Fix: If multiple types of medicine are in a doctor's inventory, they will select the medicine with the lowest medical potency.
+* Fix: Skull extraction blood is labeled as being from the extractor.
+* Fix: Skull extraction drops blood when corpse is already a skeleton
+* Fix: Colonists receive the 'colonist lost' thought when a slave is kidnapped.
+* Fix: Tree lovers don't care about harvesting / chopping down cocoa trees.
+* Fix: If a slave rebels while carrying a person, they can kidnap the carried pawn with no feedback to player.
+* Fix: Destroying Gauranlen tree while dryads are in healing pod or cocoon causes errors and keeps dryads inside.
+* Fix: Psychically deaf pawns get anima linking alert and can start the ceremony.
+* Fix: Worshipped terminal quest is failed if you deconstruct the terminal after hacking it.
+* Fix: Opened ideology dialog is not interactable when opened in caravan forming screen via pawn's bio.
+* Fix: Bionic / archotech eye is visible under the burka.
+* Fix: Opening weapons with Graphic_Random have their icon cycled every frame on the info card.
+* Fix: Colonists try to rope to pen an animal in a mental state, resulting in getting stuck.
+* Fix: Ancient beds not showing sleeping pawn body.
+* Fix: Wild person can be used in gladiator duels, causes manhunter revenge. Wild man prisoners are no longer allowed to be used as duelists.
+* Fix regression: PawnRenderer.RenderCache renders pawns always with clothes enabled.
+* Fix: PawnRenderer renders naked pawns by default.
+* Fix: There are some duplicate ideoligion icons.
+* Fix: Pawns can get stuck picking up and dropping medicine after returning on a caravan.
+* Fix: Animal pen marker animal consumption assumes animals are always hungry, halving reported consumption.
+* Fix regression: Bestower doesn't care about roof collapsing on top of him.
+* Fix: Duelists can pick up weapons during the duel even if they have no manipulation capacity.
+* Fix: Skeletons don't draw apparel.
+* Fix: Bionic parts are drawn as wounds.
+* Fix: If bestower enters a social fight the bestowing ceremony does not recover gracefully. Several other fixes to bestowing ceremony.
+* Fix: It is possible to sell animals while forming a caravan.
+* Fix: Players can bring more than 1 relic to new archonexus settlement if its an equipped weapon
+* Fix: Mech breach raids can completely break down sometimes and just stop doing anything.
+* Fix: Designator_Dropdown doesn't properly update to icon from wrapped Designator_Install.
+* Fix: Missing translate() call on cancel button text for archonexus dialog.
+* Fix/adjustments to reform ideo dialog.
+* Fix: NRE when starting bestowing ceremony.
+* Fix: Players can take items from passing trade ship inventory to next archonexus settlement
+* Fix: Dryads with replaced parts don't have the "missing" part added back.
+* Fix: Totemic boards and ideoligion rugs are not flammable.
+* Fix: WorkGiver_Tend JobOnThing doesn't match fail conditions of JobDriver_TendPatient
+* Fix: Incorrect 'wanderer joined' text when wanderer helped.
+* Fix: Beggars quest sending 'charity fulfilled' history event even when quest failed.
+* Fix: Scarification ritual now accepts prisoner targets again and doesn't break when target is a prisoner.
+* Fix: Ideo reform dialog does not support more than 5 memes horizontally.
+* Fix: Two-column credit entries have overlapping rows if left entry is taller than the right one.
+* Fix: MinifiedTree error on debug MakeColony tool.
+* Fix: SitePartWorker_SleepingMechanoids checks for wrong faction type in IsAvailable.
+* Fix: You can start conversion ritual with a moral guide that can't speak.
+* Fix: Human pawns in mental states sometimes bring up a disabled float menu option for roping.
+* Fix: Cannibal ideo pawns do not prefer human leather apparel.
+* Fix: Non-colonist can be chosen as scarification target.
+* Fix: Wild dryads can wander in, only to leave right away.
+* Fix: Error on beggars quest without fluid ideo.
+* Fix: Errors on starting incidents with no colonists.
+* Fix: Naked translation key.
+* Fix: Typos
+
+== Source ==
+* [https://store.steampowered.com/news/app/294100/view/2980807215502625718 Update 1.3.3101 adds ideoligion development during play, and more]

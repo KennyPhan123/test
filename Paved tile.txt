@@ -1,0 +1,54 @@
+{{Infobox main|structure
+| name = Paved tile
+| image = ground paved tile.png
+| description = Concrete tiles. Cheap, but neutral in terms of looks and slow to build.
+<!-- Base Stats -->
+| type = Floor
+| beauty = 0
+| flammability = 0
+<!-- Building -->
+| size = 1 ˣ 1
+| placeable = True
+| cleaning time factor = 0.8
+| filth multiplier = 1
+| speed = 1
+<!-- Creation -->
+| research = Stonecutting
+| work to make = 300
+| resource 1 = Steel
+| resource 1 amount = 2
+| deconstructable = true
+| deconstruct yield = {{Icon Small|steel}} 1
+<!-- Wiki -->
+| page verified for version = 1.3.3101
+}}
+'''Paved tiles''' are one of the [[floors]] that can be constructed. They are an improved form of [[concrete]], as they do not provide a beauty debuff but cost double the [[steel]].
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+Paved tiles provide no [[beauty]] positive or malus, and cleaning [[filth]] on it takes only 80% the work. It is non-flammable and does not penalize walk speed.
+
+== Analysis ==
+Paved tile costs twice as much steel as [[concrete]] yet has the same Move Speed, cleaning time multiplier, and Filth Rate. However, Concrete is uglier with {{Bad|{{Q|Concrete|Beauty}}}} beauty. Overall, paved tile is best suited for small rooms, if you want to avoid dedicated beauty buildings, yet still avoid the beauty penalty of concrete.
+
+Paved tile represents a middle ground in between [[concrete]] and [[steel tile]] in terms of flooring quality. Compared to [[steel tile]]s required {{Icon Small|steel}} {{Q|Steel tile|Resource 1 Amount}} steel, it is much cheaper to build but has a {{++|{{%|{{P|Cleaning Time Factor}}-{{Q|Steel tile|Cleaning Time Factor}}}}}} higher [[cleaning time multiplier]] and no [[cleanliness]] bonus.
+
+=== Comparison to sculptures ===
+If you have a decent artist (>6 skill), using concrete and [[sculpture]]s is generally more efficient than using paved tile and no sculptures.
+
+100 tiles of concrete cost {{Icon Small|steel}} {{#expr:{{Q|Concrete|Resource 1 Amount}}*100}} and have {{Bad|{{#expr:{{Q|Concrete|Beauty Base #}}*100}} }} beauty. A normal [[quality]], steel [[large sculpture]] costs {{Icon Small|steel}} {{Q|Large sculpture|Resource 1 Amount}} [[steel]] and gives {{+|{{#expr:{{Q|Large sculpture|Beauty Base #}}*{{Q|Steel|Beauty Factor}}}} }} beauty. 100 paved tiles cost {{Icon Small|steel}} {{#expr:{{P|Resource 1 Amount}}*100}} and have neutral beauty. Large sculptures take {{Ticks|{{Q|Large sculpture|Work To Make #}}*{{Q|Steel|Work To Make Factor}}}} and the concrete takes {{Ticks|{{Q|Concrete|Work To Make}}*100}}. Meanwhile, 100 paved tiles also takes {{Ticks|{{P|Work To Make}}*100}}, but requires no other work.
+
+Sculptures require a decent [[artistic|artist]], take more work, and lower skill artists can create poor [[quality]] sculptures. Paved tile is slightly more [[wealth management|wealth efficient]] with normal sculptures, though the difference over 100 tiles is only {{Icon Small|Silver||{{#expr: ({{Q|Concrete|Market Value Base #}}*100+ {{Market Value Calculator|Large sculpture|Steel|Normal}}) - ({{P|Market Value Base #}}*100)}}}}. But higher quality sculptures are more wealth efficient; a good quality sculpture is {{Good|x2}} as beautiful for only {{Bad|x1.25}} the Market Value and the exact same steel cost.
+
+In addition, sculptures have another key advantage - you can make them out of the more affordable [[wood]] or [[stone]]. Both materials are cheaper, less in demand, and have ''at least'' the same beauty as steel. If all 3 resources are scare, then you should be using natural floor or concrete, not paved tile. As these materials are cheap, any quality concerns are mostly negated. They become even better once an artist can consistently produce good quality sculptures.
+
+Sculptures require an [[art bench]] to create, making it harder for brand new colonies to make sculptures, but the bench is not particularly expensive. The other concern is [[Room stats|space]], as sculptures take up a tile of room. This is only a concern for particularly small rooms, like bedrooms, and should be weighed against simply expanding the room in the first place.
+
+== Version history ==
+* [[Version/1.3.3066|1.3.3066]] - NPC shuttle pads now always use [[concrete]] or paved tiles as flooring.
+* [[Version/1.4.3523|1.4.3523]] - Cleaning time factor added.
+
+{{Nav|floor|wide}}
+[[Category:Floor]]

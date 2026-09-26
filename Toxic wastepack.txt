@@ -1,0 +1,143 @@
+{{Biotech}}
+{{Stub|reason=1) 1.4.3555 impacts for dumping. Analysis, inc. whenever they are worth disposing at all 2) Type }}
+{{Infobox main
+| name = Toxic wastepack
+| image = Wastepack_a.png
+| type = 
+| tech level = 
+| description = A compacted package of toxic waste that will slowly dissolve if not frozen. The surface is heat-sealed for safe transport. Wastepacks will pollute the surrounding terrain if they dissolve, deteriorate, or are otherwise destroyed. Toxic wastepacks are flammable. If burned or damaged, they will release tox gas.
+| mass base = 6
+| stack limit = 5 
+| hp = 100
+| beauty = -40
+| flammability = 1
+| deterioration = 4
+| marketvalue  = 0
+| defName = Wastepack
+| thingCategories = ItemsMisc
+| page verified for version = 
+}}
+'''Toxic wastepacks''' are waste products created by mech-related buildings or the cleanup of [[polluted]] tiles.
+
+== Acquisition ==
+[[Pollution pump]]s and pawns manually cleaning [[pollution]] on the ground will generate wastepacks, at a rate of 1 wastepack per 6 polluted tiles. Wastepacks may also be dropped into your colony as part of a [[Quests#Wastepack_Dumping|quest]].
+
+===Mechanoid Recharging and Gestation===
+Toxic wastepacks are produced when [[friendly mechanoids]] utilize [[mech recharger]]s or [[large mech recharger]]s, or whenever a [[mech gestator]] or [[large mech gestator]] finishes gestating one. The amount of wastepacks produced is proportional to the Bandwidth of the mech recharged or gestated.
+{{Mech Bandwidth}}
+
+== Summary ==
+Up to 5 toxic wastepacks can fit into 1 tile, and they do not fit on [[shelf|shelves]]. 
+
+===Pollution===
+When a wastepack is destroyed in any fashion, they will [[pollution|pollute]] 6 ground tiles of a colony, per wastepack. A full stack of 5 wastepacks pollutes 30 tiles. This pollution can spread through constructed [[wall]]s, but will not bypass natural stone walls.
+
+When burned or damaged, wastepacks release [[tox gas]], in addition to the pollution.
+
+When dumped from a [[caravan]], a caravan that is carrying them is destroyed, or sent via unmanned [[transport pod]], wastepacks will lower the [[goodwill]] of whatever faction has a faction base closest to the tile the wastepacks were dumped at, regardless of how far away that base is. The goodwill loss is proportional to the amount of waste dumped and its proximity to any nearby faction bases, ranging from {{--|1}} goodwill for just a few packs nearby up to {{--|60}} or more for multiple filled pods dumped directly on a base. Each wastepack dumped on the world map immediately raises the world tile's pollution by 0.05%, requiring 2000 wastepacks to completely pollute a tile from 0% to 100%. [[Sea ice]] tiles are an exception, where each wastepack raises pollution by 0.4%.
+
+If dumped in [[Orbit]],{{OdysseyIcon}} wastepacks use the same proximity calculations as they do on the ground except that as the [[Traders guild]] is the only faction in orbit, they will always be the faction angered. Wastepacks dumped in orbit also will not result in tile pollution or affect the planet below.
+
+If the angered faction is hostile (including those made hostile by the wastepack dump), they may decide to retaliate. The percentage probability of retaliation is equal to the goodwill lost by the wastepack dump. Factions (except [[tribes]]) may retaliate by dropping wastepacks back at you, and hostile factions of any kind may send a [[raid]] in response to your "gifts". Factions will randomly select (with equal probability) between the available responses, and the response will arrive after a random delay of one to three days. Multiple wastepack pod salvos done in short succession may result in back-to-back or even simultaneous raids. Both forms of retaliation are announced upon arrival with a "Pollution retaliation" letter.
+
+===Dissolving===
+1 wastepack per stack will dissolve every 8 days, with the following factors:
+* 0.5x if indoors.
+* 2x if in [[Weather|rain]] and outdoors, even if [[roof]]ed.
+* 0x if {{Temperature|0}} or lower. Any temperature above freezing point will not slow the dissolving of the wastepack.
+
+The packs also deteriorate in the same way as all other items. As an example, 5 Toxic wastepacks left out in the rain will dissolve 1 wastepack after 4 days and deteriorate the rest over the course of the next day or so as they lose HP at a rate of 20 per day outside in the rain. This means that even if temperature is below freezing when left outside or unroofed, a wastepack will slowly lose HP and eventually be destroyed, releasing the pollution inside. Unlike most other items, deterioration leaves behind the pollution inside rather than deleting the item altogether.
+
+===Gravship===
+{{Odyssey|section=1}}
+Unique to wastepacks, [[Gravship]]s cannot land on tiles occupied by them. When a wastepack dissolves on a tile occupied by a gravship hull the pollution will remain on the underlying and not within the gravship.
+
+== Analysis ==
+===Storage===
+A 7x7 room holds 245 wastepacks, and can be cooled by a single [[cooler]] in a double-walled room, and is effective up to an outside temperature of {{Temperature|41}}. 245 wastepacks are enough storage:
+* To constantly run 8 [[bandwidth]] worth of [[mechanoids]] for 1 entire year, 4 bandwidth of mechs for 2 years...
+* To store the waste of 2 [[toxifier generator]]s for ''6 years''. A [[pollution pump]], or a pawn cleaning the pollution by hand, is required to turn ground pollution into wastepacks.
+Depending on [[biome|climate]] and freezer setup, you can get more storage with 1 cooler. And this is 1 cooler - worth {{Required Resources|Cooler}} and {{Q|Cooler|Power Consumption}} W of [[power]] (plus the material for [[wall]]s and [[door]]s). You can easily use multiple coolers to store your waste. This gives you enough time to get a form of waste disposal ready.
+
+===Disposal===
+[[File:Wastepack disposal by shuttle.jpg|thumb|400px|right|<small>An Empire shuttle full of wastepacks. credit to /u/BenightedAlizar on r/rimworld</small>]]
+Most means of destroying wastepacks have some sort of consequence:
+
+* '''Letting it pollute.''' Pollution is localized - wastepacks that deteriorate or dissolve away from your base won't have an impact, at least for a while. May cause a [[Wastepack infestation]] as wastepacks are destroyed, and [[acidic smog]] can happen at high enough pollution levels.
+* '''Dumping it offsite.''' Dumping will always incur a goodwill loss for a single faction based on the current relationship status, distance from the nearest [[faction base]] and number of wastepacks dumped. You will receive significantly larger penalties for dumping closest to allies than for dumping closest to hostile or neutral factions (e.g 1 wastepack dumped directly on a hostile will give -1 goodwill but if dumped on an ally it will give -12 goodwill). When leaving toxic wastepack behind on a gravship all wastepacks left count as deteriorated and pollute the map hex respectively. Despite benefiting from pollution, waster pirate gangs will still dislike when you dump toxic wastepacks near their bases.
+
+You will always get at least -1 goodwill for dumping wastepacks. Even if you are situated on one pole of a 100% generated world and the nearest faction base is on the opposite pole and you dump a single wastepack one tile away from your base you will still receive a -1 penalty.
+
+{| class="wikitable"
+! Faction status !! Dumping distances in tiles !! Goodwill lost (25 wastepacks)
+|-
+| Allied || 0 || 31
+|-
+| Allied || 1 || 15
+|-
+| Allied || 2 - 4 || 6
+|-
+| Allied || 5 - 16 || 2
+|-
+| Allied || 17+ || 1
+|-
+| Neutral || 0 || 25
+|-
+| Neutral || 1 || 12
+|-
+| Neutral || 2 - 5 || 5
+|-
+| Neutral || 6 - 18 || 2
+|-
+| Neutral || 19+ || 1
+|-
+| Hostile || 0 || 25
+|-
+| Hostile || 1 || 12
+|-
+| Hostile || 2 - 4 || 5
+|-
+| Hostile || 5 - 16 || 2
+|-
+| Hostile || 17+ || 1
+|}
+
+Wastepacks may also be dropped back at you, and if the faction is already hostile, you may start a [[raid]]. Dumping within 4 tiles of your colony will increase the chance for acidic smog.
+** '''[[Caravan]]s''' take time and food to set up, and have a limited carrying capacity - especially without [[pack animal]]s or [[friendly mechanoids]]. 
+** '''[[Transport pod]]s''' can dump wastepacks far away. 1 pod, which can store up to 25 wastepacks, and per launch costs {{Required Resources|Transport pod}}, and a variable amount of {{Icon Small|chemfuel}} [[chemfuel]] depending on how far you launch it.
+** '''[[Imperial shuttle]]s''' {{RoyaltyIcon}} store up to 333 wastepacks (2000 kg) at a time, and simply transporting waste will not anger the [[Empire]] - dumping it has the usual penalties. This costs 1 permit slot, has a cooldown of 40 days, and requires a [[noble]] pawn of at least Knight/Dame rank. This permit can theoretically support up to 5 bandwidth without honor costs (although the realistic value is slightly smaller).
+* '''[[Wastepack atomizer]]s''' have no direct consequences from their use. However, they require a precious [[nano structuring chip]] to create, a fair amount of [[power]], and aren't fast. One atomizer can support 4.8 [[bandwidth]] of mechanoids - a [[mechanitor]] is very likely to have more.
+* '''[[Polux tree]]s''', which are another clean form of pollution removal. These trees only grow naturally if there is plenty of pollution already, though [[polux seed|seeds]] can be bought from traders. They clean only 20% as fast as a [[Wastepack atomizer]], and can only clean if there is no artificial buildings in the area, but will erase [[pollution]] directly from the ground. This is also a downside for dealing with future pollution, as these trees do not stop wastepack infestations.
+
+[[File:Diabolus killing drop pods.png|thumb|336px|right|Diabolus destroying wastepack pods]]
+When a landed [[transport pod]] is destroyed, its contents are vanished, which allows you:
+
+* '''Bomb landed transport pods''', which exploitatively deletes wastepacks carried in them, leaving only [[steel slag chunk]]s and no pollution. Each pod can load 25 wastepacks. However this method costs a lot of [[steel]]s and [[component]]s to operate.
+** While pods drop scattered around the target position, they always drop in the chosen, enclosed room.
+** The most reliable way to destroy landed transport pods is the [[hellsphere cannon]] of a [[Diabolus]], which can destroy 25 pods and 625 wastepacks in one hit.
+
+A pawn can be ordered to carry any chosen item by forming caravans. Additionally, by exploitatively forming caravans, a pawn can carry in its inventory up to the total colony carrying capacity, allows rapidly disposing wastepacks. This enables the following methods:
+
+* '''[[Death acidifier]]s''', which exploitatively deletes wastepacks carried on a pawn with the implant on death. This does not cause pollution.
+* '''[[Subcore ripscanner]]s''', which exploitatively locks wastepacks carried on a pawn on death. The pawn's corpse can then be destroyed along with any wastepacks in its inventory. This does not cause pollution.
+* '''Pollute the [[undercave]]''',{{AnomalyIcon}} which also helps you deal with [[fleshbeast]]s since they are not immune to [[toxic buildup]]. Pollution of the undercave does not pollute your colony in any way, and they cease to exist once its associated [[pit gate]] collapsed.
+** Note once the polluted tiles reach the Dreadmeld's room, it will slowly die of toxic buildup, triggering the cave to collapse as normal when it does.
+* '''Pollute the [[labyrinth]]''',{{AnomalyIcon}} but you must destroy all wastepacks there, or the [[warped obelisk]] will teleport them back to your colony when you leave there.
+* '''Pollute the [[metal hell]]''',{{AnomalyIcon}} wastepacks dropped there do not come back with your pawns.
+* '''Pollute [[Quests#Ancient_Stockpile|Ancient Stockpile]]''',{{OdysseyIcon}} for all the advantages of polluting the undercave, indefinitely.
+{{clear}}
+
+== Gallery ==
+<gallery>
+File:Wastepack_a.png
+File:Wastepack_b.png
+File:Wastepack_c.png
+</gallery>
+
+== Version history ==
+* [[Biotech DLC]] Release - Added.
+* [[Version/1.4.3528|1.4.3528]] - Fix: Letting a pawn die on the world map with wastepacks will not pollute terrain.
+* [[Version/1.4.3542|1.4.3542]] - Fix: Can destroy wastepacks on temp tiles to avoid relationship penalty loss.
+* [[Version/1.4.3555|1.4.3555]] - Added more consequences for dumping near a [[faction base]].
+
+{{Biotech navbox}}

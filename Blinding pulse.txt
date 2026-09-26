@@ -1,0 +1,47 @@
+{{Royalty}}
+{{Infobox main|psycast
+| name = Blinding pulse
+| image = BlindingPulse.png
+| type = Psycast
+| description = Induce noise in the visual centers of the brain, obscuring vision of everyone near the target point.
+| psylink level = 2
+| casting time = 60
+| ability range = 24.9
+| psyfocus cost = 0.01
+| neural heat gain = 20
+| effect radius = 3.9
+| duration = 1800
+| duration multiplier = 
+| goodwill impact = -15
+| caster must be capable of violence = false
+}}
+'''Blinding pulse''' is a level {{P|Psylink Level}} [[psycast]] that reduces the [[sight]] capacity of pawns in its area of effect. 
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+[[File:pulse radius.PNG|thumb|right|175px|Area of affect of Blinding pulse. Cast location has been marked in yellow, surrounding affected tiles in white, and unaffected tiles in red.]]
+Upon casting, Blinding pulse inflicts the Psychic blindness [[hediff]] for {{Ticks|{{P|Duration}}}} on all psychically sensitive pawns within a 3 tile radius from the target tile, which can be any location within 25 tiles, respecting line of sight. The Psychic blindness hediff multiplies the affected pawn's [[Sight]] by a percentage scaling with their [[Psychic sensitivity]]: {{Bad|x50%}} at 100% Psychic sensitivity, capping at {{Bad|x0%}} for 200%, and a minimum of {{Bad|x95%}} at 10%.
+
+Additionally, note that Blinding pulse is considered a harmful ability, and will incur a [[goodwill]] penalty of {{Bad|-15}} when cast on pawns from a neutral or allied [[faction]].
+
+== Analysis ==
+Blinding pulse is the first of several area-of-effect crowd control psycasts available to the player, and it performs its role well. The debuff inflicted to Sight, while not effective against all threats, can be devastating against others, and the reasonably large area of effect makes it highly useful in chokepoints or against large clusters of enemies.
+
+Against the average [[human]] [[raider]], blinding pulse is moderately effective in stifling their efforts to harm your pawns. A {{Bad|50%}} reduction to [[Sight]] is equivalent to losing 6 levels of both [[Shooting]] and [[Melee]] skill. 
+* Given a target with a melee skill of 10 or lower, this reduces their [[Melee Hit Chance]] by roughly {{--|20%}}, depending on their skill. This, in turn, results in an average reduction to DPS by anywhere from {{--|22%}} at skill 10 to {{--|48%}} for a pawn with 0 skill, assuming no other impact on hit chance. [[Melee Dodge Chance]] is also impacted by Sight, but the typical raider is unlikely to have a high enough value for blinding pulse to meaningfully reduce it. 
+* For ranged pawns, due to the exponential decay of [[Shooting Accuracy]] over distance, blinding pulse will be more effective at longer range engagements. For example, an affected Shooting skill 10 pawn firing from the 25 tile maximum range of blinding pulse will have their typical Shooting Accuracy of 46.7% drop to only 21.3%, a {{--|54%}} reduction in real {{DPS}}, whereas the same pawn firing from 15 tiles would "only" see a reduction from 63.3% to 39.5%, a {{--|38%}} reduction in real {{DPS}}. As with melee pawns, blinding pulse is significantly more impactful against pawns with low skills or capacities to begin with. 
+
+For more information on the calculations provided here, please visit the associated pages for the formulas used to calculate their derived statistics. Note that pawns such as [[animals]] and [[mechanoids]] have a default Melee skill of 4 and a Shooting skill of 8 (where applicable) for the purposes of these calculations.
+
+It is significantly less effective against [[mechanoids]] and [[yttakin]],{{BiotechIcon}} due to their reduced psychic sensitivity - [[scyther]]s only get a measly {{--|9%}} debuff. It can be effective against ranged mechs due to their tendency to engage at max range, although blinding pulse's range is smaller. On the flip side, a few [[entities]]{{AnomalyIcon}} have massively increased psychic sensitivity, the two most vulnerable targets being the [[sightstealer]]{{AnomalyIcon}} and the [[gorehulk]].{{AnomalyIcon}} These enities often come in large numbers and are especially weak to this psycast.
+
+While [[vertigo pulse]] is overall better at disabling enemies, blinding pulse may be preferred when groups of enemies are directly on top of your pawns, whether they have broken your ranks, came from [[drop pod]]s, or in a group of melee blockers. In these situations, blinding pulse does not cause pawns to lose control, e.g., they won't stumble out of cover or walk into a grenade. This is especially true when melee blocking, as they don't necessarily need to to be able to kill enemies to do their job. However, other psycasts such as [[Stun]] or [[Skip]] are likely to prove far more useful in such situations.
+
+== Version history ==
+* [[Royalty DLC]] Release - Added.
+* [[Version/1.1.2571|1.1.2571]] - Radius reduced from 5 to 4, range reduced from 25 to 20.
+
+{{Nav|psycasts|wide}}
+[[Category: Psycasts]]

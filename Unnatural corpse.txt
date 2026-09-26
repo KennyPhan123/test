@@ -1,0 +1,124 @@
+{{Anomaly}}
+{{Spoiler}}
+{{Infobox main|entity
+| name = Unnatural human corpse
+| image = Unnatural corpse.png
+<!-- Base Stats -->
+| type = Entity
+| type2 = Advanced
+| deterioration = 0.25
+<!-- Containment - Studiable -->
+| anomaly knowledge = 2
+| knowledge category = Advanced
+| study interval = 120000
+| min monolith level for study = 1
+| study enabled by default = false
+| show toggle gizmo = true
+<!-- Technical -->
+| defName = UnnaturalCorpse_Human
+| label = Unnatural {0_label} corpse
+}}
+An '''unnatural corpse''' is an advanced [[entity]] that can threaten your colony. It will haunt one of your colonists until it is ready to strike. Its arrival unlocks [[Research#Death_refusal|Death refusal]] as an anomaly research option.
+
+== Acquisition ==
+There are two ways to acquire an unnatural corpse:
+* The [[Mysterious cargo]] quest involves either a friendly planetary faction{{Check Tag|Which factions?|Confirmed: Star Empire, any others?}} or an anonymous AI asking you to take an unspecified item off their hands, along with a sizable payment. One of the randomly selected options for the cargo is the unnatural corpse. For further information about the quest, see that page. The unnatural corpse appears with a blue "Mysterious Cargo" letter when it lands on your map. 
+* Performing the [[void provocation]] ritual can result in the appearance of a unnatural corpse on your map. The [[monolith]] must be at least at Level 2 for the unnatural corpse to appear after a void provocation. The corpse appears with an orange "Strange Corpse" letter when it appears on your map this way.
+
+== Summary ==
+The unnatural corpse is a dead copy of one of your colonists or guests. While relatively harmless at first, after 12-16 days, it will awaken and seek to kill its target. It is ''highly recommended'' you research and destroy the corpse as fast as possible, as it is nearly impossible to stop when it is awakened.
+
+=== Unawakened behavior ===
+Before awakening, the unnatural corpse is treated as a regular [[corpse]] item, including the regular mood debuffs for seeing it. It is a near-identical copy of the target, but will lack artificial body parts like [[bionics]], although it will keep any [[flesh whip]]s and [[flesh tentacle]]s the original target has. It cannot be resurrected by any means, such as [[resurrector mech serum]] or [[deadlife dust]] from any source, including [[death pall]]s; attempting to do so displays a message stating ''"Failed to resurrect <PAWNNAME>. It simply does not respond."'' 
+
+The corpse's existence causes a {{--|6}} mood penalty on the chosen target, and its presence can cause random [[mental breaks]] in them,{{Check Tag|MTB?|Frequency of the mental breaks?}} such as [[corpse obsession]] and [[insane ramblings]].
+
+The corpse can be be temporarily destroyed through any regular means, such as butchering, animal eating, explosions, and so on. However, the original pawn suffer a "Corpse Torment" hediff every time the corpse is destroyed, knocking them unconscious for 24 hours and inflicting {{++|20%}} [[pain]]. The corpse will reappear after the 24 hours have passed, following the rules of teleportation ([[#Teleportation|see below]]).
+ 
+Temporarily destroying the corpse will not reset or slow down the awakening timer. The study timer does reset, though, so destroying the corpse can be done to study faster at the cost of disabling the original target.
+
+Studying the unnatural corpse and gaining 8 to 12 advanced anomaly research from it will unlock the ability to destroy it permanently, yielding one [[shard]]. 
+
+If the original pawn dies, the corpse will vanish shortly after. If the original pawn is no longer available (i.e. it has targeted a guest who leaves before it can awaken) then it will disappear after seven days.
+
+=== Teleportation ===
+The corpse will sometimes silently teleport itself near the original, which is uniquely affected by the camera of the game: the corpse will attempt to teleport only if it is out of camera shot, and it can only land at a point out of camera shot. By zooming out or always looking at the corpse, it won't teleport. In addition, it cannot teleport while the game is paused, so pausing the game can let the player zoom in whenever needed. If the corpse was buried in a [[grave]] or [[sarcophagus]], it will teleport out leaving an open burial site, with the same limitations of teleporting off-screen applying.
+
+If the original pawn moves to a different world tile, the corpse will teleport to the new tile. If the original pawn enters a [[caravan]], the corpse won't force itself into the caravan, but will teleport whenever the pawn enters a loaded map.
+
+=== Awakening ===
+11 to 13 days after arrival on the map, you will receive a warning [[letter]] stating the corpse is growing stronger and is beginning to awaken. 1 to 3 days later after this warning, the corpse will begin to awaken and you will have mere moments to destroy the corpse before it fully activates. There is no way to delay the awakening. Any part destruction of the corpse, e.g., an extracted skull, will be healed upon awakening.
+
+When it has awoken, the corpse has only one goal: to find and grab the original pawn. The corpse will chase the original pawn until either the original or the corpse itself is destroyed. If it succeeds, it will hypnotize the pawn and hold them in place for 10-25 seconds (depending on [[raid points]]), before instantly and unavoidably killing the original pawn by psychically incinerating the target's brain. Skipping (via [[Skip]], [[Chaos skip]], or [[Mass chaos skip]]){{RoyaltyIcon}} either the pawn or the corpse away from each other will break the trance, as well as disorientating the corpse with [[Vertigo pulse]].{{RoyaltyIcon}} Although the hypnosis is broken and the pawn is no longer at immediate risk of dying, they are still rendered immobile for some time after.
+
+The corpse cannot be trapped by any means. It can freely open [[door]]s and if unable to path to its target, it will teleport through solid walls. It can chase and hypnotize its victim even if the target gains [[invisibility]]. However, if the target is held in a 1x1 room without a [[door]], teleportation is not possible and the corpse will endlessly pace around their cell. If the target is carried by another pawn, it will attack the pawn with its melee attack; if the target is inside of something like a [[cryptosleep casket]], it will begin ripping open the casket to attack. This does slow the corpse down as, other than its psychic death glare, it performs as a normal unarmed melee fighter.
+
+After the destruction of its target, the corpse will wander momentarily before disappearing.  
+
+The unnatural corpse will attempt to copy the original pawn again once it awakens. An awoken corpse will copy:
+* Injuries, including [[scar]]s. These will be healed nearly instantly at the cost of some of its stored regeneration.
+* Drug effects, such as [[go-juice]] and [[flake]]. This includes [[addiction]]s and [[anesthetic]]s.
+* Buffs, such as [[combat command]]{{IdeologyIcon}}
+* Age-based illnesses, such as [[bad back]] and [[dementia]]. These are not healed.
+* Certain specialty hediffs, such as [[void touched]] and [[Inhumanized|inhumanization]].
+* [[Genes]],{{BiotechIcon}} including any changes since the corpse's arrival.
+* [[Psycast]]s,{{RoyaltyIcon}} although they cannot be used.
+
+The corpse does not copy:
+* Diseases, like [[malaria]], [[food poisoning]], or [[flu]]
+* [[Pregnancy]] {{BiotechIcon}}
+* New [[artificial body parts]]
+
+Destroying the unnatural corpse after it has awoken is exceptionally difficult. The corpse has an incoming damage multiplier of 20%, receiving only a fifth of incoming damage.  The corpse has +1000% [[Pain Shock Threshold|pain shock resistance]] and a regeneration ability similar to [[Ghoul]]s, but far more powerful: '''30000 HP/day''' regeneration for up to 150-800 HP (depending on [[raid points]]) of damage taken (effectively 750-4000 HP due to the damage modifier), and it cannot die by any means if the regeneration capacity is not depleted. It may be [[downed]] by external means like [[hypothermia]] and [[heatstroke]], but even at 100%, these will not kill the corpse while it has regenerates.
+
+Items like the [[psychic shock lance]] will have no effect on the corpse. [[Biomutation lance]]s do work, however they will only delay the corpse's assault; it will reappear after some time. While awoken, if the target is on a [[caravan]], the unnatural corpse will vanish and reappear once the target enters a new loaded map.
+
+The corpse starts with a [[move speed]] modifier of x50%, which increases over the next few hours to a 300% movement speed modifier. Movement increases will be notified with a message at the top of the screen. Combined with the extreme regeneration, ability to teleport, and the ability to benefit from any [[trait]]s and [[gene]]s{{BiotechIcon}} the target has, an awoken corpse is nearly unstoppable and very likely to kill the target pawn. 
+
+If the awoken corpse loses its regeneration and becomes [[downed]], it will be destroyed. Destroying the corpse after it has awoken yields one shard as normal.
+
+== Analysis ==
+Given how hard it is to stop an awoken corpse through standard combat, and the fact allowing it to awaken provides no benefit to the colony, it is highly recommended study it ASAP and to destroy the unnatural corpse as soon as you are done studying it.
+
+Note that the corpse will start forbidden when it first arrives and whenever it respawns, so make sure to unforbid it each time this happens.
+
+However, if for whatever the reason you must fight an awoken corpse, there are ways to make the fight significantly easier.
+
+=== Sedation by proxy ===
+The easiest way to fight the corpse once it has awakened is to render its target unconscious before the corpse awakens. This can be done through various means like [[anesthetic]]s, [[neural heat dump]]ing,{{RoyaltyIcon}} and [[blood loss]] (such as through extracting a [[hemogen pack]]{{BiotechIcon}}). After that, the corpse will awaken but be unconscious, allowing you to leisurely deal damage and exhaust its regeneration limit. Once this limit is reached, the corpse will be destroyed.
+
+=== Delaying it===
+The target can be walled into a 1x1 room without any doors. This prevents the corpse from teleporting to the target and allows the rest of the colony to concentrate on the fight.
+
+Alternatively, the target can be inside of a [[cryptosleep casket]], [[biosculpter pod]],{{IdeologyIcon}} or [[passenger shuttle]].{{OdysseyIcon}} The awakened corpse does relatively little amounts of melee damage to try to break the target out. Assign one colonist to repair the building, and bring multiple melee-equipped pawns to engage the awakened corpse. You will be able to break through the awakened corpses' regeneration relatively quickly with several melee-equipped pawns. Keep an eye on the building health and re-order repairs as needed.
+
+If your targeted colonist is downed, they can be relocated mid-trance by rescuing them. Trapping the awoken corpse in a confined space with colonists or animals, and blocking off most avenues of teleportation for the corpse, can allow you to quickly overpower and then kill it. 
+
+[[Biomutation lance]]s can affect the corpse. Sending the target away such as on a [[caravan]] will cause the awoken corpse to vanish as well, with a message stating it will return. These stalling tactics can be useful, but they will reset the corpse's regeneration capacity and its movement speed bonus, effectively restarting the fight.
+
+=== Poisoning it ===
+The awoken corpse is unable to regenerate from certain effects, namely [[temperature]] and [[Toxic buildup|poison]]. Extreme temperatures can inflict heatstroke and hypothermia into the corpse as normal, which will cripple it just like a normal pawn. Toxic build-up from [[venom fangs]]{{RoyaltyIcon}} and [[venom talon]]s{{RoyaltyIcon}} cannot be regenerated from either. Once it is downed, it is easy to kill. The only problem to this is the corpse's speed and teleportation can make it difficult to hit.
+
+=== Psychic slaughter ===
+The [[psychic slaughter]] ability that some [[Creepjoiner]]s have can be used to instantly destroy the corpse. This means you lose the shard in the process, however.
+
+=== Taking advantage of death refusal ===
+Finally, the unnatural corpse's appearance unlocks the [[death refusal]] research. Unlocking the ritual and using it on the original pawn gives them the ability to revive even if the corpse manages to attack them. However, this is unlikely as you will probably finish studying the corpse long before the ritual is available.
+
+=== Prevent reappearance ===
+Dumping the unnatural corpse into a [[pit gate]] and collapsing it while the corpse is still there will destroy the corpse and prevent it from reappearing.
+
+A less reliable method is to turn the corpse into a [[nutrient paste meal]] in the small chance that it teleports into a [[hopper]] for a [[nutrient paste dispenser]].{{Check Tag|Fact check needed|Removed in Version/1.6.4850?????}} This is different than butchering the corpse. The nutrient paste meal should display "Unnatural human corpse" as part of the ingredients. You can also put a stockpile next to a nutrient paste dispenser and haul the unnatural corpse there, then build a hopper there.
+
+== Trivia ==
+* A unique music track titled "Corpse_Attack" plays while there's an active awoken unnatural corpse on the map.
+
+== Version history == 
+* [[Anomaly DLC]] Release - Added.
+* [[Version/1.5.4069|1.5.4069]] - Fix: Error when trying to debug spawn unnatural corpse.
+* [[Version/1.5.4081|1.5.4081]] - Added field in race props to generate unnatural corpse defs.
+* [[Version/1.6.4518|1.6.4518]] - Fix: Unnatural corpse fails to explode on death.
+* [[Version/1.6.4850|1.6.4850]] - Fix: Unnatural corpses could be permanently destroyed by turning them into nutrient paste.
+
+{{Nav|entity|wide}}
+[[Category: Entities]]

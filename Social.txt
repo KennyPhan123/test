@@ -1,0 +1,741 @@
+<!--Top Nav Box-->
+{| align=center
+| {{Character_Properties_Nav}}
+|}
+----
+<!-- End Nav -->
+{{for|the skill of the same name|Social (skill)}}
+[[File:SocialTab.png|frame|Example of a social tab]]
+Each colonist has a '''social''' tab where you can see their opinions of each other and their relatives (if any). Only humans may have opinions of each other. Social relationships are mostly for roleplaying purposes but they do have effects on gameplay as well. For example, if a colonist's opinion of another colonist is too low, they may start insulting them possible leading to bad mood and a social fight, which will do damage to both and can potentially lead to permanent injury. On the other hand, a colonist needs a minimum opinion of another colonist to pursue a romance with them.
+
+== Opinion ==
+Opinions are affected by a pawns beauty, their traits, random social interaction and actions controllable by the player. The later are significantly expanded by [[rituals]] {{RoyaltyIcon}}/{{IdeologyIcon}} and [[precepts]].{{IdeologyIcon}} For the effects of relations on opinion, see that section below.
+
+=== Beauty ===
+{{Main|Beauty (Pawn)}}
+All beauty modifiers are cumulative. Each new level of beauty above or below 0 increments the opinion of the pawn held by others by {{+|}}/{{--|}} 20 and is capped at {{+|}}/{{--|}} 40 meaning anything more than 2 beauty (either positive or negative) have no effect on gameplay.
+
+[[Ascetic]], [[kind]], and [[Sight|blind]] pawns do not gain nor lose any opinion for any other pawn based on their beauty stat.
+{{:Beauty (Pawn)}}
+
+=== Traits ===
+{{Main|Traits}}
+There are a number of traits that directly and permanently change the opinion of others.
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_07}}
+! Trait
+! style="text-align:left;" data-sort-type="number" | Opinion change
+|-
+! [[Annoying voice]]
+| data-sort-value="-25" | {{Bad|-25}} opinion from non-[[kind]], non-[[hearing|deaf]] pawns.
+|-
+! [[Bloodlust]]
+| data-sort-value="1" | {{Good|+}} ''':''' No opinion loss of someone who [[organ harvesting|harvests an organ]],{{IdeologyIcon}} executes a [[prisoner]],{{IdeologyIcon}} or kills a [[child]].{{BiotechIcon}}
+|-
+! [[Body modder]]
+| data-sort-value="8" | {{Good|+8}} opinion of other pawns per artificial body part they have, capped at {{Good|+40}}. Any number of [[xenogenes]] {{BiotechIcon}} counts as one artificial body part.
+|-
+! [[Body purist]]
+| data-sort-value="-8" | {{Bad|−8}} opinion of other pawns per artificial body part they have, capped at {{Bad|−40}}. Any number of [[xenogenes]] {{BiotechIcon}} counts as one artificial body part.
+|-
+! [[Cannibal]]
+| data-sort-value="1" | {{Good|+}} ''':''' No opinion loss of someone who eats meat ([[Meat eating|abhorrent, horrible, or disapproved]]).{{IdeologyIcon}}
+|-
+! [[Chemical fascination]]
+| data-sort-value="-30" | {{Bad|-30}} opinion of any pawns with [[teetotaler]].
+|-
+! [[Chemical interest]]
+| data-sort-value="-20" | {{Bad|-20}} opinion of any pawns with [[teetotaler]].
+|-
+! [[Creepy breathing]]
+| data-sort-value="-25" | {{Bad|-25}} opinion from non-[[kind]], non-[[hearing|deaf]] pawns.
+|-
+! [[Hard worker]]
+| data-sort-value="-5" | {{Bad|-5}} opinion of any pawns without the same trait or industrious.<br/>{{Bad|-20}} opinion of any pawns with lazy.<br/>{{Bad|-30}} opinion of any pawns with slothful.
+|-
+! [[Industrious]]
+| data-sort-value="-5" | {{Bad|-5}} opinion of any pawns without the same trait or hard worker.<br/>{{Bad|-20}} opinion of any pawns with lazy.<br/>{{Bad|-30}} opinion of any pawns with slothful.
+|-
+! [[Misandrist]]
+| data-sort-value="-25" | {{Bad|-25}} opinion of men.
+|-
+! [[Misogynist]]
+| data-sort-value="-25" | {{Bad|-25}} opinion of women.
+|-
+! [[Nudist]]
+| data-sort-value="1" | {{Good|+}} : No {{Bad|−10}} opinion loss of someone who has any uncovered body parts.{{IdeologyIcon}}
+|-
+! [[Psychopath]]
+| data-sort-value="1" | {{Good|+}} ''':''' No opinion loss of someone who kills a child {{BiotechIcon}} or kills an innocent animal ([[Killing innocent animals|abhorrent, horrible, or disapproved]]).{{IdeologyIcon}}<br/>{{Bad|−}} ''':''' No opinion gain from teaching a [[child]], or taking a lesson (as a child).{{BiotechIcon}}<br/>
+|-
+! [[Teetotaler]]
+| data-sort-value="-20" | {{Bad|-25}} opinion of any pawns with any [[addiction]].<br/>{{Bad|-20}} opinion of any pawns with [[chemical interest]].<br/>{{Bad|-30}} opinion of any pawns with [[chemical fascination]].
+|-
+! [[Joyous]] {{AnomalyIcon}}
+| data-sort-value="20" | {{Good|+20}} opinion from other pawns.
+|}
+</li></div>
+
+=== Random social interactions ===
+Random social interactions occur between pawns when they are in each other's vicinity. Whether interactions are good or bad is random but influenced their [[Social#Compatibility|compatibility]].
+
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_07 text-center}}
+! Thought name
+! Opinion
+! Duration (days)
+! Stack limit per pawn
+! Stack multiplier
+! Selection weight
+! Restrictions
+|- id="Chitchat"
+! Chitchat
+| {{Good|+0.66}}
+| {{Check Tag|?|unknown}}
+| +10 opinion
+| ×1
+| 1
+| style="text-align:left;" | '''Initiator''': not [[inhumanized]] {{AnomalyIcon}}<br/>'''Recipient''': not [[psychopath]]; not [[inhumanized]] {{AnomalyIcon}}<ref group="a" name="psychopath">[[Psychopath]]s and [[inhumanized]] {{AnomalyIcon}} pawns can actually be a part of a chitchat or deep talk, they just don't gain any opinion from it.</ref>
+|- id="Deep talk"
+! Deep talk
+| {{Good|+15}}
+| 20
+| 10×
+| ×0.9
+| 0.075<ref group="a"><!--
+Note about deep talk selection weight
+--> The base selection weight for deep talks is as follows muliplied by a chance factor depending of the [[Social#Compatibility|compatibility]] of the two pawns:
+:{| class="wikitable"
+! Deep talk interaction chance !! Compatibility !! Chance factor
+|-
+| rowspan="5" | {{Graph:Chart
+| width = 400
+| height = 100
+| type = line
+| x = -1.5, -0.5, 0.5, 1, 2
+| y = 0, 0.1, 1, 1.8, 3
+| xAxisTitle = Compatibility
+| yAxisTitle = Chance
+}}
+| -1.5 || 0
+|-
+| -0.5 || 0.1
+|-
+| 0.5 || 1
+|-
+| 1 || 1.8
+|-
+| 2 || 3
+|}</ref><!--
+footnote end-->
+| style="text-align:left;" | '''Initiator''': not [[inhumanized]] {{AnomalyIcon}}<br/>'''Recipient''': not [[psychopath]]; not [[inhumanized]] {{AnomalyIcon}}<ref group="a" name="psychopath" />
+|- id="Slighted"
+! Slighted
+| {{Bad|-5}}
+| 20
+| 10×
+| ×0.9
+| 0.02<ref group="a" name="negativeChance"><!--
+Note about deep talk selection weight
+-->{{Bad|x2.3}} for [[abrasive]] pawns. The base selection weight for insults and slights is also as follows muliplied by chance factors depending on the opinion of the other pawn and the [[Social#Compatibility|compatibility]] of the two pawns:
+:{| class="wikitable"
+! Insult/slight interaction chance factor !! Opinion !! Chance factor
+|-
+| rowspan="6" | {{Graph:Chart
+| width = 400
+| height = 100
+| type = line
+| x = -100, -50, -25, 0, 50, 100
+| y = 6, 4, 2, 1, 0.1, 0
+| xAxisTitle = Opinion
+| yAxisTitle = Chance
+}}
+| -100 || 6
+|-
+| -50 || 4
+|-
+| -25 || 2
+|-
+| 0 || 1
+|-
+| 50 || 0.1
+|-
+| 100 || 0
+|-
+! Insult/slight interaction chance factor !! Compatibility !! Chance factor
+|-
+| rowspan="7" | {{Graph:Chart
+| width = 400
+| height = 100
+| type = line
+| x = -2.5, -1.5, -0.5, 0.5, 1, 2, 3
+| y = 4, 3, 2, 1, 0.75, 0.5, 0.4
+| xAxisTitle = Compatibility
+| yAxisTitle = Chance
+}}
+| -2.5 || 4
+|-
+| -1.5 || 3
+|-
+| -0.5 || 2
+|-
+| 0.5 || 1
+|-
+| 1 || 0.75
+|-
+| 2 || 0.5
+|-
+| 3 || 0.4
+|}
+</ref><!--
+footnote end-->
+| style="text-align:left;" | '''Initiator''': not [[kind]]; not [[slave]] {{IdeologyIcon}} to non-slave<br/>'''Recipient''': none
+|- id="Insulted"
+! Insulted <ref group="a" name="mood">Also creates a thought that affects the mood:
+* {{Thought|desc=I've been directly insulted! What an awful person!|value=-5|label=Insulted|stack=10|duration=2}}
+* {{Thought|desc=I've been bestowed with kind words! What a nice person!|value=+5|label=Kind words|stack=10|duration=2|multi=0.9}}
+* {{Thought|desc=An unsettling conversation made me very creeped out. Nobody should think or speak of such things.|value=-4|label=Unsettling conversation|stack=10|duration=1}}</ref> <ref group="a">These can also be caused by [[insulting spree]] and [[Mental break#targeted insulting spree|targeted insulting spree]].</ref>
+| {{Bad|-15}}
+| 20
+| 10×
+| ×0.9
+| 0.007<ref group="a" name="negativeChance" />
+| style="text-align:left;" | '''Initiator''': not [[kind]]; not [[slave]] {{IdeologyIcon}} to non-slave<br/>'''Recipient''': none
+|- id="Kind words"
+! Kind words <ref group="a" name="mood" />
+| {{Good|+15}}
+| 20
+| 10×
+| ×0.9
+| 0.01
+| style="text-align:left;" | '''Initiator''': Only [[kind]]; not [[inhumanized]] {{AnomalyIcon}}<br/>'''Recipient''': none<ref group="a">Even [[psychopath]]s and [[inhumanized]] {{AnomalyIcon}} pawns gain opinion from it.</ref>
+|- id="Strange talk"
+! Strange chat {{AnomalyIcon}} <ref group="a" name="mood" />
+| {{Bad|-3}}
+| 1
+| 1×
+| ×0.75
+| exclusively
+| style="text-align:left;" | '''Initiator''': [[Disturbing]] / [[Void touched]]{{AnomalyIcon}}<br/>'''Recipient''': not [[inhumanized]] {{AnomalyIcon}}
+|}
+</li></div>
+<references group="a" />
+
+==== Social fights ====
+Every insult has a {{Bad|4 %}} chance of starting social fight, slights {{Bad|0.5 %}}. This chance is affected by the following factors:
+* [[Malnutrition]]
+** {{Bad|x1.5}} Trivial
+** {{Bad|x2}} Minor
+** {{Bad|x2.5}} Moderate
+** {{Bad|x3}} Severe
+* {{Bad|x4}} [[Bloodlust]]
+* [[Beer#Alcohol high|Alcohol high]]
+** {{Bad|x1.5}} Warm
+** {{Bad|x2.5}} Tipsy
+** {{Bad|x4}} Drunk
+** {{Bad|x5}} Hammered
+* {{Bad|x3}} [[Psychite tea#Withdrawal|Psychite withdrawal]]
+* {{Bad|x2}} [[Wake-up#Withdrawal|Wake-up withdrawal]]
+* [[Genes#Aggressive|Aggression genes]] {{BiotechIcon}}
+** {{Good|x0}} Dead calm
+** {{Bad|x2}} Aggressive
+** {{Bad|x3}} Hyper-aggressive
+
+The pawns in social fights cannot be drafted or controlled, similar to mental breaks. Fighting pawns' character portraits will display a red lightning bolt. The two fighting pawns will continue fighting until after at least {{Ticks|420}} have passed, or until the other pawn is downed or killed. Both pawns will suffer minor cut and bruise injuries, but there is a small chance that a pawn may lose their eye or even die. Pawns will not use melee weapons in fights, including bionics. Pawns that are [[incapable]] of violence can still provoke social fights, but will not fight back during them. If either pawn lands a hit, the victim will gain the {{Bad|-15}} "harmed me" opinion of their attacker for 10 days (see table in section [[Social#Actions|actions]]).
+
+After the pawns calm down, they will decide if the fight was cathartic or angering. This decision is made randomly and is wholly independent of any other factors, with both options being equally likely. A cathartic fight will give a pawn a {{Good|+38}} opinion of their opponent, and an angering fight will give a {{Bad|-22}} opinion. Both opinions last for 20 days.
+
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_07 text-center}}
+! Thought name
+! Opinion
+! Duration (days)
+! Stack limit per pawn
+! Stack multiplier
+! Nullifying traits
+|-
+! Had angering fight
+| {{Bad|-22}}
+| 20
+| 5×
+| ×0.9
+| None
+|-
+! Had cathartic fight
+| {{Good|+38}}
+| 20
+| 5×
+| ×0.9
+| None
+|}
+</li></div>
+
+=== Actions ===
+{{Stub|section=true|reason=1) See [[Children#Lesson taking]] and psychopath above. 2) See [[Baby#Social]] and [[Mental_break#Crying]]/[[Mental_break#Giggling]]}}
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_07 text-center}}
+! Thought name
+! Opinion
+! Duration (days)
+! Stack limit per pawn<br/>(overall limit)
+! Stack multiplier
+! Restrictions
+|-
+! Harmed me
+| -15
+| 10
+| 1× (300×)
+| ×1
+| None
+|-
+! Botched my surgery
+| -20
+| 90
+| 5× (300×)
+| ×0.9
+| None
+|-
+! <abbr title="Regular rescue">Rescued me</abbr>
+| 15
+| 30
+| 3× (300×)
+| ×0.9
+| None
+|-
+! <abbr title="Rescued by stranger: I was rescued by someone! I almost thought I was done for back there. I'm so thankful.">Rescued me</abbr>
+| 25
+| 30
+| 1× (300×)
+| –
+| None
+|-
+! Recruited me
+| 20
+| 120
+| 1× (1×)
+| –
+| None
+|-
+! Crashed together
+| 25
+| 20
+| 1× (300×)
+| ×1
+| None
+|-
+! <abbr title="Someone I love was sold to a trader like a piece of meat!">Sold my loved one</abbr> <ref group="b" name="mood">Also creates a thought that affects the mood.</ref>
+| -10
+| 120
+| 2× (10×)
+| ×1
+| None
+|-
+! <abbr title="My special bonded animal was given away!">Gave away my bonded animal</abbr> <ref group="b" name="mood" />
+| -10
+| 60
+| 2× (10×)
+| ×1
+| None
+|-
+! Forced to take drugs <ref group="b" name="mood" />
+| -30
+| 60
+| 1× (10×)
+| ×1
+| Only for [[teetotaler]]
+|-
+! Forced to take luciferium <ref group="b" name="mood" />
+| -30
+| 120
+| 1× (10×)
+| ×1
+| Only for [[body purist]]
+|-
+! Killed a child {{BiotechIcon}}
+| -20
+| {{Check Tag|?|unknown}}
+| 5× ({{Check Tag|?|unknown}}×)
+| ×0.9
+| Not [[psychopath]] or [[bloodlust]]
+|}
+</li></div>
+<references group="b" />
+
+==== Rituals ====
+{{Main|Rituals}}
+Pawns listening to a [[leader speech]] {{IdeologyIcon}} or [[throne speech]] {{RoyaltyIcon}} will have the following opinion of the speaker depending on the outcome:
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_07 text-center}}
+! Thought name
+! Opinion
+! Duration (days)
+! Stack limit
+! Stack multiplier
+|-
+! Terrible speech
+| {{Bad|-30}}
+| 8
+| 10×
+| ×1
+|-
+! Uninspiring speech
+| {{Bad|-15}}
+| 8
+| 10×
+| ×1
+|-
+! Encouraging speech
+| {{Good|+20}}
+| 8
+| 10×
+| ×1
+|-
+! Inspirational speech
+| {{Good|+40}}
+| 8
+| 10×
+| ×1
+|}
+</li></div>
+
+==== Precepts ====
+{{Main|Precepts}}
+{{Ideology|section=true}}
+{{Stub|section=true|reason=See [[Precepts]]. When done move info about nudist, bloodlust and canibal out of section traits}}
+
+== Relations ==
+There are multiple different types of relations possible between pawns. While familial ties affect the opinion, non-intimate relations are only the result of opinions. Romances are both the result of and a source of opinion.
+
+=== Family by blood ===
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_07 text-center}}
+! Relation
+! Opinion
+! Opinion of killer if killed
+! Incest opinion
+
+|-
+! Father/Mother/Son/Daughter/Birthmother
+| 30
+| -80
+| -30
+
+|-
+! Sibling
+| 20
+| -80
+| -15
+
+|-
+! Halfsibling
+| 15
+| -15
+| -15
+
+|-
+! Grandparent
+| 15
+| -15
+| 0
+
+|-
+! Grandchild
+| 15
+| -15
+| 0
+
+|-
+! Nephew/Niece
+| 10
+| -15
+| 0
+
+|-
+! Uncle/Aunt
+| 10
+| -15
+| -15
+
+|-
+! Cousin
+| 10
+| -15
+| -15
+
+|-
+! Greatgrandparent
+| 5
+| -15
+| 0
+
+|-
+! Greatgrandchild
+| 5
+| -15
+| 0
+
+|-
+! Granduncle/Grandaunt
+| 5
+| -15
+| 0
+
+|-
+! Grandnephew/Grandniece
+| 5
+| -15
+| 0
+
+|-
+! Secondcousin/Kin
+| 5
+| -15
+| 0
+|}
+</li></div>
+
+=== Non-Intimate Relations ===
+There are currently three types of relations between non-intimate pawns: Rival, Acquaintance, and Friend. Strangely enough, a pawn may be friends with someone who considers them to be a rival.
+* A '''rival'''  is every other pawn the pawn has an opinion of -100 to -20.
+* An '''acquaintance''' is every other pawn the pawn has an opinion of -20 to 20.
+* A '''friend''' is every other pawn the pawn has an opinion of 20 and 100.
+
+=== Romance ===
+{{Rewrite|section=1|reason=Quick and dirty move from [[Reproduction]] - needs cleanup and page integration}}
+Human pawns can come together and become lovers, affecting their opinion of each other, their mood, their wishes for accomodation and allow the chance for [[lovin']].
+
+==== Romance controls ====
+{{Biotech|section=1}}
+{{Rewrite|section=1|reason=<small>1) Tagged after the fact by not the original author - Are all mechanics below biotech or ONLY the force romance command and the factors apply to base romances? 2) Numbers for the factors listed 3) Relative age graphs/mechanics aren't adequately explained and need at the very least worked examples</small>}}
+For any pawns over 16, the Social tab will have a "Romance..." button that allows the player to try instigating a romantic relationship between that pawn and another of the gender they're attracted to. This can be tried every 12 days, and can be done even when the pawns are already in relationships. You can only attempt to romance a target pawn that has a high-enough opinion of the current pawn and isn't closely related to them. Beyond this, their relationship and relative ages affect the Romance abilities chance of success.
+
+===== Limitations =====
+When you've selected the current pawn and attempt to Romance a target pawn, it won't be allowed if: 
+* the target pawn has a negative opinion of the current pawn (stating "low opinion")
+* the likelihood of success is too low (stating "zero chance"))
+* they are closely related (incestuous) 
+
+Pawns that are under 16 or have an incompatible sexual attraction will not even be shown on the list.
+
+===== Likelihood of success =====
+With the current pawn selected, and the social tab open, you can see the chance of a Romance action's success by mousing over the target pawn's row in the social tab. It will tell you the probability of success and how it is calculated. The factors are: 
+* The target's opinion of the current pawn
+* The pawns' relative ages (which additionally factors in each pawn's youth)
+* Certain genes and traits for the pawns
+* The target pawn's opinions of the people they already are in relationships with (the chance of success is already 0% even if the pawn's opinion of their partner is only +20)
+
+The current pawn's beauty traits are major factors in the chance of success, beyond their influence on social opinions. An Ugly pawn (Beauty -1.0) has a x30% multiplier on success. A Pretty pawn (Beauty +1.0) has a x230% multiplier on success. Beauty here can be influenced by normal Beauty traits or Beauty-affecting genes. The beauty of the target pawn does not provide a multiplier or affect these chances: there is no boost from a pretty pawn romancing a pretty pawn and no extra penalty for an ugly pawn romancing a pretty pawn.
+
+Other genes can come into play as well. Someone with the Furskin gene has a x20% multiplier on romancing someone without it, and vice versa.
+
+'''Note on relative ages'''
+The relative age factor doesn't just take into account the difference in age between colonists. It also factors in how old each colonist is. This effect is very large for young colonists. A 16 year-old's relative age factor with any colonist, of any age, will steadily increase from 0% to a maximum of about 25% as they age from 16 to 17 biological years. This factor is still affected by the other colonist's age as well: a late 16-year-old has a x4.4% multiplier on a relationship with a 46-year-old but a x4.1% multiplier with a 51-year-old. However, this is drastically outweighed by the youth effect, because that same 16-year-old only has a ~1% multiplier on their romance chance with a younger 16-year-old. 
+
+{| class="wikitable"
+|-
+! Relative Age maximum by pawn age
+|-
+| {{Graph:Chart
+|width=400
+|height=100
+|type=line
+|x=16, 17, 22
+|y=0, 50, 100
+|xAxisTitle = Pawn age (years)
+|yAxisTitle = Relative Age (%)
+}}
+|}
+
+Once a colonist has reached the point where relative age isn't affected by their own youth, relative age is more affected by the difference in colonist ages.
+
+{| class="wikitable"
+|-
+! Relative Age multiplier by age of male partner for a 22-year-old female
+|-
+| {{Graph:Chart
+|width=400
+|height=100
+|type=line
+|x=16, 17, 28, 46, 55, 73
+|y=0, 30, 100, 45, 20, 20
+|xAxisTitle = Age difference (years)
+|yAxisTitle = Relative Age (%)
+}}
+|}
+
+==== Base opinions ====
+Pawns can have romantic relationships. Pawns in intimate relationships have higher base opinions of each other.
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_07 text-center}}
+! Relation
+! Opinion
+! Opinion of killer if killed
+|-
+! Spouse
+| {{Good|+30}}
+| {{Bad|-65}}
+|-
+! Fiancé
+| {{Good|+30}}
+| {{Bad|-65}}
+|-
+! Lover
+| {{Good|+35}}
+| {{Bad|-50}}
+|-
+! Stepparent
+| {{Good|+5}}
+| '''0'''
+|-
+! Stepchild
+| {{Good|+5}}
+| '''0'''
+|-
+! Parent-in-law
+| {{Good|+5}}
+| '''0'''
+|-
+! Child-in-law
+| {{Good|+5}}
+| '''0'''
+|-
+! Exspouse
+| {{Bad|-15}}
+| '''0'''
+|-
+! Exlover
+| {{Bad|-15}}
+| '''0'''
+|}
+</li></div>
+
+==== Lovers ====
+Lovers have a +35 opinion of each other. Lovers are created by the romance social interaction. The romance social interaction can also be rebuffed, carrying a -10 opinion of the romance target for the romancer and a -15 opinion of the romancer for the romance target. Lovers will want to sleep together in [[Double bed]]s, [[Double bedroll]]s, or [[Double sleeping spot]]s, and will have a permanent positive moodlet based on the opinion of each other. These pawns can break up randomly or if their opinions of each other are too low. If their opinions of each other is high enough, one of the lovers may propose to get married.
+
+Pawns that were not [[babies|born]]{{BiotechIcon}} in the colony can also have lovers spawn as NPCs.
+
+* After two lovers propose, they become '''fiancés/fiancées'''. They have a +30 opinion of each other. In the coming quadrums, they will have a marriage ceremony at the [[Marriage spot]] and become spouses.
+* '''Spouses''' are married couples. Spouses have a +30 opinion of each other. Like all of the previous relationships, the couple will want to sleep together.
+* '''Ex-Lovers''' are former lovers that have broken up through the breakup event. They have a -15 opinion of each other, but can get back together when their opinion rises back up. This is made hard by the fact that the target of the breakup will have an additional -50 opinion 
+*  '''Ex-Spouses''' are former spouses that have broken up through the breakup event. They have a -15 opinion of each other, but can get back together when their opinion rises back up. This is made hard by the fact that the target of the breakup will have an additional -70 opinion of the other person.
+
+==== Romantic social interactions ====
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_07 text-center}}
+! Thought name
+! Opinion
+! Max cumulated opinion or stack limit per pawn
+! Nullifying traits
+
+|-
+! Rebuffed me**
+| -10
+| 5
+| None
+
+|-
+! Failed to romance me
+| -15
+| 5*
+| None
+
+|-
+! Broke up with me**
+| -50
+| 1*
+| None
+
+|-
+! Affair**
+| -70
+| 1*
+| None
+
+|-
+! Divorced me**
+| -70
+| 1*
+| None
+
+|-
+! Rejected my proposal**
+| -30
+| 1*
+| None
+
+|-
+! I rejected their proposal
+| -15
+| 1*
+| None
+
+|-
+! Honeymoon phase**
+| 40
+| 1*
+| None
+
+|-
+! Got some lovin'**
+| 10
+| 3*
+| None
+|}
+</li></div>
+&#42; = Stack limit per pawn<br/>
+&#42;&#42; = Creates a thought that affects the mood
+
+==== Lovin' ====
+{{Rewrite|section=1|reason=adding graphs for the complex options {{t|MTB}}, lovin with slaves and prisoners when in relationship}}
+{{Stub|section=1|reason=Missing mood buff (+8), also note [[love enhancer]]. Use {{t|Thought}}. need stacking info}}
+Lovers, Fiancé/Fiancées, and spouses may do lovin' if in a double sleeping place with each other. This will provide a positive mood boost for the two. For lovin' to happen the game checks every hour if the pawns are eligible (e.g., the pawns are not starving, bleeding, or in labor, the pawns are in bed, et cetera). Each partner evaluates their mean-time-between separately, taking into account the following:
+<!-- factors all visible in RimWorld.LovePartnerRelationUtility#GetLovinMtbHours-->
+* [[Pain]]: {{MTB}} is multiplied by 100/(100-pain%).
+* [[Consciousness]]: if below 50%, {{MTB}} is multiplied by 50/consciousness%.
+* [[Low libido]]:{{BiotechIcon}} {{MTB}} ×2.
+* [[High libido]]:{{BiotechIcon}} {{MTB}} ×0.5.
+* Own age: MTB is divided by: age 16, 0, age 18 to 25, 1, age 80, 0.2, divisor is interpolated linearly.
+* Partner's age: MTB is divided by: age 16, 0, age 18, 1, divisor is interpolated linearly.
+* Age difference: a penalty is applied when the male pawn is more than 10 years older than the female pawn, or 3 years vice versa; the penalty accumulates quadratically until it reaches {{MTB}} ×25 at age differences equal +30 (older male)/+10 (older female).
+* Own [[beauty]]: below 0, {{MTB}} ×2.3, exactly 0, no effect, above 0, {{MTB}} ×0.3; doesn't matter how far from 0, not nullified even if both pawns "never judge others based on appearance".
+* Partner's beauty: exactly the same as own beauty, the resulting MTB scalars both apply.
+* Own opinion of the partner: -100, MTB×1.3, +100, MTB×0.7, linear interpolation.
+* Partner's opinion of self: evaluated in the exact same way, the resulting MTB scalars both apply.
+* Own brain affected by [[word of love]] [[psycast]]: {{MTB}} ×0.25.
+* Affected by [[pleasure pulse]]: {{MTB}} ×0.5.
+A session of lovin' will last for between 6 minutes and 1 hour 6 minutes game time (250 and 2750 ticks<ref>RimWorld.JobDriver_Lovin:MakeNewToils</ref>) and can be interrupted prematurely, which will still give the mood buff for lovin'. This can be repeated to stack the mood buff.
+
+==== Affairs ====
+If the opinion of another person is high enough and the opinion of the pawn's lover/fiancé/fiancée/spouse is low enough, a pawn may start an affair with another pawn. Their lover/fiancé/fiancée/spouse will suffer a massive -70 opinion of the adulterer.
+
+This is disabled for [[Ideology]] if specific setting for the ideoligions is set to have free range of spouse. In case of a mixed faith relationship, then the Ideology of the adulterer is what determines whether it counts as an affair.
+
+== Compatibility ==
+How good pawns get along is largely determined by their compatibility. This value is hidden but can be seen by turning on [[development mode]] and hovering over the target pawn in the other pawn's social tab. It is calculated by adding a pseudo random number to a score based on the absolute relative biological age. The pseudo random number follows a normal distribution and has an average value of 0.3. It is different for every pair of pawns. The score for the absolute relative biological age can be calculated with the following formula:
+
+{| class="wikitable"
+! colspan="2" | Compatibility by Absolute biological age difference (in years)
+|-
+| {{Graph:Chart
+| width = 400
+| height = 100
+| type = line
+| x = 0, 20, 25
+| y = 0.45, -0.45, -0.45
+| xAxisTitle = Absolute biological age difference
+| yAxisTitle = Score
+}}
+| <pre>Score = 0.45 * (1 - min(2, absolute_biological_age_difference / 10) )
+with
+0 ≤ absolute_biological_age_difference </pre>
+|}
+
+== Version history ==
+* [[Version/0.13.1135|0.13.1135]] - Social/Opinion system added. Family members out to cousins and beyond are now tracked, as are lovers, fiancees, marriages and exes of the same. Lovin' is added and Colonists in relationships can now share beds. People may get in social fights with those they dislike (even neutrals and enemies do this). Marriage ceremonies and parties added. People who leave the map while traveling, fleeing, being kidnapped, etc. can come back later as raiders, visitors, joiners, etc.
+* [[Version/1.1.0|1.1.0]] - Pawns now sometimes take the family name of their partner upon marriage. Pawns now really like the pawn who rescued them.
+* [[Version/1.4.3525|1.4.3525]] - Fix: Suppressed [[genes]] contributing to romance chance still apply.
+* [[Version/1.4.3563|1.4.3563]] - Fix: Lover relationships can generate for pawns who have spent their entire life in the colony.
+* [[Version/1.4.3682|1.4.3682]] - Fix: Pawn sibling relationships disappearing when parents are removed.
+* [[Version/1.6.4566|1.6.4566]] - Fix: Error attempting to generate creepjoiner relations.
+
+[[Category:Characters]]

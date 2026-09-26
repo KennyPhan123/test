@@ -1,0 +1,313 @@
+{{Stub|reason=1) Two-way links 2) Verify pawn max nutrition in-game}}
+{{Verified|1.5.4104}}{{Stat
+| def name = MaxNutrition
+| label = max nutrition
+| description = The amount of [[nutrition]] needed to completely fill this creature's stomach.
+| default base value = 1
+| min value = 0.01
+| hide at value = 1
+| to string style = FloatMaxTwo
+| show on mechanoids = false
+| show on entities = false
+| category = BasicsPawn
+| display priority in category = 2501
+| cacheable = true
+| parts = StatPart_BodySize, StatPart_LifeStageMaxFood
+}}
+
+== Factors ==
+* [[Hediffs]]
+** {{AnomalyIcon}} [[Hediffs#Ghoul|Ghoul]]: {{Good|×200%}}
+With adult [[human]]s having a max nutrition of 1, this means [[Ghoul]]s have a max nutrition of 2.
+
+[[Max Nutrition]] is calculated by:
+
+ [[Max Nutrition]] = ('''Body Size Factor''' × '''Base Body Size''') × '''Food Max Factor'''
+
+Where Body Size Factor and Food Max Factor are from the pawn's current lifestage, and Base Body Size is from the pawn's race: all are 1 by default. This means that most adult pawns have a Body Size Factor and Food Max Factor of 1, and therefore their max nutrition is equivalent to the body size of the pawn's race.
+
+ '''Body Size''' = '''Body Size Factor''' × '''Base Body Size'''
+
+* Life Stage Factors:
+{| {{STDT| c_08 sortable}}
+! Life Stage !! Body Size Factor !! Food Max Factor !! Max Food
+|-
+! Baby
+| 0.2 || 0.625 || 0.125 <!-- bodySizeFactor * foodMaxFactor = maxFood = 0.125 -->
+|-
+! Child
+| 0.35 || 2.286 || 0.8001 <!-- bodySizeFactor * foodMaxFactor = maxFood = 0.8 -->
+|-
+! Teenager
+| 0.8 || 1.25 || 1 <!-- bodySizeFactor * foodMaxFactor = maxFood = 1.0 -->
+|-
+! Larva (Insect)
+| 0.2 || 2 || 0.4
+|-
+! Immature (Insect)
+| 0.5 || 1.5 || 0.75
+|-
+! Baby (Animal)
+| 0.2 || 3 || 0.6
+|-
+! Baby (Tiny Animal)
+| 0.1 || 6 || 0.6
+|-
+! Juvenile (Animal)
+| 0.5 || 1.5 || 0.75
+|-
+! Preteen {{BiotechIcon}}
+| 0.7 || 1.552 || 1.0864 <!-- bodySizeFactor * foodMaxFactor = maxFood = 0.9 -->
+|}
+
+* Base Body Size:
+<div><li style="display: inline-table;">
+Click to <div class="mw-collapsible">
+<div class="mw-collapsible-content">
+{| {{STDT| c_08 sortable}}
+! Pawn !! [[Property:Body Size|Body Size]]
+|-
+{{#ask: [[Body Size::+]]
+[[Diet::!none]]
+| ?Body Size
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Name
+| limit = 1000
+}}
+|}
+</div>
+</div>
+</li></div>
+<!--
+{| {{STDT| c_08 sortable}}
+! Race !! Base Body Size
+|-
+! {{Icon Small|Grizzly bear}} [[Grizzly bear]]
+| 2.15
+|-
+! {{Icon Small|Polar bear}} [[Polar bear]]
+| 2.15
+|-
+! {{Icon Small|Ostrich}} [[Ostrich]]
+| 1
+|-
+! {{Icon Small|Emu}} [[Emu]]
+| 0.6
+|-
+! {{Icon Small|Cassowary}} [[Cassowary]]
+| 0.6
+|-
+! {{Icon Small|Cougar}} [[Cougar]]
+| 1
+|-
+! {{Icon Small|Panther}} [[Panther]]
+| 1
+|-
+!  {{Icon Small|Lynx}} [[Lynx]]
+| 0.6
+|-
+! {{Icon Small|Cat}} [[Cat]]
+| 0.32
+|-
+! {{Icon Small|Yorkshire terrier}} [[Yorkshire terrier]]
+| 0.32
+|-
+! {{Icon Small|Guinea pig}} [[Guinea pig]]
+| 0.2
+|-
+! {{Icon Small|Labrador retriever}} [[Labrador retriever]]
+| 0.75
+|-
+! {{Icon Small|Husky}} [[Husky]]
+| 0.86
+|-
+! {{Icon Small|Monkey}} [[Monkey]]
+| 0.35
+|-
+! {{Icon Small|Chicken}} [[Chicken]]
+| 0.3
+|-
+! {{Icon Small|Duck}} [[Duck]]
+| 0.3
+|-
+! {{Icon Small|Turkey}} [[Turkey]]
+| 0.6
+|-
+! {{Icon Small|Goose}} [[Goose]]
+| 0.6
+|-
+! {{Icon Small|Cow}} [[Cow]]
+| 2.4
+|-
+! {{Icon Small|Boomalope}} [[Boomalope]]
+| 2
+|-
+! {{Icon Small|Muffalo}} [[Muffalo]]
+| 2.4
+|-
+! {{Icon Small|Bison}} [[Bison]]
+| 2.4
+|-
+! {{Icon Small|Dromedary}} [[Dromedary]]
+| 2.1
+|-
+! {{Icon Small|Goat}} [[Goat]]
+| 0.75
+|-
+! {{Icon Small|Elk}} [[Elk]]
+| 2.1
+|-
+! {{Icon Small|Yak}} [[Yak]]
+| 2.1
+|-
+! {{Icon Small|Caribou}} [[Caribou]]
+| 1
+|-
+! {{Icon Small|Horse}} [[Horse]]
+| 2.4
+|-
+! {{Icon Small|Donkey}} [[Donkey]]
+| 1.4
+|-
+! {{Icon Small|Elephant}} [[Elephant]]
+| 4
+|-
+! {{Icon Small|Rhinoceros}} [[Rhinoceros]]
+| 3
+|-
+! {{Icon Small|Hare}} [[Hare]]
+| 0.2
+|-
+! {{Icon Small|Snowhare}} [[Snowhare]]
+| 0.2
+|-
+! {{Icon Small|Megascarab}} [[Megascarab]]
+| 0.2
+|-
+! {{Icon Small|Spelopede}} [[Spelopede]]
+| 0.8
+|-
+! {{Icon Small|Megaspider}} [[Megaspider]]
+| 1.2
+|-
+! {{Icon Small|Thrumbo}} [[Thrumbo]]
+| 4
+|-
+! {{Icon Small|Cobra}} [[Cobra]]
+| 0.25
+|-
+! {{Icon Small|Tortoise}} [[Tortoise]]
+| 0.5
+|-
+! {{Icon Small|Alphabeaver}} [[Alphabeaver]]
+| 0.45
+|-
+! {{Icon Small|Pig}} [[Pig]]
+| 1.7
+|-
+! {{Icon Small|Wild boar}} [[Wild boar]]
+| 0.85
+|-
+! {{Icon Small|Ibex}} [[Ibex]]
+| 1
+|-
+! {{Icon Small|Deer}} [[Deer]]
+| 1.2
+|-
+! {{Icon Small|Gazelle}} [[Gazelle]]
+| 0.7
+|-
+! {{Icon Small|Chinchilla}} [[Chinchilla]]
+| 0.35
+|-
+! {{Icon Small|Sheep}} [[Sheep]]
+| 0.75
+|-
+! {{Icon Small|Alpaca}} [[Alpaca]]
+| 1
+|-
+! {{Icon Small|Megasloth}} [[Megasloth]]
+| 4
+|-
+! {{Icon Small|Capybara}} [[Capybara]]
+| 0.75
+|-
+! {{Icon Small|Squirrel}} [[Squirrel]]
+| 0.2
+|-
+! {{Icon Small|Rat}} [[Rat]]
+| 0.2
+|-
+! {{Icon Small|Boomrat}} [[Boomrat]]
+| 0.2
+|-
+! {{Icon Small|Raccoon}} [[Raccoon]]
+| 0.4
+|-
+! {{Icon Small|Iguana}} [[Iguana]]
+| 0.4
+|-
+! {{Icon Small|Warg}} [[Warg]]
+| 1.4
+|-
+! {{Icon Small|Timber wolf}} [[Timber wolf]]
+| 0.85
+|-
+! {{Icon Small|Arctic wolf}} [[Arctic wolf]]
+| 0.85
+|-
+! {{Icon Small|Fennec fox}} [[Fennec fox]]
+| 0.55
+|-
+! {{Icon Small|Red fox}} [[Red fox]]
+| 0.55
+|-
+! {{Icon Small|Arctic fox}} [[Arctic fox]]
+| 0.55
+|-
+! {{Icon Small|Human}} [[Human]]
+| 1
+|-
+! {{Icon Small|Waste rat}} [[Waste rat]] {{BiotechIcon}}
+| 0.3
+|-
+! {{Icon Small|Toxalope}} [[Toxalope]] {{BiotechIcon}}
+| 1.4
+|}
+-->
+
+== Stat Def Data ==
+{| {{STDT| c_08}}
+! Name !! Description !! Category !! Parameters !! Complex Parameters !! Display Priority In Category
+|- id="Max Nutrition" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />MaxNutrition
+* '''Label:'''<br />max nutrition
+| The amount of nutrition needed to completely fill this creature's stomach.
+|
+* Display Order: '''11'''
+* Def Name:<br />'''BasicsPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default: {{Bad|false}}
+|
+* Default Base Value: '''1'''
+* Hide At Value: '''1'''
+* Min Value: '''0.01'''
+* To String Style: '''FloatMaxTwo'''
+* Show On Mechanoids: {{Bad|false}}
+* Show On Entities: {{Bad|false}}
+* Cacheable: {{Good|true}}
+|
+* Parts:
+** '''StatPart_BodySize'''
+** '''StatPart_LifeStageMaxFood'''
+| 2501
+<!--</StatDef>-->
+|}
+
+== Version history ==
+{{Stub|nocat=1|section=1|reason=General Version history}}
+
+{{nav|stats|wide}}

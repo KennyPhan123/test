@@ -1,0 +1,38 @@
+{{Odyssey}}
+{{Stub|reason=Infobox, general}}
+{{infobox main|building|
+| name = Life support unit
+| image = LifesupportUnit.png
+| description = A unit connected to the orbital platform's larger life support network. It keeps rooms heated and pressurized.
+| type = Building
+| type2 = Ruins
+| size = 1 ˣ 1
+| hp = 35
+| power = 3200
+| heatpersecond = 30
+| junk = false
+}}
+The '''Life support unit'''  is a wall-mounted building that produces [[power]], [[heat]], and [[Vacuum|oxygen]].
+
+== Acquisition ==
+Life support units cannot be constructed or minified. They can only be found on abandoned orbital platforms, where they are typically abundant.
+
+== Summary ==
+{{Stub|section=1|reason=Need info on power generation}}
+<!-- Not a value in XML, values hardcoded in C#. -->
+Every {{ticks|250}}, a life support unit lowers the [[vacuum]] percentage of its current [[room]]. The room must be enclosed by [[airtight]] structures and [[roof]]ed. It changes the vacuum percentage at a base rate of {{Down|-5%}} per second per 100 tiles, scaling proportionally to the number of tiles enclosed; for instance, a room with 25 tiles will reduce the vacuum percentage by {{Down|-20%}} per second, while a room with 200 tiles will drop by {{Down|-2.5%}} per second. Multiple oxygen sources may be required to pressurize especially large rooms.
+
+<!-- Not value in XML, values hardcoded in C#. -->
+Life support units will attempt to heat the room so long as the room temperature is lower than {{Temperature|20}}. As opposed to a [[heater]], the target temperature cannot be configured.
+
+{{Wall Mount Note}}
+
+== Analysis ==
+{{Stub|section=1|reason=Analysis stub}}
+Although these cannot be built or claimed, like all power buildings power can be drawn from it by connecting power conduits of any kind to it.  Set up a base in an abandoned orbital platform and never worry about power, heat, or vacuum again.
+
+== Version history ==
+* [[Odyssey DLC]] Release - Added.
+
+{{Nav/Ruins|Wide}}
+[[Category: Ruins]]

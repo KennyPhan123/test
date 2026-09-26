@@ -1,0 +1,57 @@
+{{BackToTutorials}}
+
+'''ThingDef''' is one of the many [[Modding_Tutorials/XML_Defs|Defs]] used in RimWorld. Almost every "tangible" (and some intangible) things you see in RimWorld are backed by a ThingDef.
+
+=What you'll learn=
+You will learn the '''structure''' of ThingDef, how to use a decompiler to learn what a tag does, and along the way you'll learn the meaning of a few select tags.
+
+=What you will '''not''' learn=
+The goal of this tutorial is not to tell you what each XML tag does. ThingDef alone has 200+ valid XML tags, not counting hundreds of subtags. There are simply too many to document, and a lot of them are self-explanatory.
+
+* If you want a list of all XML tags (not just ThingDef) you'll want [https://ludeon.com/forums/index.php?topic=21440.0 milon's autodocumentation project]. Note that it only includes tags ''in use by'' RimWorld, not necessarily ''all tags available''.
+* If you want to see what an earnest attempt at documenting the XML looks like, you'll want the [https://github.com/RimWorldMod/RimworldModdingFiles XML Documentation Database]. Last updated for A15.
+* If you want to see what a documentation attempt on this wiki looks like, [https://rimworldwiki.com/index.php?title=Modding_Tutorials/ThingDef&oldid=62403 view the history of this article] and see that was last up to date in Alpha 9.
+
+Fact of the matter is this: there is no documentation that will tell you the meaning and usage of every tag. There probably never will. If there is, it will be out-of-date soon enough.
+
+=Requirements=
+* A [[Modding Tutorials/Decompiling_source_code|decompiler]] is advised.
+
+[[File:ThingDef.PNG|300px|thumb|right|ILSpy v4.0 showing the decompiled ThingDef class, with the analyzer expanded on the smallVolume field. To the left a few of available fields are visible.]]
+
+=Introduction=
+There are hundreds of XML tags. Some of them are rudimentary tags required for basic operation. Most of them are self-explanatory, and you can always use the Find In Files functionality of [[Modding Tutorials/Recommended software|your favourite text editor]] to see what it is used by, and what values already exist. Sometimes, this does not suffice. This tutorial is for those times.
+
+=An example=
+Let's take a look at the ''intricate'' tag. This tag serves as an example because unlike "DeteriorationRate" or "stackLimit" it's not immediately obvious what it does. This tutorial assumed you just used the Find In Files functionality of [[Modding Tutorials/Recommended software|your favourite text editor]] and learned just one thing: Only the [[Component]] and [[Advanced component]] have this tag, and it's set to true.
+
+<source lang = "xml">
+<Defs>
+    <ThingDef>
+        <defName>ComponentIndustrial</defName>
+        <intricate>true</intricate>
+    </ThingDef>
+</Defs>
+</source>
+
+[[File:Intricate.PNG|300px|thumb|right|The search result for intricate.]]
+
+Take your favourite [[Modding Tutorials/Decompiling source code|decompiler]] and search for ''intricate''. Now right-click the result and hit ''analyze''. The analyzer in my decompiler shows it's read in three places, and assigned nowhere. The decompiler doesn't show any assigning of this value because it's set in the XML. We can see it's read by ''PlayerItemAccessibilityUtility.CacheAccessibleThings'' and twice by ''Thing.SmeltProducts''. Taking a closer look at the ''Thing+<SmeltProducts>c__Iterator4.MoveNext'', this is an inner method for the enumerator<ref>The what? An enumerable is a fancy type of list and the MoveNext means "go to the next item on the list". Apologies to those who have a background in computer science.</ref>. That in itself doesn't do much, so let's take a look at ''SmeltProducts'' itself.
+
+[[File:SmeltProducts.PNG|300px|thumb|right|The view for SmeltProducts.]]
+
+We can see here that ''SmeltProducts'' in turn is used for some economy related DebugOutput, and by MakeRecipeProducts. We can dive further down the rabbithole, but by now it is a reasonable assumption that ''SmeltProducts'' is used to determine what products you get from smelting. But what's the ''intricate'' tag? Well, ''SmeltProducts'' loops over the ingredients in the costList (i.e. the required ingredients to make an item) and checks if it's ''intricate''. If it's not intricate, it will return the ingredient.
+
+In other words, the ''intricate'' tag means that ThingDef won't survive a trip to the smelter. You don't get your components back if you smelt down an [[Assault rifle]].
+
+'''You can find the meaning of every XML tag this way.''' Some might be easier than others, but you can find (or make an educated guess) to the meaning of every XML tag.
+
+=Adding more tags=
+This requires C#. The current recommended way for maximum compatibility is by using a [[Modding_Tutorials/DefModExtension|DefModExtension]].
+
+=See also=
+* [https://ludeon.com/forums/index.php?topic=21440.0 milon's autodocumentation project]. Note that it only includes tags ''in use by'' RimWorld, not necessarily ''all tags available''
+* [https://github.com/RimWorldMod/RimworldModdingFiles XML Documentation Database]. Last updated for A15.
+
+[[Category:Defs]]
+[[Category:Modding tutorials]]

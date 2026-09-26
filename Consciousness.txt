@@ -1,0 +1,212 @@
+{{Verified|1.4.3641}}{{Capacity
+| mechanoid name = Data Processing
+| entity name = Sentience
+| drone name = Performance
+| default base value = 1
+| to string style = PercentZero
+| description = The state or quality of awareness. A pawn loses consciousness when this falls below 30%, and dies when this reaches 0%.
+}}
+[[Human]]s, [[animals]] and [[mechanoids]] all share the same unconscious and lethality thresholds. 
+
+{{Hover title|Version/1.4.3580|At the time of writing}}, the maximum possible Consciousness capacity is [[Effective Maximum::1.7|170%]] with a healthy pawn high on [[go-juice]], [[luciferium]] and [[wake-up]], having used a [[neural supercharger]],{{IdeologyIcon}} with any level of [[pollution stimulus]] {{BiotechIcon}} and a [[Psychic bonding|psychic bond]] {{BiotechIcon}} with a pawn on the same map.
+
+== Affected stats ==
+Consciousness itself doesn't have any ''direct'' effect on a pawn's stats, however it does directly affect several other capacities which in turn affect most [[stat]]s a pawn has. Thus, when considering the effect of a consciousness change, the affected stats of those other capacities must be considered.
+{{#ask: [[Consciousness Importance::+]]
+| ?Health Type = Type
+| ?Consciousness Importance# = Weight
+| ?Consciousness Limit# = Max
+| ?description
+| format = broadtable
+| limit  = 100
+| mainlabel = Name
+| headers = plain
+| sort = Health Type, 
+}}
+
+== Factors ==
+{{Stub|section=1|reason= 1) Painshock threshold missing 2) psychic supressor }}
+=== Base Factors ===
+''Consciousness'' is mainly affected by the following factors:
+* [[Blood Pumping]]: [[Blood Pumping Importance::0.2|20%]] importance, no allowed defect. [[Blood Pumping Limit::1|100%]] Max.
+* [[Breathing]]: [[Breathing Importance::0.2|20%]] importance, no allowed defect. [[Breathing Limit::1|100%]] Max.
+* [[Blood filtration]]: [[Blood Filtration Importance::0.1|10%]] importance, no allowed defect. [[Blood Filtration Limit::1|100%]] Max.
+* [[Pain]]: The pain offset can be calculated as follows: 
+: <code>IF Pain[%] <= 10% THEN -0% ELSE -{(Pain-0.1)/2.25}[%]</code>
+<!-- Prior formula is incorrect.
+: <code>IF {1.05 - (0.45 x Pain)}[%] < 100% THEN {1.05 - (0.45 x Pain [%])} ELSE 100% </code>
+For example, it says that pain does not start until 11.1% (0.05 / 0.45), when in fact it starts at 10%, via the LerpDouble() function.
+As another example, pain of exactly 55% will grant exactly a 20% consciousness penalty, but the prior formula say it would be -19.75% instead.
+LerpDouble linearly interprets between two pairs of points.  In this case, pain between 0.1f (10%) and 1.0f (100%) is interpolated over the range 0f (0% penalty) and 0.4f (40% penalty).
+The prior formula was also phrased as a *factor*, when in fact it is implemented as an offset (ie. 100% Pain, which is a 40% penalty, is -40% consciousness, not consciousness * 0.6)
+-->
+<!-- Same formula, as originally presented; harder to grok:
+(IF -0.45 × Pain [%] + 1.05) < 100% THEN (-0.45 × Pain [%] + 1.05) ELSE 100%</code>
+-->
+::''Thus, minor levels of pain (10% or less) have no effect on Consciousness, while anything more than that starts to reduce consciousness at a little less than half (4/9) its value.''
+
+:: ''More specifically, the pawn's consciousness is reduced at a rate of -1% for every 2.25% Pain above 10%, with a maximum penalty at 100% Pain of -40% Consciousness.''
+* Brain part efficiency: 100% importance, no allowed defect. No Max (effectively 100%).
+** [[Joywire]]: part efficiency offset {{--|20%}}
+
+=== Post Factors ===
+The following factors are applied after the ''Base factors''.
+* [[Beer]] (high)
+** Tipsy: '''×90%'''
+** Drunk: '''×65%'''
+** Hammered: '''×50%'''
+* [[Cryptosleep sickness]]: '''×80%'''
+* [[Food poisoning]]
+** Recovering: '''×60%'''
+** Initial: '''×60%'''
+** Major: '''×50%'''
+* [[Heart attack]] painful: '''×50%'''
+<!-- * [[Psychic hangover]]: '''×80%''' - Version history says removed in 1.1.2647 but its still in the files and not commented out. Disabling for now - Harakoni -->
+* [[Biosculpting sickness]]{{IdeologyIcon}}: '''×80%'''
+* [[Deathrest|Interupted deathrest]]{{BiotechIcon}}: '''×80%'''
+* [[Scanning sickness]]{{BiotechIcon}}: '''×75%'''
+* [[Morning sickness]]{{BiotechIcon}}: '''×80%'''
+* [[Imbue_death_refusal#Death_refusal_sickness|Death refusal sickness]]{{AnomalyIcon}}: '''×95%'''
+
+=== Offsets ===
+The following offsets are applied after the ''Post factors''.
+* [[Beer]] (hangover)
+** Slight: {{--|3%}}
+** Strong: {{--|8%}}
+** Pounding: {{--|18%}}
+* [[Beer|Alcohol]] withdrawal: {{--|20%}}
+* [[Go-juice]]: 
+** High: {{+|20%}}
+** Withdrawal: {{--|20%}}
+* [[Luciferium]] high: {{+|10%}}
+* Psychite withdrawal ([[Flake]]/[[Yayo]]/[[Psychite tea]]): {{--|20%}}
+* [[Smokeleaf joint]]
+** High: {{--|30%}}
+** Withdrawal: {{--|20%}}
+* [[Wake-up]]: 
+** High: {{+|10%}}
+** Withdrawal: {{--|30%}}
+* [[Blood loss]]
+** Minor: {{--|10%}}
+** Moderate: {{--|20%}}
+** Severe: {{--|40%}}
+** Extreme: {{--|40%}}
+* [[Toxic buildup]]
+** Initial: {{--|5%}}
+** Minor: {{--|10%}}
+** Moderate: {{--|15%}}
+** Serious: {{--|25%}}
+* [[Malnutrition]]
+** Trivial: {{--|5%}}
+** Minor: {{--|10%}}
+** Moderate: {{--|20%}}
+** Severe: {{--|30%}}
+* [[Heatstroke]]
+** Initial: {{--|5%}}
+** Minor: {{--|10%}}
+** Serious: {{--|20%}}
+* [[Hypothermia]]
+** Shivering: {{--|5%}}
+** Minor: {{--|10%}}
+** Serious: {{--|20%}}
+* [[Hypothermic slowdown]]
+** Minor: {{--|5%}}
+** Moderate: {{--|20%}}
+** Serious: {{--|40%}}
+* [[Infection]] extreme (initial): {{--|5%}}
+* [[Flu]]
+** Minor: {{--|5%}}
+** Major: {{--|10%}}
+** Extreme: {{--|15%}}
+* [[Plague]]
+** Minor: {{--|5%}}
+** Major: {{--|20%}}
+** Extreme: {{--|30%}}
+* [[Malaria]]
+** Minor: {{--|5%}}
+** Major: {{--|12%}}
+* [[Sleeping sickness]]
+** Minor (initial): {{--|2%}}
+** Minor (advanced): {{--|4%}}
+** Major: {{--|15%}}
+** Extreme (initial): {{--|20%}}
+* [[Lung rot]] extreme: {{--|10%}}
+* [[Resurrection psychosis]]
+** Moderate: {{--|10%}}
+** Advanced: {{--|20%}}
+** Severe: {{--|30%}}
+** Total: {{--|40%}}
+* [[Psychic breakdown]]{{RoyaltyIcon}}:
+** Minor: {{--|25%}}
+** Major: {{--|50%}}
+* [[Circadian half-cycler]]{{RoyaltyIcon}}: {{--|15%}}
+* [[Neural supercharger]]{{IdeologyIcon}}: {{+|10%}}
+* [[Psychic bonding|Psychic bond]]{{BiotechIcon}}:
+** Psychic bond: {{+|15%}}
+** Psychic bond distance: {{--|25%}}
+* [[Pollution stimulus]]{{BiotechIcon}}: {{+|5%}}
+* [[Infant illness]]{{BiotechIcon}} extreme: {{--|5%}}
+* Gene loss shock{{BiotechIcon}}: {{--|0.05}}
+* [[Bio-starvation]]{{BiotechIcon}}: {{--|25%}}
+* [[Mind-numb serum]]{{AnomalyIcon}}: {{--|5%}}
+* [[Sentience catalyst]] (animals only){{OdysseyIcon}}: {{+|10%}}
+
+=== Limits ===
+If any of these conditions apply, the ''Consciousness'' can not be higher than the given value. Note that it can still be lower.
+* [[Beer]] (high) blackout: '''10% max'''
+* [[Luciferium]] need unmet: '''80% max'''
+* [[Blood loss]] extreme: '''10% max'''
+* [[Anesthetic]]
+** Wearing off: '''90% max'''
+** Woozy: '''70% max'''
+** Sedated: '''1% max'''
+* [[Catatonic breakdown]]: '''10% max'''
+* [[Psychic shock]]: '''10% max'''
+* [[Psychic coma]]: '''10% max'''
+* [[Brain shock]]: '''10% max'''
+* [[Toxic buildup]] extreme: '''10% max'''
+* [[Heart attack]] debilitating: '''10% max'''
+* [[Overdose|Drug overdose]]
+** Minor: '''50% max'''
+** Major: '''10% max'''
+* [[Malnutrition]] extreme: '''10% max'''
+* [[Heatstroke]] extreme: '''10% max'''
+* [[Hypothermia]] extreme: '''10% max'''
+* [[Hypothermic slowdown]] extreme: '''10% max'''
+* [[Infection]] extreme (advanced): '''10% max'''
+* [[Malaria]] extreme: '''10% max'''
+* [[Sleeping sickness]] extreme (advanced): '''10% max'''
+* [[Resurrection psychosis]] catatonic: '''10% max'''
+* [[Psychic breakdown]] total{{RoyaltyIcon}}: '''10% max'''
+* [[Infant illness]]{{BiotechIcon}} extreme: '''10% max'''
+* [[Hemogen#Hemogen craving|Hemogen craving]]{{BiotechIcon}}:
+** Minor: '''90% max'''
+** Major: '''80% max'''
+** Extreme: '''50% max'''
+* [[Deathrest|Deathresting]]{{BiotechIcon}}: '''10% max'''
+* [[Deathrest|Deathrest exhaustion]]{{BiotechIcon}}: '''50% max'''
+* [[Deathless|Regeneration coma]]{{BiotechIcon}}: '''10% max'''
+* [[Xenogerm|Xenogermination coma]]{{BiotechIcon}}: '''10% max'''
+* [[Genes#Drugs|Chemical dependency]]{{BiotechIcon}}:
+** Deficiency: '''70% max'''
+** Deficiency coma: '''10% max'''
+* [[Dark psychic shock]]{{AnomalyIcon}}: '''10% max'''
+* [[Revenant|Revenant hypnosis]]{{AnomalyIcon}}: '''10% max'''
+* [[Duplicate sickness]] debilitating{{AnomalyIcon}}: '''10% max'''
+* [[Metal hell|Void shock]]{{AnomalyIcon}}: '''10% max'''
+* [[Brainwipe|Brainwipe coma]]{{AnomalyIcon}}: '''10% max'''
+* [[Unnatural corpse|Corpse torment]]{{AnomalyIcon}}: '''10% max'''
+* [[Vacuum exposure]] extreme{{OdysseyIcon}}: '''10% max'''
+
+=== Formula ===
+The formula is as follows:
+ '''Consciousness''' = ''IF'' (Base factors × Post factors + Offsets) < Limit ''THEN'' (Base factors × Post factors + Offsets) ''ELSE'' Limit
+
+The ''Base factors'' can be calculated with the following formulas:
+ '''Blood Pumping''' = 1 + ({''IF'' Blood Pumping < 1 ''THEN'' Blood Pumping ''ELSE'' 1} - 1) × 0.2
+ '''Breathing''' = 1 + ({''IF'' Breathing < 1 ''THEN'' Breathing ''ELSE'' 1} - 1) × 0.2
+ '''Blood Filtration''' = 1 + ({''IF'' Blood Filtration < 1 ''THEN'' Blood Filtration ''ELSE'' 1} - 1) × 0.1
+ '''Pain''' = ''IF'' (-0.45 × Pain + 1.05) < 1 ''THEN'' (-0.45 × Pain + 1.05) ''ELSE'' 1
+
+{{nav|stats|wide}}
+<noinclude>[[Category:Capacity]]</noinclude>

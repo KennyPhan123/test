@@ -1,0 +1,284 @@
+{{DISPLAYTITLE:Asset Bundles}}
+
+{{BackToTutorials}}
+
+{{:Modding_Tutorials/Under_Review}}
+
+This tutorial explains what asset bundles are, why you might want them, and how they compare to the two other ways RimWorld can load custom art: loose textures and DDS files. It starts from zero, so you don't need to know anything about Unity going in. Later sections walk through the actual build process, then get into the parts that trip people up, mostly shaders and cross-platform issues.
+
+== What is an asset bundle? ==
+
+An asset bundle is a single file that holds a bunch of Unity assets already packed in the format the engine wants. RimWorld runs on Unity, and Unity has its own internal way of storing textures, meshes, shaders, audio, and so on. A loose PNG sitting in your mod's <code>Textures/</code> folder isn't in that format yet, so the game has to convert it before it can use it.
+
+A bundle is that conversion done ahead of time, saved to disk, and handed to the engine in one piece. The rest of this page is mostly consequences of that.
+
+== Why would I care? ==
+
+Two reasons, mostly:
+
+'''Load time.''' When you ship loose PNGs, RimWorld converts every single one while the game boots (more on this in the next section). For a small mod you'll never notice. For a mod with hundreds or thousands of textures, that conversion adds up, and it's part of why a heavily-modded load screen sits there for a while. A bundle skips the conversion because the work is already done.
+
+'''Everything that isn't a texture.''' Loose files only really work for textures and sounds. If you want to ship a custom shader, a custom font, a custom mesh, or anything else Unity-shaped, a bundle is the normal way to get it into the game. There's no <code>Shaders/</code> folder you can just drop a file into.
+
+If your mod is XML and a handful of textures, you probably don't need bundles at all. If your mod is large, or it needs a custom shader or font, you do.
+
+As of 1.6, bundles are the encouraged path for anything beyond a small loose-texture mod. The engine grew real first-class support for them: it loads them for you, swaps the right one per operating system, and serves their contents through the same content lookup you already use. Earlier versions made you wire all of that up by hand, which is why older tutorials look more involved than this one. On 1.6+ most of the friction is gone.
+
+== Loose textures vs DDS vs asset bundles ==
+
+All three of these get a texture onto the screen. They differ in '''when''' the work happens and '''what''' they can carry. Mix those two questions up and the whole topic gets confusing fast.
+
+=== Loose textures (PNG) ===
+
+You put a <code>.png</code> in your mod's <code>Textures/</code> folder and reference it by path. Simplest possible setup, and what almost every tutorial starts with. (The [[Modding_Tutorials/Textures|Textures]] page covers the path rules and texture conventions in full; this page assumes you have that down.)
+
+RimWorld doesn't render your PNG directly. On load it converts the PNG into a compressed GPU texture (the same family of formats DDS uses) and caches the result. So the PNG is a source file, not the thing the GPU actually draws. That conversion is cheap for one texture and not cheap for a thousand.
+
+* '''Pro:''' dead simple, easy to edit, easy to diff, no tooling.
+* '''Con:''' the game pays a conversion cost on load, and you can't ship anything other than textures and sounds this way.
+
+=== DDS textures ===
+
+A <code>.dds</code> file is a texture that's ''already'' in a GPU-ready compressed format. If you drop a DDS next to where the PNG would go, RimWorld uses it directly and skips the conversion step entirely.
+
+So the loose-vs-DDS question is mostly about that conversion cost, not about how the final image looks. A correctly-made DDS and the game's own PNG conversion land in roughly the same place visually. What DDS buys you is a faster load and no first-load hitch, because the expensive part already happened on your machine when you made the file.
+
+The catch is you have to ''make'' the DDS, and if you make it wrong (wrong compression, no mipmaps, wrong color space) it can look worse than just letting the game convert the PNG. It's a real win for large texture sets, and a footgun for people who don't know what BC7 or mipmaps are.
+
+* '''Pro:''' no runtime conversion, faster load, no first-load stutter for that texture.
+* '''Con:''' you have to generate it correctly, harder to edit after the fact, much larger on disk than the source PNGs, and still textures-only.
+
+=== Asset bundles ===
+
+A bundle is the next step up. It's one file that can hold many textures (already in GPU format, like DDS, so same load-time win) ''plus'' meshes, shaders, fonts, and audio. Instead of hundreds of loose files converted one by one, the engine loads one bundle and everything inside is ready to go.
+
+The trade is that a bundle is opaque. You can't open it in an image editor and tweak a pixel. You rebuild it from your source assets, which means you keep your editable PNGs and Unity sources somewhere and treat the bundle as a build output, the same way you treat a compiled DLL.
+
+* '''Pro:''' fastest load for large asset sets, one file instead of thousands, and it's the only option for shaders, fonts, and custom meshes.
+* '''Con:''' you need a build step and the Unity tooling to produce it, and the output isn't hand-editable.
+
+=== Quick comparison ===
+
+{| class="wikitable"
+! Approach !! Load cost !! Disk size !! Can carry !! Editable after build? !! Good for
+|-
+| Loose PNG || Converted every load || Small || Textures, sounds || Yes || Small mods, prototyping
+|-
+| DDS || None (pre-converted) || Large || Textures || Painful || Large texture sets
+|-
+| Asset bundle || None (pre-converted) || Smallest || Textures, meshes, shaders, fonts, audio || No (rebuild from source) || Large mods, anything non-texture
+|}
+
+That disk-size column is worth some real numbers. Take one texture set of around 960 files and store it all three ways:
+
+* As loose PNGs: about 40 MB.
+* Converted to DDS: about 230 MB. The conversion skips the runtime work but blows up the size on disk.
+* Packed into a single asset bundle: about 28 MB.
+
+So DDS is the ''largest'' on disk, not the smallest. It trades space for skipping the load-time conversion. The bundle gets that same load-time win and still ends up the smallest of the three, because it's compressed into one file. (Numbers from a comparison shared in the [https://discord.com/channels/214523379766525963/632790371256238120/1405733585268375643 RimWorld modding Discord]; your exact figures will vary with the texture set and compression settings.)
+
+== The workflow, in plain terms ==
+
+Before any code or folder layout, here's what building a bundle actually looks like from a height:
+
+# You keep your real, editable source assets (PNGs, Unity materials, shader files, font files) in a Unity project.
+# In that Unity project you tag each asset with a bundle name, then tell Unity to build the bundles.
+# Unity spits out the bundle files.
+# You ship those bundle files inside your RimWorld mod.
+# At game load, RimWorld finds the bundle on its own and serves its contents through the normal content lookup (1.6 does the loading for you; textures and sounds resolve by their existing path, while shaders and fonts you still fetch by name in code).
+
+That's the loop. You edit in Unity, build, copy the output into your mod, and the game picks it up. The first time through it feels like a lot of ceremony for a texture. Once it's set up, adding a new asset is just "drop it in the Unity project, rebuild, copy."
+
+You don't have to do every step by hand. The next section covers that before the build details, so you can go find a tool first if you'd rather not set this up yourself.
+
+== Before we get started: Do I actually have to do everything below? ==
+
+No. Setting up the Unity project, writing the build script, and juggling per-platform bundles is fiddly enough that several modders have written tools to do it for you. They wrap the whole thing, handle the multi-platform build, and spit out ready-to-ship bundles without you babysitting the Unity editor. If that sounds like what you want, you can stop here and go find one; the rest of this page is for when you want to understand what those tools are doing or build it yourself.
+
+This tutorial doesn't point at any specific one on purpose, since they come and go and get superseded. A search on Google or GitHub for RimWorld asset bundle tooling turns them up, and the modding Discord communities are usually the fastest place to find out which one people are actually using right now and which one is abandoned. Ask there before sinking an afternoon into a tool that got replaced six months ago.
+
+== Branch: the real build steps ==
+
+If you want the actual mechanics, here they are. First, install the right Unity editor. This matters more than anything else on this page: a bundle built on the wrong Unity version may silently fail to load. RimWorld 1.6 runs on '''Unity 2022.3.35f1''', so install exactly that version through the Unity Hub (under "Add" you can pick a specific archived version, or grab it from the Unity download archive). Build your bundles in 2022.3.35f1 and they line up with what the game expects. If RimWorld updates to a new Unity version down the line, you rebuild against the new one.
+
+=== Folder layout ===
+
+Inside your mod, bundles live in an <code>AssetBundles/</code> folder. For most mods that's a single file:
+
+ MyMod/
+   About/
+   Defs/
+   Textures/
+   AssetBundles/
+     mymod_assets
+
+The bundle file itself has no extension. You name it whatever you tagged it in Unity. There's no <code>.dll</code> required to use a bundle: a pure XML-and-textures mod can ship a bundle and never write a line of C#, because the game loads it and serves its contents automatically.
+
+'''You only need per-OS copies if the bundle contains any shaders.''' Textures, meshes, and fonts are identical across platforms, so one bundle with no suffix loads everywhere. Audio is usually fine in a no-suffix bundle too, but its import settings can be overridden per platform, so if a bundled sound misbehaves on one OS, that's a place to look. A compiled shader is the real platform-specific case, so a bundle with shaders in it has to be built once per operating system and named with an OS suffix (<code>_win</code>, <code>_mac</code>, <code>_linux</code>) so the game loads the right one. The details section covers why. If you aren't shipping any shaders, ignore the suffix entirely and ship the one file.
+
+=== Setting up the Unity project ===
+
+If you have never opened Unity, here's the whole thing from scratch. You only do this setup once; after that, adding assets is just dropping files in and rebuilding.
+
+# '''Open Unity Hub and create a new project.''' Hit "New project", pick the '''2022.3.35f1''' editor you installed earlier, and choose the ''2D (Built-In Render Pipeline)'' template. RimWorld's art is flat 2D, so the 2D template gives you sane defaults. Name it something like <code>MyModAssets</code> and create it. This is a separate project from your mod folder; it's just your asset workshop.
+# '''Find the Assets folder.''' Once the editor opens, the Project window (bottom of the screen by default) shows a folder called <code>Assets</code>. Everything you want in a bundle goes somewhere under here. On disk this is <code>MyModAssets/Assets/</code> in the project folder you just made.
+# '''Copy your source art in.''' Drag your real, editable PNGs into the Project window, or copy them into <code>MyModAssets/Assets/</code> in your file browser and let Unity import them. Mirror the same folder structure your mod uses, so a texture that lives at <code>Textures/Things/Item/MyThing</code> in your mod goes to <code>Assets/Textures/Things/Item/MyThing.png</code> here. That path matters later: the game looks the asset up by the path it has ''inside'' the bundle, so it has to match where the loose file would have lived.
+
+=== Tagging assets and adding the build script ===
+
+# '''Tag each asset with a bundle name.''' Click an asset in the Project window. At the very bottom of the Inspector (right side of the screen) there's an '''AssetBundle''' dropdown, set to "None" by default. Click it, pick "New...", and type a bundle name like <code>mymod_assets</code>. Every asset you give that same name builds into one bundle together. You can multi-select a whole folder of textures and tag them all at once.
+# '''Make an Editor folder for the build script.''' In the Project window, right-click <code>Assets</code>, choose Create > Folder, and name it exactly <code>Editor</code>. The name isn't optional: Unity only runs editor scripts (the ones that add menu items) from a folder literally named <code>Editor</code>. Put the script anywhere else and the menu item never shows up.
+# '''Create the script.''' Right-click your new <code>Editor</code> folder, choose Create > C# Script, name it <code>BundleBuilder</code>, then double-click it and replace the contents with the code below. The filename has to match the class name, so <code>BundleBuilder.cs</code> holds <code>class BundleBuilder</code>.
+
+Unity doesn't expose bundle building in the default menus, which is why you need this script at all. The bare version is just one <code>BuildPipeline.BuildAssetBundles</code> call. It works, but it ships your textures with whatever import settings they happened to have, which is usually uncompressed and wasteful. Controlling how each texture imports before it gets packed is what actually shrinks the disk and memory footprint, so the script below does two things: it walks your textures and sets sane import settings on each, then builds.
+
+<syntaxhighlight lang="csharp">
+using UnityEditor;
+using UnityEngine;
+using System.IO;
+
+public static class BundleBuilder
+{
+    [MenuItem("Assets/Build AssetBundles")]
+    static void Build()
+    {
+        // First pass: set good import settings on every texture in the project.
+        foreach (string guid in AssetDatabase.FindAssets("t:Texture2D"))
+        {
+            string assetPath = AssetDatabase.GUIDToAssetPath(guid);
+            if (AssetImporter.GetAtPath(assetPath) is not TextureImporter tex) continue;
+
+            string lower = assetPath.ToLower();
+            bool isTerrain = lower.Contains("/terrain/");
+            bool isMask    = lower.Contains("_mask");
+            bool isNormal  = lower.Contains("_normal");
+
+            // GUI type suits RimWorld's flat 2D art and avoids Unity generating sprite sub-assets.
+            tex.textureType       = isNormal ? TextureImporterType.NormalMap : TextureImporterType.GUI;
+            tex.alphaIsTransparency = true;
+
+            // Mask and normal maps hold raw data, not color, so they must stay linear (sRGB off).
+            tex.sRGBTexture = !isMask && !isNormal;
+
+            // Terrain tiles repeat across the ground; everything else should clamp at its edges.
+            tex.wrapMode  = isTerrain ? TextureWrapMode.Repeat : TextureWrapMode.Clamp;
+            tex.anisoLevel = isTerrain ? 8 : 1;
+
+            tex.filterMode    = FilterMode.Trilinear;
+            tex.mipmapEnabled = true;
+
+            // BC7 high-quality compression: small on disk and in VRAM, good for hand-painted art.
+            tex.SetPlatformTextureSettings(new TextureImporterPlatformSettings
+            {
+                name       = "Standalone",
+                overridden = true,
+                format     = TextureImporterFormat.BC7,
+                maxTextureSize = 4096,
+                textureCompression = TextureImporterCompression.CompressedHQ
+            });
+
+            tex.SaveAndReimport();
+        }
+
+        // Second pass: build the bundles.
+        string output = "Assets/BuiltBundles";
+        Directory.CreateDirectory(output);
+        BuildPipeline.BuildAssetBundles(
+            output,
+            BuildAssetBundleOptions.ChunkBasedCompression, // LZ4
+            BuildTarget.StandaloneWindows64
+        );
+    }
+}
+</syntaxhighlight>
+
+A few notes on what that import pass is doing:
+
+* '''BC7 + CompressedHQ''' is the compression that gets you the small disk and VRAM footprint. Without it the texture sits in memory uncompressed.
+* '''sRGB off for masks and normal maps.''' A stuff-color mask or a normal map stores data, not a picture, so it must be read as linear. Leaving sRGB on silently corrupts it. The script keys off <code>_mask</code> and <code>_normal</code> in the filename, so name your files accordingly.
+* '''Terrain repeats, everything else clamps.''' Terrain tiles need <code>Repeat</code> wrap so they tile seamlessly across the ground; a regular sprite wants <code>Clamp</code> so its edges don't bleed. The script keys off a <code>/Terrain/</code> folder in the path.
+* '''Mipmaps on''' so the texture doesn't shimmer when the camera zooms out.
+
+This is a trimmed-down version of what dedicated bundle-building tools do; they also handle audio compression, font atlas generation, and per-bundle include/exclude rules. The texture settings above are the ones you actually want to set by hand.
+
+=== Running the build and collecting the output ===
+
+# '''Let Unity compile the script.''' After you paste the code and save the file, switch back to the Unity editor. It recompiles editor scripts automatically and you'll see a brief spinner in the bottom-right. If there's a compile error it shows up as a red message in the Console window (Window > General > Console); fix it before going further, because a script that doesn't compile won't register its menu item.
+# '''Run it.''' Once it compiles, a new '''Assets''' menu entry appears at the top of the editor: '''Assets > Build AssetBundles''' (that's the <code>[MenuItem("Assets/Build AssetBundles")]</code> line in the script). Click it. Unity reimports every texture with the settings above, then writes the bundles. This can take a while on a big set; watch the progress bar.
+# '''Find the output.''' The script writes to <code>Assets/BuiltBundles/</code> inside the project. Each bundle you tagged shows up there as a file with no extension (for example <code>mymod_assets</code>), alongside a <code>.manifest</code> file and one folder-level manifest. You only ship the extensionless bundle files; the <code>.manifest</code> files are just Unity's bookkeeping and RimWorld ignores them.
+# '''Copy the bundle into your mod.''' Copy the extensionless file into your mod's <code>AssetBundles/</code> folder. For a bundle with no shaders in it, that's the whole job: no suffix, one file, and it loads on every platform. So <code>mymod_assets</code> just moves straight into <code>MyMod/AssetBundles/</code> and you are done. You only add an OS suffix and rebuild per platform if the bundle contains any shaders, which the details section covers.
+
+That's the full loop the first time. From here on, adding an asset is: drop it in the Unity project, tag it, run '''Assets > Build AssetBundles''' again, copy the rebuilt file over.
+
+=== Loading the bundle in your mod ===
+
+In 1.6 you don't load the bundle yourself at all, which catches people off guard since the older docs make it look involved. RimWorld scans every active mod's <code>AssetBundles/</code> folder on startup, loads what it finds, and keeps the loaded bundles on the mod. You don't write <code>AssetBundle.LoadFromFile</code>, you don't call <code>LoadAsset</code>, you don't run anything in a static constructor.
+
+The game's normal content lookup also checks bundles for you. When you ask for a texture the usual way, with <code>ContentFinder<Texture2D>.Get("Things/Item/MyThing")</code>, RimWorld walks three places in order: first it looks for a loose file at that path in any active mod, then it falls back to the base game's built-in resources, and only if both miss does it look inside your loaded bundles at the matching path. Same call, same path string, whether the texture is loose or bundled. The asset just has to live at the same path inside the bundle that the loose file would have used (so an asset packed at <code>Textures/Things/Item/MyThing</code> resolves for the path above).
+
+The practical upshot: for textures and sounds you don't change a single line of your mod's code to switch from loose to bundled. You reference them by path like you always did. You only build a bundle, drop it in the folder, and the game finds the contents.
+
+'''A bundle can't overwrite or retexture a base game texture.''' Because bundles are checked last, after the base game's own resources, the vanilla texture is always found first and your bundled version at the same path is never reached. Bundles are for adding new content, not replacing what ships with the game. If you want to retexture vanilla art, you still do it the old way: a loose file at the matching path (which is checked before the base resources), or a def or <code>texPath</code> redirect that points the vanilla thing at your own texture. The same goes for sounds.
+
+The exception is shaders. The content lookup skips the loose-file step for shaders entirely (there's no loose-shader path), so a shader is only ever found inside a bundle. <code>ContentFinder<Shader>.Get("MyShaderName")</code> works, but only because the shader is in a bundle for it to find.
+
+== Branch: the details ==
+
+Most of this only comes up once you are shipping a shader or a font. A small texture-only mod can skip the whole section.
+
+=== Shaders and the cross-platform problem ===
+
+A compiled shader is platform-specific, which is why a lot of mods end up shipping multiple bundles. A shader built for DirectX (Windows) isn't the same bytes as one built for Metal (Mac) or Vulkan/OpenGL (Linux). If you build one bundle on Windows and ship it, your shader works on Windows and quietly fails on Mac and Linux, usually showing up as bright magenta where the texture should be.
+
+The fix is to build the shader bundle once per platform, and 1.6 makes this almost free because the game does the picking for you. Name the files with the suffix the game looks for:
+
+* <code>mymod_shaders_win</code> loads on Windows
+* <code>mymod_shaders_mac</code> loads on Mac
+* <code>mymod_shaders_linux</code> loads on Linux
+
+The game checks the running platform and loads only the matching one. A bundle with no suffix at all loads on every platform, which is fine for textures, meshes, sounds, and fonts that don't care, but not safe for shaders.
+
+So for a bundle that has shaders in it, you build the same assets three times in Unity with different <code>BuildTarget</code> values (<code>StandaloneWindows64</code>, <code>StandaloneOSX</code>, <code>StandaloneLinux64</code>), give each the right suffix, and ship all three. You write no platform-detection code yourself.
+
+Since only shaders need the triple build, put them in their own bundle. Tag your shaders with one bundle name and everything else with another. Then you build the shader bundle three times (one per OS, suffixed) and the everything-else bundle just once (no suffix). Your folder ends up like this:
+
+ AssetBundles/
+   mymod_assets            (textures, meshes, sounds, fonts, no suffix, loads everywhere)
+   mymod_shaders_win
+   mymod_shaders_mac
+   mymod_shaders_linux
+
+That way your big texture set gets packed once instead of three times, and only the tiny shader bundle pays the per-platform cost.
+
+When a mod works for everyone except the Mac and Linux players, who see pink everywhere, this is almost always the cause.
+
+=== Sounds ===
+
+Audio can go in a bundle as an <code>AudioClip</code>, and for a lot of sounds it's fine and saves you the loose-file management. RimWorld can also load loose audio through its normal sound def system, so for ordinary sound effects you often don't need a bundle at all. Where bundles help is when you want the audio packed with everything else, or when you are loading clips directly from code rather than through a SoundDef.
+
+=== Fonts ===
+
+If you want a custom font in your UI, a bundle is the way. You import the font into Unity, build it into a bundle, load it as a <code>Font</code>, and assign it where you draw text. There's no loose-font path in RimWorld at all, so here the bundle isn't a speed-up, it's the only way in.
+
+=== Meshes ===
+
+Same story as fonts. Custom 3D meshes (not the usual flat sprites, actual geometry) come in through a bundle as a <code>Mesh</code>. Most RimWorld mods never touch this, but if you are doing something with real geometry it's here.
+
+=== Compression and a couple of gotchas ===
+
+* '''Unity version mismatch.''' A bundle built on a different Unity version than the game uses may refuse to load, often with no clear error, the asset just comes back null. Build on Unity 2022.3.35f1 for RimWorld 1.6. This is the single most common reason a bundle that worked in the editor does nothing in-game.
+* '''Bundle file compression.''' This is how the bundle file is packed on disk, separate from texture compression below. Bundles can be built uncompressed, LZ4, or LZMA. LZ4 is the usual sweet spot: small enough, and it doesn't stall on load the way LZMA can. <code>BuildAssetBundleOptions.ChunkBasedCompression</code> gives you LZ4.
+* '''In-memory texture compression and the white-outline bug.''' Loose textures are compressed in memory once loaded, and that compression is what produces the faint white halo people sometimes see around a sprite (the art program threw away color data in fully transparent pixels). A bundle lets you turn that in-memory compression off for its textures, which sidesteps the halo without the usual workaround of padding the outline. The [[Modding_Tutorials/Textures|Textures]] page documents the bug and the loose-texture fix.
+* '''Shader stripping.''' Unity sometimes strips shader variants it thinks are unused during the build, and then your shader looks wrong at runtime because the variant you needed got cut. If a shader misbehaves only in the built bundle but works in the editor, this is a likely suspect.
+* '''Color space.''' If your textures look washed out or too dark coming out of a bundle, check that the import settings and color space match what the game expects. This is the same class of problem that makes a hand-rolled DDS look wrong.
+
+== Summary ==
+
+* Loose PNG: simplest, but converted on every load and limited to textures and sounds.
+* DDS: a texture pre-converted to GPU format, so it skips the load-time conversion. Same final look, faster load, but you have to make it right, and it lands much larger on disk than the source PNGs.
+* Asset bundle: one pre-packed file that carries textures, meshes, shaders, fonts, and audio. The fastest option for big mods and the only option for shaders, fonts, and custom meshes.
+
+If your mod is small, stay loose. If it's large or needs anything Unity-shaped beyond a texture, learn bundles, and on 1.6+ that's the encouraged path anyway since the engine does the loading and per-OS swapping for you. One no-suffix bundle covers textures, meshes, sounds, and fonts on every platform. Only shaders need per-OS copies, so put your shaders in their own bundle, build that one per platform with the right suffix, and ship the rest as a single file, or your Mac and Linux players get magenta.
+
+[[Category:Modding]]
+[[Category:Modding tutorials]]

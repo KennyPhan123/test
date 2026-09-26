@@ -1,0 +1,124 @@
+{{Infobox main|drug
+| name = Penoxycyline
+| image = Penoxycyline b.png
+| description = A drug for preventing infections before they take hold. Blocks malaria, sleeping sickness, plague.{{Sic}} Must be taken every five days to remain effective.<br/>This drug only prevents new infections. It does not cure existing infections - even those that are not yet discovered.
+<!-- Base Stats -->
+| type = Drug
+| type2 = Medical Drug
+| tech level = Industrial
+| marketvalue = 18
+| stack limit = 150
+| mass base = 0.005
+| beauty = -4
+| hp = 50
+| deterioration = 2
+| flammability = 0.7
+| rotatable = false
+| path cost = 14
+<!-- Ingestion -->
+| food type = processed
+| addictiveness = 0
+| max num to ingest at once = 1
+<!-- Creation -->
+| production facility 1 = Drug lab
+| research = Penoxycyline production
+| work to make = 600
+| work speed stat = Drug Synthesis Speed
+| resource 1 = Neutroamine
+| resource 1 amount = 2
+| bulk product amount = 4
+<!-- Technical -->
+| defName = Penoxycyline
+| drug category = Medical
+| preferability = NeverForNutrition
+| is pleasure drug = false
+| tradeTags = Drugs
+<!-- Unused -->
+| always haulable = true
+| draw gui overlay = true
+| graphic class = Graphic_StackCount
+| graphic path =  Things/Item/Drug/Penoxycyline
+| label = penoxycyline
+| parent name = MakeableDrugPillBase
+| resource readout priority = Last
+| selectable = true
+| social properness matters = true
+| thing class = Drugs
+| use hit points = true
+<!--- Drug Parameters -->
+| prevents infection = malaria, sleeping sickness, plague
+}}
+{{Info|'''Penoxycyline''' is a [[Medical drugs|medical]] [[drug]] for preventing [[disease]]. It protects against catching [[malaria]], [[sleeping sickness]], and the [[plague]].}}
+
+== Acquisition ==
+{{Acquisition}} Note that [[neutroamine]] can only be obtained from traders or found in cargo pods.
+
+== Summary ==
+Penoxycyline completely prevents users from catching any of the following [[disease]]s while its "high" is active:
+
+* [[Malaria]]
+* [[Plague]]
+* [[Sleeping sickness]] 
+
+Despite the wording of the description, it does nothing to prevent or treat [[infection]]s, or any other diseases or ailments besides the three above. 
+
+When the [[Events/Incidental#Disease|Disease event]] occurs, pawns that were protected from getting the disease by penoxycyline will be specifically noted as such. Penoxycyline does nothing to treat pre-existing diseases.
+
+Penoxycyline is not addictive and has no direct side effects. Penoxycyline ''can'' contribute to [[overdose]]s, increasing severity by 0.08-0.14 per dose consumed. This severity is not enough to cause any health effect on its own. However, it can cause minor overdoses when taken along with [[hard drugs]].
+
+== Analysis ==
+Diseases usually aren't a fatal problem by the time you can get a good supply of [[neutroamine]] and have the [[Research#{{P|Required Research}}|{{P|Required Research}}]] research. For an otherwise healthy colonist: a decent doctor, in a clean hospital, using [[herbal medicine]] or [[medicine]] is usually enough to treat the disease (so long as the colonist rests for the duration). However, this drug can still be helpful.
+
+Penoxycyline can reduce the time spend resting in bed, especially in tropical biomes where disease is prevalent and sleeping sickness is possible. If you don't want to use penoxycyline on every colonist, use it on [[sickly]] pawns first, then doctors. This prevents your doctors from getting sick when a disease outbreak occurs, so they are able to treat the rest of the colony. [[Super immune]] pawns should be last priority due to their faster recovery rate. It can also be used by pawns that are about to go caravaning since they are somewhat more vulnerable to diseases. If you can afford the neutroamine cost (and won't be using it for [[medicine]], [[wake-up]], or [[go-juice]]), then this drug is a net positive.
+
+While the in-game description says to ''"Take every five days"'', the effect actually lasts just over half a day longer. This gives pawns some leeway, in case colonists don't consume the pills promptly. Set a [[drug policy]] to tell the pawns to take one every 5 days and keep one in the inventory to take as soon as possible, or be cheap, set it to "6 days" and live dangerously.
+
+=== Doses per prevented disease ===
+The table below shows the average number of doses of penoxycyline necessary to prevent one disease. The table assumes the next dose is taken after exactly five days. The values in brackets are for [[sickly]] pawns.
+<includeonly><onlyinclude>
+|- {{#vardefine:blockedDiseaseFraktion| {{#expr: ({{#if:{{{?Malaria}}}|{{{?Malaria}}}|0}} + {{#if:{{{?Plague}}}|{{{?Plague}}}|0}} + {{#if:{{{?Sleeping sickness}}}|{{{?Sleeping sickness}}}|0}})/ {{{?Disease commonality sum}}} }} }}
+! {{DLC Icons|{{{?Name}}} }}
+! {{{?Disease MTB Days}}}
+| {{#expr: 3 * {{{?Disease MTB Days}}} / {{#var:blockedDiseaseFraktion}} / 5 round 1}} ({{#expr: 30 / (1 + (30 / (3 * {{{?Disease MTB Days}}}))) / {{#var:blockedDiseaseFraktion}} / 5 round 1}})
+| {{#expr: 2.5 * {{{?Disease MTB Days}}} / {{#var:blockedDiseaseFraktion}} / 5 round 1}} ({{#expr: 30 / (1 + (30 / (2.5 * {{{?Disease MTB Days}}}))) / {{#var:blockedDiseaseFraktion}} / 5 round 1}})
+| {{#expr: 1.3 * {{{?Disease MTB Days}}} / {{#var:blockedDiseaseFraktion}} / 5 round 1}} ({{#expr: 30 / (1 + (30 / (1.3 * {{{?Disease MTB Days}}}))) / {{#var:blockedDiseaseFraktion}} / 5 round 1}})
+| {{#expr: 1 * {{{?Disease MTB Days}}} / {{#var:blockedDiseaseFraktion}} / 5 round 1}} ({{#expr: 30 / (1 + (30 / (1 * {{{?Disease MTB Days}}}))) / {{#var:blockedDiseaseFraktion}} / 5 round 1}})
+| {{#expr: 0.95 * {{{?Disease MTB Days}}} / {{#var:blockedDiseaseFraktion}} / 5 round 1}} ({{#expr: 30 / (1 + (30 / (0.95 * {{{?Disease MTB Days}}}))) / {{#var:blockedDiseaseFraktion}} / 5 round 1}})
+| {{#expr: 0.9 * {{{?Disease MTB Days}}} / {{#var:blockedDiseaseFraktion}} / 5 round 1}} ({{#expr: 30 / (1 + (30 / (0.9 * {{{?Disease MTB Days}}}))) / {{#var:blockedDiseaseFraktion}} / 5 round 1}})
+</onlyinclude></includeonly>
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_19 text-center}}
+! rowspan="2" | Biome || rowspan="2" | Disease<br/>{{MTB}} (days) !! colspan="6" | [[Difficulty]] setting [Disease interval multiplier]
+|- style="background-color:#e0a3e0;"
+! style="border-left-color:#d685d6;" | Peaceful [×3] || Community builder [×2.5] || Adventure story [×1.3] || Strive to survive [×1] || Blood and dust [×0.95] || Losing is fun [×0.9]
+|-
+{{#ask: [[Type::Biome]] [[Name::!Lake]] [[Name::!Ocean]]
+ | ?Name = ?Name
+ | ?Disease MTB Days = ?Disease MTB Days
+ | ?Disease commonality sum = ?Disease commonality sum
+ | ?Malaria commonality = ?Malaria
+ | ?Plague commonality = ?Plague
+ | ?Sleeping sickness commonality = ?Sleeping sickness
+ | format = template
+ | template = :Penoxycyline
+ | named args = true
+ | link = none
+ | sort = From DLC, Name
+}}
+|}
+</li></div>
+
+== Gallery ==
+<gallery>
+Penoxycyline a.png|One penoxycyline
+Penoxycyline b.png|Stack of penoxycyline
+</gallery>
+
+== Version history ==
+* [[Version/0.15.1279|0.15.1279]] - Added as '''Malari-block''', and only prevents [[Malaria]]
+* [[Version/0.16.1393|0.16.1393]] - Reworked. Renamed from '''Malari-block''' to '''Penoxycyline ''' and now prevents a wide variety of infections. Cost decreased from 5 [[neutroamine]] to 3.
+* [[Alpha 17]] - Cost is further reduced from 3 to 2 neutroamine. It also received an overhaul, such that instead of instantly boosting disease immunity to 61%, it now provides true immunity and cannot reactively increase immunity against a disease that is already in progress.
+
+{{Nav|drugs|wide}}
+
+[[Category:Drug]] [[Category:Medical Drug]]

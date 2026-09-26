@@ -1,0 +1,89 @@
+{{Ideology}}
+{{Infobox main
+| name = Broadwrap
+| image = Broadwrap.png
+| description = Wrapped fabric sheets that loosely cover the wearer's head and shoulders.
+| type = Gear
+| type2 = Clothing
+| tech level = Neolithic
+| hp = 80
+| production facility 1 = Hand tailor bench
+| production facility 2 = Electric tailor bench
+| work to make = 1800
+| work speed stat = General Labor Speed
+| resource 1 = Stuff
+| resource 1 amount = 30
+| stuff tags = Fabric
+| insulationheatfactor = 0.2
+| insulationcoldfactor = 0.2
+| armorsharpfactor = 0.25
+| armorbluntfactor = 0.25
+| armorheatfactor = 0.25
+| equipdelay = 1.5
+| lifestage = Child, Adult
+| coverage = Neck, Head, Left Eye, Right Eye, Left Ear, Right Ear, Nose, Jaw, Left Shoulder, Right Shoulder
+| layer = Headgear
+| mass base = 0.10
+| has quality = true
+| thingCategories = Headgear
+| tags = Neolithic
+| tradeTags = Clothing
+| defaultOutfitTags = Worker
+| page verified for version = 1.3.3066
+}}
+'''Broadwraps''' are a form of [[clothing]] added by the [[Ideology DLC]]. It provides modest insulation and good protection for [[clothing]] based headwear, and covers the entire head, neck and shoulders of the wearer.
+
+== Acquisition ==
+{{Acquisition}} [[Leathers]] cannot be used to craft broadwraps.
+
+== Summary ==
+The broadwrap is unusual in that it occupies the [[Apparel layers|Headgear layer]] and covers, not only the entire head, but the [[Table of Human Body Parts|neck and shoulders]] as well. This allows it to stack protection to those body parts with non-Headgear layer items, including [[duster]]s, [[flak vest]]s, and [[power armor]]. As the Headgear layer is considered to be over the Outer, Middle and Skin layers, the broadwrap will attempt to [[Apparel#Protection|mitigate or negate]] damage, and thus take damage to its {{HP}}, before items in those layers when there is overlap in coverage.
+
+Also note that this layer-coverage combination means it is the only item that conflicts with the [[slave collar]] as of [[Version/1.3.3117|1.3.3117]], as the collar also covers the neck and occupies the Headgear layer.
+
+Unlike every other headgear item, the broadwrap does count as clothing for pawns with the [[nudist]] trait or with pro-nudity [[Female clothing (precept)|ideoligion]]s.{{IdeologyIcon}}<!--Female is first in the table, and directly above male so that is which is linked to-->{{Check Tag|Detail|What about preventing being nude?}}
+
+== Analysis ==
+
+The broadwrap offers modest, but not totally negligible insulation of both types. It is inferior in this regard to dedicated insulative hats like [[tuque]]s and [[cowboy hat]]s, comparable to power armor helmets, and superior to other headwear such as [[simple helmet]]s and [[bowler hat]]s. Its primary worth is protective however.
+
+The broadwrap's unique coverage means that it covers the most of any headwear in the game, even surpassing power armor helmets. Notably, this includes the neck which is both relatively fragile and fatal if destroyed. This is balanced by its relatively low armor when compared to dedicated helmets. At base, there is a 1.5% chance for an attack to hit the neck, a 3.4% chance to hit a shoulder, a 6% chance to hit the head, and a 2.56% chance to hit a potentially fatal part of the head. Thus, if a helmet and the broadwrap are close in armor rating, there is merit to sacrificing some armor for the superior coverage, but this advantage disappears with larger disparities.
+
+As a [[stuff]]able item, material selection is key to its merit, and only [[fabrics]] can be used in its construction. Thus, [[devilstrand]] and [[hyperweave]] are ideal candidates. Devilstrand is accessible by mid-game and, compared to [[steel]] [[simple helmet]]s, offers superior coverage and insulation and significantly better heat armor, at the cost of only 78% of the sharp armor. This can make them attractive options if devilstrand is accessible, especially if [[Damage types#Flame|flame]] or [[Damage types#Heat|heat]] damage is expected. 
+
+While hyperweave is rare, broadwraps made of it are very competitive against simple helmets, being outright superior to steel helmets in every factor except blunt, which neither option provides a sufficient amount of to be relevant. Even against plasteel simple helmets, the close armor rating and superior coverage and heat armor make the broadwrap an attractive option.
+
+Once power armor helmets are available however, the merits of the broadwrap fade. While the coverage it offers is still superior, the disparity in armor rating makes the power armor helmets superior in all but very niche circumstances. 
+
+As both the [[face mask]] {{BiotechIcon}} and the broadwrap cover the jaw's headgear layer, they cannot be worn together.
+
+{{Apparel Stats Table}}
+
+== Protection charts ==
+{| class="wikitable"
+! Sharp Armor !! Blunt Armor !! Heat Armor
+|-
+| {{Apparel Protection Chart
+| set1name = Hyperweave Broadwrap (Sharp)   | set1armor1 = {{#expr:{{P|Armor Factor - Sharp}}*{{Q|Hyperweave|Armor - Sharp Factor}}*100}}
+| set2name = Devilstrand Broadwrap (Sharp)  | set2armor1 = {{#expr:{{P|Armor Factor - Sharp}}*{{Q|Devilstrand|Armor - Sharp Factor}}*100}}
+| set3name = Steel Simple Helmet (Sharp)    | set3armor1 = {{#expr:{{Q|Simple helmet|Armor Factor - Sharp}}*{{Q|Steel|Armor - Sharp Factor}}*100}}
+| set4name = Plasteel Simple Helmet (Sharp) | set4armor1 = {{#expr:{{Q|Simple helmet|Armor Factor - Sharp}}*{{Q|Plasteel|Armor - Sharp Factor}}*100}}
+}}
+| {{Apparel Protection Chart
+| set1name = Hyperweave Broadwrap (Blunt)   | set1armor1 = {{#expr:{{P|Armor Factor - Blunt}}*{{Q|Hyperweave|Armor - Blunt Factor}}*100}}
+| set2name = Devilstrand Broadwrap (Blunt)  | set2armor1 = {{#expr:{{P|Armor Factor - Blunt}}*{{Q|Devilstrand|Armor - Blunt Factor}}*100}}
+| set3name = Steel Simple Helmet (Blunt)    | set3armor1 = {{#expr:{{Q|Simple helmet|Armor Factor - Blunt}}*{{Q|Steel|Armor - Blunt Factor}}*100}}
+| set4name = Plasteel Simple Helmet (Blunt) | set4armor1 = {{#expr:{{Q|Simple helmet|Armor Factor - Blunt}}*{{Q|Plasteel|Armor - Blunt Factor}}*100}}
+}}
+| '''Effective Damage (%)'''
+* Hyperweave Broadwrap (Heat): {{Apparel AP Calculation|armor1={{#expr:{{P|Armor Factor - Heat}}*{{Q|Hyperweave|Armor - Heat Factor}}*100}}|ap= 0}}%
+* Devilstrand Broadwrap (Heat): {{Apparel AP Calculation|armor1={{#expr:{{P|Armor Factor - Heat}}*{{Q|Devilstrand|Armor - Heat Factor}}*100}}|ap= 0}}%
+* Steel Simple Helmet (Heat): {{Apparel AP Calculation|armor1={{#expr:{{Q|Simple helmet|Armor Factor - Heat}}*{{Q|Steel|Armor - Heat Factor}}*100}}|ap= 0}}%
+* Plasteel Simple Helmet (Heat): {{Apparel AP Calculation|armor1={{#expr:{{Q|Simple helmet|Armor Factor - Heat}}*{{Q|Plasteel|Armor - Heat Factor}}*100}}|ap= 0}}%
+|}
+
+== Version history ==
+* [[Ideology DLC]] Release - Added.
+
+{{Nav|clothing|wide}}
+[[Category:Clothing]]

@@ -1,0 +1,96 @@
+{{Infobox main|production
+| name = Crafting spot
+| image = Crafting spot.png
+| description = A place for crafting simple items like knives or bows. Production here is slow because of the lack of tools.
+| type = Building
+| type2 = Production
+| placeable = true
+| passability = standable
+| minifiable = false
+| size = 1 ˣ 1
+| work speed factor = 0.5
+| terrain affordance = light
+| facility = tool cabinet
+| work to make = 0
+}}
+{{Info|A '''crafting spot''' is a 1 x 1 area marked on the ground where a [[Work#Craft|crafter]] can produce certain neolithic items. Crafting at a crafting spot is 50% slower than elsewhere.}}
+
+== Acquisition ==
+Crafting spots do not require a colonist to construct or [[deconstruct]], nor is there a cost, build time, or [[skill]] requirements for placing them. Instead, they are simply selected from the menu and placed directly by the player.
+
+== Summary ==
+The following items can be crafted at the crafting spot. Note that the crafting spot has a [[Property:Work Speed Factor|Work Speed Factor]] of {{P|Work Speed Factor}}, meaning that all bills will take {{#expr:1/{{P|Work Speed Factor}} round 1}}x as long as at most other work stations.
+{{Recipe List}}
+
+Note that the [[War mask]] and [[Tribal headdress]] can only be crafted by Tribal colonies.
+
+A [[tool cabinet]] can be placed nearby to increase the work speed at the crafting spot.
+
+The crafting spot is ''not'' associated with the workshop room role. For the exact calculations, see the [[workshop]] room role.
+
+=== Smash mechanoid ===
+The "smash mechanoid or drone" bill converts [[mechanoid]] or [[drone]]{{OdysseyIcon}} [[corpse]]s into usable [[materials]]. This requires {{Ticks|450/{{P|Work Speed Factor}}}} of work, modified by the [[Mechanoid Shredding Speed]] of the pawn doing the shredding but regardless of the type of mechanoid smashed, and produces material dependent on the type of mechanoid smashed, any missing body parts, and the [[Mechanoid Shredding Efficiency]] of the smasher. This bill is directly equivalent to the [[Machining table#Shred mechanoid|"Shred mechanoid or done"]] bill at the [[machining table]], with the only difference being that the machining table instead takes {{Ticks|300}} of work. The material returned is the same regardless of the method.  
+
+With the [[Biotech DLC]], the bill has options to separately specify whether to smash enemy mechanoids and friendly mechanoids. By default, only enemy mechanoids are enabled to prevent the smashing of friendly mechanoids that may be resurrected.
+
+{| class="wikitable sortable mw-collapsible we-collapsed"
+|+ style="white-space: nowrap;" | Shredding/Smashing returns by Mechanoid
+|-
+! Mechanoid !! Return
+|-
+| [[Centipede blaster]] || {{Icon Small|steel||30}} [[steel]] + {{Icon Small|plasteel||10}} [[plasteel]] 
+|- 
+| [[Centipede burner]] || {{Icon Small|steel||30}} [[steel]] + {{Icon Small|plasteel||10}} [[plasteel]] 
+|-
+| [[Centipede gunner]] || {{Icon Small|steel||30}} [[steel]] + {{Icon Small|plasteel||10}} [[plasteel]] 
+|-
+| [[Termite]] || {{Icon Small|steel||30}} [[steel]] + {{Icon Small|plasteel||10}} [[plasteel]]
+|-
+| [[Lancer]] || {{Icon Small|steel||15}} [[steel]]
+|-
+| [[Pikeman]] || {{Icon Small|steel||15}} [[steel]]
+|-
+| [[Scyther]] || {{Icon Small|steel||15}} [[steel]]
+|-
+| [[Agrihand]]{{BiotechIcon}} || {{Icon Small|steel||10}} [[steel]]
+|-
+| [[Apocriton]]{{BiotechIcon}} || {{Icon Small|steel||15}} [[steel]]
+|-
+| [[Centurion]]{{BiotechIcon}} || {{Icon Small|steel||50}} [[steel]] + {{Icon Small|plasteel||20}} [[plasteel]]
+|-
+| [[Cleansweeper]]{{BiotechIcon}} || {{Icon Small|steel||10}} [[steel]]
+|-
+| [[Constructoid]]{{BiotechIcon}} || {{Icon Small|steel||10}} [[steel]] 
+|-
+| [[Diabolus]]{{BiotechIcon}} || {{Icon Small|steel||50}} [[steel]] + {{Icon Small|plasteel||20}} [[plasteel]]
+|-
+| [[Fabricor]]{{BiotechIcon}} || {{Icon Small|steel||10}} [[steel]]
+|-
+| [[Legionary]]{{BiotechIcon}} || {{Icon Small|steel||15}} [[steel]]
+|-
+| [[Lifter]]{{BiotechIcon}} || {{Icon Small|steel||10}} [[steel]]
+|-
+| [[Militor]]{{BiotechIcon}} || {{Icon Small|steel||10}} [[steel]]
+|-
+| [[Paramedic]]{{BiotechIcon}} || {{Icon Small|steel||10}} [[steel]]
+|-
+| [[Scorcher]]{{BiotechIcon}} || {{Icon Small|steel||15}} [[steel]]
+|-
+| [[Tesseron]]{{BiotechIcon}} || {{Icon Small|steel||15}} [[steel]]
+|-
+| [[Tunneler]]{{BiotechIcon}} || {{Icon Small|steel||20}} [[steel]] + {{Icon Small|plasteel||10}} [[plasteel]]
+|-
+| [[War queen]]{{BiotechIcon}} || {{Icon Small|steel||50}} [[steel]] + {{Icon Small|plasteel||20}} [[plasteel]]
+|-
+| [[War urchin]]{{BiotechIcon}} || {{Icon Small|steel||10}} [[steel]]
+|}
+
+== Analysis ==
+While vital in some circumstances, any long-term colony should quickly replace crafting spots with dedicated work stations of the relevant types. While [[tool cabinet]]s are effective on crafting spots, it is far more effective to dedicate those resources instead to creating those dedicated stations. However, if cabinets are already available and a spot is necessary, then there is little reason not to place spots in range.
+
+They can be useful in [[caravan]] trips with [[mechanoid]] corpses. Mechanoid corpses will be much heavier than steel and plasteel they yield. Smashing them first will allow you to carry more items out to your caravan.
+
+Crafting spots work slower, so they have a niche in training the Crafting skill. Skill XP is earned based on the time spent crafting. Since crafting spots take longer, they will give more XP. Craft [[club]]s and the like in a dark room, with poor [[temperature]] (below {{Temperature|10}} or above {{Temperature|35}}), for the slowest results.
+
+{{Nav|production|wide}}
+[[Category:Production]] [[Category:Drug Production]] [[Category:Apparel Production]]

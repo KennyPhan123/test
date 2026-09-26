@@ -1,0 +1,46 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Anomaly/Global/Misc}}
+|}
+----
+{| {{STDT| c_21}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Sleep suppression" <!-- defName="SleepSuppression" -->
+! [[Sleep suppressor|Sleep suppression]]
+----
+* Def Name:<br />SleepSuppression
+* Label:<br />sleep suppression
+|<!-- Description -->
+<div style="max-width: 200px;">
+This person's brain chemistry is being affected by a psychic pulsation, preventing the buildup of fatigue toxins. This reduces their need for sleep.
+</div>
+|<!-- Details -->
+* Hediff Class: '''Hediff_SleepSuppression'''
+* Initial Severity: '''0.1%'''
+* Max Severity: '''100%'''
+* Always Show Severity: {{Good|true}}
+* Is Bad: {{Good|false}}
+|<!-- Stages -->
+{| {{STDT| c_21}}
+! Label !! Parameters
+|-
+! very mild
+|<!-- Parameters -->
+* Become Visible: {{Bad|false}}
+|-
+! mild
+|<!-- Parameters -->
+* Min Severity: '''10%'''
+* [[Sleep Fall Rate]] Factor: {{Good|×50%}}
+|-
+! moderate
+|<!-- Parameters -->
+* Min Severity: '''35%'''
+* [[Sleep Fall Rate]] Factor: {{Good|×15%}}
+|-
+! extreme
+|<!-- Parameters -->
+* Min Severity: '''65%'''
+* [[Sleep Fall Rate]] Factor: {{Good|×0%}}
+|}<noinclude>
+|}</noinclude>

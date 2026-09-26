@@ -1,0 +1,174 @@
+{{Version Nav}}
+
+Hello everyone, we’ve got a content update for RimWorld today!
+Gravships have received some quality-of-life changes.
+* The new gravship launch interface lets you get your colony's animals and mechanoids onboard, and kicks visitors out. This makes takeoffs feel better and prevents accidental kidnappings.
+* The pilot console now has a "view range" tool that shows your gravship's range without going through the whole launch process.
+* Shuttles can now safely land on items, and they no longer obliterate a ton of roof when landing inside buildings - only the necessary roof.
+* When you’re in orbit, colonists won't automatically take off their life-saving, vacuum-resistant apparel if they're in a dangerous vacuum.
+* Mechanitors can summon the mechanoid bosses… in spaaaace!
+* We added a new vacskin gland prosthetic from the Empire that protects your colonists against vacuum. (This cross-expansion content only appears for those with Odyssey and Royalty).
+* We rebalanced the starjack xenotype to make them more useful in space - they have a new low gravity adapted gene which makes them faster and better workers while in orbit.
+Other improvements include a new category for fishing in the work tab, tree sowing research allows you to grow timbershrooms in the glowforest, and the sentience catalyst now stops farm animals from roaming away.
+And just in time for the colder seasons, there are new snowy visuals for trees and some plants!
+We’ve also made several technical improvements to the game. We reduced the generation and loading times for worlds with 100% coverage, as well as added some tools to help our modders.
+This update should be compatible with all savegames and mods. The full changelog is below to browse.
+If you need to report a bug, or you’re having a problem while playing, please join us on the official RimWorld development Discord.
+Have fun out there!
+- Tia
+
+== Changelog ==
+* Added new options to the gravship launch window to easily get colony animals and mechanoids onboard before launching, as well as to remove neutral pawns off the gravship.
+* Added a "view range" option to the pilot console which lets you quickly see the range of your gravship.
+* Added snowy visuals for trees and some plants when they’re in a sufficiently snowy area.
+* Added the vacskin gland prosthetic which protects against vacuum. Requires the Odyssey and Royalty expansion.
+* Added a “low gravity adapted” gene to the starjack xenotype, as well as rebalanced the starjacks genes. Requires Odyssey and Biotech expansion.
+* Bridges built in space now have unique art for their borders.
+
+=== Improvements & Balance Changes ===
+* Fishing now has its own category in the work tab.
+* Pursuing mechanoids in the gravship scenario now arrive in two massive raids per gravship map and then stop.
+* The final mechhive raid will now be 50% stronger.
+* Improved rewards for destroying the mechhive. You now gain +50 reputation with all factions, and the colonist that destroyed the mechhive gains a larger and longer-lasting positive moodlet.
+* Mechanitors can now summon mechanoid bosses while in space.
+* Insect lair entrances are now collapsable.
+* Added the ability to sow timbershrooms in glowforests with tree sowing research.
+* Shuttles are no longer blocked from landing on items.
+* Passenger shuttles no longer destroy more roof than they need to when landing.
+* Allow quests to retarget themselves to suitable maps if they generate targeting an unsuitable one. In orbit, this allows you to accept quests that don’t work in space by flying down to the planet.
+* Gravships no longer clear pollution when landing.
+* Sentience catalyst now removes roaming and fence-blocked status from animals.
+* The gravship scenario now requires you to start with at least one colonist capable of intellectual work. This prevents you from becoming immediately stranded.
+* Worshipful village raids now occur every 24 hours and are smaller in size.
+* Gravships can once again land at worshipful villages.
+* Having a gravship on a temporary map will prevent the map from closing if all colonists are dead or gone.
+* Pawns won't automatically remove their vacuum-resistant apparel if they’re in a dangerous vacuum.
+* Planning designator shows map boundary outline in space.
+* Increased perceived path cost of shallow lava to discourage dangerous pathing.
+* More pawns from the Royalty and Ideology expansions can now spawn as starjacks.
+* Hermit crabs no longer walk sideways. They also live considerably longer.
+* Raiders won't try to ignite buildings when they are in a vacuum.
+* Bestowing ceremony can now be accepted in space.
+* Removed forced low-power mode for vac barriers when they're not in space, allowing them to still function while on the planet.
+* Prevented meteors from landing directly on top of grav anchors.
+* Added info on the grav anchor to the gravship launch confirmation.
+* Improved credits layout to reduce the vertical size.
+* Archean trees now self-heal like other special trees.
+* Updated links in the main menu.
+* Added confirmation if reforming caravan would cause your gravship to be lost.
+* Landing a gravship on polluted terrain now slowly fades the pollution visuals in.
+* Updated creative content rewards.
+
+=== Performance ===
+* Reduce time required to load a 100% world save file.
+* Reduce time to generate a 100% world by about 40%.
+* Added the ability for mods to load textures from DDS files, which should load significantly faster than PNG files and potentially at higher quality.
+* Added custom atlas packing implementation which should allow the game to start slightly faster, while using less memory.
+* Improve performance when hovering a world tile out of gravship range.
+
+=== Technical & Modding ===
+* Unify all MayRequire and IfModActive checks to strip suffixes, trim, and lower-case package IDs
+* Improved the moddability of animal abilities. It is now easier for modders to add abilities to player animals without using the Special Trainables system. Additionally, adding multiple abilities through Special Trainables is now supported.
+* Increased max radius of GenRadial to 80 and optimize radius calculations.
+* We now run back-compat code if the active mod list has changed, so that when adding expansions, all needed data is added to objects.
+* Fix: plant.wildBiomes wasn't checking for duplicate entries in biomes. (Only affects mods.)
+* Fix: Modded things with non-North default rotations not being placed correctly on gravships and prefabs
+
+=== Fixes ===
+* Fix: Traders guild faction no longer mentions giving gifts in their hostility letter.
+* Fix: Outfit stands are once again minifiable and correctly drop their inventory contents when deconstructed while minified.
+* Fix: Can't sell weapons held in outfit stands.
+* Fix: Pawns using the incorrect seat on couches when socially relaxing.
+* Fix: Properly fail strange signal quest if player loses their home map.
+* Fix: Animals not checking reservations on fishing cells.
+* Fix: Animals able to fish through foundations.
+* Fix: Unable to remove pawns from being the target on certain psychic rituals.
+* Fix: Freeze or crash on boot for players with specific AMD integrated GPUs.
+* Fix: Out of bounds error trying to determine shuttle landing position when few options are possible.
+* Fix: Combat log occasionally mentions flesh-related injuries for mechanoids.
+* Fix: Shuttle load list getting reset after launching.
+* Fix: Lava emergence could go through walls in specific situations.
+* Fix: Pawns not getting comfort from chairs while fishing.
+* Fix: Paralytic arrows weapon trait not working if Anomaly is not active.
+* Fix: Paramedics dropping their carried pawn when jumping.
+* Fix: Raiders pathing directly through doors to trash newly blocked things.
+* Fix: Loot on settlements spawning in inaccessible locations.
+* Fix: Vac barriers not exchanging temperatures properly when off.
+* Fix: Disabling mining via scenario not disabling vein mining.
+* Fix: Incorrect description on burst shot count stat.
+* Fix: Corpses spawning in some occupied settlement room types.
+* Fix: Metalhorror filth not spawning if previous map was abandoned with specific timing..
+* Fix: Update peafowl labels to distinguish between male peacocks and female peahens
+* Fix: Clarify attack target description.
+* Fix: Game not switching to appropriate map when gravship cutscene happens.
+* Fix: GenDraw.WorldRadiusRing issue with ShipJob_Wait.
+* Fix: Certain sites not receiving incidents when landed at via gravship.
+* Fix: Mining charges yielding only one mineable resource per tile.
+* Fix: Space world objects not showing the orbital ITab.
+* Fix: Basic gravtech appearing in schematics.
+* Fix: Out of bounds error when launching gravship.
+* Fix: Pursuing mechanoids scenario part now handles gravship anchors better.
+* Fix: Lag when imperial shuttle is on map with lots of haulables.
+* Fix: Bad temperatures preventing gravship launch.
+* Fix: Bestowing ceremony couldn't be started if recipient has no free cells around them.
+* Fix: Error when baby being breastfed dies.
+* Fix: Autocut in pens sometimes including plants that are the same nutrition as grass.
+* Fix: Incorrect venerated animal message when no colonists capable of hunting.
+* Fix: Mechhive now spawns a border of platforms around buildings to prevent inaccessible areas.
+* Fix: Mech booster rendering behind other buildings.
+* Fix: Shuttle in hospitality quests not arriving on map of required pawns (fix not retroactive)
+* Fix: Some apparel being incorrectly set to medieval tech level.
+* Fix: Lectern north and south graphics were swapped.
+* Fix: Genes in gene bank not being repaired.
+* Fix: Pawns with no food type or need being able to be told to eat something from their inventory because it's considered a drug.
+* Fix: Cloudwatching in space now always says stargazing.
+* Fix: Several quest sites that were previously not able to be settled are now settleable after clearing all active threats.
+* Fix: Labyrinths returning pawns to a different map than the one they were on.
+* Fix: Wall blueprints not getting removed when attached wall blueprint is removed.
+* Fix: 1 in 5000 chance for error when generating map during gameplay (e.g. ancient stockpile).
+* Fix: Error if cached throne becomes despawned.
+* Fix: Several issues with shuttle and transport pod range calculations.
+* Fix: Concurrent thread modification exception when accessing map pawns.
+* Fix: Confusing UI/messages when trying to use mortars in blind fog.
+* Fix: Unique sniper rifles with high range not showing range.
+* Fix: Error trying to move onto a layer with no valid settlement locations.
+* Fix: No fuel information given when targeting player settlements during gravship launch.
+* Fix: War queen resets to full steel when changing map.
+* Fix: Improve gravship placement logic on mechhives.
+* Fix: Incorrect apparel mentioned in thought for wearing ideo wanted apparel.
+* Fix: Error with bandit camp pawn lend quest with multiple maps.
+* Fix: Ideo buildings have incorrect names unless regenerated manually.
+* Fix: Adjust archean tree shadow.
+* Fix: Statues weren’t saving style of apparel (fix not retroactive).
+* Fix: UI icons for ores weren’t rendering correctly (e.g. in search).
+* Fix: Certain quests in saves converted from 1.5 were instantly expiring.
+* Fix: Space settlement cannon connections were replacing interior terrain.
+* Fix: Archonexus quests in space were using incorrect world object for new faction settlements.
+* Fix: Small differences in move speed weren’t being reflected accurately over long distances.
+* Fix: Drop pod raids were failing to execute in space with low threat point values.
+* Fix: Colony animals were choosing to nuzzle friendly shamblers & ghouls.
+* Fix: Collection modified error when starting gravship launch while animal is rescuing a colonist.
+* Fix: Things carried by lifters & animals are now counted for the purposes of bills.
+* Fix: Incorrect entries in empire town names.
+* Fix: Mechhive quest was taking a long time to refire after failing it.
+* Fix: Allow roof punching if pursuing mechanoids can't find any non-roofed cells.
+* Fix: Duplicate gravship wreckages were able to fire if you wait long enough without a grav engine.
+* Fix: Biosculpter pods weren’t curing scaria infections.
+* Fix: Animals were attempting to fish at 0, 0 if every water cell on the map is frozen.
+* Fix: Was possible for shuttles to get lost in specific set ups when merging two caravans.
+* Fix: Was possible to toggle auto-refuel on refuelables that don't allow it, via hotkey.
+* Fix: Gravships weren’t able to land on outposts.
+* Fix: Error generating trade request quests in space.
+* Fix: Smoke launcher, EMP launcher, and toxbomb launcher were incorrectly marked as incendiary weapons.
+* Fix: Animals with 0% wildness were requiring level 1 handling skill.
+* Fix: Incorrect plant weights on maps with limited fertile terrain.
+* Fix: Several gravtech and mechtech researches could still appear in schematics.
+* Fix: Quest lords were being added to incorrect maps in some circumstances
+* Fix: Typo in mastodon description.
+* Fix: Player shuttle could be lost if settling/camping on map with not much land.
+* Fix: Incorrect inspect string on thruster if it's broken down.
+* Fix: Grav engine was rendering behind some buildings north of it.
+* Fix: Mech relay was rendering behind buildings north of it.
+* Fix: In some cases, mechs were trying to do all work types.
+* Fix: Error from bugged zones when landing ship.
+* Fix: "Vegetarian disliked" precepts descriptions are now more accurate.

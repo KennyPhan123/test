@@ -1,0 +1,49 @@
+{{TOCright}}
+== Configuration file contents ==
+'''[[RimWorld|RimWorld's]]''' configuration file is written in XML (Version 1.0) or stored in registry (on Windows) and contains the information visible in game screen Options.
+
+=== Parameters ===
+* ''CustomCursorEnabled'' - Hides the standard OS mouse cursor and enables custom Rimworld cursor when 1, reverse when 0
+* ''QualityIndex'' - Graphics quality - Standard when 0, fancy when 1
+* ''Screenmanager Is Fullscreen mode'' - Whether the game should start in fullscreen (1) or windowed (0)
+* ''Screenmanager Resolution Width'' - Game window width in pixels
+* ''Screenmanager Resolution Height'' - Game window height in pixels
+* ''TutorialEnabled'' - Whether you want to get the tutorial notifications (1) or not (0)
+
+Parameter names are different between registry and XML, but it should not be hard to find out the appropriate parameter. Unmentioned parameters should not be changed as they can have unpredictable effects.
+
+==Configuration file locations==
+ 
+{|
+|[[File:Folders-OS-Windows-8-Metro-icon.png|18px]] 
+|
+===<span id="temp2" style="position: relative; bottom: 4px;">&nbsp;Windows version</span>===
+|}
+The configuration files are stored in registry:
+<code>HKEY_CURRENT_USER/Software/Ludeon Studios/Rimworld</code>
+
+Changes can be made using the <tt>regedit</tt> utility
+----
+{|
+|[[File:Folders-OS-Linux-Metro-icon.png|18px]] 
+|
+
+===<span id="temp2" style="position: relative; bottom: 4px;">&nbsp;Linux version</span>===
+|}
+The config file is stored in: <code>/home/</code>'''<code>your user name</code>'''<code>/.config/unity3d/Ludeon Studios/RimWorld/prefs</code>
+----
+{|
+|[[File:Folders-OS-Apple-Metro-icon.png|18px]] 
+| 
+
+===<span id="temp2" style="position: relative; bottom: 4px;">&nbsp;Mac OS X version</span>===
+|}
+The config is stored in: 
+~/Library/Preferences/unity.Ludeon\ Studios.RimWorld.plist
+
+Or in: 
+/Users/YourUserName/Library/Application Support/RimWorld/Config/Prefs.xml
+
+----
+
+[[Category:RimWorld game]]

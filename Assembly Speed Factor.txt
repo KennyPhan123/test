@@ -1,0 +1,118 @@
+{{Biotech}}
+{{Verified|1.5.4104}}{{Stat
+| def name = AssemblySpeedFactor
+| label = work speed factor
+| description = The speed at which people assemble genes here is multiplied by this value.
+| default base value = 1
+| min value = 0.25
+| effective minimum = 0.525
+| effective maximum = 1.15
+| to string style = PercentZero
+| show if undefined = false
+| category = Building
+| display priority in category = 1000
+| parts = StatPart_Outdoors, StatPart_RoomStat
+}}
+
+== Bases ==
+<div><li style="display: inline-table;">
+{| {{STDT| c_01 sortable}}
+! Building !! Assembly Speed Factor Base
+|-
+! {{Icon Small|Gene assembler|24}} [[Gene assembler]] {{BiotechIcon}}
+| '''100%'''
+|}
+</li><div>
+
+== Factors ==
+Outdoors:
+{| {{STDT}}
+! Location !! Factor
+|-
+! Indoors
+| '''×100%'''
+|-
+! Outdoors
+| {{Bad|×75%}}
+|}
+
+Room Stat:
+{| {{STDT}}
+! Room Stat !! Custom Label
+|-
+! [[Rooms#Assembly speed factor|Assembly speed factor]]
+| Room cleanliness
+|}
+
+''Room cleanliness'' is a multiplier ranging from {{Bad|75%}} - {{Good|115%}} ({{Bad|75%}} without a room), depending on the [[Rooms#Cleanliness|cleanliness]] of a room.
+
+{| {{STDT}}
+! Cleanliness !! Factor
+|-
+! -5.0
+| 0.75
+|-
+! -2.5
+| 0.85
+|-
+!  0.0
+| 1.00
+|-
+!  1.0
+| 1.15
+|}
+{{Graph:Chart|width=300|height=150|xAxisTitle=Cleanliness Score|yAxisTitle=Assembly Speed Factor|type=line|interpolate=monotone|x=-5, -2.5, 0.0, 1.0|y=0.75, 0.85, 1.00, 1.15|xGrid=|yGrid=}}
+
+== Calculating Assembly Speed Factor ==
+The factors for [[Assembly Speed Factor]] are: '''Assembly Speed Factor Base''', '''Outdoors''', and '''Room cleanliness'''. This would be written out as:
+
+<code>[[Assembly Speed Factor]] = '''Assembly Speed Factor Base''' × '''Outdoors''' × '''Room cleanliness'''</code>
+
+The maximum would be:
+
+<code>'''1''' × '''1''' × '''1.15''' = '''1.15'''</code>
+
+For an effective limit of '''115%'''.
+
+The minimum would be:
+
+<code>'''1''' × '''0.7''' × '''0.75''' = '''0.525'''</code>
+
+For an effective limit of '''52.5%'''.
+
+== Stat Def Data ==
+{| {{STDT| c_18}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+<!-- Similar to ResearchSpeedFactor -->
+|- id="Assembly Speed Factor" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />AssemblySpeedFactor
+* '''Label:'''<br />work speed factor
+| The speed at which people assemble genes here is multiplied by this value.
+|
+* Display Order:<br />'''50'''
+* Def Name:<br />'''Building'''
+* Label:<br />'''Building'''
+* Display All By Default:<br />{{Bad|false}}
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0.25}}
+* '''To String Style:''' PercentZero
+* '''Show If Undefined:''' {{Bad|false}}
+|
+* '''Parts:'''
+** '''StatPart_Outdoors:'''
+*** Factor Indoors: '''×{{%|1.00}}'''
+*** Factor Outdoors: {{Bad|×{{%|0.75}}}}
+** '''StatPart_RoomStat:'''
+*** '''Room Stat: '''[[Rooms#Assembly speed factor|Assembly speed factor]]'''
+*** '''Custom Label: '''Room cleanliness'''
+| 1000
+<!--</StatDef>-->
+|}
+
+== Version history ==
+{{Stub|section=1|reason=General}}
+* [[Biotech (DLC)]] Release - Added.
+
+{{nav|stats|wide}}

@@ -1,0 +1,74 @@
+{{Biotech}}
+{{Stub|reason=An analysis of factors on recombination time}}
+{{Infobox main|building
+| name = Gene assembler
+| image = Gene assembler south.png
+| description = A workbench for creating implantable xenogerms from genepacks stored in nearby gene banks. Genepacks are not consumed in this process and can be reused.
+| type = Building
+| type2 = Biotech (Buildings)
+| placeable = true
+| path cost = 42
+| passability = pass through only
+| blockswind = 
+| cover = 0.0
+| minifiable = false
+| size = 2 ˣ 3
+| flammability = 0.5
+| hp = 500
+| beauty = 0
+| power = -100
+| glowradius = 
+| glowcolor = 
+| heatpersecond = 
+| terrain affordance = Light
+| research = Xenogenetics
+| skill 1 = Construction
+| skill 1 level = 4
+| work to make = 12000
+| resource 1 = Steel
+| resource 1 amount = 200 
+| resource 2 = Component
+| resource 2 amount = 4
+| room role = Laboratory
+}}
+
+The '''gene assembler''' assembles one or more [[xenogenes]] into an implantable [[xenogerm]].
+
+== Acquisition ==
+Gene assemblers can be constructed once the [[Research#{{P|Required Research}}|{{P|Required Research}}]] research project has been completed. They require {{Required Resources}}, {{Ticks|{{P|Work To Make}}}} of work, and a [[{{P|Skill 1}}]] skill of {{P|Skill 1 Level}}.
+
+== Summary ==
+{{For|a general guide to the gene system|Genetics}}
+[[File:Gene assembler preview.jpg|thumb|left|The gene assembler's interface.]]
+The gene assembler must be connected to nearby [[gene bank]]s, which must contain [[genepack]]s. The gene assembler can access the [[genes]] in these stored genepacks, and reassemble them into an implantable xenogerm.
+
+Using the gene assembler, you can combine your genepacks for your own desired custom [[xenotype]]. Any type and number of gene can be added, as long as no genes conflict, and as long as you do not exceed the maximum genetic complexity, or the minimum metabolic efficiency.
+
+==== [[File:Complexity.png|20px|Complexity]] Genetic Complexity ====
+By default, the assembler's maximum genetic complexity is 6. The maximum complexity is raised by 2 for each [[gene processor]] that is currently connected and active. Up to 100 processors can be connected, for a hard maximum of 206 complexity.
+
+Gene processors will only contribute complexity when powered. If the connected processors lose power during recombination, and the maximum complexity falls below the xenogerm's requirement, then recombination will be put on hold.
+
+Genetic complexity affects the time required for the Gene assembler to combine your genes, with more complexity leading to longer work times. The base amount of work to assemble a xenogerm is {{Ticks|7500}}, with an additional {{Ticks|1250}} of work per level of complexity. For example, a xenogerm with a complexity of 3 would take {{Ticks|11250}} of work to assemble: <code>(7500 + (1250 * 3))</code>. These times are then scaled by the [[Assembly Speed Factor]] of the assembler and the [[{{Q|Xenogerm|Work Speed Stat}}]] of the pawn using the assembler.
+
+==== [[File:Metabolism.png|20px|Metabolism]] Metabolic Efficiency ====
+Nearly all non-cosmetic genes will affect your pawn's metabolic efficiency, which in turn affects their hunger rate. A higher metabolic efficiency represents a pawn that uses less energy, and requires less food. Likewise, a lower metabolic efficiency represents a hungrier pawn that requires more food. There is a tradeoff, where positive genes result in lower efficiency, and negative genes result in a higher efficiency (with a few exceptions).
+
+A valid gene combination requires a metabolic efficiency of -5 or higher, resulting in a maximum of 225% hunger rate. Positive, efficiency-lowering genes must be balanced out by negative, efficiency-raising genes for the xenogerm to become valid. Any number of efficiency-raising genes can be applied, but the effect will only stack up to +5 efficiency, at a minimum of 50% hunger rate. Any more metabolic efficiency beyond this point will have no effect.
+
+==== [[File:Archite capsule required.png|20px|Archite Capsules]] Archite Capsules ====
+It is also possible to include any number of [[Genes#Archite|archite genes]] into your xenogerm. However, each archite gene requires some number of [[archite capsule]]s, which must be loaded into the assembler to begin recombination.
+<hr>
+Once you are done customizing your xenotype, a researcher will begin processing the xenogerm. The process takes a few hours, or even days, depending on the xenogenes selected and the worker combining them. When finished, a completed xenogerm will be dropped onto the ground nearby. This process does not require any resources, apart from archite capsules if necessary.
+
+== Linking ==
+Gene assemblers can link to [[gene bank]]s and [[gene processor]]s up to 11 tiles from the building edge in a circular radius. Linking requires line of sight to the gene assembler building, so processors and assemblers should be placed in the same room to be considered connected. While there is a hard limit of 100 gene processors that can be connected to a single assembler, it is extremely unlikely this limit will be reached in typical gameplay.
+
+== Version history ==
+* [[Biotech DLC]] Release - Added
+* [[Version/1.4.3525|1.4.3525]] - Fix: Gene assembler artwork has incorrect import settings. 
+* [[Version/1.4.3534|1.4.3534]] - Fix: Pawns will continue to create a xenogerm until they pass out.
+* [[Version/1.4.3541|1.4.3541]] - Empty genepacks no longer display in the gene assembler dialog.
+
+{{Nav|biotech|wide}}
+[[Category:Biotech (Buildings)]]

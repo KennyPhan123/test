@@ -1,0 +1,87 @@
+{{infobox main|building|
+| name = Watermill generator
+| image = watermill_generator.png|128px
+| description = Produces electricity from a river. Must be placed with its wheel in moving water. If watermills are placed too close together, the turbulence they generate will interfere and reduce power generation.
+| type = Building
+| type2 = Power
+| placeable = true
+| passability = impassable
+|  blockswind = true
+| cover = 1
+| minifiable = false
+| size = 5 ˣ 6
+| flammability = 1
+| hp = 400
+| beauty = -20
+| power = 1100
+| research = watermill generator
+| skill 1 = Construction
+| skill 1 level = 6
+| work to make = 4000
+| resource 1 = Wood
+| resource 1 amount = 280
+| resource 2 = Steel
+| resource 2 amount = 80
+| resource 3 = Component
+| resource 3 amount = 3
+| page verified for version = 1.6.4518
+}}
+'''Watermill generators''' are built on moving water to generate constant [[power]], regardless of weather or other conditions.
+
+== Acquisition ==
+{{Acquisition}} 
+
+== Summary ==
+Watermill generators produce a constant 1100 W of [[power]] after being constructed, as long as the moving water they're built along does not freeze{{Check Tag|Link|Needs a link to freezing mechanics, but it isn't on wiki yet - likely will be on Environment}} as it may when the [[Odyssey DLC]] is active. When the ice on the water has thawed away, the watermill starts generating electricity again.
+
+Generators are temporarily disabled by sources of [[EMP]], with downtime scaling to the EMP damage dealt.{{Check Tag|Verify}} During this time, it will not generate any power. Unlike mechanoids, generators do not adapt to EMP and thus can be continuously restunned.
+
+=== Construction ===
+The watermill generator is unique in that it requires two different types of terrain: heavy terrain (i.e. solid ground, not mud or gravel) and moving water. This includes rivers and creeks, but not ocean.
+
+The base is a 2x3 rectangle in the middle of the housing (in white); the housing extends beyond that, making a 5x5 square. Then, a 1x5 waterwheel is attached to one side of the housing, making the total footprint <u>5x6</u>. Only the 2x3 base must be on firm ground.
+
+A watermill generator must be placed:
+# with its 2x3 base on tiles that can support Heavy (i.e. on solid ground, not on a bridge or marsh)
+# with its water wheel entirely in moving water
+# with neither its housing nor wheel overlapping any other buildings or walls.
+
+=== Exclusion zone ===
+Watermills have an exclusion zone. They are 13x7 rectangles, extending 4 squares above, below and outside the mill. The output of watermills will be reduced to 30% (330W) if you overlap their exclusion zones. Water inside this zone has no effect - [[bridge]]s, [[wall]]s, and land inside an exclusion zone do ''not'' interfere with power generation.
+
+When placing the watermill generator, the blueprint will show:
+* The 2x3 base of the generator (in white)
+* The 5x5  housing of the generator (green if placeable, red if not)
+* The 1x5 waterwheel of the generator off one side of that (green if placeable, red if not)
+* The exclusion zone, explained above (blue on previously built watermills, green if OK, flashing orange if overlapping)
+
+<gallery widths="300px" heights="600px" class="center" mode="nolines">
+File:Watermill-placement-OK.jpg|Good placement of watermill; green housing, wheel and exclusion zone. Note base (white) on firm ground but housing partially over water. 
+File:Watermill-placement-not_OK.jpg|Watermill placement not allowed; red wheel does not fit in the river, base in white not fully supported by terrain.
+File:Watermill Overlap Animation.gif|Animated warning when the exclusion zone is overlapping with another watermill (orange exclusion zone re -70% power penalty).
+</gallery>
+== Analysis ==
+[[File:Watermill-defense.png|thumb|300px|left|Despite being surrounded by wood walls, this watermill gives 100% power and is reasonably safe. Raiders will rarely, if ever, target this.]]
+
+Watermill generators offer 100% consistent power, without requiring fuel, while also being cheaper to obtain and research than [[geothermal generator]]s. Therefore, watermills are a great source of power. Their main problem is map limitation, requiring a river or creek to build off of. And, because efficient watermills need to be spread out, they are slightly harder to defend than other power systems.
+
+=== Defense ===
+In practice, watermills can be defended by surrounding them in [[wall]]s. Most [[raider]]s will not target anything enclosed in walls & doors if they have another target (colonist, targetable animal, or building) that is accessible without breaking a wall. [[Sapper]]s and [[breacher]]s will only break walls if it would be in their way. As watermills are created over water, it is unlikely for them to willingly pass through. Therefore, even [[wood]]en walls, constructed over [[bridge]]s, are sufficient to protect a watermill generator for the majority of cases. Double thick walls will help prevent casual grenade throws from breachers from opening up the generator to attack, as two such random attacks will be necessary to allow the raiders to target the generator.
+
+=== Exclusion zone ===
+The -70% exclusion zone reduction does not stack. Therefore, given a sufficiently straight river, the maximum power output is achieved by cramming as many watermill generators along both sides of a river as possible. However, 3 overlapping watermills only give 90% the power of a single mill, and 4 would only give 120% power of a single one. It would take a very cooperative, straight section of river, and at least 8 watermills, 4 on each side, all side by side, to start to rival the 2,200W output of just 2 well-spaced watermills (and in just over the space required by 2).
+[[File:Watermill_Cold_river_heating.gif|thumb|300px|right|The heater inside the roofed watermill room prevents the river water from freezing. Generators outdoors are halted.<small>(Click to view animation)</small> ]]
+
+=== Odyssey===
+{{Odyssey|section=1}} <!--- ensure rough parity with LRMS page -->
+[[Heavy bridge]]s can make some, otherwise invalid spots, available for placing mills, opening potential for more watermills in a single river. On top of that, if wood walls covering the river side proved too weak, heavy bridges allow for building sturdier walls.
+
+On colder climates, including a heat source inside the generator room will keep the water from freezing and halting power generation and thaw any ice that may keep it from working. Note however that spending power on heating this way will make the watermills less efficient on freezing temperatures.
+== Version history ==
+* [[Version/0.19.2009|0.19.2009]] - Added.
+* [[Version/1.5.4062|1.5.4062]] - Fix: Error when trying to construct a watermill generator with water check cells out of bounds of map in god mode.
+* [[Version/1.6.4518|1.6.4518]] - Loosened watermill placement rules to make them easier to place on diagonal rivers. (Base changed from 3x3 to 2x3)
+* [[Version/1.6.4528|1.6.4528]] - Fix: Splashes and watermills were not respecting river flow direction.
+
+{{nav|power|wide}}
+[[Category:Power]]

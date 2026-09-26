@@ -1,0 +1,81 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Local/Infections}}
+|}
+----
+{| {{STDT| c_15}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Plague" <!-- defName="Plague", ParentName="InfectionBase" -->
+! Plague
+----
+* Def Name:<br />Plague
+* Label:<br />plague
+| An infectious disease caused by bacteria.
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|80%|80%|35%}}
+* Is Infection: {{Bad|true}}
+* Makes [[Thoughts#Sick|Sick]] Thought: {{Bad|true}}
+* Initial Severity: '''0.1%'''
+* Lethal Severity: {{Bad|100%}}
+* Tendable: {{Good|true}}
+* '''Comps'''
+** ''Tend Duration''
+*** Base Tend Duration Hours: '''12'''
+*** Severity Per Day Tended: {{---|36.28%}}
+** ''Immunizable''
+*** Severity Per Day Not Immune: {{++|66.6%}}
+*** Immunity Per Day Sick: {{+|52.24%}}
+*** Severity Per Day Immune: {{---|33.3%}}
+*** Immunity Per Day Not Sick: {{---|2%}}
+* '''Remove On Redress Chance By Days Curve:'''
+<div><li style="display: inline-table;">
+{| {{STDT| c_15}}
+! <abbr title="Days as a World Pawn">Days</abbr> !! <abbr title="Chance to remove on Pawn Generator Redress">Chance</abbr>
+|-
+! 0
+| 0%
+|-
+! 2
+| 0%
+|-
+! 7
+| 50%
+|-
+! 20
+| 100%
+|}</li></div>
+|<!-- Stages -->
+{| {{STDT| c_15}}
+! Label !! Parameters
+|-
+! minor
+|<!-- Parameters -->
+* Pain Offset: {{++|20%}}
+* [[Consciousness]] Offset: {{--|5%}}
+* [[Manipulation]] Offset: {{--|5%}}
+|-
+! major
+|<!-- Parameters -->
+* Min Severity: '''60%'''
+* Pain Offset: {{++|35%}}
+* [[Consciousness]] Offset: {{--|20%}}
+* [[Manipulation]] Offset: {{--|20%}}
+|-
+! extreme
+|<!-- Parameters -->
+* Min Severity: '''80%'''
+* Pain Offset: {{++|60%}}
+* [[Consciousness]] Offset: {{--|30%}}
+* [[Manipulation]] Offset: {{--|30%}}
+|-
+! extreme
+|<!-- Parameters -->
+* Min Severity: '''90%'''
+* Life Threatening: {{Bad|true}}
+* Pain Offset: {{++|85%}}
+* [[Consciousness]] Offset: {{--|30%}}
+* [[Manipulation]] Offset: {{--|30%}}
+* [[Breathing]] Offset: {{--|15%}}
+|}<noinclude>
+|}</noinclude>

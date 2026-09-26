@@ -1,0 +1,44 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Anomaly/Global/Misc}}
+|}
+----
+{| {{STDT| c_21}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Cube anger" <!-- defName="CubeRage" -->
+! [[Golden cube#Cube obsession|Cube anger]]
+----
+* Def Name:<br />CubeRage
+* Label:<br />cube anger
+|<!-- Description -->
+<div style="max-width: 500px;">
+This person is upset that their cube sculptures have been destroyed. Continuing to destroy their sculptures may cause them to become violent.
+</div>
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Initial Severity: '''0.1%'''
+* Max Severity: '''100%'''
+* Always Show Severity: {{Good|true}}
+* '''Comps'''
+** ''Cause Mental State''
+*** Override Letter Label:<br /><span>Cube rage: {PAWN_nameDef}</span>
+*** Override Letter Desc:
+<span>{PAWN_nameDef} can no longer control {PAWN_possessive} anger. Too many of {PAWN_possessive} precious cube sculptures have been destroyed.
+
+{PAWN_nameDef} has flown into a berserk rage!</span>
+*** Human Mental State: '''[[Mental break#Berserk|Berserk]]'''
+*** {{MTB}} Days To Cause Mental State: '''0.04''' ({{Ticks/gametime/hours|2400}})
+*** Remove On Triggered: {{Good|true}}
+*** End Mental State On Cure: {{Bad|false}}
+*** Min Severity: '''100%'''
+*** Forced: {{Good|true}}
+** ''Disappears On Death''
+|<!-- Stages -->
+{| {{STDT| c_21}}
+! Label !! Parameters
+|-
+! Cube anger
+|<!-- Parameters -->
+* Become Visible: {{Bad|false}}
+|}<noinclude>
+|}</noinclude>

@@ -1,0 +1,81 @@
+[[File:Pen animal flap.png|thumb|right|325px|Area outlined in green / white are considered a pen.<br>Doors, fences, walls block pens.<br>Animal flaps do not block pens, allowing you to create an indoor area.]]
+A '''pen''' is an enclosed area for [[animal husbandry|farm animals]]. A pen is defined by a [[pen marker]] that is completely enclosed by a combination of [[fence]]s, [[fence gate]]s, [[barricade]]s, [[wall]]s (constructed or naturally-occurring), and [[door]]s.
+
+Once a farm animal is tamed, colonists assigned to ''Animals'' work will automatically rope the animal and lead it into a pen. A pen's perimeter must have at least one [[fence gate]] or [[door]] in order for an animal to be led in or out.
+
+Pens provide some protection against predatory wild animals. A predator will not target an animal inside a pen ''unless'' the predator has first wandered inside the pen, after which it may begin hunting one of the penned animals. An alert will be given when a predator has entered a pen. Be aware that all animals except pennable animals will wander the map randomly, and will occasionally enter a pen by jumping over a fence or gate.
+
+Un-penned farm animals cannot be assigned to an area (like humans and pets) and will roam around, producing large amounts of [[filth]]. In areas where this is a problem, it can be greatly mitigated by a [[straw matting]] floor. Otherwise, animal filth may result in a warning encouraging you to pen an animal or to place straw matting.
+
+Roaming farm animals will occasionally attempt to leave the map entirely, as determined by the roam interval [[stat]]. The game will also give a temporary warning when this happens.
+
+== Farm animals ==
+{{Stub|section=1|reason=sentience catalyst interactions}}
+A ''farm animal'' (or ''pen animal'') is an animal that will ''not'' respect an [[allowed area]] but that ''will'' remain in a pen.
+
+Farm animals do not respect regular [[zone]]s. Instead, they must be roped into an enclosed area, known as a pen, and designated by a [[pen marker]]. For pen animals, [[fence]]s, [[fence gate]]s, and [[barricade]]s, are impassable, but [[animal flap]]s are considered open. Other terrain, such as [[wall]]s and [[door]]s, can also be used to enclose a pen, which will help enemies from breaking open the pen as easily (although pen animals will never be attacked directly). Walls however cost 5x as many materials to build, and can't be stepped over. Additionally, if a [[room]] is enclosed in the creation of a pen, players will need to ensure roofs aren't being constructed or they'll stop grass from growing.
+
+Outside of a pen, or if the pen has an open door, animals will enter into the [[Mental break#Roaming|roaming]] [[mental break|mental state]]. Roaming animals will wander away and eventually leave the map. They can be roped into a [[caravan hitching spot]] or a pen (closed or not) by a colonist with enough [[Skills#Animals|animals skill]] for that animal.
+
+In general, pen animals can eat [[hay]], and graze on grass and other naturally growing vegetation. They all have 0 trainability. These are not traits of being a pen animal, but all pen animals have these traits.
+
+Pen animals will not actively be targeted by [[raider]]s (though can be caught in the crossfire).
+
+A complete list of the current pen animals. Animals not on this list can be designated to an [[allowed area]] and do not require a pen.
+
+{| class="wikitable sortable" style="text-align:center;"
+! Name !! Hunger rate<ref>Hunger rate of a fully grown specimen in [[nutrition]] per day. For reference, each unit of [[hay]] and most other [[raw food]]s is 0.05 nutrition.</ref><br/>([[nutrition]]/day) !! Products<br/>per day !! [[Pack animal]]
+|-
+{{#ask: [[Roam Mtb Days::+]]
+| named args = yes
+| ?Name = ?Name
+| limit = 500
+| format = template
+| sort = From DLC, Name
+| template = Pen Animals Table Row}}
+|}
+
+<references/>
+
+== Pen markers ==
+{{Main|Pen marker}}
+A pen marker is an important part of a pen, and is quickly built for only 30 [[stuff]]. It designates what animals are to be put inside the pen; until you place a pen marker, no animals will be hauled there. Pen markers also give you additional information and control over each separate pen area (see below). It does not matter where in the pen you place the pen marker; put it somewhere you can easily find it again to refer to it when you need to.
+
+Clicking on a pen marker will show three buttons, each containing useful information and configurations for a pen. The first tab is used to configure which species of animal is allowed in the pen. The second shows how many animals a pen can sustain without colonist intervention (through grass and brambles that grow naturally), measured in [[cow]]s, [[goat]]s, and [[chicken]]s, including an option to force display other animals in the count. The third tab allows you to set up auto-cut orders for plants. You can also set up an auto-slaughter order in the animals tab that sets a slaughter job for animals when the count of a certain gender and species surpasses a set number. Juvenile animals are not included in this count, but pregnant animals can be allowed. The auto-slaughter will mark animals in the order of oldest to youngest, and will mark pregnant animals (if allowed) in the order of their pregnancy (most recent to least recent).
+
+<gallery>
+File:Pen_marker_ui.png|Selected pen marker UI
+File:Pen_animals.png|Animals tab
+File:Pen_nutrition.png|Food tab
+File:Pen_autocut.png|Auto-cut tab
+</gallery>
+
+== Construction ==
+For a place to be considered a pen it should be a closed area surrounded by barriers:([[wall]]s, [[door]]s, [[fence]]s or [[fence gate]]s), with at least one animal-suitable entrance (i.e. fence gate) to lead animals in. A [[pen marker]] is also required and serves as a stat display when selected. Unless these conditions are met, an area is not recognized as a "pen" and colonists won't begin to rope tamed pen animals in.
+
+Marking the pen area as a separate "zone" manually is not required &mdash; it's handled by the pen marker as long as the conditions above are met.
+
+Within a pen, an [[animal flap]] will let animals move independently between indoor and outdoor areas. Depending on the season and biome, building a barn (a walled area with roof and [[animal flap]] for a door) with controlled temperature inside a pen can protect your animals from severe temperatures as well as [[toxic fallout]]. Place [[animal sleeping spot]]s inside the barn (place lots, for future births/additions). If you want to place a [[floor]] in a barn, [[straw matting]] minimizes filth generated by farm animals. (Take appropriate [[fire]] precautions.)
+
+=== Sustenance and size planning ===
+Different animals require a different amount of food, and this information can be read on the pen marker [[:File:Pen_nutrition.png|"Food" tab]]. An adult pig (0.8) or a cow (0.86) consumes much more than, say, a sheep (0.36) and thus requires a bigger pen to survive. Pens tend to be large more often than not (a 20x20 pen on a normal soil in [[Temperate forest]] holding grass can barely maintain 4 adult pigs), and since animals tend to multiply, it's good to have reserve space.
+
+Amount of sustenance (grass, brambles, plants etc) inside a pen does not depend on the size alone but rather on the amount of vegetation present inside. Consequently, a pen set on stony soil without grass will give little to no sustenance. Moreover, amount of food available is dynamic, which can be seen by viewing [[Pen marker]]: sometimes an animal consumes a tile of grass, reducing overall quantity. In warm biomes supporting growing, grass and other vegetation also gradually regrow, albeit slowly (and not in cold seasons), which may or may not compensate consumption. Consider "switching" animals between different pens if you have enough space to allow time to regrow. Additionally, while you can't grow grass directly (outside of Dev console), you can plant flowers (such as dandelions) which count as valid grazing.
+
+Animals graze on grass and other vegetation, but normally not on trees, so trees contribute nothing to sustenance and can be safely cut. Avoid planting common human crops and hay intended for storage inside a pen since many animals consider live plants as valid food and can damage your farm. Wildfires can destroy vegetation quickly: keep them in check to avoid damage to your pen!
+
+Outdoor plants usually freeze when it's too cold outside and animals can't use normal vegetation in a pen for food any more. Consider stocking up on [[hay]] and/or [[kibble]] if you want your livestock to survive through the winter and mind their dietary needs to avoid starvation.
+
+== Orbital trade ==
+When receiving items from an orbital trader, the drop pods will not go into pens. This was presumably implemented to prevent pen animals from eating your goods. This can result in undesirable drop locations if you have a very large pen and/or a mountainous base. It's even possible to not receive your items. If this happens, simply make an un-penned area so that the drop pods can land.
+
+== Strategies == 
+* Pen in combination with auto-slaughter can be extremely powerful to reduce the amount of micromanagement done by the player. The use of pens and auto-slaughter is a necessity for any colony with the [[Rancher]] meme.{{IdeologyIcon}}
+* When choosing a pen animal to farm, you may want to consider animals that have more purpose than their meat. For example [[muffalo]]s can provide wool and can act as a [[pack animal]].
+
+== Version history ==
+* [[Version/1.3.3066|1.3.3066]] - Pen system added. Prior to this, all animals would respect area restrictions.
+* [[Version/1.3.3101|1.3.3101]] - Predators no longer hunt animals on the other side of fences. Predators can still randomly wander into animal pens. Add an alert to tell the player when a predator has wandered into a pen in use. Fix: Animal pen marker animal consumption assumes animals are always hungry, halving reported consumption.
+* [[Version/1.3.3159|1.3.3159]] - Remove animal handling skill requirements for roping to pen.
+
+[[Category: Game mechanics]]

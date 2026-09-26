@@ -1,0 +1,42 @@
+{{Verified|1.2.2753}}{{Stat
+| default base value = 1
+| to string style = PercentZero
+| description = A speed at which this person uses a [[deep drill]] to extract underground resources.
+| category = PawnWork
+}}
+
+== Formula ==
+:<code>'''Deep Drilling Speed''' = (100 + Base Offsets) * Global Work Speed * Capacity Factors</code>
+
+===Offsets===
+:The base value of 100% can first be modified by the following offset:
+:* [[Drill arm]]{{RoyaltyIcon}}: {{Good|+70%}} per arm
+
+===Factors===
+:After the offset is applied, it is further modified by the following factors:
+:'''Capacities:'''
+:* [[Mining]][[Skill::Mining| ]]: [[Skill Base Factor::0.04|4%]] plus [[Skill Bonus Factor::0.12|12%]] per skill level.
+:* [[Manipulation]]: [[Manipulation Importance::1|100%]] importance, [[Manipulation Limit::-|No]] max
+:* [[Sight]]: [[Sight Importance::0.5|50%]] importance, [[Sight Limit::1|100%]] limit
+
+:'''Stats:'''
+:* [[Global Work Speed Factor::true| ]][[Global Work Speed]]
+
+==Table==
+Note that all below values are then multiplied by the Global Work Speed of the pawn.
+:{{Deep_Drilling_Speed_Table}}
+
+=== Example ===
+{| class="wikitable"
+|-
+| Deep Drilling Speed = (100 + Base Offsets) * Global Work Speed * Skill Factor * Capacity Factors
+|}
+
+For example, a [[very neurotic]], [[industrious]] pawn with a [[Mining]] skill of 20, two [[drill arm]]s and [[Trauma savant]] would result in the following:
+
+{| class="wikitable"
+|-
+| Deep Drilling Speed = (100 + 70 + 70) * (100% + 40% + 35%) * 244% * 150% = 1,537%
+|}
+
+{{nav|stats|wide}}

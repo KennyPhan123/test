@@ -1,0 +1,55 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Global/Temperature}}
+|}
+----
+{| {{STDT}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Hypothermia" <!-- defName="Hypothermia" -->
+! Hypothermia
+----
+* Def Name:<br />Hypothermia
+* Label:<br />hypothermia
+| Dangerously low core body temperature. Unless re-warmed, hypothermia gets worse and ends in death. Recovery is quick once the victim is re-warmed. Avoid hypothermia by wearing warm clothes in cold environments.
+|<!-- Details -->
+* Default Label Color: {{Color|80%|80%|100%}}
+* Lethal Severity: '''100%'''
+* Can Apply {{DOD}} Chance For Capacity Changes: {{Bad|true}}
+* Tale On Visible: '''HypothermiaRevealed'''
+|<!-- Stages -->
+{| {{STDT}}
+! Label !! Parameters
+|-
+! shivering
+|<!-- Parameters -->
+* Become Visible: {{Bad|false}}
+|-
+! shivering
+|<!-- Parameters -->
+* Min Severity: '''4%'''
+* [[Manipulation]] Offset: {{--|8%}}
+* [[Consciousness]] Offset: {{--|5%}}
+|-
+! minor
+|<!-- Parameters -->
+* Min Severity: '''20%'''
+* [[Moving]] Offset: {{--|10%}}
+* [[Manipulation]] Offset: {{--|20%}}
+* [[Consciousness]] Offset: {{--|10%}}
+|-
+! serious
+|<!-- Parameters -->
+* Min Severity: '''35%'''
+* Pain Offset: {{++|15%}}
+* [[Moving]] Offset: {{--|30%}}
+* [[Manipulation]] Offset: {{--|50%}}
+* [[Consciousness]] Offset: {{--|20%}}
+|-
+! extreme
+|<!-- Parameters -->
+* Min Severity: '''62%'''
+* Life Threatening: {{Bad|true}}
+* Pain Offset: {{++|30%}}
+* [[Consciousness]] Max: {{Bad|10%}}
+|}<noinclude>
+|}</noinclude>

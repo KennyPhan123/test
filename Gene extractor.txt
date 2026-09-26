@@ -1,0 +1,105 @@
+{{Biotech}}
+{{Infobox main|building
+| name = Gene extractor
+| image = Gene extractor south.png
+| description = An automated surgery machine that can extract a person's genes and create a genepack from them. The extracted genes will be randomly selected from the person's xenogenes and germline genes. You can force someone into the machine, but they won't like it.<br/>Extracting a person's genes while their genes are currently regrowing will kill them. Otherwise, gene extraction causes no lasting harm.<br/>Genes that require archite capsules are too complex to be extracted.
+| type = Building
+| type2 = Biotech (Buildings)
+| placeable = true
+| passability = impassable
+| blockswind = 
+| cover = 0.0
+| minifiable = false
+| size = 2 ˣ 2
+| flammability = 0.5
+| hp = 350
+| beauty = 0
+| power = -200
+| glowradius =
+| glowcolor = 
+| heatpersecond = 
+| terrain affordance = Light
+| research = Xenogenetics
+| skill 1 = Construction
+| skill 1 level = 4
+| work to make = 9000
+| resource 1 = steel
+| resource 1 amount = 200 
+| resource 2 = component
+| resource 2 amount =  8
+| room role = Laboratory
+}}
+
+The '''Gene extractor''' is used to extract [[genepack]]s from humans.
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+The extractor consumes 50W of power when idle, and 200W when active. When active, a gene extractor will collect [[genes]] from humans to be stored into a [[genepack]]. Colonists can be ordered to enter the gene extractor either by right-clicking it with a colonist selected, or by using the on-screen gizmo. Prisoners can be loaded into the gene extractor using the on-screen gizmo. Once a prisoner has been selected, a colonist will haul them to the extractor. This job is considered "Hauling" instead of "Wardening". [[Quest]] lodgers cannot have their genes extracted.
+
+In order for a pawn to enter the extractor, they must have one or more genes aside from their melanin (natural skin color) and hair color genes, meaning that baseline humans are exempt. The extractor can still extract an occupant's hair color or non-natural skin gene, if present.
+
+It takes 12 hours for gene extraction to complete. The occupant is not suspended during extraction, and will still have their needs decay. This means that a pawn may be starving or exhausted by the time they leave. Once extraction is complete, the occupant will be ejected, and a new genepack with 1 to 4 collected xenogenes will be dropped nearby. If it is not powered for 24 hours cumulative during the extraction, then extraction will be canceled.
+
+Once extracted, the occupant will suffer from multiple conditions:
+* ''Gene Shock'' for 2 days ({{++|5%}} [[pain]], {{--|5%}} [[Consciousness]], {{--|15%}} [[blood filtration]])
+*''Genes Regrowing'' for 12 to 20 days. It does not have any direct effects, but will cause xenogerm removal and instant [[death]] if the pawn has their genes extracted before it wears off. The xenogerm removal means a xenotype with the [[Deathless]] gene will still be killed upon finishing extraction. 
+Prisoners and slaves who have their genes extracted will have a {{Thought|desc=They extracted my genes like I'm some sort of lab creature.|label=Genes harvested|value=-8|stack=1|duration=25}}  as a result of the unwilling extraction. Colonist moods are not affected by anyone's genes being harvested, including their own.
+
+=== Gene selection ===
+Attempted number of genes to extract is weighted as such:
+* 1 gene    -> 0.7 weight
+* 2 genes -> 0.2 weight
+* 3 genes -> 0.08 weight
+* 4 genes -> 0.02 weight
+
+After a number of genes to extract is selected, the following rules must be adhered to for selecting genes:
+* Sum of all genes' metabolism score is required to be within -5 to 5 range.
+* Archite genes '''cannot''' be extracted.
+* Melanin skin color genes '''cannot''' be extracted.
+* No duplicates.
+
+If a gene has > 0 complexity, it has a selection weight of 3, otherwise its weight is 1.
+
+=== Xenotype Extraction Table ===
+The following table serves as a reference for which [[xenotype]]s have which specific genes. Bear in mind that many genes are not used by any xenotype, and must be acquired through [[trade]] or [[quest]]s. Archite genes cannot be extracted, despite appearing in the table.
+
+<div><li style="display: inline-table;">
+Click to <div class="mw-collapsible mw-collapsed">
+<div class="mw-collapsible-content">
+{{Xenotype genes table}}
+</div></div></li></div>
+
+== Analysis ==
+{{For|general guide to the gene system|Genetics}}
+It does not take many resources to start gene editing. A gene extractor, [[gene bank|bank]], and [[gene assembler|assembler]] only costs {{Icon Small|steel||{{#expr: {{Q|gene bank|Resource 1 Amount}} + {{Q|gene extractor|Resource 1 Amount}} + {{Q|gene assembler|Resource 1 Amount}} }} }} [[steel]] and {{Icon Small|component||{{#expr: {{Q|gene bank|Resource 2 Amount}} + {{Q|gene extractor|Resource 2 Amount}} + {{Q|gene assembler|Resource 2 Amount}} }} }} [[component]]s. You don't need to build the assembler right away, lowering the cost to {{Icon Small|steel||{{#expr: {{Q|gene bank|Resource 1 Amount}} + {{Q|gene extractor|Resource 1 Amount}} }} }} [[steel]] and {{icon Small|component||{{#expr: {{Q|gene bank|Resource 2 Amount}} + {{Q|gene extractor|Resource 2 Amount}} }} }} [[component]]s. This is often affordable for colonies that have the time to research Xenogenetics. You may want to build more gene banks as your gene collection grows, but you can toss out or sell unwanted genepacks in the meantime.
+
+Rather, the main cost of the extractor is ''time''. Each extraction takes 12 hours and has a cooldown of 12-20 days per person. And you'll get an entirely random set of genes; there's no protection against duplicate gene packs, for instance. Players that desire to use xenogenetics should plan ahead. Both colonists and [[prisoner]]s can have their genes extracted. If you want a specific xenotype's gene, then try and capture as many prisoners of that xenotype as possible, even if you don't want to recruit them. Don't shy away from extracting colonist genes, either - the extraction process is a very minor penalty, unless a colonist is currently suffering through a [[disease]]. But note that if a pawn's blood filtration is already 15% or lower, extracting gene from them will cause their filtration to drop to 0% and cause them to die.
+
+In return, even simple [[xenogerm]]s can provide major benefit. For example, [[neanderthals]] have [[Robust]] gene, reducing ''all'' damage by ×75%. With a Great <skill> gene, it becomes very easy to reach (and maintain) a level 20 skill. Virtually every [[xenotype]] has at least one gene worth extracting and using. Don't be afraid with installing "incomplete" xenogerms; each xenogerm completely overwrites the last, and only costs 4 [[herbal medicine]] to implant.
+
+Since the effect of gene extracting is applied at the end of the 12-hour process, it's safe to extract genes from pawns that still have 11 hours before their genes finish regrowing.
+
+== Version history ==
+* [[Biotech DLC]] Release - Added
+* [[Version/1.4.3530|1.4.3530]] -
+** "Genes regrowing" hediff from gene extraction lasts 12-20 days. (Down from 25)
+** Gene extractor takes 12 hours to extract genes. (Down from 24)
+* [[Version/1.4.3534|1.4.3534]] - Gene extractor can no longer extract melanin (skin or hair) genes.
+* [[Version/1.4.3541|1.4.3541]] -
+** Pawns can no longer use the gene extractor if they only have a melanin gene.
+** Fix: Empty genepacks can be extracted
+* [[Version/1.4.3548|1.4.3548]] - Fix: Pawns in gene extractors are suspended.
+* [[Version/1.4.3534|1.4.3534]] - Fix: Melanin genes can be extracted by gene extractor.
+* [[Version/1.4.3555|1.4.3555]] - 
+** Gene shock effects reduced{{Check Tag|From what?|What were the effects of gene shock previously}}, and lasts for 2 days (down from 4). 
+** Gene extractors will cancel extraction and eject the victim if they are without power for a cumulative 24 hours.
+** Fix: If a pawn is designated to enter a gene extractor but dies before they get there, the order is not canceled.
+* [[Version/1.5.4062|1.5.4062]] -
+** Fix: Error trying to breastfeed a baby inside a gene extractor.
+** Fix: Gene extraction can be exploited via save/load.
+* [[Version/1.6.4518|1.6.4518]] - The gene extractor’s "Insert person" float menu is now ordered by colonist/prisoner and then alphabetically.
+
+{{Nav|biotech|wide}}
+[[Category:Biotech (Buildings)]]

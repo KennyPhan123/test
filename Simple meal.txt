@@ -1,0 +1,98 @@
+{{Infobox main|food
+| name = Simple meal
+| image = Simple meal a.png
+| description = A simple meal quickly cooked from a few ingredients.
+<!-- Base Stats -->
+| type = Food
+| type2 = Meal
+| hp = 50
+| deterioration = 10
+| marketvalue = 15
+| mass base = 0.44
+| flammability = 1
+| stack limit = 10
+| path cost = 14
+<!-- Ingestion -->
+| food type = meal
+| taste = Simple
+| max num to ingest at once = 1
+| days to rot = 4
+| nutrition = 0.9
+<!-- Creation -->
+| work to make = 300
+| work speed stat = Cooking Speed
+| production facility 1 = Campfire
+| production facility 2 = Fueled stove
+| production facility 3 = Electric stove
+| resource 1 = Nutrition
+| resource 1 type = any
+| resource 1 amount = 0.5
+<!-- Technical -->
+| defName = MealSimple
+| preferability = Simple
+| bulk product amount = 4
+| tradeability = Buyable
+<!-- Unused -->
+| always haulable = true
+| draw gui overlay = true
+| eat effect = EatVegetarian
+| graphic class = Graphic_Single
+| graphic path = Things/Item/Meal/Simple
+| label = simple meal
+| parent name = MealRottable
+| resource readout priority = Last
+| selectable = true
+| social properness matters = true
+| sound eat = Meal_Eat
+| thing class = Meal
+| ticker type = Rare
+| use hit points = true
+}}
+{{Info|A '''simple meal''' is a [[meal]] and the most basic way to prepare [[raw food]] for consumption}}.
+
+== Acquisition ==
+Simple meals can be [[Work#Cook|cooked]] at a [[{{P|Production Facility 1}}]], [[{{P|Production Facility 2}}]], or [[{{P|Production Facility 3}}]]. A simple meal requires 0.5 units of [[nutrition]] from [[raw food]] - this is equal to 10 units of [[rice]], [[potatoes]], [[meat]], and most foods. They require {{Ticks|{{P|Work To Make}}}} of work to make, and have no minimum cooking skill. Cooking at a campfire doubles the work required, to {{Ticks|2*{{P|Work To Make}}}} of work. 4 Simple meals can be cooked at once, which require 2 units of [[nutrition]] from raw food and quadruple the time compared to 1 simple meal to make.
+
+== Summary ==
+A simple meal can be eaten by humans or animals for 0.9 [[nutrition]], or 90% of a human's hunger meter. As it takes 0.5 nutrition of [[raw food]] to create, simple meals provide 180% nutrition efficiency. 
+
+Eating a simple meal has no intrinsic effect on [[mood]] like some other meals, however if it was made out of [[insect meat]], [[human meat]], or [[twisted meat]],{{AnomalyIcon}} their respective moodlets will be applied. If [[Ideology DLC]] is active and the meal was made out of [[raw fungus]], its normal moodlet will also be applied.
+
+== Analysis ==
+Going from eating raw food to simple meals is a huge upgrade, since:
+* Simple meals give {{Good|x180%}} the nutrition of raw food.
+* Simple meals avoid the {{--|7}} [[Thoughts#Ate_raw_food|''Ate raw food'']] [[mood]]let.
+* Simple meals have a lower chance of giving [[food poisoning]] than raw food, assuming a [[clean]] cooking area and a chef with a [[cooking]] skill of 3 or better.
+* Simple meals last for 4 days compared to Raw Meat lasting for 2 days. However, raw vegetables last about 30 days longer.
+
+Compared to other meals:
+* [[Fine meal]]s give a {{+|5}} ''Ate fine meal'' mood boost and have the same nutrition efficiency, but require both meat and vegetables to create. They take more work and require a Cooking skill of 6. [[Vegetarian fine meal]]s and [[carnivore fine meal]]s can be made from 1 type of food, but waste food in the process.
+
+* [[Nutrient paste meal]]s give a {{--|4}} moodlet, require [[Research#Nutrient paste|Nutrient paste]] researched (which [[New Arrivals]] start with), and it takes [[power]] to operate a [[nutrient paste dispenser|dispenser]]. However, nutrient paste meals give {{Good|x166%}} the nutrition (300% the nutrition from raw food), never give [[food poisoning]], and take no work to create. Paste becomes relatively better if you do not have a skilled cook, or are limited on food.
+
+== Gallery ==
+<gallery>
+Simple meal a.png|One simple meal
+Simple meal b.png|Partial stack
+Simple meal c.png|Full stack
+</gallery>
+<gallery>
+Carnivore simple meal a.png|One carnivore simple meal
+Carnivore simple meal b.png|Partial stack
+Carnivore simple meal c.png|Full stack
+</gallery>
+<gallery>
+Vegetarian simple meal a.png|One vegetarian simple meal
+Vegetarian simple meal b.png|Partial stack
+Vegetarian simple meal c.png|Full stack
+</gallery>
+
+== Version history ==
+* [[Version/0.2.363|0.2.363]] - Added
+* Beta 19/1.0 - Traders will no longer accept typical short-life meals, including simple meals.
+<gallery>
+Simple meal old.png|Old texture
+</gallery>
+
+{{nav|Food|wide}}
+[[Category:Food]] [[Category:Processed Food]] [[Category:Meal]]

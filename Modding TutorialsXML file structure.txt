@@ -1,0 +1,211 @@
+{{BackToTutorials}}
+<br/>
+
+In this tutorial we will start learning the XML syntax, why the base game uses it and what everything about it does.<br/><br/>
+
+=What you'll learn=
+
+You'll learn the default structure of def files:<br/>
+
+<source lang="xml"><?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<Def Name="Parent" Abstract="True">
+	</Def>
+
+	<Def ParentName="Parent">
+	</Def>
+
+	<!-- more <Def>'s -->
+</Defs></source><br/>
+
+.. Along with how inheritance using Name, ParentName and Abstract works.<br/><br/>
+
+=Default Def structure=
+===Standard defs===
+
+Find a Def .xml file in the Core folder, for example ThingDefs_Misc/Weapons_Guns.xml:<br/>
+
+  Core/
+    Defs/
+      ThingDefs_Misc/
+        Weapons_Guns.xml
+
+<source lang="xml">../Mods/Core/Defs/ThingDefs_Misc/Weapons_Guns.xml</source><br/>
+
+The first thing in this file is the following line:<br/>
+<source lang="xml"><?xml version="1.0" encoding="utf-8"?></source><br/>
+
+Which tells us this .xml files uses UTF-8 encoding and XML version 1.0, which are the default values for these fields - some XML editors choose to hide this line on editing and then save it on top of the document without ever asking the user about it.<br/>
+
+After that, the structure of the file consists of '''<Defs>''' and '''<Def>''' tags:<br/>
+<source lang="xml"><Defs>
+	<Def>
+	</Def>
+
+	<!-- more <Def>'s -->
+
+	<Def>
+	</Def>
+</Defs></source><br/>
+
+Each '''<Def>''' contains something's ''def'' (or definition), which can be used to specify each and every modifiable property, e.g for a certain ''thing'' (ThingDef). The rootnode of every ''def'' in the game is '''<Defs>''', followed by the exact type of ''def'' (e.g. ThingDef, RecipeDef, BiomeDef, etc).<br/>
+
+===Full code===
+
+'''It is important that your file follows this structure to the point where mods won't work with multiple <Defs>, or a <Def> outside of <Defs>:'''<br/>
+<source lang="xml"><?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<Def>
+	</Def>
+
+	<!-- more <Def>'s -->
+
+	<Def>
+	</Def>
+</Defs></source><br/>
+
+===Syntax and Keywords===
+
+You have surely noticed that some of the words in the XML files seem to be used repeatedly. Take note of the words '''Abstract''', '''Name''', and '''Class'''. These words are called keywords and they make up part of the languages syntax. A word that is given the role of keyword implies that it has an intended purpose and it's use is reserved only as a keyword. For this reason, there are some rules you should be aware of as the breaking of these rules is a common cause for bugs and errors when starting out.<br/>
+
+When you write a keyword, it should be written exactly the same each time it's used. A common mistake is to unintentionally use a different casing. '''abstract''' is NOT the same as '''Abstract''' when it comes to the '''Abstract''' keyword and making that mistake will cause issues.<br/>
+
+In general, you should avoid using a keyword as a property when editing or creating a new '''<Def>'''. It's almost certain that doing so will lead to problems so you're better off avoiding using a keyword outside of it's intended purpose as a keyword.<br/>
+
+=Inheritance=
+
+''Summary'': In XML, inheritance is used to decrease redundancy. If something has a ParentName="YourParentName", it takes all contents from Name="YourParentName". In case this ParentName is incomplete this will crash the game, and you stop it from being loaded into the game with Abstract="True".<br/><br/>
+
+'''Note that after update A15, abstracts have been directly inheritable from the core and from other mods. Redefining the core abstracts is common cause for mod compatibility issues, because any mod loaded after the abstract has been redefined will use the modified version instead of the core. Therefore, when defining abstracts for a mod, it's advisable to try to avoid overwriting the core abstracts and to instead use unique names that are unlikely to be accidentally used by other mods.'''
+
+===Basegun ThingDef===
+
+The first thing in ''ThingDefs_Misc\Weapons\BaseWeapons.xml'' is a '''<ThingDef>''' with a Name and Abstract ''type'':<br/>
+<source lang="xml"><ThingDef Abstract="True" Name="BaseWeapon"></source><br/>
+
+The Abstract type means that contents of this '''<ThingDef>''' will not be loaded into the game, that after reading and processing the information in this tag it (the game) will finish reading the XML files and '''discard''' this tag and its contents, leaving alone (not discarding) anything that might have copied (taken, inherited) the contents of it. All of this is done with this tag:<br/>
+<source lang="xml"><ThingDef Abstract="True"></source><br/>
+
+So what that means is that all the ''contents'' of <code lang="xml"><ThingDef Abstract="True" Name="BaseWeapon"></code> can be used over and over in the various guns, but '''BaseWeapon''' itself does not exist in the game - it's an abstract idea!<br/>
+
+The Name type means the contents of this '''<ThingDef>''' can be ''inherited'' by (read: copied by) another '''<ThingDef>'''. This way you can write everything you're going to repeat a lot throughout the file in a single location, such as the following:<br/>
+<source lang="xml"><category>Item</category></source><br/>
+
+Which notifies that this '''<ThingDef>''' is of the ''Item'' category, as opposed to those of the ''Building'' category. Because there's a lot of ''tags'' repeated throughout every thing, this greatly compacts the XML file.<br/>
+The full BaseWeapon parent only has to be defined once in a file, and can then be inherited (copied) with:<br/>
+<source lang="xml"><ThingDef ParentName="BaseWeapon"></source><br/><br/>
+
+'''<ThingDef ParentName="Parent">''' inherits all contents from '''<ThingDef Name="Parent">'''. <br/>
+Another parent is BaseBullet which holds every standard bullet's commonly repeated properties, such as the property that bullets don't use hitpoints:<br/>
+<source lang="xml"><useHitPoints>False</useHitPoints></source><br/>
+
+The next '''<ThingDef>''' in the file is one with the Name type ''BaseGun'' and the ParentName type ''BaseWeapon''. It inherits the contents of BaseWeapon and is inherited by everything with '''<ThingDef ParentName="BaseGun">''':<br/>
+<source lang="xml"><ThingDef Name="BaseGun" Abstract="True" ParentName="BaseWeapon"></source><br/><br/>
+
+It might help to think of each ''<ThingDef Name ="...">'' as a sort of template. BaseWeapon contains the basic information which is true for all weapons: they can be hauled, equipped, selected. BaseGun contains the information which is true for all guns: they're part of the WeaponsRanged category, they can be smelted, they can have art. BaseMakeableGun in turn contains info to make the gun. 
+
+A list representation of how inheritance works in Rimworld's XML might help you out, either early on or to collect your thoughts after reading the above.<br/><br/>
+
+# Game launches
+# Game loads mods individually:
+## Inheritance information is taken from each tag
+## Anything with a PARENTNAME type inherits (read: copies) and applies all content from its associated NAME type
+##* Anything that gets content is a child
+##* Anything that sends it is a parent
+##* It's possible to be both of these
+## Content information (read: everything between the <ThingDef>) is taken and applied for each tag
+##* All interfering content from parents is now overwritten
+## Now that all <Def>s know their contents, ABSTRACT type defs are discarded and therefore ignored by the game
+## All <Def>s and their contents finish loading
+# Game finishes loading mods<br/><br/>
+
+===Breakdown===
+{| class="wikitable"
+|-
+! What you write !! What the game sees
+|-
+| <source lang="xml"><ThingDef Name="BaseGun" Abstract="True">
+    <exampleTagOne>true</exampleTagOne>
+</ThingDef>
+
+<ThingDef Name="BaseHumanGun" ParentName="BaseGun" Abstract="True">
+    <someOtherTag>12</someOtherTag>
+</ThingDef>
+</source>|| <source lang="xml"><ThingDef Name="BaseGun" Abstract="True">
+    <exampleTagOne>true</exampleTagOne>
+</ThingDef>
+
+<ThingDef Name="BaseHumanGun" ParentName="BaseGun" Abstract="True">
+    <exampleTagOne>true</exampleTagOne>
+    <someOtherTag>12</someOtherTag>
+</ThingDef>
+</source>
+|}
+
+
+{| class="wikitable"
+!colspan="2"|<ThingDef Name="BaseGun" Abstract="True">
+|-
+| &lt;ThingDef&gt; || The name of this ''tag'', which is read by the game and processed into a correct definition based on this name.<br/>All tags in ''../Mods/Core/Defs/ThingDefs/'' use the '''<ThingDef>''' tag.
+|-
+| Name="BaseGun" || The Name ''type'' of this tag. This tag is a parent with the Name value of "BaseGun".
+|-
+| Abstract="True" || The [https://en.wikipedia.org/wiki/Abstract_type Abstract type] of this tag is True.<br/>This makes it so that the contents of this tag aren't ''instantiated'', which in practice means the contents of it can only be inherited by other tags and won't be loaded into the game because its only purpose is in inheritance, in being a parent.<br/><br/>"Is the only use of this '''<ThingDef>''' to be inherited from? Yes: add Abstract="True". No: don't."
+|-
+!colspan="2"|<ThingDef Name="BaseHumanGun" ParentName="BaseGun" Abstract="True">
+|-
+| ParentName="BaseGun" || The ParentName type of this tag. This tag inherits from a parent with the Name value of "BaseGun".
+|}<br/>
+
+===Full code===
+
+After the addition of inheritance, our XML file structure looks like this:<br/>
+
+<source lang="xml"><?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<Def Name="Parent" Abstract="True">
+	</Def>
+
+	<Def ParentName="Parent">
+	</Def>
+
+	<!-- more <Def>'s -->
+</Defs></source><br/>
+
+* '''<Defs>''' is the rootnode and this uniformity is enforced.
+* '''<Def>''' has to have a specific name, matching a Type in C#.
+
+===Stopping inheritance===
+There are cases where you don't want your child to use the values specified in the parent. You can tell your child not to inherit the content from its parent's tag by specifying ''Inherit="False"'' in the child's tag, like this example taken from the SniperRifle:
+<source lang="xml">
+<weaponTags Inherit="False">
+  <li>SniperRifle</li>
+</weaponTags></source>
+The above example would only have ''SniperRifle'' as a weaponTag, none of the parent's weaponTags. This is particularly useful for lists, because lists add to the parent whereas other tags overwrite.
+
+The advantage of this is that you can leave the parent intact and still inherit from it, but let the child select which properties to inherit.
+
+====Example====
+<source lang ="xml">
+<ThingDef Name="ThingOne" Abstract="True">
+  <comps>
+    <li Class = "CompOne">
+      <valueA>1</valueA>
+    </li>
+  </comps>
+</ThingDef>
+
+<ThingDef ParentName="ThingOne">
+  <comps Inherit= "False"> <!-- This here means "don't use the comps from the parent -->
+    <li Class = "CompOne"> <!-- since we just removed all comps from the parent, we gotta re-add them -->
+      <valueA>2</valueA>   <!-- but we can use our own values! -->
+    </li>
+  </comps>
+</ThingDef>
+</source>
+
+=Next up=
+
+* [[Modding Tutorials/Weapons Guns|Weapons_Guns.xml]] continues explanations on the BaseGun parent, the tags inside its '''<ThingDef>''''s and further information on modding in weaponry.
+
+[[Category:Modding tutorials]]

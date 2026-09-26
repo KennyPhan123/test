@@ -1,0 +1,175 @@
+{{Infobox main|building
+| name = Wind turbine
+| image = Wind_Power.png
+| description = A wind-powered electrical generator. Requires a large clear space in front and behind for optimal air flow.
+| type = Building
+| type2 = Power
+| placeable = true
+| path cost = 50
+| passability = pass through only
+| blockswind = true
+| cover = 0.5
+| minifiable = false
+| size = 7 ˣ 2
+| flammability = 0.5
+| hp = 150
+| beauty = -12
+| power = 2300
+| terrain affordance = heavy
+| research = electricity
+| skill 1 = Construction
+| skill 1 level = 4
+| work to make = 3300
+| resource 1 = Steel
+| resource 1 amount = 100
+| resource 2 = Component
+| resource 2 amount = 2
+}}
+{{Info|'''Wind turbines''' generate a variable amount of [[power]] directly proportional to the wind speed.}}
+
+== Acquisition ==
+{{Acquisition}} 
+
+== Summary ==
+{{Stub|section=1|reason=Details on autocutting}}
+Wind turbines generate a variable amount of power based on the current wind speed, which in turn is based on ranges set by the current [[Weather]]. The wattage is directly proportional to the windspeed. They output 2300W at 100% wind speed, and 3450W at 150% wind speed, the maximum. Note that the "max power output" listed in the infobox claims that {{Q|Wind turbine|Power Consumption #}}W is the maximum under "ideal conditions" - this is incorrect. Wind direction is not a factor, so orientation of the turbines doesn't matter; they will spin equally well in any direction.
+
+Like all generators, each tile of a wind turbine counts as a [[power conduit]]. Turbines directly adjacent to each other will connect (see Fig. 1), and appliances within 6 tiles can connect to any tile of a turbine
+
+Generators are temporarily disabled by sources of [[EMP]], with downtime scaling to the EMP damage dealt.{{Check Tag|Verify}} During this time, it will not generate any power. Unlike mechanoids, generators do not adapt to EMP and thus can be continuously restunned.
+
+=== Exclusion zone === 
+The wind turbine's exclusion zone (7×18 white rectangle) is visible when the turbine is selected, or when placing the wind turbine blueprint. Any trees, mountains, roofs, and most buildings will reduce the turbine's output by 20% - five obstructed tiles reduce power to 0. The exclusion zone of several turbines may overlap, so long as the turbine building itself isn't in any of the zones.
+
+Low-lying objects like [[solar generator]]s and [[shelf|shelves]] can be placed without hindering the turbine's operation, and are an efficient use of space. [[Growing zone]]s (if not set to trees) or artificial [[floors|flooring]] can also be used to prevent wild trees from growing.
+
+Additionally, wind turbines do not function in [[orbit]]{{OdysseyIcon}}.
+
+The following objects block wind turbines, and are ''not'' low-lying:
+
+{{#ask:[[Blocks Wind::true]]|format=ul|class=ul-column-width-150|template=DLC Icons|link=none|limit=150|sort=From DLC, Name}}
+
+[[File:Wind_exclusion.png|500px|thumb|left|2 turbines unobstructed. The [[solar generator]] does not block the turbines.]]
+{{Clear}}
+
+=== Power output by weather ===
+{{Main|Weather}}
+
+{| class = "wikitable sortable"
+! Label
+! Time of year
+! Temperature range <ref>Can continue even if the temperature exits the appropriate range, once started.</ref>
+! Average power output (W)
+|-
+| Clear
+| Any
+| Any
+| {{Wind Turbine Output}}
+|-
+| Fog
+| Any
+| Any
+| {{Wind Turbine Output|windSpeedFactor=0.5}}
+|-
+| Rain
+| Any
+| {{Temperature|0|100}}
+| {{Wind Turbine Output|windSpeedFactor=1.5}}
+|-
+| Dry Thunderstorm
+| Any
+| Any
+| {{Wind Turbine Output|windSpeedFactor=1.5|windSpeedOffset=1.25}}
+|-
+| Rainy Thunderstorm
+| Any
+| Any
+| {{Wind Turbine Output|windSpeedFactor=1.5|windSpeedOffset=1.25}}
+|-
+| Foggy rain
+| Any
+| Any
+| {{Wind Turbine Output|windSpeedFactor=1.5}}
+|-
+| Hard snow
+| Mainly Winter
+| {{Temperature|-270|-0.5}}
+| {{Wind Turbine Output|windSpeedFactor=1.5}}
+|-
+| Soft snow
+| Mainly Winter
+| {{Temperature|-270|-0.5}}
+| {{Wind Turbine Output|windSpeedFactor=1.5}}
+|-
+| Gray Pall{{AnomalyIcon}}
+| Any
+| Any
+| {{Wind Turbine Output|windSpeedFactor=0.5}}
+|-
+| Windy{{OdysseyIcon}}
+| Any
+| Any
+| {{Wind Turbine Output|windSpeedFactor=1.5|windSpeedOffset=1.5}}
+|-
+| Tox rain{{OdysseyIcon}}
+| Any
+| {{Temperature|0|100}}
+| {{Wind Turbine Output|windSpeedFactor=1.5}}
+|-
+| Sandstorm{{OdysseyIcon}}
+| Any
+| {{Temperature|10|100}}
+| {{Wind Turbine Output|windSpeedFactor=1.5|windSpeedOffset=1.25}}
+|-
+| Blind fog{{OdysseyIcon}}
+| Any
+| Any
+| {{Wind Turbine Output|windSpeedFactor=0.5}}
+|-
+| Overcast{{OdysseyIcon}}
+| Any
+| Any
+| {{Wind Turbine Output}}
+|-
+| Blizzard{{OdysseyIcon}}
+| Mainly winter
+| {{Temperature|-270|-0.5}}
+| {{Wind Turbine Output|windSpeedFactor=1.5|windSpeedOffset=1.25}}
+|-
+| Torrential rain{{OdysseyIcon}}
+| Any
+| {{Temperature|0|100}}
+| {{Wind Turbine Output|windSpeedFactor=1.5}}
+|}
+<references/>
+
+== Analysis ==
+Wind turbines are a renewable (i.e, fuel-free) source of energy, and have the advantage of requiring no [[research]] past Electricity. Both [[wood-fired generator]]s and [[chemfuel generator]]s will constantly require a source of fuel.
+
+Wind itself is fairly inconsistent in terms of power, but this problem can be mitigated by installing [[batteries]] (which require some research). With a battery, wind becomes a somewhat stable energy source, working [[Environment#Daylight timing and latitude|day and night]]. An [[eclipse]] will completely shut down a [[solar generator]], but no event can entirely stop wind. Only a small subset of other dangers, like fog or rain [[weather controller]]s,{{RoyaltyIcon}} can reduce it. Note that, even with batteries, the exact power average can be unstable.
+
+Their other main drawback is the space requirement - a need for a large, open area clear of [[trees]], mountains, [[buildings]], [[roof]]s and other tall constructions. This makes turbines harder to protect. You can still build a wall just outside of its zone, but supporting multiple turbines quickly becomes a time and space consuming project. The empty space can also be used to house short objects that won't block the wind. One option is solar generators, although this creates a risk of having a large amount of power generated in one space that needs to be properly protected. Solar generators also don't fit fully in the space of turbines, which makes land for trees to sprout and block the wind. Another empty space item is crops. Regardless of height, no crop will block the wind, and pawns will automatically cut trees in growing zones. Crops can however catch fire if a turbine is destroyed, creating the risk of food loss, and they may need to be planted in [[Plants#Fertility|bad soil]] to fit with turbine placement.
+
+[[Watermill generator]]s and [[geothermal generator]]s offer completely consistent power, but require dedicated research, and can only be built in certain locations.
+
+=== Tips ===
+#Certain [[weather]] conditions offer a positive modifier to wind, like Thunderstorm or Snow. If a [[weather controller]] of those types is deployed, then it may be in your interest to preserve them.
+
+== Gallery ==
+
+<gallery>
+File:Wind turbines located adjacent to each other in RimWorld 1.3.3389.jpg|Fig. 1
+</gallery>
+
+== Version history ==
+* [[Version/0.8.657|0.8.657]] - Added
+* [[Beta 18]] - Width was increased from 5 to 7 tiles wide.
+* [[Beta 19]] - Power generation was buffed by 15%, from max. 3000W.
+* [[Version/1.1.0]] - Fix: Wind turbines register no wind during windy storm.
+* [[Version/1.3.3101|1.3.3101]] - Can now be walked through.
+* [[Version/1.3.3117|1.3.3117]] - Path cost 0 -> 50.
+* [[Version/1.4.3555|1.4.3555]] - Fix: Checkbox cutoff on wind turbine's auto-cut settings tab.
+* [[Version/1.6.4518|1.6.4518]] - Fix: Wind turbine blocked cells not being properly cleared when turbine destroyed.
+
+{{nav|power|wide}}
+[[Category:Power]]

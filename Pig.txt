@@ -1,0 +1,101 @@
+{{See also|altphrase='''Sow''' redirects here. For the sowing of plants, see|Growing zone|Plants}}
+{{infobox main|animal
+| page verified for version = A14D
+| name = Pig
+| image = Pig.png
+| description = Pigs were one of the first animals domesticated by humans. They are an efficient source of meat, and are easy to feed because they will eat almost anything.
+| type = Animal
+| movespeed = 3.9
+| min comfortable temperature = -5
+| max comfortable temperature = 40
+| toxic resistance = 0.5
+| toxic environment resistance = 0
+| flammability = 0.7
+| marketvalue = 200
+| filth rate = 16
+| combatPower = 45
+| bodysize = 1.7
+| healthscale = 0.7
+| hungerrate = 0.5
+| diet = omnivorous grazer
+| leathername = pigskin
+| wildness = 0
+| manhuntertame = 0
+| manhunter = 0
+| roamMtb = 3
+| trainable = none
+| specialtrainables = forage
+| mateMtb = 12
+| meatname = pork
+| gestation = 5.661
+| offspring = 1-2
+| avg offspring = 1.318
+| lifespan = 12
+| juvenileage = 0.1
+| maturityage = 0.3333
+| baby name = piglet
+| female name = sow
+| tradeTags = AnimalFarm, AnimalCommon
+| attack1dmg = 7.3
+| attack1type = Bite
+| attack1cool = 2
+| attack1part = teeth
+| attack1chancefactor = 0.7
+| attack2dmg = 6
+| attack2type = Blunt
+| attack2cool = 2
+| attack2part = head
+| attack2chancefactor = 0.2
+| isCoastal = false
+| livesin_scarlands = 0.07
+}}
+'''Pigs''', called '''sows''' if female and '''piglets''' as babies, are domesticated [[animal]]s, obtainable from both land and space traders. Pigs are omnivorous, making them easy to feed. They will eat live [[plants]] and so should be kept away from the [[growing zone]]s.
+
+== Acquisition ==
+Pigs only spawn as wild animals in {{Habitats}}. In all other biomes they must be [[Trade|purchased]] from a trader of a [[faction base]], or join the colony in an [[Events#Animals join|Animals join]] events.
+
+== Summary ==
+{{Pen Animal Note|Pigs}}
+
+== Analysis ==
+Pigs are worse for food : grass than a variety of other grazers, from [[cow]]s and [[chicken]]s, to [[horse]]s, [[ibex]], and [[alpaca]]s. Even [[chinchilla]]s are better. The pig's niche is as the most nutritionally efficient ''omnivore'' that does not require taming upkeep. By locking them into a corpse freezer full of dead raiders, this permits the conversion of long pork into pork pork as long as temperature can be maintained between {{Temperature|0}} and their minimum comfortable temperature of {{Temperature|-5}}. Large numbers of pigs will also make maintaining temperature more difficult, as [[cooler]]s will need to work against their collective [[Temperature#Body heat|body heat]] warming the freezer.
+
+[[Wild boar]]s are the next most efficient omnivore (without training upkeep). Boars are worse for nutrition, but are better at surviving cold temperatures (and can be found in the wild), allowing a freezer to operate at lower temperatures to delay spoilage during outages.
+
+Many carnivores, such as [[fox]]es, are even more nutrient efficient than pigs if they are exclusively being fed corpses. However, most also require taming upkeep, cutting into colonist time.
+
+=== Nutrition ===
+When slaughtered, a pig yields {{#vardefineecho:baby_meat|{{Meat Leather Curve|{{#expr:{{P|Body Size}}*0.2*140}}}}}} meat and {{Meat Leather Curve|{{#expr:{{P|Body Size}}*0.2*40}}}} leather as a piglet; {{Meat Leather Curve|{{#expr:{{P|Body Size}}*0.5*140}}}} meat and {{Meat Leather Curve|{{#expr:{{P|Body Size}}*0.5*40}}}} leather as a juvenile; or {{Meat Leather Curve|{{#expr:{{P|Body Size}}*140}}}} meat and {{Meat Leather Curve|{{#expr:{{P|Body Size}}*40}}}} leather as an adult. 1 meat is equal to 0.05 nutrition.
+
+An adult pig consumes {{P|Real Hunger Rate}} nutrition per day, and a female creates up to {{#expr: {{P|Average Offspring Per Birth}}/{{P|Gestation Period Days}} round 2}} offspring per day.
+* When offspring are slaughtered as babies, a female pig will produce {{#expr:{{Meat Production|{{PAGENAME}}|baby}} round 2}} nutrition of meat per day, giving a potential nutrition efficiency of {{%|{{Meat Production|{{PAGENAME}}|baby}}/{{P|Real Hunger Rate}} round 3}} (not counting males).
+* If the offspring are allowed to grow to adulthood, they will consume an additional {{#expr:{{Nutrition Consumption|{{PAGENAME}}|adult}} - {{P|Real Hunger Rate}} round 2}} nutrition per day, but will instead yield {{#expr:{{Meat Production|{{PAGENAME}}|adult}} round 2}} nutrition per day as they are slaughtered, resulting in a potential nutrition efficiency of {{%|{{Meat Production|{{PAGENAME}}|adult}}/{{Nutrition Consumption|{{PAGENAME}}|adult}} round 3}}.
+When considering a population of equal numbers of males and females, these nutrition efficiencies fall to {{%|{{Meat Production|{{PAGENAME}}|baby|1|1}}/{{Nutrition Consumption|{{PAGENAME}}|baby|1|1}} round 3}} for baby slaughter and {{%|{{Meat Production|{{PAGENAME}}|adult|1|1}}/{{Nutrition Consumption|{{PAGENAME}}|adult|1|1}} round 3}} for adult slaughter.
+
+The next best pen-omnivore, the wild boar, has an potential nutrition efficiency of {{%|{{Meat Production|Wild boar|adult|1|0}}/{{Nutrition Consumption|Wild boar|adult|1|0}} round 3}} (or {{%|{{Meat Production|Wild boar|adult|1|1}}/{{Nutrition Consumption|Wild boar|adult|1|1}} round 3}} nutrient efficient with 1:1 female:male). For comparison, a horse has a base nutrient efficiency of {{%|{{Meat Production|Horse|adult|1|0}}/{{Nutrition Consumption|Horse|adult|1|0}} round 3}}, much higher than a pig or wild boar. Chickens, ibex, and deer reach similar numbers.
+
+== Training ==
+{{TrainingTable}}
+
+== Health ==
+{{Animal Health Table|QuadrupedAnimalWithHooves}}
+{{Pawn Attack Table}}
+
+== Gallery ==
+<gallery>
+Pig east.png|Facing east
+Pig north.png|Facing north
+Pig south.png|Facing south
+</gallery>
+<gallery>
+Dessicated pig east.png|Dessicated facing east
+Dessicated Pig north.png|Dessicated facing north
+Dessicated Pig south.png|Dessicated facing south
+</gallery>
+== Version history ==
+* [[Version/0.12.906|0.12.906]] - Added
+* [[Version/1.3.3066|1.3.3066]] - Trainability changed from advanced to none, pigs now are predominantly a pen animal.
+
+{{nav|animal}}
+[[Category:Animals]]
+[[Category:Farm animal]]

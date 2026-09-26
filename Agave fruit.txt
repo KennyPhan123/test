@@ -1,0 +1,66 @@
+{{Infobox main|food
+| name = Agave fruit
+| image = Agave fruit.png
+| description = Raw agave fruit.
+<!-- Base Stats -->
+| type = Food
+| type2 = Raw food
+| hp = 100
+| deterioration = 6
+| marketvalue = 1.1
+| mass base = 0.03
+| flammability = 1
+| stack limit = 75
+| path cost = 14
+| rotatable = false
+<!-- Ingestion -->
+| taste = Raw
+| food type = vegetable
+| ingested direct thought = AteRawFood
+| food poison chance = 0.02
+| nutrition = 0.05
+| days to rot = 25
+<!-- Technical -->
+| defName = RawAgave
+| preferability = Raw
+<!-- Unused -->
+| always haulable = true
+| draw gui overlay = true
+| eat effect = EatVegetarian
+| graphic class = Graphic_Single
+| graphic path = Things/Item/Resource/PlantFoodRaw/AgaveFruit
+| label = agave fruit
+| parent name = RawFoodBase
+| resource readout priority = Middle
+| selectable = true
+| social properness matters = true
+| sound drop = Food_Drop
+| sound eat = RawVegetable_Eat
+| sound interact = Food_Drop
+| thing class = ThingWithComps
+| ticker type = Rare
+| use hit points = true
+}}
+'''Agave fruit''' is a vegetable [[raw food]] obtained by harvesting wild [[agave]].
+
+== Acquisition == 
+Agave fruit is obtained by harvesting sufficiently grown wild [[agave]], which can be found in dry [[biomes]], namely {{Habitats|Agave}}. Each plant yields {{Q|Agave|Harvest Yield}} units per plant, before modifiers for [[Difficulty]] and [[Plant Harvest Yield]]. 
+
+Agave fruit can also be foraged by a [[caravan]] when traveling through its habitat in its growing season. It can also be found in cargo pods in the same quantities that [[rice]] and [[corn]] can be found in.
+
+== Summary ==
+As a [[raw food]], agave fruit can be be eaten raw, with a flat {{Bad|2%}} chance of giving [[food poisoning]], or cooked into a [[meal]] with a food poisoning chance dependent on the skill of the cook and the [[cleanliness]] of the kitchen. [[Animals]] are immune to food poisoning from raw food but not from meals. When used in food recipes that require specific types of [[nutrition]], such as [[fine meal]]s, agave fruit is classified as a vegetable.
+
+As with most raw food, eating agave fruit directly results in a {{Thought|desc=I had to eat raw food. We should be cooking that kind of food before eating it. We're not animals.|label=ate raw food|stack=1|value=-7|duration=1}}. This mood penalty is negated if the pawn has the [[ascetic]] trait or the [[robust digestion]] {{BiotechIcon}} gene.
+
+== Analysis ==
+As a non-plantable food source, a player is mostly likely to acquire agave fruit from harvesting wild plants and foraging on caravans. Ultimately, the unreliability and the inefficiency of these methods compared to traditional farming means that agave won't see a lot of use, but it should still be exploited when stocks are low or pawns are away from home.
+
+== Version history ==
+* [[Version/0.2.363|0.2.363]] - added
+<gallery>
+Agave fruit old.png|Old sprite
+</gallery>
+
+{{nav|Food|wide}}
+[[Category:Food]] [[Category:Raw Food]] [[Category:Vegetarian]]

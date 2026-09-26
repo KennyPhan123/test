@@ -1,0 +1,92 @@
+{{Infobox main|security
+| name = Spike trap
+| image = Trap spike armed.png
+| imagesize = 128px
+| description = Five spikes under tension, connected to a touch-activated trigger. When the victim disturbs the trigger, the spikes spring forth and strike the victim. Since it is hidden in the surrounding terrain, it cannot be placed adjacent to other traps. Animals can sense these when calm.
+| type = Building
+| type2 = Security
+| placeable = true
+| minifiable = true
+| size = 1 ˣ 1
+| mass base = 2.5
+| flammability = 1
+| hp = 40
+| sell price multiplier = 0.7
+| beauty = -18
+| cleanliness = -5
+| terrain affordance = light
+| thingCategories = BuildingsSecurity
+| skill 1 = Construction
+| skill 1 level = 3
+| work to make = 3200
+| stuff tags = Metallic, Woody, Stony
+| resource 1 = Stuff
+| resource 1 amount = 45
+}}
+A '''spike trap''' is a single-use trap that deals heavy, but material dependent damage to the pawn that triggered it.
+
+== Acquisition ==
+{{Acquisition}} Spike traps cannot be placed or constructed directly next to each other nor next to any other kind of [[trap]].
+
+== Summary ==
+{{Trap Note}}
+
+Once a spike trap is triggered, it is destroyed. The "auto rearm" option, enabled by default, produces a blueprint to replace the trap.
+
+{{Cleanliness Note}}
+
+=== Damage ===
+When triggered, the spike trap makes five attacks against the pawn that triggered it. Each attack does [[Damage Type#Stab|Stab]] damage and usually causes bleeding. The amount of damage dealt by each attack is determined by the following equation:
+{| class="wikitable"
+| Damage Per Attack = Trap Melee Damage * Material Sharp Damage Multiplier * rand(0.8, 1.2)/5
+|}
+Where:
+* Damage per Attack is the damage each attack does to the target. A spike trap performs 5 of these attacks when triggered.
+* Trap Melee Damage is 100 for spike traps
+* Material Sharp Damage Multiplier is a material dependent factor.
+* rand(0.8,1.2) is a random factor between 0.8 and 1.2. This random factor is rolled once only and then applied to all attacks, it is not rolled for each attack.
+
+The armor penetration of the attack is determined by the following equation:
+{| class="wikitable"
+| AP = Damage Per Attack * 0.015
+|}
+* AP is the armor penetration of each attack.
+
+Note that both the damage and AP of the attack in the info screen are misleading. The damage listed is the average sum of the damage inflicted, the AP is incorrectly calculated as if this damage is all dealt at once.
+
+== Analysis == 
+{{For|tips on how to use spike traps in general or in killboxes|Defense structures#Spike traps|Defense structures#Entryways}}
+Spike traps are invaluable in the early game as they are one of the few defense structures available. A hallway of spike traps can virtually end any early frontal [[raid]], short of [[tough]] or [[nimble]] pawns, without your colonists ever seeing combat. A single trap can be fatal to humans or large animals. Multiple traps can fall most creatures, short of [[thrumbo]]s and heavy [[mechanoid]]s. But as raids get bigger, it starts to get impractical to replace the traps.
+
+Place traps where you expect raiders to go. Raiders will take the shortest, unobstructed route to a target. Unless they are sappers or breachers, raiders will try and break walls last. Common locations are in the corners of your base, where enemies will likely make turns, as well as narrow areas that receive frequent traffic. If it doesn't seem obvious to you at first, one way to find out is by studying raids that do come.
+
+===Offensive use===
+Spike traps can be used in field fortification after triggering the enemy assault. A human can easily carry 10 traps in caravan mode, which means they alone can fight off a 16-person siege.
+[[File:SpikeTrap Field Fortification.png|center|thumb|Spike traps used in field fortifications, with fences to funnel enemies. Half-built walls are ready to block enemy shooters while waiting for others to fall into traps.]]
+
+=== Material choice ===
+Wood spike traps can be quickly created and placed in large quantities. Stone spike traps are cheap to make, and can kill a humanoid [[raider]] in one trap. But given the significantly increased crafting time of both the traps themselves and the stone blocks required to build them, it is often more efficient to simply make several wooden traps. Stone traps are helpful if you're limited by space or type of resource available, and can be a good activity when one has the [[work frenzy]] inspiration.
+
+While metal traps are expensive in terms of resources, they can kill most humanoids and don't take as much time to make. For Odyssey DLC games, steel ore is usually abundantly available, making it the better material over wood and stone. 
+
+[[File:Trap_choke_14.jpg|400px|center|thumb|Example of a trap tunnel. Raiders will fall into the traps. Colonists can open [[door]]s, and prefer to be slowed by the [[fence]]s rather than walk through traps. If this is the only open entrance to a base, raiders will be lured here.]]
+
+{{Building Stats Table}}
+
+== Version history ==
+* [[Version/0.11.877|0.11.877]] - Added as '''Deadfall Trap'''.
+* [[Version/0.12.910|0.12.910]] - Rebalanced, cannot be rearmed.
+* [[Version/0.19.2009|0.19.2009]] - Renamed from '''Deadfall trap''' to '''Spike trap'''. Damage is increased, material cost and time to build are reduced, and it now has armor penetration (depending on what it’s made of) and a 100% chance to spring on targets and no longer prioritizes the head and torso but now require rebuilding each time, rather than being re-armed at no material cost.
+
+<gallery>
+DeadfallTrap.png|Spike Trap Old Texture (Deadfall Trap)
+</gallery>
+
+== Image gallery ==
+<gallery mode="packed" heights="200px">
+Spike trap accidental step.jpg|Trap accidentally triggered.
+Thrumbos running into spike traps.png|[[Thrumbo]]s running willy-nilly into a trap-maze.
+</gallery>
+
+{{Nav|security}}
+[[Category:Security]] [[Category:Trap]]

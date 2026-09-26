@@ -1,0 +1,144 @@
+{{Stub|reason=Order of operations}}
+{{See also|Psychic Sensitivity|Psychic Sensitivity Factor}}
+{{Verified|1.5.4104}}{{Stat
+| def name = PsychicSensitivityOffset
+| label = psychic sensitivity offset
+| description = An offset applied to the user's [[psychic sensitivity]].
+| default base value = 0
+| to string style = PercentZero
+| show if undefined = false
+| show on pawns = false
+| show on animals = false
+| category = Basics
+| display priority in category = 3500
+| cacheable = true
+| parts = StatPart_Quality
+}}
+
+== Factors ==
+* [[Quality]] Factors:
+The quality factors below apply to both positive and negative values:
+<div><li style="display: inline-table;">
+{| {{STDT| c_07}}
+! Quality !! Factor
+|-
+! Awful
+| {{Bad|×50%}}
+|-
+! Poor
+| {{Bad|×66%}}
+|-
+! Normal
+| {{Bad|×83%}}
+|-
+! Good
+| '''×100%'''
+|-
+! Excellent
+| {{Good|×116%}}
+|-
+! Masterwork
+| {{Good|×132%}}
+|-
+! Legendary
+| {{Good|×150%}}
+|}
+</li></div>
+
+== Offsets ==
+Offsets when Equipped:
+<div><li style="display: inline-table;">
+{| {{STDT| c_07 sortable}}
+! Gear !! Offsets when Equipped
+|-
+! {{Icon Small|Eltex staff|24}} [[Eltex staff]] {{RoyaltyIcon}}
+| {{+|50%}}
+|-
+! {{Icon Small|Eltex helmet|24}} [[Eltex helmet]] {{RoyaltyIcon}}
+| {{+|15%}}
+|-
+! {{Icon Small|Eltex skullcap|24}} [[Eltex skullcap]] {{RoyaltyIcon}}
+| {{+|40%}}
+|-
+! {{Icon Small|Eltex shirt|24}} [[Eltex shirt]] {{RoyaltyIcon}}
+| {{+|10%}}
+|-
+! {{Icon Small|Eltex vest|24}} [[Eltex vest]] {{RoyaltyIcon}}
+| {{+|15%}}
+|-
+! {{Icon Small|Eltex robe|24}} [[Eltex robe]] {{RoyaltyIcon}}
+| {{+|20%}}
+|}
+</li></div>
+
+* [[Precepts]] {{IdeologyIcon}}
+** [[Blind psysense]] when [[Sight|blind]]: {{+|30%}}
+
+== Gear and Quality ==
+Here is a table showing the various offsets applied depending on gear quality:
+<div><li style="display: inline-table;">
+{| {{STDT| c_07 sortable}}
+! rowspan=2 | Gear
+! colspan=7 | Quality
+|-
+! Awful !! Poor !! Normal !! Good !! Excellent !! Masterwork !! Legendary
+|-
+! {{Icon Small|Eltex staff|24}} [[Eltex staff]] {{RoyaltyIcon}}
+| {{++|25%}} || {{++|33%}} || {{++|41.5%}} || '''+50%''' || {{+|58%}} || {{+|66%}} || {{+|75%}}
+|-
+! {{Icon Small|Eltex helmet|24}} [[Eltex helmet]] {{RoyaltyIcon}}
+| {{++|7.5%}} || {{++|9.9%}} || {{++|12.45%}} || '''+15%''' || {{+|17.4%}} || {{+|19.8%}} || {{+|22.5%}}
+|-
+! {{Icon Small|Eltex skullcap|24}} [[Eltex skullcap]] {{RoyaltyIcon}}
+| {{++|20%}} || {{++|26.4%}} || {{++|33.2%}} || '''+40%''' || {{+|46.4%}} || {{+|52.8%}} || {{+|60%}}
+|-
+! {{Icon Small|Eltex shirt|24}} [[Eltex shirt]] {{RoyaltyIcon}}
+| {{++|5%}} || {{++|6.6%}} || {{++|8.3%}} || '''+10%''' || {{+|11.6%}} || {{+|13.2%}} || {{+|15%}}
+|-
+! {{Icon Small|Eltex vest|24}} [[Eltex vest]] {{RoyaltyIcon}}
+| {{++|7.5%}} || {{++|9.9%}} || {{++|12.45%}} || '''+15%''' || {{+|17.4%}} || {{+|19.8%}} || {{+|22.5%}}
+|-
+! {{Icon Small|Eltex robe|24}} [[Eltex robe]] {{RoyaltyIcon}}
+| {{++|10%}} || {{++|13.2%}} || {{++|16.6%}} || '''+20%''' || {{+|23.2%}} || {{+|26.4%}} || {{+|30%}}
+|}
+</li></div>
+
+== Stat Def Data ==
+{| {{STDT| c_07}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Psychic Sensitivity Offset" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />PsychicSensitivityOffset
+* '''Label:'''<br />psychic sensitivity offset
+| An offset applied to the user's psychic sensitivity.
+|
+* Display Order:<br />'''10'''
+* Def Name:<br />'''Basics'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Good|true}}'''
+|
+* '''Default Base Value:''' {{%|0}}
+* '''To String Style:''' PercentZero
+* '''Show On Animals:''' {{Bad|false}}
+* '''Show If Undefined:''' {{Bad|false}}
+* '''Show On Pawns:''' {{Bad|false}}
+* '''Cacheable:''' {{Good|true}}
+|
+* '''Parts:'''
+** '''StatPart_Quality:'''
+*** Factor Awful: {{Bad|×{{%|0.5}}}}
+*** Factor Poor: {{Bad|×{{%|0.66}}}}
+*** Factor Normal: {{Bad|×{{%|0.83}}}}
+*** Factor Good: '''×{{%|1.0}}'''
+*** Factor Excellent: {{Good|×{{%|1.16}}}}
+*** Factor Masterwork: {{Good|×{{%|1.32}}}}
+*** Factor Legendary: {{Good|×{{%|1.5}}}}
+*** Apply To Negative Values: {{Good|true}}
+| 3500
+<!--</StatDef>-->
+|}
+
+== Version history ==
+{{Stub|section=1|reason=General Version history}}
+
+{{nav|stats|wide}}

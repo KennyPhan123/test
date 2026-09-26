@@ -1,0 +1,38 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Royalty/Body Parts/Bionic Empire}}
+|}
+----
+{| {{STDT| c_02}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Circadian half-cycler" <!-- defName="CircadianHalfCycler", ParentName="ImplantHediffBase" -->
+! Circadian half-cycler
+----
+* Def Name:<br />CircadianHalfCycler
+* Label:<br />circadian half-cycler
+* Label Noun:<br />a circadian half-cycler
+|<!-- Description -->
+<div style="max-width: 300px;">An installed circadian half-cycler. Isolates half of the brain, allowing the other half to sleep while the user remains outwardly awake. By alternating brain halves, the user never needs to sleep. Unfortunately, two hemispheres are better than one - working with half a brain causes a reduction in consciousness.</div>
+----
+* Description Hyperlinks:<br />{{Icon Small|Circadian half-cycler}} '''[[Circadian half-cycler|View: Circadian half-cycler]]'''
+|<!-- Details -->
+* Hediff Class: '''Hediff_Implant'''
+* Default Label Color: {{Color|60%|60%|100%}}
+* Is Bad: {{Good|false}}
+* Price Impact: {{Bad|true}}
+* Counts As Added Part Or Implant: {{Good|true}}
+* Allow Mothball If Low Priority World Pawn: {{Good|true}}
+* Spawn Thing On Removed: {{Icon Small|Circadian half-cycler}} '''[[Circadian half-cycler]]'''
+* Disables Needs: '''[[Rest]]'''
+* '''Comps:''' ''React On Damage''
+** Damage Def Incoming: '''[[Damage Types#EMP|EMP]]'''
+** Create Hediff: '''[[Hediffs#Brain shock|Brain shock]]'''
+|<!-- Stages -->
+{| {{STDT| c_02}}
+! Label !! Parameters
+|-
+! Circadian half-cycler
+|<!-- Parameters -->
+* [[Consciousness]] Offset: {{--|15%}}
+|}<noinclude>
+|}</noinclude>

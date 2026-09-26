@@ -1,0 +1,42 @@
+A '''Guest''' is a friendly or neutral [[Human]] which is downed and rescued in an [[event]] or [[injury]].  
+
+In order to rescue a downed human, you need to have a vacant [[Sleeping spot]], [[bedroll]], [[bed]], or [[hospital bed]]. Once your pawns reached the downed person and has taken them back to the vacant sleeping place, they will be identified as a guest.
+
+If you select the "capture" option, the target will instead be arrested as a [[prisoner]].
+
+Keep an eye on the health condition of the downed person. Sometimes they are hurt seriously and very close to death. In these circumstances, it may be better to have a drafted pawn tend them before rescuing them.
+
+== Transport Pod Crash ==
+
+[[Events#Transport pod crash|A transport pod crashes]] nearby, ejecting its [[Downed|incapacitated]] occupant. If they belong to a friendly faction or a neutral refugee, you can rescue and treat them as a guest, or capture them as a prisoner. People crashlanding from hostile factions can only be captured and cannot be treated as guests.
+
+Unaffiliated transport pod crash victims, or those from friendly factions, may choose to join your colony. If they will do so, they will do so as soon as they regain consciousness. If they recover from being downed, and they do not immediately join you, they are not going to do so voluntarily. The join chance does not depend on their treatment - rather, it's 50% if the map conditions are safe for them to leave (the outdoor temperature is within the pawn's safe temperature range, there is no [[toxic fallout]] or [[acidic smog]]), and 100% otherwise{{hover title|code for Pawn_GuestTracker.Notify_PawnUndowned in Rimworld v.1.5.4297|<sup>[Source]</sup>}}. Therefore, stripping the rescuee can be used to guarantee them joining if that makes the outside temperature unsafe for them.{{Check Tag|Verify|This follows from the chance calculation, but hasn't been verified ingame}} When the join chance is checked, you will immediately receive a "<name> joins" letter or a "<name> has recovered and decided to leave" message depending on the outcome.
+
+The guest will use any bed assigned for medical purposes. After they are fully healthy, the character will stand up on their own start to walk towards the edge of the map. If they are healthy enough to walk, you can force them to leave earlier. Make sure none of your other beds are set to Medical, then uninstall or deconstruct the sleeping spot or bed they are using.
+
+In order to guarantee that the occupant joins in the long term, they can be captured and then recruited; note that capturing people belonging to factions will anger them. Releasing a member of most factions and allowing them to leave the map will improve your relations with that faction. The exceptions are the pirate factions and the savage tribe factions, which will always be hostile.
+
+<gallery mode="nolines">
+Transport pod crash.png|Transport pod crash victim with typical injuries
+</gallery>
+
+== Baby Transport Pod Crash ==
+{{Biotech|section=1|No category}}
+A transport pod crashes with a [[baby]] inside instead of the regular occupant and will always appear as a friendly faction/neutral refugee. You can choose to ignore it and let it starve to death, or adopt the baby by selecting it and clicking "Adopt". Half of the time, the corpse of the baby's parent can also appear next to it, still in pristine condition.
+
+<gallery mode="nolines">
+Transport pod crash baby.png|Crashed baby transport pod and it's contents
+Transport pod crash baby adopted.png|Adopted crashed transport pod baby (relatively) safely in bed
+</gallery>
+
+== Fallen visitor ==
+[[People#Traders|Visitors]] may collapse due to environmental events such as a [[Events#Heat Wave|heatwave]], opening the opportunity to treat them as well. Stripping a visitor doesn't have a negative impact on faction relations. Once the guest recovers, they will start moving towards a map edge to return home. A message will pop-up saying: ''"Because (name) exited the map healthy, relations with (faction) have improved by 12.""''.
+
+<gallery mode="nolines">
+Fallen visitor.png|Visitor becoming downed
+Fallen visitor rescue.png|Visitor being rescued and placed in a fairly efficient hospital
+Fallen visitor leaving.png|Visitor now fully healed and moving to edge of the map to leave 
+</gallery>
+
+
+[[Category:Characters]]

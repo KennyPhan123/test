@@ -1,0 +1,160 @@
+{{Odyssey}}
+{{Infobox biome
+| name = Glacial plain
+| image = GlacialPlains.jpg
+| type = Biome
+| texture = GlacialPlainsTexture.png
+| canbuildbase = Yes
+| allowRoads = No
+| allowFarmingCamps = Yes
+| animal density = 2
+| plant density = 0.4
+| movement difficulty = 1.5
+| forageability = 0.25
+| wild plant regrow days =
+| disease mtb days = 90
+| max temperature = 33 <!-- For mountains/impassable. 30 for hills of any size.-->
+| min rainfall = 600
+| description = An open area scraped clean by the movement of glaciers. While vegetation and soil are sparse, a few hardy species have made their home here.
+<!-- weather -->
+| clear = 12
+| dry thunderstorm = 2
+| foggy rain = 2
+| hard snow = 2
+| soft snow = 2
+| gray pall = 1
+| overcast = 2
+| blizard = 2
+<!-- fish -->
+| max fish population = 600
+| freshwater_common_salmon = Yes
+| freshwater_uncommon_frostfish = Yes
+| saltwater_common_salmon = Yes
+| saltwater_common_cod = Yes
+| saltwater_uncommon_dogfish = Yes
+}}
+'''Glacial plain''' is a cold [[biome]] in RimWorld added by the [[Odyssey DLC]].
+<!-- 15f + (0f - tile.temperature) + num
+num is 10/15/18/18 for small hills/large hills/Mountains/Impassable. This also has a "noise" check to further limit possible placements.
+Yes, this biome can be rather warm.-->
+== Summary ==
+An open area scraped clean by the movement of glaciers. While vegetation and soil are sparse, a few hardy species have made their home here.
+
+There are no [[geyser]]s in glacial plain maps. Frozen ruins are hidden in the glaciers on all maps, with much bigger ruins when a [[frozen ruins]] landmark is present. [[Anima tree]]s{{RoyaltyIcon}} will not appear even in a warm glacial plains map.
+
+In the lists below the number in brackets represents the relative commonality.
+
+=== Flora ===
+<div class="ul-column-width-200">
+{{#ask: [[Type::Plant]] [[Lives In Glacial Plain::>>0]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Glacial Plain
+}}
+</div>{{#set:Flora Commonality Sum | {{#expr: {{#ask: [[Type::Plant]] [[Lives In Glacial Plain::>>0]] | ?Lives In Glacial Plain = | mainlabel=- | sep=+ }} }} }}
+
+=== Fauna ===
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Glacial Plain::>>0]] [[Coastal Animal::false]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Glacial Plain
+}}
+</div>{{#set:Fauna Commonality Sum | {{#expr: {{#ask: [[Type::Animal]] [[Lives In Glacial Plain::>>0]] [[Coastal Animal::false]] | ?Lives In Glacial Plain = | mainlabel=- | sep=+ }} }} }}
+
+Additionally, these animals can spawn in coastal maps:
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Glacial Plain::>0]] [[Coastal Animal::true]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Glacial Plain
+}}
+</div>
+
+If the map is [[polluted]],{{BiotechIcon}} then the game may choose to spawn in wild animals from this list instead:
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Glacial Plain (Polluted)::>0]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Glacial Plain (Polluted)
+}}
+</div>
+
+=== Diseases ===
+Glacial plain has a disease {{MTB}} of 90 days. The following diseases can occur in a glacial plain:
+{| {{STDT|c_07 sortable}}
+! Disease
+! Commonality{{#set:Disease commonality sum|{{#expr:100+80+50+30+30+100+100+10}} }}
+|-
+| [[Flu]] || 100{{#set:Flu commonality|100}}
+|-
+| [[Plague]] || 80{{#set:Plague commonality|80}}
+|-
+| [[Gut worms]] || 50{{#set:Gut worms commonality|50}}
+|-
+| [[Fibrous mechanites]] || 30{{#set:Fibrous mechanites commonality|30}}
+|-
+| [[Sensory mechanites]] || 30{{#set:Sensory mechanites commonality|30}}
+|-
+| [[Flu#Animals|Animal flu]] || 100{{#set:Animal flu commonality|100}}
+|-
+| [[Plague#Animals|Animal plague]] || 100{{#set:Animal plague commonality|100}}
+|-
+| [[Organ decay]] || 10{{#set:Organ decay commonality|10}}
+|}
+
+=== Fish ===
+The table below contains the list of all of the fish that can be caught - as well as where they can be caught.
+{| {{STDT|c_23 sortable}}
+! Fish
+! Water body
+! Rarity
+|-
+| [[Salmon]] || Any || Common
+|-
+| [[Frostfish]] || Freshwater || Uncommon
+|-
+| [[Cod]] || Saltwater || Common
+|-
+| [[Dogfish]] || Saltwater || Uncommon
+|}
+
+== Summary ==
+Glacial plains are similar to [[boreal forest]]s or [[tundra]]s in terms of temperature and growing season length, but lack [[steam geyser]]s for heat and power, and have much less land to grow on.
+
+* '''Food and Growing: Moderate to Difficult''' - Growing seasons can be similar in length to [[boreal forest]]s, but glacial plains do not have rich soil at all and regular soil is sparse. 
+
+* '''Disease: Easy''' - Disease events are uncommon. [[Healroot]] still grows naturally during the summer, and healroot plants will survive (but not grow in) the cold.
+
+* '''Temperature: Difficult''' - While the summers are fairly warm, the total lack of steam geysers and relative lack of [[tree]]s make temperature more difficult than the other cold biomes, namely for [[New Tribe]]s which don't start with Electricity.
+
+* '''Fires: Easy''' - There is little plant life, and there are large stretches of ice between each patch of soil, meaning fires are not difficult to fight.
+
+* '''Special:''' There are few/no [[ruin]]s outside of the ice, so the initial start may be harder. The [[anima tree]]{{RoyaltyIcon}} will not spawn.
+
+Overall starting difficulty ranges from moderate to difficult. In warmer tiles and/or when playing with a developed start like [[Crashlanded]], the summer will last long enough for colonists to stablize and get a food supply established. Still, the colony will likely have to build in a sub-optimal location in order to be near a soil patch.
+
+== Gallery ==
+<gallery>
+GlacialPlains.jpg|A fully generated glacial plains
+GlacialPlainsTexture.png|Glacian plains' texture on the world map
+</gallery>
+
+== History ==
+* [[Odyssey DLC]] Release - Added.
+
+{{nav|biomes|wide}}
+[[Category:Biomes]]
+[[Category:Cold Biomes]]

@@ -1,0 +1,92 @@
+{{Stub|reason=1) Two-way links 2) Version history}}
+{{See also|Accuracy (Close)|Accuracy (Short)|Accuracy (Long)}}
+{{Verified|1.5.4104}}{{Stat
+| def name = AccuracyMedium
+| label = Accuracy (medium)
+| description = The [[Ranged weapons|weapon]]'s accuracy at a distance of 25 cells.<br/>An actual shot's chance to hit will also be affected by other factors.
+| default base value = 1
+| min value = 0.01
+| max value = 1
+| to string style = PercentZero
+| show if undefined = false
+| category = Weapon_Ranged
+| display priority in category = 5108
+| parts = StatPart_Quality
+}}
+
+== Bases ==
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_06}}
+! Weapon !! [[Property:Accuracy (Medium) Base|Accuracy<br />(Medium)<br />Base]]
+|-
+{{#ask: [[Accuracy (Medium) Base::+]]
+| ?Accuracy (Medium) Base
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Name
+}}
+|}
+</li><div>
+
+== Factors ==
+[[Accuracy (Medium)]] is multiplied by a factor depending on weapon quality:
+{| {{STDT}}
+! [[Quality]] !! Factor
+|-
+! Awful
+| {{Bad|×80%}}
+|-
+! Poor
+| {{Bad|×90%}}
+|-
+! Normal
+| '''×100%'''
+|-
+! Good
+| {{Good|×110%}}
+|-
+! Excellent
+| {{Good|×120%}}
+|-
+! Masterwork
+| {{Good|×135%}}
+|-
+! Legendary
+| {{Good|×150%}}
+|}
+
+== Stat Def Data ==
+{| {{STDT}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Accuracy (Medium)" <!-- ParentName="AccuracyBase" --><!--<StatDef>-->
+|
+* '''Def Name:'''<br />AccuracyMedium
+* '''Label:'''<br />Accuracy (medium)
+| The weapon's accuracy at a distance of 25 cells.<br/><br/>An actual shot's chance to hit will also be affected by other factors.
+|
+* Display Order:<br />'''44'''
+* Def Name:<br />'''Weapon_Ranged'''
+* Label:<br />'''Weapon (ranged)'''
+* Display All By Default:<br />{{Bad|false}}
+|
+* Default Base Value: '''{{%|1}}'''
+* Min Value: '''{{%|0.01}}'''
+* Max Value: '''{{%|1}}'''
+* To String Style: '''PercentZero'''
+* Show If Undefined: {{Bad|false}}
+|
+* '''Parts:'''
+** '''''StatPart_Quality:'''''
+*** Factor Awful: {{Bad|×{{%|0.8}}}}
+*** Factor Poor: {{Bad|×{{%|0.9}}}}
+*** Factor Normal: '''×{{%|1}}'''
+*** Factor Good: {{Good|×{{%|1.1}}}}
+*** Factor Excellent: {{Good|×{{%|1.2}}}}
+*** Factor Masterwork: {{Good|×{{%|1.35}}}}
+*** Factor Legendary: {{Good|×{{%|1.5}}}}
+| 5108
+<!--</StatDef>-->
+|}
+
+{{nav|stats|wide}}

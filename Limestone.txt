@@ -1,0 +1,87 @@
+{{Stub|reason=general}}
+{{About|the wall-like, stone structure|the material that items and structures can be made from|Limestone blocks}}
+{{See also|Smoothed limestone}}
+
+{{Infobox main|Structure
+| name = Limestone
+| image = Limestone.png
+| description = A sedimentary rock formed from the compacted remains of ancient seashells.
+<!-- Base Stats -->
+| type = Structure
+| hp = 700
+| flammability = 0
+| beauty = -2
+| rotatable = false
+<!-- Refuelable -->
+<!-- Item -->
+| stack limit = 
+| mass base = 
+| deterioration = 
+<!-- Building -->
+| size = 1 * 1
+| passability = impassable
+| cover = 1
+| blockswind = true
+<!-- Technical -->
+| defName = Limestone
+| label = limestone
+<!-- ThingDef Name="BuildingNaturalBase" Abstract="True"-->
+| category = Building
+| selectable = true
+| drawerType = MapMeshOnly
+| filthLeaving = Filth_RubbleRock
+| scatterableOnMapGen = false
+| artificialForMeditationPurposes = false
+<!-- ThingDef Name="RockBase" ParentName="BuildingNaturalBase" Abstract="True" -->
+| castEdgeShadows = true
+| thingClass = Mineable
+| texPath = Things/Building/Linked/Rock_Atlas
+| graphicClass = Graphic_Single
+| linkType = CornerFiller
+| linkFlags = Rock, MapEdge
+| altitudeLayer = Building
+| coversFloor = true
+| neverMultiSelect = true
+| saveCompressible = true
+| holdsRoof = true
+| staticSunShadowHeight = 1.0
+| blockLight = true
+| mineable = true
+| fertility = 0
+| canOverlapZones = false
+| isInert = true
+| isNaturalRock = true
+| canBuildNonEdificesUnder = false
+| deconstructable = false
+| supportsWallAttachments = true
+| damageMultipliers = Thump
+| multiplier = 4
+<!-- ThingDef Name="UglyRockBase" ParentName="RockBase" Abstract="True" -->
+| mineableYieldWasteable = false
+<!-- ThingDef ParentName="UglyRockBase" Name="LimestoneBase" -->
+| color = (158,153,135)
+| mineableThing = ChunkLimestone
+| mineableDropChance = 0.25
+| smoothedThing = SmoothedLimestone
+}}
+
+'''Limestone''' is a natural structure that can be [[mine]]d to obtain a {{Icon Small|Limestone block}} limestone {{Icon Small|Stone chunk}} stone chunk. Do note that this is not a guarantee.
+
+== Summary ==
+'''Limestone''' tiles have 700 health each, making it the second hardest stone block to mine. Each mined block has ~25% chance base to yield a {{Icon Small|Limestone block}} limestone {{Icon Small|Stone chunk}} stone chunk, each of which can be transform into {{Icon Small|Limestone block}} 20 limestone blocks.
+
+This tile can also be [[Structure#Smoothed_walls|smoothed]] to create [[Smoothed limestone]].
+
+== Analysis ==
+
+== Gallery ==
+<gallery>
+Limestone.png|Natural limestone wall
+Smoothed limestone.png|Smoothed limestone wall 
+</gallery>
+
+== Version history ==
+* ? - Added.
+* Beta 19/1.0 Update - You can now smooth natural rough rock walls into high-quality walls.
+
+[[Category:Natural wall]]

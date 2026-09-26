@@ -1,0 +1,158 @@
+{{Infobox main|drug
+| name = Flake
+| image = Flake_c.png
+| description = A flaky white preparation of psychite that can be smoked to induce a short but powerful euphoric state. While it is cheap to produce and extremely pleasurable to use, it is exceptionally addictive. Flake is known for destroying lives, communities, and entire societies.
+<!-- Base Stats -->
+| type = Drug
+| type2 = Hard Drug
+| tech level = Industrial
+| marketvalue = 14
+| stack limit = 150
+| mass base = 0.05
+| hp = 50
+| deterioration = 2
+| flammability = 1
+| rotatable = false
+| path cost = 14
+<!-- Ingestion -->
+| food type = processed
+| joy offset = 0.7
+| joy kind = Chemical
+| addictiveness = 0.05
+| max num to ingest at once = 1
+| ingestion time = 650
+<!-- Creation -->
+| production facility 1 = Drug lab
+| research = Psychite refining
+| work to make = 250
+| work speed stat = Drug Synthesis Speed
+| resource 1 = Psychoid leaves
+| resource 1 amount = 4
+| bulk product amount = 4
+<!-- Technical -->
+| defName = Flake
+| preferability = NeverForNutrition
+| drug category = Hard
+| is pleasure drug = true
+| tradeTags = Drugs
+<!-- Unused -->
+| always haulable = true
+| draw gui overlay = true
+| graphic class = Graphic_StackCount
+| graphic path = Things/Thing/Drug/Flake
+| label = Flake
+| parent name = MakeableDrugBase
+| resource readout priority = Last
+| selectable = true
+| social properness matters = true
+| thing class = Drugs
+| use hit points = true
+<!-- Drug Parameters -->
+| pain factor = 0.5
+| rest fall factor = 0.33
+| rest offset = 0.2
+| mood offset = 35
+}}
+{{Info|'''Flake''' is potent [[mood]] enhancing [[hard drugs|hard]] [[Drugs|drug]] that significantly improves the mood of a pawn and provides additional bonuses, at the risk of addiction and overdose. It is cheaper than [[yayo]], but comes with additional maluses.}}
+
+== Acquisition ==
+{{Acquisition}}
+
+It can also be found on [[raider]]s and [[Trade|purchased]].
+
+== Summary ==
+Flake is a highly potent mood enhancing drug that has a variety of effects. These can be broken into effects that occur:
+* Instantaneously and one time upon using the drug.
+* While high on the drug.
+* While having a built-up tolerance to the drug.
+* While addicted to the drug.
+* While withdrawing from the drug.
+
+'''Note that psychite tolerance, addiction and withdrawal are shared by [[psychite tea]], flake and [[yayo]].'''
+
+=== Upon smoking ===
+A pawn taking flake will do so right where they stand without looking for a place to sit first. Flake is smoked, taking {{Ticks|{{P|Ingestion Time}}}}. It has the following one time effects:
+
+* {{+|{{%|{{P|Joy Offset}}}}}} {{P|Joy Kind}} [[recreation]]
+* If the pawn has the [[chemical interest]] or [[chemical fascination]] trait:
+** {{+|30%}} [[Chemical need]]
+* {{+|20%}} [[Rest]]
+* {{Bad|{{%|{{#vardefineecho:overdoseChance|0.015}}}}}} Chance for a [[Overdose#Major|major overdose]]
+* {{++|18% to +{{%|{{#vardefineecho:maxOverdoseSeverity|0.35}}}}}} [[Overdose]] severity
+* '''+{{%|{{#vardefineecho:highSeverity|0.75}} * 0.25}} to +{{%|{{#var:highSeverity}}}}''' Flake high severity, depending on psychite tolerance ''(see "Flake high" below)''
+* {{++|{{%|{{#vardefineecho:toleranceSeverityOffset|0.04}}}}}} Psychite tolerance severity, divided by body size ''(see "Psychite tolerance" below)''
+* {{Bad|{{%|{{P|Addictiveness}}}}}} Psychite [[addiction]] chance ''(see "Psychite addiction" below)''
+* If the pawn has a psychite addiction already:
+** {{+|{{%|{{#vardefineecho:needOffset|0.9}}}}}} Psychite need ''(see "Addiction" below)''
+** {{--|{{%|{{#vardefineecho:addictionSeverityOffset|0.3}}}}}} Addiction progress ''(see "Withdrawal" below)''
+
+=== Flake high ===
+{{Quote|"Active flake in the bloodstream. Generates an intense euphoric, debilitating high."|High on flake description}}
+
+Each flake increases the flake high severity by the following formula:
+
+<code>Increase in severity = {{#var:highSeverity}} * (100 - (tolerance * 75 round 0))</code>
+
+Therefore with 0% tolerance the severity increases by {{%|{{#var:highSeverity}}}}, with 100% tolerance by {{%|{{#var:highSeverity}}*0.25}}. It decreases by {{%|{{#vardefineecho:highSeverityPerDay|3}}}} per day again, meaning that the high of a single dose lasts between {{#vardefineecho:highDurationMin|{{#expr: {{#var:highSeverity}}*0.25/({{#var:highSeverityPerDay}}/24) round 1}}}} and {{Plural|{{#vardefineecho:highDurationMax|{{#expr: {{#var:highSeverity}}/({{#var:highSeverityPerDay}}/24)}} round 1}}|hour}}. The maximum severity of a flake high is 100% which is reached with {{#expr: 1/{{#var:highSeverity}} round 1}} to {{#expr: 1/{{#var:highSeverity}}/0.25 round 1}}&nbsp;flake. Regardless of the flake high severity, the effects are always the same. Only their duration changes accordingly:
+
+* {{+|35}} [[Mood]] (''"So good, so good."'')
+* {{Good|×50%}} [[Pain]]
+* {{Good|×33%}} [[Sleep Fall Rate]]
+
+Without any tolerance, a dose of flake will last for 6 hours.
+
+{{:Psychite}}
+
+== Analysis ==
+Flake is one of three drugs that can be produced from psychoid leaves, the others being [[psychite tea]] and [[yayo]]. [[Go-juice]] is a derivative of yayo. In general, flake is better for selling, not using.
+
+=== Drug ===
+As a mood control drug, flake is generally inferior to yayo. Yayo is safer: it has a much lower addiction chance (1% vs 5%), a lower major overdose chance (1% vs 1.5%), and each unit of yayo lasts twice as long as flake, meaning there are less chances to overdose/become addicted. They both give {{+|35}} mood and '''x50%''' pain, but yayo also gives {{+|15%}} [[Moving]]. Flake's only real advantages as a taken drug are 1.) the increased chemical recreation per leaf, and 2.) flake's smaller discrete doses. Yayo is worth two flake and each high lasts twice as long, but it has to be taken all at once. You can "split up" flake for 2 separate mood emergencies.
+
+Psychite tea only gives {{+|12}} mood and {{Good|x80%}} Sleep Fall Rate, but is considerably safer than both flake and yayo. '''Adults''' can safely drink tea once every 2 days without getting addicted. This makes tea far more useful for regular use. However, all 3 psychite drugs contribute towards the same tolerance, so tea's safe usage interval does not apply if combined with either of the other two. Yayo is more appropriate for mood emergencies. In absolute emergencies, you can take yayo, flake, and psychite tea simultaneously for a {{+|82}} mood buff.
+
+For the [[Psychite dependency]] gene,{{BiotechIcon}} flake is often superior to the other psychite drugs. As dependency eliminates regular addiction and overdose, the regular safety advantages of yayo/psychite tea are negated. Flake is cheaper than yayo and satisfies the dependency for the same amount of time. Flake costs the same as psychite tea, but flake has a much greater mood increase, and restores more Rest. But if psychoid cost isn't an issue, then yayo is likely preferred due to the increase in Moving.
+
+=== Drug comparison table ===
+{| class="wikitable sortable"
+! Drug !! Mood Buff !! Moving !! Pain !! Tiredness !! Consciousness !! Sight !! Global working speed 
+|-
+| Flake        || +35 ||    - || x50% || x33% ||    - ||    - ||    -
+|-
+| Yayo         || +35 || +15% || x50% || x33% ||    - ||    - ||    -
+|-
+| Psychite tea || +12 ||    - || x90% || x80% ||    - ||    - ||    -
+|-
+| Go-juice     ||  +5 || +50% || x10% ||    - || +20% || +35% ||    -
+|-
+| Wake-up      ||   - || +10% ||    - || x80% || +10% ||    - || +50%
+|}
+
+=== Trade ===
+On the market, flake is worth 2/3<sup>rds</sup> the [[silver]] of yayo, requires 80% of the [[Work To Make]], and 50% of the ingredient costs. Flake gives 33% more silver per leaf for only 7% more work, making it always superior if you are able to use all your psychoid leaves.
+
+If the work required to create drugs is a bottleneck, then flake still remains more efficient when you sell the remaining leaves raw. For example, a pawn requires {{Ticks|35000}} of work and 800 psychoid leaves to synthesize 100 yayo worth {{Icon Small|silver||2100}}. With the same amount of work, a pawn could use 560 leaves to craft 140 flake worth {{Icon Small|silver||1960}}. The remaining 240 psychoid leaves are worth {{Icon Small|silver||456}}, for a total of {{Icon Small|silver||2416}}. However, psychoid leaves will eventually rot away without refrigeration, and fewer traders accept raw leaves. Therefore, if long term refrigeration is an issue, then yayo may be necessary.
+
+If caravan weight is a limiting factor, yayo is worth more proportional to [[mass]], however the low weight of all the options means this is unlikely to be relevant as a single [[muffalo]] can carry almost 20 stacks of flake, worth over 20,000 silver. 
+
+* [[Psychite tea]] is economically inferior to both yayo and flake; its primary advantage instead lies in its use by colonists. It is produced at a [[campfire]] or stove with the [[Cooking]] skill and only the [[Research#Psychoid brewing|Psychoid Brewing]] research however, and thus may be a more accessible in the early game.
+* Compared to [[smokeleaf joint]]s, flake takes less work to harvest, flake takes much less work to synthesize, and flake is worth more per unit. Smokeleaf's major advantage is that [[smokeleaf plant]]s grow faster than psychoid. If colonist work time doesn't matter, then smokeleaf can be worthwhile. Also, creating joints requires Cooking rather than Intellectual.
+* Compared to [[beer]], flake is more efficient for overall value / work. Flake takes much less grower work, and it's worth more per unit. Like smokeleaf, hop plants grow faster than psychoid, and use Cooking rather than Intellectual.
+
+== Gallery == 
+<gallery>
+Flake_a.png|Single item
+Flake_b.png|Partial Stack
+Flake_c.png|Full Stack
+</gallery>
+
+== Version history ==
+* [[Version/0.15.1279|0.15.1279]] - Added.
+* [[Version/1.2.2719|1.2.2719]] - Reduce flake new addiction chance from 20% to 5%. Reduce flake tolerance gain from 4.5% to 4% 
+
+<gallery>
+Flake old.png|Old texture
+</gallery>
+
+{{Nav|drugs|wide}}
+[[Category:Drug]] [[Category:Hard Drug]]

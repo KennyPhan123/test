@@ -1,0 +1,91 @@
+{{Stub|section=1|reason= Orphan - Needs links, and (more) to BE linked!}}
+<!--- Editors: This page was literally Copy/pasted from [[User:Khaim]]'s page, pure expedience, ZERO planning/linking/polishing; rename/rework as needed. -->
+
+==How-To: Properties & Queries==
+
+===Property Syntax===
+
+====Adding properties to pages====
+
+* Basic syntax: <tt><nowiki>[[Example property::value]]</nowiki></tt>
+** How this looks on the page depends on the property's ''type''. The default type is [[Special:Types/Page|Page]], which will display this the same as <nowiki>[[value]]</nowiki>, i.e. the text 'value' which links to the wikipage 'value'.
+** Properties with the [[Special:Types/Number|Number]] type - very common on this wiki - will not add a link. They will just display as 'value'.
+* Alternate display text: <tt><nowiki>[[Example property::value|alt-text]]</nowiki></tt>
+** Displays as either <nowiki>[[value|alt-text]]</nowiki>, for page links; or 'alt-text', for numbers.
+* Set property without displaying anything: <tt><nowiki>[[Example property::value| ]]</nowiki></tt>
+** The space is required.
+
+If you add a property to a page, check that it's defined! If it isn't, the wiki will use the defaults, which are terrible. In this case you should create the property page yourself.
+
+====Defining Properties====
+
+Property is defined by special pages with the '''Property:''' prefix. For example, the "Beauty Base" property is defined by [[Property:Beauty_Base]]. At minimum a property page needs to define its type.
+* Basic syntax: <tt><nowiki>[[has property::type| ]]</nowiki></tt>
+** On this wiki the type should probably be either 'number' or 'page'.
+** This is the exact same syntax as adding a property to a normal page. That's because ''has_type'' is also a property; it's a special built-in property.
+* Helper template: <tt><nowiki>{{Property with Page | page = Beauty | type = Number }}</nowiki></tt>
+** This sets the type and also displays ''See [[Beauty]]'' to link to the page that describes what this property is.
+
+A property's page is also a wiki page, so you can add content to it as normal. It's fine to leave it blank.
+
+===Query Syntax===
+A query allows you to insert content, usually tables, which dynamically update based on data from other pages.
+
+====Example====
+Wiki code for the query:
+ <nowiki>{{#ask:
+[[Skill Base Factor::>0.4]]
+[[Skill Bonus Factor::+]]
+| ?Skill Base Factor# = Base
+| ?Skill Bonus Factor# = Factor
+| format = table
+| limit  = 100
+| mainlabel = Stat
+| sort = Skill Base Factor,Skill Bonus Factor
+| order = desc,desc
+}}</nowiki>
+
+Wiki code on [[Mechanoid Disassembly Efficiency]]:
+ <nowiki>[[Skill Base Factor::0.75|75%]] plus [[Skill Bonus Factor::0.025|2.5%]] per skill level.</nowiki>
+(Similar wiki code is on the other pages.)
+
+Query output:
+{{#ask:
+[[Skill Base Factor::>0.4]]
+[[Skill Bonus Factor::+]]
+| ?Skill Base Factor# = Base
+| ?Skill Bonus Factor# = Factor
+| format = table
+| limit  = 100
+| mainlabel = Stat
+| sort = Skill Base Factor,Skill Bonus Factor
+| order = desc,desc
+}}
+
+Comments:
+ <nowiki>{{#ask:   // Begin a query.
+
+// Everything up to the next | is the query term. This particular example returns pages which:
+[[Skill Base Factor::>0.4]]  // have the Skill_Base_Factor property, value is >0.4
+[[Skill Bonus Factor::+]]    // AND have the Skill_Bonus_Factor property, with any value
+
+// Define columns to show. The first column is the page name.
+| ?Skill Base Factor# = Base  // The second column is the page's Skill_Base_Factor value, with heading 'Base'.
+| ?Skill Bonus Factor# = Factor  // The third column is Skill_Bonus_Factor, with heading 'Factor'
+| mainlabel = Stat  // The heading for the first column.
+
+// Optional settings.
+| format = table  // This makes a fitted table. 'format = broadtable' makes a table as wide as the screen.
+| limit  = 100  // Maximum number of pages to return.
+| sort = Skill Base Factor,Skill Bonus Factor  // Sort by base factor, then bonus factor.
+| order = desc,desc
+}}</nowiki>
+
+===MediaWiki references===
+* [https://www.semantic-mediawiki.org/wiki/Help:Properties_and_types Properties]
+* [https://www.semantic-mediawiki.org/wiki/Help:Selecting_pages Query syntax]
+* [https://www.semantic-mediawiki.org/wiki/Help:Displaying_information Display syntax]
+* [https://www.semantic-mediawiki.org/wiki/Help:Result_formats Result formats]
+* [https://www.semantic-mediawiki.org/wiki/Help:Special_properties Special properties]
+
+[[Category:Help]]

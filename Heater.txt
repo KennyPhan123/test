@@ -1,0 +1,66 @@
+{{infobox main|building|
+| name = Heater
+| image = Heater.png
+| description = A device that converts electricity into heat. It can automatically turn itself on or off to reach a specific target temperature.
+| type = Building
+| type2 = Temperature
+| placeable = true
+| path cost = 30
+| passability = pass through only
+| blockswind = true
+| cover = 0.4
+| minifiable = true
+| size = 1 ˣ 1
+| mass base = 6
+| flammability = 0.5
+| hp = 100
+| sell price multiplier = 0.7
+| heatpersecond = 21
+| power = -175
+| glowradius = 3
+| glowcolor = (255, 150, 100)
+| terrain affordance = light
+| research = Electricity
+| thingCategories = BuildingsTemperature
+| skill 1 = Construction
+| skill 1 level = 5
+| work to make = 1000
+| resource 1 = Steel
+| resource 1 amount = 50
+| resource 2 = Component
+| resource 2 amount = 1
+}}
+{{Info|The '''heater''' is a device that can be used to raise the [[temperature]] in a room.}}
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+[[File:Heater illumination area.png|300px|thumb|left|Heater illumination area. The white area (1 tile out) is 50% illumination, required for best [[Surgery Success Chance Factor|surgery success chance]]]]
+
+Heaters are placed on the floor. A [[power]]ed heater will attempt to heat an enclosed [[room]] up to the target temperature. Unlike [[cooler]]s, heaters require no specific placement within the room - a heater in the corner of the room is as effective as a heater placed in the center. The heat also naturally spreads between rooms, sped up by open [[door]]s or [[vent]]s. One heater can only warm so much, and factors like room size may make the target unreachable - see [[Temperature]] for more details.
+
+Heaters will attempt to heat the room so long as the room temperature is lower than the target temperature. The target temperature is set by the gizmo that appears when selecting the heater and defaults to {{Temperature |21}}.
+Heaters in operation are completely binary, having two states of power consumption, high and low.
+* '''High:''' A heater that is actively heating is in the high power state and consumes 175W. It will attempt to raise the room temperature. The heater will stay in the state so long as the target temperature is higher than the heated room temperature.
+* '''Low:''' If the room temperature is at or above the target temperature, the heater switched to this state and ceases heating the room. Power consumption reduces to 17 W.
+
+Heaters can theoretically warm up to 1800 degrees, total - 1 tile by 1800 degrees, 50 tiles by 36 degrees - but this is before considering heat leakage. Simple testing reveals that with an exterior temperature of {{Temperature|-17}}, a single heater with a target temperature of about {{Temperature|20}} can maintain a room with a 9x9 exterior.  A single heater with a target temperature of {{Temperature|10}} can maintain a room with an 11x11 exterior.
+
+In addition to providing heat, the heater will illuminate each tile surrounding it with ~50% light level (Lit), dropping to <10% light level (Dark) at two tiles. (see image)
+
+== Analysis ==
+Heaters are very helpful in cold biomes, and useful in temperate biomes during winter or a [[cold snap]]. If a pawn is too far below their [[Minimum Comfortable Temperature]], they are vulnerable to the potentially lethal [[Injury#Hypothermia|Hypothermia]] and [[Injury#Frostbite|Frostbite]], and receive the [[Mood#Cold|''Cold'']] negative [[mood]]let. Warm [[clothing]] like [[parka]]s instead increase the comfortable temperature range, but clothes must be fitted for every pawn. A colonist sleeping under {{Temperature|16}} gives them the -4 [[Mood#Slept_in_the_cold|''Slept in the cold'']] moodlet, regardless of warm clothing.
+
+Heating is necessary to grow [[crop]]s outside of their growing season. Heaters require an enclosed and (mostly) [[roof]]ed room to function - to grow crops there, small parts of the [[roof]] need to be removed (leaking heat), or [[sun lamp]]s should be used. Alternatively, [[nutrifungus]]{{IdeologyIcon}} can be grown in the darkness, but by default this inflicts a [[mood]] penalty. [[Hydroponics]] are not required, but may be used to grow crops where there is no soil.
+
+If resources and/or electricity are unavailable, a [[campfire]] may be used instead. They are much less wood efficient than multiple heaters and a [[wood-fired generator]], and their temperature can't be controlled, so pawns may instead be disgruntled by the heat.
+
+As heat constantly spreads to colder surroundings, heaters often remain at high power. If you have multiple heaters in a room, you can exploit this by having each one be set a some number of degrees higher than the last - this will mean only the number needed to actually maintain room temperature will be operating at high power, while the others will be in low power state. Larger gaps in the temperature will save power but be less precise in the maintained temperature, and vice versa.
+
+== Version history ==
+* [[Version/0.8.657|0.8.657]] - Added.
+* [[Version/1.6.4518|1.6.4518]] - Fix: Heaters ticking when minified
+
+{{nav|temperature}}
+[[Category:Temperature]]

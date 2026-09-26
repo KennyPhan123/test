@@ -1,0 +1,173 @@
+{{Odyssey}}
+{{Infobox biome
+| name = Glowforest
+| image = Glowforest.jpg
+| type = Biome
+| texture = GlowforestTexture.png
+| canbuildbase = Yes
+| animal density = 4.8
+| plant density = 0.75
+| movement difficulty = 2
+| min temperature = 10
+| max temperature = 55
+| min rainfall = 1000
+| min swampiness = 0.6
+| forageability = 1
+| wild plant regrow days = 13
+| disease mtb days = 50
+| description = Geysers spew out massive sulfur clouds that cast the region into permanent darkness. Huge fungal colonies bloom in the dark, fed by the nutrients that the geysers bring to the surface. These areas are alluring and dangerous.
+<!-- weather -->
+| clear = 18
+| fog = 2
+| rain = 1
+| dry thunderstorm = 3
+| rainy thunderstorm = 1.7
+| foggy rain = 2
+| hard snow = 4
+| soft snow = 4
+| gray pall = 1
+| blind rain = 1
+| torrential rain = 0.5
+<!-- fish -->
+| max fish population = 600
+| freshwater_common_bass = Yes
+| freshwater_uncommon_catfish = Yes
+| saltwater_common_bluefish = Yes
+| saltwater_uncommon_flounder = Yes
+| saltwater_uncommon_marlin = Yes
+}}
+'''Glowforest''' is a temperate [[biome]] in RimWorld added by the [[Odyssey DLC]].
+<!-- return return 23f + (tile.temperature - 7f) + (tile.rainfall - 600f) / 220f + tile.swampiness * 3f -->
+== Summary ==
+Glowforest biomes are permanently covered in smoke, preventing sunlight from reaching at all. This means that a number of fungi can grow freely, and [[darkness (meme)|Darkness]]-related [[precept]]s{{IdeologyIcon}} will always be active outdoors.
+
+In the lists below the number in brackets represents the relative commonality.
+
+=== Flora ===
+<div class="ul-column-width-200">
+{{#ask: [[Type::Plant]] [[Lives In Glowforest::>>0]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Glowforest
+}}
+</div>{{#set:Flora Commonality Sum | {{#expr: {{#ask: [[Type::Plant]] [[Lives In Glowforest::>>0]] | ?Lives In Glowforest = | mainlabel=- | sep=+ }} }} }}{{#set:Grazing Score|{{Grazing Score}} }}
+
+=== Fauna ===
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Glowforest::>>0]] [[Coastal Animal::false]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Glowforest
+}}
+</div>{{#set:Fauna Commonality Sum | {{#expr: {{#ask: [[Type::Animal]] [[Lives In Glowforest::>>0]] [[Coastal Animal::false]] | ?Lives In Glowforest = | mainlabel=- | sep=+ }} }} }}
+
+Additionally, these animals can spawn in coastal maps:
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Glowforest::>0]] [[Coastal Animal::true]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Glowforest
+}}
+</div>
+
+If the map is [[polluted]],{{BiotechIcon}} then the game may choose to spawn in wild animals from this list instead:
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Glowforest (Polluted)::>0]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Glowforest (Polluted)
+}}
+</div>
+
+=== Diseases ===
+Glowforest has a disease {{MTB}} of 50 days. The following diseases can occur in a glowforest:
+{| {{STDT|c_07 sortable}}
+! Disease
+! Commonality{{#set:Disease commonality sum|{{#expr:100+100+160+140+80+30+30+80+100+100+10}} }}
+|-
+| [[Flu]] || 100{{#set:Flu commonality|100}}
+|-
+| [[Plague]] || 100{{#set:Plague commonality|100}}
+|-
+| [[Malaria]] || 160{{#set:Malaria commonality|160}}
+|-
+| [[Sleeping sickness]] || 140{{#set:Sleeping sickness commonality|140}}
+|-
+| [[Gut worms]] || 80{{#set:Gut worms commonality|80}}
+|-
+| [[Fibrous mechanites]] || 30{{#set:Fibrous mechanites commonality|30}}
+|-
+| [[Sensory mechanites]] || 30{{#set:Sensory mechanites commonality|30}}
+|-
+| [[Muscle parasites]] || 80{{#set:Muscle parasites commonality|80}}
+|-
+| [[Flu#Animals|Animal flu]] || 100{{#set:Animal flu commonality|100}}
+|-
+| [[Plague#Animals|Animal plague]] || 100{{#set:Animal plague commonality|100}}
+|-
+| [[Organ decay]] || 10{{#set:Organ decay commonality|10}}
+|}
+
+=== Fish ===
+The table below contains the list of all of the fish that can be caught - as well as where they can be caught.
+{| {{STDT|c_23 sortable}}
+! Fish
+! Water body
+! Rarity
+|-
+| [[Bass]] || Freshwater || Common
+|-
+| [[Catfish]] || Freshwater || Uncommon
+|-
+| [[Bluefish]] || Saltwater || Common
+|-
+| [[Marlin]] || Saltwater || Common
+|-
+| [[Flounder]] || Saltwater || Uncommon
+|}
+
+=== Events ===
+The glowforest has two [[Events/Odyssey#Glowforest|unique events]]:
+* [[Events/Odyssey#Biolumenescent Spores|Biolumenescent Spores]]: The glowforest's equivalent to an [[aurora]], this event grants a [[mood]] bonus for colonists that view it.
+* [[Events/Odyssey#Boomshroom Sprout|Boomshroom Sprout]]: Causes [[boomshroom]]s to grow in the tile.
+
+== Analysis ==
+Glowforest is essentially a biome that's permanently night, although the fungal light will allow pawns to move and work at normal pace. [[Darkness (meme)|Darkness]]-related [[ideoligion]]s{{IdeologyIcon}} will benefit from the glowforest, with [[combat in darkness]] being a massive accuracy boost that's always active in a glowforest.
+
+* '''Growing and Food: Moderate ([[Ideology]]{{IdeologyIcon}}) or Very Difficult (no [[Ideology]])''' - It is warm enough for crops to grow for long periods, animals are very frequent, and food can be foraged. However, no sunlight reaches the glowforest, meaning normal crops cannot grow without [[sun lamp]]s. With [[Ideology]] installed, [[nutrifungus]]{{IdeologyIcon}} can be grown in the darkness (and is not disrupted by fungal light), meaning food should not be an issue at the cost of the {{--|3}} ''Ate fungus cooked'' moodlet. Even then, other useful crops like [[healroot]] and [[cotton plant|cotton]] won't grow by default. Without Ideology, food must be foraged or hunted for until [[sun lamp]]s are available.
+
+* '''Disease: Difficult''' - Disease occurs as often as a [[temperate forest]], but [[healroot]] cannot be grown at all until a [[sun lamp]] is installed. This limits the medicine supply until sun lamp growing is possible or until [[medicinemaker dryad]]s{{IdeologyIcon}} are available.
+
+* '''Temperature: Easy to Moderate''' - Glowforest tiles are generally temperate or warm, generally not too warm outside of summer days and [[heat wave]]s.
+
+* '''Fires: Easy''' - Despite the high density of plants, boomalopes, and boomshrooms, wildfires are not a threat as [[night grass]] has a much lower [[flammability]] than regular [[grass]] does, reducing the spread of outdoor fires greatly.
+
+* '''Special:''' The [[anima tree]]{{RoyaltyIcon}} will generate after some time, but [[anima grass]] will eventually die without [[sun lamp]]s. The outdoors is always considered dark for the [[Darkness (meme)|darkness]]-related [[precept]]s.{{IdeologyIcon}}
+
+Overall starting difficulty is difficult, although easier with Ideology as [[nutrifungus]]{{IdeologyIcon}} can secure food in the early game. Even with Ideology, the lack of medicine can be dangerous, especially for Tribal starts which won't establish sun lamps for a while.
+
+== Gallery ==
+<gallery>
+Glowforest.jpg|A fully generated glowforest
+GlowforestTexture.png|Glowforest's texture on the world map
+</gallery>
+
+== Version history ==
+* [[Odyssey DLC]] Release - Added. 
+* [[Version/1.6.4528|1.6.4528]] - In the glowforest, reduced caravan movement difficulty (4->2) and disease occurrence ({{MTB}} 30->50). Performance improvements in the glowforest.
+
+{{nav|biomes|wide}}
+[[Category:Biomes]]
+[[Category:Temperate Biomes]]

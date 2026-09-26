@@ -1,0 +1,58 @@
+{{Royalty}}
+{{Stub|reason=1) Two-way links}}
+{{Verified|1.5.4104}}{{Stat
+| def name = Ability_RequiredPsylink
+| label = psylink level
+| description = The minimum [[psylink]] level required to use this ability.
+| default base value = 0
+| min value = 0
+| hide at value = 0
+| show if undefined = false
+| category = Ability
+| display priority in category = 1005
+| show if mods loaded = Royalty
+}}
+
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_07 text-center}}
+! [[Psycast]] !! Psylink Level
+|-
+{{#ask: [[Psylink Level::+]]
+| ?Psylink Level
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Name
+}}
+|}
+</li><div>
+
+== Stat Def Data ==
+{| {{STDT}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Psylink Level" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />Ability_RequiredPsylink
+* '''Label:'''<br />psylink level
+| The minimum psylink level required to use this ability.
+|
+* Display Order:<br />'''60'''
+* Def Name:<br />'''Ability'''
+* Label:<br />'''Ability'''
+* Display All By Default:<br />{{Bad|false}}
+|
+* '''Default Base Value:''' {{%|0}}
+* '''Min Value:''' {{%|0}}
+* '''Hide At Value:''' {{%|0}}
+* '''Show If Undefined:''' {{Bad|false}}
+|
+* Show If Mods Loaded:
+** '''[[Royalty]] {{RoyaltyIcon}}'''
+| 1005
+<!--</StatDef>-->
+|}
+
+== Version history ==
+* [[Royalty (DLC)]] Release - Added.
+
+{{nav|stats|wide}}

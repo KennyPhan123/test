@@ -1,0 +1,143 @@
+<onlyinclude>'''Leathery stranger'''
+* '''Letter Label:''' A ragged stranger with leathery skin is approaching your colony.
+* '''Letter Prompt:''' <blockquote>The leathery stranger stares into space and speaks in a monotone, as though {PAWN_pronoun} hardly sees anyone or anything. {PAWN_pronoun} refuses to leave, insisting {PAWN_pronoun} is only interested in your colony. {PAWN_pronoun} says that {PAWN_pronoun} can help.</blockquote>
+
+'''Dark scholar'''
+* '''Letter Label:''' A dark scholar covered with twisted scars is approaching the colony.
+* '''Letter Prompt:''' <blockquote>The dark scholar slouches in place, lifeless and silent. Only {PAWN_possessive} eyes seem alive, as if {PAWN_pronoun} could look inside you.<br /><br />{PAWN_pronoun} says that this is where {PAWN_pronoun} belongs and asks to stay for a while. {PAWN_possessive} tone indicates that {PAWN_pronoun} will not take 'no' for an answer.</blockquote>
+
+'''Deal maker'''
+* '''Letter Label:''' A stunningly good-looking stranger is approaching the colony.
+* '''Letter Prompt:''' <blockquote>A stunningly good-looking stranger stands in front of you. {PAWN_possessive} face beams with confidence as {PAWN_pronoun} opens {PAWN_possessive} hands in a gesture of fellowship.<br /><br />{PAWN_pronoun} says {PAWN_pronoun} is here to make a deal and will help you in exchange for simple hospitality. This is {PAWN_possessive} purpose and {PAWN_pronoun} always fulfills {PAWN_possessive} purpose.</blockquote>
+
+'''Drifter'''
+* '''Letter Label:''' A visitor is approaching the colony.
+* '''Letter Prompt:''' <blockquote>The weary-looking drifter stretches {PAWN_possessive} legs. {PAWN_pronoun} seems very tired.<br /><br />{PAWN_pronoun} asks to stay in your colony for a while - at least until {PAWN_pronoun} has recovered {PAWN_possessive} strength.</blockquote>
+
+'''Blind healer'''
+* '''Letter Label:''' A blind healer is approaching the colony.
+* '''Letter Prompt:''' <blockquote>A small, withered {PAWN_genderNoun} stands in front of you. Where {PAWN_possessive} eyes should be, there are only scar-crusted holes in {PAWN_possessive} flesh. Yet, even without eyes, {PAWN_pronoun} somehow looks at you with kindness. {PAWN_pronoun} says that {PAWN_pronoun} knows that {PAWN_possessive} skills are needed here and wants to stay for a while.</blockquote>
+
+'''Timeless one'''
+* '''Letter Label:''' A teenager is approaching the colony. {PAWN_pronoun} has a strange air of confidence around {PAWN_objective}.
+* '''Letter Prompt:''' <blockquote>{PAWN_nameDef} is barely more than a child but in {PAWN_possessive} thoughtful eyes you sense an ancient wisdom. When {PAWN_pronoun} speaks, the words seem to come from an unnatural knowledge of endless time. {PAWN_pronoun} says that the stars brought {PAWN_objective} here to fulfill {PAWN_possessive} destiny. {PAWN_pronoun} wants to stay with you and help.</blockquote>
+
+'''Cult escapee'''
+* '''Letter Label:''' A mangled figure is approaching the colony.
+* '''Letter Prompt:''' <blockquote>The mangled stranger stares at you with empty eyes and speaks in a broken voice. {PAWN_pronoun} claims to have escaped from a terrible cult and begs to join your colony.</blockquote>
+
+'''Lone genius'''
+* '''Letter Label:''' A lone figure is approaching the colony.
+* '''Letter Prompt:''' <blockquote>The strange figure keeps muttering about some scientific breakthrough. All {PAWN_pronoun} needs is a laboratory. If you let {PAWN_objective} stay, {PAWN_pronoun} will share {PAWN_possessive} vast knowledge with you. It's hard to tell whether {PAWN_pronoun}'s insane or a genius - or both.</blockquote>
+
+
+'''Shared Parameters:'''
+* '''Race:''' CreepJoiner
+* '''Backstories:''' Unknown (Childhood) and Unknown (Adulthood)
+* '''Is Fighter:''' false
+* '''Pregnancy Chance:''' 0%
+* '''Initial Will Range''': 80~90
+* '''Initial Resistance Range''': 0~0
+* '''Can Be Scattered:''' false
+* '''Studiable As Prisoner:''' true
+* '''Accept Arrest Chance Factor:''' 80%
+* '''Base Prison Break {{MTB}} Days:''' 30
+* '''Show In Debug Spawner:''' false
+* '''Weight:''' 1
+<div><li style="display: inline-table;">
+{| {{STDT| c_01 sortable text-center}}
+! Pawn Kind !! Combat Power !! Gear !! Apparel !! Weapons !! Tech !! Inventory !! Additional Info [[{{fullurl:Creepjoiner/Pawns|action=edit}} edit]]
+<!-- 9 columns; 1 bold, 8 normal: -->
+<!-- defName="", label="", ParentName="", Name="BasePlayerPawnKind", Abstract="True"
+|- id="BasePlayerPawnKind"
+! BasePlayerPawnKind
+| [[File:BasePlayerPawnKind.png]] || 30 || '''Quality:''' Always Normal
+| '''Required:''' <br />'''Allow Headgear Chance:''' <br />'''Ignore Seasons'''<br />'''Ignore Pollution''' true<br />
+| -
+| -
+| -
+| '''Age Range:''' <br />'''Race:''' Human<br />'''Backstories:''' <br />'''Is Fighter:''' false<br />'''Pregnancy Chance:''' 6%<br />'''Initial Will Range''': 0~0<br />'''Initial Resistance Range''': 
+ -->
+<!-- defName="", label="", ParentName="BasePlayerPawnKind", Name="BaseCreepJoinerKind", Abstract="True"
+|- id="BaseCreepJoinerKind"
+! BaseCreepJoinerKind
+| [[File:BaseCreepJoinerKind.png]] || 55 || '''Quality:''' Always Normal
+| '''Required:''' <br />'''Allow Headgear Chance:''' 0%<br />'''Ignore Seasons:''' false<br />'''BeardTags:''' 
+| -
+| -
+| 10 Nutrition
+| '''Age Range:''' <br />'''Race:''' CreepJoiner<br />'''Backstories:''' Unknown (Childhood) and Unknown (Adulthood)<br />'''Is Fighter:''' false<br />'''Pregnancy Chance:''' 0%<br />'''Initial Will Range''': 80~90<br />'''Initial Resistance Range''': 0~0<br />'''Can Be Scattered:''' false<br />'''Studiable As Prisoner:''' true<br />'''Accept Arrest Chance Factor:''' 80%<br />'''Base Prison Break {{MTB}} Days:''' 30<br />'''Show In Debug Spawner:''' false<br />'''Weight:''' <br />'''Letter Label:''' <br />'''Letter Prompt:''' <br />
+ -->
+<!-- defName="LeatheryStranger", label="leathery stranger", ParentName="BaseCreepJoinerKind", Name="", Abstract="" -->
+|- id="Leathery stranger"
+! Leathery stranger<br>[[File:Leathery stranger.png]]
+| 55 || '''Quality:''' Always Normal
+| '''Fixed:''' Poor {{Icon Small|Bison wool|24}} [[Bison wool]]; {{Icon Small|Duster|24}} [[Duster]], {{Icon Small|T-shirt|24}} [[T-shirt]], {{Icon Small|Pants|24}} [[Pants]]<br />'''Allow Headgear Chance:''' 0%<br />'''Ignore Seasons:''' false<br />'''Ignore Pollution''' true<br />'''Body Type:''' Leathery<br />'''Head Type:''' Leathery<br />'''BeardTags:''' NoBeard
+| '''Fixed:''' {{Icon Small|Bolt action rifle|24}} [[Bolt action rifle]]
+| -
+| 10 Nutrition
+| '''Age Range:''' 35~70<br />
+<!-- defName="DarkScholar", label="dark scholar", ParentName="BaseCreepJoinerKind", Name="", Abstract="" -->
+|- id="Dark scholar"
+! Dark scholar<br>[[File:Dark scholar.png]] 
+| 55 || '''Forced Quality:''' Poor
+| '''Color:''' {{Color|58|58|58}}<br />'''Ignore Ideo Apparel Colors:''' true<br />'''Required:''' {{Icon Small|Robe|24}} [[Robe]]<br />'''Allow Headgear Chance:''' 0%<br />'''Available:''' {{#ask:[[Tags::IndustrialAdvanced]][[Lifestage::~*Adult*]][[Layer::!~*Outer*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}<br />'''Ignore Seasons:''' false<br />'''Ignore Pollution''' true<br />'''Head Type:''' Dark Scholar<br />'''BeardTags:''' NoBeard
+| -
+| -
+| 10 Nutrition
+| '''Age Range:''' 40~70<br />'''Forced Skills:''' 14~20 [[Intellectual]]<br />'''Existing Damage:''' Damage; SurgicalCut, Groups; Legs, Arms, FullHead<br />'''Forced Traits:''' [[Psychopath]]<br />'''Requires:''' Occultist, DeathRefusal, ShamblerOverlord, Fleshcrafter, PsychicButcher<br />'''Excludes:''' Metalhorror, OrganDecay, Assault
+<!-- defName="DealMaker", label="deal maker", ParentName="BaseCreepJoinerKind", Name="", Abstract="" -->
+|- id="Deal maker"
+! Deal maker<br>[[File:Deal maker.png]] 
+| 55 || '''Forced Quality:''' Good
+| '''Color:''' {{Color|156|31|56}}<br />'''Ignore Ideo Apparel Colors:''' true<br />'''Required:''' {{Icon Small|Top hat|24}} [[Top hat]] ,{{RoyaltyIcon}} {{Icon Small|Jacket|24}} [[Jacket]], {{Icon Small|T-shirt|24}} [[T-shirt]], {{Icon Small|Pants|24}} [[Pants]]<br />'''Allow Headgear Chance:''' 0%<br />'''Available:''' {{#ask:[[Tags::IndustrialAdvanced]][[Lifestage::~*Adult*]][[Layer::!~*Outer*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}<br />'''Ignore Seasons:''' false<br />'''Ignore Pollution''' true<br />'''BeardTags:''' 
+| '''Fixed:''' {{Icon Small|Revolver|24}} [[Revolver]]
+| -
+| 10 Nutrition
+| '''Age Range:''' 20~40<br />'''Forced Skills:''' 14~20 [[Skills#Social|Social]], 14~20 [[Shooting]]<br />'''Forced Traits:''' [[Beautiful]]<br />'''Requires:''' Joybringer, PerfectHuman, BodyMastery
+<!-- defName="CreepDrifter", label="Drifter", ParentName="BaseCreepJoinerKind", Name="", Abstract="" -->
+|- id="Creepjoiner drifter"
+! Drifter<br>[[File:Creepjoiner drifter.png]] 
+| 55 || '''HP:''' 20~60%<br />'''Quality:''' Poor
+| '''Budget''': 90~280<br />'''Allow Headgear Chance:''' 20%<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}<br />'''Ignore Seasons:''' false<br />'''Ignore Pollution''' true<br />'''BeardTags:''' 
+| '''Budget:''' 60~200<br />'''Available:''' {{Gear List|budget=200|WeaponTags|MedievalMeleeBasic|NeolithicMeleeBasic}}
+| '''Budget:''' 50~50<br />'''Available:''' 15% chance of 1x: {{Gear List|budget=50|TechHediffsTags|Poor}}
+| 0 Nutrition<br />10% chance of: 1x {{Icon Small|Herbal medicine|24}} [[Herbal medicine]]
+| '''Age Range:''' 20~60<br />
+<!-- defName="Blindhealer", label="blind healer", ParentName="BaseCreepJoinerKind", Name="", Abstract="" -->
+|- id="Blind healer"
+! Blind healer<br>[[File:Blind healer.png]] 
+| 55 || '''Quality:''' Always Normal
+| '''Fixed:''' Poor {{Icon Small|Patchleather|24}} [[Patchleather]]; {{Icon Small|T-shirt|24}} [[T-shirt]], {{Icon Small|Pants|24}} [[Pants]]<br />'''Allow Headgear Chance:''' 0%<br />'''Ignore Seasons:''' false<br />'''Ignore Pollution''' true<br />'''Hair:''' Bald
+| '''Fixed:''' Poor {{Icon Small|Steel|24}} [[Steel]] {{Icon Small|Knife|24}} [[Knife]]
+| -
+| 10 Nutrition
+| '''Age Range:''' 55~80<br />'''Missing Parts:''' 2x Eyes<br />'''Requires:''' UnnaturalHealing
+<!-- defName="TimelessOne", label="timeless one", ParentName="BaseCreepJoinerKind", Name="", Abstract="" -->
+|- id="Timeless one"
+! Timeless one<br>[[File:Timeless one.png]] 
+| 55 || '''Forced Quality:''' Good
+| '''Color:''' {{Color|211|211|211}}<br />'''Ignore Ideo Apparel Colors:''' true<br />'''Required:''' {{Icon Small|T-shirt|24}} [[T-shirt]], {{Icon Small|Pants|24}} [[Pants]]<br />'''Allow Headgear Chance:''' 0%<br />'''Available:''' {{#ask:[[Tags::IndustrialAdvanced]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}<br />'''Ignore Seasons:''' false<br />'''Ignore Pollution''' true<br />'''Head Type:''' TimelessOne<br />'''BeardTags:''' NoBeard
+| -
+| -
+| 10 Nutrition
+| '''Age Range:''' 13~16
+<!-- defName="CultEscapee", label="cult escapee", ParentName="BaseCreepJoinerKind", Name="", Abstract="" -->
+|- id="Cult escapee"
+! Cult escapee<br>[[File:Cult escapee.png]]
+| 55 || '''Quality:''' Always Normal
+| '''Fixed:''' Poor {{Icon Small|Cloth|24}} [[Cloth]]; {{Icon Small|Robe|24}} [[Robe]], {{Icon Small|T-shirt|24}} [[T-shirt]], {{Icon Small|Pants|24}} [[Pants]]<br />'''Allow Headgear Chance:''' 0%<br />'''Ignore Seasons:''' false<br />'''Ignore Pollution''' true<br />'''Body Type:''' Cult Escapee<br />'''Head Type:''' Cult Escapee<br />'''HairTags:''' Bald<br />'''BeardTags:''' NoBeard
+| -
+| '''Starting Hediffs:''' 50% chance: {{Icon Small|Flesh tentacle|24}} [[Flesh tentacle]]
+| 10 Nutrition
+| '''Age Range:''' 18~70<br />'''Missing Parts:''' 50% chance for each: Arm, Eye, Eye<br />'''Existing Damage:''' Damage; SurgicalCut, Chance Per Group; 50%, Groups; Arms, Legs<br />'''Requires:''' DeathRefusal, Occultist, ShamblerOverlord, Fleshcrafter, PsychicButcher<br />'''Excludes:''' Joybringer
+<!-- defName="LoneGenius", label="lone genius", ParentName="BaseCreepJoinerKind", Name="", Abstract="" -->
+|- id="Lone genius"
+! Lone genius<br>[[File:Lone genius.png]]
+| 55 || '''Quality:''' Always Normal
+| '''Fixed:''' Good; {{Icon Small|Cloth|24}} [[Cloth]]; {{Color|240|240|240}} {{Icon Small|Lab coat|24}} [[Lab coat]], {{Icon Small|Button-down shirt|24}} [[Button-down shirt]], {{Icon Small|Synthread|24}} [[Synthread]]; {{Icon Small|Pants|24}} [[Pants]]<br />'''Allow Headgear Chance:''' 0%<br />'''Ignore Seasons:''' false<br />'''Ignore Pollution''' true
+| '''Fixed:''' {{Icon Small|Charge lance|24}} [[Charge lance]]
+| -
+| 10 Nutrition
+| '''Age Range:''' 30~80<br />'''Forced Skills:''' 13~18 [[Intellectual]]<br />'''Forced Traits:''' [[Too smart]], [[Abrasive]]<br />'''Requires:''' UnnaturalHealing, Alchemist, Occultist
+|}</li></div></onlyinclude><noinclude>[[Category:Pawnkind tables]]</noinclude>

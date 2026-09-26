@@ -1,0 +1,181 @@
+{{Anomaly}}
+{{Stub|reason=General, but also interlinking, categories, etc. }}
+{{Rewrite|reason=Formatting and sections}}
+
+'''Containment''' refers to the process of capturing, imprisoning, and exploiting [[Entities]].
+
+== Summary==
+Containment is the desired end result when encountering Entities.  Colonies can hold entities on a [[Holding spot]] or a [[Holding platform]], the latter of which requires research and steel to build.  Once contained, entities can be researched or regularly harvested for resources or power.
+
+Only creature entities are placed on holding platforms.  Item entities, such as the Cube, can be hauled around and placed in stockpiles - having an important stockpile dedicated to entities may be a good idea.  Building entities, such as the Monolith, must be studied in their current location, as none of them are mobile.  Be careful about integrating them into your base designs as they may be a source of risk down the road.
+
+=== Containment strength ===
+{{Stub|section=1|reason=Requires the exact impact of these factors, in terms of specific numbers}}
+Any containment room is subject to containment breaches, the equivalent of prison breaks for entities. The containment strength of the room can be viewed by clicking on the platform. Containment is the sum of the following factors:
+
+* '''Average current Wall HP/10''' (e.g all wooden walls have 195 hp and will result in {{+|19.5}} containment)
+* '''Average current Door HP/5''' (an open door sets this value to {{Bad|0}}, negating any bonuses from other doors)
+* '''Average [[Light|light level]]/10''' (realistically limited to {{+|5}} through use of normal lights)
+* [[Bioferrite plate]] flooring provides up to {{+|15}} Containment at 100% room coverage
+* [[Roof|Unroofed]] containment rooms apply a {{--|30}} containment penalty
+* [[Holding spot]]s modify the resulting containment for their specific spot by {{Bad|x70%}} 
+* Each additional Holding Platform inflicts a roughly {{--|10%}} exponential cumulative penalty to all holding platforms in the same room. <!-- The cumulative remaining containment percentage of x platforms is roughly given by the exponential curve of y=111*e^(-.11*x), but I am unsure of how to present this information in a pretty and accurate manner and I've been at this edit for over two hours primarily trying to find out this info and I need to stop looking at spreadsheets... -Vilobion -->
+* An [[Electric inhibitor]] increases containment by {{+|10}}
+* A [[Shard inhibitor]] increases containment by {{+|20}}
+* An [[Electroharvester]] lowers containment by {{--|25}}
+* A [[Bioferrite harvester]] lowers containment by {{--|15}}
+
+The walls and doors that make up the containment room contribute to containment strength based on the combined average of their current {{HP}}, with stronger materials (e.g: [[granite blocks]] or [[plasteel]]) having a higher contribution. Naturally occurring walls with HP greater than naturally occurring granite have their containment strength clamped. This relies on the structures' current HP, not their maximum HP, meaning that having damaged walls or doors will result in a lower containment strength. This effect only applies to fully enclosed rooms. If any door is held open too long, the room will no longer be considered enclosed. [[Holding spot]]s and [[Holding platform]]s should be placed with a 1-tile gap from doors to prevent colonists from triggering spurious insufficient containment warnings by keeping doors open while interacting with void entities.
+
+Larger and more dangerous entities generally require more containment strength.  An entity can be held in a weak cell just fine in the short term, it simply increases the rate at which they will break out.  As a general rule, the average frequency of breaches for entities that are sufficiently contained is measured in years, while the frequency of those insufficiently contained are measured in days.  This is still likely to be enough time for an unprepared colony to quickly set up an adequate cell.
+
+The size of the cell does not affect containment strength.  Note that storing multiple entities in the same room will increase the required containment strength.  This may still be worthwhile for harvesting certain resources more efficiently.
+
+An entity incapable of [[moving]] will never breach.  This includes entities with broken spines, or entities with destroyed legs and insufficient arm strength.  Such entities can even be held outside in a holding spot without any risk, and are a useful resource to a colony.
+
+Although possible, surrounding a containment spot with doors results in lower containment strength than using a room with both walls and doors.
+
+=== Material comparison ===
+{{Recode|section=1|reason=automate a sortable version of the table}}
+The following table is for roofed containment cells with walls and a single door made completely out of the listed material, with a separate column for containment cells with walls of the listed material and a security door instead of a single door of the given material. The listed values include no bonuses for flooring, lighting, or containment boosting buildings, and are for containment rooms with a single [[Holding platform]].
+{| class="wikitable"
+! Material !! Containment Strength !! With Security Door !! Material !! Containment Strength !! With Security Door
+|-
+! [[Jade]]<br/>[[File:Jade.png|42px]] || style="text-align:right;" | 31 || style="text-align:right;" |  175 || [[Gold]]<br/>[[File:Gold.png|42px]] || style="text-align:right;" | 37 || style="text-align:right;" |  178
+|-
+! [[Wood]]<br/>[[File:wood.png|42px]] || style="text-align:right;" | 40 || style="text-align:right;" |  180 || [[Silver]]<br/>[[File:Silver.png|42px]] || style="text-align:right;" | 43 || style="text-align:right;" |  181
+|-
+! [[Steel]]<br/>[[File:steel.png|42px]] || style="text-align:right;" | 62 || style="text-align:right;" |  190 || [[Marble blocks]]<br/>[[File:Marble_blocks.png|42px]] || style="text-align:right;" | 74 || style="text-align:right;" |  196 
+|-
+! [[Slate blocks]] <br/>[[File:Slate_blocks.png|42px]] || style="text-align:right;" | 81 || style="text-align:right;" |  199 || [[Sandstone blocks]]<br/>[[File:Sandstone_blocks.png|42px]] || style="text-align:right;" | 87 || style="text-align:right;" |  202 
+|-
+! [[Limestone blocks]]<br/>[[File:Limestone_blocks.png|42px]] || style="text-align:right;" | 97 || style="text-align:right;" |  207 || [[Granite blocks]]<br/>[[File:Granite_blocks.png|42px]] || style="text-align:right;" | 105 || style="text-align:right;" |  211
+|-
+! [[Bioferrite]]<br/>[[File:Bioferrite_b.png|42px]] || style="text-align:right;" | 132 || style="text-align:right;" |  220 || [[Uranium]]<br/>[[File:Uranium.png|42px]] || style="text-align:right;" | 155 || style="text-align:right;" |  235
+|-
+! [[Plasteel]]<br/>[[File:Plasteel_c.png|42px]] || style="text-align:right;" | 174 || style="text-align:right;" |  244
+|- 
+
+|}
+
+===Escape Interval===
+The chance an entity will escape is determined by their escape interval. Each entity has a base escape interval (specified as a mean time between in days).
+
+The entity cannot escape if:
+* Their base escape interval is zero or negative. Entities incapable of escaping are:
+**{{Icon Small|Nociosphere}} [[Nociosphere]]
+**{{Icon Small|Fleshmass nucleus}} [[Fleshmass nucleus]]
+* The entity is incapable of moving (missing legs or incapacitated).
+
+The base escape interval is then further modified by:
+* '''Entity's moving capacity'''
+** It is multiplied by (10000 / Entity's Moving Capacity)%
+** The moving capacity is clamped between 1 and 100%
+** For example, at 70% moving it'll be (10000 / 70) = 143% (rounded up)
+** At 100% moving, it'll just be (10000 / 100) = 100%, meaning it'll not affect the escape interval
+* '''Days in captivity'''
+** At 15 days or less, it doesn't affect it at all (multiplies it by 100%)
+** At 60 days, it multiplies the escape interval by 120%
+** At 120 days, it multiplies the escape interval by 150%
+** At 240 days or more, it multiplies the escape interval by 200%
+** It scales linearly between the values
+* '''Containment strength minus entity's minimum containment strength''' (so if an entity needs 30 and the containment is 50, the value is 50 - 30 = 20)
+** Below 0 strength multiplies the escape interval by 5% (lowers it significantly)
+** At 0, it doesn't affect it at all (multiplies it by 100%)
+** At 100, it multiplies it by 300%
+** At 200 or more, it multiplies it by 800%
+** It scales linearly between the values
+* '''Temperature'''
+** At 0°C and above, it doesn't affect it at all (multiplies it by 100%)
+** At -30°C and below, it multiplies the escape interval by 150%
+** It scales linearly between the values
+** Affected entities:
+***{{Icon Small|Fingerspike}} [[Fleshbeasts]]
+***{{Icon Small|Shambler}} [[Shambler]]s
+***{{Icon Small|Ghoul}} [[Ghoul]]s
+
+=== Containment facilities ===
+There are a handful of facilities that can be constructed alongside holding spots or platforms. Some facilities help to make entities easier to contain, while others allow you to exploit entities for resources.
+{| class="wikitable"
+! Building !! Research !! Cost !! Limit !! Effects
+|-
+! [[Electric inhibitor]]<br/>[[File:ElectricInhibitor east.png|128px]]
+|| [[Research#Entity containment|Entity containment]] || {{Required Resources|Electric inhibitor}} || - 6 per holding platform<br/>- Max distance: 4<br/>- Min distance: 1<br/>- Must be pointed at platform<br/>- Requires line-of-sight || - {{+|10}} containment strength
+|-
+! [[Shard inhibitor]]<br/>[[File:ShardInhibitor.png|64px]]
+|| [[Research#Entity containment|Entity containment]] || {{Required Resources|Shard inhibitor}} || - 1 per holding platform<br/>- Max distance: 5.9 || - {{+|20}} containment strength
+|-
+! [[Bioferrite harvester]]<br/>[[File:BioferriteHarvester east.png|128px]]
+|| [[Research#Bioferrite harvesting|Bioferrite harvesting]] || {{Required Resources|Bioferrite harvester}} || - 1 per holding platform<br/>- Max distance: 5.9<br/>- Requires line-of-sight || - {{--|15}} containment strength<br/>- Produces [[bioferrite]]
+|-
+! [[Electroharvester]]<br/>[[File:Electroharvester south.png|128px]]
+|| [[Research#Electroharvester|Electroharvester]] || {{Required Resources|Electroharvester}} || - 1 per holding platform<br/>- Max distance: 5.9<br/>- Requires line-of-sight || - {{--|25}} containment strength<br/>- {{Bad|x50%}} entity study rate<br/>- Periodically applies electrical burns to entities<br/>- Produces up to 2000W of power
+|}
+
+== Containment Effect on Dark Study ==
+The amount of Dark Study gained while studying contained entities is affected by containment strength. In general, the higher the containment strength over the minimum containment level of the entity then the larger multiplier of Dark Study.
+
+If the entity is contained at exactly the minimum containment required then Dark Study is not adjusted from the base value.
+
+At containment levels below the required amount, Dark Study is multiplied by 50%.
+
+At containment levels 100 above the required amount, Dark Study is multiplied by 130%. 
+
+At containment levels 200 above the required amount, Dark Study is multiplied by 150%. This 50% additional Dark Study amount is the maximum value possible from containment.
+
+In between minimum containment required and 200 additional containment the Dark Study multiplier is linearly interpolated.
+
+{| class="wikitable"
+| '''Dark Study Effectiveness'''
+|-
+| {{Graph:Chart|width=400|height=100|type=line|yAxisMin = 0 |xGrid =| yGrid=| xAxisTitle = Containment Above Entity's Requirement |yAxisTitle = Dark Study (%) |x=-50,-0.001,0,100,200,250|y=50,50,100,130,150,150}}
+|}
+
+== Analysis ==
+Containment rooms can follow 1 of 2 strategies, each with its own benefits and drawbacks: maximizing containment strength and minimizing space requirement.
+
+A downed high-risk entity can be stored in a [[cryptosleep casket]] until a suitable containment cell can be constructed, if one is not available.
+
+=== Maximizing Containment Strength ===
+Since having multiple holding platforms or spots causes exponential reduction in containment strength, maximizing containment strength means holding fewer entities in the same room. This leads to a higher material cost and space requirement, increasing travel time; but leads to fewer entity escapes and higher dark research point gain. This can be done by:
+* Using a [[Security door]] for an immediate gain of nearly {{Good|+160}} Containment. <!-- It's 160-(Previous door HP) -->
+* Avoid using Bioferrite Harvesters or Electroharvesters (Note that electrical burns caused by harvesters decrease movement, which slightly increases containment strength)
+* Hold only 1 entity in each room
+* Use the highest HP wall and door materials possible- which will generally be naturally occurring ore deposits, [[granite|natural]] or [[Structure#Smoothed walls|smooth granite]], Plasteel, Uranium, natural or smooth limestone, Bioferrite, in that order.
+* Ensure the rooms are lit and covered by a roof
+* Use [[Bioferrite plating]] for flooring
+* Build a [[Shard inhibitor]] in the containment room.
+
+==== Increasing dark research point gain ====
+Beside increasing containment strength, you can gain more dark research points between each cooldown by:
+* Not using [[Electroharvester]] on researched entities, it inflicts a {{Bad|-50%}} penalty to research gains.
+* Having the researcher use [[Voidsight serum]].
+
+Containment boosting buildings come with downsides- [[Shard inhibitor]]s require a [[Shard]] to construct, and [[Electric inhibitor]]s take up a lot of space and can only affect a single platform at a time.
+
+=== Minimizing space requirement ===
+This strategy has the opposite benefits and drawbacks of the previous strategy. But for low-risk entities such as [[Gorehulk]]s, de-legged [[Metalhorror]]s, or even [[Devourer]]s once you have got the means to counter them, the risk of escape is minimal, and the research penalty can be alleviated by investing in [[security door]]s or other containment facilities.
+
+The natural number of entities to hold in a room is 8, the maximum reached by a single bioferrite or electro harvester. This quantity reduce the containment strength by about half that for a similar room with 1 holding platform.
+
+With uranium walls, a lit containment room with eight holding platforms, bioferrite flooring, and a shard inhibitor will reach 142 containment, sufficient to give Noctols an escape interval of roughly 2 years.
+
+Gorehulks are generally the easiest entities to contain, due to their relatively low containment strength, their low melee damage, and their blunt melee attacks. They also can be de-legged to permanently be prevented from escaping (see the [[Gorehulk]] page for more details.
+
+Noctols have similar containment requirement and bioferrite yield to Gorehulks, but they can't be de-legged and have sharp attacks. Toughspikes are also similar. They can be de-legged by frostbite, but yield less bioferrite.
+
+Healthy metalhorrors are dangerous to contain. But if you can destroy their legs in combat, capturing them no longer has any risk
+
+Devourers are vulnerable to tox gas, which can be deployed from IED traps to down them in case of escape.
+
+A [[Revenant]] that escapes is highly annoying. Even if you can easily recapture them, their high containment requirement will induce other  entities in the room to escape more often.
+
+=== Dealing with escapes ===
+Entity escapes are generally not dangerous, especially if they are gorehulks, their containment cell has the sturdy security door, or they're separated to individual cells. The biggest risk in these events is accidentally killing the entity while trying to recapture. Therefore, painful and less lethal means such as tox gas, fire, or acid burn should be prioritized.
+
+This means that it's fairly safe to build large containment cells, even with 8 holding platforms. You can build an [[IED tox trap]] near the cell door in case of escape. Tox gas will fill the room and cause toxic buildup for the entities inside; you can repair the door while waiting for the entities to be downed. The gas will completely dissipate before toxic buildup can kill any entity, other than gorehulks or ghouls (they have lower tox resistance). Note that metalhorrors and shamblers are immune to tox gas and can't be suppressed like this.
+
+== Trivia ==
+The highest possible containment score is '''1441.1''', possible only by having a roofed containment cell whose entirely made of fortified wall, with an ancient blast door, bioferrite plating floors, six electric inhibitors, and a shard beacon- lit entirely by [[sunlamp]]s. A healthy [[metalhorror]], the entity with the highest containment requirements, would have a prison break interval of 8 years with such a setup.
+
+While nominally a higher value would be possible with walls made of [[compacted plasteel]], this would require a perfect generation of the ore and blast door which is effectively, if not actually, impossible.

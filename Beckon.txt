@@ -1,0 +1,47 @@
+{{Royalty}}
+{{Infobox main|psycast
+| name = Beckon
+| image = Beckon.png
+| type = Psycast
+| description = Psychically command the target to approach the caster.
+| psylink level = 3
+| casting time = 15
+| ability range = 19.9
+| psyfocus cost = 0.01
+| neural heat gain = 20 
+| effect radius =
+| duration = 480
+| duration multiplier = Psychic Sensitivity
+| goodwill impact =
+| caster must be capable of violence = false
+}}
+'''Beckon''' is a level {{P|Psylink Level}} [[psycast]] that causes the target to walk towards the caster until either damaged or the duration expires. 
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+Upon casting, Beckon forces the target pawn to move towards the caster for {{Ticks|{{P|Duration}}}}, modified by [[Psychic sensitivity]]. More specifically, Beckon forces the target to path to an adjacent tile at the caster's current location at the time of casting - even if the caster moves after casting, the target pawn will not update their path to move towards the caster's new location. While moving towards their selected tile, the target pawn is prevented from taking any other actions besides moving towards their selected location. Upon reaching their target destination, they will stand in place, taking no further action until the duration expires. However, if the affected pawn is hit by an attack, the effects of Beckon will immediately end. Note that this does not imply taking damage - non-attack sources of damage such as the periodic burns suffered by a pawn set aflame will not interrupt Beckon, while an attack that deflects harmlessly off the pawn's [[Apparel#Protection|Armor]] will.{{Check Tag|Other attack-like?|What about other things that are similar mechanically, such as firefoam? What about things that are damage but don't hurt like EMP damage? Etc}} Valid targets for Beckon include any psychically sensitive, non-[[downed]] pawns within 20 tiles of the caster, respecting line of sight.
+
+=== Pathing logic ===
+[[File:BeckonLogic.png|200px|thumb|left|The sequence in which destination tiles are prioritized, starting at 1.]]
+When casting Beckon, the tile selected for the target pawn to path to is determined by a simple sequence. The default destination tile is the one directly above the caster. However, if this tile is either impassable or not standable, such as being occupied by a [[wall]], or a [[tree]], the selected tile will instead be the one directly right of the pawn, continuing clockwise until all 4 cardinal directions are disqualified. If this is the case, then the selected destination will be the tile down and right of the pawn, continuing anti-clockwise thereafter until all 4 diagonal tiles are disqualified. If all tiles surrounding the pawn are non-standable/impassable, the selection process will repeat from the uppermost tile while no longer disqualifying non-standable tiles. If a non-standable tile is selected as a destination, the pawn will stand on the tile upon reaching their destination, but will be forced to move off of it once the effects of Beckon end, as usual.
+
+== Analysis ==
+Beckon is a fairly useful psycast, though it faces competition in its role from other psycasts in or near its tier, and somewhat encumbered by a few quirks of its design. Nevertheless, it can be an effective tool to reposition and disable enemies.
+
+The primary and most obvious use for Beckon is to neutralize enemy ranged attackers. Not only does Beckon prevent them from firing on you for the duration, but it also forces them out of any cover they have likely taken, rendering them trivially easy to dispatch with your own pawns, whether that be with your ranged attackers gunning down their now-exposed form, or your melee fighters meeting them as they approach. However, note that due to the effects of Beckon being broken the instant an affected pawn receives an attack, it tends to be dispelled immediately upon leaving cover, giving the pawn time to return to cover and resume fighting back. Of course, with sufficiently damaging weapons and/or a sufficiently large wall of fire, this tendency becomes a minor inconvenience at worst, but can be problematic in the earlier days of a colony, with less pawns and more protracted combat. It is also worth noting Beckon's range of only 20 tiles is inferior to nearly all conventional ranged weapons, requiring you to either force engagements within said range, or to push forwards into enemy fire and potential injury.
+
+While potent against ranged attackers, Beckon can also be used to divert melee attackers, though they tend to be less hindered by Beckon than ranged pawns, as they want to approach your pawns to attack them regardless. Additionally, melee attackers will tend to receive many more attacks than their ranged counterparts due to not using cover, which means that any Beckons cast on them will likely last a second or two at most without direct micromanagement on the players part, rendering the effects minimal if not inconsequential. However, if one needs to remove a melee attacker from their backline, and few other options are available, Beckon can perform the task adequately. However, remember that the effects of Beckon are broken if the target receives an attack, and drafted pawns will automatically melee any enemies that approach them. As such, it could be wise to move the caster after using Beckon if one doesn't want them to engage the approaching enemy.
+
+In addition to its uses against enemy pawns, Beckon can also be an effective tool for moving your own pawns. Since the effects of Beckon completely override any movement or actions a pawn may take, it can be used to manipulate the position of pawns that you can no longer directly control via [[draft]]ing, most commonly those that are burning or suffering a [[mental break]]. Both of these conditions have the side effect of removing control of your pawns, which in the heat of combat will likely have disastrous consequences, as they step out of cover into a hail of bullets or walk directly into enemy melee. Beckon allows you to relocate your pawns to the vicinity of the caster, pulling them back into formation, and giving your pawns a chance to extinguish them in the event they're caught ablaze. As a fringe benefit, Beckon's predictable pathing makes extinguishing said burning target using [[Waterskip]] much simpler to accomplish. Though in this scenario, note that if the effects of Beckon end while the pawn is still burning, they will immediately resume moving randomly once again.
+
+Lastly, Beckon can also see some use as a long-lasting alternative to [[Stun]], though significantly more cumbersome to use. While the effects of Beckon and Stun are fundamentally unique, they both prevent the targeted pawn from taking any offensive actions for the duration. As such, Beckon has some overlap with Stun's use cases, such as temporarily disabling dangerous targets - [[centipedes]] or pawns armed with [[Triple_rocket_launcher|triple]] or [[doomsday rocket launcher]]s, to name a few. However, Beckon is largely inferior to Stun for these purposes, as not only are the effects contingent on you not damaging said threatening foes, which slows your task of permanently putting them out of action, but Beckon's aforementioned range of only 20 tiles is noticeably inferior to Stun's 25, and can limit or prevent its use entirely. However, one enemy which Beckon can be of particular use against is the [[unnatural corpse]]{{AnomalyIcon}}. While generally inferior to other options like [[Skip]] or [[Chaos skip]] due to being broken on damage, it is one of the few psycasts that can interrupt the corpse's lethal psychic attack against its living counterpart, preventing a gruesome demise for a colonist should it manage to close the gap between it and its prey. Additionally, the 8 second duration can give your pawns some much needed time to relocate and make distance, which can be invaluable as its speed increases.
+
+== Version history ==
+* [[Royalty DLC]] Release - Added.
+* [[Version/1.1.2571|1.1.2571]] - Range reduced from 25 to 20, duration reduced from 10 to 8.
+* [[Version/1.5.4062|1.5.4062]] - Fix: Beckon ability doesn’t wake up dormant mechs.
+
+{{Nav|psycasts|wide}}
+[[Category: Psycasts]]

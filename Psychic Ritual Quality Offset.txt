@@ -1,0 +1,85 @@
+{{Anomaly}}
+{{Stub|reason=Disambiguation for the "Psychic Ritual Quality" and "Psychic Ritual Quality Offset" stats, all factors that influence quality within psychic rituals, and the resulting outcomes of psychic rituals based on quality. two way links vitally needed}}
+{{See also|Psychic Ritual Quality}}
+{{Verified|1.5.4104}}{{Stat
+| def name = PsychicRitualQualityOffset
+| label = psychic ritual quality offset
+| description = An offset applied to psychic ritual quality when this person participates. The total quality offset is divided by the total number of participants.
+| default base value = 0
+| show on default value = false
+| to string style = PercentZero
+| category = PsychicRituals
+}}
+
+== Offsets ==
+* [[Precepts]]
+** [[Psychic rituals (precept)|Psychic rituals]]:
+*** Disapproved: {{--|10%}}
+*** Exalted: {{+|10%}}
+
+== Factors ==
+* Ritual invokers add quality based on their [[Psychic Sensitivity]] ({{+|12.5%}} at 100% psychic sensitivity).
+** Their psychic sensitivity is applied to a curve:
+<div><li style="display: inline-table;">
+{| {{STDT| c_10}}
+! Psychic<br />Sensitivity !! Power<br />Factor
+|-
+! 0
+| 0
+|-
+! 1
+| 0.5
+|-
+! 2
+| 0.9
+|-
+! 3
+| 1
+|}</li></div>
+** This result is divided by 4 to produce the quality offset, meaning that a maximum of {{+|25%}} quality can be applied with an invoker of at least 300% psychic sensitivity:
+<div><li style="display: inline-table;">
+{| {{STDT| c_10}}
+! Psychic<br />Sensitivity !! Quality<br />Offset
+|-
+! 0%
+| '''+0%'''
+|-
+! 100%
+| {{+|12.5%}}
+|-
+! 200%
+| {{+|22.5%}}
+|-
+! 300%
+| {{+|25%}}
+|}
+{{Graph:Chart|width=300|height=150|xAxisTitle=Psychic Sensitivity (%)|yAxisTitle=Ritual Quality Offset (%)|type=line|x=0, 1.00, 2.00, 3.00|y=0, 0.125, 0.225, 0.25|xType=number|interpolate=monotone|xGrid=|yGrid=}}
+</li></div>
+* Each chanter adds a fraction relative to the maximum number of chanters, up to a maximum of {{+|20%}} quality: At 4 max chanters for basic rituals, each adds {{+|5%}}, and at 6 max chanters for advanced rituals, each adds {{Good|≈+3.33%}}.
+
+== Stat Def Data ==
+{| {{STDT| c_10}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Psychic Ritual Quality Offset" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />PsychicRitualQualityOffset
+* '''Label:'''<br />psychic ritual quality offset
+| An offset applied to psychic ritual quality when this person participates. The total quality offset is divided by the total number of participants.
+|
+* Display Order:<br />'''500'''
+* Def Name:<br />'''PsychicRituals'''
+* Label:<br />'''Psychic ritual'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|0}}
+* '''Show On Default Value:''' {{Bad|false}}
+* '''To String Style:''' PercentZero
+| -
+| -
+<!--</StatDef>-->
+|}
+
+== Version history ==
+* [[Anomaly (DLC)]] Release - Added.
+
+{{nav|stats|wide}}

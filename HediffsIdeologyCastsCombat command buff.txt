@@ -1,0 +1,36 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Ideology/Casts}}
+|}
+----
+{| {{STDT| c_06}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Combat command buff" <!-- defName="CombatCommandBuff", ParentName="RoleStatBuff" -->
+! Combat command buff
+----
+* Def Name:<br />CombatCommandBuff
+* Label:<br />combat command
+* Debug Label Extra:<br />other
+| Combat abilities are boosted thanks to being near someone who is using the combat command ability.
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|52%|100%|95%}}
+* Is Bad: {{Good|false}}
+* '''Comps'''
+** ''Disappears''
+*** Show Remaining Time: {{Bad|false}}
+** ''Disappears On Death''
+** ''Link''
+*** Require Link On Other Pawn: {{Good|false}}
+*** Max Distance: '''10 (cells)'''
+*** Custom Mote: '''Mote_CombatCommandLinkLine'''
+|<!-- Stages -->
+{| {{STDT| c_06}}
+! Label !! Parameters
+|-
+! Combat command
+|<!-- Parameters -->
+* [[Shooting Accuracy|Shooting Accuracy (Pawn)]] Offset: {{+|3}}
+* [[Melee Hit Chance]] Offset: {{+|3}}
+|}<noinclude>
+|}</noinclude>

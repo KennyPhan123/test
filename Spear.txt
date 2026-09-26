@@ -1,0 +1,95 @@
+{{About|a specific weapon called '''spear'''}}
+{{Infobox main|weapon
+| name = Spear
+| image = Spear.png
+| type = Equipment
+| type2 = Weapons
+| description = A polearm tipped with a sharp point for stabbing opponents.
+| tech level = Neolithic
+| class = Neolithic
+| mode = Melee
+| meleeattack1dmg = 13
+| meleeattack1type = blunt
+| meleeattack1part = shaft
+| meleeattack1cool = 2.6
+| meleeattack1ap = 20
+| meleeattack2dmg = 13
+| meleeattack2type = poke
+| meleeattack2part = shaft
+| meleeattack2cool = 2.6
+| meleeattack2ap = 20
+| meleeattack3dmg = 23
+| meleeattack3type = stab
+| meleeattack3part = point
+| meleeattack3cool = 2.6
+| meleeattack3ap = 50
+| production facility 1 = Fueled smithy
+| production facility 2 = Electric smithy
+| research = Long blades
+| resource 1 = Stuff
+| resource 1 amount = 75
+| stuff tags = Metallic, Woody
+| skill 1 = Crafting
+| skill 1 level = 4
+| damage type = Sharp
+| mass base = 2
+| has quality = True
+| work to make = 12000
+| work speed stat = General Labor Speed
+| weaponTags = NeolithicMeleeAdvanced, MedievalMeleeAdvanced, Spear
+}}
+The '''spear''' is a [[Weapons#Melee Weapons|melee weapon]] that does a large amount of sharp [[damage]] with high {{AP}}.
+
+== Acquisition ==
+{{Acquisition}}
+
+Spears can be purchased from any combat supplier or war merchant, or obtained from several kinds of melee [[raider]]s.
+
+== Analysis ==
+The spear is a sharp weapon with a ''very'' similar damage output to the [[longsword]], despite the in-game tooltips stating otherwise. This is because the game does not account for the [[Weapons#Melee formulas|melee verb selection]] mechanic introduced in 1.1. 
+
+Spears and/or longswords are the best sharp melee weapons that colonists can craft. They compete with [[mace]]s and [[warhammer]]s{{RoyaltyIcon}} for best overall craftable weapon. In-depth comparison can be seen in the below section.
+
+=== Comparison to longswords ===
+<!-- Cut v Stab sources: https://steamcommunity.com/app/294100/discussions/0/3042732243097084212 & https://steamcommunity.com/app/294100/discussions/0/3111394035968026504 . You can test the x1.4 damage multi by going into devmode and hitting things with a plasteel knife. -->
+Spears have very slightly less {{DPS}}. The longsword is {{+|{{%| (7.96 / 7.88) - 1 round 3}} }} stronger in ''raw'' DPS than the spear, after considering [[melee verb selection]]. In exchange, the spear has noticeably more {{AP}} ({{+|14%}}) and costs {{Icon Small|stuff}} 25 materials less. This makes the spear numerically superior, but that is not the full story.
+
+Longswords can either ''[[Damage types#Cut|Cut]]'' or ''[[Damage types#Stab|Stab]]'', while spears can only ''Stab''. Cut damage has a chance to "cleave" through body parts. This increases damage per swing by 140%, but its damage is split between body parts. Cleave will cause [[pain shock]] faster, due to increased damage, and pain shock is the most common way to down a pawn. Also, a cut is more likely to destroy body parts it reduces to 0 HP, but stab focuses damage into one area, so stabs are more likely to destroy limbs and vital organs.
+
+Overall, which option is better depends on expected targets and quality:
+* At normal to excellent qualities, longswords are often better (definitely more consistent) for fighting against unarmored humans, lightly armored humans, and light mechs like [[scyther]]s and [[lancer]]s. This is due to the increased damage from cleaving. Spears would be better for fighting against armored enemies, like [[centipede]]s, due to the higher {{AP}}.
+
+* Both a masterwork [[plasteel]] spear and sword are able to one-shot body parts like head and neck, though not the torso. The masterwork spear is more likely to one-shot human enemies, as the damage won't be spread out, but empirical testing suggests that the longsword remains better against unarmored targets.{{Check Tag|More testing needed|At legendary, when sword killed 100 adult pawns, spear killed 92 - 97. This was done 3 times, in all 3 sword was better}} Spears still have more {{AP}}, so are better against armored enemies.
+
+==== Melee damage factor ====
+[[Melee damage factor]] boosts ([[strong melee damage]] gene{{BiotechIcon}} and [[juggernaut serum]]{{AnomalyIcon}}) will ''not'' boost the {{AP}} of the spear but will boost the AP of the longsword, due to how the spear is coded. Therefore, with strong melee or juggernaut serum, the longsword becomes almost strictly better due to now having better {{AP}} and better {{DPS}} than the spear. In addition, high quality longswords are able to destroy important body parts even when cleaving, so the spear's ability to focus on single body parts is a detriment, not a benefit.
+
+The masterwork steel longsword given at the start of the [[Scenario_system#The_Sanguophage|The Sanguophage]] scenario is particularly relevant. With your [[sanguophage]], it can one-shot through a torso stab and one-shot through cleaving pain. This longsword is actually stronger per-hit than an excellent plasteel longsword, and likely better than any weapon you'll be seeing for a while.
+
+=== Comparison to maces ===
+The spear shares a niche with the [[mace]], as both offer better anti-armor properties than the longsword, gladius, or knife. Compared to the spear, the mace requires fewer crafting materials, is best made of [[uranium]] rather than [[plasteel]], and is unlocked with [[Research#Smithing|Smithing]] research rather than Long Blades. Before armor, spears deal {{+|{{%| 7.88/7.01 -1 round 2}} }} more damage than a mace of equal quality. Maces are good against armor despite having low AP, since most enemies have very little Blunt armor.
+
+At normal quality, a [[plasteel]] spear deals more damage than a [[uranium]] mace until fighting enemies with {{%| (9.56/10.55 -1)/(-0.75) + 0.55 round 2}} <!-- 
+We are solving for 1 / (Spear DPS Improvement%) = (Armor Reduction%). The spear's DPS Improvement can be approximated as (DPS Spear / DPS Mace). 1% AP reduces 1% of armor, and every 1% of armor negates 0.75% of an attack's damage. The spear's only Sharp attack has 55% AP, so 55% AP is used in the following calculations instead of the spear's average AP of 20%. 
+
+Substituting variables produces (9.56 / 10.55) = (100 - 0.75(x - 55))%. Solving for x yields (9.56 / 10.55 - 1) / -0.75 = (x - 0.55), after converting percents into decimals. ---> Sharp armor. This means that spear is better against most mechanoids. But uranium mace will be far stronger than spears against [[flak vest]]s (when hitting the vest) and [[power armor]], dealing {{Good|{{%|({{Apparel AP Calculation|armor1=36|ap=30.63}}/100*9.3) / ({{Apparel AP Calculation|armor1=100|ap=45.75}}/100*10.53) -1 round 3}} }} more DPS than plasteel spear against flak vest at normal quality. This makes mace generally better against outlander and imperial raids.
+
+This assumes plasteel vs. uranium. If both weapons are made out of [[steel]], then the mace becomes relatively better against centipedes and plate armor and the like. Also remember that maces are cheaper, and that uranium is generally used less than plasteel.
+
+'''Notes:'''
+* Once you reach masterwork quality, the plasteel spear's AP gets very high. No enemy, short of the [[empire]]'s absolute best soldiers,{{RoyaltyIcon}} has enough armor to justify using the mace. The spear is roughly equal against most power armor (a few % DPS worse), but can ignore all of a centipede's armor for the full 112%-of-mace damage.
+* This comparison does not account for the strong melee damage [[gene]].{{BiotechIcon}} With strong melee damage, the mace comes out ahead due to blunt damage not wasting damage when overkilling a body part.
+
+{{Weapon Stats Table}}
+
+== Version history ==
+* [[Version/0.7.581|0.7.581]] - Added
+* [[Version/1.1.2610|1.1.2610]] - Implementation of new melee verb system. Previously, spears were more likely to use their shaft rather than their point. This now results in spears having higher DPS than what the game's infobox states. 
+* [[Version/1.5.4062|1.5.4062]] - Received a new texture
+<gallery>
+Spear Old.png|Texture prior to 1.5
+</gallery>
+
+{{Nav|weapon|wide}}
+[[Category:Equipment]] [[Category:Weapons]] [[Category:Neolithic Weapons]]
+[[Category:Melee Weapons]] [[Category:Sharp Weapons]] [[Category:Spears]]

@@ -1,0 +1,81 @@
+{{Ideology}}
+{{Infobox main|misc
+| name = Autobong
+| image = Autobong.png
+| description = An automatic smokeleaf-burning device which generates a smoke cloud around itself. Anyone in the cloud will become high on smokeleaf over time.
+| type = Building
+| type2 = Ideology (Buildings)
+| placeable = true
+| path cost = 42
+| passability = pass through only
+| cover = 0.2
+| minifiable = false
+| size = 2 ˣ 2
+| flammability = 0
+| hp = 80
+| power = -150
+| glowradius = 10
+| glowcolor = (252, 187, 113)
+| terrain affordance = light
+| research = Microelectronics
+| work to make = 800
+| stuff tags = Metallic, Woody
+| resource 1 = Stuff
+| resource 1 amount = 100
+| resource 2 = Smokeleaf leaves
+| resource 2 amount = 25
+| resource 3 = Component
+| resource 3 amount = 3
+| fuel filter = Smokeleaf leaves
+| fuel capacity = 25.0
+| fuel consumption rate = 1.66
+| initial fuel percent = 1 <!-- 100% -->
+| page verified for version = 1.3.3072
+}}
+An '''autobong''' is a building added by the [[Ideology DLC]]. It creates a smoke cloud with a radius of 5 tiles, and anyone in the cloud will become high on [[smokeleaf]] over time.
+
+== Acquisition ==
+{{Acquisition}} 
+
+Autobongs can only be built by pawns that follow a [[high life]] ideoligion, by a [[constructoid]]{{BiotechIcon}} (if there is at least 1 controllable pawn with high life in the colony to place a blueprint), or if the ideoligion system is disabled.
+
+== Summary ==
+{{Stub|section=1|reason= Tolerance?}}
+The autobong consumes {{Icon Small|smokeleaf leaves}} 1.66 [[smokeleaf leaves]] per day as long as it is lit. It can hold up to 25 leaves at a time, for a maximum run time of {{#expr:25/1.66 round 2}} [[Time|days]]. Any non-[[mechanoid]] pawn inside that cloud will become [[Smokeleaf joint#Stone on smokeleaf|Stoned on smokeleaf]], with severity increasing by 0.5% per second. This smoke cloud does not affect shooting accuracy, unlike [[blind smoke]].
+
+It outputs [[light]] in a 10-tile radius, with the nearest {{P|Light Radius}} tiles being above 50% light level and considered lit.
+
+While running, it produces a smoke cloud in a radius of 5 tiles around itself. All open cells that are pathable from the Autobong within a radius of 5 cells are affected. The smoke cannot travel through open doors, nor through vents, but can appear on the other side of very long walls as long as those walls do have one single pathable opening. [[Roof]]ing is not relevant. 
+[[File:Smokebong.png|thumb]]
+
+== Analysis ==
+
+=== As a drug ===
+The autobong causes a [[smokeleaf]] high, providing {{+|13}} mood for {{--|30%}} [[Consciousness]], a further {{--|10%}} [[Moving]] (for -40% total), and a few other downsides. Consciousness, in turn, impacts almost everything a colonist can do. The smokeleaf high lasts for as long as the pawn stays in the cloud, and upon leaving, persists for ~5x the length stayed, to a maximum of 24 hours once the pawn reaches 100% smokeleaf high severity after 4.8 hours in the cloud. This is before considering the effects of drug [[tolerance]]. '''Be careful, as if a pawn with a Consciousness of 30% or below passes through a smoke cloud for an extended period of time, they will die from a lack of consciousness.'''
+
+The Consciousness and Moving debuffs severely inhibit a colonist's ability to do work. "Therapy bedrooms" can be created by placing an autobong in a room and unhappy pawns can be swapped in and out when needed. 
+
+Compared to actual [[smokeleaf joint]]s, each joint costs {{Required Resources|Smokeleaf joint}} and lasts for up to 12 hours. The autobong consumes {{Icon Small|smokeleaf leaves}} 1.66 [[smokeleaf leaves]] per day, and lasts for x6 the duration you stay in the cloud. It can also affect multiple pawns at once. Therefore, pawns using the autobong for at least {{#expr: (1.66 / 4) * 12 / 6 round 1}} combined hours per day running is more efficient than actual smokeleaf joints for high duration. Note that joints give a burst of chemical Recreation, which can equate to more mood faster.
+
+Smokeleaf joints have to be made for {{Ticks|{{Q|Smokeleaf joint|Work To Make}}}}, while autobongs just need to be hauled to. In contrast, autobongs are stationary, which can make a single autobong inconvenient.
+
+Autobongs bypass "no drug use" precepts, and thus are useful for keeping guests happy.
+
+=== As a weapon ===
+It can be used offensively to provide a consciousness penalty to raiders, providing a modest penalty to their aiming and movement.  Care should be taken to put it within range of the entrance while still putting it as far out of harm's way as possible.  Be careful not to let your pawns restock it while a raid is in progress. Long hallways can be used so the Autobong can affect enemies while not being easily reachable by those enemies. 
+
+[[File:BongKillbox.png|thumb|Basics of how to use Autobong in a Killbox]]
+
+=== Prisoner control ===
+Given the radius can effect a large number of pawns at once, the autobong can also be used to manage the risks of large prison breaks at the cost of {{Icon Small|Smokeleaf leaves||1.66}} per day. Smokeleaf reduces [[consciousness]] and [[moving]]. Moving is one of the factors in the mean time between [[prison break]]s. And since the prisoners are stoned, if they do have a [[mental break]] or try to break out, they are far easier to down and much less dangerous to others. Note however that this sort of extreme measure is typically only necessary and only cost effective when dealing with large numbers of prisoners, such as when employing a bleedbox, when the [[AI Storytellers#Enemy death on downed|Enemy death on downed]] is reduced, or collecting them for [[human resources]]. 
+
+{{Building Stats Table}}
+
+== Version history ==
+* [[Ideology DLC]] Release - Added.
+* [[Version/1.3.3200|1.3.3200]] - Now satisfies smokeleaf dependency. Mechanoids are no longer affected by the smoke cloud.
+* [[Version/1.4.3523|1.4.3523]] - Moved from [[Misc]] to new [[Ideology (Buildings)|Ideology]] architect tab.
+* [[Version/1.4.3580|1.4.3580]] - Fix: Selecting autobong blueprint causes NullReferenceException.
+
+{{Nav|ideology|wide}}
+[[Category:Ideology (Buildings)]]

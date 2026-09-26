@@ -1,0 +1,90 @@
+{{See also|carnivore lavish meal|vegetarian lavish meal}}
+{{Infobox main|food
+| name = Lavish meal
+| image = Lavish meal a.png
+| description = A masterpiece of the culinary arts, this meal nourishes the body, mind, and soul.
+<!-- Base Stats -->
+| type = Food
+| type2 = Meal
+| hp = 50
+| deterioration = 10
+| marketvalue = 40
+| mass base = 0.44
+| flammability = 1
+| stack limit = 10
+| path cost = 14
+<!-- Ingestion -->
+| food type = meal
+| taste = Lavish
+| ingested direct thought = AteLavishMeal
+| max num to ingest at once = 1
+| days to rot = 4
+| nutrition = 1
+<!-- Creation -->
+| work to make = 800
+| work speed stat = Cooking Speed
+| production facility 1 = Fueled stove
+| production facility 2 = Electric stove
+| skill 1 = cooking
+| skill 1 level = 8
+| resource 1 = Nutrition
+| resource 1 type = non-vegan
+| resource 1 amount = 0.5
+| resource 2 = Nutrition
+| resource 2 type = vegan
+| resource 2 amount = 0.5
+| bulk product amount = 4
+<!-- Technical -->
+| defName = MealLavish
+| preferability = Lavish
+| tradeability = Buyable
+<!-- Unused -->
+| always haulable = true
+| draw gui overlay = true
+| eat effect = EatVegetarian
+| graphic class = Graphic_Single
+| graphic path = Things/Item/Meal/Lavish
+| label = lavish meal
+| parent name = MealRottable
+| resource readout priority = Last
+| selectable = true
+| social properness matters = true
+| sound eat = Meal_Eat
+| thing class = Meal
+| ticker type = Rare
+| use hit points = true
+}}
+{{Info|A '''lavish meal''' is an extravagant meal.}}
+
+== Acquisition ==
+Lavish meals can be [[Work#Cook|cooked]] at a [[{{lc:{{P|Production Facility 1}}}}]] or [[{{lc:{{P|Production Facility 2}}}}]]. A lavish meal requires 0.5 units of [[nutrition]] from vegetarian items, 0.5 units of nutrition from meat or animal products ([[milk]] or [[egg]]s), {{Ticks|{{P|Work To Make}}}} of work to make, and a [[{{lc:{{P|Skill 1}}}}]] skill of {{P|Skill 1 Level}}.
+
+== Summary ==
+A lavish meal can be eaten by humans or animals for 1 [[nutrition]]. As it takes 1.0 nutrition of [[raw food]] to create, lavish meals provide only 100% nutrition efficiency. Contrast this with 180% nutrition efficiency from [[fine meal]]s or [[simple meal]]s, which provide more nutrition than their individual ingredients. Note that, because pawns will automatically eat when they are hungry (0.25/1 nutrition), some food is usually lost from [[overeating]].
+
+Eating a lavish meal or its variants gives the {{Thought|desc=That lavish meal was amazing. It nourished my body and my soul.|label=ate lavish meal|value=+12|stack=1|duration=1}}. This replaces the {{Thought|desc=I ate a really tasty fine meal. Yum!|label=ate fine meal|value=+5|stack=1|duration=1}} from [[fine meal]] if present. If the meal was made out of [[insect meat]], [[human meat]], or [[twisted meat]]{{AnomalyIcon}} their respective moodlets will be applied. If [[Ideology DLC]] {{IdeologyIcon}} is active and the meal was made out of [[raw fungus]], its normal moodlet will also be applied.
+
+Lavish meals will also satisfy the food requirements of any [[conceited noble]]{{RoyaltyIcon}}.
+
+== Analysis ==
+Lavish meals consume twice as many ingredients and require 75% more work than [[fine meal]]s to produce one meal. Most of the time, you should wait to switch to lavish meals until the mid-late game, when food is rarely an issue and your [[Cooking|cooks]] are more proficient in their duties. The mood boost lasts for 24 hours, so colonists can be manually directed to eat one per day.
+
+Lavish meals can be prepared and reserved for emergencies, such as a [[psychic drone]], in order to avoid [[mental break]]s. Colonists can eat meals even if they are at full [[saturation]], so lavish meals can be used like a drug. Wealthier colonies can use them to encourage [[mental inspiration]], or help mood during the [[ship launch]].
+
+== Gallery ==
+<gallery>
+Lavish meal a.png|One lavish meal
+Lavish meal b.png|Partial stack
+Lavish meal c.png|Full stack
+</gallery>
+
+== Version history ==
+* [[Version/0.2.363|0.2.363]] - Added
+* Beta 19/1.0 - Traders will no longer accept typical short-life meals, including lavish meals.
+<gallery>
+Lavish meal old 2.png|Old sprite
+Lavish meal old.png|Even older sprite
+</gallery>
+
+{{Nav|Food|wide}}
+[[Category:Food]] [[Category:Processed Food]] [[Category:Meal]]

@@ -1,0 +1,109 @@
+{{Stub|reason=1) Version history 2) Two-way links 3) They have different material multipliers that should be explained }}
+{{See also|Work To Make}}
+{{Verified|1.5.4104}}{{Stat
+| def name = WorkToBuild
+| label = work to build
+| description = The base amount of work it takes to build a structure, once all materials are gathered.<br/>The work required to deconstruct the structure is also based on this, although in such a case it's clamped between {{ticks|20}} and {{ticks|3000}}.
+| min value = 0
+| default base value = 1
+| round to five over = 300
+| to string style = WorkAmount
+| show if undefined = false
+| scenario randomizable = true
+| category = Building
+| display priority in category = 3101
+}}
+
+== Explanation ==
+Work To Build is used for [[Buildings]], defining the amount of work in [[Ticks]] required to build a structure. It is the functionally equivalent counterpart to the stat used for items: [[Work To Make]]. Note that the wiki merges these two stats into the [[Property:Work To Make|Work To Make]] Property, although they can be easily separated by the [[Property:Type|Type]] and [[Property:Type2|Type2]] Properties.
+
+== Bases ==
+Here is a table of the Work To Build for all buildings (excluding [[Ruins]], since they cannot be built by players):
+<div><li style="display: inline-table;">
+Click to <div class="mw-collapsible mw-collapsed">
+<div class="mw-collapsible-content">
+{| {{STDT| sortable c_01 text-center}}
+! Building !! Work To Build (Ticks) !! Category
+|-
+{{#ask:
+[[Type::Building]]
+[[Type2::!Ruins]]
+[[Work To Make::+]]
+| ?Work To Make
+| ?Type2
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Name
+| limit = 500
+}}
+|}
+</div>
+</div>
+</li></div>
+
+<!-- Incomplete Manual Table For Reference -->
+<!--
+{| {{STDT| sortable}}
+! Thing !! Work To Build
+-->
+<!-- Terrain_Floors -->
+<!--
+|-
+! [[File:StrawMatting.png|24x24px|Straw matting]] [[Straw matting]]
+| {{Ticks|120}}
+|-
+! [[File:Ground concrete.png|24x24px|Concrete]] [[Concrete]]
+| {{Ticks|100}}
+|-
+! [[File:Ground paved tile.png|24x24px|Paved tile]] [[Paved tile]]
+| {{Ticks|300}}
+|-
+! [[File:WoodFloor.png|24x24px|Wood floor]] [[Wood floor]]
+| {{Ticks|85}}
+|-
+! [[File:Ground metal tile.png|24x24px|Steel tile]] [[Steel tile]]
+| {{Ticks|800}}
+|-
+! [[File:Ground silver tile.png|24x24px|Silver tile]] [[Silver tile]]
+| {{Ticks|800}}
+|-
+! [[File:Ground gold tile.png|24x24px|Gold tile]] [[Gold tile]]
+| {{Ticks|800}}
+|-
+! [[File:Ground sterile tile.png|24x24px|Sterile tile]] [[Sterile tile]]
+| {{Ticks|1600}}
+|-
+! [[File:Ground carpet cream.png|24x24px|Carpet]] [[Carpet]]
+| {{Ticks|800}}
+|-
+! [[File:.png|24x24px|]] [[]]
+| {{Ticks|}}
+|}
+-->
+== Stat Def Data ==
+{| {{STDT}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Work To Build" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />WorkToBuild
+* '''Label:'''<br />work to build
+| The base amount of work it takes to build a structure, once all materials are gathered.<br/><br/>The work required to deconstruct the structure is also based on this.
+|
+* Display Order:<br />'''50'''
+* Def Name:<br />'''Building'''
+* Label:<br />'''Building'''
+* Display All By Default:<br />{{Bad|false}}
+|
+* '''Default Base Value:''' 1
+* '''Min Value:''' 0
+* '''To String Style:''' WorkAmount
+* '''Round To Five Over:''' 300
+* '''Show If Undefined:''' {{Bad|false}}
+* '''Scenario Randomizable:''' {{Good|true}}
+| -
+| 3101
+<!--</StatDef>-->
+|}
+
+{{nav|stats|wide}}

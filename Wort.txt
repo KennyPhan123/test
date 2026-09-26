@@ -1,0 +1,70 @@
+{{Infobox main|resource
+| name = Wort
+| image = Wort.png
+| description = Un-fermented beer. This substance needs to ferment in a fermenting barrel before it becomes drinkable beer.
+| type = Crafted resources
+| type2 = 
+| path cost = 
+| stack limit = 25
+| beauty = 
+| flammability = 0.2
+| marketvalue = 2.5
+| mass base = 0.8
+| hp = 60
+| deterioration = 1
+| days to rot = 5.6
+<!-- Creation -->
+| production facility 1 = Brewery
+| work to make = 1000
+| work speed stat = Drug Cooking Speed
+| resource 1 = Hops
+| resource 1 amount = 25
+| product amount = 5
+<!-- Technical -->
+| defName = Wort
+| thingCategories = Manufactured
+| page verified for version = 1.3.3066
+<!-- Unused -->
+| tradeTags = 
+}}
+{{Info|'''Wort''' is produced at a [[brewery]] by [[Work#Cook|cooks]]. It is the initial step to making [[beer]] - fermenting wort in a [[fermenting barrel]] for 6 days it becomes [[beer]]. }}
+
+== Acquisition ==
+Wort can be crafted by [[Work#Cook|cooks]] at a [[{{P|Production Facility 1}}]], which requires the [[Research#{{Q|Brewery|Required Research}}|{{Q|Brewery|Required Research}}]] research project to have been completed in order to be constructed. Each batch requires {{Required Resources}} and {{Ticks|{{P|Work To Make}}}} of work, and produces {{Icon Small|{{PAGENAME}}||{{P|Product Amount}}}} wort. The amount of time it takes to complete the bill is determined by the colonist's [[Drug Cooking Speed]].
+
+It can also rarely be found as loot at [[faction base]]s and quest sites alongside [[fermenting barrel]]s.
+
+== Summary ==
+{{See also|Fermenting barrel|Beer}}
+The sole purpose of wort is to produce [[beer]]. 1 wort item is converted into 1 beer at a [[fermenting barrel]]. [[Work#Haul|Haulers]] can fill barrels with up to 25 wort at a time. After  being put into the barrel, the fermentation process takes 6 days.
+
+{{Ingredient List|noCollapse=true}}
+
+If the fermenting barrel is left outside of a comfortable [[temperature]] zone, the fermenting process will be halted. Left in extreme temperature for too long, and the entire batch will be ruined. No wort or beer can be recovered in this case.
+
+{| class="wikitable"
+|-
+! Temperature
+! Effect
+|-
+| {{Temperature|7|{{Q|Fermenting barrel|Max Safe Temperature}}}}
+| Ideal fermenting temperature range
+|-
+| {{Temperature|{{Q|Fermenting barrel|Min Safe Temperature}}|7}}
+| Temporarily halts fermentation process, process continues when ideal temperature restored
+|-
+| > {{Temperature|{{Q|Fermenting barrel|Max Safe Temperature}}}}<br/> < {{Temperature|{{Q|Fermenting barrel|Min Safe Temperature}}}}
+| Freezing or "too hot" is fatal to the brewing process, all product is lost, all the previous work wasted
+|}
+
+You can fill a barrel with less than 25 wort, but adding wort after will delay progress (proportional to wort added). For example, if you add 5 wort to a barrel containing 5 wort, progress will be halved.
+
+== Analysis ==
+Wort sells for less than beer or even its composite [[hops]], so its only real purpose is to be part of the brewing process. It is recommended to set a wort stockpile near your fermenting barrels and/or [[brewery]] stations.
+
+Unrefrigerated wort rots in only a few days, so be careful with storage. Usually, it is best to put wort into a fermenting barrel immediately. Unless you don't have enough barrels to ferment all the wort, there's little point in keeping it raw.
+
+== Version history ==
+* Beta 19/1.0 = Beer fermenting time 10 days -> 6 days
+
+[[Category:Crafted Resource]]

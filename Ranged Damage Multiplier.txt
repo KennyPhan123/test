@@ -1,0 +1,80 @@
+{{Stub|reason=1) Two-way links}}
+{{Verified|1.5.4104}}{{Stat
+| def name = RangedWeapon_DamageMultiplier
+| label = damage multiplier
+| description = A damage multiplier applied to projectiles fired from this [[Ranged weapons|weapon]].
+| default base value = 1
+| min value = 0
+| to string style = PercentZero
+| scenario randomizable = true
+| show if undefined = false
+| category = Weapon_Ranged
+| display priority in category = 5105
+| parts = StatPart_Quality
+}}
+
+== Factors ==
+<div><li style="display: inline-table;">
+{| {{STDT| c_04}}
+! [[Quality]] !! Factor
+|-
+! Awful
+| {{Bad|×90%}}
+|-
+! Poor
+| '''×100%'''
+|-
+! Normal
+| '''×100%'''
+|-
+! Good
+| '''×100%'''
+|-
+! Excellent
+| '''×100%'''
+|-
+! Masterwork
+| {{Good|×125%}}
+|-
+! Legendary
+| {{Good|×150%}}
+|}
+</li></div>
+
+== Stat Def Data ==
+{| {{STDT| c_06}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Damage Multiplier" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />RangedWeapon_DamageMultiplier
+* '''Label:'''<br />damage multiplier
+| A damage multiplier applied to projectiles fired from this weapon.
+|
+* Display Order:<br />'''44'''
+* Def Name:<br />'''Weapon_Ranged'''
+* Label:<br />'''Weapon (ranged)'''
+* Display All By Default:<br />{{Bad|false}}
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0}}
+* '''To String Style:''' PercentZero
+* '''Show If Undefined:''' {{Bad|false}}
+* '''Scenario Randomizable:''' {{Good|true}}
+|
+* '''Parts:'''
+** '''StatPart_Quality:'''
+*** Factor Awful: {{Bad|×{{%|0.9}}}}
+*** Factor Poor: '''×{{%|1}}'''
+*** Factor Normal: '''×{{%|1}}'''
+*** Factor Good: '''×{{%|1}}'''
+*** Factor Excellent: '''×{{%|1}}'''
+*** Factor Masterwork: {{Good|×{{%|1.25}}}}
+*** Factor Legendary: {{Good|×{{%|1.5}}}}
+| 5105
+<!--</StatDef>-->
+|}
+
+== Version history ==
+{{Stub|section=1|reason=General}}
+
+{{nav|stats|wide}}

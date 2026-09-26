@@ -1,0 +1,356 @@
+{{Biotech}}
+{{About|human pregnancy and birth|end result|Babies|Older children|Children}}
+
+'''Reproduction''' is the means by which [[human]] babies are created. 
+{{TOCright}}
+
+== Overview ==
+There are three ways a human can reproduce, assuming children are enabled in the [[AI Storytellers#Biotech|storyteller settings]].
+* Natural reproduction, through [[#Pregnancy|pregnancy]].
+* Assisted reproduction, through [[#Surrogacy|surrogacy]].
+* Artificial reproduction, through [[#Growth vat|growth vats]].
+
+== Natural reproduction ==
+Female pawns in heterosexual [[Romance|romantic relationships]] have a chance to get pregnant when they engage in [[lovin']]. Note that pawns must share a two-person bed, bedroll, or sleeping spot at the same time to initate lovin'. The ''Sleeping Alone'' debuff only checks if 2 pawns are ''assigned'' the same bed; they don't need to sleep at the same time or ever engage in lovin' to avoid it.
+
+=== Chance ===
+The prospective parents' chance of successfully reproducing is primarily controlled by their [[Fertility]] stat. The player has three options to adjust pregnancy rates from Lovin' in any relationship. By opening the social tab, to the right of a Lover, Fiancee, or Spouse, you can see a button that lets you change the couple's approach for having kids.
+
+{| class="wikitable"
+! [[File:Normal.png|32px]]         
+| '''Normal''' (Default) || x1 pregnancy chance. 
+|- 
+! [[File:AvoidPregnancy.png|32px]] 
+| '''Avoid pregnancy'''  || x0.25 pregnancy chance. 
+|- 
+! [[File:TryForBaby.png|32px]]     
+| '''Try for baby'''     || x4 pregnancy chance. 
+|}
+Therefore, the total chance of pregnancy in one relationship is likely:
+
+ '''Pregnancy chance per relationship''' = '''Mother's fertility''' x '''Father's fertility''' x '''Reproductive Approach''' x '''Times Lovin''''
+
+The actual chance that a pair of pawns will do Lovin' each night varies, but it requires them to share the same bed and sleep at the same time. For further information, including the factors that influence the lovin' chance, see [[Lovin']].
+
+=== Pregnancy ===
+Pregnancy lasts for 18 days, broken into three 6-day trimesters. The player will receive a notification when the pregnancy starts and when it progresses from one trimester to the next. The pregnant pawn will gain penalties to movement, manipulation, and hunger rate, increasing each trimester as seen in the chart below. Other than the statistical penalties, pregnant pawns have no restrictions on the activities they pursue.
+
+If the mother is in poor health, such as [[Malnutrition]], she might suffer a miscarriage.{{Check Tag|Details|Sick? Injured? Blood loss? Low capacities?}}
+
+{| class="wikitable"
+! Stage !! Effects
+|-
+| First trimester ||
+* Hunger rate offset: {{++|10%}}
+|-
+| Second trimester ||
+* [[Moving]]: {{--|10%}}
+* [[Manipulation]]: {{--|5%}}
+* Hunger rate offset: {{++|30%}}
+|-
+| Third trimester || 
+* [[Moving]]: {{--|50%}}
+* [[Manipulation]]: {{--|10%}}
+* Hunger rate offset: {{++|50%}}
+|}
+
+During the first trimester, a pawn will gain the ''New pregnancy'' moodlet, which can either be positive or negative direction: {{Good|+3}} ''I'm pregnant! It makes me happy.'', or {{Bad|-3}} ''I'm pregnant and not very happy about it.'' When the pawn is not happy about their pregnancy, you can perform an operation to end their pregnancy. This will result in a mood buff of {{Good|+5}} ''I'm relieved I'm not pregnant any more''. Throughout their pregnancy, they will also occasionally gain mood buffs or debuffs due to hormone-induced mood swings, which includes the third trimester.{{Check Tag|Detail needed}} Mood swings are visible in the Health tab as a condition affecting the brain. They vary in severity, direction, and duration, appearing as: "Pregnancy Mood (<duration>, <type>)" with the description ''This common side effect of pregnancy represents a rising and falling mood caused by unbalanced hormones.'' Accompanying this, the pawn will get a positive or negative moodlet labeled ''Pregnancy mood <type>''. Mood swings are short-lived, lasting 8 to 16 hours.
+
+'''Types of Mood swings:'''
+* {{Thought|desc=This pregnancy is so hard. My body always feels awful. So exhausting!|label=pregnancy mood collapse|value=-14|stack=1}}  
+* {{Thought|desc=It feels like everything is going wrong for me today. Pregnancy is tough.|label=pregnancy mood down|value=-8|stack=1}}  
+* {{Thought|desc=Everything feels a little bit more pleasant today. Pregnancy is nice.|label=pregnancy mood up|value=4|stack=1}}  
+* {{Thought|desc=I feel amazing! Being pregnant is a gift!|label=pregnancy mood high|value=8|stack=1}} 
+
+Pregnant pawns may also receive the "morning sickness" condition, which lasts 4 to 8 in-game hours. Along with health effects, they will gain the {{Bad|-3}} mood debuff ''Sick''.
+
+'''Morning sickness:'''
+* [[Consciousness]]: {{Bad|x0.8}}
+* [[Moving]]: {{Bad|x0.9}}
+* [[Manipulation]]: {{Bad|x0.9}}
+* Vomiting {{MTB}}: {{Bad|{{#expr:(24*0.075)}} hours}}
+
+Note that Pawns in the character selection menu can begin the game already pregnant.
+
+== Assisted reproduction ==
+Science enables new methods for obtaining babies. After Fertility Procedures has been researched, you can extract [[Ovum|ova]] from female pawns and fertilize them to form an [[embryo]], for use in surrogate pregnancies or vat-grown babies.
+
+Both methods require extracting an ovum from a [[Fertility|fertile]] female pawn, be they [[colonist]], [[prisoner]], or [[slave]],{{IdeologyIcon}} through a medical operation in the pawn's Health tab: "Extract ovum for IVF". The operation requires one of any type of medicine and a doctor, although it is a relatively easy surgery, with a 500% multiplier on success, and 0% chance of death on failure. 
+
+The ovum may then be fertilized by a fertile male colonist or slave (but not a prisoner or guest) to produce an embryo. As long as the male pawn's fertility is above 0% this will be successful. The resulting embryo can then be implanted in female pawns (may be prisoner, colonist, or slave) to initiate a pregnancy, placed in a growth vat, or sold. 
+
+=== Surrogacy ===
+With the [[Research#Fertility Procedures|Fertility Procedures]] research, you can create [[embryo]]s. They can then be implanted into a pawn for a chance for the pawn to become pregnant. The chance of success depends on the surrogate's own Fertility.
+
+Even if they did not supply the ovum, the surrogate will be considered the birth mother. Otherwise, it will act as a regular pregnancy.{{Check Tag|Verify|Not thoroughly checked, quick devmode run to write this section}}. A pawn born this way will consider both their surrogate and genetic mother as the pawn's parents in terms of social opinions. 
+
+An embryo produced by a female [[creepjoiner]]{{AnomalyIcon}} may only be implanted into a creepjoiner; conversely, a female creepjoiner cannot have an embryo produced by a normal pawn implanted in them.
+
+=== Growth vats ===
+{{See also|Growth vat}}
+[[Growth vat]]s are a complete alternative to pregnancy. They require the [[Research#Growth vats|Growth vat]]s research to make, as well as [[Research#Fertility procedures|Fertility Procedures]], and two pawns with > 0% Fertility to actually create embryos. 
+
+Growth vats allow an embryo to be born in 9 days, half the time of a natural pregnancy. Active vats must be given a constant supply of 200 W of [[power]] and 6 [[nutrition]] per day - or around 6.5 [[simple meal]]s per day - to ensure survival of the fetus. If lacking either, then the fetus will undergo biostarvation, increasing by 50% per day. If biostarvation reaches 100%, the fetus will be destroyed.
+
+Otherwise, growth vat births always have a [[Reproduction#Quality|quality]] of 70%, which affects the chance of the baby being born healthy. On practice, per 100 birth there will be 2 dead and 10 sick. However, there are benefits to this method: as it avoids natural birth, the mother won't be weighed down, and there is no risk of them dying.
+
+== Birth ==
+Your first warning for a pawn's upcoming childbirth comes during a pawn's pregnancy: the player will receive one notification when the mother hits the third trimester about "<Colonist>'s baby prep", which explains all the steps you can take to help the mother give birth successfully. Besides preparing a location and doctor for the birth, this notification reminds you to prepare a food source for the baby and build them a crib. Labor will happen roughly 6 days after, starting with a notification of "<Colonist> in labor!".
+
+Once labor begins, the birthing procedure can be initiated by clicking on the mother, and selecting the "Begin birth" option. This allows the player to select participants and a Doctor, much like [[Ideology]]'s rituals. The procedure will take place at a bed or sleeping spot, chosen automatically (preferring medical beds) if the mother is not already in bed. All of these choices have an effect on the birth's quality, which affects the chance that the mother and baby will come out of childbirth alive and healthy. You can view the exact factors and their influence in the Quality section below. The expected duration of this operation is variable, but will end once the baby has been born or mother has died.
+
+=== Labor ===
+The progress of labor can be tracked in the mother's health tab. Labor begins with contractions, different stages of dilation that change randomly over time, with all adding various amounts of pain and restrictions on movement for the mother. Many stages will incapacitate her, so even before the childbirth operation begins, it is important to bring her to a bed. When the childbirth operation has proceeded for a while, you will receive a small notification saying "<mother>'s labor has entered the final stage", and the labor will progress to the final "pushing" stage. 
+
+'''Stages of labor:'''
+* dilation, mild: pain +25%, moving x40%
+* dilation, intense: pain +50%, moving x20%
+* dilation, debilitating: pain +85%, moving x0%
+* pushing: pain +85%, moving x0%
+
+Once the childbirth procedure has begun, any spectating loved ones may socialize with each other, but the doctor and mother will be focused on their tasks. Spectators and the doctors can leave if needed, by selecting a pawn and then pressing the "Leave child birth" option.
+Finally, you can cancel the birth operation by selecting any of the involved pawns and then selecting the "Cancel child birth" option, which allows you to restart childbirth later.
+
+=== Quality ===
+When starting the child birth procedure, a screen will show you the expected quality of the birth, determined by (descending order of influence):
+* Age of the mother: The mother has a natural {{+|50%}} quality bonus between ages 20-30. Outside this range, the bonus drops. See the graph below.
+* Doctor's [[medical]] skill: Can range from {{+|0-25%}}. Starting at 0% with skill level 1 and increasing by 1.25% every level, up to a maximum of 25% at skill level 20.
+* Room [[cleanliness]]: Cleanliness can range from 0-0.6, giving {{+|0-10%}} in quality bonuses.
+* Other factors, gives up to 5% each:
+** Loved one present: The presence of someone that the mother considers a friend or more gives {{+|5%}} quality, with no stacking for multiple friends or a better friend. By default, the father will be selected to be present. If the doctor performing the operation is a friend, they will count towards this bonus too, and forcing father to participate in addition to doctor will give nothing.
+** [[Rooms|Indoors]]: If inside, the quality gains {{+|5%}}.
+** [[Bed]] health effects: Contributes up to 5% depending on the type of bed: [[sleeping spot]]s and [[bedroll]]s give no bonus. Regular and [[Royal bed|royal]] beds give a {{+|2%}} bonus while [[hospital bed]]s give a {{+|5%}} bonus.
+
+Birth quality is determined at the moment of the baby's birth; allowing the doctor or loved ones to leave, or having the room grow dirty, has an effect on birth quality.
+
+{| class="wikitable"
+! colspan="2" | Additional quality from Mother's age
+|-
+| {{Graph:Chart
+ | xAxisTitle = Mother Age
+ | yAxisTitle = Additional Quality (+%)
+ | x  = 14, 15, 20, 30, 40, 65
+ | y1 = 0, 30, 50, 50, 30, 0 
+ }}
+| 
+* 14 yrs:  {{+|0%}} 
+* 15 yrs: {{+|30%}} 
+* 20 yrs: {{+|50%}} 
+* 30 yrs: {{+|50%}} 
+* 40 yrs: {{+|30%}} 
+* 65 yrs:  {{+|0%}} 
+Note: Bonus is linearly<br>interpolated between these points
+|}
+
+=== Outcomes ===
+{{Stub|section=1|reason=Stillborn thoughts. Use [[Template:Thought]] with full details. Specify whether normal death thoughts apply or if its custom, if a surrogate pregnancy is stillborn the genemother has a negative moodlet but does the surogate, can a stillbirth be resurrected by a mech serum}}
+Depending on the quality, the baby can be born healthy or sickly, or they may die during birth, also known as being stillborn. At lower qualities, there is also a chance that the mother can die during childbirth. The quality needs to be >90% for the best possible outcomes. Since the probability of a bad outcome increases drastically below 20% birth quality, it's strongly recommended to provide at least the bare necessities, such as a bed indoors, as even a few percent above 0% in birth quality will contribute massively to the outcome.
+
+{| class="wikitable"
+! Birth Outcome Chance
+! Mother Death Chance
+|-
+| {{Graph:Chart
+ | width  = 300
+ | height = 200
+ | type   = stackedarea
+ | xAxisTitle = Birth Quality (%)
+ | yAxisTitle = Chance (%)
+ | legend = Outcomes
+ | x  =   0,  5  , 10  , 15  , 20  , 25  , 30  , 35  , 40  , 45  , 50  , 55  , 60  , 65  , 70  , 75  , 80  , 85  , 90  , 100
+ | y1 = 100, 34  , 20  , 14.7, 11.1,  9.3,  7.9,  6.8,  6  ,  5.4,  4.9,  4.5,  4.1,  3.8,  3.5,  3.3,  3.1,  2.9,  2.5,   2.5 
+ | y2 =   0,  5.1,  6.1,  6.6,  6.8,  7  ,  7.1,  7.2,  7.2,  7.3,  7.3,  7.3,  7.4,  7.4,  7.4,  7.4,  7.5,  7.5,  7.5,   7.5
+ | y3 =   0, 60.9, 73.9, 78.7, 82.1, 83.7, 85  , 86  , 86.8, 87.3, 87.8, 88.2, 88.5, 88.8, 89.1, 89.3, 89.4, 89.6, 90  ,  90
+ | y1Title = Stillborn
+ | y2Title = Sick
+ | y3Title = Healthy
+ | interpolate = monotone
+ | colors = #0066bb, #00aacc, #00ddff
+ }}
+| {{Graph:Chart
+ | width  = 300
+ | height = 200
+ | type   = line
+ | xAxisTitle = Birth Quality (%)
+ | yAxisTitle = Chance (%)
+ | x =  0, 20, 90, 100
+ | y = 20,  5,  0,   0
+ }}
+|}
+
+You will receive a notification when the birth is complete, and the baby will appear on an adjacent tile. If the baby was born alive, a pawn with the Childcare work enabled can be instructed to either move the baby to a safe space, or to deliver it to the mother for breastfeeding. The baby will be born hungry, with a mood penalty of {{Bad|-6}}.{{Check Tag|Thought Template|Please convert to Template: Thought with all details}}
+
+If your baby was healthy, the notification is "Healthy child birth", and it gives you 24 hours to choose a name for the baby. You can also name stillborn babies via the stillborn notification.{{Check Tag|Notification title?|Like "Healthy child birth" but for stillborn.}}
+
+These are only time where you can completely customize the baby's first and last names, and you additionally can add an optional nickname. The game will suggest the mother and father's last names on this screen, and provide random suggestions for the other names. Until then, the baby's name is temporary, and called "Baby <Mother's last name>". The baby will also receive the Childhood title "Newborn", and belong to the mother's faction. The baby's parents will receive a 15-day mood boost that "<Baby> was born healthy" {{Good|+8}}.
+
+If the baby is born sick, they are affected by a form of [[infant illness]], which can start at a variable intensity. If left untreated before 10 days is up, the baby dies, but if it lives through 10 days after birth, the illness will no longer affect the baby. You will also get the chance to name your baby.
+
+If the baby is stillborn, then the mother and father will experience a negative moodlet. If a surrogate mother is used, the biological mother will receive the moodlet. 
+
+If the mother survived childbirth, she will remain in bed, incapacitated by exhaustion (Postpartum exhaustion) for 16 hours. She'll no longer feel any pain from childbirth, but won't be able to move. However, if another pawn delivers her baby to her, she can begin breastfeeding.
+
+=== Lactation ===
+{{Stub|section=1|reason=Verify nutrition changes}}
+{{Quote|''The condition of being able to breastfeed a baby. The breasts are actively producing and storing milk. The lactating state begins when a mother gives birth, and continues indefinitely as long as she breastfeeds a baby at least once every 10 days. People who are lactating will have a harder time becoming pregnant.''|Description}}
+
+Upon a successful natural childbirth, the birthing mother will begin lactating. A lactating pawn can breastfeed babies, even if not their own. Lactation lasts indefinitely, but stops after 10 days of not breastfeeding a baby or if the pawn is malnourished with a {{MTB}} of 4 hours so roughly stopping at 40% malnutrition. If a lactating pawn is sent on a pawn lending [[quest]], the 10-day timer will tick down unless they are sent along with a baby or babies that they can feed.
+
+<!-- Milk fullness can go from 0 to 0.125. A pawn can feed a baby when they have at least 0.031 milk, which results in minimum of 24.8% fullness. -->
+<!-- Food consumption increase happens in 2 places. The first one happens during normal food ticking, during which it increases it by 0.5, and it scales with metabolic efficiency, and is included in a pawn's info tab. The second one happens while trying to increase a pawn's milk fullness, and that one scales with pawn's hunger level - this happens regardless of milk's fullness level, and isn't included in the pawn's info tab. Possibly a bug and may be removed in the future. -->
+While lactating, the pawn gains a milk fullness stat, which starts at 100%. When it is above {{%|0.248}}, a pawn can breastfeed any baby, reducing milk accordingly. Mother's Food Consumption is increased by +1 [[nutrition]] per day, for a total of 2.6 nutrition per day, regardless of milk fullness. For reference, 1 [[simple meal]] is 0.9 nutrition. Half of the increased hunger scales with milk regeneration rate, which decreases as the pawn gets hungry. The other half of the increased hunger scales with [[metabolic efficiency]], which can result with even more nutrition per day being consumed by such a pawn.
+
+{| class=wikitable
+! '''Hunger Level''' || Malnourished || Ravenously hungry || Hungry || Full
+|-
+| '''Milk Regeneration''' || 0% || 25% || 50% || 100%
+|-
+| '''Extra Nutrition Per Day (0 metabolic efficiency)''' || 0.5 || 0.63 || 0.75 || 1.0
+|-
+| '''Extra Nutrition Per Day (-5 metabolic efficiency)''' || 1.13 || 1.25 || 1.38 || 1.63
+|-
+| '''Extra Nutrition Per Day (+5 metabolic efficiency)''' || 0.25 || 0.38 || 0.5 || 0.75
+|}
+
+Lactation also multiplies [[Fertility]] by {{Bad|x5%}}, meaning the mother is very unlikely to get pregnant by any natural means.
+
+== Heredity ==
+{{See also|Genes}}
+[[File:PawnFamilyTree.png|thumb|right|upright=1.8|A compact chart of familial pawn relationships and its effects on inbreeding. Redundant relations have been hidden for simplicity.]]
+When an [[embryo]] is conceived, it will inherit some of the [[genes]] of both parents. During a mother's pregnancy, you can view her child's genes by going to her Health tab and selecting the information button for her pregnancy. The genetics section will list all genes that her child has inherited. 
+
+Genes which can be passed down come from the germline DNA, and are called germline genes. Pawns may modify themselves with [[xenogene]]s, but as it's not part of a pawn's germline DNA, it cannot be passed down. If a germline gene is only present in one parent, it has a small chance to be passed down.{{Check Tag|What's the chance?|What is the algorithm for calculating gene inheritance?}} However if an germline gene is present in both parents, it has a higher chance passed down, as long as the previous inherited germline gene didn't reach the metabolic limit. If a pawn is created with a maximum metabolic rating of 3 and the first gene it inherits is a 3 metabolism gene then it won't be able to inherit any more genes with a metabolism cost unless it first inherits one with a negative metabolism cost. This means that the likelihood to inherit genes is not only based on the cost of the gene but the order in which the genes are present on the pawn.
+
+Generally, all pawns will have at least one hair color and skin color germline gene. Offspring will always pick one hair color and skin color germline gene from their parents. If no hair/skin color germline gene can be found in either parent, such as if they were two [[highmates]], a random hair/skin color germline gene will be picked from the natural list of hair/skin colors instead.
+
+If a pawn has multiple [[Genes#Cosmetic|cosmetic genes]] within a category, like body type, one random gene will override the others. This will be the gene represented on the pawn. For non-cosmetic genes within a category there is a fixed priority for overrides, usually favored towards the negative variations. For example, an awful [[shooting]] aptitude will override all other shooting aptitudes. Xenogenes will always take priority over germline genes. Thus, even though the Slow runner germline gene overrides their Fast runner germline gene, the Fast runner ''xenogene'' will override the Slow runner germline gene. Note that overridden germline genes can still be passed down as normal.
+
+Pregnant pawns that haven't been part of the colony have their children apply a xenotype from their pawnkind post-birth {{Check Tag|Faction?}} in addition to the genes of the original this does not factor in the xenotype being inheritable. for example Wild Men can have a xenotype applied from any kind, including [[Hussar]]s and [[Genie]]s, but often baseliner will be applied resulting in no additional genes, Sanguophages however do not apply their xenotype to the child and follow similar behavior to wild men. {{Check Tag|Verify|Could just be absurdly rare but i've only gotten wasters and neanderthals}}
+
+=== Inbreeding ===
+If a child is born from an incestuous relationship, there's a risk of them becoming [[inbred]]. The likelihood of this is modelled proportionally to the pawns' coefficient of relationship, though it is largely simplified.
+
+As a general rule, the risk is '''80%''' for first-degree, '''40%''' for second-degree, and '''10%''' for third-degree relatives; however some exceptions apply, an example being 20% for cousins. Many fourth-degree relationships and beyond are simply referred to as "Kin". Kin relationships pose no risk for inbreeding, despite being considered incestuous. If two pawns are related in more ways than one, such as being both parent/child (80%) and grandparent/grandchild (40%), the highest number always takes priority when calculating inbreeding. Pawns being inbred will not directly increase this number, but since inbred is a gene it will follow the same rules of gene inheritance as all other genes.
+
+It's possible to check for the inbred gene after conception by using the ''"Inspect baby genes..."'' button on the [[#Pregnancy|pregnant]] pawn or the [[embryo]]. The [[#Outcomes|outcome]] of a pregnancy isn't affected by inbreeding, but should the baby be born, the game will display an additional line in the birth results:
+<code>'' The baby shows signs of genetic abnormalities due to inbreeding. ''</code>
+
+{| class="wikitable"
+! '''Inbred'''
+[[File:Gene Inbred.png|64px]]         
+|
+* Complexity: {{Bad|+1}}
+* Metabolic efficiency: {{Bad|-2}}
+* Forced Trait: [[Slow learner]]
+* [[Fertility]]: {{Bad|x50%}}
+* [[Immunity gain speed]]: {{Bad|x85%}}
+|}
+
+The risk of inbreeding goes as follows, higher numbers taking priority over lower ones:
+
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_07 text-center}}
+! Relation
+! [[File:Gene Inbred.png|24px]] Inbreeding risk
+! Coefficient of relationship
+|-
+! Parent/Sibling/Child
+| 80% || 50%
+|-
+! Grandparent/Aunt/Uncle/Niece/Nephew/Halfsibling/Grandchild
+| 40% || 25%
+|-
+! Halfniece/Halfnephew
+| 40% || 12.5%
+|-
+! Cousin
+| 20% || 12.5%
+|-
+! G. grandparent/Grandaunt/Granduncle/Grandniece/Grandnephew/G. grandchild
+| 10% || 12.5%
+|-
+! Half grandniece/Half grandnephew/Cousin once removed
+| 10% || 6.25%
+|-
+! Second cousin
+| 10% || 3.125%
+|-
+! Birth parent<ref>Although birth parents are considered on the same level as biological parents, they aren't genetically related to the child they birth, and thus run no risk of inbreeding despite the game's warnings that they do.</ref>/Kin
+| 0% || N/A
+|}
+</li></div>
+<references/>
+
+== Fertility ==
+{{See also|Fertility}}
+Fertility is the main pawn stat affecting pregnancy chances, acting as a percentage multiplier on the chance of getting pregnant naturally or through an ovum implantation. Natural pregnancy chance is equally dependent on the fertility of both partners. Additionally, fertility must be above 0% to extract a pawn's ovum or to fertilize the [[ovum]] into an [[embryo]].
+
+This stat is affected by a variety of factors, such as age, [[genes]], and [[#Contraceptives|contraceptives]]. Age is the baseline for fertility, changing slowly for each colonist over time, and at a different rate by pawn gender. Genes provide an additional multiplier on fertility. Contraceptives instantly bring fertility to 0%, overriding other fertility factors.
+
+For baseline humans without fertility-modifying genes, both men and women start becoming fertile after age 14; but regardless of fertility, pawns can't participate in reproduction until they are 16. Fertility increases differently by gender. Women's fertility increases until age 20, but starts dropping at age 28 until it reaches 0% at age 50. Men's fertility increases until age 18, but starts dropping at age 50 until it's 0% at age 90. 
+
+{| class="wikitable"
+! Fertility
+|-
+| {{Graph:Chart
+ | width  = 400
+ | height = 100
+ | type   = line
+ | x  = 0, 14,               18,  20,  28,  35,  40,  45,  50, 90, 120
+ | y1 = 0,  0, {{#expr: 200/3}}, 100, 100,  50,  10,   2,   0,  0,   0
+ | y2 = 0,  0,              100, 100, 100, 100, 100, 100, 100,  0,   0
+ | xAxisTitle = Pawn age (years)
+ | yAxisTitle = Fertility (%)
+ | legend =
+ | y1Title = Female
+ | y2Title = Male
+ }}
+|}
+
+Genes affect fertility in direct and indirect ways. There are two direct effects: the [[Fertile]] gene doubles fertility and the [[Sterile]] gene completely nullifies it. The [[Ageless]] gene prevents aging entirely, which prevents fertility loss. [[Biosculpter pod#Age reversal|Age Reversal]]{{IdeologyIcon}} also has a fully restorative effect on fertility. Even a completely infertile pawn (due to age) can start reproduction again.
+
+== Contraceptives ==
+There are many ways to manually change the likelihood of natural pregnancy. The simplest way in the game to prevent pregnancy is to not give pawns a [[double bed]] to themselves. However, it deprives them of the [[mood]] bonuses of Lovin' in the first place. By changing a couple's Reproductive Approach "Avoid pregnancy" in the social tab, pregnancy rate will be reduced by {{--|75%}}, but still gives Lovin' at the same rate. Lactation, from having given birth before, gives a {{Bad|x5%}} multiplier to Fertility.
+
+A more stable way to prevent pregnancy is available from the [[Research#Fertility Procedures|Fertility Procedures]] research. This gives access to multiple operations, reversible or permanent, to prevent and stop pregnancies. These surgeries are considered sterilization and are not applicable to pawns who are already sterilized, including sterilization on operation failure (see below). Though, they can be performed on pawns who are infertile by other means (age, Sterile gene).
+
+Neither of the IUD, Vasectomy and Tubal Ligation will be "healed" by luciferium, bioregeneration cycle and by applying healing or resurrection mech serum.
+
+=== IUD ===
+This is a method of preventing pregnancies that lasts indefinitely but is reversible. You can stop a female pawn from becoming pregnant with the "Implant IUD" medical operation, which is available at age 16+, has a base 100% success chance and no chance of pawn death upon failure. The operation requires 1 Medicine of any type and will anesthetize the pawn. The IUD lasts indefinitely and can be seen in the pawn's Health tab, but you can later remove it through the "Remove IUD" medical operation for 1 Medicine of Industrial quality (Glitterworld medicine cannot be used, this must be a bug). Women may embark with IUDs already implanted. If either of these operations is botched, the patient will become permanently sterile.{{Check Tag|Bug?|In SurgeryOutcomeBase def, an attempt is made to make the chance of sterilization small, but ImplantIUD def has addsHediffOnFailure property which always applies Sterilized on failure}}
+
+Implanted IUDs also stop pregnancies in the first trimester, an alternative to the Terminate Pregnancy operation.
+
+=== Vasectomy ===
+This is another method of preventing pregnancies that lasts indefinitely but is reversible. You can stop a male pawn from impregnating others with the "Perform vasectomy" medical operation, which is available at age 13+ and also has a base 100% success chance with no chance of pawn death upon failure. The vasectomy lasts indefinitely, with the operation requiring 1 Medicine of any type. You can later undo it through the "Reverse vasectomy" medical operation for 1 Medicine of Industrial quality (Glitterworld medicine cannot be used, this must be a bug). Men may embark with the operation already performed.{{Check Tag|Verify}} If either of these operations is botched, the patient will become permanently sterile.{{Check Tag|Bug?|In SurgeryOutcomeBase def, an attempt is made to make the chance of sterilization small, but Vasectomy def has addsHediffOnFailure property which always applies Sterilized on failure}}
+
+=== Tubal ligation ===
+This permanently stops a female pawn from being able to reproduce. "Perform tubal ligation" is a medical operation available at age 13+ and requiring 1 Medicine of any type. The surgery success chance is 100% and there is no chance of pawn death upon failure. The operation is irreversible.
+
+=== Termination ===
+If the pawn has already become pregnant past the first trimester, the only option left is to terminate the pregnancy. This can be achieved through the medical operation "Terminate pregnancy" requiring 2 Medicine of herbal quality or better and {{ticks|1500}} of work, after which the pawn will no longer be pregnant. There is a 2% of death if this operation fails, but a {{Good|x2}} success chance factor. Note that the maximum success chance still applies, resulting in a 0.04% chance of death with max surgery success.
+
+This operation can upset the affected pawn. Depending on the trimester of the pregnancy, a moodlet of {{Bad|-5}} for the first, {{Bad|-10}} for the second, and {{Bad|-20}} for the third will occur, lasting for 10 days. If a pawn was not happy about the pregnancy, they will gain a {{+|5}} moodlet instead. If performed on another faction's pawn, it is considered a violation and will result in loss of [[goodwill]].
+
+This is the only fertility procedure that does not require the Fertility Procedures research.
+
+== Analysis ==
+[[Growth vat]]s are the "best" way to create your own children, with it being faster, having no risk to the mother, and able to be done with low Fertility. However, the nutrition cost is non-negligible, and researching growth vats requires Microelectronics. The vats themselves cost some steel, components, and research to make.
+
+If both pawns are reasonably young, fertile, and sleeping at the same time, then pregnancy will be quite common; it is easy to get pawns pregnant, if you wanted them to. 
+
+If pregnancy is unwanted and Fertility Procedures has not been researched yet, the best way is to have two pawns sleep in different beds but in the same bedroom, avoiding ''Sleeping Alone'' but forgoing the boost from lovin'.
+
+== See also ==
+* [[Babies]]
+* [[Children]]
+
+== Version history ==
+* [[Biotech DLC]] Release - Introduced. Humans have a gestation cycle defined without Biotech, but they can not get pregnant.
+* [[Version/1.4.3527|1.4.3527]] - Fix regression: Food consumption absurd during lactation.
+* [[Version/1.4.3541|1.4.3541]] - Fix: Overactive temperature warning for baby moving.
+* [[Version/1.4.3555|1.4.3555]] - Lactating no longer prevents pregnancy or ovum extraction, but now inflicts a {{Bad|x5%}} multiplier to Fertility. Update the lactating hediff's description to mention that it reduces fertility. Pawns away on a PawnLend quest won't have their lactating condition expire if there are any babies with them that can feed. Terminate pregnancy operation increased to 2 medicine (from 1), work slightly reduced. Update the wording of the stillbirth letter to be a bit clearer about the choice of naming the baby, and allow the player to decide not to name the baby. Fathers now get a negative thought if their child is stillborn. If a baby is stillborn from a surrogate mother, the gene-mother gets a negative thought.
+* [[Version/1.4.3557|1.4.3557]] - Colonists born in the colony no longer stay stuck in labor forever if the Ideology DLC was not active when they became a child.
+
+{{Biotech navbox}}
+[[Category:Game mechanics]]

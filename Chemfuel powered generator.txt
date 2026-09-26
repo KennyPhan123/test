@@ -1,0 +1,126 @@
+{{infobox main|building
+| name = Chemfuel powered generator
+| image = Chemfuel_powered_generator.png
+| description = Produces power by consuming chemfuel. Must be periodically refueled by hand.
+| type = Building
+| type2 = Power
+| placeable = true
+| path cost = 50
+| passability = pass through only
+| blockswind = true
+| cover = 1
+| minifiable = false
+| size = 2 ˣ 2
+| flammability = 1
+| hp = 300
+| beauty = -20
+| power = 1000
+| glowradius = 6
+| glowcolor = (80, 112, 180)
+| heatpersecond = 6
+| terrain affordance = medium
+| research = Electricity
+| skill 1 = Construction
+| skill 1 level = 6
+| work to make = 2500
+| resource 1 = Steel
+| resource 1 amount = 100
+| resource 2 = Component
+| resource 2 amount = 3
+| fuel filter = Chemfuel
+| fuel capacity = 30.0
+| fuel consumption rate = 4.5
+}}
+{{info|The '''chemfuel powered generator''' produces [[power]] from [[chemfuel]]. The generator is an exact analog to the [[wood-fired generator]], only the type of fuel is different.}}
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+The chemfuel powered generator consumes {{Icon Small|chemfuel}} 4.5 [[chemfuel]] per day and generates a constant 1000W as long as it is switched on and fueled. It can hold up to 30 fuel at a time, for a maximum run time of 6.66 days. Fuel consumption is not dependent on how much power is actually drawn. Fuel is delivered to the generator by [[Work#Haul|hauler]]s or [[lifter]]s.{{BiotechIcon}} It can be switched off; in the off state it will neither consume fuel nor produce power. 
+
+Generators are temporarily disabled by sources of [[EMP]], with downtime scaling to the EMP damage dealt. During this time, it will not generate any power. Unlike mechanoids, generators do not adapt to EMP and thus can be continuously restunned.
+
+{| class="wikitable"
+! Source !! Stun Duration
+|-
+| Awful EMP launcher                            || {{Ticks|{{#expr: 30*45 }} }} 
+|- 
+| EMP Grenades, Poor/Norm/Good/Exc EMP launcher || {{Ticks|{{#expr: 30*50 }} }} 
+|-
+| Masterwork EMP launcher                       || {{Ticks|{{#expr: 30*62.5 }} }} 
+|-
+| Legendary EMP launcher                        || {{Ticks|{{#expr: 30*75 }} }} 
+|}
+
+==== Light & heat ====
+It outputs [[light]] in a 6 tile radius, with the nearest {{P|Light Radius}} tiles being 50% light level and considered lit. Note that the light source is centered at the bottom-left tile of the generator, rather than the "true" center of the generator. 
+
+It heats at a rate of 6 heat per second{{Check Tag|Exact mechanic unclear|Provides comparison with other heat sources but doesn't explain how much it actually heats}}. Unlike many other heat sources, it does not appear to have a maximum temperature and will continue to heat up rooms indefinitely.{{Check Tag|Confirmation needed}}.
+
+==== Explosion ====
+If it is damaged below one third of its hitpoints, or {{#expr: {{P|Max Hit Points Base #}}/3}} HP, it has a 70% chance to explode. The generator will spark and emit a hissing sound shortly before exploding between {{ticks|70}} and {{ticks|150}} later. The explosion deals 10 [[Damage Type#Flame|Flame]] damage in a radius around itself that depends on the quantity of fuel in the generator. At 0 fuel, the explosion has a radius of 0 and only destroys the generator, and expanding this radius proportional to the square root of the fuel times 0.95 up to a maximum radius of {{#expr: 0+((30*0.95)^0.5) round 2}} tiles when fully fueled. This explosion leaves [[Filth|Chemfuel puddles]] which will then ignite and burn.
+
+== Analysis ==
+{{Move|destination=Chemfuel|reason=Production analysis might be better there. Requires some clean up. Comparison to wood-fired and hydroponics strat can stay, and maybe a table of the options with work/day of power to evaluate options, but chemfuel production should likely be there}}
+Chemfuel generators are compact, can be placed anywhere, and offer a consistent source of power, making it one of the easiest generators to use. Most other power sources ''scale'' much worse; they are either inconsistent, have a location requirement, or take up lots of space. With chemfuel generators, you can easily place as many as you want, so long as you can fuel them.
+
+However, these generators require upkeep, both to create the chemfuel, and to haul the fuel to the generator. The exact amount of work depends on which source of chemfuel is used - [[infinite chemreactor]]s are very limited, but require no work to create. Many colonies will have to research [[Biofuel refining]] to actually make some. 
+
+In general, any source of chemfuel is less work than what a [[wood-fired generator]] would take. The workload is reasonably low, so using chemfuel does not bring excessive burden to a colony.
+
+=== Fuel economy ===
+==== Using wood for fuel ====
+With a [[biofuel refinery]], chemfuel generators consume {{Icon Small|wood}} 9 [[wood]] of chemfuel per day, less than a [[wood-fired generator]]'s {{Icon Small|wood}} 22 per day. Both generators produce the same amount of power. Converting wood to chemfuel takes work, but harvesting wild trees takes longer when considering the time to walk and haul. Note that the refinery itself requires 170 W of power, but you only need 1 refinery for many generators. In specific:
+
+* Converting wood to chemfuel takes {{ticks|2000}} of work for 7.78 days of fuel, or {{ticks|257}} for 1 day of fuel.
+* Just harvesting the wood depends on [[biome]], growth of the tree, and Plants skill.
+** With a [[Plants (skill)|Plants]] skill of 8, it would take a ballpark of {{ticks|260}} of work to harvest {{Icon Small|wood}} 9 [[wood]] for a fully grown, non-cactus tree. Once converted, this is a total of {{ticks|260+257}} of work to fuel a chemfuel generator for one day 
+** For reference, it would take the same pawn a ballpark of {{ticks|650}} of work to harvest {{Icon Small|wood}} 22 [[wood]], making the wood-fired generator notably less work efficient.
+* When considering tree cutting, note that a wood-fired generator also requires you to cut more trees total. This requires more hauling time as well greater travel time as local areas are deforested. On some maps, regrowth may also be outstripped by consumption.
+
+If growing your own fuel is required, wood is a terrible choice. Sowing a single tree takes {{ticks|4000}} of work, which dramatically increases the total work required. [[Fibercorn]]{{IdeologyIcon}} is less efficient than regular crops as well. However, compared to their wood-fired variants, chemfuel generators have the added advantage of being able to use raw food and, as shown below, this can be much more efficient.
+
+=== Raw food refining ===
+When refining [[raw food]], there are two primary sources. Refining waste meat, such as [[human meat|human]], [[insect meat|insect]] and [[twisted meat]],{{AnomalyIcon}} or growing and refining crop plants. 
+
+[[Corn]] is ideal to grow to feed chemfuel generators, with {{#expr:4.5*2/{{#show:Corn plant|?Harvest Yield Per Day (100)}} round 1}} tiles of [[corn plant]] in 100% fertility soil needed for each generator. Note that this assumes 100% harvest efficiency and doesn't account for low-skill colonists botching harvests - as harvest efficiency decreases at higher difficulties and at low plants skill, the number of tiles that must be dedicated to chemfuel production will increase in direct proportion.
+
+In terms of work efficiency:
+* A chemfuel generator requires {{Icon Small|chemfuel}} 4.5 [[chemfuel]] per day, or 0.45 nutrition per day. 
+* On average with a [[Plants (skill)|Plants]] skill of 8, sowing and harvesting 0.45 nutrition worth of corn requires approximately {{Ticks|({{#show:Corn plant|?Harvest Work}}+{{#show:Corn plant|?Sow Work}})*((0.45/{{#show:Corn|?Nutrition}})/{{#show:Corn plant|?Harvest Yield}}) round 0}} of work.
+* Converting corn to chemfuel takes {{ticks|2500}} of work for 7.78 days of fuel, or {{ticks|321}} for 1 day of fuel.
+* Once converted, this is a total of {{ticks|({{#show:Corn plant|?Harvest Work}}+{{#show:Corn plant|?Sow Work}})*((0.45/{{#show:Corn|?Nutrition}})/{{#show:Corn plant|?Harvest Yield}})+321 round 0}} of work to fuel a chemfuel generator for one day
+
+By way of comparison, [[rice]] requires much more work:
+* On average with a [[Plants (skill)|Plants]] skill of 8, sowing and harvesting 0.45 nutrition worth of rice requires approximately {{Ticks|({{#show:rice plant|?Harvest Work}}+{{#show:rice plant|?Sow Work}})*((0.45/{{#show:rice|?Nutrition}})/{{#show:rice plant|?Harvest Yield}}) round 0}} of work.
+* All other requirements are the same and so, once converted, this is a total of {{ticks|({{#show:rice plant|?Harvest Work}}+{{#show:rice plant|?Sow Work}})*((0.45/{{#show:rice|?Nutrition}})/{{#show:rice plant|?Harvest Yield}})+321 round 0}} of work to fuel a chemfuel generator for one day
+
+=== Boomalopes ===
+A [[boomalope]] produces, at most, {{Icon Small|chemfuel}} {{#show:Boomalope|?Daily Milk Average#}} chemfuel per day. This takes {{ticks|400}} of work before modifiers. This is enough to fuel ~{{#expr:{{#show:Boomalope|?Daily Milk Average#}}/4.5 round 2}} generators, which in practice means 2 generators per day.
+
+In theory, a herd of 9 boomalope can fuel {{#expr:{{#show:Boomalope|?Daily Milk Average#}}/4.5*9 round 1}} generators indefinitely. However, milking is not an instant process, so it is difficult to reach that theoretical limit in practice. Additionally, space for a [[pen]] and grazing, or growing more crops, are required to maintain fuel production.
+
+==== Infinite chemreactor ====
+The [[Infinite chemreactor]] is a world quest item that generates {{Icon Small|chemfuel}} 75 chemfuel every ten days (effectively {{Icon Small|chemfuel}} 7.5 chemfuel per day) at a cost of 300 watts and no work. This is more than enough to power a single chemfuel powered generator, providing a net +700 watts of power, while leaving {{Icon Small|chemfuel}} 30 chemfuel after a 10 day cycle (an average of 3 excess/day). 3 infinite chemreactors are exactly enough to power 5 chemfuel generators, providing an excess of 4,100 watts of power (5,000w -900w).
+
+Assuming a small buffer of chemfuel to start, this is easily attainable, because the supply side is reliable, and refueling can be done well in advance.
+
+==== Hydroponics ====
+Chemfuel generators together with hydroponics greenhouses and biofuel refineries produce a significant net energy profit, if the colonist workforce is available to run the setup. The (simplified) conversion chain is
+{| class="wikitable"
+|-
+|''Power'' (for greenhouse) → ''food'' (for refinery) → ''chemfuel'' (for generator) → ''power''
+|}
+A lot of excess power is generated at the end of the chain.
+
+A single [[hydroponics basin]] can produce ~{{#expr:4*{{#show:Rice plant|?Harvest Yield Per Day (280)#}}*0.05 round 2}} raw nutrition per day (growing rice, and assuming a perfect grow operation). This converts into {{Icon Small|Chemfuel}} ~{{#expr:{{#vardefineecho:chemfuel_per_basin_per_day|{{#expr:4*{{#show:Rice plant|?Harvest Yield Per Day (280)#}}*0.05*10 }}}} round 1}} chemfuel per day at a [[biofuel refinery]]. Therefore, the produce from a single basin fuels about {{#expr:{{#var:chemfuel_per_basin_per_day}}/4.5 round 1}} chemfuel generators. This is not attainable in practice, but will serve as a guideline. Assuming the full area of a sun lamp is occupied by 24 hydroponics basins in the optimal configuration and accounting for the basin's share of the sunlamps power consumption, each individual basin effectively consumes {{#vardefineecho:power_consumption_per_basin_average|{{#expr: ({{Q|hydroponics basin|Power Consumption#}} + (((19.2-6 <!--6am to 7:12pm of 24 hours-->)/24) * {{Q|Sun lamp|Power Consumption#}}/24))*-1 round 0}}}}W of power on average, or {{#vardefineecho:power_consumption_per_basin_peak|{{#expr: ({{Q|hydroponics basin|Power Consumption#}} + ({{Q|Sun lamp|Power Consumption#}}/24))*-1 round 0}}}}W peak. This results in a theoretical net gain in energy of about {{#expr:({{#show:Chemfuel generator|?Power Consumption#}}*{{#var:chemfuel_per_basin_per_day}}/4.5)-{{#var:power_consumption_per_basin_average}} round 0}}W on average or {{#expr:({{#show:Chemfuel generator|?Power Consumption#}}*{{#var:chemfuel_per_basin_per_day}}/4.5)-{{#var:power_consumption_per_basin_peak}} round 0}}W peak per dedicated hydroponics basin. While, the power draw of the refinery is not taken into account, it can be micro-managed if chemfuel is produced in batches, and will not play a big role in the overall economy.
+
+With adequate batteries to handle the day-night cycle of [[Sun lamp|sun lamps]], {{#expr:{{#vardefineecho:generators_needed_for_hydroponic_setup|{{#expr:24*{{#var:power_consumption_per_basin_average}}/{{#show:{{PAGENAME}}|?Power Consumption#}}}}}} round 1}} generators are needed to power a full hydroponics setup, which will require {{Icon Small|Chemfuel}} ~{{#expr:{{#var:generators_needed_for_hydroponic_setup}}*4.5 round 1}} chemfuel per day, or about {{#expr:{{#vardefineecho:chemfuel_dedicted_basins_needed|{{#expr:{{#var:generators_needed_for_hydroponic_setup}}*4.5/{{#var:chemfuel_per_basin_per_day}}}}}}round 1}} hydroponics basins dedicated to producing rice to turn into chemfuel. This means that with {{#expr:ceil({{#var:generators_needed_for_hydroponic_setup}})}} generators, you can grow plants in {{#expr:floor(24 - {{#var:chemfuel_dedicted_basins_needed}})}} of the 24 hydroponics basins for free, with an average of {{#expr:(ceil({{#var:generators_needed_for_hydroponic_setup}}) - {{#var:generators_needed_for_hydroponic_setup}})*{{#show:{{PAGENAME}}|?Power Consumption#}}}}W of power spare. Note that this assumes 100% harvest efficiency and doesn't account for low-skill colonists botching harvests - as harvest efficiency decreases at higher difficulties and at low plants skill, the number of basins that must be dedicated to chemfuel production will increase in direct proportion.
+
+== Version history ==
+* [[Version/0.18.1722|0.18.1722]] - Added.
+* [[Version/1.1.0|1.1.0]] - Refueling is now toggleable.
+
+{{nav|power|wide}}
+[[Category:Power]]

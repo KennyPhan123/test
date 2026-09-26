@@ -1,0 +1,163 @@
+{{Infobox biome
+| name = Arid shrubland
+| image = AridShrubland.png
+| type = Biome
+| texture = AridShrublandTexture.png
+| canbuildbase = Yes
+| allowFarmingCamps = false
+| animal density = 1.8
+| plant density = 0.24
+| movement difficulty = 1
+| min rainfall = 600
+| max rainfall = 2000
+| min temperature = -10
+| forageability = 0.5
+| wild plant regrow days = 27
+| disease mtb days = 65
+| description = A dry region, but not dry enough to become a true desert. Open plains with grasses and bushes give way to scattered groves of trees. Plants are hardy and there is a moderate density of animals, but arable soil is hard to find.
+<!-- weather -->
+| clear = 18
+| fog = 1
+| rain = 2
+| dry thunderstorm = 1
+| rainy thunderstorm = 1
+| foggy rain = 1
+| hard snow = 4
+| soft snow = 4
+| gray pall = 1
+| sandstorm = 2
+<!-- fish -->
+| max fish population = 480
+| freshwater_common_tilapia = Yes
+| freshwater_uncommon_catfish = Yes
+| saltwater_common_bluefish = Yes
+| saltwater_uncommon_tuna = Yes
+}}
+'''Arid shrubland''' is a hot and dry [[biome]] in RimWorld.
+<!-- return 22.5f + (tile.temperature - 20f) * 2.2f + (tile.rainfall - 600f) / 100f -->
+== Summary ==
+It features hot temperatures, frequent patches of low fertility terrain, a moderate amount of wildlife, and a sparse amount of trees. 
+
+In the lists below the number in brackets represents the relative commonality.
+
+=== Flora ===
+<div class="ul-column-width-200">
+{{#ask: [[Type::Plant]] [[Lives In Arid Shrubland::>>0]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Arid Shrubland
+}}
+</div>{{#set:Flora Commonality Sum | {{#expr: {{#ask: [[Type::Plant]] [[Lives In Arid Shrubland::>>0]] | ?Lives In Arid Shrubland = | mainlabel=- | sep=+ }} }} }}{{#set:Grazing Score|{{Grazing Score}} }}
+
+=== Fauna ===
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Arid Shrubland::>>0]] [[Coastal Animal::false]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Arid Shrubland
+}}
+</div>{{#set:Fauna Commonality Sum | {{#expr: {{#ask: [[Type::Animal]] [[Lives In Arid Shrubland::>>0]] [[Coastal Animal::false]] | ?Lives In Arid Shrubland = | mainlabel=- | sep=+ }} }} }}
+
+Additionally, these animals can spawn in coastal maps:
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Arid Shrubland::>0]] [[Coastal Animal::true]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Arid Shrubland
+}}
+</div>
+
+If the map is [[polluted]],{{BiotechIcon}} then the game may choose to spawn in wild animals from this list instead:
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Arid Shrubland (Polluted)::>0]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Arid Shrubland (Polluted)
+}}
+</div>
+
+=== Diseases ===
+Arid Shrubland has a disease {{MTB}} of 65 days. The following diseases can occur in an arid shrubland:
+{| {{STDT|c_07 sortable}}
+! Disease
+! Commonality{{#set:Disease commonality sum|{{#expr:100+100+60+60+30+30+100+80+10}} }}
+|-
+| [[Flu]] || 100{{#set:Flu commonality|100}}
+|-
+| [[Plague]] || 100{{#set:Plague commonality|100}}
+|-
+| [[Gut worms]] || 60{{#set:Gut worms commonality|60}}
+|-
+| [[Muscle parasites]] || 60{{#set:Muscle parasites commonality|60}}
+|-
+| [[Fibrous mechanites]] || 30{{#set:Fibrous mechanites commonality|30}}
+|-
+| [[Sensory mechanites]] || 30{{#set:Sensory mechanites commonality|30}}
+|-
+| [[Flu#Animals|Animal flu]] || 100{{#set:Animal flu commonality|100}}
+|-
+| [[Plague#Animals|Animal plague]] || 80{{#set:Animal plague commonality|80}}
+|-
+| [[Organ decay]] || 10{{#set:Organ decay commonality|10}}
+|}
+
+=== Fish ===
+{{Odyssey|section=1|No category}}
+The table below contains the list of all of the fish that can be caught - as well as where they can be caught.
+{| {{STDT|c_23 sortable}}
+! Fish
+! Water body
+! Rarity
+|-
+| [[Tilapia]] || Freshwater || Common
+|-
+| [[Catfish]] || Freshwater || Uncommon
+|-
+| [[Bluefish]] || Saltwater || Common
+|-
+| [[Tuna]] || Saltwater || Uncommon
+|}
+
+== Analysis ==
+Arid shrublands are one of the easier biomes in the game for a few reasons, with a few significant challenges. Abundant in natural resources except water and plants.
+
+* '''Growing and Food: Easy''' - There is plenty of arable land, including patches of rich soil, growing is often year-round, and there is a moderate amount of animal life.
+
+* '''Disease: Moderate''' - While diseases are less frequent in the arid shrubland, wild [[healroot]] does not grow, so medicine will be harder to acquire before healroot can be grown. [[Infection]]s from injuries are unaffected by biome. Better doctors and not treating injuries with medicine can make the supply go further, but colonists will spend more time resting and sick. A lack of medicine won't kill immediately, but does kill unexpectedly. 
+
+* '''Temperature: Easy to Moderate''' - Average temperatures range from comfortable to [[desert]]-like, although even in a cooler arid shrubland, [[heat wave]]s can be an issue. Unlike actual desert tiles, there are enough trees that [[passive cooler]]s can be built in the early game or in a power outage. Electric [[cooler]]s and [[duster]]s can solve the issue long-term. See [[Events Guide#Heat Wave|Events Guide]] for more detail on how to deal with heat waves. It is rarely cold enough for [[cold snap]]s to appear.
+
+* '''Fires: Easy''' - Arid shrubland's lower flora density reduces severity of natural fires. Rain is less common. {{Check_Tag|Factcheck|does firewatcher depend on weather commonality?}}
+
+* '''Predators: Easy''' - There are fewer natural human-hunting predators than [[temperate forest]]. Cougars are dangerous to humans but can be fended off with the right weapons, armor, or skilled colonists. Arid shrubland wildlife is relatively infrequent, large, and hardy, so can be dangerous if it turns aggressive, but not singularly so compared to other biomes. 
+
+Overall, the arid shrubland is easy to moderate difficulty. It has stable if overly warm temperatures, year-round or very long growing seasons, and is easy to traverse. It has full raw resources productivity but reduced rich soil growing zones. There are few unique challenges to living in the arid shrubland. It's not an especially easy place to live, but not uniquely so.
+
+== Trivia ==
+Arid Shrublands were the only biome in the game until Alpha 6. 
+
+== Gallery ==
+<gallery>
+AridShrubland.png|An Arid Shrubland
+<!-- AridShrublandPolluted.png|A [[polluted]] Arid Shrubland {{BiotechIcon}} -->
+AridShrublandTexture.png|Arid shrubland's texture on the world map
+</gallery>
+
+== Version history ==
+* [[Version/0.6.532|0.6.532]] - Added along with the [[biome]] system. Previously, all maps used the same map generation as arid shrubland.
+
+{{nav|biomes|wide}}
+[[Category:Biomes]]
+[[Category:Hot Biomes]]

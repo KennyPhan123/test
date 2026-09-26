@@ -1,0 +1,166 @@
+{{Biotech}}
+{{For|a full list of available genes|Genes}}
+'''Genetics''' is a system introduced in the [[Biotech DLC]], which can add new capabilities to your pawns.
+
+== Genes ==
+{{Main|Genes}}
+Genes are the core feature of the genetics system. There are a wide variety of genes, each offering changes, minor or major, positive or negative. Each type of gene has 2 stats:
+* [[File:Metabolism.png|20px|Metabolism]] '''Metabolic Efficiency''' - determines how much food the carrier of the gene/s will need to eat. Otherwise negative genes will generally increase efficiency (lowering hunger), while otherwise positive genes decrease efficiency (thus, increasing hunger). There is a hard limit of {{--|5}} Metabolic Efficiency ({{Bad|x225%}} hunger) for pawns. It has no effect past {{+|5}} ({{Good|x50%}} hunger).
+* [[File:Complexity.png|20px|Complexity]] '''Complexity''' - determines how hard it is to create an implantable [[xenogerm]] of that gene. A xenogerm with more complex genes will require more [[gene processor]]s and will take longer at a [[gene assembler]] to create.
+
+Certain genes are [[File:GeneBackground ArchiteGene.png|20px]] '''Archite genes'''. These genes provide extremely powerful effects, and require [[archite capsule]]s to install into pawns. They cannot be extracted with a [[gene extractor]].
+
+=== Heritability ===
+There are 2 ''forms'' of genes that a pawn can exhibit. For any specific gene, a pawn will exhibit either the germline or xenogene version:
+* [[File:GeneBackground Endogene.png|32px]] '''Germline genes''' (also called '''Endogenes''' in the code) are genes heritable through birth. They cannot be modified in any way. However, if a germline gene and xenogene would conflict, the xenogene takes priority.
+* [[File:GeneBackground Xenogene.png|32px]] '''Xenogenes''' are genes modified during life, and cannot be inherited through birth. A [[xenogerm]] can be used to add xenogenes to any pawn. Specifically, a xenogerm will '''overwrite all xenogenes''' and replace them with its own. Xenogenes also count as artificial enhancements for [[body modder]]s and [[body purist]]s, as well as [[transhumanist]] and [[flesh purity]] ideoligions. {{IdeologyIcon}}
+There is no other functional difference between germline genes and xenogenes, and both can be extracted (unless they are Archite genes). Certain [[xenotype]]s that have naturally adapted to their environment, like [[impids]] and [[yttakin]], use germline genes. Other xenotypes that have been designed, like [[genies]] and [[highmates]], use xenogenes. 
+
+Genes can be stored in item form as [[genepack]]s. Genepacks themselves must be stored in a powered [[gene bank]], or they will slowly [[deteriorate]].
+
+== Overview ==
+=== How to edit genes ===
+There are 3 steps to gene modding within your colony:
+# Research [[Research#Xenogenetics|Xenogenetics]]. This project is available as soon as you research [[Electricity]].
+# Gather desirable [[genepack]]s, either from a [[gene extractor]] or through trade. Store them in [[gene bank]]s.
+# Use a [[gene assembler]] to create a [[xenogerm]]. This xenogerm can be implanted into your colonists to give them genes.
+
+Further research is required to create [[gene processor|more complex]] xenogerms and use the [[Genes#Archite|Archite]] genes.
+
+=== Xenotypes ===
+{{Main|Xenotypes}}
+The game's 10 default [[xenotype]]s (11 if [[Odyssey (DLC)]] is enabled) will appear throughout the game, and in various factions. Each xenotype comes with their own set of genes to take advantage of, without having to go through the whole gene modding process. In order to use the gene extractor, you'll need pawns of different types to extract from.
+
+You can also have your starting colonists be of a custom, player-defined xenotype. You can freely and fully customize your own xenotype. If you started the game with a player xenotype or if an [[ideoligion]] {{IdeologyIcon}} references a xenotype, they'll very rarely appear throughout the world.
+
+== Obtaining genepacks ==
+[[Genepack]]s can be obtained by using a gene extractor, through [[trade]], or as a [[quest]] reward. In any case, you'll need a [[gene bank]] to store gene packs, or they will deteriorate. Genepacks are not consumed; so long as they aren't destroyed, you can use their genes forever.
+
+* {{Icon Small|Gene extractor|32}} '''Gene extractor'''
+The [[gene extractor]] will extract a random genepack from a pawn, whether they are a colonist, [[prisoner]], or [[slave]] {{IdeologyIcon}}. Each extraction has a 70% chance of extracting 1 gene, 20% chance of extracting 2 genes, and 10% chance of extracting 3 or 4. {{Check Tag|Chance?}} In any case, all genes will be stored in a single pack; you cannot separate the genes inside. Which genes you get are entirely random, but 0 Complexity genes (cosmetic genes like [[Pig ears]]) are 33% as likely to be obtained. {{Check Tag|More details}}
+
+Extracting a genepack causes the ''Genes Regrowing'' condition for 12 - 20 days. If a pawn has their genes extracted when they have the condition, they will die. In addition, gene extraction causes ''Gene Shock'' for 2 days, with mild symptoms ({{++|5%}} [[pain]], {{--|5%}} [[Consciousness]], {{--|15%}} [[blood filtration]]).
+
+The extractor can extract both xenogenes and germline genes. However, it cannot extract any of the [[Genes#Archite|Archite]] genes.
+
+* {{Icon Small|Genepack|24}} '''Trade / Quests'''
+Genepacks can be sold by [[Traders#By inventory|exotic goods traders]] or [[faction base]]s, of the industrial tech level or higher. They can also be offered as a quest reward from these factions. {{Check Tag|Details|scaling with the wealth of the quest reward//list additional restrictions below here}} They can sometimes be found in [[hermetic crate]]s, (depending on the location type and wealth of the colony/caravan). They are the only way to get [[Genes#Archite|Archite]] genepacks. Archite genes will always come with at least 1 other gene; you cannot get an isolated archite gene normally.
+
+== Assembling a xenogerm ==
+Xenogerms can be created with the help of gene assemblers, and if needed, gene processors.
+
+* {{Icon Small|Gene assembler|32}} '''Gene assembly'''
+[[Gene assembler]]s create xenogerms, using any gene found in nearby [[gene bank]]s. Once you have selected a desired set of genes, press ''Start Combining''. Assembling a xenogerm does not consume the genepacks.
+
+By default, xenogerms cost no material to create. They only take colonist time. Pawns with higher [[Research Speed]] - namely those with high Intellectual skill - will create xenogerms faster. [[Genes#Archite|Archite]] genes will require [[archite capsule]]s per xenogerm.
+
+In order to create genes with a Complexity over 6, you will need a [[gene processor]]. Each processor costs {{Required Resources|gene processor}} and increases the complexity limit by +2. In order to build gene processors, you'll need the [[Research#Gene processor|Gene Processor]] research.
+
+* {{Icon Small|Xenogerm|24}} '''Installing a xenogerm'''
+Once a xenogerm has been created, all you need to do is install it. This can be done by selecting the xenogerm and using the Order Implantation gizmo. You can also order implantation by selecting it as an operation. Implanting a xenogerm costs {{Icon Small|herbal medicine}} 4 [[herbal medicine]] or better, and causes a xenogerm coma for 1-3 days. The exact time of the coma depends on the quality of the [[surgery]] (see [[Xenogerm#Breakdown of Xenogermination Time|Breakdown of Xenogermination Time]] for details).
+
+=== Gene suppression ===
+Several genes conflict with each other - that is, a pawn cannot have both genes active at the same time. When this occurs, one gene will override the others, suppressing them.
+
+Gene suppression is ''not'' directly based on metabolic efficiency; however, several genes of the same category will have the more metabolically efficient genes suppress the less metabolically efficient genes.
+
+Xenogerm genes will always suppress germline genes if there is a conflict. However, genes inside the same xenogerm will also suppress each other in a more complicated manner. Note that genes can suppress multiple genes, and suppressed genes can still suppress other genes as well.
+
+==== Gene suppression order ====
+What determines what gene suppresses the others are two hidden values - the gene's display category's display priority in xenotype, and the gene's display order in category. All the genes in the xenogerm are sorted in ascending order based on those values; they are sorted first based on the {{Hover title|This means that a higher priority comes first.|opposite sign}} value of the display category's display priority, then the gene's display order, and then the gene's label (name).
+
+Genes that conflict with other genes have a list of "exclusion tags." As genes can have multiple exclusion tags, a gene can conflict with and suppress multiple different types of genes at the same time.
+
+All the genes in the sorted list are compared to each other, and if their exclusion tags have at least one tag in common, the {{Hover title|Technically the order used to determine suppression is different than the order used earlier. Label is sorted before display order when determining suppression. This only matters if the two genes being compared have the same display priority and different names.|earlier}} gene suppresses the later one. 
+
+==== Gene order list ====
+{{Stub|reason = Needs to have all genes added. Maybe sort by exclusion tags?}}
+
+Below is a list in the same order as how the genes are sorted for gene suppression.
+
+<div class="toccolours mw-collapsible mw-collapsed" style="width:1000px">
+The gene order list is collapsed due to length. Expand to view.
+<div class="mw-collapsible-content">
+* psychically deaf
+* psychically dull
+* psy-sensitive
+* super psy-sensitive
+* slow runner
+* fast runner
+* very fast runner
+* very unhappy
+* unhappy
+* happy
+* very happy
+* cold weakness
+* cold tolerant
+* cold super-tolerant
+* heat weakness
+* heat tolerant
+* heat super-tolerant
+* tox resistance
+* tox immunity
+* mild UV sensitivity
+* intense UV sensitivity
+* dead calm
+* aggressive
+* hyper-aggressive
+* weak melee damage
+* strong melee damage
+* very sleepy
+* sleepy
+* low sleep
+* never sleep
+* delicate
+* robust
+* extra pain
+* reduced pain
+* low libido
+* high libido
+* very unattractive
+* unattractive
+* attractive
+* very attractive
+* slow study
+* quick study
+</div>
+</div>
+
+== Analysis ==
+=== Gene modding ===
+Gene modding in RimWorld is not too expensive:
+* {{Required Resources|Gene extractor}} for a [[gene extractor]].
+* {{Required Resources|Gene assembler}} for a [[gene assembler]].
+* {{Required Resources|Gene bank}} per [[gene bank]], which stores 4 [[genepack]]s per bank.
+* {{Icon Small|herbal medicine}} 4 [[herbal medicine]] per xenogerm implantation, and nothing to create one.
+
+You don't need to build the assembler until you actually have genes you want to implant. Therefore, the total cost to ''start'' the gene process is only {{Icon Small|steel||{{#expr: {{Q|gene bank|Resource 1 Amount}} + {{Q|gene extractor|Resource 1 Amount}} }}}} [[steel]] and {{Icon Small|component||{{#expr: {{Q|gene bank|Resource 2 Amount}} + {{Q|gene extractor|Resource 2 Amount}} }}}} [[component]]s, a very affordable cost.
+
+However, getting desirable genes is another story. Extractors take a long time, especially if you want a ''specific'' gene. A pawn can only be safely extracted from every 12-20 days, for entirely random genes; there's no protection against duplicates, for instance. If you want to experiment with gene modding, it's best to start early. Plan ahead, capturing many prisoners of a desired xenotypes, even if you don't want to recruit them. Give any gene-donors the [[peg leg#Analysis|leg treatment]] to make sure they don't rebel. You can also use gene-donors for their [[hemogen pack|blood]] and a [[lung]], if so desired (removing a [[kidney]] makes them vulnerable to disease). Traders and quests offer genepacks purely through the whims of RNG.
+
+[[Power]] costs are minimal. Each gene bank consumes {{Q|Gene bank|Power Consumption}} W of power. Both the extractor and assembler can be turned off when they aren't needed, and in any case, have a total power draw of only {{#expr: -{{Q|Gene assembler|Power Consumption}} - {{Q|Gene extractor|Power Consumption}} }} W.
+
+'''Benefits'''
+
+In return, genes can be ''well'' worth it. For example:
+* [[File:Neanderthal.png|20px|link=Neanderthals]] [[Neanderthals]] - [[File:Gene Tough.png|24px|link=Robust]] [[Robust]] is {{Good|x75%}} damage from all sources, stacking with the [[tough]] trait. This equates to {{Good|x133%}} more health in just about every combat situation. Enough to prevent a [[short bow]] from instantly killing your pawns through a headshot.
+* [[File:Genie.png|20px|link=Genies]] [[Genies]] - [[File:Gene GreatCrafting.png|24px|link=Great crafting]] [[Great crafting]] means {{+|8}} Crafting skill. You still learn and lose the skill at the normal rate, just that you have an additional +8 skill. {{Check Tag|Clarify|I don't think you lose the skill at a normal rate if your base level is 8 lower than the normal level.}} Level 20 Crafting is both easy to reach and ''keep'' - with a "natural" level 20 pawn, their skill XP will decay quickly. This applies to every Strong/Great <skill> gene out there.
+* [[File:Waster.png|20px|link=Wasters]] [[Wasters]] - [[File:ChemicalDependency Psychite.png|24px|link=Psychite dependency]] [[Psychite dependency]] means that your pawns can take [[flake]] or [[yayo]], instantly gaining {{+|35}} [[mood]] any time, without addiction or any possible overdoses. Metabolic efficiency ''increases'' by {{+|4}}, reducing hunger to {{Good|x60%}} or allowing you to install other genes. (You can still get kidney damage if tolerance is too high).
+
+: All "dependency" means is that you need 12 flake/psychite tea ''per year''. Even with the reduced plant yield from [[difficulty|Losing is Fun]], only '''10''' [[psychoid plant]]s are enough to sustain a dependent pawn for an entire year.
+* [[File:Sanguophage.png|20px|link=Sanguophages]] [[Sanguophages]] - While you can't just extract their Archite genes, sanguophages come with a large variety of good and bad genes. From [[Low sleep]] to [[Fast runner]] to Robust to any of the [[Hemogenic]] genes, you can get a lot. Capture all the sanguophages in the sanguophage gathering [[quest]], and get a chance at a large variety of genes - and 2 [[lung]]s, 2 [[kidney]]s, a [[heart]], and a [[liver]] per prisoner. Note that sanguophages often have the ''Genes Regrowing'' hediff from the start, unless you select "Xenogerm implantation" as a reward.
+
+Of course, these are not the only great genes out there. Virtually every xenotype has at least 1 gene worth extracting. 
+
+Extracted genes are independent from any of the pre-existing xenotypes. Instead of being stuck with a neanderthal's [[Slow study]] and [[Slow runner]], you can choose your own downsides for your Robust xenogerm (so long as you actually have the genepacks to do so).
+
+Even if you started with your own xenotype, any recruited colonist will most likely not be that xenotype. It takes an extremely long time to ''replicate'' a player's xenotype exactly, but you can give new pawns a bunch of great genes in the process.
+
+== Version history == 
+* [[Biotech DLC]] Release - Added.
+* [[Version/1.4.3527|1.4.3527]] - Fix: Genetic metabolism doesn't actually affect hunger rate.
+* [[Version/1.4.3529|1.4.3529]] - Fix: Some randomly chosen genes not overridden properly.
+* [[Version/1.4.3555|1.4.3555]] - Xenogenes count as artificial enhancements for body modders/prosthophobes.{{Sic}}
+* [[Version/1.4.3557|1.4.3557]] - Fix: Inactive genes affecting needs.
+
+[[Category:Game mechanics]]

@@ -1,0 +1,160 @@
+{{Infobox biome
+| name = Desert
+| image = Desert.png
+| type = Biome
+| texture = DesertTexture.png
+| canbuildbase = Yes
+| allowFarmingCamps = false
+| animal density = 0.4
+| plant density = 0.05
+| movement difficulty = 1
+| max rainfall = 600
+| min temperature = 0
+| forageability = 0.25
+| wild plant regrow days = 35
+| disease mtb days = 90
+| description = A very dry area which supports little life. There is very little arable land, and animal life is very sparse. Deserts can be hot, or quite cold.
+<!-- weather -->
+| clear = 18
+| rain = 2
+| dry thunderstorm = 1
+| rainy thunderstorm = 1
+| hard snow = 4
+| soft snow = 4
+| gray pall = 1
+| sandstorm = 1
+<!-- fish -->
+| max fish population = 360
+| freshwater_common_guppy = Yes
+| freshwater_uncommon_tilapia = Yes
+| saltwater_common_bluefish = Yes
+| saltwater_uncommon_tuna = Yes
+}}
+'''Desert''' is a hot and dry [[biome]] in RimWorld.
+<!-- return tile.temperature + 0.0001 -->
+== Summary ==
+With so few animals to hunt, growing crops is a priority on one of the few arable patches. The hot temperatures can cause problems for colonists and tamed animals.  This biome has patches of soft sand which prevent building, but can be removed with [[moisture pump]]s.
+
+If [[Odyssey]] is installed, [[weather|sandstorm]]s{{OdysseyIcon}} will occur in deserts, bothering colonists and creating sand on the ground which slows movement like snow.
+
+In the lists below the number in brackets represents the relative commonality.
+
+=== Flora ===
+<div class="ul-column-width-200">
+{{#ask: [[Type::Plant]] [[Lives In Desert::>>0]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Desert
+}}
+</div>{{#set:Flora Commonality Sum | {{#expr: {{#ask: [[Type::Plant]] [[Lives In Desert::>>0]] | ?Lives In Desert = | mainlabel=- | sep=+ }} }} }}{{#set:Grazing Score|{{Grazing Score}} }}
+
+=== Fauna ===
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Desert::>>0]] [[Coastal Animal::false]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Desert
+}}
+</div>{{#set:Fauna Commonality Sum | {{#expr: {{#ask: [[Type::Animal]] [[Lives In Desert::>>0]] [[Coastal Animal::false]] | ?Lives In Desert = | mainlabel=- | sep=+ }} }} }}
+
+Additionally, these animals can spawn in coastal maps:
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Desert::>0]] [[Coastal Animal::true]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Desert
+}}
+</div>
+
+If the map is [[polluted]],{{BiotechIcon}} then the game may choose to spawn in wild animals from this list instead:
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Desert (Polluted)::>0]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Desert (Polluted)
+}}
+</div>
+
+=== Diseases ===
+Desert has a disease {{MTB}} of 90 days. The following diseases can occur in a Desert:
+{| {{STDT|c_07 sortable}}
+! Disease
+! Commonality{{#set:Disease commonality sum|{{#expr:100+80+60+60+30+30+100+80+10}} }}
+|-
+| [[Flu]] || 100{{#set:Flu commonality|100}}
+|-
+| [[Plague]] || 80{{#set:Plague commonality|80}}
+|-
+| [[Gut worms]] || 60{{#set:Gut worms commonality|60}}
+|-
+| [[Muscle parasites]] || 60{{#set:Muscle parasites commonality|60}}
+|-
+| [[Fibrous mechanites]] || 30{{#set:Fibrous mechanites commonality|30}}
+|-
+| [[Sensory mechanites]] || 30{{#set:Sensory mechanites commonality|30}}
+|-
+| [[Flu#Animals|Animal flu]] || 100{{#set:Animal flu commonality|100}}
+|-
+| [[Plague#Animals|Animal plague]] || 80{{#set:Animal plague commonality|80}}
+|-
+| [[Organ decay]] || 10{{#set:Organ decay commonality|10}}
+|}
+
+=== Fish ===
+{{Odyssey|section=1|No category}}
+The table below contains the list of all of the fish that can be caught - as well as where they can be caught.
+{| {{STDT|c_23 sortable}}
+! Fish
+! Water body
+! Rarity
+|-
+| [[Guppy]] || Freshwater || Common
+|-
+| [[Tilapia]] || Freshwater || Uncommon
+|-
+| [[Bluefish]] || Saltwater || Common
+|-
+| [[Tuna]] || Saltwater || Uncommon
+|}
+
+== Analysis ==
+Deserts can be difficult to start out in due to having low soil and plant life, as well as temperature extremes depending on the exact tile.
+
+* '''Food and Growing: Moderate to Difficult''' Deserts have relatively limited soil and no rich soil, but still have a few large patches of regular soil to grow on. In warm/hot deserts, once the first batch of crops finishes, food should not be a major issue for a mid-size colony. Cold deserts have growing seasons around the same length as [[boreal forest]]s while not having nearly the same amount of soil or animal life.
+
+* '''Disease: Easy to Moderate''' - Disease events are uncommon, although no [[wild healroot]] grows there, meaning medicine supplies can run low if there is no grower that can plant healroot.
+
+* '''Temperature: Moderate to Difficult (normal world settings), or Extreme (hot world temperature)''' - As the biome's description states, temperatures can range from hot to cold. Some desert tiles have temperate biomes with year-round growing while not being too hot save for [[heat wave]]s. Hot deserts can cause heatstroke during the summer and are especially dangerous if a heat wave occurs. Cold deserts reach dangerously low temperatures naturally during the winter. In either case, the lack of [[wood]] means that [[passive cooler]]s and [[campfire]]s are harder to build in an emergency without electricity.
+** If the world temperature is increased, deserts can get even hotter. Note that cooling the world temperature won't result in the same effect, as deserts can be replaced by [[tundra]] tiles if cold enough.
+
+* '''Fires: Easy''' - There is minimal plant life, so [[flashstorm]]s are not a concern unless lightning hits your colony directly, and wildfires essentially don't exist. Rain is rare, so if a manhunting [[boomalope]] or a raider lights your flammable base on fire, it is unlikely that rain will naturally happen.
+
+* '''Predators: Easy''' - Predators are small and sparsely populated.
+
+Overall, deserts are moderate-to-hard difficulty. In hot deserts, while food should not be a concern outside of [[scenario system#Default Scenarios|Naked Brutality]], the lack of [[wood]] or animals for [[leather]] can make temperature dangerous in the early game. Cold deserts are harder as crops can only be grown for a limited time. Once indoor farming and [[hydroponics basin]]s are established, the overall difficulty will be easier than temperate biomes due to the lack of diseases and a normal amount of minable resources.
+
+== Gallery ==
+<gallery>
+Desert.png|A Desert
+<!-- DesertPolluted.png|A [[polluted]] Desert {{BiotechIcon}} -->
+DesertTexture.png|Desert's texture on the world map
+</gallery>
+
+== Version history ==
+* [[Version/0.6.532|0.6.532]] - Added
+
+{{nav|biomes|wide}}
+[[Category:Biomes]]
+[[Category:Hot Biomes]]

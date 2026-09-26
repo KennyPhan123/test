@@ -1,0 +1,33 @@
+{{Version Nav}}
+
+This update contains balance changes and bugfixes.
+
+If you're willing to help test, please join the testing Discord server: https://discord.gg/ryKTFr
+Thanks!
+
+== Changes ==
+* Mech turret balance: Charge blaster turret cooldown 3.5->4.5 seconds. Inferno cannon turret cooldown 8.5->11.5 seconds Inferno cannon miss radius 3.5->3.9.
+* Update player-created content: 172 names added.
+* Languages updated.
+* Ground-penetrating scanner rebalance. Random find time 4 work days->3 work days. Guaranteed find time 8 work days -> 6 work days.
+* Ground-penetrating scanner now displays feedback about the current user's scanning speed, the random scan interval for this user, and the progress to a guaranteed find.
+* Fixed a bug that could cause deep ores to generate outside the buildable area.
+* Hunting decrees are now cancelled if there are not enough animals of the asked type left on the map.
+* Monument markers, when canceled, can now be reinstalled again instead of disappearing.
+* Mech clusters are now a lot less likely to fail finding position on difficult maps.
+* Only inherited titles are now being removed from pawns after resurrection. So a resurrected pawn will keep his title if it wasn't inherited by someone else upon his death.
+* Pawns with psychic harmonizers are now unaffected by others' harmonizers, to prevent runaway feedback loops.
+* You can no longer lend colonists who are unfit for work.
+* Removed errors from non-unique quest names
+* Production decrees now only use more common stuff like wood, steel, and cloth, to reduce cases of near-impossible decrees.
+* Add related quest gizmo to quest hives.
+* Add "select hives" button to infestation kill quest so you can see which hives you need to kill.
+* Fixed a bug that would cause insect kill quests to end only on killing every hive on the map (instead of every quest-spawned hive).
+* Fixed a bug that would cause downed quest guards to never leave if they were injured during the quest and later healed.
+* Fixed a bug that caused toxic spewers to affect caravans no matter where they are.
+* Fixed a bug that made throne comfort not apply while reigning.
+* Fixed a bug that could cause banished pawns to get stuck if they're on their way to a bed.
+* Fixed pawn lend quest returning pawns to a random colony map instead of the map they were picked up from.
+* If a nickname is empty in the character creation screen, the pawn's first name is used in the tooltips instead of an empty string.
+* Fixed a bug that cause debug log spam after adding entropy link via dev tools and opening health tab.
+* Optimized monument marker ticking to prevent performance loss with large monuments (checking for completion).

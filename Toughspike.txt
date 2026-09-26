@@ -1,0 +1,159 @@
+{{Anomaly}}
+{{Stub|reason=Lacking detail}}
+{{infobox main|entity
+| name = Toughspike
+| image = Toughspike.png
+| description = A fleshy man-sized creature with two spiked limbs and an armored carapace. Toughspikes throw hardened keratin spikes to take down victims from a distance.<br/>Toughspike corpses will dissolve into puddles of liquefied flesh if they're not butchered quickly.
+<!-- Base Stats -->
+| type = Entity
+| type2 = Basic
+| flammability = 1.25
+<!-- Containment -->
+| minimum containment strength = 50
+| anomaly knowledge = 2
+| knowledge category = Basic
+| study interval = 120000
+| bioferrite density = 2
+| gets cold containment bonus = true
+| min monolith level for study = 1
+| requires holding platform = true
+| base escape interval MTB days = 60
+<!-- Armor -->
+| armorsharp = 20
+| armorblunt = 16
+<!-- Pawn Stats -->
+| combatPower = 70
+| movespeed = 4.3
+| healthscale = 1
+| bodysize = 1
+| diet = none
+| lifespan = 15
+| trainable = None
+| toxic resistance = 0.5
+| body = Toughspike
+| can become shambler = true
+| min comfortable temperature = -40
+| max comfortable temperature = 60
+<!-- Production -->
+| meatname = Twisted meat
+| meatyield = 70
+<!-- Combat -->
+| damage = 9
+| damage type = RangedStab
+| armorPenetration = 100
+| range = 5.9
+| mode = Single-Shot
+| warmup = 30
+| cooldown = 120
+| burst = 1
+| velocity = 55
+| DPS = DPS
+| attack1label = left spike
+| attack1labelNoLocation = spike
+| attack1type = Stab
+| attack1dmg = 7
+| attack1cool = 2
+| attack1part = LeftSpike
+| attack1selectionWeight= 14.7
+| attack2label = right spike
+| attack2labelNoLocation = spike
+| attack2type = Stab
+| attack2dmg = 7
+| attack2cool = 2
+| attack2part = RightSpike
+| attack2selectionWeight= 14.7
+| attack3label = head
+| attack3type = Blunt
+| attack3dmg = 3
+| attack3cool = 2
+| attack3part = HeadAttackTool
+| attack3ensureLinkedBodyPartsGroupAlwaysUsable = true
+| attack3chancefactor = 0.2
+| attack3selectionWeight= 0.54
+<!-- Technical -->
+| defName = Toughspike
+| label = toughspike
+<!-- Other -->
+| renderTree = Toughspike
+| lifeStageAges: def = FullyFormed_Toughspike
+<!--
+| ThingDef Name="BaseFleshbeast" ParentName="BasePawn" Abstract="True" = 
+| thingClass = Pawn
+| category = Pawn
+| selectable = true
+| containedPawnsSelectable = true
+| containedItemsSelectable = true
+| tickerType = Normal
+| altitudeLayer = Pawn
+| useHitPoints = false
+| hasTooltip = true
+| soundImpactDefault = BulletImpact_Flesh
+| drawHighlight = true
+| tradeability = None
+| hiddenWhileUndiscovered = true
+| renderTree = Misc
+| thinkTreeMain = Fleshbeast
+| thinkTreeConstant = FleshbeastConstant
+| intelligence = ToolUser
+| specificMeatDef = Meat_Twisted
+| overrideShouldHaveAbilityTracker = true
+| disableIgniteVerb = true
+| canOpenFactionlessDoors = false
+| needsRest = false
+| hasGenders = false
+| bloodDef = Filth_Blood
+| bloodSmearDef = Filth_BloodSmear
+| soundMeleeDodge = Pawn_MeleeDodge
+| fleshType = Fleshbeast
+| isImmuneToInfections = true
+| bleedRateFactor = 0.5
+| hediffGiverSets = Fleshbeast
+| corpseHiddenWhileUndiscovered = true
+| inspectorTabs = ITab_Pawn_Health, MayRequire="Ludeon.RimWorld.Anomaly" = ITab_Entity, ITab_Pawn_Log
+| compClass = CompAttachBase
+| Class="CompProperties_InspectString" = 
+| compClass = CompInspectStringEmergence
+| inspectString = Emerged from {SOURCEPAWN_labelShort}.
+| drawGUIOverlay = true
+-->
+}}
+'''Toughspikes''' are [[entities]], and type of [[fleshbeast]], added by the [[Anomaly DLC]]. 
+
+== Occurrence ==
+{{Stub|section=1|reason=Does it split from anything and even if it doesn't, not it as an exception}}
+Toughspikes can occur in most instances that [[fleshbeast]]s generally do, including [[Fleshbeast attack]]s, in the [[Undercave]], erupting from a [[Bulbfreak]] or [[Dreadmeld]], as the result of [[Draw fleshbeasts]], present at Distress call quest sites, and as a result of the [[twisted obelisk]]'s random mutations of wildlife.{{Check Tag|Which?|What pawns turn into toughspikes?}}<!---A wild boar -> Toughspike. Is it body size related?-->
+
+== Summary ==
+{{Stub|section=1|reason= General - but also specifically damage and ranged attack}}
+The most robust fleshbeast. Their ranged attack is strongest so it's best to engage in melee if you can't outrange them. They don't split into smaller fleshbeasts and they are the only fleshbeast that will leave a corpse when killed.
+
+== Analysis ==
+The closest thing that fleshbeasts have to a tanky unit, toughspikes are relatively robust in physiology compared to any other fleshbeast that isn't a [[dreadmeld]], about on par with a human.
+
+Their damage output isn't very high, so most melee-focused pawns can fight a toughspike one-on-one. However, as is the case when engaging in melee with any fleshbeast, colonists that suffer any injury from it will become vectors for a new [[metalhorror]] infection to start.
+
+Among entities, Toughspikes are unique for the ease with which they can be permanently immobilized for risk-free [[bioferrite]] collection. See the [[Bioferrite#Immobilizing entities|Bioferrite]] page for further details.
+
+== Health == 
+=== Body parts ===
+{{Animal Health Table|Toughspike}}
+
+=== Armor ===
+{| class="wikitable"
+! Armor
+|-
+| {{Apparel Protection Chart
+| set1name= {{P|Name}} (Sharp) | set1armor1={{P|Armor - Sharp}} 
+| set2name= {{P|Name}} (Blunt) | set2armor1={{P|Armor - Blunt}} 
+| set3name= {{P|Name}} (Heat) | set3armor1={{P|Armor - Heat}} 
+| color= grey, blue, red
+}} 
+|}
+{{Pawn Attack Table}}
+
+== Version history == 
+* [[Anomaly DLC]] Release - Added.
+
+{{Nav|entity|wide}}
+[[Category: Entities]]
+[[Category: Fleshbeasts]]

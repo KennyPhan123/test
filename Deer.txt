@@ -1,0 +1,131 @@
+{{infobox main|animal|
+| page verified for version = 1.3.3101
+| name = Deer
+| image = Deer.png
+| description = A medium-sized herding herbivore which prefers to live in mixed forests and plains. Deer are very quick.
+| type = Animal
+| movespeed = 5.5
+| min comfortable temperature = -30
+| max comfortable temperature = 40
+| toxic resistance = 0.5
+| toxic environment resistance = 0
+| flammability = 0.7
+| marketvalue = 250
+| filth rate = 16
+| herdanimal = true
+| combatPower = 50
+| bodysize = 1.2
+| healthscale = 0.9
+| hungerrate = 0.2
+| diet = herbivorous
+| leathername = plainleather
+| wildness = 0.75
+| manhuntertame = 0
+| manhunter = 0
+| roamMtb = 2
+| trainable = none
+| mateMtb = 12
+| meatname = venison
+| gestation = 5.661
+| offspring = 1
+| lifespan = 15
+| juvenileage = 0.1
+| maturityage = 0.3333
+| male name = buck
+| female name = doe
+| tradeTags = AnimalCommon
+| attack1dmg = 7
+| attack1type = Blunt
+| attack1cool = 2
+| attack1part = front left leg
+| attack2dmg = 7
+| attack2type = Poke
+| attack2cool = 2
+| attack2part = front left leg
+| attack3dmg = 7
+| attack3type = Blunt
+| attack3cool = 2
+| attack3part = front right leg
+| attack4dmg = 7
+| attack4type = Poke
+| attack4cool = 2
+| attack4part = front right leg
+| attack5dmg = 8
+| attack5type = Bite
+| attack5cool = 2
+| attack5part = teeth
+| attack5chancefactor = 0.5
+| attack6dmg = 5
+| attack6type = Blunt
+| attack6cool = 2
+| attack6part = head
+| attack6chancefactor = 0.2
+| isCoastal = false
+| livesin_temperateforest = 0.5
+| livesin_temperateswamp = 0.5
+| livesin_borealforest = 0.5
+| livesin_coldbog = 0.5
+| livesin_glacialplain = 0.25
+| livesin_grassland = 0.5
+}}
+{{Info|'''Deer'''  are herding herbivorous [[animals]] that are found in {{Habitats}}.  Males of the species are called '''Bucks''' and can be distinguished by the presense of antlers and larger visual size, while females are called '''Does''' and are visually smaller and lack antlers. Young deer of both genders are light colored and spotted. Despite the visual differences, adult deer of both genders have the same stats and attacks.}}
+
+== Acquisition ==
+Deer can be found in {{Habitats}}. They can either be tamed by a [[Work #Handle|handler]] or self-tame in a random event. 
+
+== Summary ==
+{{Pen Animal Note|Deer}}
+
+== Analysis ==
+Other than being an animal to be hunted, deer don't have much of a purpose.
+
+[[Ibex]] are more efficient ranch animals, are easier to tame, and they can be found in all biomes that deer populate. Deer ''are'' better to hunt than ibex, as deer are larger targets (which won't revenge when hunted).
+
+===Nutrition===
+When slaughtered, a deer yields {{#vardefineecho:baby_meat|{{Meat Leather Curve|{{#expr:{{P|Body Size}}*0.2*140}}}}}} meat and {{Meat Leather Curve|{{#expr:{{P|Body Size}}*0.2*40}}}} leather as a baby; {{Meat Leather Curve|{{#expr:{{P|Body Size}}*0.5*140}}}} meat and {{Meat Leather Curve|{{#expr:{{P|Body Size}}*0.5*40}}}} as a juvenile; or {{Meat Leather Curve|{{#expr:{{P|Body Size}}*140}}}} meat and {{Meat Leather Curve|{{#expr:{{P|Body Size}}*40}}}} leather as an adult. 1 meat is equal to 0.05 nutrition.
+
+An adult deer consumes {{P|Real Hunger Rate}} nutrition per day, and a doe creates up to {{#expr: 1/{{P|Gestation Period Days}} round 2}} offspring per day.
+* When offspring are slaughtered as babies, a doe will produce {{#expr:{{Meat Production|{{PAGENAME}}|baby}} round 2}} nutrition of meat per day, giving an optimal nutrition efficiency of {{%|{{Meat Production|{{PAGENAME}}|baby}}/{{P|Real Hunger Rate}} round 3}}.
+* If the offspring are allowed to grow to adulthood, they will consume an additional {{#expr:{{Nutrition Consumption|{{PAGENAME}}|adult}} - {{P|Real Hunger Rate}} round 2}} nutrition per day, but will instead yield {{#expr:{{Meat Production|{{PAGENAME}}|adult}} round 2}} nutrition per day as they are slaughtered, resulting in an optimal nutrition efficiency of {{%|{{Meat Production|{{PAGENAME}}|adult}}/{{Nutrition Consumption|{{PAGENAME}}|adult}} round 3}}.
+When considering a population of equal numbers of males and females, these nutrition efficiencies fall to {{%|{{Meat Production|{{PAGENAME}}|baby|1|1}}/{{Nutrition Consumption|{{PAGENAME}}|baby|1|1}} round 3}} for baby slaughter and {{%|{{Meat Production|{{PAGENAME}}|adult|1|1}}/{{Nutrition Consumption|{{PAGENAME}}|adult|1|1}} round 3}} for adult slaughter.
+
+As mentioned above, [[ibex]] are superior for nutrition.
+
+==Training==
+{{TrainingTable}}
+
+== Health ==
+{{Animal Health Table|QuadrupedAnimalWithHooves}}
+{{Pawn Attack Table}}
+
+== Gallery ==
+<gallery>
+DeerMale.png|Buck in color
+Deermale east.png|Buck facing east
+Deermale north.png|Buck facing north
+Deermale south.png|Buck facing south
+Dessicated deermale east.png|Dessicated buck facing east
+Dessicated DeerMale north.png|Dessicated buck facing north
+Dessicated DeerMale south.png|Dessicated buck facing south
+</gallery>
+<gallery>
+Deer.png|Doe in color
+Deerfemale east.png|Doe facing east
+Deerfemale north.png|Doe facing north
+Deerfemale south.png|Doe facing south
+Dessicated deerfemale east.png|Dessicated doe facing east
+Dessicated DeerFemale north.png|Dessicated doe facing north
+Dessicated DeerFemale south.png|Dessicated doe facing south
+</gallery>
+<gallery>
+Deerbaby east.png|Baby in color
+Deerbaby east.png|Baby facing east
+Deerbaby north.png|Baby facing north
+Deerbaby south.png|Baby facing south
+Dessicated deerbaby east.png|Dessicated baby facing east
+Dessicated DeerBaby north.png|Dessicated baby facing north
+Dessicated DeerBaby south.png|Dessicated baby facing south
+</gallery>
+{{nav|animal}}
+[[Category:Animals]]
+[[Category:Wild animal]]

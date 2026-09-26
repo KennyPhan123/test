@@ -1,0 +1,235 @@
+{{DISPLAYTITLE:Basic Melee Weapon}}
+{{BackToTutorials}}
+
+This is a basic RimWorld mod tutorial for the purpose of creating a simple melee weapon.
+
+== Goals ==
+* Create a new '''machete''' item, a simple melee weapon
+* Give it a '''custom texture''' with a '''color mask'''
+* Give it a simple '''stat bonus'''
+
+[[File:ExampleMeleeWeapon.png|none|border]]
+
+== Recommended Reading ==
+* [[Modding_Tutorials/Mod_folder_structure|Mod Folder Structure]]
+* [[Modding_Tutorials/XML_Defs|Defs]]
+* [[Modding_Tutorials/ThingDef|ThingDef]]
+
+== Sample Repository ==
+A working implementation of this mod can be found [https://github.com/Aelanna/ExampleMeleeWeapon in this GitHub repository]. You can use it to compare against your work or as a basis for modification!
+
+== Folder Setup ==
+
+First, you will want to create the files and folders necessary for this mod:
+
+<source>
+Mods
+└ MyModFolder
+  ├ About
+  │ ├ About.xml
+  │ └ Preview.png
+  ├ Defs
+  │ └ ThingDefs
+  │   └ ExampleWeapons_Melee.xml
+  └ Textures
+    └ ExampleMod
+      ├ ExampleWeapon_Machete.png
+      └ ExampleWeapon_Machete_m.png
+</source>
+
+Please check out the [[Modding_Tutorials/Mod_folder_structure|mod folder structure guide]] for more information about individual folders.
+
+=== About.xml ===
+
+Your <code>About.xml</code> is used to identify your mod to RimWorld; please see [[Modding_Tutorials/About.xml|the About.xml reference page]] for more information. Be sure to replace "AuthorName" with your own name:
+
+<source lang="xml">
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+
+  <!-- This is the internal identifier for your mod. -->
+  <!-- It is recommended that you make it unique to as to avoid potential collisions with other authors; -->
+  <!--     if Rimworld detects multiple mods with the same packageId then it will refuse to load all of them. -->
+  <packageId>AuthorName.ExampleMeleeWeapon</packageId>
+
+  <!-- This is both the displayed name of your mod as well as the name used for patch targeting. -->
+  <name>Example Melee Weapon</name>
+
+  <!-- Your name goes here. -->
+  <author>AuthorName</author>
+
+  <!-- These are the RimWorld game versions that your mod supports. -->
+  <!-- It is recommended that you only list versions that you have explicitly tested to ensure they work, -->
+  <!-- as even basic XML options can change between major versions of the game. -->
+  <supportedVersions>
+    <li>1.6</li>
+  </supportedVersions>
+	
+  <!-- This is the description of your mod shown in both the vanilla mod manager as well as modded managers. -->
+  <description>This is an example melee weapon mod made for the RimWorld Wiki.</description>
+	
+</ModMetaData>
+</source>
+
+=== Sample Assets ===
+
+You can use these as the example textures:
+
+<div class="TwoColumnCollapsibleLayout">
+<div class="TwoColumnCollapsibleLayout-section">
+<div class="TwoColumnCollapsibleLayout-subtitle">Weapon Texture</div>
+<div class="TwoColumnCollapsibleLayout-text">
+[[File:ExampleWeapon Machete.png|none]]
+</div>
+</div>
+<div class="TwoColumnCollapsibleLayout-section">
+<div class="TwoColumnCollapsibleLayout-subtitle">Texture Mask</div>
+<div class="TwoColumnCollapsibleLayout-text">
+[[File:ExampleWeapon Machete_m.png|none]]
+</div>
+</div>
+</div>
+
+== Instructions ==
+
+=== 1. Create a ThingDef ===
+
+Our first step is to create the XML that represents our new weapon. Whenever possible, this is best accomplished by first copying a vanilla [[Modding_Tutorials/ThingDef|ThingDef]] and modifying it; in this case we will use the vanilla [[gladius]] as our starting point, as it is the most similar existing weapon to what we want to create. The XML for the gladius can be found in <code>Data/Core/Defs/ThingDefs_Misc/Weapons/MeleeMedieval.xml</code>.
+
+In our own <code>ExampleWeapons_Melee.xml</code>, we'll have the following content:
+
+<source lang="xml">
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Example weapon: machete -->
+  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+    <!-- pasted content omitted -->
+  </ThingDef>
+
+</Defs>
+</source>
+
+=== 2. Modify the copied ThingDef ===
+
+In order to differentiate our weapon from the vanilla gladius, we'll make the following changes:
+
+<div class="TutorialTableWrapper">
+{| class="TutorialCodeTable"
+! XML !! Description
+|-
+| <source lang="xml">
+<defName>ExampleMeleeWeapon_Machete</defName>
+</source>
+| class="TutorialCodeTable-description" |
+The <code>defName</code> of a ThingDef is its identity and must be globally unique across all mods and official content. It is strongly recommended that it is prefixed with a project or mod name, so in this case we will use "ExampleMeleeWeapon_" as our prefix.
+|-
+| <source lang="xml">
+<label>machete</label>
+</source>
+| class="TutorialCodeTable-description" |
+A ThingDef's label is its in-game name. Unless it is a proper name, it should be in lowercase so that it can be injected naturally into sentences that use it. RimWorld will automatically capitalize it as necessary if used in titles or as the start of a sentence.
+|-
+| <source lang="xml">
+<description>A broad blade meant for cutting vegetation in overgrown environments, machetes can be used as a broad-bladed combat knife in a pinch.</description>
+</source>
+| class="TutorialCodeTable-description" |
+A ThingDef's description is used when inspecting the item's details.
+|-
+| <source lang="xml">
+<graphicData>
+  <texPath>ExampleMod/ExampleWeapon_Machete</texPath>
+  <graphicClass>Graphic_Single</graphicClass>
+  <shaderType>CutoutComplex</shaderType>
+</graphicData>
+</source>
+| class="TutorialCodeTable-description" |
+This is where define the texture of our weapon, as well as some basic rendering settings. Similar to how defNames must be unique across all mods, the <code>texPath</code> of our texture must be unique across all mods if we want to avoid an asset collision. We will use the folder <code>ExampleMod</code> as our "namespace".
+
+For melee weapons such as our machete, the texture defined in our <code><graphicData></code> will be used for both items on the ground as well as the equipped weapon texture. Since we want our weapon to only be colored by its materials on the blade and not have its grip color changed, we will be using a second image as a Texture Mask. This will require us to use <code>CutoutComplex</code> as our <code><shaderType></code>, so we will specify that here as well.
+|-
+| <source lang="xml">
+<costStuffCount>40</costStuffCount>
+</source>
+| class="TutorialCodeTable-description" |
+Since our machete is a more primitive tool than the gladius with a simple single-edged blade, we will have it cost 40 "stuff" instead of 50 like the gladius.
+
+"Stuff" in RimWorld refers to the material it is made out of; just like the gladius, ours will be able to be made out of both Woody and Metallic stuff.
+|-
+| <source lang="xml">
+<statBases>
+  <WorkToMake>10000</WorkToMake>
+  <Mass>0.75</Mass>
+</statBases>
+</source>
+| class="TutorialCodeTable-description" |
+Similarly, our machete is easier to make at only 10,000 work units instead of 12,000 and is lighter at 0.75kg instead of 0.85kg.
+|-
+| <source lang="xml">
+<equippedStatOffsets>
+  <PlantWorkSpeed>0.10</PlantWorkSpeed>
+</equippedStatOffsets>
+</source>
+| class="TutorialCodeTable-description" |
+Historically, while machetes have been used as weapons, they are first and foremost a tool used for cutting plants and clearing overgrown vegetation. As such, we want our machete to increase the plant cutting speed of the pawn that wields it by 10%.
+|-
+| <source lang="xml">
+<relicChance>1</relicChance>
+</source>
+| class="TutorialCodeTable-description" |
+Unlike the gladius or longsword, machetes are generally not intended to be used as weapons and thus should not be used as often for an ideoligion's relics.
+|-
+| <source lang="xml">
+<tools>
+  <li>
+    <label>handle</label>
+    <capacities>
+      <li>Blunt</li>
+    </capacities>
+    <power>9</power>
+    <cooldownTime>2</cooldownTime>
+  </li>
+  <li>
+    <label>point</label>
+    <capacities>
+      <li>Stab</li>
+    </capacities>
+    <power>14</power>
+    <cooldownTime>2</cooldownTime>
+  </li>
+  <li>
+    <label>edge</label>
+    <capacities>
+      <li>Cut</li>
+    </capacities>
+    <power>14</power>
+    <cooldownTime>2</cooldownTime>
+  </li>
+</tools>
+</source>
+| class="TutorialCodeTable-description" |
+A weapon's <code><tools></code> determines the types of [[Combat|melee attacks]] that can be made with it. Our machete should not be as effective as a gladius in combat, so we will reduce the power of its <code>point</code> and <code>edge</code> attacks from 16 to 14. The <code>handle</code> tool's power remains the same, as it is a secondary attack.
+|-
+| <source lang="xml">
+<recipeMaker>
+  <researchPrerequisite>Smithing</researchPrerequisite>
+  <skillRequirements>
+    <Crafting>2</Crafting>
+  </skillRequirements>
+  <displayPriority>409</displayPriority>
+</recipeMaker>
+</source>
+| class="TutorialCodeTable-description" |
+Our machete is easier to craft than a gladius, and will only require a Crafting skill of 2 to make. We also want our machete to appear above the gladius in recipe lists, so we will change its <code><displayPriority></code> from 410 to 409.
+|-
+|}
+</div>
+
+=== 3. Done! ===
+
+Your first melee weapon is complete! Boot up RimWorld and you should be able to see and enable the "Example Melee Weapon" mod in your mod manager. You can then use [[Development mode|dev mode tools]] to spawn the weapon directly, or craft it at an [[Electric_smithy|electric]] or [[Fueled_smithy|fueled smithy]].
+
+If you get any errors, be sure to check out the [[Modding_Tutorials/Troubleshooting|troubleshooting guide]] or join us on the '''#mod-development''' channel on the [https://discord.gg/rimworld RimWorld Discord server].
+
+[[Category:Modding]]
+[[Category:Modding tutorials]]

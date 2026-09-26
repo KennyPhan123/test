@@ -1,0 +1,55 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Anomaly/Global/Misc}}
+|}
+----
+{| {{STDT| c_21}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Crumbling mind undiagnosed creepjoiner" <!-- defName="CrumblingMindUndiagnosedCreepjoiner", ParentName="CrumblingMindUndiagnosedBase" -->
+! Crumbling mind (undiagnosed creepjoiner)
+----
+* Def Name:<br />CrumblingMindUndiagnosedCreepjoiner
+* Label:<br />crumbling mind<!-- CrumblingMindBase -->
+|<!-- Description -->
+<div style="max-width: 500px;"><!-- CrumblingMindUndiagnosedBase -->
+This person is showing early signs of a condition which will cause severe mental degradation. They will begin to display symptoms within a matter of days.
+</div>
+|<!-- Details -->
+<!-- CrumblingMindBase -->
+* Hediff Class: '''HediffWithComps'''
+* Initial Severity: '''0.1%'''
+* Max Severity: '''100%'''
+* Is Bad: {{Bad|true}}
+* Tendable: {{Bad|false}}
+* Duplication Allowed: {{Bad|false}}
+* Default Install Part: '''Brain'''
+<!-- CrumblingMindUndiagnosedBase -->
+* '''Comps'''
+** ''Remove If Other Hediff''
+*** Hediffs:
+**** '''[[Hediffs#Crumbling_mind|Crumbling mind]]'''
+**** '''[[Hediffs#Crumbled_mind|Crumbled mind]]'''
+** ''Surgery Inspectable''
+*** Surgical Detection Desc:<br /><span>{PAWN_nameDef} is showing early signs of a severe condition which will soon cause severe mental degradation. {SURGEON_nameDef} can't yet tell exactly what is causing this, but {PAWN_nameDef} will become very ill within the next few days.</span>
+<!-- CrumblingMindUndiagnosedCreepjoiner -->
+** ''Severity Per Day''
+*** Severity Per Day Range: '''{{++|30%}} ~ {{++|50%}}'''
+*** Show Hours To Recover: {{Good|true}}
+** ''Replace Hediff''
+*** Hediffs: Hediff: '''[[Hediffs#Crumbling_mind|Crumbling mind]]'''
+*** Manually Triggered: {{Good|true}}
+*** Letter Label:<br /><span>Crumbling mind: {PAWN_nameDef}</span>
+*** Letter Desc:
+<span>{PAWN_nameDef} has begun experiencing pounding headaches and begs for help. {PAWN_pronoun} can't think straight and is losing {PAWN_possessive} cognitive function. {PAWN_nameDef} claims that {PAWN_pronoun} has seen a vision of the future. Within a matter of days, {PAWN_possessive} mind will crumble and {PAWN_pronoun} will become incapable of most tasks.
+
+The condition is currently reversible with sufficient technology, like a healer mech serum, but will soon become permanent.</span>
+|<!-- Stages -->
+<!-- CrumblingMindUndiagnosedBase -->
+{| {{STDT| c_21}}
+! Label !! Parameters
+|-
+! diagnosed
+|<!-- Parameters -->
+* Become Visible: {{Bad|false}}
+|}<noinclude>
+|}</noinclude>

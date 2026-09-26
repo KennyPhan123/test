@@ -1,0 +1,83 @@
+{{Royalty}}
+{{Stub|reason=General}}
+{{Infobox main|faction
+| name = Outlander refugee group
+| image = Temporary faction variant 1.png
+| description = A group of outlander refugees claiming to have lost their home.
+<!-- Base Stats -->
+| type = Factions
+| type2 = 
+<!-- Factions -->
+| pawn singular = refugee
+| pawns plural = refugees
+| can siege = false
+| can stage attacks = false
+| hidden = true
+| faction name maker = NamerFactionOutlander
+| settlement name maker = NamerSettlementOutlander
+| disallowed memes = Nudism, Raider, Blindsight
+| xenotype chances = (Neanderthal, 0.05), (Hussar, 0.05), (Pigskin, 0.05), (Yttakin, 0.05), (Genie, 0.05), (Dirtmole, 0.05), (Highmate, 0.025)
+| color spectrum = (0.93, 0.39, 0.32), (0.35, 0.90, 0.57), (0.25, 0.66, 0.94), (0.98, 0.75, 0.37), (0.97, 0.62, 0.52)
+| generate new leader from map members only = true
+| leader title = leader
+| required count at game start = 0
+| must start one enemy = false
+| tech level = Industrial
+| basic member kind = Refugee
+| backstory filters = (Outlander, 0.95), (Offworld, 0.05)
+<!-- Technical -->
+| defName = OutlanderRefugee
+| label = outlander refugee group
+| categoryTag = OutlanderRefugee
+| factionIconPath = World/WorldObjects/Expanding/SettlementTemporary
+| settlementTexturePath = World/WorldObjects/DefaultSettlement
+}}
+'''Outlander refugee group''' is a temporary faction.
+
+== Summary ==
+<div><li style="display: inline-table;">
+Raid Loot Value From Points Curve:
+{| {{STDT| c_01}}
+! Raid Points !! Loot Value
+|-
+! 35
+| {{Format Number|15|Money}}
+|-
+! 100
+| {{Format Number|120|Money}}
+|-
+! 1000
+| {{Format Number|500|Money}}
+|-
+! 2000
+| {{Format Number|800|Money}}
+|-
+! 4000
+| {{Format Number|1000|Money}}
+|}
+{{Graph:Chart|width=300|height=150|xAxisTitle=Raid Points|yAxisTitle=Loot Value|type=line|x=35, 100, 1000, 2000, 4000|y=15, 120, 500, 800, 1000|interpolate=monotone|xGrid=|yGrid=}}
+</li></div>
+
+== Ideoligion ==
+{{Ideology|section=1}}
+
+Disallowed memes:
+* [[File:Nudism.png|32x32px|link=Nudism (meme)|Nudism]] [[Nudism (meme)|Nudism]]
+* [[File:Raider.png|32x32px|link=Raider (meme)|Raider]] [[Raider (meme)|Raider]]
+* [[File:Blindsight.png|32x32px|link=Memes#Blindsight|Blindsight]] [[Memes#Blindsight|Blindsight]]
+
+== Pawns ==
+=== Pawn Kinds ===
+{{:Outlander refugee group/Pawns}}
+
+=== Xenotypes ===
+{{Biotech|section=1}}
+{{Faction Xenotype Table|Outlander refugee group}}
+
+== Gallery ==
+<gallery>
+</gallery>
+
+{{Nav|factions|wide}}
+
+[[Category:Factions]]

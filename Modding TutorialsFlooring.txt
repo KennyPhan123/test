@@ -1,0 +1,68 @@
+{{BackToTutorials}}
+<noinclude>
+{{modal mark for deletion}}
+</noinclude>
+
+
+In this tutorial, we're going to be learning how to add your own flooring to the game using the resource which we created in the last tutorial.
+
+==Prerequisites==
+
+You have completed the [[Modding Tutorials/Items|Items]] Tutorial.
+
+You should have read the [[Modding Tutorials/Getting Started|Getting Started]] tutorial, which gets you up to speed with how mods are structured in RimWorld. You should also have a good understanding of where files are located (such as <code>About.xml</code>, def XML files, where you should put textures, and so on).
+
+You should also have a look at the [[TerrainDef]] article, which should clear up any concerns you have on the attributes we'll be using below.
+
+== Making the folders ==
+
+After you have made your mod folder from the [[Modding Tutorials/Getting Started|Getting Started]] tutorial, you will need to create a new folder in which will contain your new flooring xml. Inside your <code>Defs</code> folder create a new subfolder called <code>TerrainDefs</code>. You're now done as far as creating folders go.
+
+== Creating the new flooring (Titanium example) ==
+
+In this example, we'll be making a new titanium flooring using the titanium resource which we created in the last tutorial! Your file should now look like this (if you're making a titanium flooring like me) :
+
+<source lang="xml">
+<?xml version="1.0" encoding="utf-8" ?>
+<TerrainDefs>
+	<TerrainDef>
+		<defName>TitaniumFloor</defName>
+		<Label>Titanium Flooring</Label>
+		<RenderPrecedence>210</RenderPrecedence>
+		<Description>A lovely</Description>
+		<TexturePath>Things/Buildings/Floors/WoodFlooring</TexturePath>
+		<Beauty>NiceTiny</Beauty>
+		<SurfacesSupported>
+			<li>Light</li>
+			<li>Heavy</li>
+			<li>SmoothHard</li>
+		</SurfacesSupported>
+		<WorkToBuild>50</WorkToBuild>
+		<DesignationCategory>Structure</DesignationCategory>
+		<Fertility>0</Fertility>
+		<CostList>
+			<li>
+				<thingDef>Titanium</thingDef>
+				<count>2</count>
+			</li>
+		</CostList>
+		<ConstructionEffect>ConstructDig</ConstructionEffect>
+		<AcceptTerrainSourceFilth>True</AcceptTerrainSourceFilth>
+	</TerrainDef>
+</TerrainDefs></source>
+
+To find out what each line does and there options, have a look at [[TerrainDef|TerrainDef]]. There you can also find more lines.
+
+== Testing ==
+
+Let’s test our new mod! Fire up RimWorld, making sure to turn on <code>Development mode</code> in the options menu. Open the mods menu and make sure your mod is ticked (For active), and then press the tilde key (~) to check for any errors thrown on runtime. That’s right, no errors! Enjoy your new flooring!
+
+==Download==
+
+The latest working package of this tutorial can be found [https://github.com/oldmud0/rwmd/tree/tutorial_flooring1 here] ([https://github.com/oldmud0/rwmd/archive/tutorial_flooring1.zip download]).
+
+== Conclusion ==
+
+You now know how to: 
+* make a simple flooring
+* know most of the TerrainDef's global attributes and their functions with the optional choices

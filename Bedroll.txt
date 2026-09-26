@@ -1,0 +1,88 @@
+{{See also|Double bedroll}}
+{{Infobox main|furniture
+| name = Bedroll
+| image = Bedroll.png
+| description = A simple bed that lays on the floor, usually made of cloth or leather, often lined with fur. It is lightweight and can be rolled up for easy transport, but it is not quite as comfortable as a typical bed. Caravans can use bedrolls while traveling for better sleep.
+| type = Building
+| type2 = Furniture
+| placeable = true
+| blockswind = false
+| path cost = 14
+| passability = standable
+| minifiable = true
+| size = 1 ˣ 2
+| mass base = 2.5
+| flammability = 1
+| hp = 75
+| sell price multiplier = 0.7
+| rest effectiveness = 0.95
+| immunity gain speed factor = 1.05
+| surgery success chance factor = 1
+| comfort = 0.68
+| terrain affordance = light
+| facility = dresser, end table, sleep accelerator
+| work to make = 600
+| stuff tags = Fabric, Leathery
+| resource 1 = Stuff
+| resource 1 amount = 40
+| has quality = True
+| room role = Bed-associated rooms
+}}
+{{Info|The '''bedroll''' is a [[furniture]] item which pawns can sleep in. Bedrolls are portable and can be used by pawns in [[caravan]]s. Bedrolls provide better [[comfort]] and [[Rest Effectiveness|rest effectiveness]] than a [[sleeping spot]], but are inferior to [[bed]]s of the same quality. For recovery from [[injury]] and [[Surgery Success Chance Factor]], bedrolls are equivalent to beds of the same quality.}}
+
+== Acquisition ==
+{{Acquisition}} Similar to [[Bed]]s, Bedrolls are constructed in place, not fabricated separately and then placed.
+
+== Summary ==
+{{For|a description of mechanics shared by all sleep furniture|Sleep furniture#Mechanics{{!}}Sleep furniture mechanics}}
+<!--Ensure parity with Double bedroll 
+-->{{PAGENAME}}s are a form of [[sleep furniture]]. One pawn can sleep on one at a time. 
+
+Bedrolls, both single and double, function similar to beds in most respects. However, unlike other beds, bedrolls can be carried and used in [[caravan]]s. When resting, caravan members will automatically use bedrolls in caravan inventory, improving their [[comfort]] regeneration, [[rest]] efficiency, and [[Injury#Healing|healing]] rates. [[Quality]] affects these as normal, even when on caravan. Note however that even if pawns fill their rest bar before dawn, the caravan will not be able to move until first light.
+
+To add bedrolls to a caravan, they cannot be "installed", which is their default upon creation. You must select a bedroll and choose the Uninstall option available for all types of [[Furniture]]. It will go into regular [[Stockpile zone|storage]] and be available in the config tab when you are forming the caravan.
+
+=== Rest Effectiveness ===
+[[Rest Effectiveness]] is a measure how fast a pawn will regain [[rest]]. A pawn sleeping in a bed with 125% rest effectiveness would regain rest 25% faster, and thus require 80% of the time to sleep. Rest effectiveness under 100% increases rest time needed.
+
+Rest effectiveness for bedrolls varies by [[quality]].
+{{Rest Effectiveness Quality Table}}
+
+=== Comfort ===
+[[Comfort]] is a measure of how high a pawn can refill their comfort meter while using the piece of furniture. A pawn sleeping in a bed with a higher comfort value can achieve a higher level. It does not affect the rate at which comfort increases only the maximum level. Comfort levels over 100% have no additional effect.
+Comfort varies by [[quality]] but not material. Beds of the same quality level will all have the same comfort, regardless of what they're constructed from.
+An adjacent [[end table]] and a nearby [[dresser]] will each increase the base comfort by a further +0.05. This increase is applied before the quality multiplier.
+{{Comfort Quality Table}}
+
+=== Surgery Success Chance Factor ===
+The [[Surgery Success Chance Factor]] is exactly what it sounds like: a multiplier on the chance for a successful surgery assuming it is performed in this bed. The base value depends on the bed type with most beds and bedrolls having a base value of 100%, the [[sleeping spot]] a lower value of 70%, and the [[hospital bed]] a higher value of 110%. This base value is then modified by the bed's quality level. Beds of the same type and quality level will all have the same factor, regardless of what they're constructed from.
+
+{{Surgery Success Chance Factor Quality Table}}
+
+=== Healing ===
+A pawn resting in a {{lc:{{PAGENAME}}}} of any quality will have their [[Immunity Gain Speed]] multiplied by {{Good|x{{P|Immunity Gain Speed Factor}}}} and heal an additional {{+|8}} HP from [[injury|injuries]] per day.
+
+== Analysis ==
+The materials chosen to construct the bedroll do not make a "better" bedroll; all [[textiles]] are equal regarding any "insulation" values vs. extreme cold or heat.  Bedrolls simply provide sleeping bonuses, same as beds. Material choice only affects the market value and hit points of the object, neither of which are typically relevant.
+
+Bedrolls are worse than [[bed]]s of the same [[quality]] for rest and comfort, and better than [[sleeping spot]]s. They are slightly better than beds made of [[stone]], as well as beds one quality level lower. At the start of the game, textiles are usually harder to obtain than [[wood]]; most [[biome]]s have plentiful amounts of wood available. Therefore, regular beds should be created when at all possible. 
+
+[[New Tribe]]s need to research [[Research#Complex furniture|Complex Furniture]] before constructing beds, so will have to rely on bedrolls to increase comfort and avoid the {{Thought|desc=I had to sleep on the ground like an animal.|label=slept on ground|value=-4|stack=1|duration=1}}. Complex Furniture should be one of the first projects to research, though a tribe may want to research [[Research#Stonecutting|Stonecutting]] or [[Research#Complex clothing|Complex Clothing]] first, depending on situation and textile availability.
+
+Bedrolls and [[double bedroll]]s retain a niche as the only beds that are usable inside a [[caravan]]. Therefore, any bedroll made prior to adopting beds can be repurposed for caravanning. Pawns will sleep on bedrolls on the world map, which prevents the aforementioned slept on the ground debuff and the {{Thought|desc=I've been kind of uncomfortable recently. We need to get something soft to sit on around here.|label=Uncomfortable|value=-3|stack=1}} debuff when traveling. It will not reduce the time the caravan spends "resting" on the world map. The benefits of bringing bedrolls must be balanced against the additional weight and loading time. A double bedroll can be used by two pawns at once and weighs 4.5 kg, compared to 5 kg for two "single" bedrolls, making it a slightly more efficient option when caravanning with multiple pawns.
+
+Bedrolls also have a Path Cost of {{P|Path Cost}} vs. {{Q|Bed|Path Cost}} for beds, which might be a consideration in a crowded [[Barracks]] or [[Prison]].
+
+=== Space ===
+Another niche is optimizing mood bonuses from small bedrooms. Unlike [[bed]]s, bedrolls have ''standable'' [[Property:Passability|passability]], which means they do not reduce room's [[Rooms#Space|space stat]]. As for small rooms, space has by far the biggest impact on [[impressiveness]], player is given the option to sacrifice some [[rest effectiveness]] and [[comfort]] in favor of a higher mood bonus and/or smaller bedroom size.
+
+At masterwork quality, a bedroll reaches 1.0 comfort with just an [[end table]]. As comfort is effectively capped at 1, a masterwork bedroll would have more space than the masterwork bed, and "only" sacrifices rest effectiveness. A room with a bedroll and a [[dresser]] will have the same space as a room with a regular bed, which should defy the purpose for most scenarios.
+
+{{Building Stats Table}}
+
+== Version history ==
+Prior to version 1.0 they had no quality, a rest effectiveness of 0.93 and a comfort of 0.6
+
+{{Nav|furniture|wide}}
+[[Category:Furniture]]
+[[Category:Sleep furniture]]

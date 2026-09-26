@@ -1,0 +1,53 @@
+{{Capacity
+| default base value = 1
+| to string style = PercentZero
+| description = The ability of a [[characters|character]] to breathe. Affects consciousness and movement.
+}}
+''Breathing'' is impaired by damaged [[lung]]s and [[human#Neck|neck]]. A character missing a lung has breathing reduced by 50% but can still survive. Without lungs, all breathing ceases and the organism will die. Lungs can be harvested and transplanted from other humans.
+
+''Breathing'' bears a small weight in the consciousness and movement capacities, hence why [[Asthma|asthmatics]] will be slightly slower than healthy colonists.
+
+It is lethal for [[human]]s and [[animals]] for ''breathing'' to be reduced to zero.
+
+{{Hover title|Version/1.4.3580|At the time of writing}}, the maximum possible ''breathing'' capacity is [[Effective Maximum::1.2|120%]] with a healthy pawn high on [[luciferium]] and with two [[detoxifier lung]]s {{BiotechIcon}} installed.
+
+== Affected stats ==
+{{#ask: [[Breathing Importance::+]]
+| ?Health Type = Type
+| ?Breathing Importance# = Weight
+| ?Breathing Limit# = Max
+| ?description
+| format = broadtable
+| limit  = 100
+| mainlabel = Name
+| headers = plain
+| sort = Health Type, 
+}}
+
+== Base factors ==
+The following factors affect ''breathing'':
+* [[Lung]] part efficiency. 50% importance per lung, no allowed defect. No Max (effectively 110%).
+** [[Detoxifier lung]]:{{BiotechIcon}} 110% part efficiency resulting in {{+|5%}} breathing per lung replaced.
+* Neck part efficiency. 100% importance, no allowed defect. No Max (effectively 100%).
+* Ribcage part efficiency. 100% importance, no allowed defect. No Max (effectively 100%).
+* Sternum part efficiency. 100% importance, no allowed defect. No Max (effectively 100%).
+
+== Offsets ==
+The following offsets affect ''breathing''. They are applied after the ''base factors''.
+* [[Luciferium]] high: {{+|10%}}
+* [[Infection]] extreme (advanced): {{--|5%}}
+* [[Flu]]
+** Minor: {{--|10%}}
+** Major: {{--|15%}}
+** Extreme: {{--|20%}}
+* [[Plague]] extreme (advanced): {{--|15%}}
+* [[Tox gas]]:{{BiotechIcon}}
+** Mild: {{--|15%}}
+** Moderate: {{--|30%}}
+** Severe: {{--|60%}}
+* [[Infant illness]]:{{BiotechIcon}}
+** Extreme: {{--|5%}}
+* [[Events/Odyssey#Volcanic ash|Volcanic ash]]{{OdysseyIcon}}: {{--|10%}}
+
+{{Nav|stats|wide}}
+[[Category:Capacity]]

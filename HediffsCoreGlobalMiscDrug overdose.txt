@@ -1,0 +1,49 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Global/Misc}}
+|}
+----
+{| {{STDT| c_10}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Drug overdose" <!-- defName="DrugOverdose" -->
+! Drug overdose 
+----
+* Def Name:<br />DrugOverdose
+* Label:<br />drug overdose
+* Label Noun:<br />a drug overdose
+| Generalized toxic effects due to over-concentration of drugs in the bloodstream.
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|100%|0%|50%}}
+* Lethal Severity: '''100%'''
+* '''Comps'''
+** ''Severity Per Day:'' {{---|100%}}
+** ''Discoverable''
+*** Send Letter When Discovered: {{Good|true}}
+*** Discover Letter Label: Overdose: {0}
+*** Discover Letter Text: {0} is overdosing!
+|<!-- Stages -->
+{| {{STDT| c_10}}
+! Label !! Parameters
+|-
+! minor
+|<!-- Parameters -->
+* Become Visible: {{Bad|false}}
+|-
+! minor
+|<!-- Parameters -->
+* Min Severity: '''50%'''
+* Vomit {{MTB}} Days: '''0.3'''
+* [[Consciousness]] Max: {{Bad|50%}}
+|-
+! major
+|<!-- Parameters -->
+* Min Severity: '''75%'''
+* Death {{MTB}} Days: '''3'''
+* [[Consciousness]] Max: {{Bad|10%}}
+* '''Hediff Givers:''' ''Random''
+** Hediff: '''[[Hediffs#Moderate chemical damage|Moderate chemical damage]]'''
+** {{MTB}} Days: '''2.5'''
+** Parts To Affect: '''Brain'''
+|}<noinclude>
+|}</noinclude>

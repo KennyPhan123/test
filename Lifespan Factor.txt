@@ -1,0 +1,49 @@
+{{Stub|reason=1) Version history says added by dlc but no banner.  is it defined in core,  was it added by the core update or the DLC,  did it switch at some point 2) mechanical detail and two way links e.g. on ailments}}
+{{Verified|1.5.4104}}{{Stat
+| def name = LifespanFactor
+| label = lifespan factor
+| description = Lifespan factor alters the effective [[Property:Life Expectancy|lifespan]] of a creature by shortening or lengthening the time until they develop age-related diseases. A lifespan factor over 100% delays disease onset and increases overall lifespan, while a lifespan factor under 100% speeds up disease onset and reduces lifespan.
+| default base value = 1
+| min value = 0.01
+| hide at value = 1
+| to string style = PercentZero
+| show on animals = false
+| show on mechanoids = false
+| category = BasicsPawn
+| display priority in category = 2000
+}}
+
+== Factors ==
+* [[Genes]] {{BiotechIcon}}
+** [[Mild cell instability]]: {{Bad|×80%}}
+** [[Major cell instability]]: {{Bad|×60%}}
+
+== Stat Def Data ==
+{| {{STDT}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Lifespan Factor" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />LifespanFactor
+* '''Label:'''<br />lifespan factor
+| Lifespan factor alters the effective lifespan of a creature by shortening or lengthening the time until they develop age-related diseases. A lifespan factor over 100% delays disease onset and increases overall lifespan, while a lifespan factor under 100% speeds up disease onset and reduces lifespan.
+|
+* Display Order:<br />'''11'''
+* Def Name:<br />'''BasicsPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''To String Style:''' PercentZero
+* '''Default Base Value:''' {{%|1}}
+* '''Hide At Value:''' {{%|1}}
+* '''Min Value:''' {{%|0.01}}
+* '''Show On Animals:''' {{Bad|false}}
+* '''Show On Mechanoids:''' {{Bad|false}}
+| -
+| 2000
+<!--</StatDef>-->
+|}
+
+== Version history ==
+* [[Biotech (DLC)]] Release - Added.
+
+{{nav|stats|wide}}

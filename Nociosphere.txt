@@ -1,0 +1,164 @@
+{{Anomaly}} 
+{{Spoiler}}
+{{Rewrite|reason=Cleanup, formatting, subheadings etc, and then once that is done, verify that all content is suitably covered. add destruction details to body, note lack of corpse}}
+{{Infobox main|entity
+| name = Nociosphere
+| image = Nociosphere.png
+| description = A dark metallic sphere covered with curved and jagged grooves. The sphere emanates sensations of pain. It hurts to be near it.<br/>The sphere thrums with a mysterious energy. It appears to be increasing in activity. It's not clear what will happen when it reaches its full capacity. However, if you capture it, you can decrease its activity by suppressing it.
+<!-- Base Stats -->
+| type = Entity
+| type2 = Advanced
+| mass base = 500
+| flammability = 0
+<!-- Containment -->
+| anomaly knowledge = 2.5
+| knowledge category = Advanced
+| study interval = 120000
+| bioferrite density = 2
+| min monolith level for study = 1
+| requires holding platform = true
+| base escape interval MTB days = -1
+<!-- Building -->
+| size = 2 * 2
+<!-- Apparel -->
+| armorsharp = 100
+| armorblunt = 100
+| armorheat = 200
+<!-- Pawn Stats -->
+| combatPower = 800
+| movespeed = 0
+| healthscale = 10
+| bodysize = 3.6
+| diet = none
+| lifespan = 5000
+| trainable = none
+| psychic sensitivity = 1
+| toxic resistance = 1.00
+| EMP resistance = 0.50
+| vacuum resistance = 1
+| minimum comfortable temperature = -100
+| maximum comfortable temperature = 250
+| injury healing factor = 0
+<!-- Production -->
+| meatyield = 0
+| gestation = 10
+| destroyyield = {{Icon Small|Shard||2}} + {{Icon Small|Steel||200}} + {{Icon Small|Plasteel||100}} + {{Icon Small|Steel slag chunk||4}} + {{Icon Small|Bioferrite||35}}
+<!-- Technical -->
+| defName = Nociosphere
+| label = nociosphere
+}}
+
+The '''Nociosphere''' is an initially-dormant mechanical [[entity]] with one singular purpose - to inflict pain on those around it.
+
+== Acquisition ==
+The nociosphere will randomly appear on the map, playing a sound indicating its arrival. The location at which the sphere arrives is typically where [[traders]] will congregate. It will spawn in a docile state where it can be easily captured. Having a holding requirement of 0 makes this even easier, as it will never randomly escape or attack. However,  it will require a warden to suppress it.
+
+== Summary ==
+{{Image wanted|section=1|reason=Abilites (combat and pain field) AOEs}}
+The nociosphere is a black sphere with red highlights. The red highlights glow brighter the higher its activity level. Once it is captured it can be suppressed, and should it reach 100% instability, it will become hostile & attack. Study will reveal it can be used as a weapon on your local map. Extended study will reveal that it is becoming unstable; Suppression will eventually become ineffective. Even if not studied, it will become unstable with time. A warning [[letter]] will notify the player 10 days before suppression will no longer lower the nociosphere's activity, and an additional one once that happens - the letter content will vary depending if the player can manually activate the nociosphere or not. There will be additional warning [[message]] 5 and 2 days before it becomes unstable.
+
+The sphere emits a ''Pain field'' in a 5.9 tile radius around itself which induces [[pain]] on any human or animal within it. This pain effect scales with both [[psychic sensitivity]] and the nociosphere's current activity.{{Check Tag|Actual values|Hediff page has details but they should be included here}} Upon entering the radius, the pain experienced by a pawn will quickly increase up to the current maximum based on the previous factors. Leaving the radius will have the pain dissipate at a similar rate. [[Psychically deaf]] pawns are immune to the pain field.
+
+If it becomes active due being sent out to an attack or its activity reaching 100%, it will be active for anywhere between 90 and 120 seconds (chosen at random when activated). Once this timer expires, the entity will reappear in a dormant state wherever the origin of the attack was initiated. If it became active on its own it will end its onslaught early after at least {{Ticks|1800}} have passed if at least 40-60% colonists (minimum of 1, chosen at random when it becomes active) are dead or downed. If the nociosphere has less than 10 days before it becomes unstable, and is not destroyed during an attack, it will depart and cannot be looted. The sphere cannot be sent to a ''Pocket Map'' [[site]], even if that site originated within the same home tile the nociosphere occupies.
+
+After being sent on an attack, the nociosphere has a cooldown of {{Ticks/gametime|180000}} ticks before being able to manually activate again. It is possible to activate its onslaught mode during cooldown by attacking it. Once the onslaught mode ends the sphere's activity is reset to 0%.
+
+The nociosphere has a '''massive''' health scale{{Check Tag|Add Details}}, with some parts reaching 12,500 total HP. However, the sphere tends to be destroyed after receiving a total of 1,500 damage regardless of where it is attacked. This, in practice, causes the sphere to be destroyed much sooner than its health pool may suggest. This also prevents the entity from dying due to lucky hits where one part is targeted consecutively, a common weakness for most creatures. The sphere will not regain health after being attacked; Only a new nociosphere will arrive with full health, a sphere which was already sent to attack will retain its injuries until it departs. When destroyed, it will explode in 5x5{{Check Tag|Verify|Thats the section that has fires, but is it the blast radius?}} area centered on the nociosphere, and dealing ???{{Check Tag|Damage amount?}} ???{{Check Tag|Damage type?}} damage, and setting fires to flammable things in that area. The nociosphere does not leave a corpse when destroyed, but instead leaves {{Icon Small|Shard||2}} [[shard]]s, {{Icon Small|Plasteel||100}} [[plasteel]], {{Icon Small|Bioferrite||35}} [[bioferrite]], and     {{Icon Small|Steel slag chunk||4}} [[steel slag chunk]]. Note however, that chunks will almost always be immediately destroyed by the explosion.
+
+The nociosphere has several abilities, including attacks, which it can use while in onslaught mode:
+* '''Entity skip:''' Teleports the nociosphere to a random tile within 99 tiles{{Check Tag|Verify|Range and purely rng target selection?}}. It then goes on cooldown for a randomly determined period between {{Ticks|180}} and {{Ticks|480}}. 
+* '''Agony pulse:''' An area of effect blast centered on the nociosphere or a distant target{{Check Tag|Add Details|Verify range}} with a radius of X{{Check Tag|Verify}} tiles. Causes +100% pain in affected pawns with a duration of X{{Check Tag|Verify}} seconds (acute), and +25% pain with a duration of 3 days (dissipating){{Check Tag|Add Details}}.
+* '''Heatspikes:''' Fires a burst of 12 energy bolts at up a target within 24.9 tiles, with {{Ticks|6}} between each bolt, for a total duration of {{Ticks|72}}. There is no warm-up time, however the ability then goes on cooldown for a randomly determined period between {{Ticks|90}} and {{Ticks|180}}. The bolts do 18 [[EnergyBolt]] damage, move at a velocity of 90, and have a Touch/Short/Medium/Long accuracy of 90%/80%/70%/60%. 
+* '''Fleshmelter bolt:''' Similar to a [[Diabolus]]' [[hellsphere cannon]]{{BiotechIcon}} with a shorter aiming time and lower base damage of 100 points.{{Check Tag|Add Details}} Deals reduced damage to mechanoids.{{Check Tag|Verify}}
+
+If a roof collapses on top of a nociosphere it will attempt to teleport away to a nearby location. When that happens its activity will raise by 40%. If there are no valid cells on the map it will disappear completely.
+=== Yield ===
+The nociosphere yields 7.2 [[bioferrite]] and 720W per day.
+
+== Analysis ==
+Before becoming unstable, there are no downsides to farming bioferrite from a nociosphere as it will not destabilize faster and cannot escape unless its activity reaches 100%. Use of an [[electroharvester]] will cause its activity to increase at an extra 15% per day. Be sure to always have a pawn available for suppression to avoid an early escape, especially if farming electricity.
+
+Moving the nociosphere to a holding platform or otherwise keeping it contained in a high traffic area may cause issues for pawns with the [[wimp]] trait or [[extra pain]] [[gene]],{{BiotechIcon}} as if these humanoids enter the sphere's vicinity they are likely to collapse from pain shock at high activity levels. Even if not incapacitated, this may cause mood penalties among the colony. Pawns that are psychically deaf are immune to this downside.{{Check Tag|Verify}}
+
+The nociosphere is ''incredibly'' strong. Extreme care should be taken when being deployed as an offensive or defensive weapon to avoid friendly casualties. If possible, it should be released against a threat that can keep it busy for most of its 90-115 seconds of onslaught mode. 
+
+Once it has reached the point where it can no longer be stabilized, it is imperative to get rid of it as soon as possible. If possible it should be released against a threat that can keep it busy for most or all of onslaught mode. If it is fully unstable and activates, it will enter its onslaught mode and go after everything living until onslaught mode is over. The ideal enemies to send the nociosphere against would be mechanoids, as they are highly resistant to its flame based attacks and do not feel any pain, negating its psychic abilities. This will allow the mechanoids to stall it until it disappears or even destroy it, especially if the mechanoid group is full of heavy weight mechanoids such as Centipedes.
+
+After being released while unstable, it will disappear regardless of whether or not it is destroyed. Once the point is reached where it can no longer be stabilized, it is imperative to get rid of the sphere before it can attack the entire colony that houses it. There are multiple strategies for doing so:
+
+=== Colony Defense ===
+After completing the study of the Nociosphere, whenever the colony might be raided, or otherwise have hostile creatures within the home tile, the nociosphere can be sent to dispatch them. The sphere is much more efficient at clearing out grouped up enemies, as 2 of its 3 powerful attacks have an area of effect able to incapacitate or outright kill a majority of enemies. For groups of enemies dispersed throughout the map tile the sphere is much less consistent. This is especially true if the tile is also home to many wild animals, as the nociosphere will not prioritize attacking hostiles over neutral pawns. This will often cause the nociosphere to end its onslaught before all primary targets are defeated.
+
+Even low threat raids should be considered a target for the sphere, as each fight will weaken the sphere for subsequent raid; This may allow the sphere's loot to be obtained before it is able to disappear permanently. Be aware that the fewer targets given to attack, the more likely the rampage can find its way back to the colony.
+
+If desperate for a hostile force to distract the nociosphere, [[toxic wastepack]]s{{BiotechIcon}} can be used via [[transport pod]] dumping to initiate a hostile raid. Note that only low tech factions are guaranteed to send retaliatory raids, as higher tech factions might instead send toxic waste back to the colony. Raids initiated this way are also not guaranteed to happen right away, sometimes taking several days to arrive, so this must be done in advance.
+
+Use of a mechanitor can also provide further raids on command by summoning mech commanders via the [[comms console]], [[mechband antenna]],{{BiotechIcon}} and [[mechband dish]].{{BiotechIcon}} Similar to wastepack raids, these must be called in much earlier than the nociosphere reaching 100% activity, as they might show up several days later. Of these 3 options, the mechband dish is the most likely to distract and outlast the sphere's onslaught; The [[apocriton]]'s ability to revive mechanoids and return them to the fight grants many targets for the sphere's weaponry. Furthermore, the sphere is less likely to leave the combat area due to the abundance of robot targets.
+
+=== Distractions ===
+The entity is hostile to most creatures, including mechanoids, insects, all mobile [[entities]], and wildlife. Nociospheres will not target pawns within [[cryptosleep casket]]s, buildings such as powered, unpowered turrets, or fleshmass spitters spawned by [[Fleshmass heart]]s, children under the age of 3, or other nociospheres (active or not). Nociospheres will ignore targets that are downed.
+
+In the event there are no enemies, the sphere can be sent near [[animals]] to distract it until the end of its onslaught. Faster animals can sometimes kite the nociosphere until its onslaught mode deactivates. Be careful that these animals do not bring the sphere back towards the colony.
+
+Active or inactive [[mechanoid cluster]]s{{RoyaltyIcon}} can also be a prime target for the sphere, sometimes allowing the entire cluster to be wiped out. Note that this method will likely destroy any valuable resources from the cluster, such as [[mech node]]s or [[unstable power cell]]s.
+
+A skilled animal handler or a [[mechanitor]]{{BiotechIcon}} can use disposable animals or [[mechanoids]] to either kite or distract the sphere. The use of allowed [[zones]] can be helpful in keeping the trainer or mechanitor at a distance while the bait keeps the sphere away from the colony.
+
+The use of [[psychic rituals]] can also serve as a nice distraction, provided the colony has the [[Bioferrite]] and manpower to conduct one. [[Psychic_rituals#Draw_Shamblers|Summoning]] [[Shambler|Shamblers]] is the best option as they always enter from a map edge which usually will not be right on top of your colony, tend to wander less than Fleshbeasts, and at higher ritual percentages the summoned horde will usually survive the Nociosphere onslaught with at least some surviving members.
+
+In cases of urgency where suppression is no longer possible, a pawn with sufficient movement speed can be used to kite around the nociosphere around the map until the duration ends. Note that any creatures closest to it will change it's target and possibly bring it to your colony.
+
+=== Direct Combat ===
+Rarely, or within certain biomes, a large amount of disposable pawns may not be readily available on the home tile. Attacking the sphere and obtaining the loot stashed within should be considered secondary to protecting the colony and the structures within.
+
+EMP weaponry does affect the nociosphere and the acquisition of such weapons should considered a priority if direct combat with the sphere is warranted. Directly attacking the nociosphere without EMP weaponry is ill-advised without end-game gear and/or highly skilled colonists. and/or a large amount of disposable creatures.
+
+Melee attacks are generally ineffective against the sphere outside of a [[zeushammer]] due to the sphere's tendency to teleport away from enemies before attacking, as well as its agony pulse attack which affects a radius around itself. Any melee colonists should be equipped with [[longjump legs]], a [[jump pack]], or similar ability to both be able to do consistent damage and avoid damage themselves.  Also when the Nociosphere is destroyed it explodes in an explosions likely to kill nearby pawns in a small radius.
+
+Deploying the sphere at the farthest possible point can delay the attack by a precious few seconds, although the sphere's teleportation ability will quickly make up this distance if no targets are available nearby.
+
+===Caravans===
+Sending away all colonists from a map as part of a caravan just before the Nociosphere goes active can entirely avoid the risk of colonist death. Active Nociospheres will still target prisoners and tamed animals, which may make this approach harder for [[Sanguophages|Sanguophage]] colonies that may keep large numbers of prisoners for hemogen farming, or colonies that have large herds of tamed animals.
+
+===Teleportation===
+The Nociosphere can teleport within about a 20 cell radius. The Nociosphere can only teleport to an "unfilled" cell. Cells are considered "filled" if they contain a Colonist, animal, barricade, sandbags, column, fence tree, steel chunk or stone chunk. Furniture such as beds and tables do not stop the Nociosphere's teleportation.
+
+Each colonist can be drafted and placed in their own individual 1x1 room, or colonists can all be drafted and crammed into a room of size equal to colonist count. For example, if you have 10 colonists, make a room that has 10 interior cells, draft the colonists, and have them stand in the room so every cell in the room is taken up by a colonist. The Nociosphere will be unable to find an "unfilled" cell to teleport inside.
+
+=== Safe disposal ===
+
+Since the sphere can only teleport 20 cells, digging a tunnel into a mountain to create a 1x1 space by filling up the tunnel again with wall, will allow one to teleport the sphere into the 1x1 enclosed space and safely wait until the onslaught timer ticks down without anything happening.
+
+=== Beckon psycast ===
+{{Royalty|section=1}}
+When the Nociosphere becomes unstable, it will leave after finishing its next attack. However, the Nociosphere does not leave instantly, instead "charging" a teleport so it can leave the map permanently. This "charging" process takes some time, and if hit with the [[Beckon]] psycast while in this state, the charging process resets. 
+
+This means that if a Nociosphere is on the verge of leaving and you want its loot, you can wait out an Onslaught and repeatedly use Beckon to perpetually stun the Nociosphere without any fear of danger (outside of the Nociosphere needing to go through an attack phase beforehand). The Nociosphere will be too preoccupied with attempting to leave and cannot harm anyone, except for the explosion it creates on death.
+
+== Health == 
+=== Body parts ===
+{{Animal Health Table|Nociosphere}}
+
+=== Armor ===
+{| class="wikitable"
+! Armor
+|-
+| {{Apparel Protection Chart
+| set1name= {{P|Name}} (Sharp) | set1armor1={{P|Armor - Sharp}} 
+| set2name= {{P|Name}} (Blunt) | set2armor1={{P|Armor - Blunt}} 
+| set3name= {{P|Name}} (Heat) | set3armor1={{P|Armor - Heat}} 
+| color= grey, blue, red
+}} 
+|}
+
+== Trivia ==
+* The Nociosphere's name likely comes from the words "[https://en.wikipedia.org/wiki/Nociception nocioception]", which refers to the body's ability to feel pain, or "nocere" which is the latin word for harm/hurt.
+* The Nociosphere has a bounding box that is 2x2 tiles in size, making it the only pawn with a box larger than 1x1.
+* The nociosphere, along with the [[fleshmass nucleus]], has a life expectancy of 5,000 years, which is used for selecting its age upon spawning. Life expectancy is not a maximum, so this means that a nociosphere could spawn with an age that would imply it was created before year 1 of the RimWorld calendar.
+
+== Version history == 
+* [[Anomaly DLC]] Release - Added.
+* [[Version/1.6.4518|1.6.4518]] - Fix: Nociosphere pain range radius not being accurate on non-square maps. Fix: Nociosphere AI error if target is not hittable.
+
+{{Nav|entity|wide}}
+[[Category: Entities]]

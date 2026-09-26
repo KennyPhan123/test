@@ -1,0 +1,1627 @@
+{{Stub|reason=[[Circadian assistant]],{{RoyaltyIcon}} [[Sleep accelerator]],{{IdeologyIcon}} [[Genes#Sleep|Sleep gene]] {{BiotechIcon}} effects should be reflect in math. List of things that affect the numbers ala Capacities and Stats. Below approximately 2 hours of sleep, pawns dont get the moodlet from their room - unknown if thats per sitting or per day, but it should be considered when compsring no sleep/circ half cyclers vs stacking reductions. half cylcer, never sleep and body mastery as removal}}
+'''Rest''' is the game mechanic that controls [[Characters]]' [[needs]] for sleep. A character with a higher rest value has slept recently, and is less tired than another character with a low rest level.
+
+== Levels of Rest ==
+Characters' rest level is grouped into four thresholds: Rested, Tired, Very Tired, and Exhausted. Each threshold exhibits different effects on a character. A pawn that is tired will have lowered [[mood]], and have a lowered [[Immunity Gain Speed]] against [[disease]]s. Sleep does not impact any sort of work- or combat- related stat.
+
+The rest levels are as follows:
+{| class="wikitable"
+! Label
+! Rest
+! Mood Debuff
+! Immunity Speed
+! Thought
+|-
+! [[Thoughts#Exhaustion|Rested]]
+| >= 28%
+| ''None''
+| 100%
+|
+|-
+! [[Thoughts#Exhaustion|Drowsy]]
+| >=14% and <28%
+| {{--|6}}
+| {{Bad|x96%}}
+| I haven't slept in a while. It's hard to keep focus.
+|-
+! [[Thoughts#Exhaustion|Tired]]
+| >=1% and <14%
+| {{--|12}}
+| {{Bad|x92%}}
+| I'm so tired. I just want to lay down and rest for a few minutes...
+|-
+! [[Thoughts#Exhaustion|Exhausted]]
+| <=1%
+| {{--|18}}
+| {{Bad|x80%}}
+| I'm so exhausted I can barely stand. My eyelids have lead weights on them. Let me sleep...
+|}
+
+Rest caps at 0% and 100%. When a character's rest level is 0, they may collapse from exhaustion; they will immediately begin sleeping on the ground wherever they are. [[Draft]]ing will wake them up immediately.
+
+== Rest Changes ==
+==== Negative ====
+When awake, rest goes down every 150 ticks (1/400 of a game day) depending on the character's current rest.
+
+{| class="wikitable"
+! 
+! Threshold range
+! Rest change per 150 ticks
+! Rest change per game day
+! Real time in state<ref>Real time spent in the state before crossing the lower threshold, assuming no rest is gained</ref>
+! Game time in state<ref>Game time spent in the state before crossing the lower threshold, assuming no rest is gained</ref>
+! Real time since 100% rest<ref>Real time spent before entering the state, assuming no rest is gained and the starting rest is 100%</ref>
+! Game time since 100% rest<ref>Game time spent before entering the state, assuming no rest is gained and the starting rest is 100%</ref>
+|-
+! Rested 
+| 100% - 28%
+| {{#expr: 150 * 1.5833333*(10^-5) * 1 * 100 round 3}}% <!--RestFallPerTick has eqn of 1.5833333E-05f * this.RestFallFactor; x150 for 150ticks, x100 to convert into percentage-->
+| {{#expr: 60000 * 1.5833333*(10^-5) * 1 * 100 round 0}}% <!--RestFallPerTick has eqn of 1.5833333E-05f * this.RestFallFactor; x60000 for number of ticks in a day, x100 to convert into percentage-->
+| {{Ticks|{{#expr: 72/(1.5833333*(10^-5) * 1 * 100) round 0}} }} <!--72% of the bar/percentage per tick = ticks-->
+| {{#expr: (72/(1.5833333*(10^-5) * 1 * 100))/2500 round 3}} hours <!--ticks/2500 ticks per hour = hours-->
+| {{Ticks|0}}
+| 0 hours
+|-
+! Drowsy 
+| 28% - 14%
+| {{#expr: 150 * 1.5833333*(10^-5) * 1 * 0.7 * 100 round 3}}%
+| {{#expr: 60000 * 1.5833333*(10^-5) * 1 * 0.7 * 100 round 0}}%
+| {{Ticks|{{#expr: 14/(1.5833333*(10^-5) * 1 * 0.7 * 100) round 0}} }}
+| {{#expr: (14/(1.5833333*(10^-5) * 1 * 0.7 * 100))/2500 round 3}} hours
+| {{Ticks|{{#expr: 72/(1.5833333*(10^-5) * 1 * 100) round 0}} }}
+| {{#expr: (72/(1.5833333*(10^-5) * 1 * 100))/2500 round 3}} hours 
+|-
+! Tired 
+| 14% - 1%
+| {{#expr: 150 * 1.5833333*(10^-5) * 1 * 0.3 * 100 round 3}}%
+| {{#expr: 60000 * 1.5833333*(10^-5) * 1 * 0.3 * 100 round 0}}%
+| {{Ticks|{{#expr: 13/(1.5833333*(10^-5) * 1 * 0.3 * 100) round 0}} }}
+| {{#expr: (13/(1.5833333*(10^-5) * 1 * 0.3 * 100))/2500 round 3}} hours
+| {{Ticks|{{#expr: 72/(1.5833333*(10^-5) * 1 * 100) + 14/(1.5833333*(10^-5) * 1 * 0.7 * 100) round 0}} }}
+| {{#expr: (72/(1.5833333*(10^-5) * 1 * 100) + 14/(1.5833333*(10^-5) * 1 * 0.7 * 100))/2500 round 3}} hours 
+|-
+! Exhausted 
+| 1% - 0%
+| {{#expr: 150 * 1.5833333*(10^-5) * 1 * 0.6 * 100 round 3}}%
+| {{#expr: 60000 * 1.5833333*(10^-5) * 1 * 0.6 * 100 round 0}}%
+| -
+| -
+| {{Ticks|{{#expr: 72/(1.5833333*(10^-5) * 1 * 100) + 14/(1.5833333*(10^-5) * 1 * 0.7 * 100) + 13/(1.5833333*(10^-5) * 1 * 0.3 * 100) round 0}} }}
+| {{#expr: (72/(1.5833333*(10^-5) * 1 * 100) + 14/(1.5833333*(10^-5) * 1 * 0.7 * 100) + 13/(1.5833333*(10^-5) * 1 * 0.3 * 100))/2500 round 3}} hours 
+|}
+{{Reflist}}
+
+==== Positive ====
+When a character rests in a bed, their Rest value increases over time. At 100% Rest Effectiveness and 100% Rest Rate Multiplier, a character requires 10.5 hours (26,250 ticks) to full rest from 0% to 100%.
+
+ Every 150 ticks (2.5 seconds at 1x speed), rest increases by 100% * (Ticks in interval (150) / Ticks Per Game Day (60000)) * (Hours per day (24) / Sleep Hours for Full (10.5)) * Rest Effectiveness * Rest Rate Multiplier
+ = 100% * (150 * 24) / (60000 * 10.5) * Rest Effectiveness * Rest Rate Multiplier
+ = (100%/175) * Rest Effectiveness * Rest Rate Multiplier
+ = ~0.57143% * Rest Effectiveness * Rest Rate Multiplier
+
+175 of these 150-tick intervals is the 26,250 ticks (10.5 in-game hours) required to fully rest from 0%.
+
+== Stat multipliers ==
+There are 3 main stats that affect Rest per day:
+* [[Rest Effectiveness]] - a [[bed]] stat that increases Rest% per time sleeping.
+* [[Rest Rate Multiplier]] - a character (pawn) stat that increases Rest% per time sleeping.
+* [[Sleep Fall Rate]] - a multiplier on the speed that a person's [[Rest|sleep need]] falls when awake.
+
+In other words, boosting the first 2 stats will ''decrease time spent sleeping''. Lowering Sleep Fall Rate will ''increase the time before needing to sleep''.
+
+=== Rest Effectiveness ===
+[[Rest Effectiveness]] depends on the object the character is sleeping on:
+
+{| class="wikitable"
+! Object
+! Rest Effectiveness (Base)
+! Rest increase per 150 ticks
+! Rest increase per full 24-hour game day
+|-
+| Sleeping Spot or Ground
+| 0.8
+| ~0.45714%
+| ~182.857%
+|-
+| Bedroll
+| 0.95
+| ~0.54286%
+| ~217.143%
+|-
+| Bed
+| 1.0
+| ~0.57143%
+| ~228.571%
+|-
+| Royal Bed
+| 1.05
+| 0.6%
+| 240%
+|}
+
+which is then multiplied by the [[quality]] of that object:
+
+{| class="wikitable"
+! Quality
+! Awful
+! Poor
+! Normal
+! Good
+! Excellent
+! Masterwork
+! Legendary
+|-
+! Rest Effectiveness 
+| 0.86 || 0.92 || 1.0 || 1.08 || 1.14 || 1.25 || 1.6
+|}
+
+A [[sleep accelerator]]{{IdeologyIcon}} adds +35% to Rest Effectiveness, which is then multiplied by the ''bed'''s quality.
+
+=== Rest Rate Multiplier ===
+[[Rest Rate Multiplier]] is a stat of a pawn, which depends on the health of the pawn:
+* [[Blood Pumping]] has a .3 weight
+* [[Digestion]] has a .3 weight
+* [[Breathing]] has a .3 weight
+[[Bionic]]s, [[luciferium]], and injuries can all increase/lower the component stats, thus having an effect on RRM.
+
+This multiplier stacks with rest effectiveness. Therefore, when a character with 100% Rest Rate Multiplier reaches the Tired threshold (28%), it takes them this long to return to full (100%) rest:
+{| class="wikitable"
+! Object
+! Ticks to Full Rest
+! Hours to Full Rest
+! % of Day to Full Rest
+|-
+| Sleeping Spot / Ground (0.8)
+| 23,625
+| ‭9.45
+| 39.375%
+|-
+| Normal Bed (1.0)
+| 18,900
+| 7.56
+| 31.5%
+|-
+| Legendary Royal Bed (1.05 * 1.6 = 1.68)
+| 11,250
+| 4.5
+| 18.75%
+|}
+
+=== Sleep Fall Rate ===
+{{Main|Sleep Fall Rate}}
+Sleep Fall Rate determines how long a pawn can stay awake until they need to sleep again. Ideally it is as low as possible. It is decreased by [[go-juice]], [[wake-up]] and the three [[psychite]] drugs for the duration of their high, addiction increases it however (with the exception of go-juice). Notably the [[circadian assistant]] {{RoyaltyIcon}} improves it, while the diseases [[muscle parasites]], [[fibrous mechanites]] and [[sensory mechanites]] are detrimental. It also depends on the [[Genes#Sleep|sleep genes]] {{BiotechIcon}}. It can range from {{Good|{{%|{{Q|Sleep Fall Rate|Effective Minimum}} }} }} to {{Bad|{{%|{{Q|Sleep Fall Rate|Effective Maximum}} }} }}.
+
+== Analysis ==
+There exists a balance point for every type/quality of bed (and character, if that character has offsets to Rest Rate Multiplier or Sleep Fall Rate), in which the hours spent sleeping and the hours spent awake during a 24-hour period precisely balance. This is ultimately a piecewise equation, as the Sleep fall rate is piecewise based on the current rest level (see above). We can ignore the Exhausted category, as a character must spend >24 hours awake (if starting at 100% rest) before reaching that threshold.
+
+As long as the character is awake for less than 18.189 hours per day, however, this is a single-part equation, as the character will never reach Tired. The percentage of the day that the character may stay awake, expressed as a decimal value, with a given RestMult (equal to Rest Effectiveness * Rest Rate Multiplier) is reached by solving the following equation for %DayAwake:
+
+ 0.95 * %DayAwake = (1 - %DayAwake) * (24/10.5) * RestMult
+
+This gives the following equation:
+
+ %DayAwake = (320 * RestMult) / (320 * RestMult + 133)
+
+At 1.0 RestMult (normal unmodified character in a normal quality regular bed), this gives a value of 70.64% of the day awake, or ~16.95 hours. Higher RestMults will grant more hours per day awake per this equation, up to 18.189 hours (75.789% of the day) awake.
+
+Beyond that point, we need a piecewise equation. The RestMult needed to be awake for 18.189 hours per day (0.75789 %DayAwake) is 1.301, which can be achieved with only a masterwork Royal Bed. After this point, we can use a fixed value for the ~75% of the day awake before hitting Tired, which results in a 72% drop in rest, and then compute the remainder of the time awake off of the sleep fall rate when Tired (66.5% per day rather than 95% per day). This can be found by solving:
+
+ 0.72 + (%DayAwake - (0.72/0.95))*0.665 = (1 - %DayAwake) * (24/10.5) * RestMult
+
+This gives:
+
+ %DayAwake = (16000*RestMult - 1512) / (16000*RestMult + 4655)
+
+At 1.3125 RestMult (an unmodified character in a masterwork Royal Bed), which is just past the threshold where this equation is needed, this gives a value of 75.962% 0f the day awake, or 18.231 hours.
+
+At 1.68 Rest Effectiveness (the legendary quality Royal Bed in the table above) and a character with the Quick Sleeper trait (50% Rest Rate Multiplier), a Bionic Heart (+25% Blood Pumping = 7.5% Rest Rate Multiplier), and a Bionic or Royalty stomach (all of which are +25% part efficiency -> +12.5% Digestion -> 3.75% Rest Rate Multiplier), for a net of 1.5*1.075*1.0375 = 1.673 Rest Rate Multiplier, the RestMult = 1.68 * 1.673 = 2.811. At that level, the character can be awake for 87.573% of the day, or 21.017 hours.
+
+In theory, there also exists a point at which the Very Tired piece of the equation becomes a factor, but this would require a pawn to be awake for at least 96.84% of the day (23.242 hours). This would require a RestMult of at least 11.915 (ie. 1191.5%), which is impossible to hit in the base game (and even with most mod setups), and thus can be ignored.
+
+=== Circadian assistant ===
+If the character is using a [[Circadian assistant]],{{RoyaltyIcon}} their sleep fall rate is reduced by 20%, meaning it takes 25% longer to reach each threshold. The equations in this case must be re-derived (derivation is left as an exercise for the reader), but the simple answer is:
+
+* A character otherwise unmodified except for the Circadian Assistant, using a normal quality bed, can be awake for ~75.047% of the day (~18.011 hours), about 6.3% more of the day than without the implant.
+* An otherwise-unmodified character in a masterwork Royal Bed can be awake for ~79.787% of a day (~19.149 hours), about 5% more of the day.
+* The above bionically-modified Quick Sleeper pawn in a legendary quality Royal Bed, with the addition of a Circadian Assistant, could be awake for ~89.421% of a day (~21.461 hours), about 2.1% more of the day.
+* None of these characters would ever reach "Tired", which takes ~94.737% of a day, or ~22.737 hours, with a Circadian Assistant installed.
+
+=== Low sleep gene ===
+The low sleep [[gene]]{{BiotechIcon}} reduces Sleep Fall Rate by x40%, meaning it takes 150% longer to reach each threshold.
+* A character otherwise unmodified, using a normal quality bed, can be awake for ~85.74% of a day (20.577 hours). This is about 15.1% more of the day, or 3.6 hours, than without the gene.
+* This gene reduces sleep so much that a pawn wouldn't get drowsy - it would take 45.47 hours awake to do so. 
+**At this point, setting an all anything schedule will provide more work time than a 24 hour schedule. A pawn with low sleep could sustain a 53.03hr cycle, (45.47 hr awake) + (7.56 hr sleep) without getting drowsy. The awake time % is still the same, but less time is spent walking to bed.
+
+== Disabling rest need ==
+There are four ways to disable a pawn's need for rest entirely: 
+* The [[Circadian half-cycler]] {{RoyaltyIcon}} implant disables the rest need at the cost of {{--|15%}} consciousness.
+* The [[Never sleep]] {{BiotechIcon}} gene disables the rest need but carries high complexity and genetic inefficiency.
+* The [[Body mastery]]{{AnomalyIcon}} trait held by some [[Creepjoiner]]s{{AnomalyIcon}} disables the rest need. 
+* The [[Void touched]] {{AnomalyIcon}} condition disables the need for both rest and comfort, but can only be obtained after [[Endings#Embrace_the_void|embracing the void]].
+
+== Comparison tables ==
+{{Stub|section=1|reason=Add variant tables for key Sleep Fall Rate ala [[quality]] tables - [[Psychite tea]], [[circadian assistant]], their combination, and maybe [[flake]]/[[yayo]]/[[go juice]] and [[wake up]] should be represented}}
+
+Below is table of the minimum sleep required for a number of combinations of [[Rest Rate Multiplier]]s and [[Rest effectiveness]]es that is infinitely sustainable. That is, each day the pawn will always return to the same state as they started the previous day. This information is displayed as a percentage of the day spent asleep, while the number in parentheses below is the hours spent asleep. 
+
+'''Note''' two important limitations. Firstly each table assumes that the resting pawn has a given [[Sleep Fall Rate]] listed in the subheading. A pawn naturally has a factor of 1.0
+
+Secondly, for time asleep shorter than {{%|(24-18.189)/24}} ({{#expr: 24-18.189}} hrs) multiplied by the Sleep Fall Rate, if the pawn stays awake for a single contiguous block of time, they have enough time awake each day to get Drowsy before going to sleep and refilling their rest meter to 100% before midnight. As the sleep fall rate is piecewise accross the different states of tiredness, this means the minimum sleep time will vary depending on whether the awake time is contiguously or if a bi- or polyphasic sleep schedule is used. As the sleep fall rate ''decreases'' when it dips into Drowsy or below, this means that a monophasic sleep schedule will actually give more time awake but at the cost of having the {{--|6}} mood debuff for that time. A polyphasic sleep schedule can allow no Drowsy period but will take slightly longer. '''The table below assumes a properly implemented polyphasic sleep''' to prevent getting Drowsy - this is done because pawns will tend to want to sleep before getting Drowsy, it avoids the mood debuff, and it simplifies the creation of the table.
+
+=== Sleep Fall Rate of 1.0 ===
+{| class="wikitable"
+! rowspan="3" | [[Rest Rate Multiplier]] !! colspan="29" | [[Rest effectiveness]]
+|-
+! [[Sleeping spot|Sleep. spot]]{{#vardefine:spotRE|{{Q|Sleeping spot|Rest Effectiveness}} }}
+! colspan="7" | [[Bed]] {{#vardefine:bedRE|{{Q|Bed|Rest Effectiveness}} }}
+! colspan="7" | [[Bed]] + [[Sleep accelerator]] {{#vardefine:bedAccelRE|({{#var:bedRE}}+0.35) }}
+! colspan="7" | [[Royal bed]] {{#vardefine:royalBedRE|{{Q|Royal bed|Rest Effectiveness}} }}
+! colspan="7" | [[Royal bed]] + [[Sleep accelerator]] {{#vardefine:royalBedAccelRE|({{#var:royalBedRE}}+0.35) }}
+|- <!-- Rest effectiveness - all qualities of bed/hospital bed/slab bed and royal bed +/- sleep accelerator-->
+! ''All''<br/><small>({{%|{{#var:spotRE}} }})
+! Awf.<br/><small>({{%|{{#var:bedRE}}*0.86 | 0}}) !! Poor.<br/><small>({{%|{{#var:bedRE}}*0.92 | 0}}) !! Norm.<br/><small>({{%|{{#var:bedRE}}*1.00 | 0}}) !! Good<br/><small>({{%|{{#var:bedRE}}*1.08 | 0}}) !! Exc.<br/><small>({{%|{{#var:bedRE}}*1.14 | 0}}) !! Mast.<br/><small>({{%|{{#var:bedRE}}*1.25 | 0}}) !! Leg. <br/><small>({{%|{{#var:bedRE}}*1.60 | 0}}) 
+! Awf.<br/><small>({{%|{{#var:bedAccelRE}}*0.86 | 0}}) !! Poor.<br/><small>({{%|{{#var:bedAccelRE}}*0.92 | 0}}) !! Norm.<br/><small>({{%|{{#var:bedAccelRE}}*1.00 | 0}}) !! Good<br/><small>({{%|{{#var:bedAccelRE}}*1.08 | 0}}) !! Exc.<br/><small>({{%|{{#var:bedAccelRE}}*1.14 | 0}}) !! Mast.<br/><small>({{%|{{#var:bedAccelRE}}*1.25 | 0}}) !! Leg. <br/><small>({{%|{{#var:bedAccelRE}}*1.60 | 0}}) 
+! Awf.<br/><small>({{%|{{#var:royalBedRE}}*0.86 | 0}}) !! Poor.<br/><small>({{%|{{#var:royalBedRE}}*0.92 | 0}}) !! Norm.<br/><small>({{%|{{#var:royalBedRE}}*1.00 | 0}}) !! Good<br/><small>({{%|{{#var:royalBedRE}}*1.08 | 0}}) !! Exc.<br/><small>({{%|{{#var:royalBedRE}}*1.14 | 0}}) !! Mast.<br/><small>({{%|{{#var:royalBedRE}}*1.25 | 0}}) !! Leg. <br/><small>({{%|{{#var:royalBedRE}}*1.60 | 0}}) 
+! Awf.<br/><small>({{%|{{#var:royalBedAccelRE}}*0.86 | 0}}) !! Poor.<br/><small>({{%|{{#var:royalBedAccelRE}}*0.92 | 0}}) !! Norm.<br/><small>({{%|{{#var:royalBedAccelRE}}*1.00 | 0}}) !! Good<br/><small>({{%|{{#var:royalBedAccelRE}}*1.08 | 0}}) !! Exc.<br/><small>({{%|{{#var:royalBedAccelRE}}*1.14 | 0}}) !! Mast.<br/><small>({{%|{{#var:royalBedAccelRE}}*1.25 | 0}}) !! Leg. <br/><small>({{%|{{#var:royalBedAccelRE}}*1.60 | 0}}) 
+|-
+! 100%<br/><small>''Nothing''</small>
+{{Rest Hours Per Day|RE={{#var:spotRE}}|RRM=1.00|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.86)|RRM=1.00|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.92)|RRM=1.00|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.00)|RRM=1.00|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.08)|RRM=1.00|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.14)|RRM=1.00|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.25)|RRM=1.00|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.60)|RRM=1.00|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.86)|RRM=1.00|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.92)|RRM=1.00|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.00)|RRM=1.00|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.08)|RRM=1.00|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.14)|RRM=1.00|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.25)|RRM=1.00|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.60)|RRM=1.00|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.86)|RRM=1.00|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.92)|RRM=1.00|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.00)|RRM=1.00|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.08)|RRM=1.00|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.14)|RRM=1.00|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.25)|RRM=1.00|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.60)|RRM=1.00|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.86)|RRM=1.00|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.92)|RRM=1.00|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.00)|RRM=1.00|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.08)|RRM=1.00|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.14)|RRM=1.00|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.25)|RRM=1.00|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.60)|RRM=1.00|color=1}} 
+|-
+! 104%<br/><small>[[Bionic stomach|BS]]</small>
+{{Rest Hours Per Day|RE={{#var:spotRE}}|RRM=1.04|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.86)|RRM=1.04|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.92)|RRM=1.04|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.00)|RRM=1.04|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.08)|RRM=1.04|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.14)|RRM=1.04|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.25)|RRM=1.04|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.60)|RRM=1.04|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.86)|RRM=1.04|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.92)|RRM=1.04|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.00)|RRM=1.04|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.08)|RRM=1.04|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.14)|RRM=1.04|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.25)|RRM=1.04|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.60)|RRM=1.04|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.86)|RRM=1.04|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.92)|RRM=1.04|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.00)|RRM=1.04|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.08)|RRM=1.04|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.14)|RRM=1.04|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.25)|RRM=1.04|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.60)|RRM=1.04|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.86)|RRM=1.04|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.92)|RRM=1.04|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.00)|RRM=1.04|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.08)|RRM=1.04|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.14)|RRM=1.04|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.25)|RRM=1.04|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.60)|RRM=1.04|color=1}} 
+|-
+! 107%<br/><small>[[Bionic heart|BH]]</small>
+{{Rest Hours Per Day|RE={{#var:spotRE}}|RRM=1.07|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.86)|RRM=1.07|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.92)|RRM=1.07|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.00)|RRM=1.07|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.08)|RRM=1.07|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.14)|RRM=1.07|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.25)|RRM=1.07|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.60)|RRM=1.07|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.86)|RRM=1.07|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.92)|RRM=1.07|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.00)|RRM=1.07|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.08)|RRM=1.07|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.14)|RRM=1.07|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.25)|RRM=1.07|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.60)|RRM=1.07|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.86)|RRM=1.07|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.92)|RRM=1.07|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.00)|RRM=1.07|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.08)|RRM=1.07|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.14)|RRM=1.07|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.25)|RRM=1.07|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.60)|RRM=1.07|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.86)|RRM=1.07|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.92)|RRM=1.07|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.00)|RRM=1.07|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.08)|RRM=1.07|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.14)|RRM=1.07|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.25)|RRM=1.07|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.60)|RRM=1.07|color=1}}
+|-
+! 111%<br/><small>[[Bionic stomach|BS]]+[[Bionic heart|BH]]</small>
+{{Rest Hours Per Day|RE={{#var:spotRE}}|RRM=1.11|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.86)|RRM=1.11|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.92)|RRM=1.11|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.00)|RRM=1.11|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.08)|RRM=1.11|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.14)|RRM=1.11|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.25)|RRM=1.11|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.60)|RRM=1.11|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.86)|RRM=1.11|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.92)|RRM=1.11|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.00)|RRM=1.11|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.08)|RRM=1.11|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.14)|RRM=1.11|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.25)|RRM=1.11|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.60)|RRM=1.11|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.86)|RRM=1.11|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.92)|RRM=1.11|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.00)|RRM=1.11|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.08)|RRM=1.11|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.14)|RRM=1.11|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.25)|RRM=1.11|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.60)|RRM=1.11|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.86)|RRM=1.11|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.92)|RRM=1.11|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.00)|RRM=1.11|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.08)|RRM=1.11|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.14)|RRM=1.11|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.25)|RRM=1.11|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.60)|RRM=1.11|color=1}}
+|-
+! 118%<br/><small>[[Bionic stomach|BS]]+[[Luciferium|L]]</small>
+{{Rest Hours Per Day|RE={{#var:spotRE}}|RRM=1.18|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.86)|RRM=1.18|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.92)|RRM=1.18|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.00)|RRM=1.18|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.08)|RRM=1.18|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.14)|RRM=1.18|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.25)|RRM=1.18|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.60)|RRM=1.18|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.86)|RRM=1.18|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.92)|RRM=1.18|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.00)|RRM=1.18|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.08)|RRM=1.18|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.14)|RRM=1.18|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.25)|RRM=1.18|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.60)|RRM=1.18|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.86)|RRM=1.18|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.92)|RRM=1.18|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.00)|RRM=1.18|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.08)|RRM=1.18|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.14)|RRM=1.18|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.25)|RRM=1.18|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.60)|RRM=1.18|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.86)|RRM=1.18|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.92)|RRM=1.18|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.00)|RRM=1.18|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.08)|RRM=1.18|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.14)|RRM=1.18|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.25)|RRM=1.18|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.60)|RRM=1.18|color=1}}
+|-
+! 122%<br/><small>[[Bionic heart|BH]]+[[Luciferium|L]]</small>
+{{Rest Hours Per Day|RE={{#var:spotRE}}|RRM=1.22|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.86)|RRM=1.22|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.92)|RRM=1.22|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.00)|RRM=1.22|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.08)|RRM=1.22|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.14)|RRM=1.22|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.25)|RRM=1.22|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.60)|RRM=1.22|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.86)|RRM=1.22|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.92)|RRM=1.22|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.00)|RRM=1.22|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.08)|RRM=1.22|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.14)|RRM=1.22|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.25)|RRM=1.22|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.60)|RRM=1.22|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.86)|RRM=1.22|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.92)|RRM=1.22|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.00)|RRM=1.22|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.08)|RRM=1.22|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.14)|RRM=1.22|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.25)|RRM=1.22|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.60)|RRM=1.22|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.86)|RRM=1.22|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.92)|RRM=1.22|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.00)|RRM=1.22|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.08)|RRM=1.22|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.14)|RRM=1.22|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.25)|RRM=1.22|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.60)|RRM=1.22|color=1}}
+|-
+! 126%<br/><small>[[Bionic stomach|BS]]+[[Bionic heart|BH]]+[[Luciferium|L]]</small>
+{{Rest Hours Per Day|RE={{#var:spotRE}}|RRM=1.26|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.86)|RRM=1.26|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.92)|RRM=1.26|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.00)|RRM=1.26|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.08)|RRM=1.26|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.14)|RRM=1.26|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.25)|RRM=1.26|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.60)|RRM=1.26|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.86)|RRM=1.26|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.92)|RRM=1.26|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.00)|RRM=1.26|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.08)|RRM=1.26|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.14)|RRM=1.26|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.25)|RRM=1.26|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.60)|RRM=1.26|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.86)|RRM=1.26|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.92)|RRM=1.26|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.00)|RRM=1.26|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.08)|RRM=1.26|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.14)|RRM=1.26|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.25)|RRM=1.26|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.60)|RRM=1.26|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.86)|RRM=1.26|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.92)|RRM=1.26|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.00)|RRM=1.26|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.08)|RRM=1.26|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.14)|RRM=1.26|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.25)|RRM=1.26|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.60)|RRM=1.26|color=1}}
+|-
+! 150%<br/><small>[[Quick sleeper|QS]]</small>
+{{Rest Hours Per Day|RE={{#var:spotRE}}|RRM=1.50|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.86)|RRM=1.50|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.92)|RRM=1.50|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.00)|RRM=1.50|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.08)|RRM=1.50|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.14)|RRM=1.50|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.25)|RRM=1.50|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.60)|RRM=1.50|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.86)|RRM=1.50|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.92)|RRM=1.50|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.00)|RRM=1.50|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.08)|RRM=1.50|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.14)|RRM=1.50|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.25)|RRM=1.50|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.60)|RRM=1.50|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.86)|RRM=1.50|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.92)|RRM=1.50|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.00)|RRM=1.50|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.08)|RRM=1.50|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.14)|RRM=1.50|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.25)|RRM=1.50|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.60)|RRM=1.50|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.86)|RRM=1.50|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.92)|RRM=1.50|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.00)|RRM=1.50|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.08)|RRM=1.50|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.14)|RRM=1.50|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.25)|RRM=1.50|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.60)|RRM=1.50|color=1}}
+|-
+! 156%<br/><small>[[Bionic stomach|BS]]+[[Quick sleeper|QS]]</small>
+{{Rest Hours Per Day|RE={{#var:spotRE}}|RRM=1.56|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.86)|RRM=1.56|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.92)|RRM=1.56|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.00)|RRM=1.56|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.08)|RRM=1.56|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.14)|RRM=1.56|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.25)|RRM=1.56|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.60)|RRM=1.56|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.86)|RRM=1.56|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.92)|RRM=1.56|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.00)|RRM=1.56|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.08)|RRM=1.56|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.14)|RRM=1.56|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.25)|RRM=1.56|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.60)|RRM=1.56|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.86)|RRM=1.56|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.92)|RRM=1.56|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.00)|RRM=1.56|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.08)|RRM=1.56|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.14)|RRM=1.56|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.25)|RRM=1.56|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.60)|RRM=1.56|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.86)|RRM=1.56|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.92)|RRM=1.56|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.00)|RRM=1.56|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.08)|RRM=1.56|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.14)|RRM=1.56|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.25)|RRM=1.56|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.60)|RRM=1.56|color=1}}
+|-
+! 161%<br/><small>[[Bionic heart|BH]]+[[Quick sleeper|QS]]</small>
+{{Rest Hours Per Day|RE={{#var:spotRE}}|RRM=1.61|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.86)|RRM=1.61|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.92)|RRM=1.61|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.00)|RRM=1.61|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.08)|RRM=1.61|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.14)|RRM=1.61|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.25)|RRM=1.61|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.60)|RRM=1.61|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.86)|RRM=1.61|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.92)|RRM=1.61|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.00)|RRM=1.61|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.08)|RRM=1.61|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.14)|RRM=1.61|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.25)|RRM=1.61|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.60)|RRM=1.61|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.86)|RRM=1.61|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.92)|RRM=1.61|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.00)|RRM=1.61|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.08)|RRM=1.61|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.14)|RRM=1.61|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.25)|RRM=1.61|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.60)|RRM=1.61|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.86)|RRM=1.61|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.92)|RRM=1.61|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.00)|RRM=1.61|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.08)|RRM=1.61|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.14)|RRM=1.61|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.25)|RRM=1.61|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.60)|RRM=1.61|color=1}}
+|-
+! 166%<br/><small>[[Bionic stomach|BS]]+[[Bionic heart|BH]]+[[Quick sleeper|QS]]</small>
+{{Rest Hours Per Day|RE={{#var:spotRE}}|RRM=1.66|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.86)|RRM=1.66|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.92)|RRM=1.66|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.00)|RRM=1.66|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.08)|RRM=1.66|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.14)|RRM=1.66|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.25)|RRM=1.66|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.60)|RRM=1.66|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.86)|RRM=1.66|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.92)|RRM=1.66|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.00)|RRM=1.66|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.08)|RRM=1.66|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.14)|RRM=1.66|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.25)|RRM=1.66|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.60)|RRM=1.66|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.86)|RRM=1.66|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.92)|RRM=1.66|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.00)|RRM=1.66|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.08)|RRM=1.66|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.14)|RRM=1.66|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.25)|RRM=1.66|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.60)|RRM=1.66|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.86)|RRM=1.66|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.92)|RRM=1.66|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.00)|RRM=1.66|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.08)|RRM=1.66|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.14)|RRM=1.66|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.25)|RRM=1.66|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.60)|RRM=1.66|color=1}}
+|-
+! 177%<br/><small>[[Bionic stomach|BS]]+[[Luciferium|L]]+[[Quick sleeper|QS]]</small>
+{{Rest Hours Per Day|RE={{#var:spotRE}}|RRM=1.77|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.86)|RRM=1.77|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.92)|RRM=1.77|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.00)|RRM=1.77|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.08)|RRM=1.77|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.14)|RRM=1.77|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.25)|RRM=1.77|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.60)|RRM=1.77|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.86)|RRM=1.77|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.92)|RRM=1.77|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.00)|RRM=1.77|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.08)|RRM=1.77|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.14)|RRM=1.77|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.25)|RRM=1.77|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.60)|RRM=1.77|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.86)|RRM=1.77|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.92)|RRM=1.77|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.00)|RRM=1.77|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.08)|RRM=1.77|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.14)|RRM=1.77|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.25)|RRM=1.77|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.60)|RRM=1.77|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.86)|RRM=1.77|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.92)|RRM=1.77|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.00)|RRM=1.77|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.08)|RRM=1.77|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.14)|RRM=1.77|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.25)|RRM=1.77|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.60)|RRM=1.77|color=1}}
+|-
+! 183%<br/><small>[[Bionic heart|BH]]+[[Luciferium|L]]+[[Quick sleeper|QS]]</small>
+{{Rest Hours Per Day|RE={{#var:spotRE}}|RRM=1.83|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.86)|RRM=1.83|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.92)|RRM=1.83|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.00)|RRM=1.83|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.08)|RRM=1.83|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.14)|RRM=1.83|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.25)|RRM=1.83|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.60)|RRM=1.83|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.86)|RRM=1.83|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.92)|RRM=1.83|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.00)|RRM=1.83|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.08)|RRM=1.83|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.14)|RRM=1.83|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.25)|RRM=1.83|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.60)|RRM=1.83|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.86)|RRM=1.83|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.92)|RRM=1.83|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.00)|RRM=1.83|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.08)|RRM=1.83|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.14)|RRM=1.83|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.25)|RRM=1.83|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.60)|RRM=1.83|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.86)|RRM=1.83|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.92)|RRM=1.83|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.00)|RRM=1.83|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.08)|RRM=1.83|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.14)|RRM=1.83|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.25)|RRM=1.83|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.60)|RRM=1.83|color=1}}
+|-
+! 190%<br/><small>[[Bionic stomach|BS]]+[[Bionic heart|BH]]+[[Luciferium|L]]+[[Quick sleeper|QS]]</small>
+{{Rest Hours Per Day|RE={{#var:spotRE}}|RRM=1.90|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.86)|RRM=1.90|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.92)|RRM=1.90|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.00)|RRM=1.90|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.08)|RRM=1.90|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.14)|RRM=1.90|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.25)|RRM=1.90|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.60)|RRM=1.90|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.86)|RRM=1.90|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.92)|RRM=1.90|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.00)|RRM=1.90|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.08)|RRM=1.90|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.14)|RRM=1.90|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.25)|RRM=1.90|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.60)|RRM=1.90|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.86)|RRM=1.90|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.92)|RRM=1.90|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.00)|RRM=1.90|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.08)|RRM=1.90|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.14)|RRM=1.90|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.25)|RRM=1.90|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.60)|RRM=1.90|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.86)|RRM=1.90|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.92)|RRM=1.90|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.00)|RRM=1.90|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.08)|RRM=1.90|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.14)|RRM=1.90|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.25)|RRM=1.90|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.60)|RRM=1.90|color=1}}
+|-
+|}
+
+=== Sleep Fall Rate of 0.8 ===
+Equivalent to the sleep fall rate of a pawn with an installed [[circadian assistant]]. {{RoyaltyIcon}}{{#vardefine: restFallFactor|0.8}}
+
+{| class="wikitable"
+! rowspan="3" | [[Rest Rate Multiplier]] !! colspan="29" | [[Rest effectiveness]]
+|-
+! [[Sleeping spot|Sleep. spot]]{{#vardefine:spotRE|{{Q|Sleeping spot|Rest Effectiveness}} }}
+! colspan="7" | [[Bed]] {{#vardefine:bedRE|{{Q|Bed|Rest Effectiveness}} }}
+! colspan="7" | [[Bed]] + [[Sleep accelerator]] {{#vardefine:bedAccelRE|({{#var:bedRE}}+0.35) }}
+! colspan="7" | [[Royal bed]] {{#vardefine:royalBedRE|{{Q|Royal bed|Rest Effectiveness}} }}
+! colspan="7" | [[Royal bed]] + [[Sleep accelerator]] {{#vardefine:royalBedAccelRE|({{#var:royalBedRE}}+0.35) }}
+|- <!-- Rest effectiveness - all qualities of bed/hospital bed/slab bed and royal bed +/- sleep accelerator-->
+! ''All''<br/><small>({{%|{{#var:spotRE}} }})
+! Awf.<br/><small>({{%|{{#var:bedRE}}*0.86 | 0}}) !! Poor.<br/><small>({{%|{{#var:bedRE}}*0.92 | 0}}) !! Norm.<br/><small>({{%|{{#var:bedRE}}*1.00 | 0}}) !! Good<br/><small>({{%|{{#var:bedRE}}*1.08 | 0}}) !! Exc.<br/><small>({{%|{{#var:bedRE}}*1.14 | 0}}) !! Mast.<br/><small>({{%|{{#var:bedRE}}*1.25 | 0}}) !! Leg. <br/><small>({{%|{{#var:bedRE}}*1.60 | 0}}) 
+! Awf.<br/><small>({{%|{{#var:bedAccelRE}}*0.86 | 0}}) !! Poor.<br/><small>({{%|{{#var:bedAccelRE}}*0.92 | 0}}) !! Norm.<br/><small>({{%|{{#var:bedAccelRE}}*1.00 | 0}}) !! Good<br/><small>({{%|{{#var:bedAccelRE}}*1.08 | 0}}) !! Exc.<br/><small>({{%|{{#var:bedAccelRE}}*1.14 | 0}}) !! Mast.<br/><small>({{%|{{#var:bedAccelRE}}*1.25 | 0}}) !! Leg. <br/><small>({{%|{{#var:bedAccelRE}}*1.60 | 0}}) 
+! Awf.<br/><small>({{%|{{#var:royalBedRE}}*0.86 | 0}}) !! Poor.<br/><small>({{%|{{#var:royalBedRE}}*0.92 | 0}}) !! Norm.<br/><small>({{%|{{#var:royalBedRE}}*1.00 | 0}}) !! Good<br/><small>({{%|{{#var:royalBedRE}}*1.08 | 0}}) !! Exc.<br/><small>({{%|{{#var:royalBedRE}}*1.14 | 0}}) !! Mast.<br/><small>({{%|{{#var:royalBedRE}}*1.25 | 0}}) !! Leg. <br/><small>({{%|{{#var:royalBedRE}}*1.60 | 0}}) 
+! Awf.<br/><small>({{%|{{#var:royalBedAccelRE}}*0.86 | 0}}) !! Poor.<br/><small>({{%|{{#var:royalBedAccelRE}}*0.92 | 0}}) !! Norm.<br/><small>({{%|{{#var:royalBedAccelRE}}*1.00 | 0}}) !! Good<br/><small>({{%|{{#var:royalBedAccelRE}}*1.08 | 0}}) !! Exc.<br/><small>({{%|{{#var:royalBedAccelRE}}*1.14 | 0}}) !! Mast.<br/><small>({{%|{{#var:royalBedAccelRE}}*1.25 | 0}}) !! Leg. <br/><small>({{%|{{#var:royalBedAccelRE}}*1.60 | 0}}) 
+|-
+! 100%<br/><small>''Nothing''</small>
+{{Rest Hours Per Day|RE={{#var:spotRE}}|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.86)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.92)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.00)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.08)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.14)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.25)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.60)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.86)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.92)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.00)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.08)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.14)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.25)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.60)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.86)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.92)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.00)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.08)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.14)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.25)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.60)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.86)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.92)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.00)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.08)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.14)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.25)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.60)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+|-
+! 104%<br/><small>[[Bionic stomach|BS]]</small>
+{{Rest Hours Per Day|RE={{#var:spotRE}}|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.86)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.92)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.00)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.08)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.14)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.25)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.60)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.86)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.92)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.00)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.08)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.14)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.25)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.60)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.86)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.92)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.00)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.08)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.14)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.25)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.60)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.86)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.92)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.00)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.08)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.14)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.25)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.60)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+|-
+! 107%<br/><small>[[Bionic heart|BH]]</small>
+{{Rest Hours Per Day|RE={{#var:spotRE}}|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.86)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.92)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.00)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.08)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.14)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.25)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.60)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.86)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.92)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.00)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.08)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.14)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.25)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.60)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.86)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.92)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.00)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.08)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.14)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.25)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.60)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.86)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.92)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.00)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.08)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.14)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.25)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.60)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}}
+|-
+! 111%<br/><small>[[Bionic stomach|BS]]+[[Bionic heart|BH]]</small>
+{{Rest Hours Per Day|RE={{#var:spotRE}}|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.86)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.92)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.00)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.08)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.14)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.25)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.60)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.86)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.92)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.00)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.08)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.14)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.25)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.60)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.86)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.92)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.00)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.08)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.14)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.25)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.60)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.86)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.92)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.00)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.08)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.14)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.25)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.60)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}}
+|-
+! 118%<br/><small>[[Bionic stomach|BS]]+[[Luciferium|L]]</small>
+{{Rest Hours Per Day|RE={{#var:spotRE}}|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.86)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.92)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.00)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.08)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.14)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.25)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.60)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.86)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.92)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.00)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.08)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.14)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.25)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.60)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.86)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.92)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.00)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.08)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.14)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.25)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.60)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.86)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.92)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.00)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.08)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.14)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.25)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.60)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}}
+|-
+! 122%<br/><small>[[Bionic heart|BH]]+[[Luciferium|L]]</small>
+{{Rest Hours Per Day|RE={{#var:spotRE}}|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.86)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.92)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.00)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.08)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.14)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.25)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.60)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.86)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.92)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.00)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.08)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.14)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.25)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.60)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.86)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.92)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.00)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.08)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.14)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.25)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.60)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.86)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.92)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.00)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.08)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.14)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.25)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.60)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}}
+|-
+! 126%<br/><small>[[Bionic stomach|BS]]+[[Bionic heart|BH]]+[[Luciferium|L]]</small>
+{{Rest Hours Per Day|RE={{#var:spotRE}}|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.86)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.92)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.00)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.08)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.14)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.25)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.60)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.86)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.92)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.00)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.08)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.14)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.25)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.60)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.86)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.92)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.00)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.08)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.14)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.25)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.60)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.86)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.92)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.00)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.08)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.14)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.25)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.60)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}}
+|-
+! 150%<br/><small>[[Quick sleeper|QS]]</small>
+{{Rest Hours Per Day|RE={{#var:spotRE}}|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.86)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.92)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.00)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.08)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.14)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.25)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.60)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.86)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.92)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.00)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.08)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.14)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.25)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.60)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.86)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.92)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.00)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.08)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.14)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.25)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.60)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.86)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.92)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.00)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.08)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.14)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.25)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.60)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}}
+|-
+! 156%<br/><small>[[Bionic stomach|BS]]+[[Quick sleeper|QS]]</small>
+{{Rest Hours Per Day|RE={{#var:spotRE}}|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.86)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.92)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.00)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.08)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.14)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.25)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.60)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.86)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.92)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.00)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.08)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.14)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.25)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.60)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.86)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.92)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.00)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.08)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.14)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.25)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.60)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.86)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.92)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.00)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.08)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.14)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.25)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.60)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}}
+|-
+! 161%<br/><small>[[Bionic heart|BH]]+[[Quick sleeper|QS]]</small>
+{{Rest Hours Per Day|RE={{#var:spotRE}}|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.86)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.92)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.00)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.08)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.14)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.25)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.60)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.86)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.92)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.00)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.08)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.14)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.25)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.60)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.86)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.92)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.00)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.08)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.14)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.25)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.60)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.86)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.92)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.00)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.08)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.14)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.25)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.60)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}}
+|-
+! 166%<br/><small>[[Bionic stomach|BS]]+[[Bionic heart|BH]]+[[Quick sleeper|QS]]</small>
+{{Rest Hours Per Day|RE={{#var:spotRE}}|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.86)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.92)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.00)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.08)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.14)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.25)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.60)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.86)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.92)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.00)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.08)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.14)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.25)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.60)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.86)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.92)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.00)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.08)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.14)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.25)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.60)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.86)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.92)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.00)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.08)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.14)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.25)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.60)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}}
+|-
+! 177%<br/><small>[[Bionic stomach|BS]]+[[Luciferium|L]]+[[Quick sleeper|QS]]</small>
+{{Rest Hours Per Day|RE={{#var:spotRE}}|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.86)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.92)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.00)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.08)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.14)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.25)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.60)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.86)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.92)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.00)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.08)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.14)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.25)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.60)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.86)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.92)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.00)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.08)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.14)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.25)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.60)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.86)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.92)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.00)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.08)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.14)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.25)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.60)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}}
+|-
+! 183%<br/><small>[[Bionic heart|BH]]+[[Luciferium|L]]+[[Quick sleeper|QS]]</small>
+{{Rest Hours Per Day|RE={{#var:spotRE}}|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.86)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.92)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.00)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.08)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.14)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.25)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.60)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.86)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.92)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.00)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.08)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.14)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.25)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.60)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.86)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.92)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.00)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.08)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.14)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.25)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.60)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.86)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.92)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.00)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.08)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.14)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.25)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.60)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}}
+|-
+! 190%<br/><small>[[Bionic stomach|BS]]+[[Bionic heart|BH]]+[[Luciferium|L]]+[[Quick sleeper|QS]]</small>
+{{Rest Hours Per Day|RE={{#var:spotRE}}|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.86)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.92)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.00)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.08)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.14)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.25)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.60)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.86)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.92)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.00)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.08)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.14)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.25)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.60)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.86)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.92)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.00)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.08)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.14)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.25)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.60)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.86)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.92)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.00)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.08)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.14)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.25)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.60)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}}
+|}
+
+=== Sleep Fall Rate of 0.4 ===
+Equivalent to the sleep fall rate of a pawn with the [[Low sleep]] gene.{{BiotechIcon}}{{#vardefine: restFallFactor|0.4}}
+
+{| class="wikitable"
+! rowspan="3" | [[Rest Rate Multiplier]] !! colspan="29" | [[Rest effectiveness]]
+|-
+! [[Sleeping spot|Sleep. spot]]{{#vardefine:spotRE|{{Q|Sleeping spot|Rest Effectiveness}} }}
+! colspan="7" | [[Bed]] {{#vardefine:bedRE|{{Q|Bed|Rest Effectiveness}} }}
+! colspan="7" | [[Bed]] + [[Sleep accelerator]] {{#vardefine:bedAccelRE|({{#var:bedRE}}+0.35) }}
+! colspan="7" | [[Royal bed]] {{#vardefine:royalBedRE|{{Q|Royal bed|Rest Effectiveness}} }}
+! colspan="7" | [[Royal bed]] + [[Sleep accelerator]] {{#vardefine:royalBedAccelRE|({{#var:royalBedRE}}+0.35) }}
+|- <!-- Rest effectiveness - all qualities of bed/hospital bed/slab bed and royal bed +/- sleep accelerator-->
+! ''All''<br/><small>({{%|{{#var:spotRE}} }})
+! Awf.<br/><small>({{%|{{#var:bedRE}}*0.86 | 0}}) !! Poor.<br/><small>({{%|{{#var:bedRE}}*0.92 | 0}}) !! Norm.<br/><small>({{%|{{#var:bedRE}}*1.00 | 0}}) !! Good<br/><small>({{%|{{#var:bedRE}}*1.08 | 0}}) !! Exc.<br/><small>({{%|{{#var:bedRE}}*1.14 | 0}}) !! Mast.<br/><small>({{%|{{#var:bedRE}}*1.25 | 0}}) !! Leg. <br/><small>({{%|{{#var:bedRE}}*1.60 | 0}}) 
+! Awf.<br/><small>({{%|{{#var:bedAccelRE}}*0.86 | 0}}) !! Poor.<br/><small>({{%|{{#var:bedAccelRE}}*0.92 | 0}}) !! Norm.<br/><small>({{%|{{#var:bedAccelRE}}*1.00 | 0}}) !! Good<br/><small>({{%|{{#var:bedAccelRE}}*1.08 | 0}}) !! Exc.<br/><small>({{%|{{#var:bedAccelRE}}*1.14 | 0}}) !! Mast.<br/><small>({{%|{{#var:bedAccelRE}}*1.25 | 0}}) !! Leg. <br/><small>({{%|{{#var:bedAccelRE}}*1.60 | 0}}) 
+! Awf.<br/><small>({{%|{{#var:royalBedRE}}*0.86 | 0}}) !! Poor.<br/><small>({{%|{{#var:royalBedRE}}*0.92 | 0}}) !! Norm.<br/><small>({{%|{{#var:royalBedRE}}*1.00 | 0}}) !! Good<br/><small>({{%|{{#var:royalBedRE}}*1.08 | 0}}) !! Exc.<br/><small>({{%|{{#var:royalBedRE}}*1.14 | 0}}) !! Mast.<br/><small>({{%|{{#var:royalBedRE}}*1.25 | 0}}) !! Leg. <br/><small>({{%|{{#var:royalBedRE}}*1.60 | 0}}) 
+! Awf.<br/><small>({{%|{{#var:royalBedAccelRE}}*0.86 | 0}}) !! Poor.<br/><small>({{%|{{#var:royalBedAccelRE}}*0.92 | 0}}) !! Norm.<br/><small>({{%|{{#var:royalBedAccelRE}}*1.00 | 0}}) !! Good<br/><small>({{%|{{#var:royalBedAccelRE}}*1.08 | 0}}) !! Exc.<br/><small>({{%|{{#var:royalBedAccelRE}}*1.14 | 0}}) !! Mast.<br/><small>({{%|{{#var:royalBedAccelRE}}*1.25 | 0}}) !! Leg. <br/><small>({{%|{{#var:royalBedAccelRE}}*1.60 | 0}}) 
+|-
+! 100%<br/><small>''Nothing''</small>
+{{Rest Hours Per Day|RE={{#var:spotRE}}|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.86)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.92)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.00)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.08)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.14)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.25)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.60)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.86)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.92)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.00)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.08)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.14)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.25)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.60)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.86)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.92)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.00)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.08)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.14)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.25)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.60)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.86)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.92)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.00)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.08)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.14)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.25)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.60)|RRM=1.00|RFF={{#var: restFallFactor}}|color=1}} 
+|-
+! 104%<br/><small>[[Bionic stomach|BS]]</small>
+{{Rest Hours Per Day|RE={{#var:spotRE}}|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.86)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.92)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.00)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.08)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.14)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.25)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.60)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.86)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.92)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.00)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.08)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.14)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.25)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.60)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.86)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.92)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.00)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.08)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.14)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.25)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.60)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.86)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.92)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.00)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.08)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.14)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.25)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.60)|RRM=1.04|RFF={{#var: restFallFactor}}|color=1}} 
+|-
+! 107%<br/><small>[[Bionic heart|BH]]</small>
+{{Rest Hours Per Day|RE={{#var:spotRE}}|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.86)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.92)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.00)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.08)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.14)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.25)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.60)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.86)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.92)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.00)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.08)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.14)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.25)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.60)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.86)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.92)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.00)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.08)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.14)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.25)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.60)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.86)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.92)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.00)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.08)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.14)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.25)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.60)|RRM=1.07|RFF={{#var: restFallFactor}}|color=1}}
+|-
+! 111%<br/><small>[[Bionic stomach|BS]]+[[Bionic heart|BH]]</small>
+{{Rest Hours Per Day|RE={{#var:spotRE}}|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.86)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.92)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.00)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.08)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.14)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.25)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.60)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.86)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.92)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.00)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.08)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.14)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.25)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.60)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.86)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.92)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.00)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.08)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.14)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.25)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.60)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.86)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.92)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.00)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.08)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.14)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.25)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.60)|RRM=1.11|RFF={{#var: restFallFactor}}|color=1}}
+|-
+! 118%<br/><small>[[Bionic stomach|BS]]+[[Luciferium|L]]</small>
+{{Rest Hours Per Day|RE={{#var:spotRE}}|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.86)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.92)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.00)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.08)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.14)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.25)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.60)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.86)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.92)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.00)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.08)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.14)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.25)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.60)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.86)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.92)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.00)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.08)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.14)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.25)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.60)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.86)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.92)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.00)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.08)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.14)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.25)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.60)|RRM=1.18|RFF={{#var: restFallFactor}}|color=1}}
+|-
+! 122%<br/><small>[[Bionic heart|BH]]+[[Luciferium|L]]</small>
+{{Rest Hours Per Day|RE={{#var:spotRE}}|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.86)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.92)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.00)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.08)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.14)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.25)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.60)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.86)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.92)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.00)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.08)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.14)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.25)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.60)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.86)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.92)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.00)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.08)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.14)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.25)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.60)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.86)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.92)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.00)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.08)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.14)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.25)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.60)|RRM=1.22|RFF={{#var: restFallFactor}}|color=1}}
+|-
+! 126%<br/><small>[[Bionic stomach|BS]]+[[Bionic heart|BH]]+[[Luciferium|L]]</small>
+{{Rest Hours Per Day|RE={{#var:spotRE}}|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.86)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.92)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.00)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.08)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.14)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.25)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.60)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.86)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.92)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.00)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.08)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.14)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.25)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.60)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.86)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.92)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.00)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.08)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.14)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.25)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.60)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.86)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.92)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.00)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.08)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.14)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.25)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.60)|RRM=1.26|RFF={{#var: restFallFactor}}|color=1}}
+|-
+! 150%<br/><small>[[Quick sleeper|QS]]</small>
+{{Rest Hours Per Day|RE={{#var:spotRE}}|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.86)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.92)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.00)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.08)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.14)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.25)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.60)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.86)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.92)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.00)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.08)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.14)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.25)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.60)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.86)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.92)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.00)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.08)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.14)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.25)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.60)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.86)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.92)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.00)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.08)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.14)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.25)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.60)|RRM=1.50||RFF={{#var: restFallFactor}}|color=1}}
+|-
+! 156%<br/><small>[[Bionic stomach|BS]]+[[Quick sleeper|QS]]</small>
+{{Rest Hours Per Day|RE={{#var:spotRE}}|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.86)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.92)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.00)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.08)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.14)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.25)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.60)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.86)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.92)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.00)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.08)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.14)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.25)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.60)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.86)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.92)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.00)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.08)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.14)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.25)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.60)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.86)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.92)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.00)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.08)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.14)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.25)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.60)|RRM=1.56|RFF={{#var: restFallFactor}}|color=1}}
+|-
+! 161%<br/><small>[[Bionic heart|BH]]+[[Quick sleeper|QS]]</small>
+{{Rest Hours Per Day|RE={{#var:spotRE}}|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.86)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.92)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.00)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.08)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.14)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.25)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.60)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.86)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.92)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.00)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.08)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.14)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.25)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.60)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.86)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.92)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.00)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.08)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.14)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.25)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.60)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.86)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.92)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.00)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.08)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.14)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.25)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.60)|RRM=1.61|RFF={{#var: restFallFactor}}|color=1}}
+|-
+! 166%<br/><small>[[Bionic stomach|BS]]+[[Bionic heart|BH]]+[[Quick sleeper|QS]]</small>
+{{Rest Hours Per Day|RE={{#var:spotRE}}|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.86)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.92)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.00)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.08)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.14)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.25)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.60)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.86)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.92)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.00)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.08)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.14)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.25)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.60)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.86)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.92)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.00)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.08)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.14)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.25)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.60)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.86)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.92)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.00)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.08)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.14)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.25)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.60)|RRM=1.66|RFF={{#var: restFallFactor}}|color=1}}
+|-
+! 177%<br/><small>[[Bionic stomach|BS]]+[[Luciferium|L]]+[[Quick sleeper|QS]]</small>
+{{Rest Hours Per Day|RE={{#var:spotRE}}|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.86)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.92)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.00)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.08)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.14)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.25)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.60)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.86)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.92)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.00)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.08)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.14)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.25)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.60)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.86)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.92)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.00)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.08)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.14)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.25)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.60)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.86)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.92)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.00)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.08)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.14)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.25)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.60)|RRM=1.77|RFF={{#var: restFallFactor}}|color=1}}
+|-
+! 183%<br/><small>[[Bionic heart|BH]]+[[Luciferium|L]]+[[Quick sleeper|QS]]</small>
+{{Rest Hours Per Day|RE={{#var:spotRE}}|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.86)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.92)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.00)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.08)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.14)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.25)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.60)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.86)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.92)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.00)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.08)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.14)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.25)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.60)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.86)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.92)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.00)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.08)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.14)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.25)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.60)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.86)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.92)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.00)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.08)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.14)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.25)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.60)|RRM=1.83|RFF={{#var: restFallFactor}}|color=1}}
+|-
+! 190%<br/><small>[[Bionic stomach|BS]]+[[Bionic heart|BH]]+[[Luciferium|L]]+[[Quick sleeper|QS]]</small>
+{{Rest Hours Per Day|RE={{#var:spotRE}}|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.86)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*0.92)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.00)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.08)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.14)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.25)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedRE}}*1.60)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.86)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*0.92)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.00)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.08)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.14)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.25)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:bedAccelRE}}*1.60)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.86)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*0.92)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.00)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.08)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.14)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.25)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedRE}}*1.60)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}}
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.86)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*0.92)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.00)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.08)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.14)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.25)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}} 
+{{Rest Hours Per Day|RE=({{#var:royalBedAccelRE}}*1.60)|RRM=1.90|RFF={{#var: restFallFactor}}|color=1}}
+|}
+
+== Tips ==
+* Dropping food from [[Gear#Inventory|inventory]] won't interrupt [[Rest|sleep]].
+
+== See also==
+Pawn [[Sleep furniture|sleeping furniture]]:
+* [[Sleeping spot]] - a free method to designate a place to sleep, but uncomfortable with terrible rest effectivness.
+* [[Double sleeping spot]] - a sleeping spot equvialent bed that allows up to two pawns to sleep together. 
+* [[Bedroll]] - a portable, lower tech version of the bed that provides less comfort and rest effectivness.
+* [[Double bedroll]] - a bedroll equvialent bed that allows up to two pawns to sleep together. 
+* [[Double bed]] - a bed equvialent bed that allows up to two pawns to sleep. 
+* [[Royal bed]] - an expensive double bed that provides additional comfort and rest effectiveness.
+* [[Hospital bed]] - a bed equivalent with a larger immunity gain speed factor 
+[[Animal]] sleeping furniture:
+* [[Animal sleeping spot]] - An animal-only equivalent to the sleeping spot
+* [[Animal sleeping box]] - An animal-only bed with stats equivalent to the bedroll 
+* [[Animal bed]] - An animal-only bed equivalent to the bed.
+
+{{Nav|status levels|wide}}
+[[Category:Status Level]]

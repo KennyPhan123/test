@@ -1,0 +1,154 @@
+{{Project|Psyfocus}}
+{{Stub|reason=Intro, analysis, additional  infobox stats (e.g. minifiable)}}
+{{Infobox main
+| image = Cube sculpture.png
+| type = Art
+| description = A hastily constructed sculpture resembling a cube.
+| beauty = 4
+| hp = 90
+| mass base = 3
+| size = 1 ˣ 1
+| cover = 0.35
+| flammability = 0
+| marketvalue = 18
+| path cost = 50
+| work to make = 84
+| work speed stat = Construction Speed
+| has quality = True
+}}
+<into text>
+
+== Acquisition ==
+[[Golden cube|Cube]]-interested colonists will go on periodic mental breaks during which they will build a sculpture resembling a cube. The {{MTB}} is approximately 4.6 days at 10% cube interest, decreasing to 3 days at 50% and 2 days at 80% and above.
+
+== Summary ==
+The building speed and quality of the sculpture is affected by construction skill. 
+Be aware that this sculpture will use up a [[Inspired creativity]] inspiration, if the colonist has one. 
+
+The type of sculpture generated depends on the [[terrain]] or [[floor]]ing the colonist is standing on or by - no material is actually consumed to create the sculptures. Pawns will avoid building the sculptures on [[flagstone]], so it can be used to prevent sculptures from being built in specific areas.
+The sculpture types and the related terrains are listed in the table below:
+
+{| class="wikitable collapsible"
+|+ 
+|-
+! Sculpture type !! Terrains
+|-
+| Dirt cube sculpture ||
+* Marshy soil
+* Mud
+* Packed dirt
+* Rich soil
+* Lichen-covered soil
+* Soil
+|-
+| Sand cube sculpture || 
+* Sand
+* Soft sand
+|-
+|| Stone cube sculpture ||
+* Rough stone
+* Rough-hewn stone
+* Smooth stone
+|-
+| Scrap cube sculpture || ''All other terrains and floors''
+|}
+The different types of cube sculpture vary in name and texture but are otherwise statistically identical. The sole exception to this is that scrap cube sculptures have 40% flammability while all other have 0%.
+
+The sculpture, once complete, can be freely minified and moved, but it cannot be deconstructed, so it has to be destroyed with attacks.
+
+While the scupture's creator is interested in the cube, they get {{Thought|label=Cube Sculpture|desc= My sculpture... My beautiful Sculpture!|value= +1}} for each existing sculpture, which stacks without an apparent limit. If the sculpture is destroyed, including being abandoned during a caravan, the sculptor will get {{Thought|label= My Cube Sculpture Destroyed|desc=My sculpture... My beautiful sculpture...  |value= -5| stack=10 | multi= 0.75|duration=5}} and an increase in severity to a hidden "Cube anger" hediff. Depending on the pawn's cube interest when each sculpture is destroyed, it takes 3-10 destroyed sculptures to reach the maximum of 100% severity. This hediff is hidden, and so its progress cannot be normally tracked. The negative thought remains for its full 5 day duration even if the pawn loses their Cube interest.
+
+The increase in severity is controlled by the following relationship:
+{| class="wikitable"
+|-
+! 
+{{Graph:Chart
+|width=400
+|height=100
+|type=area
+|xAxisTitle=Cube interest (%)
+|yAxisTitle=Cube anger per sculpture destroyed (%)
+|xAxisMin=0
+|yAxisMax=100
+|x= 10, 50, 100
+|y= 10, 20, 40
+}}
+|}
+
+Once the Cube Anger hediff reaches 100% severity, the pawn will go into a [[Berserk]] mental state with an {{MTB}} of {{Ticks|60000*0.04}} along with a custom [[letter]] detailing the cause. Once the pawn has gone into the rage, the Cube Anger hediff is reduced to 0% and removed. The hediff is also removed if the pawn loses their Cube interest. The only other way to remove the accrued Cube Anger is for the affected pawn to die. The hediff will no longer be present upon resurrection. You can temporarily delay the mental break by keeping the pawn unconscious when destroying their sculptures. 
+
+Cube sculptures have a small [[beauty]] rating, which is modified by the sculpture's quality. Cube sculptures have a 0.7x [[Sell Price Multiplier]], however traders are not willing to buy them. 
+
+Cube sculptures can be gifted to other factions by transport pod for increased relations as other items can be, but cannot be handed over by trading or caravan gifting.
+
+Similar to items of high quality, all sculptures will have descriptions of the art work they depict randomly generated for them. For further details, see the [[Sculptures#Story generation|Sculptures]] page.
+
+=== Meditation ===
+{{Royalty|section=1}}
+Pawns with the [[Psyfocus#Artistic|Artistic]] meditation focus type can use sculptures in a 10-tile radius to increase psyfocus. This includes all pawns who are not Tribal or [[Ascetic]].
+
+The highest quality sculpture is the primary source of psyfocus:
+{| {{STDT| c_07 text-center}}
+! Quality
+! Awful
+! Poor
+! Normal
+! Good
+! Excellent
+! Masterwork
+! Legendary
+|- 
+! Base Strength
+| +12%
+| +16%
+| +20%
+| +22%
+| +24%
+| +26%
+| +28%
+|}
+
+The other, surrounding sculptures give a much smaller boost:
+{| {{STDT| c_07 text-center}}
+! Quality
+! Awful
+! Poor
+! Normal
+! Good
+! Excellent
+! Masterwork
+! Legendary
+|- 
+! Strength Offset
+| +0%
+| +0%
+| +1%
+| +1%
+| +1%
+| +2%
+| +2%
+|}
+
+The maximum meditation focus strength is thus 44% for a legendary sculpture surrounded by 8 additional sculptures of masterwork or legendary quality.
+
+== Gallery ==
+<gallery>
+CubeSculpture DirtA.png|Dirt variant A
+CubeSculpture DirtB.png|Dirt variant B
+CubeSculpture DirtC.png|Dirt variant C
+</gallery>
+<gallery>
+CubeSculpture SandA.png|Sand variant A
+CubeSculpture SandB.png|Sand variant B
+CubeSculpture SandC.png|Sand variant C
+</gallery>
+<gallery>
+CubeSculpture StoneA.png|Stone variant A
+CubeSculpture StoneB.png|Stone variant B
+CubeSculpture StoneC.png|Stone variant C
+</gallery>
+<gallery>
+Cube sculpture.png|Scrap variant A
+CubeSculpture ScrapB.png|Scrap variant B
+CubeSculpture ScrapC.png|Scrap variant C
+</gallery>

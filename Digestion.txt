@@ -1,0 +1,42 @@
+{{Capacity
+| default base value = 1
+| to string style = PercentZero
+| description = How well a creature's body converts food reserves into energy to sustain life. Digestion influences [[rest rate multiplier]] at 30% weight.
+}}{{Check Tag|Verify Description}}
+
+It is lethal for [[human]]s and [[animals]] for Digestion to be reduced to 0%. Despite its name and description, Digestion has no effect on [[hunger]] rate.
+
+{{Hover title|Version/1.4.3580|At the time of writing}}, the maximum possible Digestion capacity is [[Effective Maximum::1.325|132.5%]] with a healthy pawn high on [[luciferium]] with any of the artificial stomachs installed.
+
+== Affected stats ==
+{{#ask: [[Digestion Importance::+]]
+| ?Health Type = Type
+| ?Digestion Importance# = Weight
+| ?Digestion Limit# = Max
+| ?description
+| format = broadtable
+| limit  = 100
+| mainlabel = Name
+| headers = plain
+| sort = Digestion Importance
+| order = desc
+}}
+
+== Factors ==
+The following factors affect Digestion.
+*Stomach part efficiency: 50% importance, no allowed defect. No Max
+**[[Bionic stomach]]: 125% part efficiency for {{+|12.5%}} Digestion.
+**[[Reprocessor stomach]]: 125% part efficiency for {{+|12.5%}} Digestion.
+**[[Nuclear stomach]]: 125% part efficiency for {{+|12.5%}} Digestion.
+**[[Sterilizing stomach]]: 125% part efficiency for {{+|12.5%}} Digestion.
+* [[Liver]] part efficiency: 50% importance, no allowed defect. No Max
+
+== Offsets ==
+The following offsets affect Digestion.
+* [[Luciferium]] high: {{+|20%}}
+
+== Version history == 
+* Sometime between [[Version/1.4.3523|1.4.3523]] and [[Version/1.4.3523|1.4.3523]] inclusive - Renamed from '''Metabolism''' to '''Digestion''', likely to avoid confusion with [[Metabolic efficiency]]. 
+
+{{nav|stats|wide}}
+<noinclude>[[Category:Capacity]]</noinclude>

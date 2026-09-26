@@ -1,0 +1,63 @@
+{{Stub|reason=Full list of deterioration immune items and items that whose market value is not affected.}}
+'''Deterioration''' is the gradual loss of the [[Max Hit Points|Hit Points]] of certain items due to its storage conditions. This deterioration stacks with other forms of damage to the items in question, and can result in the eventual destruction of the item. 
+
+== Summary ==
+'''Deterioration''' is the gradual loss of the [[Max Hit Points|Hit Points]] applied to a susceptible item that is not placed in a safe place. Deterioration is akin to an item taking damage from projectiles, explosions, or [[fire]] - they all lower the same HP total, so they all stack with each other.
+
+Susceptible items include [[clothing]], [[armor]], [[weapons]], and most [[resources]]. When an item's hit points reach 0, it is destroyed. Deterioration does not impact the protective stats of armor, weapon function or quality of item. See [[#Effects of deterioration]] for details.
+
+* When an item in [[Stockpile zone|storage]] is destroyed by deterioriation a pop-up message will display saying: ''<ITEM NAME> has deteriorated away in storage.''
+* When an item being worn by a pawn is destroyed by deterioriation a pop-up message will display saying: ''<ITEM NAME> worn by <PAWN NAME> deteriorated away to nothing.''
+
+Deterioration and the spoilage of [[food]] and [[corpse]]s due to [[temperature]] are completely independent from each other. Both systems run in parallel according to their own mechanics and do not interact unless they cause the destruction of the item in question.
+
+=== Deterioration rate ===
+An item's [[Deterioration Rate|deterioration rate]] specifies how many hit points are lost per day, while left either [[roof|unroofed]] or outdoors. For example, [[packaged survival meal]]s deteriorate at 0.25 HP/day, while [[rice]] deteriorates at 6 HP / day. This stat is listed in an item's information tab. For items with the [[quality]] stat, a high-quality item will have a lower deterioration rate than a poor quality item (see [[Quality#General]] for details). If this stat is not listed or listed as '0.00/d', then the item will not deteriorate.
+
+Deterioration rate is then multiplied by being in [[rain]] (x5) or being placed in [[Terrain|watery terrain]] (x3 on marsh or any water tile). Items placed indoors do not deteriorate. Items placed in a [[shelf]] do not deteriorate even when otherwise in conditions that would cause deterioration. Equipped [[apparel]] - both [[clothing]] and [[armor]] - deteriorate when worn. Equipped [[weapons]] and [[utility]] items do not deteriorate.
+
+=== Immunity to deterioration ===
+Several items are immune to deterioration. Note that items crafted from these materials do not neccessarily carry over that immunity however.
+
+Immune items include:
+* [[Metals]] 
+* [[Stone]]
+* [[Persona core]]
+* [[Artifact]]s
+* Minified [[furniture]] and [[buildings]]
+
+=== Effects of deterioration ===
+{{Move|section=1|destination=Market value|reason=This is not unique to deterioration, but to any HP loss. Might be best to leave a summary here and link to [[Market Value]], [[Max Hit Points]], and/or [[Apparel]] as needed for details}}
+As an item loses hit points, it may also lose its [[Market Value|market value]]. This only applies to items which have not been configured to ignore health when determining price.  The XML tag for this is ''healthAffectsPrice'', which defaults to ''true'' if not explicitly set in the def or a parent of the def.  This is set, for most items, in the base definition from which the item inherits its properties.  
+
+Items that do ''not'' decrease in market value with HP loss include:
+* [[Wood]] (and technically [[metals]] and [[jade]] have the healthAffectsPrice tag too, but they don't use HP so it's irrelevant)
+* [[Textiles]]
+* Raw plant matter such as [[hops]], [[psychoid leaves]] and [[smokeleaf leaves]]; and also including [[wort]]
+* Raw animal products such as [[milk]], [[insect jelly]], [[eggs]]
+* [[Meal]]s including [[pemmican]] and [[kibble]]
+* [[Drug]]s 
+* [[Medicine]] (including [[neutroamine]])
+* [[Component]]s and [[Advanced component]]s
+* [[Chemfuel]]
+* [[Basic subcore]]s,{{BiotechIcon}} [[standard subcore]]s,{{BiotechIcon}} and [[high subcore]]s{{BiotechIcon}}
+* [[Signal chip]]s,{{BiotechIcon}} [[powerfocus chip]]s,{{BiotechIcon}} and [[nano structuring chip]]s{{BiotechIcon}}
+* [[Genepack]]s{{BiotechIcon}} and [[xenogerm]]s{{BiotechIcon}}
+
+If an item loses value with hit points, it loses that value very quickly.  An item retains 100% of its value down to 90% HP, then loses 1.67% of its maximum value per 1% HP lost between 90% and 60% HP, then loses ''4%'' of its maximum value per 1% HP lost between 60% and 50% HP, then loses 0.2% of its maximum value per 1% HP lost between 50% and 0% HP.  The item will have 50% of its maximum value at 60% HP and only 10% of its maximum value at 50% HP.
+
+The only other effect of HP loss is the effect on [[mood]] of a pawn using a damaged item. A [[human]] wearing ''any'' apparel with hit points 50% or below will get the {{--|3}} [[thought]] ''[[Mood#Ratty apparel|Ratty Apparel]]''. If ''any'' worn item is below 25%, the thought will worsen to a {{--|5}} ''[[Mood#Tattered apparel|Tattered Apparel]]''. Compare them with {{--|6}} ''[[Mood#Naked|Naked]]'' thought. A pawn does not receive negative thoughts for using deteriorated weapons.
+
+Other than market value, potential mood effects, and hastening the item's destruction, an item's loss of HP does not affect any other stats, including damage output, accuracy, armor value, heat or cold insulation, [[nutrition]], [[flammability]], [[beauty]], [[comfort]], medical potency or [[quality]], etc.  In addition, a finished product is not influenced in any way by the deterioration of its ingredients, including in market value or chance of success.
+
+== Analysis ==
+{{stub|section=1|reason=Expansion needed}}
+Building a storeroom is one of the first things that a colony should do, as the destruction of required resources and equipment only slows progress and creates more work. But the effects of deterioration can also be used to dispose of junk without having to spend resources or pawn time to do so. Hauling corpses to a [[stockpile zone]] in running water, outdoors and unroofed will fairly rapidly get rid of them with no more work. 
+
+Additionally understanding what items need to be protected is also important. Many raw resources don't deteriorate and thus can be kept outside without fear, buildings can as well but have a greater risk of being stolen by raiders. As it takes resources and time to build enclose warehouses, having layers of storage areas is helpful.
+
+== Version history==
+* ? - Deterioration no longer lowers the effectiveness of weapons and armors.
+*  Beta 19/1.0 - Item deterioration rate now takes into account several factors, including being outdoors, being unroofed, and being in water
+
+[[Category:Game mechanics]]

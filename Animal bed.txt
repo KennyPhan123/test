@@ -1,0 +1,70 @@
+{{Infobox main|furniture
+| name = Animal bed
+| image = Animal_bed.png
+| description = A soft bed for animals to sleep on. Fits any animal.
+| type = Building
+| type2 = Furniture
+| placeable = true
+| path cost = 14
+| blockswind = false
+| passability = pass through only
+| cover = 0.15
+| minifiable = true
+| size = 1 ˣ 1
+| mass base = 5
+| flammability = 1
+| hp = 140
+| sell price multiplier = 0.7
+| rest effectiveness = 1
+| immunity gain speed factor = 1.07
+| surgery success chance factor = 1
+| comfort = 0.75
+| terrain affordance = light
+| work to make = 400
+| stuff tags = Fabric, Leathery
+| resource 1 = Stuff
+| resource 1 amount = 40
+| room role = Barn
+| has quality = True
+}}
+An '''animal bed''' is a [[furniture]] [[building]] that provides a place for an animal to sleep and receive medical treatment.
+It accommodates animals of any size.
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+Unlike [[animal sleeping box]]es, all animals can fit inside an animal bed.
+
+=== Rest effectiveness ===
+[[Rest effectiveness]] is a measure how fast a pawn will regain [[rest]]. A pawn sleeping in a bed with 125% rest effectiveness would regain rest 25% faster, and thus require 80% of the time to sleep. 
+Rest effectiveness for animal beds varies by [[quality]].
+{{Rest Effectiveness Quality Table}}
+
+=== Comfort ===
+[[Comfort]] is a measure of how high a pawn can refill their comfort meter while using the piece of furniture. A pawn sleeping in a bed with a higher comfort value can achieve a higher level. It does not affect the rate at which comfort increases only the maximum level. Comfort levels over 100% have no additional effect.
+Comfort varies by [[quality]] but not material. Beds of the same quality level will all have the same comfort, regardless of what they're constructed from.
+{{Comfort Quality Table}}
+
+=== Surgery success chance factor ===
+The [[surgery success chance factor]] is exactly what it sounds like: a multiplier on the chance for a successful surgery assuming it is performed in this bed. The base value depends on the bed type only, with both the animal sleeping box and animal bed having a base value of 100% while the [[animal sleeping spot]] has a lower value of 70%. This base value is then modified by the bed's quality level. Beds of the same type and quality level will all have the same factor, regardless of what they're constructed from.
+
+{{Surgery Success Chance Factor Quality Table}}
+
+== Analysis ==
+=== Sleeping comparison ===
+Compared to an [[animal sleeping spot]], a normal quality bed causes animals to sleep 80% as much. The better quality bed, the less time spent sleeping. However, in practice, animal sleeping time is almost entirely negligible. Most animal products are created even while sleeping. Combat animals can be woken up. Even for haulers, the impact is quite small. The exception is mating which is rolled every hour the animal is awake, particularly if there is a high ratio of females to males.
+
+Therefore, creating a box/bed is mostly useful for medical outcomes: recovery, surgeries and [[Immunity Gain Speed]]. Of those, animals rarely require surgery. Meanwhile, the immunity boost is rather small (+7% for animal bed, of any quality). Since animals are more resistant against disease, beds usually won't be necessary for [[infection]], but can help against the [[plague]] or to heal battle wounds quicker.
+
+On the plus side, animal beds are fairly cheap. They can be created for only {{Icon Small|cloth||40}} [[cloth]] or other fabric, which is easy to grow in a temperate [[biome]] and not that expensive to [[trade]] for.
+
+{{Building Stats Table}}
+
+== Version history ==
+* [[Version/0.12.906|0.12.906]] - Added
+* [[Version/1.3.3287|1.3.3287]] - Fix: "Assign owner" tooltip for animal beds mentions humanlike owners.
+
+{{Nav|furniture|wide}}
+[[Category:Furniture]]
+[[Category:Sleep furniture]]

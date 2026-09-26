@@ -1,0 +1,653 @@
+<noinclude>{{Verified|1.5.4104}}
+&larr; <small>[[Stat]]</small>
+{| {{STDT|sortable}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category</noinclude>
+<!-- Core Stats_Pawns_WorkGeneral -->
+<div id="Core Stats_Pawns_WorkGeneral"><!--<Defs>-->
+|- id="Global Work Speed" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />WorkSpeedGlobal
+* '''Label:'''<br />global work speed
+| A multiplier on a character's speed at doing any kind of work.
+|
+* Display Order:<br />'''140'''
+* Def Name:<br />'''PawnWork'''
+* Label:<br />'''Work'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0.3}}
+* '''To String Style:''' PercentZero
+* '''Scenario Randomizable:''' {{Good|true}}
+* '''Show On Player Mechanoids:''' {{Good|true}}
+|
+* '''Parts:'''
+** '''StatPart_Glow:'''
+*** Humanlike Only: '''{{Good|true}}'''
+*** '''Factor From Glow Curve:'''
+**** '''Points:'''
+***** (0,0.80)
+***** (0.30,1.00)
+{{Graph:Chart|width=300|height=150|xAxisTitle=Light Percentage|yAxisTitle=Global Work Speed Multiplier|type=line|x=0, 0.30|y=0.80, 1.00|interpolate=monotone|xGrid=|yGrid=}}
+*** Ignore If Incapable Of Sight: '''{{Good|true}}'''
+*** Ignore If Prefers Darkness: '''{{Good|true}}'''
+** '''StatPart_Slave{{IdeologyIcon}}:'''
+*** Factor: '''{{%|0.85}}'''
+** '''StatPart_OverseerStatOffset{{BiotechIcon}}:'''
+*** Stat: '''[[WorkSpeedGlobalOffsetMech]]'''
+*** Label: '''Offset from mechanitor'''
+** '''StatPart_Age{{BiotechIcon}}:'''
+*** Use Biological Years: '''{{Good|true}}'''
+*** Humanlike Only: '''{{Good|true}}'''
+*** '''Curve:'''
+**** '''Points:'''
+***** (4,0.2)
+***** (12,0.8)
+***** (18,1)
+{{Graph:Chart|width=300|height=150|xAxisTitle=Age (Biological)|yAxisTitle=Global Work Speed Multiplier|type=line|x=4, 12, 18|y=0.2, 0.8, 1|interpolate=monotone|xGrid=|yGrid=}}
+| 5000
+<!--</StatDef>-->
+|- id="Mining Speed" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />MiningSpeed
+* '''Label:'''<br />mining speed
+| A speed at which this person mines away walls.
+|
+* Display Order:<br />'''140'''
+* Def Name:<br />'''PawnWork'''
+* Label:<br />'''Work'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0.1}}
+* '''To String Style:''' PercentZero
+* '''Scenario Randomizable:''' {{Good|true}}
+|
+* '''Stat Factors:'''
+** '''[[Global Work Speed]]'''
+* '''Skill Need Factors:'''
+** '''SkillNeed_BaseBonus:'''
+*** Skill: '''[[Mining]]'''
+*** Base Value: '''{{%|0.04}}'''
+*** Bonus Per Level: '''{{+|{{%|0.12}}}}'''
+{{Graph:Chart|width=300|height=150|xAxisTitle=Mining Level|yAxisTitle=Mining Speed|type=rect|x=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20|y=0.04, 0.16, 0.28, 0.4, 0.52, 0.64, 0.76, 0.88, 1, 1.12, 1.24, 1.36, 1.48, 1.6, 1.72, 1.84, 1.96, 2.08, 2.2, 2.32, 2.44|xGrid=|yGrid=}}
+* '''Capacity Factors:'''
+** Capacity: '''[[Manipulation]]'''
+*** Weight: '''{{%|1}}'''
+** Capacity: '''[[Sight]]'''
+*** Weight: '''{{%|0.5}}'''
+*** Max: '''{{%|1}}'''
+| 4900
+<!--</StatDef>-->
+|- id="Deep Drilling Speed" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />DeepDrillingSpeed
+* '''Label:'''<br />deep drilling speed
+| A speed at which this person uses a deep drill to extract underground resources.
+|
+* Display Order:<br />'''140'''
+* Def Name:<br />'''PawnWork'''
+* Label:<br />'''Work'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0.1}}
+* '''To String Style:''' PercentZero
+* '''Scenario Randomizable:''' {{Good|true}}
+|
+* '''Stat Factors:'''
+** '''[[Global Work Speed]]'''
+* '''Skill Need Factors:'''
+** '''SkillNeed_BaseBonus:'''
+*** Skill: '''[[Mining]]'''
+*** Base Value: '''{{%|0.04}}'''
+*** Bonus Per Level: '''{{+|{{%|0.12}}}}'''
+{{Graph:Chart|width=300|height=150|xAxisTitle=Mining Level|yAxisTitle=Deep Drilling Speed|type=rect|x=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20|y=0.04, 0.16, 0.28, 0.4, 0.52, 0.64, 0.76, 0.88, 1, 1.12, 1.24, 1.36, 1.48, 1.6, 1.72, 1.84, 1.96, 2.08, 2.2, 2.32, 2.44|xGrid=|yGrid=}}
+* '''Capacity Factors:'''
+** Capacity: '''[[Manipulation]]'''
+*** Weight: '''{{%|1}}'''
+** Capacity: '''[[Sight]]'''
+*** Weight: '''{{%|0.5}}'''
+*** Max: '''{{%|1}}'''
+| 4901
+<!--</StatDef>-->
+|- id="Mining Yield" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />MiningYield
+* '''Label:'''<br />mining yield
+| The percentage of mined resources a miner will produce.<br id="n" /><br id="n" />This applies to both wall mining and deep drill mining.<br id="n" />This doesn't affect the production rate of rock chunks from deep drills.
+|
+* Display Order:<br />'''140'''
+* Def Name:<br />'''PawnWork'''
+* Label:<br />'''Work'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0}}
+* '''Max Value:''' 1.25
+* '''To String Style:''' PercentZero
+|
+* '''Skill Need Factors:'''
+** '''SkillNeed_Direct:'''
+*** Skill: '''[[Mining]]'''
+*** '''Values Per Level:'''
+**** 0.6
+**** 0.7
+**** 0.8
+**** 0.85
+**** 0.9
+**** 0.925
+**** 0.95
+**** 0.975
+**** 1
+**** 1.01
+**** 1.02
+**** 1.03
+**** 1.04
+**** 1.05
+**** 1.06
+**** 1.07
+**** 1.08
+**** 1.09
+**** 1.10
+**** 1.12
+**** 1.13
+{{Graph:Chart|width=300|height=150|xAxisTitle=Mining Level|yAxisTitle=Mining Yield|type=rect|x=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20|y=0.6, 0.7, 0.8, 0.85, 0.9, 0.925, 0.95, 0.975, 1, 1.01, 1.02, 1.03, 1.04, 1.05, 1.06, 1.07, 1.08, 1.09, 1.10, 1.12, 1.13|xGrid=|yGrid=}}
+* '''Capacity Factors:'''
+** Capacity: '''[[Manipulation]]'''
+*** Weight: '''{{%|0.3}}'''
+*** Max: '''{{%|1}}'''
+** Capacity: '''[[Sight]]'''
+*** Weight: '''{{%|0.2}}'''
+*** Max: '''{{%|1}}'''
+| 4902
+<!--</StatDef>-->
+|- id="Smoothing Speed" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />SmoothingSpeed
+* '''Label:'''<br />smoothing speed
+| A multiplier on the speed at which this person smooths rough stone floors and walls.
+|
+* Display Order:<br />'''140'''
+* Def Name:<br />'''PawnWork'''
+* Label:<br />'''Work'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0.1}}
+* '''To String Style:''' PercentZero
+|
+* '''Stat Factors:'''
+** '''[[Global Work Speed]]'''
+* '''Skill Need Factors:'''
+** '''SkillNeed_BaseBonus:'''
+*** Skill: '''[[Construction]]'''
+*** Base Value: '''{{%|0.3}}'''
+*** Bonus Per Level: '''{{+|{{%|0.0875}}}}'''
+{{Graph:Chart|width=300|height=150|xAxisTitle=Construction Level|yAxisTitle=Smoothing Speed|type=rect|x=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20|y=0.3, 0.3875, 0.475, 0.5625, 0.65, 0.7375, 0.825, 0.9125, 1, 1.0875, 1.175, 1.2625, 1.35, 1.4375, 1.525, 1.6125, 1.7, 1.7875, 1.875, 1.9625, 2.05|xGrid=|yGrid=}}
+* '''Capacity Factors:'''
+** Capacity: '''[[Manipulation]]'''
+*** Weight: '''{{%|1}}'''
+** Capacity: '''[[Sight]]'''
+*** Weight: '''{{%|0.3}}'''
+*** Max: '''{{%|1}}'''
+| 4500
+<!--</StatDef>-->
+|- id="Research Speed" <!-- ParentName="IntellectualSkillBase" --><!--<StatDef>-->
+|
+* '''Def Name:'''<br />ResearchSpeed
+* '''Label:'''<br />research speed
+| How fast this person performs research and how quickly they can find things using scanning equipment.
+|
+* Display Order:<br />'''140'''
+* Def Name:<br />'''PawnWork'''
+* Label:<br />'''Work'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* Default Base Value: '''{{%|1}}'''
+* To String Style: '''PercentZero'''
+* Scenario Randomizable: '''{{Good|true}}'''
+* '''Min Value:''' {{%|0.1}}
+|
+* Stat Factors:
+** '''[[Global Work Speed]]'''
+* Skill Need Factors:
+** '''SkillNeed_BaseBonus:'''
+*** Skill: '''[[Intellectual]]'''
+*** Base Value: '''{{%|0.08}}'''
+*** Bonus Per Level: '''{{+|{{%|0.115}}}}'''
+----
+* '''Capacity Factors:'''
+** Capacity: '''[[Manipulation]]'''
+*** Weight: '''{{%|0.5}}'''
+*** Max: '''{{%|1.1}}'''
+** Capacity: '''[[Sight]]'''
+*** Weight: '''{{%|0.5}}'''
+*** Max: '''{{%|1.1}}'''
+| 4500
+<!--</StatDef>-->
+|- id="Animal Gather Speed" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />AnimalGatherSpeed
+* '''Label:'''<br />animal gather speed
+| The speed at which this person milks, shears, and otherwise gathers resources from animals.
+|
+* Display Order:<br />'''140'''
+* Def Name:<br />'''PawnWork'''
+* Label:<br />'''Work'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0.1}}
+* '''To String Style:''' PercentZero
+|
+* '''Stat Factors:'''
+** '''[[Global Work Speed]]'''
+* '''Skill Need Factors:'''
+** '''SkillNeed_BaseBonus:'''
+*** Skill: '''[[Skills#Animals|Animals]]'''
+*** Base Value: '''{{%|0.04}}'''
+*** Bonus Per Level: '''{{+|{{%|0.12}}}}'''
+{{Graph:Chart|width=300|height=150|xAxisTitle=Animals Level|yAxisTitle=Animal Gather Speed|type=rect|x=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20|y=0.04, 0.16, 0.28, 0.4, 0.52, 0.64, 0.76, 0.88, 1, 1.12, 1.24, 1.36, 1.48, 1.6, 1.72, 1.84, 1.96, 2.08, 2.2, 2.32, 2.44|xGrid=|yGrid=}}
+* '''Capacity Factors:'''
+** Capacity: '''[[Manipulation]]'''
+*** Weight: '''{{%|1}}'''
+** Capacity: '''[[Sight]]'''
+*** Weight: '''{{%|0.5}}'''
+*** Max: '''{{%|1}}'''
+| 4501
+<!--</StatDef>-->
+|- id="Animal Gather Yield" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />AnimalGatherYield
+* '''Label:'''<br />animal gather yield
+| The percentage yield someone receives when they shear, milk, or otherwise gather resources from a living animal.<br id="n" /><br id="n" />Higher percentages reduce the chance of wasting the product.
+|
+* Display Order:<br />'''140'''
+* Def Name:<br />'''PawnWork'''
+* Label:<br />'''Work'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0}}
+* '''To String Style:''' PercentZero
+|
+* '''Skill Need Factors:'''
+** '''SkillNeed_Direct:'''
+*** Skill: '''[[Skills#Animals|Animals]]'''
+*** '''Values Per Level:'''
+**** 0.6
+**** 0.7
+**** 0.75
+**** 0.8
+**** 0.85
+**** 0.90
+**** 0.95
+**** 0.975
+**** 1
+**** 1.01
+**** 1.02
+**** 1.03
+**** 1.04
+**** 1.05
+**** 1.06
+**** 1.07
+**** 1.08
+**** 1.09
+**** 1.10
+**** 1.12
+**** 1.13
+{{Graph:Chart|width=300|height=150|xAxisTitle=Animals Level|yAxisTitle=Animal Gather Yield|type=rect|x=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20|y=0.6, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 0.975, 1, 1.01, 1.02, 1.03, 1.04, 1.05, 1.06, 1.07, 1.08, 1.09, 1.10, 1.12, 1.13|xGrid=|yGrid=}}
+* '''Capacity Factors:'''
+** Capacity: '''[[Manipulation]]'''
+*** Weight: '''{{%|0.3}}'''
+** Capacity: '''[[Sight]]'''
+*** Weight: '''{{%|0.2}}'''
+*** Max: '''{{%|1}}'''
+| 4502
+<!--</StatDef>-->
+|- id="Plant Work Speed" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />PlantWorkSpeed
+* '''Label:'''<br />plant work speed
+| The speed at which this person sows and harvests plants.
+|
+* Display Order:<br />'''140'''
+* Def Name:<br />'''PawnWork'''
+* Label:<br />'''Work'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0.1}}
+* '''To String Style:''' PercentZero
+* '''Never Disabled:''' {{Good|true}}
+|
+* '''Stat Factors:'''
+** '''[[Global Work Speed]]'''
+* '''Skill Need Factors:'''
+** '''SkillNeed_BaseBonus:'''
+*** Skill: '''[[Skills#Plants|Plants]]'''
+*** Base Value: '''{{%|0.08}}'''
+*** Bonus Per Level: '''{{+|{{%|0.115}}}}'''
+{{Graph:Chart|width=300|height=150|xAxisTitle=Plants Level|yAxisTitle=Plant Work Speed|type=rect|x=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20|y=0.08, 0.195, 0.31, 0.425, 0.54, 0.655, 0.77, 0.885, 1, 1.115, 1.23, 1.345, 1.46, 1.575, 1.69, 1.805, 1.92, 2.035, 2.15, 2.265, 2.38|xGrid=|yGrid=}}
+* '''Capacity Factors:'''
+** Capacity: '''[[Manipulation]]'''
+*** Weight: '''{{%|1}}'''
+** Capacity: '''[[Sight]]'''
+*** Weight: '''{{%|0.3}}'''
+*** Max: '''{{%|1}}'''
+* Show On Pawn Kind: '''[[Agrihand]]''' {{BiotechIcon}}
+| 4550
+<!--</StatDef>-->
+|- id="Plant Harvest Yield" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />PlantHarvestYield
+* '''Label:'''<br />plant harvest yield
+| The yield this person gets when harvesting plants.<br id="n" /><br id="n" />Low yields give a chance that this person will accidentally waste the harvest.
+|
+* Display Order:<br />'''140'''
+* Def Name:<br />'''PawnWork'''
+* Label:<br />'''Work'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0}}
+* '''Max Value:''' 1.5
+* '''To String Style:''' PercentZero
+* '''Never Disabled:''' {{Good|true}}
+* '''Scenario Randomizable:''' {{Good|true}}
+|
+* '''Skill Need Factors:'''
+** '''SkillNeed_Direct:'''
+*** Skill: '''[[Skills#Plants|Plants]]'''
+*** '''Values Per Level:'''
+**** 0.6
+**** 0.7
+**** 0.75
+**** 0.8
+**** 0.85
+**** 0.90
+**** 0.95
+**** 0.975
+**** 1
+**** 1.01
+**** 1.02
+**** 1.03
+**** 1.04
+**** 1.05
+**** 1.06
+**** 1.07
+**** 1.08
+**** 1.09
+**** 1.10
+**** 1.12
+**** 1.13
+{{Graph:Chart|width=300|height=150|xAxisTitle=Plants Level|yAxisTitle=Plant Harvest Yield|type=rect|x=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20|y=0.6, 0.7, 0.75, 0.8, 0.85, 0.90, 0.95, 0.975, 1, 1.01, 1.02, 1.03, 1.04, 1.05, 1.06, 1.07, 1.08, 1.09, 1.10, 1.12, 1.13|xGrid=|yGrid=}}
+* '''Capacity Factors:'''
+** Capacity: '''[[Manipulation]]'''
+*** Weight: '''{{%|0.3}}'''
+** Capacity: '''[[Sight]]'''
+*** Weight: '''{{%|0.2}}'''
+*** Max: '''{{%|1}}'''
+| 4551
+<!--</StatDef>-->
+|- id="Drug Crop Harvest Yield" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />DrugHarvestYield
+* '''Label:'''<br />drug crop harvest yield
+| The yield this person gets when harvesting drug crops.<br id="n" /><br id="n" />Low yields give a chance that this person will accidentally waste the harvest. High yields increase the yield from each plant.
+|
+* Display Order:<br />'''140'''
+* Def Name:<br />'''PawnWork'''
+* Label:<br />'''Work'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0}}
+* '''Max Value:''' 1.5
+* '''To String Style:''' PercentZero
+* '''Never Disabled:''' {{Good|true}}
+* '''Scenario Randomizable:''' {{Good|true}}
+|
+* '''Stat Factors:'''
+** '''[[Plant Harvest Yield]]'''
+| 4552
+<!--</StatDef>-->
+|- id="Hunting Stealth" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />HuntingStealth
+* '''Label:'''<br />hunting stealth
+| This stat reduces the chance of hunted animals attacking the hunter.<br id="n" /><br id="n" />A 0% score means no reduction.<br id="n" />A 100% score means animals never attack.
+|
+* Display Order:<br />'''140'''
+* Def Name:<br />'''PawnWork'''
+* Label:<br />'''Work'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0}}
+* '''To String Style:''' PercentZero
+* '''Never Disabled:''' {{Good|true}}
+|
+* '''Skill Need Factors:'''
+** '''SkillNeed_BaseBonus:'''
+*** Skill: '''[[Shooting]]'''
+*** Base Value: '''{{%|0}}'''
+*** Bonus Per Level: '''{{+|{{%|0.05}}}}'''
+{{Graph:Chart|width=300|height=150|xAxisTitle=Shooting Level|yAxisTitle=Hunting Stealth Factor|type=rect|x=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20|y=0, 0.05, 0.10, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1|xGrid=|yGrid=}}
+** '''SkillNeed_BaseBonus:'''
+*** Skill: '''[[Skills#Animals|Animals]]'''
+*** Base Value: '''{{%|0}}'''
+*** Bonus Per Level: '''{{+|{{%|0.05}}}}'''
+{{Graph:Chart|width=300|height=150|xAxisTitle=Animals Level|yAxisTitle=Hunting Stealth Factor|type=rect|x=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20|y=0, 0.05, 0.10, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1|xGrid=|yGrid=}}
+* '''Capacity Factors:'''
+** Capacity: '''[[Moving]]'''
+*** Weight: '''{{%|1}}'''
+* '''Post Process Curve:'''
+** '''Points:'''
+*** (0.0, 0.0)
+*** (0.1, 0.5)
+*** (0.2, 0.75)
+*** (0.5, 0.80)
+*** (1.0, 0.90)
+{{Graph:Chart|width=300|height=150|xAxisTitle=Hunting Stealth Before Curve|yAxisTitle=Hunting Stealth After Curve|type=line|x=0.0, 0.1, 0.2, 0.5, 1.0|y=0.0, 0.5, 0.75, 0.80, 0.90|interpolate=monotone|xGrid=|yGrid=}}
+| 4500
+<!--</StatDef>-->
+|- id="Construction Speed" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />ConstructionSpeed
+* '''Label:'''<br />construction speed
+| The speed at which this person constructs and repairs buildings.
+|
+* Display Order:<br />'''140'''
+* Def Name:<br />'''PawnWork'''
+* Label:<br />'''Work'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0.1}}
+* '''To String Style:''' PercentZero
+* '''Scenario Randomizable:''' {{Good|true}}
+|
+* '''Stat Factors:'''
+** '''[[Global Work Speed]]'''
+* '''Skill Need Factors:'''
+** '''SkillNeed_BaseBonus:'''
+*** Skill: '''[[Construction]]'''
+*** Base Value: '''{{%|0.3}}'''
+*** Bonus Per Level: '''{{+|{{%|0.0875}}}}'''
+{{Graph:Chart|width=300|height=150|xAxisTitle=Construction Level|yAxisTitle=Construction Speed|type=rect|x=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20|y=0.3, 0.3875, 0.475, 0.5625, 0.65, 0.7375, 0.825, 0.9125, 1, 1.0875, 1.175, 1.2625, 1.35, 1.4375, 1.525, 1.6125, 1.7, 1.7875, 1.875, 1.9625, 2.05|xGrid=|yGrid=}}
+* '''Capacity Factors:'''
+** Capacity: '''[[Manipulation]]'''
+*** Weight: '''{{%|1}}'''
+** Capacity: '''[[Sight]]'''
+*** Weight: '''{{%|0.2}}'''
+*** Max: '''{{%|1}}'''
+* Show On Pawn Kind: '''[[Constructoid]]''' {{BiotechIcon}}
+| 4602
+<!--</StatDef>-->
+|- id="Construct Success Chance" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />ConstructSuccessChance
+* '''Label:'''<br />construct success chance
+| The chance that this person will succeed in constructing something.<br id="n" />Failing means wasting time and resources.
+|
+* Display Order:<br />'''140'''
+* Def Name:<br />'''PawnWork'''
+* Label:<br />'''Work'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0}}
+* '''Max Value:''' 1
+* '''To String Style:''' PercentZero
+* '''Scenario Randomizable:''' {{Good|true}}
+|
+* '''Skill Need Factors:'''
+** '''SkillNeed_Direct:'''
+*** Skill: '''[[Construction]]'''
+*** '''Values Per Level:'''
+**** 0.75
+**** 0.80
+**** 0.85
+**** 0.875
+**** 0.90
+**** 0.925
+**** 0.95
+**** 0.975
+**** 1
+**** 1.01
+**** 1.02
+**** 1.03
+**** 1.04
+**** 1.05
+**** 1.06
+**** 1.07
+**** 1.08
+**** 1.09
+**** 1.10
+**** 1.12
+**** 1.13
+{{Graph:Chart|width=300|height=150|xAxisTitle=Construction Level|yAxisTitle=Construct Success Chance|type=rect|x=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20|y=0.75, 0.80, 0.85, 0.875, 0.90, 0.925, 0.975, 1, 1.01, 1.02, 1.03, 1.04, 1.05, 1.06, 1.07, 1.08, 1.09, 1.10, 1.12, 1.13|xGrid=|yGrid=}}
+* '''Capacity Factors:'''
+** Capacity: '''[[Manipulation]]'''
+*** Weight: '''{{%|0.3}}'''
+** Capacity: '''[[Sight]]'''
+*** Weight: '''{{%|0.2}}'''
+*** Max: '''{{%|1}}'''
+| 4601
+<!--</StatDef>-->
+|- id="Repair Success Chance" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />FixBrokenDownBuildingSuccessChance
+* '''Label:'''<br />repair success chance
+| The chance that this person will successfully repair a broken down building using a component.<br id="n" /><br id="n" />Failing means wasting time and resources.<br id="n" />Note that this only applies to repairing breakdowns, which is different from repairing damage.
+|
+* Display Order:<br />'''140'''
+* Def Name:<br />'''PawnWork'''
+* Label:<br />'''Work'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0}}
+* '''Max Value:''' 1
+* '''To String Style:''' PercentZero
+|
+* '''Skill Need Factors:'''
+** '''SkillNeed_Direct:'''
+*** Skill: '''[[Construction]]'''
+*** '''Values Per Level:'''
+**** 0.75
+**** 0.80
+**** 0.85
+**** 0.875
+**** 0.90
+**** 0.925
+**** 0.95
+**** 0.975
+**** 1
+**** 1.01
+**** 1.02
+**** 1.03
+**** 1.04
+**** 1.05
+**** 1.06
+**** 1.07
+**** 1.08
+**** 1.09
+**** 1.10
+**** 1.12
+**** 1.13
+{{Graph:Chart|width=300|height=150|xAxisTitle=Construction Level|yAxisTitle=Repair Success Chance|type=rect|x=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20|y=0.75, 0.80, 0.85, 0.875, 0.90, 0.925, 0.95, 0.975, 1, 1.01, 1.02, 1.03, 1.04, 1.05, 1.06, 1.07, 1.08, 1.09, 1.10, 1.12, 1.13|xGrid=|yGrid=}}
+* '''Capacity Factors:'''
+** Capacity: '''[[Manipulation]]'''
+*** Weight: '''{{%|0.3}}'''
+** Capacity: '''[[Sight]]'''
+*** Weight: '''{{%|0.2}}'''
+*** Max: '''{{%|1}}'''
+| 4600
+<!--</StatDef>-->
+|- id="Cleaning Speed Multiplier" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />CleaningSpeed
+* '''Label:'''<br />cleaning speed multiplier
+| A multiplier on how fast this cleans up filth from the ground.
+|
+* Display Order:<br />'''140'''
+* Def Name:<br />'''PawnWork'''
+* Label:<br />'''Work'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Hide At Value:''' {{%|1}}
+* '''Min Value:''' {{%|0.1}}
+* '''Show Developmental Stage Filter:''' Child, Adult
+* '''Show On Player Mechanoids:''' {{Good|true}}
+* '''To String Style:''' PercentZero
+|
+* Show On Pawn Kind: '''[[Cleansweeper]]''' {{BiotechIcon}}
+| 2500
+<!--</StatDef>-->
+|- id="Reading Speed" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />ReadingSpeed
+* '''Label:'''<br />reading speed
+| A multiplier on how fast this person can read.
+|
+* Display Order:<br />'''140'''
+* Def Name:<br />'''PawnWork'''
+* Label:<br />'''Work'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Show Developmental Stage Filter:''' Child, Adult
+* '''Default Base Value:''' {{%|0.8}}
+* '''Min Value:''' {{%|0.1}}
+* '''To String Style:''' PercentZero
+|
+* '''Skill Need Factors:'''
+** '''SkillNeed_BaseBonus:'''
+*** Skill: '''[[Intellectual]]'''
+*** Base Value: '''{{%|1}}'''
+*** Required: '''{{Bad|false}}'''
+*** Bonus Per Level: '''{{+|{{%|0.02}}}}'''
+{{Graph:Chart|width=300|height=150|xAxisTitle=Intellectual Level|yAxisTitle=Reading Speed|type=rect|x=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20|y=1, 1.02, 1.04, 1.06, 1.08, 1.1, 1.12. 1.14, 1.16, 1.18, 1.2, 1.22, 1.24, 1.26, 1.28, 1.3, 1.32, 1.34, 1.36, 1.38, 1.4|xGrid=|yGrid=}}
+* '''Capacity Factors:'''
+** Capacity: '''[[Consciousness]]'''
+*** Weight: '''{{%|1}}'''
+** Capacity: '''[[Sight]]'''
+*** Weight: '''{{%|1}}'''
+*** Max: '''{{%|1}}'''
+* '''Parts:'''
+** '''StatPart_Age{{BiotechIcon}}:'''
+*** Use Biological Years: '''{{Good|true}}'''
+*** Humanlike Only: '''{{Good|true}}'''
+*** '''Curve:'''
+**** '''Points:'''
+***** (3,0.05)
+***** (13,1)
+{{Graph:Chart|width=300|height=150|xAxisTitle=Age (Biological)|yAxisTitle=Reading Speed Multiplier|type=line|x=3, 13|y=0.05, 1|interpolate=monotone|xGrid=|yGrid=}}
+| 4600
+<!--</StatDef>-->
+<!--</Defs>--></div>
+<noinclude>
+|}</noinclude>

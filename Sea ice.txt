@@ -1,0 +1,167 @@
+{{Infobox biome
+| name = Sea ice
+| image = SeaIce.png
+| type = Biome
+| texture = IceSheetOceanTexture.png
+| canbuildbase = Yes
+| allowRoads = false
+| allowRivers = false
+| allowFarmingCamps = false
+| animal density = 0.1
+| plant density = 0
+| movement difficulty = 1.5
+| max temperature = -22
+| forageability = 0
+| wild plant regrow days = 0
+| disease mtb days = 90
+| description = Permanent ice sheets floating on water. There is no soil for plants to grow, no minerals to mine, and almost no animal life.<br/>Sea ice is extremely inhospitable. There is no soil for plants and almost no animal life. Long-term survival is a challenge.
+| Extreme Biome = true
+| hasBedrock = false
+<!-- weather -->
+| clear = 12
+<!-- While defined as 0 in the biome definition, for clarity sake I'll omit it.
+| fog = 0 
+| rain = 0
+| rainy thunderstorm = 0
+| foggy rain = 0 -->
+| dry thunderstorm = 2
+| hard snow = 8
+| soft snow = 8
+| gray pall = 1
+| windy = 1
+| overcast = 1
+| blizzard = 2
+<!-- fish -->
+| max fish population = 650
+| freshwater_common_salmon = Yes
+| freshwater_uncommon_frostfish = Yes
+| saltwater_common_salmon = Yes
+| saltwater_common_cod = Yes
+| saltwater_uncommon_dogfish = Yes
+}}
+'''Sea ice''' is a cold [[biome]] in RimWorld.
+<!-- return BiomeWorker_IceSheet.PermaIceScore(tile) - 23f, PermaIceScore = -20f + (0f - tile.temperature) * 2f -->
+== Summary ==
+Sea Ice maps do not have geothermal vents or [[Ruins|ruins]] (except in [[Landmarks#Ice_dunes|ice dunes]]{{OdysseyIcon}} and [[Quests#Ancient_Complex|ancient complex]] sites{{IdeologyIcon}}), and [[ancient shrine]]s do not spawn unless in an [[Landmarks#Ice_dunes|ice dunes]].{{OdysseyIcon}} [[Deep drill]]s cannot mine stone chunks or ores, and [[moisture pump]]s will only generate more ice. You will need to do hunting, trading and cannibalism until you get a [[heater]], a [[sun lamp]] and a [[hydroponics basin]]. It is worth mentioning that sea ice was designed to not allow colony building, only to allow traveling in the area, even though it is possible.
+
+In the lists below the number in brackets represents the relative commonality.
+
+=== Flora ===
+<div class="ul-column-width-200">
+{{#ask: [[Type::Plant]] [[Lives In Sea Ice::>>0]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Sea Ice
+}}
+</div>
+
+=== Fauna ===
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Sea Ice::>>0]] [[Coastal Animal::false]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Sea Ice
+}}
+</div>{{#set:Flora Commonality Sum | {{#expr: {{#ask: [[Type::Plant]] [[Lives In Sea Ice::>>0]] | ?Lives In Sea Ice = | mainlabel=- | sep=+ }} }} }}
+
+Additionally, these animals can spawn in coastal maps:
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Sea Ice::>0]] [[Coastal Animal::true]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Sea Ice
+}}
+</div>{{#set:Fauna Commonality Sum | {{#expr: {{#ask: [[Type::Animal]] [[Lives In Sea Ice::>>0]] [[Coastal Animal::false]] | ?Lives In Sea Ice = | mainlabel=- | sep=+ }} }} }}
+
+If the map is [[polluted]],{{BiotechIcon}} then '''no''' wild animal will spawn.
+
+=== Diseases ===
+Sea Ice has a disease {{MTB}} of 90 days. The following diseases can occur in a Sea Ice:
+{| {{STDT|c_07 sortable}}
+! Disease
+! Commonality{{#set:Disease commonality sum|{{#expr:100+80+30+30+100+80+10}} }}
+|-
+| [[Flu]] || 100{{#set:Flu commonality|100}}
+|-
+| [[Plague]] || 80{{#set:Plague commonality|80}}
+|-
+| [[Fibrous mechanites]] || 30{{#set:Fibrous mechanites commonality|30}}
+|-
+| [[Sensory mechanites]] || 30{{#set:Sensory mechanites commonality|30}}
+|-
+| [[Flu#Animals|Animal flu]] || 100{{#set:Animal flu commonality|100}}
+|-
+| [[Plague#Animals|Animal plague]] || 80{{#set:Animal plague commonality|80}}
+|-
+| [[Organ decay]] || 10{{#set:Organ decay commonality|10}}
+|}
+
+=== Fish ===
+{{Odyssey|section=1|No category}}
+The table below contains the list of all of the fish that can be caught - as well as where they can be caught.
+{| {{STDT|c_23 sortable}}
+! Fish
+! Water body
+! Rarity
+|-
+| [[Salmon]] || Freshwater || Common
+|-
+| [[Frostfish]] || Freshwater || Uncommon
+|-
+| [[Salmon]] || Saltwater || Common
+|-
+| [[Cod]] || Saltwater || Common
+|-
+| [[Dogfish]] || Saltwater || Uncommon
+|}
+
+== Analysis ==
+{{See also|Sea Ice Guide}}
+
+Sea ice is the least hospitable [[biome]] in Core RimWorld. The early game is difficult, with the most pressing issues being food and temperature. Once stability has been reached, sea ice gameplay is similar to any other biome, just slower due to the lack of natural resources, and it is more difficult to recover after a catastrophic event.
+
+===Food===
+[[Human meat]], from both raiders and would-be colonists, is a surprisingly consistent source of food in the early game, as the [[storyteller]] will send [[raid]]s and [[event]]s at the normal frequency. If there is only one colonist, the storyteller will prefer to generate colonist recruitment events like [[transport pod crash]]es due to their [[population intent]]. This makes solo colonist cannibalism feasible for a long time, especially if electric cooking is available. Once the colony is developed to the point that [[mechanoid]]s appear, cannibalism is less reliable as mechs can't be eaten.
+
+[[Fishing]]{{OdysseyIcon}} is the other consistent source of food accessible in the early game, although it requires research if not starting as a New Tribe. Fishing in a heated area is possible year-round, by creating an enclosed room with a body of water inside it. This can be done by enclosing a lake, or by using [[bridge]]s to create a room on top of the lake. If colonists have enough cold resistance to survive staying outside in the winter, fishing outside with seawater is also possible.
+
+[[Animal]]s are infrequent, but a [[snowhare]] is typically generated in each new sea ice map, and bigger animals can wander in. [[Trading]] can be used, but the sea ice lacks ways to make money, so this can only be relied upon so much.
+
+Once a [[hydroponics]] farm is established, food is no longer an issue so long as the farm remains operational.
+
+===Temperature===
+In Crashlanded (or any similarly advanced scenario), [[heater]]s can address the temperature issue quickly if power can be sustained. Warm clothing should still be obtained for when the power goes out. For Lost Tribes, [[campfire]]s will need to be used, burning the limited supply of wood, until sufficiently warm clothing is found to survive the cold.
+
+Pawns will typically come with [[parka]]s and other warm clothing, and with enough clothing and a not-too-cold tile, it is possible to survive without heating. [[Xenotype]]s{{BiotechIcon}} can further improve the minimum comfortable temperature.
+
+===Other challenges===
+If a [[polar bear]] or another predator spawns, it will likely start hunting colonists once it gets hungry. Avoid getting eaten by staying inside.
+
+Resources are hard to acquire, with trading being one of the main ways to get building materials, metals, and components. It is easier to start closer to a neutral settlement, but caravans and [[comms console]] (once researched) can come in handy. An [[electric smelter]] is also very useful for harvesting steel, and meteorites can spawn over time. In the late game, a [[long-range mineral scanner]] or a trading network will work for getting mass resources.
+
+Under default world settings, sea ice will generate near the poles, where summers are bright and winters are dark for ~24 hours. This means that [[solar generator]]s are less useful as they'll be practically be off for a long time. However, the world temperature can be decreased so sea ice generates closer to the equator, where this no longer applies.
+
+Once the colony is big enough that [[mechanoid]] raids can spawn, expect to fight mechs more often, since human raids will not generate if mechs can spawn and it is below {{temperature|-40}}. Especially cold sea ice tiles will ''only'' get mech raids, while warmer tiles can get human raids during the spring or summer. This also means that cannibalism cannot be solely relied upon.
+
+== Gallery ==
+<gallery>
+SeaIce.png|A Sea Ice
+<!-- SeaIcePolluted.png|A [[polluted]] Sea Ice{{BiotechIcon}} -->
+IceSheetOceanTexture.png|Sea Ice's texture on the world map
+</gallery>
+
+== Version history ==
+* [[Version/0.11.877|0.11.877]] - Added
+
+{{nav|biomes|wide}}
+[[Category:Biomes]]
+[[Category:Cold Biomes]]

@@ -1,0 +1,69 @@
+<!--Top Nav Box-->
+{| align=center
+| {{Resources_Nav}}
+|}
+----
+<!-- End of Nav -->
+'''Textiles''' are materials typically used to make [[clothing]].  Textiles are divided into two categories:
+* '''[[Fabrics]]''': Fibrous material typically harvested from [[plants]], or sheared from tamed [[animals]] (i.e. [[wool]])
+* '''[[Leathers]]''': A byproduct of [[Butcher table|butchering]] animals
+
+Both can often be used interchangeably to produce items, though exceptions exist and specific materials differ as to value, beauty, and combat and temperature protection values.  As such, there are some textiles that are best used for different clothing, some for armor, some for hot/cold weather, some for furniture, etc.  See the relevant item's article for details and analysis on material selection.
+
+== Comparison table ==
+Below is a list of material effects for fabrics and leathers. When a [[stuff]]able item is created from a textile, each of its base stats is multiplied by a factor for that stat belonging to the material used. Take "Armor - Sharp" for example. For this stat, [[Cloth]] has a ''factor'' of {{Q|Cloth|Armor - Sharp Factor}} and a [[duster]] has base stat of {{Q|Duster|Armor Factor - Sharp}}. Thus, the final "Armor - Sharp" of a Cloth Duster before [[quality]] multipliers is: {{Q|Cloth|Armor - Sharp Factor}} * {{Q|Duster|Armor Factor - Sharp}} or {{#expr: {{Q|Cloth|Armor - Sharp Factor}}*{{Q|Duster|Armor Factor - Sharp}} *100}}%
+
+This process is then repeated for each stat. The material's HP factor is applied to the items base HP, flammability factor to flammability etc. Insulation is not expressed as a percentage and is thus slightly different. For an example of how to calculate the insulation for a given piece of apparel, see [[Apparel#Insulation|Apparel]]
+
+Market value is the notable exception to this direct multiplicative relationship, but the value of a material does have a direct effect on that of the final product. See [[Market Value]] for details.
+<includeonly><onlyinclude>
+|-
+! {{DLC Icons|{{{Name}}} }}
+| {{{Stuff Category}}}
+| data-sort-value="{{{Beauty Factor}}}" | ×{{{Beauty Factor}}}
+| data-sort-value="{{{Max Hit Points Factor}}}" | ×{{{Max Hit Points Factor}}}
+| data-sort-value="{{{Flammability Factor}}}" | ×{{{Flammability Factor}}}
+| data-sort-value="{{{Armor - Sharp Factor}}}" | ×{{{Armor - Sharp Factor}}}
+| data-sort-value="{{{Armor - Blunt Factor}}}" | ×{{{Armor - Blunt Factor}}}
+| data-sort-value="{{{Armor - Heat Factor}}}" | ×{{{Armor - Heat Factor}}}
+| data-sort-value="{{{Insulation - Cold Factor}}}" | +{{Temperature|{{{Insulation - Cold Factor}}}||delta}}
+| data-sort-value="{{{Insulation - Heat Factor}}}" | +{{Temperature|{{{Insulation - Heat Factor}}}||delta}}
+| data-sort-value="{{{Market Value Base}}}" | {{{Market Value Base}}} {{Icon Small|silver}}
+</onlyinclude></includeonly><div><li style="display: inline-table;">
+{| {{STDT| sortable c_09 text-center}}
+! Name 
+! Stuff category 
+! data-sort-type=number | Beauty 
+! data-sort-type=number | Max Hit Points 
+! data-sort-type=number | Flammability 
+! data-sort-type=number | Armor - Sharp 
+! data-sort-type=number | Armor - Blunt 
+! data-sort-type=number | Armor - Heat 
+! data-sort-type=number | Insulation - Cold 
+! data-sort-type=number | Insulation - Heat 
+! data-sort-type=number | Market Value
+{{#ask: [[Stuff Category::Fabric||Leathery]]
+ | named args = true
+ | ?Name
+ | ?Stuff Category
+ | ?Beauty Factor
+ | ?Max Hit Points Factor
+ | ?Flammability Factor
+ | ?Armor - Sharp Factor
+ | ?Armor - Blunt Factor
+ | ?Armor - Heat Factor
+ | ?Insulation - Cold Factor
+ | ?Insulation - Heat Factor
+ | ?Market Value Base
+ | format = template
+ | template = :Textiles
+ | link = none
+ | sort = Stuff Category, From DLC, Name
+}}
+|}
+</li></div>
+All textiles have the following modifiers in common:
+* [[Property:Work To Make|Work To Make Factor]] and [[Property:Work To Build|Work To Build Factor]] of 1.
+
+{{nav|materials|wide}}
+[[Category:Material|#Textiles]]

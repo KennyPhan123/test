@@ -1,0 +1,58 @@
+{{infobox main|
+| name = Prosthetic leg
+| image = Health item prosthetic.png|Prosthetic leg
+| type = Medical Items
+| type2 = Body Parts
+| tech level = Industrial
+| description = Simple prosthesis made to replace missing leg. Not very comfortable but quite efficient.
+| production facility 1 = Machining table
+| research = Prosthetics
+| skill 1 = Crafting
+| skill 1 level = 5
+| resource 1 = Steel
+| resource 1 amount = 40
+| resource 2 = Component
+| resource 2 amount = 4
+| work to make = 15000
+| mass base = 8
+| hp = 50
+| flammability = 1.0
+| marketvalue  = 260
+| tradeTags = TechHediff
+| techHediffsTags = Simple
+| body part = Leg
+}}{{Info|'''Prosthetic legs''' are an [[artificial body part]] that replaces a pawn's leg. They are much better than a [[peg leg]] or no leg at all, but are inferior to [[bionic leg]]s, which actually improve the pawn's [[moving]] capacity.}}
+
+== Acquisition ==
+{{Acquisition}}
+
+They can also be purchased from [[Exotic goods trader]]s.
+
+== Summary ==
+Prosthetic legs replace the user's [[Table of Human Body Parts|entire organic leg]]. They are universal and can be installed on either the left or right side. The prosthetic leg has a part efficiency of {{Bad|85%}}. This partially replaces the functionality of a normal leg - when coupled with the leg body part having a [[Moving]] importance of 50%, it results in restoring {{+|42.5%}} [[moving]] per missing leg replaced, or a loss of {{--|7.5%}} when replacing a healthy leg. 
+
+Moving, in turn, affects the following [[stats]]: {{#ask: [[Moving Importance::+]]}}. This results in a directly proportional change to a pawn's [[move speed]], and a change in [[melee dodge chance]] equivalent to losing {{--|{{#expr: {{Q|Melee Dodge Chance|Moving Importance}}*0.075}}}} levels of [[Melee]] skill per leg replaced. Due to how the stat is fit to a post-process curve, this can result in the melee dodge chance dropping to 0% for pawns with skill under 7, when replacing one leg, or under 10 for both legs.
+
+Installing a leg replacement can affect a pawn's character quality by affecting their Moving capacity. A replacement part with lower than 100% part efficiency will reduce the pawn's value if replacing a healthy part, but installing even a simple peg leg when the leg was entirely missing will increase their value.
+
+As an artificial part, prosthetic legs will give a mood buff to anyone with the [[Body modder]] trait, and a mood penalty to anyone with the [[Body purist]] trait.
+
+=== Installation === 
+Installing the part requires {{ticks|2500}} of work, 2x medicine of [[Herbal medicine|herbal]] quality or better, and a [[Skills#Medical|Medical skill]] of 4.
+
+Removing the part requires {{ticks|2000}} of work, 1x medicine of [[Herbal medicine|herbal]] quality or better, and has no [[Skills#Medical|Medical skill]] requirements.
+
+If the operation fails, the part will be destroyed.
+
+== Analysis ==
+If a pawn's [[Moving]] is lower than 92% due to damage to, or loss of, an organic leg, it is a good idea to replace that leg with a prosthetic leg. Compared to a [[peg leg]], a prosthetic leg gives +12.5% Moving (base +0.575 {{CS}} move speed); upgrading gives a great improvement for both work and combat and the cost of a prosethetic is low. [[Bionic leg]]s offer a large improvement over even organic legs but are significantly more expensive to make or buy.
+
+Compared to a [[wooden foot]], a prosthetic leg only offers +2.5% Moving (base +0.115 {{CS}}). If damage is limited to the foot or toes, then a wooden foot is mostly sufficient; the extra [[component]]s can usually be put to better use than making a prosthetic.
+
+{{Moving Part Efficiency Table}}
+
+== Version history ==
+* [[Version/0.19.2009|0.19.2009]] - Renamed from '''Simple Prosthetic Leg''' to '''Prosthetic Leg''', and now craftable.
+
+{{nav|body parts|wide}}
+[[Category: Medical Item]] [[Category: Body Part]] [[Category:Artificial Body Part]]

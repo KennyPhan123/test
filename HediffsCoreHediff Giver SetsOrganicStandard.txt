@@ -1,0 +1,264 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Hediff Giver Sets}}
+|}
+----
+{| id="Core Hediff Giver Sets OrganicStandard" {{STDT| sortable}}
+! Def Name !! Class !! Hediff !! Details</noinclude>
+<!-- Environmental -->
+|- id="OrganicStandard Blood loss"
+! OrganicStandard
+| Bleeding
+| [[Hediffs#Blood loss|Blood loss]]
+| -<!-- Details -->
+|- id="OrganicStandard Hypothermia"
+! OrganicStandard
+| Hypothermia
+|<!-- Hediff -->
+* Hediff:<br />'''[[Hediffs#Hypothermia|Hypothermia]]'''
+* Hediff Insectoid:<br />'''[[Hediffs#Hypothermic slowdown|Hypothermic slowdown]]'''
+| -<!-- Details -->
+|- id="OrganicStandard Heatstroke"
+! OrganicStandard
+| Heat
+| [[Hediffs#Heatstroke|Heatstroke]]
+| -<!-- Details -->
+<!-- Special -->
+|- id="OrganicStandard Heart attack"
+! OrganicStandard
+| RandomAgeCurved
+| [[Hediffs#Heart attack|Heart attack]]
+| Parts To Affect: '''[[Heart]]'''
+* Allow On Lodgers: {{Good|false}}
+* Allow On Quest Reward Pawns: {{Good|false}}
+* Allow On Quest Reserved Pawns: {{Good|false}}
+* Allow On Beggars: {{Good|false}}
+* Min Player Population: '''2'''
+* Age Fraction {{MTB}} Days Curve: 
+<div><li style="display: inline-table;">
+{| {{STDT}}
+! Age<br />Fraction !! {{MTB}}<br />Days
+|-
+! 60%
+| 9999999
+|-
+! 80%
+| 2500
+|-
+! 100%
+| 300
+|}{{Graph:Chart|width=200|height=200|xAxisTitle=Age Fraction (Biological Age / Life Expectancy)|xAxisFormat=%|xAxisAngle=+45|yAxisTitle=MTB Days|type=line|x=0.6, 0.8, 1|y=9999999, 2500, 300|yAxisMax=3000|xGrid=|yGrid=}}</li></div>
+<!-- Birthday long-term chronic-->
+|- id="OrganicStandard Carcinoma"
+! OrganicStandard
+| Birthday
+| [[Hediffs#Carcinoma|Carcinoma]]
+|<!-- Details -->
+* Can Affect Any Live Part: {{Bad|true}}
+* '''Age Fraction Chance Curve:'''
+<div><li style="display: inline-table;">
+{| {{STDT}}
+! Age<br />Fraction !! Chance<br />On<br />Birthday
+|-
+! 28%
+| 0%
+|-
+! 100%
+| 0.11%
+|-
+! 150%
+| 0.15%
+|}{{Graph:Chart|width=200|height=200|xAxisTitle=Age Fraction (Biological Age / Life Expectancy)|xAxisFormat=%|xAxisAngle=+45|yAxisTitle=Chance On Birthday|yAxisFormat=%|type=line|x=0.28, 1, 1.5|y=0, 0.0011, 0.0015|xGrid=|yGrid=}}</li></div>
+* Average Severity Per Day Before Generation: {{++|0.05%}}
+|- id="OrganicStandard Bad back"
+! OrganicStandard
+| Birthday
+| [[Hediffs#Bad back|Bad back]]
+|<!-- Details -->
+* Parts To Affect: '''Spine'''
+* '''Age Fraction Chance Curve:'''
+<div><li style="display: inline-table;">
+{| {{STDT}}
+! Age<br />Fraction !! Chance<br />On<br />Birthday
+|-
+! 50%
+| 0%
+|-
+! 62.5%
+| 0.93%
+|-
+! 75%
+| 1.395%
+|-
+! 87.5%
+| 1.395%
+|-
+! 100%
+| 1.86%
+|}{{Graph:Chart|width=200|height=200|xAxisTitle=Age Fraction (Biological Age / Life Expectancy)|xAxisFormat=%|xAxisAngle=+45|yAxisTitle=Chance On Birthday|yAxisFormat=%|type=line|x=0.5, 0.625, 0.75, 0.875, 1|y=0, 0.0093, 0.01395, 0.01395, 0.0186|xGrid=|yGrid=}}</li></div>
+|- id="OrganicStandard Frail"
+! OrganicStandard
+| Birthday
+| [[Hediffs#Frail|Frail]]
+|<!-- Details -->
+* Parts To Affect: '''Torso'''
+* '''Age Fraction Chance Curve:'''
+<div><li style="display: inline-table;">
+{| {{STDT}}
+! Age<br />Fraction !! Chance<br />On<br />Birthday
+|-
+! 62.5%
+| 0%
+|-
+! 75%
+| 1.395%
+|-
+! 87.5%
+| 2.604%
+|}{{Graph:Chart|width=200|height=200|xAxisTitle=Age Fraction (Biological Age / Life Expectancy)|xAxisFormat=%|xAxisAngle=+45|yAxisTitle=Chance On Birthday|yAxisFormat=%|type=line|x=0.625, 0.75, 0.875|y=0, 0.01395, 0.02604|xGrid=|yGrid=}}</li></div>
+|- id="OrganicStandard Cataract"
+! OrganicStandard
+| Birthday
+| [[Hediffs#Cataract|Cataract]]
+|<!-- Details -->
+* Parts To Affect: '''Eye'''
+* Count To Affect: '''2'''
+* '''Age Fraction Chance Curve:'''
+<div><li style="display: inline-table;">
+{| {{STDT}}
+! Age<br />Fraction !! Chance<br />On<br />Birthday
+|-
+! 60%
+| 0%
+|-
+! 75%
+| 0.53%
+|-
+! 87.5%
+| 1.1045%
+|}{{Graph:Chart|width=200|height=200|xAxisTitle=Age Fraction (Biological Age / Life Expectancy)|xAxisFormat=%|xAxisAngle=+45|yAxisTitle=Chance On Birthday|yAxisFormat=%|type=line|x=0.6, 0.75, 0.875|y=0, 0.0053, 0.011045|xGrid=|yGrid=}}</li></div>
+|- id="OrganicStandard Hearing loss"
+! OrganicStandard
+| Birthday
+| [[Hediffs#Hearing loss|Hearing loss]]
+|<!-- Details -->
+* Parts To Affect: '''Ear'''
+* Count To Affect: '''2'''
+* '''Age Fraction Chance Curve:'''
+<div><li style="display: inline-table;">
+{| {{STDT}}
+! Age<br />Fraction !! Chance<br />On<br />Birthday
+|-
+! 60%
+| 0%
+|-
+! 75%
+| 0.53%
+|-
+! 87.5%
+| 1.1045%
+|}{{Graph:Chart|width=200|height=200|xAxisTitle=Age Fraction (Biological Age / Life Expectancy)|xAxisFormat=%|xAxisAngle=+45|yAxisTitle=Chance On Birthday|yAxisFormat=%|type=line|x=0.6, 0.75, 0.875|y=0, 0.0053, 0.011045|xGrid=|yGrid=}}</li></div>
+|- id="OrganicStandard Dementia"
+! OrganicStandard
+| Birthday
+| [[Hediffs#Dementia|Dementia]]
+|<!-- Details -->
+* Parts To Affect: '''Brain'''
+* '''Age Fraction Chance Curve:'''
+<div><li style="display: inline-table;">
+{| {{STDT}}
+! Age<br />Fraction !! Chance<br />On<br />Birthday
+|-
+! 85%
+| 0%
+|-
+! 95%
+| 0.93%
+|-
+! 115%
+| 9.3%
+|}{{Graph:Chart|width=200|height=200|xAxisTitle=Age Fraction (Biological Age / Life Expectancy)|xAxisFormat=%|xAxisAngle=+45|yAxisTitle=Chance On Birthday|yAxisFormat=%|type=line|x=0.85, 0.95, 1.15|y=0, 0.0093, 0.093|xGrid=|yGrid=}}</li></div>
+|- id="OrganicStandard Alzheimers"
+! OrganicStandard
+| Birthday
+| [[Hediffs#Alzheimers|Alzheimer's]]
+|<!-- Details -->
+* Parts To Affect: '''Brain'''
+* '''Age Fraction Chance Curve:'''
+<div><li style="display: inline-table;">
+{| {{STDT}}
+! Age<br />Fraction !! Chance<br />On<br />Birthday
+|-
+! 42%
+| 0%
+|-
+! 70%
+| 0.061%
+|-
+! 90%
+| 0.12%
+|-
+! 100%
+| 0.2%
+|-
+! 150%
+| 0.3%
+|}{{Graph:Chart|width=200|height=200|xAxisTitle=Age Fraction (Biological Age / Life Expectancy)|xAxisFormat=%|xAxisAngle=+45|yAxisTitle=Chance On Birthday|yAxisFormat=%|type=line|x=0.42, 0.7, 0.9, 1, 1.5|y=0, 0.00061, 0.0012, 0.002, 0.003|xGrid=|yGrid=}}</li></div>
+* Average Severity Per Day Before Generation: {{++|0.1%}}
+|- id="OrganicStandard Asthma"
+! OrganicStandard
+| Birthday
+| [[Hediffs#Asthma|Asthma]]
+|<!-- Details -->
+* Parts To Affect: '''[[Lung]]'''
+* Count To Affect: '''2'''
+* '''Age Fraction Chance Curve:'''
+<div><li style="display: inline-table;">
+{| {{STDT}}
+! Age<br />Fraction !! Chance<br />On<br />Birthday
+|-
+! 0%
+| 0%
+|-
+! 20%
+| 0.048%
+|-
+! 30%
+| 0.096%
+|-
+! 50%
+| 0.1344%
+|}{{Graph:Chart|width=200|height=200|xAxisTitle=Age Fraction (Biological Age / Life Expectancy)|xAxisFormat=%|xAxisAngle=+45|yAxisTitle=Chance On Birthday|yAxisFormat=%|type=line|x=0, 0.2, 0.3, 0.5|y=0, 0.00048, 0.00096, 0.001344|xGrid=|yGrid=}}</li></div>
+|- id="OrganicStandard Artery blockage"
+! OrganicStandard
+| Birthday
+| [[Hediffs#Artery blockage|Artery blockage]]
+|<!-- Details -->
+* Parts To Affect: '''[[Heart]]'''
+* Allow On Lodgers: {{Good|false}}
+* Allow On Quest Reward Pawns: {{Good|false}}
+* Allow On Quest Reserved Pawns: {{Good|false}}
+* Allow On Beggars: {{Good|false}}
+* '''Age Fraction Chance Curve:'''
+<div><li style="display: inline-table;">
+{| {{STDT}}
+! Age<br />Fraction !! Chance<br />On<br />Birthday
+|-
+! 25%
+| 0%
+|-
+! 30%
+| 0.1%
+|-
+! 50%
+| 0.145%
+|-
+! 100%
+| 0.16%
+|-
+! 150%
+| 0.17%
+|}{{Graph:Chart|width=200|height=200|xAxisTitle=Age Fraction (Biological Age / Life Expectancy)|xAxisFormat=%|xAxisAngle=+45|yAxisTitle=Chance On Birthday|yAxisFormat=%|type=line|x=0.25, 0.3, 0.5, 1, 1.5|y=0, 0.001, 0.00145, 0.0016, 0.0017|xGrid=|yGrid=}}</li></div>
+* Average Severity Per Day Before Generation: {{++|0.025%}}
+<noinclude>
+|}</noinclude>

@@ -1,0 +1,149 @@
+{{Infobox main|plant
+| name = Dandelions
+| image = Dandelion a.png
+| description = A tiny yellow flower which grows in large clusters. Though it is often considered a weed, dandelions in bloom are quite beautiful.
+| type = Plant
+| type2 = Decorative
+| hp = 85
+| flammability = 1
+| beauty = 4
+| beauty outdoors = 4
+| grow days = 2.5
+| lifespanDaysPerGrowDays = 8
+| sow work = 170
+| harvest work = 200
+| min fertility = 0.05
+| fertility sensitivity = 0
+| nutrition = 0.25
+| food type = plant
+| immune to blight = yes
+| sowTags = Ground
+| livesin_temperateforest = 0.5
+| livesin_tundra = 0.1
+| livesin_aridshrubland = 0.8
+| livesin_desert = 0.5
+| livesin_grassland = 0.3
+| livesin_lavafield = 0.2
+| livesin_scarlands = 0.5
+}}
+'''Dandelions''' are a common [[beauty|beautiful]] flower that can be sown but also grows naturally in {{Habitats}}. 
+
+== Acquisition == 
+Dandelions can be sown by [[Work#Grow|growers]] in [[growing zone]]s. Sowing requires {{Ticks|{{P|Sow Work}}}} of work. Unlike [[rose]]s and [[daylilies]] they cannot be planted in [[plant pot]]s. 
+
+== Analysis ==
+{{Stub|section=1|reason= How long do they live without proper light?}}
+=== Animal feed ===
+Dandelions have a niche as a fast-growing plant for animals to graze on inside [[pens]], for which they are almost strictly better than [[Rice plant|rice]]. However, dandelions should only be used if animal feed is needed urgently, as they are far inferior to [[Corn plant|corn]] and [[haygrass]] in terms of work per nutrition, and are inferior to haygrass in terms of nutrition per tile per day. Immature dandelions are worth less than the base {{P|Nutrition}} nutrition and will be eaten by animals just the same, lowering dandelion's work efficiency even further.
+
+* A dandelion takes {{Ticks|{{P|Sow Work}}}} to sow and is worth {{P|Nutrition}} nutrition if allowed to grow to maturity, or {{Ticks|{{P|Sow Work}} / {{P|Nutrition}} round 2}} work per nutrition.
+* [[Haygrass]] takes {{Ticks|{{Q|Haygrass|Sow Work}} + {{Q|Haygrass|Harvest Work}}}} to both sow and harvest, for {{#expr:{{Q|Haygrass|Harvest Yield}} * {{Q|Hay|Nutrition}}}} nutrition per plant, resulting in {{Ticks|({{Q|Haygrass|Sow Work}} + {{Q|Haygrass|Harvest Work}}) / ({{Q|Haygrass|Harvest Yield}} * {{Q|Hay|Nutrition}}) round 2}} work per nutrition.
+
+Overall, haygrass takes {{Good|{{%|({{Q|Haygrass|Sow Work}} + {{Q|Haygrass|Harvest Work}}) / ({{Q|Haygrass|Harvest Yield}} * {{Q|Hay|Nutrition}}) / ({{P|Sow Work}} / {{P|Nutrition}}) round 3}}}} as much work as fully grown dandelions. [[Corn]] is even better for work efficiency. Some time is needed to haul the hay/corn to the pen, but extra travel time is also required for growers to come into the pen and constantly plant dandelions.
+{| {{STDT| sortable c_14 text-center}} <!-- Header-->
+!rowspan=2|Plant
+!rowspan=2 data-sort-type=number|Grow days
+!rowspan=2 data-sort-type=number|Fertility sensitivity
+!colspan=2|Nutrition per day (normal soil)
+!colspan=2|Work per nutrition
+|-
+!data-sort-type=number|Unharvested
+!data-sort-type=number|Harvested
+!data-sort-type=number|Unharvested
+!data-sort-type=number|Harvested
+{{#ask:[[Dandelions||Haygrass||Corn plant||Potato plant||[Rice plant]]
+  | named args=yes
+  | ?Name=Name
+  | limit = 500
+  | format = template
+  | template=:Dandelions
+}}
+|}
+<onlyinclude><includeonly><!--Row template-->
+|- 
+![[{{{Name}}}]]
+|<!--Grow days
+-->{{#vardefine:v|{{Q|{{{Name}}}|Real Grow Days}} }}<!--
+-->{{#vardefine:c|{{P|Real Grow Days}} }}<!--
+-->{{#ifexpr:{{#var:v}} = {{#var:c}}
+  |{{#expr: {{#var:v}} round 1}} (100%)
+  |{{#ifexpr:{{#var:v}} < {{#var:c}}
+    |{{Good|{{#expr: {{#var:v}} round 1}} ({{#expr:{{#var:v}}/{{#var:c}}*100 round 1}}%) }}
+    |{{Bad|{{#expr: {{#var:v}} round 1}} ({{#expr:{{#var:v}}/{{#var:c}}*100 round 1}}%) }}
+  }}
+}}
+|{{Q|{{{Name}}}|Fertility Sensitivity}}
+|<!-- Nutrition per day, unharvested
+-->{{#ifeq:{{{Name}}}|{{PAGENAME}}|colspan=2{{!}} }}<!--
+-->{{#vardefine:v|{{#expr:{{Q|{{{Name}}}|Nutrition}}/{{Q|{{{Name}}}|Real Grow Days}} }} }}<!--
+-->{{#vardefine:c|{{#expr:{{P|Nutrition}}/{{P|Real Grow Days}} }} }}<!--
+-->{{#ifexpr:{{#var:v}} = {{#var:c}}
+  |{{#expr: {{#var:v}} round 3}} (100%)
+  |{{#ifexpr:{{#var:v}} > {{#var:c}}
+    |{{Good|{{#expr: {{#var:v}} round 3}} ({{#expr:{{#var:v}}/{{#var:c}}*100 round 1}}%) }}
+    |{{Bad|{{#expr: {{#var:v}} round 3}} ({{#expr:{{#var:v}}/{{#var:c}}*100 round 1}}%) }}
+  }}
+}}
+{{#ifeq:{{{Name}}}|{{PAGENAME}}||{{!}}<!--Nutrition per day, harvested
+  -->{{#vardefine:v|{{#expr:{{Q|{{Q|{{{Name}}}|Harvest Product}}|Nutrition}}*{{Q|{{{Name}}}|Harvest Yield}}/{{Q|{{{Name}}}|Real Grow Days}} }} }}<!--
+  -->{{#vardefine:c|{{#expr:{{P|Nutrition}}/{{P|Real Grow Days}} }} }}<!--
+  -->{{#ifexpr:{{#var:v}} = {{#var:c}}
+    |{{#expr: {{#var:v}} round 3}} (100%)
+    |{{#ifexpr:{{#var:v}} > {{#var:c}}
+      |{{Good|{{#expr: {{#var:v}} round 3}} ({{#expr:{{#var:v}}/{{#var:c}}*100 round 1}}%) }}
+      |{{Bad|{{#expr: {{#var:v}} round 3}} ({{#expr:{{#var:v}}/{{#var:c}}*100 round 1}}%) }}
+    }}
+  }}
+}}
+|<!--Work per nutrition, unharvested
+-->{{#ifeq:{{{Name}}}|{{PAGENAME}}|colspan=2{{!}} }}<!--
+-->{{#vardefine:v|{{#expr:{{Q|{{{Name}}}|Sow Work}}/{{Q|{{{Name}}}|Nutrition}} }} }}<!--
+-->{{#vardefine:c|{{#expr:{{P|Sow Work}}/{{P|Nutrition}} }} }}<!--
+-->{{#ifexpr:{{#var:v}} = {{#var:c}}
+  |{{#expr: {{#var:v}} round 0}} (100%)
+  |{{#ifexpr:{{#var:v}} < {{#var:c}}
+    |{{Good|{{#expr: {{#var:v}} round 0}} ({{#expr:{{#var:v}}/{{#var:c}}*100 round 1}}%) }}
+    |{{Bad|{{#expr: {{#var:v}} round 0}} ({{#expr:{{#var:v}}/{{#var:c}}*100 round 1}}%) }}
+  }}
+}}
+{{#ifeq:{{{Name}}}|{{PAGENAME}}||{{!}}<!--Work per nutrition, harvested
+  -->{{#vardefine:v|{{#expr:({{Q|{{{Name}}}|Sow Work}}+{{Q|{{{Name}}}|Harvest Work}}) / ({{Q|{{Q|{{{Name}}}|Harvest Product}}|Nutrition}}*{{Q|{{{Name}}}|Harvest Yield}}) }} }}<!--
+  -->{{#vardefine:c|{{#expr:{{P|Sow Work}}/{{P|Nutrition}} }} }}<!--
+  -->{{#ifexpr:{{#var:v}} = {{#var:c}}
+    |{{#expr: {{#var:v}} round 0}} (100%)
+    |{{#ifexpr:{{#var:v}} < {{#var:c}}
+      |{{Good|{{#expr: {{#var:v}} round 0}} ({{#expr:{{#var:v}}/{{#var:c}}*100 round 1}}%) }}
+      |{{Bad|{{#expr: {{#var:v}} round 0}} ({{#expr:{{#var:v}}/{{#var:c}}*100 round 1}}%) }}
+    }}
+  }}
+}}
+|-
+</onlyinclude></includeonly>
+=== Beauty ===
+Dandelions are modestly beautiful. While they provide comparatively little beauty per plant, each dandelion lasts for 20 days, which cuts down on work. If you have a big room with a dirt floor and open roof, they can be viable for raising the rooms beauty. In smaller rooms, the higher beauty per tile of roses or daylilies will be preferred.
+{| {{STDT| c_24 text-center sortable}}
+|-
+! Plant !! Lifespan<br>(Days) !! Sowing<br>Work !! Min Light !! Beauty<br>/Tile !! Beauty-Days<br>/Work 
+|-
+! Dandelions 
+| {{Q|Dandelions|Lifespan}} || {{Ticks|{{Q|Dandelions|Sow Work}}}} || {{%|{{Q|Dandelions|Min Grow Light}}}} || {{Q|Dandelions|Beauty Base}} || {{#expr:({{Q|Dandelions|Lifespan}} * {{Q|Dandelions|Beauty Base}})/{{Q|Dandelions|Sow Work}} round 2}}
+|-
+! [[Rose]]
+| {{Q|Rose|Lifespan}} || {{Ticks|{{Q|Rose|Sow Work}}}} || {{%|{{Q|Rose|Min Grow Light}}}} || {{Q|Rose|Beauty Base}} || {{#expr:({{Q|Rose|Lifespan}} * {{Q|Rose|Beauty Base}})/{{Q|Rose|Sow Work}} round 2}}
+|-
+! [[Daylily]] 
+| {{Q|Daylily|Lifespan}} || {{Ticks|{{Q|Daylily|Sow Work}}}} || {{%|{{Q|Daylily|Min Grow Light}}}} || {{Q|Daylily|Beauty Base}} || {{#expr:({{Q|Daylily|Lifespan}} * {{Q|Daylily|Beauty Base}})/{{Q|Daylily|Sow Work}} round 2}}
+|-
+! [[Bonsai tree]]{{IdeologyIcon}}
+| {{Q|Bonsai tree|Lifespan}} || {{Ticks|{{Q|Bonsai tree|Sow Work}}}} || {{%|{{Q|Bonsai tree|Min Grow Light}}}} || {{Q|Bonsai tree|Beauty Base}} || {{#expr:({{Q|Bonsai tree|Lifespan}} * {{Q|Bonsai tree|Beauty Base}})/{{Q|Bonsai tree|Sow Work}} round 2}}
+|}
+
+== Gallery ==
+<gallery>
+Dandelion a.png| Dandelion variant A
+Dandelion b.png| Dandelion variant B
+Dandelion c.png| Dandelion variant C
+</gallery>
+
+{{Nav|plant|wide}}
+[[Category:Plants]][[Category:Decorative plants]]

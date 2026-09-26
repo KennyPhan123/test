@@ -1,0 +1,112 @@
+{{Version Nav}} 
+
+Hello everyone! I'm happy to announce a new update for RimWorld and all expansions.
+
+The biosculpters got a focused redesign. Colonists can now automatically do their own age reversal, and initiating a biosculpting cycle takes 1 step instead of 3. There's also less incentive to do weird things like deconstruct and reconstruct the biosculpter. Overall the micromanagement burden should be much lower, especially for large colonies.
+
+We also reworked caravan formation to make it faster and more fluid. The archonexus restart sequence got some love so it's clearer and better-tuned. Finally, there's also a bunch of smaller improvements - see the change list below.
+
+This update was tested as compatible with all savegames and mods.
+
+Thanks to everyone who helped test on the Official dev Discord server, to Matt Ritchie for running the unstable build update cycle, Nick Barrash for the biosculpter rework, and all our other devs for their contributions, and everyone who gave such rich feedback on Discord and on the RimWorld subreddit.
+
+As always, don't hesitate to review Ideology on its Steam page!
+
+Enjoy!
+-Tynan
+
+== Biosculpter changes ==
+
+* Transhumanism believers will now automatically take their yearly age reversal cycle if the new “Auto age reverse” toggle on biotuned biosculpter pods is enabled
+* All cycles now take 5 nutrition, and nutrition must be loaded before a cycle is selected instead of after. Extra cycle ingredients (like glitterworld medicine) are collected and carried to the biosculpter by the pawn initiating the cycle.
+* It now only requires a single player action to start a pawn on a biosculpter cycle (previously it took two separate actions and waiting for pawns to fill nutrition).
+* Biosculpter pods glow green when nutrition is loaded and they’re ready for cycle selection.
+* Biotuned biosculpter pods now run cycles 25% faster.
+* Biotuning now happens after a cycle is completed instead of when a pawn enters the pod.
+* Biosculpters consume 50W of power if no cycle is running, and 200W if a cycle is running, instead of consuming full power all the time.
+* Biosculpters now take longer to minify.
+* Age reversal demanded alert will fire 1 day after age reversal deadline (instead of 5 days before) if a pawn has a pod with Auto age reverse enabled. This reduces spam.
+* Nutrition is liquified when added to a pod and is no longer ejected if a cycle is cancelled.
+* If biosculpter loses power while occupied, we don't animate and we now show how long until eject in inspect string.
+* Change pleasure cycle mood bonus from +10 to +15.
+* Biotuning duration has been increased to 80 days from 60 days.
+* Biosculpter deconstruct yield is down to 25% from 50%.
+* Biosculpter construct cost increased from 3 to 4 components.
+* Biosculpters don't heal missing eyes if the pawn's ideoligion approves of blindness.
+
+== Caravan improvements ==
+
+* Change caravan packing spot to caravan hitching spot. It's still free, but it does more.
+* Caravan hitching post now can be used to keep animals in place on temporary maps.
+* Caravan pawns gathering items now haul items in their inventory to pack animals. This drastically speeds up caravan formation.
+* Animals will eat and sleep within their rope area if they're roped to a spot.
+* Added an alert that shows when hungry animals are tied to hitching posts.
+* Allow caravan pawns to sleep in bed while packing, less dire hunger threshold before eat, and allow pawn to regain excited travel thought after draft.
+* Change caravan hauling behavior to cancel enroute instead of waiting for arrival if ticks after first item pickup timeout exceeded.
+* Added a positive thought when pawns have been preparing a caravan for a long time, to reduce pawns going insane from caravan prep.
+* Joy decreases more slowly when a pawn is preparing a caravan.
+* Colonists will now look for food in pack animal inventory if no better food sources available.
+* Colonists will grab food from pack animal to feed patients if no other food available.
+* Colonists can grab medicine from pack animals.
+* Colonists will take drugs (if assigned or need) from pack animal inventory if no other sources are available.
+* Update pen needed alert to take into account hitching post and handling skill for roping removal.
+* Remove animal handling skill requirements for roping to pen.
+* Save prepare caravan gather items toil tree to disk.
+
+== Archonexus improvements ==
+
+* Add animal pregnancy, gender, and bonded information to archonexus settlement dialog.
+* Sort items players take to new archonexus settlement more in line with usefulness.
+* Update new archonexus settlement confirm dialog always show and warn if all items or relics not selected.
+* Tweak count of items players can bring to new archonexus settlement.
+* Change archonexus item selection such that weapons and utility belts are unequipped and must be explicitly chosen.
+* Remove pawn hediffs like hypothermia and malnutrition upon new archonexus settlement.
+* Swap thing icon and info icon in archonexus dialog.
+* Reset pawn food and rest levels when starting new archonexus colony.
+* Add animation after selecting new archonexus settlement to make moment feel more significant.
+
+== Misc improvements ==
+
+* Ideoligious buildings are no longer expected to be placed in non-home maps.
+* Display current and required total tend qualities in the tooltip for hediffs with HediffComp_TendDuration comp. (Muscle parasites, athsma, gut worms, etc...)
+* Separated "Weapon" stat category into "Weapon (melee)" and "Weapon (ranged)".
+* Pawn beauty stat is now visible even when the value is zero.
+* Precept name length is now limited.
+* Minor fixes to new colony optimism thought appliance when abandoning settlements or creating new ones.
+* New colony optimism thought is now given to all colonists after the player settles a tile and he had no home map elsewhere and when player abandons his last home map. This makes relocating much more feasible, especially in emergencies.
+* Reduced the amount of ancient junk that spawns on newly-generated maps.
+* Blind pawns who venerate trees can now sense nearby trees and enjoy their presence even without sight.
+* Reduce prevalence of breach raids at high points levels.
+* Update predators hunting across fences tooltip to match current functionality.
+* Ensure the trigger conditions for scarification/blinding are clear to the player.
+* Right clicking on ancient junk with drafted pawn shows option to attack.
+* Unforbid items in pawn inventory if taken by caravan from temporary map.
+* Animals with paralytic abasia can be tamed or hunted without penalty after a animal hospitatlity quest ends. Hospitality joiners and prisoners can now arrived paralyzed as well.
+* Added range values to darkness combat stats.
+* Added charity events for not helping pilgrims.
+* Added hacking progress stat to hackable things.
+* Resurrected pawns with titles that were inherited lose all permits associated with the lost titles.
+* Provide a config error if def label contains '[', ']', '{', or '}' characters. Added a flag to hide this error.
+* Clarify age reversal precept.
+* Updated player-created names.
+
+== Fixes ==
+
+* Fix: New colony optimism thoughts are not applied correctly.
+* Fix: Gastro-analyzer can be removed by biosculpter.
+* Fix: Caravan stuck indefinitely if animal in pen added while caravan pawns moving to exit map
+* Fix: Clicking ideo icon on some dialogs uslessly opens copy of same dialog.
+* Fix: Royal ascent shuttle can only take 1000kg of colonists.
+* Fix: Skip psycast can cause duplication bugs.
+* Fix: "Melee warmup time" is actually ranged warmup time. Melee weapons use only cooldown.
+* Fix: PainIsVirtue meme doesn't guarantee the presence of scarification precept.
+* Fix: Error on reloading a save with bombardment/salvo spawned on the same tick as save.
+* Fix: Multiple instances of minified item dont show correctly in to load part of caravan tab.
+* Fix: Exception when pawn dies of malnutrition.
+* Fix: Burned tree description states it doesn't drop wood when it does.
+* Fix: Exception drawing pawn inspect pane/bio tab/other UI with null extra mini faction.
+* Fix: Some ability translation keys are in Royalty but used elsewhere.
+* Fix: Plants previously designated to be grown on buildings aren't cleared when a new plant is selected.
+* Fix: Biosculpter nutrition not incremented if same food def added to pod before and after biosculpter update.
+* Fix: numCase subsymbol doesn't work if source number is float.
+* Fix: Typos.

@@ -1,0 +1,55 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Biotech/Mechanitor}}
+|}
+----
+{| {{STDT| c_12}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Remote repairer" <!-- defName="RemoteRepairerImplant" -->
+! Remote repairer
+----
+* Def Name:<br />RemoteRepairerImplant
+* Label:<br />remote repairer
+|<!-- Description -->
+<div style="max-width: 500px;">
+A mechlink upgrade which allows the mechanitor to repair mechs from a distance. The user links with the mechanoid and uses their own brain to psychically guide its self-repair mechanites.
+
+This implant can be installed up to 3 times to increase its range.
+----<!-- Description Short -->
+An implant which allows the user to repair mechs from a distance. This can be installed up to 3 times.
+----
+* Description Hyperlinks:<br />{{Icon Small|Remote repairer}} '''[[Remote repairer|View: Remote repairer]]'''
+</div>
+|<!-- Details -->
+* Hediff Class: '''Hediff_Level'''
+* Default Label Color: {{Color|60%|60%|100%}}
+* Is Bad: {{Good|false}}
+* Price Impact: {{Bad|true}}
+* Initial Severity: '''1''' (Severity is bound to level of implant)
+* Min Severity: '''0'''
+* Max Severity: '''3'''
+* Keep On Body Part Restoration: {{Good|True}}
+* Level Is Quantity: {{Good|true}}
+* Duplication Allowed: {{Bad|false}}
+* '''Comps:''' ''Give Ability''
+** Ability Defs: '''[[Remote repair]]'''
+|<!-- Stages -->
+{| {{STDT| c_12}}
+! Label !! Parameters
+|-
+! x1
+|<!-- Parameters -->
+* Min Severity: '''1'''
+* [[Mech Remote Repair Distance]] Offset: {{+|7.9 (cells)}}
+|-
+! x2
+|<!-- Parameters -->
+* Min Severity: '''2'''
+* [[Mech Remote Repair Distance]] Offset: {{+|13.9 (cells)}}
+|-
+! x3
+|<!-- Parameters -->
+* Min Severity: '''3'''
+* [[Mech Remote Repair Distance]] Offset: {{+|19.9 (cells)}}
+|}<noinclude>
+|}</noinclude>

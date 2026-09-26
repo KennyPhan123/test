@@ -1,0 +1,90 @@
+{{See also|Spelopede}}
+{{Biotech}}
+
+{{Infobox main|Environment
+| name = Spelopede cocoon
+| image = CocoonSpelopedeA.png <!-- Spelopede cocoon A.png -->
+| description = A stasis cocoon containing a spelopede.<br/>When conditions are inhospitable, insects sometimes form stasis cocoons and burrow underground. These cocoons keep insects safe from fire, extreme temperatures, and other threats for years.<br/>Pollutants can stimulate cocoons and cause them to resurface, and strong pollutants can attract cocoons from great distances.<br/>Cocoons do nothing if they are not disturbed. If a cocoon is disturbed or destroyed, the insect within will awaken and attack, triggering other nearby cocoons in the process.
+<!-- Base Stats -->
+| type = Environment
+| hp = 150
+| flammability = 0
+| rotatable = false
+| path cost = 42
+<!-- Building -->
+| size = 1 * 1
+| passability = pass through only
+| cover = 0.5
+| blockswind = true
+<!-- Pawn Stats -->
+| combatPower = 75
+<!-- Technical -->
+| defName = CocoonSpelopede
+| label = spelopede cocoon
+<!-- ThingDef ParentName="CocoonBase" -->
+| texPath = Things/Building/Natural/CocoonSpelopede
+| pawnSpawnRadius = 0
+| points = 75
+| spawnablePawnKinds = Spelopede
+| lordJob = LordJob_AssaultColony
+| shouldJoinParentLord = True
+| mentalState = CocoonDisturbed
+| destroyAfterSpawn = true
+<-- ThingDef Abstract="True" Name="CocoonBase" ParentName="BuildingNaturalBase" -->
+| thingClass = ThingWithComps
+| graphicClass = Graphic_Random
+| drawSize = 1
+| altitudeLayer = Building
+| tickerType = Normal
+| receivesSignals = true
+| isInsectCocoon = true
+| deconstructable = false
+| startsDormant = true
+| wakeUpDelayRange = 162
+| wakeUpEffect = CocoonWakingUp
+| maxDistAwakenByOther = 3
+| wakeUpRepeatSignalDelayRange = 30~60
+| delayedWakeUpDoesZs = false
+| showSleepingZs = false
+| wakeUpDelayStateLabelKey = DormantCompOpening
+| wakeUpIfAnyTargetClose = true
+| wakeUpCheckRadius = 4.9
+| wakeUpOnThingConstructedRadius = 4.9
+| canTargetBuildings = false
+| canTargetAnimals = false
+| canTargetMechs = false
+| canTargetHumans = true
+| wakeUpWithDelay = true
+| radiusCheckInspectPaneKey = TriggerRadius
+| activateMessageKey = MessageCocoonDisturbed
+| activatePluralMessageKey = MessageCocoonDisturbedPlural
+| ticksPerHeal = 6000
+| filthDef = Filth_Slime
+| spawnCountOnSpawn = 10
+| spawnMtbHours = 4
+| spawnRadius = 1
+| effect = CocoonDestroyed
+| placeWorkers = PlaceWorker_CocoonTriggerRadius
+| drawPlaceWorkersWhileSelected = true
+}}
+
+'''Spelopede cocoon''' is a dormant insectoid cocoon that spawns as part of the [[Events#Wastepack Infestation|wastepack infestation]] event.
+
+== Summary ==
+{{Cocoon Base|Summary}}
+
+== Analysis ==
+{{Cocoon Base|Analysis}}
+
+== Gallery ==
+<gallery>
+CocoonSpelopedeA.png|Variant A
+CocoonSpelopedeB.png|Variant B
+CocoonSpelopedeC.png|Variant C
+</gallery>
+
+== Version history ==
+* [[Biotech]] Release - Added.
+
+[[Category:Environment]]
+[[Category:Insectoid]]

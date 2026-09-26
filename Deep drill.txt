@@ -1,0 +1,93 @@
+{{Infobox main|production
+| name = Deep drill
+| image = Deep drill.png
+| description = A deep-crust drilling rig for extracting minerals from deep under the surface. Use a ground-penetrating scanner to detect the resources. This drill will yield stone chunks if no resources are present. Can be repositioned freely.
+| type = Building
+| type2 = Production
+| placeable = true
+| path cost = 50
+| passability = pass through only
+| cover = 0.5
+| minifiable = true
+| size = 1 ˣ 1
+| mass base = 35
+| flammability = 0.5
+| hp = 300
+| sell price multiplier = 0.7
+| beauty = -25
+| power = -200
+| terrain affordance = light
+| research = Deep drilling
+| skill 1 = Construction
+| skill 1 level = 4
+| work to make = 10000
+| resource 1 = Steel
+| resource 1 amount = 100
+| resource 2 = Component
+| resource 2 amount = 2
+}}
+{{Info|A '''deep drill''' extracts resources, such as [[metals]] or [[stone chunk]]s, from underground deposits.}}
+
+== Acquisition ==
+{{Acquisition}}
+
+They can also be found in [[Work site|mining sites]]{{IdeologyIcon}} in limited numbers.
+
+== Summary ==
+[[File:Deepdrill radius.png|thumb|175px|left|White tile highlights the drill's mining radius.]]
+A deep drill takes 200 W of [[power]] and occupies a 1x2 cell space, 1 for the drill and 1 for the interaction spot. Deep drills can be uninstalled freely. 
+
+Operation requires a pawn [[capable]] of, and assigned to, the [[Work#Mine|Mine]] worktype. Each extraction cycle requires {{Ticks|14000}} of work to finish, modified by the colonist's [[Deep Drilling Speed]] stat, and unaffected by the resource type being mined. Note that the ''quantity'' of ore mined per cycle does depends on the resource type however. Unlike at most production stations, pawns using a deep drill will not sit and gain comfort from a chair positioned at their working spot. [[Tunneler]] mechanoids{{BiotechIcon}} are unable to use deep drills.
+
+A deep drill can mine ore deposits found by the [[ground-penetrating scanner]], with the mined ore placed in a tile adjacent to the drill at the end of each extraction cycle. Ore cannot be found by deep drilling randomly, and must first be created by scanning. Deep drills will mine ore deposits in a 2.6-tile radius, or 5-tile diameter. While drills can't be placed in walls or other invalid terrain, a nearby drill can still mine ores within those tiles. Drills can be also be placed on bridges, even though deposits can't be generated under [[terrain]] that doesn't naturally support light structures.
+
+Drills being worked on without a deposit in their radius instead produce a [[stone chunk]] each extraction cycle, matching the stone type under the drill when possible. Otherwise it consistently produces a seeded type of stone at that tile out of the map's available stone types, displayed on the deep drill's tooltip. It cannot extract [[vacstone]]{{OdysseyIcon}} chunks. Drills can only be placed on [[ice]] as long as there are mineral resources available under it. Since the ground-penetrating scanner does not work on [[sea ice]] or in [[orbit]],{{OdysseyIcon}} deep drills cannot be placed at all on those biomes.
+=== Ores ===
+A [[ground-penetrating scanner]] can be used to create the following ore deposits:
+
+{{Deep Ore Deposit Table}}
+
+The drill's inspection pane shows what resource is below ({{lc:{{#ask:[[Category:Metal]] AND [[Name::!Bioferrite]] AND [[Name::!Obsidian]]}}, or [[jade]]}}). Cells will turn from green to yellow and then blank as they are depleted. Each cell contains a total of 300 resources, but the actual quantity obtained might be more or less than that, since it is multiplied by the miner's [[mining yield]]. When the drill runs out of ores, it is automatically forbidden, though you can unforbid it to mine stone chunks as usual.
+
+<gallery widths="400px" heights="400px" class="left" mode="nolines">
+File:Deepdrill Mineral Example.png|'''Mineral drilling example. Hovering the mouse over a deposit tile displays the ore and quantity remaining under that tile.'''
+</gallery>
+
+=== Infestations ===
+{{Stub|section=1|reason=Details - How often does this happen, how many insects appear, etc. Initial investigation from CompCreatesInfestations but needs to be tested in game - Can't fire again with 7 days of a deep drill infestation from that drill, or any drill within 10 tiles. No idea about the MTB infestations though}}
+Manned drills are capable of drilling into underground [[insectoid]] hives, activating the [[Events/Incidental#Too Deep: Infestation|Too Deep: Infestation]] event and bringing several insectoids to the surface.  There will be a short delay between the alert and their appearance, giving your miner time to get away.
+
+== Analysis ==
+When combined with [[ground-penetrating scanner]]s, deep drills are a vast and valuable source of metals. These minerals often limit a colony when it comes to [[ship]] building or general advancement. A ground-penetrating scanner can find an infinite amount of veins over time, meaning you don't have to leave your colony or rely on [[trade]] to get them. Due to how slow drilling is, you may want to place multiple drills when mining for ore deposits.
+
+As the colonist will often spend long times drilling in a place far away from the base, their [[Mood]] will suffer because of the lack of [[beauty]] and [[comfort]]. A room can be constructed around the drill to mitigate the debuffs, using [[sculpture]]s to increase room quality.
+
+=== Power ===
+[[File:Drill-defense.png|thumb|225px|right|Defend your drill & power with walls.<br>Left: [[Unstable power cell]] Right: [[Battery]]]]
+A deep drill requires [[power]] to operate, but ore deposits may be far from your main power grid. A [[vanometric power cell]] can power up to 5 drills with no input required. Although it is quite explosive, an [[unstable power cell]] {{RoyaltyIcon}} is easier to get, and can power 2 drills. A fully charged [[battery]] can be re-installed near the drill, providing a little less than 3 days worth of power at a time.
+
+=== Sequence break ===
+If deep drills can be looted from a [[work site]],{{IdeologyIcon}} they can be used to "sequence break" the production of infinite [[stone chunk]]s before they're researched and, if a power cell is acquired, even before [[Electricity]] is researched. 
+
+Note that without a ground-penetrating scanner, which cannot be minified and whose research requires researching deep drills anyway, it cannot be used to generate other resources.
+
+=== Comparison to long-range scanners ===
+The [[long-range mineral scanner]] can find readily mineable ores on the world map, as opposed to ores that need to be drilled.
+
+Compared to drilling, it is much faster, but more difficult, to mine ores with a long-range scanner. At 100% [[Mining Speed]] (Mining 8), a pawn requires {{Ticks|47.5}} per steel just to mine the ore, while deep drilling requires {{Ticks|400}} per steel just for extraction. While the long-range scanner finds ore roughly {{Ticks/gametime|60000}} slower, you can search for a specific ore like plasteel or gold. It is possible for the ground scanner to find ore near the buildable edges of the map, forcing massive travel times and making the ore deposit impractical. When mining for steel, the travel time can in theory be ignored if transport-pods are used to transport the materials, although this comes at a cost of losing about 20-25% of the steel to transport costs.
+
+The benefit of deep drilling is ease of use. Ground-penetrating scanners find much more ore (9000 vs 2300 [[steel]]) per deposit. Deep drilling allows your miners to stay within your colony. In contrast, the long-range scanner forces you travel to the destination, fight ambushes, and bring oft-heavy ores back. While drilling is slow, you can have multiple miners operate multiple deep drills. The bottleneck with ground-penetrating scanners, most often, are miners. The bottleneck with long-range scanners is often the scanning and travel time; 1 good miner is sufficient to mine a single ore scan. The logistic challenges of the long-range scanner are greatly mitigated if a [[passenger shuttle]]{{OdysseyIcon}} is available, improving it's usage for quick resource acquisition as long as [[chemfuel]] production is sufficient.
+
+So, overall, drilling operations are a way for lategame and endgame colonies to accumulate resources. Long-range scanners are better if you need large amounts of a specific ore quickly, but is more difficult to organize. Also, which option to prefer can depend on quantity and quality of miners. Long-range scanners are relatively better when you only have 1 good miner.
+
+== Version history ==
+* Beta 19 - [[Chemfuel]] can no longer be acquired by drilling.
+* Beta 19/ 1.0 - Now costs more and mines slower.
+* 1.0 - It is now possible to drill into insectoid hives.
+* [[Version/1.1.2624|1.1.2624]] - The area of deep drills has been expanded to become 21 tiles large (5x5 square minus the corners), as opposed to 9 tiles (3x3 square). Its power consumption has also been reduced (300 -> 200W).
+* [[Version/1.3.3067|1.3.3067]] - Fix: Deep drills produce chunks over themselves and their interaction cells.
+* [[Version/1.4.3523|1.4.3523]] - Fix: Deep drilling job not canceling when forbidden or exhausted the resource.
+* [[Version/1.6.4518|1.6.4518]] - Deep drills now produce the same type of stone that they're placed on, when possible. Deep drills can no longer be placed at all on sea ice, as the ground-penetrating scanner no longer works on those biomes.
+
+{{Nav|production|wide}}
+[[Category:Production]] [[Category:Resource Production]]

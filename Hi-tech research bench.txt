@@ -1,0 +1,84 @@
+{{Infobox main|production
+| name = Hi-tech research bench
+| image = Hi-tech_research_bench.png
+| imagesize = 192px
+| description = A high-tech bench with computers and electronic measurement equipment. Allows more rapid research, and unlocks advanced research projects.
+| type = Building
+| type2 = Production
+| placeable = true
+| path cost = 50
+| passability = pass through only
+| cover = 0.5
+| minifiable = false
+| size = 5 ˣ 2
+| flammability = 1
+| hp = 250
+| power = -250
+| efficiency = 1
+| terrain affordance = heavy
+| facility = multi-analyzer
+| research = Microelectronics
+| skill 1 = Construction
+| skill 1 level = 6
+| work to make = 5000
+| stuff tags = Metallic
+| resource 1 = Stuff
+| resource 1 amount = 150
+| resource 2 = Steel
+| resource 2 amount = 100
+| resource 3 = Component
+| resource 3 amount = 10
+| room role = Laboratory
+| work table not in room role factor = 0.8
+}}
+A '''hi-tech research bench''' is a [[production]] bench at which your colonists can [[research]] new technology. 
+
+It is the more advanced version of the [[simple research bench]], providing faster research speeds and allowing access to more advanced technologies. It is also the only bench that can be linked to the [[Multi-analyzer]].
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+{{Stub|section=1|reason=Specific mechanical effect of [[cleanliness]] on research rate}}
+Once a project has been selected in the [[Research]] tab, [[colonist]]s assigned to [[Work#Research|Research work type]] will work at a hi-tech research bench to complete the project. Multiple researchers can contribute toward a project at the same time, so long as sufficient research benches are available, and benches can be freely swapped between researchers.
+
+They require electricity to function and can not be used when unpowered.
+
+The rate of research depends on the following factors: 
+* The [[research speed]] stat of the researcher.
+* The type of research bench and facilities used. Hi-tech research benches have ×1 multiplier to this research rate. 
+** Linking a [[multi-analyzer]] gives a +10% buff to the research bench. This buff is additive with the research bench, and then multiplied by other factors.
+* A ×0.7 work multiplier for being in "Bad Temperature" - below {{Temperature|10}} or above {{Temperature|35}} - like most production facilities. 
+* A ×0.9 work multiplier for being outdoors. {{Check Tag|Verify|Selecting the research bench claims 90%. Clicking on the info tab gives a "Research Speed" of 0.75x}}
+* The [[Cleanliness]] of the room. The modifier is ×0.75 for ''very dirty'' (-5 or lower), ×1 for clean (0), and ×1.09 for ''sterile'' (0.6). Being outdoors gives a ×0.75 multiplier for Cleanliness (in addition to the penalty for being outdoors).
+* [[Reading bonus]] for books on bookshelves nearby.
+
+Some research projects require either the hi-tech research bench, or both the bench and the [[multi-analyzer]]. Multi-analyzers link to all hi-tech research benches within 4 tiles. Only linked benches can be used to [[research]] projects that require the multi-analyzer.
+[[File:Maximum Multianalyser distance.png|thumb|center|Maximum multi-analyzer distance]]
+
+== Analysis == 
+Once they are unlocked, hi-tech research benches are 33.33% faster at researching than the [[simple research bench]]. As soon as [[Research#{{P|Required Research}}|{{P|Required Research}}]] is researched and the colony has sufficient [[power]] and resources to construct them, simple benches should be replaced. This is also required to unlock projects beyond Microelectronics. Multiple research benches can be used concurrently; as soon as you have the resources and manpower to spare, you may want to have 2 researchers operating at once. 
+
+If resources are tight but several researchers are available, simple research benches can be retained in order to research less complex technologies. Simple and hi-tech research benches may be used together, though pawns will automatically abandon any simple benches when hi-tech is required. You can also place half of the available researchers on a [[Schedule|night shift]], allowing them to effectively share hi-tech benches.
+
+=== Laboratories ===
+[[File:Compact_lab.png|thumb|right|Compact, 5x6 lab with 2 research benches. [[Vent]]s or open doors can be used to bring temperature in. <br/>Pawns may not like the tight space.]]
+Because research is a long term task, it is advised to please researchers:
+* Increase a researcher's [[comfort]] with [[dining chair]]s or [[armchair]]s, and install [[sculpture]]s or other [[beauty|beautiful]] items to increase mood.
+* Install [[floor]]s and keep the room clean, which also increases research speed.
+** [[Steel tile]] and [[sterile tile]] provide a small boost to Cleanliness, but are quite costly.
+Research rooms can be kept small and out of major thoroughfares, to minimize the amount of cleaning time and sterile tile used. For example, the lab on the right uses 30 [[sterile tile]]s, which cost {{Icon Small|steel}} 90 [[steel]] and {{Icon Small|silver}} 360 [[silver]].
+
+If investing any significant amount of resources into a laboratory, it is recommended to build it such that it will fit the [[multi-analyzer]] that will eventually be required. 
+{{Clear}}
+
+{{Building Stats Table}}
+
+== Version history ==
+* [[Version/0.13.1135|0.13.1135]] - added.
+* [[Version/1.5.4062|1.5.4062]] - Storing books in bookcases increases the beauty of a room, makes nearby research benches faster.
+
+{{Nav|production|wide}}
+[[Category:Production]]
+[[Category:Research]]
+[[Category: Laboratory Production]]

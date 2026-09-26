@@ -1,0 +1,80 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Global/Misc}}
+|}
+----
+{| {{STDT| c_01}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Anesthetic" <!-- defName="Anesthetic", ParentName="DiseaseBase" -->
+! Anesthetic
+----
+* Def Name:<br />Anesthetic
+* Label:<br />anesthetic
+| Sleep drugs in the bloodstream. Anesthetic renders creatures unconscious.
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|90%|100%|35%}}
+* Is Bad: {{Good|false}}
+* Initial Severity: '''100%'''
+* Max Severity: '''100%'''
+* '''Remove On Redress Chance By Days Curve:'''
+<div><li style="display: inline-table;">
+{| {{STDT| c_01}}
+! Days !! Chance
+|-
+! 0
+| 0%
+|-
+! 2
+| 0%
+|-
+! 7
+| 50%
+|-
+! 20
+| 100%
+|}{{Graph:Chart|width=200|height=200|xAxisTitle=Days|yAxisTitle=Remove On Redress Chance|yAxisFormat=%|type=line|x=0, 2, 7, 20|y=0, 0, 0.5, 1|interpolate=monotone|xGrid=|yGrid=}}</li></div>
+* '''Comps'''
+** ''Disappears''
+*** Disappears After Ticks: {{Ticks/gametime/days|45000}} ~ {{Ticks/gametime/days|120000}}
+*** Show Remaining Time: {{Good|true}}
+** ''Severity Per Day:'' {{---|80%}}
+|<!-- Stages -->
+{| {{STDT| c_01}}
+! Label !! Parameters
+|-
+! wearing off
+|<!-- Parameters -->
+* Pain Factor: {{Good|×95%}}
+* Vomit {{MTB}} Days: '''4'''
+* [[Consciousness]] Max: {{Bad|90%}}
+* [[Manipulation]] Offset: {{--|10%}}
+* [[Moving]] Offset: {{--|5%}}
+* '''Mental State Givers'''
+** Mental State: '''[[Confusion|Confused wandering]]'''
+** {{MTB}} Days: '''50'''
+|-
+! woozy
+|<!-- Parameters -->
+* Min Severity: '''60%'''
+* Pain Factor: {{Good|×80%}}
+* Vomit {{MTB}} Days: '''0.25'''
+* [[Consciousness]] Max: {{Bad|70%}}
+* [[Manipulation]] Offset: {{--|20%}}
+* [[Moving]] Offset: {{--|20%}}
+* [[Talking]] Offset: {{--|20%}}
+* [[Digestion]] Offset: {{--|20%}}
+* [[Sight]] Offset: {{--|15%}}
+* Forget Memory Thought {{MTB}} Days: '''5'''
+* '''Mental State Givers'''
+** Mental State: '''[[Confusion|Confused wandering]]'''
+** {{MTB}} Days: '''5'''
+|-
+! sedated
+|<!-- Parameters -->
+* Min Severity: '''80%'''
+* Pain Factor: {{Good|×0%}}
+* Vomit {{MTB}} Days: '''0.25'''
+* [[Consciousness]] Max: {{Bad|1%}}
+|}<noinclude>
+|}</noinclude>

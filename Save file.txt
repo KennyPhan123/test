@@ -1,0 +1,208 @@
+<!--Top Nav Box-->
+{| align=center
+| {{Basics_Nav}}
+|}
+----
+[[File:saves_preview.png|200px|right]]'''Save files''' are the files that store a player's progress in ''[[RimWorld]]''. The game can be saved in two ways: the player saving a game manually, or the game saving automatically - being an autosave. When saving the game manually, the player can choose a custom name for the save. When the game autosaves, the save names are automatically labeled as "Autosave-#", with the number incrementing by one for every autosave stored.
+
+Saving manually also allows the choice of overwriting other saves. To the very left of each save's "load" button, three pieces of information are stored: the corresponding date, time and version. If a save's version is different from the game's current version, that info will be displayed in yellow, rather than the standard grey (as seen in the image).
+
+Clicking the red "X" to the right of the save's load button will delete the save, though the game will ask the player if they want to continue with their deletion every time an X is clicked.
+{{TOCright}}
+== Save file contents == 
+'''RimWorld's''' save files are written in XML and contain all the information about the state of the game. They are stored with the file extension .rws, and can be read with any XML reader or Notepad. The contents of a save are heavily dependent on the version of the game that was running at the very moment of the save, this means that even though saves of a different version may still work, some gameplay issues may occur.
+
+[[DLC]] and [[mods]] are also integrated into save files, meaning that problems can occur when loading a save without the same content enabled as was originally part of that save. If there is any difference between what is enabled and what's contained in a save file, the game will notify the player of this. 
+
+World data is saved into the map file, to allow multiple saves on the same world without confusion.
+
+=== Notable sections === 
+* ''Resources'' - Contains information about each of the available resources in the game.
+* ''ProjectList'' - Contains the state of each of the research projects available in the game. The research completes when Progress is more than (or equal) to TotalCost.
+* ''ThingReservation'' - Details what a Pawn (person/animal) is doing/going to do.
+* ''Thing'' - information about a person/animal.
+
+=== Important elements ===
+; {{code|<li>}}
+: You will notice that "li" appears a lot in the save file. As in HTML, this simply stands for a "list item". It can have many different meanings depending on what the element surrounding it is.
+; {{code|<def>}}
+: "def" contains a single string that refers to some item or property. For example, an element {{code|needs > li.Need_Food > def}} (in CSS selector syntax) has the value "Food", explaining that the data is about need for food.
+: A donkey, on the other hand, starts with a {{code|def}} containing "Donkey" in the section that describes pawns.
+; {{code|<id>}}
+: This contains a string of the unique identifier of a thing. It might be referred to several times in the file. Be sure to change it if you duplicate a thing.
+: {{code|<ID>}} and {{code|<UniqueID>}} serve the same purpose, but they are numbers.
+
+The names are generally quite descriptive, so it shouldn't be hard to figure out the purpose of things and how to change them. The {{code|class}} attribute should be familiar to those who know HTML. As with always, it is harder to figure out how to create things from thin air than to change existing things.
+
+=== Overall structure ===
+
+Each section is book-ended by an opening tag {{code|<tag>}} and closing tag {{code|</tag>}} respectively. For brevity's sake, only the opening tag is shown and closing tags are omitted with the exception of {{code|</savegame>}}.
+
+Note: This structure was taken from 1.2 save files.
+{{Collapse|
+<source lang="xml">
+<?xml version="1.0" encoding="utf-8" ?>
+<savegame>
+   <meta>
+      <gameVersion>
+      <modIds>
+      <modNames>
+   <game>
+      <currentMapIndex>
+      <info>
+      <rules>
+      <scenario>
+      <tickManager>
+      <playSettings>
+      <storyWatcher>
+      <gameEnder />
+      <letterStack>
+      <researchManager>
+      <storyteller>
+      <history>
+      <taleManager>
+      <playLog>
+      <battleLog>
+      <outfitDatabase>
+      <drugPolicyDatabase>
+      <foodRestrictionDatabase>
+      <tutor>
+      <dataNotifier>
+      <questManager>
+      <components>
+      <world>
+      <maps>
+      <cameraMap>
+</savegame>
+</source>
+}}
+The vast majority of the data in a save file is contained within the {{code|<world>}} and {{code|<maps>}} sections. Within the {{code|<maps>}} section, each colony is stored as a list item {{code|<li>}} if multiple colonies were present at any point during the save. In turn, within each colony, the {{code|<things>}} section stores items, chunks, filth, plants, buildings and pawns. Each and every instance of any type is stored as an individual {{code|<thing>}} with its own respective class.
+{{Collapse|
+<source lang="xml">
+<savegame>
+   <meta>
+   <game>
+      <world>
+         <info>
+         <grid>
+         <factionManager>
+         <worldPawns>
+         <worldObjects>
+         <gameConditionManager>
+         <storyState>
+         <features>
+         <components>
+      <maps>
+         <li>
+            <uniqueID>
+            <mapInfo>
+            <weatherManager>
+            <reservationManager>
+            <physicalInteractionReservationManager>
+            <designationManager>
+            <pawnDestinationReservationManager>
+            <lordManager>
+            <visitorManager>
+            <gameConditionManager>
+            <fogGrid>
+            <roofGrid>
+            <terrainGrid>
+            <zoneManager>
+            <temperatureCache>
+            <snowGrid>
+            <areaManager>
+            <lordsStarter>
+            <attackTargetReservationManager>
+            <deepResourceGrid>
+            <weatherDecider>
+            <damageWatcher>
+            <rememberedCameraPos>
+            <mineStrikeManager>
+            <retainedCaravanData>
+            <storyState>
+            <wildPlantSpawner>
+            <temporaryThingDrawer>
+            <components>
+            <compressedThingMapDeflate>
+            <things>
+</savegame>
+</source>
+}}
+
+==Save file locations== 
+
+The current location of the save files can be viewed through the game by going into '''Settings''' → '''Save data location''' → '''Show'''. Otherwise, refer to the sections below.
+ 
+{|
+|[[File:Folders-OS-Windows-8-Metro-icon.png|18px]] 
+|
+===<span id="temp1" style="position: relative; bottom: 4px;">&nbsp;Windows version</span>===
+|}
+The Save files are stored in users AppData folders:
+<code>%USERPROFILE%\Appdata\LocalLow\Ludeon Studios\RimWorld by Ludeon Studios\Saves</code>
+
+Shortcut:
+# <kbd>Windows</kbd>+<kbd>R</kbd> -> the Run dialog will appear.
+# Type appdata and press enter.
+# Go to LocalLow/Ludeon Studios.
+
+Note:
+* As of at least Alpha 16, the directory Steam Cloud will create is <code>%USERPROFILE%\Appdata\LocalLow\Ludeon Studios\RimWorld</code> which is not detected by the game. Unknown if this a bug at this point.
+* By default, <code>%USERPROFILE%</code> is the same as <code>C:\Users\[username]</code>. It is possible to be moved.
+----
+{|
+|[[File:Folders-OS-Linux-Metro-icon.png|18px]] 
+|
+
+===<span id="temp1" style="position: relative; bottom: 4px;">&nbsp;Linux version</span>===
+|}
+
+The Save files are stored in: <code>~/.config/unity3d/Ludeon Studios/RimWorld by Ludeon Studios/Saves/</code>
+* If using Flatpak Steam, save files may be found at <code>~/.var/app/com.valvesoftware.Steam/config/unity3d/Ludeon Studios/RimWorld by Ludeon Studios/Saves/</code>
+
+At least as of Alpha 17b, Steam Cloud synchronization is working as intended on Linux, meaning that save files are automatically updated across different Steam installations on multiple devices.
+----
+{|
+|[[File:Folders-OS-Apple-Metro-icon.png|18px]] 
+|
+
+===<span id="temp1" style="position: relative; bottom: 4px;">&nbsp;macOS version</span>===
+|}
+Your Rimworld settings folder is <code>'''~/Library/Application Support/RimWorld'''</code>
+
+To see your save games with Finder, open a new shell and enter:
+
+<code>open "~/Library/Application Support/RimWorld/Saves/"</code>
+(may also be in cache)
+
+This also applies to Alpha 12d.
+
+As of at least Alpha 16, Steam Cloud uses the directory <code>'''~/Library/Application Support/RimWorld By Ludeon Studios/Saves'''</code>, whereas the game uses <code>open ~/Library/Application Support/RimWorld/Saves/</code>, therefore meaning the save game sync is currently not working.
+
+<gallery widths="450px" heights="450px" class="center" mode="nolines">
+File:Save file for Mac using EasyFind.png|Save file for Mac using EasyFind
+File:Save file for Mac using EasyFind reveal in Finder.png|Save file for Mac using EasyFind reveal in Finder
+</gallery>
+
+==Editing saves==
+{{see also|Permadeath save conversion guide|Development mode#Permanently disable{{!}}Dev mode renabling|Fluid ideoligion save conversion guide}}
+Save editing can be a useful way to tweak the current game state. It can be used to do various things such as adding or remove currently active [[events]], pawn traits and passions, and modifying skills and statistics. 
+
+'''Note: Incorrectly editing the save can have unwanted consequences that might be irreversible if the original file is lost, up to and including the total loss of the save. It is highly recommended that you make a copy of your save file before editing it or save the new one as a different save file.'''
+
+===Stopping an event===
+Example of removing the Toxic Fallout event from the game: open the save file with Wordpad, press <kbd>Ctrl</kbd>+<kbd>F</kbd>, or <kbd>⌘</kbd>+<kbd>F</kbd> on macOS and search for 'toxicfallout'. You will see a list of <code><nowiki><li>events</li></nowiki></code>. See where in the list 'ToxicFallout' is. Below that list is a list of <code><nowiki><li>numbers</li></nowiki></code>. Change the number to '0' between <code><nowiki><li></li></nowiki></code> which is in the same position in the list as 'ToxicFallout' was in the previous list (bottom one for me). It will now never occur again.
+
+Also if currently, you would be experiencing this Toxic Fallout and would want to remove it not only for the future but also immediately, do the following: Ctrl+F in the save file and search for 'activeconditions'. You will find: <code><nowiki><activeConditions><li></nowiki><i>some text regarding the Toxic Fallout</i><nowiki></li></activeConditions></nowiki></code>. Change this to only 1 line with just this: <code><activeConditions /></code>. So you would have [[:File:Save file editing example.png|this]].
+
+===Modifying a pawn===
+Pawn editing is another useful ability of editing save files. This can be used for a range of ways, from small modifications to existing pawns, recreating specific characters, or simply creating godlike pawns. To do this, open the save file, and move about 1/3 down the text file. Click on a line, and then use the <kbd>Ctrl</kbd>+<kbd>F</kbd> function to find the name of the pawn you wish to edit. Keep going down until you find the pawn save location, which will have three lines: one for last name, one for nickname, and one for first name.
+
+From here, scroll down to find the part you wish to edit. You can remove health conditions by editing the hediffs for injuries (i.e. deleting permanent wounds) or add skills and passions.
+
+===Moving/Removing a steam geyser===
+A [[steam geyser]] can usually be removed using the Destroy function in Dev Mode, but in older versions or modded saves this might not be possible. Instead, the geyser can be manually deleted from the save file.
+
+To edit a geyser: open the save file with Wordpad/Notepad, press Ctrl+F, or ⌘+F on macOS and search for 'geyser'. The geyser should be represented as a <code><thing Class="Building_SteamGeyser"></code>. To move the geyser to a new location, edit the coordinates stored in the {{code|<pos>}} line. To remove the geyser entirely, select the lines from {{code|<thing>}} to {{code|</thing>}}.
+
+[[Category:Game mechanics]]

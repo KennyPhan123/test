@@ -1,0 +1,132 @@
+{{Infobox main|animal
+| page verified for version = 1.3.3101
+| name = Alpaca
+| image = Alpaca.png
+| description = A medium-sized ungulate closely related to the llama, the alpaca is usually raised for its remarkably soft and insulating wool. Alpacas have also been used as pack animals since they hauled cargo on the rugged mountain trails of ancient South America.
+| type = Animal
+| movespeed = 4.1
+| min comfortable temperature = -20
+| max comfortable temperature = 45
+| toxic resistance = 0.5
+| toxic environment resistance = 0
+| flammability = 0.7
+| marketvalue = 350
+| filth rate = 16
+| woolname = alpaca wool
+| sheartime = 10
+| wool = 45
+| herdanimal = true
+| combatPower = 65
+| bodysize = 1
+| healthscale = 1
+| hungerrate = 0.275
+| diet = herbivorous
+| leathername = camelhide
+| wildness = 0.25
+| manhuntertame = 0
+| manhunter = 0
+| roamMtb = 3
+| trainable = none
+| mateMtb = 12
+| packanimal = true
+| gestation = 6.66
+| offspring = 1
+| lifespan = 15
+| juvenileage = 0.2
+| maturityage = 0.3333
+| tradeTags = AnimalFarm, AnimalCommon
+| attack1dmg = 7.3
+| attack1type = Blunt
+| attack1cool = 2
+| attack1part = front left leg
+| attack2dmg = 7.3
+| attack2type = Poke
+| attack2cool = 2
+| attack2part = front left leg
+| attack3dmg = 7.3
+| attack3type = Blunt
+| attack3cool = 2
+| attack3part = front right leg
+| attack4dmg = 7.3
+| attack4type = Poke
+| attack4cool = 2
+| attack4part = front right leg
+| attack5dmg = 8
+| attack5type = Bite
+| attack5cool = 2
+| attack5part = teeth
+| attack5chancefactor = 0.7
+| attack6dmg = 7
+| attack6type = Blunt
+| attack6cool = 2
+| attack6part = head
+| attack6chancefactor = 0.2
+| isCoastal = false
+| livesin_temperateforest = 0.5
+| livesin_temperateswamp = 0.5
+| livesin_tropicalrainforest = 0.5
+| livesin_tropicalswamp = 0.5
+}}
+'''Alpacas''' are easily tameable [[herbivore]]s that provide [[alpaca wool|wool]] and act as [[pack animal]]s.
+
+== Acquisition ==
+Alpacas can be found in {{Habitats}}. They can either be tamed by a [[Work #Handle|handler]] or self-tame in a random event. 
+
+Alpacas can be bought and sold in other [[Trade#Faction base|faction bases]] and from [[Trade#Bulk goods trader 2|bulk goods traders]]. Alpacas purchased from traders will be already tamed.
+
+== Summary ==
+{{Pen Animal Note|Alpacas}}
+
+Alpacas can be sheared for {{Icon Small|Alpaca wool}} {{P|Wool Amount}} [[alpaca wool]] ({{Icon Small|silver|16|{{#expr: {{Q|Alpaca wool|Market Value Base}}*{{P|Wool Amount}}}}}}) every {{P|Shearing Interval Days}} days for {{Ticks|1700}} of work. Note that yield and shearing time are modified by the shearer's [[Animal Gather Yield]] and [[Animal Gather Speed]] respectively. 
+
+Alpacas are also [[pack animal]]s, and will carry up to 35 kg of weight in a [[caravan]]. They cannot be ridden.
+
+== Analysis ==
+=== Pack animal ===
+Alpacas are the smallest pack animal, carrying the least weight and consuming the least food. But when only considering their effectiveness as pack animals, alpacas are strictly inferior to [[donkey]]s. Donkeys are easier to tame, carry more weight, and can be ridden for up to 130% caravan speed. Even when you standardize for nutrition consumption, donkeys still carry more weight. [[Horse]]s, while slightly harder to tame than alpacas, are even faster (160% caravan speed) and carry even more weight.
+
+In the absence of other options, alpacas can be useful for early-game [[caravan]]s. In a tropical biome, donkeys and horses are not available. The other native pack animal there is the [[elephant]], which is much harder to tame. Later on, Alpacas can serve a niche for [[transport pod]]s having the lowest mass out of all pack animals, allowing two adults with one pod along with any extra supplies to send to an on-going caravan. Also, alpacas produce wool, unlike donkeys or horses.
+
+=== Wool ===
+An alpaca produces the same amount of wool (at the same intervals) as a [[sheep]], but sheep consume {{%|1-({{Q|Sheep|Real Hunger Rate}}/{{Q|Alpaca|Real Hunger Rate}}) round 2}} less nutrition. Compared to [[sheep wool]], [[alpaca wool]] offers {{Temperature|{{#expr:{{Q|Alpaca wool|Insulation - Cold Factor}} - {{Q|Sheep wool|Insulation - Cold Factor}}}}||delta}} better insulation against Cold and {{Temperature|{{#expr:{{Q|Alpaca wool|Insulation - Heat Factor}} - {{Q|Sheep wool|Insulation - Heat Factor}}}}||delta}} against Heat, and is {{%|({{Q|Alpaca wool|Market Value Base}}/{{Q|Sheep wool|Market Value Base}}) -1 round 2}} more valuable. Thus, the alpaca wool is superior to sheep wool. If the goal is to make bulk wool, regardless of stats, then sheep are more efficient when growing crops is required to feed the herds and equally efficient when grazing. If the sole purpose is to make money, then alpacas are better than sheep. In addition, alpaca are pack animals.
+
+Alpacas are superior to other wooly animals ([[bison]], [[muffalo]], and [[megasloth]]s) in terms of wool per nutrition consumed. Bison and muffalo would be better for wool per ''colonist work'', though the amount of work to harvest wool isn't terribly large in practice. The insulation and market value of alpaca wool is also superior to that of both [[muffalo wool]] and [[bison wool]]. Megasloth wool offers superior cold insulation and protection, however due to the wildness and intelligence of megasloths, they are not directly comparable to other wooly animals. See [[Megasloth#Wool|their page]] for further analysis.
+
+== Training ==
+{{TrainingTable}}
+
+== Health ==
+{{Animal Health Table|QuadrupedAnimalWithHooves}}
+{{Pawn Attack Table}}
+
+== Gallery ==
+=== Normal ===
+<gallery>
+Alpaca east.png|Facing east
+Alpaca north.png|Facing north
+Alpaca south.png|Facing south
+</gallery>
+
+=== Dessicated ===
+<gallery>
+Dessicated alpaca east.png|Facing east
+Dessicated Alpaca north.png|Facing north
+Dessicated Alpaca south.png|Facing south
+</gallery>
+
+=== Pack ===
+<gallery>
+Alpaca pack east.png|Packing bags facing east
+Alpaca pack north.png|Packing bags facing north
+Alpaca pack south.png|Packing bags facing south
+</gallery>
+
+== Version history ==
+* [[Version/0.12.906|0.12.906]] - Can now be shorn for wool
+* Beta 19/1.0 - move speed 3.8 -> 3.2, leg damage 7 -> 6
+* Version 1.3 - Animal Overhaul
+
+{{nav|animal|wide}}
+[[Category:Animals]]
+[[Category:Pack Animal]]
+[[Category:Farm animal]]

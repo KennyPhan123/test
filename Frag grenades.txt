@@ -1,0 +1,114 @@
+{{Infobox main|weapon
+| name = Frag grenades
+| image = FragGrenades.png
+| description = Old-school fragmentation grenades. They can be thrown a short distance, where they'll explode, damaging anything and anyone nearby.
+| type = Equipment
+| type2 = Weapons
+| tech level = Industrial
+| class = Industrial
+| damage = 50
+| damage type = Bomb
+| armorPenetration = 10
+| stoppingPower = 0.5
+| range = 12.9
+| accuracy = -
+| warmup = 90
+| cooldown = 160
+| burst = 1
+| mode = Single Thrown
+| velocity = 12
+| missRadius = 1.9
+| blastRadius = 1.9
+| production facility 1 = Machining table
+| research = Machining
+| resource 1 = Steel
+| resource 1 amount = 20
+| resource 2 = Chemfuel
+| resource 2 amount = 80
+| marketvalue = 265
+| DPS = DPS
+| work to make = 12000
+| work speed stat = General Labor Speed
+| mass base = 1
+| has quality = False
+| weaponTags = GrenadeDestructive, EmpireGrenadeDestructive
+| tradeTags = WeaponRanged
+}}
+'''Frag grenades''' are short ranged, thrown [[weapons]] that have a forced miss radius but deal explosive damage in a small radius around their target. They are not consumed and do not use any ammo.
+
+== Acquisition ==
+{{Acquisition}}
+
+They can also be [[Trade|purchased]] from orbital pirate merchants and orbital combat suppliers, [[outlander]] [[faction base]]s, or obtained from the following [[raider]] kinds:
+
+<!--They have the same name, but they're different pawn kinds. Raider is linked instead of a faction because its a Mercenary used by both Outlanders and Pirates-->
+{| class="wikitable sortable"
+! Raider Kind !! Chance !! Average Quality !! Health
+|-
+| [[Raider#Grenadier|Grenadier]] || 50% || Normal || 70-230%
+|-
+| [[Empire#Imperial_grenadier|Imperial grenadier]] {{RoyaltyIcon}} || 100% || Normal || 70-230%
+|}
+
+== Summary ==
+[[File:Frag grenade range.png|350px|thumb|left|Frag grenade range and AOE.<br>Red = Radius which grenades can land, if aiming at the center.<br>[[Sterile tile]] = Tiles at risk of explosion.]]
+Frag grenades are weapons. They take up the weapon slot and will not run out of ammo. Grenades are blocked by walls, but the blast ignores cover. When choosing a target, a circular zone will generate to indicate range, then another 3x3 indicator with a circular center will become the aiming spot.
+
+Frag grenades deal {{P|Damage Base}} [[Damage types#{{P|Damage Type}}|{{P|Damage Type}}]] damage in a {{P|Blast Radius}} tile radius. Bomb damage deals 2x damage to passable structures and buildings, 4x damage to plants and impassable buildings, and 8x damage to walls.  They are thrown from a very short range of {{P|Range}} tiles and have moderate aiming time. Once landed, grenades have a {{ticks|100}} delay before exploding. With a forced miss radius of 1.9 tiles, an unobstructed grenade generally lands within 1 grid tile (including diagonals) of the target. However, instances of extreme deviation outside of this 1.9 tiles is possible. At longer distances, [[Shooting]] skills, [[shooting accuracy]], sight, and manipulation of the grenadier is relevant. [[Aiming time]] effects will apply.
+
+When throwing a grenade down an 1-tile wide alley, a pawn can consistently throw a grenade 4 tiles, not including the tile the pawn is standing on, without intersecting the two side walls. Beyond 4 tiles, there is a risk of hitting the wall and dropping short. This can be relevant to prevent friendly fire or damaging defenses during combat.
+
+=== Item ===
+When damaged with [[Damage Types#Flame|Flame]] damage at 20 HP or below, the grenade item will explode. The grenades will spark and emit a hissing sound shortly before exploding some time later. The explosion deals 50 Bomb damage in a 2.66 tile radius around itself.
+
+Frag grenades have no [[quality]] - every set of grenades will have the same stats, regardless of the skill of the crafter.
+<div style="clear:left></div>
+
+== Analysis ==
+{{Stub|section=1|reason=Cleanup and frag grenades have a lot of utility and specific use cases not properly represented here}}
+
+[[File:Grenades melee block.png|250px|thumb|right|Grenades are highly effective in a [[melee block]] scenario. Grenadier (black square) aims at the red square. Circled grenade can hit multiple enemies for high damage.]]
+[[File:Grenades corridor.png|250px|thumb|right|Grenades can be thrown straight for up to 4 tiles. If aiming at the red tile, [[sterile tile]] is the blast zone. Don't put walls there.]]
+=== As a weapon ===
+Frag grenades are not conventional weapons. With only 12 tiles of range, they are difficult to use in a firefight. They are poor in a [[killbox]], due to the grenade's tendency to break walls. In general, it is somewhat difficult to hit a moving target with a grenade. Usage without oversight is prone to vulnerable positioning and unwanted collateral damage.
+
+But in the right circumstances, frag grenades can range from useful to incredibly powerful:
+*'''[[Melee block]]ing.''' Have 3 melee pawns line behind a doorway / hallway, as shown in the picture. Line a grenadier within 4 tiles of the hallway, and let them fire. Frag grenades are obscenely effective weapons in this scenario, as they can hit a clump of enemies with the full explosion. Melee blocks are extremely effective against melee enemies, such as [[manhunter pack]]s, [[infestation]]s, and melee-only [[raid]]s. Grenades can damage walls within a 2-tile radius, so try and avoid getting your own walls blown up.
+*'''Structure destruction.''' Grenades are very effective at destroying [[wall]]s and [[turret]]s due to Bomb damage's multiplier. Good against [[mech cluster]]s.{{RoyaltyIcon}} Combos well with [[blind smoke]]: smoke prevents turrets from targeting on at all, but has minimal impact on the grenade's accuracy. <br>You can destroy your own walls too. This can be used as a [[Roof#Roof_collapse|roof collapse]] trap, though [[molotov cocktail]]s may be better for this purpose.
+*'''Attacking enemies in cover.''' Grenades ignore the [[cover]] mechanic, and enemies in cover are stationary targets. While you usually shouldn't let your enemies have cover in the first place, this fact can be useful in certain points in the game.
+
+Grenades offer a viable combat alternative for pawns with health issues or low skill, due to large blast radius, and the forced miss mechanic mostly ignoring accuracy. Frag grenades strictly benefit from the [[trigger-happy]] trait, as the [[Aiming Time]] bonus applies while the accuracy penalty does not, resulting in a significantly higher DPS. Similarly, the [[careful shooter]] trait is strictly detrimental, reducing DPS with no benefit in return.
+
+==== Aiming ahead ====
+It is possible to aim a grenade throw ahead of a running pawn to hit them with the blast. How far to aim ahead depends on the speed of the pawn:
+* At speed of 4 to 4.6 c/s (with 4.6 c/s being the speed of a healthy human), aim ahead of the pawn by 19 cells.
+* At 3.5 c/s, aim ahead by 15 cells.
+* At 3.0 c/s, aim ahead by 13 cells.
+
+=== Fighting against ===
+Hostiles with grenades are very dangerous, mostly for the same reasons they are good as a player weapon. They function well against stationary targets like [[mini-turret]]s and colonists in [[cover]]. Players should pay attention to the "throwing" sound (a whooshing sound) and clear the area fast enough to avoid getting caught in its blast radius.
+
+Like any ranged weapon, grenades can't be thrown in melee combat, so rushing them in melee will practically neutralize the threat. As raiders prioritize the nearest target, they'll target an approaching melee colonist, only to invariably miss as their target is moving.
+
+Frag grenades are used by outlanders and pirates for their [[breacher]] raids. They deal damage to walls very quickly. But as grenades have a short range, and as breachers tend to rush ahead of the group, you can pick off the grenadiers.
+
+=== Non-combat utility ===
+Frag grenades are useful when destroying walls and other objects. Because they don't cause [[fire]]s, you can throw them at an ignited object, which will end the fire. For [[Ancient complex]]es Frag grenades are incredibly useful both for controlling fires from [[Ancient unstable fuel node|fuel nodes]] but also since all rooms are connected by stone doors which cannot be held open until the complex is fully cleared of enemies, grenades can be thrown to destroy walls to clear faster paths or to equalise temperatures in burning rooms with the outside. 
+
+Frag grenades can also be used to clear items, such as in [[dumping zone]]s. When dealing with flammable objects, it's less work to light them on fire instead.
+
+== Version history ==
+{{Image wanted|section=1|reason=Pre-1.5 texture and the other old texture}}
+<!--Added in or prior to Version/0.1.334-->
+* Beta 19/1.0 - Frag grenades are no longer a valid hunting weapon
+* [[Version/1.2.2753|1.2.2753]] - Projectiles are now rendered with a visual arc and ground shadow.
+* [[Version/1.3.3066|1.3.3066]] - Grenade throws are rendered in an arc.
+* [[Version/1.5.4062|1.5.4062]] - Received a new sprite.
+
+<gallery>
+Equipment Grenades.png|Original Grenade sprite
+</gallery>
+
+{{Nav|weapon|wide}}
+[[Category:Equipment]] [[Category:Weapons]] [[Category:Industrial Weapons]] [[Category:Explosive Weapons]]
+[[Category:Ranged Weapons]] [[Category:Single Thrown Weapons]] [[Category:Grenades]]

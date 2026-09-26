@@ -1,0 +1,149 @@
+{{Biotech}}
+{{Stub|reason=1) Corresponding Property 2) Two-way links}}
+{{Verified|1.5.4104}}{{Stat
+| def name = ControlTakingTime
+| label = control taking time
+| description = How many seconds it will take for a [[mechanitor]] to take control of this [[mech]].
+| default base value = 12
+| min value = 0
+| format string = {0}s
+| to string style = Integer
+| show if undefined = false
+| show on animals = false
+| show on humanlikes = false
+| show on mechanoids = true
+| category = Mechanoid
+| display priority in category = 2010
+}}
+
+== Bases ==
+{| {{STDT| c_18 sortable}}
+! [[Mechanoid]] !! Control Taking Time
+<!-- Races_Mechanoid -->
+<!--
+|-
+! Name="BaseMechanoid" (Name="MechCentipede", Name="BaseMechanoidWalker", Name="LightMechanoid")
+| 12
+-->
+|-
+! {{Icon Small|Centipede blaster|24}} [[Centipede blaster]]
+| 12
+|-
+! {{Icon Small|Centipede gunner|24}} [[Centipede gunner]]
+| 12
+|-
+! {{Icon Small|Centipede burner|24}} [[Centipede burner]]
+| 12
+|-
+! {{Icon Small|Lancer|24}} [[Lancer]] <!-- Name="LancerMechanoidWalker" -->
+| 12
+|-
+! {{Icon Small|Scyther|24}} [[Scyther]]
+| 12
+|-
+! {{Icon Small|Pikeman|24}} [[Pikeman]]
+| 12
+|-
+! {{Icon Small|Termite|24}} [[Termite]]
+| 12<ref name="NoGestation">This mech cannot be gestated by a mechanitor, so this is irrelevant</ref>
+<!-- Biotech Races_Mechanoids_Light -->
+|-
+! {{Icon Small|Militor|24}} [[Militor]] {{BiotechIcon}}
+| 12
+|-
+! {{Icon Small|Lifter|24}} [[Lifter]] {{BiotechIcon}}
+| 12
+|-
+! {{Icon Small|Constructoid|24}} [[Constructoid]] {{BiotechIcon}}
+| 12
+|-
+! {{Icon Small|Fabricor|24}} [[Fabricor]] {{BiotechIcon}}
+| 12
+|-
+! {{Icon Small|Agrihand|24}} [[Agrihand]] {{BiotechIcon}}
+| 12
+|-
+! {{Icon Small|Cleansweeper|24}} [[Cleansweeper]] {{BiotechIcon}}
+| 12
+|-
+! {{Icon Small|War urchin|24}} [[War urchin]] {{BiotechIcon}}
+| 12<ref name="NoMechanitor">This mech cannot be directly controlled by an overseer, so this is irrelevant</ref>
+|-
+! {{Icon Small|Paramedic|24}} [[Paramedic]] {{BiotechIcon}}
+| 12
+<!-- Biotech Races_Mechanoids_Medium -->
+|-
+! {{Icon Small|Legionary|24}} [[Legionary]] {{BiotechIcon}}
+| 18
+|-
+! {{Icon Small|Tesseron|24}} [[Tesseron]] {{BiotechIcon}}
+| 18
+|-
+! {{Icon Small|Scorcher|24}} [[Scorcher]] {{BiotechIcon}}
+| 12
+<!-- Biotech Races_Mechanoids_Heavy -->
+<!--
+|-
+| Name="HeavyMechanoid"
+| 24
+-->
+|-
+! {{Icon Small|Tunneler|24}} [[Tunneler]] {{BiotechIcon}}
+| 24
+<!-- Biotech Races_Mechanoids_SuperHeavy -->
+<!--
+|-
+! Name="SuperHeavyMechanoid"
+| 30
+-->
+|-
+! {{Icon Small|Apocriton|24}} [[Apocriton]] {{BiotechIcon}}
+| 18<ref name="NoGestation" />
+|-
+! {{Icon Small|Centurion|24}} [[Centurion]] {{BiotechIcon}} <!-- Name="MechCenturion" -->
+| 30
+|-
+! {{Icon Small|War queen|24}} [[War queen]] {{BiotechIcon}} <!-- Name="MechWarqueen" -->
+| 30
+|-
+! {{Icon Small|Diabolus|24}} [[Diabolus]] {{BiotechIcon}} <!-- Name="MechDiabolus" -->
+| 30
+|}
+<references />
+
+== Stat Def Data ==
+{| {{STDT| c_18}}
+! Name !! Description !! Category !! Parameters !! Complex Parameters !! Display Priority In Category
+|- id="Control Taking Time" <!-- <StatDef ParentName="MechStatBase"> From MechStatBase: MayRequireAnyOf="Ludeon.RimWorld.Biotech,Ludeon.RimWorld.Anomaly" -->
+|<!-- Name -->
+* '''Def Name:'''<br />ControlTakingTime
+* '''Label:'''<br />control taking time
+----
+* May Require Any Of:
+** '''[[Biotech]] {{BiotechIcon}}'''
+** '''[[Anomaly]] {{AnomalyIcon}}'''
+| How many seconds it will take for a mechanitor to take control of this mech.
+|<!-- Category: From MechStatBase -->
+* Display Order: '''13'''
+* Def Name:<br />'''Mechanoid'''
+* Label:<br />'''Mechanoid'''
+* Display All By Default: {{Good|true}}
+|<!-- Parameters -->
+* Default Base Value: '''12'''
+* Min Value: '''0'''
+* To String Style: '''Integer'''
+* Format String:<br />"{0}s"
+* Show If Undefined: {{Bad|false}}
+<!-- MechStatBase -->
+* Show On Animals: {{Bad|false}}
+* Show On Humanlikes: {{Bad|false}}
+* Show On Mechanoids: {{Good|true}}
+| -<!-- Complex Parameters -->
+| 2010
+<!--</StatDef>-->
+|}
+
+== Version history ==
+* [[Biotech (DLC)]] Release - Added.
+
+{{nav|stats|wide}}

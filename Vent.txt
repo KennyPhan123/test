@@ -1,0 +1,46 @@
+{{infobox main|temperature
+| name = Vent
+| image = Vent.png
+| type = Building
+| type2 = Temperature
+| placeable = True
+| size = 1 ˣ 1
+| description = A simple vent for equalizing the temperature between two rooms without allowing people to walk between them.
+| hp = 100
+| cover = 1.0
+| terrain affordance = Medium
+| flammability = 1
+| research = Complex furniture
+| work to make = 400
+| resource 1 = steel
+| resource 1 amount = 30
+}}
+{{Info|A '''vent''' allows transfer of [[temperature]] and [[gas]]es from one room to another.}}
+
+== Acquisition ==
+{{Acquisition}} Placement of a vent requires pathable space on either side - furniture such as [[stool]]s will not impede function, but a [[wall]] would.
+
+The blueprint can be laid atop an existing wall; the wall is replaced upon construction. 
+
+== Summary ==
+{{Stub|section=1|reason=1) Gas spread mechanics 2) Hard numbers for temperature transfer in both open and closed states}}
+Vents act structurally like a wall, preventing movement, enclosing a [[room]], and supporting a [[roof]]. They have two states - open and closed. In the open state, they allow the transfer of [[temperature]] and [[gas]] from one room to another at their full rate.{{Check Tag|What rate?}} Even when open, vents are not 100% efficient at equalizing temperatures between rooms.{{Check Tag|Quantify}} When closed, the transfer of temperature is reduced{{Check Tag|What rate?}}{{Check Tag|Same as normal wall?}} and the transfer of gas is ceased entirely. The vent can be designated for opening or closing by the player, which will then be actioned by a pawn assigned to [[Work#Basic|Basic]] work.
+
+As with walls, the transfer rate is directly proportional to the number of tiles however temperature equalization itself is non-linear. Thus, more vents will decrease the time to reach stability.
+
+A vent cannot be uninstalled, only deconstructed, at the usual loss of half the material.
+
+== Analysis ==
+{{Stub|section=1|reason=Needs thermal transfer rate analysis vs walls, double walls, closed doors and open doors}}
+
+The main alternative to vents is keeping [[door]]s open, and placing them wherever you would vents - doors are cheaper and each room will still be considered separate. However, vents remain impassible when open, which can be useful for keeping [[prisoner]]s in and for avoiding the {{Thought|desc=I was disturbed during sleep by people moving around nearby. A private room would solve this.|label=Disturbed Sleep|value=-3|}}.
+
+General tip: As efficiency is lost for every vent, minimising the number of vents between source and destination is ideal. Heat or cool one central room and vent to the surrounding rooms, rather than attempting to daisy chain many vents.
+
+[[File:Vent efficiency example.png|center|thumb|A heat overlay over two different structures which shows the inefficiency of chaining multiple vents together.]]
+
+== Version history ==
+* [[Version/0.17.1546|0.17.1546]] - Vents can now be opened and closed with a simple flick action.
+* [[Version/1.4.3555|1.4.3555]] - Gases can now travel through vents.
+{{nav|temperature}}
+[[Category:Temperature]]

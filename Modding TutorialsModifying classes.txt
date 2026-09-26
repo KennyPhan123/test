@@ -1,0 +1,61 @@
+{{BackToTutorials}}
+
+=Changing methods=
+Use [[Modding Tutorials/Harmony| Harmony]].
+
+=Adding fields to classes=
+You can't. Not even with [[Modding Tutorials/Harmony| Harmony]]. Maybe you want to [[Modding_Tutorials/Def_classes| subclass]] instead?
+
+=Adding methods to classes=
+Yes and no. You can create [https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods extension methods] that are syntactic sugar for calling static methods, but extension methods do not have access to protected or private fields or methods that an actual class method would.
+
+For example, if you wanted to add a method to Pawn which would tell you if that pawn has a specific trait, you could do the following:
+
+<source lang="csharp">
+using RimWorld;
+using Verse;
+
+namespace MyExampleClassExtension
+{
+    public static class PawnExtensions
+    {
+        public static bool HasTrait(this Pawn pawn, TraitDef trait)
+        {
+            return pawn.story.traits.HasTrait(trait);
+        }
+    }
+}
+</source>
+
+This can then be called like so:
+
+<source lang="csharp">
+bool isNudist = pawn.HasTrait(TraitDefOf.Nudist)
+</source>
+
+Note the first argument to HasTrait: `this Pawn Pawn` -- that tells C# that you are defining an extension method on the Pawn class.
+
+=Adding fields to Defs=
+You can. The game support something called a [[Modding Tutorials/DefModExtension| DefModExtension]]. If you have a Def, you can get your mod extension from it. This allows you to add any custom field to any def.
+
+=Adding behaviour to the Thing class=
+If it's a ThingWithComps, you can add a [[Modding Tutorials/ThingComp|ThingComp]] instead. Almost all Things are a ThingWithComps. ThingComps can also be used to store whatever data you need.
+
+=Adding behaviour to the Hediff class=
+HediffWithComps also support comps. HediffComps are different from [[Modding Tutorials/ThingComp|ThingComp]]s, but their general use is the same.
+
+=Using Harmony to override a non-overridden method=
+You can't. Harmony can only patch methods which are actually implemented. You can't patch what isn't there. 
+
+Alternatives: 
+* [[Modding_Tutorials/Modifying_classes#Patching_the_base_class_of_a_subclass|Patch the base]] class instead, then check for the instance.
+* [[Modding_Tutorials/Modifying_classes#Adding_fields_or_methods_to_classes|Subclass]], and then replace it wherever it's created with Harmony.
+
+=Patching the base class of a subclass=
+[[Modding Tutorials/Harmony|Harmony]] can only patch methods that actually have IL code. What you can do is patch the parent class. Let your patch take the __instance of the parent and pattern match.
+<source lang="csharp">
+if (!(__instance is SubClass))
+    return;
+</source>
+
+[[Category:Modding tutorials]][[Category:Modding]]

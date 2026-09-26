@@ -1,0 +1,140 @@
+{{Anomaly}}
+{{Spoiler}}
+{{Infobox main|entity
+| name = Sightstealer
+| image = Sightstealer.png
+| description = Emaciated and misshapen humanoids. Their arms end in sharp, curled claws formed from bioferrite. Sightstealers are fragile, but use psychic influence to render themselves invisible until they get close to their victims. They are known to emit haunting screams as they gather on their terrible hunts.
+<!-- Base Stats -->
+| type = Entity
+| type2 = Basic
+| flammability = 0.7
+| hidden while undiscovered = true
+| tradeability = None
+<!-- Containment -->
+| minimum containment strength = 30
+| anomaly knowledge = 1.5
+| knowledge category = Basic
+| study interval = 120000
+| bioferrite density = 2
+| min monolith level for study = 1
+| requires holding platform = true
+| base escape interval MTB days = 60
+<!-- Pawn Stats -->
+| combatPower = 70
+| movespeed = 4.83
+| healthscale = 0.75
+| bodysize = 0.8
+| body = Human
+| diet = none
+| lifespan = 250
+| trainable = None
+| psychic sensitivity = 2
+| toxic resistance = 0.5
+| vacuum resistance = 1
+| minimum comfortable temperature = -40
+| maximum comfortable temperature = 60 
+<!-- Production -->
+| leatheryield = 20
+| leathername = Dread leather
+| meatname = Twisted meat
+| meatyield = 70
+<!-- Melee Combat -->
+<!-- 1. Attack -->
+| attack1label = left claw
+| attack1labelNoLocation = claw
+| attack1dmg = 7.0
+| attack1type = Scratch
+| attack1part = LeftHand
+| attack1cool = 2
+| attack1alwaysTreatAsWeapon = true
+<!-- 2. Attack -->
+| attack2label = right claw
+| attack2labelNoLocation = claw
+| attack2dmg = 7.0
+| attack2type = Scratch
+| attack2part = RightHand
+| attack2cool = 2
+| attack2alwaysTreatAsWeapon = true
+<!-- 3. Attack -->
+| attack3label = head
+| attack3dmg = 3
+| attack3type = Blunt
+| attack3part = HeadAttackTool
+| attack3cool = 2
+| attack3chancefactor = 0.1
+| attack3ensureLinkedBodyPartsGroupAlwaysUsable = true
+<!-- Technical -->
+| defName = Sightstealer
+| label = sightstealer
+}}
+The '''sightstealer''' is an [[entity]] added by the [[Anomaly DLC]]. It is likely to be one of the first anomalous entities a colony will encounter.
+
+== Occurrence ==
+Sightstealers appear:
+* In the [[sightstealer arrival]] event.
+* When a [[creepjoiner]] becomes hostile due to friendly fire and has the [[Creepjoiner#Drawbacks|Sightstealer attack]] drawback.
+
+== Summary ==
+{{For|further detail about howling and multi-wave sightstealer attacks|Sightstealer arrival}}
+Sightstealers are ambush predators, entering a map [[invisible]] to both pawns and the player, and remain so until they get close to a target. Targets of a Sightstealer includes colonists, friendly NPCs, and raiders. {{Check Tag|When is invis broken?| How close? Just proximity to another pawn or do they have to be targeting them? Mechs, enemy and friendly? Reports of them walking through tamed animals without detection etc.}}{{Check Tag|Targets?|Who do they target?}}{{Check Tag|Doors?|Can they pass through doors? Over fences?}} The player is not notified of a Sightstealer arrival, unless they are summoned by attacking a creepjoiner, in which case the player is only notified in advance. Sightstealers are also revealed from invisibility when they take damage, get hit by [[firefoam]] or an [[EMP]] explosion, or they are affected by a [[Disruptor flare pack#Summary|disruptor flash]], Sightstealers will return to being invisible when not nearby any targets. Invisible sightstealers will trigger [[proximity detector]]s when in range, however they will not be revealed by it. Additionally, they will make a howling sound effect and track [[filth]] even when invisible, you can look for this to narrow down their location, instead of using a proximity detector.
+
+Despite the description stating that it uses psychic influence to render themselves invisible, pawns with 0% [[psychic sensitivity]] are '''not'''  immune to this effect, and are unable to see them when they are invisible.
+
+Sightstealers do not trigger [[traps]] regardless of their current visibility.
+
+They are relatively weak entities in terms of both {{DPS}} and {{HP}}, feel [[pain]] and [[bleeding|bleed]] and have a high [[psychic sensitivity]] of {{%|{{P|Psychic Sensitivity}}}} - instead the primary risk comes from ambush and numbers. 
+
+They do not sleep and bleed at 50% the normal rate.
+
+=== Containment ===
+The Sightstealer is fairly weak, requiring only 30 containment strength. This means you can use [[wood]]en [[wall]]s and a basic [[holding spot]] to contain it with minimal risk.
+
+Contained sightstealers yield 1.6 [[bioferrite]] per day when attached to a [[Bioferrite harvester]].
+
+== Analysis ==	
+Only marginally more dangerous than an unarmed baseliner but with claws that can cause bleeding, a single sightstealer is unlikely to be a threat to most colonists. However, they can be dangerous in large groups especially if a pawn is caught by surprise. Their speed means that they can quickly surround pawns and, unlike manhunter packs, sightstealers give no warning for pawns to run inside. As such, if the initial sightstealer is spotted, a howl occurs, or "Distant shrieks" are heard, it's best to zone your colonists inside, install a [[proximity detector]] or turn up the game volume and listen for their howling sound. 
+
+ '' '''Sightstealer revealed:''' A twisted creature has appeared out of thin air! ''
+
+Once they are detected, combat is largely similar to manhunters despite their anomalous nature. A constriction, strong [[Melee block]]ers and a good backline of gunners can handle even the largest sightstealer waves. Carefully targeted [[frag grenades]] from behind the melee blockers are also particularly devastating. Sightstealers are also vulnerable to fire. A pawn armed with an [[incendiary launcher]], [[molotov cocktails]], or [[incinerator]] can easily cripple even a pack of sightstealers but watch out for burning sightstealers losing collision and moving through your blockers.
+
+If the colony contains a [[mechanitor]],{{BiotechIcon}} [[scyther]]s, [[scorcher]]s,{{BiotechIcon}} [[tesseron]]s,{{BiotechIcon}} and [[centipede burner]]s are effective counters. If a sightstealer howls, drafted mechanoids are valid targets for the sightstealers, and they will reveal themselves to attack. This can be used to force sightstealers to become visible before they draw close to colonists.
+
+Sightstealers is one of the easiest anomalies to contain, both in terms of containment requirment and risk posed during escapes. When combined with the ease of defeating them, they are effectively a blessing to most colonies, providing an easy source of beginning research.
+
+Alternatively, if you set up your colony on highly [[Pollution|polluted]] terrain, a sightstealer can die before even harming your colonists.{{Check Tag|Detail needed|How much time/distance to kill? How practical a defence is this?}}
+
+== Health == 
+{{Animal Health Table|Human}}
+{{Pawn Attack Table}}
+
+== Gallery ==
+<gallery>
+Sightstealer A east.png|Variant A facing east
+Sightstealer A north.png|Variant A facing north
+Sightstealer A south.png|Variant A facing south
+
+Sightstealer B east.png|Variant B facing east
+Sightstealer B north.png|Variant B facing north
+Sightstealer B south.png|Variant B facing south
+</gallery>
+<gallery>
+Sightstealer C east.png|Variant C facing east
+Sightstealer C north.png|Variant C facing north
+Sightstealer C south.png|Variant C facing south
+
+Sightstealer D east.png|Variant D facing east
+Sightstealer D north.png|Variant D facing north
+Sightstealer D south.png|Variant D facing south
+</gallery>
+<gallery>
+Dessicated Sightstealer east.png|Desiccated facing east
+Dessicated Sightstealer north.png|Desiccated facing north
+Dessicated Sightstealer south.png|Desiccated facing south
+</gallery>
+
+== Version history == 
+* [[Anomaly DLC]] Release - Added.
+
+{{Nav|entity|wide}}
+[[Category: Entities]]

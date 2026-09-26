@@ -1,0 +1,79 @@
+{{See also|Textile|Fabric}}
+{{TOCright}}
+'''Wools''' are a class of [[textile]]s obtained by [[Work#Handle|handlers]] shearing ''tamed'' hairy [[animals]]. Such animals will slowly grow wool, the progress of which can be tracked in the animal's infobox. Once they reach 100%, handlers will shear these animals and leave the wool on the ground where sheared. You can avoid excessive hauling by zoning or [[pen]]ning your wool-bearing livestock close to your storage. You can keep track of wool development on the specimen infobox. 
+
+Shearing an animal takes {{Ticks|1700}}, regardless of the amount of wool produced, and only modified by the [[Animal Gather Speed]] of the handler.
+
+Compared to other textiles, wools typically provide excellent cold insulation, modest heat insulation, and comparatively poor armor, while also being easy to acquire in large quantities. The wool stats, yield, and shearing interval vary between different animals.
+
+== Acquisition ==
+The following animals produce wool:
+<div style="display:inline-table">
+{| {{STDT| sortable c_08 text-center}}
+! Animal !! Wool Name !! Wool Amount !! Shearing Interval !! Daily Wool Average
+|-
+{{#ask: [[Concept:Production Animals]] [[Wool Amount::+]]
+| ?Wool Name
+| ?Wool Amount
+| ?Shearing Interval Days
+| ?Daily Wool Average
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Name}}
+|}</div>
+
+== Comparison table ==
+<includeonly><onlyinclude>
+|-
+! {{DLC Icons|{{{Name}}} }}
+| data-sort-value="{{{Armor - Sharp Factor}}}" | ×{{{Armor - Sharp Factor}}}
+| data-sort-value="{{{Insulation - Cold Factor}}}" | +{{Temperature|{{{Insulation - Cold Factor}}}||delta}}
+| data-sort-value="{{{Insulation - Heat Factor}}}" | +{{Temperature|{{{Insulation - Heat Factor}}}||delta}}
+| data-sort-value="{{{Market Value Base}}}" | {{{Market Value Base}}} {{Icon Small|silver}}
+</onlyinclude></includeonly>
+
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_09 text-center}}
+! Name !! Armor - Sharp !! Insulation - Cold !! Insulation - Heat !! Market Value
+{{#ask: [[Category:Wool]] [[Beauty Factor::+]]
+ | named args = true
+ | ?Name
+ | ?Armor - Sharp Factor
+ | ?Insulation - Cold Factor
+ | ?Insulation - Heat Factor
+ | ?Market Value Base
+ | format = template
+ | template = :Wool
+ | link = none
+ | sort = From DLC, Name
+}}
+|}
+</li></div>
+
+All wools have the following modifiers in common:
+* [[Property:Beauty Factor|Beauty Factor]] of 1.5.
+* [[Property:Max Hit Points Factor|Max Hit Points Factor]] of 1.
+* [[Property:Flammability Factor|Flammability Factor]] of 1.7.
+* [[Property:Work To Make|Work To Make Factor]] and [[Property:Work To Build|Work To Build Factor]] of 1.
+* [[Property:Armor - Blunt Factor|Armor - Blunt Factor]] of 0.
+* [[Property:Armor - Heat Factor|Armor - Heat Factor]] of 1.1.
+
+== Descriptions ==
+{{List|Wool}}
+
+== Trivia ==
+Contrary to wool in real life, wool in [[RimWorld]] is more flammable than [[Cloth|cotton]], rather than less.
+
+== Gallery ==
+{{#set:Image|[[File:Wool.png]]}}
+<gallery>
+Wool.png|Generic wool icon
+</gallery>
+
+== Version history ==
+* [[Version/0.12.906|0.12.906]] - Added
+* [[Version/1.3.3066|1.3.3066]] - Added a Thing category for wool.
+
+{{Nav|Materials|wide}}
+[[Category:Material|#Wool]] [[Category:Textile|#Wool]] [[Category:Fabric|#Wool]]

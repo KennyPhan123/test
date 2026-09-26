@@ -1,0 +1,68 @@
+{{Royalty}}
+{{Project|Psyfocus}}
+{{See also|Darklight brazier}}
+{{Infobox main|furniture
+| name = Brazier
+| image = Brazier.png
+| description = A bowl-shaped furnishing used to hold a fire. Will light the surroundings and create heat.
+| type = Building
+| type2 = Furniture
+| placeable = true
+| path cost = 42
+| passability = pass through only
+| cover = 0.15
+| minifiable = true
+| size = 1 ˣ 1
+| mass base = 15
+| flammability = 0
+| hp = 80
+| sell price multiplier = 0.7
+| glowradius = 10
+| glowcolor = (252, 187, 113)
+| heatpersecond = 3.5
+| maxheattemperature = 23
+| terrain affordance = light
+| research = Complex furniture
+| thingCategories = BuildingsFurniture
+| work to make = 1000
+| stuff tags = Metallic, Stony
+| resource 1 = Stuff
+| resource 1 amount = 50
+| fuel filter = Wood
+| fuel capacity = 30.0
+| fuel consumption rate = 2.0
+| initial fuel percent = 0 <!-- 0% -->
+| fuel consumption per tick in rain = 0.0006
+}}
+
+A '''brazier''' is a type of [[furniture]] which emits light and heat. Braziers are required for higher ranks of [[titles]] to make them happy. Braziers need to be consistently fueled to appease the nobles whose thronerooms contain them. It is also a meditation focus for [[psycast]]ers.
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+{{Stub|section=1|reason=Psyfocus mechanics}}
+[[File:Brazier illumination area.png|300px|thumb|left|The white area (6 tiles out) is 50% illumination, required for best [[Surgery Success Chance Factor|surgery success chance]]; the yellow (7th tile) represents 30% or better, adequate for all general labor, avoiding [[mood]] penalties, and for growing [[Decorative Plants|decorative plants]] indoors in [[plant pot]]s.]]
+A lit brazier outputs [[light]] in a 10 tile radius, with the nearest {{P|Light Radius}} tiles at or above 30% light level and considered "[[Light|Lit]]", to a maximum of 50%. The provided light in this area is bright enough to prevent work speed penalties, grow decorative plants, and prevent the debuff [[Thoughts_list#In_darkness|"In darkness"]]. However, braziers are not bright enough to grow most [[crop]]s indoors, which require 51% illumination. Lit braziers will also heat enclosed [[rooms]] to a maximum [[temperature]] of {{Temperature|23}} at a rate of 3.5 heat per second.{{Check Tag|Exact mechanic unclear|Provides comparison with other heat sources but doesn't explain how much it actually heats}}.
+
+The brazier consumes {{Icon Small|Wood}} 2 [[wood]] per day as long as it is lit, and consumes an additional {{Icon Small|Wood}} 0.0006 wood per {{Ticks|1}}, or a total of {{Icon Small|Wood}} {{#expr: 2+ (0.0006*60000)}} wood per day, if it is lit while unroofed in the [[Weather|rain]]. It can hold up to 30 fuel at a time, for a maximum run time of {{#expr:30/2}} days. Fuel is delivered to the brazier by a [[Work#Haul|haulers]] as long as refueling is enabled. An uninstalled brazier both stops consuming fuel and retains its fuel level when reinstalled.
+
+{{Pyromaniac Building Note}}
+
+Two lit braziers or [[darklight brazier]]s{{IdeologyIcon}} are required in the throne room of every [[noble]] of "Acolyte" rank or above. Braziers and their darklight variant are interchangable and any combination of the buildings will count.
+
+== Analysis ==
+{{Stub|reason=Compared to other psyfoci need but see Main TODO list for the Large Project}}
+
+Braziers are intended for throne rooms. Other than their nobility, they combine the larger light radius of the [[campfire]] with lower heat per second, max temperature and fuel consumption rate of the [[torch lamp]]. Braziers can hold 10 more wood than either and can be uninstalled, but require {{Required Resources}} to make. Braziers can be uninstalled as a time-consuming way to turn it off.
+
+If the [[Ideology DLC]] is installed, [[darklight brazier]]s{{IdeologyIcon}} are strictly superior to the regular variant, even for colonies that don't prefer darklight. They have the exact same light radius but consume less fuel and are otherwise identical.
+
+{{Building Stats Table}}
+
+== Version history ==
+* ? - Added.<!-- Don't just assume it was added on royalty release, verify -->
+* [[Version/1.5.4062|1.5.4062]] - Increased work to build from 100 to 1000. Hide meditation focus radius ring from braziers.
+
+{{Nav|furniture|wide}}
+[[Category:Furniture]] [[Category:Lamp]]

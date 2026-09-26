@@ -1,0 +1,92 @@
+{{Verified|1.5.4104}}{{Stat
+| def name = Mass
+| label = mass
+| description = The physical mass of an object.
+| default base value = 1
+| min value = 0
+| format string = {0} kg
+| to string style = FloatTwoOrThree
+| minified thing inherits = true
+| show on unhaulables = false
+| category = Basics
+| display priority in category = 1500
+| parts = StatPart_BodySize, StatPart_NaturalNotMissingBodyPartsCoverage, StatPart_GearAndInventoryMass, StatPart_UnfinishedThingIngredientsMass, StatPart_AddedBodyPartsMass
+}}
+
+How heavy an object is to carry in a [[caravan]] or a [[transport pod]].
+
+Take note that for stackable items (like resources), the displayed mass corresponds to a single item, not the whole stack. Thus a full stack of 75 steel (mass equals 0.5 kg each) actually weights 32.5 kg in total.
+
+== Calculating Mass ==
+{{Rewrite|nocat|section=1|reason=Verify that all of the factors that apply to pawns apply to corpses as well}}
+For [[pawn]]s and [[corpse]]s, the base mass is multiplied by the body size (which is first determined by a base body size, and a body size factor depending on the pawn's lifestage) and the combined coverage of natural (not missing) body parts.
+
+After these factors, pawn/corpse mass is offset by the mass of gear (worn apparel and equipped weapon) and inventory items.
+
+For added body parts (artificial items that fully or partially replace limbs: not internal organs or implants), the mass of the item spawned when surgically removed (i.e. the item installed) is multiplied by 90%. This is repeated for each added body part, and the sum of these adjusted masses is added as a singular offset.
+
+Overall, this equates to:
+
+<code>Total Pawn or Corpse Mass = (Base Mass × (Base Body Size × Body Size Factor) × Coverage of Natural Body Parts) + Gear + Inventory + (Added Body Part Item Masses × 0.9)</code>
+
+
+
+For unfinished items, the base mass is offset by the combined mass of all ingredients:
+
+<code>Unfinished Item Mass = Mass Base + ((Ingredient 1 Mass × Ingredient 1 Amount) + (Ingredient 2 Mass × Ingredient 2 Amount) etc...)</code>
+
+== Base Values ==
+<div><li style="display: inline-table;">
+Click to <div class="mw-collapsible mw-collapsed">
+<div class="mw-collapsible-content">
+{| {{STDT| c_01 sortable}}
+! Thing !! Mass Base
+|-
+{{#ask: [[Mass Base::+]]
+| ?Mass Base
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Name
+| limit = 1000
+}}
+|}
+</div>
+</div>
+</li></div>
+
+== Stat Def Data ==
+{| {{STDT}}
+! Name !! Description !! Category !! Parameters !! Complex Parameters !! Display Priority In Category
+|- id="Mass" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />Mass
+* '''Label:'''<br />mass
+| The physical mass of an object.
+|
+* Display Order: '''10'''
+* Def Name:<br />'''Basics'''
+* Label:<br />'''Basics'''
+* Display All By Default: {{Good|true}}
+|
+* Default Base Value: '''1'''
+* Min Value: '''0'''
+* To String Style: '''FloatTwoOrThree'''
+* Format String:<br />"{0} kg"
+* Minified Thing Inherits: {{Good|true}}
+* Show On Unhaulables: {{Bad|false}}
+|
+* '''Parts:'''
+** '''StatPart_BodySize'''
+** '''StatPart_NaturalNotMissingBodyPartsCoverage'''
+** '''StatPart_GearAndInventoryMass'''
+** '''StatPart_UnfinishedThingIngredientsMass'''
+** '''StatPart_AddedBodyPartsMass'''
+| 1500
+<!--</StatDef>-->
+|}
+
+== Version history ==
+{{Stub|nocat=1|section=1|reason=General Version history}}
+
+{{nav|stats|wide}}

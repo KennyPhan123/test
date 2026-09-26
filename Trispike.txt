@@ -1,0 +1,155 @@
+{{Anomaly}}
+{{Stub|reason=General but also specifically mechanical summary and missing analysis}}
+{{infobox main|entity
+| name = Trispike
+| image = Trispike.png
+| description = A man-sized amalgamation of several smaller fleshbeasts. Each of the creature's limbs is capable of surviving independently. On death, trispikes may split into separate fingerspikes as each limb rips free and attacks.
+<!-- Base Stats -->
+| type = Entity
+| type2 = Basic
+| flammability = 1.25
+<!-- Containment -->
+| minimum containment strength = 40
+| anomaly knowledge = 2
+| knowledge category = Basic
+| study interval = 120000
+| bioferrite density = 2
+| gets cold containment bonus = true
+| min monolith level for study = 1
+| requires holding platform = true
+| base escape interval MTB days = 60
+<!-- Pawn Stats -->
+| combatPower = 90
+| movespeed = 4.3
+| healthscale = 0.3
+| bodysize = 1
+| diet = none
+| lifespan = 10
+| trainable = None
+| toxic resistance = 0.5
+| min comfortable temperature = -40
+| max comfortable temperature = 60
+| body = Trispike
+<!-- Production -->
+| meatname = Twisted meat
+| meatyield = 70
+<!-- Combat -->
+| damage = 9
+| damage type = RangedStab
+| armorPenetration = 100
+| range = 5.9
+| mode = Single-Shot
+| warmup = 30
+| cooldown = 120
+| burst = 1
+| velocity = 55
+| DPS = DPS
+| attack1label = left spike
+| attack1labelNoLocation = spike
+| attack1type = Stab
+| attack1dmg = 7
+| attack1cool = 2
+| attack1part = LeftSpike
+| attack1alwaysTreatAsWeapon = true
+| attack2label = right spike
+| attack2labelNoLocation = spike
+| attack2type = Stab
+| attack2dmg = 7
+| attack2cool = 2
+| attack2part = RightSpike
+| attack2alwaysTreatAsWeapon = true
+| attack3label = top spike
+| attack3labelNoLocation = spike
+| attack3type = Stab
+| attack3dmg = 7
+| attack3cool = 2
+| attack3part = MiddleSpike
+| attack3alwaysTreatAsWeapon = true
+| attack3chancefactor = 0.5
+| attack4label = head
+| attack4type = Blunt
+| attack4dmg = 3
+| attack4cool = 2
+| attack4part = HeadAttackTool
+| attack4ensureLinkedBodyPartsGroupAlwaysUsable = true
+| attack4chancefactor = 0.2
+<!-- Technical -->
+| defName = Trispike
+| label = trispike
+<!-- Other -->
+| renderTree = Trispike
+| deathAction Class="DeathActionProperties_Divide" = 
+| divideBloodFilthCountRange = 1~2| /divideBloodFilthCountRange = 
+| dividePawnCount = 3
+| dividePawnKindOptions = Fingerspike
+| lifeStageAges: def = EntityFullyFormed
+<!--
+| ThingDef Name="BaseFleshbeast" ParentName="BasePawn" Abstract="True" = 
+| thingClass = Pawn
+| category = Pawn
+| selectable = true
+| containedPawnsSelectable = true
+| containedItemsSelectable = true
+| tickerType = Normal
+| altitudeLayer = Pawn
+| useHitPoints = false
+| hasTooltip = true
+| soundImpactDefault = BulletImpact_Flesh
+| drawHighlight = true
+| tradeability = None
+| hiddenWhileUndiscovered = true
+| renderTree = Misc
+| thinkTreeMain = Fleshbeast
+| thinkTreeConstant = FleshbeastConstant
+| intelligence = ToolUser
+| specificMeatDef = Meat_Twisted
+| overrideShouldHaveAbilityTracker = true
+| disableIgniteVerb = true
+| canOpenFactionlessDoors = false
+| needsRest = false
+| hasGenders = false
+| bloodDef = Filth_Blood
+| bloodSmearDef = Filth_BloodSmear
+| soundMeleeDodge = Pawn_MeleeDodge
+| fleshType = Fleshbeast
+| isImmuneToInfections = true
+| bleedRateFactor = 0.5
+| hediffGiverSets = Fleshbeast
+| corpseHiddenWhileUndiscovered = true
+| inspectorTabs = ITab_Pawn_Health, MayRequire="Ludeon.RimWorld.Anomaly" = ITab_Entity, ITab_Pawn_Log
+| compClass = CompAttachBase
+| Class="CompProperties_InspectString" = 
+| compClass = CompInspectStringEmergence
+| inspectString = Emerged from {SOURCEPAWN_labelShort}.
+| drawGUIOverlay = true
+-->
+}}
+'''Trispikes''' are [[entities]], and type of [[fleshbeast]], added by the [[Anomaly DLC]]. 
+
+== Occurrence == 
+
+Like the [[fingerspike]] and [[toughspike]], trispikes are found during most fleshbeast-related incidents, most likely from [[pit gate]] emergences, or as reinforcements to protect the [[fleshmass heart]], as well as higher-wealth fleshbeast burrow incidents.
+
+== Summary ==
+Trispikes split into 3 separate [[fingerspike]]s on death that land on nearby unoccupied cells.{{Check Tag|Detail Needed|What range, what counts as unoccupied. LoS}}
+
+They cannot be butchered, as they leave no corpse behind.
+
+== Analysis ==
+Trispikes are the weakest fleshbeast with the capacity to split into more fleshbeasts. Compared to the toughspike, trispikes are quite fragile due to their low HP multiplier, but this plays into their role as a splitter.
+Out of the three lesser fleshbeasts, trispikes should be the last to be killed if possible in order to keep the fleshbeast horde within manageable numbers. When trying to keep distance (e.g kiting) other fleshbeasts are higher priority, specially fingerspikes as they're the fastest.
+Since splitting fingerspikes can not land in an occupied cell, you can pack your fighters tightly and build walls around to prevent them from landing near.
+[[File:Trispike counter.png|left|thumb|Fight from a walled-up room to prevent splitting fingerspikes from landing near you]]<br clear=left>
+=== Containment ===
+Trispikes are not a good entity for containment. They're very hard to down without dying, and their productivity is not worth the effort. They can't be easily crippled to prevent escapes and when they eventually do they will most likely will die and split into fingerspikes.
+
+== Health ==
+{{Animal Health Table|Trispike}}
+{{Pawn Attack Table}}
+
+== Version history == 
+* [[Anomaly DLC]] Release - Added.
+
+{{Nav|entity|wide}}
+[[Category: Entities]]
+[[Category: Fleshbeasts]]

@@ -1,0 +1,118 @@
+<noinclude><!--Top Nav Box-->
+{| align=center
+| {{Gameplay_Nav}}
+|}
+----
+<!-- End of Nav -->
+</noinclude>
+'''Time''' in RimWorld is split into two related systems - [[#Real time|real time]], that is the time experienced by the player, and [[#In-game time|in-game time]], that is time that passes in the gameworld of the colony and experienced by the pawns themselves.
+
+== Real time ==
+{{Stub|section=1|reason =Explain 1 second weirdness with game time and IRL time (assuming use of seconds is also accelerated by game speed. i.e. will say 3 seconds tk bleed to death on 1x and 3x speed despite the realtime to death being 1s on 3x}}
+Time in RimWorld passes as a series of ticks. On normal game speed, there are 60 such ticks to a real second; there are always 2,500 ticks to one in-game hour.
+
+{| {{STDT|c_01 text-right}}
+! colspan='2' | In-Game Time
+! colspan='1' | Ticks
+! colspan='1' | Real Time
+|-
+! 1 Sec
+| 0.024 Hours     ||      60 || 1s
+|-
+! 1 Hour
+| 41.6&#773; Secs     ||   2,500 ||  ~42s
+|-
+! 1 Day
+| 24 Hours  ||    60,000 || 16m 40s
+|-
+! 1 Quadrum
+| 15 Days  ||   900,000 || 4h 10m
+|-
+! 1 Year
+| 4  Quadrums || 3,600,000 || 16h 40m
+|}
+{| {{STDT|c_01 text-right}}
+|-
+! colspan='3' | Technical details for modders
+|-
+!
+! Ticks
+! Time
+|-
+| 1 tick || 1 tick || 1/60th second
+|-
+| 1 rare tick || 250 ticks || 4.16 seconds
+|-
+| 1 long tick || 2000 ticks || 33.33 seconds
+|}
+
+The player also has access to play speed controls that attempt to multiply the rate at which game time progresses. Note that depending on a number of technical factors including the machine on which the game is being run, it may not be possible to run the game at the target speed. In this case, the game will run as close to the target as possible and, as such, the limit will be more noticeable at higher speeds. 
+
+The speeds are described in the table below. The speeds controls can be selected by the buttons on the lower right hand sode of the screen, or by key binds. Note that Speeds 2, 3, and 4 are sometimes described by the community as 2x, 3x, and 4x speed, however this is not representative of the actual speed.
+
+{| class="wikitable"
+|-
+! Speed !! Default key binding !! Game speed multiplier !! Button
+|-
+| Pause || {{Key|Space}} || x0 || [[File:TimeSpeedButton Pause.png]]
+|-
+| 1 || {{Key|1}} || x1 || [[File:TimeSpeedButton Normal.png]]
+|-
+| 2 || {{Key|2}} || x3 || [[File:TimeSpeedButton Fast.png]]
+|-
+| 3 || {{Key|3}} || x6 || [[File:TimeSpeedButton Superfast.png]]
+|-
+| 4 || {{Key|4}} || x15 || N/A
+|}
+Note that Speed 4 is only available when [[development mode]] is active and is only available by key bind.
+
+== In-game time ==
+{{Stub|section=1|reason=Exploration of [[Temperature]]/Season link and [[Light]]/Season link}}
+{{Quote|The year is divided into 4 quadrums* of 15 days each. Quadrums are the same everywhere, while seasons are different in different places}}
+Time on the rimworld proceeds largely as one would expect except for three primary differences. Years only last 60 days, years are separated into 4 15-day "quadrums" instead of months, and the year is seasonal - that is, last season ends at the same time as the year. Note that times given in-game will use this system - thus if something ''"spoils in 1 year"'', you have 60 in-game days, not 365. 
+
+Like terrestrial seasons, the [[temperature]] changes with progression of the quadrums and the temperature effects depend on the latitude. When it is "Summer" in the Northern Hemisphere, it is "Winter" in the Southern, and vice versa, while areas near the equator remain temperate year-round.
+
+Each quadrums is given a name that is a portmanteau of the terrestrial months of the ''season'' that quadrum is equivalent to, rather than named for months in the same period of the year. Thus, Aprimay is a portmanteau of April and May, but is the start of the year and relates to Spring in the North, but Fall in the South. Mouse-hovering over the in-game date in the lower right-hand corner will list what "local seasons" each quadrum represents for the settlement currently viewed.  
+
+The names of these 4 quadrums are:
+
+{| class="wikitable"
+|-
+! Name !! Northern Season !! Southern Season !! Days
+|-
+! Aprimay   
+| Spring || Fall || 1 to 15
+|-
+! Jugust    
+| Summer || Winter || 16 to 30
+|-
+! Septober  
+| Fall || Spring || 31 to 45
+|-
+! Decembary 
+| Winter || Summer || 46 to 60
+|}
+
+The game starts in the year 5500, and by default begins in Spring (Aprimay or Septober). In colder biomes, the season will adjust to Summer, to allow players to survive and grow plants, although some colder biomes there is permanent winter, and this only serves to make the starting temperature more hospitable. Starting season may be changed in [[World generation#Advanced settings|World Generation]]. 
+
+===Time of day===
+Days in RimWorld last 24 hours, or {{Ticks|60,000}}. The in-game clock is in 24-hour format, with the hours displayed in military time from 0h to 23h. The time of day has a few effects on gameplay:
+*Time determines the level of [[light]] outdoors.
+*Plants can only grow from 6:00 to 19:12.
+*[[Night owl]]s consider it "Day time" from 11h to 18h, and "Night time" from 23h to 6h.
+
+[[Light|Daylight]] length is also tied to the season and latitude - the day will be independent of the season at the equator but get longer in the Summer and shorter in the Winter the further north or south you go. Exact details of the relationship between season, latitude and day length are currently unknown.
+
+The hour of the day is relative to the location on the [[Menus#World|World map]]. If it's noon (1200) at your home base, it will still be late morning (1100/11 AM) a bit to the west, and already early afternoon (1300/1 PM) a bit to the east, as "time zones" are in our world. Time of day is modeled on the planet view; local time of day corresponds to how the sunlight hits the planet.
+
+===Work===
+Items in game list values with names like "Work to build", "Work to uninstall", or "[[Work To Make]]" in their info boxes. One unit of work is approximately {{Ticks|60}}. Note that the work values are rounded to display nicely as seconds, and the actual tick amounts are used by the game engine, not the displayed work.
+
+== Version history ==
+* [[Version/0.0.254B|0.0.254B]] - Abolished cycles - dates are measured in days only.
+* [[Version/0.10.785|0.10.785]] - Day length extended from 24,000 to 30,000 ticks. Days per month reduced from 12 to 10.
+* [[Version/0.13.1135|0.13.1135]] - Days are now twice as long as before, with years being half as many days i.e. years are exactly as long as before in actual play time, just divided into a smaller number of longer days. The year is now split into seasons instead of months.
+* [[Version/0.17.1546|0.17.1546]] - As season names could no longer be consistently applied to the entire globe, necessitating that they be named as month-like "quadrums." 
+
+[[Category:Game mechanics]]

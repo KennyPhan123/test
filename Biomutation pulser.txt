@@ -1,0 +1,78 @@
+{{Anomaly}}
+{{Infobox main
+| name = Biomutation pulser
+| image = Biomutation pulser.png
+| description = A one-use broad-wave psychic effector created from a dark archotech shard. The device creates a pulse that reshapes the musculature of every animal within the region, turning them into terrifying creatures. Animals currently under your control will not be affected.
+<!-- Base Stats -->
+| type = Artifact
+| type2 = Utility
+| tech level = Archotech
+| marketvalue = 800
+| stack limit = 1
+| mass base = 0.5
+| beauty = -4
+| styledominance = 10
+| hp = 80
+| rotatable = false
+| path cost = 14
+<!-- Creation -->
+| production facility 1 = Bioferrite shaper
+| research = Mutation weaponry
+| skill 1 = crafting
+| skill 1 level = 6
+| work to make = 19200
+| work speed stat = General Labor Speed
+| resource 1 = Shard
+| resource 1 amount = 1
+| resource 2 = Bioferrite
+| resource 2 amount = 40
+| resource 3 = Twisted meat
+| resource 3 amount = 30
+<!-- Ability -->
+| casting time = 132
+| goodwill impact = -200
+<!-- Technical -->
+| defName = BiomutationPulser
+| label = biomutation pulser
+| thingCategories = Artifacts
+| tradeTags = UtilitySpecial
+| thingSetMakerTags = RewardStandardLowFreq
+}}
+{{Info|A '''biomutation pulser''' is a single-use [[artifact]] added by the [[Anomaly DLC]] that transforms all non-player [[animals]] on a map into [[fleshbeasts]].}}
+
+== Acquisition ==
+{{Acquisition}}
+
+Biomutation pulsers can also drop from destroyed [[flesh sack]]s,{{AnomalyIcon}} with a ~ 1.17% chance of appearing, or found in [[ancient danger]]s.
+
+== Summary ==
+{{Image wanted|section=1|reason=Gizmos}}
+A biomutation pulser is a single-use artifact, which can be used to transform all non-player-faction animals on the map with a [[psychic sensitivity]] above 0% into [[fleshbeasts]]. Animals belonging to the player's faction are ''not'' affected, however all other animals are, including [[insectoids]] and animals belonging to other factions, both enemy and friendly. All items carried by pack animals transformed in this way are lost. If a faction's animals are affected by the pulser, it will incur a [[goodwill]] penalty of {{Bad|-200}}, making the faction hostile. There is no goodwill effect if no animals are affected, even if humans from that faction are present, however any subsequent deaths or injuries will still have their usual effect.
+
+The resultant fleshbeast depends on the [[body size]] of the animal transformed:
+* {{#ask: [[Body Size::<0.74]] [[Type::Animal]] | ?Body Size | limit = 0| searchlabel = Between 0 and 0.74}}: {{Icon Small|Fingerspike}} [[Fingerspike]]
+* {{#ask: [[Body Size::>0.75]] [[Body Size::<3.49]] [[Type::Animal]] | ?Body Size | limit = 0| searchlabel = Between 0.75 and 3.49}}: {{Icon Small|Toughspike}} [[Toughspike]] <sup>50%</sup><big> / </big>{{Icon Small|Trispike}} [[Trispike]] <sup>50%</sup> 
+* {{#ask: [[Body Size::>3.5]] [[Type::Animal]] | ?Body Size | limit = 0| searchlabel = Above 3.49}}: {{Icon Small|Bulbfreak}} [[Bulbfreak]]
+
+It can be used by first selecting a pawn, and right-clicking the artifact and selecting 'Activate biomutation pulser', or by selecting the pulser itself, clicking the 'Use biomutation pulser' gizmo, and left clicking the [[colonist]] or [[slave]]{{IdeologyIcon}} to activate the pulser. In either event, the selected pawn will approach the pulser and spend {{ticks|132}} activating it, at which point all the affected animals will instantaneously transform in purely-visual explosions of gore. No [[filth]] will be created.  
+
+Fleshbeasts will be hostile to and attack any [[human]]s, [[mechanoids]], and tamed non-[[Pen animal|pen]] animals they see, but won't necessarily seek out enemies to engage.
+
+Once it has been used once, the pulser disappears completely. It cannot be reloaded, nor can any resources be salvaged from it.
+
+== Analysis ==
+Similar to the [[psychic animal pulser]] and its [[Shard animal pulser|shard variant]], by enclosing all your colonists in a closed room with no doors, you can safely use this item to harry [[raids]], weakening or even outright defeating them. Unlike the animal pulsers however, the lack of any expiry once created nor seeking behavior from the fleshbeasts means you run the risk of the two groups simply not meeting and just creating a new problem that must be dealt with on top of the original threat.
+
+The utility of the pulser depends heavily on what animals are present and in what numbers. If a herd of [[elephant]]s just arrived or there are dozens of small animals, it can be very potent. Unlike the animal pulser, even small animals can be a significant threat because they will instead transform fingerspikes. It is also particularly effective when the enemies bring their own animals, such as [[yttakin pirates]]{{BiotechIcon}} - the transformation deprives them of a significant portion of the [[combat power]] of the raid and the fleshbeasts will be all but guaranteed to see and engage with the enemies. Note that while this can be used against caravans, any items carried by the transformed animals will be lost entirely. 
+
+A niche use for the pulser is in fighting [[infestation]]s that cannot currently be handled. Infestations will continue to grow and spread, meaning that if they can't be handled immediately, they will likely get worse over time. Transforming all the insectoids into fleshbeasts makes them typically makes them slightly more dangerous, but the [[hive]]s will die without maintenance and they will no longer expand. A small increase in difficulty to prevent a gradual but much greater increase. The fleshbeasts will not be tied to the hives either, often making them more likely to encounter other pawns that will trigger and fight them for you, such as raiders or trade caravans.
+
+There is a significant competition for the use of [[shard]]s however and often the creation of biomutation pulsers should be low priority, as is the [[Research#{{P|Required Research}}|{{P|Required Research}}]] research project generally. If spare shards are available and the research is complete however, having a single pulser in reserve as a hail-mary or for niche occasions such as infestations can be valuable.
+
+This item combos well with both the Draw Animals ritual (successful or manhunter) and Shard Shock Lances, as converting large animals into Bulbfreaks and capturing them will provide Advanced research points and the second best bioferrite per day per holding space.
+
+== Version history ==
+* [[Anomaly DLC]] Release - Added.
+* [[Version/1.6.4518|1.6.4518]] - Fix: Biomutation pulser throws error.
+
+[[Category:Artifact]]

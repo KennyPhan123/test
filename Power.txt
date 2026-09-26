@@ -1,0 +1,157 @@
+<noinclude>
+<!--Top Nav Box-->
+{| align=center
+| {{Architect_Nav}}
+|}
+----
+<!-- End of Nav -->
+</noinclude>
+{{TOCright}}
+'''Power''' is both the representation of [[electricity]] required to power a wide variety of appliances and buildings, and the name of a section of the architect that contains buildings that interact with this system.
+
+{|class="wikitable" style="text-align:center;"
+|-
+| width=100px height=50px | {{Icon Small|Power conduit|80px}}
+| width=100px height=50px | {{Icon Small|Hidden conduit|80px}}
+| width=100px height=50px | {{Icon Small|Waterproof conduit|80px}}
+| width=100px height=50px | {{Icon Small|Power switch|80px}}
+| width=100px height=50px | {{Icon Small|Wood-fired generator|80px}}
+| width=100px height=50px | {{Icon Small|Chemfuel powered generator|80px}}
+| width=100px height=50px | {{Icon Small|Wind turbine|80px}}
+|- align="center"
+| <div><small>[[Power conduit]]</small></div>
+| <div><small>[[Hidden conduit]]</small></div>
+| <div><small>[[Waterproof conduit]]</small></div>
+| <div><small>[[Power switch]]</small></div>
+| <div><small>[[Wood-fired generator]]</small></div>
+| <div><small>[[Chemfuel powered generator]]</small></div>
+| <div><small>[[Wind turbine]]</small></div>
+|-
+| width=100px height=50px | {{Icon Small|Battery|80px}}
+| width=100px height=50px | {{Icon Small|Solar generator|80px}}
+| width=100px height=50px | {{Icon Small|Geothermal generator|80px}}
+| width=100px height=50px | {{Icon Small|Watermill generator|80px}}
+| width=100px height=50px | {{Icon Small|Toxifier generator|80px}}
+| width=100px height=50px | {{Icon Small|Bioferrite generator|80px}}
+| width=100px height=50px | {{Icon Small|Gravcore power cell|80px}}
+|- align="center"
+| <div><small>[[Battery]]</small></div>
+| <div><small>[[Solar generator]]</small></div>
+| <div><small>[[Geothermal generator]]</small></div>
+| <div><small>[[Watermill generator]]</small></div>
+| <div><small>[[Toxifier generator]]</small>{{BiotechIcon}}</div>
+| <div><small>[[Bioferrite generator]]</small>{{AnomalyIcon}}</div>
+| <div><small>[[Gravcore power cell]]</small>{{OdysseyIcon}}</div>
+|}
+
+Additionally, there are several buildings that produce power but are either not constructible or are constructible but are not on the Power architect menu. These are:
+
+{|class="wikitable" style="text-align:center;"
+|-
+| width=100px height=50px | {{Icon Small|Ship reactor|80px}}
+| width=100px height=50px | {{Icon Small|Unstable power cell|80px}}
+| width=100px height=50px | {{Icon Small|Electroharvester|80px}}
+|- align="center"
+| <div><small>[[Ship reactor]]</small></div>
+| <div><small>[[Unstable power cell]]</small>{{RoyaltyIcon}}</div>
+| <div><small>[[Electroharvester]]</small>{{AnomalyIcon}}</div>
+|}
+
+== Mechanics ==
+{{Stub|section=1|reason=Does not cover the mechanics of power sufficiently - how is the order of power loss determined when demand>supply? When do power generators tick? When does battery capacity tick? etc. }}
+Power is measured in the form of '''Watts (W)'''. Power generators create watts, and appliances will consume a certain amount of watts to function. Most appliances will use power even when not actively being used - they must be manually switched off. Some appliances use less power when not in active use, sometimes referred to as "stand-by" power. 
+
+Power conduits can randomly [[short circuit]] whenever they are powered, and many power buildings or appliances can also short circuit while in [[rain]] or [[snow]]. See [[Short circuit]] for details.
+
+=== Transport ===
+Power only exists within a power grid and requires something to transport it. Any power that isn't used or stored is wasted. 
+
+Power travels through [[power conduit]]s, [[waterproof conduit]]s,  [[power switch]]es, [[batteries]], and all generators and generator equivalents. These power transporters must be directly adjacent to each other to connect and transport power between them. This is distinct from appliances, which do not transport power, but can connect to a power transport from up to 6 tiles away. See [[#Appliances|Appliances]] for more detail.
+
+Configurations of connected power transporters are called grids. All points in a grid have instantaneous access to all power generated and stored by buildings attached to the grid. Grids that are not connected by power transporters, or only connected via a power switch that is turned off, are completely independent from each other.
+
+=== Storage ===
+{{Main|Battery}}
+Power is stored in the form of '''Watt-days (Wd)''', where 1 Watt-day can power a 1 W appliance for 24 hours. Each [[battery]] can store up to 600 Wd, but only store at 50% efficiency. This means that, for the purposes of ''storage'', 1 W for 24 hours would only give 0.5 Wd inside a battery. Batteries lose 5 Wd of stored power per day, even if they aren't connected to anything or are uninstalled in their minified state. The stored power is drawn from if, and only if, the current load wattage on the grid exceeds the current generation wattage. Power can be stored and drawn from at any rate - the 500 Wd generated by 1000 W power generator over the course of a day and stored in 50%-efficient batteries can be consumed in 6 hours if the connected grid is 2000W below demand or last for days if demand only exceeds supply by a few watts. 
+
+=== Appliances ===
+{{hatnote|For a list of all buildings that consume power, see {{#ask: [[Power Consumption::<0]] | ?Power Consumption | sort=Power Consumption | limit = 0| searchlabel = here}} }}
+
+Appliances are [[structure]]s or buildings that consume power but don't transmit it. Most appliances will connect automatically if placed up to six squares away from a power transporter, or when one is placed within range. 
+
+When placing an appliance's blueprint, the most direct connection point to a power transmitting structure will be displayed as a golden yellow connection between the current blueprint position and the power. Note that it will display a connection even if the grid it attaches too does not have sufficient or any power, and that while an appliance will default to that connection point it will be able to connect to other sources with range using the reconnect gizmo mentioned below. If no yellow wire is shown, there is no connection point in range. 
+
+Once constructed, this connection will be displayed by a black "power cord" that runs from the connecting power transmitting building to the appliance in question. This cord is graphical only and cannot be interacted with or damaged in any way. Additionally, when viewing the power grid, a magenta wire similar to the yellow above will display the connection point of appliances in view. 
+
+When connected to the power grid, it can take a few moments before an appliance turns on.
+
+Selecting any power transporter or appliance attached to a grid will display the "Grid Excess/Stored" values in the info pane. If the demand for power exceeds the current supply and cannot be made up for by consuming stored power, appliances connected to the grid lose power until the supply is once again below demand. It is currently unknown how which appliance is disabled is selected - it may be random. 
+
+<gallery>
+Power cord prospective.png|Power cord shown in build mode indicating that the nearby appliance will receive power despite direct no power conduit connection
+Power cord connected.png|Placed power cord shown outside of build mode indicating active connection between the appliance and power source
+Power cord connected build mode.png|Placed power cord shown in build mode indicating an active connection between the appliance and power source
+</gallery>
+
+==== Managing appliances ====
+'''Reconnect''': Click to force an appliance to reconnect to a conduit line or power source. This can also be used to change which power source an appliance is connected to if there is more than one in range.<br/>
+'''Designate toggle power''': Click to mark an appliance to be turned on (<span style="color:#20D720;font-weight:bold">&#10004;</span>) or off (<span style="color:red;font-weight:bold">X</span>) by a colonist set to [[Work#Basic|Basic]].
+
+{|class="wikitable" style="display:inline-block;float:left"
+|- align="center"
+| width=70px height=70px | [[File:Reconnect.png|70px|link=|alt=Reconnect]]
+|- align="center"
+| <div><small>Reconnect</small></div>
+|}
+{|class="wikitable" style="display:inline-block;float:left"
+|- align="center"
+| width=70px height=70px | [[File:Designate Power On.png|70px|link=|Toggle ON]]
+| width=70px height=70px | [[File:Designate Power Off.png|70px|link=|Toggle OFF]]
+|- align="center"
+| colspan="2"|<div><small>Designate toggle power</small></div>
+|}
+{{Clear}}
+
+=== Mechanoid power ===
+{{Biotech|section=1}}
+{{Main|Mechanitor#Power|l1=Mechanoid power}}
+Enemy [[mechanoid]]s - that is, all mechanoids without any DLC - do not require any source of power. However, your [[allied mechanoid]]s do. When controlled by a colony, an active mechanoid's power need falls by 10% per day. Non-working mechs lose 3% power per day. They can enter a dormant self-charging state, which instead restores 1% power per day for free. Mechanoids in a [[caravan]] do not consume or gain any power.
+
+A mechanoid's power need does not directly translate to electrical power. However, [[mech recharger]]s require a constant 200 W, [[large mech recharger]]s require 400 W, and both chargers restore 50% of any mechanoid's power per day. When recharging, mechanoids create [[Toxic wastepack]]s, which can lead to [[pollution]].
+
+== Power generators ==
+{| {{STDT| sortable c_01 text-center}}}}
+! Type !! Cost !! Fuel<br>(per day) !! Size !! Base Output<br>(Watts) !! Output<br>Per<br>Tile !!Variable<br>Output !! Day !! Night !! Placement !! Market Value 
+|-
+| [[Chemfuel powered generator]] || {{Required Resources|Chemfuel powered generator|sep=<nowiki> </nowiki>+|simple=1}} || {{Icon Small|Chemfuel||4.5}} || {{Q|Chemfuel powered generator|Size}} || {{Q|Chemfuel powered generator|Power Consumption}} || 250 || {{Cross}} || {{Check}} || {{Check}} || Anywhere || {{Q|Chemfuel powered generator|Market Value Base #}}
+|-
+| [[Geothermal generator]] || {{Required Resources|Geothermal generator|sep=<nowiki> </nowiki>+|simple=1}} || {{Cross}} || {{Q|Geothermal generator|Size}} || {{Q|Geothermal generator|Power Consumption}} || 100 || {{Cross}} || {{Check}} || {{Check}} || On [[geyser]]s || {{Q|Geothermal generator|Market Value Base #}}
+|-
+| [[Ship reactor]] || {{Required Resources|Ship reactor|sep=<nowiki> </nowiki>+|simple=1}} || {{Cross}} || {{Q|Ship reactor|Size}} || {{Q|Ship reactor|Power Consumption}} || 23.8 || {{Cross}} || {{Check}} || {{Check}} || Outside<br />''(can roof over afterwards)'' || {{Q|Ship reactor|Market Value Base #}}
+|-
+| [[Solar generator]] || {{Required Resources|Solar generator|sep=<nowiki> </nowiki>+|simple=1}} || {{Cross}} || {{Q|Solar generator|Size}} || {{Q|Solar generator|Power Consumption}} || 106.25 || {{Check}} || {{Check}} || {{Cross}} || In sunlight || {{Q|Solar generator|Market Value Base #}}
+|-
+| [[Vanometric power cell]] || ''N/A'' || {{Cross}} || {{Q|Vanometric power cell|Size}} || {{Q|Vanometric power cell|Power Consumption}} || 500 || {{Cross}} || {{Check}} || {{Check}} || Anywhere || {{Q|Vanometric power cell|Market Value Base #}}
+|-
+| [[Watermill generator]] || {{Required Resources|Watermill generator|sep=<nowiki> </nowiki>+|simple=1}} || {{Cross}} || {{Q|Watermill generator|Size}} || {{Q|Watermill generator|Power Consumption}} || 36.6 || {{Cross}} || {{Check}} || {{Check}} || On riverbanks || {{Q|Watermill generator|Market Value Base #}}
+|-
+| [[Wind turbine]] || {{Required Resources|Wind turbine|sep=<nowiki> </nowiki>+|simple=1}} || {{Cross}} || {{Q|Wind turbine|Size}} || {{Q|Wind turbine|Power Consumption}} || 164.29 ||{{Check}} || {{Check}} || {{Check}} || In open ground || {{Q|Wind turbine|Market Value Base #}}
+|-
+| [[Wood-fired generator]] || {{Required Resources|Wood-fired generator|sep=<nowiki> </nowiki>+|simple=1}} || {{Icon Small|Wood||22}} || {{Q|Wood-fired generator|Size}} || {{Q|Wood-fired generator|Power Consumption}} || 250 || {{Cross}} || {{Check}} || {{Check}} || Anywhere || {{Q|Wood-fired generator|Market Value Base #}}
+|-
+| [[Electroharvester]] {{AnomalyIcon}} || {{Required Resources|Electroharvester|sep=<nowiki> </nowiki>+|simple=1}} || {{Cross}} || {{Q|Electroharvester|Size}} || Varies; Up to 2000 || Varies; Up to 1000 || {{Check}} || {{Check}} || {{Check}} || Anywhere || {{Q|Electroharvester|Market Value Base #}}
+|-
+| [[Bioferrite generator]] {{AnomalyIcon}} || {{Required Resources|Bioferrite generator|sep=<nowiki> </nowiki>+|simple=1}} || {{Icon Small|Bioferrite||6}} || {{Q|Bioferrite generator|Size}} || {{Q|Bioferrite generator|Power Consumption}} || 666.7|| {{Cross}} || {{Check}} || {{Check}} || Anywhere || {{Q|Bioferrite generator|Market Value Base #}}
+|-
+| [[Toxifier generator]] {{BiotechIcon}} || {{Required Resources|Toxifier generator|sep=<nowiki> </nowiki>+|simple=1}} || {{Cross}} || {{Q|Toxifier generator|Size}} || {{Q|Toxifier generator|Power Consumption}} || 350 || {{Cross}} || {{Check}} || {{Check}} || Anywhere || {{Q|Toxifier generator|Market Value Base #}}
+|-
+| [[Gravcore power cell]] {{OdysseyIcon}} || {{Required Resources|Gravcore power cell|sep=<nowiki> </nowiki>+|simple=1}} || {{Cross}} || {{Q|Gravcore power cell|Size}} || {{Q|Gravcore power cell|Power Consumption}} || 1200|| {{Cross}} || {{Check}} || {{Check}} || On [[gravship substructure]] || {{Q|Gravcore power cell|Market Value Base #}}
+|-
+| [[Unstable power cell]] {{RoyaltyIcon}} || ''N/A'' || {{Cross}} || {{Q|Unstable power cell|Size}} || {{Q|Unstable power cell|Power Consumption}} || 400 || {{Cross}} || {{Check}} || {{Check}} || Anywhere || {{Q|Unstable power cell|Market Value Base #}}
+|}
+
+== Version history ==
+* [[Version/0.0.245|0.0.245]] - Electrical devices now short-circuit and cause fires if left out in the rain while running.
+
+{{nav|power|wide}}
+[[Category:Buildings]]

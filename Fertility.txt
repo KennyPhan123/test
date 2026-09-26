@@ -1,0 +1,50 @@
+{{Biotech}}
+{{Stub|reason=Either better explain mechanics or make explicit link to sectionbon othwr page that explains it.}}
+{{For|soil fertility|Plants#Fertility{{!}}Plants}}{{For|animal fertility|Ailments#Pregnancy{{!}}Ailments}}
+{{Stat
+| default base value = 1
+| hide at value = 1
+| min value = 0
+| to string style = PercentZero
+| description = It affects the chance of a [[Reproduction#Pregnancy|pregnancy]] occurring. Pregnancy chance is dependent on the fertility of both partners. This also affects the chance of successfully implanting an [[embryo]] in a [[Reproduction#Surrogacy|surrogate]].
+| category = BasicsPawn
+}}
+
+== Factors ==
+
+=== Base Factors ===
+
+* [[Sterile]] gene: {{Bad|x0%}}
+* [[Fertile]] gene: {{Good|x200%}}
+* [[Inbred]] gene: {{Bad|x50%}}
+* [[Reproduction#Lactation|Lactating]]: {{Bad|x5%}}
+* [[Reproduction#Vasectomy|Vasectomy]]: {{Bad|x0%}}
+* [[Reproduction#IUD|Implanted IUD]]: {{Bad|x0%}}
+* [[Reproduction#Tubal ligation|Tubal ligation]]: {{Bad|x0%}}
+
+=== Age ===
+
+{| class="wikitable"
+! Fertility
+|-
+| {{Graph:Chart
+ | width  = 400
+ | height = 100
+ | type   = line
+ | x  = 0, 14,               18,  20,  28,  35,  40,  45,  50, 90, 120
+ | y1 = 0,  0, {{#expr: 200/3}}, 100, 100,  50,  10,   2,   0,  0,   0
+ | y2 = 0,  0,              100, 100, 100, 100, 100, 100, 100,  0,   0
+ | xAxisTitle = Pawn age (years)
+ | yAxisTitle = Fertility (%)
+ | legend =
+ | y1Title = Female
+ | y2Title = Male
+ }}
+|}
+
+== Version history ==
+* [[Biotech DLC]] Release - Added.
+* [[Version/1.4.3530|1.4.3530]] - Fertility stat is no longer capped at 100%.
+* [[Version/1.4.3555|1.4.3555]] - Update the fertility stat to read back any hediffs that are modifying fertility.
+
+{{Nav|stats|wide}}

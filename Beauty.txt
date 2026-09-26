@@ -1,0 +1,97 @@
+__NOTOC__
+{{Rewrite|reason=Fragmented and does not present the information in a new-player-friendly, or holistic fashion. It should start with the object stat and then progress to its applications. Also see other needs for reference in adequate detail re: rise and fall rates, thresholds, etc.}}
+{{About|beauty of all items and structures|the beauty stat of pawns|Beauty (Pawn)}}
+
+'''Beauty''' refers to one of the following, depending on context:
+* '''Physical Beauty''': A property present on certain map objects that indicate how pleasant said object is to look at. Its subdivided in 2 types.
+** '''[[Beauty (Stat)|Beauty Stat]]''': A stat that determines the beauty of an object. If the object is placed outside and has a "Outdoor Beauty" value defined, it uses that instead.
+** '''[[Outdoor Beauty]]''': A stat that determines the beauty of an object when placed outside. Mostly used for "natural" objects and surfaces (ex: plants, soil).
+* '''Environmental beauty''': The net beauty score of a given map tile. It affects perceived beauty and room impressiveness.
+* '''Perceived beauty''': Environmental beauty as perceived by a pawn. It affects "beauty need level" and depends on line of sight.
+* '''Beauty need level''': A pawn's [[need]] to live in a beautiful environment (similar to [[rest]] and [[comfort]]); affects [[mood]].
+
+== Physical beauty ==
+{{Stub|section=1|reason=Mechanics of indoor/outdoor beauty divides - what is classified as as indoors? Not a room, not a roofed room, etc?}}
+{{Main|Beauty (Stat)|Outdoor Beauty}}
+Physical beauty is a stat of many structures, plants, items, and other objects. Some objects have two beauty stats - one that applies when the object is indoors and another that applies when it is outdoors. 
+
+In the case of pawn-made structures, the beauty stat is calculated from a base value, the [[Stuff|type of material]] it is made from, and the [[quality]] level of the item.  The exact value and calculation of the beauty stat for a specific item can be viewed by mousing over the "beauty" stat in the item's information window.
+
+Here, an example is given for a [[Small sculpture|''small marble sculpture'']] of "good" quality: [(base value of small sculptures) 50 * (material modifier for marble) 1.35 + (material offset for marble) 1] * (quality multiplier for "good quality") 2 = (final value) 137.  This sculpture adds 137 of environmental beauty to the tile it is installed on, a fairly high value.
+
+The most beautiful single structure in the base game is a [[Quality|legendary]] (x8) [[gold]] (x4 +20) [[Grand sculpture|grand]] (400 base) sculpture, which has a beauty of [400 * 4 + 20] * 8 = 12,960.  However, note that this is slightly less than the [100 * 4 + 20] * 8 = 3,360 * 4 = 13,440 beauty that 4 legendary gold large sculptures occupying the same 4 tiles could provide, as the offset is applied once per item independent of the base beauty value.
+
+The formula for pieces of furniture is identical, but their base beauty values are usually substantially lower (ex. a [[Bed]] has a base beauty value of 1) than those of works of art, whose primary purpose is to provide environmental beauty.
+
+Items with beauty of above 100 will have their beauty rounded to be divisible by 5, with a remainder of 2.5 being rounded down.
+
+== Environmental beauty ==
+{{See also|Environment#Beauty|l1=Environment}}
+
+Each map tile has an integer value that expresses its beauty. This value is the sum of the beauty values of all objects on that tile. This includes include [[filth]], clutter, the [[floor]], furniture and other objects.
+
+[[File:ToggleShowBeauty.png|||frame|This icon of the mini toolbar toggles the '''beauty display'''.  It shows the environmental and perceived beauty for the map tile under the mouse cursor while enabled.  This is what a pawn would "see" if standing on a map tile.]]
+
+== Perceived beauty ==
+A pawn constantly perceives the surrounding '''environmental beauty''' in an '''8-tile radius''' (241 total tiles) within its line of sight: objects such as doors or walls will reduce the effective area being evaluated. The perceived beauty is the average value of the Environmental beauty values of all the tiles within the evaluated area for a given pawn at the moment of evaluation.
+
+A net effect of the above is the placing high beauty objects, such as [[sculpture]]s, at the center of large living areas is better than at the edges.
+
+Pawns require a [[sight]] capacity above '''0%''' to evaluate beauty.
+
+<gallery>
+Beauty display radius.png|The beauty display radius
+</gallery>
+
+== Beauty overlay ==
+
+By hold the 'ALT' key on your keyboard, you can view the beauty of tiles nearby your cursor, Beauty also shows up with room stats (in the button panel on the bottom right), Finally, beauty shows in a pawn's "Needs" tab, these can all be helpful tools in gauging the room's beauty to ensure [[impressiveness]].
+
+== Beauty need level ==
+
+The beauty [[need]] level of a pawn rises and falls with the perceived beauty.  This is a delayed effect, and increases register much faster than decreases. 
+
+The level is displayed in percent. A value between 35% and 65% is considered "neutral", and has no effect on the pawn.  Values outside that range, either particularly low or high, generate a positive or negative [[Thoughts list#Needs 2|thought]], influencing the pawn's [[mood]] (eg. "Unsightly environment -5" or "Pretty environment +5"). A value of 6 or higher in the beauty display will be enough to move the need towards 100%. 
+
+Keeping the colonists in beautiful surroundings will, effectively, permanently increase their mood. 
+
+''Beauty need'' therefore works similarly to [[comfort]] need, but can only be fulfilled while the pawn is awake (while ''comfort need'' can also be fulfilled while sleeping on comfortable furniture).
+
+{| class="wikitable"
+|-
+!Minimum<br>Beauty<br>Threshold!!Percent<br>of Need!! Mood<br>Bonus
+|-
+|  6   || 100%    || {{+|15}}
+|-
+|  4.5 || 85-100% || {{+|10}}
+|-
+|  2.5 || 65-85%  || {{+|5}}
+|-
+| -0.5 || 35-65%  || '''0'''
+|-
+| -3.5 || 15-35%  || {{--|5}}
+|-
+| -3.9 || 0-15%   || {{--|10}}
+|-
+| -4   || 0%      || {{--|15}}
+|}
+
+== Tips ==
+
+* Satisfying the ''beauty need'' of your pawns is one of the best ways to improve the [[mood]] in your colony.  '''A beautiful environment can provide constant, substantial mood buffs''' practically everywhere, with zero required maintenance.
+* Bedrooms only need enough beauty to keep their [[impressiveness]] at the desired level.  The beauty level of a pawn does not change during sleep, so excessively beautiful bedrooms do '''not''' have a strong effect on the pawn's mood in most situations.
+* Because the beauty [[need]] level rises a lot faster than it falls, it is acceptable to have very ugly areas in your base, ''if the pawns do not spend long periods of time there''.  '''Short or intermittent trips into ugly zones have almost no effect on pawn mood''', as long as the beauty level is kept high enough elsewhere.
+* '''Naked floor (rough stone or soil) does not take dirt from foot traffic or animals''', as long as nobody is bleeding or vomiting.  This can offset the -1 beauty value from the naked floor. Your cleaners will then also not have to clean those areas.  Do not do this in places where cleanliness or walk speed matters.
+* Dirty floors tiles have -5 beauty, blood and vomit are a lot worse (-30 and -40).  You need to clean regularly if you want a beautiful base.  Because of these high negative offsets, dirty floors rapidly lower room [[impressiveness]].
+* Strive to decorate all rooms, as well as outdoor areas that are heavily frequented, or where pawns spend extended amounts of time.  Examples are the hospital, most workspaces, the recreation area, and the main walkways of the colony.  A cheap and easy way of outdoors decoration during the growing season is to plant [[rose]]s.  Decorate larger rooms by spreading the decoration evenly in the space.
+* '''Smoothed floors and carpets''' can effectively raise an entire room's average beauty by 2 points, a substantial increase.  Use these floors in frequented areas, if you can afford it.
+* '''Walls''' should be smoothed (+2 beauty) or made of marble (+1 beauty).  Jade walls have +10 beauty, but it is usually better to craft jade sculptures instead, unless you have excessive amounts of jade and no capable artist to use it.
+* If you need to keep stockpiles in areas that should be beautiful, like the recreation room or the hospital, put the items on [[shelf|shelves]].  Most objects laying naked on the floor have -5 beauty, this gets absorbed by the shelf.
+* A single grand sculpture of very high quality ("masterwork" or "legendary") made of jade (or gold...) can turn even a large room full of rotten corpses into a "beautiful" environment.  If you can get your hands on one of these, usually from an inspired master artist in your colony, place them strategically for the best possible impact.
+* [[Rooms|Room Beauty]] has the information about Rooms.
+
+== Version history ==
+* [[Version/1.3.3117|1.3.3117]] - Some things, like rock chunks, are now considered beautiful when outdoors but ugly when indoors. This solves a problem where a person standing in a nice forest will think their surroundings are ugly.
+
+{{nav|status levels|wide}}
+[[Category:Status Level]]

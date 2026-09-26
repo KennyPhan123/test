@@ -1,0 +1,97 @@
+'''Buildings''' are the constructed elements that make up a colony. Buildings provide living accommodations, protection from enemies and the weather, and various vital functions for the colony.
+
+Buildings that are owned by the colony can be deconstructed; or copied by clicking the <tt>[Build copy]</tt> button.
+
+Buildings owned by an enemy faction on a local map can be [[claim]]ed once the enemy are all defeated. Once claimed, the buildings are free to be used by colonists, or deconstructed.
+
+Certain buildings have an option to Uninstall them or Reinstall them at a new location, a task carried out by [[construct]]ors. An uninstalled building is converted to a minified item and can be sold to [[trade]]rs or reinstalled at another location, and can even be loaded onto [[caravan]]s to be sold or reinstalled elsewhere.
+
+Buildings are not subject to [[deterioration]].
+<!--
+-->{{#vardefine: pixels1|226}}<!--
+-->{{#vardefine: pixels2|182}}<!--
+-->{{#vardefine: pixels3|182}}<!--
+-->
+{| style="border: 0;width: 660px;"
+|- style="vertical-align: top;"
+| style="width: 38%;" |                                                         <!--COLUMN 1-->
+{|class="wikitable" width={{#var:pixels1}} style="text-align:center;"               <!--PRODUCTION start-->
+|-
+! Production
+|-
+| style="text-align:left;vertical-align: top;" | {{#ask:[[Category:Production]][[Description::+]]|format=ul }}
+|}
+{|class="wikitable" width={{#var:pixels1}} style="text-align:center;"               <!--TEMPERATURE start-->
+! Temperature
+|-
+| style="text-align:left;vertical-align: top;" | {{#ask:[[Category:Temperature]][[Description::+]]|format=ul }} 
+|}
+{|class="wikitable" width={{#var:pixels1}} style="text-align:center;"               <!--FLOOR start-->
+! Floor
+|-
+| style="text-align:left;vertical-align: top;" | {{#ask:[[Category:Floor]][[Description::+]]|format=ul }} 
+|}
+{|class="wikitable" width={{#var:pixels1}} style="text-align:center;"               <!--RECREATION start-->
+! Recreation
+|-
+| style="text-align:left;vertical-align: top;" | {{#ask:[[Category:Recreation]][[Description::+]]|format=ul }}
+|}
+| style="width: 31%;" |                                                         <!--COLUMN 2-->
+{| class="wikitable" width={{#var:pixels2}} style="text-align:left;"                <!--STRUCTURE start-->
+! style="text-align:center;" | Structure
+|-
+| style="text-align:left;vertical-align: top;" | {{#ask:[[Category:Structure]][[Description::+]]|format=ul }} 
+|}                                                            
+{| class="wikitable" width={{#var:pixels2}} style="text-align:center;"    <!--FURNITURE start-->   
+! Furniture
+|-
+| style="text-align:left;vertical-align: top;" | {{#ask:[[Category:Furniture]][[Description::+]]|format=ul }}
+|}
+{|class="wikitable" width={{#var:pixels2}} style="text-align:center;"               <!--POWER start-->
+! Power
+|-
+| style="text-align:left;vertical-align: top;" | {{#ask:[[Category:Buildings]][[Category:Power]][[Description::+]]|format=ul }}
+|}
+| style="width: 31%;" |                                                         <!--COLUMN 3-->
+{|class="wikitable" width={{#var:pixels3}} style="text-align:center;"               <!--SECURITY start-->
+! Security
+|-
+| style="text-align:left;vertical-align: top;" | {{#ask:[[Category:Security]][[Description::+]]|format=ul }}
+|}
+{|class="wikitable" width={{#var:pixels3}} style="text-align:center;"               <!--MISC start-->
+! Misc
+|-
+| style="text-align:left;vertical-align: top;" | {{#ask:[[Category:Miscellaneous]][[Description::+]]|format=ul|limit=500}}
+|}
+{|class="wikitable" width={{#var:pixels3}} style="text-align:center;"               <!--SHIP start-->
+! Ship
+|-
+| style="text-align:left;vertical-align: top;" | {{#ask:[[Category:Ship]][[Description::+]]|format=ul }}
+|}
+|}
+
+== Table ==
+
+<!--Help: https://www.semantic-mediawiki.org/wiki/Help:Inline_queries -->
+{{#ask:
+ [[Type::Building]]
+ [[Type2::+]]
+<!-- |?Image  hidden because of different dimensions. -->
+ |?Type2
+ |?Required Research
+ |?Skill 1
+ |?Skill 1 Level
+ |?From DLC
+ |?Work To Make
+ |?Flammability Base
+ |?Beauty Base
+ |?Comfort Base
+ |?Max Hit Points Base
+
+|sort=Type2,Required Research,From DLC,Skill 1,Skill 1 Level<!-- Help about empty statement and comma: https://www.semantic-mediawiki.org/wiki/Help:Inline_queries#Sorting_results. -->
+|order=ascending,ascending,ascending,ascending,ascending
+|limit=1000
+|format=table<!--TODO: add |format=templatefile support. Help about this: https://www.semantic-mediawiki.org/wiki/Help:Templatefile_format. -->
+}}
+
+[[Category:Architect]]

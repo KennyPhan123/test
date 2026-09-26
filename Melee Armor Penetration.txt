@@ -1,0 +1,56 @@
+{{Stub|reason=Thorough explanation of StatWorker_MeleeArmorPenetration and all of its contributing factors towards the calculated melee AP}}
+{{Verified|1.5.4104}}{{Stat
+| min value = 0
+| default base value = 0
+| to string style = PercentZero
+| description = Average armor penetration of all attacks in melee combat.<br id="n" />This stat includes currently used weapon.
+| category = PawnCombat
+}}
+<!-- Way too much jargon and possible paths within StatWorker_MeleeArmorPenetration that need to be interpreted before I can make a concise pseudocode
+== Factors ==
+* Stat Worker
+** If Pawn is null: {{AP}} is 0
+** Get list of availiable verbs, not counting terrain verbs
+** if there are 0 available verbs: {{AP}} is 0
+** For each melee attack verb, add the selection weights together
+** if the combined selection weight is 0: {{AP}} is 0
+** For each melee attack verb, add together (selection weight / sum selection weight * adjusted verb prop {{AP}})
+*** Sum of this is the calculated Melee Armor Penetration Stat
+** Adjusted verb prop {{AP}}:
+*** if tool is not null: AP = tool AP
+**** else: AP is none
+*** if AP < 0: 
+**** else if equipment is not null: AP = AdjustedMeleeDamageAmount * 0.015
+* AdjustedMeleeDamageAmount:
+** if tool is not null: damage = AdjustedBaseMeleeDamageAmount
+*** else: damage = meleeDamageBaseAmount (1)
+** if attacker is not null: damage = 
+AdjustedBaseMeleeDamageAmount:
+-->
+
+== Stat Def Data ==
+{| {{STDT}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Melee Armor Penetration" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />MeleeArmorPenetration
+* '''Label:'''<br />melee armor penetration
+| Average armor penetration of all attacks in melee combat.<br id="n" /><br id="n" />This stat includes currently used weapon.
+|
+* Display Order:<br />'''110'''
+* Def Name:<br />'''PawnCombat'''
+* Label:<br />'''Combat'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Worker Class:''' StatWorker_MeleeArmorPenetration
+* '''Default Base Value:''' {{%|0}}
+* '''Min Value:''' {{%|0}}
+* '''To String Style:''' PercentZero
+* '''For Information Only:''' {{Good|true}}
+* '''Show Developmental Stage Filter:''' Child, Adult
+| -
+| 4100
+<!--</StatDef>-->
+|}
+
+{{nav|stats|wide}}

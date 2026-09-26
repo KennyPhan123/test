@@ -1,0 +1,109 @@
+<!--Top Nav Box-->
+{| align=center
+| {{Architect_Nav}}
+|}
+<hr>
+<!-- End of Nav -->
+{{Infobox main|temperature
+| name = Cooler
+| image = Cooler south.png
+| type = Building
+| type2 = Temperature
+| placeable = True
+| description = An air-cooling machine that fits into a wall. Cool air comes out one side, while hot exhaust comes out the other. Can be used to cool down rooms during summer, or to create a walk-in freezer.
+| size = 1 ˣ 1
+| minifiable = false
+| hp = 100
+| power = -200
+| mass base =
+| cover = 1
+| terrain affordance = Medium
+| heatpersecond = -21
+| flammability = 0.7
+| research = Air conditioning
+| work to make = 1600
+| resource 1 = Steel
+| resource 1 amount = 90
+| resource 2 = Component
+| resource 2 amount = 3
+| skill 1 = Construction
+| skill 1 level = 5
+}}
+{{Info|The '''cooler''' is a device that can be used to lower the [[temperature]] in a room by moving the heat to its other side.  This effect can maintain happy colonists during high outdoor temperatures, prevent heat stroke and prevent perishable items like [[food]] from spoiling. It requires [[power]] to operate.}}
+
+They are the high-tech upgrade to [[passive cooler]]s, requiring research and power, but not limited to low of {{Temperature|17}} and thus capable of refrigerating or freezing food.
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+{{Stub|section =1|reason=Lacking mechanical  detail on coolìng inc. rates}}
+Coolers take the place of a [[wall]] tile. If [[power]]ed, they will cool their front side (shown by a blue tile on placement), and conversely, will heat their back side (red tile). 
+
+Coolers will attempt to cool the room on the front side so long as the room temperature is higher than the target temperature. The target temperature is set by the gizmo that appears when selecting the cooler and defaults to {{Temperature |21}}.
+Coolers in operation are completely binary, having two states of power consumption, high and low.
+* '''High:''' A cooler that is actively cooling is in the high power state and consumes 200W. It will attempt to reduce the room temperature and will warm the other side. The cooler will stay in the state so long as the target temperature is cooler than the cooled room temperature.
+* '''Low:''' If the room temperature is at or below the target temperature, the cooler switched to this state and ceases cooling the cold side and warming the warm side. Power consumption reduces to 20 W.
+
+There is no change to the magnitude of the cooling effect - the target temperature is maintained simply by reaching the target and turning off until the room warms sufficiently to turn the cooler back on. As such some variation around the target should be expected, especially with only one cooler. 
+
+Surrounding heat and the room's size may make reaching the target temperature impossible and multiple coolers affecting the room may be necessary to do so. See the [[temperature]] page for more details. Note that if a cooler or group of coolers is insufficient to reach the target temperature, they will stay in high power mode indefinitely.
+
+The cooler will not function and stay in low power mode if a building or similar object with a passability of "impassable" is placed either in front or behind the cooler (i.e. in the red or blue tiles). Other objects will not prevent the cooler from functioning. A list of impassable objects can be seen {{#ask: [[Passability::impassable  ]] | limit = 0| searchlabel = here}}. As with all temperature changes, rooms must be enclosed and have a mostly complete [[roof]] in order to actually change from the outdoor temperature. The cooler will cease to function if the hot side of the cooler is greater than {{Temperature |165}}, where it will forcefully put itself into low power consumption. Coolers will not shutdown is the hot side is covered by a closed [[door]], allowing additional security.
+
+Coolers can theoretically cool 1800 degrees Celsius, total - 1 tile by 1800 degrees, 50 tiles by 36 degrees - but this is before considering outside temperature. Simple playtesting reveals that with an exterior temperature of {{Temperature|27|38}}, a single cooler can cool a room with a 10x10 exterior to a minimum temperature of {{Temperature|10|16}}. Under these conditions, 2-3 coolers were required to maintain a constant (frozen) {{Temperature|-1|0}} within the same space.
+
+Coolers function as very frail [[steel]] [[wall]]s, having one third the hp. If a [[raider]] decides to break into a building, they may decide to destroy the weak air conditioning unit as an easy point of entry.
+
+{{OdysseyIcon}} Despite being air conditioning units, coolers are [[airtight]] and remain functional in [[orbit]], and may be used to reduce excess heat in a [[gravship]].
+
+== Analysis ==
+Coolers are often required to create freezers. Perishable items will spoil if not kept cool. Cold temperatures will slow down spoiling, until the freezing point, a temperature of {{Temperature|0}}, which prevents spoilage completely.  In many warmer [[biomes]], spoilage is a major obstacle in maintaining a food supply, and thus freezer construction is generally considered a high priority.
+
+If a room is colder than its surroundings, then heat will leak inside. Heat leaks in more when pawns open [[door]]s. You can create an "airlock" with multiple doors; as one door is opened, the next closes, which keeps heat out. If using [[autodoor]]s, make sure to leave enough space between each one. You may want to set a cooler a few degrees below {{Temperature|0}} to keep a slight buffer against temperature gains from opening doors, cooler breakdowns, power outages, etc. 
+
+During a [[heat wave]], or inside harsh [[biome]]s, like a Desert, coolers are useful to regulate pawn temperature. Too far beyond a pawn's [[Maximum Comfortable Temperature]] will make them vulnerable to [[heat stroke]] and gives the [[Thoughts#Hot|''Hot'']] negative moodlet. Having a bedroom above {{Temperature|26}} gives colonists the {{Thought|desc=I had to sleep in unbearable heat. Can't we have air conditioning?|label=Slept in the heat|value=-4|stack=1|duration=1}}; [[apparel]] does not alter this fact.
+
+If you have multiple coolers in a room, consider having each cooler be 1 degree lower than the last - one will actively cool the room, while the others will be in low power state.
+
+{{OdysseyIcon}} [[Vac barrier]]s can be built to help insulate freezer rooms by blocking room to room temperature flow.
+
+=== Hot side ===
+[[File:Freezer chimney.png|thumb|left|250px|Freezer using a 1x1 "chimney".<br>A small, unroofed area to let the heat out.]]
+The hot side is rarely useful. It could be used for heating a base when the outdoors temperature is uncomfortably cold, but not freezing - specifically, between {{Temperature|1|16}}. This isn't recommended if the outdoors temperature often goes above {{Temperature|20}}; otherwise, the cooler will make your colony unbearably hot when you actually need the freezing. You could also point the hot side at a [[sun lamp#Analysis|greenhouse]], supplementing [[heater]]s during the cool-but-not-freezing season.
+
+Regardless, the hot side must be accounted for. Without a way to exhaust the heat, it will leak back to the cooler room, making it hard to actually cool. Pointing the cooler's hot side outdoors would be the simplest way to do so.
+
+Alternatively, you can point the hot side to a "chimney", an unroofed, 1x1 or so room. Unroofed rooms will always maintain the outside temperature, meaning that the cooler's hot side is completely mitigated by a chimney. In the picture to the left, a [[fence]] is used to prevent [[drop pod]]s ([[comms console|orbital trader]] and [[Raider#Mid-base drop pods|raider]]) from landing inside.
+
+Interestingly enough, [https://www.reddit.com/r/RimWorld/comments/ynlhgu/a_definitive_guide_to_efficient_freezers_14/ Testing] has shown that by pointing the hot side of a cooler into an open door in the same room as the cold side is pointed to is able to somehow significantly increase the efficiency of the cooler. This is due to the open door's temperature being automatically set to be the average of the temperatures on either side of the door. When both sides of the open door are cold, the door cools down after the cooler's hot side heats it, effectively deleting the cooler's heat and allowing it to violate thermodynamics and operate much more efficiently.
+
+{{clear}}
+
+== Further test results ==
+* Outdoor temp: {{Temperature|46}}
+: Room size (inside): 5x5    
+: (outer dimension single wall): 6x6
+: Cooler: 1
+: = Temperature: {{Temperature|-3|-2}}
+
+* Outdoor temp: {{Temperature|46}}
+: Room size (inside): 5x5
+: (outer dimension <u>double</u> walls) :7x7  
+: Cooler: 1
+: = Temperature: {{Temperature|-14|-12}}
+
+: Note: The 4 outer corner nor the 4 inner corner walls seem to matter. The material doesn´t seem to matter either.
+
+== Gallery ==
+<gallery>
+Cooler south.png|Facing south
+Cooler north.png|Facing north
+Cooler east.png|Facing east
+</gallery>
+
+== Version history ==
+*[[Version/0.8.657|0.8.657]] - Added
+
+{{Nav|temperature}}
+[[Category:Temperature]]

@@ -1,0 +1,69 @@
+{{Infobox main|production
+| name = Stonecutter's table
+| image = StonecuttersTable.png
+| imagesize = 192px
+| description = A work table with saws and chisels for cutting stone chunks into usable blocks.
+| type = Building
+| type2 = Production
+| placeable = true
+| path cost = 50
+| passability = pass through only
+| cover = 0.5
+| minifiable = true
+| size = 3 ˣ 1
+| mass base = 20
+| flammability = 1
+| hp = 180
+| sell price multiplier = 0.7
+| cleanliness = -5
+| terrain affordance = heavy
+| facility = tool cabinet
+| research = Stonecutting
+| work to make = 2000
+| stuff tags = Metallic, Woody
+| resource 1 = Stuff
+| resource 1 amount = 75
+| resource 2 = Steel
+| resource 2 amount = 30
+| room role = Workshop
+| work table not in room role factor = 0.8
+}}
+{{Info|The '''stonecutter's table''' is a [[production]] bench used to cut [[stone chunk]]s into [[stone blocks]].}}
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+Stonecutting is a [[crafting]] task, but gives no experience points. Each stone chunk will make 20 stone blocks of the respective stone type, and the crafting skill level of the pawn does not influence the yield. Only the [[general labor speed]] of the crafting pawn influences the speed at which chunks are cut.
+
+Work bills can be created at the stonecutter's table for each kind of stone chunk, as well as a special bill that will use any type of stone chunk available.
+
+Chunks for the active work bills will be taken from anywhere in the bills' ingredient radii, even if they're not in a stockpile and not marked for hauling.
+
+When setting up the work bills, keep in mind that the 'Do X times' bill counts the amount of ''chunks'' that are cut, not the amount of stone blocks produced. Each chunk produces 20 stone blocks, so in order to produce 100 stone blocks, the bill would need to repeat only 5 times. Conversely, the 'Do until X' bill actually counts the resulting stone blocks.
+
+{{Cleanliness Note}}
+
+{{Recipe List}}
+
+== Analysis ==
+In order to make any of the several types of stone block, it is easiest to create the universal work bill, and then select only the desired rock types from the list of allowed ingredients.
+
+It is more efficient to create a dumping stockpile zone close to the work station, and adjust the ingredient radius accordingly. Especially when creating an infinite work bill, your pawns will eventually travel very far to gather the remaining stone chunks, unless the ingredient radius has been limited manually.
+
+{{Stonecutting maximization}}
+
+{{Building Stats Table}}
+
+== Version history ==
+* [[Version/0.2.363|0.2.363]] - Added.
+* [[Version/0.3.410|0.3.410]] - Now requires research.
+* [[Version/0.10.785|0.10.785]] - Can now be made of various stuffs.
+* [[Version/1.6.4850|1.6.4850]] - Fix: Butcher yield storyteller setting affecting "make any stone blocks" bill yield.
+
+<gallery>
+OldStonecuttersTable.png|Original Stonecutter's Table Sprite
+</gallery>
+
+{{Nav|production|wide}}
+[[Category:Production]] [[Category:Resource Production]]

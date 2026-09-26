@@ -1,0 +1,163 @@
+{{Infobox biome
+| name = Extreme desert
+| image = ExtremeDesert.png
+| type = Biome
+| texture = ExtremeDesertTexture.png
+| canbuildbase = Yes
+| allowFarmingCamps = false
+| animal density = 0.1
+| plant density = 0.002
+| movement difficulty = 1
+| max rainfall = 340
+| min temperature = 4.82 <!-- Derived from formula. Desert will still get chosen over this below 7.647°C. -->
+| forageability = 0
+| wild plant regrow days = 35
+| disease mtb days = 90
+| description = An extremely hot, dry area, devoid of almost all life. Searing heat and a near total lack of arable land make it very difficult to survive here.<br/>Searing heat and a near total lack of arable land make survival here a challenge.
+| Extreme Biome = true
+<!-- weather -->
+| clear = 18
+| rain = 1
+| dry thunderstorm = 1
+| rainy thunderstorm = 1
+| hard snow = 1
+| soft snow = 1.5
+| gray pall = 1
+| sandstorm = 2
+<!-- fish -->
+| max fish population = 240
+| freshwater_common_guppy = Yes
+| freshwater_uncommon_tilapia = Yes
+| saltwater_common_bluefish = Yes
+| saltwater_uncommon_tuna = Yes
+}}
+'''Extreme desert''' is a hot and dry [[biome]] in RimWorld.
+<!-- return tile.temperature * 2.7f - 13f - tile.rainfall * 0.14f -->
+== Summary ==
+The hot temperatures can cause problems for colonists and tamed animals. Its warm enough for growing plants outdoors, but it has to be done in stony patches around hills and mountains. Even though [[potatoes]] grow better in stony soil, you need to plant [[rice]] first so you will not starve while waiting for [[potatoes]]. [[Berries|Strawberries]] are also a good idea since there is no wood for cooking. Later [[Hydroponics basin|hydroponics]] can be used instead of ground. This biome has patches of soft sand which prevent building, but can be removed with [[moisture pump]]s. Animal migrations may occur, about once every other year.
+
+In the lists below the number in brackets represents the relative commonality.
+
+=== Flora ===
+<div class="ul-column-width-200">
+{{#ask: [[Type::Plant]] [[Lives In Extreme Desert::>>0]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Extreme Desert
+}}
+</div>{{#set:Flora Commonality Sum | {{#expr: {{#ask: [[Type::Plant]] [[Lives In Extreme Desert::>>0]] | ?Lives In Extreme Desert = | mainlabel=- | sep=+ }} }} }}{{#set:Grazing Score|{{Grazing Score}} }}
+
+=== Fauna ===
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Extreme Desert::>>0]] [[Coastal Animal::false]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Extreme Desert
+}}
+</div>{{#set:Fauna Commonality Sum | {{#expr: {{#ask: [[Type::Animal]] [[Lives In Extreme Desert::>>0]] [[Coastal Animal::false]] | ?Lives In Extreme Desert = | mainlabel=- | sep=+ }} }} }}
+
+Additionally, these animals can spawn in coastal maps:
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Extreme Desert::>0]] [[Coastal Animal::true]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Extreme Desert
+}}
+</div>
+
+If the map is [[polluted]],{{BiotechIcon}} then the game may choose to spawn in wild animals from this list instead:
+<div class="ul-column-width-200">
+{{#ask: [[Type::Animal]] [[Lives In Extreme Desert (Polluted)::>0]]
+ | format = template
+ | template = Icon List
+ | link = none
+ | sort = From DLC, Name
+ | default = None.
+ | ?Lives In Extreme Desert (Polluted)
+}}
+</div>
+
+=== Diseases ===
+Extreme Desert has a disease {{MTB}} of 90 days. The following diseases can occur in a Extreme Desert:
+{| {{STDT|c_07 sortable}}
+! Disease
+! Commonality{{#set:Disease commonality sum|{{#expr:100+80+40+40+20+20+100+80+10}} }}
+|-
+| [[Flu]] || 100{{#set:Flu commonality|100}}
+|-
+| [[Plague]] || 80{{#set:Plague commonality|80}}
+|-
+| [[Gut worms]] || 40{{#set:Gut worms commonality|40}}
+|-
+| [[Muscle parasites]] || 40{{#set:Muscle parasites commonality|40}}
+|-
+| [[Fibrous mechanites]] || 30{{#set:Fibrous mechanites commonality|30}}
+|-
+| [[Sensory mechanites]] || 30{{#set:Sensory mechanites commonality|30}}
+|-
+| [[Flu#Animals|Animal flu]] || 100{{#set:Animal flu commonality|100}}
+|-
+| [[Plague#Animals|Animal plague]] || 80{{#set:Animal plague commonality|80}}
+|-
+| [[Organ decay]] || 10{{#set:Organ decay commonality|10}}
+|}
+
+=== Fish ===
+{{Odyssey|section=1|No category}}
+The table below contains the list of all of the fish that can be caught - as well as where they can be caught.
+{| {{STDT|c_23 sortable}}
+! Fish
+! Water body
+! Rarity
+|-
+| [[Guppy]] || Freshwater || Common
+|-
+| [[Tilapia]] || Freshwater || Uncommon
+|-
+| [[Bluefish]] || Saltwater || Common
+|-
+| [[Tuna]] || Saltwater || Uncommon
+|}
+
+== Analysis ==
+{{See also|Extreme Desert Guide}}
+
+The extreme desert is one of the harshest biomes in the game, although a standard extreme desert is not as difficult as the [[sea ice]]. There is arable land, natural stone, ores, and natural structures to take advantage of, making it easier to reach stability. The following difficulty analysis is for regular extreme deserts:
+
+* '''Food and Growing: Difficult''' - Food can be an issue when starting out due to the lack of animals and poor soil. However, arable land exists, and growing can be done year-round (with normal temperature settings). Once the first batch of crops finishes growing, a small colony's worth of food can be sustained.
+
+* '''Disease: Easy-Moderate''' - Disease events are uncommon, although no [[wild healroot]] grows there, and growing space is limited for regular healroot.
+
+* '''Temperature: Difficult (regular settings) to Extreme (hot world temperature)''' - Extreme desert is not nearly as hot as the [[sea ice]] is cold. Average summer temperatures are typically below {{Temperature|36}}, the normal [[heatstroke]] threshold, although heatstroke can still occur during the daytime and from [[heat wave]]s. The near total lack of [[wood]] makes building an emergency [[passive cooler]] harder. Once electric [[cooler]]s and/or [[duster]]s are established, temperature should no longer be an issue. If the global temperature is increased in the world-generation settings, extreme deserts can become hot enough to prevent crops from growing.
+
+* '''Fires: Easy''' - There is basically no plant life, so [[flashstorm]]s are not a concern unless lightning hits your colony directly, and wildfires essentially don't exist. Rain is rare, so if a manhunting [[boomalope]] or a raider lights your flammable base on fire, it is unlikely that rain will naturally happen.
+
+* '''Predators: Easy''' - The only natural predator is the [[fennec fox]], which is half the size of an adult human and has equal speed to a base human.
+
+Extreme desert is overall a difficult biome. While it is not difficult to reach stability, the extreme desert remains unforgiving if/when something goes wrong, especially during the early game. Once a sufficient [[hydroponics]] farm can be established, the average difficulty is similar to other biomes, and arguably easier due to the reduced diseases.
+
+=== Dune survival ===
+In the [[dunes]],{{OdysseyIcon}} there is no soil and no ores to mine. Food is limited to hunting the few animals around, trading, and [[cannibalism]]. Cannibalism is the main reliable food source in the early game. Raids happen at the usual rate, and with a colonist count of 1, the storyteller's [[population intent]] will kick in to provide more food via potential recruits. [[Fishing]]{{OdysseyIcon}} is possible if a dunes tile generates on a coast.
+
+== Gallery ==
+<gallery>
+ExtremeDesert.png|An Extreme Desert
+<!-- ExtremeDesertPolluted.png|A [[polluted]] Extreme Desert {{BiotechIcon}} -->
+ExtremeDesertTexture.png|Extreme desert's texture on the world map
+</gallery>
+
+== Version history ==
+* [[Version/0.13.1135|0.13.1135]] - Added
+
+{{nav|biomes|wide}}
+[[Category:Biomes]]
+[[Category:Hot Biomes]]

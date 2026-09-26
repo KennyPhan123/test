@@ -1,0 +1,84 @@
+{{Royalty}}{{Infobox main|exotic
+| name = Techprint
+| image = Techprint.png|Techprint
+| description = The physical form of techprints can range from scraps of paper with diagrams, all the way to advanced self-contained teaching machines. Regardless of form, they play the same role. They give your researchers the confidence that an idea is possible, and a rough idea of the designs in more established societies. Your researchers need the foundational knowledge offered by techprints to know where to start on a given technology. Only after enough techprints have been applied can your researchers work out the fine details of how to make use of the technology in your particular situation. Applying techprints to a satisfied project fulfills half the remaining research progress. In addition, researchers always gain a boost to their intellectual skills when applying techprints, even on already-completed technologies.
+<!-- Base Stats -->
+| type = Exotic item
+| hp = 100
+| deterioration = 2
+| marketvalue = 1000
+| mass = 0.03
+| flammability = 1
+| stack limit = 10
+| path cost = 14
+| rotatable = false
+<!-- Technical -->
+| defName = Techprint
+| always haulable = true
+<!-- Unused -->
+| draw gui overlay = false
+| e type = Medicine
+| graphic class = Graphic_Single
+| graphic path = Things/Item/Special/Techprint
+| label = Techprint
+| parent name = ResourceBase
+| resource readout priority = Middle
+| selectable = true
+| sound drop = Standard_Drop
+| sound interact = Standard_Drop
+| thing class = ThingWithComps
+| use hit points = true
+}}
+{{Main|Research}}
+'''Techprints''' are exotic consumable items associated with a specific research project and which must be consumed to unlock access to that research project.
+
+== Acquisition ==
+Techprints cannot be crafted. Instead they can be [[Trade|purchased]] from visitors, caravans, faction bases, and trading ships (combat suppliers provide 1, exotic goods traders provide 3), or obtained as a [[quest]] reward. They can also be found inside [[ancient shrine]]s and [[Quests#Ancient_Complex|ancient complexes]] {{IdeologyIcon}}.{{Check Tag|Ancient Mechanitor Complex?|If so, also Biotech}}
+
+Note that not all types of techprints are available from outlander traders, with the more advanced techprints like [[cataphract armor]] only tradable from the [[empire]] and [[trade ship]]s. This can be viewed by selecting the corresponding research in the research tab.
+
+Traders will only stock and sell techprints for research that the colony doesn't already have unlocked.
+
+== Summary ==
+Techprints can be applied to research benches to unlock the specific research project it is associated with for research and completion. The associated project will be mentioned in the techprint's name and projects that require techprints will note that information in the Research menu. Most projects require only a single techprint to unlock, but the [[Research#Cataphract_armor|cataphract armor]] research requires two. For this purpose, all techprints for the same project are interchangeable - any two techprints of the right type will function. 
+
+Upon use, a researcher will bring the techprint to a research bench of any sort and proceed to consume it, gaining 2000 [[Intellectual]] XP in the process. This XP is unaffected by the researcher's [[passion]] or learning rate.  If a [[hi-tech research bench]] is used for this purpose, it need not be powered. 
+
+Applying the techprint does not require that any prerequisite research be finished, or even the appropriate structures (e.g. hi-tech research bench, multi-analyzer) to be used, however using the techprint to unlock a project does not complete the project, it only allows it to be researched as normal. If the project has prerequisites or required structures, they will still be necessary to research the project.
+
+Applying a techprint of a project that is already unlocked will grant progress on the project equal to half of the remaining points to complete the project. This will still grant the Intellectual XP to the researcher, and will do so even if the project has been completed. Due to rounding errors, it is possible to reach 100% research points on a given project. However, the project will ''not'' be considered complete until a pawn gets a final point of research at the proper research bench, so techprints cannot be used to sequence break.
+
+All techprints have a [[Sell_Price_Multiplier|Sell Price Multiplier]] of x10%.
+
+=== Variations ===
+These are the different technologies you can obtain techprints for with the [[Royalty DLC]] active: 
+* [[Research#Artificial metabolism|Artificial Metabolism]]
+* [[Research#Brain wiring|Brain Wiring]]
+* [[Research#Cataphract armor|Cataphract Armor]]
+* [[Research#Circadian influence|Circadian Influence]]
+* [[Research#Compact weaponry|Compact Weaponry]]
+* [[Research#Flesh shaping|Flesh Shaping]]
+* [[Research#Healing factors|Healing Factors]]
+* [[Research#Jump packs|Jump packs]]
+* [[Research#Molecular analysis|Molecular Analysis]]
+* [[Research#Neural computation|Neural Computation]]
+* [[Research#Poison synthesis|Poison Synthesis]]
+* [[Research#Specialized limbs|Specialized Limbs]]
+* [[Research#Skin hardening|Skin Hardening]]
+
+== Analysis ==
+Outlanders will only ever sell the techprint for Jump packs. If wanting other techprints, they can be obtained by trading with the [[empire]] (which requires the Knight/Dame [[title]]) or with [[trade ship]]s, or obtain them from other sources. Note that trade ships from the [[traders guild]]{{OdysseyIcon}} will supply any type of techprint despite the guild not appearing as a faction in the research tab. 
+
+Visiting multiple empire [[faction base]]s can be a fast way to farm techprints if [[passenger shuttle]]s{{OdysseyIcon}} or other means of fast travel are available. Otherwise, calling trader caravans from the empire via [[comms console]] is an efficient way to hunt them, always providing 1 techprint on a 4 day cooldown. Exotic trade ships from the [[traders guild]]{{OdysseyIcon}} provide 3 techprints on a 15 day cooldown, and do not require a title to trade with.
+
+Because traders will not offer techprints that have already been unlocked, buying "unwanted" techprints will make it more likely for a desirable techprint to be stocked in the future. Buying all the techprints will not result in an increase in other items, as techprints occupy their own category in trader inventories.
+
+Techprints provide a flat XP bonus, so applying techprints on pawns with low Intellectual skill and no passion would provide the greatest boost.
+
+== Version history ==
+* 1.1 - Added
+* [[Version/1.1.2647|1.1.2647]] - It has been changed to no longer work without the Royalty DLC. Previously mods could add research requiring techprints, even without the DLC.
+* [[Version/1.4.3523|1.4.3523]] - Techprints now give a flat 2000xp bonus, unaffected by learning rate.
+* [[Version/1.6.4630|1.6.4630]] - Fix: Techprints in loot (e.g. ancient danger) don't respect techprint commonality.
+
+[[Category:Exotic Item]]

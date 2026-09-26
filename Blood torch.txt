@@ -1,0 +1,75 @@
+{{Biotech}}
+{{Project|Psyfocus}}
+{{infobox main|furniture
+| name = Blood torch
+| image = Blood torch.png
+| description = A specially-treated wooden torch that produces a red light over a large area. Sanguophages gather around torches like these during their ceremonial meetings. The sanguine glow is particularly pleasing to individuals with the bloodfeeder gene. It can be automatically refueled with wood, and produces a small amount of heat
+| type = Building
+| type2 = Furniture
+| placeable = true
+| mass = 1
+| marketvalue = 24
+| path cost = 24
+| passability = pass through only
+| cover = 0.15
+| minifiable = false
+| size = 1 ˣ 1
+| flammability = 0
+| hp = 75
+| glowradius = 10
+| glowcolor = (460, 220, 205)
+| heatpersecond = 3.5
+| maxheattemperature = 23
+| terrain affordance = light
+| deconstruct yield = nothing
+| destroyyield = nothing
+| fuel filter = Wood
+| fuel capacity = 20.0
+| fuel consumption rate = 1.5
+| initial fuel percent = 0.1 <!-- 10% -->
+| fuel consumption per tick in rain = 0.0006
+| thingCategories = BuildingsMisc
+| page verified for version = 1.4.3580
+}}
+The '''blood torch''' is a piece of [[furniture]] that burns [[wood]] to light an area, while also generating a small amount of [[Temperature|heat]]. It also provides a small [[mood]] buff to [[sanguophages]] and other [[bloodfeeder]]s.
+
+== Acquisition ==
+Blood torches cannot be crafted. Instead they are created during the [[Quests#Bloodthirsty Parley|Bloodthirsty Parley]] quest type - note that the name of each quest in game varies. During this quest a location on your map will be chosen, a blood torch will appear at that spot, and between two and four [[sanguophage]]s will meet. Once placed, the torch will be left behind, regardless of the outcome of the quest. After this point, it can be refueled, uninstalled and reinstalled as any other building.
+
+== Summary ==
+[[File:Blood torch illumination area.png|300px|thumb|left|The white area (7 tiles out) is 50% illumination, required for best [[Surgery Success Chance Factor|surgery success chance]]; the yellow (8th tile) represents 30% or better, adequate for all general labor, avoiding [[mood]] penalties, and for growing [[Decorative Plants|decorative plants]] indoors in [[plant pot]]s.]]
+A blood torch outputs [[light]] in a 10 tile radius, with the nearest {{P|Light Radius}} tiles at or above 30% light level and considered lit. It heats the room to a maximum [[temperature]] of {{temperature|23}} at a rate of 3.5 heat per second.{{Check Tag|Exact mechanic unclear|Provides comparison with other heat sources but doesn't explain how much it actually heats}}
+
+The blood torch consumes {{Icon Small|wood}} 1.5 [[wood]] per day as long as it is lit. If lit while unroofed under the [[rain]], it consumes an additional {{Icon Small|wood}} 0.0006 wood per {{ticks|1}}, or a total of {{Icon Small|wood}} {{#expr: 1.5+ (0.0006*60000)}} wood per day. It can hold up to {{Icon Small|wood}} 20 wood at a time, for a maximum run time of {{#expr:20/1.5 round 2}} days, or {{#expr:24*20/(1.5+ (0.0006*60000)) round 2}} hours if in constant rain. It is constructed with a full fuel capacity. Fuel is delivered to the torch by a [[Work#Haul|haulers]] as long as refueling is enabled. 
+
+It cannot be "turned off" or paused, only deconstructed, in which case ''no wood'' is recovered, regardless of any "fuel" remaining.
+
+It functions as a [[meditation focus]] for [[psycast]]ers with the Flame focus.{{RoyaltyIcon}} 
+
+{{Pyromaniac Building Note}} Additionally, pawns with the [[bloodfeeder]] gene gain {{Thought|desc=No flame burns as softly as a blood torch.|label=blood torch|value=+2|stack=1}} if there is a lit blood torch that is within 8 cells and in the same room (if any).
+
+Despite being similar to the [[darktorch]],{{IdeologyIcon}} it does not generate [[darklight]].{{IdeologyIcon}}
+
+== Analysis == 
+=== Light and heat ===
+{{Main|Torch lamp}}
+It is generally not resource and work-time efficient to use once [[Electricity]] has been researched, however its grid independence and immunity to power outages and [[solar flare]]s make it very useful in niche applications even beyond this point.
+
+It consumes wood at a 3/4 the rate of a regular torch lamp - if the area requiring lighting is not large enough to require the additional radius of the torch lamp, the blood torch will be more efficient.
+
+=== Mood buff ===
+The mood buff it offers is small, and doesn't persist. As such, it is rarely worth seeking out a blood torch for the mood buff that you would not otherwise acquire anyway. If one is acquired, however, it can be worth keeping fueled and placed to benefit any bloodfeeders so long as [[wood]] is not in short supply.
+
+Due to the lack of persistence, ideally the torch should be placed where the target bloodfeeder will stay on the radius long term. For example, crafters and researchers are ideal targets, while a grower or animal handler likely won't stay in one area long enough for the small buff to matter.
+
+== Gallery ==
+<gallery>
+Blood torch.png| Lit
+Blood torch unlit.png| Unlit
+</gallery>
+
+== Version history ==
+* [[Biotech DLC]] Release - Added.
+
+{{nav|furniture|wide}}
+[[Category:Furniture]] [[Category:Lamp]]

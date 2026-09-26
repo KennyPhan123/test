@@ -1,0 +1,77 @@
+{{BackToTutorials}}
+{{:Modding Tutorials/Under Review}}
+<br/>
+As the pool of mods gets bigger and the game's development stabilises, compatibility between mods becomes more and more important. Prior to Alpha 17, compatibility was often an afterthought, or technically unfeasible. Since then, with the advent of tools like xpath-based [[Modding Tutorials/PatchOperations| PatchOperations]] and [[Modding Tutorials/Harmony| Harmony]], there is no technical excuse for mod conflicts. With these two tools, all mods can co-exist and alter anything in their respective domain without interfering with the operation of other mods. All that is required is at least one, but preferably two modders willing to cooperate. 
+
+=Mod conflicts=
+Two or more mods can alter the same thing. If both adhere to best practices, this can happen with minimal or no issues. The most common cause of XML mod conflicts is [[Modding_Tutorials/XML_file_structure#Inheritance| overwriting (abstract) bases]], overwriting Defs wholesale and [[Modding Tutorials/Harmony| destructive prefixes]]. Note that while two mods can both change the same thing, we can't really speak of a conflict until unintended or undesired behaviour arises.
+
+=Avoiding mod conflicts=
+
+* Don't overwrite abstract bases. You can use [https://github.com/RimWorld-CCL-Reborn/AllYourBase this tool] to easily find mods which don't adhere to best practices. 
+* Stay in scope. Do your patching defensively.
+* Don't overwrite vanilla's Defs unless you absolutely have to. If you just want to change just a few values, use [[Modding Tutorials/PatchOperations| xpath]].
+* In C#, keep in mind that things can and will be null. Even more so when dealing with other mods: sometimes mods have to be creative with their solutions (and other times their creator just plain has no idea what they're doing).
+
+==Defensive patching==
+Modders should keep in mind that there are more mods than just theirs and Core. Users run with dozens, if not hundreds of mods. Always try to limit your scope so your alterations only apply to those things you intend to change.
+
+===XML===
+When adding something (like a stackLimit to Thoughts, or comps to ThingsWithComps), keep in mind you're likely not the first. Here is an example of a defensive xpath:
+
+<source lang="XML">
+<!-- Add /comps/li/compClass if there are no comps yet. -->
+<!-- Add /li/compClass to /comps if exists (i.e. other mod already added the comps field first) -->
+<Operation Class="PatchOperationConditional">
+    <xpath>/Defs/WorldObjectDef[defName="Caravan"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+        <xpath>/Defs/WorldObjectDef[defName="Caravan"]</xpath>
+        <value>
+            <comps>
+                <li>
+                    <compClass>MyNamespace.MyComp</compClass>
+                </li>
+            </comps>
+        </value>
+    </nomatch>
+    <match Class="PatchOperationAdd">
+        <xpath>/Defs/WorldObjectDef[defName="Caravan"]/comps</xpath>
+        <value>
+            <li>
+                <compClass>MyNamespace.MyComp</compClass>
+            </li>
+        </value>
+    </match>
+</Operation>
+</source>
+
+===C#===
+C# compatibility issues generally fall into these categories:<br/>
+* Destructive prefixes
+::These should be avoided if at all possible. In a lot of cases, you can substitute with a postfix instead. You can also limit the impact of your destructive prefix by staying in scope as much as possible. It's entirely feasible to check for a def, type, comp, whatever, and determine if you should really return false in all cases.
+* Null references
+::You're probably not doing enough null-checking. Null is a valid value for a lot of things in RimWorld.
+* Weird interactions
+::These have to be handled on a case by case basis.
+
+==Mod load order==
+If one mod wants to make [[Muffalo]]s green and another wants to make them red, one of them is going to win. The general understanding of mod load order is that "mods on the bottom win and overwrite mods on top".
+
+As with most things, the truth is a bit more fine-grained. It's true that if "Core, Mod 1, Mod 2, Mod 3" is the load order, and it's true that the last mod in the load order "wins", but the actual load order is a bit different.
+
+# XML
+# xpath
+# C#
+
+The game first loads all XML (defs, mostly) from Core, Mod 1, Mod 2, Mod 3
+Then it applies all xpath patches from  Mod 1, Mod 2, Mod 3
+Then it loads the C# from Mod 1, Mod 2, Mod 3
+
+Core doesn't use xpath or load any C#, so they're not in that list. The C# for RimWorld is already loaded by that point, roughly speaking.
+So if Mod 3 overwrites something in XML, but Mod 2 overwrites it in xpath and Mod 1 overwrites it in C#, it's Mod 1 that wins -- even though Mod 3 and Mod 2 come after it in the load order.
+
+There are a few things that matter with load order:
+- Does the mod require a different mod? Examples of that are mods that require HugsLib, Proper Shotguns, Turret Extensions, Alien Races, JecsTools, whatever. If you are missing a dependency, you'll notice: You get a nice red error saying something like
+Could not find type named TurretExtensions.CompProperties_Upgradable from node <A lot of XML> and missing a dependency like that will put the entire game in a corrupted and unplayable state.
+
+[[Category:Modding tutorials]]

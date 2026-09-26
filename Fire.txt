@@ -1,0 +1,120 @@
+{{TOCright}}
+{{Rewrite|reason=[[Version/1.5.4062]] changed how flammability interacts with Flame damage. Needs to be updated on [[Flammability]], [[Damage Types#Flame]]/[[Damage Types#Burn]], and [[Fire]] - note changelog states that it only affects buildings but don't assume. Verify all mechanics with testing.}}
+{{Stub|reason=Mechanics and numbers (heat production / fire spread / etc.). See also [[Damage Types#Flame|Flame Damage]]}}
+[[File:Fire.png|500px|thumb|right|This fire is getting out of control; if allowed to spread, it could soon ignite the nearby wooden walls, doors, floors and furniture.]]
+
+<onlyinclude>'''Fire''' is a destructive force capable of destroying plants, buildings, and pawns alike. It spreads via embers that travel up to two tiles, and will start another fire if they land on something [[flammable]]. Fire may spread far and wide if left unchecked. Fire also causes a massive surge of [[temperature|heat]] when indoors. While inherently dangerous, fire can be used as a weapon or tool.
+
+[[Colonist]]s capable of [[Work#Firefight|firefighting]] will only fight fires in your [[Home area]], although [[draft]]ed pawns will douse adjacent fires, anywhere.</onlyinclude>
+
+== Sources of fire ==
+{{stub|section=1|reason=List likely incomplete}}
+* Temperatures above {{Temperature|235}} will ignite flammable items and structures.
+* Created from [[molotov cocktail]]s, [[incendiary launcher]]s,  [[incendiary shell]]s and their respective [[IED incendiary trap|IED traps]], [[phoenix armor]],{{RoyaltyIcon}} [[flamebow]]s,{{BiotechIcon}} [[incinerator]]s{{AnomalyIcon}} and the [[mini-flameblaster]]{{BiotechIcon}} of [[scorcher]]s{{BiotechIcon}} or the [[inferno cannon]] of [[centipede burner]]s.
+* Created from the explosions of a [[doomsday rocket launcher]], [[orbital power beam targeter]], and [[diabolus]]{{BiotechIcon}}.
+* Humanoid [[raider]]s may light your colony's objects on fire, if there are no colonists available to fight.
+* Human pawns will spontaneously start fires during a [[Mental_break#Fire_starting_spree|fire starting spree]] [[mental break]].
+* Created from fire spew attacks from pawns with the [[fire spew]]{{BiotechIcon}} gene, notably [[impids]]{{BiotechIcon}}.
+* [[Boomalope]]s and [[boomrat]]s will cause fire on [[death]].
+* [[Weather|Lightning]] will cause fire. [[Rain]] will quickly put it out, but dry thunderstorms and [[Events#Flashstorm|Flashstorm]]s won't have that.
+* [[Power conduit|Conduit]] explosions (the [[short circuit]] event) will cause fire.
+
+== As a hazard ==
+Fire is capable of destroying crops, resources, structures, and can injure or kill pawns. Fire can lead to [[explosion]]s or [[roof collapse]] which can destroy even non-flammable items. 
+
+== Fire spread ==
+[[File:Fire Spread RimWorld 1.4.png|500px|thumb|left|Fire can only spread in the orange tiles (2 straight or 1 diagonal and 1 straight).]]
+
+Fire spreads by:
+* Direct Ignition: A flame directly adjacent to the tile with flammable material
+* Embers: They can jump over a tile, i.e. tiles that are 2 tiles away can be ignited by embers
+* Indoors Room Temperature: Starting from {{Temperature|235}} fire can spread everywhere in the room
+
+=== Basic prevention ===
+The most important step in preventing your entire colony from burning to the ground is to build using non-flammable materials like [[stone]] or [[plasteel]], especially [[wall]]s.
+
+Firebreaks are also useful to halt the spread of fire in a particular direction. These should be two tiles wide and can be built around colonies, crops, or other important structures. Options include:
+* '''Non-flammable [[floor]]ing''', typically [[concrete]] or stone tile. This is best if the firebreak area needs to permit colonist and/or animal movement.
+* '''Stone fences''', if movement speed across the firebreak is not a concern.
+* '''[[Stone chunk]]s''' or '''[[steel slag chunk]]s''', hauled into a stockpile. This is possible even before [[Research#Stonecutting|stonecutting]] has been researched. Be aware that your colonists may deplete the stockpile when performing stonecutting or smelting tasks.
+
+[[Firefoam]] in some form is a great way to stop fires from getting out of control. For maximum protection, a [[firefoam popper]] can be placed in every valuable room.
+
+=== Pawns ===
+Pawns will catch fire if on top of or adjacent to a burning item, hit by an attack from an incendiary weapon, or hit by a lightning strike.
+A pawn on fire will immediately enter a temporary "on fire" [[mental break]], run around uncontrollably for several seconds, then slowly extinguish themselves or enter a body of water.
+ 
+In their panic, pawns on fire will not attack and may uncontrollably run in to unsafe areas. The player can prioritize a different colonist to help put out the flames of their burning comrade. Also note that pawns on fire can spread fire. 
+
+While on fire, a pawn will receive 2 heat damage per second regardless of the flame size. They will typically receive burns on several random body parts. Heat damage has no armor penetration and is therefore easily affected by heat resisting apparel like [[devilstrand]]. If the fire is not extinguished, eventually a pawn will become [[Injury#Shock|incapacitated]] and burn until death.
+
+=== Interiors ===
+At higher temperatures (above ~235C/455F/508K), flammable items, flooring, and pawns can spontaneously ignite, and an orange haze effect will appear in the room. Room temperature depends on the number and duration of fires, insulation, unroofed tiles, and the ambient temperature, but it will generally return to normal within 1 day.
+
+Pawns trying to put out indoors fires may collapse from [[Injury#Heatstroke|heatstroke]] and will die if not rescued. Remove some roof tiles via [[Zones]] or hold one of the doors open before making a rescue attempt. [[Firefoam popper]]s or [[firefoam turret]]s may be hastily installed near an out-of-control inferno, too.
+
+=== Objects ===
+Objects and structures on fire will take damage to their hit points over time, may spread fire to other flammables up to 2 tiles away, and will disintegrate into [[filth|ashes]] when HP reaches zero. The damage taken value is the same for everything. The size of the fire depends on the [[flammability]] of the material. Objects on fire may spontaneously extinguish themselves or be extinguished by a pawn, rain, or firefoam.  Flammable floors will leave behind burned floor tiles. 
+All turrets, [[mortar]]s, [[mortar shell]]s, and [[chemfuel]] have a chance to explode while on fire, which is preferable to burning up as explosions leave behind some scrap parts.
+Objects with 0% flammability can't catch fire, except flammable items stored inside a stone [[shelf]] will still burn.
+
+== As a tool or weapon ==
+Fire can be utilized as a weapon or tool to counter things like infestations or to help capture enemy pawns. Additionally, fire may also be used to efficiently destroy blights.
+
+=== Pawn capture ===
+In a killbox corridor, a small side area with doors connecting to the outside should be constructed. Additionally, add stone doors at the end of the corridor, but hold them open for now. Wooden barricades should then be constructed inside this area, this is your "fuel". Nearby, build a shelf with incendiary weapons for convenience. When enemies arrive, wait until all of them have entered the "killbox", then light the barricades on fire with incendiary weapons. Then, close the two doors at the end. The raiders will drop like flies after a while. Once their [[heatstroke]] reaches 0.7 severity (70% percent, extreme heatstroke), open the doors and put out the fires. Capture the pawns you want, and then either execute the remainder or let them flee once they regain consciousness.
+
+=== Countermeasure against infestations ===
+[[Events#Infestations|Infestations]] are difficult to clear, especially when spread through multiple (mined out) caves.
+
+An effective method is to equip a colonist with an incendiary launcher or molotov cocktails and attack the [[hive]]s one at a time.
+
+Should one of your caves have [[power conduit]]s running through all the area and completely sealed with roof, they could be used to spread the fire by closing the caves with walls and then simply shoot at a conduit to ignite. [[Insectoids]] will collapse and eventually die of [[Health#Cold and Heat Injuries|burn]]s or [[Injury#heatstroke|heatstroke]], hives will ignite if the temperature gets high enough for spontaneous combustion.
+
+=== Flora raze ===
+A faster alternative to "Cut plants" to clear areas from vegetation that provides a tactical defense as it takes any possible cover object away from enemies. Equip  an [[incendiary launcher]] or [[molotov cocktail]] and target to attack the desired area. The fire will spread rapidly in all directions, so the player must ensure there are no flammables near unintended sections. [[Rain]] will extinguish fire on unroofed areas. This method may be used to efficiently clear blights, or to spread fires across large areas quickly.
+
+== Firefighting ==
+Firefighting is most often accomplished by [[colonist]]s "stomping" on the fire until it goes out completely. Another method of extinguishing fire is by deploying [[firefoam]] through various methods, extinguishing the fire and preventing new fires from forming on pawns and tiles covered in firefoam.
+
+You can also blow fire out with an explosion like that produced by a grenade (draft a colonist who has grenades, target the fire). 
+
+=== Colonist firefighting behavior ===
+By default, all colonists not currently working on another job will go to extinguish a fire, if capable, ''only'' if the fire is within a designated '''[[Zone/Area#Home_area|home area]]''' and the colonists' allowed area. Unlike other tasks that get reserved, colonists do not lock out each other from fighting the same fire and may work together to extinguish it quicker.
+
+It is worth mentioning again that colonists only fight fires within a home area. Outside the home area, colonists will just ignore the fires and carry on with their duties. To fight fires outside of a home area or to fight fires in a coordinated manner, draft the colonists and place them NEXT to the fire. They will fight any adjacent fires and you can better move your colonists to strategically attack it.
+
+Colonists can catch on fire while firefighting but will usually manage to put out the fire. If instead they become downed, the fire will consume them unless another colonist comes to put them out.
+
+Pyromaniacs will never extinguish fires and in fact may sometimes start them.
+
+=== Firefoam poppers ===
+{{main|Firefoam popper}}
+After their initial construction, firefoam poppers can be uninstalled and stored. Reinstalling them later—near a small-to-moderately sized field of fire—and manually detonating them allows a single pawn to quickly and safely complete a task that could otherwise occupy several pawns for many danger-filled hours.   
+
+=== Firefoam pop packs ===
+{{main|Firefoam pop pack}}
+
+Firefoam pop packs can be worn by pawns in the [[utility]] slot. It can be activated instantly to create a small explosion of firefoam, after which it needs to be recharged with [[chemfuel]]. It is much more flexible than a firefoam popper, making it suitable for combat or mobile firefighting, but requires a colonist to move to the location of the fire.
+
+=== Foam turrets ===
+{{main|Foam turret}}
+Foam turrets offer much a larger range than firefoam poppers (20 tiles vs 10 tiles), while also consuming [[chemfuel]] on use rather than the repeat construction cost of [[steel ]] and [[components]] that the single-use firefoam poppers cost to rebuild, potentially offering greater coverage at a cheaper ongoing cost. Though, they do not operate autonomously and must be manually activated by a colonist in order to douse fires.
+
+=== Foam spray ===
+Pawns with the [[foam spray]]{{BiotechIcon}} gene have access to a foam spray ability which can douse a 3x3 area around the pawn with [[firefoam]]. While it can only be used 3 times every 12 hours, making it somewhat ineffective at general firefighting, it can be extremely useful for quenching fires in critical locations, such as near explosive items, indoors, or during combat. However, there aren't any [[Xenotypes]] that carry the gene, making it only obtainable from [[traders]].
+
+== Rain event ==
+{{Main|Firewatcher}}
+Colloquially referred to as a "rain event" or the "firewatcher" after the name of the process in the game code, sufficiently large fires on a map increase the chance for [[Weather|rain]] to occur. The resultant rain will gradually extinguish [[roof|unroofed]] fires, and may eventually control large wildfires. It's important to note that rainfall is not guaranteed, only drastically encouraged by speeding up the weather cycle and increasing bias towards rainy weathers. It is possible for rainfall to not occur even during the most extreme fires.
+
+For more detailed information, see [[Firewatcher]].
+
+== Gallery ==
+<gallery>
+FireA.png|Variant A
+FireB.png|Variant B
+FireC.png|Variant C
+</gallery>
+
+[[Category:Game mechanics]]

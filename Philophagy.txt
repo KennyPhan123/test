@@ -1,0 +1,179 @@
+{{Anomaly}}
+{{Infobox main|psycast
+| name = Philophagy 
+| image = Philophagy.png
+| type = Psychic ritual
+| description = Psychically draw experiences from the victim's mind and transfer them to the invoker, targeting the victim's highest skill. The target will suffer brain damage, causing them to fall into a coma for several days.
+| research = Philophagy 
+| ritual duration = 10000
+| ritual cooldown = 300000
+| resource 1 = Shard
+| resource 1 amount = 1
+}}
+'''Philophagy''' is a [[psychic ritual]] that transfers [[skill]] experience from the target's highest skill to the invoker.
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+{{Stub|reason= General - Missing proper summary format. Does passion and [[Global Learning Factor]] affect anything? Also needs participant kinds and numbers}}
+
+* Transfer a percentage of the total experience of the victim's best [[skill]] to the invoker.
+** The victim's skill with the highest total XP is selected. If multiple skills are tied, the skill in which the invoker has the highest total XP is selected.
+** Base level of skill is taken into account, before modifiers from aptitude [[genes]]{{BiotechIcon}} or [[inhumanized]].
+** Both the victim and the invoker must be capable of a skill in order for it to be eligible.
+* Inflict psychic damage to the brain, ranging from 3 to 5 damage in total.
+** This damage can kill the victim, and the victim is considered to have been executed if they're a prisoner.
+* The victim will go into a [[dark psychic shock]] for 1 to 2 days. They'll also gain the ''drained my skills'' thought against the invoker for 20 days.
+* The percentage of experience transferred is dependent on the ritual's quality - the higher the quality the higher the percentage.
+** At 100% quality, 80% of the victim's XP is transferred over.
+* Applies a stacking mood debuff for participants:
+** 1 ritual: {{Thought|desc=It feels wrong to have participated in that ritual.|label=Philophagy guilt|value=-3|stack=1|duration=6}}
+** 2 rituals: {{Thought|desc=That ritual was a crime against its victim. I shouldn't have been there.|label=Philophagy guilt|value=-6|stack=1|duration=6}}
+** 3+ rituals: {{Thought|desc=That ritual was nothing short of torture. It's evil!|label=Philophagy guilt|value=-10|stack=1|duration=6}}
+** Disabled by: [[Psychopath]] traits, being [[Inhumanized]], as well as [[Psychic rituals (precept)|Psychic rituals: Exalted]] precept.{{IdeologyIcon}}
+* Applies the following mood debuff for the target:
+** {{Thought|desc=They used me for their twisted ceremony. I'll never forget that horrid chanting.|label=psychic ritual victim|value=-18|stack=1|duration=20}}
+
+{| class="wikitable"
+|+ Percentage of XP transferred
+|-
+! {{Graph:Chart|width=400|height=150|type=line|xAxisTitle=Quality (%)|yAxisTitle=XP transferred (%)|x=0,50,90,100|y=10,30,50,80|yAxisMin=0}}
+|}
+
+== Analysis == 
+Philophagy is relatively niche since it costs a shard, only improves 1 skill at a time, and requires a sacrifical pawn that has a high level in the desired skill. Recruiting the pawn directly would keep 100% of the skill experience, and the cases where a pawn is outright unrecruitable is rare as [[brainwipe]] is able to remove resistance and [[unwavering loyalty]].
+
+Still, philophagy can be useful as recruiting the victim can be unideal for a number of reasons. The most obvious use of the ritual is to transfer skill XP from an undesirable yet skilled pawn (e.g, poor [[trait]]s or [[creepjoiner]] downsides) into a more useful pawn. For instance, stacking skill XP onto an [[industrious]] pawn would allow tasks to be done faster than an average pawn. [[Children]]{{BiotechIcon}} are good recipents as a properly raised child will often have good [[trait]]s, but they don't start with any skill levels. Similarly, a [[slow learner]] or [[slow study]]{{BiotechIcon}} pawn who is otherwise desirable can be a great recipient for gaining XP. Even if the philophagy victim would be a decent colonist, recruiting more colonists has its downsides. A higher colonist count will increase [[raid points]] and [[PopulationIntent|make it harder to recruit further colonists]], so it can be more efficient (and computer-friendly) to transfer skills instead.
+
+Furthermore, it can be beneficial to stack skill XP onto a single pawn. For example, three colonists with Crafting 9 isn't necessarily better than one colonist with Crafting 15, as having Crafting 15 would create higher [[quality]] items. It is also possible to create pawns good at every skill, as philophagy does not care about passions or [[Global Learning Factor]].{{Check Tag|Verify}} Doing this is particularly valuable for [[corrupted obelisk]] duplication.
+
+It is not necessary to use [[prisoner]]s as victims for this ritual. One strategy is to level up a [[slave]]{{IdeologyIcon}} or sacrificial colonist who has a passion in a desirable skill, either by using a [[skilltrainer]] or by having them continuously [[training|train]] the skill, then transfer the XP over to a desired recipient.
+
+Overall, chronophagy will rarely be an ''immediate'' priority of a shard, but it should be considered once the colony has a decent supply of shards and suitable victims to steal XP from.
+
+=== Experience table ===
+The following table assumes 100% quality, no fractional skill levels before transfer, the recipient is skill 0, and no effect from [[Global Learning Factor]] or passions. Fractional levels represent progress from current level to the next.
+
+{| style="text-align:center;" class="wikitable"
+|-
+! colspan='2'| Donor 
+! colspan='2'| Recipient
+|-
+! Level
+! Experience
+! Experience 
+! Level
+|-
+! 0
+| 0
+| 0
+! 0
+|-
+! 1
+| 1000
+| 800
+! 0.8
+|-
+! 2
+| 3000
+| 2400
+! 1.7
+|-
+! 3
+| 6000
+| 4800
+! 2.6
+|-
+! 4
+| 10000
+| 8000
+! 3.5
+|-
+! 5
+| 15000
+| 12000
+! 4.4
+|-
+! 6
+| 21000
+| 16800
+! 5.3
+|-
+! 7
+| 28000
+| 22400
+! 6.2
+|-
+! 8
+| 36000
+| 28800
+! 7.1
+|-
+! 9
+| 45000
+| 36000
+! 8
+|-
+! 10
+| 55000
+| 44000
+! 8.89
+|-
+! 11
+| 67000
+| 53600
+! 9.86
+|-
+! 12
+| 81000
+| 64800
+! 10.82
+|-
+! 13
+| 97000
+| 77600
+! 11.76
+|-
+! 14
+| 115000
+| 92000
+! 12.69
+|-
+! 15
+| 135000
+| 108000
+! 13.61
+|-
+! 16
+| 157000
+| 125600
+! 14.53
+|-
+! 17
+| 181000
+| 144800
+! 15.45
+|-
+! 18
+| 207000
+| 165600
+! 16.36
+|-
+! 19
+| 235000
+| 188000
+! 17.27
+|-
+! 20
+| 265000
+| 212000
+! 18.18
+|}
+
+== Version history ==
+* [[Anomaly DLC]] Release - Added.
+<!-- Alegedly, this was the description prior/ but may not have been. Confirm and then confrim change date -  Psychically draw experiences from the victim's mind, and transfer them to the invoker, targeting the victim's highest Skill. This will increase the invoker's experience in the same skill, and for the target to lose an equal amount. Target will also suffer Psychic Shock. -->
+{{Nav|psychic rituals|wide}}
+
+[[Category: Psychic rituals]]

@@ -1,0 +1,575 @@
+{{DISPLAYTITLE:Basic Plant}}
+{{BackToTutorials}}
+
+This is a basic RimWorld mod tutorial for the purpose of creating a custom plant. We will also use the plant matter gathered from this custom plant in a later tutorial.
+
+== Goals ==
+In this tutorial you will:
+
+* Create [[Modding_Tutorials/ThingDef|ThingDef]]s for a '''new plant''': theragold, a genetically modified cultivar of marigolds with both nutritional and medicinal benefits
+* Learn how to use '''XML inheritance''' to share data between multiple [[Modding_Tutorials/ThingDef|ThingDef]]s
+* Assign '''custom mature and immature plant textures''' to your new plant
+* '''Add your new plant to existing vanilla and modded biomes'''
+* Create a [[Modding_Tutorials/ThingDef|ThingDef]] for a '''new raw food''' item
+* Create a new [[Modding_Tutorials/RecipeDef|RecipeDef]] to '''craft herbal medicine''' using this new item
+
+[[File:ExamplePlant.png|none|border]]
+
+== Recommended Reading ==
+* [[Modding_Tutorials/Mod_Folder_Structure|Mod Folder Structure]]
+* [[Modding_Tutorials/XML_Defs|Defs]]
+* [[Modding_Tutorials/MayRequire|MayRequire]]
+
+== Sample Repository ==
+A working implementation of this mod can be found [https://github.com/Aelanna/ExamplePlant in this GitHub repository]. You can use it to compare against your work or as a basis for modification!
+
+== Folder Setup ==
+
+First, you will want to create the files and folders necessary for this mod:
+
+<source>
+Mods
+└ MyModFolder
+  ├ About
+  │ ├ About.xml
+  │ └ Preview.png
+  ├ Defs
+  │ ├ RecipeDefs
+  │ │ └ ExampleRecipe_Theragold.xml
+  │ ├ ThingDefs_Items
+  │ │ └ ExampleItem_Theragold.xml
+  │ └ ThingDefs_Plants
+  │   └ ExamplePlant_Theragold.xml
+  └ Textures
+    └ ExampleMod
+      ├ ImmatureTheragold
+      │ └ ImmatureTheragold_a.png
+      ├ Theragold
+      │ └ Theragold_a.png
+      └ RawTheragold.png
+</source>
+
+Please check out the [[Modding_Tutorials/Mod_Folder_Structure|mod folder structure guide]] for more information about individual folders.
+
+=== About.xml ===
+
+Your <code>About.xml</code> is used to identify your mod to RimWorld; please see [[Modding_Tutorials/About.xml|the About.xml reference page]] for more information. Be sure to replace "AuthorName" with your own name:
+
+<source lang="xml">
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+
+  <!-- This is the internal identifier for your mod. -->
+  <!-- It is recommended that you make it unique to as to avoid potential collisions with other authors; -->
+  <!--     if Rimworld detects multiple mods with the same packageId then it will refuse to load all of them. -->
+  <packageId>AuthorName.ExamplePlant</packageId>
+
+  <!-- This is both the displayed name of your mod as well as the name used for patch targeting. -->
+  <name>Example Plant</name>
+
+  <!-- Your name goes here. -->
+  <author>AuthorName</author>
+
+  <!-- A version number for your own tracking -->
+  <!-- See wiki About.xml guide for concerns regarding this field for RimWorld versions prior to 1.4 -->
+  <modVersion>1.0</modVersion>
+
+  <!-- These are the RimWorld game versions that your mod supports. -->
+  <!-- It is recommended that you only list versions that you have explicitly tested to ensure they work, -->
+  <!-- as even basic XML options can change between major versions of the game. -->
+  <supportedVersions>
+    <li>1.6</li>
+  </supportedVersions>
+
+  <!-- This is the description of your mod shown in both the vanilla mod manager as well as modded managers. -->
+  <description>This is an example melee weapon mod made for the RimWorld Wiki.</description>
+
+</ModMetaData>
+</source>
+
+=== Sample Assets ===
+
+You can use these as the example textures:
+
+<div class="TwoColumnCollapsibleLayout">
+<div class="TwoColumnCollapsibleLayout-section">
+<div class="TwoColumnCollapsibleLayout-subtitle">Mature Plant Texture</div>
+<div class="TwoColumnCollapsibleLayout-text">
+[[File:ExamplePlant_Theragold.png|none]]
+</div>
+</div>
+<div class="TwoColumnCollapsibleLayout-section">
+<div class="TwoColumnCollapsibleLayout-subtitle">Immature Plant Texture</div>
+<div class="TwoColumnCollapsibleLayout-text">
+[[File:ExamplePlant_ImmatureTheragold.png|none]]
+</div>
+</div>
+<div class="TwoColumnCollapsibleLayout-section">
+<div class="TwoColumnCollapsibleLayout-subtitle">Raw Food Item Texture</div>
+<div class="TwoColumnCollapsibleLayout-text">
+[[File:ExamplePlant_RawTheragold.png|none]]
+</div>
+</div>
+</div>
+
+
+== Instructions ==
+
+=== 1. Create plant ThingDefs ===
+
+Our first step is to create the XML that represents our new plant. Whenever possible, this is best accomplished by copying vanilla [[Modding_Tutorials/ThingDef|ThingDef]]s and modifying them; in this case we will use the three Defs that constitute the vanilla [[healroot]] as our starting point, as it is the most similar existing plant to what we want to create. The XML for healroot can be found in <code>Data/Core/Defs/ThingDefs_Plants/Plants_Cultivated_Farm.xml</code> and <code>Data/Core/Defs/ThingDefs_Plants/Plants_Wild_General.xml</code>.
+
+In our own <code>ExamplePlant_Theragold.xml</code>, we'll have the following three ThingDefs:
+
+<source lang="xml">
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Abstract base: TheragoldBase -->
+  <!-- The data from this node will be inherited by our two "concrete" Defs -->
+  <ThingDef ParentName="PlantBase" Name="TheragoldBase" Abstract="True">
+    <!-- pasted content omitted -->
+  </ThingDef>
+
+  <!-- Cultivated theragold -->
+  <!-- This ThingDef will inherit all fields from the abstract base TheragoldBase -->
+  <ThingDef ParentName="TheragoldBase">
+    <defName>ExamplePlant_Theragold</defName>
+    <label>theragold</label>
+    <!-- pasted content omitted -->
+  </ThingDef>
+
+  <!-- Wild theragold -->
+  <!-- This ThingDef will inherit all fields from the abstract base TheragoldBase -->
+  <ThingDef ParentName="TheragoldBase">
+    <defName>ExamplePlant_TheragoldWild</defName>
+    <label>wild theragold</label>
+    <!-- pasted content omitted -->
+  </ThingDef>
+
+</Defs>
+</source>
+
+=== 2. Modify our copied ThingDefs ===
+
+In order to differentiate our plant from healroot, we'll make the following changes:
+
+==== <code>TheragoldBase</code> ====
+
+By specifying <code>Abstract="True"</code> as an attribute, our base ThingDef will not actually be loaded on its own, however its fields will be inherited by ThingDefs that specify its <code>Name</code> as a parent via <code>ParentName="TheragoldBase"</code>. This will allow us to share field values between two or more ThingDefs without copying each one.
+
+<div class="TutorialTableWrapper">
+{| class="TutorialCodeTable"
+! XML !! Description
+|-
+| <source lang="xml">
+<graphicData>
+  <texPath>ExampleMod/Theragold</texPath>
+  <graphicClass>Graphic_Random</graphicClass>
+</graphicData>
+</source>
+| class="TutorialCodeTable-description" |
+This defines the default mature graphic for our new plant. Graphic_Random is a graphicClass that must be pointed at a folder; this is used by most vanilla plants and allows you to have multiple textures for more visual variety.
+
+In the specific case of plants, the texture will also be horizontally flipped at random for additional variety.
+|-
+| <source lang="xml">
+<selectable>true</selectable>
+</source>
+| class="TutorialCodeTable-description" |
+By default, plants that inherit from <code>PlantBase</code> are not selectable. This should be overridden if colonists can meaningfully interact with it in any way; the only vanilla plants that are not selectable are completely non-interactible plants such as grasses, shrubs, and anima and gauranlen grass.
+|-
+| <source lang="xml">
+<plant>
+  <immatureGraphicPath>ExampleMod/ImmatureTheragold</immatureGraphicPath>
+  <growDays>8</growDays>
+  <dieIfLeafless>false</dieIfLeafless>
+  <harvestWork>400</harvestWork>
+  <harvestTag>Standard</harvestTag>
+  <harvestedThingDef>ExamplePlant_RawTheragold</harvestedThingDef>
+  <harvestYield>8</harvestYield>
+  <topWindExposure>0.1</topWindExposure>
+  <visualSizeRange>0.3~1.0</visualSizeRange>
+  <wildOrder>2</wildOrder>
+  <allowAutoCut>false</allowAutoCut>
+</plant>
+</source>
+| class="TutorialCodeTable-description" |
+The <code>plant</code> tag contains many properties and settings related to plants in RimWorld. The ones we specifically add or change here are the following:
+
+<code>immatureGraphicPath</code> sets the texture used for this planet when it is immature (it cannot be harvested yet). This uses the same <code>graphicClass</code> as the main graphic data.
+
+<code>growDays</code> represents the amount of time in whole days that it takes for this plant to mature. Note that since plants rest at night, the actual number of in-game days required will be longer than specified; this value will be used for the wild variant of our plant and we will override it for the cultivated version.
+
+<code>harvestedThingDef</code> is the item that will be created when this plant is harvested. We will define it in a later step.
+
+<code>harvestYield</code> is the amount of the <code>harvestedThingDef</code> that will be created when this plant is harvested. Note that the final yield will be affected by the pawn's Plant skill and stats.
+|-
+|}
+</div>
+
+==== <code>ExamplePlant_Theragold</code> ====
+
+This will represent the cultivated variant of our new plant. We will start with the vanilla <code>Plant_Healroot</code> and modify the following:
+
+<div class="TutorialTableWrapper">
+{| class="TutorialCodeTable"
+! XML !! Description
+|-
+| <source lang="xml">
+<ThingDef ParentName="TheragoldBase">
+</source>
+| class="TutorialCodeTable-description" |
+We will use our new custom abstract base instead of <code>HealrootBase</code> as the parent for this ThingDef.
+|-
+| <source lang="xml">
+<defName>ExamplePlant_Theragold</defName>
+</source>
+| class="TutorialCodeTable-description" |
+The <code>defName</code> of a ThingDef is its identity and must be globally unique across all mods and official content. It is strongly recommended that it is prefixed with a project or mod name, so in this case we will use "ExamplePlant_" as our prefix.
+|-
+| <source lang="xml">
+<label>theragold</label>
+</source>
+| class="TutorialCodeTable-description" |
+A ThingDef's label is its in-game name. Unless it is a proper name, it should be in lowercase so that it can be injected naturally into sentences that use it. RimWorld will automatically capitalize it as necessary if used in titles or as the start of a sentence.
+|-
+| <source lang="xml">
+<description>Engineered by a long-forgotten glitterworld, theragolds are a genetically modified cultivar of marigolds intended for seeding on terraformed garden worlds. While not particularly efficient at either, theragolds can be eaten for nutrition or processed into various medicinal products. Its hardiness and relative ease of cultivation makes it a valuable secondary crop for frontier colonies.\n\nThis secondary cultivar of theragold is faster-growing but less hardy, and intended for cultivation by frontier colonies.</description>
+</source>
+| class="TutorialCodeTable-description" |
+This is the full description of our plant as shown in the full stat card when being inspected.
+|-
+| <source lang="xml">
+<plant>
+  <growDays>5</growDays>
+  <sowWork>250</sowWork>
+  <sowMinSkill>6</sowMinSkill>
+  <sowTags>
+    <li>Ground</li>
+    <li>Hydroponic</li>
+  </sowTags>
+  <purpose>Food</purpose>
+</plant>
+</source>
+| class="TutorialCodeTable-description" |
+We will add or override the following fields in our <code>plant</code> properties:
+
+<code>growDays</code> for the cultivated variant is much shorter at 5 days. This is slower than rice but faster than potatoes, corn, or healroot. Factored in with its yield, this makes our new plant significantly less nutrition-efficient than any of the three core food crops.
+
+<code>sowWork</code> is slightly more involved than the 170 for core food crops.
+
+<code>sowMinSkill</code> of 6 is higher than any vanilla food crop but lower than healroot, which requires 8.
+
+<code>sowTags</code> determine where this plant can be sown. Our new plant can be sown in the Ground or in Hydroponics, but cannot be down in Decorative locations such as flower pots.
+
+<code>purpose</code> Unlike healroot, the primary immediate use for our plant is food.
+|-
+|}
+</div>
+
+==== <code>ExamplePlant_TheragoldWild</code> ====
+
+This will represent the wild variant of our new plant. We will start with the vanilla <code>Plant_HealrootWild</code> and modify the following:
+
+<div class="TutorialTableWrapper">
+{| class="TutorialCodeTable"
+! XML !! Description
+|-
+| <source lang="xml">
+<ThingDef ParentName="TheragoldBase">
+</source>
+| class="TutorialCodeTable-description" |
+We will use our new custom abstract base instead of <code>HealrootBase</code> as the parent for this ThingDef.
+|-
+| <source lang="xml">
+<defName>ExamplePlant_TheragoldWild</defName>
+</source>
+| class="TutorialCodeTable-description" |
+The <code>defName</code> of a ThingDef is its identity and must be globally unique across all mods and official content. It is strongly recommended that it is prefixed with a project or mod name, so in this case we will use "ExamplePlant_" as our prefix.
+|-
+| <source lang="xml">
+<label>wild theragold</label>
+</source>
+| class="TutorialCodeTable-description" |
+A ThingDef's label is its in-game name. Unless it is a proper name, it should be in lowercase so that it can be injected naturally into sentences that use it. RimWorld will automatically capitalize it as necessary if used in titles or as the start of a sentence.
+|-
+| <source lang="xml">
+<description>Engineered by a long-forgotten glitterworld, theragolds are a genetically modified cultivar of marigolds intended for seeding on terraformed garden worlds. While not particularly efficient at either, theragolds can be eaten for nutrition or processed into various medicinal products. Its hardiness and relative ease of cultivation makes it a valuable secondary crop for frontier colonies.\n\nThis original cultivar of theragold is hardier but slower-growing than the modified variant intended for human cultivation and can be found growing wild in a variety of biomes.</description>
+</source>
+| class="TutorialCodeTable-description" |
+This is the full description of our plant as shown in the full stat card when being inspected.
+|-
+| <source lang="xml">
+<neverMultiSelect>false</neverMultiSelect>
+</source>
+| class="TutorialCodeTable-description" |
+By default, plants will not be selected when the player band-box selects regions of the map. We want to override this behavior as wild theragold is both edible and has medicinal value.
+|-
+| <source lang="xml">
+<plant>
+  <wildClusterRadius>4</wildClusterRadius>
+  <wildClusterWeight>80</wildClusterWeight>
+
+  <wildBiomes>
+
+    <!-- These values match the vanilla weights of wild healroot -->
+    <TemperateForest>0.05</TemperateForest>
+    <TemperateSwamp>0.05</TemperateSwamp>
+    <BorealForest>0.16</BorealForest>
+    <Tundra>0.05</Tundra>
+    <ColdBog>0.05</ColdBog>
+
+    <!-- These are examples of optional compatibility entries for modded biomes -->
+
+    <!-- This is the "feralisk-infested jungle" biome from Alpha Biomes by Sarg -->
+    <AB_FeraliskInfestedJungle MayRequire="sarg.alphabiomes">0.05</AB_FeraliskInfestedJungle>
+    <!-- This is the "idyllic meadow" biome from Alpha Biomes by Sarg -->
+    <AB_IdyllicMeadows MayRequire="sarg.alphabiomes">0.05</AB_IdyllicMeadows>
+
+    <!-- This is the "alpine meadow" biome from More Vanilla Biomes by Zylleon -->
+    <ZBiome_AlpineMeadow MayRequire="zylle.MoreVanillaBiomes">0.05</ZBiome_AlpineMeadow>
+    <!-- This is the "cloud forest" biome from More Vanilla Biomes by Zylleon -->
+    <ZBiome_CloudForest MayRequire="zylle.MoreVanillaBiomes">0.05</ZBiome_CloudForest>
+    <!-- This is the "desert oasis" biome from More Vanilla Biomes by Zylleon -->
+    <ZBiome_DesertOasis MayRequire="zylle.MoreVanillaBiomes">0.05</ZBiome_DesertOasis>
+    <!-- This is the "grasslands" biome from More Vanilla Biomes by Zylleon -->
+    <ZBiome_Grasslands MayRequire="zylle.MoreVanillaBiomes">0.05</ZBiome_Grasslands>
+    <!-- This is the "marsh" biome from More Vanilla Biomes by Zylleon -->
+    <ZBiome_Marsh MayRequire="zylle.MoreVanillaBiomes">0.05</ZBiome_Marsh>
+
+    <!-- This is the "boreal island" biome from Biomes! Islands by the Biomes! team -->
+    <BiomesIslands_BorealIsland MayRequire="BiomesTeam.BiomesIslands">0.16</BiomesIslands_BorealIsland>
+    <!-- This is the "temperate island" biome from Biomes! Islands by the Biomes! team -->
+    <BiomesIslands_TemperateIsland MayRequire="BiomesTeam.BiomesIslands">0.05</BiomesIslands_TemperateIsland>
+    <!-- This is the "temperate archipelago" biome from Biomes! Islands by the Biomes! team -->
+    <BiomesIslands_TemperateArchipelago MayRequire="BiomesTeam.BiomesIslands">0.05</BiomesIslands_TemperateArchipelago>
+    <!-- This is the "tropical island" biome from Biomes! Islands by the Biomes! team -->
+    <BiomesIslands_TropicalIsland MayRequire="BiomesTeam.BiomesIslands">0.05</BiomesIslands_TropicalIsland>
+    <!-- This is the "tropical archipelago" biome from Biomes! Islands by the Biomes! team -->
+    <BiomesIslands_TropicalArchipelago MayRequire="BiomesTeam.BiomesIslands">0.05</BiomesIslands_TropicalArchipelago>
+    <!-- This is the "tundra island" biome from Biomes! Islands by the Biomes! team -->
+    <BiomesIslands_TundraIsland MayRequire="BiomesTeam.BiomesIslands">0.05</BiomesIslands_TundraIsland>
+    <!-- This is the "tundra archipelago" biome from Biomes! Islands by the Biomes! team -->
+    <BiomesIslands_TundraArchipelago MayRequire="BiomesTeam.BiomesIslands">0.05</BiomesIslands_TundraArchipelago>
+    <!-- This is the "chromatic oasis" biome from Biomes! Oasis by the Biomes! team -->
+    <BMT_ChromaticOasis MayRequire="BiomesTeam.Oasis">0.2</BMT_ChromaticOasis>
+
+  </wildBiomes>
+</plant>
+</source>
+| class="TutorialCodeTable-description" |
+<code>wildBiomes</code> is the only critical addition here for the wild variant of our plant. This determines the biomes in which our plant can naturally spawn, as well as the ecosystem weight within those biomes, which we will match to the weight of healroot. While this can also be accomplished by using [[Modding_Tutorials/PatchOperations|PatchOperations]], using the <code>wildBiomes</code> tag is far easier.
+
+In addition to vanilla biomes, we also have optional compatibility entries for several popular biome mods. These examples use [[Modding_Tutorials/MayRequire|MayRequire]] to safely disable themselves if the specified mod is not loaded, and have been listed here with their authors' permission.
+
+Note that this is not an exhaustive list of either vanilla biomes nor the modded biomes in their respective mods; these are the ones that our plant should plausibly appear in and individual choices are subject to creative liberty.
+|-
+|}
+</div>
+
+=== 3. Create a raw food ThingDef ===
+
+Now, we will create a new ThingDef to represent the raw food item harvested from our new plant. As before, we can and should copy an existing vanilla ThingDef as a starting point; in this case, we can copy <code>RawRice</code>, <code>RawPotatoes</code>, or <code>RawCorn</code> from <code>Data/Core/Defs/ThingDefs_Items/Items_Resource_RawPlant.xml</code>:
+
+<source lang="xml">
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Example raw food: raw theragold -->
+  <ThingDef ParentName="PlantFoodRawBase">
+    <!-- pasted content omitted -->
+  </ThingDef>
+
+</Defs>
+</source>
+
+==== Modifying the ThingDef ====
+
+This will represent the wild variant of our new plant. We will start with the vanilla <code>Plant_HealrootWild</code> and modify the following:
+
+<div class="TutorialTableWrapper">
+{| class="TutorialCodeTable"
+! XML !! Description
+|-
+| <source lang="xml">
+<defName>ExamplePlant_RawTheragold</defName>
+</source>
+| class="TutorialCodeTable-description" |
+The <code>defName</code> of a ThingDef is its identity and must be globally unique across all mods and official content. It is strongly recommended that it is prefixed with a project or mod name, so in this case we will use "ExamplePlant_" as our prefix.
+|-
+| <source lang="xml">
+<label>theragold flowers</label>
+</source>
+| class="TutorialCodeTable-description" |
+A ThingDef's label is its in-game name. Unless it is a proper name, it should be in lowercase so that it can be injected naturally into sentences that use it. RimWorld will automatically capitalize it as necessary if used in titles or as the start of a sentence.
+|-
+| <source lang="xml">
+<description>Raw theragold flowers. This can be cooked into meals or crafted into various medicinal products.</description>
+</source>
+| class="TutorialCodeTable-description" |
+This is the full description of our item as shown in the full stat card when being inspected.
+|-
+| <source lang="xml">
+<graphicData>
+  <texPath>ExampleMod/RawTheragold</texPath>
+</graphicData>
+</source>
+| class="TutorialCodeTable-description" |
+This is the texture we will use for our food item. Note that <code>PlantFoodRawBase</code> uses <code>Graphic_Single</code>, so we will point the <code>texPath</code> directly at the texture instead of at a folder.
+|-
+| <source lang="xml">
+<comps>
+  <li Class="CompProperties_Rottable">
+    <daysToRotStart>30</daysToRotStart>
+    <rotDestroys>true</rotDestroys>
+  </li>
+</comps>
+</source>
+| class="TutorialCodeTable-description" |
+Our <daysToRotStart> will be set to 30, which will make it rot slower than raw fruits and vegetables, but faster than grains such as rice or corn.
+|-
+|}
+</div>
+
+=== 4. Create a medicine RecipeDef ===
+
+Finally, we will create a new RecipeDef that will allow us to craft herbal medicine from raw matter harvested from our custom plant. Since there is no direct vanilla analogue to this recipe, we will be created it from scratch, starting in our <code>ExampleRecipe_Theragold.xml</code> file:
+
+<source lang="xml">
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Example recipe: make herbal medicine from theragold flowers -->
+  <RecipeDef>
+    <!-- content to be filled here -->
+  </RecipeDef>
+
+</Defs>
+</source>
+
+==== Filling in the RecipeDef ====
+
+This will represent the wild variant of our new plant. We will start with the vanilla <code>Plant_HealrootWild</code> and modify the following:
+
+<div class="TutorialTableWrapper">
+{| class="TutorialCodeTable"
+! XML !! Description
+|-
+| <source lang="xml">
+<defName>ExamplePlant_Make_MedicineHerbal</defName>
+</source>
+| class="TutorialCodeTable-description" |
+In addition to our mod prefix, vanilla naming convention -- including those for auto-generated crafting recipes -- is to prefix "Make_" onto the defName of the final product, so we will maintain the same general naming convention to inform the nature of our custom RecipeDef.
+|-
+| <source lang="xml">
+<label>make herbal medicine from theragold</label>
+</source>
+| class="TutorialCodeTable-description" |
+For RecipeDefs, its label is what is shown in the Add Bill list for workbenches, so qualifying it with the primary ingredient can help differentiate it from other potential recipes for the same product.
+|-
+| <source lang="xml">
+<description>Make herbal medicine from theragold flowers.</description>
+</source>
+| class="TutorialCodeTable-description" |
+This is the full description of our recipe as shown in the full bill interface.
+|-
+| <source lang="xml">
+<jobString>Making herbal medicine from theragold flowers.</jobString>
+</source>
+| class="TutorialCodeTable-description" |
+This string is shown in a pawn's inspect pane when it is performing work on this recipe.
+|-
+| <source lang="xml">
+<effectWorking>Cook</effectWorking>
+</source>
+| class="TutorialCodeTable-description" |
+This specifies an EffecterDef that should be used while this recipe is being worked on. We will use the same one used for cooking meals.
+|-
+| <source lang="xml">
+<soundWorking>Recipe_CookMeal</soundWorking>
+</source>
+| class="TutorialCodeTable-description" |
+This specifies a SoundDef that should be sustained while this recipe is being worked on. We will also use the same sound effect used for cooking meals here.
+|-
+| <source lang="xml">
+<workSkill>Cooking</workSkill>
+</source>
+| class="TutorialCodeTable-description" |
+This specifies the primary skill associated with this recipe. This is the skill that will gain experience points when work is done on this recipe, as well as being the filtering skill used in the bill interface.
+|-
+| <source lang="xml">
+<workAmount>300</workAmount>
+</source>
+| class="TutorialCodeTable-description" |
+300 work matches the amount of work required for vanilla simple meals, and equates to approximately 5s of time at 100% work speed.
+|-
+| <source lang="xml">
+<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+</source>
+| class="TutorialCodeTable-description" |
+This is the StatDef used to determine how quickly a pawn performs the work required to complete this recipe.
+|-
+| <source lang="xml">
+<recipeUsers>
+  <li>CraftingSpot</li>
+  <li>DrugLab</li>
+</recipeUsers>
+</source>
+| class="TutorialCodeTable-description" |
+Specifies the workbenches that this recipe can be performed at via their <code>defName</code>s. In our case, we want our recipe to be usable at both the vanilla crafting spot and drug lab.
+
+Note that you can also accomplish this by using a [[Modding_Tutorials/PatchOperations|PatchOperation]] on the targeted workbenches, but this is usually the easier way to introduce a new recipe, especially if you are not targeting your own workbenches.
+|-
+| <source lang="xml">
+<ingredients>
+  <li>
+    <filter>
+      <thingDefs>
+        <li>ExamplePlant_RawTheragold</li>
+      </thingDefs>
+    </filter>
+    <count>12</count>
+  </li>
+</ingredients>
+</source>
+| class="TutorialCodeTable-description" |
+The <code>ingredients</code> tag specifies the materials that will be consumed in the process of using this recipe. A full exploration of all possible ingredient options is outside the scope of this tutorial; in our case, we simply want to use 12 theragold flowers for each recipe instance.
+|-
+| <source lang="xml">
+<fixedIngredientFilter>
+  <thingDefs>
+    <li>ExamplePlant_RawTheragold</li>
+  </thingDefs>
+</fixedIngredientFilter>
+</source>
+| class="TutorialCodeTable-description" |
+The <code>fixedIngredientFilter</code> specifies all possible ThingDefs that can be used to fulfill the ingredient requirements for this recipe. As with the ingredients list, an exploration of all possible filter options is outside the scope of this tutorial and in our case the only ingredient we will need is the aforementioned theragold flowers.
+|-
+| <source lang="xml">
+<products>
+  <MedicineHerbal>1</MedicineHerbal>
+</products>
+</source>
+| class="TutorialCodeTable-description" |
+This specifies the items that should be produced by this recipe. Our goal is to produce a single herbal medicine for each instance of this recipe being performed.
+|-
+| <source lang="xml">
+<skillRequirements>
+  <Crafting>2</Crafting>
+</skillRequirements>
+</source>
+| class="TutorialCodeTable-description" |
+Finally, we will put a low requirement of 2 Crafting skill needed to perform this recipe. Note that this entire tag can be omitted if you do not want a skill requirement at all.
+|-
+|}
+</div>
+
+=== 5. Done! ===
+
+Your first plant is complete! Boot up RimWorld and you should be able to see and enable the "Example Plant" mod in your mod manager. You can then start a new game on an appropriate biome, use [[Development mode|dev mode tools]] to spawn the plant directly, or sow it in a growing zone with a sufficiently skilled colonist. Be sure to also check out the crafting recipe on the appropriate workbenches!
+
+If you get any errors, be sure to check out the [[Modding_Tutorials/Troubleshooting|troubleshooting guide]] or join us on the '''#mod-development''' channel on the [https://discord.gg/rimworld RimWorld Discord server].
+
+[[Category:Modding]]
+[[Category:Modding tutorials]]

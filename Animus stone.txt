@@ -1,0 +1,63 @@
+{{Royalty}}
+{{Project|Psyfocus}}
+{{infobox main|misc
+| name = Animus stone
+| image = AnimusStone.png
+| description = An ancient jade stone marked with sacred tribal carvings. Tribal psycasters can focus on these stones during meditation to increase their psyfocus gain more than a typical nature shrine.<br>Different tribal cultures tell different stories about these stones, but most agree that they were crafted by an ancient world spirit during a time of great power. Since they look like natural objects to unobservant outsiders, raiders will generally ignore them.
+| type = Building
+| type2 = Misc
+| placeable = True
+| size = 1 ˣ 1
+| mass base = 5
+| marketvalue = 5000
+| hp = 100
+| tradeability = Buyable
+}}
+An '''Animus stone''' is a [[building]] added by the [[Royalty DLC]] at which a pawn can meditate to regain [[psyfocus]].
+
+== Acquisition ==
+Animus stones cannot be crafted. They can be bought from tribal faction settlements, where they have a 25% chance of appearing in stock, or received as a [[quest]] reward from a tribal faction.
+
+== Summary ==
+Animus stones are a natural [[meditation focus]]. They have a base meditation focus strength of '''34%'''.
+
+Animus stones have <code>ai_neverTrashThis</code> enabled. As a result, hostile pawns generally do not deliberately select them as targets when trashing colony buildings, and they are not treated as obstacles worth destroying by breaching logic. They can still be damaged incidentally.
+
+Like other natural focus objects, its effectiveness is reduced by artificial buildings within a 34.9 tile radius. Note that this does not include [[floor]]ing and [[torch lamp]]s. The reduction is set by the following curve:
+
+<div><li style="display: inline-table;">
+{| {{STDT| c_07 text-center}}
+! Artificial items<br>in range !! Strength<br>offset !! Graph
+|-
+|  0 || '''0%'''
+| rowspan="4" | {{Graph:Chart
+ | width = 200 | height = 200 | type = line | xAxisTitle = Artificial items in range | yAxisTitle = Strength offset
+ | x = 0,  5,  10,  50
+ | y = 0, -8, -16, -34
+}}
+|-
+|  5 || {{--| 8%}}
+|-
+| 10 || {{--|16%}}
+|-
+| 50 || {{--|34%}}
+|} 
+</li></div>
+
+Animus stones give {{+|2%}} psyfocus per day to nearby natural focus objects, including other animus stones. Up to four additional animus stones can attach to a focus. Thus the maximum meditation focus of an animus stone is '''42%''', reached with a total of five animus stones.
+
+== Analysis == 
+Animus stones are the strongest Natural meditation focus, 6% stronger than the [[anima tree]]. However, the anima tree has the benefit of the anima tree linking ceremony, giving pawns access to a higher level of [[psylink]]. If psyfocus is needed ''now'', though, the animus stone is the best option for Natural meditation pawns.
+
+Compared to other foci, natural focus has the disadvantage in that they should be placed far from artificial buildings. This increases travel time and reduces efficiency of this focus. The animus stone has a high psyfocus power, but the travel time can end up making the animus stone less efficient than other types of foci.
+
+== Version history ==
+* [[Version/1.1.2647|1.1.2647]] - Added.
+* [[Version/1.1.2654|1.1.2654]] - Increase psyfocus gain of animus stone from 25 to 34.
+* [[Version/1.2.2719|1.2.2719]] - Fix: Just claimed artificial structures don't affect nature focus objects.
+
+<noinclude>
+{{nav|misc|wide}}
+</noinclude>
+
+[[Category:Miscellaneous]]

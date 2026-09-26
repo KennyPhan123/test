@@ -1,0 +1,113 @@
+{{Stub|reason=Needs to cover both natural and constructed roofs, and has information that should be combined from several sources, inc the Orders pages, [[mountain]] etc.Transclude the orders/zones onto the page and discuss them, and expand analysis of things like roof drop traps. Work to make. void  metal roof}}{{#set:Blocks Wind = true}}
+
+A '''roof''' is an area of cover from the elements. They can be natural or artificial, with only minor differences between them.
+
+== Occurrence ==
+
+[[File:Roof Radius 2.png|thumb|right|A single wall or column will support a roof in a roughly circular area 6 tiles around it.]]
+Constructed roofs are created by pawns; they require no resources to create or destroy and take {{Ticks|65}} of work to construct or remove, modified by the pawn's [[Construction Speed]] × 1.7. A [[build roof area]] designates an area where pawns assigned to [[Work#Construct|Construct]] will build a roof if possible. A [[remove roof area]] does the opposite, designating an area where existing roofs, including thin rock roofs, will be removed. A newly constructed room, up to a maximum size{{Check Tag|What size?}}, will automatically apply a build roof area over itself, including walls, but excluding remove roof area. [[Ignore roof area]] removes the effects of both build roof area and remove roof area - existing roofs won't be removed, new roofs are not designated for construction, and a newly enclosed room may create a build roof area.
+
+When a roof is constructed, any other unroofed tiles designated by the ''build roof area'' which are immediately adjacent to the tile targeted by the constructor, will also have their roof constructed for no extra work. Effectively this means up to 9 tiles of roof can be constructed in a single action. On the other hand, roof removal can only be performed one tile at a time.
+
+Natural roofs (e.g. rock roof (thin) and overhead mountain) cannot be created by the player, and only appear in natural [[rock]] formations. Thin rock roof can be removed as usual, but overhead mountain cannot be destroyed by any means short of [[development mode]].
+
+A roof can extend up to 6 tiles from a wall, column, rock wall, or any other fully impassible structure. This means that building with interior dimensions 12x(#) or smaller will always be able to be fully roofed. Areas built larger than this will remain partially unroofed without the use of additional support. In addition, a roof must be adjacent to either a roof-bearing structure, or another roof.
+
+If a roof's support is removed after it was built, then it will cause a [[#Roof collapse|roof collapse]].
+
+== Summary ==
+{{Stub|section=1|reason=Likely not a complete list of effects. Also a list of buildings affected would be nice}}
+All types of roof do the following, when placed:
+* Prevent sunlight from reaching the area, lowering the [[light]] level of the tile.
+* Block many effects from [[weather]]:
+** Prevent [[rain]] from giving colonists the {{--|3}} ''Soaking Wet'' [[mood]]let or accelerating item [[deterioration]].
+** Prevent [[snow]] from accumulating on the ground.
+** Prevent [[lightning]] from striking an area. Note that any lightning generated in the area, such as by the [[Flashstorm (psycast)|Flashstorm psycast]] will still strike if there is an unroofed area, but will simply always strike somewhere unroofed.
+** Prevent weather from impacting [[Weapons#Accuracy|ranged accuracy]], assuming ''both'' the shooter and the target are under a roof. The area between the shooter and target is irrelevant.
+* Prevent item [[deterioration]] completely, if the roofed area is also in a [[room]].
+* A [[room]] with at least 75% roof allows [[temperature]] changes to occur. If a room goes below that threshold, then temperature will instantly equalize with the Outdoors temperature. Having more of a room roofed will increase insulation.
+** If the [[room]] also has less than 300 unroofed tiles, it will turn from "Unroofed" to "Roofed".
+
+Certain electric buildings and [[battery|batteries]] can start a fire during rain or snow when not under a roof. Roofed unlit production buildings still operate at full speed if the pawn using it is not in the dark.
+Certain buildings like [[mortar]]s, [[telescope]] and [[ground-penetrating scanner]]s do not function under a roof.
+Trees cannot grow under a roof regardless of light level, but other plants can be. Similarly, a roof cannot be built on the same tile as a tree.
+[[Gas]]es dissipate slower under a roof.
+
+== Types ==
+[[File:Roof thin thick.png|thumb|left|200px|Roof visibility overlay enabled showing thick/overhead mountain (dark green), thin/rock roof (light green) and constructed roofs (light green)]]
+=== Overhead mountain (thick) ===
+Overhead mountain has special properties compared to regular roof:
+*Overhead mountain does not allow [[transport pod]]s to land or any [[mortar shell]]s to hit. Pods will land somewhere else; mortar shells are erased.
+*Overhead mountain has natural [[temperature]]-regulating effects.
+*Overhead mountain allows [[infestation]]s to spawn (see [[Infestation#Natural Infestations]] for details).
+*Overhead mountain is considered more indoors for an undergrounder's [[Indoors (need)|Indoors need]].
+*Overhead mountain cannot be removed.
+*Having a roof collapse will create [[collapsed rocks]], instantly killing or destroying anything underneath. The roof remains the same.
+
+=== Constructed roof ===
+Roof put over areas when ordered using a construct roof zone. This roof will make a room considered roofed, however things like mortars or drop pods will break through it if landing on it, causing a small amount of damage from roof collapsing along with any other damage the falling objects would otherwise cause. You can also remove constructed roofs by replacing the construct roof zone with a deconstruct roof zone
+
+=== Rock roof (thin) ===
+Near the edge of mountains, Rock Roof (thin) is functionally the same as constructed roof, and unlike thick rock roofs can be removed in the same way as constructed roofs. It cannot be rebuilt if removed or destroyed.
+
+== Roof collapse ==
+A roof will collapse if the last supporting [[structure]] within 6 tiles is removed, whether by [[Mine | mining]], [[Deconstruct | deconstruction]], or destruction. Removing the last tile of roof supporting another section of roof by [[#Roof deconstruction|deconstruction]] will delete the now-unsupported section but will not cause a collapse nor cause any damage. The player receives an event notification when a roof tile collapses and the game is paused.
+
+Roof collapses cause damage to everything and everyone underneath them, dealing [[Injury|injuries]] to pawns and damage to items. All roof collapses deal [[Damage Types#Crush|Crush]] damage. Thick mountain roof deals 99,999 damage with 999% {{AP}}, obliterating anything underneath it. Collapsed overhead mountain will leave [[collapsed rocks]]. Pawns and objects caught under collapsed rocks will be utterly destroyed; their bodies, [[gear]], and inventory are unrecoverable. Destroyed items leave no scrap parts. Thick mountain roof is not removed by collapse - if the collapsed rock is mined out and a collapse is triggered again, more collapsed rock will be created indefinitely. 
+
+Normal collapsed roof remove the roof tiles in question and leaves [[filth]] in the form of building and rock rubble on the ground. Constructed and thin mountain roof deal between 15 and 30 damage with 0% {{AP}}, targeted at the "outside" and "top" of a pawn i.e. the neck of a [[human]] pawn and all its external children parts including the head.  
+
+=== Analysis ===
+{{Stub|section=1|reason=Further optimization of roof drop traps}}
+The player can prevent roof collapse by preemptively removing roof tiles at risk. Creating a [[Remove roof area]] on the necessary tiles will prompt a colonist to safely remove thin roof.
+
+Roof collapse can also be manipulated into a weapon to damage entire rooms of enemies at once. Use [[frag grenades]] or any ranged weapon to destroy a pillar that was supporting roof over a [[killbox]]. Alternatively, [[IED trap]]s can be placed behind cheap, low {{HP}} walls or columns supporting roofs and enemies shot at when they come near it. They will take cover behind the structure, triggering the IED, detonating it, and dropping the roof on them for two sources of damage. Pathing hacks that exploit pawn preferences to avoid walking over slower terrain can also be used, such as placing IED roof drop traps on bridges over water.
+
+The damage from thin roof drops is not enormous, but targeting the head and neck make it deadlier that it would otherwise be. Assuming the random damage range is linear between the two points,{{Check Tag|Verify|Verify that the chance for any value between 15 and 30 damage being chosen is, in fact, the same.}} approximately 33.3% of roof collapses will do enough damage to outright destroy the head or neck and instantly kill the pawn. The 0% {{AP}} of the thin roof collapses means that helmets, and to a lesser extent, armor pieces that protect the neck, are very effective at protecting pawns however. This means that heavily armored pawns have little to fear from thin roof collapses except when extremely unlucky, while wearing [[Quality|legendary]] [[cataphract armor]]{{RoyaltyIcon}} and [[cataphract helmet]]{{RoyaltyIcon}} will make a pawn completely immune to them. This also makes [[Tribes|Tribal]] [[raiders]] much more susceptible to roof drop traps than the usually better armored [[outlander]] and [[pirate]] [[factions]].
+
+Nothing will save a pawn from a collapsed overhead mountain and overhead mountain drops are devastating, though difficult to set up and wasteful in terms of loot.
+
+{| class="wikitable"
+! Average thin roof damage by Armor (%)
+|-
+| {{Graph:Chart|width=400
+| height=150
+| type=line
+| yGrid=
+| xGrid=
+| xAxisTitle= Armor (%) 
+| xAxisMin = 0
+| xAxisMax = 200
+| yAxisMin = 0
+| yAxisMax = 30
+| yAxisTitle= Average Damage Dealt
+| x= 0, 100, 200
+| y1Title = Lower bound (15 damage)
+| y1= {{#expr:15*1}}, {{#expr:15*0.25}}, {{#expr:15*0}}
+| y2Title = Higher bound (30 damage)
+| y2= {{#expr:30*1}}, {{#expr:30*0.25}}, {{#expr:30*0}}
+| legend = Average Damage
+}}
+|}
+
+== Roof deconstruction ==
+Drawing a "[[Remove roof area]]" will cause colonists to remove a constructed roof. Constructors will automatically go and safely remove the roofs without risk of collapse. Overhead Mountains cannot be removed this way, only by triggering a collapse.
+
+Because of the collapse protection mentioned above when removing the roof, it can be expeditious to direct pawns to only remove the outside ring of roofing to allow the inner roof area to become unsupported and vanish safely. 
+
+== Gallery ==
+<gallery>
+TempRoof.png|A tile of corrugated sheet metal, used to show new roofs being placed
+Roof placement fading.png|Newly-built roof sections are briefly visible, before fading out
+Roof drop trap 1.png|Simple roof trap setup. A wooden column is place in a killbox and roof is built within it's support radius. The column is then preemptively damaged down to low hp so a single shot will destroy it and cause the roof to collapse
+Roof drop trap 2.png|The result of the supporting column being destroyed. Note that you can see six enemies being damaged simultaneously by the falling roof
+Bridge_ied_trap_4.png|Non-contiguous version of an IED bridge roof trap showing that pathing raiders will be lured by the movement efficiency.
+Bridge ied trap 5.png|Several raiders outside of the IED blast radius are damaged by the roof collapse
+</gallery>
+
+== Version history ==
+* Beta 19/1.0 - It's no longer possible to build roof over trees
+* [[Version/1.5.4062|1.5.4062]] - Improved lighting for roof eaves. Gas now dissipates slower in roofed areas.
+{{nav|structure|wide}}
+[[Category:Buildings]]
+[[Category:Environment]]

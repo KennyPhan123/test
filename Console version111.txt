@@ -1,0 +1,145 @@
+{{Version Nav|date=2022-12-08}}
+
+== Features / additions ==
+
+* Added: Learning Helper - in-game intelligent encyclopaedia  
+* Added: Inbox - improved system for alerts and messages with notification system
+* Added: Stack size and labels overlay
+* Added: Guilty colonist manager
+* Added: Additional details panels
+** Bill details and items
+** Caravan meeting 
+* Added: Shield belts information panel
+* Added: New version popup, a new screen to show patch notes in game when a new patch is released
+
+== Features/Improvements ==
+=== UI ===
+* Added: Animal name labels with toggle
+* Added: Caravan stats on Trade screen
+* Added: Extra width for pawn labels with wide symbols
+* Added: Ground scanner information text
+* Added: Header in DLC prompt
+* Added: Highlight for passion icon in pawn management stats menu
+* Added: Missing punctuation in the title "Opinion of his" in the Relationship tab
+* Added: Added note about rare materials in Bill details screen
+* Added: Error message for draggable objects when placed incorrectly by the player
+* Added: Psy settings info boxes showing further details
+* Added: Icon to distinguish trader from other NPCs
+* Added: Title to "More Information" option in trade screen
+* Added:  Mass added to trade screen
+* Added: Display diet details in Caravan menu
+* Improved: Reward preferences to Quest screen
+* Improved: Values that summarise as '0' in the Relationship tab were all visualised in white - even if other positive (green)/negative (red) stats are included - now colours reflect status.
+* Improved: Changed sequence of opinions in Relationship tab help make it clearer
+* Improved: Alert tab is now populated faster and updated before it is shown 
+* Improved: Error notification when trying to place blueprint incorrectly
+* Improved: Build screen is now hidden when accessing Architect or Quest menus
+* Improved: Detailed descriptions filter prompt is now hidden if no filters are available
+* Improved: Grow zones and Stockpile information displaying has been optimised
+* Improved: Inspect screen button prompts are hidden when additional screens are open and it is not possible to inspect
+* Improved: L1 modifier button is now hidden when input is not possible 
+* Improved: Hide R1 alerts button is now hidden when input is not possible
+* Improved: Increase the width of the Psy management and information panel 
+* Improved: Items with multiple variations now show in the correct colour in Caravan details menu
+* Improved: Selection position and navigation mode in the Bills screen is now retained when returning from Bill details
+* Improved: Scrolling Bills now stops the selection at the second final element for consistency throughout the game
+* Improved: Show nutrition value when making Caravans
+* Improved: Item list now correctly updates after sorting in Caravan inventory screen
+* Improved: Room stats now update when cursor is not being moved
+* Improved: Updated saving error prompt with more contextual information
+* Improved: Replaced icon for the roping animal action with a clearer icon.
+* Improved: Title for removing monument marker dialog updated
+* Improved: Beauty overview numbers in the background no longer cover other numbers.
+* Improved: Made skill information shown instead of passion in Team overview when it is important to show the skill stat
+
+=== Gameplay ===
+* Added: Functionality to execute and spare guilty colonists
+* Improved: Greatly improved performance when scanning for corpses to haul
+* Improved: Made fermenting slower on high game speed
+* Improved: Made mood and thoughts expiration update correctly
+* Improved: Made it possible to assign “none” as animal master
+* Improved: Made quest timer live update
+* Improved: Room stats update in a dynamic way
+* Improved: Optimised placing floor over water to improve performance
+* Improved: Recovery rate for psypower heat now adjusts for game speed
+
+=== Audio ===
+* Large sound effect overhaul
+** Added: draft / undraft sound from View All Colonists menu
+** Added: sound effects for Caravan, Work and Assign menus
+** Added: sound effects for Trade menu
+** Added: sound effects for Work menu details toggle
+** Added: sound effects for menu sounds
+** Added: sound effects for Pawn Management menu
+** Added: sound effects for deselection, remove for loading screen
+** Added: sound effects for Schedule menu
+** Added: sound effects for toggle tile info action
+** Added: sound effects for inventory screen
+** Added: sound effects for fix pin button view
+** Added: sound effects when closing interaction menu
+** Added: sound effects for stockpile menu
+** Added: sound effects in Research Screen
+* Improved: Schedule screen toggle tools sound
+* Improved: Trade screen audio sound effects
+* Improved: Work menu toggle sound sound effects
+* Improved: Speed toggle sounds, including new audio for x2 and x3
+* Improved: Warning sound effect plays every time the player selects an invalid “Starting site”
+* Improved: Move audio call on toggle pawn list to base class for better performance
+* Improved: Move sound function calls to another place  for better performance
+* Improved: Removed the double sound from dialog systems, now just one plays
+
+=== Tutorial ===
+* Added: “Pick me up” label to weapons during tutorial
+* Added: Tutorial fail prompt if pawn is downed before Raid event
+* Improved: Set default storyteller and difficulty for tutorial
+
+== Fixes ==
+=== UI ===
+* Fixed: The UI box at the bottom left of the screen for different eggs selected has uniform length
+* Fixed: Assign food tab filter logic updated to work as expected
+* Fixed: Selected pawn showing "null" north button when having no gizmo options
+* Fixed: Now close architect menu on focus change
+* Fixed: Correctly provide the "interact" option when hovering over a drafted pawn that is carrying drug items
+* Fixed: No longer showing placeholder text on empty alert screen
+* Fixed: Entropy limiter icon now changes according to the setting 
+* Fixed: Factions menu details opens correctly on PlayStation
+* Fixed: Filter control text updates correctly on tab change
+* Fixed: Animal icon now scales correctly when animals screen updates
+* Fixed: Bill details button prompts and HUD is now visible in the Stockpile screen
+* Fixed: Colony name overlaying tile information box in World Map
+* Fixed: Default colour is set on some quest rewards (Honor/Good Will/Body parts)
+* Fixed: Filters showing when invalid for current menu
+* Fixed: Categories shown in the Food tab of the Assign menu
+* Fixed: Input binding fix for Research screen and Architect menu, when paused
+* Fixed: The "None" Overlay Option was incorrectly labelled "Overlay Name"
+* Fixed: Equippable items in Gear tab of Caravan menu was missing cursor on first open
+* Fixed: If the caravan is ambushed with the Caravan Details screen open, the Caravan Details screen does not work correctly
+* Fixed: Inventory now updates after forced food consuming
+* Fixed: A "switching prisoners" button prompt issue now fixed for dead prisoners - when the colony has 3 or more than 3 prisoners
+* Removed: Change Tab button from History menu, now we only have one section in that menu
+* Removed: "The quest description goes here" text when accessing the Alerts tab before it is populated 
+* Removed: “Select starting site” button when on multiple camps selected
+
+=== Gameplay ===
+* Fixed: Map size no longer resets when returning from character selection
+* Fixed: Moving bills in the Bills screen will have correct scroll behaviour now
+* Fixed: The 'toggle allowed' function only toggles the selected category in Stockpile Zone storage settings
+* Fixed: Now displaying correct filters for stockpiles
+* Fixed: Quest rewards no longer show up outside of Quest screen
+* Fixed: Refactor time controls to block input after pressing R2 and to avoid input conflicts with other game actions
+* Fixed: Electrical cables look torn when the camera is zoomed out
+* Removed: Message on tile deselect action
+
+=== Localisation ===
+* Fixed: Formatting issues in Japanese
+* Fixed: 'Scheduled' and 'Frequency' text does not overlap in the Polish localisation
+* Fixed: Rewards Preference text is now translated
+* Fixed: Russian control misalignment
+* Fixed: Translate "days" in Caravan selection in World Map
+
+=== Additional fixes ===
+* Fixed: Infinite loading screen and notification initialisation
+* Fixed: "You're Still Here?" Achievement can be unlocked by leaving the game idle and continuing, after all colonists have died
+* Fixed: Open market instead of web browser
+* Fixed: Stabilize version of new DLC handling system
+* Fixed: When starting caravan travel days info is correctly updated in all languages

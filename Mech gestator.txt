@@ -1,0 +1,84 @@
+{{Biotech}}
+{{See also|Large mech gestator}}
+{{Infobox main|building
+| name = Mech gestator
+| image = MechGestatorStandard_MenuIcon.png
+| description = A tank of mechanite-rich fluid with support tubes for feeding in materials and nutrients. Mechanitors can use it to produce new mechanoids or to resurrect dead mechanoids. This basic type of mech gestator is only capable of generating light-weight mechs.<br/>The process uses harsh chemicals which are stored in toxic wastepacks. Haulers must remove the wastepacks from time to time.
+| type = Building
+| type2 = Biotech (Buildings)
+| placeable = 
+| path cost = 
+| passability = pass through only
+| blockswind = 
+| cover = 0.5
+| minifiable = 
+| size = 3 * 2
+| flammability = 0.5
+| mass base = 25
+| hp = 250
+| beauty = 
+| power = -350
+| terrain affordance = 
+| research = Basic mechtech
+| skill 1 = 
+| skill 1 level = 
+| work to make = 8000
+| resource 1 = Steel
+| resource 1 amount = 150
+| resource 2 = Component
+| resource 2 amount = 3
+| thingCategories = 
+| room role = Laboratory
+}}
+The '''mech gestator''' is a [[building]] added by the [[Biotech DLC]] that allows for the creation and resurrection of light [[mechanoids]] by a [[mechanitor]]
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+The mech gestator is used to build and revive all light mechanoids. It cannot gestate medium, heavy or superheavy mechanoids. Consumes 350 W of power when gestating a mech, and 50 W otherwise. If power is lost during gestation, the cycle will pause, but no other adverse effects will occur. The gestator can only be worked by a [[mechanitor]], and that mechanitor that works the gestator will be bonded to the mechs created.
+<includeonly><onlyinclude>
+|-
+! style="text-align:left;" data-sort-value="{{{?Name}}}" | {{Icon Small|{{{?Name}}}}} {{DLC Icons|{{{?Name}}}}}
+| {{Required Resources|{{{?Name}}}|sep=&nbsp;+|simple=1}}
+| {{{?Gestation Cycles}}}
+| [[{{{?Required Research}}}]]
+</onlyinclude></includeonly>
+<div><li style="display: inline-table;">
+{| {{STDT|sortable c_03 text-center}}
+! Mech !! Materials !! [[Gestation cycle|Gestation<br/>Cycles]]!! Required<br/>Research
+|-
+{{#ask: [[Production Facility 1::Mech gestator]] OR [[Production Facility 2::Mech gestator]] OR [[Production Facility 3::Mech gestator]] OR [[Production Facility 4::Mech gestator]]
+| named args = true
+| ?Name = ?Name
+| ?Gestation Cycles = ?Gestation Cycles 
+| ?Required Research = ?Required Research
+| format = template
+| template = :Mech gestator
+| link = none
+| limit = 300
+| sort = From DLC, Type, Type2, Name}}
+|}
+</li><div>
+Note: Despite being light mechanoids, [[war urchin]]s are not created at this gestator. They are instead created by the [[War queen]].
+
+Resurrection bills can only be used on dead friendly mechanoids. 
+* '''Resurrect Light Mech:''' Requires {{Icon Small|Steel||25}} [[steel]], and 1 [[gestation cycle]].
+
+== Analysis ==
+Mech gestators are required for the creation of most light mechanoids. If a player wishes to have mechanoids, this is often a necessary building.
+
+Light mechanoids primarily handle basic, repetitive jobs, such as [[Agrihand|harvesting crops]] or [[Cleansweeper|sweeping filth]]. Even colonies that don't want to focus heavily on mechanoids should consider investing into light, labor mechs in order to save on colonist time.
+
+== See also == 
+[[Large mech gestator]] - The larger variant, for creating other sizes of mechanoids.
+
+== Version history ==
+* [[Biotech DLC]] Release - Added.
+* [[Version/1.4.3528|1.4.3528]] - Fix: Mech gestator draw size.
+* [[Version/1.5.4062|1.5.4062]] - Fix: Mech gestators spawning mechs early.
+
+{{Nav|biotech|wide}}
+{{Nav|mechanoid|wide}}
+[[Category:Biotech (Buildings)]]
+[[Category: Laboratory Production]]

@@ -1,0 +1,104 @@
+{{Ideology}}
+{{infobox main|misc
+| name = Sleep accelerator
+| image = Sleep accelerator.png
+| description = A bedside device that accelerates the sleeper's circadian rhythm. This speeds up sleep, but consumes a lot of electricity and also causes increased hunger. It must be placed directly adjacent to and facing the head of the bed. Placing more than one sleep accelerator near the same bed has no effect.
+| type = Building
+| type2 = Ideology (Buildings)
+| placeable = true
+| passability = pass through only
+| cover = 0.2
+| minifiable = true
+| size = 1 ˣ 1
+| mass base = 20
+| flammability = 0.7
+| hp = 100
+| sell price multiplier = 0.7
+| power = -400
+| terrain affordance = light
+| research = microelectronics
+| thingCategories = BuildingsMisc
+| skill 1 = Construction
+| skill 1 level = 8
+| work to make = 6000
+| resource 1 = Steel
+| resource 1 amount = 50
+| resource 2 = Component
+| resource 2 amount = 5
+| page verified for version = 1.3.3069
+}}
+A '''Sleep accelerator''' is a building added by the [[Ideology DLC]]. It increases the rate at which a pawn sleeps, giving them a longer working day, in exchange for increasing the amount of nutrition they require and consuming power. 
+
+== Acquisition ==
+{{Acquisition}} Sleep accelerators can only be constructed by colonists/slaves with an [[Ideoligion]] containing the [[Ideoligion#Transhumanist|Transhumanist]] meme. They can also be built by a [[constructoid]],{{BiotechIcon}} even if its [[mechanitor]] follows a different ideoligion, but placing down the blueprint requires a Transhumanist colonist or slave in the colony.
+
+== Summary ==
+[[File:Sleep accelerator all placements.png|thumb|left|Every valid placement and rotation of the sleep accelerator. Note that only one accelerator can be active for a bed.]]
+Sleep accelerators can be installed to a bed, granting +35% [[Rest Effectiveness]] and +20% [[Saturation#Bed Hunger Rate Multiplier|Bed Hunger Rate Multiplier]] to the colonist sleeping in it for 400W power. Note that this Rest Effectivenes bonus is applied before the quality multiplier on Rest Effectiveness of the bed, that is the bonus is multiplied by the '''bed's''' [[Quality#Structures|quality (Rest Effectiveness Factor)]]. It is applied ''after'' the multiplier from being a bed being made of stone. It takes 50W power when it's not being used. 
+
+As noted by the description, the sleep accelerator must be placed adjacent to and facing the head of the targeted bed to have effect. More than one accelerator has no effect. A [[double bed|double]] or [[royal bed]] only requires a single accelerator to affect both pawns.
+
+The following beds can utilize the sleep accelerator: {{#ask: [[Facility::{{PAGENAME}}]]}}.
+
+<div><li style="display: inline-table;">
+{{#vardefine:baseRestEffectiveness| 35}}
+{| {{STDT| sortable c_08 text-center}}
+! Bed [[Quality]]
+! data-sort-type="number" | Awful
+! data-sort-type="number" | Poor
+! data-sort-type="number" | Normal
+! data-sort-type="number" | Good
+! data-sort-type="number" | Excellent
+! data-sort-type="number" | Masterwork
+! data-sort-type="number" | Legendary
+|-
+! [[Rest Effectiveness]] Bonus
+| +{{#expr:{{#var:baseRestEffectiveness}}*0.86 round 0}}%
+| +{{#expr:{{#var:baseRestEffectiveness}}*0.92 round 0}}%
+| +{{#expr:{{#var:baseRestEffectiveness}}*1.00 round 0}}% 
+| +{{#expr:{{#var:baseRestEffectiveness}}*1.08 round 0}}%
+| +{{#expr:{{#var:baseRestEffectiveness}}*1.14 round 0}}%
+| +{{#expr:{{#var:baseRestEffectiveness}}*1.25 round 0}}%
+| +{{#expr:{{#var:baseRestEffectiveness}}*1.60 round 0}}%
+|-
+|}
+</li></div>
+'''Nota bene:''' As the rest effectiveness bonuses apply to the bed ''before'' the bed's [[quality]] multiplier is applied, the exact bonus the sleep accelerator applies scales with the '''bed's''' quality.
+
+Pawns with a Transhumanist ideoligion will gain a {{+|3}} [[mood]]let for 24 hours whenever they sleep with a sleep accelerator.
+
+== Analysis ==
+=== Costs and benefits ===
+{{For|full analysis of rest and sleep saved|Rest}}
+When sleeping in a normal quality [[bed]], sleep accelerators will save 1.4 hours of sleep per day (5.8% of a day). In a masterwork bed, this is reduced to saving 1.25 hours (5.2% of a day). While this might seem paradoxical, considering the accelerator's increased Rest Effectiveness, using a masterwork bed means that there's less sleep need to be saved. In both cases, sleep is reduced by roughly 20%.
+
+Consequently, other means of sleep reduction, like [[psychite tea]], [[bionic heart]]s, [[circadian assistant]],{{RoyaltyIcon}} or the [[Low sleep]] gene,{{BiotechIcon}} will all reduce the relative impact of the sleep accelerator. However, with multiple means of sleep reduction, pawns will start to go well "beyond" a 24 hour sleep cycle. In this scenario, setting their [[schedule]] to all Anything will reduce the time pawns travel to and from bed, increasing efficiency in a different way.
+
+The power draw is significant and spikes while colonists sleep. If a pawn sleeps for 6 hours a day and [[batteries]] are used, then an average of roughly '''{{#expr: (300*6/15) + 50}} W per day''' if said power is constantly supplied. Batteries will only store 50% of any excess power. So if [[solar generator]]s are used while colonists sleep at night, then more power is required, up to the upper limit of {{#expr: (300*6/12) + 50}} W per accelerator. The hunger cost can largely be counteracted by growing more food, or by using a [[nutrient paste dispenser]]. <!-- 50 W all day. +300 W for 6 hours = 1800 W hr. Batts store 50% energy when stuff is offline. 6 hours online, (18 * 0.5) effective hours offline, or 15 effective hours a day. 1800 W hr / 15 hr = 120 W average, plus +50 W all the time, assuming chemfuel generator.--> If many sleep accelerators are used, it can be useful to have colonists on different sleep schedules so that power spikes won't be as large.
+
+=== Building decision ===
+Overall, the sleep accelerator is a permanent {{+|5%}} or so buff to colonist time once the resource and power cost can be afforded. They are a low priority to build as their [[component]] cost is hefty; they should be built after relevant weapons, defenses, and the power supply are made. Also, [[neural supercharger]]s should be built first, as they provide 
+
+Sleep accelerators require a Transhumanist pawn somewhere in the colony. In addition, the transhumanist needs enough Construction skill unless a [[constructoid]]{{BiotechIcon}} is available. If the colony's main ideoligion isn't Transhumanist, note that the [[ancient]]s faction will always have a Transhumanist ideoligion, so farming [[ancient danger]]s can be a good way to access a Transhumanist colonist. Also note that having a pawn of different ideoligion may clash with [[diversity of thought]] precepts, although it is possible to imprison the transhumanist after the buildings are built to remove the bigotry penalty.
+
+==== As part of the Transhumanist package ====
+Having the entire colony become Transhumanist makes it easier to access the sleep accelerator and grants a {{+|3}} mood buff. However, they'll demand [[neural supercharger]]s at moderate [[expectations]] (80,000 colony [[wealth]]), and [[biosculpter pod#Age Reversal|age reversal]] at high [[expectations]] (180,000 colony wealth).
+
+* Neural superchargers are another power- and resource- hungry machine, requiring {{Required Resources|Neural supercharger}} and consuming {{Q|Neural supercharger|Power Consumption}} W all day. For the entire day, the supercharge gives {{+|10%}} [[Consciousness]], boosting a wide variety of stats, along with {{+|25%}} [[Global Learning Factor]]. However, pawns will be more hungry, in addition having to power both supercharges and sleep accelerators.
+* Age reversal takes a minimum of 2.61 days/year, or 4.31% of the year when tuned in a [[sterile tile|sterile]] room. In a regular, clean room, this takes 3 days/year (5% of the year). This negates most of the benefit from the sleep accelerator, and comes with the downside of pawns unable to exit freely without [[Ailments#biosculpter sickness|biosculpter sickness]]. Colonies engaging with [[Anomaly]] can take advantage of the [[chronophagy]]{{AnomalyIcon}} ritual to avoid the downsides of using a [[biosculpter pod]], as just one or two rituals - repeatable every few days - will bring pawns many years under the age reversal demand threshold. 
+
+If your colony has not reached high expectations yet, or age reversal is not done (either avoiding it through [[chronophagy]]{{AnomalyIcon}} or by simply taking to moodlet), then the accelerator and supercharger are a maintenance-free positive to work. If pawns are getting age reversal, then sleep accelerators are a ''very'' slight positive to work (though you'll get the full benefit from the supercharger).
+
+Overall, having whole-colony Transhumanism is powerful in the late game but at the cost of a lot of resources. It is particularly good on [[fluid ideoligion]]s, which can convert once resources are available. Still, if chronophagy{{AnomalyIcon}} is unavailable, then it is more work-efficient to recruit a pawn with a Transhumanist ideoligion instead of having a whole colony being Transhumanist (at the cost of any temporary negatives from [[Diversity of thought|biogtry precepts]]).
+
+=== Tips ===
+* Pawns in a [[double bed]] will share a sleep accelerator, so you may want to use a Free Love precept or pair pawns up. Manipulating their actions, using the "Romance" option in the Social tab, and/or using the Word of Love [[psycast]] can all help power. If you're using solar generators, then you may want to have pawns sleep in the day in order to ignore the battery's 50% penalty and use the generator's full draw of power. If you are doing this, remember that [[light]] impacts both movement and work speed.
+* If another faction has the Transhumanist ideoligion, then you can have their pawns construct sleep accelerators and neural superchargers without your entire colony demanding accelerators/superchargers/age reversals/body parts. This is also possible with a fluid ideoligion, though development points can be somewhat prohibitive.
+** If your faction is against Diversity of Thought, then you can [[arrest]] the other ideoligion pawn as soon as they are done building them, and put them in [[cryptosleep]] until you need more fancy buildings built.
+
+== Version history ==
+* [[Ideology DLC]] Release - Added.
+* [[Version/1.4.3523|1.4.3523]] - Moved from [[Misc]] to new [[Ideology (Buildings)|Ideology]] architect tab.
+
+{{Nav|ideology|wide}}
+[[Category:Ideology (Buildings)]]

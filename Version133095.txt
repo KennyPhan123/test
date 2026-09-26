@@ -1,0 +1,46 @@
+{{Version Nav|unstable=1}}
+
+Build 1.3.3095 is on its way.
+
+* Relic hunt quests which reference a relic that will be removed during reforming are ended automatically with a prior confirm dialog given to the player.
+* Fix: Players can take items from passing trade ship inventory to next archonexus settlement
+* Add content source to item descriptions in various dialogs with item tables.
+* Add tongue body part. Make tongue removable via surgery (if you'd prefer someone not speak).
+* Add bionic tongue.
+* Fix: If multiple types of medicine are in a doctor's inventory, they will select the medicine with the lowest medical potency.
+* Use IsFormingCaravan extension method instead of explicitly looking at pawn's lord job.
+* Fix: Doctors tending to patients in bed use the medicine in their inventory even if it is worse than available medicine.
+* Fix: Dryads with replaced parts don't have the "missing" part added back.
+* Performance improvements to animal slaughter dialog, debug tables and debug option screens.
+* Fix: Totemic boards and ideoligion rugs are not flammable.
+* Removed unnecessary MayRequire attributes.
+* Fix: WorkGiver_Tend JobOnThing doesn't match fail conditions of JobDriver_TendPatient
+* Pawns recover from berserk trance on being downed.
+* Don't show anima linking command on every nature focus capable pawn anymore to reduce UI spam. You can still start it via float command or from anima tree directly.
+* Dryad healing pods now heal all negative hediffs including missing body parts. When return to healing pod is toggled on, dryads will return to healing pods if they have any missing parts.
+* Fix: Incorrect 'wanderer joined' text when wanderer helped.
+* Predator in pen alert now mentions the predator by species name.
+* Remove old back compatibility code.
+* Dryad spawn days reduced from 8 to 6.
+* Increase impact of 'lost role' thought from -5 to -15.
+* Reduce production specialist crafting speed buff from +70% to +50%.
+* Reduce intensity of 'ate meat' opinion maluses for vegetarians.
+* Reduce biosculpter age reversal cycle duration from 10 to 8 days.
+* Reduce nutrition requirements of healing and age reversal biosculpter cycles from 10 to 5.
+* Woodmaker dryad output every 2 days increased from 25 wood to 32 wood.
+* Reduced dryad transform delay from 6 days to 5 days.
+* Update descriptions of individualist and collectivist memes.
+* Add allow slave corpse toggle to various storage areas and buildings so you can separate slave corpses from colonist corpses.
+* Adjust mood impact of relic-in-ritual-room thought.
+* Fix: Typos.
+
+
+Fluid ideo stuff:
+* Fix: Dev points from quests open hidden quests.
+* Fix: Non-fluid ideos trigger development point rewards.
+* Adjusted padding on ideo reform dialog.
+* Reform dialog greys out options that can no longer be done and added a sound when resetting changes.
+* Fix: Possible to remove and add a meme when reforming an ideo by randomizing memes.
+* When starting with a fluid ideology, allow player to choose one low OR medium-impact meme.
+* Fluid ideos cannot be reformed when there is an active ritual.
+* Fix: 'Can now reform ideo' letter not sent if there is an active ritual when the next reform points threshold is met.

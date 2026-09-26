@@ -1,0 +1,468 @@
+<noinclude>{{Verified|1.5.4104}}
+&larr; <small>[[Stat]]</small>
+{| {{STDT|sortable}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category</noinclude>
+<!-- Core Stats_Pawns_Combat -->
+<div id="Core Stats_Pawns_Combat"><!--<Defs>-->
+<!-- ================================== Melee =======================================-->
+|- id="Melee DPS" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />MeleeDPS
+* '''Label:'''<br />melee DPS
+| Average damage per second in melee combat.<br id="n" /><br id="n" />This stat ignores target defenses like dodging and armor.
+|
+* Display Order:<br />'''110'''
+* Def Name:<br />'''PawnCombat'''
+* Label:<br />'''Combat'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Worker Class:''' StatWorker_MeleeDPS
+* '''Default Base Value:''' {{%|0}}
+* '''Min Value:''' {{%|0}}
+* '''To String Style:''' FloatTwo
+* '''For Information Only:''' {{Good|true}}
+* '''Show Developmental Stage Filter:''' Child, Adult
+| -
+| 5100
+<!--</StatDef>-->
+|- id="Melee Damage Factor" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />MeleeDamageFactor
+* '''Label:'''<br />melee damage factor
+| A multiplier on the amount of melee damage inflicted by this person.
+|
+* Display Order:<br />'''110'''
+* Def Name:<br />'''PawnCombat'''
+* Label:<br />'''Combat'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''To String Style:''' PercentZero
+* '''Default Base Value:''' {{%|1}}
+* '''Hide At Value:''' {{%|1}}
+* '''Min Value:''' {{%|0.0001}}
+|
+* '''Parts:'''
+** '''StatPart_ShamblerCrawling{{AnomalyIcon}}:'''
+*** Factor: '''{{%|0.75}}'''
+| 5200
+<!--</StatDef>-->
+|- id="Melee Cooldown" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />MeleeCooldownFactor
+* '''Label:'''<br />melee cooldown
+| A multiplier on the time this creature takes to recover after making a melee attack.
+|
+* Display Order:<br />'''110'''
+* Def Name:<br />'''PawnCombat'''
+* Label:<br />'''Combat'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0.05}}
+* '''To String Style:''' PercentZero
+* '''Show If Undefined:''' {{Bad|false}}
+| -
+| 5201
+<!--</StatDef>-->
+|- id="Melee Armor Penetration" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />MeleeArmorPenetration
+* '''Label:'''<br />melee armor penetration
+| Average armor penetration of all attacks in melee combat.<br id="n" /><br id="n" />This stat includes currently used weapon.
+|
+* Display Order:<br />'''110'''
+* Def Name:<br />'''PawnCombat'''
+* Label:<br />'''Combat'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Worker Class:''' StatWorker_MeleeArmorPenetration
+* '''Default Base Value:''' {{%|0}}
+* '''Min Value:''' {{%|0}}
+* '''To String Style:''' PercentZero
+* '''For Information Only:''' {{Good|true}}
+* '''Show Developmental Stage Filter:''' Child, Adult
+| -
+| 4100
+<!--</StatDef>-->
+|- id="Melee Hit Chance" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />MeleeHitChance
+* '''Label:'''<br />melee hit chance
+| Chance to hit a target in melee.<br id="n" /><br id="n" />The target can still dodge even if we would've hit.
+|
+* Display Order:<br />'''110'''
+* Def Name:<br />'''PawnCombat'''
+* Label:<br />'''Combat'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Never Disabled:''' {{Good|true}}
+* '''Default Base Value:''' {{%|0}}
+* '''Min Value:''' {{%|0}}
+* '''Show On Pawns:''' {{Bad|false}}
+* '''To String Style:''' PercentZero
+* '''To String Style Unfinalized:''' FloatOne
+* '''Finalize Equipped Stat Offset:''' {{Bad|false}}
+* '''No Skill Offset:''' 4
+|
+* '''Skill Need Offsets:'''
+** '''SkillNeed_BaseBonus:'''
+*** Skill: '''[[Melee]]'''
+*** Base Value: '''0'''
+*** Bonus Per Level: '''{{+|1}}'''
+{{Graph:Chart|width=300|height=150|xAxisTitle=Melee Level|yAxisTitle=Melee Skill Points|type=rect|x=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20|y=0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20|xGrid=|yGrid=}}
+* '''Capacity Offsets:'''
+** Capacity: '''[[Manipulation]]'''
+*** Scale: '''12'''
+*** Max: '''{{%|1.5}}'''
+** Capacity: '''[[Sight]]'''
+*** Scale: '''12'''
+*** Max: '''{{%|1.5}}'''
+* '''Post Process Curve:'''
+** '''Points:'''
+*** (-20, 0.05)
+*** (-10, 0.10)
+*** (0.0, 0.50)
+*** (10, 0.80)
+*** (20, 0.90)
+*** (40, 0.96)
+*** (60, 0.98)
+{{Graph:Chart|width=300|height=150|xAxisTitle=Melee Skill Points|yAxisTitle=Melee Hit Chance Multiplier|type=line|x=-20, -10, 0.0, 10, 20, 40, 60|y=0.05, 0.10, 0.50, 0.80, 0.90, 0.96, 0.98|interpolate=monotone|xGrid=|yGrid=}}
+* '''Parts:'''
+** '''StatPart_Age{{BiotechIcon}}:'''
+*** Use Biological Years: '''{{Good|true}}'''
+*** Humanlike Only: '''{{Good|true}}'''
+*** '''Curve:'''
+**** '''Points:'''
+***** (4,0.05)
+***** (12,0.8)
+***** (13,1)
+{{Graph:Chart|width=300|height=150|xAxisTitle=Age (Biological)|yAxisTitle=Melee Hit Chance Multiplier|type=line|x=4, 12, 13|y=0.05, 0.8, 1|interpolate=monotone|xGrid=|yGrid=}}
+| 4100
+<!--</StatDef>-->
+|- id="Melee Dodge Chance" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />MeleeDodgeChance
+* '''Label:'''<br />melee dodge chance
+| Chance to dodge a melee attack that would've otherwise hit.<br id="n" /><br id="n" />Characters will not dodge while aiming or firing a ranged weapon.
+|
+* Display Order:<br />'''110'''
+* Def Name:<br />'''PawnCombat'''
+* Label:<br />'''Combat'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Never Disabled:''' {{Good|true}}
+* '''Default Base Value:''' {{%|0}}
+* '''Min Value:''' {{%|0}}
+* '''To String Style:''' PercentZero
+* '''To String Style Unfinalized:''' FloatOne
+* '''No Skill Offset:''' 0
+* '''Show Developmental Stage Filter:''' Child, Adult
+|
+* '''Skill Need Offsets:'''
+** '''SkillNeed_BaseBonus:'''
+*** Skill: '''[[Melee]]'''
+*** Base Value: '''0'''
+*** Bonus Per Level: '''{{+|1}}'''
+{{Graph:Chart|width=300|height=150|xAxisTitle=Melee Level|yAxisTitle=Melee Skill Points|type=rect|x=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20|y=0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20|xGrid=|yGrid=}}
+* '''Capacity Offsets:'''
+** Capacity: '''[[Moving]]'''
+*** Scale: '''18'''
+** Capacity: '''[[Sight]]'''
+*** Scale: '''8'''
+*** Max: '''{{%|1.4}}'''
+* '''Post Process Curve:'''
+** '''Points:'''
+*** (5, 0)
+*** (20, 0.30)
+*** (60, 0.50)
+{{Graph:Chart|width=300|height=150|xAxisTitle=Melee Skill Points|yAxisTitle=Melee Dodge Chance Percentage|type=line|x=5, 20, 60|y=0, 0.30, 0.50|interpolate=monotone|xGrid=|yGrid=}}
+| 4100
+<!--</StatDef>-->
+<!-- ================================== Shooting =======================================-->
+|- id="Ranged Cooldown Multiplier" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />RangedCooldownFactor
+* '''Label:'''<br />ranged cooldown multiplier
+| A multiplier on the cooldown between bursts when using a ranged weapon.
+|
+* Display Order:<br />'''110'''
+* Def Name:<br />'''PawnCombat'''
+* Label:<br />'''Combat'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''To String Style:''' PercentZero
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0.01}}
+* '''Hide At Value:''' {{%|1}}
+| -
+| 1205
+<!--</StatDef>-->
+|- id="Shooting Accuracy" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />ShootingAccuracyPawn
+* '''Label:'''<br />shooting accuracy
+* '''Label For Full Stat List:'''<br />shooting accuracy (people)
+| Base chance to not miss per cell of shot distance.<br id="n" /><br id="n" />Chance to hit is also affected by many other factors.<br id="n" /><br id="n" />A hit chance explanation for any shot can be seen by selecting a shooter and mousing over a target.
+|
+* Display Order:<br />'''110'''
+* Def Name:<br />'''PawnCombat'''
+* Label:<br />'''Combat'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Worker Class:''' StatWorker_ShootingAccuracy
+* '''Show On Animals:''' {{Bad|false}}
+* '''Show On Entities:''' {{Bad|false}}
+* '''Show Developmental Stage Filter:''' Child, Adult
+* '''Default Base Value:''' {{%|0}}
+* '''Min Value:''' {{%|0}}
+* '''To String Style:''' PercentOne
+* '''To String Style Unfinalized:''' FloatOne
+* '''Finalize Equipped Stat Offset:''' {{Bad|false}}
+* '''No Skill Offset:''' 8
+|
+* '''Skill Need Offsets:'''
+** '''SkillNeed_BaseBonus:'''
+*** Skill: '''[[Shooting]]'''
+*** Base Value: '''0'''
+*** Bonus Per Level: '''{{+|1}}'''
+{{Graph:Chart|width=300|height=150|xAxisTitle=Shooting Level|yAxisTitle=Shooting Skill Points|type=rect|x=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20|y=0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20|xGrid=|yGrid=}}
+* '''Capacity Offsets:'''
+** Capacity: '''[[Sight]]'''
+*** Scale: '''12'''
+*** Max: '''{{%|2}}'''
+** Capacity: '''[[Manipulation]]'''
+*** Scale: '''8'''
+*** Max: '''{{%|1}}'''
+* '''Post Process Curve:'''
+** '''Points:'''
+*** (-20, 0.70)
+*** (-10, 0.80)
+*** (-6, 0.83)
+*** (-4, 0.85)
+*** (-2, 0.87)
+*** (0, 0.89)
+*** (2, 0.93)
+*** (4, 0.94)
+*** (6, 0.95)
+*** (8, 0.96)
+*** (10, 0.97)
+*** (12, 0.975)
+*** (14, 0.98)
+*** (16, 0.98333)
+*** (18, 0.98666)
+*** (20, 0.99)
+*** (22, 0.9925)
+*** (26, 0.995)
+*** (30, 0.9965)
+*** (40, 0.998)
+*** (60, 0.999)
+{{Graph:Chart|width=300|height=150|xAxisTitle=Shooting Skill Points|yAxisTitle=Shooting Accuracy Multiplier|type=line|x=-20, -10, -6, -4, -2, 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 26, 30, 40, 60|y=0.70, 0.80, 0.83, 0.85, 0.87, 0.89, 0.93, 0.94, 0.95, 0.96, 0.97, 0.975, 0.98, 0.98333, 0.98666, 0.99, 0.9925, 0.995, 0.9965, 0.998, 0.999|yAxisMin=0.70|interpolate=monotone|xGrid=|yGrid=}}
+* '''Post Process Stat Factors:'''
+** [[ShootingAccuracyChildFactor]]{{BiotechIcon}}
+| 4050
+<!--</StatDef>-->
+|- id="Accuracy Factor (Close)" <!-- ParentName="ShootingAccuracyFactorBase" --><!--<StatDef>-->
+|
+* '''Def Name:'''<br />ShootingAccuracyFactor_Touch
+* '''Label:'''<br />accuracy factor (close)
+| A multiplier on accuracy at a distance of 3 cells or less.
+|
+* Display Order:<br />'''110'''
+* Def Name:<br />'''PawnCombat'''
+* Label:<br />'''Combat'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* Min Value: '''{{%|0.01}}'''
+* Default Base Value: '''{{%|1}}'''
+* Hide At Value: '''{{%|1}}'''
+* To String Style: '''PercentZero'''
+* Show On Animals: '''{{Bad|false}}'''
+* Show Developmental Stage Filter: '''Child, Adult'''
+| -
+| 4049
+<!--</StatDef>-->
+|- id="Accuracy Factor (Short)" <!-- ParentName="ShootingAccuracyFactorBase" --><!--<StatDef>-->
+|
+* '''Def Name:'''<br />ShootingAccuracyFactor_Short
+* '''Label:'''<br />accuracy factor (short)
+| A multiplier on accuracy at a distance of 12 cells.
+|
+* Display Order:<br />'''110'''
+* Def Name:<br />'''PawnCombat'''
+* Label:<br />'''Combat'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* Min Value: '''{{%|0.01}}'''
+* Default Base Value: '''{{%|1}}'''
+* Hide At Value: '''{{%|1}}'''
+* To String Style: '''PercentZero'''
+* Show On Animals: '''{{Bad|false}}'''
+* Show Developmental Stage Filter: '''Child, Adult'''
+| -
+| 4048
+<!--</StatDef>-->
+|- id="Accuracy Factor (Medium)" <!-- ParentName="ShootingAccuracyFactorBase" --><!--<StatDef>-->
+|
+* '''Def Name:'''<br />ShootingAccuracyFactor_Medium
+* '''Label:'''<br />accuracy factor (medium)
+| A multiplier on accuracy at a distance of 25 cells.
+|
+* Display Order:<br />'''110'''
+* Def Name:<br />'''PawnCombat'''
+* Label:<br />'''Combat'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* Min Value: '''{{%|0.01}}'''
+* Default Base Value: '''{{%|1}}'''
+* Hide At Value: '''{{%|1}}'''
+* To String Style: '''PercentZero'''
+* Show On Animals: '''{{Bad|false}}'''
+* Show Developmental Stage Filter: '''Child, Adult'''
+| -
+| 4047
+<!--</StatDef>-->
+|- id="Accuracy Factor (Long)" <!-- ParentName="ShootingAccuracyFactorBase" --><!--<StatDef>-->
+|
+* '''Def Name:'''<br />ShootingAccuracyFactor_Long
+* '''Label:'''<br />accuracy factor (long)
+| A multiplier on accuracy at a distance of 40 cells or more.
+|
+* Display Order:<br />'''110'''
+* Def Name:<br />'''PawnCombat'''
+* Label:<br />'''Combat'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* Min Value: '''{{%|0.01}}'''
+* Default Base Value: '''{{%|1}}'''
+* Hide At Value: '''{{%|1}}'''
+* To String Style: '''PercentZero'''
+* Show On Animals: '''{{Bad|false}}'''
+* Show Developmental Stage Filter: '''Child, Adult'''
+| -
+| 4046
+<!--</StatDef>-->
+|- id="Aiming Time" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />AimingDelayFactor
+* '''Label:'''<br />aiming time
+| How long it takes to shoot after choosing a target.
+|
+* Display Order:<br />'''110'''
+* Def Name:<br />'''PawnCombat'''
+* Label:<br />'''Combat'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0.01}}
+* '''To String Style:''' PercentZero
+* '''Show On Animals:''' {{Bad|false}}
+* '''Show On Entities:''' {{Bad|false}}
+* '''Show Developmental Stage Filter:''' Child, Adult
+|
+* '''Parts:'''
+** '''StatPart_Age{{BiotechIcon}}:'''
+*** Use Biological Years: '''{{Good|true}}'''
+*** Humanlike Only: '''{{Good|true}}'''
+*** '''Curve:'''
+**** '''Points:'''
+***** (4,1.8)
+***** (12,1.1)
+***** (13,1)
+{{Graph:Chart|width=300|height=150|xAxisTitle=Age (Biological)|yAxisTitle=Aiming Time Multiplier|type=line|x=4, 12, 13|y=1.8, 1.1, 1|interpolate=monotone|xGrid=|yGrid=}}
+| 4040
+<!--</StatDef>-->
+|- id="Mortar Miss Radius Multiplier" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />MortarMissRadiusFactor
+* '''Label:'''<br />Mortar miss radius multiplier
+* '''Label For Full Stat List:'''<br />Mortar miss radius multiplier
+| A multiplier on the miss radius of a mortar used by this person. Smaller numbers means more accurate mortar shells.
+|
+* Display Order:<br />'''110'''
+* Def Name:<br />'''PawnCombat'''
+* Label:<br />'''Combat'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Show On Animals:''' {{Bad|false}}
+* '''Show On Mechanoids:''' {{Bad|false}}
+* '''Show On Entities:''' {{Bad|false}}
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0}}
+* '''To String Style:''' PercentZero
+* '''To String Style Unfinalized:''' FloatOne
+* '''Finalize Equipped Stat Offset:''' {{Bad|false}}
+* '''No Skill Offset:''' 0
+|
+* '''Skill Need Offsets:'''
+** '''SkillNeed_BaseBonus:'''
+*** Skill: '''[[Shooting]]'''
+*** Base Value: '''{{%|0.2}}'''
+*** Bonus Per Level: '''{{+|{{%|-0.025}}}}'''
+{{Graph:Chart|width=300|height=150|xAxisTitle=Shooting Level|yAxisTitle=Mortar Miss Radius Multiplier|type=rect|x=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20|y=0.2, 0.175, 0.15, 0.125, 0.10, 0.075, 0.05, 0.025, 0, -0.025, -0.05, -0.075, -0.1, -0.125, -0.15, -0.175, -0.2, -0.225, -0.25, -0.275|xGrid=|yGrid=}}
+* '''Capacity Offsets:'''
+** Capacity: '''[[Sight]]'''
+*** Max: '''{{%|1}}'''
+*** Scale: '''-1'''
+** Capacity: '''[[Manipulation]]'''
+*** Scale: '''-0.5'''
+| 4060
+<!--</StatDef>-->
+<!-- ================================== Misc =======================================-->
+|- id="Trap Spring Chance" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />PawnTrapSpringChance
+* '''Label:'''<br />trap spring chance
+| Chance to spring a trap the character is unaware of.
+|
+* Display Order:<br />'''110'''
+* Def Name:<br />'''PawnCombat'''
+* Label:<br />'''Combat'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0}}
+* '''Hide At Value:''' {{%|1}}
+* '''To String Style:''' PercentZero
+* '''Show If Undefined:''' {{Bad|false}}
+| -
+| 4047
+<!--</StatDef>-->
+|- id="Incoming Damage Multiplier" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />IncomingDamageFactor
+* '''Label:'''<br />incoming damage multiplier
+| A multiplier on all incoming damage.
+|
+* Display Order:<br />'''110'''
+* Def Name:<br />'''PawnCombat'''
+* Label:<br />'''Combat'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0}}
+* '''Hide At Value:''' {{%|1}}
+* '''To String Style:''' PercentZero
+| -
+| 4048
+<!--</StatDef>-->
+|- id="Stagger Time Multiplier" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />StaggerDurationFactor
+* '''Label:'''<br />stagger time multiplier
+| A multiplier on the duration of the stagger-slowdown that occurs when damage is taken.
+|
+* Display Order:<br />'''110'''
+* Def Name:<br />'''PawnCombat'''
+* Label:<br />'''Combat'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''To String Style:''' PercentZero
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0}}
+* '''Hide At Value:''' {{%|1}}
+| -
+| 1200
+<!--</StatDef>-->
+<!--</Defs>--></div>
+<noinclude>
+|}</noinclude>

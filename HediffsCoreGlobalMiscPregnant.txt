@@ -1,0 +1,46 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Core/Global/Misc}}
+|}
+----
+{| {{STDT| c_13}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Pregnant" <!-- defName="Pregnant" -->
+! Pregnant (animal)
+----
+* Def Name:<br />Pregnant
+* Label:<br />pregnant
+* Label Noun:<br />pregnancy
+* Debug Label Extra:<br />animal
+| This creature is gestating offspring. It will give birth if the pregnancy comes to term. If starved or injured, there may be a miscarriage.
+|<!-- Details -->
+* Hediff Class: '''Hediff_Pregnant
+* Default Label Color: {{Color|70%|100%|70%}}
+* Is Bad: {{Good|false}}
+* Initial Severity: '''0.1%'''
+* Prevents Pregnancy: {{Good|true}}
+* Pregnant: {{Good|true}}
+* '''Comps:''' ''Message After Ticks''
+** Ticks: {{Ticks|600}}
+** Message: {0} is pregnant!
+** Message Type: '''PositiveEvent'''
+|<!-- Stages -->
+{| {{STDT| c_13}}
+! Label !! Parameters
+|-
+! early-stage
+|<!-- Parameters -->
+* Vomit {{MTB}} Days: '''2.5'''
+|-
+! middle-stage
+|<!-- Parameters -->
+* Min Severity: '''33.3%'''
+* [[Moving]] Offset: {{--|15%}}
+|-
+! late-stage
+|<!-- Parameters -->
+* Min Severity: '''66.6%'''
+* Vomit {{MTB}} Days: '''2'''
+* [[Moving]] Offset: {{--|30%}}
+|}<noinclude>
+|}</noinclude>

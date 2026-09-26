@@ -1,0 +1,164 @@
+{{infobox main|animal
+| page verified for version = 1.3.3101
+| name = Elephant
+| image = Elephant.png
+| description = The largest unmodified land animal. Elephants have a long trunk they use to manipulate objects, and sharp tusks they use to gore attackers. A dead elephant's valuable tusks can be recovered by butchering it.<br>Intelligent creatures with complex social relationships, elephants can be used as pack animals or trained to carry out the most complex of tasks. They live a long time, and are known to remember events and relationships from many decades before.
+| type = Animal
+| movespeed = 4.8
+| min comfortable temperature = -12
+| max comfortable temperature = 50
+| toxic resistance = 0.5
+| toxic environment resistance = 0
+| flammability = 0.7
+| marketvalue = 600
+| filth rate = 24
+| ridingspeed = 1.3
+| herdanimal = true
+| combatPower = 260
+| bodysize = 4
+| healthscale = 3.6
+| hungerrate = 1.605
+| diet = herbivorous
+| leathername = elephant leather
+| wildness = 0.75
+| manhuntertame = 0
+| manhunter = 0.5
+| trainable = advanced
+| specialtrainables = war trumpet
+| mateMtb = 12
+| packanimal = true
+| gestation = 13.32
+| offspring = 1
+| lifespan = 50
+| juvenileage = 0.3
+| maturityage = 0.666
+| tradeTags = AnimalUncommon
+| baby name = elephant calf
+| attack1dmg = 25
+| attack1type = Scratch
+| attack1cool = 2.6
+| attack1part = tusk
+| attack2dmg = 25
+| attack2type = Stab
+| attack2cool = 2.6
+| attack2part = tusk
+| attack3dmg = 16.9
+| attack3type = Blunt
+| attack3cool = 2
+| attack3part = front left leg
+| attack4dmg = 16.9
+| attack4type = Blunt
+| attack4cool = 2
+| attack4part = front right leg
+| attack5dmg = 14
+| attack5type = Blunt
+| attack5cool = 2
+| attack5part = head
+| attack5chancefactor = 0.2
+| isCoastal = false
+| livesin_aridshrubland = 0.5
+| livesin_tropicalrainforest = 0.5
+| livesin_tropicalswamp = 0.5
+}}
+'''Elephants''', called '''elephant calves''' as babies,  are large land [[animals]] often found in {{Habitats}}. They have [[elephant tusk]]s, which they use to fight in melee.
+
+== Acquisition == 
+Elephants can be found in {{Habitats}}. They can either be tamed by a [[Work #Handle|handler]] or self-tame in a random event.
+
+Elephants can be bought and sold in other [[Trade#Faction base|faction bases]] and from [[Trade#Exotic goods trader 2|exotic goods traders]]. Elephants purchased from traders will be already tamed.
+
+== Summary ==
+When an adult elephant is butchered, it yields {{Icon Small|elephant tusk}} 2 [[elephant tusk]]s, unless the tusk body part is damaged.
+
+Elephants can be brought on [[caravan]]s as [[pack animal]]s, they can carry {{P|Pack Capacity}} kg of weight, almost double that of the [[muffalo]]. They can additionally be ridden for up to 130% caravan speed, reached if there is at least 1 elephant per rider.
+{{Odyssey|section=1}}
+[[Odyssey DLC]] adds the possibility to train elephants to use the 'War trumpet' ability on command as their special skill. It has two levels of training.
+
+{| {{STDT| sortable text-valign:top}}
+! Ability !! Description 
+|- id="War trumpet"
+! War trumpet<br/>[[File:WarTrumpet.png|64px]]
+| ''Release a powerful roar which has a chance to cause hostile humans and animals to tremble in fear, reducing their movement speed and manipulation.''
+----
+Applies a namesake hediff on hostile humans, [[insectoids]] and [[drones]]:
+''This creature has been shaken by the powerful roar of a mighty beast.''
+* [[Manipulation]] {{Bad|x85%}}
+* [[Moving]] {{Bad|x75%}}
+* [[Hearing]] {{Bad|x50%}}
+* AoE: 19.9 radius around the caster
+* Warmup: {{Ticks|30}}
+* Duration: 20 to 30 seconds
+* Cooldown: {{Ticks/gametime|7500}}
+* Chance for each target: 100% at 80% [[Hearing]] - 0% at 0% Hearing
+* Ignores line of sight.
+|}
+
+== Analysis ==
+Elephants are difficult to tame and eat a high amount of food, but are very powerful animals. They are in the unique position as the only pack animal that can be trained to haul. They can also be ridden in a caravan for extra speed. As a bonus, elephants are great at combat.
+
+Elephants come in herds; hunting 1 elephant may anger the entire herd. In addition, elephants have 50% manhunter on hunt but 0% manhunter on a failed tame. Even if you want to slaughter elephants, consider taming them first. As a plus side, elephant herds are great to use with a [[psychic animal pulser]] or the [[manhunter pulse]] [[psycast]]{{RoyaltyIcon}}.
+
+===As an attack animal===
+Elephants are powerful animals, great for [[Defense tactics#Animal melee blocking|damage soak tactics]]. They have a high health, joint second with [[megasloth]]s, but elephants are much easier to tame. In addition, elephants will never go manhunter on a failed taming attempt. 
+
+However, this comes at the cost of a high hunger rate. This is not usually a problem, as elephants reside in tropical biomes, but can be an issue during a [[toxic fallout]] or [[caravan]] trip.
+
+{| class="wikitable sortable"
+|-
+! Animal !! Health Scale !! DPS !! Move Speed !! Hunger rate !! <abbr title="How often the animal forgets a stage of training in days">Training Decay</abbr>
+|-
+| [[Thrumbo]] || {{Q|Thrumbo|Health Scale}} || {{Q|Thrumbo|Mob Average DPS}} || {{Q|Thrumbo|Move Speed Base}} || {{Q|Thrumbo|Real Hunger Rate}} || {{#expr:12 - 6*{{Q|Thrumbo|Wildness}} round 1}}
+|-
+| [[Megasloth]] || {{Q|Megasloth|Health Scale}} || {{Q|Megasloth|Mob Average DPS}} || {{Q|Megasloth|Move Speed Base}} || {{Q|Megasloth|Real Hunger Rate}} || {{#expr:12 - 6*{{Q|Megasloth|Wildness}} round 1}}
+|-
+| '''Elephant''' || {{P|Health Scale}} || {{P|Mob Average DPS}} || {{P|Move Speed Base}} || {{P|Real Hunger Rate}} || {{#expr:12 - 6*{{Q|Elephant|Wildness}} round 1}}
+|-
+| [[Rhinoceros]] || {{Q|Rhinoceros|Health Scale}} || {{Q|Rhinoceros|Mob Average DPS}} || {{Q|Rhinoceros|Move Speed Base}} || {{Q|Rhinoceros|Real Hunger Rate}} || {{#expr:12 - 6*{{Q|Rhinoceros|Wildness}} round 1}}
+|-
+| [[Grizzly bear|Bear]] || {{Q|Grizzly bear|Health Scale}} || {{Q|Grizzly bear|Mob Average DPS}} || {{Q|Grizzly bear|Move Speed Base}} || {{Q|Grizzly bear|Real Hunger Rate}} || {{#expr:12 - 6*{{Q|Grizzly bear|Wildness}} round 1}}
+|}
+
+===As a pack animal===
+Elephants, despite carrying the most out of any [[pack animal]] in the game, are not great pack animals. This is due to their high hunger rate. 1 elephant carries less and eats more than 2 [[muffalo]] or 5 [[alpaca]]. Elephants can be ridden, and the only rideable animal native to the tropics, where their hunger usually isn't an issue. However, any other rideable animal would be better on a caravan (2 [[donkey]]s can carry 2 people, 1 elephant can carry 1 person).
+
+In addition, elephants are the only pack animal that isn't a [[pen animal]]. For the sole purpose of packing goods, this is a downside, as elephants need to be re-trained. On the flip side, this allows elephants to be a pack animal that fights enemies and hauls goods.
+
+===In Odyssey DLC===
+{{Odyssey|section=1}}
+Elephant's war trumpet has a weaker effect than thrumbo's roar, but these effects stack together for a more powerful debuff, and it still synergies well with its high health and damage soak tactics.
+
+== Training ==
+{{TrainingTable}}
+
+{{OdysseyIcon}} In addition, a {{PAGENAME}} can be trained to perform 'War Trumpet'.
+== Health ==
+{{Animal Health Table|QuadrupedAnimalWithHoovesTusksAndTrunk}}
+{{Pawn Attack Table}}
+
+== Trivia ==
+As both males and females have tusks, this may imply that the elephants in-game are African Elephants as tusks are a sexually dimorphic trait in Asian Elephants.
+
+== Gallery ==
+<gallery>
+Elephant east.png|Facing east
+Elephant north.png|Facing north
+Elephant south.png|Facing south
+</gallery>
+<gallery>
+Dessicated elephant east.png|Dessicated facing east
+Dessicated Elephant north.png|Dessicated facing north
+Dessicated Elephant south.png|Dessicated facing south
+</gallery>
+<gallery>
+ElephantPack east.png|Packing bags facing east
+ElephantPack north.png|Packing bags facing north
+ElephantPack south.png|Packing bags facing south
+</gallery>
+== Version history ==
+* [[Version/0.12.906|0.12.906]] - Added.
+* [[Version/1.4.3523|1.4.3523]] - Allow female elephants to drop tusks when butchered. Previously they did not yield tusks despite the texture of female elephants showing tusks, and female elephants' ability to attack with tusks.
+* [[Odyssey DLC]] Release - Added War Trumpet ability.
+{{nav|animal}}
+[[Category:Animals]]
+[[Category:Pack Animal]]
+[[Category:Wild animal]]

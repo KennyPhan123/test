@@ -1,0 +1,118 @@
+{{Version Nav}} 
+
+Hey everyone - here's a new update for RimWorld for all of you!
+
+This wide-ranging update makes a variety of improvements - see the full changelog below.
+
+One critical adjustment is in the proportion of different raid strategies. Previously, mechanoids were using breach raids far too often. I've been seeing feedback about this for a while, so in previous updates we did make some analysis tools and I tried to adjust things to solve it. Unfortunately, I missed the true issue and the problem persisted. After some recent feedback from Reddit, we made some more analysis tools to figure out what's going on, I was shocked to discover how out of whack the numbers were. I'm not sure how I missed this before, but the game wasn't acting anything like I intended. Please accept my apology for missing this before.
+
+With this update, breach raids are now present but uncommon, with normal raids forming the main threat. I also tweaked the numbers for human factions so the mix of raid strategies should be healthily varied through the whole game. The game will now also reduce the likelihood of getting two raids from the same faction in a row.
+
+Related to that, players' turrets have been buffed gently. Since we have raids that can handle turrets more intelligently now, we can make the turrets stronger against the attacks against which they are effective. All this is subject to ongoing adjustment, of course.
+
+We also did a bunch of work to improve your ability to handle vegetarian, carnivore, and eat-anything colonists together. Previously, you didn't have the management tools needed to identify and separate these peoples' foods properly; now you do.
+
+Biosculpters also have better feedback to help players anticipate the duration of the biosculpting cycles, since these durations change depending on who goes into the pod.
+
+This update should be compatible with all saves and mods.
+
+Many thanks to Nick Barrash for work on extremely fiddly meal-related AI and visualization, Matt Ritchie for helping investigate breacher issues, and Alex Mulford for helping balance player defense tools. Also thanks to TiaPixel for marketing help and to everyone who offered test feedback for the unstable build on the public RimWorld test Discord server.
+
+As always, please don't hesitate to review Ideology on its Steam page!
+
+Until next time,
+Ty
+
+== Combat - Turrets ==
+
+* [[Mini-turret]] damage increased from 11 to 12.
+* Mini-turret accuracy increased: touch 0.7 -> 0.77, short 0.64 -> 0.7, medium 0.41 -> 0.45, long 0.22 -> 0.24.
+* [[Autocannon turret|Autocannon]] damage increased from 25 to 27.
+* Autocannon accuracy increased: touch 0.25 -> 0.28, short 0.65 -> 0.72, medium 0.6 -> 0.66, long 0.45 -> 0.5.
+* [[Uranium slug turret]] damage increased from 50 to 55.
+* Uranium slug turret accuracy increased: touch 0.2 -> 0.22, short 0.3 -> 0.33, medium 0.4 -> 0.44.
+* [[Mortar]] miss radius reduced from 10 to 9 (when playing without classic mortars active).
+* The [[Mortar Miss Radius Multiplier|accuracy of mortars]] is now related to a pawn's [[shooting]] skill. Skill level 8 makes it the same as before. Higher skill will make the mortar more accurate, while lower skill will make it less accurate.
+* Turret ammo cost is no longer factored by difficulty.
+* Reduced uranium slug turret cost per shot from 3 uranium to 2.666.
+
+== Combat - Enemies ==
+
+* Reduced [[termite]] mech's [[thump cannon]] range from 25.9 to 24.9.
+* Added a way to make special per-faction raid strategy probabilities.
+* Adjusted mechanoid raid strategy probabilities so that late game they use breachers about 33% of the time instead of 90% of the time.
+* Breachers no longer want to attack passable player buildings. They only target impassable buildings like walls.
+* Changed termite [[thump cannon]]'s [[Damage type#Thump|damage]] multiplier versus walls from 4x to 2x (so their damage versus walls dropped from 540 to 270). It now requires 2 shots from a termite to destroy a 300hp steel wall.
+* Changed [[breach axe|breaching axe]]'s [[Damage type#Demolish|damage]] multiplier versus walls from 1 to 0.75 (so their damage versus walls drops from 75 to ~56).
+* Selection weight of the most recent raid faction is reduced by 60% when choosing a faction for the next raid.
+* Adjusted human factions' raid strategy selection weights for slightly more variation.
+
+== Food handling ==
+
+* We now vary meal textures depending on ingredients.
+* Food restrictions are automatically applied to pawns from ideoligions that require a specific food type.
+* Meals now look differently depending on whether they were made from vegetarian, carnivore, or mixed ingredients. This will help you manage stockpiles of food for pawns with different dietary demands.
+* Meal inspect strings now display information regarding their ingredients and who would accept eating them.
+* With Ideology active, colonists will not automatically merge meals with different food kinds (i.e. meat only or veg only).
+* Meal-related thoughts now display which meal caused the thought.
+* Added food restrictions for meat or veg only meals.
+* Added special thing filters for meat and veg ingredient-filled meals.
+* Add insect meat food restriction and special things filter.
+* Add cannibal food restriction and special thing filter.
+* Don't apply ate meat thought if vegetarian eats human meat, allow strong cannibal precepts with meat eating negative precepts.
+
+== Misc improvements ==
+
+* Reworked how tree-lovers respond to the destruction of trees to be smoother and more consistent. Tree Density ideo precept now has a mood penalty directly proportional to the number of destroyed trees, with no effect from biome.
+* Biosculpter inspect string now says which pawn and cycle will be run while pawn has job to enter in progress.
+* Add LookTarget to the cure message shown when using healer mech serum.
+* Restored the healing message displayed after using a healer mech serum.
+* Pawns can now install pre-built furniture even if it is incompatible with their ideo.
+* When you r-click on a biosculpter with a pawn selected, we now show biosculpter cycles' durations in the context menu.
+* Biosculpter's inspect pane readout now notes if biosculpting cycle is accelerated by precept (i.e. if the pawn is a transhumanist).
+* Show biosculpter cycle duration for both normal and transhumanist pawns in cycle button's tooltip.
+* Some research now requires high tech bench: brain wiring, compact weaponry, neural supercharge, biosculpting, specialized limbs, poison synthesis.
+* Buildings in non-player non-hostile maps can no longer be claimed while there are members of the owner faction active.
+* Slaves are now worth 75% of colonists in terms of map wealth and population.
+* Terminals in worshipful villages now take 3 seconds to hack.
+* Changed slag steel chunk mass from 5 to 8 so it doesn't weight less than the steel you get by smelting it.
+* Added a loading tip describing fixed wealth mode.
+* Total tend quality info is now only displayed if the hediff disappears after a certain level of tend quality (since it's fairly useless otherwise).
+
+== Fixes ==
+
+* Fix: [[Hood]] and [[torture crown]] have no armor ratings.
+* Fix: [[Transport pod]]s built before last patch have 0 capacity.
+* Fix: Uninstalling and reinstalling a [[mortar]] resets its cooldown.
+* Fix: Caravan fails to leave map if roping pawn removed or mental break while animal still in pen.
+* Fix: Newborn animals from other factions don't leave with faction.
+* Fix: High life precept description doesn't properly display mood range.
+* Fix: Less-restrictive nudism precepts are inconsistent with allowed gear.
+* Fix: [[Autobong]] doesn't satisfy smokeleaf dependence.
+* Fix: Special characters on named precepts can break UI.
+* Fix: Starting packaged survival meals can be made of ingredients not allowed by ingredient filters.
+* Fix: Tattoo artwork integration bugs.
+* Fix: Error message with def for smeltProducts.
+* Fix: [[Long range mineral scanner]] took 10x less work to build than similar structures.
+* Fix: Work speed penalty reasons formatting issues.
+* Fix: Remove gestation period stat for megaspiders and spelopedes, since they do not breed.
+* Fix: [[Slab bed]] doesn't burn.
+* Fix: Potential nullref in CompAbilityEffect_StartRitual.
+* Fix: Drum party-related error when ticking AI lord.
+* Fix: Blood from scarification is from cutter, not cuttee.
+* Fix: Psyfocus ritual reward does not recharge psyfocus to max.
+* Fix: Trade price tooltip for selling bonus when player's negotiator has ideo leader role.
+* Fix: Mortar draws interaction spot when selected.
+* Fix: If a hosted guest is imprisoned and enslaved, the gear he is wearing remains locked.
+* Fix: Paralytic Abasia pawn enslaved throws 10 jobs in one tick when emancipated.
+* Fix: Meals with no ingredients cause "ate non-meat" thought.
+* Fix: Player-provided saved game had a settlement with a non-functional trade button. It no longer refuses to trade.
+* Fix: Pawns grow at incorrect rate and do not reach adulthood at the age specified in relevant race defs.
+* Fix: Saving and loading repeatedly while doors are waiting to close can cause them to become stuck open.
+* Fix: Darkness pawns have a 'outdoors lit' accuracy debuff when targeting something in a cave.
+* Fix: Hauling items into stockpiles occasionally fails with a NullReferenceException. This affected emptying egg box job and possibly others.
+* Fix: Bestowing ceremony target is undraftable even after ceremony ended.
+* Fix: Hackables can be instantly hacked.
+* Fix: [[Autobong]] reduces consciousness of [[Mechanoid|mechs]].
+* Fix: Raiders attacking non-aggressive roamers.
+* Fix: Vegetarian pawns get mad eating vegetarian-made pemmican.

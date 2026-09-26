@@ -1,0 +1,492 @@
+{{DISPLAYTITLE:Plague Gun}}
+
+{{BackToTutorials}}
+
+This is a tutorial for taking an item [[mod]] from conception all the way to completion, touching on most systems involved in RimWorld modding and explaining each step.
+
+'''Editor Note:''' This tutorial is somewhat obsolete as custom C# code is no longer necessary to apply additional hediffs to the target of a ranged attack, however it has been kept here as it still serves as a useful end-to-end tutorial on how to set up a custom code assembly for a RimWorld mod. This particular version was first written for RimWorld v1.1, but has been updated and should still work in v1.6, if you run into any issues please let us know in in the #mod-development channel of the [https://discord.gg/UTaMDWc RimWorld Discord].
+
+== Introduction ==
+
+In this tutorial we will be using most of the tools available to a Rimworld [[Modding|modder]] to create a custom weapon, known as the Plague Gun.
+
+This weapon will, when its shots hit a living target, have a chance to apply the [[Plague]] hediff ("health difference") to that target.
+
+To do this, we will create XML ThingDefs for the gun and projectile, create a C# assembly which determines what happens when the projectile hits a target, and link that behavior back to the XML.
+
+This tutorial will assume a basic familiarity with XML and C# syntax. It should be simple enough to follow if you're only a beginner. 
+
+If you have no XML or C# experience, there are good tutorials for XML [https://www.w3schools.com/xml/ here] and C# [https://www.learncs.org/ here].
+
+=== The Completed Mod ===
+For a working example, check out [https://github.com/dninemfive/PlagueGun this GitHub repo].
+
+== Required Items ==
+
+Make sure to have the following installed, at least one per row:
+
+{| class="wikitable"
+|-
+| [https://code.visualstudio.com/ VSCode] || A text editor that allows you to edit XML files and use "Find in Files" for referencing.
+|-
+| [https://visualstudio.microsoft.com/vs/community/ Visual Studio Community] || Use this or any other C# compiler to turn scripts into .dll files that RimWorld can use.
+|-
+| [https://github.com/icsharpcode/ILSpy/releases ILSpy]|| This is for referencing the game's decompiled C# scripts.
+|}
+
+For more detailed recommendations, see [[Modding Tutorials/Recommended software|here]].
+
+== XML Stage ==
+
+In this stage we will set up the mod and create XML files which add our things to the database.
+
+# Locate your RimWorld folder.
+#* On Steam, you can find it by right-clicking the game in your games list > Properties > Local Files > Browse Local Files...
+#** By default, it will be located at <code>C:\Program Files (x86)\Steam\steamapps\common\RimWorld</code> if you bought it through Steam on Windows.
+#* If you bought the DRM-free version, it will be located wherever you unzipped it.
+#* On GOG, you can find it by right-clicking the game in your games list > Manage Installation > Show Folder
+#** By default it will be located at <code>C:\Program Files (x86)\GOG Galaxy\Games\RimWorld</code> if you bought it through GOG on Windows.
+# Create a <code>Mods</code> folder (if it doesn't already exist).
+<br /><nowiki /><!--
+--><small>RimWorld>Mods>PlagueGun</small>
+#* Go into the Mods folder.
+#* Make a new folder with our mod's title: '''PlagueGun'''
+# Inside '''PlagueGun''', make an '''About''' folder.
+<br /><nowiki /><!--
+--><small>RimWorld>Mods>PlagueGun>About</small>
+# Inside the '''About''' folder, make a new text file and rename it About.xml.
+<br /><nowiki /><!--
+--><small>RimWorld>Mods>PlagueGun>About>About.xml</small>
+#* You will need a good text editor to make a proper XML file -- see [[#Required Items|required items]]. I always make a .txt file first and change it to .xml. If you can't rename your file's type, make sure you have filetypes visible in your operating system's file view settings.
+#* [[About.xml]] is the file that shows your mod in the mod list inside the RimWorld game. It is also used when creating a Workshop upload for Steam.
+#* At the top of an XML file, always include this for RimWorld. It basically just gives the game some info about how to read the file. <source lang = "xml"><?xml version="1.0" encoding="utf-8"?></source> ''Note: the'' version '' tag should always be "1.0". It has no relation with the current RimWorld version.''
+#* Then add the MetaData tags for the Workshop and in-game Mod list.<source lang ="xml"><ModMetaData>
+  <name>Test Mod - Plague Gun</name> <!-- The name of your mod in the mod list -->
+  <author>YourNameHere</author>
+  <packageId>YourNameHere.PlagueGun</packageId> <!-- a unique identifier for your mod. Must contain only a-z and periods, no spaces. -->
+  <supportedVersions> <!-- the version(s) your mod supports -->
+    <li>1.1</li>
+  </supportedVersions>
+  <description>This mod adds a plague gun, a weapon that has a chance to give your enemies the plague.\n\nFor version 1.1.</description>
+</ModMetaData>
+</source>
+#* Save the file.
+# Add a Preview.png or Preview.jpeg to your '''About''' folder.
+<br /><nowiki /><!--
+--><small>RimWorld>Mods>PlagueGun>About>Preview.png</small>
+#* This lets users see what your mod looks like in the RimWorld mod list or on the Steam Workshop.
+#* The conventional dimensions to fit the preview image on Steam are 640x360. The image must be smaller than 1mb. 
+#* Example: [[File:Preview.png]]
+# Make a '''Defs''' folder in your Mod's directory.
+<br /><nowiki /><!--
+--><small>RimWorld>Mods>PlagueGun>Defs</small>
+#* RimWorld will read your XML files in any subdirectory of '''Defs'''. You can name your directories however you like under that folder. Defs>StrangeNewAlienGuns>MyGuns.xml will work. For the purposes of this tutorial, however, we will use the RimWorld standard structure.
+#* What are Defs? Main article: [[Modding Tutorials/XML Defs|Defs]]
+#** RimWorld uses things called Defs (short for "definitions") like blueprints for in-game objects. Instead of using hidden C# code, RimWorld will look up an XML Def and copy it to the game world. This makes things easier for us, the modders. Everything from characters, animals, floors, damages, buildings, and even diseases in RimWorld use Defs. We're going to make Defs for our Plague Gun and Plague Bullet.
+# Make a new '''ThingDefs''' folder in your '''Defs''' folder.
+<br /><nowiki /><!--
+--><small>RimWorld>Mods>PlagueGun>Defs>ThingDefs</small>
+# Make a new text file in your '''ThingDefs''' folder, and change it to RangedWeapon_PlagueGun.xml.
+<br /><nowiki /><!--
+--><small>RimWorld>Mods>PlagueGun>Defs>ThingDefs>RangedWeapon_PlagueGun.xml</small>
+#* This file will contain the blueprints (ThingDefs) for our new gun and bullets.
+#* Next we will fill out our XML file by copying an existing revolver's ThingDef and a revolver bullet ThingDef.
+#* In RimWorld, it is often best to use the XML attribute <code>ParentName="BaseBullet"</code> when making a bullet, because it will copy XML code from a pre-existing BaseBullet ThingDef, which can save us time and key taps. Main article: [[Modding Tutorials/XML file structure#Inheritance|Inheritance]]
+# First, add our favourite line to the top.<source lang = "xml"><?xml version="1.0" encoding="utf-8"?></source>
+# Add the <code><Defs></code> opening and closing tags to the XML to hold our new code.<source lang = "xml>
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+</Defs>
+</source>
+# Use your text editor. Use its "Find in Files" function to reference and copy Bullet_Revolver to your XML file.
+#* Find in Files is one of my most-used functions. In Notepad++, if you press CTRL+SHIFT+F, you can go to the Find in Files screen. From there, you can enter a phrase to search for, and then you can enter the file path to search through. This makes it wildly easier to search for examples in RimWorld's Core. RimWorld holds copies of all of its weapons, items, buildings, etc. inside the Mods/Core directory.
+#* So, start by using Find in Files... and find this: <code>defName>Bullet_Revolver</code>
+#* When you find Bullet_Revolver, copy from its beginning <code><ThingDef></code> all the way until its closing <code></ThingDef></code> tag into your XML File.
+# Use your text editor's "Find in Files" function to reference and copy Gun_Revolver to your XML file.
+#* Typically, Gun_Revolver is right below Bullet_Revolver in XML, so hopefully this will be easy to find and copy.
+#* Again, copy the ThingDef block to your new XML file.
+# Change the defName, labels, and other stats of Bullet_Revolver and Revolver in your XML file to make them unique.
+#* '''A word on defNames:''' <code>defName</code>s are how the game references defs anywhere they're used in XML, since they're unique. When telling your plague gun to fire plague bullets, for instance, set its <code>defaultProjectile</code> to your projectile's defName, like so:<source lang ="xml"><defaultProjectile>TST_Bullet_PlagueGun</defaultProjectile></source>
+#* '''TIP:''' Use prefixes to avoid conflicting with other mods. RimWorld will overwrite any def with <code><defName>Tobacco</defName></code>, for instance, if it finds another with the same defName. If two modders use different prefixes, however, e.g. <code><defName>VGP_Tobacco</defName></code> and <code><defName>ROM_Tobacco</defName></code>, no conflict will occur, and both mods can co-exist. This tutorial uses TST_ for its example prefix. Main article: [[Modding_Tutorials/Compatibility|Compatibility]]
+#* By contrast, labels, descriptions, and other non-defName tags can generally be non-unique without a risk of conflicts, except perhaps confusion for the end user.
+
+<big>'''If all you were interested in is making a gun mod, you are done.'''</big> You'll of course want to edit values like the damage it does, and [[Modding_Tutorials/Testing_mods|test your mod]]. You'll also want to change the <code>texturePath</code> to your unique art, and whatever else.
+
+=== Completed Example ===
+
+''Note'': The example is up-to-date for [[Version|1.3]] and will likely be outdated in the future. The above steps should always be relevant.
+<source lang ="xml">
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef ParentName="BaseBullet">
+    <defName>TST_Bullet_PlagueGun</defName>
+    <label>plague bullet</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>12</damageAmountBase>
+      <stoppingPower>1</stoppingPower>
+      <speed>55</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>TST_Gun_PlagueGun</defName>
+    <label>plague gun</label>
+    <description>A curious weapon notable for its horrible health effects.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/Revolver</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <uiIconScale>1.4</uiIconScale>
+    <soundInteract>Interact_Revolver</soundInteract>
+    <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <statBases>
+      <WorkToMake>4000</WorkToMake>
+      <Mass>1.4</Mass>
+      <AccuracyTouch>0.80</AccuracyTouch>
+      <AccuracyShort>0.75</AccuracyShort>
+      <AccuracyMedium>0.45</AccuracyMedium>
+      <AccuracyLong>0.35</AccuracyLong>
+      <RangedWeapon_Cooldown>1.6</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags>
+      <li>SimpleGun</li>
+      <li>Revolver</li>
+    </weaponTags>
+    <weaponClasses>
+      <li>RangedLight</li>
+    </weaponClasses>
+    <costList>
+      <Steel>30</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <skillRequirements>
+        <Crafting>3</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>TST_Bullet_PlagueGun</defaultProjectile>
+        <warmupTime>0.3</warmupTime>
+        <range>25.9</range>
+        <soundCast>Shot_Revolver</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+</Defs>
+</source>
+
+== C# Workspace Setup ==
+{{Main|Modding Tutorials/Setting up a solution}}
+
+Next, we will set up a workspace to write C# code, which is a little bit more involved than just using a text editor.
+
+# Open your compiler of choice for C#.
+#* This tutorial will assume you're using Visual Studio Community Edition, a free Windows-based compiler for C# code.
+# Make a new Visual C# Class Library .NET Framework project. Name it PlagueGun. Make its directory RimWorld>Mods>PlagueGun>Source
+#* File → New → Project → Class Library (.NET Framework).
+#* Don't get this confused with "Class Library (.NET Standard)" or "Class Library (.NET Core)"!
+# Go into the project properties. 
+#* Project → PlagueGun Properties.
+# In that window, change the Target Framework version to .NET Framework 4.7.2
+#* Forgetting to do this will cause lots of errors.
+#* Select Yes when it asks you if you're sure to change the framework.
+# While still in Properties, go to the '''Build''' tab.
+# Change the output path to be RimWorld\Mods\PlagueGun\Assemblies
+#* All .dll files will go into this directory when we "build" our code library.
+# In Solution Explorer. Go into Properties and edit AssemblyInfo.cs. Change the name of your assembly and assembly file version number as you like.
+#* This doesn't have to all be the same as your namespace, but it doesn't hurt to be consistent.
+# In the main option bar at the top of the visual studio (File, Edit, View...), click Project, and click Add Reference.
+# Click Browse at the bottom right corner of the window and go to RimWorld\RimWorldWin64_Data\Managed
+# Add references to Assembly-CSharp.dll, UnityEngine.dll, and UnityEngine.CoreModule.dll.
+#* In 1.1 the Unity DLLs were split up and are no longer all contained in the same module.
+#* For our purposes we only need UnityEngine.CoreModule.dll, as it contains some code we will use later.
+#* In general, it's also a good idea to add UnityEngine.dll, which allows Visual Studio to tell you which modules you're missing if you get related errors.
+# In the Solution Explorer (typically on the right side of the application), look at the references drop down list.
+# Select Assembly-CSharp. Check the Properties section (usually under Solution Explorer). Make sure the properties section has Copy Local set to FALSE.
+# Do this (Copy Local to FALSE) for UnityEngine and UnityEngine.CoreModule as well.
+#* By doing this, we prevent the project from causing one million hash conflicts by copying the entire game's code twice!
+
+Now the workspace setup is complete and we can add C# code to RimWorld.
+
+'''Note:''' Exact folder names might differ between installs. The naming scheme differs slightly between the DRM-free and Steam version of the mod.
+
+== C# Coding ==
+
+Now let's start writing the code we'll need to add custom behavior to our projectiles.
+
+=== Getting Started ===
+# Open Class1.cs in the sidebar, usually on the right in Visual Studio.
+# Right-click and rename the .cs file to your liking.
+# Add these lines to the top this file (and every .cs file you make from now on for modding RimWorld).<source lang ="csharp">
+using RimWorld;
+using Verse;
+</source>
+#* These tell the code you're working with RimWorld. Without these, our code will not be able to understand references to RimWorld code.
+# Add a namespace line. By default, this is your project name. Take note - you will need this to connect to XML later.<source lang="csharp">
+namespace TST_PlagueGun
+{
+}
+</source>
+#* '''Note:''' ''Using a prefix on the namespace is not required, but it's good for consistency and in the rare case they may overlap - such as when multiple people follow the same tutorial to learn how to mod.''
+
+=== Connecting XML and C#, Part 1 ===
+{{Main|Modding Tutorials/DefModExtension}}
+
+# First, let's add a way to read XML data into your assembly.
+# Rename public class Class1 to ModExtension_PlagueBullet and make it inherit DefModExtension. As a reminder, inheritance looks like this:<source lang="csharp">
+public class ModExtension_PlagueBullet : DefModExtension
+{
+}
+</source>
+#* '''Note:''' Renaming things in an IDE like Visual Studio is best done by pressing F2 or right-clicking the item/name. Doing it like that will change all occurrences of that thing, so everything that references your namespace or Class1 will now use the new name.
+# Add the following fields in ModExtension_PlagueBullet:<source lang="csharp">
+public float addHediffChance = 0.05f;
+public HediffDef hediffToAdd;
+</source>
+#* Here, we're giving the field addHediffChance a default value, which means it doesn't need to be set explicitly in XML.
+#* '''Note:''' Standard modding practice is to give fields exposed to XML camelCase names, for consistency with vanilla XML.
+# Now let's add the XML which connects to this ModExtension. In your TST_Bullet_PlagueGun def, add the following lines: <source lang="XML">
+<modExtensions>
+    <li Class="TST_PlagueGun.ModExtension_PlagueBullet">
+        <addHediffChance>0.05</addHediffChance>
+        <hediffToAdd>Plague</hediffToAdd>
+    </li>
+</modExtensions>
+</source>
+#* '''Note:''' Note the XML tags match the names of the fields in the C# class. This allows the XML to provide data to the program.  When the mod is loaded, the XML will be read, and used to fill in the corresponding fields.
+#* Additionally, take care to note you can set the value of addHediffChance to any valid floating point number and it will be reflected in-game. The value given in C# is only the default value if unset.
+
+=== Writing the Projectile === 
+# Let's make the actual projectile. For this tutorial, we're going to make a new projectile that checks for impact and adds a Hediff (health differential - poison, toxins, implants, anything).
+# First, create a new .cs file by right-clicking the PlagueGun part of the Solution Explorer and selecting Add > New Item.
+#* '''Note:''' in C#, you can have multiple class definitions in a single file. We're just making a new file for organizational purposes.
+# Make your new class inherit the Bullet class (a child of the Projectile class), so the game will treat your new projectile like a bullet and not throw (fun) errors. <source lang="csharp">
+public class Projectile_PlagueBullet : Bullet
+</source>
+# First, let's connect our new projectile to the relevant ModExtension: <source lang="csharp">
+public ModExtension_PlagueBullet Props => def.GetModExtension<ModExtension_PlagueBullet>();
+</source>
+#* This line is a Property, basically a method which doesn't take any arguments, and can generally speaking be treated as a variable. See [https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/properties this article] for more details.
+# Now, let's start the actual core code of this mod. Let's begin by overriding the Impact method on the base Bullet class, like so: <source lang="csharp">
+protected override void Impact(Thing hitThing, bool blockedByShield = false)
+</source>
+#* The <code>override</code> keyword tells the compiler that we're replacing the functionality of the <code>Impact</code> method from the <code>Bullet</code> class we're inheriting from.
+# First, let's call the base version of this method so we don't need to rewrite all the logic about damaging a pawn - we only care about adding the hediff ''after'' damage occurs. <source lang="csharp">
+base.Impact(hitThing, blockedByShield);
+</source>
+# Next, we check to make sure the ModExtension was properly loaded, that we hit something, and that what we hit was a [[Pawns|Pawn]].<source lang="csharp">
+if (Props != null && hitThing != null && hitThing is Pawn hitPawn)
+</source>
+#* '''Note:''' Null checking is a very important skill, especially for Rimworld modding. If you ever get a <code>NullReferenceException</code>, check to make sure you're correctly handling null values.
+#* Also, note that we initialize a <code>Pawn</code> version of the <code>hitThing</code> while checking its type; we'll use this later. This statement ''also'' null-checks this new variable, in case you were wondering.
+# Now that we know we hit a pawn, we generate a random number to see whether to apply the hediff.<source lang="csharp">
+float rand = Rand.Value;
+if (rand <= Props.addHediffChance)
+</source>
+#* <code>Rand</code> is the base game's randomness generation class. <code>Value</code> grabs the next random number between 0 and 1 and updates the class.
+# If a hediff is applied, we want to alert the player, so we create a message in the top-left of the screen.<source lang="csharp">
+Messages.Message("TST_PlagueBullet_SuccessMessage".Translate(
+	this.launcher.Label, hitPawn.Label
+), MessageTypeDefOf.NeutralEvent);
+</source>
+# Before adding the hediff, we need to check if the pawn already has it, so we get the hediff from the pawn, if it exists.<source lang="csharp">
+Hediff plagueOnPawn = hitPawn.health?.hediffSet?.GetFirstHediffOfDef(Props.hediffToAdd);
+</source>
+#* '''Note:''' The <code>?.</code> is called the [https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/member-access-operators#null-conditional-operators--and- null conditional operator]. It's basically an in-line null check; if the hit pawn's health tracker (<code>health</code>) or hediff set (<code>hediffSet</code>) are null it sets <code>plagueOnPawn</code> to null instead of throwing an error.
+# Now we finally add the hediff. If the pawn already has the plague we just increase its severity; otherwise, we create and add a new hediff with a random severity.<source lang="csharp">
+float randomSeverity = Rand.Range(0.15f, 0.30f);
+if (plagueOnPawn != null)
+{
+	plagueOnPawn.Severity += randomSeverity;
+}
+else
+{
+	Hediff hediff = HediffMaker.MakeHediff(Props.hediffToAdd, hitPawn);
+	hediff.Severity = randomSeverity;
+	hitPawn.health.AddHediff(hediff);
+}</source>
+
+==== Whew. ====
+Let's take a break and recap for a second. If you've followed the projectile section so far, this is the code you should have in your new .cs file:<source lang="csharp">
+using Verse;
+using RimWorld;
+
+namespace TST_PlagueGun
+{
+    public class Projectile_PlagueBullet : Bullet
+    {
+        public ModExtension_PlagueBullet Props => base.def.GetModExtension<ModExtension_PlagueBullet>();
+
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
+        {
+            base.Impact(hitThing, blockedByShield);
+            if (Props != null && hitThing != null && hitThing is Pawn hitPawn)
+            {
+                float rand = Rand.Value;
+                if (rand <= Props.addHediffChance)
+                {
+                    Messages.Message("TST_PlagueBullet_SuccessMessage".Translate(
+                        this.launcher.Label, hitPawn.Label
+                    ), MessageTypeDefOf.NeutralEvent);
+                    Hediff plagueOnPawn = hitPawn.health?.hediffSet?.GetFirstHediffOfDef(Props.hediffToAdd);
+                    float randomSeverity = Rand.Range(0.15f, 0.30f);
+                    if (plagueOnPawn != null)
+                    {
+                        plagueOnPawn.Severity += randomSeverity;
+                    }
+                    else
+                    {
+                        Hediff hediff = HediffMaker.MakeHediff(Props.hediffToAdd, hitPawn);
+                        hediff.Severity = randomSeverity;
+                        hitPawn.health.AddHediff(hediff);
+                    }
+                }
+            }
+        }
+    }
+}
+</source>
+Don't worry, we're almost finished. In fact, if you compile right now the gun ''will'' work - there just won't be any feedback if the shooter misses. This might be desirable, but let's add some feedback anyway.
+
+Well, that's a little bit of a lie. You'd also need to add the <code><thingClass></code> node to the XML, given below.
+
+We want to add an <code>else</code> block to our <code>if (rand <= Props.addHediffChance))</code> statement. This is where keeping track of curly braces comes in; Visual Studio should draw vertical lines between the correct curlies. Add this:<source lang="csharp">
+else
+{
+    MoteMaker.ThrowText(hitThing.PositionHeld.ToVector3(), hitThing.MapHeld, "TST_PlagueBullet_FailureMote".Translate(Props.addHediffChance), 12f);
+}
+</source>
+* This throws a mote (particle effect, essentially), with text stating that the plague was not applied, at the target's position.
+* Fun fact: the <code>.ToVector3()</code> call is the entire reason we needed to reference UnityEngine and UnityEngine.CoreModule.
+
+=== Connecting XML and C#, Part 2 ===
+Finally, we need to make sure our projectile's def tells the game to use our new Projectile_PlagueBullet class instead of Bullet.<source lang="xml">
+<thingClass>TST_PlagueGun.Projectile_PlagueBullet</thingClass>
+</source>
+
+We're done! Your final Projectile_PlagueBullet class should look like this:<source lang="csharp">
+using Verse;
+using RimWorld;
+
+namespace TST_PlagueGun
+{
+    public class Projectile_PlagueBullet : Bullet
+    {
+        public ModExtension_PlagueBullet Props => base.def.GetModExtension<ModExtension_PlagueBullet>();
+
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
+        {
+            base.Impact(hitThing, blockedByShield);
+            if (Props != null && hitThing != null && hitThing is Pawn hitPawn)
+            {
+                float rand = Rand.Value;
+                if (rand <= Props.addHediffChance)
+                {
+                    Messages.Message("TST_PlagueBullet_SuccessMessage".Translate(
+                        this.launcher.Label, hitPawn.Label
+                    ), MessageTypeDefOf.NeutralEvent);
+                    Hediff plagueOnPawn = hitPawn.health?.hediffSet?.GetFirstHediffOfDef(Props.hediffToAdd);
+                    float randomSeverity = Rand.Range(0.15f, 0.30f);
+                    if (plagueOnPawn != null)
+                    {
+                        plagueOnPawn.Severity += randomSeverity;
+                    }
+                    else
+                    {
+                        Hediff hediff = HediffMaker.MakeHediff(Props.hediffToAdd, hitPawn);
+                        hediff.Severity = randomSeverity;
+                        hitPawn.health.AddHediff(hediff);
+                    }
+                }
+                else
+                {
+                    MoteMaker.ThrowText(hitThing.PositionHeld.ToVector3(), hitThing.MapHeld, "TST_PlagueBullet_FailureMote".Translate(Props.addHediffChance), 12f);
+                }
+            }
+        }
+    }
+}</source>
+
+Just compile and test your work; the plague will be properly applied and everything.
+
+'''Note:''' Code you write on your own should not look like this - for one thing, it should be well-commented so that others (even if it's just you in the future) know exactly what you're trying to do and how you're doing it. The code [https://github.com/dninemfive/PlagueGun/blob/master/PlagueGun/Projectile_PlagueBullet.cs in the repo] is probably over-commented and designed for a general audience but I recommend reviewing it.
+
+== Localization ==
+...well, almost. If you did test the gun just now, you'll have seen that the text was all distorted, using special characters which looked like the normal ones instead of text you expected. This is because of the use of <code>.Translate()</code> on keys which do not have translations in the language database. We just need to add those, and we'll be all set!
+
+# First, create a bunch of folders, starting in the root of your mod folder:
+<br /><nowiki /><!--
+--><small>Languages>English>Keyed</small>
+# Next, create a new file called PlagueGun_Keys.xml, with our favorite header.<source lang="xml">
+<?xml version="1.0" encoding="utf-8"?>
+</source>
+# This will be really quick. Add the opening and closing <code><LanguageData></code> tags:<source lang="xml">
+<LanguageData>
+</LanguageData>
+</source>
+# And, finally, add translations for the two keys used in the projectile class.<source lang="xml">
+<TST_PlagueBullet_FailureMote>Failure: {0} chance</TST_PlagueBullet_FailureMote>
+<TST_PlagueBullet_SuccessMessage>{0} infected {1} with the plague!</TST_PlagueBullet_SuccessMessage>
+</source>
+#* The <code>{0}</code> and <code>{1}</code> in these keys will be replaced with the first and second arguments, respectively, of the <code>.Translate()</code> calls. For reference:<source lang="csharp">
+// successful hit message
+"TST_PlagueBullet_SuccessMessage".Translate(this.launcher.Label, hitPawn.Label)
+// unsuccessful hit mote
+"TST_PlagueBullet_FailureMote".Translate(Props.addHediffChance)
+</source>
+#* If you give <code>.Translate()</code> more arguments, you can use <code>{2}</code>, <code>{3}</code>, &c.
+#* Note that, since you only passed one argument to the failure message, <code>{1}</code> would not be replaced with anything.
+# Your PlagueGun_Keys.xml file should look like this:<source lang="xml">
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<TST_PlagueBullet_FailureMote>Failure: {0} chance</TST_PlagueBullet_FailureMote>
+	<TST_PlagueBullet_SuccessMessage>{0} infected {1} with the plague!</TST_PlagueBullet_SuccessMessage>
+</LanguageData>
+</source>
+
+== Next Steps ==
+This concludes this tutorial. Congratulations on making it this far; you now have a solid understanding of XML and C# modding, and of connecting these two. There's a lot more to learn, especially on the C# end, so make sure to practice. If you have any questions don't hesitate to hit up the [https://discord.gg/UTaMDWc Discord]#mod-development or the [https://ludeon.com/forums/index.php?board=14.0 forums] for help.
+
+As for this mod, you might want to add custom textures or sounds. For your next, you might want to try messing around with [[Modding Tutorials/Harmony|Harmony]] or see other [[Modding Tutorials|tutorials]] for inspiration.
+
+== See also ==
+* [[Modding Tutorials/Setting up a solution|Setting up a solution]]
+* [[Modding Tutorials/Distribution|Distribution]]
+* [[Modding Tutorials/Harmony|Harmony]]
+* [[Modding_Tutorials/Mod_folder_structure#The_Languages_folder|Language support]]
+
+== History ==
+* This tutorial is a rewrite of the original by Jecrell (see also original forum {{LudeonThread|33219}})
+
+[[Category: Modding tutorials]]
+[[Category: Modding]]

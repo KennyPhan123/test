@@ -1,0 +1,130 @@
+{{Verified|1.5.4104}}{{Stat
+| default base value = 1
+| to string style = PercentTwo
+| description = The base chance this person will successfully tame an animal on any given attempt. The actual chance is also affected by the animal's wildness.
+Failed tame attempts can induce animal attacks, especially for more vicious animals.
+| category = PawnSocial
+}}
+
+== Factors ==
+* [[Skills#Animals|Animals]][[Skill::Animals| ]]: [[Skill Base Factor::0.04|4%]] plus [[Skill Bonus Factor::0.03|3%]] per skill level.
+* [[Manipulation]]: [[Manipulation Importance::0.5|50%]] importance, 20% allowed defect. [[Manipulation Limit::1|100%]] limit
+* [[Talking]]: [[Talking Importance::0.9|90%]] importance, 20% allowed defect. [[Talking Limit::1|100%]] limit
+* [[Hearing]]: [[Hearing Importance::0.3|30%]] importance, 5% allowed defect. [[Hearing Limit::1|100%]] limit
+* Precepts{{IdeologyIcon}} multipliers:
+** [[Animal connection]] duplicates the chance.
+** [[Ranching (precept)|Ranching]] multiplies the chance by 1.2.
+* [[Animals specialist]] role{{IdeologyIcon}}: x2 Tame Animal Chance
+* Animal's [[Wildness]]: A value between 0% to 100%. At 0%, taming chance gets doubled, while at 100% it becomes impossible. It has no effect at 50%.<ref>The effects of wildness are obtained from a post-processing curve (also called '''simple curve''') on the function TameChanceFactorCurve_Wildness with the points (1,0);(0.5,1);(0,2). While the formula <code>2 * (1 - [[wildness]])</code> replicates the effects, the difference is that this factor can't go above 2 nor below 0.</ref>
+** Despite being human, [[wildman]] have 75% Wildness.
+** Do note that this factor is applied after all others excluding the 3 below.
+
+While not directly related to this stat, some other relevant factors for the actual tame chance are:
+* If the animal is [[Venerated_animals|venerated]] by the tamer's ideoligion{{IdeologyIcon}}, the chance is doubled.
+* If the tamer is [[bond]]ed with the animal to be tamed, the chance is multiplied by 4.
+* If the pawn to be tamed is imprisoned, the chance is multiplied by 0.6.
+
+Do note that a pawn with [[Inspired taming]] will always be successful as long as it meets the Minimum Handling requirement.
+
+== Formula ==
+The formula proper is:<br/>
+<code><big>'''Tame chance''' = [[Skills#Animals|Animals]] * 2 * (1 - [[wildness]]) * Manipulation Offset * Talking Offset * Hearing Offset</big></code><br/>
+<code><big>'''"X" Offset''' = Min( 1; ( ( 1 - X importance ) + X importance * X efficiency / (1 - X Allowed Defect) ) )</big></code>
+
+Replacing values for Manipulation, Talking, and Hearing results on the following expressions: <br/>
+:<code>Manipulation Offset = Min( 1; ( 0.5 + 5/8 * Manipulation ) )</code><br/>
+:<code>Talking Offset = Min( 1; ( 0.1 + 9/8 * Talking ) )</code><br/>
+:<code>Hearing Offset = Min( 1; ( 0.7 + 6/19 * Hearing ) )</code><br/>
+
+With all of the above, the final formula is:<br/>
+<code><big>'''Tame chance''' = ( 0.04 + 0.03 * Animals skill ) * 2 * (1 - [[wildness]]) * Min( 1; ( 0.5 + 5/8 * Manipulation ) ) * Min( 1; ( 0.1 + 9/8 * Talking ) ) *  Min( 1; ( 0.7 + 6/19 * Hearing ) )</big></code><br/>
+
+For the case that Manipulation is above 80%, Hearing above 80%, and Talking above 95%, the formula can be reduced to:<br/>
+:<code><big>'''Tame chance''' = [[Skills#Animals|Animals]] * 2 * (1 - [[wildness]])</big></code><br/>
+
+Do note that additional factors mentioned above (venerated status{{IdeologyIcon}}, bond, imprisoned status) would apply over this calculated value to obtain the final tame chance. Precepts{{IdeologyIcon}} bonuses are technically evaluated before factoring wildness, but can be applied at this stage with no issue.
+
+
+'''Example:'''<br/>
+:A tamer with 13 handling skill has a <code>[4% base] + [3% * 13] = '''42%'''</code> base taming chance. If said pawn attempts to tame a [[Timber wolf]], Minimum Handling of 8, the taming chance would be reduced by its '''85% wildness''', resulting in a <code>42% * 2 * ( 1 - 85% wildness ) = '''12.90%''' </code> taming chance.
+
+:If additionally, this pawn suffers from [[Hearing loss]] on either ear, the taming chance would be <code>42% * 2 * ( 1 - 85%) * (70% + 6/19 * 87.5%) = '''12.30%''' </code>.
+
+
+The table below shows the base taming chance<ref>The precepts{{IdeologyIcon}} [[Animal connection]] and [[Ranching (precept)|Ranching]] multiply this change by 2/1.2, respectively.</ref> for all vanilla combinations of wildness and [[Skills#Animals|Animals skill]]. All values assume Manipulation, Hearing, and Talking values high enough to not alter Tame chance. Do note that not all results are possible in normal gameplay; [[Minimum Handling Skill|Minimum Handling]] is decided by the wildness of the animal in question, removing some combinations. As such, the first Animals skill level that allows interaction with an animal of a given wildness is colored dark green.
+
+<!--{| class="wikitable sortable mw-collapsible" style="text-align:center" -->
+{| {{STDT|sortable c_08 align-center sortable mw-collapsible }}
+|+ class="nowrap" | <span valign="top" style="white-space:nowrap" width="100"> '''Tame chance table'''</span>
+|- style="background-color:#52a76f;"
+! rowspan=2; | Animals<br/>skill !! rowspan=2; | Base <br/>chance !! colspan=17; | Wildness !! rowspan=2; | Animals<br/>skill
+|-style="background-color:#a8d3b7;"
+! 0% !! 20% !! 25% !! 30% !! 35% !! 40% !! 45% !! 50% !! 55% !! 60% !! 75% !! 80% !! 85% !! 90% !! 95% !! 97% !! 98.5%
+|-
+! 0
+|| 4.00% || style="background-color:#52a76f;" | 8.00% || 6.40% || 6.00% || 5.60% || 5.20% || 4.80% || 4.40% || 4.00% || 3.60% || 3.20% || 2.00% || 1.60% || 1.20% || 0.80% || 0.40% || 0.24% || 0.12% || style="background-color:#a8d3b7;" |'''0'''
+|-
+!1 
+| 7.00% || 14.00% || style="background-color:#52a76f;" | 11.20% || style="background-color:#52a76f;" | 10.50% || 9.80% || 9.10% || 8.40% || 7.70% || 7.00% || 6.30% || 5.60% || 3.50% || 2.80% || 2.10% || 1.40% || 0.70% || 0.42% || 0.21% ||style="background-color:#a8d3b7;"|'''1'''
+|-
+! 2
+|| 10.00% || 20.00% || 16.00% || 15.00% || style="background-color:#52a76f;" | 14.00% || style="background-color:#52a76f;" | 13.00% || 12.00% || 11.00% || 10.00% || 9.00% || 8.00% || 5.00% || 4.00% || 3.00% || 2.00% || 1.00% || 0.60% || 0.30% ||style="background-color:#a8d3b7;" |'''2'''
+|-
+!3
+|| 13.00% || 26.00% || 20.80% || 19.50% || 18.20% || 16.90% || style="background-color:#52a76f;" | 15.60% || style="background-color:#52a76f;" | 14.30% || 13.00% || 11.70% || 10.40% || 6.50% || 5.20% || 3.90% || 2.60% || 1.30% || 0.78% || 0.39% || style="background-color:#a8d3b7;" |'''3'''
+|-
+!4
+|| 16.00% || 32.00% || 25.60% || 24.00% || 22.40% || 20.80% || 19.20% || 17.60% || style="background-color:#52a76f;" | 16.00% || style="background-color:#52a76f;" | 14.40% || 12.80% || 8.00% || 6.40% || 4.80% || 3.20% || 1.60% || 0.96% || 0.48% || style="background-color:#a8d3b7;" |'''4'''
+|-
+!5
+|| 19.00% || 38.00% || 30.40% || 28.50% || 26.60% || 24.70% || 22.80% || 20.90% || 19.00% || 17.10% || style="background-color:#52a76f;" | 15.20% || 9.50% || 7.60% || 5.70% || 3.80% || 1.90% || 1.14% || 0.57% || style="background-color:#a8d3b7;" |'''5'''
+|-
+!6
+|| 22.00% || 44.00% || 35.20% || 33.00% || 30.80% || 28.60% || 26.40% || 24.20% || 22.00% || 19.80% || 17.60% || 11.00% || 8.80% || 6.60% || 4.40% || 2.20% || 1.32% || 0.66% || style="background-color:#a8d3b7;" |'''6'''
+|-
+!7
+|| 25.00% || 50.00% || 40.00% || 37.50% || 35.00% || 32.50% || 30.00% || 27.50% || 25.00% || 22.50% || 20.00% || style="background-color:#52a76f;" | 12.50% || 10.00% || 7.50% || 5.00% || 2.50% || 1.50% || 0.75% || style="background-color:#a8d3b7;" |'''7'''
+|-
+!8
+|| 28.00% || 56.00% || 44.80% || 42.00% || 39.20% || 36.40% || 33.60% || 30.80% || 28.00% || 25.20% || 22.40% || 14.00% || style="background-color:#52a76f;" | 11.20% || style="background-color:#52a76f;" | 8.40% || 5.60% || 2.80% || 1.68% || 0.84% || style="background-color:#a8d3b7;" |'''8'''
+|-
+!9
+|| 31.00% || 62.00% || 49.60% || 46.50% || 43.40% || 40.30% || 37.20% || 34.10% || 31.00% || 27.90% || 24.80% || 15.50% || 12.40% || 9.30% || style="background-color:#52a76f;" | 6.20% || style="background-color:#52a76f;" | 3.10% || 1.86% || 0.93% || style="background-color:#a8d3b7;" |'''9'''
+|-
+!10
+|| 34.00% || 68.00% || 54.40% || 51.00% || 47.60% || 44.20% || 40.80% || 37.40% || 34.00% || 30.60% || 27.20% || 17.00% || 13.60% || 10.20% || 6.80% || 3.40% || style="background-color:#52a76f;" | 2.04% || style="background-color:#52a76f;" | 1.02% || style="background-color:#a8d3b7;" |'''10'''
+|-
+!11
+|| 37.00% || 74.00% || 59.20% || 55.50% || 51.80% || 48.10% || 44.40% || 40.70% || 37.00% || 33.30% || 29.60% || 18.50% || 14.80% || 11.10% || 7.40% || 3.70% || 2.22% || 1.11% || style="background-color:#a8d3b7;" |'''11'''
+|-
+!12
+|| 40.00% || 80.00% || 64.00% || 60.00% || 56.00% || 52.00% || 48.00% || 44.00% || 40.00% || 36.00% || 32.00% || 20.00% || 16.00% || 12.00% || 8.00% || 4.00% || 2.40% || 1.20% || style="background-color:#a8d3b7;" |'''12'''
+|-
+!13
+|| 43.00% || 86.00% || 68.80% || 64.50% || 60.20% || 55.90% || 51.60% || 47.30% || 43.00% || 38.70% || 34.40% || 21.50% || 17.20% || 12.90% || 8.60% || 4.30% || 2.58% || 1.29% || style="background-color:#a8d3b7;" |'''13'''
+|-
+!14
+|| 46.00% || 92.00% || 73.60% || 69.00% || 64.40% || 59.80% || 55.20% || 50.60% || 46.00% || 41.40% || 36.80% || 23.00% || 18.40% || 13.80% || 9.20% || 4.60% || 2.76% || 1.38% || style="background-color:#a8d3b7;" |'''14'''
+|-
+!15
+|| 49.00% || 98.00% || 78.40% || 73.50% || 68.60% || 63.70% || 58.80% || 53.90% || 49.00% || 44.10% || 39.20% || 24.50% || 19.60% || 14.70% || 9.80% || 4.90% || 2.94% || 1.47% || style="background-color:#a8d3b7;" |'''15'''
+|-
+!16
+|| 52.00% || 104.00% || 83.20% || 78.00% || 72.80% || 67.60% || 62.40% || 57.20% || 52.00% || 46.80% || 41.60% || 26.00% || 20.80% || 15.60% || 10.40% || 5.20% || 3.12% || 1.56% || style="background-color:#a8d3b7;" |'''16'''
+|-
+!17
+|| 55.00% || 110.00% || 88.00% || 82.50% || 77.00% || 71.50% || 66.00% || 60.50% || 55.00% || 49.50% || 44.00% || 27.50% || 22.00% || 16.50% || 11.00% || 5.50% || 3.30% || 1.65% || style="background-color:#a8d3b7;" |'''17'''
+|-
+!18
+| 58.00% || 116.00% || 92.80% || 87.00% || 81.20% || 75.40% || 69.60% || 63.80% || 58.00% || 52.20% || 46.40% || 29.00% || 23.20% || 17.40% || 11.60% || 5.80% || 3.48% || 1.74% || style="background-color:#a8d3b7;" |'''18'''
+|-
+!19
+| 61.00% || 122.00% || 97.60% || 91.50% || 85.40% || 79.30% || 73.20% || 67.10% || 61.00% || 54.90% || 48.80% || 30.50% || 24.40% || 18.30% || 12.20% || 6.10% || 3.66% || 1.83% || style="background-color:#a8d3b7;" |'''19'''
+|-
+!20
+| 64.00% || 128.00% || 102.40% || 96.00% || 89.60% || 83.20% || 76.80% || 70.40% || 64.00% || 57.60% || 51.20% || 32.00% || 25.60% || 19.20% || 12.80% || 6.40% || 3.84% || 1.92% || style="background-color:#a8d3b7;" |'''20'''
+|}
+
+{{nav|stats|wide}}
+
+== Notes ==

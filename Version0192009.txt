@@ -1,0 +1,161 @@
+{{Version Nav}}
+To get the update: If you’re on Steam, the game will update automatically. If you’re DRM-free, you can re-download from the same link you got the game from originally. It always has the latest version.
+
+If you want to keep playing Beta 18 on Steam: Right click RimWorld in the Library list -> Properties -> Betas -> Choose beta18 from the drop-down menu.
+
+You can play savegames from Beta 18 (and probably before), though some details will change upon loading.
+
+I did want this build to be 1.0 for a while, but it became apparent the game would benefit from one more refinement round, so we’re doing Beta 19 first. I very much want the 1.0 version to be worthy of its version number, which means not rushing it.
+
+Please discuss this post in this forum thread.
+
+EDIT: This build did include 64-bit support. It works fine in the DRM-free build, but caused old builds to become unplayable when added to Steam, because of complications in Steam’s system for deciding which version to serve to which player. It seems Steam doesn’t easily support an old beta branch being 32-bit only with a new one being 32/64 – in this case it starts serving 64-bit content into the old branch, making it unusable since the files are mixed between versions. Since the 32-bit version works fine for almost every use case (aside from very rare and extreme massively-modded situations), I’m removing 64-bit until I can get in touch with Valve and figure out how to get it working smoothly.
+
+Below is a list of notable changes. If anything below seems to change game balance, you can bet that related variables were adjusted to maintain roughly the same challenge as before – I just don’t write down every single change because otherwise this list would be way too long. This list also does not including a ton of more behind-the-scenes optimization, refactoring, fixing, and adjustments we did.
+
+==Release Trailer==
+
+<youtube>https://www.youtube.com/watch?v=FH5tLLJXbg8</youtube>
+
+==Changes==
+* Added bridges. You can build bridges over rivers and non-deep lake/ocean water. Bridges support all but the heaviest structures, can burn, and collapse under damage.
+* Added new “Messages” section of the History tab. This section shows the last 200 messages and letters you’ve received.
+* Added low-tech [[plate armor]].
+* New scenario: Naked Brutality – Start naked with no items.
+* New main tab: Wildlife. Allows easy counting, finding, and designating of wild animals.
+* Ship end sequence: Starting up the ship reactor now takes 15 days, during which you will be attacked constantly by desperadoes and mechanoids.
+* New raid arrival mode: Multiple groups.
+* New raid arrival mode: Enemy pods scattered all over the map.
+* Split mechanoid scyther into scyther (close combat specialist) and lancer (fast sniper)
+* Split tribal warrior into warrior (mid-range melee) and penitent (poverty melee, similar to drifter)
+* Faction relations are now categorized as hostile/neutral/ally instead of just hostile/neutral. Allies will randomly send military aid and will respond to certain special requests.
+* You can now offer gifts to improve faction relations by using transport pods, sending caravans, or giving gifts to their traders. Gifts can be silver, items, or slaves. No more magical teleporting silver gifts.
+* Visitors of allied factions will now occasionally leave gifts before leaving.
+
+===New buildings===
+* [[Watermill generator]]: Generate power from moving water.
+* [[Autocannon turret]]: Heavy medium-range turret.
+* [[Uranium slug turret]]: Armor-penetrating long-range turret.
+* [[Fabrication bench]]: Craft advanced components and some advanced tech items.
+* [[Waterproof conduit]]: Transmit power under water for bases on both sides of a river.
+* [[Butcher spot]]: Butcher without building a bench, at an efficiency penalty.
+* [[Double sleeping spot]]: Sleep with your partner, even in crushing poverty.
+
+===New Traits===
+* [[Undergrounder]]: Don’t mind never seeing the sky, don’t mind being in darkness.
+* [[Great memory]]: Slower skill decay.
+* [[Tough]]: Take less damage.
+* [[Gourmand]]: Eat a lot, random eating binges, cooking skill bonus.
+* [[Sickly]]: Get sick often.
+* [[Quick sleeper]]: Take less time to sleep.
+
+===New items===
+* [[Flak pants]]
+* [[Prosthetic heart]]
+* [[Bionic spine]]/[[Bionic heart|heart]]/[[Bionic stomach|stomach]]
+* [[Archotech eye]]/[[Bionic arm|arm]]/[[Bionic leg|leg]]
+* [[Tornado generator]]
+* [[Patchleather]]: Poor-quality leather made from any combination of other leather
+
+===Improved caravaning===
+* Redesigned how world movement speed is fed back per-world tile.
+* Pack animals now follow colonists to speed up the packing process.
+* Added Caravan tab with caravan loading progress.
+* Redesigned “Form caravan” window: stats like carried mass, caravan speed, days worth of food, and visibility are now explained better.
+* Caravans now automatically forage for food while traveling.
+* Added “Remove from caravan” command: remove people or animals from the caravan even if it hasn’t left the map yet.
+* Added “Load into caravan” right-click option: designate extra items to be picked up by the caravan before leaving.
+* Caravan speed now depends on the carried weight.
+* Caravan members now slowly gain social recreation when the caravan is not moving.
+* Caravan visibility is now explicitly expressed and better explained than the old caravan stealth. This makes small caravans more relevant.
+* Quest prompts now give much more information about what kinds of challenges to expect.
+* When reforming a caravan, we now list colonists’ inventory separately so the player can choose what to take and what to leave.
+* Caravans who are not moving now have a lower chance of being attacked.
+
+===Misc. Changes===
+* New incident: “Wild man wanders in”.
+* New terrain: Soft sand – doesn’t allow building medium or heavy structures.
+* New designators: Mass-forbid and unforbid.
+* Infestations now begin with the insects tunneling towards the colony, which gives the player time to respond.
+* You can now write job titles for your colonists.
+* New type of attack: Kick sand/water in eyes.
+* Condensed leathers together into fewer types. Instead of a separate type for each animal, there are categories.
+* You can now smooth natural rough rock walls into high-quality walls.
+* Trained animal skills and tameness now decay over time. Animals can revert to the wild, depending on their natural wildness.
+* Deep drill use will now sometimes cause insect attacks (by tunneling through the ground near the drill, with a warning).
+* New edge shader for blueprints looks much nicer and more visible than before.
+* Workbench bills can now be assigned to specific colonists.
+* Added “Show what will buy” window which shows all items a trader will buy.
+* Trees’ color now depends on the current season.
+* Added tainted-apparel thing filter.
+* Increased prisoner recruitment chance and added a resistance which must be reduced to zero before recruitment can begin.
+* Animals can now be renamed.
+* Animals can now get diseases.
+* Added an automatic destroyed building replacement toggle. When active, a destroyed building will leave behind a blueprint and be automatically rebuilt.
+* Added translation report tool: Generates a report about the currently-loaded language data stating which translations are missing, which are unnecessary, and lots of other useful information.
+* Added translation cleaner tool: Corrects many common problems in translation files and adds/updates English language reference for every string in the game.
+* You can mass-toggle various checkboxes and drop-down selections by clicking and dragging the mouse over them.
+* Workbench bills can now be copied and pasted.
+* Colonists now opportunistically haul items while working if their current target is roughly in the same direction.
+* The player can now request AI-core quests from allies.
+* It’s now possible to craft prosthetic and bionic body parts, grenades, and molotovs.
+* It’s now possible to mass-cancel all designations with a designator’s right-click menu.
+* It’s now possible to forbid/unforbid all items and rearm all traps with a designator’s right-click menu.
+* You can now drag and reorder colonists in the colonist bar.
+* Social interaction log now has flavorful randomized text instead of the same repeated interaction text every time.
+* Mods page now has a search bar so you can easily find one mod in your list of hundreds.
+* In some very bad situations, a mysterious Man in Black may arrive. Can he set things right in these parts?
+* Armor system reworked into a 3-outcome system with armor penetration. The armor penetration of the weapon is subtracted from the armor value of the armor. This gives an effective armor rating, measured as a percent. We roll a RNG out of 100%. If the result is under half the effective AR, the hit is totally deflected. If the result is over half the effective AR, but under the effective AR, the hit is mitigated – damage is reduced by half and sharp hits are converted to bruise. If the result is over the effective AR, the hit passes the armor and applies normally. As before, armor is applied in sequence from the outside in. AR maxes out at 200%. Default armor penetration is 1.5% per point of damage, but some weapons vary from this.
+* Totally reworked how plants grow; they now grow everywhere at once instead of reproducing plant-by-plant. Wild plants after several in-game years should now look more or less as good as at the beginning.
+* Long-range mineral scanner can now be tuned to seek specific minerals, and must be worked by a researcher.
+* Battles in the Combat tab are now named.
+* Items of the same type in the Items tab are now grouped together.
+* Items in the Items tab can now be sorted by mass, market value, etc.
+* Instead of shooting them, hunters now execute downed creatures with a neck cut (except explosive creatures).
+* When placing or selecting work stations where pawns can sit while working, the spot where the pawn goes is indicated by a chair outline so the player realizes that a chair can be built there.
+* Removed tornado incident.
+* Transport pods now have a contents list which allows removing things from the pod.
+* Blunt weapons now have a chance to stun the target.
+* Joy is renamed to ‘recreation’.
+* Using deep drills can cause insect attacks.
+* Changed deep moving water to chest-deep moving water: walkable but slower than shallow water.
+* Turrets are cheaper and more powerful, but now consume steel/uranium for maintenance after firing a lot.
+* Character log now integrates log messages from combat and social interactions.
+* Deadfall trap redesigned to Spike trap: Much more powerful with a 100% chance to spring on targets, and has armor penetration (depending on what it’s made of) but requires resources to replace.
+* Insects will now go into an insect-specific “hypothermic slowdown” instead of getting hypothermia and dying on the first winter.
+* Alphabeavers incident now only occurs in biomes with sparse plants so they’re not meaningless.
+* The refugee from the “downed refugee” world quest can be instantly recruited by offering help.
+* Removed scyther blade.
+* Mechanoids now always die on downed.
+* Doing passionate work now affects mood instead of recreation.
+* Deep drills now yield stone chunks if no resource is below.
+* Firefoam poppers will now pop whenever there’s a fire in a 3-cell radius, instead of only when the fire touches them.
+* Food poisoning now has three stages it moves through over the course of a day.
+* Pawns hit by ranged attacks now stagger the same way as pawns hit by melee attacks. This effect only happens if the weapon’s stopping power stat is equal or greater than the target’s body size.
+* Most crafting benches are now uninstallable and reinstallable.
+* Removed shiv since it’s basically a low-quality knife.
+* It’s now possible to craft knives at crafting spots.
+* “autostart.rws” is now automatically loaded on start in dev mode, for faster testing.
+* Techprof subpersona core now completes current research instead of random research.
+* Combined rib body parts into rib cage.
+* Reworked the “advanced map options” dialog layout, extreme game-breaking map sizes are now disabled by default and must be enabled in the options.
+* Tribal factions can now do sapper raids.
+* Added medical care column to the Assign tab.
+* Removed shoddy and superior item qualities.
+* Rebalanced and refactored quality generation. Masterwork/legendary level items never generate on enemies, traders, bases. Masterwork items are extra hard to craft, and legendary requires an inspiration.
+* Removed the distinction between allowed areas and animal areas.
+* Wearing new apparel now takes time. Colonists now take off the colliding apparel first (which takes time) before wearing the new one.
+* Added minimum crafting skill to various weapon and apparel crafting recipes.
+* Removed the requirement to pay fee to initiate the item stash quest.
+* Various floors now require research.
+* Settling very near another faction base will now cause faction relations loss every quadrum because of anger due to territorial encroachment.
+* Fulfilling trade requests now gives goodwill.
+* Destroying a faction base of a mutual enemy now gives goodwill.
+* All traders are now unwilling to buy tainted apparel and short-life meals.
+* Improved animal fleeing behavior
+* No human enemies spawn with weapons above industrial tech.
+* Charge lance is now craftable and usable by humans.
+* Explosive weapons now explode when set on fire.
+* Wood-powered fires and coolers no longer vanish when fuel is exhausted; they wait to be refueled.
+* Tons of art has been redone and adjusted.
+* Many, many other bugfixes, interface and balance adjustments

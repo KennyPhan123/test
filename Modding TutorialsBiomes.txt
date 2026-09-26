@@ -1,0 +1,661 @@
+{{DISPLAYTITLE:Biomes}}
+
+{{BackToTutorials}}
+
+{{:Modding_Tutorials/Under_Review}}
+
+
+This is a basic overview of biomes and their creation. As well as different places that a biome is taken into consideration.
+
+== BiomeDef ==
+
+Biomes are defined in XML using <code>BiomeDef</code> [[Modding_Tutorials/Defs|Defs]]. As with all Defs, looking at the vanilla examples is a great way to get a feel for how the system is used.
+In order to generate a biome on the world map, biomes also require a unique <code>workerClass</code> defined in code. See [[Modding_Tutorials/Setting_up_a_solution|Setting up a solution]] to get started.
+
+=== Fields ===
+
+The following are valid fields in <code>BiomeDef</code>. Not all fields are necessary, look at vanilla BiomeDefs for examples.
+
+<div class="TutorialTableWrapper">
+{| class="TutorialCodeTable"
+! XML Example !! Description
+|-
+| <source lang="xml">
+<workerClass>MyCustomBiome.BiomeWorker_CustomForest</workerClass>
+</source>
+| class="TutorialCodeTable-description" |
+A reference to code that defines where your biome will spawn on the world map. In Rimworld, these start with <code>BiomeWorker</code>
+|-
+| <source lang="xml">
+<implemented>true</true>
+</source>
+| class="TutorialCodeTable-description" |
+Determines if the biome gets generated from <code>WorldGenStep_Terrain</code>. Defaults to true. Likely this is used for debugging/development purposes
+|-
+| <source lang="xml">
+<generatesNaturally>true</generatesNaturally>
+</source>
+| class="TutorialCodeTable-description" |
+Determines if the biome gets generated from <code>WorldGenStep_Terrain</code>. Requires <code>implemented</code> to be true. Defaults to true.
+|-
+| <source lang="xml">
+<canBuildBase>true</canBuildBase>
+</source>
+| class="TutorialCodeTable-description" |
+Determines if a player or npc faction can be generated here. Defaults to true.
+|-
+| <source lang="xml">
+<settlementSelectionWeight>0.75</settlementSelectionWeight>
+</source>
+| class="TutorialCodeTable-description" |
+How likely a settlement can spawn on the selected tile. This is a value from 0-1. Defaults to 1
+|-
+| <source lang="xml">
+<allowRoads>true</allowRoads>
+</source>
+| class="TutorialCodeTable-description" |
+Whether roads can appear on this biome. Note that unless both this and <code>allowRivers</code> are false, roads will still display visually. Defaults to true.
+|-
+| <source lang="xml">
+<allowRivers>true</allowRivers>
+</source>
+| class="TutorialCodeTable-description" |
+Whether rivers can appear on this biome. Note that unless both this and <code>allowRoads</code> are false, rivers will still display visually. Defaults to true. 
+|-
+| <source lang="xml">
+<animalDensity>3.5</animalDensity>
+</source>
+| class="TutorialCodeTable-description" |
+How much animals will spawn on your biome. Higher numbers lead to an increase in animals.
+|-
+| <source lang="xml">
+<plantDensity>0.7</plantDensity>
+</source>
+| class="TutorialCodeTable-description" |
+How many plants will spawn on your biome. Higher numbers lead to an increase in plants.
+|-
+| <source lang="xml">
+<allowFarmingCamps>true</allowFarmingCamps>
+</source>
+| class="TutorialCodeTable-description" |
+([[Ideology]] {{IdeologyIcon}} Only) Allow farming camps to spawn. Defaults to true.
+|-
+| <source lang="xml">
+<campSelectionWeight>0.65<campSelectionWeight>
+</source>
+| class="TutorialCodeTable-description" |
+([[Ideology]] {{IdeologyIcon}} Only) How likely a camp can spawn on the selected tile. This is a value from 0-1. Defaults to 1
+|-
+| <source lang="xml">
+<pollutionOffset>0.2<pollutionOffset>
+</source>
+| class="TutorialCodeTable-description" |
+([[Biotech]] {{BiotechIcon}} Only) This will be the biomes initial pollution. This can be increased during the world creation screen.
+|-
+| <source lang="xml">
+<impassable>false</impassable>
+</source>
+| class="TutorialCodeTable-description" |
+Whether the biome can be passed via caravan.
+|-
+| <source lang="xml">
+<hasVirtualPlants>true</hasVirtualPlants>
+</source>
+| class="TutorialCodeTable-description" |
+Determines if animals are allowed to graze on this tile while caravanning. Defaults to true.
+|-
+| <source lang="xml">
+<forageability>0.75<forageability>
+</source>
+| class="TutorialCodeTable-description" |
+A multiplier of nutrition [[forage]]d per day. Requires a <code>foragedFood</code> defined. This is also used for animals that can forage ([[Odyssey]]{{OdysseyIcon}}).
+|-
+| <source lang="xml">
+<foragedFood>RawBerries</foragedFood>
+</source>
+| class="TutorialCodeTable-description" |
+Food that will be retrieved.
+|-
+| <source lang="xml">
+<wildPlantsCareAboutLocalFertility>false</wildPlantsCareAboutLocalFertility>
+</source>
+| class="TutorialCodeTable-description" |
+If this is false and the tile you are in is not a mixed biome, total plant population is based on the whole map rather than a 20 cell radius. Defauilts to true.
+|-
+| <source lang="xml">
+<wildPlantsAreCavePlants>true</wildPlantsAreCavePlants>
+</source>
+| class="TutorialCodeTable-description" |
+Cave plants have their own weight which is used to place them in caves. This makes it so the weight defined in <code>wildPlants</code> is used instead.
+|-
+| <source lang="xml">
+<wildPlantRegrowDays>13</wildPlantRegrowDays>
+</source>
+| class="TutorialCodeTable-description" |
+A wild plant has a chance to regrow after a set number of days. Defaults to 25.
+|-
+| <source lang="xml">
+<movementDifficulty>1.25</movementDifficulty>
+</source>
+| class="TutorialCodeTable-description" |
+The base movement difficulty for a caravan to travel across the tile. 
+|-
+| <source lang="xml">
+<baseWeatherCommonalities>
+  <Clear>18</Clear>
+  <Fog>1</Fog>
+  <Rain>2</Rain>
+  <DryThunderstorm>1</DryThunderstorm>
+  <RainyThunderstorm>1</RainyThunderstorm>
+  <FoggyRain>1</FoggyRain>
+  <SnowGentle>4</SnowGentle>
+  <SnowHard>4</SnowHard>
+  <GrayPall MayRequire="Ludeon.RimWorld.Anomaly">1</GrayPall>
+  <Overcast MayRequire="Ludeon.RimWorld.Odyssey">2</Overcast>
+</baseWeatherCommonalities>
+</source>
+| class="TutorialCodeTable-description" |
+What weather events can occur and how often they can occur. Note that multiple other variables are taken into effect with weather
+|-
+| <source lang="xml">
+<terrainsByFertility>
+  <li>
+    <terrain>Soil</terrain>
+    <min>-999</min>
+    <max>0.87</max>
+  </li>
+  <li>
+    <terrain>SoilRich</terrain>
+    <min>0.87</min>
+    <max>999</max>
+  </li>
+</terrainsByFertility>
+</source>
+| class="TutorialCodeTable-description" |
+The terrain that will appear based on fertility values generated by the genSteps <code>ElevationFertility</code> and <code>MutatorPostElevationFertility</code>. Will default to regular soil if a value is omitted.
+|-
+| <source lang="xml">
+<terrainPatchMakers>
+  <li>
+    <perlinFrequency>0.04</perlinFrequency>
+    <thresholds>
+      <li>
+        <terrain>MarshyTerrain</terrain>
+        <min>0.7</min>
+        <max>999</max>
+      </li>
+    </thresholds>
+  </li>
+</terrainPatchMakers>
+</source>
+| class="TutorialCodeTable-description" |
+Terrain generated through perlin noise. This can be used for patches of highly fertile soil, marshes, ponds, or other variable land. For a visual representation, you can use the [[Development_mode|Dev mode]] command <code>Map noise visualizer</code>.
+|-
+| <source lang="xml">
+<soundsAmbient>
+  <li>Ambient_NightInsects_Standard</li>
+</soundsAmbient>
+</source>
+| class="TutorialCodeTable-description" |
+Sounds that will play when zoomed in on the map.
+|-
+| <source lang="xml">
+<wildPlants>
+  <Plant_TallGrass>3.2</Plant_TallGrass>
+  <Plant_Chokevine>0.8</Plant_Chokevine>
+  <Plant_Bush>0.2</Plant_Bush>
+  <Plant_Witchwood MayRequire="Ludeon.RimWorld.Biotech">1.0</Plant_Witchwood>
+  <Plant_Reeds MayRequire="Ludeon.RimWorld.Odyssey">1</Plant_Reeds>
+  <Plant_LilyPad MayRequire="Ludeon.RimWorld.Odyssey">0.2</Plant_LilyPad>
+  <Plant_Bulrush MayRequire="Ludeon.RimWorld.Odyssey">0.2</Plant_Bulrush>
+  <MCP_MyCustomPlant MayRequire="username.CustomPlantMod">0.3</MCP_MyCustomPlant>
+</wildPlants>
+</source>
+| class="TutorialCodeTable-description" |
+What plants can spawn in the wild for this biome. Based on weight. These can also be included on an plants properties. Duplicates are not allowed between the two. Plants that appear due to pollution appear in this list as well. Disable <wildPlantsAreCavePlants> to have weights defined here affect cave plants.
+|-
+| <source lang="xml">
+<wildAnimals>
+  <Donkey>0.34</Donkey>
+  <GuineaPig>0.48</GuineaPig>
+  <Yak>0.05</Yak>
+  <Bison>0.06</Bison>
+  <Crow MayRequire="Ludeon.RimWorld.Odyssey">0.6</Crow>
+  <Bluebird MayRequire="Ludeon.RimWorld.Odyssey">0.6</Bluebird>
+  <Quail MayRequire="Ludeon.RimWorld.Odyssey">0.6</Quail>
+  <MCA_MyCustomAnimal MayRequire="username.CustomAnimalMod">0.3</MCP_MyCustomanimal>
+</wildAnimals>
+</source>
+| class="TutorialCodeTable-description" |
+What animals can spawn in the biome based on weight. These can also be included on an animals race properties. Duplicates are not allowed between the two.
+|-
+| <source lang="xml">
+<pollutionWildAnimals>
+  <Toxalope MayRequire="Ludeon.RimWorld.Biotech">0.3</Toxalope>
+  <WasteRat MayRequire="Ludeon.RimWorld.Biotech">0.4</WasteRat>
+  <Rat>1</Rat>
+  <Raccoon>0.5</Raccoon>
+</pollutionWildAnimals>
+</source>
+| class="TutorialCodeTable-description" |
+([[Biotech]] {{BiotechIcon}} Only) Animals defined in this field will only spawn if there is pollution on the map. The chance of these animals spawning is based on a curve with a 10% chance at 25% pollution, 90% chance at 75% pollution and 100% at 100% pollution
+|-
+| <source lang="xml">
+<coastalWildAnimals>
+  <SeaLion MayRequire="Ludeon.RimWorld.Odyssey">0.1</SeaLion>
+  <Seal MayRequire="Ludeon.RimWorld.Odyssey">0.1</Seal>
+</coastalWildAnimals>
+</source>
+| class="TutorialCodeTable-description" |
+([[Odyssey]] {{OdysseyIcon}} Only) Animals defined here will spawn if the tile has the <code>Coast</code> <code>TileMutatorDef</code>. A coast requires a tile neighboring an ocean tile.
+|-
+| <source lang="xml">
+<diseaseMtbDays>50</diseaseMtbDays>
+</source>
+| class="TutorialCodeTable-description" |
+The mean time between a disease incident occurring. Possible diseases are chosen from <code>diseases</code>.
+|-
+| <source lang="xml">
+<diseases>
+  <li>
+    <diseaseInc>Disease_Flu</diseaseInc>
+    <commonality>120</commonality>
+  </li>
+  <li>
+    <diseaseInc>Disease_Plague</diseaseInc>
+    <commonality>80</commonality>
+  </li>
+</diseases>
+</source>
+| class="TutorialCodeTable-description" |
+Possible diseases that can occur. One will be chosen at random by weight
+|-
+| <source lang="xml">
+<allowedPackAnimals>
+  <li>Muffalo</li>
+  <li>Alpaca</li>
+</allowedPackAnimals>
+</source>
+| class="TutorialCodeTable-description" |
+Pack animals that can appear from caravan traders.
+|-
+| <source lang="xml">
+<hasBedrock>true</hasBedrock>
+</source>
+| class="TutorialCodeTable-description" |
+If a tile can be [[Deep_drill|deep drilled]] for materials. Defaults to true. Also prevents the [[Ground-penetrating_scanner|Ground-penetrating scanner]] from working on this tile.
+|-
+| <source lang="xml">
+<isExtremeBiome>true</isExtremeBiome>
+</source>
+| class="TutorialCodeTable-description" |
+Prevents spawning of Special trees as well as Royalty intro quests. Defaults to false.
+|-
+| <source lang="xml">
+<isWaterBiome>false</isWaterBiome>
+</source>
+| class="TutorialCodeTable-description" |
+Unused field that is located on Ocean and Lake biomes.
+|-
+| <source lang="xml">
+<allowPollution>true</allowPollution>
+</source>
+| class="TutorialCodeTable-description" |
+Pollution can appear on the world maps tile. Defaults to true. Note that this tile can still be polluted while on the map tile or by sending a drop-pod of wastepacks to the area.
+|-
+| <source lang="xml">
+<wildAnimalsCanWanderInto>true</wildAnimalsCanWanderInto>
+</source>
+| class="TutorialCodeTable-description" |
+If false, animals will not appear when using the draw animals [[Anomaly]] Ritual. Defaults to true.
+|-
+| <source lang="xml">
+<noAmbientWind>false</noAmbientWind>
+</source>
+| class="TutorialCodeTable-description" |
+If false, When the camera is zoomed out, you will hear wind effects.
+|-
+| <source lang="xml">
+<inVacuum>false</inVacuum>
+</source>
+| class="TutorialCodeTable-description" |
+([[Odyssey]] {{OdysseyIcon}} Only) Tiles from this map will have no oxygen. [[Wind_turbine|Wind turbines]] will be unable to function.
+|-
+| <source lang="xml">
+<disableSkyLighting>false</disableSkyLighting>
+</source>
+| class="TutorialCodeTable-description" |
+Enables Sky Lighting. This is from weather events as well as day/night time.
+|-
+| <source lang="xml">
+<disableShadows>false</disableShadows>
+</source>
+| class="TutorialCodeTable-description" |
+Shadows from buildings and structures will not be displayed.
+|-
+| <source lang="xml">
+<canExitMap>true</canExitMap>
+</source>
+| class="TutorialCodeTable-description" |
+Determines if pawns are able to leave the map through caravan or other means. Defaults to True.
+|-
+| <source lang="xml">
+<onlyAllowWhitelistedArrivalModes>false</onlyAllowWhitelistedArrivalModes>
+</source>
+| class="TutorialCodeTable-description" |
+Only allow arrival modes for pawns as specified in their <code>PawnsArrivalModeDef</code>
+|-
+| <source lang="xml">
+<isBackgroundBiome>false</isBackgroundBiome>
+</source>
+| class="TutorialCodeTable-description" |
+Rotates coastal landmarks in the correct orientation when needed. Used for Ocean and Lake biomes.
+|-
+| <source lang="xml">
+<wildAnimalScariaChance>0.3</wildAnimalScariaChance>
+</source>
+| class="TutorialCodeTable-description" |
+The chance that a wild animal spawned will have scaria. Defaults to 0.
+|-
+| <source lang="xml">
+<geyserCountFactor>0.75</geyserCountFactor>
+</source>
+| class="TutorialCodeTable-description" |
+Multiplies the amount of Steam Geysers that can appear on the map. Defaults to 1
+|-
+| <source lang="xml">
+<constantOutdoorTemperature>10</constantOutdoorTemperature>
+</source>
+| class="TutorialCodeTable-description" |
+A set temperature for a map. Measured in Celsius.
+|-
+| <source lang="xml">
+<coastalBeachTerrain>Mud</coastalBeachTerrain>
+</source>
+| class="TutorialCodeTable-description" |
+Defines what terrain should be used when generating beach. Defaults to sand.
+|-
+| <source lang="xml">
+<lakeBeachTerrain>Ice</lakeBeachTerrain>
+</source>
+| class="TutorialCodeTable-description" |
+Defines what terrain should be used when generating a lake or beach. Defaults to sand.
+|-
+| <source lang="xml">
+<riverbankTerrain>Marsh</riverbankTerrain>
+</source>
+| class="TutorialCodeTable-description" |
+Defines what terrain should be used for the sides of a river. Requires a <code>riverbankSizeRange</code> defined. Defaults to RiverBank.
+|-
+| <source lang="xml">
+<riverbankSizeRange>4~6</riverbankSizeRange>
+</source>
+| class="TutorialCodeTable-description" |
+Size of a riverbank that can appear alongside a river. Can be a range, or a single number for a constant size.
+|-
+| <source lang="xml">
+<mudTerrain>MossyTerrain</mudTerrain>
+</source>
+| class="TutorialCodeTable-description" |
+([[Odyssey]] {{OdysseyIcon}} Only) Defines what terrain should be used when generating a Wetlands Tile mutator. Defaults to Mud.
+|-
+| <source lang="xml">
+<noGravel>false</noGravel>
+</source>
+| class="TutorialCodeTable-description" |
+If Gravel (Stony soil) should be generated. Defaults to false
+|-
+| <source lang="xml">
+<gravelTerrain>Ice</gravelTerrain>
+</source>
+| class="TutorialCodeTable-description" |
+Defines what terrain to use when generating gravel. Defaults to Stony Soil. Requires <code>noGravel</code> to be false.
+|-
+| <source lang="xml">
+<waterShallowTerrain>SoilRich<waterShallowTerrain>
+</source>
+| class="TutorialCodeTable-description" |
+Defines what terrain to use when generating shallow water for <code>TileMutatorDef</code>s. Defaults to shallow water.
+|-
+| <source lang="xml">
+<waterDeepTerrain>WaterOceanDeep</waterDeepTerrain>
+</source>
+| class="TutorialCodeTable-description" |
+Defines what terrain to use when generating deep water for <code>TileMutatorDef</code>s. Defaults to deep water.
+|-
+| <source lang="xml">
+<oceanShallowTerrain>MossyTerrain</oceanShallowTerrain>
+</source>
+| class="TutorialCodeTable-description" |
+Defines what terrain should be used when generating shallow ocean water for <code>TileMutatorDef</code>s. Defaults to shallow ocean Water
+|-
+| <source lang="xml">
+<oceanDeepTerrain>Mud</oceanDeepTerrain>
+</source>
+| class="TutorialCodeTable-description" |
+Defines what terrain should be used when generating Deep ocean water for <code>TileMutatorDef</code>s. Defaults to deep ocean water
+|-
+| <source lang="xml">
+<waterMovingShallowTerrain>Mud</waterMovingShallowTerrain>
+</source>
+| class="TutorialCodeTable-description" |
+Defines what terrain should be used when generating shallow moving water for <code>TileMutatorDef</code>s. Defaults to shallow moving water
+|-
+| <source lang="xml">
+<waterMovingChestDeepTerrain>Sand</waterMovingChestDeepTerrain>
+</source>
+| class="TutorialCodeTable-description" |
+Defines what terrain should be used when generating deep moving water for <code>TileMutatorDef</code>s. Defaults to chest-deep moving water
+|-
+| <source lang="xml">
+<biomeMapConditions>
+  <li>SolarFlare</li>
+<biomeMapConditions>
+</source>
+| class="TutorialCodeTable-description" |
+A list of permanent <code>GameConditionDef</code> that can occur on the map.
+|-
+| <source lang="xml">
+<extraGenSteps>
+  <li>MNCS_CheeseChunks</li>
+  <li>MNCS_MoonHives</li>
+  <li>MNCS_FixPlayerStartSpot</li>
+</extraGenSteps>
+</source>
+| class="TutorialCodeTable-description" |
+Extra <code>GenStepDef</code> that can occur on this biomes maps.
+|-
+| <source lang="xml">
+<preventGenSteps>
+  <li>RockChunks</li>
+  <li>CaveHives</li>
+</preventGenSteps>
+</source>
+| class="TutorialCodeTable-description" |
+These <code>GenStepDef</code> will not occur on this biomes maps.
+|-
+| <source lang="xml">
+<extraRockTypes>
+  <li>SolidIce</li>
+</extraRockTypes>
+</source>
+| class="TutorialCodeTable-description" |
+Provided that the rock is defined as <code>biomeSpecific</code>, these rocks will be able to appear on the selected biome naturally
+|-
+| <source lang="xml">
+<forceRockTypes>
+  <li>Sandstone</li>
+</forceRockTypes>
+</source>
+| class="TutorialCodeTable-description" |
+Only rocks defined in this field will appear. This is a 100% rate meaning no variation on the biome.
+|-
+| <source lang="xml">
+<maxFishPopulation>500</maxFishPopulation>
+</source>
+| class="TutorialCodeTable-description" |
+([[Odyssey]] {{OdysseyIcon}} Only) The maximum amount of fish a body of water is able to have. Defaults to 0.
+|-
+| <source lang="xml">
+<fishTypes>
+  <freshwater_Common>
+    <Fish_Bass MayRequire="Ludeon.RimWorld.Odyssey">1</Fish_Bass>
+  </freshwater_Common>
+  <freshwater_Uncommon>
+    <Fish_Catfish MayRequire="Ludeon.RimWorld.Odyssey">1</Fish_Catfish>
+  </freshwater_Uncommon>
+  <saltwater_Common>
+    <Fish_Bluefish MayRequire="Ludeon.RimWorld.Odyssey">1</Fish_Bluefish>
+  </saltwater_Common>
+  <saltwater_Uncommon>
+    <Fish_Marlin MayRequire="Ludeon.RimWorld.Odyssey">1</Fish_Marlin>
+    <Fish_Flounder MayRequire="Ludeon.RimWorld.Odyssey">1</Fish_Flounder>
+  </saltwater_Uncommon>
+  <rareCatchesSetMaker 
+  MayRequire="Ludeon.RimWorld.Odyssey">RareFishingCatches_Temperate</rareCatchesSetMaker>
+</fishTypes>
+</source>
+| class="TutorialCodeTable-description" |
+([[Odyssey]] {{OdysseyIcon}} Only) Fish that can appear in bodies of water. If multiple fish are in a list, one is randomly chosen. If a category is not present, no fish from that category will appear. Despite there being a <code>1</code> to indicate chance, this field is not utilized.
+|-
+| <source lang="xml">
+<layerWhitelist>
+  <li>MP_MyCustomPlanetLayer</li>
+</layerWhitelist>
+</source>
+| class="TutorialCodeTable-description" |
+<code>PlanetLayerDef</code> this biome is allowed to occur in. If this is set it will only appear on the specified layers
+|-
+| <source lang="xml">
+<layerBlacklist>
+  <li>Surface</li>
+</layerBlacklist>
+</source>
+| class="TutorialCodeTable-description" |
+<code>PlanetLayerDef</code> this biome is not allowed to occur in. If this is set it will not appear in on the specified layers
+|-
+| <source lang="xml">
+<settleWarning>This biome is very dangerous.</settleWarning>
+</source>
+| class="TutorialCodeTable-description" |
+A warning that can appear when trying to settle on a tile of that biome.
+|-
+| <source lang="xml">
+<fogOfWarColor>(249,145,104)</fogOfWarColor>
+</source>
+| class="TutorialCodeTable-description" |
+The color of Fog of war. Fogged/undiscovered locations on your map. Default is null and this field is not necessary to fill in. Normal fog of war color is (77, 69, 66).
+|-
+| <source lang="xml">
+<orbitalDebris>
+</source>
+| class="TutorialCodeTable-description" |
+This field is unused in base game. It's unknown what the purpose was.
+|-
+| <source lang="xml">
+<texture>World/Biomes/MNCS_SurfaceSwiss</texture>
+</source>
+| class="TutorialCodeTable-description" |
+The texture that will be displayed on the world map. Vanilla uses a 512x512 texture. These should appear seamless
+|-
+|}
+</div>
+
+== Determining Biome ==
+
+Biome calculation is done during world generations <code>WorldGenStep_Terrain</code>. Each tile is calculated individually. After verifying the biome can be placed via the BiomeDefs <code>generatesNaturally</code>, and the BiomeWorkers <code>CanPlaceOnLayer</code>, it's score is calculated from the individual biome workers <code>GetScore</code>. The biome with the highest score will be placed on that specific tile. Note that BiomeWorkers should be unique. If two biomes are using the same biomeWorker or have the same score, the first mod loaded according to load order wins. 
+
+=== Biome Generation ===
+
+There is no right or wrong way to create the score for biomes. If you look at biome workers, many of them will use different formula or logic to appear on the map. Here is an example used from the mod [https://github.com/Halicade/GuldenBiome/blob/master/Source/BiomeWorker.cs| Gulden Biome (Continued)].
+
+<source lang="cs">
+// We are subclassing the temperate forest biome worker
+public class BiomeWorker_GuldenForest : BiomeWorker_TemperateForest
+{
+  public override float GetScore(BiomeDef biome, Tile tile, PlanetTile planetTile) {
+    // We don't want to completely overwrite the parent biome. 
+    // That's why we only want tiles with an elevation between 500 and 800.
+    if (tile.elevation is <= 500 or >= 800) {
+        return 0;
+    }
+    
+    // Get what the score is of the parent biome, temperate forest
+    float score = base.GetScore(biome, tile, planetTile);
+    // If that score is 0 or less we don't want this biome there.
+    if (score <= 0) {
+        return 0;
+    }
+    
+    // We add 1.5 so that it is higher than the temperate forest.
+    // We don't want this number too large, otherwise it will overwrite other biomes.
+    return score + 1.5f;
+  }
+}
+</source>
+
+=== Using Rand ===
+
+If you want a biome to appear randomly around the world map, you need to seed your Rand value. Without this, if you were to regenerate the world using the same world seed, your biome would appear in different tiles. You can use <code>Rand.PushState</code> and <code>Rand.PopState</code>. Or you can use <code>Rand.ValueSeeded</code> or any other method that allows for a seeded outcome. This below example comes from multiple different sources and was rewritten here for better understanding.
+
+<source lang="cs">
+public class BiomeWorker_MyCustomBiome : BiomeWorker
+{
+    public override float GetScore(BiomeDef biome, Tile tile, PlanetTile planetTile) {
+        // We don't want to generate on water.
+        if (tile.WaterCovered) {
+            return -100f;
+        }
+        // We don't want to generate where it's too cold
+        if (tile.temperature < -10f) {
+            return 0f;
+        }
+        //We don't want to generate where there is little rain
+        if (tile.rainfall < 600f) {
+            return 0f;
+        }
+        
+        // We use the tileId as part of the seed to get a constant for each tile.
+        // "^" is to perform a bitwise XOR operation
+        // 0x11245d7a is a random hexadecimal value
+        // We add these last two pieces so that if another mod randomly generates their tiles, the values won't be the same
+        // If our random value is above 0.009 we won't generate here
+        // This might seem like a small amount, but there is over 100,000 tiles on a map with 30% coverage so the odds are quite high
+        if (Rand.ValueSeeded(planetTile.tileId ^ 0x11245d7a) > 0.009f) {
+            return 0f;
+        }
+        
+        // A formula to calculate the score at this tile.
+        return 16f + (tile.temperature - 7f) + (tile.rainfall - 600f) / 180f;
+    }
+}
+</source>
+
+== About Terrain modifiers ==
+
+There are many terrain modifiers like <code>lakeBeachTerrain</code> and <code>gravelTerrain</code>. These are used by MapGenUtility to get the appropriate terrain at a specific cell. These can change depending on if you have a [[Landmarks#Mixed_biome|mixed biome]]{{OdysseyIcon}} or a <code>tileMutatorDef</code> that overrides a terrain such as <code>overrideLakeBeachTerrain</code>. Note that not every terrain modifier has an equivalent override. Some specific terrain may be hardcoded.
+
+== Places That Use Biomes ==
+
+In addition to the fields required for biomes, some feilds require knowledge of the biome to trigger specific events or occurences. In these cases a [[Modding_Tutorials/PatchOperations|patch operation]] will be necessary
+
+=== Animals and plants ===
+
+Animals and plants can also set where they spawn in their raceProperties and plantProperties respectively. Duplicates are not allowed between the biome and properties list. Either method is acceptable for appearance rates. However, you are not able to set their pollution appearance rate or coastal appearance rate through their properties. If you are creating a biome, it might be more sensible to place the appearances in the <code>BiomeDef</code>.
+
+=== <code>IncidentDef</code>s ===
+
+<code>Ambush</code>, <code>ManhunterAmbush</code>, <code>CaravanMeeting</code>, and <code>CaravanDemand</code> requires a biome listed in their <code>mtbDaysByBiome</code> to be considered a valid map to have their incidents occur.
+
+Some incidents have <code>allowedBiomes</code> or <code>disallowedBiomes</code>. [[Events#Beavers!|Alphabeavers]] for example can only appear in the Tundra or Arid Shrubland. Affected incidents include <code>AmbrosiaSprout</code>, <code>HerdMigration</code>, <code>Alphabeavers</code>, <code>VolcanicAsh</code>, <code>LavaEmergence</code>{{OdysseyIcon}}, <code>LavaFlow</code>{{OdysseyIcon}}, <code>VolcanicDebris</code>{{OdysseyIcon}}, <code>BoomshroomSprout</code>{{OdysseyIcon}}, <code>BioluminescentSpores</code>{{OdysseyIcon}}, <code>DroughtInitial</code>{{OdysseyIcon}}, and <code>Drought</code>{{OdysseyIcon}}
+
+<code>GauranlenPodSpawn</code>{{IdeologyIcon}} is the only incident that makes use of <code>disallowedBiomes</code>.
+
+=== <code>FeatureDef</code>s ===
+
+<code>FeatureDef</code>s generate names that can appear alongside landforms on the world map. These are things like "Barra Sea", "Bat Cheek Flats", and "Gorar Desert". Some <code>FeatureDef</code>s have <code>rootBiome</code> and <code>acceptableBiome</code>. For example, the <code>Desert</code> FeatureDef has <code>Desert</code> and <code>ExtremeDesert</code> as <code>rootBiomes</code> meaning at least one of these are required for an area to be given this name. <code>acceptableBiomes</code> are adjacent biomes that can also fulfill the qualifications for the Desert Feature. This is purely for visual and does not have impact on gameplay.
+
+=== <code>TileMutatorDef</code>s ===
+Most <code>TileMutatorDef</code>s in Odyssey will not be active on a biome unless they are patched into the TileMutatorDefs <code>biomeWhitelist</code>. You can also restrict certain biomes using the <code>biomeBlacklist</code>. [[Modding_Tutorials/Mod_Folder_Structure#LoadFolders.xml_.28Optional.29|LoadFolders]] is recommended here.
+
+[[Category:Modding tutorials]]

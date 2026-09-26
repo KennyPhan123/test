@@ -1,0 +1,123 @@
+{{Biotech}}
+{{infobox main
+| name = Tox pack
+| image = ToxPack.png
+| description = A reusable backpack containing canisters of reagents and a mechanism that uses them to generate tox gas. When the wearer activates the pack, it will begin spreading tox gas and continue for several seconds until it runs out of reagents.<br/>Once used, it must be reloaded with chemfuel before it can be used again.<br/>Tox gas burns the lungs and eyes, causing a temporary shortness of breath and reduction in sight. Continued exposure to tox gas results in toxic buildup which can be lethal.
+<!-- Base Stats -->
+| type = Gear
+| type2 = Utility
+| tech level = Industrial
+| mass base = 3
+| beauty = -3
+| hp = 100
+| deterioration = 2
+| flammability = 0.6
+| path cost = 14
+<!-- Apparel -->
+| has quality = false
+| clothing for nudity = False
+| lifestage = Adult
+| coverage = Waist
+| layer = Belt
+| scoreOffset = 4
+| careIfWornByCorpse = false
+| careIfDamaged = false
+| wearPerDay = 0
+| tags = BeltDefenseTox
+| bodyPartGroups = Waist
+| equipdelay = 2
+<!-- Creation -->
+| production facility 1 = Machining table
+| research = Tox gas
+| skill 1 = Crafting
+| skill 1 level = 3
+| work to make = 3600
+| work speed stat = General Labor Speed
+| resource 1 = Steel
+| resource 1 amount = 10
+| resource 2 = Component
+| resource 2 amount = 1
+| resource 3 = Chemfuel
+| resource 3 amount = 35
+<!-- Technical -->
+| defName = Apparel_PackTox
+| label = tox pack
+| thingCategories = ApparelUtility
+| defaultOutfitTags = 
+| tradeTags = Clothing
+| page verified for version = 1.4.3525
+<!-- ThingDef ParentName="ApparelNoQualityBase" -->
+| tickerType = Normal
+| EquipDelay = 2
+<!-- recipeMaker -->
+| unfinishedThingDef = UnfinishedPack
+| useIngredientsForColor = false
+| displayPriority = 350
+<!-- Class="CompProperties_ApparelReloadable" -->
+| maxCharges = 1
+| soundReload = Standard_Reload
+| chargeNoun = tox pack
+| displayGizmoWhileUndrafted = false
+| ammoDef = Chemfuel
+| ammoCountToRefill = 35
+| baseReloadTicks = 60
+| hotKey = Misc4
+<!-- Class="CompProperties_ReleaseGas" -->
+| gasType = ToxGas
+| cellsToFill = 45
+| durationSeconds = 12.75
+| effecterReleasing = ToxGasReleasing
+<!-- Class="CompProperties_AIUSablePack" -->
+| compClass = CompToxPack
+| checkInterval = 60
+| verbClass = Verb_DeployToxPack
+| label2 = deploy tox pack
+| violent = false
+| hasStandardCommand = true
+| targetable = false
+| soundCast = GasPack_Deploy
+| nonInterruptingSelfCast = true
+<!-- ThingDef Name="ApparelNoQualityBase" Abstract="True" -->
+| thingClass = Apparel
+| category = Item
+| drawerType = MapMeshOnly
+| selectable = True
+| useHitPoints = True
+| drawGUIOverlay = true
+| altitudeLayer = Item
+| alwaysHaulable = True
+| burnableByRecipe = true
+| smeltable = true
+| forbiddable = true
+| colorable = true
+}}
+The '''tox pack''' is a [[utility]] item added by the [[Biotech DLC]] that allows the user to deploy [[tox gas]]. 
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+{{Stub|section=1|reason=Mechanical detail- cloud size, deployment time, activation mechanics for both player pawns and NPCs etc. }}
+{{Image wanted|section=1|reason=AoE image in standard style}}
+Tox packs create a cloud of [[tox gas]] centered on the user.
+
+The pack can only be used once before needing to be refueled, at a cost of {{icon Small|chemfuel||35}} chemfuel. To refuel it, select its user and right-click a pile of chemfuel.
+
+{{Utility Note}}
+
+== Analysis ==
+{{Stub|section=1|reason=General - e.g. strategies, use case, value proposition for making and opportunity cost for use vs other utility}}
+Because the tox gas cloud is created centered on the user, tox packs are best used on [[waster]]s or xenotypes with toxic resistance.
+
+=== Toxic killbox ===
+While useless in an open area, Tox packs gain a lot of utility when used in tight corridors and cramped rooms. As Rimworld simulates gas physics for tox gas, smoke and [[Deadlife dust]]. Tox packs are very good for melee blockers inside of killboxes. Do remember however that unless your pawns have full toxic immunity, they will at least partially be affected by tox gas. Thus this strategy is recommended with [[Waster]]s and other tox resistant/immune xenotypes.
+
+=== Riot control ===
+Tox gas can be used to stop prison breaks or slave rebellions. However, due to the danger of tox gas in enclosed areas and its greatly reduced effectiveness outdoors, it can be very unreliable and either be ineffective or quickly result in dead escapees. It might still be a better option if all of your wardens would likely cause fatal injuries in direct combat, such as if your colonists are mostly [[sanguophage]]s or otherwise have strong melee.
+
+== Version history ==
+* [[Biotech DLC]] Release - Added.
+* [[Version/1.4.3563|1.4.3563]] - Tox packs no longer activate upon stripping or butchering [[corpse]]s wearing them.
+
+{{nav|Utility|wide}}
+[[Category: Utility]]

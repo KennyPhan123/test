@@ -1,0 +1,86 @@
+{{Version Nav|unstable=1}}
+
+New unstable branch build is up! 1.3.3068.
+
+Also announced on Steam https://steamcommunity.com/games/294100/announcements/detail/2996567278477693098
+
+* Chance of resentment on failed conversion attempt reduced from 36% to 20%. Chance of fight reduced from 4% to 2%.
+* If a pawn has sight under 50%, he should gain a psychic sensitivity bonus of up to 50%.
+* Assign mapPawns.FreeColonistsAndPrisonersSpawned to a local variable in Alert_RitualObligation to avoid repeated expensive calls.
+* Add caching to pen-related calcualtions related to WorkGiver_TakeToPen to address large performance spikes when having many animals in a pen.
+* Change back HomeFaction to Faction in JobDriver_TakeToBed, improve related comment.
+* Changed all culture icon colors to full white.
+* Changed implementation of delivering pawns to their bed after gladiator duel.
+* Small optimization: Check a flag before calling a complex function when checking for repeating memes during ideo generation.
+* Add short comments for couple recent fixes.
+* Added artwork for stacked skulls.
+* Clarified 'right-click' info in beggars quest.
+* Removed duplicate blind check in ThoughtWorker_Dark.
+* Text fixes for certainty tooltip.
+* Fix: Missing eye wound graphic and tattoos visible on beheaded pawn.
+* Fix: 'The maximum number of (role) is xx' flickering on edit ritual dialog
+* Fix: Dueling slaves without beds assigned results in errors
+* Fix: Possible string concatenation issue.
+* Fix: Failing to generate a new unique name for a precept can leave it with a null name.
+* Fix: When a styled standing lamp is failed to build, a non-styled blueprint replaces it.
+* Fix: Inverted desired connection strength check in alert.
+* Fix: Slave ideo buildings lacking causes empty alert.
+* Fix: Another quest node relating to animals could possibly use dryads.
+* Fix: Dryads can show up as animals for hospitality quests.
+* Fix: Typos. 
+
+== Steam announcement <ref>https://steamcommunity.com/games/294100/announcements/detail/2996567278477693098</ref>==
+=== Update 1.3.3068 in testing on unstable branch ===
+The release of Ideology and 1.3 have brought a massive surge of new players and new energy in the RimWorld community. It's awesome and slightly overwhelming. We've been hard at work translating feedback into fixes and improvements to try to make the best play experience possible, both in the short and long term.
+
+To that end, there's currently a testing branch of the next update up on Steam's unstable
+beta branch. (Changelist below.)
+
+We test these builds and take feedback directly on the official development Discord server. Anyone who is willing to help out should please
+join us there
+, try out the build and tell us what you find! Many thanks to all who have participated and all who join.
+
+Thanks
+-Ty
+
+Change log since the last main version:
+
+Current unstable build: 1.3.3068
+
+* Chance of resentment on failed conversion attempt reduced from 36% to 20%. Chance of fight reduced from 4% to 2%.
+* If a pawn has sight under 50%, he should gain a psychic sensitivity bonus of up to 50%.
+* Assign mapPawns.FreeColonistsAndPrisonersSpawned to a local variable in Alert_RitualObligation to avoid repeated expensive calls.
+* Add caching to pen-related calcualtions related to WorkGiver_TakeToPen to address large performance spikes when having many animals in a pen.
+* Change back HomeFaction to Faction in JobDriver_TakeToBed, improve related comment.
+* Changed all culture icon colors to full white.
+* Changed implementation of delivering pawns to their bed after gladiator duel.
+* Small optimization: Check a flag before calling a complex function when checking for repeating memes during ideo generation.
+* Add short comments for couple recent fixes.
+* Skulls are stackable.
+* Clarified 'right-click' info in beggars quest.
+* Removed duplicate blind check in ThoughtWorker_Dark.
+* Connecting to a Gauranlen tree gives 25`45% connection strength to the connector depending on ritual quality.
+* Psychically deaf pawns cannot connect with Gauranlen trees.
+* Bonsai trees no longer are auto-harvested on reaching max growth
+* Added debug tool to stop timed raids once started.
+* Text fixes for certainty tooltip.
+* Fix: Missing eye wound graphic and tattoos visible on beheaded pawn.
+* Fix: 'The maximum number of (role) is xx' flickering on edit ritual dialog
+* Fix: Dueling slaves without beds assigned results in errors
+* Fix: Possible string concatenation issue.
+* Fix: Failing to generate a new unique name for a precept can leave it with a null name.
+* Fix: When a styled standing lamp is failed to build, a non-styled blueprint replaces it.
+* Fix: Inverted desired connection strength check in alert.
+* Fix: Slave ideo buildings lacking causes empty alert.
+* Fix: Another quest node relating to animals could possibly use dryads.
+* Fix: Dryads can show up as animals for hospitality quests.
+* Fix: Cannibal tribes can sometimes generate without cannibal precept.
+* Fix: Sterilized roosters can still fertilize eggs.
+* Fix: Female pawns can infrequently gain beards on style change.
+* Fix: Exception when selecting leader with building precept that has no requirements.
+* Fix: Wrong zone checked for auto cut
+* Fix: Duplicate building precepts from multiple ideos only shows first building in architect menu.
+* Fix: Missing body parts constantly draw bandages on pawns. Now they go away once it has been tended to.
+* Fix: Typos.
+
+== Source ==

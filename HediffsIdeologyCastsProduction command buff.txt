@@ -1,0 +1,36 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Ideology/Casts}}
+|}
+----
+{| {{STDT| c_06}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Production command buff" <!-- defName="ProductionCommandBuff", ParentName="WorkRoleAuraBuffHediffBase" -->
+! Production command buff
+----
+* Def Name:<br />ProductionCommandBuff
+* Label:<br />production command
+* Debug Label Extra:<br />other
+| This person's construction and crafting speeds are boosted thanks to being near someone who is using the production command ability.
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|52%|100%|95%}}
+* Is Bad: {{Good|false}}
+* '''Comps'''
+** ''Disappears''
+*** Show Remaining Time: {{Bad|false}}
+** ''Disappears On Death''
+** ''Link''
+*** Require Link On Other Pawn: {{Good|false}}
+*** Max Distance: '''10 (cells)'''
+*** Custom Mote: '''Mote_WorkCommandLinkLine'''
+|<!-- Stages -->
+{| {{STDT| c_06}}
+! Label !! Parameters
+|-
+! Production command
+|<!-- Parameters -->
+* [[Construction Speed]] Offset: {{+|40%}}
+* [[General Labor Speed]] Offset: {{+|20%}}
+|}<noinclude>
+|}</noinclude>

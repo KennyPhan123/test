@@ -1,0 +1,181 @@
+{{Version Nav}} 
+
+==Release Trailer==
+
+<youtube>https://www.youtube.com/watch?v=BHuchTya6rA</youtube>
+
+==Core Release==
+
+The big new thing is the faction system. Now we have generated factions like pirate bands, outlander towns, and tribes. They even generate names for themselves! This leads to hilarity with three-way battles, buying off factions to get their allegiance so they’ll send fighters to help you, and getting raided by a dude’s friends after you capture him and beat him up. The video shows this in detail.
+
+Alistair Lindsay’s music is in this build! Al is obviously still refining and expanding the music, but I think this is a great start. Listen to the dulcet tones of the mixed sci-fi/Western theme he’s been cooking up for the past 3 months.
+
+There’s now a planning tool, so you can put down inert designations that don’t do anything. This helps you plan your colony visually, on the map. (I recommend you don’t put thousands of them, though; they’re not rendered in a super-efficient way right now.)
+
+The map generates in a more varied way now, using a data-driven algorithm which you can mod (from the MapGeneratorDefs folder).
+
+Tons more stuff is moddable now. And you can write proper code mods that link DLLs into the game, easily, and in a way that’s compatible with other code mods.
+
+There is a proper hunting system which allows you to mark animals for hunting and let your colonists handle the details. Beware sending unarmed colonists to hunt boomrats by kicking them to death. The rats go boom.
+
+The game has partial support for localization now. This was a last-minute addition, so it’s not all locked in yet and not everything can be translated. But lots of stuff can be. Now the Russian hackers can stop hacking the DLL to make the game display in Cyrillic. A rough German fan translation from TheEisbaer is included with Alpha 3.
+
+The bill interface has been redesigned and smartened. You can now set colonists to maintain a certain stockpile of a certain kind of item. No more repeatedly ordering them to cook 4 meals every day. Just set it to “make until you have 10 meals” and it’ll run forever.
+
+Finally, and very important, is the many small AI improvements. The AI in Alpha 2 was a little bit derpy. This was a consequence of the game increasing in complexity but the AI not becoming smarter fast enough to handle the new situations it was trying to deal with. Now, you won’t see colonists eat raw potatoes out of the stockpile when there is a dispenser ready. They will put food in the dispenser, then use it. And colonists who make something at a table will actually put it in storage now. And there are many other improvements.
+
+===Changes===
+* Reworked debug lister menu to handle large numbers of options. Also added a type-in filter.
+* Started refactoring map generation into encapsulated steps and parameterized them.
+* Pawn decision trees are now defined in XML.
+* Added '''simple [[door]]'''. Cheaper, but cannot be powered.
+* Filled out storyteller moddability.
+* Finished refactoring map generation into encapsulated, parameterized steps.
+* Thick rock roofs now drop ‘collapsed rocks’ instead of solid rocks.
+* Disallowed building very close to the map edge. This discourages weird building patterns that exploit edges and corners and stress game systems.
+* Resource lister now counts meals.
+* Started automatic hunting. So far, colonists can go kick animals to death. Doesn’t work so well for boomrats.
+* Moved JobDefs into XML.
+* Job reports like “Hauling Metal.” or “Eating meal.” are now in JobDef, not code.
+* Finished automated hunting. Colonists will hunt with guns or melee attacks.
+* Pawns now try to eat nice [[meals]] when they have the choice over [[Nutrient paste meal|nutrient meals]].
+* Aptitude has become “average of relevant [[skills]]” out of 20 to reduce confusion.
+* [[Damage Types|Damage types]] are now defined in xml definitions.
+* Recipes can now give skills.
+* [[Hydroponics basin|Hydroponics]] are more fertile and now require power or the plants die. You can also now set what to grow on them.
+* [[Raiders]] come from specific factions and don’t always drop from orbit.
+* Bedding in and debugging generated faction system.
+* Tribal [[raiders]] now spawn and attack. Created [[short bow]], [[great bow]], and handful-of-stones weapons.
+* Solidified faction relations. They are now reported on the faction overview.
+* Pawns of warring [[factions]] now fight.
+* Let pawns spawn with [[minigun]] and [[LMG|L-15 LMG]].
+* Refactored gun spawning system to work by tech level, spawn tags, and pawn kind money.
+* Pawns now spawn with [[backstories]] from appropriate spawn category for their faction.
+* Started trying to fix save/load.
+* Restricted hairdos by faction. No more pirates or tribals in pigtails.
+* Mods list is now scrollable.
+* Can now individually hide zones.
+* Tribals now have special names (no more tribal Bob Smiths).
+* All pawn kinds can now carry stuff in their inventory, like silver, and will spawn with some. Hooray, a reason to attack people!
+* Faction spawning is now data-driven.
+* XML loader now warns on finding no usable defs in a file.
+* XML loader now warns and explains on finding anything besides a proper <li> tag inside a list element.
+* You can now call factions on the radio and talk to them. You can offer them silver to improve relations.
+* Colonists don’t get sad about being in darkness until they haven’t seen a light for 3-4 hours.
+* Corpses can now rot.
+* Pawns now spawn with randomized goodies. Yay, something to steal!
+* Faction relations change over time.
+* For modders: Beauty and TransmitsPower are now overridable properties of Things and Buildings.
+* Launch pad replaced with [[orbital trade beacon]]. Trade system clarification commences.
+* [[Mental break]] probability is much lower.
+* Colonists will now sleep on the ground if exhausted.
+* Bills no longer vanish on hitting zero count (you can reactivate them without reconfiguring them).
+* Bill config interface displays ingredient search radius ring.
+* Alerts now have a moving arrow to draw attention to critical alerts. They are draw on top of the letter stack and so are more visible.
+* It is now impossible to place a hopper in an invalid position.
+* Modders can now create custom Def subclasses.
+* Modders can now make custom code to define building placement restricters.
+* Colonists now undraft themselves if they’ve been doing nothing for at least a quarter of a day and there are no enemies on the map.
+* Merged architect and direct mode code for displaying commands. Direct mode now displays commands for selected things along the bottom of the screen, the same way Architect mode does.
+* Game can now natively load dictionaries of data with def references as keys or values.
+* Reworked early-game alerts into a todo list style. “Need growing zone”. “Build a room”. And so on.
+* Now, if someone tries to get food from a paste dispenser fails, they first try to fill it, even without being assigned as a hauler or cook.
+* Corpse hauling is now globally prioritized above other hauling.
+* Right-click prioritize menu now gives sensible reasons why actions cannot be prioritized (e.g. haul -> “no place configured to store this”)
+* Bill dialog now warns you if you add a bill that no colonist has the skill to do.
+* Drafted pawns now automatically beat adjacent fires.
+* Redesigned AI King into a proper state machine so it can handle more complex multi-faction combats and more intricate goals.
+* Refactored traveler behavior as a king of squad directive, so you can have traveling groups who stay together.
+* The tutor now properly teaches about the bills tab.
+* Humanoids no longer eat raw food unless they are near-starving at least.
+* Faction relations now measured on a -100 to 100 scale instead of 0-100.
+* Roughed in a way to call allies for combat aid. If they like you enough, they’ll send a group of friendly fighters to help you. Useful in a pinch against tough raids.
+* Travelers arrive in groups sometimes.
+* Can no longer place a no roof region where there is a thick roof.
+* Friendly factions will not help you fight their own friends.
+* Built up and redesigned AI code so factions can fight each other properly.
+* Staging enemies no longer assault you on sight. They will hold their staging position and defend. Hopefully pre-emptive attacks become more meaningful this way.
+* Enemies now stage attacks for randomized amounts of time.
+* Ally forces now hang around a reasonable point near your base if there are no enemies. After some time, they leave together as a group (they become travelers).
+* If harmed, traveling groups stop and defend as a group. They resume traveling if they are not harmed for some time.
+* Roughed in visitor event: groups from non-hostile factions visit the colony, chill for a while, and leave.
+* You can now suspend bills without deleting or modifying them for easy later reactivation.
+* AI will now immediately store items after creating them at a bench (if there are multiple items, the first one will be automatically insta-stored). This is part of the crafting job and is independent of hauling.
+* Testing and grinding down bugs produced over the past few weeks.
+* Various minor usability improvements.
+* Spent a while de-spaghettifying map initialize code, as well as moving the world data out of the map itself.
+* Colonists now start out with the work types they’re best at enabled, instead of everyone having the same settings.
+* New alerts make tiny bell noises.
+* Different teams have different color names by randomly shading within the red range (hostile) or blue range (neutral). So you can tell apart two different hostile groups.
+* Guns are now visible in peoples’ hands when aiming or in certain other circumstances.
+* Most code-driven text can now be translated. Most text is now linked to the translation system.
+* [[Rain]] now slowly washes away [[filth|blood]].
+* In the bill interface: made Make X and Make Until exclusive. Gave them separate short form outputs.
+* Designation categories (Orders, Buildings, Furniture, Zones, etc) are now data-driven. Modders can add new ones.
+* Thing categories (for storage settings, etc) are now modular defs. They can be localized, and modders can add new ones without replacing the whole tree.
+* Fertilizer pump mod integrated into core.
+
+===New Content===
+* Added [[Terrain|rich dirt]] patches.
+* Added simple ruins generation.
+* Added basic music system. Added Al’s guitar sting for game start.
+* Added target amount for bills; colonists won’t do the bill if you have more than the target amount in storage.
+* Created the Fertilizer Pump external code test mod. Adds the fertilizer pump building which uses electricity and slowly creates a growable soil field around itself.
+* Added more new colony optimism to help ease into the early game.
+* Abolished old fixed teams system and stated creating generated faction system. Create faction overview tab.
+* Created name generator for factions and made content for raider, outlander, and tribal factions.
+* Added more music from Al.
+* Created system to track the instigator of damage. Factions turn on you if you damage or kill their members.
+* Created some basic backstory content for tribals.
+* Cleaned up pawn graphics and fixed it so they can be loaded from mods.
+* Made people spawn per-faction. Started adding tribal raiders.
+* Completed 28th revolution around the sun.
+* Created soft faction relations so factions can get progressively more and less pissed at you.
+* Added info window for '''[[factions]]'''.
+* Added a cancel button on the in-progress buildings.
+* Added help message about trading from orbital beacon in first-opened trade screen.
+* Added hotkeys for architect mode.
+* Added shortcut keys for next/previous colonist (default comma and period keys).
+* Added new styles of raid: immediate assault (no staging time) and center-drop (they drop right into your colony).
+* Created “get mods” Web link in mods page.
+* Added a button to select through things in the same square (you could always do this by slowly clicking)
+* Colonists don’t eat raw food unless urgently hungry or starving.
+* [[Stonecutter's table]] now requires [[research]].
+* Added a simple planning designation that does nothing so people can plan base layouts early.
+* Added a glow to the button that a tutor concept is talking about. Easier to learn.
+* Started text translation system.
+* Integrated new player creative content.
+
+===Bug Fixes===
+* Bugfixes.
+* Fixed external code loading.
+* Performance bugfixes.
+* A one-line fix so colonists take stacks of items to storage after crafting them (not just one).
+
+==Hotfixes==
+
+APRIL 15 UPDATE: Silently updated to Alpha3f. This version fixes a bug that caused save games to sometimes fail to load. Alpha3f will break save compatibility from earlier versions.
+
+APRIL 13 UPDATE: Silently updated to Alpha3e with one minor fix.
+
+APRIL 12 UPDATE: Silently updated to Alpha3d. Fixes specified below.
+
+I’ve just uploaded Alpha3c, a slightly changed version which fixes a number of rare bugs that cropped up after the Alpha 3 release.
+
+Your savegames from Alpha 3 should still work (though you’ll have to copy the .rim files over to a Saves folder in the new install directory).
+
+The bugs fixed were:
+
+* 633: Occasional crash on load associated with the TerrainGrid.
+* 635: Performance killer associated with forbidden items under blueprints in certain conditions.
+* 638: Game crashes if you load a map under 256 squares wide, then load one over 256 squares wide (flood fill and path grids not resetting their sizes).
+* 636: Minor error message as pawns drop and tried to pick up created items at bill tables.
+* 637: Warden/doctor loop when feeding incapacitated prisoner set to get no food.
+* 504: [[Muffalo]]s draw with wrong texture.
+* 644: Pawn spaz loop when eating stackable food off the same square someone else is eating off of (e.g. corner of table).
+* (Alpha3d) 656: Cooks don’t haul meals to stockpiles
+* (Alpha3d) 646: New Colony button doesn’t work with special characters in folder path
+* (Alpha3f) Fixed a bug causing savegames to fail to load.
+
+
+Sorry about asking you to update twice in two days three times in three days. We did a lot of testing with a good-sized test team, but it’s amazing what crops up when thousands of people get their hands on the game. I’m going to have to consider other test and development processes to try to avoid this kind of situation in the future.

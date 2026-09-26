@@ -1,0 +1,108 @@
+{{Infobox main|security
+| name = Rocketswarm launcher
+| image = TurretRocket_MenuIcon.png
+| description = An emergency-defense launcher that fires a single barrage of rockets covering a large area. The turret does not fire until someone activates it. It is very effective against large groups of weaker combatants, but less effective against small numbers of armored targets. Once fired, it must cool off for hours and be reloaded to fire again.
+| type = Building
+| type2 = Security
+| placeable = 
+| path cost = 50
+| passability = pass through only
+| cover = 0.4
+| minifiable = false
+| size = 2 * 2
+| mass base = 8 
+| flammability = 0.7
+| hp = 200
+| beauty = -20
+| power = -150
+| terrain affordance = Heavy
+| research = Rocketswarm launcher
+| thingCategories = 
+| skill 1 = Construction
+| skill 1 level = 5
+| work to make = 10000
+| resource 1 = Plasteel
+| resource 1 amount = 20
+| resource 2 = Steel
+| resource 2 amount = 200 
+| resource 3 = Component
+| resource 3 amount = 2
+| resource 4 = Chemfuel
+| resource 4 amount = 180
+| damage = 24
+| damage type = Bomb
+| armorPenetration = 36
+| range = 29.9
+| missRadius = 5.75
+| blastRadius = 2.9
+| accuracyTouch = 28
+| accuracyShort = 75
+| accuracyMedium = 66
+| accuracyLong = 50
+| mode = Single-Use
+| burst = 12
+| burstTicks = 10
+| warmup = 0
+| cooldown = 210
+| velocity = 38
+| stoppingPower = 0.5
+| DPS = DPS
+| page verified for version = 1.4.3525
+| fuel filter = Chemfuel
+| fuel capacity = 180
+| fuel consumption rate = 180
+}}
+'''Rocketswarm launchers''' are [[security]] [[turret]]s that fire a barrage of rockets at a designated point when activated by a pawn.
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+{{Image wanted|section=1|reason=Webm of use would be instructive and allow playing on the page}}
+[[File:Rocketswarm_blast.png|thumb|left|300px|Blast of 1 rocket, and the radius where blasts can hit.]]
+Rocketswarm launchers fire a volley of {{P|Burst Count}} rockets in {{Ticks|{{#expr:{{P|Burst Ticks}} * ({{P|Burst Count}}-1)}}}}. Unlike most other turrets, it must be activated by a pawn, and then manually targeted by the player. 
+
+It can target any tile within its {{P|Range}} tile range and within [[line of sight]]. It fires at the targeted tile, even if a pawn is on the tile at the time of targeting. As such it is unaffected by [[blind smoke]] and the pawn will not adjust the point of aim if the pawn moves after target selection. Pawns that are [[incapable]] of violence cannot activate the launcher. Unlike the [[mortar]], it must be powered to fire. 
+
+There is a delay of {{Ticks|60}} between targeting and firing. Note that the rocketswarm launcher fires in a straight path like a traditional projectile, it does not travel over walls or other obstructions like a mortar.
+
+Each rocket will land in a {{P|Miss Radius}} tile radius of the selected tile and deals {{P|Damage Base}} [[Damage types#{{P|Damage Type}}|{{P|Damage Type}}]] damage with an {{AP}} of {{P|Armor Penetration}}% in a {{P|Blast Radius}} tile radius. Note that per explosion, this is significantly less than the default of 50 damage of other Bomb type weapons, although it is made up for by the volume of fire. Additionally, unlike other forced miss radius effects, each rocket will hit a different target tile unless every possible tile has been hit. This ensures that the projectiles are dispersed over the target radius. Note that the blast radii of the rockets can still overlap.<!--forcedMissEvenDispersal  forcedMissEvenDispersal is used purely by the rocketswarm turret in vanilla and uses an internal tile cache so that within the range of all possible forced miss tiles it will not repeat a tile until it's hit all of them. i.e. as the name suggests, it evenly disperses each individual projectile over the entire target area.
+-->
+
+The launcher can be activated once before needing to be reloaded at the cost of {{Icon Small|Chemfuel||180}} [[chemfuel]]. It is possible to partially reload the launcher, but it can only be fired with a full load. After launching, there is a {{Ticks|7200}} cooldown before it can be fired again, and it cannot be reloaded during this time. 
+
+When damaged beyond ?%{{Check Tag|Value?}} of its health, a rocketswarm launcher will spark and emit a hissing sound shortly before exploding {{Ticks|240}} later, dealing 50 [[Damage Type#Bomb|Bomb]] damage in a 6.9 tile radius around itself.
+
+== Analysis ==
+{{Stub|section=1|reason=Strategies, bunker/pillbox design for non-water bases, etc}}
+Rocketswarm launchers are highly effective against high quantity, lightly armored targets such as tribals, manhunting animals, [[fleshbeasts]],{{AnomalyIcon}} and [[horax cult]]ists.{{AnomalyIcon}} Each enemy is likely to be hit by multiple rockets, which is enough to cripple or kill them. However, rocketswarm launchers have clunky firing mechanics and a hefty research cost, so they are not a high priority for most colonies:
+
+* Rocketswarm launchers require a colonist to manually aim them, and each launcher only has one volley before needing to cooldown.
+* Their rockets are inaccurate and deal great damage to buildings, so any defensive fortifications need to be built around the rockets' radii. It is possible to build these launchers out in the open to avoid building damage while still getting a lot out of the explosions, but this usually requires building turrets at multiple angles, and risks them being destroyed by high range enemies like [[pikemen]].
+* Raiders tend to spread out naturally, with many pawns lagging behind and with faster pawns like [[jogger]]s ahead of the the rest of the pack. Structures and natural terrain can be used to clump up raiders, although structures can be destroyed and natural terrain is not available in all maps.
+* Rocketswarm launchers can damage friendly structures, animals, visitors, and colonists.
+
+By the time Microelectronics is researched, the resource cost required to build and refuel rocketswarm launchers should not be prohibitively expensive. They are actually cheaper than [[autocannon turret]]s to build. The [[chemfuel]] cost is high, but chemfuel can be trivially produced in most biomes by growing more food. They can provide high value for their resource cost when in the right circumstances, but their high research and need for specialized base designs requires extra effort from the colony, said base designs are less effective for other weapons, and multiple rocketswarm launchers are typically needed against large raids.
+
+Their rockets are great at destroying buildings as they deal [[Bomb]] damage, but under normal situations, this property is hard to use offensively as these launchers cannot be uninstalled. For example, if wanting to deal with a [[mech cluster]],{{RoyaltyIcon}} a new launcher would need to be built for each new location. However, when on a [[gravship]],{{OdysseyIcon}} rocketswarm launchers can be brought along for attacks, making them an effective tool at dealing with turrets and enemy cover.
+
+=== Usage strategy ===
+Usually, it is not necessary to lead the shots by more than a few tiles, as rocketswarm launchers fire quickly and the blast radius is large. When aiming at a crowd, it is is better to aim at the standard speed pawns if possible, not the [[jogger]]s and [[go-juice]] pawns that will lead the front. Having melee pawns and/or using [[trap]]s may help prevent fast pawns from advancing and attacking your rocketswarm launchers.
+
+If placed outside of a base, consider having pawns ready with [[jump pack]]s,{{RoyaltyIcon}} [[locust armor]],{{RoyaltyIcon}} [[longjump legs]],{{BiotechIcon}} or [[moving]] and [[move speed]] enhancements ready to ensure they can get in position to trigger the launcher in time. 
+
+=== Defense structures ===
+One way to take advantage of the rocketswarm launcher is by using water, which can slow down enemies, clump them up, and naturally funnel them (via pathing AI) without needing to build structures. This is easier to set up when settling on water-related [[landmark]]s,{{OdysseyIcon}} such as [[archipelago]] or [[coastal atoll]]. Rivers may be used in the base game, but are more awkward and enemies can come from the opposite direction from the river.
+
+<gallery widths="300px" heights="300px" class="left" mode="nolines">
+File:Rocketswarm water1.png|'''Water being used to clump up and slow down raiders.'''
+File:Rocketswarm water2.png|'''After 2 rocketswarm volleys, the raid ends.'''
+</gallery>
+
+== Version history ==
+* [[Version/1.4.3523|1.4.3523]] - Added.
+* [[Version/1.4.3682|1.4.3682]] - Pawns that are incapable of violence can no longer activate rocketswarm launchers.
+* [[Version/1.6.4518|1.6.4518]] - Fix: Rocketswarm turret cannot be reloaded nor fired if not fully fueled.
+
+{{Nav|security|wide}}
+[[Category:Security]] [[Category:Turret]]

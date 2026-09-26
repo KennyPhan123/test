@@ -1,0 +1,54 @@
+{{Stub|reason=1) Better table formatting 2) Version history 3) Two-way links}}
+{{Verified|1.5.4104}}{{Stat
+| def name = Ability_Duration
+| label = duration
+| description = How long the effects of this ability last.
+| default base value = 0
+| min value = 0
+| hide at value = 0
+| format string = {0} s
+| show if undefined = false
+| category = Ability
+| display priority in category = 999
+}}
+
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_07 text-center}}
+! Ability !! Duration
+|-
+{{#ask: [[Duration::+]]
+| ?Duration
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Name
+}}
+|}
+</li><div>
+
+== Stat Def Data ==
+{| {{STDT}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Duration" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />Ability_Duration
+* '''Label:'''<br />duration
+| How long the effects of this ability last.
+|
+* Display Order:<br />'''60'''
+* Def Name:<br />'''Ability'''
+* Label:<br />'''Ability'''
+* Display All By Default:<br />{{Bad|false}}
+|
+* '''Default Base Value:''' 0
+* '''Min Value:''' 0
+* '''Hide At Value:''' 0
+* '''Format String:''' {0} s
+* '''Show If Undefined:''' {{Bad|false}}
+| -
+| 999
+<!--</StatDef>-->
+|}
+
+
+{{nav|stats|wide}}

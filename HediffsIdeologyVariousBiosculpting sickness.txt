@@ -1,0 +1,51 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Ideology/Various}}
+|}
+----
+{| {{STDT| c_06}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Biosculpting sickness" <!-- defName="BiosculptingSickness", ParentName="DiseaseBase" -->
+! Biosculpting sickness
+----
+* Def Name:<br />BiosculptingSickness
+* Label:<br />Biosculpting sickness
+| The after-effects of an incomplete biosculpting cycle. It causes nausea, dizziness, and fuzzy thinking.
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Default Label Color: {{Color|90%|100%|35%}}
+* Initial Severity: '''0.1%'''
+* Makes Sick Thought: {{Bad|true}}
+* Scenario Can Add: {{Good|true}}
+* Remove On Redress Chance By Days Curve:
+<div><li style="display: inline-table;">
+{| {{STDT| c_06}}
+! Days !! Chance
+|-
+! 0
+| 0%
+|-
+! 2
+| 0%
+|-
+! 7
+| 50%
+|-
+! 20
+| 100%
+|}{{Graph:Chart|width=200|height=200|xAxisTitle=Days|yAxisTitle=Remove On Redress Chance|type=line|x=0, 2, 7, 20|y=0, 0, 0.5, 1|interpolate=monotone|xGrid=|yGrid=}}</li></div>
+* '''Comps:''' ''Disappears''
+** Disappears After Ticks: {{Ticks/gametime/hours|8000}} ~ {{Ticks/gametime/hours|12000}}
+** Show Remaining Time: {{Good|true}}
+|<!-- Stages -->
+{| {{STDT| c_06}}
+! Label !! Parameters
+|-
+! Biosculpting sickness
+|<!-- Parameters -->
+* Vomit {{MTB}} Days: '''0.125'''
+* [[Consciousness]] Post Factor: {{Bad|80%}}
+* [[Moving]] Post Factor: {{Bad|90%}}
+* [[Manipulation]] Post Factor: {{Bad|90%}}
+|}<noinclude>
+|}</noinclude>

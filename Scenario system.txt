@@ -1,0 +1,638 @@
+<!--Top Nav Box-->
+{| align=center
+| {{GameCreation_Nav}}
+|}
+----
+<!-- End Nav -->
+[[File:ChooseScenario.png|500px|thumb|Default scenario choosing window, with the [[Biotech DLC]] installed and one custom-set scenario.]]
+
+The '''scenario system''' allows you to choose, randomize, and customize special situations to play in. Determine the starting situation, type of community (tribe, colony), permanent map conditions, starting items, animals, health conditions, traits, and change special rules. In the image on the right, you can see the window for choosing scenarios and the "Open Steam Workshop" button (if you are using the steam version of the game).
+
+==New Tribe vs New Arrivals==
+Starting scenarios can be roughly grouped into one of two types, determined by the faction type the player will inherit. These are:
+*'''New tribes:''' Inherited by the "Lost Tribe" default scenario, and selectable in the scenario editor.
+*'''New arrivals:'''  Inherited by the "Crashlanded", "Rich Explorer", and "Naked Brutality" default scenarios, and selectable in the scenario editor.
+
+There are some significant differences between the New Tribe and New Arrivals scenarios. 
+
+=== Research ===
+The most significant difference is the starting [[research]] and the long term effects on research speed. New Tribes begin with a different, and lower tech, set of research projects already completed, as described below. Note that custom and default scenarios may also add additional technologies to these lists.
+
+Furthermore, new tribes start with a tech level of "Neolithic", while new arrivals begin with a tech level of "Industrial". This increases the research points required by new tribes by {{Bad|+50%}} per level for technologies above '''Neolithic''', capped at 200% ('''Industrial''').  Note that most techs on the research tree are classified as '''Industrial''' or higher.
+<div style="display:inline-table; vertical-align:top;">
+{| class="wikitable" style=display:inline-table
+|-id="Tech Packs"
+!  colspan = "2"|  Starting Research
+|-
+! New Tribe !! New Arrivals
+|-
+|
+* [[Research#Passive cooler|Passive Cooler]]
+* [[Research#Tree sowing|Tree Sowing]]
+* [[Research#Recurve bow|Recurve Bow]]
+* [[Research#Psychoid brewing|Psychoid Brewing]]
+* [[Research#Pemmican|Pemmican]]
+* [[Research#Fishing|Fishing]]{{OdysseyIcon}}
+| 
+
+* [[Research#Passive cooler|Passive Cooler]]
+* [[Research#Stonecutting|Stonecutting]]
+* [[Research#Complex clothing|Complex Clothing]]
+* [[Research#Complex furniture|Complex Furniture]]
+* [[Research#Electricity|Electricity]]
+* [[Research#Air conditioning|Air Conditioning]]
+* [[Research#Nutrient paste|Nutrient Paste]]
+|}
+</div>
+<div style="display:inline-table; vertical-align:top; text-align: center">
+{| class="wikitable" style=display:inline-table
+|-
+! rowspan = "2"| Project tech <br/>level
+! colspan = "2"| Research cost multiplier
+|-
+! New Tribe !! New Arrivals
+|-
+! Neolithic
+| 100% || 100%
+|-
+! Medieval
+| 150% || 100%
+|-
+! Industrial
+| 200% || 100%
+|-
+! Spacer
+| 200% || 100%
+|-
+! Ultra
+| 200% || 100%
+|}
+</div>
+
+===Other differences===
+{| class="wikitable" style=display:inline-table
+|-
+! New Tribe !! New Arrivals
+|-
+| Can build the [[Hoopstone ring]]<br>{{Required Resources|Hoopstone ring}}, {{Q|Hoopstone ring|Work To Make}}<br>(Rec Power: {{%|{{Q|Hoopstone ring|Recreation Power}}}}) 
+| Can build the [[Horseshoes pin]]<br>{{Required Resources|Horseshoes pin}}, {{Q|Horseshoes pin|Work To Make}}<br>(Rec Power: {{%|{{Q|Horseshoes pin|Recreation Power}}}})
+|-
+| Can build the [[Game-of-Ur board]]<br>{{Required Resources|Game-of-Ur board}}, {{Q|Chess table|Work To Make}}<br>(Rec Power: {{%|{{Q|Game-of-Ur board|Recreation Power}}}}) 
+| Can build the [[Chess table]]<br>{{Required Resources|Chess table}}, {{Q|Chess table|Work To Make}}<br>(Rec Power: {{%|{{Q|Chess table|Recreation Power}}}})
+|-
+| Starting pawns:
+* Have [[Backstories|backstories]] from the "Tribal" category, which have the Natural [[meditation focus]]. This allows most tribals to meditate at the [[Anima tree]].{{RoyaltyIcon}}
+** 3 player created backstories lack the natural mediation focus but can appear as possible starting pawns. These include:
+***Samantha 'Sam' Haxton's Ranger Child
+***Valentin 'Val' Anastasi's Mad scientist
+***Christian 'Wolle' Alberts's Gamer Fanatic
+** Any [[children]]{{BiotechIcon}} of a tribe also gain the natural meditation focus, unless [[Growth vat|Vatgrown]] for enough time.
+* Have a 2% chance to have one of the following artificial body parts: {{Tag List|value=50|techHediffsTags|Poor}}
+| Starting pawns:
+* Have [[Backstories|backstories]] from the "Offworld" category. 
+* Have a 3% chance to have one of the following artificial body parts: {{Tag List|value=800|techHediffsTags|Poor|Simple|ImplantEmpireCommon}}
+|- <!-- Resistance is set by Pawn_GuestTracker. Its a random Value * F(initialResistanceRange) + Offset from Royal title, Rounded. F(initialResistanceRange) = [ (maxInclusive - minInclusive) + minInclusive] OR minInclusive (If maxInclusive<= minInclusive).
+Recruitment is handled by InteractionWorker_RecruitAttempt.
+I see no
+ -->
+| [[Prisoner#Starting resistance|Recruitment difficulty]] increased by {{Bad|32%}} for the factions: {{Check Tag|This may not be true.}}
+* [[Outlanders]]
+* [[Pirates]]
+| [[Prisoner#Starting resistance|Recruitment difficulty]] increased by {{Bad|32%}} for the factions: {{Check Tag|This may not be true.}}
+* [[Tribal]]s
+|-
+| Tribals forage 70% more food while traveling. See [[Foraging|Caravan]] for details. ||
+|-
+| Can craft the [[tribal headdress]] and [[war mask]] ||
+|-
+| colspan=2| {{Ideology|section=1}}
+|-
+| Allows the '''Drum party''' [[Ritual]] || Allows the '''Dance party''' [[Ritual]]
+|}
+
+=== Starting Memes ===
+ {{Ideology|section=1}}
+In addition to the above, some [[memes]] affect the starting scenario in one or more ways.
+{| class="wikitable" style=display:inline-table
+|-
+! Meme !! Starts with tech !! Allows to Build !! Others
+|- 
+! '''[[Blindsight]]'''<br/>[[File:Blindsight.png|64px]]
+| - || - || Pawns will start [[Blindness|blinded]]
+|-
+! '''High life'''<br/>[[File:High life.png|64px]]
+| - || [[Autobong]]<br/>[[Mindbend carpet]] || -
+|-
+! '''Pain is virtue'''<br/>[[File:Pain is virtue.png|64px]]
+| - || [[Slab bed]]<br/>[[Slab double bed]] || Starting Pawns will have [[scar]]s. <br/>Though its memes, nullifies:
+* "Ate without table -3"
+* "Slept outside -4"
+* "Slept on ground -4"
+* "Soaking wet -3"
+* "Slept in the cold -4"
+* "Slept in the heat -4" 
+|-
+! '''Transhumanist'''<br/>[[File:Transhumanist.png|64px]]
+| - || [[Hex carpet]]<br/>[[Hex tile]]<br/>[[Neural supercharger]]<br/>[[Sleep accelerator]] || -
+|-
+! '''Tree connection'''<br/>[[File:Tree connection.png|64px]]
+| [[Tree sowing]] || - || Though its memes, nullifies:
+* "Ate without table -3"
+* "Slept outside -4"
+* "Slept on ground -4"
+* "Soaking wet -3"
+* "Slept in the cold -4"
+* "Slept in the heat -4" 
+|-
+! '''Tunneler'''<br/>[[File:Tunneler.png|64px]]
+| [[Research#Stonecutting|Stonecutting]] || [[Fungal gravel]] || Grants the [[Indoors (precept)|Indoors: Preferred]] precept.
+|-
+! '''Bloodfeeding'''<br/>{{BiotechIcon}}<br/>[[File:Bloodfeeding.png|64px]]
+| [[Research#Electricity|Electricity]]<br/>[[Deathrest]] || - || -
+|}
+
+==Default Scenarios==
+These four scenarios are in the base game. Each offers a different set of challenges, and encourages different playstyles to a certain extent. For example: you could start off as a 'rich explorer' who came from a high-tech glitterworld but yearned to explore the universe, or you could also start as a desperate tribe that's on the brink of starvation after fleeing from a devastating group of '[[mechanoid|blood machines]]'. On the other hand, you could be managing a few crashlanded civilians who barely escaped an assaulted passenger liner with their lives.
+
+Here are the four scenarios listed in order as shown in game:
+
+{| class="wikitable mw-collapsible" style=display:inline-table
+!!! Crashlanded !! Lost Tribe !! The Rich Explorer !! Naked Brutality
+|-
+! Summary
+| Three crashlanded survivors - the classic RimWorld experience. || Five lost tribespeople attempt to rebuild. Difficult. ||  One rich explorer out to experience the universe. Extra difficult. ||Naked, alone, and utterly unprepared. Can you survive? Extremely difficult and unfair.
+|-
+! rowspan=2 | Description
+| rowspan=2|The three of you awake in your cryptosleep sarcophagi to the sound of sirens and ripping metal. You barely get to the escape pods before the ship is torn apart. Some time later, you land on this unknown rimworld. || Your tribe was destroyed by the great blood machines sent by the gods. Five of you managed to escape. Now, it's time to build up a new home.|| People called you crazy for leaving your glitterworld home, but you always yearned to explore the stars - outside the neurosimulator. Now you're at the end of your long journey in cryptosleep, landing on an unknown rimworld to see what it's like.  || You went under anesthetic for a minor surgery. Now you've awoken in a drop pod crashing into a distant planet. You're naked, alone and utterly unprepared. Can you survive?
+|-
+| '''Note:''' Since you'll start poor and research slowly, this is a difficult scenario. || '''Note:''' Since your starting character will lack some skills, this is an especially difficult scenario in the early game. || '''Warning:''' There is nothing fair about this scenario - it is extremely difficult and death can happen for any reason.
+|-style="text-align: center; vertical-align: middle;"
+! Scenario Type
+| New Arrivals || New Tribe || New Arrivals || New Arrivals
+|-
+! Starting pawns
+| Start with three people, chosen from eight
+* Arrive in drop pods
+* 50% chance of having [[cryptosleep sickness]] (Only lasts 3.2 to 4.8 in-game hours)
+* All potential options will have backstories from the "Offworld" category.
+|Start with five people, chosen from eight
+* They have a 50% chance of starting with [[malnutrition]]
+** Severity ranges from 20% (minor) to 40% (moderate)
+* They will have a 'food' need between 0-10%
+* All potential options will have backstories from the "Tribal" category.
+| Start with one person, chosen from eight
+* Arrive in drop pods
+* All potential options will have backstories from the "Offworld" category.
+| Start with one person, chosen from eight
+* All potential options will have backstories from the "Offworld" category.
+|-
+! Starting Pet
+| One random pet, which will be bonded to a random colonist
+| 3 random pets
+* Has a 100% chance of being bonded with random colonists
+* Has a 100% chance of being bonded with the starting colonist
+| One random pet, which will be bonded to the starting colonist
+| None
+|-
+! Starting Techs
+|
+* [[Scenario system#Tech Packs|New Arrival Package]]
+|
+* [[Scenario system#Tech Packs|New Tribe Package]]
+|
+* [[Scenario system#Tech Packs|New Arrival Package]]
+* [[Research#Smithing|Smithing]]
+* [[Research#Machining|Machining]]
+* [[Research#Gunsmithing|Gunsmithing]]
+* [[Research#Blowback Operation|Blowback Operation]]
+* [[Research#Gun turrets|Gun Turrets]]
+|
+* [[Scenario system#Tech Packs|New Arrival Package]]
+|-
+! rowspan=3 | Starting Supplies
+|
+* 800 [[silver]]
+* 50 [[packaged survival meal]]s (around 8 days worth of food)
+* 30 [[components]]
+* 30 [[medicine]]
+|
+* 200 [[silver]]
+* 400 [[pemmican]] (slightly more than 2 day's worth of food, 300 pre-Beta 19)
+* 20 [[herbal medicine]]
+|
+* 2,000 [[silver]]
+* 40 [[packaged survival meal]]s (around 20 days worth of food)
+* 30 [[component]]s
+* 30 [[glitterworld medicine]]
+* 30 [[gold]]
+|
+* No supplies
+|-
+| Nearby building materials
+* 450 [[steel]]
+* 300 [[wood]]
+| Nearby building materials
+* 500 [[wood]]
+| Nearby building materials
+* 450 [[steel]]
+* 300 [[wood]]
+|style="text-align: center">| -
+|-
+|Various resources scattered around the map
+* 3 [[ship chunk]]s
+* 720 [[steel]]
+* 7 [[packaged survival meal]]s
+|style="text-align: center">| - ||style="text-align: center">| -
+| 1 to 2 [[steel slag chunk]]s from the drop pod.
+|-
+! Others
+| Start with three normal-quality weapons
+* 1 [[bolt-action rifle]]
+* 1 [[revolver]]
+* 1 plasteel [[knife]]
+
+Start with three pieces of armor (in addition to synthread clothes)
+* 1 plasteel [[flak helmet]]
+* 1 [[flak pants]]
+* 1 [[flak vest]]
+| Start with 6 weapons
+* 2 [[short bow]]s
+* 1 bundle of [[pila]]
+* 1 wooden [[club]]
+* 1 steel [[ikwa]]
+* 1 [[Jade knife]] (unique item to this scenario only)
+|
+Start with a high-tech weapon
+* 1 [[charge rifle]]
+
+| Colonist arrives naked
+|}
+
+{{Biotech|section=1}}
+
+{| class="wikitable mw-collapsible" style=display:inline-table
+!!! The Mechanitor !! The Sanguophage
+|-id="Biotech Scenarios"
+! Summary
+| One mechanitor and a few servant mechanoids. || One crashlanded sanguophage needing blood to survive, and one human colonist.
+|-
+! rowspan=2 | Description
+| You knew you could only achieve greatness with help. People were too unreliable, so you chose to take on mechanoids as your servants, workers, and warriors. As you gained strength, others became fearful. It became clear you needed to get away from the influence of humanity. Now you've migrated to this sparsely-populated rimworld with some of your metallic helpers. Finally, you have the space to grasp your true potential!
+| When a dark stranger offered you a cure for your cancer, you were ready to agree to anything. He made you into a sanguophage - an immortal blood-drinker hated by a thousand religions. You hid your condition for years, but eventually a hunter tracked you down. Stowing away on the first starship leaving the system, you barely escaped alive.
+|-
+| '''Note:''' Since your starting character will lack some skills, this is a difficult scenario. || '''Note:''' Sanguophages have unique strengths and weaknesses, which makes this a difficult scenario. 
+|-
+! Scenario Type
+| colspan=2 | {{center|New Arrivals}}
+|-
+! Starting pawns
+| Start with one person, chosen from eight
+* They will always be a [[mechanitor]]
+* Forced trait: [[Recluse]]
+* Forbidden traits: [[Body purist]], [[Psychically dull]], [[Psychically deaf]]
+* They will always be capable of Intellectual
+* They will always be equipped with:
+** 1x [[Flak vest]]
+** 1x [[Duster]]
+** 1x [[Button-down shirt]]
+** 1x [[Pants]]
+** 1x [[Airwire headset]]
+** 1x Masterwork [[Biocoded]] [[Autopistol]]
+* Arrive in drop pods
+* All potential options will have backstories from the "Offworld" category.
+| Starts with 2 persons:
+* One adult/children [[sanguophage]] and one baseliner colonist of any age.
+* Arrive in drop pods
+|-
+! Starting Mechanoids
+|
+* 1 [[Lifter]]
+* 1 [[Constructoid]]
+|style="text-align: center">| -
+|-
+! Starting Techs 
+|
+* [[Scenario system#Tech Packs|New Arrival Package]]
+* [[Microelectronics]]
+* [[Basic mechtech]]
+* [[Research#Battery|Battery]]
+|
+* [[Scenario system#Tech Packs|New Arrival Package]]
+* [[Research#Deathrest|Deathrest]]
+|-
+! Starting Supplies
+|
+* 1,000 [[silver]]
+* 40 [[packaged survival meal]]s (around 20 days worth of food)
+* 55 [[component]]s
+* 10 [[medicine]]
+* 100 [[plasteel]]
+* 900 [[steel]]
+* 300 [[wood]]
+* 5 [[Basic subcore]]
+|
+* 2,000 [[silver]]
+* 30 [[packaged survival meal]]s (around 15 days worth of food)
+* 10 [[component]]s
+* 20 [[medicine]]
+* 100 [[plasteel]]
+* 200 [[steel]]
+* 200 [[wood]]
+* 30 [[Hemogen pack]]
+* 1 Masterwork Steel [[Longsword]]
+|-
+! Others
+| The exostrider remains that usually spawn on the starting map will also be disabled. ||style="text-align: center">| -
+|}
+
+{{Anomaly|section=1}}
+
+{| class="wikitable mw-collapsible" style=display:inline-table
+|- id="The Anomaly"
+! colspan=2 | The Anomaly
+|-
+! Summary
+| Three researchers and a ghoul investigate an ancient monolith.<br>
+|-
+! rowspan=2 | Description
+| Your research expedition has finally arrived at the source of the anomalous signal: an ancient archotech monolith on a distant planet. As you survey the structure from orbit, the scanner's audio feed forms garbled syllables which repeat your own name over and over. Your crewmate screams as her flesh begins flowing and reforming. A blinding beam of energy reaches up from the planet and tears your research vessel apart. You have disturbed something ancient and inhuman.
+|-
+| '''Note:''' This is a difficult scenario and is not recommended for new players.
+|-style="text-align: center; vertical-align: middle;"
+! Scenario Type
+| {{Hover title|As New Arrivals, but with lab coats and relevant backstories|Research Expedition}}
+|-
+! Starting pawns
+| Start with one ghoul and three colonists.
+* Arrive in drop pods
+* Each pawn has a 4% chance{{Check Tag|Each?|Is this a 4% chance of one of the options being selected (e.g. 1% chance of stomach), a 4% chance for each exclusive of all others i.e. 84% chance of nothing, 4% stomach, etc, or each rolling a chance independently of each other (whether it be 4 or 1% each) (e.g. 4% of pawns have a stomach, 4%*4%=0.16% have a stomach and lung etc.}} of having a [[flesh tentacle]], [[flesh whip]], [[fleshmass lung]], or [[fleshmass stomach]]. A pawn can end up with more than one flesh part this way.
+|-
+! Starting Techs
+| Start with technology already researched
+* [[Scenario system#Tech Packs|New Arrival Package]]
+* [[Research#Security door|Security door]]
+* [[Research#Battery|Battery]]
+|-
+! Starting Supplies
+|
+* 50 [[packaged survival meal]]s (around 16 days worth of food)
+* 100 [[twisted meat]]
+* 45 [[medicine]]
+* 45 [[component]]
+* 1 [[holding platform]]
+* 1 [[proximity detector]]
+* 2 [[Quality|normal]] [[textbook]]s
+* 1 [[Quality|good]] [[tome]]
+* 1 [[Quality|normal]] [[pump shotgun]]
+* 1 [[Quality|normal]] [[Steel]] [[knife]]
+* 1 [[shard]]
+* 2 [[turret pack]]s
+* 100 [[bioferrite]]
+* 250 [[wood]]
+* 800 [[steel]]
+* 70 [[plasteel]]
+* Various resources scattered around the map
+** 5 [[ship chunk]]s
+** 700 [[steel]]
+|-
+! Others
+|
+* After 12-15 days, a [[Event#Transport pod crash (Ghoul)|ghoul transport pod crash incident]] will occur.
+* The [[monolith]] is activated from the start
+|}
+
+{{Odyssey|section=1}}
+
+{| class="wikitable mw-collapsible" style=display:inline-table
+! colspan=2 | The Gravship
+|- id="The Gravship"
+! Summary
+| A crew of three hunted by mechanoids.<br>
+|-
+! rowspan=2 | Description
+| Your gravship sits docked at the orbital relay. As your crew begins to salvage the equipment, you realize that this isn't ancient human tech - it's a mechanoid beacon. The relay crackles to life and broadcasts its war alert to a distant mechhive. They're hunting you now, and they will eventually find you wherever you go.
+|-
+| '''Note:''' This is a difficult scenario and is not recommended for new players.
+|-style="text-align: center; vertical-align: middle;"
+! Scenario Type
+| Gravship Crew
+|-
+! Starting pawns
+| Start with three people, chosen from eight
+* They will always be able to perform [[Intellectual]] works.
+* Arrive in a pre-built [[gravship]].
+|-
+! Starting Techs
+| Start with technology already researched
+* [[Scenario system#Tech Packs|New Arrival Package]]
+* [[Research#Basic gravtech|Basic gravtech]]
+* [[Research#Biofuel refining|Biofuel refining]]
+|-
+! Starting Supplies
+|
+* 100 [[chemfuel]]
+* 250 [[wood]]
+* 60 [[packaged survival meal]]
+* 40 [[medicine]]
+* 40 [[components]]
+* 1 [[autopistol]]
+* 1 [[machine pistol]]
+* 1 [[breach axe]]
+* 350 [[steel]]
+* All buildings on the gravship {{Check Tag|What?|How many of each buildings?}}
+* Various resources scattered around the map
+** 300 [[silver]]
+** 500 [[steel]]
+** 400 [[gravlite panel]]s
+|-
+! Others
+|
+* Forced map: Orbital Relay in [[orbit]]
+** The usual starting tile selection screen during world creation will not be shown. Instead the player will start on a random tile in [[orbit]].{{Check Tag|How random?|How does the game chose which tile to start on (is there any preferences, can it be near the poles?)}}
+* [[Mechanoid]] will chase after the player
+** When started, the game will give a warning after 45 seconds about the pursuing mechanoids. The mechanoids will always arrive after 12 hours of starting.
+** When on any tile other than the [[mechhive]], the mechanoids raid will happen after anywhere between 18 to 35 days after the player first landed their [[gravship]] on that tile. The warning message will be sent after 14 to 16 days.
+** The mechanoid will launch 2 raids. The first raid will have a minimum [[raid point]]s of 2000 and a raid point multiplier of 1.5. The second raid, arriving 12 hours after the first one, will have a minimum raid points of 8000 and a raid point multiplier of 2. Should the player survive both raids, the mechanoids will stop pursuing them on that tile, as long as the player doesn't land their [[gravship]] back on that same map.
+** Landing a [[gravship]] on a map resets both the warning message timer as well as the raid timer of that map.
+** The mechanoids will only raid the player if they still have their [[grav engine]].
+** Completion of the [[Endings#Odyssey|odyssey ending]] will stop the pursuit, regardless of which option the player chose.
+* The Mechanoid Signal quest to get a new [[grav engine]] will not be available.
+|}
+
+== Scenario editor ==
+[[File:ScenarioEditor.png|200px|thumb|Scenario edit mode]]
+The scenario editor looks somewhat like the default scenario choosing window except for the left side of the page has changed, there are now three buttons: Load, which you can use to load your previously saved custom scenarios. Save, which is used to save your custom scenarios. And randomize seed, which is used to randomize the scenario. Under these buttons is the Edit mode, which you can toggle to open a window like the one on the bottom-right.
+
+=== Edit mode ===
+{{Stub|section=1|reason=Inadequate detail on what options are and mean}}
+In this mode, you can change a scenario however you want. Each of the parts on the right of the window is explained below, including the possible inputs.
+
+==== Mandatory parts ==== 
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_07 text-center}}
+! Part name
+! Description
+! Possible inputs
+
+|-
+! Title
+| The title for the scenario.
+| Text
+
+|-
+! Summary
+| A short version of the description for the scenario.
+| Text
+
+|-
+! Description
+| The description for the scenario.
+| Text
+
+|-
+! Player faction
+| The type of faction you will run. (changes what research you have and don't have)
+| New Arrivals<br>New Tribe
+
+|-
+! Starting people
+| The number of people you will start with.
+| Number (max 10)
+
+|-
+! Starting people {{BiotechIcon}}
+| The number of people you will start with and what kind of xeno races. (More can be added)
+| Number (max 10)<br>Racetype<br>Required? (Cannot go below 1)
+
+|-
+! Arrival method
+| How your colonists will arrive.
+| Standing<br>Drop pods
+|}
+</li><div>
+
+==== Voluntary parts ====
+{| {{STDT| sortable c_07 text-center}}
+! Part name
+! Description
+! Possible inputs
+
+|-
+! Allowed age range
+| The biological age range of your starting colonists.
+| Number slider (min 15, max 120)
+
+|-
+! Characters explode on death
+| Self explanatory. Number determines radius.
+| Number (max 1000000000) and type of explosion (bomb or flame)
+
+|-
+! Create incident
+| Creating of an [[events|incident]] for the colony, with the option to repeat every X days.
+| Number (max 1000000000)<br />Repeat checkbox
+
+|-
+! Disable exostrider remains {{BiotechIcon}}
+| Disable chance of exostrider remains showing up. Recommended not to start without [[Mechanitor]] as this disables the ability to get the required implant for Mechanoid control.
+| None (Only can be added once)
+
+|-
+! Disable incident
+| Disabling of an incident for the colony.
+| Any incident
+
+|-
+! Disallow building
+| Disallows a building from being built.
+| Any building
+
+|-
+! Forced health condition
+| Forces the characters specified to have a specific health condition.
+| Type of health condition<br />Severity of the condition<br />Chance for having the condition<br />Who will have the condition
+
+|-
+! Forced trait
+| Forces the characters specified to have a specific trait.
+| Trait<br />Chance for having the trait<br />Who will have the trait
+
+|-
+! Game start dialog
+| Text shown at the start of the game
+| Text
+
+|-
+! Naked
+| Chance of colonists or planet inhabitants being naked
+| Chance of nudity<br />Who will be naked
+
+|-
+! Permanent game condition
+| Forces the world to have a constant planetary effect
+| Game condition 
+
+|-
+! Permanent map condition
+| Forces the map to have the specified map condition permanently on
+| Map condition
+
+|-
+! Planetkiller weapon incoming
+| Makes the game end after a specified amount of days
+| Number (max 1000000000)
+
+|-
+! Scattered randomly
+| Makes the game scatter the specified items randomly around the map.
+| Item<br />Number (max 100000000000)
+
+|-
+! Set need level
+| Sets the starting level of need until the characters can restore themselves.
+| Need<br />Severity of need<br />Chance<br />Who the need is applied to 
+
+|-
+! Start near
+| Makes the game spawn the specified items near your starting location.
+| Item<br />Number (max 100000000000)
+
+|-
+! Start with
+| Makes the game drop the specified items to your starting location.
+| Item<br />Number (max 100000000000)
+
+|-
+! Start with animal(s)
+| Makes the game start you with the specified animals as pets.
+| Number (max 100000000000)<br>Animal
+
+|-
+! Start with mechanoid{{BiotechIcon}}
+| Makes the game start you with the specified controllable mechanoids
+| Number (max 100000000000)<br>Mechanoid
+
+|-
+! Start with research
+| Makes the game start you with the specified research.
+| Research
+
+|-
+! Stat multiplier
+| The multiplier for [[Stat]]s
+| Number (max 10000)
+|}
+
+These parts are self explanatory and require no input: Cannot mine, cannot sow, cannot tame and cannot hunt.
+
+== Version history ==
+* [[Version/0.12.906|0.12.906]] - Colonies now start with a pet.
+* [[Version/0.14.1234|0.14.1234]] - Scenario system added. The previous default experience is now the Crashlanded scenario.
+* [[Version/0.19.2009|0.19.2009]] - Naked Brutality scenario added.
+* ? - Crashlanded scenario's starting packaged survival meals increased from 44 to 50. 
+* [[Version/1.4.3527|1.4.3527]] - Fix: Scenario text cut off if tiny text is disabled.
+* [[Version/1.4.3555|1.4.3555]] - Fix: You can start as a psychically deaf mechanitor. 
+* [[Version/1.4.3563|1.4.3563]] - Fix: [[Children]]{{BiotechIcon}} generated at tribal game start don't have [[Psyfocus|natural meditation focus]].{{RoyaltyIcon}}
+* [[Version/1.5.4069|1.5.4069]] - Update The Anomaly scenario to start with three (up from two) researchers and a ghoul. Also increased number of packaged survival meals from 45 to 50. 
+
+[[Category:RimWorld game]]

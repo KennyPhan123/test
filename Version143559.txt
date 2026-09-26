@@ -1,0 +1,17 @@
+{{Version Nav|unstable=1}}
+
+Version 1.4.3559 is up now on the unstable branch!
+* Reduce the frequency at which gunlinks and eltex shirts appear in quest rewards, as they're overrepresented at low colony wealth values.
+* Update rewards for OpportunitySite_AncientComplex. Higher value rewards can now occasionally appear, along with genepacks, archite capsules, and deathrest capacity serums.
+* Hospitality refugee uses the same system to determine refugee count as for beggars.
+* Children now recalculate their life stage immediately when they become an adult instead of waiting for their next growth tick.
+* Fix: Pawns with "dead calm" gene can get into fights over botched conversion attempts.
+* Fix: Genes that remove all passions don't save previous values, causing passions to reset on removal.
+* Fix: Tox packs activate on stripping or butchering corpses wearing them.
+* Fix: Pawns being carried by other pawns strains psychic bond.
+* Fix: Hemogen wasted when refueling deathrest buildings.
+* Fix: ThingDef.ConfigErrors() doesn't check if race.body is null before checking parts.
+* Fix: Gene processor has no path cost.
+* Fix: Animals specialist role mentions boosting animal-related abilities of nearby allies, which is false.
+* Fix: Children generated at tribal game start don't have natural meditation focus.
+* Fix: Food restrictions now respect eg "Allow vegetarian food" for instances of food and not just based on def.

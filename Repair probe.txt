@@ -1,0 +1,164 @@
+{{Biotech}}
+{{infobox main|
+| name = Repair probe
+| image = Health item prosthetic.png
+| type = Medical Items
+| type2 = Body Parts
+| tech level = 
+| description = An implant which increases the speed at which a mechanitor can repair a mechanoid. This does not affect the overall energy needed to repair a mechanoid.<br/>The implant allows the mechanitor to plug in directly with the mechanoid while they are repairing it. This allows them to more quickly understand the mechanoid's injuries, and better-direct the mech's self-repair mechanites to assist with the repair.<br/>This implant can be self-installed in the same way as the mechlink.<br/>This implant can be installed up to 6 times to increase its effect.
+| production facility 1 = Machining table
+| research = Ultra mechtech
+| work to make = 3200
+| skill 1 = Crafting
+| skill 1 level = 6
+| resource 1 = Nano structuring chip
+| resource 1 amount = 1
+| resource 2 = Advanced component
+| resource 2 amount = 2
+| mass base = 1
+| hp = 100
+| beauty = -4
+| flammability = 
+| deterioration = 0
+| marketvalue  = 1200
+| thingCategories = BodyPartsMechtech
+| tradeTags = 
+}}
+'''Repair probes''' are [[artificial body parts]] added by the [[Biotech DLC]] that increase the rate at which [[mechanitor]]s repair their [[mechanoids]].
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+Each repair probe increases base [[Mech Repair Speed]] of the implanted [[mechanitor]] by {{+|33%}}, before the effect of the multiplicative [[Crafting]] skill modifier. Repair probes have a [[max install count]] of six, meaning up to six repair probes can be installed in each mechanitor's brain. Each probe stacks additively as if it were {{+|33.3&#773;%}}, with the end result rounded down. For further detail on how [[Mech Repair Speed]] is calculated, see that page. 
+
+{| class="wikitable"
+|-
+! Num.<br>Probes !! Base [[Mech Repair Speed|Mech Repair<br>Speed]] Offset
+|-
+! 1 
+| {{+|33%}}
+|-
+! 2 
+| {{+|66%}}
+|-
+! 3 
+| {{+|100%}}
+|-
+! 4 
+| {{+|133%}}
+|-
+! 5 
+| {{+|166%}}
+|-
+! 6 
+| {{+|200%}}
+|}
+
+<div><li style="display: inline-table;">
+{| {{STDT| c_18}}
+! rowspan=2 | Crafting<br />Level
+! colspan=7 | Number of Repair Probes
+|-
+! 0 !! 1 !! 2 !! 3 !! 4 !! 5 !! 6
+|-
+! 0
+| 80% || {{%| {{#expr: (1 + 0.33) * 0.8}} }} || {{%| {{#expr: (1 + 0.66) * 0.8}} }} || {{%| {{#expr: (1 + 1) * 0.8}} }}
+| {{%| {{#expr: (1 + 1.33) * 0.8}} }} || {{%| {{#expr: (1 + 1.66) * 0.8}} }} || {{%| {{#expr: (1 + 2) * 0.8}} }}
+|-
+! 1
+| 90% || {{%| {{#expr: (1 + 0.33) * 0.9}} }} || {{%| {{#expr: (1 + 0.66) * 0.9}} }} || {{%| {{#expr: (1 + 1) * 0.9}} }}
+| {{%| {{#expr: (1 + 1.33) * 0.9}} }} || {{%| {{#expr: (1 + 1.66) * 0.9}} }} || {{%| {{#expr: (1 + 2) * 0.9}} }}
+|-
+! 2
+| 100% || {{%| {{#expr: (1 + 0.33) * 1.0}} }} || {{%| {{#expr: (1 + 0.66) * 1.0}} }} || {{%| {{#expr: (1 + 1) * 1.0}} }}
+| {{%| {{#expr: (1 + 1.33) * 1.0}} }} || {{%| {{#expr: (1 + 1.66) * 1.0}} }} || {{%| {{#expr: (1 + 2) * 1.0}} }}
+|-
+! 3
+| 110% || {{%| {{#expr: (1 + 0.33) * 1.1}} }} || {{%| {{#expr: (1 + 0.66) * 1.1}} }} || {{%| {{#expr: (1 + 1) * 1.1}} }}
+| {{%| {{#expr: (1 + 1.33) * 1.1}} }} || {{%| {{#expr: (1 + 1.66) * 1.1}} }} || {{%| {{#expr: (1 + 2) * 1.1}} }}
+|-
+! 4
+| 120% || {{%| {{#expr: (1 + 0.33) * 1.2}} }} || {{%| {{#expr: (1 + 0.66) * 1.2}} }} || {{%| {{#expr: (1 + 1) * 1.2}} }}
+| {{%| {{#expr: (1 + 1.33) * 1.2}} }} || {{%| {{#expr: (1 + 1.66) * 1.2}} }} || {{%| {{#expr: (1 + 2) * 1.2}} }}
+|-
+! 5
+| 130% || {{%| {{#expr: (1 + 0.33) * 1.3}} }} || {{%| {{#expr: (1 + 0.66) * 1.3}} }} || {{%| {{#expr: (1 + 1) * 1.3}} }}
+| {{%| {{#expr: (1 + 1.33) * 1.3}} }} || {{%| {{#expr: (1 + 1.66) * 1.3}} }} || {{%| {{#expr: (1 + 2) * 1.3}} }}
+|-
+! 6
+| 140% || {{%| {{#expr: (1 + 0.33) * 1.4}} }} || {{%| {{#expr: (1 + 0.66) * 1.4}} }} || {{%| {{#expr: (1 + 1) * 1.4}} }}
+| {{%| {{#expr: (1 + 1.33) * 1.4}} }} || {{%| {{#expr: (1 + 1.66) * 1.4}} }} || {{%| {{#expr: (1 + 2) * 1.4}} }}
+|-
+! 7
+| 150% || {{%| {{#expr: (1 + 0.33) * 1.5}} }} || {{%| {{#expr: (1 + 0.66) * 1.5}} }} || {{%| {{#expr: (1 + 1) * 1.5}} }}
+| {{%| {{#expr: (1 + 1.33) * 1.5}} }} || {{%| {{#expr: (1 + 1.66) * 1.5}} }} || {{%| {{#expr: (1 + 2) * 1.5}} }}
+|-
+! 8
+| 160% || {{%| {{#expr: (1 + 0.33) * 1.6}} }} || {{%| {{#expr: (1 + 0.66) * 1.6}} }} || {{%| {{#expr: (1 + 1) * 1.6}} }}
+| {{%| {{#expr: (1 + 1.33) * 1.6}} }} || {{%| {{#expr: (1 + 1.66) * 1.6}} }} || {{%| {{#expr: (1 + 2) * 1.6}} }}
+|-
+! 9
+| 170% || {{%| {{#expr: (1 + 0.33) * 1.7}} }} || {{%| {{#expr: (1 + 0.66) * 1.7}} }} || {{%| {{#expr: (1 + 1) * 1.7}} }}
+| {{%| {{#expr: (1 + 1.33) * 1.7}} }} || {{%| {{#expr: (1 + 1.66) * 1.7}} }} || {{%| {{#expr: (1 + 2) * 1.7}} }}
+|-
+! 10
+| 180% || {{%| {{#expr: (1 + 0.33) * 1.8}} }} || {{%| {{#expr: (1 + 0.66) * 1.8}} }} || {{%| {{#expr: (1 + 1) * 1.8}} }}
+| {{%| {{#expr: (1 + 1.33) * 1.8}} }} || {{%| {{#expr: (1 + 1.66) * 1.8}} }} || {{%| {{#expr: (1 + 2) * 1.8}} }}
+|-
+! 11
+| 190% || {{%| {{#expr: (1 + 0.33) * 1.9}} }} || {{%| {{#expr: (1 + 0.66) * 1.9}} }} || {{%| {{#expr: (1 + 1) * 1.9}} }}
+| {{%| {{#expr: (1 + 1.33) * 1.9}} }} || {{%| {{#expr: (1 + 1.66) * 1.9}} }} || {{%| {{#expr: (1 + 2) * 1.9}} }}
+|-
+! 12
+| 200% || {{%| {{#expr: (1 + 0.33) * 2.0}} }} || {{%| {{#expr: (1 + 0.66) * 2.0}} }} || {{%| {{#expr: (1 + 1) * 2.0}} }}
+| {{%| {{#expr: (1 + 1.33) * 2.0}} }} || {{%| {{#expr: (1 + 1.66) * 2.0}} }} || {{%| {{#expr: (1 + 2) * 2.0}} }}
+|-
+! 13
+| 210% || {{%| {{#expr: (1 + 0.33) * 2.1}} }} || {{%| {{#expr: (1 + 0.66) * 2.1}} }} || {{%| {{#expr: (1 + 1) * 2.1}} }}
+| {{%| {{#expr: (1 + 1.33) * 2.1}} }} || {{%| {{#expr: (1 + 1.66) * 2.1}} }} || {{%| {{#expr: (1 + 2) * 2.1}} }}
+|-
+! 14
+| 220% || {{%| {{#expr: (1 + 0.33) * 2.2}} }} || {{%| {{#expr: (1 + 0.66) * 2.2}} }} || {{%| {{#expr: (1 + 1) * 2.2}} }}
+| {{%| {{#expr: (1 + 1.33) * 2.2}} }} || {{%| {{#expr: (1 + 1.66) * 2.2}} }} || {{%| {{#expr: (1 + 2) * 2.2}} }}
+|-
+! 15
+| 230% || {{%| {{#expr: (1 + 0.33) * 2.3}} }} || {{%| {{#expr: (1 + 0.66) * 2.3}} }} || {{%| {{#expr: (1 + 1) * 2.3}} }}
+| {{%| {{#expr: (1 + 1.33) * 2.3}} }} || {{%| {{#expr: (1 + 1.66) * 2.3}} }} || {{%| {{#expr: (1 + 2) * 2.3}} }}
+|-
+! 16
+| 240% || {{%| {{#expr: (1 + 0.33) * 2.4}} }} || {{%| {{#expr: (1 + 0.66) * 2.4}} }} || {{%| {{#expr: (1 + 1) * 2.4}} }}
+| {{%| {{#expr: (1 + 1.33) * 2.4}} }} || {{%| {{#expr: (1 + 1.66) * 2.4}} }} || {{%| {{#expr: (1 + 2) * 2.4}} }}
+|-
+! 17
+| 250% || {{%| {{#expr: (1 + 0.33) * 2.5}} }} || {{%| {{#expr: (1 + 0.66) * 2.5}} }} || {{%| {{#expr: (1 + 1) * 2.5}} }}
+| {{%| {{#expr: (1 + 1.33) * 2.5}} }} || {{%| {{#expr: (1 + 1.66) * 2.5}} }} || {{%| {{#expr: (1 + 2) * 2.5}} }}
+|-
+! 18
+| 260% || {{%| {{#expr: (1 + 0.33) * 2.6}} }} || {{%| {{#expr: (1 + 0.66) * 2.6}} }} || {{%| {{#expr: (1 + 1) * 2.6}} }}
+| {{%| {{#expr: (1 + 1.33) * 2.6}} }} || {{%| {{#expr: (1 + 1.66) * 2.6}} }} || {{%| {{#expr: (1 + 2) * 2.6}} }}
+|-
+! 19
+| 270% || {{%| {{#expr: (1 + 0.33) * 2.7}} }} || {{%| {{#expr: (1 + 0.66) * 2.7}} }} || {{%| {{#expr: (1 + 1) * 2.7}} }}
+| {{%| {{#expr: (1 + 1.33) * 2.7}} }} || {{%| {{#expr: (1 + 1.66) * 2.7}} }} || {{%| {{#expr: (1 + 2) * 2.7}} }}
+|-
+! 20
+| 280% || {{%| {{#expr: (1 + 0.33) * 2.8}} }} || {{%| {{#expr: (1 + 0.66) * 2.8}} }} || {{%| {{#expr: (1 + 1) * 2.8}} }}
+| {{%| {{#expr: (1 + 1.33) * 2.8}} }} || {{%| {{#expr: (1 + 1.66) * 2.8}} }} || {{%| {{#expr: (1 + 2) * 2.8}} }}
+|}</li></div>
+
+=== Installation ===
+{{Stub|section=1|reason=Written from memory. Verification, expansion, and clarity needs work. also where installed }}
+Unlike most other artificial body parts, the repair probe is not installed via an [[operation]]. Instead, the selected mechanitor can be selected to use the device on themselves, consuming the item and installing it.
+
+== Analysis ==
+{{stub|section=1|reason=Some numbers on how much time is saved repairing would be useful. Subsequently, a proper analysis of synergy with [[remote repairer]], if any}}
+Repair probes use a valuable [[nano structuring chip]]. Making a repair probe should be weighed against making [[mechlord suit|mechlord]] [[mechlord helmet|armor]], a [[wastepack atomizer]], or your own [[war queen]]. Making a mechlord suit, in order to have 2 [[centipede]]s, is most likely better than having 1 centipede repaired 33% faster. The advanced components could also be used for [[bionics]]. If you have a surplus of chips and components, then repair probes are ultimately a buff to your mechanitor.
+
+Usually the time taken to repair after battle isn't a big issue. Sees use with the [[remote repairer]], as this implant makes it easier to repair mechs during battle.
+
+== Version history ==
+* [[Biotech DLC]] Release - Added.
+
+{{Nav|body parts|wide}}
+[[Category:Medical Item]] [[Category:Body Part]] [[Category:Implant]]

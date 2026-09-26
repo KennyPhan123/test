@@ -1,0 +1,192 @@
+{{Version Nav|date=2020-02-24}}
+
+RimWorld versions 1.1, a major update from version 1.0, is now available for public testing and modding on Steam’s unstable beta branch. That’s right everyone – RimWorld is done, but that doesn’t mean we’re done with it!
+
+You can find a full change log for this update at the bottom of this post. This update will be released to the default branch soon. We’ve placed it on the unstable branch now to get in some final testing, and to smooth out the transition for mods.
+
+If you want to help test, right-click RimWorld in your Steam library list, click Properties, then select the ‘betas’ tab. Select ‘unstable’ from the drop-down list. Note that this version is unstable and might break.
+
+We will be carefully watching for critical bugs and fixing them! If you find anything, please post about it on the Bugs forum.
+
+===About compatibility===
+
+If you’re playing without mods: You’ll be able to update and continue playing on the new version without interruption.
+If you’re playing with mods: Simple data-only mods, like new hairstyles, will probably work on the new version without changes. Complex mods will break. If you’re using complex mods, I recommend that you set your Steam branch to version-1.0. Then, set it back to default after your mods have been updated in a few weeks. Anyone can keep playing on version 1.0 as long as they wish, using the version-1.0 branch.
+For modders: We did a lot of work before 1.0 and in this version to make updating as painless as possible. There’s a guide to updating mods to 1.1 included in the game files, called ModUpdating.txt. Modder Brrainz has also written a separate online guide here – thanks to him! You can also get live help with modding on the RimWorld Discord server.
+
+The game now includes a system for handling multi-version mods, so there is no need to make multiple Workshop items or break old mod uploads by updating them in-place. (Mods which gain support for 1.1 will create an error on the log in version 1.0, but this error is harmless. It’s just because there is some new XML data in the About.xml file which 1.0 can’t interpret.)
+
+Big thanks to Oskar Potocki for donating his Vanilla Animals mod to become part of the core game.
+
+Discuss this on the Ludeon forums.
+
+==Royalty Trailer==
+
+<youtube>https://www.youtube.com/watch?v=ex5_XpQ-uJk</youtube>
+
+=Change summary=
+
+==New features==
+* UI now looks sharp at UI scales over 1.0. Great for 4K monitors.
+* New [[Quests]] tab provides information about available, active, and historical quests.
+* Added a new data-driven quests generation and management system. This should make it straightforward for modders and us to add or change quests without programming.
+* UI now uses colored text to highlight important words like character names, places, and rewards.
+* Improved the mod management interface and code.
+* Mods now have a global package ID which lets them refer to each other.
+* Mods can now define other mods they must be loaded after or before. Added a tool to automatically sort the mod list.
+* Mods can now define other mods that they depend on. Shortcuts allow the player to easily download required mods.
+* Mods can now define other mods that they are incompatible with. The interface will warn players about incompatibilities.
+* Added loading screen tips. These are short bits of text helping the player understand an obscure aspect of the game. They’re displayed during loading.
+* Loading screen now displays present and active expansions and mods.
+* Added room stats gizmo, which displays the stats of the room containing a selected building, at a glance.
+* Added [[recon armor]], a lighter variant of [[marine armor]].
+* Added [[EMP launcher]] weapon. It fires [[EMP grenades]] a long distance.
+* Added [[smoke launcher]] weapon. It fires smoke grenades a long distance.
+* Added smoke grenadier enemy.
+* Added a planet population slider to the planet generation parameters.
+* Added animals: [[Bison]], [[donkey]], [[duck]], [[goat]], [[goose]], [[guinea pig]], [[horse]], [[sheep]], [[yak]].
+* Added [[tortured artist]] trait. The character has a permanent mood debuff, but gets art inspirations from low mood.
+* Added a bunch of new backstories across multiple categories.
+* Added heatstroke alert for colonists and tame animals.
+* Added taming inspiration, which makes the next tame attempt very likely to succeed.
+* Added fertility overlay, which shows terrain fertility in an easy-to-see way.
+* Added terrain affordance overlay, which shows where you can build what in an easy-to-see way.
+* Added [[barricades]], which are like [[sandbags]], but can be constructed of metal, wood, or stone. Changed sandbags to be constructed of textile stuff instead of [[steel]].
+* Added an option to choose which kinds of letters pause the game.
+* Added recipes to burn entire stacks of drugs at once.
+* Added [[wooden hand]] and [[wooden foot]].
+* Added a variety of new tribal [[backstories]].
+* Added a letter to the player when a colonist is kidnapped, noting that there will be chances to get them back.
+* Added [[Asexual|asexual]] trait.
+* Bisexual trait is no longer hidden.
+* Context menu now shows icons next to each option depending on what’s being chosen. E.g. When choosing a building material, see icons for the material. When choosing a drug to administer, see icons for the drugs. And so on.
+* Info cards can now include hyperlinks to other info cards. This is used in various places. For example, the info card for animals (and people) links to the type of meat and leather you can get from them. Info card for plants links to what you harvest from them. Info card for surgeries links to each ingredient. Info card for buildings links to the building materials. And so on.
+* Info card now visually displays the object being inspected.
+* Added weapon biocoding, which makes a weapon only usable by one individual.
+* For modders, added ModUpdating.txt, a file included with each version from now on with notes on what they might need to update to keep their mod working.
+* Added Greek language localzation created by some wonderful volunteers.
+
+==Adjustments==
+* The game now uses an incremental garbage collector, which should remove the periodic frame hitches that would appear when a lot of memory was allocated and released. However, note that there is still a cost to memory allocations, so modders should still try to reduce allocation wherever possible.
+* Optimizations to many systems. Performance should be significantly better, especially in complex game situations with many pawns.
+* Faction icons are now differentiated by shape as well as color, to help out colorblind players.
+* Redesigned how the underground mineral scanner works. Instead of showing all minerals on the map instantly, it can be worked at by a pawn, who will periodically find new mineral patches. This can go on forever, so minerals are never exhausted.
+* Split tribe into two [[factions]], the gentle tribe (naturally neutral) and fierce tribe (naturally hostile).
+* Redesigned the system for generating ruined buildings on map start to make much more varied and interesting ruins.
+* Prisoner tab now shows slave price, recruitment chance, potential faction relation gain upon release, and information about the last recruiter and their impacting.
+* Added new body impact visual effects for when a creature gets hit by a projectile.
+* Added ‘pawn lost’ thought that happens when a pawn is kidnapped or abandoned by their caravan.
+* Downed pawns can now be loaded into transport pods like prisoners.
+* Added confirmation dialog before attacking friendly factions.
+* Added ‘allow refueling’ toggle to [[torch lamp|torch]], [[campfire]] and [[passive cooler]].
+* Pawns now really like the pawn who rescued them.
+* Added toggle refuel allow command to [[pod launcher]], [[Wood-fired generator|wood generator]], [[Chemfuel powered generator|chemfuel generator]], [[fueled smithy]] and [[fueled stove]].
+* Added an explanatory letter telling players how to get [[advanced component]]s for the [[fabrication bench]].
+* Added skill descriptions to combat log text.
+* Added an arrow that points at the UI during the tutorial.
+* Added scar pain feedback and reworked how scar pain works. Scars are now assigned an easy-to-understand pain category instead of an obscure number.
+* Added ‘freed from slavery’ mood-boosting thought for pawns bought from a trader.
+* Trade interface now shows the next restock time for settlements.
+* Added mood boost when prisoner released.
+* Open caskets now look different from closed ones.
+* Brawler [[trait]] disallows shooting passion.
+* Colonists attending a party gain recreation value.
+* Player can now inspect the contents of cryptosleep caskets on a new tab.
+* Stomach is no longer a vital organ.
+* Changed animal rescue radius from 30 to 75.
+* Info card for [[surgery|surgeries]] now shows the chance of death upon failure.
+* Info card shows max hit points factor for materials.
+* Interface now reports the chance of a successful arrest before you try to make it.
+* Insect hives slowly heal over the course of days.
+* Reworked how traits and work disables are laid out in the Bio tab for greater space efficiency.
+* Changed [[caravan]] reform to be allowed with sleeping hostiles on site.
+* Changed sites to stop and reset forced exit timer when enemies start a battle (for awakening mechanoids and hidden ambushes).
+* Reworked the world site system to allow easier combination of different site parts, and to feed things back to the player more flexibly.
+* Added the ability for world sites to have unknown parts.
+* Rebalanced sleeping sickness.
+* Rebalanced [[mechanoid]] bodypart coverages
+* Changed rare thrumbo [[Events|incident]] to send from 2 to 6 [[thrumbo]]s.
+* Adjusted a lot of text to use a colon instead of brackets, and to consistent use a capital after colon.
+* Ashes from burned plants and buildings now survive rain and disappear after 10-15 days. They’re also visually larger.
+* [[Trade Price Improvement|Trade price improvement]] from negotiator is now reported on the trade screen.
+* Tattered apparel and unhappy nudity alerts now shows how many are affected.
+* Changed and fixed some hotkeys.
+* Smelting, burning and destruction review. [[Plate armor]] is now smeltable, except for wooden plate armor which is burnable. Wooden [[club]] also is burnable now and the metallic variants are smeltable. Apparels from [[hyperweave]] or [[devilstrand]] can no longer be burnt, can destroy apparels now same as with weapons. Neolithic ranged weapons can now be burnt.
+* Placing turrets now shows min and max range, not just max range.
+* IEDs now explode when bullets hit them.
+* Pawns no longer engage in recreational acitivites when injured, unless the activity can be done in bed.
+* Bridges now only support light buildings.
+* The terrain requirements for building walls now depends on what they’re built from. This means stone walls can’t be built on bridges any more.
+* Pawns now sometimes take the family name of their partner upon marriage.
+* Dementia now causes slow skill losses.
+* Rework stock generation for all trader and settlement types.
+* Factions tab display changed for clarity; enemy relations are shown with icons.
+* Bio tab now displays faction icons.
+* History messages tab layout reworked – tooltip replaced with a pane on the right side that displays the letter.
+* Credits now list the memory of colonists who died.
+* Anasthetic now wears off slowly instead of all at once. The person will be drowsy for some time.
+* Nimble pawns are now better at avoiding traps.
+* Increased the selection limit up to 200.
+* Combined the stats ArtSpeed, TailoringSpeed and SmeltingSpeed into UnskilledLaborSpeed and renamed UnskilledLaborSpeed to GeneralLaborSpeed.
+* Renamed sculptor’s table to art bench since it’s not just for sculptures any more.
+* Localization data is now packed into a single file per language, which massively reduces the number of files in an install of the game and speeds up various file operations.
+* Many other balance changes, code improvements, optimizations, and adjustments.
+
+==Fixes==
+* Fix: Explosions from missed projectiles landing in wall cells could hit things on the other side of the wall.
+* Fix: Enemy settlements could generate with floors on water.
+* Fix: Nutrition eaten per day readout when forming a caravan would be affected by the current hunger level.
+* Fix: Manhunting animals could attack doors without seeing anyone going through them.
+* Fix: Corpses wouldn’t create corpse bile.
+* Fix: Colonists could play horseshoes from a different room.
+* Fix: Prisoner’s food restrictions were ignored when the food came from the warden’s inventory.
+* Fix: Duplicate context menu options on campfire when producing psychite tea.
+* Fix: Can’t give a rescued addict their drug without angering their faction.
+* Fix: Goodwill change during siege does not end attack.
+* Fix: Blind guy won’t use recreation.
+* Fix: Jawless animals can still haul.
+* Fix: Prisoner gets mood debuff when colonist euthanized.
+* Fix: Wind turbines register no wind during windy storm.
+* Fix: [[Shelf|Shelves]] have no path cost and description doesn’t state they hide [[beauty]] of things inside of them.
+* Fix: No mood penalty for giving bonded animal as a gift if sent by transport pod.
+* Fix: Pawns with one-arm and alcohol withdrawal are unable to manipulate anything at all.
+* Fix: Pawn with alcohol-induced brain damage are doomed to die.
+* Fix: Uninstalling a trap does not properly roll the chance to trigger the trap.
+* Fix: Wild animals spawn in sealed underground spaces.
+* Fix: Pregnant animal is also viewed as sick one (since pregnancy affects its capacities), so it sells for less than one with no health conditions.
+* Fix: No forced departure countdown for caravan if there are sleeping mechanoids.
+* Fix: [[Luciferium]] wont remove Frail. Now, lucifierum can remove all chronic health conditions.
+* Fix: Even if campfire runs out of fuel during cooking, cooking continues.
+* Fix: Raiders keep attacking walls forever after their group flees.
+* Fix: Crashed ship parts that land on bridges are instantly destroyed.
+* Fix: Duplicate context menu options when opening cryptosleep casket.
+* Fix: Butchering rotted animal yields fresh meat even if it rots during the job.
+* Fix: Lag spikes on animal birth in endgame.
+* Fix: Storyteller choice resets when you reopen the storyteller config page.
+* Fix: When placing a cooler, the system ignores blueprints and building frames.
+* Fix: The ‘restore default settings’ tool exits game without saving.
+* Fix: If your only colony is on an island, the endgame quest to journey to the ship never occurs.
+* Fix: Rain and Snow weather overlay textures replaced with blank rectangles in old colonies due to loss of floating-point precision.
+* Fix: Age displayed differently in trade screen and on colonist.
+* Fix: Animals that are wandering won’t follow area restrictions.
+* Fix: Hopper and vitals monitor rotate in the opposite direction from other buildings.
+* Fix: Can’t restrict ambrosia in food restrictions.
+* Fix: Administered [[beer]] does not provide nutrition.
+* Fix: Steadfast and iron-willed traits effects’ are clamped to a small effect.
+* Fix: When a colonist dies while being rescued, others get no negative thoughts.
+* Fix: For the ‘drag a character from left behind to selected’ tutorial instruction, it allows you to drag a character anywhere at all, even just within ‘left behind’. It should only accept dragging from left behind to selected.
+* Fix: It’s possible to land in any biome in the tutorial by selecting a landing site, going to the character creation screen, then going back to select a different landing site.
+* Fix: Insects can be tamed and hunted after their hives are destroyed.
+* Fix: Preferred character list not working correctly.
+* Fix: [[Power conduit]] graphic does not display properly on top of grave.
+* Fix: Change colonist schedule to ‘sleep’ instantly ends the food binge mental state.
+* Fix: Selecting several beds causes a major performance drop.
+* Fix: Manhunter pack incident not working on high wealth or difficulty.
+* Fix: Can see things in undiscovered cells if they peek around the edge of the fog.
+* Fix: Arrested wild man don’t use nutrient despenser and can’t receive food.
+* Fix: Military commissar backstory missing Social bonus.
+* Fix: Allies can sometimes push player pawns out of cover during combat.
+* Fix: ‘Run in background’ being disabled can make the game stop loading when in the background.
+* Fix: Player can start with pets his pawns can’t keep tame.
+* Fix: Escape ship letter mentions raiders even in peaceful difficulty, where they are not present.
+Many other fixes.

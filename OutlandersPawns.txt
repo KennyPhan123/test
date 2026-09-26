@@ -1,0 +1,99 @@
+<onlyinclude><div><li style="display: inline-table;">
+{| {{STDT| c_01 sortable text-center}}
+! Pawn Kind !! Combat Power !! Gear !! Apparel !! Weapons !! Tech !! Inventory !! Additional Info [[{{fullurl:Outlanders/Pawns|action=edit}} edit]]
+<!-- 9 columns; 1 bold, 8 normal: -->
+<!-- defName="", label="", ParentName="", Name="OutlanderBase", Abstract="True"
+|- id="Name"
+! Name
+| [[File:Name.png]] || CP || '''HP:''' <br />'''Avg. Quality:'''
+| '''Budget''': <br />'''Required:''' <br />'''Disallowed:''' <br />'''Allow Headgear Chance:''' <br />'''Available:''' {{#ask:[[Tags::IndustrialBasic||IndustrialAdvanced]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+| '''Budget''': <br />'''Biocoded Chance:''' %<br />'''Available:''' <br />{{Gear List|budget=|WeaponTags|}}
+| '''Budget''': <br />'''Required:''' <br />'''Disallowed:''' <br />% chance to have one of the following: {{Gear List|budget=|TechHediffsTags|}}
+| 2.55 Nutrition
+| '''Age Range:''' <br />'''Race:''' Human<br />'''Default Faction Type:''' Civil Outlander<br />'''Backstories:''' Cryptosleep (5% Commonality)<br />'''Disallowed Traits:''' <br />'''Required Work Tags:''' <br />''':''' <br />''':''' <br />'''Chemical Addiction Chance''': 5%<br />'''Initial Will Range''': <br />'''Initial Resistance Range''': 
+-->
+<!-- defName="Villager_Child", label="villager", ParentName="VillagerBase", Name="Villager_Child" -->
+|- id="Villager child"
+! Villager (Child)<br>[[File:Villager child.png]]
+| 45 || '''HP:''' 20~200%<br />'''Avg. Quality:''' Poor
+<!-- Apparel -->
+| '''Budget''': 200~400<br /><!--
+-->'''Allow Headgear Chance:''' 40%<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic||IndustrialAdvanced]][[Lifestage::~*Child*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+<!-- Weapons -->
+| '''Budget''': 0<br /><!--
+-->'''Available:''' <br />{{Gear List|budget=0|WeaponTags|Gun|MedievalMeleeBasic}}
+<!-- Tech -->
+| '''Budget''': 50~600<br /><!--
+-->6% chance to have one of the following: {{Gear List|budget=600|TechHediffsTags|Poor|Simple|ImplantEmpireCommon}}
+| 2.55 Nutrition
+<!-- Additional Info -->
+| '''Pawn Group Development Stage:''' Child<br />'''Race:''' Human<br />'''Default Faction Type:''' Civil Outlander<br />'''Backstories:''' Cryptosleep (5% Commonality)<br />'''isFighter:''' false<br />'''Chemical Addiction Chance''': 5%<br />'''Initial Will Range''': 0~1<br />'''Initial Resistance Range''': 10~17
+<!-- defName="Villager", label="villager", ParentName="OutlanderBase", Name="VillagerBase" -->
+|- id="Villager"
+! Villager<br>[[File:Villager.png]]
+| 45 || '''HP:''' 20~200%<br />'''Avg. Quality:''' Poor
+<!-- Apparel -->
+| '''Budget''': 200~400<br /><!--
+-->'''Allow Headgear Chance:''' 40%<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic||IndustrialAdvanced]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+<!-- Weapons -->
+| '''Budget''': 65~250<br /><!--
+-->'''Available:''' <br />{{Gear List|budget=250|WeaponTags|Gun|MedievalMeleeBasic}}
+<!-- Tech -->
+| '''Budget''': 50~600<br /><!--
+-->6% chance to have one of the following: {{Gear List|budget=600|TechHediffsTags|Poor|Simple|ImplantEmpireCommon}}
+| 2.55 Nutrition
+<!-- Additional Info -->
+| '''Age Range:''' Any<br />'''Race:''' Human<br />'''Default Faction Type:''' Civil Outlander<br />'''Backstories:''' Cryptosleep (5% Commonality)<br />'''isFighter:''' false<br />'''Chemical Addiction Chance''': 5%<br />'''Initial Will Range''': 0~1<br />'''Initial Resistance Range''': 10~17
+<!-- defName="Town_Guard", label="town guard", ParentName="OutlanderBase", Name="GuardBase" -->
+|- id="Town guard"
+! Town guard<br>[[File:Town guard.png]]
+| 60 || '''HP:''' 60~200%<br />
+<!-- Apparel -->
+| '''Budget''': 400~600<br /><!--
+-->'''Allow Headgear Chance:''' 40%<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic||IndustrialAdvanced||IndustrialMilitaryBasic||BeltDefensePop]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+<!-- Weapons -->
+| '''Budget''': 250~400<br /><!--
+-->'''Available:''' <br />{{Gear List|budget=400|WeaponTags|Gun}}
+<!-- Tech -->
+| '''Budget''': 200~700<br /><!--
+-->4% chance to have one of the following: {{Gear List|budget=700|TechHediffsTags|Poor|Simple|ImplantEmpireCommon}}
+| 2.55 Nutrition
+<!-- Additional Info -->
+| '''Age Range:''' Any<br />'''Race:''' Human<br />'''Default Faction Type:''' Civil Outlander<br />'''Backstories:''' Cryptosleep (5% Commonality)<br />'''isFighter:''' true<br />'''Chemical Addiction Chance''': 5%<br />'''Initial Will Range''': 1~3<br />'''Initial Resistance Range''': 15~24
+<!-- defName="Town_Trader", label=""town trader, ParentName="OutlanderBase", Name="TraderBase" -->
+|- id="Town trader"
+! Town trader<br>[[File:Town trader.png]] 
+| 45 || '''HP:''' 100%<br />'''Avg. Quality:''' Normal
+<!-- Apparel -->
+| '''Budget''': 400~600<br /><!--
+-->'''Required:''' {{Gear List/Items|Bowler hat}}<br /><!--
+-->'''Available:''' {{#ask:[[Tags::IndustrialBasic||IndustrialAdvanced||IndustrialMilitaryBasic||IndustrialMilitaryAdvanced||BeltDefensePop]][[Lifestage::~*Adult*]][[Name::!~*Bowler hat*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+<!-- Weapons -->
+| '''Budget''': 200~200<br /><!--
+-->'''Available:''' <br />{{Gear List|budget=200|WeaponTags|Gun}}
+<!-- Tech -->
+| '''Budget''': 600~1500<br /><!--
+-->15% chance to have one of the following: {{Gear List|budget=1500|TechHediffsTags|Poor|Simple|Advanced|ImplantEmpireCommon}}
+| 2.55 Nutrition
+<!-- Additional Info -->
+| '''Age Range:''' Any<br />'''Race:''' Human<br />'''Default Faction Type:''' Civil Outlander<br />'''Backstories:''' Cryptosleep (5% Commonality)<br />'''Trader:''' true<br />'''isFighter:''' false<br />'''Xenotypes:''' 4% {{Icon Small|Highmate|24}} [[Highmate]]<br />'''Chemical Addiction Chance''': 5%<br />'''Initial Will Range''': 2~4<br />'''Initial Resistance Range''': 12~20
+<!-- defName="Town_Councilman", label="town councilman", labelPlural="town councilmen", ParentName="OutlanderBase", Name="CouncilmanBase" -->
+|- id="Town councilman"
+! Town councilman<br>[[File:Town councilman.png]]
+| 40 || '''HP:''' 100%<br />'''Avg. Quality:''' Good
+<!-- Apparel -->
+| '''Budget''': 700~1200<br /><!--
+-->'''Required:''' {{Gear List/Items|Bowler hat}}<br /><!--
+-->'''Available:''' {{#ask:[[Tags::IndustrialBasic||IndustrialAdvanced||IndustrialMilitaryBasic||BeltDefensePop]][[Lifestage::~*Adult*]][[Name::!~*Bowler hat*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+<!-- Weapons -->
+| '''Budget''': 200~200<br /><!--
+-->'''Available:''' <br />{{Gear List|budget=200|WeaponTags|Gun}}
+<!-- Tech -->
+| '''Budget''': 600~1500<br /><!--
+-->15% chance to have one of the following: {{Gear List|budget=1500|TechHediffsTags|Simple|Advanced|ImplantEmpireCommon}}
+| 2.55 Nutrition
+<!-- Additional Info -->
+| '''Age Range:''' At least 30<br />'''Race:''' Human<br />'''Default Faction Type:''' Civil Outlander<br />'''Backstories:''' Cryptosleep (5% Commonality)<br />'''Faction Leader:''' true<br />'''isFighter:''' false<br />'''Chemical Addiction Chance''': 5%<br />'''Initial Will Range''': 3~5<br />'''Initial Resistance Range''': 7~11
+|}</li></div></onlyinclude>
+
+<noinclude>[[Category:Pawnkind tables]]</noinclude>

@@ -1,0 +1,63 @@
+{{Verified|1.5.4104}}{{Stat
+| def name = MaxHitPoints
+| label = max hit points
+| description = The maximum hit points of an object.<br/>This represents how much damage it can take before being destroyed.
+| default base value = 100
+| min value = 1
+| round value = true
+| round to five over = 200
+| to string style = Integer
+| show non abstract = true
+| scenario randomizable = true
+| category = BasicsNonPawnImportant
+| display priority in category = 99997
+}}
+
+== Bases ==
+<div><li style="display: inline-table;">
+Click to <div class="mw-collapsible">
+<div class="mw-collapsible-content">
+{| {{STDT| sortable c_01}}
+! Thing !! Max Hit<br />Points
+|-
+{{#ask: [[Max Hit Points Base::+]]
+| ?Max Hit Points Base
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Name
+| limit = 1000
+}}
+|}
+</div>
+</div>
+</li></div>
+
+== Stat Def Data ==
+{| {{STDT}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Max Hit Points" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />MaxHitPoints
+* '''Label:'''<br />max hit points
+| The maximum hit points of an object.<br/><br/>This represents how much damage it can take before being destroyed.
+|
+* Display Order:<br />'''2'''
+* Def Name:<br />'''BasicsNonPawnImportant'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />{{Bad|false}}
+|
+* '''Default Base Value:''' 100
+* '''Min Value:''' 1
+* '''Round Value:''' {{Good|true}}
+* '''To String Style:''' Integer
+* '''Round To Five Over:''' 200
+* '''Show Non Abstract:''' {{Good|true}}
+* '''Scenario Randomizable:''' {{Good|true}}
+* '''Show On Pawns:''' {{Bad|false}}
+| -
+| 99997
+<!--</StatDef>-->
+|}
+
+{{nav|stats|wide}}

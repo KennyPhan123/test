@@ -1,0 +1,112 @@
+{{Infobox main|weapon
+| name = Mace
+| image = Mace.png
+| type = Equipment
+| type2 = Weapons
+| tech level = Medieval
+| description = A refined club, engineered for efficient swinging and deadly impacts.
+| class = Medieval
+| mode = Melee
+| damage type = Blunt
+| meleeattack1dmg = 9
+| meleeattack1type = poke
+| meleeattack1part = handle
+| meleeattack1cool = 2
+| meleeattack1ap = 13
+| meleeattack2dmg = 15.7
+| meleeattack2type = blunt
+| meleeattack2part = head
+| meleeattack2cool = 2
+| meleeattack2ap = 24
+| production facility 1 = Fueled smithy
+| production facility 2 = Electric smithy
+| research = Smithing
+| resource 1 = Stuff
+| resource 1 amount = 50
+| stuff tags = Metallic, Woody
+| skill 1 = Crafting
+| skill 1 level = 3
+| work to make = 6000
+| work speed stat = General Labor Speed
+| mass base = 1.25
+| has quality = True
+| weaponTags = MedievalMeleeDecent
+}}
+The '''mace''' is a melee [[weapon]] that does a moderate amount of blunt damage, and has a moderate cooldown. As a blunt weapon, mace attacks don't cause bleeding (unless a body part gets destroyed), and generally fares better against armor when compared to sharp weapons.
+
+== Acquisition ==
+{{Acquisition}}
+
+Maces can also be [[Trade|purchased]] from outlander and orbital combat suppliers, or from outlander and pirate [[raider]]s drops.
+
+== Analysis ==
+Maces are the strongest blunt weapon that can be crafted by your colony without the [[Royalty DLC]]. 
+
+The mace is best when made with [[uranium]], due to the metal's blunt damage multiplier. 
+
+Blunt weapons are often seen as "anti-armor" weapons, due to the tiny amounts of Blunt armor that most enemies have. In this role, the mace faces heavy competition with the [[spear]]. This is because enemies with especially strong armor are quite rare in practice.
+
+== Comparisons ==
+=== Comparison to spear ===
+Before considering armor, spears deal more raw damage.  A steel spear deals {{+|{{%| 7.88/7.01 -1 round 3}}}} more {{DPS}} than a steel mace of equal quality. A [[plasteel]] spear does {{+|{{%| 10.55/9.56 -1 round 3}}}} of a uranium mace. While spears fare worse against armor, they have high {{AP}}. A plasteel spear has 55% AP on its only "Sharp" attack, meaning it ignores all Sharp armor below 55%. 
+
+So at normal quality, a plasteel spear deals more damage than a [[uranium]] mace until fighting enemies with {{%| (9.56/10.55 -1)/(-0.75) + 0.55 round 2}} <!-- 
+We are solving for 1 / (Spear DPS Improvement%) = (Armor Reduction%). We can get DPS Improvement using (DPS Spear / DPS Mace). For armor, we know that 1% AP reduces 1% of armor, and 1% of armor equals -0.75% damage, which is subtracted from 100% damage. Since spear's only Sharp attack has 55% AP, we use that instead of spear's avg AP. 
+
+Sub variables in and you get (9.56 / 10.55) = (100 - 0.75(x - 55))%. Solve for x and we get (9.56 / 10.55 - 1) / -0.75 = (x - 0.55), after converting percents into decimals. ---> Sharp armor. This is before considering quality; at higher quality, the spear only gets better. For example, if both weapons are excellent, then the mace only starts to become better at {{%|(11.48/12.63 -1)/(-0.75) + 0.66 round 2}} armor. For reference, [[centipede]]s have 72% armor.
+
+However, this changes when facing ''humans'' with armor. A simple normal flak vest would completely flip the damage balance, a normal uranium mace deals {{Good|{{%|({{Apparel AP Calculation|armor1=36|ap=30.63}}/100*9.3) / ({{Apparel AP Calculation|armor1=100|ap=45.75}}/100*10.53) -1 round 3}} }} more DPS than a normal plasteel spear when they hit the vest (which is about half of the times). While the difference gets smaller at higher weapon quality, it gets larger against marine and cataphract armor
+
+Another advantage of the mace is that it's cheaper. It costs {{Icon Small|stuff}} 25 material less. They are unlocked with [[Research#Smithing|Smithing]] rather than [[Research#Long blades|Long Blades]]. [[Uranium]] is cheaper than [[plasteel]], and much less useful in the early- and mid-game.
+
+----
+'''This comparison falls off at Masterwork quality or higher,''' but it's not because of armor. Instead, it's due to the overkill mechanics of both weapons. 
+* The spear, as ''[[Damage Types#Stab|Stab]]'' damage, can only ever hit a single body part. If a 42 damage spear hits a 25 damage arm, the arm is destroyed. Overkill damage, i.e. 17 damage ({{%|(17/42) round 2}} of the attack), is completely wasted.
+* The mace, as ''[[Damage Types#Blunt|Blunt]]'' damage, will spread damage if it causes overkill. If a mace destroys the arm, it will damage the shoulder, too.
+This results in the mace better against humans, and the spear being better against centipedes.
+
+=== Comparison to longswords ===
+Like the spear, the [[longsword]] is a sharp weapon. Steel longswords are about {{%| 7.96/7.01 -1 round 3}} stronger than steel maces. Plasteel longswords are {{%| 10.71/9.56 -1 round 3}} stronger than uranium maces. Additionally, longswords have the advantage of the ''[[Damage Types#Cut|Cut]]'' damage type, which does bonus cleaving damage. But pawns tend to have much lower Blunt armor than they do sharp. This results in armor being the main determinant in this comparison.
+
+The exact breakpoints vary on [[quality]] and material. In general, a normal [[plasteel]] longsword can beat a normal [[uranium]] mace against targets wearing just [[flak jacket]]s or [[flak pants]], as well as unarmored pawns. Armor pieces like [[flak vest]]s and [[power armor]] reduce the longsword to the point of being worse than the mace. 
+
+Blunt damage has a few minor advantages, which is listed in the [[Damage Types#Blunt|Blunt]] weapon page.
+
+=== Comparison to other blunt weapons ===
+==== Clubs ====
+Compared to its neolithic 'ancestor', the [[club]], the mace is 10 units more expensive, has a greater damage per hit, and swings just as fast. However, maces are impacted by [[quality]], while clubs aren't. A poor or awful mace will be worse than a club of the same material. In contrast, a good mace will clearly outperform a club.
+
+==== Warhammers ====
+The [[warhammer]]{{RoyaltyIcon}} costs 3x the materials and requires [[Research#Long Blades|Long blades]] researched. However, it isn't conventionally stronger. The mace is actually {{%| 9.56/9.31 - 1 round 3}} stronger, in raw {{DPS}}, than the warhammer. The warhammer has slightly more {{AP}}, but a uranium mace already has such high AP that no (reasonable) enemy can resist it.
+
+The warhammer's big advantage, is that it swings slower, but with a stronger hit. This makes it more likely to destroy body parts. The effect of this heavily depends on quality and damage output.
+
+*'''At normal or good quality''', this is almost irrelevant against humans, as warhammers don't have enough damage to destroy vital body parts. The mace performs similarly, but is 3x cheaper, so the mace comes out ahead.
+
+*'''But at masterwork and legendary quality''', the uranium warhammer's damage matters a lot more. It has enough damage to consistently 1-shot or 2-shot humans. The mace would take 3 hits to down from [[pain]], meaning the mace takes more time to actually kill. The differences are further exacerbated with the [[Strong melee damage]] gene.{{BiotechIcon}} 
+
+: Against non-humans, where the warhammer no longer 1-shots enemies, the mace would technically come out ahead. However, the [[spear]] and [[longsword]] would deal even more damage. A legendary plasteel spear in particular has enough AP to completely ignore the armor of every non-human in the game.
+
+{{Weapon Stats Table}}
+
+== Styles ==
+{{Ideology|section=1}}
+[[Ideoligion]]s allow the selection of styles which then change the texture of the certain items and buildings when constructed by the colony. These style variants can be crafted if the colony has the selected style, or can be looted from raiders from factions with the requisite style.
+
+<gallery>
+Mace.png|Base variant
+HoraxianMace.png|Horaxian{{AnomalyIcon}}
+</gallery>
+
+== Version history ==
+* Beta 19/1.0 - Damage buffed. 
+* [[Version/1.5.4062|1.5.4062]] - Received a new texture.
+* [[Anomaly DLC]] Release - Received a new style, Horaxian.
+
+<gallery>
+Mace Old.png|Texture prior to 1.5
+</gallery>
+
+{{Nav|weapon|wide}}
+[[Category:Equipment]] [[Category:Weapons]] [[Category:Medieval Weapons]]
+[[Category:Melee Weapons]] [[Category:Blunt Weapons]] [[Category:Clubs]]

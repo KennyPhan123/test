@@ -1,0 +1,70 @@
+{{Anomaly}}
+{{Stub|reason=General, see other turret pages and [[turret pack]]}}
+{{Infobox main|security
+| image = Tactical turret.png
+| name = Tactical turret
+| description = A short-range turret. It will stop functioning once its battery runs out. If damaged sufficiently, it may explode.
+<!-- Base Stats -->
+| type = Building
+| type2 = Security
+| marketvalue = 0
+| beauty = -20
+| hp = 100
+| flammability = 0.7
+| rotatable = false
+| path cost = 50
+| mass = 8
+<!-- Building -->
+| passability = pass through only
+| cover = 0.4
+| terrain affordance = Light
+<!-- Pawn Stats -->
+| combatPower = 45 <!-- same as a scavenger -->
+<!-- Ranged Combat -->
+| damage type = Bullet
+| mode = Burst
+| damage = 12
+| warmup = 4.8 <!-- 0, 0.5 -->
+| cooldown = 2.4
+| range = 19.9 <!-- Must be kept in sync with "explosion radius" of Grenade_TurretPack -->
+| accuracy = 96
+| accuracyTouch = 77
+| accuracyShort = 70
+| accuracyMedium = 45
+| accuracyLong = 24
+| velocity = 70
+| burst = 2
+| burstTicks = 8
+<!-- Creation -->
+| work to make = 1800
+| resource 1 = Steel
+| resource 1 amount = 40
+| destroyyield = {{Icon Small|Steel||10}}
+<!-- Technical -->
+| defName = Turret_TacticalTurret
+| label = tactical turret
+| weaponTags = TurretGun
+| weaponClasses = Ranged
+<!-- Other -->
+| sell price multiplier = 0.70
+<!-- Unused -->
+| claimable = false
+| selectable = true
+}}
+The '''tactical turret''' is a temporary short range, low power [[turret]] deployed from the [[turret pack]].
+
+== Acquisition ==
+It is deployed by the [[turret pack]].
+
+== Summary ==
+[[File:Tactical_turret_widget_gizmos.png|thumb|left|Battery power tooltip: This turret has a limited battery life. Once it runs out, it will stop working entirely.]]
+
+Once deployed, it lasts for {{Ticks/gametime/hours|12500}}, and it remains in an unpowered state once the battery is depleted.
+
+It is forbiddable, breakdownable, stunnable by [[Stun]] and [[EMP]] damage, and has a 50% chance to explode from damage while below 20% health, taking {{Ticks|240}} to explode, with a radius of 3.9 cells of [[Bomb]] damage.
+
+== Analysis ==
+?
+
+== Version history ==
+* [[Anomaly (DLC)]] Release - Added.

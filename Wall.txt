@@ -1,0 +1,123 @@
+{{About|the constructable building only|natural and smoothed walls|Structure#Walls{{!}}Structure}}
+{{Project|Psyfocus}}
+{{Infobox main|structure
+ | name               = Wall
+ | image              = Wall.png
+ | imagesize          = 128px
+ | description        = An impassable wall. Capable of holding up a roof.
+ | type               = Building
+ | type2              = Structure
+ | placeable          = true
+ | passability        = impassable
+ | blockswind         = true
+ | cover              = 1
+ | minifiable         = false
+ | size               = 1 × 1
+ | flammability       = 1
+ | hp                 = 300
+ | terrain affordance = depends on materials
+ | work to make       = 135
+ | stuff tags         = Metallic, Woody, Stony
+ | resource 1         = Stuff
+ | resource 1 amount  = 5
+ | destroyyield       = nothing
+}}
+{{Info|'''Walls''' are impassable structures primarily used to create [[room roles|rooms]].}}
+
+== Acquisition ==
+{{Acquisition}}  
+
+== Summary ==
+Walls are impassable objects that block movement, line of sight, and line of fire. An area enclosed by walls, [[door]]s, or other impassable objects like [[cooler]]s is considered a [[room]]. Each room has its own [[room stats]] - consisting of cleanliness, beauty, wealth, and spaciousness. [[Power conduit]]s can be constructed below a wall, negating the conduit's [[beauty]] penalty. [[Floor]]s under a wall are also negated for room stats.
+
+Walls can also support [[roof]]ing, up to 6 tiles away in all directions. If walls, [[column]]s, and all other supporting objects are removed, then the roof will collapse and injure pawns and objects below. While most natural walls count as walls for the purposes of rooms, [[collapsed rocks]] do not.
+
+Corners, i.e., diagonal walls, are not required to complete a room. Corners will provide weaker temperature and beauty insulation than vertical or horizontal aligned walls, but still create rooms.  Pawns cannot travel or attack through diagonal gaps. However, [[fire]] ''can'' go through diagonals.
+
+Walls also provide excellent [[cover]] from projectile attacks, blocking 75% of shots. Pawns behind a wall with an adjacent free space will "lean" around the wall to shoot at enemies on the other side.
+
+When selecting a wall, [[door]] and [[autodoor]] construction gizmos are available as they are in the structure [[architect]] tab. Additionally, doors can be placed over walls. Colonists assigned to [[construction]] will automatically deconstruct the wall to make room for the door.
+
+=== Special ===
+Certain [[damage type]]s are designed to deal more damage to impassable terrain, and to walls specifically:
+* Walls take 8× damage from [[Damage Type#Bomb|Bomb]] type damage; 4× from being an impassable, and 2× for being a wall
+* Walls take 30× damage from [[Damage Type#Thump|Thump]] type damage; 15× from being an impassable, and 2× for being a wall
+* Walls take 7.5× damage from [[Damage Type#Demolish|Demolish]] type damage; 10× from being impassable, but 0.75× for being a wall
+
+=== Meditation ===
+{{Royalty|section=1}}
+[[Ascetic]]s can [[psyfocus|meditate]] at a wall for a Meditation Focus Strength of 22%.
+
+== Analysis ==
+Walls, or natural rock, are practically essential to every colony. It's certainly possible to create a room of [[door]]s or [[cooler]]s, and use other forms of defenses, but it is thoroughly impractical for a variety of reasons. As impassable structures, they are important when controlling enemy flow and creating defenses, be they basic curtain walls or to elaborate [[killbox]]es. Sapper and breach [[raid]]s will explicitly try and break them, but other raiders will path around so long as ''any'' target can be reached wihtout breaking a wall. 
+
+Note that non-sapper, non-breacher raiders will occasionally ignite or throw grenades or molotovs at walls. These are infrequent and random - they won't intentionally attempt to breach a wall, but if the wall is destroyed by a single explosion or the resulting fire, they will path through the breach. As such, walls that are non-flammable and have over 400 HP to resist the damage from standard explosives should be used for defenses, even when only routing standard raiders. Ideally, these walls would be also be two thick.
+
+=== Multi-layer walls ===
+When making a multi-layer thick wall, it is typically best to not have a gap between layers. For rooms, not having a gap will better insulate [[temperature]]. For a perimeter wall or for defenses in general: if standard AI enemies have no path to a colonist and decides not to attack furniture, they will choose a ''random'' section of accessible wall and attack it, recalculating after destruction. If the walls have a gap in-between, after the first layer is broken, it is likely for an enemy to randomly pick the inner wall to target next, as the entirety of the inner wall is accessible. With no gap, the enemy will be unable to access most of the inner layer, meaning they will be much more likely to destroy another outer layer wall. 
+
+Using multi-layer walls with no gap is especially important for [[shambler assault]]s,{{AnomalyIcon}} who use a similar AI for their "dumb breach".
+
+Having gaps between each layer of wall will make it possible to repair the outermost layer without needing to go outside, and has a small benefit against explosives.
+
+=== Material choice ===
+Wall materials each have their own advantages and disadvantages:
+
+==== Wood ====
+[[Wood]] is easily obtainable in a vast majority of [[biome]]s, and are the fastest wall to create. They are very helpful when first starting a Crashlanded [[scenario]], and often essential for Lost Tribe and Naked Brutality starts. However, wood is [[fire|flammable]]. Other than [[raider]]s lighting it on fire, a bad [[weather|dry thunderstorm]] or [[Short circuit|conduit explosion]] could end up engulfing your entire base in flames. Especially by the time you get to using [[Electricity]], you should replace wood with another material.
+
+==== Stone ====
+Stone is very abundant, but very time consuming. In addition to constructing the wall, cutting up [[stone block]]s takes quite a bit of work. However, stone types  are available in bulk, generally fairly hardy and are completely fire-proof. Ideally, all large walls should be made of one of the more durable stone types however strategically placed sections of stone walls will act as a "fire break" to limit the spread of a fire while your colonists fight it.
+* [[Granite blocks]] are the most durable wall material on the planet. [[Limestone blocks|Limestone]] is the 2nd most durable. Limestone has no advantage as walls over granite, unless your biome happens to lack the harder stone.
+** Note that breachers, one of the most relevant cases of wall durability, can break any stone wall in the same amount of hits.
+* [[Sandstone blocks|Sandstone]] walls are the quickest stone wall to build, which can save a lot of time for large bases. They are also the weakest stone type able to resist a single standard 50 damage explosion without failure, while no material short of plasteel can resist two. This makes Sandstone the lowest acceptable tier for outer walls, mortar pits, [[unstable power cell]]{{RoyaltyIcon}} enclosures, and similar defences. 
+* [[Slate blocks|Slate]] has essentially no redeeming qualities compared to other stone types. They are destroyed by a single explosion and their benefits of being lighter as when in material form is rarely relevant. They are still stronger than steel and wood, and are non-flammable, but they should only be used when other, stronger stone types aren't available.
+* [[Marble blocks|Marble]] walls give {{+|1}} [[beauty]] to a room and colonists looking at it. Since even a [[quality|normal]] marble [[small sculpture]] provides {{#expr: {{Q|Small sculpture|Beauty Base}} * {{Q|Marble blocks|Beauty Factor}} + {{Q|Marble blocks|Beauty Offset}} -0.001 round 0}} already while requiring only ten times as much material sculptures are more cost-effective. However, walls don't take up space, and marble walls are not worth more [[wealth]] than other stone walls. They are otherwise the least durable stone wall.
+* [[Vacstone blocks|Vacstone]]{{OdysseyIcon}} is the most durable stone wall, but vacstone can only be found in [[orbit]],{{OdysseyIcon}} so it is harder to acquire.
+
+==== Metal ====
+In comparison to stone, [[steel]] is less durable and flammable. However, steel is much faster to construct. It may also be a necessity in a material-scarce biome like the [[Biomes#Ice sheet|ice sheet]]. Overall, steel walls are useful as a quick installation or when nothing else is available, but the other demands on steel supplies and the relative fragility of the resulting walls make them a poor choice in most circumstances.
+
+[[Plasteel]] and [[Uranium]] make for the two strongest walls in the game and are non-flammable, but these materials are significantly rarer and more expensive than other alternatives. As such they should be reserved for locations that need to take a lot of damage without failure, such as the entrance, back wall, and defenses of a [[killbox]].
+
+==== Precious materials ====
+Not technically a category in-game [[gold]], [[silver]], and [[jade]] walls are similar in that they are significantly more [[beauty|beautiful]] than regular walls while offering very low HP. Whether you should invest your precious materials in walls or sculptures depends on the expected [[quality]] of the sculpture and how many rooms the walls are facing.
+
+The increase in wealth of ten walls facing
+* '''One room''' is inferior to a [[small sculpture]] of at least '''normal quality''',
+* '''Two rooms''' is inferior to a small sculpture of at least '''masterwork quality''' for silver and jade and none for gold,
+* '''Three rooms''' is inferior to a small sculpture of at least '''legendary quality''' for silver and '''masterwork quality''' for jade,
+* '''Four rooms''' is inferior to a small sculpture of at least '''legendary quality''' for silver and jade.
+
+The increase in beauty of ten walls facing
+* '''One room''' is inferior to a small sculpture of at least '''normal quality''' for gold and silver and '''poor quality''' for jade,
+* '''Two rooms''' is inferior to a small sculpture of at least '''good quality''',
+* '''Three rooms''' is inferior to a small sculpture of at least '''excellent quality''' for gold and jade and '''good quality''' for silver, and
+* '''Four rooms''' is inferior to a small sculpture of at least '''masterwork quality''' for gold and '''excellent quality''' for jade and silver.
+
+Further advantages of walls are, however, that they don't reduce the room size and do not rely on having an [[artistic|artist]].
+
+{{Building Stats Table}}
+
+== Gallery ==
+<gallery>
+Wall wood.png|A wooden wall
+Wall granite.png|A granite block wall
+Wall slate.png|A slate block wall
+Wall sandstone.png|A sandstone block wall
+Wall limestone.png|A limestone block wall
+Wall marble.png|A marble block wall
+</gallery>
+
+== Version history ==
+* [[Version/0.7.581|0.7.581]] - '''Wood wall''' and '''metal wall''' merged into '''wall''' with the introduction of the [[stuff]] system. 
+* [[Version/1.1.0|1.1.0]] - Terrain requirements now depends on what they’re built from. This means stone walls can’t be built on bridges any more.
+* [[Version/1.1.2654|1.1.2654]] - Increase psyfocus gain of wall from 11 to 22.
+* [[Version/1.3.3067|1.3.3067]] - Metallic walls now use stuff-specific UI and blueprint graphics.
+* [[Version/1.3.3117|1.3.3117]] - Added a "build door" gizmo that displays when a wall or wall blueprint is selected.
+* [[Version/1.3.3200|1.3.3200]] - [[Damage types#Thump|Thump damage]] multiplier versus walls reduced from 4× to 2×.
+* [[Version/1.6.4850|1.6.4850]] - Fix: Cancelling a wall blueprint that was replacing another wall would delete any wall attachments.
+
+{{Nav|structure|wide}}
+[[Category:Structure]]
+[[Category:Artificial wall]]

@@ -1,0 +1,134 @@
+{{Biotech}}
+{{See also|Centurion}}
+{{infobox main|none|
+| name = Legionary
+| image = LegionaryAncient east.png
+| description = A combat support mechanoid with a wide-range bullet shield and mid-range needle gun. Designed to support other mechanoids, the legionary is vulnerable to anyone who can get inside its shield.
+| combatPower = 150
+| type = Mechanoid
+| movespeed = 4.3
+| flammability = 0
+| marketvalue = 1200
+| armorblunt = 20
+| armorsharp = 40
+| armorheat = 200
+| min comfortable temperature = -100
+| max comfortable temperature = 250
+| psychic sensitivity = 0.5
+| toxic resistance = 1
+| toxic environment resistance = 1
+| bandwidth cost = 2
+| bodysize = 1
+| healthscale = 0.72
+| lifespan = 
+| attack1dmg = 12
+| attack1type = Blunt
+| attack1cool = 2
+| attack1part = left fist
+| attack2dmg = 12
+| attack2type = Blunt
+| attack2cool = 2
+| attack2part = right fist
+| attack3dmg = 8.5
+| attack3type = Blunt
+| attack3cool = 2
+| attack3part = head
+| attack3chancefactor = 0.2 
+| page verified for version = 1.4.3525
+| weaponTags = MechanoidGunNeedleLauncher
+<!-- Creation -->
+| research = Ultra mechtech
+| production facility 1 = Large mech gestator
+| gestation cycles = 4
+| resource 1 = Plasteel
+| resource 1 amount = 100
+| resource 2 = Component
+| resource 2 amount = 6
+| resource 3 = High subcore
+| resource 3 amount = 1
+}}
+A '''legionary''' is a [[mechanoids|mechanoid]] added by the [[Biotech DLC]] that projects a shield.
+
+== Acquisition ==
+{{Acquisition}}
+
+Dead, friendly {{lc:{{PAGENAME}}}}s can also be resurrected at the {{lc:{{P|Production Facility 1}}}} using the "''Resurrect medium mechanoid''" bill. This requires the corpse of the friendly {{PAGENAME}}, {{Icon Small|Steel||50}} [[steel]], and 1 [[gestation cycle]] taking {{ticks|1800}} to initiate.
+
+== Summary == 
+{{Mechanoid Summary}}
+
+Dead legionaries may be shredded at the [[machining table]] or [[crafting spot]] for {{Icon Small|Steel||15}} [[steel]]. However, these values are affected by [[Mechanoid Shredding Efficiency|mechanoid shredding efficiency]], as well as missing parts on the legionary.
+
+=== Shield ===
+[[File:Legionary shield radius.png|thumb|left|175px|Radius of the legionary's shield with unshielded area denoted in red, partially shielded areas in gold (see Note right).<br> Note that despite the shield visually extends into the red tiles, it does not protect them.]]
+
+The legionary projects a shield that is 3 tiles in radius, centered on the mech and moving with it, and which is visible whenever drafted or attacked. The shield stops all incoming enemy ground-level fire from passing into the bubble. It does not prevent pawns of any faction that are inside from firing out.  Also note that this only applies to ground-level fire, i.e. fire from ranged [[weapons]] carried by all types of [[pawn]] and [[turrets]], including grenades that cross the boundary of the shield. Explosives projectiles will detonate on the shield edge. Fire from [[mortar]]s, [[orbital bombardment targeter|orbital bombardment]], or [[Titles#Permits|aerodrone strikes or salvos]] {{RoyaltyIcon}} will not be blocked by the shield, nor will explosions crossing the boundary.
+
+'''Note:''' Pawns on the tiles shown in [[gold tile|gold]] in the image to the left are shielded from attacks directly targeted at them, however, due to a bug, they can still be hit by attacks aimed at other nearby pawns that miss. 
+
+The shield can absorb up to 200 damage before breaking. If an attack would be sufficient to completely deplete the shield's charge, then the rest of its damage is negated, and the shield is temporarily broken. <!--After the shield takes damage and a delay of {{ticks|120}} has passed,{{Check Tag|Verify|Verify delay time}}--> The shield regenerates charge at rate of 0.25 HP per second, so long as it has not been broken. However, once the shield's charge is completely expended, the shield will break and be totally disabled for {{ticks|5400}} after which point the shield will be restored at full health. Projectiles from [[EMP grenades]] and [[EMP launcher|launchers]] from outside hitting the shield will disable the shield for {{ticks|1500}}, after which time the shield will be restored at full health. Note that {{Hover title|Version/1.6.4630|as of the time of writing}}, projectiles [[unique weapons]] with the [[EMP rounds]]{{OdysseyIcon}} trait do not disable the shield when striking it. It is currently unknown whether this is intended or considered a bug. It is also currently unknown if striking the mechanoid itself disables the shield.{{Check Tag|Verify}} Furthermore, unlike the mechanoid itself, the shield projector will not adapt to the EMP effect. Its therefore possible to continuously disable the shield until the mechanoid can be killed. Note that an EMP area of effect overlapping with the projected shield will not disable it - a projectile must hit the shield or the EMP damage must be dealt to the structure itself
+
+If the [[EMP]] damage is dealt to the legionary itself, the shield is similarly disabled for {{ticks|1500}}, but will continue to regenerate as if it was not.
+
+A pawn does not need to be inside the shield to benefit from the effect, assuming the enemy is not inside the shield and that the shield is between them and their attacker the incoming rounds will be stopped. However, it does not prevent pawns from moving inside the shield and attacking.
+
+=== As an ally ===
+Mechs under player control require power: legionaries use 10% of their power per day while active.  If set to dormant self-charging, they instead recharge for 1% power / day, without pollution. They recharge in a [[large mech recharger]] (400W), for 50% power/day, creating 10 [[wastepack]]s whenever the recharger's waste is filled up.
+
+=== Combat ===
+Legionaries are always equipped with a [[needle launcher]], which they do not drop upon death. See the [[needle launcher]] page for further information.
+
+Legionaries have a [[shooting accuracy]] of 96%, equivalent to a pawn with a [[Shooting]] skill of 8. They have a [[melee hit chance]] of 62%, equivalent to a pawn with a [[Melee]] skill of 4.
+
+== Analysis ==
+{{Stub|section=1|reason=Needs at least comparison to Centurion for mechanitors choosing a shield mech, but also there's strategies for using the shield, distribution on a firing line, lillboz design, and moee esoteric like square packing legionaries and letting them go wild in a walled tile to make a shield wall etc}}
+=== As an enemy ===
+* The launcher is weak, but don't underestimate it. It's still strong enough to destroy vulnerable organs, including the brain.
+* EMP works well to break the shield, if you can get close enough at all. Legionaries are often surrounded by powerful mechanoids due to their advanced nature.
+
+===As an ally===
+The Legionary's shield provides a safe space for your ranged pawns to attack the enemy without worrying about retaliatory fire. With 200 hitpoints, slow firing weapons like pila, sniper rifles, and charge lances will no longer trouble your pawns as their slow fire rate gives the shield a bit of time to regenerate. However, care should still be utilized when relying on its shield. Exposure to rapid-fire weapons like miniguns or heavy charge blasters (both found on Centipedes) can shred the shield extremely fast.
+
+As a projected momentum repulsor field, the Legionary's shield is vulnerable to EMP, so try to take out enemies who wield EMP grenades or launchers first.
+
+===Comparison===
+When compared to [[centurion]]s, legionaries are cheaper to build as they do not require advanced components or powerfocus chips, only use 2 bandwidth instead of 5, but also have a smaller and weaker shield. When using a lot of higher-tier mechs such as [[centipede]]s it is more resource efficient to make one or two legionaries to defend them rather than a single centurion. However, a centurion provides higher shield coverage and lets you cram more mechs into the same shield.
+
+== Health == 
+=== Body parts ===
+{{Animal Health Table|Lancer}} 
+=== Armor ===
+{| class="wikitable"
+! Armor
+|-
+| {{Apparel Protection Chart
+| set1name= {{P|Name}} (Sharp) | set1armor1={{P|Armor - Sharp}} 
+| set2name= {{P|Name}} (Blunt) | set2armor1={{P|Armor - Blunt}} 
+| set3name= {{P|Name}} (Heat) | set3armor1={{P|Armor - Heat}} 
+| color= grey, blue, red
+}} 
+|}
+{{Pawn Attack Table|weapon=Needle launcher}}
+
+== Trivia ==
+Both shield mechanoids, the centurion and the legionary, are named after positions in the ancient Roman Army. The Roman Army famously used large shields called scuta.
+
+== Gallery ==
+<gallery>
+Legionary east.png| Age 0-99 Legionary facing east
+Legionary north.png| Age 0-99 Legionary facing north
+Legionary south.png| Age 0-99 Legionary facing south
+</gallery><gallery>
+LegionaryAncient east.png| Age 100+ Legionary facing east
+LegionaryAncient north.png| Age 100+ Legionary facing north
+LegionaryAncient south.png| Age 100+ Legionary facing south
+</gallery>
+
+== Version history ==
+* [[Biotech DLC]] Release - Added.
+* [[Version/1.4.3555|1.4.3555]] - Weapon changed from needle gun to needle launcher. 
+* ? - Description changed to reflect change from needle gun to needle launcher. ''A combat support mechanoid with a wide range bullet shield and long-range needle gun. Designed to support other mechanoids from long range, the legionary is vulnerable to anyone who can get inside its shield.'' -> ''A combat support mechanoid with a wide-range bullet shield and mid-range needle gun. Designed to support other mechanoids, the legionary is vulnerable to anyone who can get inside its shield''
+* [[Version/1.4.3682|1.4.3682]] - Fix: Missing final period in legionary description.
+
+{{nav|mechanoid|wide}}
+[[Category:Mechanoids]]

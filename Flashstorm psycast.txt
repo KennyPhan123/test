@@ -1,0 +1,43 @@
+{{Royalty}}
+{{About|the [[psycast]]|the weather event|Events#Flashstorm{{!}}Flashstorm}}
+{{Infobox main|psycast
+| name = Flashstorm
+| image = Flashstorm.png
+| type = Psycast
+| description = Use differential-pressure skipgates in the atmosphere to generate a localized flashstorm. The storm will strike the area with lightning for some time before dissipating.
+| psylink level = 5
+| casting time = 60
+| ability range = 19.9
+| psyfocus cost = 0.04
+| neural heat gain = 65
+| effect radius = 13.9
+| duration = 9840
+| duration multiplier = 
+| goodwill impact = -35
+}}
+'''Flashstorm''' is a level {{P|Psylink Level}} [[psycast]] that creates a brief [[lightning]] storm at the target location.
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+Upon casting Flashstorm, a miniature [[flashstorm]] will be created centered on the target tile, which can be any unroofed tile within 20 tiles of the caster, respecting line of sight. This flashstorm, like its natural counterpart, will create lightning strikes every {{Ticks|320}} to {{Ticks|800}}, though only on unroofed tiles in a reduced radius of 15 tiles (the displayed radius of 14 tiles is incorrect.) These strikes deal 10 [[Flame]] damage in a 3x3 radius centered on the strike, and ignite flammable pawns, objects, and items within. The flashstorm will persist for {{Ticks|{{P|Duration}}}} before dissipating. While the flashstorm persists, the area within the radius will be visually darkened by cloud cover, though this effect is only cosmetic - it has no effect on the [[Light]] level of the affected tiles.
+
+Note that pawns that are incapable of violence are prevented from casting Flashstorm.
+
+== Analysis ==
+Flashstorm is perhaps the single least useful psycast of the lot. The effect radius is large, meaning it is wildly inaccurate, and the relatively slow rate of lightning strikes limits any potential damage dealt to being mediocre ''at best''. Additionally, lightning strikes deal pitifully low damage to organic targets (especially [[impids]]{{BiotechIcon}}), and none at all to the already-imposing [[mechanoids]]. All this combined with a significant psyfocus cost of 4% and a staggering neural heat gain of 65 render Flashstorm cumbersome to use for minimal gain.
+
+Even against stationary targets, which won't flee the effect radius, Flashstorm is middling. It could see use against [[siege]]s, as the lightning is likely to ignite [[mortar shell]]s if nothing else, thus provoking the siege into attacking. The range of the flashstorm psycast is rather small, though, so other means of provoking a siege (e.g., [[mortar]]s, [[sniper rifle]]s) are superior once available. [[Mech cluster]]s and [[crashed ship part]]s are guarded by mechs, who are immune to flame.
+
+Overall, Flashstorm is not worth the time. However, if one is absolutely determined to make use of Flashstorm, it has two properties that, when combined, can give it some minor use in a [[killbox]] design - its inability to strike roofed tiles, and the lack of a limit to the number of flashstorms one can place in the same area. While Flashstorm does require an unroofed tile to target, there is no such limitation on the tiles surrounding it. By roofing nearly (or all) the tiles within the radius of the flashstorm, one can corral all the strikes from the flashstorm to a few specific tiles, such as a hallway in a killbox, at a chokepoint guarded by melee blockers, or tiles behind cover to bait enemies within. Secondarily, by casting flashstorm multiple times on the same tile, the rate of lightning strikes will be drastically improved, turning them from an inconsequential threat to a less-inconsequential source of damage and crowd control, panicking enemies and dealing minor damage. However, the large amounts of neural heat incurred per cast make this difficult to execute without methods of dissipating neural heat, such as [[neural heat dump]], [[eltex]] gear, or high [[psychic sensitivity]]. Outside of this niche use case, Flashstorm should never be considered as an answer to combat, and your psyfocus is better spent on any other psycast.
+
+In addition, if already obtained, flashstorm has some quality of life features:
+* Flashstorm disables the game's [[firewatch]], making it easier to burn a lot of corpses without needing to put them under a roof.
+* Flashstorm will light up the entire map during [[unnatural darkness]]{{AnomalyIcon}} for a very brief moment, allowing use of the helpful enemy overlay when zooming out. Note that flashstorm is also liable to start map-wide fires when used this way, as the usual firewatch system is disabled during the unnatural darkness event.
+
+== Version history ==
+* [[Version/1.1.2647|1.1.2647]] - Added.
+
+{{Nav|psycasts|wide}}
+[[Category: Psycasts]]

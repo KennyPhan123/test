@@ -1,0 +1,72 @@
+{{BackToTutorials}}
+{{Rewrite|reason=Heavily outdated}}
+(You cannot use the Package editor because it does not exist anymore)
+
+A sound is played by three elements working together:
+
+* The '''sound event'''. This is the signal that the game sends to the sound system to tell it that it should play the sound. These are defined mostly in game code.
+* The '''SoundDef'''. This is a def like any other, which defines what the sound system should do when a particular sound event is triggered. It could do nothing. It could play just one file the same way every time. Or it could play a cycle of different sound files with filters and randomized parameters. These are defined in XML like any other def, but they also have a special in-game editor so you can edit them while the game is running.
+* The '''sound file'''. This is the raw sound, in wav or ogg or mp3 format, that the sound def refers to when playing sounds. These are made outside the game in a separate editor like SoundForge or Adobe Audition.
+
+This tutorial focuses on SoundDefs.
+
+You can edit SoundDefs in XML, but it's generally more useful to edit them in real time in the game with the in-game editor. This way you can hear how the sound changes as you modify it.
+
+==Getting the editor started==
+
+* Run the game, go to the Options menu, and turn on Development mode
+* At the top of the screen you'll see white development tool icons. Mouse over them to see what they are.
+* Click the button for the package editor. (No button for package editor. Package editor is gone.)
+* A list of def types will appear. These are all the types of packages you can edit. Choose SoundDef.
+* The package editor will open. Choose the mod you wish to edit.
+* Choose the package you want to edit. You can also create a new package.
+* Either create a new SoundDef package, or open one.
+**  To create one, click the small “New package” button.
+**  To open one, click the button labeled “No package”, and choose an existing package that you’re going to add your sound to.
+* Create a new SoundDef by hitting the + symbol at the bottom of the definition list.
+* Select your new SoundDef. The def editor window will open.
+
+The def editor displays a hierarchical tree of editable properties in the selected definition. Some of them are expandable into lists; elements can be added and removed from these lists. Some of them have sub-properties. '''Mouse over the names of properties in the definition editor to get more info about them.'''
+
+==Getting a sound into the game==
+If you aren’t running the Dev version of the game, go to the options menu and turn on Dev mode.
+Open the package editor for SoundDefinition packages by clicking on the tiny white double-window button at the top of the screen.
+
+Figure out what the event name is for the sound. This is the identifier that the game uses to invoke your sound. Event names are hardcoded into the game code. There is a list of them available [https://docs.google.com/spreadsheet/pub?key=0AgWNUTNe4QC7dGpXa2ZHQTdPSU8yOVdrMllfbV9leEE&output=html here].
+
+Put this name as the sound’s defName. (You can also put identifiers in the eventNames list to have multiple event names invoke the same sound.)
+
+Go create your .wav file, and put it in the SoundDefinitions folder of the mod you’re working on.
+
+Back in the Def editor, look at the list of subSounds. Add a new subSound, and expand it so you can look at its properties.
+
+Open its list of grains. (each grain is one sound sample or chunk of silence the sound can play).
+
+Add a new grain of the sound sample type.
+
+In the grain’s path, write the path to your .wav file, relative to the mod’s root folder, without the filename extension. For example, if the sound is at 'C:/Programs/RimWorld/Mods/MyMod/Sounds/Guns/Gunshot1.wav', you would write 'Sounds/Guns/Gunshot1'.
+
+Hit the play button to test-play the sound! You should also start immediately hearing it when the game triggers it.
+
+
+
+==How SoundDefs work==
+When the game code wants to play a sound, it looks through all the loaded mods for a sound definition with a name matching the name it is looking for. It then invokes this sound definition.
+
+* ''In order for a sound definition to play, its name must match a name that the code will look for.''
+
+All the game code does is tell the sound system to begin and end the sound, and sometimes to change the parameters of that sound (things like FireSize or CameraAltitude). It is up to the sound definition to take these simple inputs and use them to create actual sounds you hear.
+
+For example, a sound definition for a bullet impact could play a single .wav file quietly or loudly. Or it could play that file more loudly depending on a difference in the ImpactSpeed parameter given to it by the code. Or, it could have several .wav files and shuffle between them to choose the one to play in any given instance. It could do this in such a way to avoid repeating. It could randomize its pitch or volume within a certain range. There are many other possibilities.
+
+===Sound parameters===
+
+Some sound events have parameters that they can use to drive changes in their properties as they play.
+
+[https://docs.google.com/spreadsheet/pub?key=0AgWNUTNe4QC7dGpXa2ZHQTdPSU8yOVdrMllfbV9leEE&output=html Sound events and parameters list]
+
+Parameters can be applied to sustainers or oneshots. For example, a bullet impact sound could have a parameter indicating how much damage was done. Or, a button mouseover sound could make use of the speed that the mouse cursor had when it entered the button. Each of these requires some additional coding, but most are quite simple.
+
+Parameters can be applied constantly or once per sample. When applied once per sample, the parameter’s value is fixed at the start of each sound. When it’s updated constantly, it changes every frame. For example, if we tied the pitch of a gunshot to the Perlin smooth-random parameter source, it would fire at a different pitch when set to update once per sample, and sound like a yo-yoing pitch if updated constantly.
+
+[[Category:Modding tutorials]]

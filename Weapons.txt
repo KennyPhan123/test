@@ -1,0 +1,305 @@
+<!--Top Nav Box-->
+{| align=center
+| {{Gear_Nav}}
+|}
+----
+<!-- End of Nav -->
+{{For|analysis of using each weapon|Weapon Guide}}
+{{For|a way to compare the numbers of each weapon|Weapon comparison table}}
+{{Imagemargin|[[File:weapons_preview.png|right]]|32px}}
+'''Weapons''' are used by [[colonists]] and [[raiders]] alike to fight each other (and sometimes to put down enraged [[animals]]). Weapons have several characteristics that make them useful in different combat situations. Most currently do not consume any ammunition, but instead take time to aim and additional cooldown time for subsequent shots. 
+{{TOCright}}
+If left exposed with no roof, a weapon on the ground will [[Deterioration|deteriorate]] until it disintegrates without a trace. Weapons stored in a [[shelf]] will not deteriorate, even if left outside.
+
+Weapons of quality Excellent or higher have an engraving that can be read by clicking the Art tab from the inspect pane.
+
+== Ranged weapons ==
+Range weapons consist mostly of firearms, as well as explosives, other non-gunpowder weapons like [[Neolithic Weapons|bows and throwing spears]], and more advanced weapons like the charge rifle. A ranged weapon's accuracy and damage are also affected by its [[quality]] level.
+
+=== Firing cycle ===
+Once a target is selected, and the shooter is in [[#Range|range]], the firing cycle of ranged weapons can be broken down into three phases. 
+# '''Aiming time'''. Sometimes referred to as '''warm-up'''. During this period the shooter will remain stationary and aim at the target before firing. The time this takes depends on the aiming time of the weapon, multiplied by the [[aiming time]] stat of the shooter. The remaining time until firing is displayed by a translucent white wedge, displayed in front of the shooter and cast toward the target. The wedge slowly thins until it disappears and the shot or burst is fired. During this time, the firing action can be canceled.
+# '''Firing'''. Once aiming has finished, the pawn will fire the weapon. Ranged weapons either fire a single shot or a number of shots in sequence called a burst. The number of shots in a burst is determined by the weapon type and cannot be changed. Once begun, firing can't be interrupted manually, however it can be interrupted, such as by stunning. A burst will also end early if the target dies or is destroyed. There is a short delay, called "burst [[tick]]s", after every shot in the burst but the last. 
+# '''Cooldown'''. Once firing is complete, a cooldown occurs. During this period the shooter will remain stationary. The time this takes depends on the cooldown time of the weapon, multiplied by the [[Ranged Cooldown Multiplier]] stat of the shooter. This is indicated by a translucent white circle over the pawn, which shrinks to nothing as the pawn recovers.
+Once this cycle is complete, the process repeats.
+
+Thus optimum {{DPS}} is determined by the following equation:
+
+'''<code>Max DPS = (Damage &times; Burst Shot Count) &divide; ((Ranged Cooldown ([[ticks]]) + Warm-up ([[ticks]]) + (Burst Time ([[ticks]]) * (Burst Count - 1))) &divide; 60)</code>'''
+
+This optimum DPS is then affected by [[#Accuracy|accuracy]] to determine the actual DPS on target.
+
+=== Range ===
+The ranges are measured in tiles and correspond to:
+* Touch = 3 tiles.
+* Short = 12 tiles.
+* Medium = 25 tiles.
+* Long = 40 tiles.
+
+Every ranged weapon has an [[#Accuracy|accuracy]] for each range point. Between those ranges, the accuracy of the weapon is linearly interpolated. A weapon will never fire past its range stat, even if it has an accuracy value listed for longer ranges. For example, a pump shotgun, with a maximum range of {{Q|Pump shotgun|Range}} tiles, a Short range accuracy of {{Q|Pump shotgun|Accuracy (Short) Base}}% and a Medium range accuracy of {{Q|Pump shotgun|Accuracy (Medium) Base}}%. It will never fire at a target {{#expr:{{Q|Pump shotgun|Range}} + 1 round 0}} tiles away, but at a range of 14 tiles, its accuracy will be 2/13 of the way between the Short and Medium range accuracy values, or {{#expr: {{Q|Pump shotgun|Accuracy (Short) Base}} + ((14-12)*({{Q|Pump shotgun|Accuracy (Medium) Base}}-{{Q|Pump shotgun|Accuracy (Short) Base}}))/(25-12) round 0}}%.
+
+Ranged weapons wielders cannot fire at targets that are in melee range of themselves, but can target more distant enemies while engaged in melee. Note that NPCs will never target another pawn while engaged in melee.
+
+=== Accuracy ===
+{{Stub|section=1|reason=Needs to be double checked and what happens at ranges beyond 40 tiles for weapon accuracy? Where is body size of target applied? Also [[Combat in darkness]] precept effect needs info. Also [[Nearsighted]] info? Also [[Shooting Accuracy Multiplier (Child)]] (verify in game, not just xml)}}
+Ranged weapon accuracy follows the following equation:
+
+'''<code>Accuracy = ([[Shooting Accuracy]]<sup>Range</sup> &times; Weapon Accuracy &times; [[Weather]] &times; [[Smoke]] &times; [[Cover]]) + [[Combat in darkness|Combat in Darkness]]</code>'''
+
+Where:
+* [[Shooting Accuracy]]: Is the stat of the shooting pawn.
+* Range: Is the distance in tiles between the shooter and the target.
+* Weapon Accuracy: Is the weapon accuracy of the weapon at that range. If it is not one of the listed values at 3, 12, 25, or 40 tiles, it is linearly interpolated between the nearest point above and the nearest point below the current range.
+* [[Weather]]: Is the accuracy modifier for a given weather ranging from 50% for Fog, to 100% on a clear day.
+* [[Smoke]]: If smoke occupies any tile directly between the shooter and target, it applies a 30% modifier (otherwise 100%).
+* [[Cover]]: Cover modifier for the target, based on cover objects and shooting angle.
+* [[Body size]]: A modifier based on the body size of the target. 0.5x for body sizes of 0.5 or lower, equal to body size for body size between 0.5 and 2.0, and 2.0x for body sizes of 2.0x or higher.{{Check Tag|Detail/Verify|Verify bounds and check where the multiplier is applied in the order of operations}} When a non-pawn structure is targeted, an effective body size is calculated as <code>[[Property:Cover Effectiveness|Cover Effectiveness]] * each of its dimensions in tiles * 2.5</code>. The result is still bound between 0.5 and 2. <!--examples: Wall: 1 * 1 * 2.5 -> 2.0; Sandbag: 0.55 * 1 * 2.5 -> 1.375; 1x2 Table: 0.4*2*2.5 -> 2.-->
+* [[Combat in darkness|Combat in Darkness]] Preferred Precept{{IdeologyIcon}}: If the shooter has the precept and the ''target'' is in darkness, +25% accuracy. If the shooter has the precept and target is not in darkness, -20% accuracy. Otherwise, 0%. For this precept, "darkness" is considered: 1. "Indoors" with 0% light level, 2. "Indoors" lit by only [[Darktorch#Summary|dark light]], or 3. Outdoors or Unroofed, only if the sun is at 0% light level. 
+
+Related to accuracy, there are also [[friendly fire]] mechanics that prevent misses from hitting nearby allies within a certain radius.
+
+=== Stopping power ===
+<!-- In case this ever comes up in the future - the XML for pawns supports specifying bulletStaggerSpeedFactor (0.17 is default, so 83% slowdown) for a pawn's race in XML. This is currently unused in the game. However, if it ends up being used - (as of 1.6.4633) the pawn slow down must be at least 83%. The slowdown can be higher, but not lower. If a pawn is staggered multiple times in a row, the duration will be refreshed and the slowdown may be changed if the new new stagger source caused a higher slowdown. Similarly stagger slowdown, a pawn's race in XML supports bulletStaggerDelayTicks for custom stagger duration and bulletStaggerIgnoreBodySize for having pawns always staggerable by any projectile regardless of their body size. In all cases, those seem to be currently unused. -->
+Stopping power is the ability of ranged weapons to cause stagger when hitting a target, slowing them down by 83% for {{ticks|95}}. Stagger duration is scaled by [[Stagger Time Multiplier]], which may render the target immune to being staggered. [[Unnatural corpse]]s{{AnomalyIcon}} are immune to being staggered, despite having 100% [[Stagger Time Multiplier]]. The size of the number relates directly to the body size of the pawn that can be staggered by the weapon - thus, to stagger [[human]]s a stopping power of {{Q|Human|Body Size}} or higher is required while to stagger an [[elephant]] a stopping power of {{Q|Elephant|Body Size}} would be needed. Any creature (unless immune to it) will get staggered when hit by a projectile with a sufficient stopping power, even if it doesn't deal any damage.
+
+A typical ranged weapon has a stopping power of 0.5, however the following weapons have higher stopping powers:
+<div class="ul-column-width-200">
+{{#ask: [[Stopping Power::>0.500001]]
+| format = template
+| template = Icon List
+| link = none
+| sort = From DLC
+}}
+</div>
+{{Hover title|Version/1.4.3704|At the time of writing}}, all weapons with a stopping power above 0.5, have a stopping power of at least 1 and are able to stagger humans.{{#if: {{#ask: [[Stopping Power::>0.500001]] [[Stopping Power::<0.999999]]}}|{{Error|Wrong. Fix this}}}}
+
+=== Ranged weapons comparison table === 
+Stats listed in the table below are for weapons that are of normal quality; better/worse quality will raise/lower the % to hit as appropriate.
+
+DPS (Optimal) refers to the theoretical DPS if every single shot were to hit the target. DPS for the various ranges takes into account the weapon's accuracy at the start of the defined range.
+
+Technical limitations prevent the display of a more comprehensive table on this page. For a complete comparison table, see [[Weapon comparison table]].
+
+Note that due to their unique and partially unknown mechanics, {{DPS}} values for [[beam graser]]s{{BiotechIcon}} and [[incinerator]]s{{AnomalyIcon}} cannot be provided.
+
+{| {{STDT|sortable c_06 text-center}}
+! colspan='2'|Name !! Damage !! {{AP}} !! Stopping Power !! Warm-Up<br/>(ticks){{ref label|Time|A}} !! Cooldown<br/>(ticks){{ref label|Time|A}} !! Range<br/>(tiles) !! Burst Count !! Burst (ticks){{ref label|Time|A}} !! Bullet Speed !! Accuracy<br/>(Touch) !! Accuracy<br/>(Short) !! Accuracy<br/>(Medium) !! Accuracy<br/>(Long) !! Miss Radius !! Blast Radius !! DPS<br/>(Optimal){{ref label|DPS Targets|B}} !! data-sort-type="number"|DPS<br/>(Touch){{ref label|DPS Targets|B}} !! data-sort-type="number"|DPS<br/>(Short){{ref label|DPS Targets|B}} !! data-sort-type="number"|DPS<br/>(Medium){{ref label|DPS Targets|B}} !! data-sort-type="number"|DPS<br/>(Long){{ref label|DPS Targets|B}} !! Value {{icon Small|silver|}}
+|-
+{{#ask:[[Concept:Ranged Weapons]] [[Class::!Mechanoid Weapons]] [[Name::!Uranium slug cannon]] [[Name::!Autocannon]] [[Name::!Mini-turret gun]] [[Name::!Tactical turret gun]] 
+ | named args=yes
+ | ?Name=?Name
+ | format=template
+ | template= Ranged Weapon Table Row
+ | sort=From DLC, name}}
+|}
+<sup>{{#if: {{#var:hasQuality}} | For the full effects of qualities, see [[Quality]].}} {{#if: {{#var:missRadius}} || Values shown in <span style="color:firebrick; font-weight:bold>Red</span> indicate the weapon is out of range at the reference point for this range band. The value is provided due to the [[#Range|interpolated nature]] of accuracy between range points.}}</sup>
+:{{note|Time|A}} At normal game speed, there are 60 ticks to one real world second. See: [[Time]].
+:{{note|DPS Targets|B}} This DPS assumes a single target - weapons with a blast radius may have higher effective DPS by virtue of hitting multiple targets.
+
+=== Quality modifiers ===
+{| {{STDT|sortable c_06 text-center}}
+! Quality !! Accuracy Modifier !! Base Damage Modifier !! Armor Penetration Modifier
+|-
+! Awful
+| 0.80
+| 0.90
+| 0.90
+|-
+! Poor
+| 0.90
+| 1.00
+| 1.00
+|-
+! Normal
+| 1.00
+| 1.00
+| 1.00
+|-
+! Good
+| 1.10
+| 1.00
+| 1.00
+|-
+! Excellent
+| 1.20
+| 1.00
+| 1.00
+|-
+! Masterwork
+| 1.35
+| 1.25
+| 1.25
+|-
+! Legendary
+| 1.50
+| 1.50
+| 1.50
+|}
+
+== Melee weapons ==
+These are touch-range weapons. Besides dedicated melee weapons, all ranged weapons can also be used as makeshift melee weapons.
+
+The exact damage of a melee weapon is based on its [[quality]] level, with a low quality weapon dealing less damage and a high quality weapon dealing more.
+
+Note that melee accuracy is determined by a [[colonist]]'s [[Melee|melee skill]] and further modified by health stats of manipulation and sight, as well as the opponent's dodge chance.
+
+Weapons of quality Excellent or higher have an engraving that can be read by clicking the Art tab from the inspect pane.
+
+=== Base melee stats ===
+The following stats are for a baseline human wielding weapons that are of normal quality and made out of [[steel]] (the baseline material). Other materials may do more or less average damage per second (DPS), as will better/worse [[quality|qualities]].
+
+{{Melee Weapons Table}}
+
+=== Material / Quality modifiers ===
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_06 text-center}}{{#vardefine:formatterNumeratorVariable1|Melee Blunt Damage Factor}}{{#vardefine:formatterDenominatorVariable1|Melee Cooldown Factor}}{{#vardefine:formatterNumeratorVariable2|Melee Sharp Damage Factor}}{{#vardefine:formatterDenominatorVariable2|Melee Cooldown Factor}}
+! Material !! Cooldown speed factor !! Damage factor (Blunt) !! Damage factor (Sharp) !! Max HP factor !! DPS factor (Blunt) !! DPS factor (Sharp)
+|-
+{{#ask: [[Melee Blunt Damage Factor::+]]
+  | format = template
+  | template = Ask Table Formatter
+  | ?Melee Cooldown Factor
+  | ?Melee Blunt Damage Factor
+  | ?Melee Sharp Damage Factor
+  | ?Max Hit Points Factor
+  | sort = From DLC, Name
+  | link = none
+}}
+|}
+</li><div>
+
+{| {{STDT|sortable c_06 text-center}}
+! Quality !! Base Damage Modifier
+|-
+! Awful
+| 0.80
+|-
+! Poor
+| 0.90
+|-
+! Normal
+| 1.00
+|-
+! Good
+| 1.10
+|-
+! Excellent
+| 1.20
+|-
+! Masterwork
+| 1.45
+|-
+! Legendary
+| 1.65
+|}
+
+Do note that stone blocks can only be used with clubs.
+
+=== Melee formulas ===
+{{Rewrite|reason=Expand into explanation of Melee verb system and true DPS vs displayed DPS. Consider consulting with [[User:Jiquera]] on the wiki and [https://www.reddit.com/r/RimWorld/comments/lcjgil/the_melee_verb_system_why_it_didnt_fix_what_it/ Khitrir] on the unofficial RW discord}}
+==== General formulas ====
+'''Damage''' for any melee weapon is '''Base Damage x Material Modifier x Quality Modifier'''
+
+'''Cooldown''' is calculated as '''Weapon melee cooldown / Material melee cooldown'''
+
+'''DPS''' (damage per second) is calculated as '''Damage / Cooldown'''. Note that you must use Cooldown (seconds) to get DPS, otherwise if you use Cooldown (Ticks) you'll calculate DPT (Damage Per Tick) which you probably don't want.
+
+'''AP''' (armor piercing) defaults to 0.015 x '''Damage''' if no value is specified
+
+'''Chance Factor''' defaults to 1 if no value is specified
+
+==== Listed DPS on weapons ====
+The DPS listed on the info tab for weapons is deceiving as '''it is no longer used''' when a pawn equips the item (see below). Regardless this is how it is computed based on the melee attack options the weapon has:
+# For each attack option compute the '''Selection Weight''' = '''Damage''' x '''Damage'''
+# For each attack option compute the '''Selection Chance''' = '''Selection Weight''' / SumOfAll('''Selection Weights''')
+# Compute the '''Average Damage''' = SumOfAll('''Damage''' x '''Selection Chance''')
+# Compute the '''Average Cooldown''' = SumOfAll('''Cooldown''' x '''Selection Chance''')
+# Compute the '''Average DPS''' = '''Average Damage''' / '''Average Cooldown'''
+
+Note that this is mathematically incorrect (see below for more details). Below is an example with a Normal Persona Zeus Hammer:
+
+{| class="wikitable"
+! Attack !! Damage !! Cooldown !! Selection Weight !! Selection Chance
+|-
+| head || 31 || 2.2 || 961 || 81%
+|-
+| handle || 15 || 1.6 || 225 || 19%
+|}
+
+'''Average Damage''' = 31 x 81% + 15 x 19% = 27.965
+
+'''Average Cooldown''' = 2.2 x 81% + 1.6 x 19% = 2.086
+
+'''Average DPS''' = 27.965 / 2.086 = 13.40
+
+You can find more of these values in Dev mode >> Logging Menu >> Tools. There are also values listed for pawns and these are computed the same as above except that in step 1 you also multiply by 0.3 and the '''Chance Factor''' if one is specified. Note that just like the item values these are not actually used in the game anymore (see below).
+
+==== Listed DPS on pawns ====
+This is a system used since version [[Version/1.1.2610|1.1.2610]] and it is based on a category system. It is based on the attack options available however now we take both the options from the weapon as well as the options from the pawn (eg. fists) into account:
+
+# For each attack option compute the '''Initial Selection Weight''' = '''Damage''' x (1 + '''AP''') x '''Chance Factor''' / '''Cooldown'''
+# For each attack option determine the '''Category''' based on the highest weight value we just computed:
+#* ''Best'' if '''Initial Selection Weight''' >= 0.95 x MAX('''Initial Selection Weight''')
+#* ''Worst'' if '''Initial Selection Weight''' < 0.25 x MAX('''Initial Selection Weight''')
+#* ''Mid'' Otherwise
+# For each attack option compute the '''Final Selection Weight''' based on the categories:
+#* 0.75 / NumberOfOptionsIn(''Best'') if the option is in the ''Best'' category
+#* 0.25 / NumberOfOptionsIn(''Mid'') if the option is in the ''Mid'' category
+#* 0.0 if the option is in the ''Worst'' category
+# For each attack option compute the '''Selection Chance''' = '''Final Selection Weight''' / SumOfAll('''Final Selection Weights''')
+# Compute the '''Average Damage''' = SumOfAll('''Damage''' x '''Selection Chance''')
+# Compute the '''Average Cooldown''' = SumOfAll('''Cooldown''' x '''Selection Chance''')
+# Compute the '''Average DPS''' = '''Average Damage''' / '''Average Cooldown'''
+
+Below is an example with a pawn carrying a Normal [[Persona zeushammer|Persona Zeus Hammer]] (note that AP is not specified and therefore is defined as '''Damage''' x 0.015):
+
+{| class="wikitable"
+! Attack !! Damage !! Cooldown !! Armor Piercing !! Chance Factor !! Initial Selection Weight !! Category !! Final Selection Weight !! Selection Chance
+|-
+| head || 31 || 2.2 ||  ||  || 20.64 || Best || 0.75 || 75.0%
+|-
+| handle || 15 || 1.6 ||  ||  || 11.48 || Mid || 0.125 || 12.5%
+|-
+| left fist (archotech arm) || 14 || 2 ||  ||  || 8.47 || Mid || 0.125 || 12.5%
+|-
+| right fist || 8.2 || 2 ||  ||  || 4.60 || Worst || 0.00 || 0.0%
+|-
+| teeth || 8.2 || 2 ||  || 0.07 || 0.32 || Worst || 0.00 || 0.0%
+|-
+| head || 5 || 2 ||  || 0.2 || 0.54 || Worst || 0.00 || 0.0%
+|}
+
+'''Average Damage''' = 31 x 75% + 15 x 12.5% + 14 x 12.5% = 26.875
+
+'''Average Cooldown''' = 2.2 x 75% + 1.6 x 12.5% + 2 x 12.5% = 2.100
+
+'''Average DPS''' = 26.875 / 2.100 = 12.80
+
+Note that in this case upgrading the left arm actually decreased the average DPS (from 13.17 to 12.80) by moving an inferior attack option from ''Worst'' to ''Mid''.
+
+There is a peculiarity in the description above as it seems that the AccuracyTouch properties of ranged weapons is not used. This may be a bug as it seems intended that it should have been used.
+
+== Biocoding ==
+{{See also|Persona weapons}}
+Any weapons carried by non-colonists can arrive on the map "biocoded", meaning that weapon is ''only'' usable by the specific pawn that the weapon is biocoded to. Biocoding on weapons cannot be changed or erased, but pawns recruited as colonists will still be able to use weapons biocoded to them.  These weapons are occasionally found on raiders, guests and other pawns, and cannot be sold. They can be [[Electric smelter|smelted]] and have a specific option in both the bill menu and in [[stockpile]]s to allow their sorting.
+
+== Unobtainable weapons ==
+{{Main|Unobtainable items}}
+Certain weapons are equipped exclusively by [[mechanoid]]s or [[turret]]s. These cannot be obtained independently from their regular users without the use of [[dev mode]]. When a normal pawn equips a debug-spawned weapon and then drops it, the weapon will disappear.
+
+== Gallery ==
+<gallery>
+UnfinishedWeapon.png|Unfinished melee weapon
+UnfinishedGun.png|Unfinished gun
+</gallery>
+
+== Version history ==
+* [[Version/0.0.245|0.0.245]] - Shooting accuracy split into misses due to equipment and misses due to skill.
+* [[Version/0.0.250|0.0.250]] - Melee attacks incap more than guns and explosives. '''N.b. That this change may or may not be represented in the current version. It was only added in this previous version.'''
+* [[Version/0.8.657|0.8.657]] - Melee weapons have a [[quality]]. Can now craft any kind of melee weapon from appropriate materials.
+* [[Version/0.9.722|0.9.722]] - High-quality weapons have art engraved into them. All weapons now have quality levels, including guns and bows. Quality affects accuracy. 
+* Beta 19/1.0 - Debuffed ranged weapon melee attacks to be in line with fists in terms of DPS. Serious melee weapons ([[knife]] on upward) across the board 5%-10% DPS buff. Pawns hit by ranged attacks now stagger the same way as pawns hit by melee attacks. This effect only happens if the weapon's stopping power stat is equal or greater than the target's body size. Missed shots now have a 50% extra chance of hitting nothing; this will make missed shots less likely to hit random things (but doesn’t change the chance of missing).
+* [[Version/1.1.0|1.1.0]] - Biocoding added
+
+{{nav|weapon|wide}}
+[[Category:Equipment|#Weapons]]

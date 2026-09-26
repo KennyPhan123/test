@@ -1,0 +1,176 @@
+'''Books''' are a category of items with similar mechanics that provide recreation and additional bonuses. There are five types of book:
+* {{Icon Small|Novel}} [[Novel]]
+* {{Icon Small|Textbook}} [[Textbook]]
+* {{Icon Small|Schematic}} [[Schematic]]
+* {{Icon Small|Tome}} [[Tome]]{{AnomalyIcon}}
+* {{Icon Small|Map}} [[Map]]{{OdysseyIcon}}
+
+== Summary ==
+Books come in a number of different forms: [[novel]]s, [[textbook]]s, [[schematic]]s, [[tome]]s,{{AnomalyIcon}} and [[map]]s,{{OdysseyIcon}} with the latter forms only appears if the relevant DLCs are installed. Despite their unique mechanics, all books share a number of mechanics. Books can be read by colonists for [[Recreation]] purposes, as long as the colonist is not blind ([[sight]] capacity above 0%). Additionally, reading any book will train [[intellectual]] at a rate of 0.1 XP per {{Ticks|1}}, or 250 XP per in-game hour. Lastly, each different type of book has a different additional effect when read. 
+
+[[Children]]{{BiotechIcon}} will sometimes want to read books to fulfill their [[learning]] need.{{Check Tag|Detail needed}}
+
+While reading any book, pawns with passion for the Intellectual skill gain {{Thought|desc=Reading really engages my intellectual passions.|label=I love reading|value=4|stack=1}}, while pawns with burning passion gain {{Thought|desc=Reading excites my burning intellectual passions! I just love learning this way.|label=I really love reading|value=6|stack=1}}. Similarly, when a pawn is reading a textbook, they'll gain {{Thought|desc=This book covers a topic I'm passionate about. It's interesting.|label=Interesting textbook|value=6|stack=1}} if they are passionate about the skill they are reading about, or {{Thought|desc=This book covers a topic I'm very passionate about. It's captivating.|label=Amazing textbook|value=10|stack=1}} with burning passion. The bonuses for being passionate about a textbook and general intellectual passion about books can be active at the same time.
+
+Books can be placed in bookcases to provide a +0.8% [[reading bonus]] to a room each, up to +20%.
+
+Books can generate with a quest.{{OdysseyIcon}} Reading a book containing a quest has a chance to trigger such quest with a {{MTB}} of {{ticks|12500}}. Only a single quest may be generated per book.
+
+=== Selection ===
+Colonists will only read books that are allowed by their reading policy. These policies can be configured and assigned via the [[assign]] tab.
+
+When choosing a book to read, colonists will consider the benefits of available books, and will try to avoid books that are not useful to them. This includes textbooks that teach [[skills]] the colonist is incapable of, and schematics for completed [[research]] projects.
+
+=== Recreation ===
+Colonists can read books to gain "Reading" [[recreation]]. All books have an inherent [[recreation power]] of 1, placing them on par with the [[chess table]] and [[horseshoes pin]], but behind more advanced diversions such as the [[billiards table]], [[poker table]], or any form of [[television]].
+
+Unlike most forms of recreation, the recreational effectiveness of books can be affected by external factors, as the rate at which recreation is gained is multiplied by the room's [[reading bonus]]. Additionally, [[novel]]s gain a large multiplier on recreation based on their [[quality]].
+
+=== Assignment ===
+[[File:Interface_assign_reading_policy.png|thumb|right|250px]]
+You can choose which types of books colonists read by configuring their reading policy in the [[Assign]] tab. Policies can control what types of books colonists are allowed to read, the minimum and maximum [[quality]] of the books allowed, and which [[skills]] colonists should prioritize when selecting textbooks. See [[Reading policy]] for further detail.
+
+== Novels ==
+{{Main|Novel}}
+Novels have a recreation gain multiplier. They will fulfill the pawn's need for recreation faster. Novels have 5% chance to generate with a quest{{OdysseyIcon}}.
+<!--Please replicate any changes to this table on the Novel page to ensure parity-->
+{| class="wikitable"
+|+ Effect of Quality on Recreation
+|-
+! Quality !! Factor
+|-
+! Awful 
+| 120%
+|-
+! Poor 
+| 140%
+|-
+! Normal 
+| 160%
+|-
+! Good 
+| 180%
+|-
+! Excellent 
+| 200%
+|-
+! Masterwork 
+| 225%
+|-
+! Legendary 
+| 250%
+|}
+
+== Textbooks ==
+{{Main|Textbook}}
+Pawns can read textbooks in order to increase their skills. The quality of the book determines their XP gain per hour. This is modified depending on whether the book teaches one or two skills (when teaching two skills the number seems to be divided by 1.6). Textbooks have 1% chance to generate with a quest{{OdysseyIcon}}.
+<!--Please replicate any changes to this table on the Textbook page to ensure parity-->
+{| class="wikitable"
+|+ Effects of Quality on Reading
+|-
+! rowspan=2 | Quality !! colspan=2 | XP Rate !! rowspan=2 | Max level
+|-
+! 1 skill !! 2 skills
+|-
+! Awful
+| 125 / Hour || 78 / Hour || 2
+|-
+! Poor
+| 188 / Hour || 117 / Hour || 5
+|-
+! Normal
+| 250 / Hour || 156 / Hour || 8
+|-
+! Good 
+| 312 / Hour || 195 / Hour || 10
+|-
+! Excellent 
+| 375 / Hour || 234 / Hour || 12
+|-
+! Masterwork 
+| 438 / Hour || 273 / Hour || 14
+|-
+! Legendary 
+| 500 / Hour || 312 / Hour || 16
+|}
+
+== Schematics ==
+{{Main|Schematic}}
+Schematics increase research points in a certain [[research]]. Schematics can be found for research projects that have not been completed, unless all projects are completed. When two topics are touched the points gained per topic is lowered.  Schematics cannot generate with a quest{{OdysseyIcon}}.
+<!--Please replicate any changes to this table on the Schematics page to ensure parity-->
+{| class="wikitable"
+|+ Effects of Quality on Research
+|-
+! rowspan=2 | Quality !! colspan=2 | Points
+|-
+! 1 project !! 2 projects
+|-
+! Awful 
+| 20 / Hour || 12 / Hour
+|-
+! Poor
+| 30 / Hour || 18 / Hour
+|-
+! Normal
+| 40 / Hour || 25 / Hour
+|-
+! Good
+| 50 / Hour || 31 / Hour
+|-
+!Excellent
+| 60 / Hour || 37 / Hour
+|-
+!Masterwork
+| 70 / Hour || 43 / Hour
+|-
+!Legendary
+| 80 / Hour || 50 / Hour
+|}
+
+== Tomes ==
+{{Anomaly|section=1}}
+{{Main|Tome}}
+Tomes function similarly to schematics, except that they progress [[Anomaly]] research and have a chance to cause [[mental break]]s while being read. They are generally harder to obtain than other varieties of book. Tomes have 15% chance to generate with a quest.{{OdysseyIcon}} 
+<!--Please replicate any changes to this table on the Tome page to ensure parity-->
+{| class="wikitable"
+|+ Effects of Quality on Research
+|-
+! rowspan=2 | Quality !! colspan=2 | Points
+|-
+! 1 project !! 2 projects
+|-
+! Awful 
+| 0.07 / Hour || 0.05 / Hour
+|-
+! Poor
+| 0.15 / Hour || 0.09 / Hour
+|-
+! Normal
+| 0.23 / Hour || 0.14 / Hour
+|-
+! Good
+| 0.30 / Hour || 0.19 / Hour
+|-
+!Excellent
+| 0.38 / Hour || 0.23 / Hour
+|-
+!Masterwork
+| 0.45 / Hour || 0.28 / Hour
+|-
+!Legendary
+| 0.52 / Hour || 0.33 / Hour
+|}
+
+All tomes have [[mental break]] chance in a range between 1% - 5%, regardless of quality.
+
+== Maps ==
+{{Odyssey|section=1}}
+{{Main|Map}}
+Maps, as opposed to other book types, do not have quality. However, they are always guaranteed to generate with a related quest.
+
+== Version history ==
+* [[Version/1.5.4062|1.5.4062]] - Books and reading system added.
+* [[Odyssey DLC]] Release - Added maps. All book types (besides schematics) can now generate with a quest that has a chance to be granted while reading the book.
+* [[Version/1.6.4850|1.6.4850]] - Fix: Books in containers could have the same text content.
+
+{{nav|joy|wide}}

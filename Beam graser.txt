@@ -1,0 +1,100 @@
+{{Biotech}}
+{{Infobox main|weapon
+| name = Beam graser
+| image = BeamGraser.png
+| description = A gamma ray laser which fires a sweeping beam. The narrow, high-energy beam can pierce thick armor and ignite targets.
+| type = Equipment
+| type2 = Weapons
+| tech level = Spacer
+| marketvalue = 144
+| class = Spacer
+| damage = 10
+| damage type = Beam
+| armorPenetration = 50
+| range = 24.9
+| minrange = 3.9
+| accuracyTouch = 60
+| accuracyShort = 70
+| accuracyMedium = 65
+| accuracyLong = 55
+| mode = Beam
+| warmup = 60
+| cooldown = 102
+| burst = 5
+| burstTicks = 22
+| DPS = dps <!---DPS  Traditional DPS doesn't seem to work for this weapon -->
+| mass base = 4
+| stoppingPower = 
+| meleeattack1dmg = 9
+| meleeattack1type = Blunt
+| meleeattack1part = Barrel
+| meleeattack1cool = 2
+| meleeattack1ap = 13.5
+| meleeattack2dmg = 9
+| meleeattack2type = Poke
+| meleeattack2part = Barrel
+| meleeattack2cool = 2
+| meleeattack2ap = 13.5
+| production facility 1 = Fabrication bench
+| research = Beam weapons
+| skill 1 = Crafting
+| skill 1 level = 8
+| resource 1 = Plasteel
+| resource 1 amount = 30
+| resource 2 = Steel
+| resource 2 amount = 30
+| resource 3 = Advanced component 
+| resource 3 amount = 4
+| work to make = 47000
+| has quality = False
+| page verified for version = 1.4.3525
+| weaponTags = BeamGraserGun
+}}
+The '''beam graser''' is a ranged [[weapon]] added by the [[Biotech DLC]] that fires a beam that attacks pawns as it travels through multiple different tiles, potentially lighting them on fire. It is the main armament of the [[tesseron]].
+
+== Acquisition ==
+Without the [[Odyssey DLC]], beam grasers cannot be crafted. They can obtained as loot from raiding [[faction base]]s,{{Check Tag|Which?|The empire does, check outlanders too}} and as gifts from vistors and traders.{{Check Tag|Verify|Reported in unstable 1.6}} They cannot be obtained by trade.
+
+Beam grasers also spawn on all [[tesseron]]s, including those [[Mechanoid creation|gestated]] by a colony. However, it is not possible to obtain one from them as they will not drop it on [[death]], [[downing]], or complete loss of [[manipulation]] like other weapons.
+
+With the [[Odyssey DLC]], {{lcfirst:{{Acquisition}}}}
+
+== Summary ==
+{{Stub|section=1|reason=Mechanical specifics. Shield interaction (([[low-shield pack]]s, [[skipshield]],{{RoyaltyIcon}} [[Gravship shield generator]] tested). Also, can it damage mechs? Is there a difference between main targets and side targets? (including if mechs as side targets can be hit)}}
+*This weapon has a minimum range of 3.9. It has special damage rules and an instant projectile.
+*Creates a physical beam that sweeps from one end to another in a line. It hits everything that remains in its way, ''except'' for the intended target.
+*The intended target is immune to the physical beam, but is hit directly, using regular accuracy mechanics.
+*Checks heat armor. Has a 50% to light enemies on [[fire]].
+*Ignores area shields. Personal shields will block direct damage, but will not prevent ignition, whether the pawn is the intended target or not.
+*Can be fired while wearing a [[shield belt]].
+
+<buildingDamageFactorImpassable>0.4</buildingDamageFactorImpassable>
+<buildingDamageFactorPassable>0.2</buildingDamageFactorPassable>
+
+== Analysis ==
+Beam grasers are a very unconventional weapon, and dangerous in enemy hands, though poor for general colony use. Like the [[beam repeater]],{{OdysseyIcon}} the graser checks heat armor with enough {{AP}} to ignore most non-mech armor, lights enemies on [[fire]], and can ignore shields. The beam graser specifically will also bypass [[cover]] when lighting pawns on fire, and can be fired while wearing a [[shield belt]]. However, beam grasers have poor {{DPS}} and middling range. In addition, the equippable weapon cannot be enhanced by [[quality]], further limiting its DPS. Also, while [[mechanoid]]s are not completely immune to the beam graser, this weapon is ineffective against mechs, as they are immune to fire and have 200% Heat armor.
+ 
+This weapon lights pawns on fire, which can be a good thing in an open engagement for getting enemies out of cover, but is an active detriment for [[melee block]] strategies. This is because pawns lit on fire will ignore collision and run past the melee block, and will end up flanking your own pawns. In fortified positions like [[killbox]]es, the fire can be detrimental for a similar reason.
+
+Overall, the beam graser is great for dealing with enemies in cover. However, because a well-designed base should not give enemies cover, the utility is limited. It can help when actively attacking enemies, e.g., when raiding an enemy tile. Compared to [[grenade]]s, the beam graser has much better range and is compatible with a shield belt, but is much worse at destroying structures, and relies on the shooter's accuracy.
+
+Note that while beam grasers can bypass shields, they are poor at actually destroying [[low-shield pack]]s{{RoyaltyIcon}} and [[mech low-shield]]s{{RoyaltyIcon}}.
+
+===Comparisons===
+*[[Beam repeater]]{{OdysseyIcon}}: Although sharing similar beam mechanics, they fulfill different roles. The beam graser is designed to keep enemies out of cover and has some AOE. The beam repeater deals high single-target damage, but has a massive warmup and cooldown period.
+
+*[[Incinerator]]{{AnomalyIcon}}: The incinerator is the only other ranged weapon that can be fired with a [[shield belt]]. Despite its shorter range, the incinerator is better at fulfilling a support role, as it more reliably ignites pawns and the burner ability gives it extra flexibility. The beam graser does have more {{AP}} and a shorter firing cycle, but if {{DPS}} is desired, then a different weapon should be used.
+
+== Melee attacks table ==
+{{Weapon Stats Table/Melee}}
+
+== Version history ==
+* [[Biotech DLC]] Release - Added.
+* [[Version/1.4.3555|1.4.3555]] - Armor Penetration of Beam increased to 50% from 1%.
+* [[Version/1.5.4062|1.5.4062]] - Texture recreated with higher quality.
+* [[Version/1.6.4518|1.6.4518]] - No longer an unobtainable nor a mechanoid exclusive weapon. Can now be found in play. Crafting recipe added. Tech level changed from Ultra to Spacer. Description changed from ''"A high-energy gamma ray laser which fires a sweeping beam that burns and ignites targets. Because of the health risks, grasers are usually only used by mechanoids, and this one was made to interface directly with a mechanoid wielder and draw from its power source.'' changed to ''"A gamma ray laser which fires a sweeping beam. The narrow, high-energy beam can pierce thick armor and ignite targets."
+* [[Version/1.6.4850|1.6.4850]] - Fix: Beam weapons were creating VFX in the wrong location (only affects mods).
+
+{{Nav|weapon|wide}}
+[[Category:Equipment]] [[Category:Weapons]] [[Category:Spacer Weapons]]
+[[Category:Ranged Weapons]]

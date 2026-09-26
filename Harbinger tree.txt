@@ -1,0 +1,116 @@
+{{Anomaly}}
+{{Stub|reason=Needs more detail on what causes new trees to spawn; there seems to be a link to current monolith level, rather than being entirely random. Skulls? Also reports thaf nonfresh provide nonprogress despite being consumed by the tree}}
+{{Project|Psyfocus}}
+{{Infobox main|plant
+| name = Harbinger tree
+| image = Harbinger tree.png
+| description = A gnarled tree that grows a flesh-like covering around a bioferrite skeleton. Harbinger trees are capable of feeding on corpses and raw meat, and will consume those placed nearby. If well fed, the grove will continue to grow.<br>The tree can be harvested for twisted meat and bioferrite.<br>In a tribal myth, these trees are the emissaries of a mad, shapeless god who rules an endless black ocean. The myth ends after the shapeless god reaches up from the water and tears down the sky.
+| type = Plant
+| type2 = Tree
+| path cost = 42
+| passability = pass through only
+| blockswind = true
+| cover = 0.25
+| minifiable = false
+| hp = 230
+| flammability = 0
+| beauty = -10
+| beauty outdoors = -10
+| grow days = 10
+| sow work = 400
+| harvest work = 1000
+| product = Bioferrite
+| yield = 15
+| min fertility = 0.50
+| fertility sensitivity = 0.50
+| nutrition = 2
+| livesin_temperateforest = 0
+| livesin_temperateswamp = 0
+| livesin_tropicalrainforest = 0
+| livesin_tropicalswamp = 0
+| livesin_aridshrubland = 0
+| livesin_desert = 0
+| livesin_borealforest = 0
+| livesin_coldbog = 0
+| livesin_tundra = 0
+| pollution = any
+}}
+The '''harbinger tree''' is a [[tree]] added by the [[Anomaly DLC]] that consumes [[meat]] and [[corpse]]s to fuel their own growth. 
+
+== Occurrence ==
+Harbinger trees can spawn randomly from an event after activating the [[void monolith]], spawned by the [[void provocation]] psychic ritual, or can be planted via a [[harbinger seed]] which can be acquired as a [[quest]] reward or bought from traders.
+
+== Summary ==
+{{Stub|section=1|reason=Void focus mediation}}
+Harbinger trees consume [[corpse]]s, [[meat]], and [[skull]]s placed around them. They can eat both rotten and fresh corpses, as well as all forms of raw meat (including [[insect meat|insect]], [[human meat|human]], [[twisted meat|twisted]]). Harbinger trees will not consume [[pemmican]] or [[meals]] of any type.
+
+Items fed to the harbinger tree are covered in fleshy roots, although this effect is merely cosmetic; they can still freely be hauled away or picked up. Every {{ticks|5000}}, valid targets within the tree's consumption radius will be partially consumed:
+* Corpses will have random body parts digested, and will eventually be destroyed when no parts remain. All gear worn by consumed corpses is destroyed alongside them, similar to [[Electric crematorium|cremation]].
+* Meat will simply be destroyed outright, with anywhere between 4-12 meat being consumed in any given interval.
+
+Harbinger trees will consume nutrition even during their resting period. Growth rate is increased by 150% while the tree actively consuming something, regardless of the quantity or variety of targets. Its consumption radius increases as it grows, linearly interpolated from 3.9 tiles at or below 15% growth to 5.9 tiles at or above 85% growth.
+
+{| class="wikitable"
+|-
+| [[File:Create Corpse Stockpile.png|frameless|none]] || When you select a harbinger tree, a UI button for creating a corpse stockpile appears.
+
+This button creates a [[dumping stockpile]] around the tree, within the consumption radius of the tree.
+
+By default, it accepts almost all corpses, whether fresh or rotten:
+* Human corpses, except [[unnatural corpse]]s
+* Animal corpses
+* Entity corpses
+* [[Drone]] {{OdysseyIcon}} corpses (despite not being able to be digested by harbinger trees)
+By default, it does not accept:
+* [[Mechanoid]] corpses
+|}
+
+When fully grown and harvested, harbinger trees provide {{Icon Small|Twisted meat||30}} [[twisted meat]] and a base amount of {{Icon Small|Bioferrite||15}} [[bioferrite]]. Trees that are destroyed through other means will still yield twisted meat, but no bioferrite. Twisted meat yield scales linearly with the tree's growth progress and is unaffected by [[AI_Storytellers#Economy|harvest yield]] modifiers from difficulty or a pawn's individual [[Plant Harvest Yield]], but the amount of bioferrite harvested is affected by both.
+
+Harbinger trees are not dangerous in any way and, despite their flavor text, do not cause any events or phenomena beyond consuming corpses and meat.
+
+Despite both being [[dendrovore]]s, [[thrumbo]]s will not eat harbinger trees, while [[alphabeaver]]s will.
+
+Lastly, Harbinger trees do not require sunlight to survive.
+
+=== Reproduction ===
+Each harbinger tree tracks the nutrition it has consumed, setting a random growth threshold between 70 and 100 nutrition upon first creation. When a tree reaches its threshold, it will immediately spawn a new sapling, regardless of whether the original tree is fully grown. Its total consumed nutrition is then reset to 0, and its threshold is rerolled. This can be used to build large forests of harbinger trees to destroy corpses and gain resources. Note that rotten and desiccated corpses have 0 nutrition and thus do not contribute to the spawning of new trees. As a result, waiting too long to dispose of the corpses from a raid can lead to a massive loss of potential nutrition.
+
+A fresh adult human corpse with no missing body parts will provide a harbinger tree 5.2 nutrition, meaning that between 13.46 and 19.23 corpses are needed for each new harbinger tree. A single piece of meat has a nutrition of 0.05, requiring between 1,400 and 2,000 meat total to spawn a new tree. The new tree will attempt to spawn near the one that created it, but it will appear elsewhere on the map if a nearby tile is not available. The closest a new tree will spawn is within 4 orthogonal tiles of the original. The new tree will not spawn within 2 tiles of a wall but can spawn adjacent to player-placed floors.
+
+== Analysis ==
+Harbinger trees provide a low-tech, resource-free way to get rid of corpses without using fire or an [[electric crematorium]]; This feature makes them very similar to pigs. No labor is required except for that which is required to haul the corpses to the tree itself. Tribal or low-tech settlements may find it useful for reducing the number of potential [[shambler]]s on the map if a [[death pall]] occurs; while shamblers can still reanimate from corpses in the process of being consumed, they will often be weakened due to missing body parts that will not regenerate upon reanimation.
+
+Later on, harbinger trees can be used as a source of [[twisted meat]] for mid- and late-game recipes like the [[juggernaut serum]] without having to fight and butcher dangerous entities like [[fleshbeast]]s. It is impractical to farm harbinger trees using meat farmed from ranching or hunting, although colonies experiencing massive raids may be able to meet their serum production needs off the yield from harbinger trees alone. A single [[fleshmass nucleus]] produces significantly more twisted meat in a more consistent manner, but requires regular suppression and defeating a [[fleshmass heart]] to acquire.
+
+Typical growth times and daily bioferrite yield for an unfed harbinger tree can be found below:
+
+{{Grow Table}}
+
+Keeping the harbinger tree well-fed will dramatically increase overall yield. The fastest theoretical growth time - attainable by planting a harbinger tree on rich soil and feeding it constantly - would be {{#expr: {{#var:RGD}} / (((1.4-1)*{{#var:FS}}) + 1) / 1.5 round 2}} days, for a total yield of {{Icon Small|Bioferrite||{{#expr: {{Q|Harbinger tree|Harvest Yield Per Day (140)}} * 1.5}} bioferrite per day}} and {{Icon Small|Twisted meat||{{#expr: {{Q|Harbinger tree|Harvest Yield Per Day (140)}} * 3}} twisted meat per day}}. <!-- Twisted meat yields are equal to twice the bioferrite yield, so this just uses ((1.5 * 2) * yield) for simplicity's sake -->
+
+== Gallery == 
+
+<gallery widths="300px" heights="300px" class="center" mode="nolines">
+Harbinger growth.png|'''Each stage of Harbinger tree's growth cycle including a chopped stump. Note that a neighboring tree immediately starts consuming the dropped [[Twisted meat]].'''
+File:Harbinger_1.png|'''A freshly planted harbinger tree, with the corpse stockpile and consumption radius.'''
+File:Harbinger_Hare.png|'''Harbinger tree consuming the desiccated corpse of a hare.'''
+File:Harbinger_Rotten2.png|'''Harbinger tree consuming the rotten corpse of a turkey and a tortoise.'''
+File:Harbinger_Meat.png|'''Harbinger tree consuming two stacks of muffalo meat.'''
+File:Harbinger_25_Meat.png|'''Harbinger tree at 25% growth consuming a stack of muffalo meat.'''
+File:Harbinger feeding.png|'''Harbinger tree consuming a variety corpses and displaying the small blood splats effect'''
+File:Harbinger feeding big splats.png|'''Harbinger tree now displaying the large blood splats part of the animation'''
+File:Harbinger chopped.png||'''The chopped stump of a fully grown Harbinger tree'''
+</gallery>
+
+== Version history == 
+* [[Anomaly DLC]] Release - Added.
+* 1.5.4083 — Harbinger trees now give bioferrite instead of wood when harvested.
+* 1.5.4104 — Fix: Harbinger tree provocation not working on ambient horror mode.
+* ? <!-- Unknown but likely when BF was added to the tree - but CHECK don't assume --> - Description changed from ''{{Hover title|A gnarled tree that grows a flesh-like covering. Harbinger trees are capable of feeding on corpses and raw meat, and will consume those placed nearby. If well fed, the grove will continue to grow. In a tribal myth, these trees are the emissaries of a mad, shapeless god who rules an endless black ocean. The myth ends after the shapeless god reaches up from the water and tears down the sky.|"[...] a flesh-like covering. [...]"}}'' changed to ''{{Hover title|A gnarled tree that grows a flesh-like covering around a bioferrite skeleton. Harbinger trees are capable of feeding on corpses and raw meat, and will consume those placed nearby. If well fed, the grove will continue to grow. The tree can be harvested for twisted meat and bioferrite. In a tribal myth, these trees are the emissaries of a mad, shapeless god who rules an endless black ocean. The myth ends after the shapeless god reaches up from the water and tears down the sky.|"[...] a flesh-like covering around a bioferrite skeleton. [...] The tree can be harvested for twisted meat and bioferrite. [...]"}}''.
+
+{{Nav|entity|wide}}
+[[Category: Entities]]
+{{nav|plant|wide}}
+[[Category:Plants]]
+[[Category:Trees]]

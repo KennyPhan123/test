@@ -1,0 +1,312 @@
+<onlyinclude><div><li style="display: inline-table;">
+{| {{STDT| c_01 sortable text-center}}
+! Pawn Kind !! Combat Power !! Gear !! Apparel !! Weapons !! Tech !! Inventory !! Additional Info [[{{fullurl:Mercenaries/Pawns|action=edit}} edit]]
+<!-- 9 columns; 1 bold, 8 normal: -->
+<!-- defName="", label="", ParentName="", Name="MercenaryBase", Abstract="True"
+|- id="Name"
+! Name
+| [[File:Name.png]] || CP || '''HP:''' <br />'''Avg. Quality:''' Normal
+| '''Budget''': <br />'''Allow Headgear Chance:''' <br />'''Available:''' {{#ask:[[Tags::]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+| '''Budget''': <br />'''Biocoded Chance:''' 10%<br />'''Available:''' <br />{{Gear List|budget=|WeaponTags|}}
+| '''Budget''': <br />% chance to have one of the following: {{Gear List|budget=|TechHediffsTags|}}
+| 2.55 Nutrition<br /> 15% chance for: 0~2x {{Icon Small|Go juice|24}} [[Go juice]] or {{Icon Small|Yayo|24}} [[Yayo]]
+| '''Age Range:''' Up to 65<br />'''Race:''' Human<br />'''Default Faction Type:''' Pirate<br />'''Backstories:''' Cryptosleep (8% Commonality)<br />'''Disallowed Traits:''' <br />'''Chemical Addiction Chance''': 10%<br />'''Initial Will Range''': <br />'''Initial Resistance Range''': 
+-->
+<!-- defName="", label="", ParentName="MercenaryBase", Name="GrenadierBase", Abstract="True"
+|- id="Name"
+! Name
+| [[File:Name.png]] || CP || '''HP:''' 70~230%<br />'''Avg. Quality:''' Normal
+| '''Budget''': 400~700<br />'''Allow Headgear Chance:''' 50%<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic||IndustrialAdvanced||IndustrialMilitaryBasic||BeltDefensePop]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+| '''Budget''': 500~500<br />'''Biocoded Chance:''' 10%<br />'''Available:''' <br />{{Gear List|budget=500|WeaponTags|}}
+| '''Budget''': 500~500<br />5% chance to have one of the following: {{Gear List|budget=500|TechHediffsTags|Poor|Simple|ImplantEmpireCommon}}
+| 2.55 Nutrition<br /> 15% chance for: 0~2x {{Icon Small|Go juice|24}} [[Go juice]] or {{Icon Small|Yayo|24}} [[Yayo]]<br />5% chance for: 1x{{Icon Small|Medicine|24}} [[Medicine]]
+| '''Age Range:''' Up to 65<br />'''Race:''' Human<br />'''Default Faction Type:''' Pirate<br />'''Backstories:''' Cryptosleep (8% Commonality)<br />'''Disallowed Traits:''' [[Brawler]]<br />'''Chemical Addiction Chance''': 10%<br />'''Initial Will Range''': 1~3<br />'''Initial Resistance Range''': 
+-->
+<!-- defName="Grenadier_Destructive", label="grenadier", ParentName="GrenadierBase", Name="", Abstract="" -->
+|- id="Grenadier"
+! Grenadier<br>[[File:Grenadier.png]] 
+| 70 || '''HP:''' 70~230%<br />'''Avg. Quality:''' Normal
+<!-- Apparel -->
+| '''Budget''': 400~700<br /><!--
+-->'''Allow Headgear Chance:''' 50%<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic||IndustrialAdvanced||IndustrialMilitaryBasic||BeltDefensePop]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+<!-- Weapons -->
+| '''Budget''': 500~500<br /><!--
+-->'''Biocoded Chance:''' 10%<br /><!--
+-->'''Available:''' <br />{{Gear List|budget=500|WeaponTags|GrenadeDestructive}}
+<!-- Tech -->
+| '''Budget''': 500~500<br /><!--
+-->5% chance to have one of the following: {{Gear List|budget=500|TechHediffsTags|Poor|Simple|ImplantEmpireCommon}}
+| 2.55 Nutrition<br /> 15% chance for: 0~2x {{Icon Small|Go juice|24}} [[Go juice]] or {{Icon Small|Yayo|24}} [[Yayo]]<br />5% chance for: 1x{{Icon Small|Medicine|24}} [[Medicine]]
+<!-- Additional Info -->
+| '''Age Range:''' Up to 65<br />'''Race:''' Human<br />'''Default Faction Type:''' Pirate<br />'''Backstories:''' Cryptosleep (8% Commonality)<br />'''Disallowed Traits:''' [[Brawler]]<br />'''canBeSapper:''' true<br />'''isGoodBreacher:''' true<br />'''Chemical Addiction Chance''': 10%<br />'''Initial Will Range''': 1~3<br />'''Initial Resistance Range''': 10~16
+<!-- defName="Grenadier_EMP", label="EMP grenadier", ParentName="GrenadierBase", Name="", Abstract="" -->
+|- id="EMP grenadier"
+! EMP grenadier<br>[[File:EMP grenadier.png]] 
+| 55 || '''HP:''' 70~230%<br />'''Avg. Quality:''' Normal
+<!-- Apparel -->
+| '''Budget''': 400~700<br /><!--
+-->'''Allow Headgear Chance:''' 50%<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic||IndustrialAdvanced||IndustrialMilitaryBasic||BeltDefensePop]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+<!-- Weapons -->
+| '''Budget''': 500~500<br /><!--
+-->'''Biocoded Chance:''' 10%<br /><!--
+-->'''Available:''' <br />{{Gear List|budget=500|WeaponTags|GrenadeEMP}}
+<!-- Tech -->
+| '''Budget''': 500~500<br /><!--
+-->5% chance to have one of the following: {{Gear List|budget=500|TechHediffsTags|Poor|Simple|ImplantEmpireCommon}}
+| 2.55 Nutrition<br /> 15% chance for: 0~2x {{Icon Small|Go juice|24}} [[Go juice]] or {{Icon Small|Yayo|24}} [[Yayo]]<br />5% chance for: 1x{{Icon Small|Medicine|24}} [[Medicine]]
+<!-- Additional Info -->
+| '''Age Range:''' Up to 65<br />'''Race:''' Human<br />'''Default Faction Type:''' Pirate<br />'''Backstories:''' Cryptosleep (8% Commonality)<br />'''Disallowed Traits:''' [[Brawler]]<br />'''Chemical Addiction Chance''': 10%<br />'''Initial Will Range''': 1~3<br />'''Initial Resistance Range''': 15~24
+<!-- defName="Grenadier_Smoke", label="smoke grenadier", ParentName="GrenadierBase", Name="", Abstract="" -->
+|- id="Smoke grenadier"
+! Smoke grenadier<br>[[File:Smoke grenadier.png]] 
+| 55 || '''HP:''' 70~230%<br />'''Avg. Quality:''' Normal
+<!-- Apparel -->
+| '''Budget''': 400~700<br /><!--
+-->'''Allow Headgear Chance:''' 50%<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic||IndustrialAdvanced||IndustrialMilitaryBasic||BeltDefensePop]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+<!-- Weapons -->
+| '''Budget''': 400~400<br /><!--
+-->'''Biocoded Chance:''' 10%<br /><!--
+-->'''Available:''' <br />{{Gear List|budget=400|WeaponTags|GrenadeSmoke}}
+<!-- Tech -->
+| '''Budget''': 500~500<br /><!--
+-->5% chance to have one of the following: {{Gear List|budget=500|TechHediffsTags|Poor|Simple|ImplantEmpireCommon}}
+| 2.55 Nutrition<br /> 15% chance for: 0~2x {{Icon Small|Go juice|24}} [[Go juice]] or {{Icon Small|Yayo|24}} [[Yayo]]<br />5% chance for: 1x{{Icon Small|Medicine|24}} [[Medicine]]
+<!-- Additional Info -->
+| '''Age Range:''' Up to 65<br />'''Race:''' Human<br />'''Default Faction Type:''' Pirate<br />'''Backstories:''' Cryptosleep (8% Commonality)<br />'''Disallowed Traits:''' [[Brawler]]<br />'''Chemical Addiction Chance''': 10%<br />'''Initial Will Range''': 1~3<br />'''Initial Resistance Range''': 18~28
+<!-- defName="", label="", ParentName="MercenaryBase", Name="MercenaryMidTierBase", Abstract="True"
+|- id="Name"
+! Name
+| [[File:Name.png]] || CP || '''HP:''' <br />'''Avg. Quality:''' Normal
+| '''Budget''': <br />'''Allow Headgear Chance:''' <br />'''Available:''' {{#ask:[[Tags::]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+| '''Budget''': <br />'''Biocoded Chance:''' 20%<br />'''Available:''' <br />{{Gear List|budget=|WeaponTags|}}
+| '''Budget''': 700~1200<br />15% chance to have one of the following: {{Gear List|budget=1200|TechHediffsTags|Simple|Advanced|ImplantEmpireCommon}}
+| 2.55 Nutrition<br /> 15% chance for: 0~2x {{Icon Small|Go juice|24}} [[Go juice]] or {{Icon Small|Yayo|24}} [[Yayo]]
+| '''Age Range:''' Up to 65<br />'''Race:''' Human<br />'''Default Faction Type:''' Pirate<br />'''Backstories:''' Cryptosleep (8% Commonality)<br />'''Disallowed Traits:''' <br />'''Chemical Addiction Chance''': 10%<br />'''Initial Will Range''': 2~4<br />'''Initial Resistance Range''': 
+-->
+<!-- defName="", label="mercenary gunner", ParentName="MercenaryMidTierBase", Name="MercenaryGunnerBase", Abstract="True"
+|- id="Name"
+! Name
+| [[File:Name.png]] || 85 || '''HP:''' 70~320%<br />'''Avg. Quality:''' Normal
+| '''Budget''': 1000~1500<br />'''Allow Headgear Chance:''' 50%<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic||IndustrialAdvanced||IndustrialMilitaryBasic||IndustrialMilitaryAdvanced||BeltDefensePop]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+| '''Budget''': 330~650<br />'''Biocoded Chance:''' 20%<br />'''Available:''' <br />{{Gear List|budget=650|WeaponTags|Gun}}
+| '''Budget''': 700~1200<br />15% chance to have one of the following: {{Gear List|budget=1200|TechHediffsTags|Simple|Advanced|ImplantEmpireCommon}}
+| 2.55 Nutrition<br /> 5% chance for: 0~2x {{Icon Small|Go juice|24}} [[Go juice]] or {{Icon Small|Yayo|24}} [[Yayo]]<br />10% chance for: 1x {{Icon Small|Medicine|24}} [[Medicine]]
+| '''Age Range:''' Up to 65<br />'''Race:''' Human<br />'''Default Faction Type:''' Pirate<br />'''Backstories:''' Cryptosleep (8% Commonality)<br />'''Disallowed Traits:''' [[Brawler]]<br />'''Forced Traits:''' 4~14 [[Shooting]]<br />'''Chemical Addiction Chance''': 10%<br />'''Initial Will Range''': 2~4<br />'''Initial Resistance Range''': 
+-->
+<!-- defName="Mercenary_Gunner", label="mercenary gunner", ParentName="MercenaryGunnerBase", Name="", Abstract="" -->
+|- id="Mercenary gunner"
+! Mercenary gunner<br>[[File:Mercenary gunner.png]] 
+| 85 || '''HP:''' 70~320%<br />'''Avg. Quality:''' Normal
+<!-- Apparel -->
+| '''Budget''': 1000~1500<br /><!--
+-->'''Allow Headgear Chance:''' 50%<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic||IndustrialAdvanced||IndustrialMilitaryBasic||IndustrialMilitaryAdvanced||BeltDefensePop]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+<!-- Weapons -->
+| '''Budget''': 330~650<br /><!--
+-->'''Biocoded Chance:''' 20%<br /><!--
+-->'''Available:''' <br />{{Gear List|budget=650|WeaponTags|Gun}}
+<!-- Tech -->
+| '''Budget''': 700~1200<br /><!--
+-->15% chance to have one of the following: {{Gear List|budget=1200|TechHediffsTags|Simple|Advanced|ImplantEmpireCommon}}
+| 2.55 Nutrition<br /> 5% chance for: 0~2x {{Icon Small|Go juice|24}} [[Go juice]] or {{Icon Small|Yayo|24}} [[Yayo]]<br />10% chance for: 1x {{Icon Small|Medicine|24}} [[Medicine]]
+<!-- Additional Info -->
+| '''Age Range:''' Up to 65<br />'''Race:''' Human<br />'''Default Faction Type:''' Pirate<br />'''Backstories:''' Cryptosleep (8% Commonality)<br />'''Disallowed Traits:''' [[Brawler]]<br />'''Forced Traits:''' 4~14 [[Shooting]]<br />'''Chemical Addiction Chance''': 10%<br />'''Initial Will Range''': 2~4<br />'''Initial Resistance Range''': 6~10
+<!-- defName="Mercenary_Gunner_Acidifier", label="mercenary gunner", ParentName="MercenaryGunnerBase", Name="", Abstract="" -->
+|- id="Mercenary gunner (Death acidifier)"
+! Mercenary gunner (Death acidifier)<br>[[File:Mercenary gunner (Death acidifier).png]]
+| 85 || '''HP:''' 70~320%<br />'''Avg. Quality:''' Normal
+<!-- Apparel -->
+| '''Budget''': 1000~1500<br /><!--
+-->'''Allow Headgear Chance:''' 50%<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic||IndustrialAdvanced||IndustrialMilitaryBasic||IndustrialMilitaryAdvanced||BeltDefensePop]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+<!-- Weapons -->
+| '''Budget''': 330~650<br /><!--
+-->'''Biocoded Chance:''' 20%<br /><!--
+-->'''Available:''' <br />{{Gear List|budget=650|WeaponTags|Gun}}
+<!-- Tech -->
+| '''Budget''': 700~1200<br /><!--
+-->'''Required:''' {{Icon Small|Death acidifier|24}} [[Death acidifier]]<br /><!--
+-->15% chance to have one of the following: {{Gear List|budget=1200|TechHediffsTags|Simple|Advanced|ImplantEmpireCommon}}
+| 2.55 Nutrition<br /> 5% chance for: 0~2x {{Icon Small|Go juice|24}} [[Go juice]] or {{Icon Small|Yayo|24}} [[Yayo]]<br />10% chance for: 1x {{Icon Small|Medicine|24}} [[Medicine]]
+<!-- Additional Info -->
+| '''Age Range:''' Up to 65<br />'''Race:''' Human<br />'''Default Faction Type:''' Pirate<br />'''Backstories:''' Cryptosleep (8% Commonality)<br />'''Disallowed Traits:''' [[Brawler]]<br />'''Forced Traits:''' 4~14 [[Shooting]]<br />'''Chemical Addiction Chance''': 10%<br />'''Initial Will Range''': 2~4<br />'''Initial Resistance Range''': 10~16
+<!-- defName="", label="mercenary sniper", ParentName="MercenaryMidTierBase", Name="MercenarySniperBase", Abstract="True"
+|- id="Name"
+! Name
+| [[File:Name.png]] || 110 || '''HP:''' 70~320%<br />'''Avg. Quality:''' Normal
+| '''Budget''': 1000~1500<br />'''Allow Headgear Chance:''' 50%<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic||IndustrialAdvanced||IndustrialMilitaryBasic||IndustrialMilitaryAdvanced]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+| '''Budget''': 600~600<br />'''Biocoded Chance:''' 20%<br />'''Available:''' <br />{{Gear List|budget=600|WeaponTags|SniperRifle}}
+| '''Budget''': 700~1200<br />15% chance to have one of the following: {{Gear List|budget=1200|TechHediffsTags|Simple|Advanced|ImplantEmpireCommon}}
+| 2.55 Nutrition<br /> 15% chance for: 0~2x {{Icon Small|Go juice|24}} [[Go juice]] or {{Icon Small|Yayo|24}} [[Yayo]]<br />10% chance for: 1x {{Icon Small|Medicine|24}} [[Medicine]]
+| '''Age Range:''' Up to 65<br />'''Race:''' Human<br />'''Default Faction Type:''' Pirate<br />'''Backstories:''' Cryptosleep (8% Commonality)<br />'''Disallowed Traits:''' <br />'''Forced Skills:''' 8~16 [[Shooting]]<br />'''Chemical Addiction Chance''': 10%<br />'''Initial Will Range''': 2~4<br />'''Initial Resistance Range''': 
+-->
+<!-- defName="Mercenary_Sniper", label="mercenary sniper", ParentName="MercenarySniperBase", Name="", Abstract="" -->
+|- id="Mercenary sniper"
+! Mercenary sniper<br>[[File:Mercenary sniper.png]] 
+| 110 || '''HP:''' 70~320%<br />'''Avg. Quality:''' Normal
+<!-- Apparel -->
+| '''Budget''': 1000~1500<br /><!--
+-->'''Allow Headgear Chance:''' 50%<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic||IndustrialAdvanced||IndustrialMilitaryBasic||IndustrialMilitaryAdvanced]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+<!-- Weapons -->
+| '''Budget''': 600~600<br /><!--
+-->'''Biocoded Chance:''' 20%<br /><!--
+-->'''Available:''' <br />{{Gear List|budget=600|WeaponTags|SniperRifle}}
+<!-- Tech -->
+| '''Budget''': 700~1200<br /><!--
+-->15% chance to have one of the following: {{Gear List|budget=1200|TechHediffsTags|Simple|Advanced|ImplantEmpireCommon}}
+| 2.55 Nutrition<br /> 15% chance for: 0~2x {{Icon Small|Go juice|24}} [[Go juice]] or {{Icon Small|Yayo|24}} [[Yayo]]<br />10% chance for: 1x {{Icon Small|Medicine|24}} [[Medicine]]
+<!-- Additional Info -->
+| '''Age Range:''' Up to 65<br />'''Race:''' Human<br />'''Default Faction Type:''' Pirate<br />'''Backstories:''' Cryptosleep (8% Commonality)<br />'''Disallowed Traits:''' <br />'''Forced Skills:''' 8~16 [[Shooting]]<br />'''Chemical Addiction Chance''': 10%<br />'''Initial Will Range''': 2~4<br />'''Initial Resistance Range''': 13~20
+<!-- defName="Mercenary_Sniper_Acidifier", label="mercenary sniper", ParentName="MercenarySniperBase", Name="", Abstract="" -->
+|- id="Mercenary sniper (Death acidifier)"
+! Mercenary sniper (Death acidifier)<br>[[File:Mercenary sniper (Death acidifier).png]] 
+| 110 || '''HP:''' 70~320%<br />'''Avg. Quality:''' Normal
+<!-- Apparel -->
+| '''Budget''': 1000~1500<br /><!--
+-->'''Allow Headgear Chance:''' 50%<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic||IndustrialAdvanced||IndustrialMilitaryBasic||IndustrialMilitaryAdvanced]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+<!-- Weapons -->
+| '''Budget''': 600~600<br /><!--
+-->'''Biocoded Chance:''' 20%<br /><!--
+-->'''Available:''' <br />{{Gear List|budget=600|WeaponTags|SniperRifle}}
+<!-- Tech -->
+| '''Budget''': 700~1200<br /><!--
+-->'''Required:''' {{Icon Small|Death acidifier|24}} [[Death acidifier]]<br /><!--
+-->15% chance to have one of the following: {{Gear List|budget=1200|TechHediffsTags|Simple|Advanced|ImplantEmpireCommon}}
+| 2.55 Nutrition<br /> 15% chance for: 0~2x {{Icon Small|Go juice|24}} [[Go juice]] or {{Icon Small|Yayo|24}} [[Yayo]]<br />10% chance for: 1x {{Icon Small|Medicine|24}} [[Medicine]]
+<!-- Additional Info -->
+| '''Age Range:''' Up to 65<br />'''Race:''' Human<br />'''Default Faction Type:''' Pirate<br />'''Backstories:''' Cryptosleep (8% Commonality)<br />'''Disallowed Traits:''' <br />'''Forced Skills:''' 8~16 [[Shooting]]<br />'''Chemical Addiction Chance''': 10%<br />'''Initial Will Range''': 2~4<br />'''Initial Resistance Range''': 14~23
+<!-- defName="Mercenary_Slasher", label="mercenary slasher", ParentName="MercenaryMidTierBase", Name="MercenarySlasherBase", Abstract="True"
+|- id=""
+! 
+| [[File:.png]] || 140 || '''HP:''' 70~320%<br />'''Avg. Quality:''' Normal
+| '''Budget''': 300~1400<br />'''Required:''' {{Icon Small|Shield belt|24}} [[Shield belt]]<br />'''Allow Headgear Chance:''' 0%<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic||IndustrialAdvanced||IndustrialMilitaryBasic||IndustrialMilitaryAdvanced]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+| '''Budget''': 200~500<br />'''Biocoded Chance:''' 20%<br />'''Available:''' <br />{{Gear List|budget=500|WeaponTags|MedievalMeleeDecent|MedievalMeleeAdvanced}}
+| '''Budget''': 700~1200<br />15% chance to have one of the following: {{Gear List|budget=1200|TechHediffsTags|Simple|Advanced|ImplantEmpireCommon}}
+| 2.55 Nutrition<br /> 15% chance for: 0~2x {{Icon Small|Go juice|24}} [[Go juice]] or {{Icon Small|Yayo|24}} [[Yayo]]<br />10% chance for: 1x {{Icon Small|Medicine|24}} [[Medicine]]
+| '''Age Range:''' Up to 65<br />'''Race:''' Human<br />'''Default Faction Type:''' Pirate<br />'''Backstories:''' Cryptosleep (8% Commonality)<br />'''Disallowed Traits:''' <br />'''canBeSapper:''' true<br />'''Chemical Addiction Chance''': 10%<br />'''Initial Will Range''': 2~4<br />'''Initial Resistance Range''': 19~29
+-->
+<!-- defName="Mercenary_Slasher", label="mercenary slasher", ParentName="MercenarySlasherBase", Name="", Abstract="" -->
+|- id="Mercenary slasher"
+! Mercenary slasher<br>[[File:Mercenary slasher.png]]
+| 140 || '''HP:''' 70~320%<br />'''Avg. Quality:''' Normal
+<!-- Apparel -->
+| '''Budget''': 300~1400<br /><!--
+-->'''Required:''' {{Icon Small|Shield belt|24}} [[Shield belt]]<br /><!--
+-->'''Allow Headgear Chance:''' 0%<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic||IndustrialAdvanced||IndustrialMilitaryBasic||IndustrialMilitaryAdvanced]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+<!-- Weapons -->
+| '''Budget''': 200~500<br /><!--
+-->'''Biocoded Chance:''' 20%<br /><!--
+-->'''Available:''' <br />{{Gear List|budget=500|WeaponTags|MedievalMeleeDecent|MedievalMeleeAdvanced}}
+<!-- Tech -->
+| '''Budget''': 700~1200<br /><!--
+-->15% chance to have one of the following: {{Gear List|budget=1200|TechHediffsTags|Simple|Advanced|ImplantEmpireCommon}}
+| 2.55 Nutrition<br /> 15% chance for: 0~2x {{Icon Small|Go juice|24}} [[Go juice]] or {{Icon Small|Yayo|24}} [[Yayo]]<br />10% chance for: 1x {{Icon Small|Medicine|24}} [[Medicine]]
+<!-- Additional Info -->
+| '''Age Range:''' Up to 65<br />'''Race:''' Human<br />'''Default Faction Type:''' Pirate<br />'''Backstories:''' Cryptosleep (8% Commonality)<br />'''Disallowed Traits:''' <br />'''canBeSapper:''' true<br />'''Chemical Addiction Chance''': 10%<br />'''Initial Will Range''': 2~4<br />'''Initial Resistance Range''': 10~16
+<!-- defName="Mercenary_Slasher_Acidifier", label="mercenary slasher", ParentName="MercenarySlasherBase", Name="", Abstract="" -->
+|- id="Mercenary slasher (Death acidifier)"
+! Mercenary slasher (Death acidifier)<br>[[File:Mercenary slasher (Death acidifier).png]] 
+| 140 || '''HP:''' 70~320%<br />'''Avg. Quality:''' Normal
+<!-- Apparel -->
+| '''Budget''': 300~1400<br /><!--
+-->'''Required:''' {{Icon Small|Shield belt|24}} [[Shield belt]]<br /><!--
+-->'''Allow Headgear Chance:''' 0%<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic||IndustrialAdvanced||IndustrialMilitaryBasic||IndustrialMilitaryAdvanced]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+<!-- Weapons -->
+| '''Budget''': 200~500<br /><!--
+-->'''Biocoded Chance:''' 20%<br /><!--
+-->'''Available:''' <br />{{Gear List|budget=500|WeaponTags|MedievalMeleeDecent|MedievalMeleeAdvanced}}
+<!-- Tech -->
+| '''Budget''': 700~1200<br /><!--
+-->'''Required:''' {{Icon Small|Death acidifier|24}} [[Death acidifier]]<br /><!--
+-->15% chance to have one of the following: {{Gear List|budget=1200|TechHediffsTags|Simple|Advanced|ImplantEmpireCommon}}
+| 2.55 Nutrition<br /> 15% chance for: 0~2x {{Icon Small|Go juice|24}} [[Go juice]] or {{Icon Small|Yayo|24}} [[Yayo]]<br />10% chance for: 1x {{Icon Small|Medicine|24}} [[Medicine]]
+<!-- Additional Info -->
+| '''Age Range:''' Up to 65<br />'''Race:''' Human<br />'''Default Faction Type:''' Pirate<br />'''Backstories:''' Cryptosleep (8% Commonality)<br />'''Disallowed Traits:''' <br />'''canBeSapper:''' true<br />'''Chemical Addiction Chance''': 10%<br />'''Initial Will Range''': 2~4<br />'''Initial Resistance Range''': 9~15
+<!-- defName="Mercenary_Heavy", label="heavy mercenary", labelPlural="heavy mercenaries", ParentName="MercenaryMidTierBase", Name="MercenaryHeavyBase", Abstract="" -->
+|- id="Heavy mercenary"
+! Heavy mercenary<br>[[File:Heavy mercenary.png]] 
+| 140 || '''HP:''' 70~320%<br />'''Avg. Quality:''' Normal
+<!-- Apparel -->
+| '''Budget''': 200~350<br /><!--
+-->'''Allow Headgear Chance:''' 50%<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic||IndustrialAdvanced||IndustrialMilitaryBasic||IndustrialMilitaryAdvanced||BeltDefensePop]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+<!-- Weapons -->
+| '''Budget''': 1200~1200<br /><!--
+-->'''Biocoded Chance:''' 20%<br /><!--
+-->'''Available:''' <br />{{Gear List|budget=1200|WeaponTags|GunHeavy|GunSingleUse|Flamethrower}}
+<!-- Tech -->
+| '''Budget''': 700~1200<br /><!--
+-->15% chance to have one of the following: {{Gear List|budget=1200|TechHediffsTags|Simple|Advanced|ImplantEmpireCommon}}
+| 2.55 Nutrition<br /> 15% chance for: 0~2x {{Icon Small|Go juice|24}} [[Go juice]] or {{Icon Small|Yayo|24}} [[Yayo]]
+<!-- Additional Info -->
+| '''Age Range:''' Up to 65<br />'''Race:''' Human<br />'''Default Faction Type:''' Pirate<br />'''Backstories:''' Cryptosleep (8% Commonality)<br />'''Disallowed Traits:''' <br />'''Chemical Addiction Chance''': 10%<br />'''Initial Will Range''': 2~4<br />'''Initial Resistance Range''': 14~23
+<!-- defName="", label="", ParentName="MercenaryBase", Name="MercenaryEliteTierBase", Abstract="True"
+|- id="Name"
+! Name
+| [[File:Name.png]] || 130 || '''HP:''' 100%<br />'''Avg. Quality:''' Normal
+| '''Budget''': 2500~3500<br />'''Allow Headgear Chance:''' 90%<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic||IndustrialAdvanced||IndustrialMilitaryBasic||IndustrialMilitaryAdvanced||SpacerMilitary||BeltDefensePop]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+| '''Budget''': 500~1400<br />'''Biocoded Chance:''' 30%<br />'''Available:''' <br />{{Gear List|budget=1400|WeaponTags|IndustrialGunAdvanced}}
+| '''Budget''': 1000~1200<br />35% chance to have one of the following: {{Gear List|budget=1200|TechHediffsTags|Advanced|ImplantEmpireCommon}}
+| 2.55 Nutrition<br /> 80% chance for: 1~2x {{Icon Small|Go juice|24}} [[Go juice]] or {{Icon Small|Yayo|24}} [[Yayo]]
+| '''Age Range:''' Up to 45<br />'''Race:''' Human<br />'''Default Faction Type:''' Pirate<br />'''Backstories:''' Cryptosleep (25% Commonality)<br />'''Disallowed Traits:''' [[Brawler]]<br />'''Chemical Addiction Chance''': 10%<br />'''Initial Will Range''': 3~5<br />'''Initial Resistance Range''': 
+-->
+<!-- defName="PirateBoss", label="boss", labelPlural="bosses", ParentName="MercenaryEliteTierBase", Name="", Abstract="" -->
+|- id="Pirate boss"
+! Boss<br>[[File:Pirate boss.png]] 
+| 130 || '''HP:''' 100%<br />'''Avg. Quality:''' Normal
+<!-- Apparel -->
+| '''Budget''': 2500~3500<br /><!--
+-->'''Allow Headgear Chance:''' 90%<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic||IndustrialAdvanced||IndustrialMilitaryBasic||IndustrialMilitaryAdvanced||SpacerMilitary||BeltDefensePop]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+<!-- Weapons -->
+| '''Budget''': 500~1400<br /><!--
+-->'''Biocoded Chance:''' 30%<br /><!--
+-->'''Available:''' <br />{{Gear List|budget=1400|WeaponTags|IndustrialGunAdvanced}}
+<!-- Tech -->
+| '''Budget''': 1000~1200<br /><!--
+-->35% chance to have one of the following: {{Gear List|budget=1200|TechHediffsTags|Advanced|ImplantEmpireCommon}}
+| 2.55 Nutrition<br /> 80% chance for: 1~2x {{Icon Small|Go juice|24}} [[Go juice]] or {{Icon Small|Yayo|24}} [[Yayo]]
+<!-- Additional Info -->
+| '''Age Range:''' Up to 45<br />'''Race:''' Human<br />'''Default Faction Type:''' Pirate<br />'''Backstories:''' Cryptosleep (25% Commonality)<br />'''Disallowed Traits:''' [[Brawler]]<br />'''Faction Leader:''' true<br />'''canBeSapper:''' true<br />'''Chemical Addiction Chance''': 10%<br />'''Initial Will Range''': 3~5<br />'''Initial Resistance Range''': 17~27
+<!-- defName="", label="elite mercenary", labelPlural="elite mercenaries", ParentName="MercenaryEliteTierBase", Name="MercenaryEliteBase", Abstract="True"
+|- id="Name"
+! Name
+| [[File:Name.png]] || 130 || '''HP:''' 100%<br />'''Avg. Quality:''' Normal
+| '''Budget''': 2500~3500<br />'''Allow Headgear Chance:''' 90%<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic||IndustrialAdvanced||IndustrialMilitaryBasic||IndustrialMilitaryAdvanced||SpacerMilitary||BeltDefensePop]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+| '''Budget''': 500~1400<br />'''Biocoded Chance:''' 30%<br />'''Available:''' <br />{{Gear List|budget=1400|WeaponTags|IndustrialGunAdvanced}}
+| '''Budget''': 1000~1200<br />35% chance to have one of the following: {{Gear List|budget=1200|TechHediffsTags|Advanced|ImplantEmpireCommon}}
+| 2.55 Nutrition<br /> 80% chance for: 1~2x {{Icon Small|Go juice|24}} [[Go juice]] or {{Icon Small|Yayo|24}} [[Yayo]]<br />10% chance for: 1x {{Icon Small|Medicine|24}} [[Medicine]]
+| '''Age Range:''' Up to 45<br />'''Race:''' Human<br />'''Default Faction Type:''' Pirate<br />'''Backstories:''' Cryptosleep (25% Commonality)<br />'''Disallowed Traits:''' [[Brawler]]<br />'''Forced Skills:''' 10~15 [[Shooting]]<br />'''Chemical Addiction Chance''': 10%<br />'''Initial Will Range''': 3~5<br />'''Initial Resistance Range''': 
+-->
+<!-- defName="Mercenary_Elite", label="elite mercenary", labelPlural="elite mercenaries", ParentName="MercenaryEliteBase", Name="", Abstract="" -->
+|- id="Elite mercenary"
+! Elite mercenary<br>[[File:Elite mercenary.png]]
+| 130 || '''HP:''' 100%<br />'''Avg. Quality:''' Normal
+<!-- Apparel -->
+| '''Budget''': 2500~3500<br /><!--
+-->'''Allow Headgear Chance:''' 90%<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic||IndustrialAdvanced||IndustrialMilitaryBasic||IndustrialMilitaryAdvanced||SpacerMilitary||BeltDefensePop]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+<!-- Weapons -->
+| '''Budget''': 500~1400<br /><!--
+-->'''Biocoded Chance:''' 30%<br /><!--
+-->'''Available:''' <br />{{Gear List|budget=1400|WeaponTags|IndustrialGunAdvanced}}
+<!-- Tech -->
+| '''Budget''': 1000~1200<br /><!--
+-->35% chance to have one of the following: {{Gear List|budget=1200|TechHediffsTags|Advanced|ImplantEmpireCommon}}
+| 2.55 Nutrition<br /> 80% chance for: 1~2x {{Icon Small|Go juice|24}} [[Go juice]] or {{Icon Small|Yayo|24}} [[Yayo]]<br />10% chance for: 1x {{Icon Small|Medicine|24}} [[Medicine]]
+<!-- Additional Info -->
+| '''Age Range:''' Up to 45<br />'''Race:''' Human<br />'''Default Faction Type:''' Pirate<br />'''Backstories:''' Cryptosleep (25% Commonality)<br />'''Disallowed Traits:''' [[Brawler]]<br />'''Forced Skills:''' 10~15 [[Shooting]]<br />'''Chemical Addiction Chance''': 10%<br />'''Initial Will Range''': 3~5<br />'''Initial Resistance Range''': 15~23
+<!-- defName="Mercenary_Elite_Acidifier", label="elite mercenary", labelPlural="elite mercenaries", ParentName="MercenaryEliteBase", Name="", Abstract="" -->
+|- id="Elite mercenary (Death acidifier)"
+! Elite mercenary (Death acidifier)<br>[[File:Elite mercenary (Death acidifier).png]] 
+| 130 || '''HP:''' 100%<br />'''Avg. Quality:''' Normal
+<!-- Apparel -->
+| '''Budget''': 2500~3500<br /><!--
+-->'''Allow Headgear Chance:''' 90%<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic||IndustrialAdvanced||IndustrialMilitaryBasic||IndustrialMilitaryAdvanced||SpacerMilitary||BeltDefensePop]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+<!-- Weapons -->
+| '''Budget''': 500~1400<br /><!--
+-->'''Biocoded Chance:''' 30%<br /><!--
+-->'''Available:''' <br />{{Gear List|budget=1400|WeaponTags|IndustrialGunAdvanced}}
+<!-- Tech -->
+| '''Budget''': 1000~1200<br /><!--
+-->'''Required:''' {{Icon Small|Death acidifier|24}} [[Death acidifier]]<br /><!--
+-->35% chance to have one of the following: {{Gear List|budget=1200|TechHediffsTags|Advanced|ImplantEmpireCommon}}
+| 2.55 Nutrition<br /> 80% chance for: 1~2x {{Icon Small|Go juice|24}} [[Go juice]] or {{Icon Small|Yayo|24}} [[Yayo]]<br />10% chance for: 1x {{Icon Small|Medicine|24}} [[Medicine]]
+<!-- Additional Info -->
+| '''Age Range:''' Up to 45<br />'''Race:''' Human<br />'''Default Faction Type:''' Pirate<br />'''Backstories:''' Cryptosleep (25% Commonality)<br />'''Disallowed Traits:''' [[Brawler]]<br />'''Forced Skills:''' 10~15 [[Shooting]]<br />'''Chemical Addiction Chance''': 10%<br />'''Initial Will Range''': 3~5<br />'''Initial Resistance Range''': 12~20
+|}</li></div></onlyinclude><noinclude>[[Category:Pawnkind tables]]</noinclude>

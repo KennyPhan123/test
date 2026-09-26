@@ -1,0 +1,328 @@
+{{main|Events}}
+Incidental Events are those not triggered by the [[storyteller]]. Instead, these are results of other game mechanics. 
+
+For purposes of the wiki, these are divided in good, bad, faction, informational, and social events.
+
+== Good ==
+Good Incidental events are generally positive or neutral in nature.
+<div class="mw-customtoggle-IncidentalGood" style="display:inline-block;background:rgba(128,128,128,0.5);color:white;padding:10px;border-radius:5px;outline:none;user-select:none">Show Good Incidental Events</div>
+
+<div  id="mw-customcollapsible-IncidentalGood" class="mw-collapsible"><!-- mw-collapsed -->
+
+==== Friendlies ====
+This event can only occur if you are allied with at least one other faction and have enemies on screen. Allied factions may send around fighters to assist you when mutual enemies appear, such as pirates, manhunters or insectoids. They won't assist against factions that they aren't hostile to. Keep in mind that friendly fire will damage your relations with the aiding faction. On the other hand, rescuing their downed people will improve relations.
+
+There are two versions of the friendlies event. The first is sent by an allied faction at 0 cost. These friendlies are [[raider]]s who are allied with you. They can arrive via any method and use the usual [[raid points]] system to determine their size.
+
+The second can be called in instantly via [[comms console]], at the cost of -25 [[goodwill]]. The faction must be allied with you, and have an Industrial tech level or higher. These allies will always arrive through [[drop pod]], and can use any arrival method with drop pods. Unlike the random event, these friendlies are set with a strength between 150 - 400 [[raid points]], instead of using the raid points of your colony.
+
+<gallery widths="400px" heights="400px" class="center" mode="nolines">
+File:Friendlies.png|'''Friendlies vs Pirates'''
+File:Friendlies vs Thrumbo.png|'''Friendlies vs Thrumbo'''
+</gallery>
+
+==== Legendary work ====
+{{For|more details|Quality#Legendary items}}
+One of your colonists has produced an object of legendary [[quality]].
+
+==== Man in Black ====
+When your colonists are no longer able to defend themselves, a stranger may join the colony to help. As their name indicates, men in black come in a full set of black clothing. They also come wearing a [[flak vest]] and always carry a [[revolver]]. Their skills and traits are fully randomized, but they will always be capable of Violence and Caring, and their favorite color{{IdeologyIcon}} will always be black.<!-- The trigger of this is under the "helpfully" named Notify_PawnEvent function. There are 2 other sections of interest: StrangerInBlackJoin in Incidents_Map_Special.xml and the 3 mentions of StrangerInBlackJoin in Storytellers.xml-->
+
+This event is triggered only when all of your colonists are downed at your base, but almost always happens when this is the case. This event can only happen if your colony has had 3 or more colonists{{Check Tag|Slaves or Temp?|Do slaves or temporsy colonists from quests or permits count?}} at any point, regardless of the current population at the time the event would be triggered. This event also has a cooldown of roughly 1 year.
+
+The man in black will not appear on the temporary maps generated for world quests. However, if all your surviving pawns are downed elsewhere, it is possible for the man in black to appear at your base. (Testing is needed to see how these events are affected by allowing multiple colonies in the scenario editor.) 
+
+{| {{STDT| c_01 text-center}}
+! Pawn Type !! Image !! Combat Power !! Gear Health (%) !! Avg. Gear Quality !! Clothing Budget !! Weapon Budget !! Available Weapons !! Age Range !! <div style="float:left;width:90%;">Additional Info </div><div style="float:right;width:10%;">[[{{fullurl:Empire/Pawns|action=edit}} edit]]</div>
+|-
+! Man in Black
+| [[File:ManInBlack.png|60px]] || 55 || 100 || Good || - || 500-500 || [[Revolver]] || 20-55 || Always has a black [[pants]], [[button-down shirt]], [[flak vest]], [[duster]], and [[cowboy hat]]. Always carrying 10 nutrition worth of food.{{Check Tag|Verify|Amount and always}} and 5 [[medicine]].{{Check Tag|Verify|Amount and always}} Always has [[Shooting|Shooting skill]] between 8 and 16. Is never incapable of Violence or Caring. 5% chance of spawning addicted to a drug.
+|}
+
+==== Masterwork ====
+{{For|more details|Quality#How quality is determined}}
+One of your colonists has produced an object of masterwork [[quality]].
+
+==== Meteorite ====
+A large meteorite has struck ground in the area. It has left behind a lump of [[material]]. During daylight, a large shadow will project on the ground which shrinks as it closes in. 
+
+The meteorite will severely damage or kill anything that is below it. Any colonists beneath the meteorite has a small while to escape before they are crushed by it. The map tile will read: Meteorite (incoming).
+
+<gallery widths="250px" heights="250px" class="center" mode="nolines">
+File:Meteorite before impact.png|'''Flying meteorite'''
+File:Meteorite during impact.png|'''Crashing meteorite, with explosion'''
+File:Meteorite.png|'''Landed meteorite'''
+</gallery>
+
+==== New recruit ====
+You'll get this notification whenever a Warden has succeeded in recruiting a prisoner. It also appears if a [[transport pod crash]] victim chooses to join your faction.
+
+==== Outpost destroyed ====
+[[File:Faction destroyed.png|400px|thumb|right|R.I.P. some pirate faction, nobody will remember you.]] 
+
+This is the notification that triggers when you successfully defeat all human hostiles in an enemy base after invading them (not counting turrets, which need to be neutralized separately). After this you have a while to capture any prisoners (there is usually at least one building suitable to turn into a cell), treat the wounded, pack up and leave before enemy reinforcements arrive in the form of a raid.
+
+===== Faction defeated =====
+Should you destroy all bases of a faction, the notification will say that since you just destroyed the last faction base, the faction no longer exists.
+
+You can still view the defeated faction in the menu, and it will show 'Defeated' below it. They won't send any raids, nor will they send caravans. It should be noted that this does not actually decrease the total frequency of raids you will get, as whether a raid happens or not is determined separately and before a faction is chosen. It just means that the raids will not be from this faction and will be from other factions, and with fewer human factions to choose from the game will start sending more mechanoid raids, which can inadvertently make the game harder if you find mechanoids more difficult.
+
+Destroying and/or befriending all factions will make mechanoids the only remaining threat for all future raids.
+{{Clear}}
+
+==== Quest completed ====
+You've done what was [[quest|requested]] by other factions and will receive the reward at your nearest(?) base via pods very close to your buildings, along with an improvement in relations. While they attempt not to, the pods may also crash through your roof, so be prepared to repair them.
+
+==== Ransom (Time remaining) ====
+This event can only occur if a colonist of yours was captured by another faction.
+
+Another faction captured one of your downed colonists somehow and will release that colonist to you... for a price. Common methods for capturing your colonists include grabbing downed colonists while retreating from a raid or downing an entire caravan.
+
+This event will only trigger within a season of the kidnapping. If 2 or more pawns are kidnapped the event is guaranteed and will trigger for only 1 of them as long as a [[orbital trade beacon]] with [[comms console]] is powered on the map.
+
+The offer will be good for 24 game hours. If paid, the colonist will immediately appear on your map border or be sent via drop pod.
+
+==== Rare thrumbos ====
+Two to six [[thrumbo]]s will spawn at the edge of the map, staying around for a while to eat anything they can, including your crops, but not including [[anima tree|anima]],{{RoyaltyIcon}} [[gauranlen tree|gauranlen]],{{IdeologyIcon}} [[polux tree|polux]],{{BiotechIcon}} [[harbinger tree|harbinger]],{{AnomalyIcon}} or [[archean tree]]s.{{OdysseyIcon}} The player can attempt to hunt or tame them, both of which are very difficult. If no action is taken, they will leave on their own after a few days. It will not reoccur for 13 days.
+
+==== Reactor ready ====
+You have completed the 15 day warm up period for starting a [[ship reactor]]. If the rest of the necessary ship parts have been built, it may now be launched. Raids and sieges will drop considerably after this period is over.
+
+==== Ship chunks ====
+This event doesn't have an envelope, but rather appears in the notification bar up top, assuming these chunks don't strike your colony or pawns. One or more [[ship chunk]]s fall onto the map. They can be deconstructed for 5-6 [[component]]s and 20 [[steel]]. Rarely they can punch through roofs, damaging structures near it. Extremely rarely, they can land right on top of a colonist, killing them.
+
+In Beta 18 the ship chunk creates an explosion upon landing. The falling chunks cast shadows on the ground, giving a little time for colonists to move out of the way.
+
+==== Trauma savant ====
+This event only has a 12% chance to trigger upon one of your colonists receiving a brain injury.
+
+A colonist has suffered a brain injury and has gained great abilities from it at the cost of others, gaining 50% extra [[manipulation]] while losing the ability to [[talking|speak]], [[hearing|hear]], and have any [[social]] relationships. It also restores the brain to full functioning, despite the injury.
+
+==== Anima tree sprout ====
+{{Royalty|section=1}}
+If an [[anima tree]] was killed by any means, this event can occur within a few days from the last death of the tree, appearing at random places that are unaffected by its radius.
+</div>
+
+== Bad ==
+Bad Incidental events are either negative or cautionary in nature.
+<div class="mw-customtoggle-IncidentalBad" style="display:inline-block;background:rgba(128,128,128,0.5);color:white;padding:10px;border-radius:5px;outline:none;user-select:none">Show Bad Incidental Events</div>
+
+<div  id="mw-customcollapsible-IncidentalBad" class="mw-collapsible"><!-- mw-collapsed -->
+
+==== Ancient danger ====
+{{main|Ancient shrine}}
+{{quote|As (Colonist name) draws near the ancient wall a sense of foreboding overcomes him(her). (S)He isn't sure why, but (s)he feels this dusty structure may contain great dangers|Message that appears when the first colonist walks near.}}
+
+This event is related to map generation and may not appear on every map. It may occur more than once per map. While listed as a danger, they are usually harmless until disturbed.
+
+A colonist approached a walled out area of the map partially or completely under a mountain. It contains one or more of the following: ancient [[cryptosleep casket]]s, [[insectoids|bugs]] with hives, [[mechanoid]]s or treasure. Open at your own risk, by blowing a hole or deconstructing a section of the wall.
+
+First, you'll need to deal with hostiles outside. Then, opening or attacking any casket will cause all the others to open instantly. The cryptosleep caskets usually contain humans, but may also contain [[megascarab]]s or be empty. The Spacers inside the caskets may or may not be dead. If alive, they may or may not be wounded, or armed and hostile. It's even possible for pawns incapable of violence to melee attack. If they are not hostile and can walk, they will try to escape. Any alive Spacers inside may be captured and recruited, usually with a low recruitment difficulty percentage.
+
+Ancient structures may include other treasures like psychic lances and pulsers. [[Luciferium]] can be found in these buildings. Pod people sometimes carry [[plasteel]], [[component]]s, and [[gold]]. The caskets can be claimed and used or deconstructed by the colony.
+
+==== Animal revenge ====
+An animal that was harmed will go mad and become [[manhunter]]. When you select an animal to be hunted, the game will notify you if it has a chance for revenge and what the percentage is. Occasionally, all nearby pack members of that animal's species may start attacking their attacker.
+
+==== Birthday ====
+Character gains an age-related illness, such as [[bad back]] or [[cataract]]s. They may be cured by using the [[healer mech serum]], [[luciferium]], a [[biosculpter pod]],{{IdeologyIcon}} or the Scarless [[gene]].{{BiotechIcon}} Some may be 'cured' by replacing the affected parts with bionics.
+
+Due to age or a pre-existing health condition, they can also have a [[heart attack]].
+
+==== Death ====
+One of your pawns has died unintentionally. Slaughtering an animal or euthanizing a colonist or prisoner will not produce this event.
+
+==== Disease ====
+Colonists (including [[prisoner]]s and [[slave]]s{{IdeologyIcon}}) or animals will gain a random [[disease]]. [[Biome]] influences both the amount of disease and its selection. Multiple pawns can get a disease at once, but diseases never spread between pawns. Disease events are controlled separately from other events by your [[storyteller]].
+
+[[Sickly]] pawns will get sick with a MTB of 30 days, independently of the rest of your colonists.
+
+==== Drug addiction ====
+A colonist has taken too much of a [[drug]] and is now [[Addictiveness|addicted]]. They will now need to regularly take that drug or suffer the withdrawal effects. See here for more details of the [[Withdrawal]] condition.
+
+==== Heart attack ====
+A character or tamed animal suffers a [[heart attack]]. Characters will seek out a medical bed or their assigned bed for treatment. Animals will return to the nearest empty animal bed or sleeping spot. Doctors will then proceed to attempt to resuscitate the victim, using medicine if allowed and available.
+
+During a heart attack, people or animals can fall unconscious or even die if not treated in time.
+
+<gallery widths="400px" heights="400px" class="center" mode="nolines">
+File:Heart attack.png|'''Heart attack notification'''
+File: Heart attack health tab.png|'''Health tab'''
+</gallery>
+
+==== Mental Break ====
+{{Main|Mental break}}
+One of your colonists or prisoners has had it and has a [[mental break]]. During this time, the afflicted colonist will be effectively unavailable, will not do colony work and can not be drafted. They will use forbidden doors and items. They will also attend to their needs such as sleep, recreation, and eating.
+
+Depending on the nature of the mental break, there are several ways to handle the situation:
+
+* Wall the person in – this is only possible if they wander to a suitable location.
+* Try to arrest them. They will possibly resist and need to be beaten down, causing injury. This will also give them a fairly long-lasting mood debuff ("I was arrested!") after you release them from jail. Arresting temporary members will immediately cause their faction to become hostile.
+* Wait out the situation - This takes a while for most minor breaks. 
+
+==== Overdose ====
+{{Main|Overdose}}
+One of your colonists or animals has [[overdose]]d. There is a risk of overdose when taking any [[drug|hard drug]], as well as when taking too many non-social drugs in general. This can cause permanent damage or even death.
+
+==== Predator hunting ====
+A wild, hungry predator has targeted one of your colonists or tamed animals for killing and eating. This will only be triggered if a hungry predator is on the map. This means if there are few wild animals near it, or if it's dangerously close to your base or pen, in some cases it can be a good idea to put out food to feed the predator so this event does not trigger. A hunting predator is different from normal enemies in a couple of ways. While regular enemies will tend to avoid targeting noncombatant [[children]], predators will target them the same as a regular pawn. Predators will also not stop attacking once a pawn is [[downed]], and will keep attacking until the pawn is dead and then eat the corpse. Predators don't change targets, even if a different pawn is closer, unless the targeted pawn becomes inaccessible, such as by entering the door to your base.  As of version 1.4, colonists and turrets will not automatically identify predators hunting a pawn as hostile. Attacking the predator will trigger "animal revenge," which gives the predator the ability to change targets and all colonists and turrets will recognize it as a hostile. Version 1.5 patches this and they will be immediately identified as hostile by all colonists and turrets once they start hunting a pawn.
+
+==== Prison break ====
+[[File:Prison break.png|300px|thumb|right|Prison break]]
+{{Template:Prison Break}}
+{{Clear}}
+
+==== Roof collapsed ====
+This event only happens if something is crushed by the falling roof. Otherwise, it's only a notification.
+
+All [[roof]]s must be supported by a constructed or rock wall within 6 spaces with contiguous roof sections in between itself and that wall. If either of these conditions changes such as via mining, an explosion or demolition, then the roof will collapse. Damage is dealt to the head and shoulders. Note that falling roofs underneath a mountain will instantly kill any pawn unfortunate enough to be crushed.
+
+If demolishing a building, it's recommended to use the Remove Roof tool to remove the roof first before deconstructing the walls.
+
+==== Too Deep: Infestation ====
+{{Main|Infestation}}
+Insectoid infestations can spawn when actively digging from a [[deep drill]]. Insectoids, but not hives, will pop out around the drill's area. These do not have the overhead mountain requirement like regular infestations. However, they are often smaller in number, and are unable to reproduce due to the lack of hive.
+</div>
+
+== Faction ==
+These events are related with changes with other factions, either relations or leadership.
+<div class="mw-customtoggle-IncidentalFaction" style="display:inline-block;background:rgba(128,128,128,0.5);color:white;padding:10px;border-radius:5px;outline:none;user-select:none">Show Faction Events</div>
+
+<div  id="mw-customcollapsible-IncidentalFaction" class="mw-collapsible"><!-- mw-collapsed -->
+
+==== Allied: (Faction) ====
+Relations with another faction have risen above +75 and you are now allied with them. They may now [[#Friendlies|assist you]] against mutual enemies.
+
+==== Enemy now neutral: (Faction) ====
+This notification will appear once relations have been improved with a Hostile faction enough that they will no longer be hostile. Common ways to improve relations include releasing prisoners from their faction (which must leave the map safely to receive the bonus), having successful [[Peace talks]] or providing gifts.
+
+==== Hostile faction ====
+[[File:Bad will.png|300px|thumb|right|Badwill: Friendly traders face a mechanoid raid, loses members and turns against the player.]]
+You've done something to anger another [[faction]] bad enough that they are now hostile to yours. This can happen if you arrest a faction member of theirs, rob one of their caravans or if they take too much friendly fire from your colonists, among other reasons. Rough factions that are neutral/allied will naturally decay goodwill, until they become hostile again.
+{{Clear}}
+
+==== Leader died ====
+Occasionally, the leader of another faction will die, sometimes through no action on your part. The popup window will also announce his or her successor.
+
+This alert uses the variable title of the leader in question. For example, if the "boss" of a pirate band dies you will see 'Boss died', if the "chief" died, then it will read 'Chief died', and so on.
+
+This will also happen if the leader personally comes to raid your base and is killed in action. Killing an enemy faction leader will give a mood buff for a while to the colonist that accomplished this.
+
+===== New Leader =====
+Similar to the Leader Died event, except this one occurs only when you've succeeded in both capturing and [[#New recruit|recruiting]] another faction's leader. The leader then places first at the colonist bar, instead of last.
+
+<gallery widths="300px" heights="300px" class="center" mode="nolines">
+File:Raid with Faction leader.png|'''Raid with Faction leader presence'''
+File:Boss died Faction new b.png|'''(Boss name) died / The new boss is (name)'''
+File:Defeated hostile leader name.png|'''Defeated hostile leader (name)'''
+File:New chief.png|'''Chief of a hostile tribe recruited to colony.'''
+</gallery>
+</div>
+
+
+== Informational Events ==
+These events serve purely to give information about the game, and have no physical gameplay implications.
+<div class="mw-customtoggle-IncidentalInfo" style="display:inline-block;background:rgba(128,128,128,0.5);color:white;padding:10px;border-radius:5px;outline:none;user-select:none">Show Informational Events</div>
+
+<div id="mw-customcollapsible-IncidentalInfo" class="mw-collapsible"><!-- mw-collapsed -->
+
+==== About: Electricity ====
+Appears when you finish researching [[Electricity]]. Reminds you of the power of electric appliances, and the [[power]] infrastructure required to maintain them.
+
+==== About: Getting advanced components ====
+Appears when you finish researching [[Research#Fabrication|Fabrication]]. Reminds you that you need [[advanced component]]s to build a [[fabrication bench]], and the potential means of obtaining them.
+
+==== About: Launching the ship ====
+Appears when you finish researching [[Starflight basics]]. This is a simple reminder about the dangers of powering up the [[ship reactor]] once built. Once turned on, the number of raids will greatly increase for the next 15 days.
+
+==== Persona Core Offer ====
+A non-hostile faction will notify you that they know where an [[Persona core]] is located: a critical component for building a ship. They will want 1500 silver for this information. However, you can only make this request at the [[comms console]] with factions which have at least +40 [[goodwill]].
+
+You can always request for a persona core location from the comms console with 100% success, even if this event doesn't trigger, so long as you have the requisite goodwill. This event only serves to remind the player that it is possible.
+
+==== Summer ====
+This event occurs at the beginning of the summer [[quadrum]], if you are lacking suitable [[apparel]] for winter's [[temperature]]s. It merely informs you that you are ill-prepared for the winter. Grow some more food and get some warm clothing. Plan ahead for any additions to your colony during these seasons, including recruits and born animals.
+
+==== Unwaveringly loyal ====
+Appears when you first capture an unwaveringly loyal [[prisoner]]. They are unable to be recruited as a colonist or be [[conversion|converted]],{{IdeologyIcon}} but can be released, [[slave|enslaved]],{{IdeologyIcon}} or used for a variety of [[human resources]].
+
+==== About: Anima tree linking ====
+{{Royalty|section=1}}
+Appears when an [[anima tree]] has 20 anima grass around it. Reminds you that a colonist with ''Natural'' meditation can begin the linking ritual, gaining a level of [[psycast]]ing in the process.
+
+==== Baby Prep ====
+{{Biotech|section=1}}
+Appears when a human's [[reproduction|pregnancy]] is at its third trimester. Labor will happen without warning within the next 6 days, so prepare a clean hospital with a good doctor.
+
+==== Disturbing vision ====
+{{Anomaly|section=1}}
+
+A random eligible colonist has a dream about the [[void monolith]]. This event serves to remind the player about the monolith and its location, and the colonist chosen by this event does not receive any special benefit from the monolith.
+
+</div>
+
+== Social ==
+These events cover relationships changes between 2 pawns. Currently, all events relate to marital status.
+
+[[Creepjoiner]]s {{AnomalyIcon}} are not able to romance ordinary pawns, but they can romance another creepjoiner, or form relationships to pawns with the [[Psychic bonding]] gene,{{BiotechIcon}} such as [[Highmates]].{{BiotechIcon}} {{Check Tag|verify|Confirmed for leathery man. Is this relevant for other types of creepjoiners? Can be overridden with psychic bond}}.
+
+<div class="mw-customtoggle-IncidentalSocial" style="display:inline-block;background:rgba(128,128,128,0.5);color:white;padding:10px;border-radius:5px;outline:none;user-select:none">Show Social Events</div>
+
+<div  id="mw-customcollapsible-IncidentalSocial" class="mw-collapsible"><!-- mw-collapsed -->
+==== Affair ====
+Somebody who is already married starts an affair with a single person. It is possible for your colonists to cheat on their lovers who aren't members of your faction.
+
+==== Breakup ====
+A couple splits, complete with the Mood and Social penalties for both colonists. The one initiating the break-up is better off than the other in the couple.
+
+==== Divorce ====
+A married couple has divorced; as a normal break up, but with worse mood penalties.
+
+<gallery widths="300px" heights="300px" class="center" mode="nolines">
+File:Marriage is on.png|'''Susy has accepted Mat's marriage proposal...'''
+File:Affair.png|'''Affair'''
+</gallery>
+
+==== Marriage is on! ====
+A couple that has been together for a while will announce their engagement. The wedding will take place some time in the future, at a [[marriage spot]], or any gathering spot ([[table]] or [[campfire]]) in lieu of one. Both fiancees and married pawns, like lovers, will want to sleep in the same bed. They receive mood boosts or debuffs depending on the relationship with their couple. They can also receive a mood boost from lovin'.
+
+When the day of the wedding arrives, it will take place regardless of the entire colony's attendance. Pawns will sometimes take the family name of their partner upon marriage. 
+
+The wedding ceremony is preceded by a pre-wedding [[party]] and followed by a celebratory party. The pre-wedding party gives the colonists time to gather at the wedding location and ends after a minimum of 2 hours once both fiances are present. After the ceremony takes place, a 3 hour reception will follow with everyone drinking, smoking and eating if hungry. This requires the beer, joints and meals to be located in the same room, so colonists might go hungry if meals are kept in a different room, such as a freezer.
+
+Getting married, as well as taking part in the marriage ceremony, gives a substantial 30-day {{+|40}} [[Mood|mood buff]] to the newlyweds ("Got married to <name>"), and a 10-day {{+|20}} to attendees ("Attended wedding"). 
+
+Colonists who do not reach the meeting point on time, such as those sleeping, fighting fires or lying incapacitated in bed, will not gain the mood buff from the event. A quick "draft" and "undraft" for everybody ''but'' the couple should be enough to coerce all capable colonists to attend. Colonists on caravans will not attend.
+
+If the couple happens to be busy at the exact moment the wedding is to take place, for example, because they are drafted or loading a caravan, those who are not members of the trade group will remain waiting at attendance and perform no task at all, except for eating until the couple comes back.
+
+<gallery widths="300px" heights="300px" class="center" mode="nolines">
+File:Marriage_Creepjoiners.png|'''Marriage ceremony between two creepjoiners. Other pawns from the colony are participating.'''
+</gallery>
+
+==== New lovers ====
+You receive the announcement that two characters have become lovers, and "now want to sleep together". These are usually colonists, but a pair of [[prisoner]]s can also become lovers. They will receive [[mood]] boosts or debuff proportional to their [[opinion]] of their partner, with +/- 1 mood for every 10 opinion above/below zero.
+
+Starting the moment their new relationship is announced, couples will ''immediately'' have a -4 mood debuff for "''sleeping alone''", even if they won't get their first chance to sleep together for hours. This can be remedied by assigning both pawns to a two person bed, such as the [[double sleeping spot]], [[double bedroll]], [[double bed]] or [[royal bed]]. A [[double bedroll]] is preferred when in a [[caravan]]. Couples that sleep in the same bed can also perform [[Lovin]]' for a mood boost to both partners.
+{{Clear}}
+
+==== Rejected proposal ====
+After two characters [[#New lovers|fall in love]], one of them proposed marriage but is turned down, which may result in the couple breaking up. The proposing one suffers a mood penalty of -18 for 25 days. They may accept another offer in the future. Note that a later, accepted proposal will not remove the mood effects of the previous, rejected ones.
+
+<gallery widths="300px" heights="300px" class="center" mode="nolines">
+File:Breakup.png|'''Breakup'''
+File:New lovers.png|'''A character woos another into a romance and she agrees'''
+File:Rejected proposal.png|'''Rejected proposal'''
+</gallery>
+{{Clear}}
+
+</div>
+
+== Version history ==
+
+* [[Version/0.14.1236|0.14.1236]] - Fixed [[Version/0.14.1236#Changes|many events]] never firing. Threat cycle event maker will no longer queue events it doesn't have the points to fire.
+* [[Version/1.1.0|1.1.0]] - Pawns now sometimes take the family name of their partner upon marriage
+* [[Version/1.4.3523|1.4.3523]] - Fix: Stranger in black can have 0 shooting skill.
+* [[Version/1.6.4518|1.6.4518]] - Stranger in black apparel color and favorite color changed from {{Color|58|58|58}} (58,58,58) to {{Color|51|51|51}} (51,51,51).
+
+[[Category:Game mechanics]]

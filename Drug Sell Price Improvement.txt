@@ -1,0 +1,54 @@
+{{Stub|reason=1) Version history 2) Two-way links 3) Integrate with [[Trade]] / [[Market Value]]/[[Trade Price Improvement]]}}
+{{Verified|1.5.4104}}{{Stat
+| default base value = 0
+| to string style = PercentTwo
+| description = When this person sells non-medical [[drugs]], prices are improved by this percentage.
+| category = PawnSocial
+}}
+
+== Factors ==
+The game code defines the following [[:Category:Drug|drug categories]]:
+* None
+* [[:Category:Medical Drug|Medical]]
+* [[:Category:Social Drug|Social]]
+* [[:Category:Hard Drug|Hard]]
+* Any
+
+'''Non-medical''' applies to the following drugs:
+{{#ask:
+[[Category:Social Drug||Hard Drug]]
+| format = template
+| template = Icon List
+| link = none
+}}
+
+== Offsets ==
+* [[Precepts]]{{IdeologyIcon}}
+** [[Drug use]]:
+*** Essential: {{+|10%}}<Ref>This bonus will not be applied if the [[Skills#Social|Social]] [[skill]] is disabled for the negotiating pawn.</Ref>
+<References />
+
+== Stat Def Data ==
+{| {{STDT}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Drug Sell Price Improvement" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />DrugSellPriceImprovement
+* '''Label:'''<br />drug sell price improvement
+| When this person sells non-medical drugs, prices are improved by this percentage.
+|
+* Display Order:<br />'''120'''
+* Def Name:<br />'''PawnSocial'''
+* Label:<br />'''Social'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|0}}
+* '''Hide At Value:''' {{%|0}}
+* '''To String Style:''' PercentTwo
+* '''Disable If Skill Disabled:''' [[Skills#Social|Social]]
+| -
+| 2560
+<!--</StatDef>-->
+|}
+
+{{nav|stats|wide}}

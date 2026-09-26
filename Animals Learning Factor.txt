@@ -1,0 +1,52 @@
+{{Stub|reason=1) Two-way links}}
+{{Verified|1.5.4104}}{{Stat
+| def name = AnimalsLearningFactor
+| label = animals learning factor
+| description = A multiplier on the learning rate for [[Skills#Animals|animals]] [[skill]].
+| default base value = 1
+| min value = 0
+| hide at value = 1
+| to string style = PercentZero
+| scenario randomizable = true
+| show on animals = false
+| category = BasicsPawn
+| display priority in category = 3500
+}}
+
+== Factors ==
+* [[Precepts]]{{IdeologyIcon}}
+** [[Ranching (precept)|Ranching]]:
+*** Central: {{Good|×200%}}
+
+Learning rate for animals skill is determined by:
+ [[Passion]] level × [[Global Learning Factor]] × [[Animals Learning Factor]] = [[Skills#Animals|Animals]] [[Skill]] Learning Rate
+
+== Stat Def Data ==
+{| {{STDT}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Animals Learning Factor" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />AnimalsLearningFactor
+* '''Label:'''<br />animals learning factor
+| A multiplier on the learning rate for animals skill.
+|
+* Display Order:<br />'''11'''
+* Def Name:<br />'''BasicsPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />{{Bad|false}}
+|
+* '''Default Base Value:''' {{%|1.0}}
+* '''To String Style:''' PercentZero
+* '''Show On Animals:''' {{Bad|false}}
+* '''Hide At Value:''' {{%|1}}
+* '''Min Value:''' {{%|0}}
+* '''Scenario Randomizable:''' {{Good|true}}
+| -
+| 3500
+<!--</StatDef>-->
+|}
+
+== Version history ==
+* [[Version/1.3.3066|1.3.3066]]{{Check Tag|Verify defined in Core|Definitely added here, but unclear if defined in Core or Ideology}} - Added.
+
+{{nav|stats|wide}}

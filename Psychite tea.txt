@@ -1,0 +1,129 @@
+{{Infobox main|drug
+| name = Psychite tea
+| image = Tea c.png
+| description = A fragrant tea infused with leaves of the psychoid plant. Drinking it induces a subtle psychite euphoria. This tea is easy to produce at cooking facilities, but can produce psychite addiction if consumed too often.<br/>Many tribes use psychoid tea, both as a daily energizer and as part of social and religious rituals.
+<!-- Base Stats -->
+| type = Drug
+| type2 = Social drug
+| tech level = Neolithic
+| marketvalue = 10
+| stack limit = 150
+| mass base = 0.05
+| hp = 50
+| deterioration = 6
+| flammability = 1
+| rotatable = false
+| path cost = 14
+<!-- Ingestion -->
+| food type = processed, fluid
+| joy offset = 0.4
+| joy kind = Chemical
+| addictiveness = 0.02
+| max num to ingest at once = 1
+| ingestion time = 210
+<!-- Creation -->
+| production facility 1 = Campfire
+| production facility 2 = Fueled stove
+| production facility 3 = Electric stove
+| research = Psychoid brewing
+| skill 1 = cooking
+| skill 1 level = 2
+| work to make = 400
+| work speed stat = Drug Cooking Speed
+| resource 1 = Psychoid leaves
+| resource 1 amount = 4
+| bulk product amount = 4
+<!-- Technical -->
+| defName = PsychiteTea
+| drug category = Social
+| preferability = NeverForNutrition
+| tradeTags = Drugs
+<!-- Unused -->
+| label = psychite tea
+| rest offset = 0.1
+| min tolerance to addict = 0.1
+| pain factor = 0.9
+| rest fall factor = 0.8
+| mood offset = 12}}
+'''Psychite tea''' is a relatively safe [[social drug]] that greatly improves mood, slightly reducing pain and the rate in which pawns get tired, at the risk of addiction. It is relatively very easy to research compared to other drugs, especially for [[Scenario system#New Tribe vs New Arrivals|Tribal]] colonies who suffer a speed penalty while researching more advanced drugs.
+
+== Acquisition ==
+{{Acquisition}}
+
+It can also be purchased from [[Trade#By_inventory|Tribal traders]], especially [[Trade#Shaman_merchant|Shaman Merchants]] who commonly stock it, as well as [[Tribal]] [[faction base]]s. Tribal [[visitor]]s and [[raider]]s will also occasionally carry them.
+
+== Summary ==
+Psychite tea is a moderately potent social drug that has a variety of effects. These can be broken into effects that occur:
+* Instantaneously and one time upon using the drug.
+* While high on the drug.
+* While having a built-up tolerance to the drug.
+* While addicted to the drug.
+* While withdrawing from the drug.
+
+'''Note that psychite tolerance, addiction and withdrawal are shared by psychite tea, [[flake]] and [[yayo]].'''
+
+=== Upon drinking ===
+A pawn taking psychite tea will do so right where they stand without looking for a place to sit first. Psychite tea is taken by drinking, taking {{ticks|{{P|Ingestion Time}} }}. It has the following one time effects:
+
+* {{+|{{%|{{P|Joy Offset}} }} }} {{P|Joy Kind}} [[recreation]]
+* If the pawn has the [[chemical interest]] or [[chemical fascination]] trait:
+** {{+|20%}} [[Chemical need]]
+* {{+|10%}} [[Rest]]
+* '''+{{%|{{#vardefineecho:highSeverity|0.75}} * 0.25}} to +{{%|{{#var:highSeverity}} }}''' Psychite tea high severity, depending on tolerance ''(see "Psychite tea high" below)''
+* {{++|{{%|{{#vardefineecho:toleranceSeverityOffset|0.03}} }} }} Psychite tolerance severity, divided by body size ''(see "Psychite tolerance" below)''
+* If the pawn has a {{%|{{#vardefineecho:minToleranceToAddict|0.1}} }} Psychite tolerance already:
+** {{Bad|{{%|{{P|Addictiveness}} * ( 1 + 4 * {{#var:minToleranceToAddict}} / 0.5) }} to {{%|{{P|Addictiveness}} * 15}} }} Psychite [[addiction]] chance ''(see "Psychite addiction" below)''
+* If the pawn has a psychite addiction already:
+** {{+|{{%|{{#vardefineecho:needOffset|0.9}} }} }} Psychite need ''(see "Psychite addiction" below)''
+** {{--|{{%|{{#vardefineecho:addictionSeverityOffset|0.15}} }} }} Psychite addiction progress ''(see "Psychite addiction" below)''
+
+=== Psychite tea high ===
+{{Quote|"Active psychite tea in the bloodstream. Generates a mild euphoric effect."}}
+
+Each psychite tea increases the psychite tea high severity by the following formula:
+
+<code>Increase in severity = {{#var:highSeverity}} * (100 - (tolerance * 75 round 0))</code>
+
+Therefore with 0% tolerance the severity increases by {{%|{{#var:highSeverity}} }}, with 100% tolerance by {{%|{{#var:highSeverity}}*0.25}}. It decreases by {{%|{{#vardefineecho:highSeverityPerDay|3}} }} per day again, meaning that the high of a single dose lasts between {{#vardefineecho:highDurationMin|{{#expr: {{#var:highSeverity}}*0.25/({{#var:highSeverityPerDay}}/24) round 1}} }} and {{Plural|{{#vardefineecho:highDurationMax|{{#expr: {{#var:highSeverity}}/({{#var:highSeverityPerDay}}/24)}} round 1}}|hour}}. The maximum severity of a psychite tea high is 100% which is reached with {{#expr: 1/{{#var:highSeverity}} round 1}} to {{Plural|1/{{#var:highSeverity}}/0.25 round 1|psychite tea}}. Regardless of the psychite tea high severity, the effects are always the same. Only their duration changes accordingly:
+* {{+|12}} [[Mood]] (''"Drinking that tea made me feel great. I love having this energy!"'')
+* {{Good|×90%}} [[Pain]]
+* {{Good|×80%}} [[Sleep Fall Rate]]
+
+Without any tolerance, a dose of psychite tea will last for {{Plural|{{#vardefineecho:highDurationMax|{{#expr: {{#var:highSeverity}}/({{#var:highSeverityPerDay}}/24)}} round 1}}|hour}}.
+
+{{:Psychite}}
+
+== Analysis ==
+Psychite tea is much less [[Drugs#Addiction and Tolerance|addictive]] than flake or yayo. Adult colonists, 18 or older, can drink it every 2 days without becoming addicted. Tea provides a greater mood buff than [[ambrosia]] or a single [[beer]], while decreasing the need for rest, thus increasing a colonist's work time. Psychite tea can be consumed on a consistent schedule to increase productivity, or saved for combat situations where you ''need'' pawns to stay happy.
+
+The main risk of psychite tea is addiction from unintended use, whenever from a [[social drug binge]] or from a pawn with [[chemical interest]]. Psychite withdrawal is harsher than [[smokeleaf]], much harsher than ambrosia, and it is noticeably harder to get addicted to beer. If these factors can be handled, then using psychite tea is a net positive for the colony. Of these, drug binges can be avoided by keeping [[mood]] up. Pawns with chemical interest will respect [[allowed area]]s, so restrict them from areas that create or store drugs.
+
+=== Work analysis ===
+Psychite tea provides {{Good|x80%}} to Rest Fall Rate for 6 hours, or {{+|25%}} time per 1% Rest need. Without tea, the [[Rest|Rest need]] falls by ~3.96% per hour when not already tired. The boost from tea will equate to +{{#expr:95*(6/24)*0.25 round 2}}% Rest need over 6 hours, in addition to the instant +10% Rest from ingesting the drug. This results in a net boost of {{+|{{#expr:10 + 95*6/24*0.25 round 2}}%}} Rest, or {{#expr:(10+95*6/24*0.25)/95*24 round 2}} hours of effective awake time.
+
+Actual time ''saved'' will almost always be lower in a 24 hour schedule, as sleeping increases Rest faster than it falls. On a normal quality [[bed]], a dose of tea equates to 0.95 hours of sleep, or {{Ticks|0.95*2500 round 2}} <!-- Baseline pawn, normal bed is awake for (18.19 hr awake) / (7.56 + 18.19 hr rest+awake) = 70.6% day = 16.95 hours. Tea adds 4.03 directly to "hr awake", so it becomes (22.22 hr awake) / (7.56 + 22.22 hr rest+awake) = 74.6% awake = 17.9 hours --->. With healthy pawns at the {{Hover title|Plants {{Q|Psychoid plant|Minimum Required Growing Skill}} required to plant psychoid, {{P|Skill 1}} {{P|Skill 1 Level}} for making tea|lowest possible skill}}, it takes {{#expr:370/.77 round 1}} [[tick]]s to sow a psychoid plant, {{#expr:400/.52 round 1}} ticks to cook the tea, and 210 ticks to drink it, for a total of {{#expr:370/.77 + 400/.52 + 200 round 1}} ticks per dose. Note that this is before travel time.
+
+Time savings decrease as [[Rest Rate Multiplier]] increases, such as with better beds or the [[quick sleeper]] trait. However, psychite tea also increases the Recreation meter, which saves time recreating. Plus, high skill colonists create tea a lot faster. Short of a [[circadian half-cycler]]{{RoyaltyIcon}} or the [[Never sleep]] gene,{{BiotechIcon}} creating psychite tea with perfect travel time is always a plus on work.
+
+===Trade===
+[[Flake]] costs the same amount of psychoid leaves, takes less work, and is worth {{Icon Small|silver||4}} silver more per unit. Therefore, psychite tea is a completely inferior option to both flake and [[yayo]] once [[Research#Psychite refining|Psychite refining]] has been researched.
+
+[[Smokeleaf joint]]s are a usually better option. [[Smokeleaf plant]]s grow faster than psychoid, and give {{+|{{#expr:(100 * 9/8)-100 round 1}}%}} more drugs per plant and planter work. Smokeleaf joints take {{Bad|{{#expr:(450-400)/4}}%}} longer to create in a [[drug lab]] than psychite in a [[electric stove]], but give {{+|{{#expr:(100*11/10)-100}}%}} more silver per unit. Note that both [[crafting spot]]s and [[campfire]]s double the work for their respective drug, while [[fueled stove]]s require constant wood. Therefore, smokeleaf is the superior cash crop if you have a [[drug lab]], or if you don't have either stove.
+
+Regardless, psychoid may be grown in a colony for drinking - any excess tea can be sold for good money.
+
+== Gallery ==
+<gallery>
+Tea a.png|One tea
+Tea b.png|Partial stack
+Tea c.png|Full stack
+</gallery>
+
+== Version history ==
+* Beta 18 - Added as '''Psychoid pekoe'''.
+* Beta 19 - Renamed from '''Psychoid pekoe''' to '''Psychite tea'''. No longer made at a [[crafting spot]].
+* Beta 19/1.0 - tolerance gain 0.02 -> 0.03, market value 14 -> 10, restFallFactor 0.9 -> 0.8
+* [[Version/1.5.4062|1.5.4062]] - Drug tolerance gain is now divided by body size and not body size squared - this also had the effect of making the suggested safe dose intervals for children correct. 
+
+{{Nav|drugs|wide}}
+[[Category:Drug]] [[Category:Social Drug]]

@@ -1,0 +1,102 @@
+{{Anomaly}}
+{{Spoiler}}
+{{Infobox main|entity
+| name = Twisted obelisk
+| image = Twisted obelisk.png
+| description = A large metallic pillar that emanates a putrid psychic energy. The pillar hums ominously and appears to be increasing in activity. It's not clear what will happen when it reaches its full capacity.<br/>You can send colonists to suppress the obelisk to prevent it from activating. You can also mark the obelisk for study to try to learn its purpose and perhaps make use of it.<br />You can attack the obelisk to destroy it, but doing so may unleash unnatural and dangerous phenomena.
+<!-- Base Stats -->
+| type = Entity
+| type2 = Advanced
+| hp = 3000
+| flammability = 0
+<!-- Meditation -->
+| meditation psyfocus bonus = 0.24
+| focus type = Void
+<!-- Activity -->
+| starting range = 0.2~0.4
+| change per day base = 0.2
+| change per damage = 0.001
+| warning = 0.9
+| activity worker class = ObeliskActivityWorker
+| activity research factor curve = (0, 0.5), (0.5, 1), (0.99, 2)
+<!-- Containment - Studiable -->
+| anomaly knowledge = 2
+| knowledge category = Advanced
+| study interval = 120000
+| min monolith level for study = 1
+| study enabled by default = false
+| show toggle gizmo = true
+| can be activity deactivated = true
+<!-- Building -->
+| size = 3 × 3
+| passability = impassable
+| paintable = false
+| deconstructable = false
+| claimable = false
+| destroyyield = {{Icon Small|Shard|24|1}}
+| cover = 1
+<!-- Technical -->
+| defName = WarpedObelisk_Mutator
+| label = twisted obelisk
+}}
+The '''twisted obelisk''' is one of three [[obelisk]]s that can appear in the [[Anomaly DLC]]. It is able to give your pawns fleshmass mutations.
+
+== Occurrence ==
+{{Stub|section=1|reason=Detail as to when they can spawn as a major threat, what that means etc. Ensure parity between this page and all three [[obelisk]] page - consider templatization if necessary.}}
+An obelisk can {{Check Tag|Spawn Chance}} spawn in the map as a [[major threat]] event sometime after day 50 when the [[void monolith]] level is 1 or greater. An obelisk has a chance to spawn 120 days after the last of any type.
+
+== Summary == 
+{{Stub|section=1|reason=How are the chances of the results distributed for both the targeted option and the random one. e.g. is it equal between the 4/6 options? is getting a lung 2x as likely as a stomach? etc. See [[fleshmass stomach]] further discussion on community discord. Also check tags.}}
+
+=== Obelisk mechanics ===
+Like the other [[obelisk]]s, the twisted obelisk has an activity level, which can be suppressed as wardening work. Reaching 100% activation will cause a special, dangerous event and cause the obelisk to be destroyed afterwards. At full HP, an obelisk gains +20% activity per day, but damaging it will raise activity, and once it falls below 80% HP, the daily rate will rapidly increase.
+
+Obelisks can be studied for advanced anomaly research, with the rate of study increasing with activity level.
+
+=== Mutation ===
+[[File:Obelisk mutate gizmo.png|thumb|left|Gizmo for mutating (once the obelisk has been studied for 10 points of research)]]
+
+When suppressing or studying the twisted obelisk, there is a chance of a mutation happening, occurring on average every 24 hours of interaction.
+
+There are 6 possible occurrences with equal chance and one is selected randomly when the obelisk is triggered. The first four options will mutate the pawn that suppressed or studied the obelisk: 
+* [[Flesh whip]] (arm): Provides a {{Q|Flesh whip|Attack 1 Damage}} damage, {{Q|Flesh whip|Attack 1 AP}}% {{AP}}, {{Q|Flesh whip|MeleeDPS}} {{DPS}} [[{{Q|Flesh whip|Attack 1 Type}}]] attack and -1 [[Beauty (Pawn)|Beauty]], 30 HP
+* [[Flesh tentacle]] (arm): 120% Part Efficiency, -1 [[Beauty (Pawn)|Beauty]], 30 HP
+* [[Fleshmass lung]] (lung): +6% [[Pain]], +30% Toxic Environment Resistance, and immunity to [[Lung rot]] and [[Asthma]]. Only mutates 1 lung at a time.
+* [[Fleshmass stomach]] (stomach): +8% Pain, 0% Food Poisoning chance Factor, immunity to [[gut worms]].
+* Turn a random tree within a radius of 100 tiles from the obelisk into a [[harbinger tree]]
+* Turn a random animal on the map into a [[fleshbeast]]
+
+Alternatively, after gaining 10 anomaly research from the obelisk, mutation can be manually triggered via the "Mutate" gizmo, which allows the player to choose a controllable human (including guests and [[ghoul]]s) pawn to target and mutate. This will cause one of first four options, although the mutation remains randomly chosen. This has a 5 day cooldown.
+:''"You've learned more about the obelisk. It is an archotech machine that transforms flesh creatures into different forms. The device is damaged, so the new forms would be chaotic and unstable - a person or animal so transformed would become something totally unrecognizable. The obelisk's energy level rises unless suppressed. If it fully activates, it could transform an endless number of creatures, creating a nightmarish horde of flesh mutants. {PAWN_nameDef} thinks that it may be possible to safely shut down the obelisk but this will need significantly more study. You can now intentionally provoke a response from the twisted obelisk."''
+
+The flessmass parts can replace missing limbs and organs. The new flesh part cannot replace an artificial part, but can replace a part with an artificial part attached, such as a natural arm with a [[wooden hand]]. If an artificial or already mutated body part is chosen as the target, the obelisk trigger will fail. The obelisk will still go on cooldown if the mutation attempt fails.
+
+=== Full activation ===
+If the activity level of the twisted obelisk reaches 100%, it will explode, dropping a [[shard]] and  causing some [[wildlife]] in the area to turn into hostile [[fleshbeast]]s. The amount depends on [[raid point]]s. If there are insufficient animals, fleshbeasts will emerge from the ground.
+
+The explosion covers 4.9 tiles out from the obelisk with the damage type of [[Damage_Types|vaporize]]. {{Check Tag|Detail|Radius, Damage, Damage type, any left over flames, debris or resource}} Tamed and allied animals remain unaffected.
+
+=== Destruction ===
+After obtaining 30 anomaly research from the twisted obelisk, it can be safely deactivated at the cost of 2 [[shard]]s. A deactivated obelisk will not need to be suppressed, but can no longer mutate pawns.
+:''"{PAWN_nameDef} has completed {PAWN_possessive} investigation of the twisted obelisk. {PAWN_pronoun} has discovered a method for safely deactivating the obelisk using shards of archotechnology. You can no longer study the obelisk after deactivating it."'' 
+
+== Analysis ==
+In terms of effectiveness, fleshmass limbs and organs are typically inferior to bionic or detoxifer{{BiotechIcon}} parts that can be crafted, the exception being the flesh whip, which has a slightly better {{DPS}} than the [[elbow blade]].{{RoyaltyIcon}} However, they are effectively free upgrades, requiring only waiting for the cooldown and some patience with the RNG. For colonists with the [[masochist]] trait or a colony with the [[Pain (precept)|Pain: Idealized]] precept,{{IdeologyIcon}} the pain that comes from the fleshmass lungs and stomach might even make them preferable to [[detoxifier lung]]s{{BiotechIcon}} and [[bionic stomach]]s, respectively. [[Ghoul]]s can also use the twisted obelisk for a chance at free upgrades such as a Flesh Whip, while also not caring about the downsides of pain and ugliness.
+
+In terms of [[wealth management]], mutated body parts don't contribute to the colony wealth and will attract less severe incidents than their artificial counterparts.
+
+You can damage the obelisk and continuously suppress it to trigger a mutation by interaction. This doesn't affect the mutate ability cooldown and results in a body part mutation on average once per {{Ticks|90000}} of interaction. For comparison, a pawn with 100% [[general labor speed]] and 2 [[tool cabinet]]s takes {{Ticks|76785}} of work to make a [[bionic arm]] from raw resources.
+
+{{Obelisk Analysis|pawn_count=4}}
+
+{{Obelisk Destruction|pawn_count=4}}
+
+== Trivia ==
+* Possibly a reference to the Markers from Dead Space, slowly turning Pawns into Fleshbeasts, similar to how the Markers turn Humans into necromorphs.
+** Despite this. Markers share more similarities with a Warped Obelisk than the Twisted Obelisk. Such as the double spires on top of both.
+
+== Version history == 
+* [[Anomaly DLC]] Release - Added.
+
+{{Nav|entity|wide}}
+[[Category: Entities]]

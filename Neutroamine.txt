@@ -1,0 +1,79 @@
+{{Infobox main|production
+| name = Neutroamine
+| image = Neutroamine c.png
+| description = A synthetic precursor chemical. Useless on its own, many drugs require neutroamine as an ingredient.
+<!-- Base Stats -->
+| type = Crafted resources
+| hp = 50
+| deterioration = 1
+| marketvalue = 6
+| mass base = 0.02
+| flammability = 0.7
+| stack limit = 150
+| path cost = 14
+| rotatable = false
+<!-- Technical -->
+| defName = Neutroamine
+<!-- Unused -->
+| always haulable = true
+| draw gui overlay = true
+| parent name = ResourceBase
+| graphic class = Graphic_Single
+| graphic path = Things/Item/Resource/Neutroamine
+| label = neutroamine
+| selectable = true
+| sound drop =  Standard_Drop
+| ticker type = Normal
+| use hit points = true
+}}
+
+{{Info|'''Neutroamine''' is an item that cannot be crafted and must be sourced externally. It can be combined with [[herbal medicine]] and [[cloth]] to create standard [[medicine]], or synthesize various [[drugs]] with it at a [[drug lab]], such as [[Penoxycyline]] and [[wake-up]]. }}
+
+== Acquisition ==
+Neutroamine cannot be crafted, instead the primary source is [[trade]] with [[Orbital trade beacon|orbital traders]] and [[Outlander]] settlements and caravans.
+
+Alternatively, it can also be acquired, albeit unreliably, through:
+* Looting [[raiders]] that attack your colony.
+* Raiding other [[faction base]]s.
+* Cargo pod [[event]].
+* In [[ancient danger]]s.
+
+== Usage ==
+Neutroamine is used in the following crafting recipes:
+{{Ingredient List|noCollapse=1}}
+
+Neutroamine will [[deteriorate]] when left outside.
+
+== Analysis ==
+Neutroamine has only one use, to be used in crafting but can not be crafted by the player. It is therefore advisable to calculate for which recipes it is worth buying neutroamine and for which you should rather buy the end product instead. Consider the following table. If the "profitability" is above 1 it means selling the product is worth more than selling all of its ingredients and buying the ingredients is better than buying the product.
+
+{{Trading Value Table}}
+
+These are the key insights:
+
+* '''The [[medicine]] recipe loses money.''' Even if cloth and herbal medicine are grown rather than purchased, a proper comparison is the cost of buying {{Icon Small|medicine}} 1 medicine and selling {{Icon Small|cloth}} 3 cloth and {{Icon Small|herbal medicine}} 1 herbal medicine vs buying {{Icon Small|neutroamine}} 2 neutroamine. Assuming no [[trade price improvement]], this works out to {{Icon Small|silver}} {{#expr: ({{Q|Cloth|Market Value Base}} * 3 + {{Q|Herbal medicine|Market Value Base}}) * 0.6 - {{Q|Medicine|Market Value Base}} * 1.4}} silver for selling cloth and herbal medicine and buying medicine vs {{Icon Small|silver}} {{#expr: -{{P|Market Value Base}} * 2 * 1.4}} silver for buying the neutroamine. This doesn't really change with trade price improvements since then you'll be better of crafting the cloth into valuable items for sale. It might, however, be useful to have a small stockpile of neutroamine if proper medicine is needed urgently.
+* '''For all other recipes it's generally better to buy the ingredients instead of the product.''' Especially when some ingredients are already at hand.
+* '''The best way to make profit out of neutroamine is [[wake up]].''' It takes no additional ingredients and even with no trade price improvement it nets {{Icon Small|silver}} {{#expr: {{Q|Wake up|Market Value Base}} * 0.6 - {{P|Market Value Base}} * 2 * 1.4}} silver for every wake up crafted out of bought neutroamine.
+* '''{{AnomalyIcon}} With extra bioferrite at hand, crafting [[voidsight serum]] is the most profitable.''' Since you still need to buy the neutroamine, crafting the bioferrite into something else is preferable, however.
+
+== Gallery ==
+<gallery>
+Neutroamine a.png|One neutroamine
+Neutroamine b.png|Partial stack
+Neutroamine c.png|Full stack
+</gallery>
+
+== Trivia ==
+The use of neutroamine as an intermediary element to synthesize a different drug is inspired by the use of methylamine to create methamphetamine in the show "[https://en.wikipedia.org/wiki/Breaking_Bad Breaking Bad]". <ref>"It was inspired by methylamine (I watched Breaking Bad)." - Tynan Sylvester, [https://www.reddit.com/r/RimWorld/comments/1e59c6e/comment/ldphul4 Reddit comment].</ref>
+
+== Version history ==
+* [[Version/0.15.1279|0.15.1279]] - Added.
+
+<gallery>
+Neutroamine old.png|Old sprite
+</gallery>
+
+== References ==
+{{Reflist}}
+
+[[Category:Crafted Resource]]

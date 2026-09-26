@@ -1,0 +1,88 @@
+{{Project|Psyfocus}}
+{{Infobox main|furniture
+| name = Torch lamp
+| image = Torch lamp.png
+| description = A wooden torch for lighting an area. People need light to move and work at full speed. Can be automatically refueled with wood. Produces a small amount of heat.
+| type = Building
+| type2 = Furniture
+| placeable = true
+| path cost = 14
+| passability = pass through only
+| cover = 0.15
+| minifiable = false
+| size = 1 ˣ 1
+| flammability = 0
+| hp = 75
+| glowradius = 10
+| glowcolor = (184,136,83)
+| heatpersecond = 3.5
+| maxheattemperature = 23
+| terrain affordance = light
+| styledominance = 5
+| work to make = 100
+| resource 1 = Wood
+| resource 1 amount = 20
+| deconstruct yield = nothing
+| destroyyield = nothing
+| fuel filter = Wood
+| fuel capacity = 20.0
+| fuel consumption rate = 2.0
+| initial fuel percent = 1 <!-- 100% -->
+| fuel consumption per tick in rain = 0.0006
+}}
+The '''torch lamp''' is a piece of [[furniture]] that burns [[wood]] to [[light]] an area, while also generating a small amount of [[Temperature|heat]].
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+[[File:Torch lamp illumination area.png|300px|thumb|left|The white area (5 tiles out) is 50% illumination, required for best [[Surgery Success Chance Factor|surgery success chance]]; the yellow (6-7 tiles) represents 30% or better, adequate for all general labor, avoiding [[mood]] penalties, and for growing [[Decorative Plants|decorative plants]] indoors in [[plant pot]]s.]]
+A torch lamp outputs [[light]] in a 10 tile radius, with the nearest {{P|Light Radius}} tiles being above 50% light level and considered lit. It heats the room to a maximum [[temperature]] of {{Temperature|{{P|Max Heat Temperature}} }} at a rate of {{P|Heat Per Second}} heat per second.{{Check Tag|Exact mechanic unclear|Provides comparison with other heat sources but doesn't explain how much it actually heats}}
+
+The torch lamp consumes {{Icon Small|wood}} 2 [[wood]] per day as long as it is lit. It can hold up to {{Icon Small|wood}} 20 wood at a time, for a maximum run time of {{#expr:20/2}} days. It is constructed with a full fuel capacity. Fuel is delivered to the torch lamp by a [[Work#Haul|haulers]] as long as refueling is enabled. It cannot be "turned off" or paused, only deconstructed, in which case ''no wood'' is recovered, regardless of any "fuel" remaining.
+
+If under the [[rain]] and unroofed, it consumes an additional {{Icon Small|wood}} 0.0006 wood per {{Ticks|1}}, or  {{#expr: 2+ (0.0006*60000)}} wood per day. It therefore lasts for {{#expr:24*20/(2+ (0.0006*60000)) round 2}} hours if in constant rain.
+
+{{Pyromaniac Building Note}}
+
+== Analysis ==
+[[Light]] is incredibly important for most colonies. Even if you have a colony full of [[night owl]]s, darkness will impact movement speed, work speed, and surgery success rate. Any room with a [[roof]] is innately dark, so torch lamps are an effective source of light in the early game. An alternative solution, in the very early game, is to remove the [[roof]] (in the Architect/Zones tab) in the specific areas where colonists are working - such as over the interaction spot of a [[simple research bench]]. But, of course, there will be no light once it is [[night]]time.
+
+=== Comparison to other torches ===
+[[Wall torch lamp]]s can only be installed onto walls and have a shorter radius, but do not take up a tile of space. Regular torch lamps are more appropriate when placed in a center of a large room, and wall torch lamps suitable otherwise. Note that wall torch lamps also require less wood to initially make, but consume the same wood per day. Therefore, if the colony is planning to establish a power grid immediately then wall torch lamps will be better.
+
+The [[darktorch]]{{IdeologyIcon}} consumes wood at 75% the rate of a regular torch lamp, but has a light radius of 4.75 tiles. If the area requiring lighting is not large enough to require the additional radius of the torch lamp, the darktorch becomes more efficient.
+
+=== Comparison to standing lamps ===
+[[Standing lamp]]s are a strict upgrade once [[Electricity]] has been researched. Standing lamps provide more light and do not require refueling, just a source of [[power]]. A [[wood-fired generator]], the most work-inefficient generator, can fuel {{#expr: 1000/30 round 0}} standing lamps for the cost of {{#expr: 22/2}} torch lamps of [[wood]] - or, more practically, a few standing lamps and important buildings like [[heater]]s and [[cooler]]s. However, torches have a few niches over electric lamps:
+
+* They are immune to [[solar flare]]s and other power outages. Solar flares are too short to have a meaningful impact to productivity, but light is very important for surgeries.
+* They can provide light in very specific locations, without needing [[power conduit]]s.
+* Standing lamps require {{Required Resources|Standing lamp}}. Steel can be very scarce at certain points of the game, and some colonies can have an abundance of wood.
+
+== Styles ==
+{{Ideology|section=true}}
+[[Ideoligion]]s allow the selection of styles which then change the texture of the certain items and buildings when constructed by the colony. These style variants can be crafted if the colony has the selected style, or can be looted from raiders from factions with the requisite style.
+
+<gallery>
+Torch lamp.png|Base Variant
+Morbid torch lamp.png|Morbid Variant
+Totemic torch lamp.png|Totemic Variant
+Spikecore torch lamp.png|Spikecore Variant
+Rustic torch lamp.png|Rustic Variant
+</gallery>
+<gallery>
+Torch lamp unlit.png|Base Variant Unlit
+Morbid torch lamp unlit.png|Morbid Variant Unlit
+Totemic torch lamp unlit.png|Totemic Variant Unlit
+Spikecore torch lamp unlit.png|Spikecore Variant Unlit
+Rustic torch lamp unlit.png|Rustic Variant Unlit
+</gallery>
+
+== Version history ==
+* [[Version/1.1.0|1.1.0]] - Refueling is now toggleable.
+* [[Ideology DLC]] Release - Received styles via new [[Ideoligion]] [[style]] system. 
+* [[Version/1.5.4062|1.5.4062]] - Hide meditation focus radius ring from torches.
+
+{{Nav|furniture|wide}}
+[[Category:Furniture]] [[Category:Lamp]]

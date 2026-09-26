@@ -1,0 +1,43 @@
+{{Anomaly}}
+{{Infobox main|structure|
+| name = Gray surface
+| image = Gray surface.png
+| description = An unnatural gray floor. It is featureless and smooth. It is not concrete, metal, or any other recognizable building material.
+<!-- Base Stats -->
+| type = Terrain
+| path cost = 2
+<!-- Building -->
+| terrain affordance = Heavy
+| speed = 0.87
+<!-- Technical -->
+| defName = GraySurface
+| label = gray surface
+<!-- TerrainDef ParentName="FloorBase" -->
+| texturePath = Terrain/Surfaces/GrayFloor
+| edgeType = FadeRough
+| renderPrecedence = 340
+| layerable = false
+| affordances = Light
+| fertility = 0
+<!-- TerrainDef Name="FloorBase" Abstract="True" -->
+| tags = Floor
+| designationCategory = Floors
+| constructEffect = ConstructDirt
+| pollutionShaderType = TerrainFadeRoughLinearBurn
+| pollutionOverlayTexturePath = Terrain/Surfaces/PollutionFloorSmooth
+| pollutionColor = (1, 1, 1, 0.8)
+| pollutionOverlayScale = (0.75, 0.75)
+}}
+
+'''Gray surface''' is a terrain that appears exclusively in the [[Labyrinth]].
+
+== Summary ==
+Gray surface is the prominent terrain of the labyrinth, only accompanied by a small amount of [[Void metal]] surrounding the obelisk. It has a move speed factor of {{P|Move Speed Factor}}, the same as most natural terrain.
+
+== Analysis ==
+It is neutral in all accords, providing no up or downsides. (except for the 87% move speed modifier.)
+
+== Version history ==
+* [[Anomaly]] Release - Added.
+
+[[Category:Terrain]]

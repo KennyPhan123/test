@@ -1,0 +1,182 @@
+'''Wealth management''' is the practice of managing the wealth present in a colony to reduce the difficulty of the [[raids]] that it encounters.
+
+== Effect of wealth ==
+{{Main|Raid points}}
+Colony wealth is one of the key determining factors in determining the [[raid points]] available to the storyteller, both directly contributing raid points itself, and scaling the points added by each colonist. 
+
+{| class="wikitable"
+|-
+|"Storyteller Wealth" = (Colony Wealth (items) + Colony Wealth (people and animals) + ( (Colony Wealth (buildings)) * 0.5 )
+|}
+Storyteller wealth has an impact on [[Raid points#Wealth points|"wealth points"]] and [[Raid points#Pawn points|"pawn points"]]. The full calculation is omitted here, but can be seen in the dedicated [[Wealth#Raid Points|Wealth]] page.
+
+Assume storyteller wealth is between 14k and 400k. Each base raid point would be worth about <code>3120 / (19.4 + colonist count)</code> storyteller wealth. In other words, for the same threshold, $1 of storyteller wealth will give <code> (19.4 + colonist count) / 3120  </code> raid points. 
+
+* At 0 colonists, 1 base raid point is worth ~160.83 storyteller wealth.
+* At 3 colonists, 1 base raid point is worth ~139.29 storyteller wealth.
+* At 10 colonists, 1 base raid point is worth ~106.12 storyteller wealth.
+* At 20 colonists, 1 base raid point is worth ~79.19 storyteller wealth.
+
+Wealth below 14k has practically no impact. Wealth above 400k has a reduced impact. Remember that these are ''base'' raid points, from adding both wealth points and pawn points.
+
+Points are ''then'' multiplied by [[Raid points#Difficulty|difficulty threat scale]], [[Raid points#Adaptation factor|Adaptation factor]], and a [[Raid points#Other factors|few other modifiers]]. At 100% threat scale (Strive to Survive) with neutral adaptation, you will receive 100% raid points. Once all factors have been applied, raid points are used to "buy" raiders. See below for details.
+
+The maximum wealth is 1,000,000 for the purposes of raid points, and the maximum number of raid points is 10,000. If one of these two caps are reached, then there is no point managing wealth any further.
+
+=== Empirical testing ===
+''Due to rounding and other modifiers to raid size, including the type of raid, these numbers may not be entirely accurate.''
+
+A colony starts with 3 colonists and about $104000 storyteller wealth. They suddenly gain 1666 [[beer]], worth just under {{Icon Small|silver||20000}}. For a [[scyther]]-only mechanoid raid:
+*'''Strive to Survive (100% threat)''': 3 scythers increases to 4 scythers.
+*'''Losing is Fun (220% threat)''': 9 scythers increases to 10-11 scythers.
+*'''500% threat scale''': 21 scythers increases to 25-26 scythers.
+
+To be specific, raid points have increased by 143.5, which is then multiplied by threat scale (e.g. 220% multiplier for Losing is Fun). These points are used to "buy" raiders worth a certain amount of combat power at a one-to-one exchange rate. A scyther is worth 150 combat power. A generic tribal is worth 30-60 combat power, a fairly well-armed pirate is worth 90 combat power, and the strongest pirates are worth 150 combat power. A [[centipede]] is worth 400 combat power.
+
+The 1-2 scyther difference in Losing is Fun might seem small, but keep in mind that this is ''after'' already reaching $100000 wealth. If you were having 5 scyther raids, then suddenly gained {{Icon Small|silver||20000}}, the raids would increase 5 scythers to 7, which ''is'' quite a large increase. These 3 colonists will have a rough time handling 7 scythers, let alone 9, let alone 21 or 26 from a custom 500% difficulty.
+
+=== Other impacts ===
+* For certain types of raids, you must have a minimum amount of raid points before they happen. [[Mechanoid]] raids and [[drop pod]]s "right on top of you" can only happen at 300 raid points. [[Siege]]s can only happen at 500 raid points. [[Sapper]]s and [[breacher]]s only happen at 700 raid points. 
+
+*Wealth (not storyteller wealth) has an impact on expectations. See [[Wealth#Expectations]] for details.
+
+== Analysis ==
+While wealth is clearly a driver in the raid point scaling, the effect is often exaggerated and certain causes of wealth blamed unnecessarily. Put simply, it takes a significant amount of wealth to noticeably affect raid sizes. Often, it is colonist count and the normal scaling causing the actual problem. That does not mean that wealth management is without merit - it just means that the gains must be considered objectively. E.g. Is a strategy requiring significant micromanagement worth it when it reduces raid size by one scyther? In general, wealth has little impact on Adventure Story, and only starts to matter in the higher [[difficulty|difficulties]].
+
+To re-iterate: '''Wealth management should not really matter when playing on Strive to Survive or below unless undertaking additional challenges that act as a handicap'''. Wealth can make a significant impact on Losing is Fun and custom difficulties with higher threat scales. Otherwise, you shouldn't feel the need to restrict your play by much. You can also lower the difficulty - "Base Builder" was designed to let you build a grand base, after all.
+
+== Strategies ==
+Wealth management strategies can be broken down into two general classes:
+# Wealth control, or wealth minimization, where the intent is to control the total wealth accrued by purposefully reducing both the total wealth of the colony and the rate of accrual. 
+# Wealth investment, where wealth gain is not slowed in any way but instead steps are taken to ensure that sufficient wealth is reinvested into advancing the colony to keep up with advancing raid points.
+
+For example, a colony without wealth management might mass-produce [[flake]], sell it, and leave silver for later use. A wealth ''controlling'' colony might avoid growing [[psychoid plant|psychoid]] all together, or limit its production. A wealth ''investing'' colony would create flake as needed, but use it to buy items like [[component]]s and [[doomsday rocket launcher]]s to better deal with the increased raid points.
+
+When considering cost savings, relate it to how many raiders you'd save. An extra tribal raider is worth around 45 combat power. In Strive to Survive, this equates to {{Icon Small|silver||7500}}. In Losing is Fun, the raider would be worth {{Icon Small|silver||3400}}. At 500% threat, they'd be worth {{Icon Small|silver||1700}}. Note that this value will lower for each colonist you have.
+
+===Wealth control strategies===
+----
+*'''Try not to overproduce'''. If there's one tip that's relevant to difficulties below Losing is Fun, it's this. You shouldn't need 10000 units of [[rice]] to feed 5 colonists, even in the [[toxic fallout|worst]] [[volcanic winter|scenarios]], unless your growing season is really short (10/60 or 20/60). In a similar vein, you shouldn't need to make 100 [[fine meal]]s in advance, mine [[ore]] for the sake of giving your miner some work, or harvest every raider's [[organ harvesting|organs]] for the sake of the war crime. Try not to produce what you don't need in the near future. And, unless you really need to buy something, don't do things for the purpose of money.
+** Think about it this way: a raider's [[kidney]], [[lung]], and [[heart]] are worth {{Icon Small|silver||3100}}, and their [[human leather]] is worth a bit more. In Losing is Fun, every raider you harvest means an extra raider (per raid). The organs aren't doing anything for you, until you either sell, gift, or install them.
+** For the purposes of food: each colonist eats 20 units of raw food per day when cooked into [[simple meal]]s or [[fine meal]]s.
+::In Losing is Fun, a 5x5 growing zone in normal soil (25 tiles) is enough to feed a single colonist in a year-round growing colony, assuming 1. a good planter and 2. things are harvested reasonably quickly. A 4x5 growing zone in rich soil (20 tiles), or 3 [[hydroponics basin]]s (12 tiles) are effectively the same. It's ok to overgrow if you have to face long winters, especially if you plan to take in more colonists in the meantime.
+*'''Destroy useless items'''. Burn [[corpse]]s and [[electric smelter|smelt]] any unnecessary [[weapon]]s from raiders. [[Caravan]]s can be used to destroy items quickly and with no tech required - make a caravan, then, as soon as it enters the world map, immediately drop any items to destroy them. [[Fire]] or [[frag grenade]]s can also be used to destroy items.
+** If you can't destroy them, then at least let them [[deterioration|deteriorate]] - water erodes the fastest.
+** Weapons are quite valuable, despite traders only paying 20% for them. A single [[heavy SMG]] is worth {{Icon Small|silver}} 355, before HP or quality. Weapons can quickly pile up; a dozen firearms can be worth thousands of market value.
+**Rotten corpses and damaged clothes are worth single-digit numbers of wealth. Fresh corpses are worth a fair amount, about {{Icon Small|silver}} 250 / corpse, which is relevant for large raids back-to-back.
+*'''Gift excess items to other [[faction]]s'''. Excess food, [[leather]]s, [[drug]]s, and even [[silver]] may not help your colony for the near future. Items like these can easily be replaced later on. Right now, you can gift your surplus to other factions for a [[goodwill]] boost. Eventually, you can call said factions as an ally, turning this into an investment that completely destroys wealth. It's alright to keep items like [[component]]s, which are more difficult to acquire.
+**Traders will visit your colony every so often, or you can create a [[caravan]] or deploy [[transport pod]]s. 
+**'''Simply destroy those items.''' If you can't be bothered to give them away, then destroy the items with [[fire]], [[frag grenade]]s. or dump them on the world map with a short [[caravan]] trip.
+*'''Have rooms perform multiple functions'''. For example, combining Dining and Recreation rooms into a larger one has 0 penalty, giving both ''Impressive'' [[mood]]lets for the cost of 1. Some buildings like workshops and research benches get a work penalty if not in a proper room, so they should be put in separate rooms at a certain point.
+**Turning bedrooms into barracks does lower mood. However, combining the barracks with their dining, recreation, and even work rooms allows you to make them all Impressive. Instead of making 10 sculptures for 10 bedrooms, you can put 10 sculptures for all of barracks, recreation, and dining rooms, while using some beauty for the workshop. Each sculpture counts for 3 rooms and 10 colonists, which usually makes up for the barracks' mood loss.
+**Throne rooms{{RoyaltyIcon}} and ritual rooms{{IdeologyIcon}} do not allow beds or work stations, and throne rooms do not allow ritual items. However, each room can be combined with dining and recreation.
+* '''Let your own weapons deteriorate.''' Many items will lose value sharply as they lose HP. Weapons at 50% HP are worth 10% value, at no loss of function. Deterioration makes items prone to destruction from [[fire]] or [[frag grenade]]s, but a legendary [[charge rifle]] going from {{Icon Small|silver}} 4010 to {{Icon Small|silver}} 401 is a significant difference at higher difficulties. In order to damage weapons quickly, you can throw a frag grenade at it, which deals 50 HP of damage.
+** For armor, lower HP does not impact protective performance. But armor loses HP whenever it blocks a shot, and low HP armor gives the ''Tattered apparel'' [[mood]]let.
+*'''Park items in [[caravan]]s.''' Items outside your colony do not count towards colony wealth. Create a caravan with a useless/unnecessary colonist, grab your items, and wait. For [[New Tribe]]s, a single pawn with Plants 10 or so can survive off foraged [[berries]] indefinitely, thus park items indefinitely (assuming the [[biome]] allows foraging). Watch out for ambushes and [[disease]]. Note that, if the caravan is on top of a friendly [[faction base]], ambushes are impossible. 
+*'''Accept a lower amount of "progress"'''. You don't need an opulent [[carpet]] if your colonists are just fine with [[concrete]] and a few [[flower pot]]s, or a dirt floor planted constantly planted with [[daylily]]s. Upgrades may seem small, but upgrading everywhere will quicky pile up wealth.
+
+=== Wealth investment strategies ===
+----
+When interacting with any [[trader]], your colony will always buy and sell at a [[Market Value]] loss. At most, it's net equal. Therefore, selling your [[flake]] actually ''lowers'' your wealth. 
+
+With this in mind, consider buying things that either protect you, are consumed on use, or both:
+* [[Doomsday rocket launcher|Doomsday]] and [[triple rocket launcher]]s will greatly soften up enemies. Against human raiders, rockets have the potential to dispel an entire raid with 1 burst. Once used, their wealth is fully consumed.
+* Better [[weapon]]s, [[armor]], and [[defense]]s - or the [[component]]s and [[metal]] required to produce them. 
+** [[Reinforced barrel]]s, to replenish [[mortar]]s.
+** When bonded, [[persona weapon]]s{{RoyaltyIcon}} have no value, both for [[trade]] and for the purposes of [[raid points]].
+* Rarer materials that you'll need in the future. Key examples are [[gold]] for the [[multi-analyzer]], [[advanced component]]s for the [[fabrication bench]], and regular components before you have fabrication available.
+* [[Skilltrainer]]s and [[psytrainer]]s{{RoyaltyIcon}}, which are consumed to improve pawn stats. 
+* [[Artifact]]s - When used correctly, [[psychic shock lance]]s, [[psychic insanity lance]]s, and [[psychic animal pulser]]s can all save your colony in a pinch.
+* [[Low-shield pack]]s{{RoyaltyIcon}} are single-use and very helpful in a pinch.
+
+==Practical examples==
+
+=== Corpse disposal ===
+A group of almost 100 tribals - a raid worth 5000 raid points - attack your colony. After the raid was over, a few days were passed in order to naturally kill any [[downed]] pawns. 49 tribals were killed, and due to testing methodology, were mostly melee fighters. How much would the corpses be worth?
+
+* Fresh corpses are worth an average of {{Icon Small|silver}} 250 each. With 49 corpses, this is {{Icon Small|silver}} 12,316.
+* Raiders drop weapons, which vary by the type of weapon. Most of the wealth was concentrated into [[spear]]s, [[pila]], and [[ikwa]]s. 49 weapons were dropped, for around {{Icon Small|silver}} 3,739.
+* Tainted apparel is worth single-digit silver per apparel. 49 corpses of apparel is worth about {{Icon Small|silver}} 60.
+
+With a total of {{Icon Small|silver}} 16,109, we can derive raid points, using the calculations from [[#Effects of wealth]].   An average tribal raider is worth 45 raid points. So assuming we are below 400k wealth, and ignoring adaptation:
+
+{| class="wikitable sortable"
+!colspan="4" | Raid points from 49 corpses / weapons, UNROTTED. ({{Icon Small|silver}} 16,109)
+|-
+!Colonist # !! Difficulty !! Raid Points !! Raiders #
+|-
+|3 pawns || Strive to Survive (100%) || 115 || 2-3 tribal
+|-
+|10 pawns || Strive to Survive (100%) || 152 || 3-4 tribal
+|-
+|10 pawns || Losing is Fun (220%) || 334 || 7-8 tribal
+|-
+|10 pawns || 500% threat || 759 || 16-17 tribal
+|}
+
+However: if temperature permits, corpses will rot in about 2 days. When corpses were left to rot, they and their clothes are now worth '''{{Icon Small|silver}} 0''' on the statistics screen, leaving {{Icon Small|silver}} 3,545 from weapons. This is slightly less than last time, as the weapons have deteriorated a little.
+
+{| class="wikitable sortable"
+!colspan="4" | Raid points from 49 corpses / weapons, ROTTED. ({{Icon Small|silver}} 3,545)
+|-
+!Colonist # !! Difficulty !! Raid Points !! Raiders #
+|-
+|3 pawns || Strive to Survive (100%) || 25 || < 1 tribal
+|-
+|10 pawns || Strive to Survive (100%) || 33 || 1 tribal
+|-
+|10 pawns || Losing is Fun (220%) || 73 || 1-2 tribal
+|-
+|10 pawns || 500% threat || 167 || 3-4 tribal
+|}
+
+Remember that this is a '''100''' tribal raid we're talking about. For a good chunk of the game, corpses will not be nearly as impactful. A 10-man raid would be worth 10% of the value. At this raid size: even on ''500%'' you will only get 1 tribal raider, and only ''if'' the corpses haven't rotted in time.
+
+Most of the time, corpses will rot before the next raid occurs. For reference, [[Cassandra Classic]] has an absolute minimum of 1.9 days between each raids/major threat. In Strive to Survive, the impact of rotten corpses of a 100-man raid is ''less than 1 extra raider'' (less than +1%), which is low enough where it is not worth thinking about at that difficulty.
+
+There are situations where corpses matter for wealth - just that they are limited in application. In a biome with winter, letting corpses pile up can result in a couple of extra raiders (in higher difficulties). On Losing is Fun / 500%, corpses can matter for the [[ship launch]]. Raids are very frequent, so unrotted corpses and leftover weapons can lead to a significant amount of increased wealth. The weapons of pirate raiders are more valuable, so you may want to dispose of them.
+
+Disposal has its merits beyond wealth. Weapons can be [[electric smelter|smelted]] into [[steel]]. Corpses are ugly to look at; even with the [[Corpses (precept)|Corpses: Don't Care]] precept,{{IdeologyIcon}} they create [[filth]], lowering the [[beauty]] of the surrounding area. Corpses can also feed your carnivore [[animal]]s. At Strive to Survive, these are bigger considerations than the actual wealth of these corpses.
+
+=== Corpse butchering ===
+Let's say we're in the same situation as in [[#Corpse disposal]]. We have 49 corpses. Why waste them? You can butcher them into [[human meat]] and [[human leather]], which can then be sold. The mood penalties for human butchering can be managed, especially if the butcher is a [[cannibal]] / [[psychopath]] / [[bloodlust]].
+
+How much material you'll get will vary based on corpse damage and Cooking skill. If a skill 10+ Cook butchers 49 randomly damaged corpses in Strive to Survive, you'd result in...
+#{{Icon Small|human leather}} 2241 [[human leather]], worth {{Icon Small|silver}} 9412
+#{{Icon Small|human meat}} 4168 [[human meat]], worth {{Icon Small|silver}} 3334
+In total, this is valued at {{Icon Small|silver}} 12,746, about {{Icon Small|silver}} {{#expr:12746/49 round 2}} per corpse. At 10 colonists, this would be worth 120 raid points, or 2-3 tribal raiders, at Strive to Survive. 
+
+This'd be worth 264 points in Losing is Fun. However, Losing is Fun applies 80% [[AI Storytellers#Butchering yield|Butchering yield]], so you'd only get 80% of the wealth. This would be worth 600 points in 500%, but as it is a custom difficulty, you can set butcher yield to whatever you want.
+
+There are 3 schools of thought with what to do...
+* '''Wealth control (1):''' Just don't butcher humans. It saves on mood and it saves on time.
+* '''Wealth control (2):''' Gift all that meat and leather to other factions, using [[transport pod]]s.  Gifting the entire stash of meat/leather results in +89 [[goodwill]] (+76 in Losing is Fun), turning a neutral faction into an ally, whilst destroying all the wealth from the meat.
+* '''Wealth investment:''' Sell the human goods to a faction, buying material like [[component]]s and [[doomsday rocket launcher]]s. You likely won't need {{Icon Small|silver}} 12,000 of goods, but you likely won't have {{Icon Small|silver}} 12,000 worth of product in the first place. You can buy what you need and sell what you have.
+
+=== Floors ===
+The most wealth-efficient flooring is dirt floor. It costs nothing, and you can improve its beauty by using [[daylily|daylilies]]. You can have a barracks / dining room / rec room combo be ''Very Impressive'' by planting 2-3 dozen daylilies every few days. For an example, see [[:File:Daylilies_dining_room.png|here]].
+
+[[Carpet]] is one of the most beautiful tiles in the base game, but it has above average wealth. If ''carpet'' doesn't have a big impact on raid points, then cheaper tiles like [[stone tile]] and [[paved tile]] wouldn't, either.
+
+Let's say we place 100 tiles of carpet, which allows you to have four 5x5 bedrooms, or a 10x10 common room. Each tile of carpet costs {{Icon Small|silver|16|{{Q|Carpet|Market Value Base}}}}. But remember that, as a placed building, carpet has 1/2 the ''Storyteller Wealth''. Thus we can calculate the raid points of 1300/2 (650) wealth:
+
+{| class="wikitable sortable
+!colspan="4" | Raid points from 100 tiles of carpet ({{Icon Small|silver}} 1300/2)
+|-
+!Colonist # !! Difficulty !! Raid Points !! Raiders #
+|-
+|3 pawns || Strive to Survive (100%) || 4.7 || 0
+|-
+|10 pawns || Losing is Fun (220%) || 14 || <0.5 tribal
+|-
+|10 pawns || 500% threat || 31 || <1 tribal
+|}
+
+So even on 500%, the impact of flooring is quite small. When using a 11x11 interior barracks set up, carpet would add about 1 raider. This can be noticeable in the early game, especially on the larger end of barracks. But you wouldn't be using carpet. [[Concrete]] can be used and costs {{%|{{Q|Concrete|Market Value Base}} / {{Q|Carpet|Market Value Base}} round 2}} the wealth.
+
+Floor ''can'' have a major impact in 500% - but it's not usually with raider count. As mentioned in [[#Other factors]], [[siege]]s can only happen once you reach 700 raid points. Your flooring can be the difference between a siege - which can be colony-ending if you don't have the tools to deal with it - and a regular raid. Also, 1 tribal on its own can make a big impact when you previously had 1-man raids. Flooring is unlikely to make any sort of difference outside of 500%.
+
+<small>Note that concrete + high quality [[large sculpture]]s are more wealth-efficient and resource-efficient than any constructed floor. However, other floors ''do'' have the advantage of not taking up a room's space. In small rooms, like bedrooms, space can have a major impact on Impressiveness. High quality sculptures also require an artist.</small>
+
+{{Nav|guides|wide}}
+[[Category: Guides]]

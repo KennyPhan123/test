@@ -1,0 +1,75 @@
+<!--Do not delete
+-->{{#set:Image = [[File:Buildingmats.png]]}}<!--
+Do not delete
+-->'''Stuff''' is a concept in RimWorld's code by which a material can be chosen before creation of an item or building, used in the item's construction and the stats of the chosen material affect the stats of the end product.
+An item that can do this is called "stuffable".
+Examples of stuffable things include most [[structure]]s, [[furniture]], [[melee weapons]] and [[apparel]].
+
+[[File:Buildingmats.png|thumb|200px|Note that this icon is used only on this wiki to symbolise "stuff". It is not used in-game.]]
+
+Stuff is categorized. For example, an item can be made of "Leathery" stuff, i.e. that part of the recipe can be filled by the correct amount of any given [[leather]]. Some recipes give you a choice, for example [[bed]]s' stuff is tagged "Metallic, Wood, Stony", allowing the player to choose between those. There are often better/worse choices, especially given the practical availability of different material for different colonies, but also different "stuff" can have differing effects on the final product (e.g. "wood" is more flammable than stone, and "stony" beds are not as comfortable as wood or steel, except for [[jade]]). Such details are available in articles for specific items.
+
+The stuff categories are:
+{| class="wikitable"
+! Stuff category !! Materials
+|-
+| [[Leather]]y || {{#ask: [[Stuff Category::Leathery]]
+    | format = template
+    | template = DLC Icons
+    | link = none
+    | sort = From DLC, Name
+    | sep = ,&#32; 
+}}
+|-
+| [[Fabric]] || {{#ask: [[Stuff Category::Fabric]]
+    | format = template
+    | template = DLC Icons
+    | link = none
+    | sort = From DLC, Name
+    | sep = ,&#32;
+}}
+|-
+| [[Wood]]y || {{#ask: [[Stuff Category::Woody]]
+    | format = template
+    | template = DLC Icons
+    | link = none
+    | sort = From DLC, Name
+    | sep = ,&#32; 
+}}
+|-
+| [[Metals|Metallic]] || {{#ask: [[Stuff Category::Metallic]]
+    | format = template
+    | template = DLC Icons
+    | link = none
+    | sort = From DLC, Name
+    | sep = ,&#32;
+}}
+|-
+| [[Stone|Stony]] || {{#ask: [[Stuff Category::Stony]]
+    | format = template
+    | template = DLC Icons
+    | link = none
+    | sort = From DLC, Name
+    | sep = ,&#32;
+}}
+|-
+| {{DLC Icons|Bioferrite}} || {{#ask: [[Stuff Category::Bioferrite]]
+    | format = template
+    | template = DLC Icons
+    | link = none
+    | sort = From DLC, Name
+    | sep = ,&#32;
+}}
+|}
+Note that, despite being full categories of their own, currently the only material in the Woody category is [[Wood]] and the only material in the Bioferrite category is [[Bioferrite]]. Notably, [[Bioferrite]] is also in the Metallic category.
+
+== List of stuffable things ==
+{{#ask: [[Stuff Tags::+]] | format = ul | class = ul-column-width-100 | template = DLC Icons | sort = From DLC, Name | link = none | limit = 500}}
+
+== Version history ==
+* [[Version/0.7.581|0.7.581]] - Stuff system added. Prior to this, objects equivalent to stuffed objects had to be distinctly defined i.e. wood wall and metal wall.
+
+== See also ==
+* [[Materials]]
+
+[[Category:Game mechanics]]

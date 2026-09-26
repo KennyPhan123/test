@@ -1,0 +1,116 @@
+{{infobox main|security|
+| name = Autocannon turret
+| image = Autocannon.png
+| description = A heavy automatic turret. Its large-caliber shells do heavy damage over significant ranges, but its barrel must be refurbished after use. It cannot fire at close-up targets, and may explode when damaged.
+| type = Building
+| type2 = Security
+| placeable = true
+| path cost = 50
+| passability = pass through only
+| cover = 0.5
+| minifiable = false
+| size = 2 ˣ 2
+| flammability = 0.7
+| hp = 380
+| beauty = -20
+| power = -150
+| terrain affordance = heavy
+| research = autocannon turret
+| skill 1 = Construction
+| skill 1 level = 6
+| work to make = 15000
+| resource 1 = Steel
+| resource 1 amount = 350
+| resource 2 = Plasteel
+| resource 2 amount = 40
+| resource 3 = Component
+| resource 3 amount = 6
+| damage = 27
+| armorPenetration = 40
+| range = 32.9
+| minrange = 8.9
+| accuracyTouch = 28
+| accuracyShort = 72
+| accuracyMedium = 66
+| accuracyLong = 50
+| mode = Burst
+| burst = 3
+| burstTicks = 17
+| cooldown = 210
+| velocity = 88
+| stoppingPower = 0.5
+| DPS = DPS
+| fuel filter = Steel
+| fuel capacity = 180
+| fuel consumption rate = {{#expr: 180/90 round 2}}
+}}
+The '''autocannon turret''' is a [[security]] [[turret]] that fires a burst of medium-damage shells. 
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+{{Image wanted|section=1|reason=Concise, small infographic of the cover bug}}
+Autocannon turrets automatically shoot at enemies within range so long as they are [[power]]ed and have sufficient ammunition. They only shoot at enemies of their faction, including manhunting animals but not animals hunting pawns or faction animals for food. They are capable of [[friendly fire]]. The autocannon turret uses the [[autocannon]] weapon. In addition to the weapon's accuracy, the turret itself has a per-tile [[shooting accuracy]] of 96% or equivalent to a [[Shooting]] skill of 8. It has a maximum range of {{P|Range}} tiles, but is unable to hit enemies within an {{P|Minimum Range}} tile radius. These ranges are centered on the lower left tile of the turret, regardless of orientation.  Despite its damage, the autocannon's stopping power is almost non-existent, not even being able to stagger [[human]]s - the same is also true for the [[uranium slug turret]]. 
+
+After firing 90 rounds, it needs to be reloaded with {{Icon Small|Steel||180}} [[steel]] by a hauler. This can be adjusted in the [[storyteller settings]], but all default [[difficulty]] settings do not alter this.
+
+Since autocannons are large 2x2 structures, ranged attacks are twice as accurate against them. 
+
+As of [[Version/1.4.3580|version 1.4.3580]], autocannon turrets do benefit from [[cover]] but only if the lower left corner of the turret is covered from the shooter as confirmed by [[:File:Big_turrets_partially_benefit_from_cover.jpg|empirical testing]]. In practice this means that the turret can '''only''' be in cover if engaged from the south-east, as pawns will target the nearest tile of the turret and cover only applies if it is directly adjacent to the targeted tile. 
+
+Like all turrets, they cannot target any pawn that has one or more tiles of [[blind smoke]] between the turret and them and are temporarily disabled by sources of [[EMP]], with downtime scaling to the EMP damage dealt. Unlike mechanoids, turrets do not adapt to EMP and thus can be continuously restunned.
+
+=== Explosion ===
+Autocannon turrets have a 50% chance to explode when damaged below 20% health. The exploding turret will spark and emit a hissing sound for {{ticks|240}} before exploding, dealing 50 [[Damage Types#Bomb|Bomb damage]] in a 5.9 tile radius centered around the lower left tile of the turret. Bomb damage is multiplied {{Up|x8}} against [[wall]]s, {{Up|x4}} against other impassable structures and plants, and {{Up|x2}} against passable buildings. All nearby raiders will attempt to move out of the blast radius before detonation.
+
+[[File:Large turret explosion radius.png|thumb|center|Radius of autocannon turret explosion. Note the slight offset from the 'true' center of the turret.]]
+
+== Analysis ==
+{{Stub|section=1|reason=Exploiting/avoiding the cover bug in killbox/defense design}}
+In general, turrets are not very strong for their price. Outside of the easier [[difficulties]], you shouldn't expect turrets to defeat raids on their own. They are best used when to support colonists, rather than replace colonists.
+
+Autocannons are a general purpose turret. They can be useful in [[killbox]]es, where turrets can be massed together. However, they are quite costly. In an open field, the autocannon's low accuracy makes it less viable. 
+
+If you want automated firepower, autocannon turrets are usually your best bet. Other turrets have their niches beyond firepower, however.
+* [[Mini-turret]]s offer less firepower at most ranges. Four mini-turrets output less {{DPS}} than one autocannon once beyond 12 tiles of range. The advantage of mini-turrets is that they are effective distractions. They are cheap and disposable, meaning they are great for taking attacks from enemies. Mini-turrets also have the benefit of being harder to hit.
+* [[Uranium slug turret]]s are not strict upgrades. The autocannon actually outdamages the uranium slug turret until 25 tiles of range (before {{AP}}). Even then, since the uranium slug turret has a tendency to overkill, they are almost always worse against human targets. The uranium slug turret's advantages are the massive range and massive {{AP}}. They are highly effective against [[centipede]]s and other armored targets.
+
+== Graphs ==
+{{#ifeq: {{#expr:{{Q|Autocannon|Minimum Range}}*{{Q|Uranium slug cannon|Minimum Range}}}}|105.91||{{Recode|section=1|reason=Min range changed - code needs update}}}}
+{| class="wikitable"
+|-
+! {{Hover title|link=no|dotted=yes|DPS taking into account both weapon accuracy and pawn/turret accuracy|True DPS}} over Range
+|-
+| {{Graph:Chart|width=400
+|height=200
+|type=line
+|xGrid=
+|yGrid=
+|xAxisTitle=Range (Cells)
+|xAxisMin = 0
+|xAxisMax = 46
+|yAxisMin = 1
+|yAxisMax = 30
+|yAxisTitle=DPS
+|x= 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46 
+|y1= {{#explode:  {{Weapon DPS Iterator|Mini-turret gun|normal|0.96}} | && |1 }}
+|y2= , , , , , , , {{#explode: {{Weapon DPS Iterator|Autocannon|normal|0.96}} | && |1 }}
+|y3= , , , , , , , , , , {{#explode: {{Weapon DPS Iterator|Uranium slug cannon|normal|0.98}} | && |1 }}
+|y1Title= Mini-turret
+|y2Title= Autocannon turret
+|y3Title= Uranium slug turret
+|legend= Legend
+}}
+|}
+
+== Version history ==
+* [[Version/0.19.2009|0.19.2009]] - Added.
+* 1.1 - Its damage and armor penetration was halved (40 -> 20, 60% -> 30%), and the reload cost was increased (120 -> 180 baseline).
+* [[Version/1.1.0|1.1.0]] - Placing turrets now shows min and max range, not just max range.
+* [[Version/1.1.2618|1.1.2618]] - Damage and armor penetration was increased (20 -> 25, 30% -> 37.5%).
+* [[Version/1.3.3200|1.3.3200]] - Damage increased from 25 to 27. Accuracy increased: touch 0.25 -> 0.28, short 0.65 -> 0.72, medium 0.6 -> 0.66, long 0.45 -> 0.5. Turret ammo cost is no longer factored by difficulty.
+* Between [[Version/1.3.3117|1.3.3117]] and 1.4.3580 - Turrets now benefit from [[cover]]. Despite displaying in the mouse-over box as such, empirical testing demonstrated that turrets did not benefit at all. However, a new issue was introduced. See above.
+
+{{nav|security|wide}}
+[[Category:Security]] [[Category:Turret]]

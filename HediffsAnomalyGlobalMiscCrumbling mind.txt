@@ -1,0 +1,51 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Anomaly/Global/Misc}}
+|}
+----
+{| {{STDT| c_21}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Crumbling mind" <!-- defName="CrumblingMind", ParentName="CrumblingMindBase" -->
+! Crumbling mind
+----
+* Def Name:<br />CrumblingMind
+* Label:<br />crumbling mind<!-- CrumblingMindBase -->
+|<!-- Description -->
+<div style="max-width: 500px;"><!-- CrumblingMindBase -->
+This person is experiencing a rapidly decaying mental state. Within a few days, they will be incapable of most work. With sufficient technology, like a healer mech serum, the condition can still be reversed. However, it will soon become permanent.
+</div>
+|<!-- Details -->
+<!-- CrumblingMindBase -->
+* Hediff Class: '''HediffWithComps'''
+* Initial Severity: '''0.1%'''
+* Max Severity: '''100%'''
+* Is Bad: {{Bad|true}}
+* Tendable: {{Bad|false}}
+* Duplication Allowed: {{Bad|false}}
+* Default Install Part: '''Brain'''
+<!-- CrumblingMind -->
+* '''Comps'''
+** ''Severity Per Day:'' {{++|33%}}
+*** Show Hours To Recover: {{Good|true}}
+** ''Replace Hediff''
+*** Hediffs: Hediff: '''[[Hediffs#Crumbled_mind|Crumbled mind]]'''
+*** Message:<br /><span>{PAWN_nameDef}'s cognitive condition has become permanent.</span>
+|<!-- Stages -->
+{| {{STDT| c_21}}
+! Label !! Parameters
+|-
+! mild
+|<!-- Parameters -->
+* [[Consciousness]] Post Factor: {{Bad|×90%}}
+|-
+! moderate
+|<!-- Parameters -->
+* Min Severity: '''40%'''
+* [[Consciousness]] Post Factor: {{Bad|×75%}}
+|-
+! extreme
+|<!-- Parameters -->
+* Min Severity: '''80%'''
+* [[Consciousness]] Post Factor: {{Bad|×60%}}
+|}<noinclude>
+|}</noinclude>

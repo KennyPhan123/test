@@ -1,0 +1,169 @@
+{{Version Nav}}
+In addition to a ton of general improvements for the base game and Royalty, this update focuses on tightening quest generation and making nobles more flexible. Full change log is below.
+
+For DRM-free players, just re-download from your original download link to get the updated version(s). Your download link never changes.
+
+If for any reason you want to play the previous version on Steam, please use the Steam beta branch called ‘previous’.
+
+RimWorld is a very flexible game with many different game states, and our quest generation system uses some pretty complex scripting to generate quests appropriate at different difficulties, diplomatic configurations, and colony sizes. Since releasing 1.1, we’ve been seeing some cases where quests would generate that weren’t rewarded appropriately or had the wrong difficulty and complexity level for the stage of the game they were appearing in. All this should be a lot tighter in this build, and there are further plans for refining and enriching quest content in the future. All the feedback we’ve gotten about this has been invaluable – thank you!
+
+This update also works on making nobles more flexible. Players have indicated that they want to use royal colonists in more different ways, and it’s always been a goal with RimWorld to support players choosing their own path as much as possible, exploring different strategies and role-playing different stories. The original nobility design focused on advancing a single character up the noble ranks, but if players want to have 6 knights and they’re willing to do the quests to earn that royal favor, the game should reward that gracefully. Shared throne rooms and controllable speeches are a step in that direction. As always, we’ll be watching how this plays and seeking more ways to enable players’ goals.
+
+This update should be compatible with all vanilla savegames. We also tested with a wide variety of mods and found it compatible (though it’s hard to guarantee this since mods can change any time and do anything). We’ll be watching carefully and working to fix anything that comes up. Whether you’re a modder or a player who has discovered a problem, please don’t hesitate to come chat with us about technical issues on the public testing Discord server!
+
+The content add-on discussed some weeks ago is still coming. These updates represent the more urgent and straightforward improvements I want to get out quickly, while we work on the deeper changes separately. I’m excited to show you what’s coming but, as always, it’s better to keep it under wraps because the design is still changing as we iterate on it.
+
+Thanks again to everyone who is playing and offering feedback.
+
+-Ty
+
+'''EDIT:''' We’ve discovered an incompatibility with the Startup Impact mod. This shouldn’t affect play at all, but the mod’s special loading screen won’t work until it’s updated.
+
+== Improvements ==
+
+* Multiple thrones can now share one throneroom.
+* Allow non-noble pawns to play music. High culture recreation type is re-labeled to music recreation. Allow non-conceited nobles use dexterity play.
+* Make speech from the throne an ability player can control. High-level royals gain the ability to do a speech from the throne. It has a cooldown (so the speaker can think of ideas for the next speech). The feedback for throne speeches now tells the player the chances of different outcomes, along with the relevant social stat.
+* Removed minimum expectations for non-conceited titles (that is, titles of pawns who were not born royalty and are not greedy or jealous).
+* Implemented category-based melee verb selection. Previously, pawns would select which melee verb to use simply by a weighted random selection according to the power of their different verbs. However, this created an incoherency where adding, for example, a knee spike to a pawn with a longsword would actually make him worse, since the knee spike is less powerful than the longsword but now he is more likely to choose a verb besides the longsword. The new verb category system places each verb in one of three categories – best, mid, and worst. It then chooses randomly between best (75% of the time) and mid (25% of the time). So adding a knee spike to a longsword wielder will not make him use the longsword less often; rather it will replace his fists as the mid-tier verb and improve his damage per second.
+* Colonists can now be set as master to any animal they are bonded with regardless of skill. This prevents situations where starting animals begin bonded to colonists who cannot become their master, leading to a permanent negative thought for the colonist not being master of the bonded animal.
+* “New quest” letters now link directly to the relevant quest instead of requiring an extra click.
+* Shuttles that don’t land on landing pads will now avoid crushing buildings, items, and trees.
+
+== Tuning ==
+
+* Redesigned how hosting quests generate threats. Instead of always generating points-based threats on a 24-hour cycle with the same timing in all cases, the system now chooses from a designed menu of different duration ranges, threat counts, and threat intensities. Each challenge rating (star level) has a different menu of threats. These are all modified by the possibility of adding helpers, different guests with different conditions, and so on.
+* Quests’ reward value is now always at least 250 silver, no matter how small the quest.
+* Quest guests can now only be downed or sick if quest points are over 300.
+* Non-royal guests can now have mood threshold set only if quest points are over 400.
+* Helpers can no longer generate for 1-star hospitality quests (since these quests have no violent threats).
+* Reworked how the guest count for quests is generated, taking points into account better, and adjusted the rate to have fewer guests at really low points levels.
+* Hosting quests can only use 2 or 3 challenge stars above specific points thresholds.
+* Random quests no longer generate at all under 100 points, and lerp to generating as normal at 200 points.
+* Tune random quest selection weights for more variation.
+* You can no longer get quests about fighting mech clusters at unreasonably low points levels.
+* You can no longer get infestation quests at unreasonably low points levels. Change the code that determines the hive count to round normally without randomness, for greater accuracy.
+* Increase monument protection times from 10~30 days to 20~50 days, and increased reward factor to match.
+* We no longer generate as many cheap items at high reward values, in order to focus on a few big juicy rewards.
+* Adjusted the rewards for various game conditions in condition-for-pay quests (this means quests where e.g. you get a toxic fallout but also get a reward). Also linked specific conditions to specific star ratings.
+* Balance down the reward you get just for keeping a hospitality guest without threats (since often this can even be advantageous).
+* Deny choosing Empire as asker for a hospitality joiners quest if points are under 240, to avoid sending nobles when a colony can’t realistically support them and they wouldn’t want to visit.
+* Adjust how hospitality quests determine the royal title of royal guests so early-mid-game guests don’t have unsupportably high titles.
+* Tune the default relationship between quest points and reward value to make it scale better lower and higher points levels.
+* Slightly increase chance of population-gaining quests.
+* Quest threat sites will no longer generate with ‘possibly unknown threats’ all the time, and especially not at lower challenge levels.
+* Quest threat sites will now limit the number of threats at the site according to the quest points.
+* Extended hive spawning delay the 14 seconds to 28 seconds.
+* Reduced [[luciferium]] market value from 120 to 70.
+* Increased joywire consciousness impact from 20% to 30%.
+* Increased spike trap build cost from 35 to 45.
+* Reduced wood sharp damage multiplier from 0.45 to 0.40.
+* Colored lights research project no longer requires high tech research bench.
+* Difficulty settings now modify butcher yield similarly to crop yield.
+* Moisture pumps now leave resources behind when destroyed.
+* Fine floors now give 75% of resources back upon deconstruction, similar to other floors.
+* Changed research prerequisite for ship landing beacon from microelectronics to electricity.
+* Greatbow can now be made at crafting spot.
+* Health conditions can now have negative pawn price offsets. Mindscrew now has a negative price offset.
+
+== Technical ==
+
+* Improve grammar resolution trace format by putting the trace first, then variables, then custom rules.
+* Make mech capsules avoid placing multiple mechs on the same cell.
+* Suppress “dependency needs to have downloadUrl” warning for dependencies on official content.
+* Moved ‘Copy debug to clipboard’ button to above debug text. Made the signal text box button narrower and changed the ‘…’ button label to ‘Send defined signal’.
+* Shuttles can now take off when under roofs to prevent breaking quests if it moves under a thick roof after landing.
+* Added a new quest node for creating multiple incident quest parts periodically or randomly.
+* Moved quest part debug window contents to a virtual method. Added a debug button to complete Pawn Lend return shuttle delay.
+* Improve ‘write storyteller’ debug output.
+* Special thing filters are now always shown based on the root category of the filter listing.
+* ThingFilter now resolves the display root category lazily.
+
+== Text ==
+
+* Adjust description of ArrestSuccessChance stat.
+* Replace obsolete loading tip about noble foods.
+* Removed some nouns that don’t pluralize well by adding “s” to the end.
+* Name generator now always uses GenText.CapitalizeAsTitle.
+* Bladelink weapons now report the minimum title required to legally use them in their info card.
+* Re-arranged some parts of “title gained” letter to put important stuff near the top.
+* Adjust feedback for when protected monument is destroyed.
+* Adjust some repetitive text in game condition quest descriptions.
+* Refine description text for the infestation/joiner quest generation script.
+* “Caused by title” trait tooltip text is now white to match other “caused by” text.
+* Display quest info on monument marker inspect pane. Don’t show “Complete”
+* Add tooltip about allies sending random traders and military aid.
+* Recreation type stat report now describes what it is and lists all recreation types.
+* Removed some redundant text from animal hospitality quests.
+* Display quest info on monument marker inspect pane. Don’t show “Complete”
+* Recreation type stat report now describes what it is and lists all recreation types.
+* Changed the “royal incapable of social” warning dialog to prompt the user to confirm before accepting the quest, instead of simply closing and requring the user to accept the quest again.
+* Updated player-created backstories and names.
+* Fix: Typo in duck description.
+* Fix: Trap hit letter label for friendly pawns not capitalized.
+* Fix: Incorrect tooltip about surgically upgrading psychic amplifier (it doesn’t actually require surgery).
+* Fix: Quest guests not being unhealthy even though quest description says they are.
+* Fix: Pawn lend quest specifies how colonists will be returned, when it could be either shuttle or drop pods depending on asking faction.
+* Fix: World inspect pane showing always the label of the first selected object instead of ‘(various)’.
+* Fix: Incorrect capitalization in plant attributes.
+* Fix: Site threat quests sometimes mention a faction which is not even used for the site threats.
+
+== Fixes ==
+
+* Fix: Error spam if a herd of boomalopes explodes.
+* Fix: If a shuttle drops off downed pawns, they’re dropped on top of each other.
+* fix: On dismissing a quest, a seemingly-random one is selected.
+* Fix: Can get pyromaniac trait for medical assistant backstory where it doesn’t make any sense.
+* Fix: Pawns being carried don’t show up on the social tab.
+* Fix: Debug text overlapping with hyperlinks.
+* Fix: Old methods not calling _NewTemp versions.
+* Fix: Recreating cantTakeReasons List<string> recreated every time in Selector. Resurrection utility now checks for artificial body parts using hediffSet.PartOrAnyAncestorHasDirectlyAddedParts.
+* Fix: Exception in pawn creation panel.
+* Fix: Resurrection blindness affecting unnatural body parts.
+* Fix: Ordering more than 1 drafted pawn to move somewhere they cannot go does not show a ‘no path’ hint.
+* Fix: Listing_TreeThingFilter.Visible having new parameter but no _NewTemp appended. Old method with same signature now always returns true and is not called anywhere.
+* Fix: Armor prevents damage from surgery failures.
+* Fix: Mech cluster lord not receiving wake up signal if there are no spawned mechs initially.
+* Fix: Threat response icon color doesn’t match icons beside it.
+* Fix: Wild decree mental break can happen to prisoners.
+* Fix: Modded factions that have no color set for their icon break the ‘choose rewards’ window.
+* Fix: Wick not being rendered on defoliator when it’s about to explode.
+* Fix: Attacking infestation hives causes nearby ancient danger hives to aggro.
+* Fix: Replacement body parts not affecting pawn price. HediffDef priceImpact now defaults to false, and we explicitly state which hediffs have price impact.
+* Fix: Architect tab looks darker than other tabs in bright snow.
+* Fix: Some shelves have ‘Allow fresh’ whereas others do not. Display root category in ThingFilter is now updated properly.
+* Fix: ListsEqualIgnoreOrder is incorrect.
+* Fix: Asymmetric faction relations caused by permanentEnemyToEveryoneExceptPlayer FactionDef flag.
+* Fix: Piano uses stuffed unfinished thing.
+* Fix: Wild men/women suffer from naked moodlet.
+* Fix: Affordance grid doesn’t update when edifices are built or removed.
+* Fix: ‘Choose rewards’ button is cut off at the bottom.
+* Fix: Loading an old scenario file can break the UI if it references a stuff that isn’t in the game any more.
+* Fix: Hediff combatLogEntry is referenced but not deep-saved.
+* Fix: Selecting a minified ship landing beacon causes errors.
+* Fix: QuestNode_GetRandomPawnKindForFaction sometimes makes the quest description unresolvable (fallback is a string).
+* Fix: Outlander combat suppliers don’t buy drugs.
+* Fix: Errors with melee verbs when drafting pawns carrying ranged weapons.
+* Fix: Ship landing area alert text displays improper dimensions.
+* Fix: ‘Prisoner released’ thoughts remain after recapturing the pawn.
+* Fix: Psychopath has a negative social opinion after another colonist sells slaves.
+* Fix: Language worker not capitalizing words in quotes properly.
+* Fix: Name generator capitalizing letters after apostrophes.
+* Fix: White fringes on harpsichord art. Note that harpsichord also needs HQ tex compression because of the dark low-contrast gradients.
+* Fix: Text uncapitalized after colon.
+* Fix: Error on using quest script defs debug table.
+* Fix: Capacities aren’t updated when equipping gear that affects stats.
+* Fix: Stats show all gear if any one piece affects it.
+* Fix: Red interface button has no right border.
+* Fix: Noble given a speech walks to a throne really slowly.
+* Fix: TranslateWithBackup didn’t work.
+* Fix: Missing ‘shuttle arrived’ signal that disables hospitality threats after shuttle delay.
+* Fix: Thought reporting incorrect start / finish expiration date.
+* Fix: GetPawn not filtering by excluded factions on existing pawns.
+* Fix: Stone blocks (and other recipe products without hitpoints) not counted properly by recipe.
+* Fix: Tribute collector arriving when there’s another caravan hostile to empire on the map.
+* Fix: Dismiss quest icon is asymmetrical.
+* Fix: Incorrectly rotated monument marker thing not detected properly as part of monument.
+* Fix: “Sequence contains no matching element” in BuildDifferenceExplanationText for some mods.
+* Fix: Secondary guests don’t use faction name rulepacks.
+* Fix: SketchThing detecting incorrect things as part of the monument.

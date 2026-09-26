@@ -1,0 +1,163 @@
+{{Ideology}}
+{{infobox main|plant|
+| page verified for version = 1.3.3066
+| name = Gauranlen tree
+| image = Gauranlen tree.png
+| description = A large, distinctive-looking tree with a unique life-cycle. Each Gauranlen tree contains a small non-conscious dryad queen. The queen births creatures called dryads which guard and tend the tree. In exchange, the tree nurtures its protectors by feeding them directly. From the outside, it appears the dryads are created by the tree directly and act as part of it.<br>It is possible for a person to form a connection with a Gauranlen tree and partially control the dryads it produces.<br>Some say Gauranlen trees are the homes of nature spirits that follow humanity across worlds.
+| type = Plant
+| type2 = Tree
+| path cost = 42
+| passability = pass through only
+| blockswind = true
+| cover = 0.25
+| minifiable = false
+| hp = 300
+| flammability = 1
+| beauty = 6
+| beauty outdoors = 6
+| grow days = 10
+| lifespanDaysPerGrowDays = 0
+| harvest work = 800
+| product = wood
+| yield = 35
+| min fertility = 0.05
+| fertility sensitivity = 0
+| min grow light = 0
+| nutrition = 2
+| immune to blight = true
+| livesin_temperateforest = 0
+| livesin_temperateswamp = 0
+| livesin_tropicalrainforest = 0
+| livesin_tropicalswamp = 0
+| livesin_aridshrubland = 0
+| livesin_desert = 0
+| livesin_extremedesert = 0
+| livesin_borealforest = 0
+| livesin_coldbog = 0
+| livesin_tundra = 0
+}}
+[[File:Gauranlen tree exclusion radius.png|thumb|right|Gauranlen tree exclusion radius]]
+[[File:GauranlenRadius.png|thumb|right|Gauranlen tree seed exclusion radius]]
+The '''Gauranlen  tree''' is a tree added by the [[Ideology DLC]]. It produces and supports [[dryads]].
+
+==Acquisition==
+Gauranlen trees are grown from a [[Gauranlen seed]], which must be harvested from a [[gauranlen pod]]. Gauranlen pods are spawned as an [[event]] that occurs roughly every 60 days (30 days with the [[Tree connection]] meme), or as a successful [[ritual]] reward. Harvesting a pod yields 1-2 Gauranlen seed. 
+
+Seeds can be planted on any tile with a fertility stat, but it cannot be planted closer than 4 tiles to another Gauranlen tree, or within 1 tile from any other tree or cactus. It also cannot be placed within 1 tile of a [[growing zone]]. If planted within 7 tiles of an artificial structure, the tree will experience a greater connection strength decay over time.
+
+Like the [[anima tree]],{{RoyaltyIcon}} [[polux tree]],{{BiotechIcon}} [[harbinger tree]],{{AnomalyIcon}} and the [[archean tree]]{{OdysseyIcon}} but unlike other trees, Gauranlen trees cannot be moved.
+
+== Summary ==
+Gauranlen trees can be linked to and pruned to allow access to its [[dryad]]s. The tree reaches its largest size after 10 days of growth since planting, although this only affects [[wood]] yield and determines if it will sprout [[gauranlen moss]].
+
+Guaranlen trees can be eaten by [[alphabeaver]]s but not by [[thrumbo]]s, despite both being [[dendrovore]]s. It is immune to [[Toxic fallout]].
+
+=== Default behavior ===
+The tree will continuously sprout [[gauranlen moss]] once per day after reaching 60% growth, which provides no benefit other than its [[beauty]] of {{+|10}}.
+
+An unconnected Gauranlen tree can produce up to 2 [[immature dryad]]s, which can be converted into specialized dryads. Immature dryads will wander around the tree, putting out fires within a 9.5 tile radius, and will even wake up to do so.
+
+=== Linking and Connection ===
+To access dryads, a colonist must first perform a linking ceremony to the Gauranlen tree. This ceremony requires at minimum 1 connector capable of Plant Cutting and with a [[Psychic Sensitivity]] above 0%. Each spectator increase the ritual quality by 10%, which in turn improves the initial connection (ranging from 25% to 45%). 
+
+Connection is required to generate and maintain dryads. The amount of connection, which can be viewed by selecting the tree, determines how many dryads are sustained at once:
+<div><li style="display: inline-table;">
+{| {{STDT|c_16 text-center}}
+|-
+! Connection !! 5% !! 25% !! 50% !! 75%
+|-
+!Dryads 
+|1 || 2 || 3 || 4
+|}
+</li></div>
+
+If connection rises above the threshold, the tree will spawn [[immature dryad]]s ([[#Dryads|see below]] for detail). If connection falls below the breakpoint, any extra dryads will merge with the tree and will need to be respawned. The desired amount of connection can be set by selecting the tree. It is recommended to set desired connection above the breakpoint, as any time spent below the breakpoint will merge dryads. 
+
+Even if the connection reaches 0%, the pawn and Gauranlen tree will remain linked. The link can only be broken if the linked pawn dies or is kidnapped. The link will remain broken if the pawn is revived or return to the colony. After unlinking, there is a 30 day cooldown before the tree can be relinked.
+
+==== Pruning ====
+{{For|how much time a pawn would need to prune|Pruning Speed}}
+
+Connection can be built up by pruning the tree, which is considered Plant Cut work and is impacted by [[Pruning Speed]]. Pruning the tree will train Plants skill at the normal rate, although since the pawn doesn't have to waste time moving, the XP gain/hour will be higher than normal planting. Notably, Pruning Speed is only impacted by Plants skill, [[Global Work Speed]], and the [[Tree connection]] [[meme]]. Missing arms, eyes, etc. have no impact, although gauranlen trees cannot be pruned at 0% [[Manipulation]].
+
+A baseline pawn at Plants 8 will have 100% pruning speed, and will prune at 1%/hr. A pawn of this skill would need to prune for 6 hours per day to maintain 4 dryads.
+
+Pawns will take a {{Ticks/gametime|10000}} break time between two prunings of an individual Gauranlen tree, with each tree tracked separately, where pawns will not prune the tree even if assigned to work and no other work is possible. This applies even if a pruning was interrupted, e.g., by [[draft]]ing. However, it is possible to manually command the pawn to prune the tree to ignore the cooldown.
+
+When a pawn is connected to multiple Gauranlen trees, they prioritize pruning the tree with the biggest difference between desired connection strength and current.
+
+==== Connection decay ====
+As long as the Connection strength is above 0.1%, for a given connection strength '''X''', the base decay is given by the following table.
+:{| {{STDT|c_16 text-center}}
+|-
+! scope="row" | Current Connection || <0.1% || 0.1% to 33% || 33% to 66% || 66%+
+|-
+! scope="row" | Daily connection loss
+| 0% || 2% + ('''X''' - 0.1%) * 20/329 || 4% + ('''X''' - 33%) * 2/33  || 6%
+|}
+Ignoring the special case of 0% connection, the daily decay is 2% plus 2/33 times the current connection strength, capping at '''6%'''. As the number of bonded dryads is dependent on the Connection strength of the tree, more dryads lead to increased pruning time required.
+
+''Any'' artificial building in the Gauranlen tree's 7-tile range will increase connection decay by up to {{--|6.24%}} / day. This decay depends solely on the distance to the closest artificial building, not the number of artificial buildings.
+:{| {{STDT|c_16 text-center}}
+|-
+! scope="row" | Distance to<br/>tree (cells) || 1 || 2 || 3 || 4 || 5 || 6 || 7 || 8+
+|-
+! scope="row" | Daily loss (%) 
+| 6.24 || 5.48 || 4.72 || 3.96 || 3.20 || 2.44 || 1.68 || 0 
+|}
+
+=== Dryads ===
+{{Main|Dryads}}
+
+If a gauranlen tree has enough connection, it will spawn [[immature dryad]]s. There is a cooldown of 6 days between each immature dryad spawn, although this cooldown will tick down even if the tree is unconnected or the connection is not high enough to spawn more dryads. An unlinked tree will spawn up to 2 dryads.
+
+Once a colonist has linked to a tree, a [[dryads|dryad caste]] can be selected. After selection, immature dryads will immediately cocoon, and will take 5 days to develop into that caste. One tree can only have 1 caste of dryads, though you can have multiple dryads of that caste. Note that the connected pawn must have the "Basic" work type assigned to change the dryad caste after you have selected one.
+
+The dryad caste can be changed freely without needing colonist interaction, but doing so causes each existing dryad to enter the 5 day cocoon period.
+
+===Ideoligion interactions===
+A pawn with the Gauranlen Connection precept will get a {{+|25%}} [[Pruning Speed]] boost, and a non-stacking {{+|3}} [[mood]]let for being connected to a tree. When ''not'' connected to a tree, they will get a mood penalty (scaling with colony [[expectations]]).
+
+The gauranlen tree counts as a "super" tree to pawns with the [[Trees (precept)|Trees: Desired precept]], and will give the "amazing tree" thought to such pawns.
+
+===Destruction===
+The destruction of a connected Gauranlen tree will kill all of its dryads and give a -15 mood to the connected pawn for 10 days. It will also prevent the previously connected pawn from connecting to a different tree until 10 days have passed. It will get selected for cutting using the chop tree drag command, so be careful.
+
+== Analysis ==
+In order to get and sustain 4 dryads, a pawn will have to prune each tree from 3.6 hours (Gauranlen Connection, Plants 20) to 6 hours (Plants 8) every day ''just'' to sustain the dryads, before Global Work Speed. Sustaining 1 tree with 4 dryads is more efficient than 2 trees with 2 dryads, due to 2 trees losing connection faster.
+
+How much benefit you'll get depends on the dryad in question:
+* [[Woodmaker]]: Woodmakers are space-efficient, but not work efficient compared to growing any other tree. Also can survive in extreme cold/heat. 
+** If you can't harvest trees, then somewhat competitive with [[fibercorn]]. With Tree Connection, Plants 14 dryads are equal to Plants 14 fibercorn. At higher plants skill, or with a [[Plants specialist]], fibercorn becomes better for wood per work.
+* [[Berrymaker]] & [[Medicinemaker]]: Unless you are unable to grow plants at all, then the dryads are worse than their plant equivalent.
+* [[Barkskin]] & [[Clawer]]: Combat dryads, controlled just like an animal trained to Attack. Unlike animals, dryads can regenerate from all permanent wounds and even [[luciferium]] addiction by resting for 3 days. Both dryads are not great in solo combat, but can work together with colonists. It's a huge time cost, but can be useful.
+* [[Carrier]]: 1 pawn can sustain 4 half-speed haulers for a full waking day, for less than a full day's of work. If you don't need things hauled constantly, then you still have to prune the tree (or face a 5-day minimum penalty).
+* [[Gaumaker]]: Another way to create gauranlen trees. Useful for the Tree Connection moodlet, and only available with Tree Connection.
+
+Because light impacts Global Work Speed, you'll want to place a [[standing lamp]] 8-9 tiles away. Alternately, you can place a [[torch lamp]] anywhere near the tree.
+
+Regular, healthy colonists will likely have disappointing results with Gauranlen trees. However, Pruning Speed is ''not'' affected by reduced [[Consciousness]], [[Manipulation]], [[Sight]], etc. This means that disabled and psychically optimized (blinded, permanent [[pain]]) pawns can prune at the same rate as a healthy colonist. Blind and half-conscious [[psycast]]ers{{RoyaltyIcon}} are terrible as regular workers, but they can be nearly as productive as normal colonists by pruning Gauranlen trees.
+
+'''Using gauranlen trees in grow zones'''
+<br>
+The Gauranlen tree requires a 3 by 3 space around it to not be cut down. They can't be placed within 4 tiles of another gauranlen tree, so maximizing area to trees, you can have 4 trees in a 6*6 area(note that an additional 7 tiles from each side cannot have buildings without impeding connection). The ratio of tiles occupied by a tree to tiles occupied by a grow zone is 9:16, making for a 5*5 repeating pattern around each tree. At each protruding corner, where you shouldn't have walls, more grow tiles can be put in (as long as it's arable soil). Thus it is efficient to use the tree in this way if space available is an important factor.
+
+==Gallery==
+<gallery>
+GauranlenTreeA.png|Gauranlen Tree sprite Variant A
+Gauranlen tree.png|Gauranlen Tree sprite Variant B
+Stump chopped gauranlen.png|[[Chopped gauranlen stump]]
+Stump smashed gauranlen.png|[[Smashed gauranlen stump]]
+</gallery>
+
+== Version history ==
+* [[Ideology DLC]] Release - Added.
+* [[Version/1.3.3069|1.3.3069]] - Connecting to a Gauranlen tree gives 25-45% connection strength to the connector depending on ritual quality. Psychically deaf pawns cannot connect with Gauranlen trees.
+* [[Version/1.3.3072|1.3.3072]] - Gauranlen trees heal slowly over time. When a pawn is connected to multiple gauranlen trees, they prioritize pruning the tree with the biggest difference between desired connection strength and current.
+* [[Version/1.3.3074|1.3.3074]] - Prevent thrumbos from eating Gauranlen trees.
+* [[Version/1.3.3076|1.3.3076]] - Pruning is now based on [[Pruning Speed|pruning speed]] stat.
+* [[Version/1.3.3101|1.3.3101]] - Dryad spawn days reduced from 8 to 6. Reduced dryad transform delay from 6 days to 5 days.
+* [[Version/1.4.3523|1.4.3523]] - Fix: Global work speed not applying to pruning speed.
+
+{{nav|plant|wide}}
+[[Category:Plants]] [[Category:Trees]]

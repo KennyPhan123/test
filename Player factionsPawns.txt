@@ -1,0 +1,111 @@
+<onlyinclude><div><li style="display: inline-table;">
+{| {{STDT| c_01 sortable text-center}}
+! Pawn Kind !! Combat Power !! Gear !! Apparel !! Weapons !! Tech !! Inventory !! Additional Info [[{{fullurl:Player factions/Pawns|action=edit}} edit]]
+<!-- 9 columns; 1 bold, 8 normal: -->
+<!-- defName="", label="", ParentName="", Name="BasePlayerPawnKind"
+|- id="Name"
+! Name
+| [[File:Name.png]] || 30 || '''HP:''' <br />'''Avg. Quality:''' Always Normal
+| '''Budget''': <br />'''Required:''' <br />'''Disallowed:''' <br />'''Allow Headgear Chance:''' <br />'''Available:''' {{#ask:[[Tags::]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}<br />'''Ignore Seasons'''<br />'''Ignore Pollution'''
+| -
+| -
+| -
+| '''Age Range:''' <br />'''Race:''' Human<br />'''Default Faction Type:''' <br />'''Backstories:''' <br />'''Disallowed Traits:''' <br />'''Required Work Tags:''' <br />'''isFighter:''' false<br />'''Pregnancy Chance:''' 6%<br />'''Chemical Addiction Chance''': <br />'''Initial Will Range''': 0~0<br />'''Initial Resistance Range''': 
+-->
+<!-- defName="Colonist", label="colonist", ParentName="BasePlayerPawnKind", Name="" -->
+|- id="Player colonist"
+! Colonist<br>[[File:Player colonist.png]] 
+| 30 || '''Avg. Quality:''' Always Normal
+<!-- Apparel -->
+| '''Budget''': 350~600<br /><!--
+-->'''Allow Headgear Chance:''' 0%<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}<br /><!--
+-->'''Ignore Seasons'''<br /><!--
+-->'''Ignore Pollution'''
+<!-- Weapons -->
+| -
+<!-- Tech -->
+| '''Budget''': 50~800<br /><!--
+-->'''Disallowed:''' {{Gear List|TechHediffsTags|PainCauser}}<br /><!--
+-->3% chance to have one of the following: {{Gear List|budget=800|TechHediffsTags|Poor|Simple|ImplantEmpireCommon}}
+| -
+<!-- Additional Info -->
+| '''Age Range:''' Any<br />'''Race:''' Human<br />'''Default Faction Type:''' [[Player factions#New Arrivals|Player Colony]]<br />'''Backstories:''' Cryptosleep (100% Commonality)<br />'''isFighter:''' false<br />'''Pregnancy Chance:''' 6%<br />'''Chemical Addiction Chance''': 6%<br />'''Initial Will Range''': 0~0<br />'''Initial Resistance Range''': 13~21
+<!-- defName="Tribesperson", label="member", ParentName="BasePlayerPawnKind", Name="" -->
+|- id="Player tribesperson"
+! Member<br>[[File:Player tribesperson.png]] 
+| 30 || '''Avg. Quality:''' Always Normal
+<!-- Apparel -->
+| '''Budget''': 200~200<br /><!--
+-->'''Available:''' {{#ask:[[Tags::Neolithic]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}<br /><!--
+-->'''Ignore Seasons'''<br /><!--
+-->'''Ignore Pollution'''
+<!-- Weapons -->
+| -
+<!-- Tech -->
+| '''Budget''': 50~50<br /><!--
+-->2% chance to have one of the following: {{Gear List|budget=50|TechHediffsTags|Poor}}
+| -
+<!-- Additional Info -->
+| '''Age Range:''' Any<br />'''Race:''' Human<br />'''Default Faction Type:''' [[Player factions#New Tribe|Player Tribe]]<br />'''Backstories:''' Cryptosleep (0% Commonality)<br />'''isFighter:''' false<br />'''Pregnancy Chance:''' 6%<br />'''Chemical Addiction Chance''': 5%<br />'''Initial Will Range''': 0~0<br />'''Initial Resistance Range''': 9~15
+<!-- defName="Mechanitor", label="mechanitor", ParentName="", Name="MechanitorBase" -->
+|- id="Player mechanitor"
+! Mechanitor<br>[[File:Player mechanitor.png]] 
+| 85 || -
+<!-- Apparel -->
+| '''Budget''': 0~2500<br /><!--
+-->'''Required:''' {{Icon Small|Airwire headset|24}} [[Airwire headset]], {{Icon Small|Duster|24}} [[Duster]], {{Icon Small|Flak vest|24}} [[Flak vest]], {{Icon Small|Button-down shirt|24}} [[Button-down shirt]], {{Icon Small|Pants|24}} [[Pants]]<br /><!--
+-->'''Allow Headgear Chance:''' 0%<br /><!--
+-->'''Available:''' {{#ask:[[Tags::IndustrialAdvanced]][[Lifestage::~*Adult*]][[Layer::!~*Outer*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}<br /><!--
+-->'''Ignore Seasons'''<br /><!--
+-->'''Ignore Pollution'''
+<!-- Weapons -->
+| '''Budget''': 300~900<br /><!--
+-->'''Biocoded Chance:''' 100%<br /><!--
+-->'''Forced Quality:''' Masterwork<br /><!--
+-->'''Available:''' <br />{{Gear List|budget=900|WeaponTags|Autopistol}}
+<!-- Tech -->
+| '''Budget''': 1000~2000<br /><!--
+-->'''Required:''' {{Icon Small|Mechlink|24}} [[Mechlink]]<br /><!--
+-->?% chance to have one of the following: {{Gear List|budget=2000|TechHediffsTags|Simple|Advanced|AdvancedWeapon}}
+| 50% chance of: 1~2x {{Icon Small|Go juice|24}} [[Go juice]] or {{Icon Small|Yayo|24}} [[Yayo]]
+<!-- Additional Info -->
+| '''Age Range:''' Any<br />'''Race:''' Human<br />'''Default Faction Type:''' [[Player factions#New Arrivals|Player Colony]]<br />'''Backstories:''' Cryptosleep (100% Commonality), Scientist<br />'''Disallowed Traits:''' [[Body purist]], [[Psychically dull]], [[Psychically deaf]]<br />'''Required Work Tags:''' Intellectual<br />'''Forced Traits:''' [[Recluse]]<br />'''Chemical Addiction Chance''': 8%<br />'''Initial Will Range''': 0<br />'''Initial Resistance Range''': 0~1
+<!-- defName="Sanguophage_Player", label="sanguophage", ParentName="SanguophageBase", Name="" -->
+|- id="Player sanguophage"
+! Sanguophage (Player)<br>[[File:Player sanguophage.png]] 
+| 100 || -
+<!-- Apparel -->
+| '''Budget''': 350~600<br /><!--
+-->'''Color:''' {{Color|58|58|58}}<br /><!--
+-->'''Required:''' {{Icon Small|Duster|24}} [[Duster]], {{Icon Small|Button-down shirt|24}} [[Button-down shirt]], {{Icon Small|Pants|24}} [[Pants]]<br /><!--
+-->'''Allow Headgear Chance:''' 0%<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic]][[Lifestage::~*Adult*]][[Layer::!~*Outer*]][[Name::!~*shirt*]][[Name::!~*Pants*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}
+<!-- Weapons -->
+| '''Budget''': 0<br />
+<!-- Tech -->
+| -
+| -
+<!-- Additional Info -->
+| '''Chronological Age Range:''' 300~2000<br />'''Race:''' Human<br />'''Default Faction Type:''' [[Player factions#New Arrivals|Player Colony]]<br />'''Backstories:''' Cryptosleep (10% Commonality)<br />'''Disallowed Traits:''' [[Traits#Immunity|Immunity]]<br />'''Required Work Tags:''' Social, Violent<br />'''Override Faction Xenotypes:''' 100% {{Icon Small|Sanguophage|24}} [[Sanguophage]]<br />'''isFighter:''' true<br />'''Chemical Addiction Chance''': 8%<br />'''Initial Will Range''': 5~15<br />'''Initial Resistance Range''': 10~80
+<!-- defName="Researcher", label="researcher", ParentName="BasePlayerPawnKind", Name="", Abstract="" -->
+|- id="Player researcher"
+! Researcher<br>[[File:Player researcher.png]] 
+| 30 || '''Quality:''' Always Normal
+<!-- Apparel -->
+| '''Budget''': 750~1200<br /><!--
+-->'''Color:''' {{Color|250|250|250}}<br /><!--
+-->'''Required:''' {{Icon Small|Lab coat|24}} [[Lab coat]]<br /><!--
+-->'''Allow Headgear Chance:''' 0%<br />'''Available:''' {{#ask:[[Tags::IndustrialBasic]][[Lifestage::~*Adult*]]|format=template|template=Gear List/Items|link=none|default=None|limit=15|sort=Layer,Tags,From DLC|sep=,&#32;}}<br /><!--
+-->'''Ignore Seasons'''<br /><!--
+-->'''Ignore Pollution'''
+<!-- Weapons -->
+| -
+<!-- Tech -->
+| '''Budget''': 50~800<br /><!--
+-->'''Disallowed:''' {{Icon Small|Mindscrew|24}} [[Mindscrew]]<br /><!--
+-->3% chance to have one of the following: {{Gear List|budget=800|TechHediffsTags|Poor|Simple|ImplantEmpireCommon}}
+| -
+<!-- Additional Info -->
+| '''Age Range:''' Any<br />'''Race:''' Human<br />'''Default Faction Type:''' [[Player factions#Research Expedition|Research Expedition]]<br />'''Backstories:''' Cryptosleep (100% Commonality)<br />'''Is Fighter:''' false<br />'''Pregnancy Chance:''' 6%<br />'''Chemical Addiction Chance''': 6%<br />'''Initial Will Range''': 0~0<br />'''Initial Resistance Range''': 13~21
+|}</li></div></onlyinclude>
+
+[[Category:Pawnkind tables]]

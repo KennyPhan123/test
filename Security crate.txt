@@ -1,0 +1,181 @@
+{{Ideology}}
+{{Stub|reason= Occurance.}}
+{{Infobox main|building
+| name = Security crate
+| image = Security crate.png
+| description = A large self-powered hermetically-sealed crate with built-in security alarms. These can preserve their contents for a long time. If it is opened without the proper code, it will probably activate some nearby security system.
+| type = Building
+| type2 = Ruins
+| placeable = false
+| path cost = 50
+| passability = pass through only
+| cover = 0.5
+| size = 2 ˣ 2
+| flammability = 0
+| hp = 400
+| loot container = yes
+| glowradius = 4
+| glowcolor = (214, 46, 31)
+| page verified for version = 1.3.3117
+}}
+'''Security crate''' are [[ruins]] added by the [[Ideology DLC]]. Glows slightly, has contents that it ejects when opened. Summons enemies when opened
+
+== Occurrence==
+?
+
+== Summary ==
+{{Loot Container Note}}
+
+=== Loot ===
+One of the following items is dropped on opening:<!-- 
+Set variables for individual weights and calculate total
+Source: MapGen_AncientComplex_SecurityCrate (ThingSetMakerDef)
+Might change with later DLCs as new items are added, better to edit it in one place.
+!-->{{#vardefine:lootAllWeights|
+  {{#expr:
+    {{#vardefineecho:lootGold|1}} + 
+    {{#vardefineecho:lootUranium|0.5}} +
+    {{#vardefineecho:lootAdComp|1}} +
+    {{#vardefineecho:lootGlitterMed|1}} +
+    {{#vardefineecho:lootUtility|0.1}} +
+    {{#vardefineecho:lootMisc|0.75}} +
+    {{#vardefineecho:lootMiscHigh|0.5}} +
+    {{#vardefineecho:lootSpecial|0.05}} +
+    {{#vardefineecho:lootTechprint|0.05}} +
+    {{#vardefineecho:lootSerum|0.25}} +
+    {{#vardefineecho:lootShard|0.05}} +
+    {{#vardefineecho:lootBook|0.7}}
+  }} }}
+{| {{STDT| sortable c_09 text-center}}
+! style="width:15em;" | Item
+! style="width:60em;" | Randomly picked among
+! style="width:3em;" | Amount
+! style="width:3em;" | Chance
+|-
+! {{Icon Small|Gold}} [[Gold]]
+| 
+| 15-30
+| {{#expr: (100 * {{#var:lootGold}} / {{#var:lootAllWeights}})round 1}}%
+|-
+! {{Icon Small|Advanced component}} [[Advanced component]]
+| 
+| 4-8
+| {{#expr: (100 * {{#var:lootAdComp}} / {{#var:lootAllWeights}})round 1}}%
+|-
+! {{Icon Small|Glitterworld medicine}} [[Glitterworld medicine]]
+| 
+| 3-10
+| {{#expr: (100 * {{#var:lootGlitterMed}} / {{#var:lootAllWeights}})round 1}}%
+|-
+! Miscellaneous
+| <!--
+!-->{{Icon Small|bionic arm}} [[bionic arm]], <!--
+!-->{{Icon Small|bionic eye}} [[bionic eye]], <!--
+!-->{{Icon Small|bionic heart}} [[bionic heart]], <!--
+!-->{{Icon Small|bionic leg}} [[bionic leg]], <!--
+!-->{{Icon Small|bionic spine}} [[bionic spine]], <!--
+!-->{{Icon Small|bionic stomach}} [[bionic stomach]], <!--
+!-->{{Icon Small|recon helmet}} [[recon helmet]], <!--
+!-->{{Icon Small|reinforced barrel}} [[reinforced barrel]], <!--
+!-->{{Icon Small|skilltrainer}} [[skilltrainer]], <!--
+!-->{{Icon Small|healing enhancer}} [[healing enhancer]]{{RoyaltyIcon}}
+| 1
+| {{#expr: (100 * {{#var:lootMisc}} / {{#var:lootAllWeights}})round 1}}%
+|-
+! [[Book]]
+| <!--
+!-->{{Icon Small|novel}} [[novel]], <!--
+!-->{{Icon Small|schematic}} [[schematic]], <!--
+!-->{{Icon Small|textbook}} [[textbook]], <!--
+!-->{{Icon Small|tome}} [[tome]]{{AnomalyIcon}}
+| 1
+| {{#expr: (100 * {{#var:lootBook}} / {{#var:lootAllWeights}})round 1}}%
+|-
+! {{Icon Small|Uranium}} [[Uranium]]
+| 
+| 30-60
+| {{#expr: (100 * {{#var:lootUranium}} / {{#var:lootAllWeights}})round 1}}%
+|-
+! High value
+| <!--
+!-->{{Icon Small|antigrain warhead}} [[antigrain warhead]], <!--
+!-->{{Icon Small|archotech arm}} [[archotech arm]], <!--
+!-->{{Icon Small|archotech eye}} [[archotech eye]], <!--
+!-->{{Icon Small|archotech leg}} [[archotech leg]], <!--
+!-->{{Icon Small|doomsday rocket launcher}} [[doomsday rocket launcher]], <!--
+!-->{{Icon Small|healer mech serum}} [[healer mech serum]], <!--
+!-->{{Icon Small|orbital bombardment targeter}} [[orbital bombardment targeter]], <!--
+!-->{{Icon Small|orbital power beam targeter}} [[orbital power beam targeter]], <!--
+!-->{{Icon Small|psychic animal pulser}} [[psychic animal pulser]], <!--
+!-->{{Icon Small|psychic emanator}} [[psychic emanator]], <!--
+!-->{{Icon Small|psychic insanity lance}} [[psychic insanity lance]], <!--
+!-->{{Icon Small|psychic shock lance}} [[psychic shock lance]], <!--
+!-->{{Icon Small|psychic soothe pulser}} [[psychic soothe pulser]], <!--
+!-->{{Icon Small|reinforced barrel}} [[reinforced barrel]], <!--
+!-->{{Icon Small|resurrector mech serum}} [[resurrector mech serum]], <!--
+!-->{{Icon Small|techprof subpersona core}} [[techprof subpersona core]], <!--
+!-->{{Icon Small|tornado generator}} [[tornado generator]], <!--
+!-->{{Icon Small|triple rocket launcher}} [[triple rocket launcher]], <!--
+!-->{{Icon Small|vanometric power cell}} [[vanometric power cell]], <!--
+!-->{{Icon Small|archite capsule}} [[archite capsule]],{{BiotechIcon}} <!--
+!-->{{Icon Small|deathrest capacity serum}} [[deathrest capacity serum]],{{BiotechIcon}} <!--
+!-->{{Icon Small|biomutation lance}} [[biomutation lance]],{{AnomalyIcon}} <!--
+!-->{{Icon Small|biomutation pulser}} [[biomutation pulser]]{{AnomalyIcon}}
+| 1
+| {{#expr: (100 * {{#var:lootMiscHigh}} / {{#var:lootAllWeights}})round 1}}%
+|-
+! [[Serum]]{{AnomalyIcon}}
+| <!--
+!-->{{Icon Small|juggernaut serum}} [[juggernaut serum]],{{AnomalyIcon}} <!--
+!-->{{Icon Small|metalblood serum}} [[metalblood serum]],{{AnomalyIcon}} <!--
+!-->{{Icon Small|mind-numb serum}} [[mind-numb serum]],{{AnomalyIcon}} <!--
+!-->{{Icon Small|voidsight serum}} [[voidsight serum]]{{AnomalyIcon}}
+| 1-2
+| {{#expr: (100 * {{#var:lootSerum}} / {{#var:lootAllWeights}})round 1}}%
+|-
+! [[Utility]]
+| <!--
+!-->{{Icon Small|shield belt}} [[shield belt]], <!--
+!-->{{Icon Small|jump pack}} [[jump pack]],{{RoyaltyIcon}} <!--
+!-->{{Icon Small|disruptor flare pack}} [[disruptor flare pack]],{{AnomalyIcon}} <!--
+!-->{{Icon Small|turret pack}} [[turret pack]]{{AnomalyIcon}}
+| 1
+| {{#expr: (100 * {{#var:lootUtility}} / {{#var:lootAllWeights}})round 1}}%
+|-
+! {{Icon Small|prestige recon helmet}} [[Prestige recon helmet]]{{RoyaltyIcon}}
+| 
+| 1
+| {{#expr: (100 * {{#var:lootSpecial}} / {{#var:lootAllWeights}})round 1}}%
+|-
+! {{Icon Small|Techprint}} [[Techprint]]{{RoyaltyIcon}}
+| 
+| 1
+| {{#expr: (100 * {{#var:lootTechprint}} / {{#var:lootAllWeights}})round 1}}%
+|-
+! {{Icon Small|Shard}} [[Shard]]{{AnomalyIcon}}
+| 
+| 1
+| {{#expr: (100 * {{#var:lootShard}} / {{#var:lootAllWeights}})round 1}}%
+|-
+|}
+
+== Analysis ==
+?
+
+== Gallery ==
+<gallery>
+File:Security crate.png|Full security crate facing South
+File:AncientSecurityCrate north.png|Full security crate facing North
+File:AncientSecurityCrate east.png|Full security crate facing East
+</gallery>
+<gallery>
+File:AncientSecurityCrateOpen south.png|Empty security crate facing South
+File:AncientSecurityCrateOpen north.png|Empty security crate facing North
+File:AncientSecurityCrateOpen east.png|Empty security crate facing East
+</gallery>
+
+== Version history ==
+* [[Ideology DLC]] Release - Added.
+
+{{Nav/Ruins}}
+[[Category:Ruins]]

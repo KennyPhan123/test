@@ -1,0 +1,141 @@
+{{Infobox main|leathery
+| name = Human leather
+| image = Humanleather b.png
+| description = Tanned, dried, scraped human skin. Most people find this material horrifying. Some find it fascinating. While a decent leather, it neither protects nor insulates particularly well.
+<!-- Base Stats -->
+| type = Textile
+| type2 = Leather
+| stuff category = Leathery
+| hp = 60
+| flammability = 1
+| marketvalue = 4.2
+| beauty = -4
+| mass base = 0.03
+| stack limit = 75
+| path cost = 14
+| rotatable = false
+<!-- Stat Modifiers -->
+| beauty factor = 1
+| work to make factor = 1
+| work to build factor = 1
+| max hit points factor = 1.3
+| flammability factor = 1
+| armor - sharp factor = 0.64
+| armor - blunt factor = 0.24
+| armor - heat factor = 1.5
+| insulation - cold factor = 12
+| insulation - heat factor = 12
+<!-- Technical -->
+| page verified for version = 1.2.2753
+<!-- Unused -->
+| always haulable = true
+| color = (211,194,143)
+| commonality = 0.0025
+| default color = (211,194,143)
+| default color two = (200,200,200)
+| draw gui overlay = true
+| graphic class = Graphic_Single
+| graphic path = Things/Item/Resource/Cloth
+| label = humanleather
+| resource readout priority = Middle
+| selectable = true
+| thing class = ThingWithComponents
+}}
+{{Info|'''Human leather'''  is a type of [[leather]] produced when a [[Skills#Cooking|cook]] butchers a [[human]] or [[gorehulk]]{{AnomalyIcon}} at a [[butcher table]]. It inflicts a [[mood]] penality on most pawns when worn as [[clothing]].}}
+
+== Acquisition ==
+The following animals provide human leather:
+{{Leather List}}
+
+== Summary ==
+{{Rewrite|section=1|reason=Not a great display of information - now the info is complete, it could use a better display section. Table seems like the obvious option but may have dimensional issues. toggles and control panel for different options seem ideal.}}
+Wearing [[stuffable]] items made from human leather inflicts [[mood]] penalties on [[human]] pawns, proportional to the number of items worn:
+<div style="column-count:2; width:800px;">
+* 1 item: {{Thought|desc=Wearing human leather is disturbing. Who could do this?|label=human leather <APPAREL NAME>|value=-2|stack=1}} 
+* 2 item: {{Thought|desc=I'm dressed like an insane person.|label=human leather <APPAREL NAME> (+1)|value=-4|stack=1}} 
+* 3 item: {{Thought|desc=I think there may be a face on my clothes. Oh, no, my clothes *are* a face.|label=human leather <APPAREL NAME> (+2)|value=-6|stack=1}} 
+* 4+ item: {{Thought|desc=I look like a freak from a horror show, and I feel like I'm in a horror show.|label=human leather <APPAREL NAME> etc|value=-8|stack=1}} 
+Disabled by: [[Bloodlust]], [[Cannibal]], or [[Psychopath]] traits, the [[Inhumanized]] hediff, or any [[Cannibalism (precept)|Cannibalism]]{{IdeologyIcon}} precept.
+
+* 1 item: {{Thought|desc=I enjoy wearing the suffering of others.|label=human leather <APPAREL NAME>|value=+2|stack=1}} 
+* 2 item: {{Thought|desc=This will scare them. All will know my power.|label=human leather <APPAREL NAME> (+1)|value=+4|stack=1}} 
+* 3 item: {{Thought|desc=The faces on my clothes aren't smiling, but they make *me* happy.|label=human leather <APPAREL NAME> (+2)|value=+6|stack=1}} 
+* 4+ item: {{Thought|desc=The flesh! The flesh signals my triumph!|label=human leather <APPAREL NAME> etc|value=+8|stack=1}} 
+Requires: [[Bloodlust]] or [[Cannibal]] trait.
+</div>
+----
+<div style="column-count:2; width:800px;">
+* 1 item: {{Thought|desc=Wearing human leather is disturbing. Who could do this?|label=human leather <APPAREL NAME>|value=-2|stack=1}} 
+* 2 item: {{Thought|desc=I'm dressed like an insane person.|label=human leather <APPAREL NAME> (+1)|value=-4|stack=1}} 
+* 3 item: {{Thought|desc=I think there may be a face on my clothes. Oh, no... my clothes *are* a face.|label=human leather <APPAREL NAME> (+2)|value=-6|stack=1}} 
+* 4+ item: {{Thought|desc=I look like a freak from a horror show, and I feel like I'm in a horror show.|label=human leather <APPAREL NAME> etc|value=-8|stack=1}} 
+Requires: [[Cannibalism (precept)|Cannibalism: Abhorrent]]{{IdeologyIcon}} precept. Disabled by: [[Psychopath]], [[Bloodlust]], and [[Cannibal]] traits and the [[Inhumanized]] hediff.
+
+* 1 item: {{Thought|desc=Wearing human leather is wrong.|label=human leather <APPAREL NAME>|value=-2|stack=1}} 
+* 2 item: {{Thought|desc=I feel really uncomfortable with all this human leather apparel.|label=human leather <APPAREL NAME> (+1)|value=-3|stack=1}} 
+* 3 item: {{Thought|desc=Why am I wearing so much human leather? This is horrible!|label=human leather <APPAREL NAME> (+2)|value=-5|stack=1}} 
+* 4+ item: {{Thought|desc=I look like a freak, this is horrifying!|label=human leather <APPAREL NAME> etc|value=-6|stack=1}} 
+Requires: [[Cannibalism (precept)|Cannibalism: Horrible]]{{IdeologyIcon}} precept. Disabled by: [[Psychopath]], [[Bloodlust]], and [[Cannibal]] traits and the [[Inhumanized]] hediff.
+</div>
+----
+<div style="column-count:2; width:800px;">
+* 1 item: {{Thought|desc=I should not be wearing human leather apparel.|label=human leather <APPAREL NAME>|value=-1|stack=1}} 
+* 2 item: {{Thought|desc=I'm dressed in human skin. I do not like this.|label=human leather <APPAREL NAME> (+1)|value=-2|stack=1}} 
+* 3 item: {{Thought|desc=Why am I wearing so much human leather apparel? We should have something else to wear for me...|label=human leather <APPAREL NAME> (+2)|value=-3|stack=1}} 
+* 4+ item: {{Thought|desc=I should really wear non-human leather apparel. I look like a crazy person.|label=human leather <APPAREL NAME> etc|value=-4|stack=1}} 
+Requires: [[Cannibalism (precept)|Cannibalism: Disapproved]]{{IdeologyIcon}} precept. Disabled by: [[Psychopath]], [[Bloodlust]], and [[Cannibal]] traits and the [[Inhumanized]] hediff.
+
+* 1 item: {{Thought|desc=I feel good wearing human leather apparel.|label=human leather <APPAREL NAME>|value=+1|stack=1}} 
+* 2 item: {{Thought|desc=I enjoy wearing the skin of others.|label=human leather <APPAREL NAME> (+1)|value=+2|stack=1}} 
+* 3 item: {{Thought|desc=I wear the faces of my enemies. This makes me happy.|label=human leather <APPAREL NAME> (+2)|value=+3|stack=1}} 
+* 4+ item: {{Thought|desc=I look like a real cannibal. Who could doubt me?|label=human leather <APPAREL NAME> etc|value=+4|stack=1}} 
+Requires: [[Cannibalism (precept)|Cannibalism: Preferred]]{{IdeologyIcon}} precept. Disabled by: [[Bloodlust]], and [[Cannibal]] traits.
+</div>
+----
+<div style="column-count:2; width:800px;">
+* 1 item: {{Thought|desc=I enjoy wearing the faces of others.|label=human leather <APPAREL NAME>|value=+2|stack=1}} 
+* 2 item: {{Thought|desc=This will scare them. All will know my power.|label=human leather <APPAREL NAME> (+1)|value=+3|stack=1}} 
+* 3 item: {{Thought|desc=The faces on my clothes aren't smiling, but they make *me* happy.|label=human leather <APPAREL NAME> (+2)|value=+5|stack=1}} 
+* 4+ item: {{Thought|desc=The flesh! The flesh signals my triumph!|label=human leather <APPAREL NAME> etc|value=+6|stack=1}} 
+Requires: [[Cannibalism (precept)|Cannibalism: Required (strong)]]{{IdeologyIcon}} precept. Disabled by: [[Bloodlust]], and [[Cannibal]] traits.
+
+* 1 item: {{Thought|desc=I enjoy wearing the suffering of others.|label=human leather <APPAREL NAME>|value=+2|stack=1}} 
+* 2 item: {{Thought|desc=This will scare them. All will know my power.|label=human leather <APPAREL NAME> (+1)|value=+4|stack=1}} 
+* 3 item: {{Thought|desc=The faces on my clothes aren't smiling, but they make *me* happy.|label=human leather <APPAREL NAME> (+2)|value=+6|stack=1}} 
+* 4+ item: {{Thought|desc=The flesh! The flesh signals my triumph!|label=human leather <APPAREL NAME> etc|value=+8|stack=1}} 
+Requires: [[Cannibalism (precept)|Cannibalism: Required (ravenous)]]{{IdeologyIcon}} precept. Disabled by: [[Bloodlust]], and [[Cannibal]] traits.
+</div>
+
+== Usage ==
+{{PAGENAME}} can be used as a material for [[stuff]]able items with the [[Leathery]] stuff tag.
+
+{{PAGENAME}} can be used in the following recipes:
+{{Ingredient List}}
+
+Unlike all other leathers, human leather cannot be used to make [[patchleather]].
+
+== Analysis ==
+{{See also|Human resources}}
+Human leather is an abundant and valuable resource. But in ordinary circumstances, using it comes with several downsides:
+* Simply butchering a human [[corpse]] gives {{--|6}} mood to all colonists. This does not stack, so butchering 50 corpses has the same moodlet as butchering one.
+** The butcher gets further {{--|6}} mood for the bill, which ''does'' stack up to 20 times.
+* Seeing a human corpse gives another {{--|3}} moodlet.
+* Actually wearing human leather gives a {{--|2}} moodlet per item. 
+* Creating items out of human leather, or using human [[furniture]] at all, does not upset anyone.
+
+Pawns with the [[Bloodlust]], [[Cannibal (trait)|Cannibal]], or [[Psychopath]] [[trait]]s are immune to all mood penalties. Bloodlusted and cannibal pawns get a mood boost for wearing human leather clothing. These penalties are also negated by a pro-Cannibalism [[ideoligion]]{{IdeologyIcon}}. For colonists bothered by human butchering, their mood isn't too difficult to handle. Possible ways to offest the {{--|6}} moodlet includes [[fine meal]]s, impressive dining room/bedrooms, and more time for Recreation.
+
+As clothing items, human leather is one of the worst [[textiles]] in the game. It joins the 4th place for most Hit Points Factor (alongside most leathers), 22nd for Sharp [[Armor ]](or 8th worst), 6th for Blunt Armor, 3rd for Heat Armor (alongside all leathers excluding [[Patchleather]]). It also has terrible [[insulation]], being the 3rd and 4th worst against cold and heat, respectively. As these clothes can please certain pawns - use it for innerwear which have a small impact on protection, like [[t-shirt]]s. 
+
+As furniture, it has a poor [[beauty]] value, but is great for bulk projects due to how common it is.
+
+Human leather has an oddly high [[market value]], which makes it a valuable trade good. As with all fabrics, [[corset]]s{{RoyaltyIcon}}/[[formal vest]]s{{RoyaltyIcon}} are the most economical use of leather; without the [[Royalty DLC]], [[duster]]s and [[armchair]]s are the best. Human leather remains quite profitable when sold raw, so cannibal colonies are able to quickly accumulate wealth.
+
+== Gallery ==
+<gallery>
+Humanleather a.png|One human leather
+Humanleather b.png|Stack of human leathers
+</gallery>
+
+{{Nav|materials|wide}}
+[[Category:Material]] [[Category:Textile]] [[Category:Leather]]

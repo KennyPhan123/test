@@ -1,0 +1,112 @@
+{{Anomaly}}
+{{Infobox main|entity
+| name = Fleshmass nucleus
+| image = Fleshmass nucleus.png
+| description = The archotech core of a fleshmass heart. It is a chaotic lattice of fluid-smeared metal. Solid chunks of jagged metal appear here and there, packed with archotechnology. The whole structure slowly twists and bends under its own power.<br />It constantly grows meat on its surface, which occasionally erupts violently. If too much meat builds up, it will regrow into a fleshmass heart.
+<!-- Base Stats -->
+| type = Entity
+| type2 = Advanced
+| mass base = 100
+| flammability = 0
+| hide stats = true
+| hidden while undiscovered = true
+| tradeability = None
+<!-- Containment -->
+| anomaly knowledge = 3
+| knowledge category = Advanced
+| study interval = 120000
+| bioferrite density = 3
+| min monolith level for study = 1
+| requires holding platform = true
+| base escape interval MTB days = -1
+| can be executed = false
+| has animation = false
+<!-- Building -->
+| destroyyield = 100~200 {{Icon Small|Twisted meat|24}} + 2 {{Icon Small|Shard|24}}
+<!-- Apparel -->
+| armorsharp = 100
+| armorblunt = 100
+| armorheat = 200
+<!-- Pawn Stats -->
+| combatPower = 100
+| movespeed = 0
+| healthscale = 1
+| bodysize = 1
+| body = FleshmassNucleus
+| diet = none
+| lifespan = 5000
+| trainable = None
+| psychic sensitivity = 1
+| toxic resistance = 1.00
+| EMP resistance = 0.50
+| min comfortable temperature = -100
+| max comfortable temperature = 250
+| needs rest = false
+| always awake = true
+| flesh type = EntityMechanical
+| override should have ability tracker = true
+| doesnt move = true
+| has corpse = false
+| has genders = false
+| gestation = 10
+| disable ignite verb = true
+| hediff giver sets = AnomalyEntity
+| pain shock threshold = 100
+| injury healing factor = 0
+| life stage ages = EntityFullyFormed
+<!-- Production -->
+| meatyield = 0
+<!-- Technical -->
+| defName = FleshmassNucleus
+| label = fleshmass nucleus
+}}
+The '''fleshmass nucleus''' is an advanced [[entity]] added by the [[Anomaly DLC]] that will occasionally produce [[twisted meat]]. 
+
+== Acquisition ==
+This [[Entity]] is found after killing a [[fleshmass heart]]. The heart will leave this as a dropped item, and it can be captured as you would any downed Entity.
+
+== Summary ==
+The fleshmass nucleus can be contained on a [[holding platform]] or [[holding spot]]. It does not have a minimum containment strength, but must be contained to be studied and suppressed.
+
+The nucleus will constantly gain activity (base 10% a day) as new flesh grows across its surface. A warden will need to suppress it to reduce its activity. The speed of suppression scales with psychic sensitivity. If its activity reaches 100%, the flesh will reach critical mass and form a new fleshmass heart. This will occur wherever the nucleus is contained and spread across the map like before. The new fleshmass heart will have a unique biosignature, requiring you to collect new [[fleshmass neural lump]]s to kill it.
+
+The nucleus will also produce 3-6 piles of [[twisted meat]] around itself at periodic intervals with an {{MTB}} of {{Ticks/gametime|60000}} and a minimum time of {{Ticks/gametime|15000}}. The amount of meat produced is random but is strongly influenced by activity level, producing an average of 96 meat each time at 0% activity and an average of 220 meat at 90%.
+
+A fleshmass nucleus has regeneration like a [[Ghoul]], meaning it can be harvested by [[electroharvester]]s endlessly.
+
+A fleshmass nucleus cannot be ordered to be executed, but if it is not needed, a nucleus can be ordered to be released from containment. Then a pawn can be [[drafted]] and ordered to attack it until it is destroyed. 
+
+=== Yield ===
+The fleshmass nucleus yields 3 [[bioferrite]] per day and 200W of power. Note that its daily activity gain rate will increase by +15% when it is connected to an electroharvester, for a total of 25% activity gained per day.
+
+When destroyed, a nucleus yields 2 [[shard]]s and 100-200 twisted meat.
+
+== Analysis ==
+Compared to other entities, the fleshmass nucleus is much less dangerous when the colony does not have a strong containment cell. It can be held at no risk on any [[holding spot]] in any room; the only way a nucleus can ever pose any danger is if it is allowed to reached full activity and reform into a [[fleshmass heart]]. It will otherwise never escape on its own, never cause adverse effects, and not fight back when attacked. This means that it is viable to keep the nucleus inside a freezer so the twisted meat it produces will not rot.
+
+Similar to the [[nociosphere]], at least one colonist should be available at any given time to keep the fleshmass nucleus's activity suppressed. 
+
+The nucleus's comparatively paltry power output makes the use of an electroharvester largely inadvisable, as even weak entities such as [[gorehulk]]s will produce more power while being far less dangerous in the event of an escape.
+
+Keeping the nucleus at high activity can facilitate the farming of large amounts of [[twisted meat]], which has many uses. Most colonists will receive a painful {{Thought|desc=It was so gristly and stringy - like eating cancer. I want to throw up.|label=Ate twisted meat|value=-10|stack=1|duration=1}} when eating twisted meat, but [[ghoul]]s and [[animal]]s have no such reservations. Every animal type in the game (even herbivores like [[horse]]s) will happily consume [[meal]]s that contain twisted meat, except raw meat-only animals like [[warg]]s that can simply eat it raw. Colonies settled in [[biome]]s with low grazing potential - or that simply have [[Cooking|cooks]] with time to spare - can comfortably ranch pack animals on an exclusive diet of [[simple meal]]s that use twisted meat as their only ingredient.
+
+Twisted meat can also be [[biofuel refinery|refined]] into [[chemfuel]]. The twisted meat produced by one nucleus kept at high activity can fuel over {{#expr:35*<!--Refinery produces 35 chemfuel-->220<!--Produced at 90%-->*{{Q|Twisted meat|Nutrition}}/3.5<!--How much nutrition needed to make 35 chemfuel-->/4.5<!--4.5 chemfuel per day--> round 0}} [[chemfuel powered generator]]s, assuming average luck and sufficient pawn-hours for refining.
+
+== Gallery ==
+<gallery>
+FleshmassNucleusA.png
+FleshmassNucleusB.png
+FleshmassNucleusC.png
+FleshmassNucleusD.png
+FleshmassNucleusE.png
+FleshmassNucleusF.png
+</gallery>
+
+== Trivia ==
+* The fleshmass nucleus, along with the [[nociosphere]], has a life expectancy of 5,000 years, which is used for selecting its age upon spawning. Life expectancy is not a maximum, so this means that a fleshmass nucleus could spawn with an age that would imply it was created before year 1 of the RimWorld calendar. As a new fleshmass nucleus is spawned upon defeating a fleshmass heart, the age of a fleshmass nucleus can change if the nucleus is allowed to reform into a heart and defeated again.
+
+== Version history == 
+* [[Anomaly DLC]] Release - Added.
+
+{{Nav|entity|wide}}
+[[Category: Entities]]

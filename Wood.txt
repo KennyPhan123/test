@@ -1,0 +1,159 @@
+{{Infobox main|resource
+| name = Wood
+| image = Woodlog c.png
+| description = Wood from trees or other fibrous plants. Useful for building structures and weapons. It is a good fuel for campfires and generators, and can be refined into chemfuel. In a pinch, a piece of wood can be used as a weapon or a leg.
+<!-- Base Stats -->
+| type = Material
+| type2 = Woody
+| tech level = Neolithic
+| stuff category = Woody
+| hp = 150
+| deterioration = 0.5
+| marketvalue = 1.2
+| beauty = -4
+| mass base = 0.4
+| stack limit = 75
+| path cost = 14
+| rotatable = false
+| class = Neolithic
+| airtight = False
+<!-- Stat Modifiers -->
+| beauty factor = 1
+| beauty offset = 0
+| work to make factor = 0.7
+| work to build factor = 0.7
+| flammability factor = 1
+| max hit points factor = 0.65
+| armor - sharp factor = 0.54
+| armor - blunt factor = 0.54
+| armor - heat factor =  0.4
+| insulation - cold factor = 8
+| insulation - heat factor = 4
+| melee blunt damage factor = 0.9
+| melee sharp damage factor = 0.4
+| melee cooldown factor = 1.0
+| door opening speed factor = 1.2
+| rest effectiveness factor = 1
+<!-- Melee Combat -->
+| meleeattack1dmg = 10
+| meleeattack1type = blunt
+| meleeattack1part = log
+| meleeattack1cool = 2
+| meleeattack1ap = 15
+| mode = Melee
+<!-- Technical -->
+| defName = WoodLog
+| has quality = False
+| stuff adjective = wooden
+| color = (133,97,67)
+<!-- Unused -->
+| always haulable = true
+| appearance = Planks
+| construct effect = ConstructWood
+| draw gui overlay = true
+| e type = Equipment
+| equipment type = Primary
+| equipped angle offset = -20
+| equipped texture path = Things/Item/Resource/WoodLog_Equipped
+| graphic class = Graphic_StackCount
+| graphic path = Things/Item/Resource/WoodLog
+| is body part = true
+| label = wood
+| parent name = ResourceVerbBase
+| resource readout priority = Middle
+| selectable = true
+| sound drop = Wood_Drop
+| sound impact stuff = BulletImpactWood
+| sound interact = Wood_Drop
+| sound melee hit blunt = MeleeHit_Wood
+| sound melee hit sharp = MeleeHit_Wood
+| thing class = ThingWithComps
+| use hit points = true
+| volume = 1
+}}
+{{Info|'''Wood''' is a construction and crafting material vital in the early game.}}
+
+== Acquisition == 
+Wood can be obtained by harvesting most [[tree]]s, including plants like the [[saguaro cactus|saguaro cacti]], using the [[Orders|Chop Wood]] command. [[Fibercorn]]{{IdeologyIcon}} can also be grown for wood.
+
+Every default [[scenario]], except for [[Scenario system#Naked Brutality|Naked Brutality]], starts the player with a select amount of wood. Wood is carried by bulk goods [[trader]]s, trade ships, and [[faction base]]s. A single piece of wood is obtained when extracting a [[peg leg]], [[wooden hand]], or [[wooden foot]].
+
+A [[woodmaker]] [[dryad]]{{IdeologyIcon}} will generate 32 wood every 2 days.
+
+=== Plant yield ===
+The following plants provide the following amounts of wood:
+<div><li style="display: inline-table;">
+{| {{STDT| sortable c_08 mw-collapsible mw-collapsed text-center}}
+! Plant !! Harvest Yield <!--!! Yield/Day<br>(70% Fert) !! Yield/Day<br>(100% Fert) !! Yield/Day<br>(140% Fert) !! Yield/Day<br>(280% Fert)-->
+|-
+{{#ask: [[Harvest Product::Wood]]
+| ?Harvest_Yield
+<!--
+| ?Harvest_Yield_Per_Day_(70)
+| ?Harvest_Yield_Per_Day_(100)
+| ?Harvest_Yield_Per_Day_(140)
+| ?Harvest_Yield_Per_Day_(280)
+-->
+| format = template
+| template = Ask Table Formatter
+| link = none
+| sort = From DLC, Name
+}}
+|}
+</li></div>
+
+== Summary == 
+Wood can be wielded as a [[Weapons#Melee_Weapons|melee weapon]]. It deals more [[DPS|damage per second]] than a bare fist or [[beer]] bottle.
+
+=== Deterioration ===
+Wood [[deteriorate]]s very slowly when left outdoors - a rate of 0.25 HP/day. For comparison, a wood log will take ''10 full years'' to deteriorate into nothing, before multipliers like [[rain]]. So, for all intents and purposes, you can safely leave wood outside. The only real threat is [[fire]].
+
+== Usage ==
+Wood can be used as a material for [[stuff]]able items with the "Woody" stuff tag. Note that it is currently the only material in that category.
+
+Wood can be used in the following recipes:
+{{Ingredient List}}
+Note that [[peg leg]]s, [[wooden hand]]s, and [[wooden foot|wooden feet]] do not exist in item form and are simply added to the pawn during [[surgery]], consuming the wood in the process. When extracting these parts, you simply get the wood back. 
+
+Wood is used to refuel the following:
+
+{{Fuel Usage List}}
+
+== Analysis ==
+{{Stub|section=1|reason=Acquisition analysis, see table on [[Trees]] for initial basis, but add [[Woodmaker]]}}
+
+Wood is a useful material for early [[wall]]s and [[furniture]]. Wood builds are quick to construct, wood itself is usually cheap, and most [[scenario]]s start with at least some. In contrast, [[stone block]]s take a bit of work to make, while [[steel]] is more valuable early. Later on, you should replace your walls with some sort of stone. Otherwise, a [[flashstorm]] or [[raid]] could light your entire base on fire.  
+
+In contrast, wood is relatively safe for [[door]]s and [[furniture]].
+* Wood doors are the fastest to open until [[autodoor]]s are available. The fire risk of a wooden door, when surrounded by non-flammable walls and floor, is minimal. For comparison, stone doors take a while to open, and [[steel]] doors remain flammable (and slower to open). Using wood for doors can be acceptable into the midgame, and even indefinitely if they are not intended to resist attack.
+* There is no specific need to replace wooden furniture, as furniture is usually safe from attack. Like with doors, furniture in an otherwise nonflammable room is usually safe from fire. Other materials might be selected for their improved availability, durability against [[drop pod]]s or [[infestation]]s, and beauty as the colony progresses.
+
+Colonies in extreme and wood-scarce [[biome]]s, like the [[ice sheet]] or [[extreme desert]], should conserve wood as much as possible. It should be used for [[campfire]] or [[passive cooler]]s until you can either create electric [[heater]]s and [[cooler]]s or get the necessary [[clothing]] to survive the temperature. For construction, [[ruins]] can be deconstructed for stone/steel, and steel should be used for furniture instead.
+
+Should your colony be visited by an [[alphabeaver]] infestation, watch out! These ravenous genetically-engineered critters will eat every tree on the map if you don't stop them by force! They will not eat wood on the ground or wooden buildings, however.
+
+=== As a weapon ===
+Wood is the one of worst melee weapons in the game, barely beating out a bottle of [[beer]] and a plain, unarmed punch. Even a good-[[quality]] [[eltex staff]],{{RoyaltyIcon}} which is more of a psycasting tool than a weapon, has higher damage and AP. In most cases, players should at least craft a [[club]], rather than using a log as a weapon. Even swinging a gun or bow as a melee weapon will do only slightly less damage, while still allowing you to shoot as enemies approach.
+
+However, any weapon is superior to no weapon. If you have no other weapons available, and do not have the supplies or time to spare to create even a club, then equipping a log is better than having a colonist fight entirely unarmed.
+
+{{Weapon Stats Table}}
+
+== Gallery ==
+<gallery>
+Woodlog a.png|One wood
+Woodlog b.png|Partial stack
+Woodlog c.png|Full stack
+</gallery>
+
+== Version history ==
+* [[Version/0.4.460|0.4.460]] - Wood logs and wood planks merged into wood.
+* [[Version/0.10.785|0.10.785]] - Now carried by [[traders]]
+
+[[File:Wood log.png|frame|left|Sprite as of 28 August 2016, replaced by 10 July 2019 at the latest]]
+
+{{Nav|materials|wide}}
+{{Nav|weapon|wide}}
+[[Category:Material]] [[Category:Lumber]]
+[[Category:Equipment]] [[Category:Weapons]] [[Category:Neolithic Weapons]]
+[[Category:Melee Weapons]] [[Category:Blunt Weapons]] [[Category:Improvised Weapons]]

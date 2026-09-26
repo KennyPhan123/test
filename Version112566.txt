@@ -1,0 +1,24 @@
+{{Version Nav}} 
+
+This update brings bugfixes and other adjustments.
+
+If you're willing to help test the unstable branch, please join this Discord server: https://discord.gg/FYBsdNX
+
+== Change lo g==
+* Shorten the royal endgame quest defense duration 15 days->12 days. This does not affect quests that were already generated.
+* Significantly reduced the frequency of random mech clusters (unconnected to quests).
+* Mech large turrets now have minimum ranges. Mech mortars initial warmup increased 60->120 seconds. Mech mortars cooldown increased 44->80 seconds.
+* Reclassified mech mortar as problem causer instead of combat threat, so clusters will now only spawn one of these. Charge blaster turret burst shots reduced 24->16. Mech heavy turrets health 380->280.
+* Hosting quest worst case raids timing is no longer as severe.
+* Giving a speech from the throne now trains social skill.
+* Fix: Banished pawns still send letters about forgetting decrees.
+* Fix: Bad image for info card on some walls.
+* Fixed Scenario editor breaking when ThingCount scenPart is null due to def not present
+* Janissaries, Troopers and Cataphracts no longer can come with the "Brawler" trait.
+* Fix: It's possible to defeat condition causers simply by entering the map and leaving. We no longer remove the WorldObject if there's any not destroyed condition causer.
+* It's now possible to move the camera with a float menu open.
+* Fix: Middle-mouse camera dragging stops if the mouse goes over a UI menu while dragging
+* Fix: Royal guests arrive with tattered clothes
+* Fix: Pawns are deep-saved twice if the player saves the game while drop pods with quest pawns are mid air.
+* Fix: Wrong title being reported in violation letter for illegal psycasts.
+* Fixes to implants base defs

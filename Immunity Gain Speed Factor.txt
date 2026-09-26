@@ -1,0 +1,117 @@
+{{Stub|reason=1) Corresponding Property 2) Two-way links}}
+{{Verified|1.5.4104}}{{Stat
+| def name = ImmunityGainSpeedFactor
+| label = immunity gain speed factor
+| description = [[Immunity gain speed]] is multiplied by this value.
+| default base value = 1
+| min value = 0.5
+| effective minimum = 0.95
+| effective maximum = 1.13
+| hide at value = 1
+| to string style = PercentZero
+| category = Building
+| display priority in category = 4000
+}}
+
+== Bases ==
+<div><li style="display: inline-table;">
+{| {{STDT| c_01 sortable}}
+! Furniture !! Immunity Gain Speed Factor Base
+<!-- Name="SansComfortBedBase" (Name="BasicBedBase") = 1.07 -->
+|-
+! {{Icon Small|Bed|24}} [[Bed]]
+| 107%
+|-
+! {{Icon Small|Double bed|24}} [[Double bed]]
+| 107%
+|-
+! {{Icon Small|Royal bed|24}} [[Royal bed]]
+| 107%
+|-
+! {{Icon Small|Hospital bed|24}} [[Hospital bed]]
+| 111%
+|-
+! {{Icon Small|Bedroll|24}} [[Bedroll]]
+| 105%
+|-
+! {{Icon Small|Double bedroll|24}} [[Double bedroll]]
+| 105%
+|-
+! {{Icon Small|Animal sleeping box|24}} [[Animal sleeping box]]
+| 105%
+|-
+! {{Icon Small|Animal bed|24}} [[Animal bed]]
+| 107%
+|-
+! {{Icon Small|Ancient bed|24}} [[Ancient bed]] {{IdeologyIcon}}
+| 95%
+|-
+! {{Icon Small|Slab bed|24}} [[Slab bed]] {{IdeologyIcon}}
+| 107%
+|-
+! {{Icon Small|Slab double bed|24}} [[Slab double bed]] {{IdeologyIcon}}
+| 107%
+|-
+! {{Icon Small|Crib|24}} [[Crib]] {{BiotechIcon}}
+| 107%
+|-
+! {{Icon Small|Deathrest casket|24}} [[Deathrest casket]] {{BiotechIcon}}
+| 107%
+|}
+</li></div>
+
+== Offsets ==
+<div><li style="display: inline-table;">
+{| {{STDT| c_01}}
+! Facility !! Immunity Gain Speed Factor Offset
+|-
+! {{Icon Small|Vitals monitor|24}} [[Vitals monitor]]<ref>Linkable to [[Hospital bed]] (Maximum of 1)</ref>
+| {{+|2%}}
+|}
+<references />
+</li></div>
+
+== Calculating Immunity Gain Speed Factor ==
+The factors for [[Immunity Gain Speed Factor]] are: '''Immunity Gain Speed Factor Base''' and '''Immunity Gain Speed Factor Offset'''. This would be written out as:
+
+<code>[[Immunity Gain Speed Factor]] = '''Immunity Gain Speed Factor Base''' + '''Immunity Gain Speed Factor Offset'''</code>
+
+The maximum would be:
+
+<code>'''1.11''' + '''0.02''' = '''1.13'''</code>
+
+For an effective limit of '''113%'''.
+
+The minimum would be:
+
+<code>'''0.95''' + '''0''' = '''0.95'''</code>
+
+For an effective limit of '''95%'''.
+
+== Stat Def Data ==
+{| {{STDT| c_01}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label<br />Attributes !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category
+|- id="Immunity Gain Speed Factor" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />ImmunityGainSpeedFactor
+* '''Label:'''<br />immunity gain speed factor
+| Immunity gain speed is multiplied by this value.
+|
+* Display Order:<br />'''50'''
+* Def Name:<br />'''Building'''
+* Label:<br />'''Building'''
+* Display All By Default:<br />{{Bad|false}}
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0.5}}
+* '''To String Style:''' PercentZero
+* '''Hide At Value:''' {{%|1}}
+| -
+| 4000
+<!--</StatDef>-->
+|}
+
+== Version history ==
+{{Stub|section=1|reason=General}}
+
+{{nav|stats|wide}}

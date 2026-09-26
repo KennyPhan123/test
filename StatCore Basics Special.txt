@@ -1,0 +1,222 @@
+<noinclude>{{Verified|1.5.4104}}
+&larr; <small>[[Stat]]</small>
+{| {{STDT|sortable}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label !! Description !! Category !! Parameters !! Complex<br />Parameters !! Display<br />Priority<br />In<br />Category</noinclude>
+<!-- Core Stats_Basics_Special -->
+<div id="Core Stats_Basics_Special"><!--<Defs>-->
+|- id="Medical Potency" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />MedicalPotency
+* '''Label:'''<br />medical potency
+| How effective this is when used to tend wounds and diseases, or do surgery.<br id="n" /><br id="n" />Higher medical potency improves the quality of tending, and acts as a multiplier on the chance of success during surgery.<br id="n" />Medical potency is just one factor in medical outcomes, among many others, including doctor ability, equipment, cleanliness, and luck.
+|
+* Display Order:<br />'''2'''
+* Def Name:<br />'''BasicsNonPawnImportant'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|0.0}}
+* '''Min Value:''' {{%|0.2}}
+* '''To String Style:''' PercentZero
+* '''Show If Undefined:''' {{Bad|false}}
+| -
+| 4000
+<!--</StatDef>-->
+|- id="Medical Tend Quality Maximum" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />MedicalQualityMax
+* '''Label:'''<br />medical tend quality maximum
+| The maximum quality of medical tending that can be achieved while using this.<br id="n" /><br id="n" />Better tend quality allows skilled doctors to treat wounds better, as well as more reliably.
+|
+* Display Order:<br />'''2'''
+* Def Name:<br />'''BasicsNonPawnImportant'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|1.0}}
+* '''Min Value:''' {{%|0.0}}
+* '''To String Style:''' PercentZero
+* '''Show If Undefined:''' {{Bad|false}}
+| -
+| 4010
+<!--</StatDef>-->
+|- id="Construction Speed" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />ConstructionSpeedFactor
+* '''Label:'''<br />construction speed
+* '''Label For Full Stat List:'''<br />construction speed (material factor)
+| The speed at which buildings made of this are constructed is multiplied by this value.<br id="n" /><br id="n" />Some materials, like stone, are slow to build from, while others, like wood, are fast.
+|
+* Display Order:<br />'''12'''
+* Def Name:<br />'''BasicsNonPawn'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0.1}}
+* '''To String Style:''' PercentZero
+* '''Hide At Value:''' {{%|1}}
+| -
+| 2500
+<!--</StatDef>-->
+|- id="Meditation Psyfocus Bonus" <!-- ParentName="MeditationFocusBase" --><!--<StatDef>-->
+|
+* '''Def Name:'''<br />MeditationFocusStrength
+* '''Label:'''<br />meditation psyfocus bonus
+| The amount of extra psyfocus someone gains by focusing on this object during meditation, in addition to their own base rate of meditation psyfocus gain.<br id="n" /><br id="n" />For some objects, this number can change depending on the surroundings and the person doing the meditating.
+|
+* Display Order:<br />'''13'''
+* Def Name:<br />'''Meditation'''
+* Label:<br />'''Meditation'''
+* Display All By Default:<br />'''{{Good|true}}'''
+|
+* Format String: '''{0} / day'''
+* Format String Unfinalized: '''{0} / day'''
+* To String Style: '''PercentZero'''
+* Show If Mods Loaded Any: '''Royalty{{RoyaltyIcon}}'''
+* '''Worker Class:''' StatWorker_PossibleCompOffsets
+* '''Default Base Value:''' {{%|0}}
+* '''Min Value:''' {{%|0.0}}
+* '''Show If Undefined:''' {{Bad|false}}
+* '''Show Zero Base Value:''' {{Good|true}}
+| -
+| 4010
+<!--</StatDef>-->
+|- id="Psychic Sensitivity Offset" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />PsychicSensitivityOffset
+* '''Label:'''<br />psychic sensitivity offset
+| An offset applied to the user's psychic sensitivity.
+|
+* Display Order:<br />'''10'''
+* Def Name:<br />'''Basics'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Good|true}}'''
+|
+* '''Default Base Value:''' {{%|0}}
+* '''To String Style:''' PercentZero
+* '''Show On Animals:''' {{Bad|false}}
+* '''Show If Undefined:''' {{Bad|false}}
+* '''Show On Pawns:''' {{Bad|false}}
+* '''Cacheable:''' {{Good|true}}
+|
+* '''Parts:'''
+** '''StatPart_Quality:'''
+*** Factor Awful: '''{{Bad|{{%|0.5}}}}'''
+*** Factor Poor: '''{{Bad|{{%|0.66}}}}'''
+*** Factor Normal: '''{{%|0.83}}'''
+*** Factor Good: '''{{%|1.0}}'''
+*** Factor Excellent: '''{{Good|{{%|1.16}}}}'''
+*** Factor Masterwork: '''{{Good|{{%|1.32}}}}'''
+*** Factor Legendary: '''{{Good|{{%|1.5}}}}'''
+*** apply To Negative Values: '''{{Good|true}}'''
+| 3500
+<!--</StatDef>-->
+|- id="Psychic Sensitivity Factor" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />PsychicSensitivityFactor
+* '''Label:'''<br />psychic sensitivity factor
+| A factor applied to the user's psychic sensitivity.
+|
+* Display Order:<br />'''10'''
+* Def Name:<br />'''Basics'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Good|true}}'''
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Hide At Value:''' {{%|1}}
+* '''To String Style:''' PercentZero
+* '''Show On Animals:''' {{Bad|false}}
+* '''Show If Undefined:''' {{Bad|false}}
+* '''Show On Pawns:''' {{Bad|false}}
+| -
+| 3500
+<!--</StatDef>-->
+|- id="Neural Heat Limit Offset" <!-- MayRequireAnyOf="Royalty {{RoyaltyIcon}} Biotech {{BiotechIcon}}" --> <!--<StatDef>-->
+|
+* '''Def Name:'''<br />PsychicEntropyMaxOffset
+* '''Label:'''<br />neural heat limit offset
+| An offset applied to the user's neural heat limit.
+|
+* Display Order:<br />'''10'''
+* Def Name:<br />'''Basics'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Good|true}}'''
+|
+* '''Default Base Value:''' {{%|0}}
+* '''Hide At Value:''' {{%|0}}
+* '''To String Style:''' FloatOne
+* '''Show On Animals:''' {{Bad|false}}
+* '''Show If Undefined:''' {{Bad|false}}
+* '''Show On Pawns:''' {{Bad|false}}
+|
+* '''Show If Mods Loaded:'''
+** '''Royalty {{RoyaltyIcon}}'''
+* '''Show If Mods Loaded Any:'''
+** '''Royalty {{RoyaltyIcon}}'''
+** '''Biotech {{BiotechIcon}}'''
+| 3525
+<!--</StatDef>-->
+|- id="Neural Heat Recovery Rate Offset" <!-- MayRequireAnyOf="Royalty{{RoyaltyIcon}} Biotech{{BiotechIcon}}" --> <!--<StatDef>-->
+|
+* '''Def Name:'''<br />PsychicEntropyRecoveryRateOffset
+* '''Label:'''<br />neural heat recovery rate offset
+| An offset applied to the user's neural heat recovery rate.
+|
+* Display Order:<br />'''10'''
+* Def Name:<br />'''Basics'''
+* Label:<br />'''Basics'''
+* Display All By Default:<br />'''{{Good|true}}'''
+|
+* '''Default Base Value:''' {{%|0}}
+* '''Hide At Value:''' {{%|0}}
+* '''Format String:''' {0}/s
+* '''To String Style:''' FloatTwo
+* '''Show On Animals:''' {{Bad|false}}
+* '''Show If Undefined:''' {{Bad|false}}
+* '''Show On Pawns:''' {{Bad|false}}
+|
+* '''Show If Mods Loaded Any:'''
+** '''Royalty {{RoyaltyIcon}}'''
+** '''Biotech {{BiotechIcon}}'''
+| 3550
+<!--</StatDef>-->
+|- id="Filth Multiplier" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />FilthMultiplier
+* '''Label:'''<br />filth multiplier
+| How susceptible this surface is to filth. If this is less than 100%, some of the filth deposited here will disappear on contact. This only applies to organic filth.
+|
+* Display Order:<br />'''13'''
+* Def Name:<br />'''Terrain'''
+* Label:<br />'''terrain'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0}}
+* '''Show On Pawns:''' {{Bad|false}}
+* '''To String Style:''' PercentZero
+| -
+| -
+<!--</StatDef>-->
+|- id="Cleaning Time Multiplier" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />CleaningTimeFactor
+* '''Label:'''<br />cleaning time multiplier
+| A multiplier on how long it takes to clean filth from this surface.
+|
+* Display Order:<br />'''13'''
+* Def Name:<br />'''Terrain'''
+* Label:<br />'''terrain'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0.001}}
+* '''Show On Pawns:''' {{Bad|false}}
+* '''To String Style:''' PercentZero
+| -
+| -
+<!--</StatDef>-->
+<!--</Defs>--></div>
+<noinclude>
+|}</noinclude>

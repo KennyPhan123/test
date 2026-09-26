@@ -1,0 +1,712 @@
+{{DISPLAYTITLE:PatchOperations}}
+{{BackToTutorials}}
+
+PatchOperations are a feature that allows you to modify the content of XML Defs. Prior to RimWorld alpha 17, modders could only modify Defs by creating new ones that overwrote the original; this often resulted in compatibility issues as if more than one mod tried to overwrite the same Def, only the last mod in the load order would succeed as prior ones would themselves be overwritten.
+
+<div class="TableOfContentsContainer">
+<div class="TableOfContentsContainer-toc">
+__TOC__
+</div>
+<div class="TableOfContentsContainer-content">
+= Basics =
+
+PatchOperations are written as XML nodes that go into your mod's <tt>Patches</tt> folder:
+
+<source>
+MyModFolder
+├ About
+├ Defs
+└ Patches
+  └ MyPatchFile.xml
+</source>
+
+Just as with XML Defs, folder and file names do not matter and you can freely name and organize your patch files in whatever manner you wish. Individual patches themselves are a standard XML file with <tt><Patch></tt> as the root tag:
+
+<source lang="xml">
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- PatchOperations go here -->
+
+</Patch>
+</source>
+
+== XPath ==
+Most PatchOperations must be targeted at one or more XML nodes inside the master XML document. This is done via [https://developer.mozilla.org/en-US/docs/Web/XPath XML Path Language] or XPath.
+
+Note that an XPath is targeting the structure of the XML document after it's been parsed by RimWorld's parser, thus it has nothing to do with the actual file or folder paths. For example, if you wanted to add a stat value to the vanilla Wall building, you might use an XPath like so:
+
+<code>Defs/ThingDef[defName="Wall"]/statBases</code>
+
+* The first segment of any XPath targeting an XML Def will be <code>Defs/</code> as all XML Defs use the <code><Defs></code> root tag.
+* The square brackets denote a predicate, or conditional match. In this case, we are looking for <code>ThingDef</code>s that have a child tag <code>defName</code> equal to "Wall".
+
+=== Targeting Attributes ===
+
+You can target Defs that do not have a <code>defName</code> (such as abstract bases) by targeting their identifying attributes. For example, if you wanted to add another Stuff category to the abstract base Def for all shelves, you might use the following xpath:
+
+<code>Defs/ThingDef[@Name="ShelfBase"]/stuffCategories</code>
+
+You can use the same technique to target all Defs that inherit from a common base. For example, you could use the following xpath to target all <code>ThingDef</code>s that inherit from <code>ApparelBase</code>:
+
+<code>Defs/ThingDef[@ParentName="ApparelBase"]</code>
+
+=== Additional XPath Resources ===
+
+* [https://developer.mozilla.org/en-US/docs/Web/XPath Mozilla Developer Network]
+* [https://www.w3schools.com/xml/xml_xpath.asp W3Schools XPath Tutorial]
+* [https://stackoverflow.com/questions/tagged/xpath StackOverflow XPath Tag]
+* Ludeon Forum Thread: {{LudeonThread|32785}}
+</div>
+</div>
+
+= PatchOperation Types =
+
+<div class="TwoColumnCollapsibleLayout">
+<div class="TwoColumnCollapsibleLayout-section">
+<div class="TwoColumnCollapsibleLayout-subtitle">Basic XML node operations:</div>
+<div class="TwoColumnCollapsibleLayout-text">
+* '''[[#PatchOperationAdd|PatchOperationAdd]]''' adds a provided child node to the selected node
+* '''[[#PatchOperationInsert|PatchOperationInsert]]''' inserts a provided sibling node above the selected node
+* '''[[#PatchOperationRemove|PatchOperationRemove]]''' deletes the selected node
+* '''[[#PatchOperationReplace|PatchOperationReplace]]''' replaces the selected node with the provided node
+</div>
+</div>
+<div class="TwoColumnCollapsibleLayout-section">
+<div class="TwoColumnCollapsibleLayout-subtitle">XML attribute operations:</div>
+<div class="TwoColumnCollapsibleLayout-text">
+* '''[[#PatchOperationAttributeAdd|PatchOperationAttributeAdd]]''' adds a provided attribute to the selected node if and only if the attribute name is not already present
+* '''[[#PatchOperationAttributeSet|PatchOperationAttributeSet]]''' sets a provided attribute for the selected node, overwriting the attribute value if the attribute name is already present
+* '''[[#PatchOperationAttributeRemove|PatchOperationAttributeRemove]]''' removes an attribute for the selected node
+</div>
+</div>
+<div class="TwoColumnCollapsibleLayout-section">
+<div class="TwoColumnCollapsibleLayout-subtitle">Special operations:</div>
+<div class="TwoColumnCollapsibleLayout-text">
+* '''[[#PatchOperationSequence|PatchOperationSequence]]''' contains a set of other PatchOperations, and aborts upon any operation failing
+* '''[[#PatchOperationAddModExtension|PatchOperationAddModExtension]]''' adds a ModExtension.
+* '''[[#PatchOperationSetName|PatchOperationSetName]]''' changes the name of a node.
+</div>
+</div>
+<div class="TwoColumnCollapsibleLayout-section">
+<div class="TwoColumnCollapsibleLayout-subtitle">Conditional operations:</div>
+<div class="TwoColumnCollapsibleLayout-text">
+* '''[[#PatchOperationFindMod|PatchOperationFindMod]]''' tests for the presence of another mod, and can do different operations depending on the result.
+* '''[[#PatchOperationConditional|PatchOperationConditional]]''' tests nodes, and can do different operations depending on the result.
+* '''[[#PatchOperationTest|PatchOperationTest]]''' tests nodes, which is useful inside a PatchOperationSequence
+</div>
+</div>
+</div>
+
+==PatchOperationAdd==
+Inserts the specified <code>value</code>s as a child node of the XML nodes targeted by the operation's <code>xpath</code>. By default, the new nodes will be inserted after any existing child nodes (<code>Append</code>). You can use <code><order>Prepend</order></code> in the patch operation to insert them before existing child nodes instead.
+
+Note: PatchOperationAdd will not overwrite any existing tags. If one of your <code>value</code>s overlaps with an existing node and you are not targeting a list node, then it will cause an error on game load.
+
+<div class="TutorialTableWrapper">
+{| class="TutorialCodeTable"
+! Before !! Patch operation || After
+|-
+| <source lang="xml">
+<ExampleDef>
+  <defName>SampleDef</defName>
+  <aaa>Some text</aaa>
+</ExampleDef>
+</source>
+| class="TutorialCodeTable-highlighted" |<source lang="xml">
+<Operation Class="PatchOperationAdd">
+  <xpath>Defs/ExampleDef[defName="SampleDef"]</xpath>
+  <value>
+    <bbb>New text</bbb>
+  </value>
+</Operation> 
+</source>
+| <source lang="xml">
+<ExampleDef>
+  <defName>SampleDef</defName>
+  <aaa>Some text</aaa>
+  <bbb>New text</bbb>
+</ExampleDef>
+</source>
+|-
+| <source lang="xml">
+<ExampleDef>
+  <defName>SampleDef</defName>
+  <exampleList>
+    <li>Bar</li>
+  </exampleList>
+</ExampleDef>
+</source>
+| class="TutorialCodeTable-highlighted" |<source lang="xml">
+<Operation Class="PatchOperationAdd">
+  <xpath>Defs/ExampleDef[defName="SampleDef"]/exampleList</xpath>
+  <order>Prepend</order>
+  <value>
+    <li>Foo</li>
+  </value>
+</Operation> 
+</source>
+| <source lang="xml">
+<ExampleDef>
+  <defName>SampleDef</defName>
+  <exampleList>
+    <li>Foo</li>
+    <li>Bar</li>
+  </exampleList>
+</ExampleDef>
+</source>
+|-
+|}
+</div>
+
+==PatchOperationInsert==
+Inserts the specified <code>value</code>s as a sibling above the selected node(s). You can specify <code><order>Append</order></code> to insert it after the targeted node(s) instead (default is <code>Prepend</code>).
+
+<div class="TutorialTableWrapper">
+{| class="TutorialCodeTable"
+! Before !! Patch operation || After
+|-
+| <source lang="xml">
+<ExampleDef>
+  <defName>Rainbow</defName>
+  <colors>
+    <li>Red</li>
+    <li>Yellow</li>
+    <li>Green</li>
+    <li>Blue</li>
+    <li>Violet</li>
+  </colors>
+</ExampleDef>
+</source>
+| class="TutorialCodeTable-highlighted" |<source lang="xml">
+<Operation Class="PatchOperationInsert">
+  <xpath>Defs/ExampleDef[defName="Rainbow"]/colors/li[text()="Yellow"]</xpath>
+  <value>
+    <li>Orange</li>
+  </value>
+</Operation>
+</source>
+| <source lang="xml">
+<ExampleDef>
+  <defName>Rainbow</defName>
+  <colors>
+    <li>Red</li>
+    <li>Orange</li>
+    <li>Yellow</li>
+    <li>Green</li>
+    <li>Blue</li>
+    <li>Violet</li>
+  </colors>
+</ExampleDef>
+</source>
+|-
+| <source lang="xml">
+<ExampleDef>
+  <defName>Fish</defName>
+  <lines>
+    <li>one fish</li>
+    <li>two fish</li>
+  </lines>
+</ExampleDef>
+</source>
+| class="TutorialCodeTable-highlighted" |<source lang="xml">
+<Operation Class="PatchOperationInsert">
+  <xpath>Defs/ExampleDef[defName="Fish"]/lines/li[text()="two fish"]</xpath>
+  <order>Append</order>
+  <value>
+    <li>red fish</li>
+    <li>blue fish</li>
+  </value>
+</Operation>
+</source>
+| <source lang="xml">
+<ExampleDef>
+  <defName>Fish</defName>
+  <lines>
+    <li>one fish</li>
+    <li>two fish</li>
+    <li>red fish</li>
+    <li>blue fish</li>
+  </lines>
+</ExampleDef>
+</source>
+|-
+|}
+</div>
+
+==PatchOperationRemove==
+Removes the targeted node.
+
+<div class="TutorialTableWrapper">
+{| class="TutorialCodeTable"
+! Before !! Patch operation || After
+|-
+| <source lang="xml">
+<ExampleDef>
+  <defName>Sample</defName>
+  <foo>Uno</foo>
+  <bar>Dos</bar>
+  <baz>Tres</baz>
+</ExampleDef>
+</source>
+| class="TutorialCodeTable-highlighted" |<source lang="xml">
+<Operation Class="PatchOperationRemove">
+  <xpath>Defs/ExampleDef[defName="Sample"]/bar</xpath>
+</Operation>
+</source>
+| <source lang="xml">
+<ExampleDef>
+  <defName>Sample</defName>
+  <foo>Uno</foo>
+  <baz>Tres</baz>
+</ExampleDef>
+</source>
+|-
+|}
+</div>
+
+==PatchOperationReplace==
+Replaces the selected node(s) with your <code>value</code>s.
+
+<div class="TutorialTableWrapper">
+{| class="TutorialCodeTable"
+! Before !! Patch operation || After
+|-
+| <source lang="xml">
+<ExampleDef>
+  <defName>Sample</defName>
+  <foo>Uno</foo>
+  <bar>Dos</bar>
+  <baz>Tres</baz>
+</ExampleDef>
+</source>
+| class="TutorialCodeTable-highlighted" |<source lang="xml">
+<Operation Class="PatchOperationReplace">
+  <xpath>Defs/ExampleDef[defName="Sample"]/baz</xpath>
+  <value>
+    <baz>Drei</baz>
+  </value>
+</Operation>
+</source>
+| <source lang="xml">
+<ExampleDef>
+  <defName>Sample</defName>
+  <foo>Uno</foo>
+  <bar>Dos</bar>
+  <baz>Drei</baz>
+</ExampleDef>
+</source>
+|-
+|}
+</div>
+
+==PatchOperationAttributeAdd==
+Adds the specified attribute to the targeted node(s), but only if that attribute is not yet present.
+
+<div class="TutorialTableWrapper">
+{| class="TutorialCodeTable"
+! Before !! Patch operation || After
+|-
+| <source lang="xml">
+<ExampleDef>
+  <defName>Sample</defName>
+  <foo>Uno</foo>
+  <bar>Dos</bar>
+  <baz>Tres</baz>
+</ExampleDef>
+</source>
+| class="TutorialCodeTable-highlighted" |<source lang="xml">
+<Operation Class="PatchOperationAttributeAdd">
+  <xpath>Defs/ExampleDef[defName="Sample"]</xpath>
+  <attribute>Name</attribute>
+  <value>SampleBase</value>
+</Operation>
+</source>
+| <source lang="xml">
+<ExampleDef Name="SampleBase">
+  <defName>Sample</defName>
+  <foo>Uno</foo>
+  <bar>Dos</bar>
+  <baz>Tres</baz>
+</ExampleDef>
+</source>
+|-
+|}
+</div>
+
+==PatchOperationAttributeSet==
+Adds the specified attribute to the targeted node(s), or overwrites the existing value if the specified attribute already exists. 
+
+<div class="TutorialTableWrapper">
+{| class="TutorialCodeTable"
+! Before !! Patch operation || After
+|-
+| <source lang="xml">
+<ExampleDef Name="SampleSource">
+  <defName>Sample</defName>
+  <foo>Uno</foo>
+  <bar>Dos</bar>
+  <baz>Tres</baz>
+</ExampleDef>
+</source>
+| class="TutorialCodeTable-highlighted" |<source lang="xml">
+<Operation Class="PatchOperationAttributeSet">
+  <xpath>Defs/ExampleDef[defName="Sample"]</xpath>
+  <attribute>Name</attribute>
+  <value>SampleBase</value>
+</Operation>
+</source>
+| <source lang="xml">
+<ExampleDef Name="SampleBase">
+  <defName>Sample</defName>
+  <foo>Uno</foo>
+  <bar>Dos</bar>
+  <baz>Tres</baz>
+</ExampleDef>
+</source>
+|-
+|}
+</div>
+
+==PatchOperationAttributeRemove==
+Removes the specified attribute from the targeted node(s).
+
+<div class="TutorialTableWrapper">
+{| class="TutorialCodeTable"
+! Before !! Patch operation || After
+|-
+| <source lang="xml">
+<ExampleDef Name="SampleBase">
+  <defName>Sample</defName>
+  <foo>Uno</foo>
+  <bar>Dos</bar>
+  <baz>Tres</baz>
+</ExampleDef>
+</source>
+| class="TutorialCodeTable-highlighted" |<source lang="xml">
+<Operation Class="PatchOperationAttributeRemove">
+  <xpath>Defs/ExampleDef[defName="Sample"]</xpath>
+  <attribute>Name</attribute>
+</Operation>
+</source>
+| <source lang="xml">
+<ExampleDef>
+  <defName>Sample</defName>
+  <foo>Uno</foo>
+  <bar>Dos</bar>
+  <baz>Tres</baz>
+</ExampleDef>
+</source>
+|-
+|}
+</div>
+
+==PatchOperationAddModExtension==
+{{Main|Modding Tutorials/DefModExtension}}
+Adds the specified [[Modding Tutorials/DefModExtension|DefModExtension]] to the targeted <code>Def</code>. Automatically creates a <code><modExtensions></code> node if one doesn't already exist.
+
+<div class="TutorialTableWrapper">
+{| class="TutorialCodeTable"
+! Before !! Patch operation || After
+|-
+| <source lang="xml">
+<ExampleDef Name="SampleBase">
+  <defName>Sample</defName>
+  <foo>Uno</foo>
+  <bar>Dos</bar>
+  <baz>Tres</baz>
+</ExampleDef>
+</source>
+| class="TutorialCodeTable-highlighted" |<source lang="xml">
+<Operation Class="PatchOperationAddModExtension">
+  <xpath>Defs/ExampleDef[defName="Sample"]</xpath>
+  <value>
+    <li Class="MyNamespace.MyModExtension">
+      <key>Value</key>
+    </li>
+  </value>
+</Operation>
+</source>
+| <source lang="xml">
+<ExampleDef Name="SampleBase">
+  <defName>Sample</defName>
+  <foo>Uno</foo>
+  <bar>Dos</bar>
+  <baz>Tres</baz>
+  <modExtensions>
+    <li Class="MyNamespace.MyModExtension">
+      <key>Value</key>
+    </li>
+  </modExtensions>
+</ExampleDef>
+</source>
+|-
+|}
+</div>
+
+==PatchOperationSetName==
+Changes the name of a node. Most useful for changing the names of the nodes in "dictionary"-style nodes without changing their contents, such as for stat blocks or recipe products.
+
+<div class="TutorialTableWrapper">
+{| class="TutorialCodeTable"
+! Before !! Patch operation || After
+|-
+| <source lang="xml">
+<ThingDef>
+  <defName>ExampleThing</defName>
+  <!-- many nodes omitted -->
+  <statBases>
+    <Insulation_Cold>10</Insulation_Cold>
+  </statBases>
+</ThingDef>
+</source>
+| class="TutorialCodeTable-highlighted" |<source lang="xml">
+<Operation Class="PatchOperationSetName">
+  <xpath>Defs/ThingDef[defName="ExampleThing"]/statBases/Insulation_Cold</xpath>
+  <name>Insulation_Heat</name>
+</Operation>
+</source>
+| <source lang="xml">
+<ThingDef>
+  <defName>ExampleThing</defName>
+  <!-- many nodes omitted -->
+  <statBases>
+    <Insulation_Heat>10</Insulation_Heat>
+  </statBases>
+</ThingDef>
+</source>
+|-
+| <source lang="xml">
+<RecipeDef>
+  <defName>ExampleRecipe</defName>
+  <!-- many nodes omitted -->
+  <products>
+    <WoodLog>30</WoodLog>
+  </products>
+</RecipeDef>
+</source>
+| class="TutorialCodeTable-highlighted" |<source lang="xml">
+<Operation Class="PatchOperationSetName">
+  <xpath>Defs/RecipeDef[defName="ExampleRecipe"]/products/WoodLog</xpath>
+  <name>Steel</name>
+</Operation>
+</source>
+| <source lang="xml">
+<RecipeDef>
+  <defName>ExampleRecipe</defName>
+  <!-- many nodes omitted -->
+  <products>
+    <Steel>30</Steel>
+  </products>
+</RecipeDef>
+</source>
+|-
+|}
+</div>
+
+==PatchOperationSequence==
+Contains one or more additional PatchOperations, which are executed in order. If any of them fail, then the Sequence stops and will not run any additional PatchOperations.
+
+'''WARNING''': PatchOperations within an XML file will run in order even without a PatchOperationSequence and using a PatchOperationSequence can obfuscate or hide errors, making it difficult to debug if your child PatchOperations have errors. While PatchOperationSequence can be used to sequence multiple PatchOperations with a single PatchOperationConditional or PatchOperationFindMod, it is generally recommended to use [[Modding Tutorials/Mod Folder Structure|LoadFolders.xml]] instead.
+
+<source lang="xml">
+<Operation Class="PatchOperationSequence">
+  <operations>
+    <li Class="PatchOperationAdd">
+      <xpath>Defs/ExampleDef[defName="Sample"]/statBases</xpath>
+      <value>
+        <Mass>10</Mass>
+      </value>
+    </li>
+    <li Class="PatchOperationSetName">
+      <xpath>Defs/ExampleDef[defName="Sample"]/statBases/Flammability</xpath>
+      <name>ToxicEnvironmentResistance</name>
+    </li>
+    <!-- etc -->
+  </operations>
+</Operation>
+</source>
+
+As mentioned, you can also use [[Modding_Tutorials/MayRequire|MayRequire]] on child operations of a PatchOperationSequence. This is likely not an intended use of MayRequire and is generally not recommended:
+
+<source lang="xml">
+<Operation Class="PatchOperationSequence">
+  <operations>
+    <li Class="PatchOperationAdd" MayRequire="Ludeon.Rimworld.Biotech"> <!-- Only runs if Biotech is active -->
+      <xpath>Defs/ThingDef[defName="MechGestator"]/recipes</xpath>
+      <value>
+        <li>MyCustomMech</li>
+      </value>
+    </li>
+    <li Class="PatchOperationAdd" MayRequire="MyProject.OtherModPackageId"><!-- Only runs if the specific mod is active -->
+      <xpath>Defs/ThingDef[defName="OtherModWorkbench"]/recipes</xpath>
+      <value>
+        <li>MyCustomResource</li>
+      </value>
+    </li>
+  </operations>
+</Operation>
+</source>
+
+==PatchOperationFindMod==
+
+Checks whether any of the specified mods or DLCs are loaded and allows you to run an additional PatchOperation for <code>match</code> or <code>nomatch</code> results.
+
+'''WARNING''': Unlike all other mod-compatibility features in RimWorld, PatchOperationFindMod uses the mod ''name'' and not its <code>packageId</code>.
+
+'''NOTE''': For expansions, PatchOperationFindMod uses the <code>label</code> value defined in the <code>ExpansionDef</code> for the DLC.  At present, this means they are identified by just their single word names: Royalty, Ideology, Biotech, Anomaly.
+
+'''NOTE''': PatchOperationFindMod should only be used if you are implementing ''optional'' compatibility for the target mod, i.e. if your mod can work with or without the mod in question. If you are creating a compatibility mod specifically for a target mod that would be meaningless without that mod present, then it's better to simply specify that mod in your About.xml as a dependency and forgo the use of PatchOperationFindMod and avoid the potential issues introduced by using PatchOperationSequence.
+
+The following example adds a mod extension to the targeted Defs if RimQuest is loaded ([https://github.com/Mehni/MoreFactionInteraction/blob/ab3ab2a22ee529ee4e38a471fe150fd48fd07ce9/Patches/MoreFactionInteraction.xml#L64 See original]):
+<source lang="xml">
+<Operation Class="PatchOperationFindMod">
+  <mods>
+    <li>RimQuest</li>
+  </mods>
+  <match Class="PatchOperationAddModExtension">
+    <xpath>Defs/IncidentDef[defName="MFI_DiplomaticMarriage" or defName="MFI_HuntersLodge" or defName="MFI_Quest_PeaceTalks"]</xpath>
+    <value>
+      <li Class = "RimQuest.RimQuest_ModExtension">
+        <canBeARimQuest>false</canBeARimQuest>
+      </li>
+    </value>
+  </match>
+</Operation>
+</source>
+
+The following example replaces the tabWindowClass of the Factions button when Relations Tab is '''not''' loaded:
+<source lang ="xml">
+<Operation Class="PatchOperationFindMod">
+  <mods>
+    <li>Relations Tab</li>
+  </mods>
+  <nomatch Class="PatchOperationReplace">
+    <xpath>/Defs/MainButtonDef[defName="Factions"]/tabWindowClass</xpath>
+    <value>
+      <tabWindowClass>MyNameSpace.MyTabWindowClass</tabWindowClass>
+    </value>
+  </nomatch>
+</Operation>
+</source>
+
+==PatchOperationConditional==
+
+Tests for the existence/validity of the specified node(s) and allows you to run optional <code>match</code> or <code>nomatch</code> PatchOperations in response.
+
+The following example adds a <code><comps></code> node to the Caravan Def if it does not exist already, then adds a custom comp to said list:
+<source lang ="xml">
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <!-- add comps field to Caravan WorldObjectDef if it doesn't exist -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/WorldObjectDef[defName="Caravan"]/comps</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/WorldObjectDef[defName="Caravan"]</xpath>
+      <value>
+        <comps />
+      </value>
+    </nomatch>
+  </Operation>
+
+  <!-- add pyromaniac caravan handler comp to Caravan WorldObjectDef -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/WorldObjectDef[defName="Caravan"]/comps</xpath>
+    <value>
+      <li Class="BetterPyromania.WorldObjectCompProperties_Pyromania">
+        <fuelCount>20</fuelCount>
+        <cooldown>30000</cooldown>
+        <needThreshold>0.5</needThreshold>
+      </li>
+    </value>
+  </Operation>
+
+</Patch>
+</source>
+
+==PatchOperationTest==
+
+{{:Modding_Tutorials/Obsolete}}
+
+Tests for the existence/validity of an xpath. Useful as a way to intentionally stop a PatchOperationSequence.
+
+'''NOTE: Conditionally applying patches in this way is considered obsolete.''' Using PatchOperationConditional is a much better idea as the use of <success>Always</success> here will also suppress legitimate errors, making Sequences difficult to debug.
+
+The following example patch is from Apparello, by Shinzy. 
+<source lang ="xml">
+<Operation Class="PatchOperationSequence">
+  <!-- Must use <success>Always</success> because of the PatchOperationTest -->
+  <success>Always</success>
+  <!-- check for worn graphics and if none found, add one -->
+  <operations>
+    <li Class="PatchOperationTest">
+      <xpath>Defs/ThingDef[defName = "Apparel_Pants"]/apparel/wornGraphicPath</xpath>
+      <success>Invert</success>
+    </li>
+    <li Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName = "Apparel_Pants"]/apparel</xpath>
+      <value>
+        <wornGraphicPath>Accessorello/Pants/Pants</wornGraphicPath>
+      </value>
+    </li>
+  </operations>
+</Operation>
+</source>
+
+= Miscellaneous =
+
+== Custom PatchOperations ==
+Custom PatchOperation types can be created in C# by subclassing <code>Verse.PatchOperation</code>, which is useful for performing a patch based on ModSettings values or other custom behavior.
+
+A tutorial for this process does not exist yet, but you can check out the following references of custom PatchOperations:
+* [https://github.com/15adhami/XmlExtensions XML Extensions] - An entire framework mod containing many useful custom PatchOperations. Please note that this framework uses the viral [https://www.gnu.org/licenses/gpl-3.0.en.html GVPLv3 License], meaning that if your mod makes use of the framework it must also be licensed under GPLv3.
+* [https://github.com/CombatExtended-Continued/CombatExtended/blob/Development/Source/CombatExtended/CombatExtended/PatchOperationMakeGunCECompatible.cs PatchOperationMakeGunCECompatible] - Used by Combat Extended to automatically apply multiple changes to a single firearm for compatibility.
+* [https://gist.github.com/Lanilor/e326e33e268e78f68a2f5cd3cdbbe8c0 PatchOperationAddOrReplace] - An example of a custom variant of PatchOperationAdd that replaces an existing value.</br>
+
+== "Success" Option ==
+
+{{:Modding_Tutorials/Obsolete}}
+
+The ''<code><success>...</success></code>'' node determines how errors are handled, usually in a PatchOperationSequence. '''Note that use of this tag should be considered obsolete'''; its use was common before PatchOperationConditional was implemented, but it should no longer be required and can cause confusion as it can suppress legitimate errors from showing up.
+
+Options available are:
+* Always - This patch operation always succeeds, i.e. it suppresses all errors that might have occurred. This used to be used in PatchOperationSequence along with PatchOperationTest in order to conditionally run patches, but is now obsolete.
+* Normal - Errors are handled normally
+* Invert - Errors are considered a success and success is considered a failure. This used to be used in PatchOperationSequences to test the negative of a PatchOperationTest; you should now use <code><nomatch></code> on PatchOperationConditional.
+* Never - This patch operation always fails. Generally only used in testing to see if a Sequence is working correctly, should never be used in published mods.
+
+== Tips and Tricks ==
+* Patching is run after all XML Defs are loaded into memory and in mod list order. If you are encountering compatibility issues with another mod's PatchOperations, you can use <code>loadBefore</code> and <code>loadAfter</code> in your <code>About.xml</code> to help players resolve these issues.
+* Patching is done before Def inheritance takes place. This means that you cannot target tags that are inherited from a parent, but also that if you alter a parent, all of its children will inherit the patched value.
+* You can override a value inherited from a parent Def without changing that value for all Defs by using <code>Inherit="False"</code>:
+<source lang = "xml">
+<Operation Class="PatchOperationAdd">
+  <xpath>/Defs/ThingDef[defName = "Apparel_KidPants"]</xpath>
+  <value>
+    <thingCategories Inherit="False">
+      <li>NewValue</li>
+    </thingCategories>
+  </value>
+</Operation>
+</source>
+* You can use <code>or</code> in predicates to target multiple nodes: <code>Defs/ThingDef[defName="Cassowary" or defName = "Emu" or defName = "Ostrich" or defName = "Turkey"]</code> This is generally better than using multiple PatchOperations so long as you are making the same changes to each target.
+* You can use <code>/text()</code> to target the text contents of a tag instead of the whole tag for operations like PatchOperationReplace. This is especially useful if you do not want to accidentally remove attributes.
+
+== Common Issues / Troubleshooting ==
+
+* XPath and XML nodes in general is case-sensitive and must be exact. Copying values such as <code>defName</code> fields is strongly recommended to avoid errors.
+* Malformed XML such as unclosed or mismatched tags can cause the XML parser to crash completely, which can result in a blank screen on startup or a "Recovered from a fatal error" screen and the removal of all active mods. If this occurs, run all of your XML through an XML validator to ensure that it is structurally correct. Checking your Player.log file can help in diagnosing the exact cause as well.
+* It's very easy to confuse Insert vs Add; Insert will "add" the <code>value</code> as a ''sibling'' of the target node(s), while Add will "insert" the <code>value</code> as a ''child'' of the target node(s).
+* Remember that XPath targets the XML data structure, not the file path.
+* Nodes in XML other than <code>li</code> list items must be unique at each level. If you Add or Insert a duplicate node, that will generate a red error on load and cause that Def to fail to load.
+* If you're still stumped, feel free to join the [https://discord.gg/RimWorld RimWorld Discord server] and ask questions in the <code>#mod-development</code> channel.
+
+== References and Links ==
+
+{{:Modding_Tutorials/Obsolete}}
+
+The original tutorial on PatchOperations created by Zhentar: [https://gist.github.com/Zhentar/4a1b71cea45b9337f70b30a21d868782 Introduction to PatchOperation]
+
+[[Category:Modding]]
+[[Category:Modding tutorials]]

@@ -1,0 +1,48 @@
+{{Version Nav}}
+Hi!
+
+Fresh patch notes here. Today, we’ve got rebalanced quest rewards and some changes for genes and children, plus various bug fixes. The changelog is available below.
+
+With the wide variety of items added over the past few expansions, it was time to revisit quest rewards. Our community's feedback and discussions on Reddit were especially useful!
+
+We wanted to make sure that quest rewards were varied and rewarding throughout all stages of the game. This update reduces the frequency of some rewards and removes others, like double beds and slab beds. You’ll now see a greater variety of cool and valuable quest rewards including infinite chemreactors, techprof subpersona cores, vanometric power cells, psychic emanators, and more!
+
+We also adjusted ancient complexes to occasionally contain high-value loot. Ancient complexes should feel exciting and rewarding when you finally reach the treasure and make a daring escape, so it made sense to add a wider range of interesting items. You can also find Biotech-specific rewards like genepacks, archite capsules, or deathrest capacity serums scattered throughout a complex.
+
+Big thank you to our testers and dedicated community for helping us with these updates and giving us feedback! Join us on the official RimWorld development discord if you'd like to help test in the future. :)
+
+Please don't hesitate to leave Biotech a review on Steam. (Expansions tend to not get many reviews!)
+
+- Tia 💚
+
+* Reduce the frequency at which gunlinks and eltex shirts appear in quest rewards, as they're overrepresented at low colony wealth values.
+* Update rewards for OpportunitySite_AncientComplex. Higher value rewards can now occasionally appear, along with genepacks, archite capsules, and deathrest capacity serums.
+* Hospitality refugee uses the same system to determine refugee count as for beggars.
+* Children now recalculate their life stage immediately when they become an adult instead of waiting for their next growth tick.
+* Updated player creative content.
+* Moved some SpecialThingFilterDefs to categories other than Root.
+* Minor performance improvements for xenotype editor.
+* Removed XenotypeSet config error warning if total weight exceeds 100% without "warnIfTotalAbove1" flag turned off.
+* Round growth points down on UI for clarity.
+* Fix: Infinite loop of hauling mech to charger outside the mech's allowed area.
+* Fix: No TKey for "Patrolling.".
+* Fix: Inconsistent psychic bond torn when one partner is in a suspendable building.
+* Fix: Lover relationships can generate for pawns who have spent their entire life in the colony.
+* Fix: Pawns with "dead calm" gene can get into fights over botched conversion attempts.
+* Fix: Genes that remove all passions don't save previous values, causing passions to reset on removal.
+* Fix: Tox packs activate on stripping or butchering corpses wearing them.
+* Fix: Pawns being carried by other pawns strains psychic bond.
+* Fix: Hemogen wasted when refueling deathrest buildings.
+* Fix: Gene processor has no path cost.
+* Fix: Animals specialist role mentions boosting animal-related abilities of nearby allies, which is false.
+* Fix: Children generated at tribal game start don't have natural meditation focus.
+* Fix: Food restrictions now respect eg "Allow vegetarian food" for instances of food and not just based on def.
+* Fix: ThinkNodeConditional_UnderCombatPressure not returning correctly for minCloseTargets > 1.
+* Fix: "Tend to self" emergency work giver appears below non-emergency work giver on UI.
+* Fix: Text cut off in mod mismatch window.
+* Fix: Sanguophages can take too many hemogen packs for maintaining hemogen levels in some circumstances.
+* Fix: "Slept in cold" and "Slept in heat" memories don't take into account gene-related comfortable temperature offsets.
+* Fix: Drug synthesis speed stat drawer is now consistent with whether a pawn is actually going to be able to craft drugs or not.
+
+== Source ==
+* [https://store.steampowered.com/news/app/294100/view/3494259338705325620 Update 1.4.3563 improves quest reward variety]

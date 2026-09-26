@@ -1,0 +1,802 @@
+<!--Top Nav Box-->
+{| align=center
+| {{Character_Properties_Nav}}
+|}
+----
+<!-- End Nav -->
+{{Rewrite|reason=Verbose and circumspect. Needs cleanup, better layout and general tightening up. Over used of italics and bold.}}
+{{TOCright}}
+[[File:skills_preview.png|right]][[File:skill_increase_anim.gif|268px|right|Increasing skills of a colonist that's currently building something.]]
+Every human in RimWorld has a set of skills which govern their speed and success at various tasks.
+
+Performing relevant work awards Experience Points (XP) towards improving a pawn's '''skill level'''. Pawns also slowly lose XP over time, so constant practice at a skill is necessary to keep one's skill levels high. A pawn's various skills are displayed in the Bio tab of the pawn inspect pane.
+
+Pawns may have a Passion 🔥 or even a Double Passion 🔥🔥 for any particular skill, which increases their rate of XP gain and [[mood]] while performing related work. Conversely, a skill may be entirely prevented by a pawn's [[backstory]] or [[trait]]s, preventing them from performing relevant work. 
+
+High skill levels grant improved speed or success in relevant jobs, up to Level 20. Conversely, a low skill level will result in slow or poor performance in related work, such as Construction failure, wild animal revenge, surgery failure, low harvest yields, or poor quality crafting products. 
+
+The skills are Shooting, Melee, Construction, Mining, Cooking, Plants, Animals, Crafting, Artistic, Medical, Social, and Intellectual.
+
+== Summary ==
+{{see also|Training}}
+Skills are improved by performing certain associated jobs, although some few related tasks do not provide skill experience (i.e. smelting, feeding incapacitated pawns, stone-cutting, cleaning).  Performing these tasks will earn the character experience points either per task completed or per second they are pursuing that task, both of which will eventually level up the skill. The resulting higher skill level then improves the performance in all associated tasks and types of work.  Skills are leveled up individually, and there is no single "character level" as in many role playing games.
+
+In some cases, special management tactics can be employed to more effectively or specifically steer the skill training in the colony, especially during periods of low work in colony development.  See the [[Training|main article on skill training]] for more information.
+
+=== Skills vs work types ===
+Skills and work types (or "tasks") are two different, but related, concepts.  In some cases, like "mine" (work type) and "mining" (skill), there is an almost perfect correspondence, but in many other cases there is not: the ''work types'' "tailor" and "smith", for example, are associated with the ''crafting skill''.  Some tasks listed on the work tab do not even have an associated ''skill'' (eg. "haul", "clean" and "firefight").
+
+The ''Work'' tab, where you assign tasks to colonists, indicates which skills are relevant for a given task (by mousing over a tick box).  It also shows you if the colonist has a ''passion'' for those skills (with an icon in the tick box), and if a significant proficiency has already been acquired (by emphasizing the tick box border).  Lower skill pawns have their work box darker, and higher skill pawns have it lighter. Extremely proficient pawns have a golden box. When assigning work to a pawn with low skill in a certain job, the box will have a red outline. Passions appear as extremely small flames at the bottom-right hand side of the work box. All these aspects are important for deciding how to assign tasks and types of work.
+
+In general, you want colonists to perform tasks they are ''good at'' (it is productive for your colony), as well as tasks they are ''passionate for'' (improves the associated skill faster and also keep them happy while working).
+
+=== Improving skills ===
+{{Rewrite|section=1|reason=1) Other things affect GLF now, and table no longer accounts for every possible combination of GLF and passion 2) [[Ranching (precept)]] precept inc effect and order of operations}}
+Skill leveling in RimWorld is very similar to many role playing games: experience points are progressively earned, and then the skill is 'leveled up' when a certain XP threshold is reached. Importantly, the effect of a skill improves as level increases, but the experience point threshold for leveling up also increases. This means that '''leveling up a skill takes more XP and thus a longer time at high levels'''
+
+When a player pawn gains a new level in a skill, a text mote is displayed.
+
+Experience points are generally gained at a consistent rate per unit [[time]] - that is, while the rate may vary from one task to another, when performing a given task the only other factor in XP gain is the time spent doing it. High skill level often increases the speed at which a pawn performs related work, such as Cooking and Plant growing. As such, more tasks must be performed to spend the same amount of time working and thus gain the same amount of XP. 
+
+This is not true for all tasks however, as some will simply give a lump sum of experience for each task completed, such as doctoring a wound.
+
+Regardless of how XP is gained, it is multiplied by Passion and [[Global Learning Factor]] in the following way:
+
+<code>Real XP gained = Global Learning Factor x [[#Passion|Passion Multiplier]] x Base XP gained </code>
+
+Additionally, there is a soft cap of 4000 '''net''' XP gained per day per skill. Any XP gains past this point are multiplied by 20%.{{Check Tag|Clarify|How does this work for chunks of experience? If some action were assigned to give a lump sum of 5000 experience, would a pawn gain the full 5000, or would the pawn gain 4200?}} This cap resets a few seconds after midnight. Any passive XP losses are applied against the net gain (e.g. if a pawn were to gain 4500 XP, but lose 1000, they would still remain 500 XP under the cap). Experience from [[Skilltrainer]]s does not apply to this cap, nor is it affected by the 20% multiplier.
+
+==== Passion ====
+Passion for a given skill is indicated by the presence of flame icons next to the skill experience bar on the character's [[Bio]] tab. These passions increases the rate at which a pawn learns specific skills, and may provide them a [[mood]] boost when performing activities related to the skill. Skill gains from using a [[skilltrainer]] are influenced by ''passion'', making the item more valuable when used by characters with a passion for the associated skill. Typically, passion cannot be gained or lost in an adult pawn's lifetime, however [[children]]{{BiotechIcon}} may gain passions at [[growth moment]]s and the addition or removal of [[Genes#Aptitudes|Skill Aptitude xenogenes]]{{BiotechIcon}} can also affect passions.{{Check Tag|Incapable of?|What happens to passions on a suppressed skill when a pawns becomes incapable? Some tasks that use that skill can still be performed, despite the incapability and its effects are needed}}
+
+The three levels of passion are:
+{| 
+|-
+| || '''''None: ''''' || &nbsp;No flames. 35% multiplier on experience gain. This is the most common passion level.
+|-
+| [[File:PassionMinor.png|24px|left]] || '''Interested: ''' || &nbsp;One flame. 100% multiplier on experience gain (or ×2.86 as fast as no passion) and +8 mood ("Minor passion for my work") while performing related tasks.
+|-
+| [[File:PassionMajor.png|24px|left]]  || '''Burning: ''' || &nbsp;Two flames. 150% multiplier on experience gain (or ×4.29 as fast as no passion) and +14 mood ("Burning passion for my work") while performing related tasks.
+|}
+
+==== Global Learning Factor ====
+{{See also|Global Learning Factor}}
+
+A pawn has a default Global Learning Factor of 100%. Some traits, implants, Genes, and Hediffs can effect Global Learning Factor as an Offset, or a factor. Offsets are added to the base value of 100%. Then, the sum is multiplied by any applicable factors. For example, a pawn with the Fast Learner trait and a Learning Assistant implant has a final Global Learning Factor of 195%.
+
+'''Offsets'''
+* [[Too smart|Too Smart]] trait: {{+|75%}}, while also inflicting a penalty to [[Mental Break Threshold|mental break threshold]].
+* [[Fast learner|Fast Learner]] trait: {{+|75%}}
+* [[Slow learner|Slow Learner]] trait: {{--|75%}}
+* [[Learning assistant]] implant {{RoyaltyIcon}}: {{+|20%}}
+* [[Neural supercharger]] building {{IdeologyIcon}}: {{+|25%}}
+* [[Gene#Quick study|Quick study]] gene {{BiotechIcon}}: {{+|50%}}
+
+'''Factors'''
+* [[Gene#Slow study|Slow study]] gene {{BiotechIcon}}: {{Bad|×50%}}
+
+==== Experience multiplier table ====
+{| class="wikitable"
+|-
+! Global Learning Factor !! 25% !! 45% !! 50% !! 70% !! 100% !! 120% !! 125% !! 145% !! 175% !! 195% !! 200% !! 220% !! 250% !! 270% !! 275% !! 295% !! 300% !! 305% !! 320% !! 325% !! 345% 
+|-
+! ''None'' 
+| {{#expr: 0.35* 25}}% || {{#expr: 0.35* 45}}% || {{#expr: 0.35* 50}}% || {{#expr: 0.35* 70}}% || {{#expr: 0.35* 100}}% || {{#expr: 0.35* 120}}% || {{#expr: 0.35* 125}}% || {{#expr: 0.35* 145}}% || {{#expr: 0.35* 175}}% || {{#expr: 0.35* 195}}% || {{#expr: 0.35* 200}}% || {{#expr: 0.35* 220}}% || {{#expr: 0.35* 250}}% || {{#expr: 0.35* 270}}% || {{#expr: 0.35* 275}}% || {{#expr: 0.35* 295}}% || {{#expr: 0.35* 300}}% || {{#expr: 0.35* 305}}% || {{#expr: 0.35* 320}}% || {{#expr: 0.35* 325}}% || {{#expr: 0.35* 345}}% 
+|-
+! [[File:PassionMinor.png|frameless]] 
+| 25% || 45% || 50% || 70% || 100% || 120% || 125% || 145% || 175% || 195% || 200% || 220% || 250% || 270% || 275% || 295% || 300% || 305% || 320% || 325% || 345% 
+|-
+! [[File:PassionMajor.png|frameless]]  
+| {{#expr: 1.5* 25}}% || {{#expr: 1.5* 45}}% || {{#expr: 1.5* 50}}% || {{#expr: 1.5* 70}}% || {{#expr: 1.5* 100}}% || {{#expr: 1.5* 120}}% || {{#expr: 1.5* 125}}% || {{#expr: 1.5* 145}}% || {{#expr: 1.5* 175}}% || {{#expr: 1.5* 195}}% || {{#expr: 1.5* 200}}% || {{#expr: 1.5* 220}}% || {{#expr: 1.5* 250}}% || {{#expr: 1.5* 270}}% || {{#expr: 1.5* 275}}% || {{#expr: 1.5* 295}}% || {{#expr: 1.5* 300}}% || {{#expr: 1.5* 305}}% || {{#expr: 1.5* 320}}% || {{#expr: 1.5* 325}}% || {{#expr: 1.5* 345}}% 
+|}
+
+=== Decay ===
+Beyond skill level 10, XP points are continuously drained away. A skill level is lost only after falling to 0 XP points, and then losing a further 1000 points, preventing repeated level loss and gain right around a level threshold. Experience decay is strictly calculated based on the current skill level and is not directly affected by skill use; Instead, gained XP simply cancels out loss, and vice versa.
+
+XP decays at an accelerated rate with higher skill levels.  This means that all XP earned after 55,000 total XP (level 10) effectively has less value, especially for skills that a colonist does not use frequently, because it will disappear. In most cases, XP is gained by ''time spent'' on a skill, and not by effective work performed: Working faster does not make it easier or faster to gain XP, or compensate the decay loss. Level 20 (max level) is very difficult to acquire, usually only achievable by colonists solely dedicated to a single profession. 
+
+The [[Great memory]] trait halves the skill decay rate for a pawn. The [[Perfect memory]] trait, which is only found on some [[Creepjoiner]]s,{{AnomalyIcon}} will entirely prevent all skill decay.
+
+=== Skill point acquisition strategy ===
+{{Stub|section=1|reason=Need at least simple introduction on which jobs and skills benefit from experts vs more hands and why - e.g. cooks beyond skill 9 = More hands, plant harvesting and crafting = experts.}}
+The above implies that on average it is better to spread out the skill training over several colonists instead of having only one "expert", except for the artisan professions where it is usually good to have true experts in the colony.
+
+For example, you need to acquire about 150,000 XP to make one colonist a "region-known master" (level 16); the same amount of XP would be enough to have ''three'' colonists at level 9 ("solid professional").  This avoids the risk of losing the only pawn that is capable of the task, and in most cases three level-9 workers are better than a single level-16 expert. Creating anything [[quality]] is a notable exception to this.
+
+=== Experience table ===
+Level 20 is the highest skill level achievable for a pawn.
+
+{| class="wikitable"
+|-
+! Level
+! Name
+! Total experience required
+! Experience till next level
+! Experience decay rate (exp/day)
+|-
+| -
+| Incapable
+| -
+| -
+| -
+|-
+| 0
+| Barely heard of it
+| 0
+| 1000
+| 0
+|-
+| 1
+| Utter Beginner
+| 1000
+| 2000
+| 0
+|-
+| 2
+| Beginner
+| 3000
+| 3000
+| 0
+|-
+| 3
+| Basic Familiarity
+| 6000
+| 4000
+| 0
+|-
+| 4
+| Some Familiarity
+| 10000
+| 5000
+| 0
+|-
+| 5
+| Significant Familiarity
+| 15000
+| 6000
+| 0
+|-
+| 6
+| Capable Amateur
+| 21000
+| 7000
+| 0
+|-
+| 7
+| Weak Professional
+| 28000
+| 8000
+| 0
+|-
+| 8
+| Employable Professional
+| 36000
+| 9000
+| 0
+|-
+| 9
+| Solid Professional
+| 45000
+| 10000
+| 0
+|-
+| 10
+| Skilled Professional
+| 55000
+| 12000
+| 30
+|-
+| 11
+| Very skilled Professional
+| 67000
+| 14000
+| 60
+|-
+| 12
+| Expert
+| 81000
+| 16000
+| 120
+|-
+| 13
+| Strong Expert
+| 97000
+| 18000
+| 180
+|-
+| 14
+| Master
+| 115000
+| 20000
+| 300
+|-
+| 15
+| Strong Master
+| 135000
+| 22000
+| 540
+|-
+| 16
+| Region-Known Master
+| 157000
+| 24000
+| 840
+|-
+| 17
+| Region-Leading Master
+| 181000
+| 26000
+| 1200
+|-
+| 18
+| Planet-Known Master
+| 207000
+| 28000
+| 1800
+|-
+| 19
+| Planet-Leading Master
+| 235000
+| 30000
+| 2400
+|-
+| 20
+| Legendary Master
+| 265000
+| 32000
+| 3600
+|}
+
+Note that these values are considered before genes that affect skills. For example, a pawn with good social would only need 1000 experience points to get from level 4 to 5.
+
+== List of skills ==
+{{Split|section=1|reason=Split into individual skill pages and leave short summaries and links here. will allow better explanations of what trains each skill and how, and allow training considerations to be added}}
+
+In the following sections, all XP values listed assume an "Interested" 🔥 passion with a 100% Learning Speed.  Note that this is not the "default" rate; "no passion" with 35% XP gain is far more common.
+
+=== Animals ===
+{{For|a list of skills that animals can learn|Animals#Training}}
+The animals skill determines how well a character handles wild and domesticated animals, and decreases the revenge chance while hunting.
+
+Higher animals skill has the following benefits:
+* Chance to tame a wild animal increases. Some animals can not even be attempted to be tamed if the animals skill is too low.
+* Chance to successfully train a domesticated animal a command increases.
+* Animal handling, such as milking and shearing certain livestock, becomes more efficient, with a lower chance of wasting products.
+* More animal species can be assigned to Guard the pawn during combat or field work. An animal's Wildness stat determines the skill level required of an assigned master.
+* Animal revenge becomes less likely during Hunting.
+{{#ask:  [[Category:Stat]] [[Skill::Animals]]
+| ?Description
+| ?Skill Base Factor=Base Factor
+| ?Skill Bonus Factor=Bonus Factor
+}}
+
+=== Artistic ===
+The artistic skill is used to create [[beauty|beautiful]] works of art at an [[art bench]].  
+
+Higher skill increases the chance for a higher quality, in this case more beautiful, sculpture. Note that higher skill levels do not increase the speed of creating sculptures.
+
+The beauty and market value of sculptures increases tremendously at the highest quality levels.  Combined with the fact that trade partners pay more for works of art compared to other items, this makes ''artistic'' a useful skill outside of decorating the home base.
+
+Not very useful in the early game, but once you have a well-established colony, having a permanent artist would be beneficial to it.
+
+=== Construction ===
+The ''construction'' skill governs a wide variety of colonist tasks, centered around creating structures in the game world; it is an essential skill in any colony:
+* Making all kinds of structures, like furniture, walls, power lines and spaceship parts.  If a structure can be placed on the ground in form of a blueprint, its construction is usually facilitated by this skill.  Many structures require a minimum skill to make.
+* Deconstructing existing structures back into raw materials.
+* Building and tearing down roofs.
+* Laying and removing flooring, like carpet, concrete and stone tiles.
+* Smoothing rock walls and stone floors.
+
+Higher ''construction'' skill will
+* allow the construction of more difficult to build structures.
+* increase construction speed; the base speed at 0 construction skill is 50%, this is increased additively by 15% for every skill level.
+* reduce the chance of a construction effort to be "botched", which will result in some resources going to waste, and require the construction effort to be restarted (ie. all work is wasted).  The base chance of success is 75%, increasing by about 3% per skill level to 100% at skill level 8.
+* increase the chance to make higher quality items, for items that have a quality rating, such as furniture.
+
+Construction outcomes are influenced by the [[manipulation]] and [[sight]] capacities of the colonist.
+
+Experience is gained continuously while working on a construction project. At 100% work speed this seems to translate to roughly 82 experience per point of work required.
+
+{{#ask:  [[Category:Stat]] [[Skill::Construction]]
+| ?Description
+| ?Skill Base Factor=Base Factor
+| ?Skill Bonus Factor=Bonus Factor
+}}
+
+<div><li style="display: inline-table;">
+{| {{STDT| sortable text-center mw-collapsible mw-collapsed}}
+|+ style="white-space: nowrap;" |'''Items with a required Construction skill level:'''
+|-
+! Name !! Level
+|-
+{{#ask: [[Skill 1::Construction]]
+| ?Skill 1 Level=
+| format = template
+| template = Ask Table Formatter
+| limit = 999
+| link = none
+| sort = From DLC, Skill 1 Level, Name}}
+|}
+</li><div>
+
+=== Cooking ===
+The cooking skill affects how long it takes to cook [[meals]] and butcher dead creatures, as well as the [[Food Poison Chance]] for the person who eats the meal. It also affects [[Butchery Speed]] and [[Butchery Efficiency]], how much meat is produced when butchering.
+
+Cooking and butchering increase cooking skill.  It is also trained by making [[smokeleaf joint]]s at a drug lab and cooking [[psychite tea]] at a campfire or stove.
+
+A Cooking skill of {{Q|Lavish meal|Skill 1 Level}} is required to be able to cook every item, a skill of 9 achieves the minimum [[Food Poison Chance]], and a skill of 10 gives maximum [[Butchery Efficiency]] - assuming a healthy but otherwise unaugmented pawn. Levels above this only increase the speed of tasks. 
+
+{| class="wikitable"
+|-
+! Project
+! Experience Given Per Task
+|-
+| Simple Meal
+| 60
+|-
+| Fine Meal
+| 110
+|-
+| Lavish meal
+| 160
+|-
+| Pemmican
+| 80
+|}
+
+{{#ask:  [[Category:Stat]] [[Skill::Cooking]]
+| ?Description
+| ?Skill Base Factor=Base Factor
+| ?Skill Bonus Factor=Bonus Factor
+}}
+
+<div><li style="display: inline-table;">
+{| {{STDT| sortable text-center mw-collapsible mw-collapsed}}
+|+ style="white-space: nowrap;" |'''Items with a required Cooking skill level:'''
+|-
+! Name !! Level
+|-
+{{#ask: [[Skill 1::Cooking]]
+| ?Skill 1 Level=
+| format = template
+| template = Ask Table Formatter
+| limit = 999
+| link = none
+| sort = From DLC, Skill 1 Level, Name}}
+|}
+</li><div>
+
+=== Crafting ===
+The crafting skill affects the creation of many of the items under the [[Work#Smith|smith]], [[Work#Tailor|tailor]] and [[Work#Craft|craft]] work types. It does so in two ways; crafting quality and minimum crafting levels.
+
+A pawn's Crafting skill is a driving factor in the [[Quality]] of produced [[Clothing]], [[Armor]], and [[Weapons]]. The quality of things such as [[Sculptures]] and [[Buildings]] are instead controlled by the [[#Artistic|Artistic]] and [[#Construction|Construction]] skills respectively.
+
+The speed of production for these tasks is unrelated to Crafting level, however, and is instead completely dependent on a pawn's [[General Labor Speed]] and the amount of labor required in the bill. 
+
+Many work [[bill|bills]] of the [[Work#Smith|Smith]], [[Work#Tailor|Tailor]] and [[Work#Craft|Craft]] work types have a required minimum Crafting skill level. This restricts the creation of some items to skilled crafters regardless of their possible quality.
+
+The Crafting skill also determines the time required to shred [[mechanoid]]s, and the amount of resources produced from doing so.
+
+{{#ask:  [[Category:Stat]] [[Skill::Crafting]]
+| ?Description
+| ?Skill Base Factor=Base Factor
+| ?Skill Bonus Factor=Bonus Factor
+}}
+
+<div><li style="display: inline-table;">
+{| {{STDT| sortable text-center mw-collapsible mw-collapsed}}
+|+ style="white-space: nowrap;" | '''Items with a required Crafting skill level:'''
+|-
+! Name !! Level
+|-
+{{#ask: [[Skill 1::Crafting]]
+| ?Skill 1 Level=
+| format = template
+| template = Ask Table Formatter
+| limit = 999
+| link = none
+| sort = From DLC, Skill 1 Level, Name}}
+|}
+</li><div>
+
+=== Medical ===
+{{Main|Doctoring}}
+
+The ''Medical'' skill level is the main factor for medical treatment quality and speed, surgery speed and surgery success chance. 
+
+Low quality treatment will increase the chance of [[infection]], and the likelihood of permanent health conditions such as ''scars'', in turn leading to chronic pain.  Certain scars cause more than 10% pain, permanently weakening the ''consciousness'' of the patient, which reduces their work performance.
+
+Medical ''surgery'', if not successful, can fail in minor or major ways, even causing the death of the patient.  The success rate is not only determined by the ''medical'' skill, but also other character stats like ''manipulation'', ''eye sight'' and ''consciousness''.  It is not advisable to let an impaired doctor perform surgery.
+
+Higher grade [[medicine]] and medical equipment like [[hospital bed]]s and a [[sterile tile|sterile]] environment significantly boost the effectiveness of all medical treatments, independent of the skill level of the doctor.
+
+Medical skill can be trained very quickly by performing euthanasia on fast-breeding animals such as chickens.  This costs 1 medicine per procedure, but only requires [[herbal medicine]].  The procedure can be scheduled in the respective animal's ''health'' tab, and an animal sleeping spot must be available to perform the euthanasia.
+
+Performing ''surgery'' trains the ''medical'' skill.  The amount of XP that is awarded only depends on the duration of the procedure (varying by procedure and ''medical operation speed'' of the surgeon).
+
+{{#ask:  [[Category:Stat]] [[Skill::Medical]]
+| ?Description
+| ?Skill Base Factor=Base Factor
+| ?Skill Bonus Factor=Bonus Factor
+}}
+
+=== Melee ===
+The melee skill determines a characters' effectiveness with [[melee weapons]] namely, their chance to:
+* Land a hit in melee (''see [[Melee Hit Chance]]'')
+* Dodge a melee attack, when not aiming or firing a ranged weapon (''see [[Melee Dodge Chance]]'')
+The tables below are post-processed chances for a healthy pawn.
+{{col-begin|width=60}}
+<div class="center" style="width:auto; margin-left:auto; margin-right:auto;">'''Chance to hit'''</div>
+{| {{STDT| c_12 text-center}}
+!Skill Level
+!Standard
+!Brawler
+!Skill Level
+!Standard
+!Brawler
+|-
+!0
+|50%
+|62%
+! -
+| -
+| -
+|-
+!1
+|53%
+|65%
+!11
+|81%
+|85%
+|-
+!2
+|56%
+|68%
+!12
+|82%
+|86%
+|-
+!3
+|59%
+|71%
+!13
+|83%
+|87%
+|-
+!4
+|62%
+|74%
+!14
+|84%
+|88%
+|-
+!5
+|65%
+|77%
+!15
+|85%
+|89%
+|-
+!6
+|68%
+|80%
+!16
+|86%
+|90%
+|-
+!7
+|71%
+|81%
+!17
+|87%
+|90.3%
+|-
+!8
+|74%
+|82%
+!18
+|88%
+|90.6%
+|-
+!9
+|77%
+|83%
+!19
+|89%
+|90.9%
+|-
+!10
+|80%
+|84%
+!20
+|90%
+|91.2%
+|}
+{{col-2|width=60}}
+<div class="center" style="width:auto; margin-left:auto; margin-right:auto;">'''Chance to dodge'''</div>
+{| {{STDT| c_12 text-center}}
+!Skill Level
+!Standard
+!Nimble
+!Skill Level
+!Standard
+!Nimble
+|-
+!0
+|0%
+|20%
+! -
+| -
+| -
+|-
+!1
+|0%
+|22%
+!11
+|12%
+|33%
+|-
+!2
+|0%
+|24%
+!12
+|14%
+|33.5%
+|-
+!3
+|0%
+|26%
+!13
+|16%
+|34%
+|-
+!4
+|0%
+|28%
+!14
+|18%
+|34.5%
+|-
+!5
+|0%
+|30%
+!15
+|20%
+|35%
+|-
+!6
+|2%
+|30.5%
+!16
+|22%
+|35.5%
+|-
+!7
+|4%
+|31%
+!17
+|24%
+|36%
+|-
+!8
+|6%
+|31.5%
+!18
+|26%
+|36.5%
+|-
+!9
+|8%
+|32%
+!19
+|28%
+|37%
+|-
+!10
+|10%
+|32.5%
+!20
+|30%
+|37.5%
+|}
+{{col-end}}
+{{#ask:  [[Category:Stat]] [[Skill::Melee]]
+| ?Description
+| ?Skill Base Factor=Base Factor
+| ?Skill Bonus Factor=Bonus Factor
+}}
+
+=== Mining ===
+The mining skill determines how long it takes for a colonist to mine out each rock, and how much they can obtain from each mineral vein mined.
+
+{{#ask:  [[Category:Stat]] [[Skill::Mining]]
+| ?Description
+| ?Skill Base Factor=Base Factor
+| ?Skill Bonus Factor=Bonus Factor
+}}
+
+=== Intellectual ===
+This skill affects the speed at which [[research]] is completed.
+
+{{#ask:  [[Category:Stat]] [[Skill::Intellectual]]
+| ?Description
+| ?Skill Base Factor=Base Factor
+| ?Skill Bonus Factor=Bonus Factor
+}}
+
+=== Plants ===
+The plants skill affects how fast a colonist sows and harvests growing zones, hydroponics and flower pots, and how fast trees and other vegetation is cut down. It also influences how much a colonist [[forage]]s while in a caravan. Some plants require a minimum plants skill in order to plant them.
+
+
+{{#ask:  [[Category:Stat]] [[Skill::Plants]]
+| ?Description
+| ?Skill Base Factor=Base Factor
+| ?Skill Bonus Factor=Bonus Factor
+}}
+
+<div><li style="display: inline-table;">
+{| {{STDT| sortable text-center mw-collapsible mw-collapsed}}
+|+ style="white-space: nowrap;" | '''Plants with a minimum Plants skill level to sow:'''
+|-
+! Name !! Level
+|-
+{{#ask: [[Category:Plants]] [[Minimum Required Growing Skill::>1]]
+| ?Minimum Required Growing Skill=
+| format = template
+| template = Ask Table Formatter
+| limit = 999
+| link = none
+| sort = From DLC, Minimum Required Growing Skill, Name}}
+|}
+</li><div>
+
+=== Shooting ===
+The shooting skill affects a character's [[Shooting Accuracy|accuracy]] with [[ranged weapons]].
+
+The table below shows post-processed shooting accuracy per tile of distance for each skill level and trait combination, assuming the pawn is healthy:
+
+{| {{STDT| c_12 text-center}}
+!Skill Level
+!Standard
+!Careful Shooter
+!Trigger-Happy
+!Skill Level
+!Standard
+!Careful Shooter
+!Trigger-Happy
+|-
+!0
+|89%
+|94.5%
+|84%
+! -
+| -
+| -
+| -
+|-
+!1
+|91%
+|95%
+|85%
+!11
+|97.25%
+|98.333%
+|95%
+|-
+!2
+|93%
+|95.5%
+|86%
+!12
+|97.5%
+|98.5%
+|95.5%
+|-
+!3
+|93.5%
+|96%
+|87%
+!13
+|97.75%
+|98.666%
+|96%
+|-
+!4
+|94%
+|96.5%
+|88%
+!14
+|98%
+|98.833%
+|96.5%
+|-
+!5
+|94.5%
+|97%
+|89%
+!15
+|98.167%
+|99%
+|97%
+|-
+!6
+|95%
+|97.25%
+|91%
+!16
+|98.333%
+|99.125%
+|97.25%
+|-
+!7
+|95.5%
+|97.5%
+|93%
+!17
+|98.5%
+|99.25%
+|97.5%
+|-
+!8
+|96%
+|97.75%
+|93.5%
+!18
+|98.666%
+|99.313%
+|97.75%
+|-
+!9
+|96.5%
+|98%
+|94%
+!19
+|98.833%
+|99.375%
+|98%
+|-
+!10
+|97%
+|98.167%
+|94.5%
+!20
+|99%
+|99.438%
+|98.167%
+|}
+
+Note that shooting accuracy for the pawn is calculated '''per tile''', meaning that while a trivial increase (like 1% or so) in shooting accuracy may not matter up close, it can make a huge difference in long distances.
+
+For example:
+*A colonist with shooting accuracy of 99% has a base accuracy of 72.5% against a target 32 tiles away.
+*With 98% accuracy, the base accuracy against the same target becomes only 52.4%.
+
+The base accuracy at various distances are listed when you check the information of a pawn. This can show the actual shooting performance of a pawn, especially at long ranges.
+
+{{#ask:  [[Category:Stat]] [[Skill::Shooting]]
+| ?Description
+| ?Skill Base Factor=Base Factor
+| ?Skill Bonus Factor=Bonus Factor
+}}
+
+=== Social ===
+The social skill affects the impact of social interactions on other characters' mood, the impact of gifts on faction relations, the recruitment chance for prisoners and trader prices.
+A small amount of experience is gained every time two colonists have a social interaction with each other. Characters have a [[talking]] stat that somehow interacts with this skill
+
+{{#ask:  [[Category:Stat]] [[Skill::Social]]
+| ?Description
+| ?Skill Base Factor=Base Factor
+| ?Skill Bonus Factor=Bonus Factor
+}}
+
+== Version history ==
+* [[Version/0.0.245|0.0.245]] - Skills now cap at 20. Added cooking, medicine, artistic, crafting but currently do nothing. Rebalanced shooting and melee to make skill more important. Shooting accuracy split into misses due to equipment and misses due to skill.
+* [[Version/0.2.363|0.2.363]] - High level skills now decay. Passions system added. 
+* [[Version/0.9.722|0.9.722]] - Old pawns now tend to spawn with higher skills. Low skill cooks can now cause food poisoning.
+* [[Version/0.10.785|0.10.785]] - Passion flames are now displayed subtly on the work overview screen. Reduced skill degradation rate. Reworked how skills generate so there will be more initial skill variation and age affect starting skills more.
+* [[Version/0.12.906|0.12.906]] - Animals skill added.
+* B19/1.0 - Doing passionate work now affects mood instead of recreation. Adjusted balance of learning rates for various skills. Easier: Melee, shooting, social. Harder: Intellectual, growing, mining.
+* [[Version/1.2.2753|1.2.2753]] - Pawns will now not lose their skill levels until they fall 1000 XP under zero. This stops pawns from quickly leveling up and down around a threshold.  We now display a text mote when a player pawn gains a new level in a skill.
+* [[Version/1.4.3527|1.4.3527]] - Fix: Can train shooting and melee on colony mechanoids.
+
+[[Category:Characters]]

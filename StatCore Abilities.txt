@@ -1,0 +1,185 @@
+<noinclude>{{Verified|1.5.4104}}
+&larr; <small>[[Stat]]</small>
+{| {{STDT|sortable}}
+! Def Name<br />Label<br />Label For Full Stat List<br />Offset Label !! Description !! Category !! Parameters !! Complex<br />Paramaters !! Display<br />Priority<br />In<br />Category</noinclude>
+<!-- Core Stats_Abilities -->
+<div id="Core Stats_Abilities"><!--<Defs>-->
+|- id="Psylink Level" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />Ability_RequiredPsylink
+* '''Label:'''<br />psylink level
+| The minimum psylink level required to use this ability.
+|
+* Display Order:<br />'''60'''
+* Def Name:<br />'''Ability'''
+* Label:<br />'''Ability'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|0}}
+* '''Min Value:''' {{%|0}}
+* '''Hide At Value:''' {{%|0}}
+* '''Show If Undefined:''' {{Bad|false}}
+|
+* '''Show If Mods Loaded:'''
+** '''Royalty {{RoyaltyIcon}}'''
+| 1005
+<!--</StatDef>-->
+|- id="Casting Time" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />Ability_CastingTime
+* '''Label:'''<br />casting time
+| How long it takes to perform this ability.
+|
+* Display Order:<br />'''60'''
+* Def Name:<br />'''Ability'''
+* Label:<br />'''Ability'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|1}}
+* '''Min Value:''' {{%|0}}
+* '''Format String:''' {0} s
+* '''To String Style:''' FloatOne
+* '''Show If Undefined:''' {{Bad|false}}
+|
+* '''Show If Mods Loaded:'''
+** '''Royalty {{RoyaltyIcon}}'''
+| 1004
+<!--</StatDef>-->
+|- id="Neural Heat Gain" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />Ability_EntropyGain
+* '''Label:'''<br />neural heat gain
+| How much neural heat will be added as a result of performing this ability.
+|
+* Display Order:<br />'''60'''
+* Def Name:<br />'''Ability'''
+* Label:<br />'''Ability'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|5}}
+* '''Min Value:''' {{%|0}}
+* '''Show If Undefined:''' {{Bad|false}}
+|
+* '''Show If Mods Loaded:'''
+** '''Royalty {{RoyaltyIcon}}'''
+| 1003
+<!--</StatDef>-->
+|- id="Psyfocus Cost" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />Ability_PsyfocusCost
+* '''Label:'''<br />psyfocus cost
+| How much psyfocus must be spent to perform this ability.
+|
+* Display Order:<br />'''60'''
+* Def Name:<br />'''Ability'''
+* Label:<br />'''Ability'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Worker Class:''' StatWorker_PsyfocusCost
+* '''To String Style:''' PercentOne
+* '''Default Base Value:''' {{%|0}}
+* '''Min Value:''' {{%|0}}
+* '''Show If Undefined:''' {{Bad|false}}
+|
+* '''Show If Mods Loaded:'''
+** '''Royalty {{RoyaltyIcon}}'''
+| 1002
+<!--</StatDef>-->
+|- id="Range" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />Ability_Range
+* '''Label:'''<br />range
+| The maximum distance to a target of this ability, or to the center of the target location.
+|
+* Display Order:<br />'''60'''
+* Def Name:<br />'''Ability'''
+* Label:<br />'''Ability'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|25}}
+* '''Min Value:''' {{%|0}}
+* '''Hide At Value:''' {{%|0}}
+* '''Show If Undefined:''' {{Bad|false}}
+| -
+| 1001
+<!--</StatDef>-->
+|- id="Duration" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />Ability_Duration
+* '''Label:'''<br />duration
+| How long the effects of this ability last.
+|
+* Display Order:<br />'''60'''
+* Def Name:<br />'''Ability'''
+* Label:<br />'''Ability'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|0}}
+* '''Min Value:''' {{%|0}}
+* '''Hide At Value:''' {{%|0}}
+* '''Format String:''' {0} s
+* '''Show If Undefined:''' {{Bad|false}}
+| -
+| 999
+<!--</StatDef>-->
+|- id="Effect Radius" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />Ability_EffectRadius
+* '''Label:'''<br />effect radius
+| The radius of the area of effect of this ability.
+|
+* Display Order:<br />'''60'''
+* Def Name:<br />'''Ability'''
+* Label:<br />'''Ability'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|0}}
+* '''Min Value:''' {{%|0}}
+* '''Hide At Value:''' {{%|0}}
+* '''Show If Undefined:''' {{Bad|false}}
+| -
+| 998
+<!--</StatDef>-->
+|- id="Goodwill Impact" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />Ability_GoodwillImpact
+* '''Label:'''<br />goodwill impact
+| How casting this ability on someone will impact relations with their faction.
+|
+* Display Order:<br />'''60'''
+* Def Name:<br />'''Ability'''
+* Label:<br />'''Ability'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|0}}
+* '''Hide At Value:''' {{%|0}}
+* '''Show If Undefined:''' {{Bad|false}}
+| -
+| 997
+<!--</StatDef>-->
+|- id="Detection Chance" <!--<StatDef>-->
+|
+* '''Def Name:'''<br />Ability_DetectChancePerEntropy
+* '''Label:'''<br />detection chance
+| The likelihood of this psychic power being detected when it is used.<br id="n" /><br id="n" />Some factions try to enforce laws which restrict some powers to those holding specific titles. When you use a power, there is a chance that the psychic signature will be detected at a distance, which leads to diplomatic consequences.
+|
+* Display Order:<br />'''60'''
+* Def Name:<br />'''Ability'''
+* Label:<br />'''Ability'''
+* Display All By Default:<br />'''{{Bad|false}}'''
+|
+* '''Default Base Value:''' {{%|0}}
+* '''Min Value:''' {{%|0}}
+* '''Show If Undefined:''' {{Bad|false}}
+* '''Hide At Value:''' {{%|0}}
+* '''To String Style:''' PercentZero
+|
+* '''Show If Mods Loaded:'''
+** '''Royalty {{RoyaltyIcon}}'''
+* '''Stat Factors:'''
+** '''[[Ability_EntropyGain]]'''
+| 996
+<!--</StatDef>-->
+<!--</Defs>--></div>
+<noinclude>
+|}</noinclude>

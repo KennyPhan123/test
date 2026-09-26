@@ -1,0 +1,21 @@
+This article contains information on how to convert a [[Permadeath]] save file into a non-Permadeath save file.
+
+#<big>'''Find the save file:'''</big> 
+## First, launch RimWorld, via Steam, GOG, or wherever you have it installed.
+## Click "Options" on the main menu.
+## In the middle column, under Gameplay, click "Open Save Data Folder" - this should open a file explorer in your RimWorld directory.
+## Open the "Saves" folder.
+## Find your Permadeath save that you wish to convert. It will end in "(Permadeath)".
+
+#<big>'''Edit the save file:'''</big>
+## '''Create a backup!''' Always create a backup before editing a save file, preferably saved in another location.
+## Once you have identified which file you need to edit, open it with your favourite text editor, for example Notepad, Visual Studio, Sublime Text, or Atom. Anything will do if it can edit large files.
+## Once the file is open, confirm it is opened correctly - the top of the file should start with "<code><?xml version="1.0" encoding="utf-8"?></code>"
+## In the <game> section of the file, which is after the list of active mods (if any), there is a line which reads: "<code><permadeathMode>True</permadeathMode></code>"
+## Change this line to "<code><permadeathMode>False</permadeathMode></code>" and remove the line below it which reads "<code><permadeathModeUniqueName></code>".
+## Save your changes to the file, and rename it to remove the (Permadeath) - this is personal preference, it has no effect on the actual save file.
+## Relaunch RimWorld.
+
+<big>Now your file is not permadeath!</big>
+{{Nav|guides|wide}}
+[[Category: Guides]]

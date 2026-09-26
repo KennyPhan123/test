@@ -1,0 +1,64 @@
+<!--
+Note: This loot pool uses class ThingSetMaker_Sum, meaning that each item has an independent chance to spawn. Therefore the chances do not add up to 100% and are not mutually exclusive (unlike the many loot pools using ThingSetMaker_RandomOption). There is a possibility that no item will spawn at all, or that items will spawn in all categories, including possibly 2 artifacts.
+!-->{| {{STDT| sortable c_06 text-center}}
+! Item !! Randomly picked among !! Amount || Chance
+|-
+! Artifact
+| {{#ask:[[Category:Artifact]]
+ | format = plainlist
+ | template = Loot Item
+ | link = none
+ | sep = ,&#32;
+ | sort = From DLC, Name
+ | default = None.
+}} || 1 - 2 || 70%
+|-
+! Misc. item
+| <!--
+In the XML this loot is a combination of an explicit list of items and a filtering on SingleUseWeapon and SkillNeurotrainer. It's implemented here as a hard-coded list because:
+- it's impossible to sort the items if using a combination of a query and a manual list
+- using a single query to get everything hits the wiki limits on query complexity (due to too many implied OR to specify the list of pages)
+!-->{{Loot Item|Antigrain warhead}}, <!--
+!-->{{Loot Item|Archotech arm}}, <!--
+!-->{{Loot Item|Archotech eye}}, <!--
+!-->{{Loot Item|Archotech leg}}, <!--
+!-->{{Loot Item|Assault rifle}}, <!--
+!-->{{Loot Item|Bionic arm}}, <!--
+!-->{{Loot Item|Bionic eye}}, <!--
+!-->{{Loot Item|Bionic heart}}, <!--
+!-->{{Loot Item|Bionic leg}}, <!--
+!-->{{Loot Item|Bionic spine}}, <!--
+!-->{{Loot Item|Charge lance}}, <!--
+!-->{{Loot Item|Charge rifle}}, <!--
+!-->{{Loot Item|Doomsday rocket launcher}}, <!--
+!-->{{Loot Item|Flatscreen television}}, <!--
+!-->{{Loot Item|Grand sculpture}}, <!--
+!-->{{Loot Item|Healer mech serum}}, <!--
+!-->{{Loot Item|Joywire}}, <!--
+!-->{{Loot Item|Marine armor}}, <!--
+!-->{{Loot Item|Marine helmet}}, <!--
+!-->{{Loot Item|Megascreen television}}, <!--
+!-->{{Loot Item|Orbital bombardment targeter}}, <!--
+!-->{{Loot Item|Orbital power beam targeter}}, <!--
+!-->{{Loot Item|Painstopper}}, <!--
+!-->{{Loot Item|Power claw}}, <!--
+!-->{{Loot Item|Resurrector mech serum}}, <!--
+!-->{{Loot Item|Skilltrainer}} (any), <!--
+!-->{{Loot Item|Techprof subpersona core}}, <!--
+!-->{{Loot Item|Tornado generator}}, <!--
+!-->{{Loot Item|Triple rocket launcher}}, <!--
+!-->{{Loot Item|Orbital mech cluster targeter}} <!--
+!-->|| 1 || 50%
+|-
+! {{Loot Item|Techprint}}
+| any || 1 || 50%
+|-
+! {{Loot Item|Luciferium}}
+|  || 5 - 20 || 35%
+|-
+! {{Loot Item|Advanced component}}
+|  || 1 - 4 || 35%
+|-
+! {{Loot Item|Glitterworld medicine}}
+|  || 2 - 8 || 35%
+|}<noinclude>[[Category:Customized table templates]]</noinclude>

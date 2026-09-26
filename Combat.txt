@@ -1,0 +1,180 @@
+<!--Top Nav Box-->
+{| align=center
+| {{Gameplay_Nav}}
+|}
+----
+<!-- End of Nav -->
+{{TOCright}}
+{{Rewrite|reason=Tone too guidelike and missing actual detail about combat not explained well elsewhere. melee verbs, damage types, etc should be explained conceptually here, and then further detail linked where appropriate.}}
+RimWorld's combat system may seem a little daunting to new players at first, however a few simple guidelines will have you ready to repel attacks and hold ground like a pro.
+
+In every gunfight there is one very important lifesaving rule to remember:<br/>
+'''Always use whatever [[cover]] is available!'''<br/>
+
+== Combat basics ==
+[[Draft]] pawns to have them enter combat. While drafted, pawns with a ranged weapon will automatically fire at enemies they see. [[Wall]]s and other impassible objects will block line of fire. When adjacent to an enemy, pawns will always fight in melee - even if they are holding a gun. You can assign specific targets for both melee and ranged attackers.
+
+There are several other key mechanics in the combat system of the game:
+
+=== Cover ===
+{{main|Cover}}
+Using the strongest [[cover]] available is key to winning a firefight. Pawns will automatically use cover, like [[sandbag]]s and stone [[chunk]]s, that they are adjacent to.  If you have the time and resources to spare, you can make multi-layer defenses, with rows of cover you can fall back to if you're being overwhelmed. The drawback is that, if enemies advance, they can use your defensive lines as cover.
+
+[[Wall]]s are the best possible cover, shielding colonists from 75% of bullets. While they cannot be fired through, pawns will "lean" out from a wall and fire from its side. A row of 1-tile wide walls, interspersed with [[barricade]]s or [[sandbag]]s, are the strongest formation of cover. 
+
+Cover can also be used by your enemies. [[Chunk]]s of stone and steel slag are much more effective than [[tree]]s, and should be cleared out. Conversely, if assaulting a [[siege]] or [[mech cluster]] ,{{RoyaltyIcon}} you should use any preexisting cover, such as chunks, [[ruins]], or [[mountain]]s.
+
+=== Tactics ===
+{{Main|Defense tactics}}
+Sometimes you will have to use more clever tactics to defeat your incoming enemies, such as when you're outnumbered, or you don't have suitable ways to cope with the incoming raiders.
+
+===Logistics===
+During battle, it's often handy to keep colonists with [[firefighting]] duties nearby in case a [[fire]] breaks out. Pawns lit on fire will run around wildly, unable to attack. [[Firefoam pop pack]]s will extinguish colonists while preventing future fires. Even if someone is incapable of violence, they can help end fires nearby and rescue people in need.
+
+After battle, you'll likely need to clean up and repair any damage done to your base. Undraft colonists so that they can start on work. Build [[grave]]s, set up a dumping stockpile accepting corpses, or use an [[electric crematorium]] to dispose of bodies, in order to avoid the mood penalty for seeing [[corpse]]s.
+
+=== Pause frequently! ===
+The most important combat tip is saved for last. Use the pause feature! The tide of battle changes very quickly with a smoking turret or thrown grenade in the middle of your colonists. Take advantage of the space bar to freeze the action and give your colonists new orders.
+
+==Colonist management==
+Ultimately, colonists are beings with [[mood]], [[need]]s, and [[injuries]] to take care of. A tired, hungry colonist will become progressively more upset, while [[pain]] isn't a particularly pleasant experience. [[Mental break]]s are absolutely ''lethal'' in combat, as the pawn will refuse to shoot or follow orders. To prevent this, you should ideally care for colonists ''before'' combat starts. 
+
+A pleasant base - great dining, recreation, and bedrooms specifically - will keep soldiers' spirits high. Alternatively, you can assign colonists to carry [[drug]]s at all times (Assign tab -> Drug policy). Order colonists to take the drug as combat begins. [[Go-juice]], while inherently addictive, confers major combat-related boosts.
+
+===Skills===
+As pawns can only hold one weapon at a time, colonists that are great at one combat stat (Shooting or Melee) are better than one decent at both. Shooting skill has a greater impact the further away a colonist is shooting from, so assign longer range weapons to skilled colonists. Give your best melee fighters the best melee weapons.
+
+Ideally, you should keep your best doctors away from direct combat. In practice, having an extra shooter is more valuable - just don't be overly risky with them.
+
+===Triage===
+Tending to wounded colonists is important to save them from dying. Drafted colonists can immediately tend to others on the field, with or without medicine. Prioritize those who are bleeding out the most. While medicine does not staunch the flow of bleeding of a specific wound any faster, it can stop multiple wounds at the same time.
+
+If a colonist starts to sustain too many injuries, you can use your less combat-skilled colonists to take over while they retreat. If need be, have your injured colonist drop their weapon and undraft them, then have your reserves pick up the weapon and fight in their place. If a pawn takes on too much damage, they may become [[downed]] and require rescue.
+
+== Ranged ==
+{{stub|section=1|reason= melee preventing ranged fire snd player exception}}
+Ranged combat involves the use of weapons from a distance. Pawns wielding ranged weapons will shoot at enemies, because what else did you expect them to do?
+
+Note that RimWorld does not have any ammo mechanics, even for items that visually appear to be finite, like [[pila]] and [[grenades]]. [[Doomsday rocket launcher]]s and [[triple rocket launcher]]s are consumed on use, while every other held weapon is infinite. Weapons will not be damaged so long as they are wielded, and weapon damage has no impact on their combat effectiveness.
+
+===Weapon stats===
+Ranged weapons consist of many attributes:
+*'''Damage:''' How much health each bullet can do. For reference, the brain has 10 HP, the heart has 15 HP, and the torso (general body) has 40 HP.
+*'''Armor penetration:''' The ability to ignore [[armor]]. AP directly subtracts from armor rating; if a weapon's AP > the armor %, then armor is completely ignored.
+*'''Stopping power:''' The ability to stagger, or slow, pawns with a body size equal to or less than the stopping power. A stopping power of 1 can stagger humans, as they have a body size of 1. When staggered, a pawn is reduced to 1/6th of their normal speed for {{ticks|95}}.
+*'''Burst count:''' How many bullets are fired at a time. If a weapon fires multiple shots, there will be a short delay between bullets.
+*'''Aim time''' and '''Cooldown time''': How long it takes between each burst. Aim time happens before shooting, cooldown happens after.
+*'''Range:''' How far a weapon can shoot.
+*'''Accuracy:''' A weapon's own modifier to accuracy. Shooting skill and other factors also determine accuracy.
+** Each weapon has specific accuracy values at Touch (3), short (12), medium (25) and long (40) ranges. Linear interpolation is used for any values in between. (e.g. accuracy at 17.5 tiles is equal to the average of the short and medium accuracy)
+
+There are two summary stats of how a weapon will actually perform:
+*'''Optimal DPS:''' How much damage a weapon can do, per second, if every shot hits an unarmored target.
+*'''DPS (Range):''' How much damage a weapon can do, per second, factoring in weapon accuracy at a specific range. (Before the shooter's accuracy, armor, etc.)
+DPS is a measure of how fast a weapon can deal out [[pain]]. [[Pain shock]] is the primary way of disabling pawns in combat; hurt them enough, and they will be [[downed]]. Note that enemies downed from pain have a chance to [[death|die]], anyways. Other factors like range, stopping power, and aiming/cooldown time can all impact how you use a weapon in battle, but damage is a stat to be prioritized first.
+
+===Effective accuracy===
+Conventional (non-explosive) ranged weapon accuracy follows the following equation:
+{| class="wikitable"
+|-
+| Accuracy = ([[Shooting Accuracy]]<sup>Range</sup> &times; Weapon Accuracy &times; Other factors
+|}
+
+In simpler terms:
+*[[Shooting Accuracy]] is the stat of the shooter. A shooter's accuracy becomes exponentially more important the further a shot is fired. Higher Shooting skill, [[manipulation]], a [[gunlink]],{{RoyaltyIcon}} etc. all improve this stat.
+*Weapon accuracy is the stat of the weapon. Each weapon has specific accuracy values for shooting at specific ranges. This is a factor applied after shooting accuracy.
+*Factors like [[cover]], [[smoke]], [[weather]], and body size are all multipliers or offsets to the "final" accuracy. See [[Weapons#Accuracy]] for the full list.
+
+If a ranged weapon is calculated to hit, it will hit, regardless of where the bullet visually lands or any defender movement. If the bullet misses, then it can impact other tiles.
+
+===Miss mechanics===
+Whenever a regular ranged weapon misses, the projectile will land within a random distance from the original target depending on the actual accuracy of the shot based on the weapon and the shooter. Stray shots have a 50% chance of hitting nothing, and a 50% chance of hitting another target on the alternative cell it happens to land on. Projectiles can also hit other things that are between the target and the shooter, such as stray animals. Accuracy to maximum miss distances are as follows:
+
+{| class="wikitable sortable"
+! Accuracy !! Max Miss Distance !! Area (cells)
+|-
+| 100% || 1.0 || 5
+|-
+| 22% || 2.0 || 13
+|-
+| 11% || 4.0 || 41
+|-
+| 7% || 6.0 || -
+|-
+| 4% || 8.0 || -
+|-
+| 2% || 10.0 || -
+|}
+
+There are special mechanics in regards to [[friendly fire]], or hitting a pawn from the same faction.
+
+===Forced miss===
+{{Rewrite|section=1|reason=Added in 2018, verify this still works like this and if so then integrate with existing FMR weapon pages}}
+Many weapons (mostly explosives) have a Forced Miss Radius stat. Forced miss is modified with distance:
+{| class="wikitable sortable"
+! Distance (cells) !! Radius Multiplier
+|-
+| 0 - 8 || 0
+|-
+| 9 - 24 || 0.5
+|-
+| 25 - 48 || 0.8
+|-
+| 49+ || 1.0
+|}
+
+Weapons with this stat will ''always'' land within their forced miss radius, ignoring every factor to accuracy. There is a small chance to use standard accuracy instead, more likely with a small radius.
+
+===Interception===
+{{stub|section=1|reason= what circumstances does a wild shot get intercepted? not when it targets the floor? does friendly fire setting work on allies, enemies, guests, or only colonists? also are some weapons exempt like rockets}}
+Living pawns, human or animal, can intercept projectiles on their way to their target if that shot is a hit, or with unknown conditions if it goes wild. The chance of an interception is based on four factors:
+# The [[Body Size]] of the pawn, specifically a 40% multiplied by body size, with a minimum of 0.1 (4%) and maximum of 2.0 (80%). For non-pawn objects, this factor is based on [[Property: Cover Effectiveness|Cover Effectiveness]].
+# The distance between the shooter and the prospective interceptor, interception is impossible at a distance of 5 or fewer tiles, and the chance scales up to the body size factor at a distance of 12 or more.
+# If the interceptor is downed the chance is reduced.
+# The Friendly Fire difficulty setting of the storyteller; the above chances are directly multiplied by this setting if both the shooter and interceptor are colonists.
+
+There appears to be no, or a very high limit, to the number of pawns per tile which are checked for interception; densely packing large animals using zones can form a nigh-impenetrable bullet sponge.
+Note that non-pawn objects are capable of intercepting projectiles, but not if the shot is a hit.
+
+== Melee ==
+[[File:Melee_test_eleplants_block.png|thumb|200px|left|A very basic melee block, available in any doorway.]]
+Melee involves hand-to-hand combat, with or without the use of weapons. Accuracy is determined with the [[Melee Hit Chance]] stat.
+
+Pawns will usually not stack into a cell with other melee attackers. For enemies, only one pawn per cell can attack the same target. Undrafted colony brawlers will not always have collision, so it is possible for them to stack if the [[Threat response|threat response setting]] is set to attack.
+
+Melee combat has strengths and weaknesses. While a pawn can bash with a gun barrel in melee, a fighter with a dedicated melee weapon remains much more effective. However, a brawler may get shot down during their approach. The [[shield belt]] was designed to solve that problem. A colony might develop a [[Defense tactics#Melee sortie|small strike team of brawlers]] that can swiftly eliminate threats in close quarters, especially those that have infiltrated the colony.
+
+One of the most common tactics is the ''[[Defense_tactics#Melee_blocking|melee block]]'' (see left). Stand 3 colonists just outside a hallway or door entrance. This ensures that you only fight 1 enemy at a time, reducing their relative damage output. Other colonists can fire behind the melee blockers, though enemy raiders can fire behind each other too. Effective against [[infestation]]s and melee rushes.
+{{clear}}
+===Other mechanics===
+{{Stub|section=1|reason=kick in eyes detail. how often is it selected, how dooes it interact with the verb system, cooldown timme - booth beforenit can benused again and if replacong an attack melee cooldown, inter linking - [[terrain]] table, terrain pages, hediff pages, [[sight]] etc}}
+* Skilled melee pawns have the ability to evade melee attacks when fighting. When the melee blow is dodged, it will always miss, regardless of whether or not it is supposed to hit.
+* Blunt melee attacks don't cause bleeding (unless a body part is destroyed), but they have a chance to stun enemies for a short time on hit. In addition, most pieces of [[armor]] will protect poorly against blunt attacks.
+* Pawns that engage in melee combat while standing on dirt may 'kick dirt' or 'water' in their target's eyes, effectively blinding them for a short time (-80% [[sight]] for dirt, and -50% sight for water).
+
+== Friendly fire ==
+{{stub|section=1|reason=this is two of the quoted several subsidiary mechanics, more detail is needed}}
+[[File:Friendly Fire Radii.png|thumb|right|Friendly fire safety radii:<br>Central pawn will not hit any friendly pawn on or within the gold radius<br>Any pawn on a sterile tile will not hit any other friendly pawn on a sterile tile.]]
+Friendly fire is a mechanic in which ranged attacks that missed their target have chance to hit nearby targets, including allies. As such it is important to be careful when you shoot at enemies while allies are in the way or near them, as they may have a chance of being hit as well. 
+
+There are several subsidiary mechanics in this process. 
+
+First, there is a safe zone around the shooter in which allies cannot be hit by friendly fire at all. Colonists can always shoot over the shoulders of allies up to 5 tiles away from them, but any further and allies may be hit. This range is represented by the gold and sterile tiles in the image to the right. The inner radius of sterile tiles defines an area in which a group of pawns cannot friendly fire each other. The safe zone applies even if the target is within the zone.
+
+Second is the [[AI_Storytellers#General|Friendly Fire Difficulty Setting]]. This acts as chance multiplier on the existing chance of friendly fire, ranging between 0% and 100% to pawns in the red area of the image or beyond. Note that 100% will not result in all misses causing friendly fire, it only adds an additional scalar to the existing chance.
+
+== Combat log ==
+The game keeps track of all combat actions done by a pawn. This can be accessed through the 'Log' tab for a character, and lets you review combat after the battle has finished or in the heat of it.
+
+Each action is accompanied by some flavor text.
+
+== See also ==
+*[[Defense tactics]] for a more in-depth guide about countering hostile events
+*[[Defense structures]] for building defenses in your colony
+*[[Offense tactics]] for assaults on hostiles outside your colony
+*[[Weapon Guide]] for ways to use or counter different kinds of weapon
+
+== Version history ==
+* [[Version/0.18.1722|0.18.1722]] - Storyful combat: A major rework of melee combat, and a new way to report all combat interactions. Storyful combat generates a combat log that reports each blow, miss, swipe, block and fall in the combat. During or after a fight, you can review the combat log to see what happened, to generate a richer story.
+
+[[Category:Game mechanics]]

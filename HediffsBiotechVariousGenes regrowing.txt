@@ -1,0 +1,38 @@
+<noinclude>
+{| align=center
+! {{Hediffs Nav/Biotech/Various}}
+|}
+----
+{| {{STDT| c_18}}
+! Name !! Description !! Details !! Stages</noinclude>
+|- id="Genes regrowing" <!-- defName="XenogermReplicating" -->
+! Genes regrowing
+----
+* Def Name:<br />XenogermReplicating
+* Label:<br />genes regrowing
+|<!-- Description -->
+<div style="max-width: 500px;">This person's genetic material is regrowing. This process doesn't have any direct health effects. However, extracting their genes while they are regrowing will kill them.</div>
+|<!-- Details -->
+* Hediff Class: '''HediffWithComps'''
+* Ever Curable By Item: {{Bad|false}}
+* Force Remove On Resurrection: {{Good|true}}
+* Initial Severity: '''1'''
+* '''Comps:''' ''Disappears''
+** Disappears After Ticks: '''{{Ticks/gametime/days|6000000}} ~ {{Ticks/gametime/days|8400000}}'''
+** Show Remaining Time: {{Good|true}}
+** Can Use Decimals Short Form: {{Good|true}}
+** Message On Disappear:<br />{PAWN_nameDef}'s genes have finished regrowing.
+|<!-- Stages -->
+{| {{STDT| c_18}}
+! Label !! Parameters
+|-
+! -
+| -<!-- Parameters -->
+|-
+! -
+|<!-- Parameters -->
+* Min Severity: '''2'''
+* Life Threatening: {{Bad|true}}
+* [[Consciousness]] Max: {{Bad|0%}} (Outright kills the pawn)
+|}<noinclude>
+|}</noinclude>

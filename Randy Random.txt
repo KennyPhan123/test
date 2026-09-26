@@ -1,0 +1,50 @@
+{| align=center
+| {{AI Storytellers Nav}}
+|}
+{{Infobox main|ai
+| name = Randy Random
+| image = Randy.png
+| description = Randy doesn't follow rules. He'll generate random events, and he doesn't care if they make a story of triumph or utter hopelessness. It's all drama to him.
+| type = AI Storytellers
+}}
+
+'''Randy Random''' is a wild storyteller whose main characteristic is triggering challenges at any time, to the extent of launching several dangerous threats all at the same time or consecutively. Randy also multiplies his [[raid points]] by 0.5x to 1.5x, resulting in both easier and harder difficulty raids than you should be receiving. It is possible to receive back-to-back raids at 1.5x but also a quadrum of relative peace with a 0.5x raid.
+
+In the long-term, Randy will average about as many threats sent as Cassandra.
+
+== Analysis ==
+Randy produces more erratic gameplay than Cassandra and Phoebe. Because Randy can apply a random raid size multiplier ranging from 0.5 to 1.5, the raid difficulty progression under Randy can appear inconsistent. His lack of on/off cycles and a cooldown for major threats allows him to generate periods both more intense and more Peaceful then Cassandra and Phoebe possibly could.
+
+== Code specifics == 
+
+Randy fires events on average every 1.35 days. Not all events are fired via Randy. Some events, like quests, are fired separately and not controlled by Randy's firing mechanism. 
+
+Randy checks if an event can be fired once every 1,000 game ticks. That 1,000 game ticks is the equivalent to 60 times a Rimworld day or 2.5 times a Rimworld hour. If Randy has not fired a major threat after 13 days, the next Randy fired event becomes a major threat.
+
+ <minDaysPassed>1</minDaysPassed>
+ <maxThreatBigIntervalDays>13</maxThreatBigIntervalDays>
+ <mtbDays>1.35</mtbDays>
+ <categoryWeights>
+  <Misc>3.5</Misc>
+  <ThreatBig>1.4</ThreatBig>
+  <OrbitalVisitor>1.1</OrbitalVisitor>
+  <FactionArrival>2.4</FactionArrival>
+  <ThreatSmall>0.6</ThreatSmall>
+  <ShipChunkDrop>0.22</ShipChunkDrop>
+ </categoryWeights>
+
+ <randomPointsFactorRange>0.5~1.5</randomPointsFactorRange>
+
+== Overall mean time between major threats ==
+[[File:Randy Random Overall Major Threat MTB Derivation.png|thumb|left|Derivation equations]]
+
+On average, Randy sends major threats every 7.14 days. First, the basic per-day rate of Randy Random's major threats without the 13 day interval maximum is calculated (1). This gives an exponential distribution for the interval of major threats (2). To account for the 13 day major threat interval, a new distribution is produced that is identical up to the simple exponential distribution up to day 13, and afterwards follows an exponential distribution where the rate constant is described by the MTB of firing any event at all (3,4). The expected interval is calculated by definition and gives a result of approximately 7.14 days per major threats from Randy Random.
+
+== Trivia ==
+Randy's artwork was drawn by Ricardo Tomé.<ref>[https://www.artstation.com/artwork/kGWV2 Ricardo Tomé's Artstation post]</ref>
+
+== References ==
+{{Reflist}}
+
+{{nav|ai}}
+[[Category:AI]]

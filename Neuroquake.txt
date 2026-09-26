@@ -1,0 +1,48 @@
+{{Royalty}}
+{{Infobox main|psycast
+| name = Neuroquake
+| image = Neuroquake.png
+| type = Psycast
+| description = Find a discontinuity in the psychic field and unfold it, releasing a massive amount of psychic energy. Every creature in range but outside of the safe, inner, circle will be driven violently insane. Casting this takes 12 seconds of meditation, and afterwards, the caster will go into a five-day psychic coma. The disturbing neuroquake echoes will inflict pain on everyone for many kilometers around, causing diplomatic consequences with all factions.
+| psylink level = 6
+| casting time = 70
+| ability range = 59.9
+| psyfocus cost = 0.5
+| neural heat gain = 0
+| effect radius = 5.9
+| duration = 288000
+| duration multiplier = psychic sensitivity
+| goodwill impact = -75
+| caster must be capable of violence = false
+}}
+'''Neuroquake''' is a level {{P|Psylink Level}} [[psycast]] that drives pawns insane in its area of effect. 
+
+== Acquisition ==
+{{Acquisition}}
+
+== Summary ==
+{{Quote|''If you use neuroquake, everyone in this region will feel the neuroquake echo, you will lose goodwill with every non-hostile faction. Neuroquake takes 12 seconds to cast, and cannot be interrupted. When complete, the caster will fall into a psychic coma for 5 days. Everyone within a 60 tile radius of the caster except those in a 5 tile radius around the caster will be affected.<br>Do you really want to cast neuroquake?''|Confirmation dialogue}}
+
+Upon casting Neuroquake, the player will be given the above prompt asking them to confirm their choice to cast Neuroquake. After confirmation, the pawn will begin the process of casting Neuroquake. This takes 12 seconds, during which the pawn is unable to perform any action, such as moving, attacking, using equipped or carried items, and cannot be interrupted by any means besides downing the caster. If the cast time elapses without interruption, upon its conclusion, every psychically sensitive pawn within a circle of 60 tiles radius, centered on the caster will be afflicted with the [[Mental break#Berserk|Berserk]] mental state for {{Ticks|{{P|Duration}}}}, modified by [[Psychic Sensitivity]]. However, pawns within a 6 tile radius will be excluded from this effect. Note that mech bosses such as the [[Diabolus]]{{BiotechIcon}} and [[War queen]]{{BiotechIcon}} are immune to the Berserk mental state and thus, Neuroquake. Additionally, pawns that are [[incapable]] of violence are unable to cast Neuroquake.
+
+Additionally, immediately after casting, the psycaster will suffer from the [[Psychic coma]] hediff for 5 days, rendering them unconscious for the duration. Furthermore, all psychically sensitive pawns, including hostiles, on the current map will be given the {{Thought|desc=Distant, unfamiliar echoes of terror and grief. It makes me feel nervous and shaky.|label=Neuroquake echoes|value=-12|stack = 3|multi = 0.75|duration = 10}}. Furthermore, any pawns within a 4-tile radius on the world map will also incur this penalty, whether in a [[caravan]] or otherwise. Note that despite [[psychically deaf]] pawns being immune to this penalty, the severity of the thought is not affected by psychic sensitivity.
+
+Lastly, all factions not currently hostile with the player will incur a {{Bad|-10}} penalty to [[goodwill]] upon casting Neuroquake, regardless of their proximity to or presence in the player's colony at time of casting. Note that this does not replace the innate {{Bad|-75}} goodwill penalty of Neuroquake as a harmful ability, which will be applied as usual when used against pawns of a neutral or allied faction.
+
+== Analysis ==
+Neuroquake is a supremely powerful raid buster, without equal. It can end even the most daunting raids without any effort or bloodshed required on the part of the player. The duration of the berserk mental state inflicted lasts just shy of five full days, meaning that even pawns with low psychic sensitivity (such as the ever lethal [[mechanoid]]s) will kill each other long before the effect expires, even without accounting for any further action on the part of the player. Once cast, affected enemies will turn on one another and the raid will invariably swallow itself whole, tearing at each other until one or no survivors remain, affording the player a bloodless victory. Neuroquake is effective against almost all enemy and raid types, as well as other combat targets, such as [[Mech cluster]]s and [[Crashed ship parts]]. Used prudently, Neuroquake is the single most effective method to wipe out an enemy force.
+
+However, in spite of this, Neuroquake is not without drawback or weakness.
+
+Firstly, the pawn casting Neuroquake is completely unable to move or take action while casting. Additionally, the moderate but not unlimited range of Neuroquake requires them to be reasonably close to the target enemies. This renders them vulnerable to not only enemies closing the distance and attacking, but also enemies with long range, such as human pawns wielding [[sniper rifle]]s, or [[pikemen]]. This can be mitigated through the use of personal defensive options such as a [[low-shield pack]], or the [[invisibility]] or [[skipshield]] psycasts. Alternatively, one could just place the pawn in cover, behind a wall, or enclose them in [[wallraise]]s, as Neuroquake does not require line of sight.
+
+Secondly, while Neuroquake is effective against most common raid types, there are a few exceptions. Drop pod raids either scatter themselves all over the map, or drop directly on top of the player. The former reduces the raider density, limiting Neuroquake's targets, while the latter makes it cumbersome to utilize Neuroquake due to the immediate nature of the attack, which will likely be more easily repelled with conventional tactics. However, scattered raiders will eventually clump back together as they make their way towards the player's pawns, meaning that using Neuroquake is not entirely out of the question. [[Hate chanters]],{{AnomalyIcon}} with their tendency to remain immobile along the edges of the map until provoked renders using Neuroquake a less than appealing prospect, as the number of available targets within range will be middling at best until they begin their attack in earnest. Most problematic, however, are [[shambler]]s,{{AnomalyIcon}} being the only raid type to be completely immune to the effects of Neuroquake due to shamblers having 0% psychic sensitivity.
+
+Lastly, the aftereffects of casting Neuroquake can make it situationally a less than appealing prospect. The pawn casting it will be rendered completely useless for five days, leaving them a dead weight and unable to contribute to the colony - a significant loss considering the pawn is, at bare minimum, a level 6 psycaster. The malus to mood is both long lasting and substantial, and can push an already-struggling colony over the brink into full-on breakdown if used carelessly. Additionally, the goodwill penalty, while seeming nominal, can make it difficult to maintain positive relationships with factions, or even drive them to hostility with repeated uses. It falls to the player to decide whether or not these downsides are more appealing than the potential dangers of dispatching your enemies by more traditional methods. Contrastingly, if neuroquake is used to wipe out an enemy faction base, there is a net gain of +10 relationship with all factions in range (-10 for casting neuroquake, +20 with all other factions for wiping out a faction base).
+
+== Version history ==
+* [[Version/1.2.2719|1.2.2719]] - Added.
+* [[Version/1.3.3066|1.3.3066]] - Neuroquake rebalance:  Neuroquake lists duration in the casting warning. Coma duration increased from 3 days -> 5 and no longer scales with psychic sensitivity. The negative moodlet to friendly bystanders applies whether they are conscious or not and is increased from -10 to -12. Casting warmup decreased from 125s -> 12s. Berserk radius decreased from entire map -> 60 tiles.
+
+{{Nav|psycasts|wide}}
+[[Category: Psycasts]]
